@@ -1,0 +1,31 @@
+# ai-media
+
+[Analysis home](../README.md) · 7 projects catalogued; 3 focused source/content reviews.
+
+Screening entries provide identity and package evidence only. Source-reviewed entries explain the exact scope inspected; none is a runtime certification. See [methodology](../methodology.md).
+
+## Category assessment
+
+Specialized video, speech, music, and media-production workflows exposed as optional generation workers.
+
+Borrow ViMax's staged story/character pipeline, VoiceStudio's speech/transcription tools and file output mode, and YuE2's symbolic-plan and artifact-integrity patterns. Integrate through capability manifests, budgets, resumable jobs, and common artifact storage. Prefer editable intermediate representations and content-aware checkpoint invalidation over opaque one-shot generation.
+
+The YuE checkout is YuE2, not the original branch. Engine licensing, weight requirements, language coverage, quality, latency, and hardware fitness need separate verification. No media benchmark was reproduced and screened tools remain unendorsed discovery candidates.
+
+Start with:
+
+- [vimax](https://github.com/HKUDS/ViMax) — [individual report](../projects/ai-media--vimax.md).
+- [voicestudio](https://github.com/debpalash/VoiceStudio) — [individual report](../projects/ai-media--voicestudio.md).
+- [yue](https://github.com/multimodal-art-projection/YuE) — [individual report](../projects/ai-media--yue.md).
+
+## Project catalogue
+
+| Project source | Individual report | Depth | Harness relevance / finding |
+|---|---|---|---|
+| [career-ops](https://github.com/santifer/career-ops) | [Report](../projects/ai-media--career-ops.md) | screened | Inventory / README only; implementation not independently established. |
+| [finger-frame-effect](https://github.com/sophiamyang/finger-frame-effect) | [Report](../projects/ai-media--finger-frame-effect.md) | screened | Inventory / README only; implementation not independently established. |
+| [personalive](https://github.com/GVCLab/PersonaLive) | [Report](../projects/ai-media--personalive.md) | screened | Inventory / README only; implementation not independently established. |
+| [streambert](https://github.com/truelockmc/streambert) | [Report](../projects/ai-media--streambert.md) | screened | Inventory / README only; implementation not independently established. |
+| [vimax](https://github.com/HKUDS/ViMax) | [Report](../projects/ai-media--vimax.md) | source-reviewed | Useful storyboard and character asset pipeline; checkpoint reuse needs content-aware invalidation and cost controls. |
+| [voicestudio](https://github.com/debpalash/VoiceStudio) | [Report](../projects/ai-media--voicestudio.md) | source-reviewed | Agent-facing speech, transcription, and voice profile tools; file output avoids flooding model context. |
+| [yue](https://github.com/multimodal-art-projection/YuE) | [Report](../projects/ai-media--yue.md) | source-reviewed | This checkout is YuE2; symbolic plan and hashed artifacts are useful reproducibility patterns, quality claims unverified. |

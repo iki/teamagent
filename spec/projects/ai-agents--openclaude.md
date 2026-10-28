@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped source review
+
+Source: [openclaude](https://github.com/Gitlawb/openclaude); inspected saved discovery revision `20a50493c775f151b61e1fabd5fa678ad1fbdaae`. Prior analyzed revision `9a2910da236395d259c72c3b4ddf92278625a6c1` remains historical evidence.
+
+**Scope:** Complete tool-pool assembly and compile-time tool type test. Permission matcher/dispatch, individual tools, auth and provider runtime were not read.
+
+The [tool-pool builder](https://github.com/Gitlawb/openclaude/blob/20a50493c775f151b61e1fabd5fa678ad1fbdaae/src/tools.ts#L243-L365) applies blanket deny filtering, feature/mode selection and per-tool enablement before joining MCP tools. `assembleToolPool` filters MCP entries too, sorts built-ins and MCP entries separately for cache stability, then gives built-ins precedence on name collisions. In contrast, [getMergedTools](https://github.com/Gitlawb/openclaude/blob/20a50493c775f151b61e1fabd5fa678ad1fbdaae/src/tools.ts#L367-L387) simply appends the provided MCP list without the same filtering or deduplication. Callers must choose the right contract; neither function alone establishes per-call authorization, because the matcher and execution gate were not inspected.
+
+The [type test](https://github.com/Gitlawb/openclaude/blob/20a50493c775f151b61e1fabd5fa678ad1fbdaae/src/Tool.types.test.ts#L16-L69) distinguishes encoded input from transformed output, rejects scalar input schemas and retains unknown output at the heterogeneous registry boundary. Its schema-consumer function is only referenced with `void`, not invoked; this is compile-time evidence, not runtime malformed-input coverage. The reviewed tool list also contains build-feature and environment-dependent branches, so presence in source is not proof that a shipped build exposes a capability.
+
+Teamagent can borrow deterministic pool assembly and separate input/output type contracts, while enforcing deny rules again at dispatch and keeping dynamic registry data unknown until decoded. No compiler, upstream tests, model calls or tool executions were run. This review does not attribute this fork's behavior to an unrelated upstream product.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openclaude](https://github.com/Gitlawb/openclaude); analyzed commit `9a2910da236395d259c72c3b4ddf92278625a6c1`; commit date 2026-09-29T12:59:42+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--openclaude.md).
+Analysis metadata: source [openclaude](https://github.com/Gitlawb/openclaude); analyzed commit `20a50493c775f151b61e1fabd5fa678ad1fbdaae`; commit date 2026-10-27T10:47:34-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openclaude.md).
 <!-- teamagent-analysis:end -->

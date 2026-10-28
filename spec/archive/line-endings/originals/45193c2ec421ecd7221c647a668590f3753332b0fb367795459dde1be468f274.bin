@@ -1,0 +1,742 @@
+{
+  "format": "teamagent-static-text-verification-v1",
+  "reviewDate": "2026-10-27",
+  "phase": "final-alias-and-exact-locator-validation",
+  "checkedAt": "2026-10-27T18:40:39.721Z",
+  "configured": 42,
+  "attempted": 42,
+  "skipped": 0,
+  "initialOrRefreshImports": 4,
+  "pinned": 38,
+  "counts": {
+    "usable-text": 29,
+    "partial": 8,
+    "blocked": 1,
+    "unsupported": 0,
+    "failed": 4
+  },
+  "pinnedIdentitiesUnchanged": true,
+  "pinnedRemoteCheckTimesUnchanged": true,
+  "pinnedCaptureDatesUnchanged": true,
+  "pinnedPublicationDatesUnchanged": true,
+  "firstCaptureDatesKnown": 38,
+  "sourcePublicationDatesKnown": 24,
+  "publicationEvidence": {
+    "publisher-html-meta": 14,
+    "unknown": 18,
+    "publisher-jsonld": 10
+  },
+  "updatedVersions": 0,
+  "processExitCode": 1,
+  "baselineCheckedAt": "2026-10-27T18:18:37.040Z",
+  "baselineSnapshot": "source-state-static-2026-10-27.json",
+  "previousVerification": "static-policy-verification-2026-10-27.json",
+  "sourceHashes": {
+    "app/research/text-sync.ts": "29f434a8db23a3e69ce8bc2b3120a75a07cd8e38e0194239de244f3f180a4779",
+    "app/research/text-contracts.ts": "a7aa1846fcdd81d3bd68724c038e60f151b3919e0979c336fc6cbce7ec3c8caa",
+    "app/research/text-reports.ts": "5b0f362cc5f3cc2a218a24ac13338a843cd93e4d2d4e31979f9f8d63e50f9770",
+    "app/research/text-dates.ts": "faa5e3df8ed4c89f2c6d29948485eae61d029555a6e8379d12ce065916a48936",
+    "app/research/index.ts": "ddeb7393bf164a4377028a703c55e783e48fe2405f6cc96c020b114f14c287a3",
+    "app/memory/index.ts": "d9a3c258d31898f32ab55d0d68c4884f65579f407fc7dab764bf97efd9865df0",
+    "test/research-text.test.ts": "b535dbe7d5cabf4b4a28462ea0d46bebf4d5fb62bd239d9e7f53a1d43f9c396d",
+    "test/research-text-dates.test.ts": "4019649adb03a958203261146f8d69be3d1e79a2bedb4a37e348a4d4c7740d71",
+    ".urls.md.conf": "eaa949d37509f4aec51b63bd42494685acf2be7f683510199f61a8aedd0415e0",
+    ".urls.pdf.conf": "09fbeb193b04d2491bca521e3d74bd8f274d0213ceb5790e69fdd70c07a70f38"
+  },
+  "stateSha256": "122afa24b8c9bbf76cfa56a435573df040f1dc55300e327cda6f835a25e324b1",
+  "stateSnapshot": "source-state-static-final-2026-10-27.json",
+  "runtime": {
+    "bun": "1.4.2",
+    "python": "3.12.15"
+  },
+  "localValidation": {
+    "newTextPolicyTests": 12,
+    "stepGate": {
+      "passed": 336,
+      "failed": 0,
+      "assertions": 1240,
+      "files": 45,
+      "durationSeconds": 177.83,
+      "reportedBy": "parent agent gate output"
+    },
+    "independentReadOnlyReview": "No blocking findings after alias pinning and exact private locator binding.",
+    "relativeLinks": {
+      "documents": 46,
+      "checked": 134,
+      "issues": [],
+      "scope": "Text report file targets; anchors and remote URLs are not covered."
+    }
+  },
+  "providerActivity": {
+    "xApiEnabled": false,
+    "mediaProvidersCalled": false,
+    "separateKiroReprobeExecuted": false
+  },
+  "pinnedSources": [
+    {
+      "name": "ai.260330.x-miesler-top-5-ideas-in-ai.md",
+      "sourceId": "9634d20b-5e70-4d11-a6b1-868407a25e3b",
+      "versionId": "1d40cf2a-fb70-4c67-a933-098820f2d496",
+      "contentHash": "8ec690197a7ae7607c690a0b551899ac80e6e19b3691bfd438c05932a6c71b23",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:23.073Z",
+      "sourcePublishedAt": "2026-03-30T01:44:22.000Z",
+      "publicationEvidence": "publisher-html-meta",
+      "publicationField": "article:published_time"
+    },
+    {
+      "name": "agents.260803.how-we-built-the-kiro-agent-harness.md",
+      "sourceId": "bdf5c4b9-88e6-4a7b-b040-ddbfcd0caa73",
+      "versionId": "089ca588-842e-4cb5-9417-98237942fb74",
+      "contentHash": "cf7d878a122c18689d9b45ba73563e882e5fa8fae1723cd843ecf7b6500d6b00",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:21.437Z",
+      "sourcePublishedAt": null,
+      "publicationEvidence": "unknown",
+      "publicationField": null
+    },
+    {
+      "name": "agents.260729.how-chatgpt-optimizes-its-agent-loop.md",
+      "sourceId": "23c7be2f-0d0b-4de4-836b-61201f0c4ad1",
+      "versionId": "472f541f-960a-4622-88a3-786359f78f98",
+      "contentHash": "aab0b76993a44594d800adfcc8cc55aba25fbe1cf873671e3e540604ddc53fd5",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:30.428Z",
+      "sourcePublishedAt": "2026-07-29T15:18:25+00:00",
+      "publicationEvidence": "publisher-jsonld",
+      "publicationField": "Article.datePublished"
+    },
+    {
+      "name": "agents.260728.camel-ai-on-durable-objects.md",
+      "sourceId": "6bb0e228-0bc5-4c53-b835-86a19785a1d6",
+      "versionId": "c63ca019-7a6f-48ef-a2af-f032471b5170",
+      "contentHash": "e1f2d9821412de0fc470895d90055e5c486704fd6f1a9eb2c65e915fdc9478b5",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:25.663Z",
+      "sourcePublishedAt": "2026-07-28T16:19:18.000Z",
+      "publicationEvidence": "publisher-html-meta",
+      "publicationField": "article:published_time"
+    },
+    {
+      "name": "agents.260723.i-got-long.md",
+      "sourceId": "fd7dce7b-9c89-4c56-844c-f34da1c732c9",
+      "versionId": "7f178812-d40e-444c-a566-f968dc49f481",
+      "contentHash": "739b9b80fa4c51aa9070dff2697f2d265e54f6a351395f01b4e3d094c291bf7b",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:33.177Z",
+      "sourcePublishedAt": "2026-07-23T19:08:01+00:00",
+      "publicationEvidence": "publisher-jsonld",
+      "publicationField": "Article.datePublished"
+    },
+    {
+      "name": "agents.260720.agent-swarm-model-economics.cursor.md",
+      "sourceId": "696afa09-f1fb-4dbb-8e62-7db99aaf7c08",
+      "versionId": "d7495391-0abf-4eaa-9875-59ce13ff760a",
+      "contentHash": "6be1210c4e90e5614cca376e854831cd8206b8b62d2b38763d7a1098811ebc58",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:34.729Z",
+      "sourcePublishedAt": "2026-07-20T12:00:00.000Z",
+      "publicationEvidence": "publisher-jsonld",
+      "publicationField": "Article.datePublished"
+    },
+    {
+      "name": "agents.260704.harness-self-improvement.md",
+      "sourceId": "b9a6e88a-dbb8-481f-a864-a5332746269c",
+      "versionId": "0906f4f8-942c-41f2-b83b-e3a594ff9659",
+      "contentHash": "8079b9359a53c7e46badafbec53eb332863ccf1502f3ed13b3dfa7c0e564e744",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:38.522Z",
+      "sourcePublishedAt": null,
+      "publicationEvidence": "unknown",
+      "publicationField": null
+    },
+    {
+      "name": "agents.260703.agentic-autonomy-levels.addyosmani.md",
+      "sourceId": "4183542e-682b-471c-9ea2-7211a9f3043a",
+      "versionId": "46597a20-68df-4f69-840b-ba48b925fc96",
+      "contentHash": "a813693bd62bf144d7938d893600c15210b812d8335506c8df935c3d1dffc213",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:38.083Z",
+      "sourcePublishedAt": "2026-07-03T14:30:33+00:00",
+      "publicationEvidence": "publisher-jsonld",
+      "publicationField": "Article.datePublished"
+    },
+    {
+      "name": "agents.260701.apps-after-agents.md",
+      "sourceId": "4dbf6a58-69a8-4f01-b095-ec27e9ae465d",
+      "versionId": "9fcfdc66-e80b-48cb-af1c-0cee4e500aa0",
+      "contentHash": "55f77c5c8e886ddb46917de455805beb132e49f0d6e3752cf836b35abf37c7a4",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:39.861Z",
+      "sourcePublishedAt": "2026-07-01T12:00:00.000Z",
+      "publicationEvidence": "publisher-html-meta",
+      "publicationField": "article:published_time"
+    },
+    {
+      "name": "agents.260214.deterministic-core-agentic-shell.md",
+      "sourceId": "f88b5784-99aa-4551-820c-80f1504dd1f5",
+      "versionId": "2c28a965-b4a9-463e-8392-20a65224f101",
+      "contentHash": "29b79c466f2ea3d6c3faf8451ebadb1bdd2f8c1c20ff348fb738be4de0995aae",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:41.075Z",
+      "sourcePublishedAt": null,
+      "publicationEvidence": "unknown",
+      "publicationField": null
+    },
+    {
+      "name": "claude.260331.claude-code-leak.kuber.md",
+      "sourceId": "00b75129-a82f-4e2a-9d35-4eb2f8b3effe",
+      "versionId": "aa48a04f-d847-475a-874f-758703c6c992",
+      "contentHash": "0a7df2efb2469775b377506893775e4b08c2e0b47c0f0927efa315b598b8e2bc",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:42.770Z",
+      "sourcePublishedAt": "2026-03-31T00:00:00.000Z",
+      "publicationEvidence": "publisher-html-meta",
+      "publicationField": "article:published_time"
+    },
+    {
+      "name": "swarm.260327.multi-agent-landscape.md",
+      "sourceId": "ee18d00d-08b5-4f11-b5a6-75b09890b40a",
+      "versionId": "c326a6b3-e4a9-4b93-bb48-5bac4e325524",
+      "contentHash": "4b9e7a3f372256c4b6e72528a085e2e10c2e8a17a72be09a878994a2d0189659",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:42.868Z",
+      "sourcePublishedAt": "2026-03-27T00:00:00-04:00",
+      "publicationEvidence": "publisher-html-meta",
+      "publicationField": "article:published_time"
+    },
+    {
+      "name": "cx.260820.no-need-to-walk-the-graph.contextandchaos.md",
+      "sourceId": "3b9ff000-6626-4b65-9a40-ca448d9246b1",
+      "versionId": "61e14b40-ac53-4e70-ae99-400ab52d1e69",
+      "contentHash": "597a9b86c618b61a1566946a6b01906633212dca7671e107b1c21cd1daa0516b",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:46.319Z",
+      "sourcePublishedAt": "2026-08-20T14:17:32+00:00",
+      "publicationEvidence": "publisher-jsonld",
+      "publicationField": "Article.datePublished"
+    },
+    {
+      "name": "cx.260819.gisting.shopify.md",
+      "sourceId": "c536ad51-5bd7-4477-9b13-82da3d032f81",
+      "versionId": "32e5f69e-464a-45ce-aeab-181a28e9a300",
+      "contentHash": "9d984893a4a667d63279196b5dca61d7cbd90d2bda566269fad69e8078a99cae",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:48.016Z",
+      "sourcePublishedAt": "2026-08-19T00:00:00.000Z",
+      "publicationEvidence": "publisher-html-meta",
+      "publicationField": "datePublished"
+    },
+    {
+      "name": "cx.260818.context-engineering-2026.louisbouchard.md",
+      "sourceId": "64ada779-8e0d-4484-9ffa-aed2f20fb44c",
+      "versionId": "1fc6f2e4-4b3a-460d-aff7-b2c51d910355",
+      "contentHash": "4aee96110ffa7d41fecc4f51ba423e8499ef5507a5e97c205e5a515bbe93b45c",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:50.579Z",
+      "sourcePublishedAt": "2026-08-18T22:30:00.000Z",
+      "publicationEvidence": "publisher-html-meta",
+      "publicationField": "article:published_time"
+    },
+    {
+      "name": "cx.260804.11-context-engineering-tips-cut-coding-agent-tokens.decodingai.md",
+      "sourceId": "cb99cf7b-04cf-4768-bd80-0bdb7cc398a8",
+      "versionId": "7742b589-898a-438e-a342-c37caf09d467",
+      "contentHash": "2e5974797b3aa0957c9119d61b716454327a04ea83b286d036be49b70cdaec6e",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:52.966Z",
+      "sourcePublishedAt": "2026-08-04T11:04:10+00:00",
+      "publicationEvidence": "publisher-jsonld",
+      "publicationField": "Article.datePublished"
+    },
+    {
+      "name": "cx.260630.the-context-layer.md",
+      "sourceId": "e7918014-b57f-40fc-b68b-fd9f1657a587",
+      "versionId": "a0e69913-15b1-47a7-9b50-c579c9bf6650",
+      "contentHash": "89f0b0034b56404b21f10c227d49d849abdc43f4fa0f7d119adc9151f8614f99",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:54.916Z",
+      "sourcePublishedAt": "2026-06-30T08:20:17+00:00",
+      "publicationEvidence": "publisher-jsonld",
+      "publicationField": "Article.datePublished"
+    },
+    {
+      "name": "cx.251216.evaluating-compression.md",
+      "sourceId": "7f2c2fe0-0781-44b2-ac22-068edc240439",
+      "versionId": "2b7338ae-25e8-4ddc-aabe-cf96a167d36f",
+      "contentHash": "5977140981a2cc0c5bc1de340671c2b843f0971f012e1970a3ffe93055e9999b",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:57.493Z",
+      "sourcePublishedAt": "2025-12-16T00:00:00.000Z",
+      "publicationEvidence": "publisher-html-meta",
+      "publicationField": "article:published_time"
+    },
+    {
+      "name": "cx.251126.effective-harnesses-for-long-running-agents.md",
+      "sourceId": "ecbfe3fc-edb6-449b-9da1-96ec5bb2f9eb",
+      "versionId": "c10eb1bb-204a-4812-bca8-1755a785afb8",
+      "contentHash": "60435eb25e4d6318753e4994149df54dd4c4f3d575fbd8b6dc136c55321a6401",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:56.982Z",
+      "sourcePublishedAt": "2025-11-26T00:00:00.000Z",
+      "publicationEvidence": "publisher-html-meta",
+      "publicationField": "article:published_time"
+    },
+    {
+      "name": "kb.260707.llm-wiki-agent-memory.decodingai.md",
+      "sourceId": "7c58292e-c3d1-47b5-af71-93e117073929",
+      "versionId": "2c14f6bf-934b-42a4-9951-88dfad53ba08",
+      "contentHash": "d46ee357cb6792c425174667ad423796217f5ca0aa2b755c29266af7a595a9c8",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:15.210Z",
+      "sourcePublishedAt": "2026-07-07T05:01:21+00:00",
+      "publicationEvidence": "publisher-jsonld",
+      "publicationField": "Article.datePublished"
+    },
+    {
+      "name": "kb.260410.mentisdb-whitepaper.md",
+      "sourceId": "9143b211-25b3-40ea-9a62-186bce90fb59",
+      "versionId": "364e38ca-5947-4980-acdc-b14bf01d0a74",
+      "contentHash": "d3461ad5064654489d91202783993a7d919aacfdead5b4b541d4785c807aa6f5",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:50:59.494Z",
+      "sourcePublishedAt": null,
+      "publicationEvidence": "unknown",
+      "publicationField": null
+    },
+    {
+      "name": "kb.260402.x-karpathy-llm-kb.md",
+      "sourceId": "c5cdcae0-7870-4ad7-9705-de1d8a8f0433",
+      "versionId": "4c21d3c7-0d91-4297-8a08-87736c381fc7",
+      "contentHash": "c2416492e811d02fccc6da405adb6b555616388ae5a6a1abb6fbac48b919c195",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:01.854Z",
+      "sourcePublishedAt": "2026-04-02T20:42:21.000Z",
+      "publicationEvidence": "publisher-html-meta",
+      "publicationField": "article:published_time"
+    },
+    {
+      "name": "tools.260624.tanstack-ai-code-mode.md",
+      "sourceId": "a892a778-b0bb-4a29-99e4-952d8583e59f",
+      "versionId": "8a8d898e-52f5-441b-9c5c-d7dc72c505c3",
+      "contentHash": "04d5e41b8d9137034c55420f9c39a330e4e1535568c46a0b8a95a5577968e0c7",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:03.567Z",
+      "sourcePublishedAt": null,
+      "publicationEvidence": "unknown",
+      "publicationField": null
+    },
+    {
+      "name": "tools.260624.tanstack-ai-code-mode-isolates.md",
+      "sourceId": "2ace0db2-7a2a-4817-ad5b-899f3efe479b",
+      "versionId": "baf116e5-722d-4ff0-97d8-117e82b8d140",
+      "contentHash": "22544270f50cc6ecc63eb496ec7eb7a820af961a8cabeb037b74fa50a86afa0c",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:05.290Z",
+      "sourcePublishedAt": null,
+      "publicationEvidence": "unknown",
+      "publicationField": null
+    },
+    {
+      "name": "tools.260408.tanstack-ai-code-mode-blog.md",
+      "sourceId": "f1fa2c3b-2aa0-4aa8-9a61-d65ab4c8c359",
+      "versionId": "ec30d1c5-773c-4157-baba-ab9311b74c31",
+      "contentHash": "0eb697287c8b8abad2896bdb3fd7f849be6ec34c6c8c3c83aaf725f41314617c",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:07.579Z",
+      "sourcePublishedAt": null,
+      "publicationEvidence": "unknown",
+      "publicationField": null
+    },
+    {
+      "name": "mcp.260422.building-agents-that-use-mcp.claude.md",
+      "sourceId": "2182f154-7c50-4590-a87a-c4ee23caec92",
+      "versionId": "b327e052-bed8-4c85-ab29-09b967bb2b3f",
+      "contentHash": "e75b27aa47231ab761bc169a65a2802965fe2ebd063ec296cf02d8cd82fd1500",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:09.500Z",
+      "sourcePublishedAt": "2026-04-22",
+      "publicationEvidence": "publisher-html-meta",
+      "publicationField": "article:published_time"
+    },
+    {
+      "name": "sandbox.260803.cloudflare-computer.md",
+      "sourceId": "25cd4eda-f0b8-4bb3-b433-2e48e962fc94",
+      "versionId": "461b90f9-dd13-4d0d-8932-dc1be2db7944",
+      "contentHash": "d349883747d7e4611463f7729e9285c854343b742287b7b1571d6b7bff0b6d2b",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:13.979Z",
+      "sourcePublishedAt": "2026-08-03T13:15:24.000Z",
+      "publicationEvidence": "publisher-html-meta",
+      "publicationField": "article:published_time"
+    },
+    {
+      "name": "spec.260113.good-spec.addyosmani.md",
+      "sourceId": "53b83d0c-06b8-42b6-be0b-171aea06a1c7",
+      "versionId": "ee922dc4-336e-4cbb-9851-07e281b37150",
+      "contentHash": "e8fe3c64af82ed00838a9286e8fb1a00871f74e81cc739ce6c454f25bf7c2850",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:18.193Z",
+      "sourcePublishedAt": "2026-01-13T00:00:00+00:00",
+      "publicationEvidence": "publisher-html-meta",
+      "publicationField": "article:published_time"
+    },
+    {
+      "name": "spec.250902.spec-driven-dev.speckit.md",
+      "sourceId": "e1c95b7e-b300-4356-a9bd-a70b6a176efb",
+      "versionId": "51eecd77-c6f2-4bae-82b9-0b045dff0d8b",
+      "contentHash": "85c23dff21288c09650af69d275dc2fdb5a71a8e0af481e5255ab6810991256c",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:19.704Z",
+      "sourcePublishedAt": null,
+      "publicationEvidence": "unknown",
+      "publicationField": null
+    },
+    {
+      "name": "spec.250902.spec-driven.speckit.md",
+      "sourceId": "71b08c03-4868-4530-8644-d6b454b8ee38",
+      "versionId": "44669675-1dbc-499d-ac15-5689ee6e598e",
+      "contentHash": "f35880b97709158020de9cb5282a43ff8adb885fbbb6645e688681057b41acda",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:20.039Z",
+      "sourcePublishedAt": null,
+      "publicationEvidence": "unknown",
+      "publicationField": null
+    },
+    {
+      "name": "security.260805.cloudflare-os-is-an-architecture-of-distrust.md",
+      "sourceId": "840e1b68-13e2-4d65-b63c-e147a5e54154",
+      "versionId": "4ca3871a-967c-4d62-a703-87b2d27818dd",
+      "contentHash": "8be8cb19c06e8d0cb4aaaf2660f51203610e7ced23940c38150fa904b249cf3d",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:21.805Z",
+      "sourcePublishedAt": "2026-08-05T21:00:00+01:00",
+      "publicationEvidence": "publisher-html-meta",
+      "publicationField": "article:published_time"
+    },
+    {
+      "name": "security.260727.hf-openai-agent-intrusion-technical-timeline.md",
+      "sourceId": "2d98cffd-9e13-4d63-9a73-a1ba8a4438bc",
+      "versionId": "2c0c67c0-7e2e-4b61-b3db-03bf4491d4ca",
+      "contentHash": "2c0158c45fdc1e6d012cc395e95aca180f27576c59a699d607dac5429fa7ef26",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:27.861Z",
+      "sourcePublishedAt": "2026-07-27T00:00:00.728Z",
+      "publicationEvidence": "publisher-jsonld",
+      "publicationField": "Article.datePublished"
+    },
+    {
+      "name": "security.260727.from-zero-trust-to-zero-custody.md",
+      "sourceId": "34c55d46-46ae-4bfc-ade6-123132e80656",
+      "versionId": "dd97a846-a7fc-4fb4-a256-e9d5d7a68994",
+      "contentHash": "e8d85231dbcfb9df64efe351d219c126c09951ceb044cba92fbd9d1acb6cbbea",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:24.891Z",
+      "sourcePublishedAt": "2026-07-27T15:30:27+00:00",
+      "publicationEvidence": "publisher-jsonld",
+      "publicationField": "Article.datePublished"
+    },
+    {
+      "name": "security.260410.many-ih.md",
+      "sourceId": "8c1ceebd-4abd-4771-be36-60101749811b",
+      "versionId": "bdd0d482-6140-4091-8e78-69928f89f520",
+      "contentHash": "25cc58b74fc687b26901c44fa73ce031d3d68081d87462bbdc34f178fb3cb46f",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:27.303Z",
+      "sourcePublishedAt": null,
+      "publicationEvidence": "unknown",
+      "publicationField": null
+    },
+    {
+      "name": "agents.260731.ferrox-ffm10-graph-engineering.pdf",
+      "sourceId": "e21c46ca-4f1d-4913-977b-87d3511e3a91",
+      "versionId": "2b94e4a3-d4ef-42ce-8b95-40238dd68ccc",
+      "contentHash": "543154651900ccdc5d52abd0e8d5afcc0c8b3f1ad0ebfee691ee60999915192e",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:33.887Z",
+      "sourcePublishedAt": null,
+      "publicationEvidence": "unknown",
+      "publicationField": null
+    },
+    {
+      "name": "agents.260607.hermes.guide.pdf",
+      "sourceId": "046e5ede-374f-499b-b6dc-0368aabdd20b",
+      "versionId": "d6ddf7e6-c118-409a-904d-171b2a4a4728",
+      "contentHash": "3b215f153c2da2249f27df6d0e21971d8a8b1e2691ae417f02f4a0dde7d76279",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:35.848Z",
+      "sourcePublishedAt": null,
+      "publicationEvidence": "unknown",
+      "publicationField": null
+    },
+    {
+      "name": "cx.260408.memento.pdf",
+      "sourceId": "fb0cdf64-23c4-4e76-ad2a-e592d00ec396",
+      "versionId": "9b543f7f-590c-450d-9999-d29f8475a279",
+      "contentHash": "2e4e6d858ce6539e5bf7217b3b802241cc6cac1523740b3eca8bede28bf283d9",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:36.008Z",
+      "sourcePublishedAt": null,
+      "publicationEvidence": "unknown",
+      "publicationField": null
+    },
+    {
+      "name": "security.260413.many-ih.2604.09443.pdf",
+      "sourceId": "898db207-95f6-4b96-b93a-97746997d4c2",
+      "versionId": "0b8d618f-fa62-44be-9afb-ea7507bb0b17",
+      "contentHash": "7691fe7a7f9d7471a597783f0ef2fde0e960b9d4ac01a958b2e661527cceb969",
+      "identityUnchanged": true,
+      "remoteCheckedAtUnchanged": true,
+      "firstCaptureDateUnchanged": true,
+      "publicationDateUnchanged": true,
+      "firstCapturedAt": "2026-10-24T05:51:38.390Z",
+      "sourcePublishedAt": null,
+      "publicationEvidence": "unknown",
+      "publicationField": null
+    }
+  ],
+  "incompleteSources": [
+    {
+      "name": "ai.260330.x-miesler-top-5-ideas-in-ai.md",
+      "status": "pinned",
+      "validation": "partial",
+      "warnings": [
+        "Public social-page HTML only: authenticated post, article and thread completeness are unverified. No alternate mirror was substituted.",
+        "Image count is measured; visual fidelity and completeness are unverified.",
+        "Static snapshot checked locally; no remote freshness check, conversion or export rewrite was performed."
+      ]
+    },
+    {
+      "name": "agents.260731.qm-is-trying-to-solve-the-company-agent-problem.md",
+      "status": "failed",
+      "validation": "failed",
+      "warnings": [
+        "Import failed (invalid); no current content was validated."
+      ]
+    },
+    {
+      "name": "agents.260728.camel-ai-on-durable-objects.md",
+      "status": "pinned",
+      "validation": "partial",
+      "warnings": [
+        "Public social-page HTML only: authenticated post, article and thread completeness are unverified. No alternate mirror was substituted.",
+        "Image count is measured; visual fidelity and completeness are unverified.",
+        "Static snapshot checked locally; no remote freshness check, conversion or export rewrite was performed."
+      ]
+    },
+    {
+      "name": "agents.260706.testing-17-agentic-loop-engineering-techniques-for-reliable-ai-agents.md",
+      "status": "failed",
+      "validation": "failed",
+      "warnings": [
+        "Import failed (invalid); no current content was validated."
+      ]
+    },
+    {
+      "name": "agents.260311.equip-responses-api-computer-environment.md",
+      "status": "failed",
+      "validation": "failed",
+      "warnings": [
+        "Import failed (invalid); no current content was validated."
+      ]
+    },
+    {
+      "name": "kb.260402.x-karpathy-llm-kb.md",
+      "status": "pinned",
+      "validation": "partial",
+      "warnings": [
+        "Public social-page HTML only: authenticated post, article and thread completeness are unverified. No alternate mirror was substituted.",
+        "Image count is measured; visual fidelity and completeness are unverified.",
+        "Static snapshot checked locally; no remote freshness check, conversion or export rewrite was performed."
+      ]
+    },
+    {
+      "name": "tools.260624.tanstack-ai-code-mode-with-skills.md",
+      "status": "failed",
+      "validation": "failed",
+      "warnings": [
+        "Import failed (invalid); no current content was validated."
+      ]
+    },
+    {
+      "name": "tools.260408.tanstack-ai-code-mode-blog.md",
+      "status": "pinned",
+      "validation": "partial",
+      "warnings": [
+        "original/tanstack-ai-code-mode.md: A referenced image could not be retrieved under the import policy",
+        "No images were captured; whether the source contains missing images is unverified.",
+        "Static snapshot checked locally; no remote freshness check, conversion or export rewrite was performed."
+      ]
+    },
+    {
+      "name": "sandbox.260803.cloudflare-computer.md",
+      "status": "pinned",
+      "validation": "partial",
+      "warnings": [
+        "original/cloudflare-computer: HTML image without a static src was not retrieved",
+        "original/cloudflare-computer: HTML image with unsupported scheme was not retrieved",
+        "Image count is measured; visual fidelity and completeness are unverified.",
+        "Static snapshot checked locally; no remote freshness check, conversion or export rewrite was performed."
+      ]
+    },
+    {
+      "name": "agents.260731.ferrox-ffm10-graph-engineering.pdf",
+      "status": "pinned",
+      "validation": "partial",
+      "warnings": [
+        "original/file: PDF text stream and physical page boundaries retained; reading order, table layout, equations, vector artwork and OCR are not reconstructed; original PDF retained",
+        "Image count is measured; visual fidelity and completeness are unverified.",
+        "Static snapshot checked locally; no remote freshness check, conversion or export rewrite was performed."
+      ]
+    },
+    {
+      "name": "agents.260607.hermes.guide.pdf",
+      "status": "pinned",
+      "validation": "partial",
+      "warnings": [
+        "original/Hermes-Agent-The-Complete-Guide-v260607.pdf: PDF text stream and physical page boundaries retained; reading order, table layout, equations, vector artwork and OCR are not reconstructed; original PDF retained",
+        "Image count is measured; visual fidelity and completeness are unverified.",
+        "Static snapshot checked locally; no remote freshness check, conversion or export rewrite was performed."
+      ]
+    },
+    {
+      "name": "cx.260408.memento.pdf",
+      "status": "pinned",
+      "validation": "blocked",
+      "warnings": [
+        "Requested PDF was not captured as a PDF document; an HTML wrapper is not a substitute.",
+        "No images were captured; whether the source contains missing images is unverified.",
+        "Static snapshot checked locally; no remote freshness check, conversion or export rewrite was performed."
+      ]
+    },
+    {
+      "name": "security.260413.many-ih.2604.09443.pdf",
+      "status": "pinned",
+      "validation": "partial",
+      "warnings": [
+        "original/2604.09443: PDF text stream and physical page boundaries retained; reading order, table layout, equations, vector artwork and OCR are not reconstructed; original PDF retained",
+        "Image count is measured; visual fidelity and completeness are unverified.",
+        "Static snapshot checked locally; no remote freshness check, conversion or export rewrite was performed."
+      ]
+    }
+  ],
+  "limitations": [
+    "Local static checks do not establish current remote freshness.",
+    "The four importer calls retried sources with no successful capture; all previously captured versions remain pinned.",
+    "Publication dates are publisher assertions with labeled evidence; unknowns are not inferred from filenames or HTTP Last-Modified.",
+    "The eight partial extractions and PDF wrapper remain explicit incomplete outcomes.",
+    "Private cache/export bytes must be transferred or restored separately on another machine.",
+    "Authenticated X API access, full post/thread coverage, PDF layout/OCR and image fidelity were not verified."
+  ]
+}

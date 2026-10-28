@@ -14,7 +14,7 @@ First-captured time comes from the retained memory source creation timestamp. So
 
 Original research remains in [data/research/texts](../../../data/research/texts/). This sync does not replace historical evidence. Exact source URL query parameters stay in private memory/export manifests; public reports omit them. Extracted heading samples are untrusted source data.
 
-Last run: 2026-10-27T18:40:39.721Z. [Machine-readable source state](source-state.json). [Changelog](CHANGELOG.md).
+Last run: 2026-10-28T07:07:39.056Z. [Machine-readable source state](source-state.json). [Changelog](CHANGELOG.md).
 
 | Source group | Content validation | Import outcome |
 | --- | --- | --- |
@@ -30,13 +30,13 @@ Last run: 2026-10-27T18:40:39.721Z. [Machine-readable source state](source-state
 | [agents.260728.camel-ai-on-durable-objects.md](agents.260728.camel-ai-on-durable-objects.md.report.md) | partial | pinned |
 | [agents.260729.how-chatgpt-optimizes-its-agent-loop.md](agents.260729.how-chatgpt-optimizes-its-agent-loop.md.report.md) | usable-text | pinned |
 | [agents.260731.ferrox-ffm10-graph-engineering.pdf](agents.260731.ferrox-ffm10-graph-engineering.pdf.report.md) | partial | pinned |
-| [agents.260731.qm-is-trying-to-solve-the-company-agent-problem.md](agents.260731.qm-is-trying-to-solve-the-company-agent-problem.md.report.md) | failed | failed |
+| [agents.260731.qm-is-trying-to-solve-the-company-agent-problem.md](agents.260731.qm-is-trying-to-solve-the-company-agent-problem.md.report.md) | failed, usable-text | failed, created |
 | [agents.260803.how-we-built-the-kiro-agent-harness.md](agents.260803.how-we-built-the-kiro-agent-harness.md.report.md) | usable-text | pinned |
 | [ai.260330.x-miesler-top-5-ideas-in-ai.md](ai.260330.x-miesler-top-5-ideas-in-ai.md.report.md) | partial | pinned |
 | [claude.260331.claude-code-leak.kuber.md](claude.260331.claude-code-leak.kuber.md.report.md) | usable-text | pinned |
 | [cx.251126.effective-harnesses-for-long-running-agents.md](cx.251126.effective-harnesses-for-long-running-agents.md.report.md) | usable-text | pinned |
 | [cx.251216.evaluating-compression.md](cx.251216.evaluating-compression.md.report.md) | usable-text | pinned |
-| [cx.260408.memento.pdf](cx.260408.memento.pdf.report.md) | blocked | pinned |
+| [cx.260408.memento.pdf](cx.260408.memento.pdf.report.md) | blocked, partial | pinned, created |
 | [cx.260630.the-context-layer.md](cx.260630.the-context-layer.md.report.md) | usable-text | pinned |
 | [cx.260804.11-context-engineering-tips-cut-coding-agent-tokens.decodingai.md](cx.260804.11-context-engineering-tips-cut-coding-agent-tokens.decodingai.md.report.md) | usable-text | pinned |
 | [cx.260818.context-engineering-2026.louisbouchard.md](cx.260818.context-engineering-2026.louisbouchard.md.report.md) | usable-text | pinned |
@@ -58,5 +58,5 @@ Last run: 2026-10-27T18:40:39.721Z. [Machine-readable source state](source-state
 | [swarm.260327.multi-agent-landscape.md](swarm.260327.multi-agent-landscape.md.report.md) | usable-text | pinned |
 | [tools.260408.tanstack-ai-code-mode-blog.md](tools.260408.tanstack-ai-code-mode-blog.md.report.md) | partial | pinned |
 | [tools.260624.tanstack-ai-code-mode-isolates.md](tools.260624.tanstack-ai-code-mode-isolates.md.report.md) | usable-text | pinned |
-| [tools.260624.tanstack-ai-code-mode-with-skills.md](tools.260624.tanstack-ai-code-mode-with-skills.md.report.md) | failed | failed |
+| [tools.260624.tanstack-ai-code-mode-with-skills.md](tools.260624.tanstack-ai-code-mode-with-skills.md.report.md) | failed, usable-text | failed, created |
 | [tools.260624.tanstack-ai-code-mode.md](tools.260624.tanstack-ai-code-mode.md.report.md) | usable-text | pinned |

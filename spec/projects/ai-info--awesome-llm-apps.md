@@ -24,6 +24,14 @@ This entry was catalogued under **ai-info**. Its category places it in the candi
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`6c16b23f1bacd0fdf240bb5141ef45e59e82c306`](https://github.com/Shubhamsaboo/awesome-llm-apps/commit/6c16b23f1bacd0fdf240bb5141ef45e59e82c306). Scope: Full Excaliflow server and README, travel scrape helper and code-fence test read. Diagram UI, verification runner, scraper service enforcement and other catalog applications were not reviewed.
+
+The [Excaliflow server](https://github.com/Shubhamsaboo/awesome-llm-apps/blob/6c16b23f1bacd0fdf240bb5141ef45e59e82c306/advanced_llm_apps/excaliflow/server.js) rejects malformed URL escapes and lexical path traversal and restricts methods to GET/HEAD. It follows filesystem symlinks through stat/readFile, loads each response wholly into memory and listens without an explicit loopback host, despite the [README's local-server presentation](https://github.com/Shubhamsaboo/awesome-llm-apps/blob/6c16b23f1bacd0fdf240bb5141ef45e59e82c306/advanced_llm_apps/excaliflow/README.md). It is a demo server, not an untrusted-artifact serving boundary. UI export, animation and accessibility claims were not exercised.
+
+The [travel scraper](https://github.com/Shubhamsaboo/awesome-llm-apps/blob/6c16b23f1bacd0fdf240bb5141ef45e59e82c306/advanced_ai_agents/multi_agent_apps/agent_teams/ai_travel_planner_agent_team/backend/tools/scrape.py) forwards the supplied URL to a credentialed service with wait/timeout settings but no local destination validation; remote filtering is outside this review. The [code-fence fixtures](https://github.com/Shubhamsaboo/awesome-llm-apps/blob/6c16b23f1bacd0fdf240bb5141ef45e59e82c306/generative_ui_agents/ai-knowledge-explorer/agent/tests/test_tool_code_fence.py) cover empty and ordinary wrappers, not JSON schema validity or safe execution. Adapt narrow fixtures as examples and keep each catalog application's trust model separate. No server, browser, service or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps); analyzed commit `4bf51ab704fb2c5b3803cd5191b30d7dcdb51dc2`; commit date 2026-09-28T23:56:53-05:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-info--awesome-llm-apps.md).
+Analysis metadata: source [awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps); analyzed commit `6c16b23f1bacd0fdf240bb5141ef45e59e82c306`; commit date 2026-10-21T16:23:38-07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-info--awesome-llm-apps.md).
 <!-- teamagent-analysis:end -->

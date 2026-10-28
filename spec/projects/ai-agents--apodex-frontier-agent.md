@@ -2,7 +2,7 @@
 
 Source: [apodex-frontier-agent](https://github.com/ApodexAI/FrontierAgent) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `179709fee18ae8506ac77bc724b3cea0ac1e0dbf`; commit timestamp `2026-10-02T17:35:23+08:00`; 770 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `e4cb2397109c957a2f99c3a5d850b9fc479dbef6` (commit date `2026-10-14T15:59:18+08:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete local-path authorization and write-file modules; runtime alias-resolution section and path-authorization test-name inventory. The complete 39-path interval, operating-system sandbox, filesystem-state authority and backend isolation were not audited.
+
+[Local authorization](https://github.com/ApodexAI/FrontierAgent/blob/e4cb2397109c957a2f99c3a5d850b9fc479dbef6/plugins/tools/_path_auth.py#L87-L175) prefers installed filesystem state over request metadata and resolves workspace symlinks before checking grants. [Read/write grants](https://github.com/ApodexAI/FrontierAgent/blob/e4cb2397109c957a2f99c3a5d850b9fc479dbef6/plugins/tools/_path_auth.py#L343-L402) keep curated skills, mounted inputs and overflow evidence read-only. This is a useful separation: imported/recovered material must not become a location where model output can write future privileged instructions. The legacy metadata workspace path remains a separately constrained input rather than authenticated policy provenance.
+
+The separate [write fallback](https://github.com/ApodexAI/FrontierAgent/blob/e4cb2397109c957a2f99c3a5d850b9fc479dbef6/plugins/tools/write_file.py#L91-L116) weakens that boundary: after a non-container sandbox failure or absence, it checks a raw string prefix and writes without rerunning canonical authorization. A similarly prefixed sibling path or unresolved traversal/symlink needs rejection by a common final guard; [runtime alias rewriting](https://github.com/ApodexAI/FrontierAgent/blob/e4cb2397109c957a2f99c3a5d850b9fc479dbef6/plugins/tools/_sandbox.py#L2505-L2545) deliberately does not canonicalize arbitrary returned paths. This finding is from source inspection, not a reproduced host exploit. Container failures do fail visibly instead of redirecting outputs.
+
+[The write-size check](https://github.com/ApodexAI/FrontierAgent/blob/e4cb2397109c957a2f99c3a5d850b9fc479dbef6/plugins/tools/write_file.py#L28-L70) counts Python string characters while labeling the limit and receipt as bytes; UTF-8 payloads can exceed the stated byte bound. **Disposition:** boundary-design reference only. Teamagent must enforce final destination containment and encoded-byte limits consistently across primary and fallback adapters, and an unavailable sandbox cannot silently authorize host effects.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [apodex-frontier-agent](https://github.com/ApodexAI/FrontierAgent); analyzed commit `179709fee18ae8506ac77bc724b3cea0ac1e0dbf`; commit date 2026-10-02T17:35:23+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--apodex-frontier-agent.md).
+Analysis metadata: source [apodex-frontier-agent](https://github.com/ApodexAI/FrontierAgent); analyzed commit `e4cb2397109c957a2f99c3a5d850b9fc479dbef6`; commit date 2026-10-14T15:59:18+08:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--apodex-frontier-agent.md).
 <!-- teamagent-analysis:end -->

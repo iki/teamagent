@@ -29,6 +29,18 @@ The inspected file is large and composes many changing strategies; adoption need
 
 [Models](../models.md) · [Decisions](../decisions.md) · [Generation](../generation.md) · [Security](../security.md)
 
+## 2026-10-28 divergent-history investigation and scoped source review
+
+Source: [litellm](https://github.com/BerriAI/litellm); inspected snapshot `0a1dbc0fb4f6b52aec97700dddb457adf91d1cbd`; prior analyzed commit `252c71c0b22197d5dd99eac730696f28032796af`. The inspected snapshot is the saved discovery version, not a claim about the checkout's latest HEAD.
+
+**Scope:** Complete committed path inventory (15,184 paths); full clientside_credential_handler.py (155 lines), routing_read_batch.py (248 lines), and its 220-line unit-test file. Fallback implementation and provider calls were not audited or executed.
+
+**History outcome:** both full commits are available, but the analyzed commit is not an ancestor and the complete trees differ. The two-tree comparison contains 15,184 changed paths; common ancestor: `1f8bae7eabc8b8fac66700c9752a15e2d7f90a66`. These counts establish comparison coverage, not semantic review of every file. The prior analyzed baseline and findings remain preserved as historical evidence. A separately acknowledged, guarded reconciliation records the inspected revision as a new scoped analysis baseline; it does not establish ancestry, publisher intent or whole-project correctness. The managed metadata below is authoritative for whether that acknowledgment has been recorded.
+
+The [client credential boundary](https://github.com/BerriAI/litellm/blob/0a1dbc0fb4f6b52aec97700dddb457adf91d1cbd/litellm/router_utils/clientside_credential_handler.py) clears server-owned provider identity/config fields when a client changes the base URL, rejects an unresolved OIDC secret reference at that boundary and disables workload-identity minting for redirected hosts. It preserves the per-user Copilot mode because that downstream path owns its validated host. This is provider-specific credential isolation, not proof that every dynamic endpoint or fallback is authorized; ordinary api_key propagation and the downstream adapters still require explicit review. Teamagent must bind account evidence, training exclusions and credentials to the exact host/model/operation before ranking or fallback.
+
+[Routing read batching](https://github.com/BerriAI/litellm/blob/0a1dbc0fb4f6b52aec97700dddb457adf91d1cbd/litellm/router_utils/routing_read_batch.py) combines cooldown and usage reads, uses request-local context, consumes prefetch once so retries read fresh, and rolls back reservations on failed/cancelled prefetch. The [fixtures](https://github.com/BerriAI/litellm/blob/0a1dbc0fb4f6b52aec97700dddb457adf91d1cbd/tests/unit/router_utils/test_routing_read_batch.py) compare routing choices and one MGET with mocks. They also deliberately preserve simple-shuffle selection during Redis failure while usage-based routing raises no-deployment. These inspected assertions are not executed measurements. Batch efficiency must not silently redefine quota enforcement or unavailable-state semantics; measure latency and preserve the selected strategy's explicit failure policy.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [litellm](https://github.com/BerriAI/litellm); analyzed commit `252c71c0b22197d5dd99eac730696f28032796af`; commit date 2026-09-15T12:40:19-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--litellm.md).
+Analysis metadata: source [litellm](https://github.com/BerriAI/litellm); analyzed commit `0a1dbc0fb4f6b52aec97700dddb457adf91d1cbd`; commit date 2026-10-27T17:47:50Z; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--litellm.md).
 <!-- teamagent-analysis:end -->

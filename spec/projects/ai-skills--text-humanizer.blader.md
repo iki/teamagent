@@ -2,7 +2,7 @@
 
 Source: [text-humanizer.blader](https://github.com/blader/humanizer) · Category: [ai-skills](../categories/ai-skills.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8`; commit timestamp `2026-09-27T22:54:38-07:00`; 14 tracked paths.
 
@@ -24,6 +24,12 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-27
+
+Reviewed commit `8c307f367c91bd974002f10f2be2965d642c13df` (commit date `2026-10-16T12:12:03-07:00`). Complete README-only sponsorship/badge delta.
+
+The [README](https://github.com/blader/humanizer/blob/8c307f367c91bd974002f10f2be2965d642c13df/README.md) adds a sponsor and moves badges. Skill instructions and executable content are unchanged. Sponsorship/install counts provide no effectiveness evidence; retain the previous comparison-candidate disposition. Factual preservation, linguistic quality and model-specific effectiveness remain untested.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [text-humanizer.blader](https://github.com/blader/humanizer); analyzed commit `225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8`; commit date 2026-09-27T22:54:38-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--text-humanizer.blader.md).
+Analysis metadata: source [text-humanizer.blader](https://github.com/blader/humanizer); analyzed commit `8c307f367c91bd974002f10f2be2965d642c13df`; commit date 2026-10-16T12:12:03-07:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--text-humanizer.blader.md).
 <!-- teamagent-analysis:end -->

@@ -2,7 +2,7 @@
 
 Source: [adrian](https://github.com/secureagentics/Adrian) · Category: [ai-security](../categories/ai-security.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `73c6c1c41f2e87a9070ef4fd62a00421d8ad2fcf`; commit timestamp `2026-09-15T15:06:35+02:00`; 441 tracked paths.
 
@@ -24,6 +24,12 @@ This entry was catalogued under **ai-security**. Its category places it in the c
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-27
+
+Reviewed commit `8ad3bdb4abb2184fd56c00718b82c4d8a497bc16` (commit date `2026-10-21T12:53:56+01:00`). Complete two-file delta: alert changes and full new taxonomy test.
+
+The [alert bundle](https://github.com/secureagentics/Adrian/blob/8ad3bdb4abb2184fd56c00718b82c4d8a497bc16/backend/internal/alerts/alerts.json) separates following injected content from following a user instruction and adds dispatch-without-constraint-check and implausible-input cases. The [tests](https://github.com/secureagentics/Adrian/blob/8ad3bdb4abb2184fd56c00718b82c4d8a497bc16/backend/internal/engine/taxonomy_test.go) extract M2/M3/M4 prompt codes, reject empty extraction, compare both directions with alert keys, and check severity/default action/visible fields. Adopt bidirectional taxonomy consistency tests; they do not prove classifier accuracy or BLOCK enforcement. Deterministic authorization must precede dispatch. The unchanged runtime and external framework mappings were not audited; tests were read, not run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [adrian](https://github.com/secureagentics/Adrian); analyzed commit `73c6c1c41f2e87a9070ef4fd62a00421d8ad2fcf`; commit date 2026-09-15T15:06:35+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-security--adrian.md).
+Analysis metadata: source [adrian](https://github.com/secureagentics/Adrian); analyzed commit `8ad3bdb4abb2184fd56c00718b82c4d8a497bc16`; commit date 2026-10-21T12:53:56+01:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-security--adrian.md).
 <!-- teamagent-analysis:end -->

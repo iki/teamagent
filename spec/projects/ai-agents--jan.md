@@ -2,7 +2,7 @@
 
 Source: [jan](https://github.com/janhq/jan) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `14a720628f9592c8e60f7e081ef733076db8a6a9`; commit timestamp `2026-10-02T14:37:31+08:00`; 2,677 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `d15915c7114aee6c23568f6e0b4d490b1b0d83a6` (commit date `2026-10-27T11:08:15+05:30`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete Python ADK runtime and session modules. Native JSON-RPC server, EventQueue implementation, permission enforcement, web tooling and tests were not audited or executed.
+
+The [Python runtime](https://github.com/janhq/jan/blob/d15915c7114aee6c23568f6e0b4d490b1b0d83a6/adk/python/jan_adk/runtime.py#L297-L388) encodes request parameters before registering a pending slot, checks protocol version at startup and preserves an existing session object when resuming. It dispatches callbacks on a separate thread so a permission callback can make a request without blocking the reader needed to receive its answer. However, ordinary requests have no default deadline, the callback queue is unbounded, and line-based stdout/stderr capture has no byte bound. Parsed frames are used without a schema. A request timeout removes the local slot but does not cancel or reconcile the remote effect; malformed output fails local waiters without itself terminating the child. The environment inherits all parent variables, with update-check suppression overridable by supplied environment values.
+
+The [session implementation](https://github.com/janhq/jan/blob/d15915c7114aee6c23568f6e0b4d490b1b0d83a6/adk/python/jan_adk/session.py#L77-L137) reports dropped unread events and distinguishes loss of the channel from a terminal record. It retains up to 64 early terminal records to handle completion before the prompt reply. Yet JanTurn.interrupt delegates to session.interrupt, whose wire request contains only sessionId; a retained old turn handle can therefore request interruption of a later active turn. The [completion mapper](https://github.com/janhq/jan/blob/d15915c7114aee6c23568f6e0b4d490b1b0d83a6/adk/python/jan_adk/session.py#L279-L328) defaults a missing stopReason to completed. Bind cancellation to the exact run generation and reject malformed terminal records rather than manufacturing successful completion.
+
+The [host-tool bridge](https://github.com/janhq/jan/blob/d15915c7114aee6c23568f6e0b4d490b1b0d83a6/adk/python/jan_adk/session.py#L341-L425) starts a daemon thread per call, signals withdrawal and suppresses late answers, but it neither stops nor waits for non-cooperative handlers and has no local concurrency limit. Handler inputs are passed through from the frame; server-side schema/capability enforcement was not reviewed. Tool/fork mutation locking usefully keeps remote declarations aligned with copied local handlers, but mutable declarations still require host ownership. The [image converter](https://github.com/janhq/jan/blob/d15915c7114aee6c23568f6e0b4d490b1b0d83a6/adk/python/jan_adk/session.py#L489-L520) reads whole paths and accepts supplied URLs/MIME values without local containment or size checks. Teamagent needs validated artifact handles and bounded conversion before transferring data, alongside explicit subprocess and tool cleanup receipts.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [jan](https://github.com/janhq/jan); analyzed commit `14a720628f9592c8e60f7e081ef733076db8a6a9`; commit date 2026-10-02T14:37:31+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--jan.md).
+Analysis metadata: source [jan](https://github.com/janhq/jan); analyzed commit `d15915c7114aee6c23568f6e0b4d490b1b0d83a6`; commit date 2026-10-27T11:08:15+05:30; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--jan.md).
 <!-- teamagent-analysis:end -->

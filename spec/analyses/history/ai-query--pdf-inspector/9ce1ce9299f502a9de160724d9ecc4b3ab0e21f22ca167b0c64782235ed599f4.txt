@@ -1,0 +1,38 @@
+# pdf-inspector
+
+Source: [pdf-inspector](https://github.com/firecrawl/pdf-inspector) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `ef52f77850b29189048797a48b24862251f54fe7`; commit timestamp `2026-09-27T23:55:46-07:00`; 374 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/firecrawl/pdf-inspector/blob/ef52f77850b29189048797a48b24862251f54fe7/README.md)):
+
+> Fast Rust library for PDF classification and text extraction. By default it detects whether a PDF is text-based or scanned, extracts text with position awareness, and converts to clean Markdown without OCR. Native Rust and CLI consumers can opt into selective OCR. Includes bindings for Python, Node.js, and browser WebAssembly. Built by Firecrawl to handle text-based PDFs locally in under 200ms, skipping expensive OCR services for the ~54% of PDFs that don't need them.
+
+Build/package evidence: [Cargo.toml](https://github.com/firecrawl/pdf-inspector/blob/ef52f77850b29189048797a48b24862251f54fe7/Cargo.toml); [napi/Cargo.toml](https://github.com/firecrawl/pdf-inspector/blob/ef52f77850b29189048797a48b24862251f54fe7/napi/Cargo.toml); [napi/package.json](https://github.com/firecrawl/pdf-inspector/blob/ef52f77850b29189048797a48b24862251f54fe7/napi/package.json); [pyproject.toml](https://github.com/firecrawl/pdf-inspector/blob/ef52f77850b29189048797a48b24862251f54fe7/pyproject.toml); [wasm/Cargo.toml](https://github.com/firecrawl/pdf-inspector/blob/ef52f77850b29189048797a48b24862251f54fe7/wasm/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/firecrawl/pdf-inspector/blob/ef52f77850b29189048797a48b24862251f54fe7/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review — 2026-10-27
+
+**Metric-corroborated Windows glyph fallback preserves punctuation more deliberately.** Reviewed commit `bcf387d1f4ab91d702f417fd9600694da0c166c3` (commit date `2026-10-07T09:37:47-07:00`) against `ef52f77850b29189048797a48b24862251f54fe7`. The complete Git comparison contains 3 changed paths.
+
+The complete three-path change concerns glyph fallback, synthetic regression fixtures and its changelog. For TrueType subsets lacking both cmap and glyph names, the converter now compares Macintosh and Windows standard glyph-order variants. It admits the fallback only after digit/space/letter metric checks, then chooses Windows only when its accented-letter advance matches are more numerous and mismatches fewer; ties retain Macintosh. Blank advancing glyphs beyond the known order are mapped to spaces only when an outline record exists but draws no bounding box. Synthetic fonts cover curly quotes, apostrophe, en dash, euro, unchanged Macintosh order, ambiguous metrics and missing/zero-width/outlined extra glyphs. The ambiguity fixture deliberately retains the Macintosh reading when dropped metrics cannot discriminate, so the fallback is inferred text, not authoritative Unicode recovery.
+
+Evidence: [src/mac_glyph_order.rs:282-379](https://github.com/firecrawl/pdf-inspector/blob/bcf387d1f4ab91d702f417fd9600694da0c166c3/src/mac_glyph_order.rs#L282-L379) Â· [src/mac_glyph_order.rs:413-514](https://github.com/firecrawl/pdf-inspector/blob/bcf387d1f4ab91d702f417fd9600694da0c166c3/src/mac_glyph_order.rs#L413-L514) Â· [src/tounicode_mac_order_tests.rs:377-471](https://github.com/firecrawl/pdf-inspector/blob/bcf387d1f4ab91d702f417fd9600694da0c166c3/src/tounicode_mac_order_tests.rs#L377-L471) Â· [CHANGELOG.md:9-31](https://github.com/firecrawl/pdf-inspector/blob/bcf387d1f4ab91d702f417fd9600694da0c166c3/CHANGELOG.md#L9-L31).
+
+**Harness consequence:** Record extraction method and ambiguity flags alongside original PDF bytes/page coordinates. Use exact punctuation and spacing fixtures before deciding a page needs OCR, and expose uncertain font fallback for review instead of silently upgrading inferred wording into quoted evidence. Do not infer the README's latency or OCR-avoidance claims from these source changes.
+
+**Scope and limits:** Scoped review of the complete changed implementation, selected synthetic fixtures and changelog; no PDF rendered, parser executed or OCR comparison reproduced. The historical report remains a broader inventory screen; this update establishes only the glyph-fallback slice.

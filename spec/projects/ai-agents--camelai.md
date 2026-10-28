@@ -2,7 +2,7 @@
 
 Source: [camelai](https://github.com/qaml-ai/camelAI) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `3825a9a671b2260cc6138929535de30e435c1f93`; commit timestamp `2026-10-03T09:38:47-05:00`; 1,829 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `f4108141d856edef72cc282ac5c4646c27caf621` (commit date `2026-10-26T16:52:12-05:00`). The original snapshot above remains historical evidence.
+
+**Scope:** OAuth configuration/transport helpers and auth-route loaders at the pinned revision; callback state issuance, token/session storage, redirect helper internals and production OAuth were not audited.
+
+The [OAuth helper](https://github.com/qaml-ai/camelAI/blob/f4108141d856edef72cc282ac5c4646c27caf621/src/lib/oauth-config.ts#L81-L114) sets a fifteen-second abort timer and refuses redirect responses for provider fetches. The timer is cleared when `fetch` resolves, before subsequent JSON body consumption; it therefore does not bound a stalled response body. Token/user responses are cast into expected shapes instead of comprehensively decoded from unknown data. A Teamagent adapter needs a whole-operation deadline, response-size bounds and schema/semantic validation through body parsing, with caller cancellation composed into that deadline.
+
+The [user-info path](https://github.com/qaml-ai/camelAI/blob/f4108141d856edef72cc282ac5c4646c27caf621/src/lib/oauth-config.ts#L214-L292) requires Google's verified-email flag and obtains a verified GitHub email from the authenticated email endpoint rather than trusting the public profile email. That is a useful identity-evidence distinction, but truthiness checks and a string conversion are not complete validation of provider IDs and email fields. The helper supports an optional PKCE challenge; this scope did not inspect issuance/consumption of state, verifier storage or callback/session binding and makes no end-to-end OAuth certification.
+
+The [public auth layout](https://github.com/qaml-ai/camelAI/blob/f4108141d856edef72cc282ac5c4646c27caf621/src/routes/_auth.tsx) distinguishes a session from construction of the full auth context and clears a stale cookie to break a redirect loop. [Login error mapping](https://github.com/qaml-ai/camelAI/blob/f4108141d856edef72cc282ac5c4646c27caf621/src/routes/_auth.login.tsx#L13-L32) keeps a bounded set of user-facing outcomes. Preserve this separation between configuration, session presence, valid principal and account eligibility; neither frontend availability nor a static sandbox egress address establishes provider or network authorization.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [camelai](https://github.com/qaml-ai/camelAI); analyzed commit `3825a9a671b2260cc6138929535de30e435c1f93`; commit date 2026-10-03T09:38:47-05:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--camelai.md).
+Analysis metadata: source [camelai](https://github.com/qaml-ai/camelAI); analyzed commit `f4108141d856edef72cc282ac5c4646c27caf621`; commit date 2026-10-26T16:52:12-05:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--camelai.md).
 <!-- teamagent-analysis:end -->

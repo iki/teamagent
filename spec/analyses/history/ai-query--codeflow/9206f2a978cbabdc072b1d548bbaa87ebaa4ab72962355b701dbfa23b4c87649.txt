@@ -1,0 +1,44 @@
+# codeflow
+
+Source: [codeflow](https://github.com/braedonsaunders/codeflow) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `b0e82d127fc4990f571ebc6da6c5d9af2591aaa1`; commit timestamp `2026-09-22T15:49:35Z`; 177 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/braedonsaunders/codeflow/blob/b0e82d127fc4990f571ebc6da6c5d9af2591aaa1/README.md)):
+
+> Ever opened a new codebase and felt completely lost? **CodeFlow** turns any GitHub repository or local codebase into an interactive architecture map in seconds. See how your files connect at a glance. Click any node to highlight its dependencies. Drag, zoom, and explore. The **Code** view keeps that map and opens the selected file plus its connected files as full-file cards on the canvas, grouped by directory.
+
+Build/package evidence: [card/package.json](https://github.com/braedonsaunders/codeflow/blob/b0e82d127fc4990f571ebc6da6c5d9af2591aaa1/card/package.json); [package.json](https://github.com/braedonsaunders/codeflow/blob/b0e82d127fc4990f571ebc6da6c5d9af2591aaa1/package.json)
+
+License evidence: [LICENSE](https://github.com/braedonsaunders/codeflow/blob/b0e82d127fc4990f571ebc6da6c5d9af2591aaa1/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Debug-removal suggestions keep ambiguous code report-only and export patches for separate application.** Reviewed commit `b70af01cfd1a1cec4b02075b124fdd1ec8cc33be` (commit date `2026-10-20T10:13:03-04:00`). Compared with `b0e82d127fc4990f571ebc6da6c5d9af2591aaa1`; the complete Git comparison contains 4 changed paths.
+
+The new transform gathers JS/TS debug-statement sites, classifies unsupported/unchecked content as report-only and builds per-site, per-file and combined unified patches without writing sources. Bare carriage-return files are refused for patch generation because Git line matching differs; source lines are split once for patch reuse. Scope analysis downgrades shadowed console references, escaped identifier uncertainty, aliases/global console mutation, dynamic eval/Function exposure and expression/automatic-semicolon-insertion hazards. Binding-resolution exceptions conservatively make the site report-only.
+
+Selected fixture bodies check deterministic patch output, risky one-line bodies and expression uses, and invoke Git application in their own test harness. A 5,000-statement test asserts one elapsed-time threshold under two seconds; this is a fixture expectation, not a reproduced complexity or performance result. The no-write test is a textual absence check for selected browser filesystem API names, not a general capability proof. The transform remains a custom tokenizer/scope heuristic and creates all patch strings in memory; it has no source-version identity or total input/output budget in the inspected collector.
+
+Evidence: [index.html:5170-5333](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/index.html#L5170-L5333) · [index.html:5336-5395](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/index.html#L5336-L5395) · [index.html:6137-6250](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/index.html#L6137-L6250) · [index.html:6290-6345](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/index.html#L6290-L6345) · [index.html:7358-7423](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/index.html#L7358-L7423) · [tests/remove-debug-statement.test.mjs:114-176](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/tests/remove-debug-statement.test.mjs#L114-L176) · [tests/remove-debug-statement.test.mjs:881-928](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/tests/remove-debug-statement.test.mjs#L881-L928) · [tests/remove-debug-statement.test.mjs:1410-1431](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/tests/remove-debug-statement.test.mjs#L1410-L1431).
+
+**Harness consequence:** Keep proposed edits separate from execution, preserve report-only uncertainty and present exact diff evidence. Before applying, bind each patch to immutable source bytes/current version, validate path containment and run parser/type/regression checks against the actual language configuration. Cap analysis and patch bytes. Reuse the conservative edge-case fixtures as evaluation inputs rather than treating a downloadable patch as verified semantic equivalence.
+
+**Scope and limits:** Static scoped review of the new debug-removal collector and selected scope/boundary logic in the full cached HTML, plus fixture bodies, across the four changed paths. No HTML/source/test execution or Git patch application performed; complete tokenizer, UI rendering, canvas changes and all semantic cases were not exhaustively audited.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [codeflow](https://github.com/braedonsaunders/codeflow); analyzed commit `b0e82d127fc4990f571ebc6da6c5d9af2591aaa1`; commit date 2026-09-22T15:49:35Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--codeflow.md).
+<!-- teamagent-analysis:end -->

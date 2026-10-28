@@ -24,6 +24,19 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review — 2026-10-27
+
+**Hosted retention wording is conditional while local converter code is unchanged.** Reviewed commit `6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81` (commit date `2026-10-22T06:45:42-04:00`) against `e7c67f1d239ea6a805cbf4ed6c6b2056d435e22d`. The complete Git comparison contains 2 changed paths.
+
+The complete comparison is limited to README.md and contributor-agreement metadata. The README changes its hosted-platform wording from default zero retention to opt-in zero retention, describes a multi-model hosted service, and updates examples/promotional links. These are pinned upstream documentary claims, not verified account settings or a contract review. The local converter implementation did not change in this delta.
+
+Evidence: [README.md:32-43](https://github.com/datalab-to/marker/blob/6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81/README.md#L32-L43) · [README.md:428-450](https://github.com/datalab-to/marker/blob/6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81/README.md#L428-L450) · [README.md:564-577](https://github.com/datalab-to/marker/blob/6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81/README.md#L564-L577).
+
+**Harness consequence:** Treat hosted Datalab conversion as a distinct route from local Marker. Before document egress, resolve account/operation-specific retention and training conditions independently; a local model licence, hosted free allowance or README claim does not grant account coverage. Preserve local benchmark evidence rather than attributing hosted performance claims to the local adapter.
+
+**Scope and limits:** Documentary policy-change review only. No authenticated account, contractual eligibility, hosted service, licence entitlement or conversion benchmark was verified.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [marker](https://github.com/datalab-to/marker); analyzed commit `e7c67f1d239ea6a805cbf4ed6c6b2056d435e22d`; commit date 2026-10-02T09:53:01Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--marker.md).
+Analysis metadata: source [marker](https://github.com/datalab-to/marker); analyzed commit `6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81`; commit date 2026-10-22T06:45:42-04:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-query--marker.md).
 <!-- teamagent-analysis:end -->

@@ -2,7 +2,7 @@
 
 Source: [openmausbot](https://github.com/milind-soni/OpenMausBot) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `c2fc677ff2a6d4cf3527ce6c0df111632eff5b1d`; commit timestamp `2026-10-04T01:26:48+05:30`; 3,484 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `1908b929057150ff621262bb13a2183787f6c66f` (commit date `2026-10-27T21:36:33+05:30`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete browser session/profile helpers, their mocked fixtures and shared tool-name aggregation helper; server session/authentication, pairing redemption, MCP OAuth and backend grants were not audited.
+
+The [browser session reader](https://github.com/milind-soni/OpenMausBot/blob/1908b929057150ff621262bb13a2183787f6c66f/src/lib/session.ts#L31-L77) distinguishes unreachable and unauthenticated responses, but any successful body not matching its session shape falls back to loopback. Unless that body explicitly declares service trust, the UI treats it as connected and owner/admin; even a successful malformed JSON response becomes an empty body then owner UI state. This is a concrete frontend trust-state problem, not evidence of a server authorization bypass. Teamagent should reject unknown successful response shapes and require an explicit validated local-owner variant.
+
+[Profile selection](https://github.com/milind-soni/OpenMausBot/blob/1908b929057150ff621262bb13a2183787f6c66f/src/lib/session.ts#L18-L29) avoids displaying the configured owner's identity to ordinary sessions with a different or missing email. Pairing/sign-in helpers remove sensitive fragment values from the current address/history before redemption, and browser grants carry a stable attempt ID for retries. The fallback attempt-ID generator uses Math.random when randomUUID is unavailable, so it is not an adequate basis for the comment's unpredictability claim. Server-side one-time use, retry binding and credential storage were not inspected; the fixtures mock those responses rather than proving redemption behavior.
+
+The [tool-name helper](https://github.com/milind-soni/OpenMausBot/blob/1908b929057150ff621262bb13a2183787f6c66f/shared/tool-name.ts) separates command-looking display titles from aggregate tool buckets to avoid grouping by raw commands. Its whitespace/slash heuristic can still miss a single-word command or misclassify a namespaced tool. Teamagent should receive canonical tool identity separately from a bounded redacted display label, never infer authority or audit identity from presentation text. No frontend fixtures, browser flows or server/provider calls were executed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openmausbot](https://github.com/milind-soni/OpenMausBot); analyzed commit `c2fc677ff2a6d4cf3527ce6c0df111632eff5b1d`; commit date 2026-10-04T01:26:48+05:30; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--openmausbot.md).
+Analysis metadata: source [openmausbot](https://github.com/milind-soni/OpenMausBot); analyzed commit `1908b929057150ff621262bb13a2183787f6c66f`; commit date 2026-10-27T21:36:33+05:30; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openmausbot.md).
 <!-- teamagent-analysis:end -->

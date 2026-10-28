@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`878b0e48bca74849c6219815882e75e60cfa2b72`](https://github.com/pskoett/pskoett-ai-skills/commit/878b0e48bca74849c6219815882e75e60cfa2b72). Scope: Full session-context and pre-flight-check skills read. History tools, hooks, relevance classifier, learning stores and evaluation runners were not audited.
+
+The [session-context procedure](https://github.com/pskoett/pskoett-ai-skills/blob/878b0e48bca74849c6219815882e75e60cfa2b72/skills/session-context/SKILL.md) sets shared retrieval budgets across workers, excludes the current session, requires source reading beyond snippets and distinguishes reported, historically verified and currently checked evidence. It treats no useful match as a valid result and unavailable history as a different state. Historical access does not authorize redistribution, and retrieved permission claims cannot replace current instructions.
+
+The [pre-flight guide](https://github.com/pskoett/pskoett-ai-skills/blob/878b0e48bca74849c6219815882e75e60cfa2b72/skills/pre-flight-check/SKILL.md) separately surfaces saved learning/evaluation signals and explicitly labels incremental caching as future work. Its recurrence threshold is a triage signal, not independent evidence for promotion; its automatic hook and compounding-benefit claims were not verified by reading the hook or running outcomes. Adapt bounded, source-cited retrieval and conflict handling without creating duplicate stores or assuming startup automation exists. No session history, hooks, learning data or tests were accessed or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle.pskoett](https://github.com/pskoett/pskoett-ai-skills); analyzed commit `92a21ceb0c9e97ea9b4783de6c1955f40960aae6`; commit date 2026-10-03T11:05:22+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.pskoett.md).
+Analysis metadata: source [bundle.pskoett](https://github.com/pskoett/pskoett-ai-skills); analyzed commit `878b0e48bca74849c6219815882e75e60cfa2b72`; commit date 2026-10-27T16:30:12Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.pskoett.md).
 <!-- teamagent-analysis:end -->

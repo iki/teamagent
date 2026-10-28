@@ -1,0 +1,42 @@
+# aci
+
+Source: [aci](https://github.com/aipotheosis-labs/aci) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `3e4a82fa5fd22f1165af2b39fa3de2b0f031242e`; commit timestamp `2026-05-28T12:32:33+01:00`; 651 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/aipotheosis-labs/aci/blob/3e4a82fa5fd22f1165af2b39fa3de2b0f031242e/README.md)):
+
+> This repo is for the ACI.dev platform. If you're looking for the **Unified MCP** server built with ACI.dev, see aci-mcp. ACI.dev is the open-source tool-calling platform that hooks up 600+ tools into any agentic IDE or custom AI agent. It gives agents intent-aware access to tools with multi-tenant auth, granular permissions, and dynamic tool discovery—exposed as either direct function calls or through a **Unified Model-Context-Protocol (MCP) server**.
+
+Build/package evidence: [backend/pyproject.toml](https://github.com/aipotheosis-labs/aci/blob/3e4a82fa5fd22f1165af2b39fa3de2b0f031242e/backend/pyproject.toml); [frontend/package.json](https://github.com/aipotheosis-labs/aci/blob/3e4a82fa5fd22f1165af2b39fa3de2b0f031242e/frontend/package.json)
+
+License evidence: [LICENSE](https://github.com/aipotheosis-labs/aci/blob/3e4a82fa5fd22f1165af2b39fa3de2b0f031242e/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review â€” 2026-10-27
+
+**Maintenance reconciliation does not establish new connector guarantees.** Reviewed commit `ba14b1916eff02b4cd9dcd5ce8ba879d209c7df7` (commit date `2026-10-23T16:29:06+01:00`) against `3e4a82fa5fd22f1165af2b39fa3de2b0f031242e`. The complete Git comparison contains 19 changed paths.
+
+The nineteen-path inventory is dominated by dependency/CI/container metadata. Changed application hunks are formatting plus a SQLAlchemy CursorResult type cast so the quota UPDATE result exposes rowcount; the quota SQL itself is unchanged. Selected secret-manager tests only change regex-literal syntax. The quota implementation performs a conditional project UPDATE using an organization-total subquery and reports a refused update when rowcount is zero. Its comment claiming prevention of race conditions is not evidence that concurrent updates to different projects serialize at the organization budget. The backend workflow adds read-only contents permission and pins action SHAs, but still checks out pull-request head under pull_request_target and exposes test credentials; safety depends on actual protected-environment controls not visible in this source pass. Dependency ranges introduce explicit ceilings for some libraries; their runtime compatibility was not tested.
+
+Evidence: [backend/aci/common/db/crud/projects.py:128-173](https://github.com/aipotheosis-labs/aci/blob/ba14b1916eff02b4cd9dcd5ce8ba879d209c7df7/backend/aci/common/db/crud/projects.py#L128-L173) Â· [backend/aci/server/tests/app_connectors/unit/test_agent_secrets_manager.py:130-145](https://github.com/aipotheosis-labs/aci/blob/ba14b1916eff02b4cd9dcd5ce8ba879d209c7df7/backend/aci/server/tests/app_connectors/unit/test_agent_secrets_manager.py#L130-L145) Â· [frontend/src/components/appconfig/add-account.tsx:104-118](https://github.com/aipotheosis-labs/aci/blob/ba14b1916eff02b4cd9dcd5ce8ba879d209c7df7/frontend/src/components/appconfig/add-account.tsx#L104-L118) Â· [frontend/src/utils/date-range-utils.ts:45-59](https://github.com/aipotheosis-labs/aci/blob/ba14b1916eff02b4cd9dcd5ce8ba879d209c7df7/frontend/src/utils/date-range-utils.ts#L45-L59) Â· [frontend/src/components/ui-extensions/enhanced-switch/enhanced-switch.tsx:1-22](https://github.com/aipotheosis-labs/aci/blob/ba14b1916eff02b4cd9dcd5ce8ba879d209c7df7/frontend/src/components/ui-extensions/enhanced-switch/enhanced-switch.tsx#L1-L22) Â· [frontend/src/components/ui-extensions/enhanced-date-picker/time-picker-input.tsx:7-25](https://github.com/aipotheosis-labs/aci/blob/ba14b1916eff02b4cd9dcd5ce8ba879d209c7df7/frontend/src/components/ui-extensions/enhanced-date-picker/time-picker-input.tsx#L7-L25) Â· [backend/pyproject.toml:1-66](https://github.com/aipotheosis-labs/aci/blob/ba14b1916eff02b4cd9dcd5ce8ba879d209c7df7/backend/pyproject.toml#L1-L66) Â· [.github/workflows/backend.yml:1-77](https://github.com/aipotheosis-labs/aci/blob/ba14b1916eff02b4cd9dcd5ce8ba879d209c7df7/.github/workflows/backend.yml#L1-L77).
+
+**Harness consequence:** Keep ACI as an integration-platform comparison candidate. Verify organization-wide quota reservation under concurrent different-project calls before using this pattern for model/tool budgets. Check executor trust, scope-bound credentials and protected CI environments independently of pinned actions or type cleanliness. Do not promote the historical README's broad connector/auth claims from this maintenance update.
+
+**Scope and limits:** Maintenance reconciliation with a scoped quota/CI source review; all nineteen changed paths were classified but container/workflow/dependency closure was not audited. No application tests, concurrent database experiment, CI run or connector authentication call. Existing broad inventory-only limitations remain.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [aci](https://github.com/aipotheosis-labs/aci); analyzed commit `3e4a82fa5fd22f1165af2b39fa3de2b0f031242e`; commit date 2026-05-28T12:32:33+01:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--aci.md).
+<!-- teamagent-analysis:end -->

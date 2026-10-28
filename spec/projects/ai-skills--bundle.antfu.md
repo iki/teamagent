@@ -24,6 +24,12 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit `8886fe2d385d3644cbb47e46ae9cb1cf09307d3b` (commit date `2026-10-23T04:36:45+02:00`). Fourteen text-file deltas read, including full new triage skill and upload script. The Vitest submodule pointer is inventoried; its implementation was not inspected.
+
+The [triage skill](https://github.com/antfu/skills/blob/8886fe2d385d3644cbb47e46ae9cb1cf09307d3b/skills/antfu-issue-triage/SKILL.md) separates evidence-backed proposals from approved writes and treats partially fixed/linked work conservatively. Visual evidence guidance adds reproducible revision/viewport manifests; Vitest guidance records a source revision and limitations of mtime-based incremental tests. Adapt those procedures while retaining Teamagent's Bun/Aube choices and full gates. Do not adopt the new [attachment fallback](https://github.com/antfu/skills/blob/8886fe2d385d3644cbb47e46ae9cb1cf09307d3b/skills/antfu-create-pr/scripts/upload-github-attachment.sh): it sends the bearer credential in curl arguments, lacks explicit request/response/time bounds and extracts an undocumented JSON response with sed. Not printing a token does not remove process-argument exposure. The suggested package installer, undocumented upload endpoint, external CLI/version assertions and Vitest beta behavior were not executed or independently verified.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle.antfu](https://github.com/antfu/skills); analyzed commit `e53a142a2420e8cd812cfe9ed0484ab01bc856aa`; commit date 2026-09-30T14:41:33+09:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.antfu.md).
+Analysis metadata: source [bundle.antfu](https://github.com/antfu/skills); analyzed commit `8886fe2d385d3644cbb47e46ae9cb1cf09307d3b`; commit date 2026-10-23T11:36:45+09:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.antfu.md).
 <!-- teamagent-analysis:end -->

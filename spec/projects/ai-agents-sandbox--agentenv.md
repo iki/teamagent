@@ -24,6 +24,14 @@ This entry was catalogued under **ai-agents-sandbox**. Its category places it in
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`abc027b29947366d33b3f65b7018cd096840612d`](https://github.com/kvcache-ai/AgentEnv/commit/abc027b29947366d33b3f65b7018cd096840612d). Scope: Full sandbox launch contract, extra-drive preparation/embedded tests and image fixture helper read. Firecracker, network enforcement, access-token implementation and orchestrator lifecycle were not audited.
+
+The [launch contract](https://github.com/kvcache-ai/AgentEnv/blob/abc027b29947366d33b3f65b7018cd096840612d/src/sandbox/mod.rs) distinguishes runtime envd credentials, snapshot identity, per-launch network policy and opaque extension metadata. The credential type's redaction/non-serialization is documented here but its implementation was not inspected. [Drive preparation](https://github.com/kvcache-ai/AgentEnv/blob/abc027b29947366d33b3f65b7018cd096840612d/src/sandbox/extra_drive.rs) separates fresh requested size from resumed known source size, forbids shrink on resume and rolls back previously prepared devices/symlinks on a returned error. Its tests assert size mapping, not real device cleanup.
+
+Rollback errors are logged, and cancellation during an await is not visibly covered by a scoped cleanup guard in this function; successful ownership transfer also requires the caller to release returned handles. Adapt phase-specific resource semantics with cancellation-safe ownership and explicit residual-artifact reporting. The [image fixture](https://github.com/kvcache-ai/AgentEnv/blob/abc027b29947366d33b3f65b7018cd096840612d/src/image/test_support.rs) retains layer digests/sizes in configuration, but a fixture does not prove production validation. No VM, device, filesystem cleanup or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agentenv](https://github.com/kvcache-ai/AgentEnv); analyzed commit `5843159b1eaf235a45a08a5329fc6647c6e5bc31`; commit date 2026-10-03T14:03:10+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--agentenv.md).
+Analysis metadata: source [agentenv](https://github.com/kvcache-ai/AgentEnv); analyzed commit `abc027b29947366d33b3f65b7018cd096840612d`; commit date 2026-10-27T09:56:43+08:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--agentenv.md).
 <!-- teamagent-analysis:end -->

@@ -2,7 +2,7 @@
 
 Source: [ax](https://github.com/google/ax) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `ac2332829f22360ff97b0ba34d94dd0dd782f17e`; commit timestamp `2026-09-27T16:54:08-07:00`; 64 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `41ec50c6398376fa510349b2089237540739d935` (commit date `2026-10-27T10:46:26-07:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Changed-path inventory and the task runner entry point, runner lifecycle and selected lifecycle fixtures; Kubernetes controller, cluster security and CLI provisioning were not audited.
+
+The [runner lifecycle](https://github.com/google/ax/blob/41ec50c6398376fa510349b2089237540739d935/runner/runner.go#L96-L167) deliberately separates a task command from the container's inspection lifetime: it reports the command exit code, then remains alive until its context is cancelled. This is useful for post-failure inspection, but `Run` returning nil or a live metadata endpoint cannot be used as a successful task verdict. Workspace setup errors are logged and command launch still proceeds; Teamagent must require the declared workspace preparation to succeed before executing a dependent command.
+
+[Cancellation](https://github.com/google/ax/blob/41ec50c6398376fa510349b2089237540739d935/runner/runner.go#L169-L212) signals the POSIX process group, waits ten seconds, then kills it. That provides a concrete host cleanup pattern, not Windows behavior or rollback of external effects. Command environments inherit the runner environment and task overrides. The [entry point](https://github.com/google/ax/blob/41ec50c6398376fa510349b2089237540739d935/cmd/ax-task-runner/main.go#L80-L104) reads YAML without an input-size bound or strict unknown-field decoding in this path; it is not a sufficient untrusted task authorization boundary.
+
+The inspected [fixtures](https://github.com/google/ax/blob/41ec50c6398376fa510349b2089237540739d935/runner/runner_test.go#L34-L122) distinguish command exit, a still-running metadata service and cancellation. They were not executed. Retain AX as a task-runner reference with explicit preparation, execution, inspection and verified-result states; no cluster isolation, controller reconciliation or packaged deployment claim follows from this scope.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ax](https://github.com/google/ax); analyzed commit `ac2332829f22360ff97b0ba34d94dd0dd782f17e`; commit date 2026-09-27T16:54:08-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--ax.md).
+Analysis metadata: source [ax](https://github.com/google/ax); analyzed commit `41ec50c6398376fa510349b2089237540739d935`; commit date 2026-10-27T10:46:26-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--ax.md).
 <!-- teamagent-analysis:end -->

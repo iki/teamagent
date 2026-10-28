@@ -2,7 +2,7 @@
 
 Source: [agentic-stack](https://github.com/codejunkie99/agentic-stack) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `3848f275f5d227f355984d6c9ba67072202f94f9`; commit timestamp `2026-09-26T23:29:05+05:30`; 274 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `11a75e16b6cb08a436b3124474273fdb9f08b4de` (commit date `2026-10-12T19:34:40+05:30`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete 48-path inventory; focused DAG validation, dispatch, verdict, approval and scheduling implementation; full plan CLI; selected orchestration fixtures. Memory/evolution/proactive modules and cross-process crash recovery were not audited.
+
+The new planner checks [cycles, executor eligibility and declared dependency artifacts](https://github.com/codejunkie99/agentic-stack/blob/11a75e16b6cb08a436b3124474273fdb9f08b4de/.agent/harness/dag.py#L205-L275), writes prompts before dispatch, and [withholds output references after failed verdicts](https://github.com/codejunkie99/agentic-stack/blob/11a75e16b6cb08a436b3124474273fdb9f08b4de/.agent/harness/dag.py#L406-L456). Suspended nodes produce evidence and explicit continue/abandon/replan resolutions. [Fixtures](https://github.com/codejunkie99/agentic-stack/blob/11a75e16b6cb08a436b3124474273fdb9f08b4de/tests/test_orchestration_evolution_memory.py#L334-L436) cover admission, blocked dependents, exceptions and output-limit classification.
+
+The guarantees are narrower than the terminology suggests. [run_bounded](https://github.com/codejunkie99/agentic-stack/blob/11a75e16b6cb08a436b3124474273fdb9f08b4de/.agent/harness/dag.py#L108-L128) captures full subprocess streams before slicing, so its cap bounds stored text rather than process-output memory. [Verdicts](https://github.com/codejunkie99/agentic-stack/blob/11a75e16b6cb08a436b3124474273fdb9f08b4de/.agent/harness/dag.py#L370-L404) can accept nonempty exit-zero text when no independent verifier is configured; string/regex checks do not establish task correctness. The host then records quality 1.0 for that result, which must not be reused as an empirical success label without its verification scope.
+
+[Parallel waves](https://github.com/codejunkie99/agentic-stack/blob/11a75e16b6cb08a436b3124474273fdb9f08b4de/.agent/harness/dag.py#L598-L631) select ready nodes by count while dispatch uses the shared project root. No workspace-conflict admission or lease fencing is established by this path. Approval depends on editable plan/card declarations, so those files must be trusted policy inputs. **Disposition:** reuse the explicit exception and artifact-reference patterns, while Teamagent retains independent acceptance checks, isolated writing workers, bounded streaming capture and transactional task/lease ownership.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agentic-stack](https://github.com/codejunkie99/agentic-stack); analyzed commit `3848f275f5d227f355984d6c9ba67072202f94f9`; commit date 2026-09-26T23:29:05+05:30; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--agentic-stack.md).
+Analysis metadata: source [agentic-stack](https://github.com/codejunkie99/agentic-stack); analyzed commit `11a75e16b6cb08a436b3124474273fdb9f08b4de`; commit date 2026-10-12T19:34:40+05:30; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agentic-stack.md).
 <!-- teamagent-analysis:end -->

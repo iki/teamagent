@@ -1,0 +1,40 @@
+# browser-harness
+
+Source: [browser-harness](https://github.com/browser-use/browser-harness) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `afbcc381b963040c19627d788e40c7e7663171ee`; commit timestamp `2026-09-07T13:13:31-07:00`; 190 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/browser-use/browser-harness/blob/afbcc381b963040c19627d788e40c7e7663171ee/README.md)):
+
+> Connect an LLM directly to your real browser through one editable CDP websocket. The agent writes missing helpers as it works, so the harness improves with every task. Try browser-harness in Browser Use Cloud or paste the setup prompt into your coding agent.
+
+Build/package evidence: [pyproject.toml](https://github.com/browser-use/browser-harness/blob/afbcc381b963040c19627d788e40c7e7663171ee/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/browser-use/browser-harness/blob/afbcc381b963040c19627d788e40c7e7663171ee/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Documentation-only changes improve task-completion checks but do not establish runtime safety or benchmark superiority.** Reviewed commit `4ced8e0087d2d45ea2d08c00cb62449b2d94a90e` (commit date `2026-10-24T20:12:38-07:00`). Compared with `afbcc381b963040c19627d788e40c7e7663171ee`; the complete Git comparison contains 72 changed paths.
+
+The entire 72-path comparison consists of README and domain-skill Markdown changes; it adds no runtime implementation. The selected Mermaid recipe now requires both a visible graph and editor text equal to the submitted diagram, polls to a 15-second deadline and separates parsing from screenshot-based appearance review. It still packages diagram contents into a third-party site's URL fragment, which is unsuitable for sensitive material under Teamagent's state policy. The Bilbasen recipe distinguishes one-page extraction from complete results, asks for changed listing IDs after pagination, deduplicates by externalId and reports shortfalls against the displayed total. Those are workflow instructions, not implemented schema checks or enforced pagination bounds. A dated site observation is not a current site guarantee.
+
+The README's benchmark presentation explicitly limits its claim to the first 100 public tasks, one agent/configuration and a shared cloud browser, records infrastructure retries and a discarded setup-error run, and says paired score intervals overlap zero. Its lower token/cost medians exclude browser/proxy/judge costs and do not carry confidence intervals. This review read that reported provenance; it did not independently reproduce or verify the external dataset. The README also describes whole-profile CDP access and editable helper code, which require a stronger trust boundary than merely having a domain recipe.
+
+Evidence: [README.md:1-123](https://github.com/browser-use/browser-harness/blob/4ced8e0087d2d45ea2d08c00cb62449b2d94a90e/README.md#L1-L123) · [agent-workspace/domain-skills/mermaid/render.md:1-73](https://github.com/browser-use/browser-harness/blob/4ced8e0087d2d45ea2d08c00cb62449b2d94a90e/agent-workspace/domain-skills/mermaid/render.md#L1-L73) · [agent-workspace/domain-skills/bilbasen/search.md:1-67](https://github.com/browser-use/browser-harness/blob/4ced8e0087d2d45ea2d08c00cb62449b2d94a90e/agent-workspace/domain-skills/bilbasen/search.md#L1-L67) · [agent-workspace/domain-skills/admin/microsoft-365.md:1-3](https://github.com/browser-use/browser-harness/blob/4ced8e0087d2d45ea2d08c00cb62449b2d94a90e/agent-workspace/domain-skills/admin/microsoft-365.md#L1-L3).
+
+**Harness consequence:** Adopt the completion criteria—matching submitted state, explicit total/shortfall, observed page transition and separate visual QA—as evaluation patterns. Pin and test executable helpers independently, restrict browser scopes and actions, and keep sensitive diagrams local. Preserve benchmark cohort/runtime/cost exclusions and uncertainty; do not turn the reported medians into a production performance or safety claim.
+
+**Scope and limits:** Documentation-only delta review with full changed-path inventory and three selected domain recipes plus README. No runtime/helper implementation review in this pass, no live website validation and no benchmark reproduction. Remaining domain recipes were enumerated, not individually evaluated.

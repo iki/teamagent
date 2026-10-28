@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`12af471f627f866411b4bd785b19646d3672784c`](https://github.com/Leonxlnx/taste-skill/commit/12af471f627f866411b4bd785b19646d3672784c). Scope: Full evaluation definitions, static linter and profile-cleanup tests read. Browser helper, rendered inspector, scoring reference and actual evaluation runs were not reviewed.
+
+The [evaluation definitions](https://github.com/Leonxlnx/taste-skill/blob/12af471f627f866411b4bd785b19646d3672784c/skills/taste-skill/evals/evals.json) propose fresh skill/no-skill comparisons and a blinded screenshot judge across landing pages and application screens. They contain expected outputs, not outcome records. Many expectations encode this bundle's house style; task usability, accessibility and factual correctness need independent criteria to avoid rewarding only imitation of the skill.
+
+The [static linter](https://github.com/Leonxlnx/taste-skill/blob/12af471f627f866411b4bd785b19646d3672784c/skills/taste-skill/scripts/lint.mjs) changes severity for app screens, but uses line regexes rather than parsed styles, skips lines over 2,000 characters and follows stat-based directory traversal without a seen-path or depth bound. Oversized files are disclosed on stderr, not included as coverage gaps in JSON output; missing/unreadable descendants can disappear. A clean result is narrower than a complete design review. The [cleanup tests](https://github.com/Leonxlnx/taste-skill/blob/12af471f627f866411b4bd785b19646d3672784c/tests/profile-cleanup.mjs) preserve unowned/live/foreign-host profiles and delete only abandoned owned fixtures, but the fake-browser launch test skips Windows. Adapt ownership fixtures and blinded comparisons, not universal style bans. No browser, scan or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [design.taste](https://github.com/Leonxlnx/taste-skill); analyzed commit `ce26fc25c0e5e8cab638f883de62d9a86ee5e45b`; commit date 2026-09-26T11:01:50+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.taste.md).
+Analysis metadata: source [design.taste](https://github.com/Leonxlnx/taste-skill); analyzed commit `12af471f627f866411b4bd785b19646d3672784c`; commit date 2026-10-25T01:42:19+02:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.taste.md).
 <!-- teamagent-analysis:end -->

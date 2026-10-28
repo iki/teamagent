@@ -2,7 +2,7 @@
 
 Source: [open-codesign](https://github.com/OpenCoworkAI/open-codesign) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `5bc24f04b6074a4189b603dcd6046983525b4618`; commit timestamp `2026-09-30T17:38:23+08:00`; 979 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `4cf33932edc5f687e3cf7190261ebbb02c898d08` (commit date `2026-10-24T17:23:46+08:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete sequential JSONL UI session and mocked fixtures, plus the done tool's execution branch and complete delta; desktop execution/isolation, static parser internals and the wider agent were not audited.
+
+The [UI session transport](https://github.com/OpenCoworkAI/open-codesign/blob/4cf33932edc5f687e3cf7190261ebbb02c898d08/apps/cli/src/ui-session.ts#L8-L138) decodes split UTF-8 input, bounds message bytes and queued requests, rejects unsupported fields/methods and uses unique request IDs. Its loop additionally bounds total requests/steps and validates action batches through the host. Invalid requests can be corrected within the same sequential session without emitting the raw rejected input. These are useful channel-envelope patterns; the initial chunk is appended before its byte limit is checked, and output/backpressure bounds belong to an uninspected writer boundary.
+
+[Lifetime, idle and per-request timers](https://github.com/OpenCoworkAI/open-codesign/blob/4cf33932edc5f687e3cf7190261ebbb02c898d08/apps/cli/src/ui-session.ts#L158-L304) feed a shared abort signal, preserve stable terminal errors and dispose input listeners. Their ability to finish a stuck host operation still depends on the host honoring cancellation: the adapter awaits host loading and session actions directly. The [fixtures](https://github.com/OpenCoworkAI/open-codesign/blob/4cf33932edc5f687e3cf7190261ebbb02c898d08/apps/cli/src/ui-session.test.ts) exercise a fake host, split multibyte input, duplicate IDs, input limits and cleanup status. They were not run and cannot establish packaged desktop isolation or real cleanup.
+
+The [done tool](https://github.com/OpenCoworkAI/open-codesign/blob/4cf33932edc5f687e3cf7190261ebbb02c898d08/packages/core/src/tools/done.ts#L497-L602) separates blocking errors from advisory layout warnings and can call an injected runtime verifier. Runtime checking is optional and applies only to renderable paths; the success text chooses its runtime claim based on the callback being configured, rather than recording whether that particular path actually ran it. The broader statement that the design is verified consequently needs a scoped evidence receipt. Teamagent should record artifact version, exact checks performed, skipped/unsupported checks and observed outcomes; a model instruction to stop using tools is not host enforcement or proof of task correctness.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [open-codesign](https://github.com/OpenCoworkAI/open-codesign); analyzed commit `5bc24f04b6074a4189b603dcd6046983525b4618`; commit date 2026-09-30T17:38:23+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--open-codesign.md).
+Analysis metadata: source [open-codesign](https://github.com/OpenCoworkAI/open-codesign); analyzed commit `4cf33932edc5f687e3cf7190261ebbb02c898d08`; commit date 2026-10-24T17:23:46+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--open-codesign.md).
 <!-- teamagent-analysis:end -->

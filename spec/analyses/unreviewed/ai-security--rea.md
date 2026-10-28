@@ -4,6 +4,15 @@ Source: [rea](https://github.com/morluto/rea) · [security](../../security.md), 
 
 Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-security--rea.md).
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`0cd7ef456bf960da265e04b341e82a24b1e377d5`](https://github.com/morluto/rea/commit/0cd7ef456bf960da265e04b341e82a24b1e377d5). Scope: Initial focused source review of five complete protocol, timeout, logging, result-delivery and browser-observation modules. Backend implementations and live tools were not exercised.
+
+The [Ghidra response parser](https://github.com/morluto/rea/blob/0cd7ef456bf960da265e04b341e82a24b1e377d5/src/ghidra/protocol.ts) accepts JSON as unknown, validates a strict discriminated response and separates remote errors from malformed transport data. It does not itself bound line bytes or authenticate the sender. The [startup policy](https://github.com/morluto/rea/blob/0cd7ef456bf960da265e04b341e82a24b1e377d5/src/mcpStartupPolicy.ts) explicitly distinguishes client timeout guidance from enforced phase deadlines and labels its estimate as a single-request allowance rather than a bulk-work bound. Adapt those distinctions without changing Teamagent's Effect Schema/service choices.
+
+The [browser observation schema](https://github.com/morluto/rea/blob/0cd7ef456bf960da265e04b341e82a24b1e377d5/src/domain/webExecution.ts) records UTF-16/exclusive coverage offsets, unavailable coverage, unknown causal attribution, excluded observations and the instrumentation's effects on execution. Successful results require confirmed cleanup, while the broader observation shape can preserve unconfirmed cleanup. This is a useful evidence vocabulary, not proof that the runtime fulfills it. [Tool logging](https://github.com/morluto/rea/blob/0cd7ef456bf960da265e04b341e82a24b1e377d5/src/server/toolLogging.ts) emits names, duration and status without caller inputs; thrown exceptions bypass that completion log. [Result delivery](https://github.com/morluto/rea/blob/0cd7ef456bf960da265e04b341e82a24b1e377d5/src/server/toolResult.ts) attaches schema-validated continuation requests for retained evidence, but the byte-budget implementation and retention ownership are outside this review. No reverse-engineering tool, browser instrumentation or tests were run.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [rea](https://github.com/morluto/rea); analyzed commit `none`; commit date unknown; review date unknown; depth unreviewed. [Maintenance record](../repos/ai-security--rea.md).
+Analysis metadata: source [rea](https://github.com/morluto/rea); analyzed commit `0cd7ef456bf960da265e04b341e82a24b1e377d5`; commit date 2026-10-27T17:13:17Z; review date 2026-10-28T08:26:04.502Z; depth reviewed. [Maintenance record](../repos/ai-security--rea.md).
 <!-- teamagent-analysis:end -->

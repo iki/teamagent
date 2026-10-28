@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Conversion reuses indexing semantics and supersession annotations explicitly fail open.** Reviewed commit `9a453edba8c288f673390812ff5e100aef43fa09` (commit date `2026-10-23T10:43:17+02:00`). Compared with `bde22b5138574b1c1d46ed1ead0c99a18e8d6513`; the complete Git comparison contains 551 changed paths.
+
+convertFile returns a versioned result with converter identity, Markdown hash, warnings and source metadata; it rejects known multi-record adapters and oversized stat results before reading, then delegates preparation to a processor with time/memory options. The host follows symlinks and buffers the entire file between stat and preparation, without rechecking actual byte length in this wrapper, so a pre-read size check is not a stable bounded snapshot. The source size in the receipt remains the earlier stat value.
+
+Graph reconciliation now chunks incoming-link identity lookups in groups of eight and yields between chunks/documents, improving event-loop responsiveness while still materializing the identities and overall graph state. Result supersession annotation returns unmarked results when the optional lookup is absent or returns a failure; this does not establish that a fact is current. A changed lexical hydration fixture verifies that snippet line ranges come from the actual returned chunk, and that failed hydration yields an empty snippet without a fabricated range. The graph seed lookup now carries the plural collection filter as well as the singular one.
+
+Evidence: [src/ingestion/convert-file.ts:1-181](https://github.com/gmickel/gno/blob/9a453edba8c288f673390812ff5e100aef43fa09/src/ingestion/convert-file.ts#L1-L181) · [src/pipeline/result-context.ts:61-88](https://github.com/gmickel/gno/blob/9a453edba8c288f673390812ff5e100aef43fa09/src/pipeline/result-context.ts#L61-L88) · [src/ingestion/graph-reconciliation.ts:138-155](https://github.com/gmickel/gno/blob/9a453edba8c288f673390812ff5e100aef43fa09/src/ingestion/graph-reconciliation.ts#L138-L155) · [src/ingestion/graph-reconciliation.ts:223-249](https://github.com/gmickel/gno/blob/9a453edba8c288f673390812ff5e100aef43fa09/src/ingestion/graph-reconciliation.ts#L223-L249) · [src/ingestion/graph-reconciliation.ts:272-288](https://github.com/gmickel/gno/blob/9a453edba8c288f673390812ff5e100aef43fa09/src/ingestion/graph-reconciliation.ts#L272-L288) · [src/pipeline/graph-retrieval.ts:301-315](https://github.com/gmickel/gno/blob/9a453edba8c288f673390812ff5e100aef43fa09/src/pipeline/graph-retrieval.ts#L301-L315) · [test/pipeline/search-n1.test.ts:169-226](https://github.com/gmickel/gno/blob/9a453edba8c288f673390812ff5e100aef43fa09/test/pipeline/search-n1.test.ts#L169-L226).
+
+**Harness consequence:** Preserve converter/version/warning receipts and actual chunk evidence, but admit immutable bytes under a hard read cap and separately validate symlink/containment policy. Treat cooperative yielding as latency control rather than a memory/work bound. Require an explicit supersession-check status and keep unverified currency distinct from no successor; scope every retrieval channel to authorized collections.
+
+**Scope and limits:** Static scoped review of conversion boundary, graph-yielding, supersession and selected lexical hydration fixtures within the 551-path comparison. Terminable processor enforcement, storage successor implementation, full graph/search ranking and actual converters were not fully audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gno](https://github.com/gmickel/gno); analyzed commit `bde22b5138574b1c1d46ed1ead0c99a18e8d6513`; commit date 2026-09-29T14:31:21+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--gno.md).
+Analysis metadata: source [gno](https://github.com/gmickel/gno); analyzed commit `9a453edba8c288f673390812ff5e100aef43fa09`; commit date 2026-10-23T10:43:17+02:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--gno.md).
 <!-- teamagent-analysis:end -->

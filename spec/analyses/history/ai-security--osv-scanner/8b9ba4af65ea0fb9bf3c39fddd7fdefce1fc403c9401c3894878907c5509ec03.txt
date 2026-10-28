@@ -1,0 +1,38 @@
+# OSV Scanner: dependency findings with scoped call analysis
+
+Source: [osv-scanner](https://github.com/google/osv-scanner) · Category: `ai-security`
+
+Review depth: **source-reviewed**. Snapshot `1b86129be1f0285c403616cb362ac188de676c6e`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+The inspected source-analysis dispatcher runs language-specific analysis only for eligible lockfile identities and enabled options: `go.mod` for Go and `Cargo.lock` for Rust in this path. Vulnerabilities are deduplicated by identifier before downstream analysis. Result helpers distinguish package-version identity from commit identity, preserving a useful distinction for source-pinned dependencies.
+
+This is concrete evidence that reachability/call analysis is scoped, not a universal property of every dependency finding. A package match, reachable vulnerable code path, and demonstrated exploit remain different levels of evidence. The review did not inspect every scanner mode or package extractor.
+
+## Harness adoption
+
+Use during plugin admission, imported-repository analysis, environment-image preparation, and coding-change evaluation. Record source commit, package identity, lockfile or manifest evidence, vulnerability database timestamp, scanner version, and analysis coverage. Run scans against immutable snapshots so dependency changes cannot race the assessment.
+
+Store findings in a normalized ledger with duplicate identifiers merged but source evidence preserved. Feed remediation candidates to agents with the affected package and feasible upgrade constraints. A fix should be validated by dependency resolution and relevant tests, not by text replacement in a manifest alone.
+
+## Limitations and decision
+
+Adopt as a baseline dependency scanner. Database freshness and package resolution determine what can be known, while unsupported or disabled call analysis must remain explicitly unknown. A clean scan does not prove that a new package or downloaded skill is benign. Pair with source/dataflow review and least-privilege execution. Avoid automatically blocking every historical finding without considering applicability and compensating controls, but make exceptions time-bounded and attributable. [SkillSpector](ai-security--skillspector.md) adds agent-instruction checks; it does not replace dependency vulnerability analysis.
+
+## Evidence read
+
+- [Language-specific source analysis dispatch](https://github.com/google/osv-scanner/blob/1b86129be1f0285c403616cb362ac188de676c6e/internal/sourceanalysis/sourceanalysis.go#L1-L37)
+- [Package/version/commit result identity](https://github.com/google/osv-scanner/blob/1b86129be1f0285c403616cb362ac188de676c6e/internal/utility/results/results.go#L1-L33)
+
+## Related directions
+
+[Security](../security.md) · [Agents](../agents.md) · [Import Generation](../import-generation.md) · [Evolution](../evolution.md)
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`8748c7ca24ecb3fb35a1319c983f41b4a6cf5833`](https://github.com/google/osv-scanner/commit/8748c7ca24ecb3fb35a1319c983f41b4a6cf5833). Scope: Full source-analysis dispatcher, result formatter, alias grouping, group annotation and inventory test comparator read. Language analyzers, scanner integration and vulnerability-feed results were not exercised.
+
+The [alias grouper](https://github.com/google/osv-scanner/blob/8748c7ca24ecb3fb35a1319c983f41b4a6cf5833/internal/grouper/grouper.go) uses connected components across record IDs and aliases, preserving first-record group ordering and sorting/deduplicating aliases. This avoids treating transitive aliases as unrelated findings. The [annotation builder](https://github.com/google/osv-scanner/blob/8748c7ca24ecb3fb35a1319c983f41b4a6cf5833/internal/grouper/build.go) keeps ecosystem priority distinct from numeric severity and preserves 'unimportant' separately from call analysis. Its uncalled annotation is derived from package-level exploitability signals and applied across grouped vulnerability IDs; verify signal provenance and granularity before suppressing a particular finding.
+
+The [analysis dispatcher](https://github.com/google/osv-scanner/blob/8748c7ca24ecb3fb35a1319c983f41b4a6cf5833/internal/sourceanalysis/sourceanalysis.go) only invokes selected Go/Rust analysis for the matching lockfile types. No analysis for another ecosystem must remain unknown rather than safe. The [formatter](https://github.com/google/osv-scanner/blob/8748c7ca24ecb3fb35a1319c983f41b4a6cf5833/internal/utility/results/results.go) safely shortens commits for display, while full identity still belongs in retained evidence. Adapt alias closure and explicit evidence categories; do not treat absence of displayed calls or a low ecosystem priority as proof of non-exploitability. No scans, language analyzers, advisory lookups or tests were run for this update.

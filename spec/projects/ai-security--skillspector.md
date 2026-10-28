@@ -29,6 +29,14 @@ Shortlist as a default scanner adapter and borrow its ledger schema. Static rule
 
 [Skills](../skills.md) · [Security](../security.md) · [Import Generation](../import-generation.md) · [Evolution](../evolution.md)
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`e7172462caf367736645f66c1aa154ca5f9c64dc`](https://github.com/NVIDIA/SkillSpector/commit/e7172462caf367736645f66c1aa154ca5f9c64dc). Scope: Full cleanup helper, analyzer graph and graph import-order regression tests read. Inspection ledger, analyzer semantics and input-handler ownership were not audited.
+
+The [cleanup helper](https://github.com/NVIDIA/SkillSpector/blob/e7172462caf367736645f66c1aa154ca5f9c64dc/src/skillspector/cleanup.py) records temporary directories early enough to clean up interrupted graph runs, retries Windows read-only deletions only for permission errors and avoids chmod on links/junctions. However, prefix/type checks are not creation-ownership proofs, and cleanup_result accepts a string path without the tracker's checks. Teamagent should retain an unforgeable host-owned cleanup handle, validate containment at deletion and report residual artifacts rather than accept an arbitrary returned directory. This review does not establish whether untrusted input can reach those fields.
+
+The [graph](https://github.com/NVIDIA/SkillSpector/blob/e7172462caf367736645f66c1aa154ca5f9c64dc/src/skillspector/graph.py) wraps analyzers in ledger guards and explicitly finalizes inspection coverage before reporting. Credential-independent graph construction is useful, but an analyzer whose is_available() returns false is still skipped; the unseen finalizer determines how that becomes visible. The [import-order tests](https://github.com/NVIDIA/SkillSpector/blob/e7172462caf367736645f66c1aa154ca5f9c64dc/tests/unit/test_graph_proxy.py) restore shared module/proxy state and check alternate import paths, protecting test isolation rather than scan accuracy. Adapt interruption cleanup and explicit analyzer-status accounting behind owned paths. No scan, provider, cleanup operation or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [skillspector](https://github.com/NVIDIA/SkillSpector); analyzed commit `35270064e42230dbc566e4134c55b5d581355db3`; commit date 2026-10-02T11:39:38-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--skillspector.md).
+Analysis metadata: source [skillspector](https://github.com/NVIDIA/SkillSpector); analyzed commit `e7172462caf367736645f66c1aa154ca5f9c64dc`; commit date 2026-10-27T10:50:17-07:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--skillspector.md).
 <!-- teamagent-analysis:end -->

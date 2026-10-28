@@ -30,6 +30,19 @@ Research pilot rather than default engine until representative task benchmarks a
 
 [Models](../models.md) · [Decisions](../decisions.md) · [Agents](../agents.md)
 
+
+## Change review - 2026-10-28
+
+**Model-management MCP adds detached jobs without enforcing cancellation or admission bounds.** Reviewed commit `e0db083cdc9e563e0766cc6fc661ef23c32298e0` (commit date `2026-10-17T16:47:26+02:00`). Compared with `ce370e87d7b623d7759b52ec2007d75fc5b0e87e`; the complete Git comparison contains 512 changed paths.
+
+The new stdio MCP wrapper exposes hardware discovery, model recommendation, install/start/stop, status and log tails. Its argument checker rejects unknown keys, invalid types, boolean-as-integer values, unsupported enums and numeric bounds. Install admission is protected by a process-local lock, then launches setup with --yes as a detached child and records a PID; the human-confirmation instruction is prose, not an enforced authorization gate in this adapter. Tool calls create one thread each without an admission cap, initialization state is recorded but not required before tools/call, and all notifications including cancellation are ignored. EOF drains workers for up to sixty seconds, while detached installation intentionally survives the server. Fixtures cover protocol envelopes, arguments, monotonic progress, mocked install construction and a stdio round trip; they do not demonstrate enforced cancellation or multi-process installation exclusion.
+
+Evidence: [c/mcp_server.py:32-133](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/c/mcp_server.py#L32-L133) · [c/mcp_server.py:177-250](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/c/mcp_server.py#L177-L250) · [c/mcp_server.py:300-439](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/c/mcp_server.py#L300-L439) · [c/tests/test_mcp_server.py:52-124](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/c/tests/test_mcp_server.py#L52-L124) · [c/tests/test_mcp_server.py:139-196](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/c/tests/test_mcp_server.py#L139-L196) · [c/tests/test_mcp_server.py:216-248](https://github.com/JustVugg/colibri/blob/e0db083cdc9e563e0766cc6fc661ef23c32298e0/c/tests/test_mcp_server.py#L216-L248).
+
+**Harness consequence:** Expose this as a model-management worker only behind deterministic install grants, disk/network budgets and explicit long-running job ownership. Keep detached job state separate from request lifetime, reconcile completion by durable identity, and advertise cancellation as unsupported until enforced. Add bounded input, concurrency and redacted error/log contracts rather than adopting this handwritten protocol wrapper unchanged. Engine inference quality and hardware compatibility still require a separate benchmark.
+
+**Scope and limits:** Scoped static review of the new model-management MCP wrapper and its fixtures within a 512-path comparison. No code, setup command, download, model server, GPU workload or upstream test was executed. Underlying setup_flow locking, process identity validation, inference kernels and the other changed converters are outside this review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [colibri](https://github.com/JustVugg/colibri); analyzed commit `ce370e87d7b623d7759b52ec2007d75fc5b0e87e`; commit date 2026-09-25T00:09:37+02:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-run--colibri.md).
+Analysis metadata: source [colibri](https://github.com/JustVugg/colibri); analyzed commit `e0db083cdc9e563e0766cc6fc661ef23c32298e0`; commit date 2026-10-17T16:47:26+02:00; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-run--colibri.md).
 <!-- teamagent-analysis:end -->

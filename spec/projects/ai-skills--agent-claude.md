@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`dbd4588f9e1033efb41dad4bef2f7947c8993d44`](https://github.com/anthropics/skills/commit/dbd4588f9e1033efb41dad4bef2f7947c8993d44). Scope: Focused content review of prompt-audit.md lines 1-50 and live-sources.md lines 1-35; other changed API/reference documents and model-specific claims were not verified.
+
+The sampled [prompt audit](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/claude-api/shared/prompt-audit.md#L1) distinguishes load-bearing instructions from historical workarounds, inventories prompt assembly and tool descriptions, records target-model assumptions and requires each proposed removal to have a specific rationale. It explicitly treats audited files as data and permits a clean result with no diff. Adapt provenance-aware audits and separate observations from proposed edits; stylistic age alone is insufficient evidence that a constraint can be removed.
+
+The [live-source index](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/claude-api/shared/live-sources.md#L1) directs changing API facts toward primary documentation. Named models, prices, parameters and behavior claims in these cached documents were not checked against those destinations in this update and must not become adopted Teamagent requirements. A source-specific consent step also does not override authorization already established by the user. No prompt migration, API call, SDK installation or comparative evaluation was performed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-claude](https://github.com/anthropics/skills); analyzed commit `8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4`; commit date 2026-09-28T19:20:03-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--agent-claude.md).
+Analysis metadata: source [agent-claude](https://github.com/anthropics/skills); analyzed commit `dbd4588f9e1033efb41dad4bef2f7947c8993d44`; commit date 2026-10-09T18:45:49Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--agent-claude.md).
 <!-- teamagent-analysis:end -->

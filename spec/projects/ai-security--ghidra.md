@@ -24,6 +24,14 @@ This entry was catalogued under **ai-security**. Its category places it in the c
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`1b9e58a915cf867e106495eaa2a4b18eb4971c9d`](https://github.com/NationalSecurityAgency/ghidra/commit/1b9e58a915cf867e106495eaa2a4b18eb4971c9d). Scope: Full DefaultLocalGhidraProtocolConnector and its parse tests read. Shared URL parser, storage implementation, certificates and decompiler changes were not audited.
+
+The [local connector](https://github.com/NationalSecurityAgency/ghidra/blob/1b9e58a915cf867e106495eaa2a4b18eb4971c9d/Ghidra/Framework/Project/src/main/java/ghidra/framework/protocol/ghidra/DefaultLocalGhidraProtocolConnector.java) separates storage location from repository item paths and uses URI query decoding so literal plus signs survive while percent escapes are decoded once. [Parse fixtures](https://github.com/NationalSecurityAgency/ghidra/blob/1b9e58a915cf867e106495eaa2a4b18eb4971c9d/Ghidra/Framework/Project/src/test/java/ghidra/framework/protocol/ghidra/DefaultLocalGhidraProtocolConnectorParseTest.java) cover UNC shares, Unicode including supplementary characters, spaces, brackets, root files and folder trailing slashes.
+
+A URL classified as local can still name a network share. Treat that label as a storage protocol distinction, not an offline or trusted-path guarantee. connect checks existence and records requested read-only access; actual opening later maps ownership, read-only and lock failures into distinct statuses. Adapt round-trip path fixtures and the separation of parsing from authorized opening. This narrow review establishes neither traversal containment nor native access enforcement; no project, share, binary or tests were opened or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ghidra](https://github.com/NationalSecurityAgency/ghidra); analyzed commit `a462673d2f1543d153c61d10bcd6c68f85555194`; commit date 2026-09-30T05:01:14-04:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-security--ghidra.md).
+Analysis metadata: source [ghidra](https://github.com/NationalSecurityAgency/ghidra); analyzed commit `1b9e58a915cf867e106495eaa2a4b18eb4971c9d`; commit date 2026-10-27T05:11:25-04:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-security--ghidra.md).
 <!-- teamagent-analysis:end -->

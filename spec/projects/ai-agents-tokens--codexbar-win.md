@@ -24,6 +24,14 @@ This entry was catalogued under **ai-agents-tokens**. Its category places it in 
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`31b10ce42993d3be2f041e169e82ef174d24c7ec`](https://github.com/nesszer/Win-CodexBar/commit/31b10ce42993d3be2f041e169e82ef174d24c7ec). Scope: Full HTTP proxy settings/embedded tests, shared host-session helpers and Codex directory discovery/tests read. Cost parsers, account ownership, credential reads and native packaging were not audited.
+
+The [HTTP proxy adapter](https://github.com/nesszer/Win-CodexBar/blob/31b10ce42993d3be2f041e169e82ef174d24c7ec/rust/src/core/http_proxy.rs) validates HTTP(S) scheme/host and distinguishes disabled settings from configured credentials. Invalid enabled configuration explicitly calls no_proxy and continues directly; this is a convenience fallback, not an enforceable egress requirement. The settings type derives Debug while containing the password, and accepts URL userinfo, so callers must avoid diagnostic exposure and use protected credential storage. Reject direct fallback when Teamagent policy requires a proxy.
+
+The [session discovery helper](https://github.com/nesszer/Win-CodexBar/blob/31b10ce42993d3be2f041e169e82ef174d24c7ec/rust/src/codex_sessions.rs) respects explicit roots and searches WSL distro home/root directories, deduplicating paths by lowercased spelling. That is discovery rather than authorization and can conflate case-sensitive paths; reading another discovered user's data still needs scope/ownership checks. The [host helper](https://github.com/nesszer/Win-CodexBar/blob/31b10ce42993d3be2f041e169e82ef174d24c7ec/rust/src/host/session.rs) keeps unsupported GUI-session reasons explicit and provides CLI guidance, but does not prove packaged desktop behavior. No credentials, session directories, proxy, native app or tests were accessed/executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codexbar-win](https://github.com/nesszer/Win-CodexBar); analyzed commit `d5ef504d62d05b6660f1b78c65bcc679badef8e7`; commit date 2026-10-04T02:13:05+07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--codexbar-win.md).
+Analysis metadata: source [codexbar-win](https://github.com/nesszer/Win-CodexBar); analyzed commit `31b10ce42993d3be2f041e169e82ef174d24c7ec`; commit date 2026-10-27T02:02:46+07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--codexbar-win.md).
 <!-- teamagent-analysis:end -->

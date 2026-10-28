@@ -1,0 +1,44 @@
+# mem0
+
+Scoped personal/agent memory with additive extraction and explicit provider-failure propagation.
+
+Source: [mem0](https://github.com/mem0ai/mem0) · Snapshot: `abb81c88e1f738a8117d8293530fbc31a5ef8fd9` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [mem0/memory/main.py:881-986](https://github.com/mem0ai/mem0/blob/abb81c88e1f738a8117d8293530fbc31a5ef8fd9/mem0/memory/main.py#L881-L986)
+
+The inspected snapshot implements a V3 phased batch add path. With infer disabled, it skips system messages, embeds message content and creates raw memories with role and optional actor metadata. With inference enabled, it obtains recent messages for a session scope, retrieves up to ten existing memories filtered by user_id, agent_id and run_id, maps memory UUIDs to compact integer identifiers, and calls the additive extraction prompt once. Model transport errors are re-raised as LLMError. Extraction parse failures, however, are logged and reduced to an empty extracted list in the examined segment.
+
+## Harness implications
+
+This is a useful compact memory API reference, especially the explicit scoping and raw-versus-inferred distinction. Do not repeat older descriptions that assume every add operation executes an LLM-selected ADD/UPDATE/DELETE cycle; this source snapshot uses additive extraction. The harness should record input events independently, distinguish raw message retention from derived preference memory, and propagate extraction failure as a job status. Integer candidate IDs help constrain model references without granting the model permission to invent database identifiers.
+
+## Limitations and tradeoffs
+
+The top-ten pre-retrieval limits what the extraction model can compare, so distant duplicates or contradictory memories can be missed. Additive extraction does not itself establish temporal truth, source reliability or deletion policy. A parser failure returning no facts is operationally different from an explicit empty successful extraction; wrap it with observable diagnostics if adopting this path. The review covers this Python path, not feature parity with hosted services or the TypeScript SDK.
+
+## Adoption and validation
+
+Adopt as a replaceable scoped-memory connector when its integration cost is lower than implementing the same API. Keep source events, permissions, retention rules and provenance under harness ownership. Validate cross-user isolation, actor attribution, repeated message import, malformed JSON, missing provider capability and contradictory preferences before relying on automatic personalized context.
+
+Related directions: [memory](../memory.md) · [agents](../agents.md) · [evolution](../evolution.md).
+
+
+## Change review - 2026-10-28
+
+**Blank entity guards reduce accidental broad deletion but omitted scope still deletes all entities.** Reviewed commit `26cdefb46600c0fa5953c4b5ee5003c125539fc4` (commit date `2026-10-26T10:51:39-04:00`). Compared with `abb81c88e1f738a8117d8293530fbc31a5ef8fd9`; the complete Git comparison contains 78 changed paths.
+
+Python and TypeScript clients now reject non-null filters on add/delete-all endpoints that require top-level entity IDs, and reject empty or whitespace-only entity strings before destructive HTTP requests. Both guard suites exercise all supported identities, mixed valid/blank input, typed options and explicit wildcard acceptance. However delete_users/deleteUsers with no IDs still enumerates and deletes every returned entity; both fixtures deliberately preserve that behavior. Thus blank rejection is a useful validation fix, not an authorization boundary or a safe omitted-scope default. The OSS TypeScript add path copies caller filters before injecting scope keys, preventing scope leakage through reused options. Vertex AI initialization now logs field names instead of full credential-bearing configuration; the regression fixture excludes a fake private key, but remaining exception logging is outside that specific guarantee.
+
+Evidence: [mem0/client/main.py:94-110](https://github.com/mem0ai/mem0/blob/26cdefb46600c0fa5953c4b5ee5003c125539fc4/mem0/client/main.py#L94-L110) · [mem0/client/main.py:622-673](https://github.com/mem0ai/mem0/blob/26cdefb46600c0fa5953c4b5ee5003c125539fc4/mem0/client/main.py#L622-L673) · [mem0-ts/src/client/mem0.ts:77-103](https://github.com/mem0ai/mem0/blob/26cdefb46600c0fa5953c4b5ee5003c125539fc4/mem0-ts/src/client/mem0.ts#L77-L103) · [mem0-ts/src/client/mem0.ts:638-684](https://github.com/mem0ai/mem0/blob/26cdefb46600c0fa5953c4b5ee5003c125539fc4/mem0-ts/src/client/mem0.ts#L638-L684) · [tests/test_client_entity_guards.py:42-198](https://github.com/mem0ai/mem0/blob/26cdefb46600c0fa5953c4b5ee5003c125539fc4/tests/test_client_entity_guards.py#L42-L198) · [mem0-ts/src/client/tests/memoryClient.entityGuards.test.ts:31-234](https://github.com/mem0ai/mem0/blob/26cdefb46600c0fa5953c4b5ee5003c125539fc4/mem0-ts/src/client/tests/memoryClient.entityGuards.test.ts#L31-L234) · [mem0-ts/src/oss/src/memory/index.ts:765-781](https://github.com/mem0ai/mem0/blob/26cdefb46600c0fa5953c4b5ee5003c125539fc4/mem0-ts/src/oss/src/memory/index.ts#L765-L781) · [mem0/vector_stores/vertex_ai_vector_search.py:35-53](https://github.com/mem0ai/mem0/blob/26cdefb46600c0fa5953c4b5ee5003c125539fc4/mem0/vector_stores/vertex_ai_vector_search.py#L35-L53) · [tests/vector_stores/test_vertex_ai_vector_search.py:169-200](https://github.com/mem0ai/mem0/blob/26cdefb46600c0fa5953c4b5ee5003c125539fc4/tests/vector_stores/test_vertex_ai_vector_search.py#L169-L200).
+
+**Harness consequence:** Require an explicit, validated ownership scope and separate broad-deletion authorization before exposing memory deletion to a model. Preserve the distinction between omitted, blank and explicitly authorized wildcard identities. Copy request-scoped data and test redaction on failure paths as well as successful initialization; do not infer complete credential safety from one debug-log fix.
+
+**Scope and limits:** Scoped static review of entity guards, related fixtures, the filter-copy hunk and Vertex initialization logging within the 78-path comparison; the full memory inference/storage pipeline and every changed path were not audited. Fixtures were read, not executed; no service, credential or deletion operation was invoked.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [mem0](https://github.com/mem0ai/mem0); analyzed commit `26cdefb46600c0fa5953c4b5ee5003c125539fc4`; commit date 2026-10-26T10:51:39-04:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--mem0.md).
+<!-- teamagent-analysis:end -->

@@ -24,6 +24,14 @@ Curate selected debugging, planning, and skill-authoring procedures as optional 
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`2ce8aa15d05bd57213e6f746f953aafb7ded7a8b`](https://github.com/obra/superpowers/commit/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b). Scope: Full review-request skill, session-diagnosis skill, builder-check prompt and skill-size test read. Main execution/debugging skills and diagnosis reference implementations were not audited.
+
+The [review-request skill](https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/requesting-code-review/SKILL.md) gives a separate reviewer a bounded description, requirements and base/head rather than the entire author conversation. The [builder check](https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/brainstorming/builder-check-prompt.md) asks only for ambiguities that materially change implementation. Adapt those context boundaries, while selecting the actual patch base and accounting for uncommitted changes instead of assuming HEAD~1 covers the work.
+
+The [diagnosis workflow](https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/diagnosing-superpowers/SKILL.md) distinguishes human prompts from hook/parent messages, demands transcript evidence for numbers and separates local analysis from export/sharing. Its mandatory seven-analyst fanout and refusal to propose fixes are local workflow choices, not Teamagent requirements. The [size gate](https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/tests/skill-size/test-skill-size.sh) checks bytes against a documented 20,000-character compaction assumption; the conservative byte check is observable, but that client behavior was not verified here and size alone does not guarantee recall. No session export, subagent analysis, hook or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [plan.obra-superpowers](https://github.com/obra/superpowers); analyzed commit `8ca22dba9a94f28898bbce59f2537ff4d87c747d`; commit date 2026-09-25T11:06:27-07:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-skills--plan.obra-superpowers.md).
+Analysis metadata: source [plan.obra-superpowers](https://github.com/obra/superpowers); analyzed commit `2ce8aa15d05bd57213e6f746f953aafb7ded7a8b`; commit date 2026-10-21T14:00:49-07:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-skills--plan.obra-superpowers.md).
 <!-- teamagent-analysis:end -->

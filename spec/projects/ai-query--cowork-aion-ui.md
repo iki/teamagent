@@ -24,6 +24,19 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review — 2026-10-27
+
+**Community-link refresh does not extend channel capabilities.** Reviewed commit `11cd2a9a20d1e033157636efc570b41384c66d85` (commit date `2026-10-23T14:21:49Z`) against `6744099b279b991c17e31c243f0920477bd31cb6`. The complete Git comparison contains 12 changed paths.
+
+All twelve changed paths are localized readmes or the replaced community QR image. Inspected English, Chinese and Spanish diffs point the community links at the newer image. No application implementation or package manifest changed, so the earlier surface inventory gains no new verified desktop/mobile/channel behavior.
+
+Evidence: [readme.md:31-42](https://github.com/iOfficeAI/AionUi/blob/11cd2a9a20d1e033157636efc570b41384c66d85/readme.md#L31-L42) · [readme.md:691-703](https://github.com/iOfficeAI/AionUi/blob/11cd2a9a20d1e033157636efc570b41384c66d85/readme.md#L691-L703) · [docs/readme/readme_ch.md:31-42](https://github.com/iOfficeAI/AionUi/blob/11cd2a9a20d1e033157636efc570b41384c66d85/docs/readme/readme_ch.md#L31-L42) · [docs/readme/readme_es.md:31-42](https://github.com/iOfficeAI/AionUi/blob/11cd2a9a20d1e033157636efc570b41384c66d85/docs/readme/readme_es.md#L31-L42).
+
+**Harness consequence:** Keep channel capabilities tied to tested transport implementations and platform builds, not README freshness. Retain the existing application reference without inferring a new integration requirement from community asset churn.
+
+**Scope and limits:** Complete changed-path classification with three readme diffs inspected; other translations and QR contents were not independently interpreted. No application or native platform was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cowork-aion-ui](https://github.com/iOfficeAI/AionUi); analyzed commit `6744099b279b991c17e31c243f0920477bd31cb6`; commit date 2026-09-09T07:56:13Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--cowork-aion-ui.md).
+Analysis metadata: source [cowork-aion-ui](https://github.com/iOfficeAI/AionUi); analyzed commit `11cd2a9a20d1e033157636efc570b41384c66d85`; commit date 2026-10-23T14:21:49Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-query--cowork-aion-ui.md).
 <!-- teamagent-analysis:end -->

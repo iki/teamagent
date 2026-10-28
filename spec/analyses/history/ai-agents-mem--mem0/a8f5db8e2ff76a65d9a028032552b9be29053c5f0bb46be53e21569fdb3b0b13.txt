@@ -1,0 +1,27 @@
+# mem0
+
+Scoped personal/agent memory with additive extraction and explicit provider-failure propagation.
+
+Source: [mem0](https://github.com/mem0ai/mem0) · Snapshot: `abb81c88e1f738a8117d8293530fbc31a5ef8fd9` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [mem0/memory/main.py:881-986](https://github.com/mem0ai/mem0/blob/abb81c88e1f738a8117d8293530fbc31a5ef8fd9/mem0/memory/main.py#L881-L986)
+
+The inspected snapshot implements a V3 phased batch add path. With infer disabled, it skips system messages, embeds message content and creates raw memories with role and optional actor metadata. With inference enabled, it obtains recent messages for a session scope, retrieves up to ten existing memories filtered by user_id, agent_id and run_id, maps memory UUIDs to compact integer identifiers, and calls the additive extraction prompt once. Model transport errors are re-raised as LLMError. Extraction parse failures, however, are logged and reduced to an empty extracted list in the examined segment.
+
+## Harness implications
+
+This is a useful compact memory API reference, especially the explicit scoping and raw-versus-inferred distinction. Do not repeat older descriptions that assume every add operation executes an LLM-selected ADD/UPDATE/DELETE cycle; this source snapshot uses additive extraction. The harness should record input events independently, distinguish raw message retention from derived preference memory, and propagate extraction failure as a job status. Integer candidate IDs help constrain model references without granting the model permission to invent database identifiers.
+
+## Limitations and tradeoffs
+
+The top-ten pre-retrieval limits what the extraction model can compare, so distant duplicates or contradictory memories can be missed. Additive extraction does not itself establish temporal truth, source reliability or deletion policy. A parser failure returning no facts is operationally different from an explicit empty successful extraction; wrap it with observable diagnostics if adopting this path. The review covers this Python path, not feature parity with hosted services or the TypeScript SDK.
+
+## Adoption and validation
+
+Adopt as a replaceable scoped-memory connector when its integration cost is lower than implementing the same API. Keep source events, permissions, retention rules and provenance under harness ownership. Validate cross-user isolation, actor attribution, repeated message import, malformed JSON, missing provider capability and contradictory preferences before relying on automatic personalized context.
+
+Related directions: [memory](../memory.md) · [agents](../agents.md) · [evolution](../evolution.md).

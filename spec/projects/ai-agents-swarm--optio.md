@@ -24,6 +24,14 @@ This entry was catalogued under **ai-agents-swarm**. Its category places it in t
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`f2c557d476125429eb327019254fa5a2237902cf`](https://github.com/jonwiggins/optio/commit/f2c557d476125429eb327019254fa5a2237902cf). Scope: Full WebSocket authentication and workspace/role authorization helpers read. Token mint/consume implementation, origin allowlist, route wiring and revocation behavior were not audited.
+
+The [WebSocket authentication helper](https://github.com/jonwiggins/optio/blob/f2c557d476125429eb327019254fa5a2237902cf/apps/api/src/ws/ws-auth.ts) checks browser origin before authentication, uses cookies or credential subprotocols rather than URL query tokens, refreshes workspace membership and retains only the reusable credential that actually authenticated the upgrade. Single-use upgrade-token consumption is delegated to an unread service; PATs are also accepted, so not every subprotocol credential is short-lived. The extractor takes the first matching credential rather than rejecting duplicates.
+
+The [authorization helper](https://github.com/jonwiggins/optio/blob/f2c557d476125429eb327019254fa5a2237902cf/apps/api/src/ws/ws-authz.ts) separates workspace equality, private ownership visibility and mutating-role requirements. Null workspace matching is explicitly a local-development case, and auth-disabled mode bypasses role enforcement. Adapt resource authorization for each WebSocket route and current membership checks; connection establishment does not establish per-message authorization or revocation of a long-lived stream. The separate raw-cookie extraction helper must not be mistaken for proof the cookie authenticated. No sessions, tokens, sockets or tests were exercised.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [optio](https://github.com/jonwiggins/optio); analyzed commit `d1bc561661257bd03a031a8c49561de5eb5963d7`; commit date 2026-10-01T09:57:03-06:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--optio.md).
+Analysis metadata: source [optio](https://github.com/jonwiggins/optio); analyzed commit `f2c557d476125429eb327019254fa5a2237902cf`; commit date 2026-10-26T20:58:35-06:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--optio.md).
 <!-- teamagent-analysis:end -->

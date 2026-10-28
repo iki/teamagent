@@ -24,6 +24,21 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Stored-auth inventory joins secret state and the web server adds host filtering before token-bearing pages.** Reviewed commit `0cac110a809e93753fa353810b9b4c91e89810fc` (commit date `2026-10-21T14:10:36-04:00`). Compared with `ae865a19178ddf6f375780a02e9c77c4cf4da184`; the complete Git comparison contains 579 changed paths.
+
+Stored-auth listing reads through the shared OAuth store so secret-backed token slots are included, aggregating access/refresh presence across issuers rather than depending on iteration order. It returns booleans, server keys and a store path, not credentials; token presence is not expiry, validity or entitlement. The wrapper uses shallow casts over dynamic state, so validation depends on the underlying store. Clear operations reset the process cache after persisted clearing; clear-all reports the pre-read count, not a transactional deletion receipt.
+
+The production web entry adds host-allow-list middleware before API/static/token-injected SPA responses, with an explicitly unauthenticated health route registered earlier. TLS is selected only when the parsed config supplies the certificate/key pair, and origin construction now accounts for scheme/default ports. The actual host parser and health payload helpers were outside the cached scope, so call ordering is established but DNS-rebinding coverage is not independently verified. Browser-launch logging now prints only the error message instead of the error object/stack/spawn arguments. The shown handler still interpolates that message verbatim, so this is reduced exposure rather than a demonstrated general secret redactor. The normal page deliberately receives the API token.
+
+Evidence: [clients/mcpdo/src/connection/stored-auth.ts:1-148](https://github.com/modelcontextprotocol/inspector/blob/0cac110a809e93753fa353810b9b4c91e89810fc/clients/mcpdo/src/connection/stored-auth.ts#L1-L148) · [clients/web/server/server.ts:94-143](https://github.com/modelcontextprotocol/inspector/blob/0cac110a809e93753fa353810b9b4c91e89810fc/clients/web/server/server.ts#L94-L143) · [clients/web/server/server.ts:165-207](https://github.com/modelcontextprotocol/inspector/blob/0cac110a809e93753fa353810b9b4c91e89810fc/clients/web/server/server.ts#L165-L207) · [clients/web/server/web-server-config.ts:260-310](https://github.com/modelcontextprotocol/inspector/blob/0cac110a809e93753fa353810b9b4c91e89810fc/clients/web/server/web-server-config.ts#L260-L310) · [clients/web/server/web-server-config.ts:319-409](https://github.com/modelcontextprotocol/inspector/blob/0cac110a809e93753fa353810b9b4c91e89810fc/clients/web/server/web-server-config.ts#L319-L409).
+
+**Harness consequence:** Keep credentials out of inventory output, verify underlying schema/secret-store guarantees and distinguish credential presence from usable authorization. Use explicit clear receipts with scope and count semantics. Validate host/origin parsing on actual requests, minimize any unauthenticated health response and keep token-bearing pages private/no-store with redacted navigation logs; TLS and host filtering do not replace user/tool authorization.
+
+**Scope and limits:** Static scoped review of stored-auth administration and web-server wiring within the 579-path comparison. Secret-store persistence, host-allow-list/health helpers, certificate parsing and real browser/server tests were not fully audited or executed; no credentials read or cleared.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mcp-inspector](https://github.com/modelcontextprotocol/inspector); analyzed commit `ae865a19178ddf6f375780a02e9c77c4cf4da184`; commit date 2026-09-30T18:23:03-04:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-inspector.md).
+Analysis metadata: source [mcp-inspector](https://github.com/modelcontextprotocol/inspector); analyzed commit `0cac110a809e93753fa353810b9b4c91e89810fc`; commit date 2026-10-21T14:10:36-04:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-inspector.md).
 <!-- teamagent-analysis:end -->

@@ -2,7 +2,7 @@
 
 Source: [mateclaw](https://github.com/mateaix/mateclaw) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `9f49637ac96bf7dd36dcd859ae519a39783a1502`; commit timestamp `2026-10-03T17:55:16+08:00`; 4,220 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `cf1fd92c6d8a6faf572c378155aeb6fcacc0564b` (commit date `2026-10-27T03:41:20-05:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete structured tool-result renderer registry, desktop Vite composition/build script and stop/incomplete/TTS presentation fixture; Vue component implementations, renderer safety helpers, Electron IPC and backend execution were not audited.
+
+The [tool-result registry](https://github.com/mateaix/mateclaw/blob/cf1fd92c6d8a6faf572c378155aeb6fcacc0564b/mateclaw-ui/src/components/chat/tool-results/registry.ts#L7-L61) requires an explicit versioned UI envelope with at most eight blocks and maps payload type names to trusted application components. Unknown or rejected blocks fall back to text, while table/product renderers impose row/item limits. This avoids loading executable UI from payloads, but the 100 KiB check occurs after full serialization, fallback clipping counts string units rather than UTF-8 bytes, and chart/table checks are only shallow envelope validation. The exported URL/chart safety helpers and final rendering components were not inspected, so no complete sanitization guarantee follows from this registry.
+
+The [presentation fixture](https://github.com/mateaix/mateclaw/blob/cf1fd92c6d8a6faf572c378155aeb6fcacc0564b/mateclaw-ui/src/components/chat/__tests__/MessageBubble.stopIndicator.test.ts#L108-L222) specifies distinct user-stopped and interrupted labels, an incomplete-answer card that does not misdiagnose token exhaustion as repetition, and audio cleanup/error handling. It includes a completed message carrying an incomplete finish reason, illustrating why channel presentation needs a richer outcome than one status label. Its mocked network/audio calls and imported component were not executed or independently audited; these are useful acceptance cases rather than proof of actual provider cancellation or resource release.
+
+The [desktop build composition](https://github.com/mateaix/mateclaw/blob/cf1fd92c6d8a6faf572c378155aeb6fcacc0564b/mateclaw-desktop/vite.config.ts#L8-L72) applies branding to renderer, main and preload outputs. The [packaging script](https://github.com/mateaix/mateclaw/blob/cf1fd92c6d8a6faf572c378155aeb6fcacc0564b/mateclaw-desktop/scripts/build.sh#L20-L78) can install missing frontend dependencies, selects available package/build tools and explicitly skips Java tests before copying a JAR into resources. Build success would therefore establish neither reproducible dependency resolution nor native/IPC acceptance. No install, build, backend or desktop application was run during this review.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mateclaw](https://github.com/mateaix/mateclaw); analyzed commit `9f49637ac96bf7dd36dcd859ae519a39783a1502`; commit date 2026-10-03T17:55:16+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--mateclaw.md).
+Analysis metadata: source [mateclaw](https://github.com/mateaix/mateclaw); analyzed commit `cf1fd92c6d8a6faf572c378155aeb6fcacc0564b`; commit date 2026-10-27T03:41:20-05:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mateclaw.md).
 <!-- teamagent-analysis:end -->

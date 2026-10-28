@@ -1,0 +1,42 @@
+# fastmcp
+
+Source: [fastmcp](https://github.com/punkpeye/fastmcp) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `3cc03cfea6ca74dd5b0c004de498a3083e8f2348`; commit timestamp `2026-09-29T22:32:15-07:00`; 164 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/punkpeye/fastmcp/blob/3cc03cfea6ca74dd5b0c004de498a3083e8f2348/README.md)):
+
+> A TypeScript framework for building MCP servers capable of handling client sessions. FastMCP implements the legacy, handshake-based MCP revisions (`2025-11-25` and earlier). It does not support the current specification, `2026-07-28`, which made the protocol stateless — no `initialize` handshake and no `Mcp-Session-Id`. For a framework targeting the current spec, use ViteMCP.
+
+Build/package evidence: [package.json](https://github.com/punkpeye/fastmcp/blob/3cc03cfea6ca74dd5b0c004de498a3083e8f2348/package.json)
+
+License evidence: [LICENSE](https://github.com/punkpeye/fastmcp/blob/3cc03cfea6ca74dd5b0c004de498a3083e8f2348/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Atomic token replacement preserves prior values while session auth refresh rebuilds tool access.** Reviewed commit `febd9b4277166730cf2aa892662aa30a7abd5787` (commit date `2026-10-26T21:49:39-07:00`). Compared with `3cc03cfea6ca74dd5b0c004de498a3083e8f2348`; the complete Git comparison contains 52 changed paths.
+
+DiskStore saves credential entries to a fresh 0600 temporary file and atomically renames it over the destination; Windows retries only EPERM/EACCES/EBUSY five times with 310 ms total delay, retaining the old value on persistent failure and preserving the original expiry. Fixtures cover concurrent overwrite/read/cleanup, relaxed prior file permissions, retry exhaustion and unrelated errors. Single-use take claims an entry by rename before reading it. This is not complete storage hardening: JSON entries are cast without semantic validation, read errors become null, key sanitization maps distinct punctuation to the same underscore path, existing directory permissions are not tightened, and no fsync/crash-durability guarantee is supplied. Separately updateAuth recomputes currently registered visible tools and replaces handlers when access changes; in-memory fixtures cover revocation, grants, in-place auth mutation and session separation.
+
+Evidence: [src/auth/utils/diskStore.ts:71-103](https://github.com/punkpeye/fastmcp/blob/febd9b4277166730cf2aa892662aa30a7abd5787/src/auth/utils/diskStore.ts#L71-L103) · [src/auth/utils/diskStore.ts:133-192](https://github.com/punkpeye/fastmcp/blob/febd9b4277166730cf2aa892662aa30a7abd5787/src/auth/utils/diskStore.ts#L133-L192) · [src/auth/utils/diskStore.ts:207-300](https://github.com/punkpeye/fastmcp/blob/febd9b4277166730cf2aa892662aa30a7abd5787/src/auth/utils/diskStore.ts#L207-L300) · [src/auth/utils/diskStore.rename.test.ts:37-142](https://github.com/punkpeye/fastmcp/blob/febd9b4277166730cf2aa892662aa30a7abd5787/src/auth/utils/diskStore.rename.test.ts#L37-L142) · [src/auth/utils/diskStore.test.ts:175-213](https://github.com/punkpeye/fastmcp/blob/febd9b4277166730cf2aa892662aa30a7abd5787/src/auth/utils/diskStore.test.ts#L175-L213) · [src/FastMCP.ts:1856-1874](https://github.com/punkpeye/fastmcp/blob/febd9b4277166730cf2aa892662aa30a7abd5787/src/FastMCP.ts#L1856-L1874) · [src/FastMCP.auth-refresh.test.ts:39-175](https://github.com/punkpeye/fastmcp/blob/febd9b4277166730cf2aa892662aa30a7abd5787/src/FastMCP.auth-refresh.test.ts#L39-L175).
+
+**Harness consequence:** Adopt the non-destructive atomic replacement and narrowly bounded retry pattern for host-owned secrets, with collision-resistant key encoding, validated records and explicit corruption/IO outcomes. Verify Windows ACL and crash behavior separately. Tool authorization must follow refreshed session identity and current registration; advertised visibility alone does not authorize a previously dispatched operation.
+
+**Scope and limits:** Scoped static review of token-store implementation and fixtures plus session-auth refresh hunks and fixtures in the 52-path comparison. Edge transports, CIMD fetching and the remainder of FastMCP were not audited. Tests were read, not run; POSIX/Windows storage and deployed authorization behavior were not exercised.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [fastmcp](https://github.com/punkpeye/fastmcp); analyzed commit `febd9b4277166730cf2aa892662aa30a7abd5787`; commit date 2026-10-26T21:49:39-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--fastmcp.md).
+<!-- teamagent-analysis:end -->

@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`ea7dd78515839ff11fc24e79ba0c53db2d5fff6c`](https://github.com/coreyhaines31/makerskills/commit/ea7dd78515839ff11fc24e79ba0c53db2d5fff6c). Scope: Full ingest skill and skillify test rubric read. Personal routing configuration, external publishers, vault code and actual skill-evaluation runs were not reviewed.
+
+The [ingest procedure](https://github.com/coreyhaines31/makerskills/blob/ea7dd78515839ff11fc24e79ba0c53db2d5fff6c/skills/ingest/SKILL.md) separates decisions, each party's actions, unanswered questions and durable facts, anchors extraction to the source and drafts replies without sending. Its assumption that filed issues are internal/reversible is not a sufficient disclosure policy: a repository can be public or notify others. Clipboard fallback and searches for private participant names also require context-specific authorization. Preserve per-destination routing, and report skipped optional outputs instead of silently omitting them.
+
+The [test rubric](https://github.com/coreyhaines31/makerskills/blob/ea7dd78515839ff11fc24e79ba0c53db2d5fff6c/skills/skillify/references/test-rubric.md) explicitly simulates writes and external actions, excludes personal config unless supplied and includes missing-config and resume scenarios. Quote-backed findings and valid clean passes are useful. Prompt-only quarantine is not filesystem isolation; self-role-play and rerunning selected failures do not replace held-out independent evaluation. Preserve original scenarios and add regression and untouched cases after changes. No clipboard, vault, issues, messages or experiments were accessed or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle.makerskills](https://github.com/coreyhaines31/makerskills); analyzed commit `1868b816090246ced9be9ef3556726c4dc94877c`; commit date 2026-09-04T16:29:07-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.makerskills.md).
+Analysis metadata: source [bundle.makerskills](https://github.com/coreyhaines31/makerskills); analyzed commit `ea7dd78515839ff11fc24e79ba0c53db2d5fff6c`; commit date 2026-10-22T13:07:42-07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.makerskills.md).
 <!-- teamagent-analysis:end -->

@@ -2,9 +2,9 @@
 
 Source: [gittifacts](https://github.com/jovidecroock/gittifacts) · [Analysis](../unreviewed/ai-agents-mem--gittifacts.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-27T18:19:07.717Z. Status: **unreviewed**. Reviewed SHA: `none`; commit date: unknown; review date: unknown; observed SHA: `30c373de1461a41230e66e737eaeef70d456c8bc`.
+Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `30c373de1461a41230e66e737eaeef70d456c8bc`; commit date: 2026-10-12T08:20:04+02:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `30c373de1461a41230e66e737eaeef70d456c8bc`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. No comparable review baseline. Working-tree changes: false; shallow history: false; report changed since recorded review: true.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/jovidecroock/gittifacts/compare/30c373de1461a41230e66e737eaeef70d456c8bc...30c373de1461a41230e66e737eaeef70d456c8bc). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
 - Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 

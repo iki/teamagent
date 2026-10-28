@@ -2,7 +2,7 @@
 
 Source: [deeptutor](https://github.com/HKUDS/DeepTutor) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `ef2d9e5c3c99fd073742c5aadc2bb9584b1e503b`; commit timestamp `2026-09-27T13:34:05+08:00`; 3,518 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `a31d82624c27d75f4e771d4fcb78dce16470b383` (commit date `2026-10-19T04:12:56+08:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete browser authentication status/cache helper, auth-status hook and session API adapter; backend authentication and submission fencing, shared cache/storage helpers, session UI and tests were not audited.
+
+The [authentication cache](https://github.com/HKUDS/DeepTutor/blob/a31d82624c27d75f4e771d4fcb78dce16470b383/web/lib/auth.ts#L37-L111) coalesces requests and uses a generation counter so an older status response cannot repopulate state after an authentication boundary. Cross-tab storage contains an invalidation hint rather than a trusted principal; each tab rechecks the server. Null results have a shorter cache lifetime than stable answers. However, response JSON is assigned a TypeScript interface without runtime validation, and the helper's policy fields must not become authority merely because a type annotation exists. Logout clears local identity even if the server call fails, which is not evidence that the server session was revoked.
+
+The [auth-status hook](https://github.com/HKUDS/DeepTutor/blob/a31d82624c27d75f4e771d4fcb78dce16470b383/web/hooks/useAuthStatus.ts#L32-L92) exposes availability separately from authenticated state, but loads once per mount; the storage listener refreshes the shared helper without directly updating this hook's state. Its empty allowed-surface list falls back to chat/reading for presentation. Teamagent should subscribe mounted consumers to explicit identity generations and preserve the difference between unknown policy, an empty permission set and a display default. This review does not claim a backend authorization bypass.
+
+The [session adapter](https://github.com/HKUDS/DeepTutor/blob/a31d82624c27d75f4e771d4fcb78dce16470b383/web/lib/session-api.ts#L9-L19) requires an explicit true capability before offering uncertain-submission replacement, while the [replacement request](https://github.com/HKUDS/DeepTutor/blob/a31d82624c27d75f4e771d4fcb78dce16470b383/web/lib/session-api.ts#L323-L335) names the original submission. That supports a server-side reconciliation design, but fencing was not inspected. The same adapter deduplicates page results by workspace plus session identity, yet its fetch-all loops have no total page/item budget. Generic JSON response casts and a never-settling promise after a 401 redirect are additional host-boundary obligations. Receipt types, deletion booleans and trace completeness fields should be validated, and authentication transitions should settle waiting callers explicitly.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deeptutor](https://github.com/HKUDS/DeepTutor); analyzed commit `ef2d9e5c3c99fd073742c5aadc2bb9584b1e503b`; commit date 2026-09-27T13:34:05+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--deeptutor.md).
+Analysis metadata: source [deeptutor](https://github.com/HKUDS/DeepTutor); analyzed commit `a31d82624c27d75f4e771d4fcb78dce16470b383`; commit date 2026-10-19T04:12:56+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deeptutor.md).
 <!-- teamagent-analysis:end -->

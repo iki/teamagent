@@ -6,7 +6,7 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://dropbox.com/scl/fi/y64dzlo9lvly3hcd9vmex/Forge-Field-Manual-No10-Graph-Engineering.pdf>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-10-27T18:40:39.721Z. Import: **pinned**. Content validation: **partial**.
+Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-10-28T07:07:39.056Z. Import: **pinned**. Content validation: **partial**.
 
 First captured: 2026-10-24T05:51:33.887Z. Source creation/publication date: unknown. Date evidence: unknown. Filename dates and Last-Modified are not treated as creation dates.
 

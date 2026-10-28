@@ -24,6 +24,13 @@ This entry was catalogued under **ai-agents-tokens**. Its category places it in 
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`501aeeb93610072c5b3558a4fd16e2b2a5dde990`](https://github.com/lirantal/tokenu/commit/501aeeb93610072c5b3558a4fd16e2b2a5dde990). Scope: Nine changed manifest/workflow files read. Lockfile changes and deleted link-check configuration inventoried but not analyzed; tokenizer implementation unchanged in this delta.
+
+The [manifest](https://github.com/lirantal/tokenu/blob/501aeeb93610072c5b3558a4fd16e2b2a5dde990/package.json) raises gpt-tokenizer to the 4.x range and changes development tooling; [CI](https://github.com/lirantal/tokenu/blob/501aeeb93610072c5b3558a4fd16e2b2a5dde990/.github/workflows/ci.yml) adds a release-formatter smoke step and pinned action revisions. Release input names migrate to the new Changesets action interface. Scheduled [link checking](https://github.com/lirantal/tokenu/blob/501aeeb93610072c5b3558a4fd16e2b2a5dde990/.github/workflows/links-checker-schedule.yml) uses bounded concurrency/retries and converts failures into issue creation, while its cache action remains a mutable major tag. No application-source change establishes token-count equivalence across the dependency major. Before adoption compare fixed multilingual/tool-call fixtures against the exact encoding/provider and distinguish estimates from billed tokens. No dependency was installed, tokenizer executed, workflow run or token accuracy measured; Teamagent's Aube/Bun toolchain remains unchanged.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [tokenu](https://github.com/lirantal/tokenu); analyzed commit `1c0785292b89bdda7d999f2945e9b7708d80d435`; commit date 2026-08-01T04:57:59Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--tokenu.md).
+Analysis metadata: source [tokenu](https://github.com/lirantal/tokenu); analyzed commit `501aeeb93610072c5b3558a4fd16e2b2a5dde990`; commit date 2026-10-27T02:20:40-07:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--tokenu.md).
 <!-- teamagent-analysis:end -->

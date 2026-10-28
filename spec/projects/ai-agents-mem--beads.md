@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**HTTP policy caching binds project identity while remote-clone freshness and locking have separate limits.** Reviewed commit `43f41374a34d82ecf40903451eea277fbb4f1e75` (commit date `2026-10-27T09:51:28Z`). Compared with `d2844318a18ff61a983e40d3abe88561e05f8e2a`; the complete Git comparison contains 2364 changed paths.
+
+The HTTP policy cache keys server URL plus pinned project, stores a redacted URL in a private file, rejects future timestamps and expires after a configurable five-minute default. Unpinned workspaces and invalid/off TTLs disable it. This caches a policy assertion, not authorization; TTL has no upper clamp and reading the cache has no byte cap. ServerContext avoids network work when explaining a refusal, while Ping re-reads context after the initial handshake. The wire explicitly advertises limited caller attribution rather than inventing provenance.
+
+The remote Dolt cache scrubs Git trace/hook environment and probes minimum CLI version before transfers, but unknown/probe-failed versions are permitted. Its fresh-cache shortcut accepts negative age after a backward clock change. Clone/pull/push take a file lock, whereas opening and eviction do not; the caller must exclude concurrent readers/writers. Stale-lock cleanup unlinks by age without establishing that its owner is dead, which can split lock ownership on systems where an active lock remains on the old inode. Metadata writes and command output collection are not bounded/transactional in this module.
+
+Evidence: [internal/httpclient/servercontext.go:15-70](https://github.com/gastownhall/beads/blob/43f41374a34d82ecf40903451eea277fbb4f1e75/internal/httpclient/servercontext.go#L15-L70) · [internal/httpclient/policy_cache.go:15-128](https://github.com/gastownhall/beads/blob/43f41374a34d82ecf40903451eea277fbb4f1e75/internal/httpclient/policy_cache.go#L15-L128) · [internal/remotecache/cache.go:81-239](https://github.com/gastownhall/beads/blob/43f41374a34d82ecf40903451eea277fbb4f1e75/internal/remotecache/cache.go#L81-L239) · [internal/remotecache/cache.go:259-334](https://github.com/gastownhall/beads/blob/43f41374a34d82ecf40903451eea277fbb4f1e75/internal/remotecache/cache.go#L259-L334).
+
+**Harness consequence:** Separate cached capability hints from current authorization and preserve missing attribution explicitly. Use a maximum freshness policy with monotone or future-time checks, verify the actual executable identity and report unknown versions. Cache leases must cover readers, transfer and eviction, never reclaim an active lock by age alone, and return bounded redacted transfer diagnostics plus durable metadata receipts.
+
+**Scope and limits:** Static scoped HTTP context/policy cache and remote-clone lifecycle review within the 2,364-path comparison. HTTP authorization, wire validation, lockfile platform implementations, embedded memory/search and Dolt SQL behavior were not fully audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [beads](https://github.com/gastownhall/beads); analyzed commit `d2844318a18ff61a983e40d3abe88561e05f8e2a`; commit date 2026-10-03T13:33:54-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--beads.md).
+Analysis metadata: source [beads](https://github.com/gastownhall/beads); analyzed commit `43f41374a34d82ecf40903451eea277fbb4f1e75`; commit date 2026-10-27T09:51:28Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--beads.md).
 <!-- teamagent-analysis:end -->

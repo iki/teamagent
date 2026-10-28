@@ -24,6 +24,19 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review — 2026-10-27
+
+**Metric-corroborated Windows glyph fallback preserves punctuation more deliberately.** Reviewed commit `bcf387d1f4ab91d702f417fd9600694da0c166c3` (commit date `2026-10-07T09:37:47-07:00`) against `ef52f77850b29189048797a48b24862251f54fe7`. The complete Git comparison contains 3 changed paths.
+
+The complete three-path change concerns glyph fallback, synthetic regression fixtures and its changelog. For TrueType subsets lacking both cmap and glyph names, the converter now compares Macintosh and Windows standard glyph-order variants. It admits the fallback only after digit/space/letter metric checks, then chooses Windows only when its accented-letter advance matches are more numerous and mismatches fewer; ties retain Macintosh. Blank advancing glyphs beyond the known order are mapped to spaces only when an outline record exists but draws no bounding box. Synthetic fonts cover curly quotes, apostrophe, en dash, euro, unchanged Macintosh order, ambiguous metrics and missing/zero-width/outlined extra glyphs. The ambiguity fixture deliberately retains the Macintosh reading when dropped metrics cannot discriminate, so the fallback is inferred text, not authoritative Unicode recovery.
+
+Evidence: [src/mac_glyph_order.rs:282-379](https://github.com/firecrawl/pdf-inspector/blob/bcf387d1f4ab91d702f417fd9600694da0c166c3/src/mac_glyph_order.rs#L282-L379) Â· [src/mac_glyph_order.rs:413-514](https://github.com/firecrawl/pdf-inspector/blob/bcf387d1f4ab91d702f417fd9600694da0c166c3/src/mac_glyph_order.rs#L413-L514) Â· [src/tounicode_mac_order_tests.rs:377-471](https://github.com/firecrawl/pdf-inspector/blob/bcf387d1f4ab91d702f417fd9600694da0c166c3/src/tounicode_mac_order_tests.rs#L377-L471) Â· [CHANGELOG.md:9-31](https://github.com/firecrawl/pdf-inspector/blob/bcf387d1f4ab91d702f417fd9600694da0c166c3/CHANGELOG.md#L9-L31).
+
+**Harness consequence:** Record extraction method and ambiguity flags alongside original PDF bytes/page coordinates. Use exact punctuation and spacing fixtures before deciding a page needs OCR, and expose uncertain font fallback for review instead of silently upgrading inferred wording into quoted evidence. Do not infer the README's latency or OCR-avoidance claims from these source changes.
+
+**Scope and limits:** Scoped review of the complete changed implementation, selected synthetic fixtures and changelog; no PDF rendered, parser executed or OCR comparison reproduced. The historical report remains a broader inventory screen; this update establishes only the glyph-fallback slice.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [pdf-inspector](https://github.com/firecrawl/pdf-inspector); analyzed commit `ef52f77850b29189048797a48b24862251f54fe7`; commit date 2026-09-27T23:55:46-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--pdf-inspector.md).
+Analysis metadata: source [pdf-inspector](https://github.com/firecrawl/pdf-inspector); analyzed commit `bcf387d1f4ab91d702f417fd9600694da0c166c3`; commit date 2026-10-07T09:37:47-07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-query--pdf-inspector.md).
 <!-- teamagent-analysis:end -->

@@ -24,6 +24,19 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**L2 now honors configured timeout while judgment parsing still collapses uncertainty.** Reviewed commit `a3c2d8600b5d8ab51d5389e55ce62ca8da16b833` (commit date `2026-10-19T18:19:38+08:00`). Compared with `74fc30b05afefbb26c82a1da7b77ab2d75489a5f`; the complete Git comparison contains 2 changed paths.
+
+The complete two-path change removes the fixed 120-second override from L2 generation and changes community QR URLs. The caller now applies opts.timeoutMs ?? config.timeoutMs through AbortSignal.timeout, so L2 inherits the configured timeout just like L1/L1.5; the constructor still defaults to 120 seconds. Reading the surrounding unchanged boundary reveals a separate limit: parseL15Response checks object presence but coerces judgment fields with Boolean, so a string such as 'false' becomes true. A null/unparseable judgment returns three false flags from l15Judge despite a comment describing an all-null unavailable path, conflating failed judgment with a negative decision. Local storeState is a no-op and local L4 generation returns null; these advertised boundary gaps must remain explicit.
+
+Evidence: [src/offload/local-llm/index.ts:22-53](https://github.com/TencentCloud/TencentDB-Agent-Memory/blob/a3c2d8600b5d8ab51d5389e55ce62ca8da16b833/src/offload/local-llm/index.ts#L22-L53) · [src/offload/local-llm/index.ts:105-125](https://github.com/TencentCloud/TencentDB-Agent-Memory/blob/a3c2d8600b5d8ab51d5389e55ce62ca8da16b833/src/offload/local-llm/index.ts#L105-L125) · [src/offload/local-llm/index.ts:130-182](https://github.com/TencentCloud/TencentDB-Agent-Memory/blob/a3c2d8600b5d8ab51d5389e55ce62ca8da16b833/src/offload/local-llm/index.ts#L130-L182) · [src/offload/local-llm/llm-caller.ts:44-93](https://github.com/TencentCloud/TencentDB-Agent-Memory/blob/a3c2d8600b5d8ab51d5389e55ce62ca8da16b833/src/offload/local-llm/llm-caller.ts#L44-L93) · [src/offload/local-llm/parsers/l15-parser.ts:1-37](https://github.com/TencentCloud/TencentDB-Agent-Memory/blob/a3c2d8600b5d8ab51d5389e55ce62ca8da16b833/src/offload/local-llm/parsers/l15-parser.ts#L1-L37).
+
+**Harness consequence:** Adopt configurable per-stage deadlines and preserve cancellation/error context, but decode model decisions through strict boolean schemas and a separate unavailable outcome before using them for memory/task transitions. Local mode must not imply remote state persistence or skill generation. Keep endpoint policy and logging redaction explicit; a direct compatible API call is not evidence that execution remains on-device.
+
+**Scope and limits:** Static review of both changed hunks and the unchanged caller/parser needed to trace their behavior. No provider call, SDK test, local model, judgment normalization caller or memory-quality experiment ran. QR image contents were not fetched; model output quality and complete offload lifecycle remain unverified.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [tencentdb-agent-memory](https://github.com/TencentCloud/TencentDB-Agent-Memory); analyzed commit `74fc30b05afefbb26c82a1da7b77ab2d75489a5f`; commit date 2026-09-28T19:27:09+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tencentdb-agent-memory.md).
+Analysis metadata: source [tencentdb-agent-memory](https://github.com/TencentCloud/TencentDB-Agent-Memory); analyzed commit `a3c2d8600b5d8ab51d5389e55ce62ca8da16b833`; commit date 2026-10-19T18:19:38+08:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tencentdb-agent-memory.md).
 <!-- teamagent-analysis:end -->

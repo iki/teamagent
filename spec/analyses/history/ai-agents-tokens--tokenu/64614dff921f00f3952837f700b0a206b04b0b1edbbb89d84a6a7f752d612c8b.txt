@@ -1,0 +1,36 @@
+# tokenu
+
+Source: [tokenu](https://github.com/lirantal/tokenu) · Category: [ai-agents-tokens](../categories/ai-agents-tokens.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `1c0785292b89bdda7d999f2945e9b7708d80d435`; commit timestamp `2026-08-01T04:57:59Z`; 207 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/lirantal/tokenu/blob/1c0785292b89bdda7d999f2945e9b7708d80d435/README.md)):
+
+> A Unix  du -like CLI that counts token usage per file and directory. When we needed to find out which folder was eating up disk space, we reached for the classic Linux `du` command. Today, when writing code with LLMs and AI agents, the question has changed: **which folder is eating up my context window?
+
+Build/package evidence: [package.json](https://github.com/lirantal/tokenu/blob/1c0785292b89bdda7d999f2945e9b7708d80d435/package.json)
+
+License evidence: [LICENSE](https://github.com/lirantal/tokenu/blob/1c0785292b89bdda7d999f2945e9b7708d80d435/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-tokens**. Its category places it in the candidate set for models, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [models](../models.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`501aeeb93610072c5b3558a4fd16e2b2a5dde990`](https://github.com/lirantal/tokenu/commit/501aeeb93610072c5b3558a4fd16e2b2a5dde990). Scope: Nine changed manifest/workflow files read. Lockfile changes and deleted link-check configuration inventoried but not analyzed; tokenizer implementation unchanged in this delta.
+
+The [manifest](https://github.com/lirantal/tokenu/blob/501aeeb93610072c5b3558a4fd16e2b2a5dde990/package.json) raises gpt-tokenizer to the 4.x range and changes development tooling; [CI](https://github.com/lirantal/tokenu/blob/501aeeb93610072c5b3558a4fd16e2b2a5dde990/.github/workflows/ci.yml) adds a release-formatter smoke step and pinned action revisions. Release input names migrate to the new Changesets action interface. Scheduled [link checking](https://github.com/lirantal/tokenu/blob/501aeeb93610072c5b3558a4fd16e2b2a5dde990/.github/workflows/links-checker-schedule.yml) uses bounded concurrency/retries and converts failures into issue creation, while its cache action remains a mutable major tag. No application-source change establishes token-count equivalence across the dependency major. Before adoption compare fixed multilingual/tool-call fixtures against the exact encoding/provider and distinguish estimates from billed tokens. No dependency was installed, tokenizer executed, workflow run or token accuracy measured; Teamagent's Aube/Bun toolchain remains unchanged.
+
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [tokenu](https://github.com/lirantal/tokenu); analyzed commit `1c0785292b89bdda7d999f2945e9b7708d80d435`; commit date 2026-08-01T04:57:59Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--tokenu.md).
+<!-- teamagent-analysis:end -->

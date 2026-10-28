@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Search freshness needs a coverage manifest and a source-coordinate map.** Reviewed commit `ed1e73bc5133536c05dbde3d7fbe2a2dfba1f79f` (commit date `2026-10-27T15:46:31Z`). Compared with `04030c3e0a23ce93f39a83d821b1b87ec03aec4e`; the complete Git comparison contains 2545 changed paths.
+
+The server search index removes front matter and backtick-fenced code, lowercases the remaining content and calculates match positions there. It then slices snippets from the original content using those transformed positions. Removed regions therefore shift snippets and reported lines away from the original source; there is no offset map. The saved-index parser checks the index version, head and notes array, but does not validate each note. Reusing an equal-head index consequently establishes neither entry integrity nor complete source coverage.
+
+A rebuild reads the repository head and then enumerates and reads mutable files without a pinned content snapshot. Unreadable notes are skipped. Incremental application advances the head before individual reads; a failed update removes the note while retaining the advanced head. LocalDiskStore validates lexical key syntax and writes through a temporary rename, but does not resolve symlink containment or establish crash durability. R2 requests buffer the entire response, and the inspected listing performs one request with regex XML extraction and no continuation loop.
+
+Evidence: [apps/server/src/searchIndex.ts:1-365](https://github.com/refactoringhq/tolaria/blob/ed1e73bc5133536c05dbde3d7fbe2a2dfba1f79f/apps/server/src/searchIndex.ts#L1-L365) · [apps/server/src/store.ts:1-243](https://github.com/refactoringhq/tolaria/blob/ed1e73bc5133536c05dbde3d7fbe2a2dfba1f79f/apps/server/src/store.ts#L1-L243).
+
+**Harness consequence:** Keep exact source offsets through normalization and return coverage failures independently from revision freshness. Publish an index only after its complete immutable source manifest is checked, with missing files explicitly reported. Retain temporary-file publication as an adapter pattern, adding resolved containment, bounded bodies, paginated object listing, cleanup and durability semantics appropriate to the host.
+
+**Scope and limits:** Scoped static review of the complete cached search-index and storage files in the 2,545-path comparison; neither the full application nor the guarded DNS helper was audited. No upstream code, network service, deployment or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [tolaria](https://github.com/refactoringhq/tolaria); analyzed commit `04030c3e0a23ce93f39a83d821b1b87ec03aec4e`; commit date 2026-09-26T00:28:02+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tolaria.md).
+Analysis metadata: source [tolaria](https://github.com/refactoringhq/tolaria); analyzed commit `ed1e73bc5133536c05dbde3d7fbe2a2dfba1f79f`; commit date 2026-10-27T15:46:31Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tolaria.md).
 <!-- teamagent-analysis:end -->

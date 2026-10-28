@@ -24,6 +24,13 @@ This entry was catalogued under **ai-info**. Its category places it in the candi
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`b6e53a8e11e00c8b14b2f72d6b4f1ce71fef6692`](https://github.com/alchaincyf/hermes-agent-orange-book/commit/b6e53a8e11e00c8b14b2f72d6b4f1ce71fef6692). Scope: Complete English/Chinese README delta read; the renamed and updated Chinese PDF and embedded screenshots were inventoried but not inspected.
+
+The [English README](https://github.com/alchaincyf/hermes-agent-orange-book/blob/b6e53a8e11e00c8b14b2f72d6b4f1ce71fef6692/README.md) now distinguishes the Chinese third edition v261020, based on Hermes v0.22.2, from the unchanged English second edition. Its erratum says the Chinese body corrects the earlier training-data interpretation, while the English PDF still requires the separate correction. The [Chinese README](https://github.com/alchaincyf/hermes-agent-orange-book/blob/b6e53a8e11e00c8b14b2f72d6b4f1ce71fef6692/README_zh.md) describes five new hands-on sections and revised chapter mapping. Retain language/edition-specific provenance; do not treat a translated title or current README as evidence that all editions share corrections. PDF contents, screenshots, official product behavior and provider data policies were not independently verified. This remains a secondary-source guide, not evidence of a tested Hermes integration.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hermes-agent-orange-book](https://github.com/alchaincyf/hermes-agent-orange-book); analyzed commit `9ac06e1d05373c3b8b6d49751e8a59c1475f9867`; commit date 2026-08-23T22:21:18+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-info--hermes-agent-orange-book.md).
+Analysis metadata: source [hermes-agent-orange-book](https://github.com/alchaincyf/hermes-agent-orange-book); analyzed commit `b6e53a8e11e00c8b14b2f72d6b4f1ce71fef6692`; commit date 2026-10-20T11:23:27+08:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-info--hermes-agent-orange-book.md).
 <!-- teamagent-analysis:end -->

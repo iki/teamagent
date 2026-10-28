@@ -2,7 +2,7 @@
 
 Source: [pipali](https://github.com/khoj-ai/pipali) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `d1efc3cc315c1a0ece86ff490af9e0ff7788219d`; commit timestamp `2026-09-25T23:08:07-07:00`; 582 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `4d347b0b7450508f717d49d727b1ef2215ef757d` (commit date `2026-10-26T23:29:16-07:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Sandbox configuration/settings, selected lifecycle and command-preparation branches, and policy/path fixtures; the vendored native runtime and shell actor's confirmation flow were not audited.
+
+The [policy builder](https://github.com/khoj-ai/pipali/blob/4d347b0b7450508f717d49d727b1ef2215ef757d/src/server/sandbox/config.ts#L183-L309) translates one application configuration into different platform policies. It allows local binding, Git configuration and Unix sockets in the Unix runtime; Windows converts credential patterns to concrete paths and uses a dedicated runtime/account arrangement. A shared setting label does not prove equivalent filesystem or network restrictions across operating systems. The inspected [policy fixtures](https://github.com/khoj-ai/pipali/blob/4d347b0b7450508f717d49d727b1ef2215ef757d/tests/server/sandbox/sandbox.test.ts) cover translation, case folding, prefix lookalikes, deny precedence and environment overrides, not demonstrated native confinement.
+
+[Persisted settings](https://github.com/khoj-ai/pipali/blob/4d347b0b7450508f717d49d727b1ef2215ef757d/src/server/sandbox/settings.ts) retain user additions and merge current shipped defaults on load. That simplifies default upgrades, but an empty user list does not remove shipped grants and a software update can change effective permissions. Teamagent should persist the effective policy version and show grant changes before an existing authorization is reused, rather than treating a settings row as a permanent permission snapshot.
+
+The [command wrappers](https://github.com/khoj-ai/pipali/blob/4d347b0b7450508f717d49d727b1ef2215ef757d/src/server/sandbox/index.ts#L383-L459) require enabled, supported and ready runtime state, and throw instead of returning an unrestricted command when inactive. Windows also restarts when protected-path state changes. Startup failures are retained/logged and comments describe a confirmation-based fallback; the shell actor implementing that fallback was outside this review, so it is not certified here. Preserve these separate states in channels and test actual native restrictions, cancellation and sensitive-environment handling before adopting an adapter.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [pipali](https://github.com/khoj-ai/pipali); analyzed commit `d1efc3cc315c1a0ece86ff490af9e0ff7788219d`; commit date 2026-09-25T23:08:07-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--pipali.md).
+Analysis metadata: source [pipali](https://github.com/khoj-ai/pipali); analyzed commit `4d347b0b7450508f717d49d727b1ef2215ef757d`; commit date 2026-10-26T23:29:16-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--pipali.md).
 <!-- teamagent-analysis:end -->

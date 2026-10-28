@@ -1,0 +1,44 @@
+# stash
+
+Source: [stash](https://github.com/fergana-labs/stash) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `cfb7051ded81e3cef9323250a98793ddef191031`; commit timestamp `2026-10-03T00:12:52Z`; 1,629 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/fergana-labs/stash/blob/cfb7051ded81e3cef9323250a98793ddef191031/README.md)):
+
+> Agents generate valuable experience every time they work: successful approaches, failed attempts, and human corrections. Stash captures that history and makes
+
+Build/package evidence: [backend/requirements.txt](https://github.com/fergana-labs/stash/blob/cfb7051ded81e3cef9323250a98793ddef191031/backend/requirements.txt); [chrome_extension/package.json](https://github.com/fergana-labs/stash/blob/cfb7051ded81e3cef9323250a98793ddef191031/chrome_extension/package.json); [desktop/package.json](https://github.com/fergana-labs/stash/blob/cfb7051ded81e3cef9323250a98793ddef191031/desktop/package.json); [desktop/src-tauri/Cargo.toml](https://github.com/fergana-labs/stash/blob/cfb7051ded81e3cef9323250a98793ddef191031/desktop/src-tauri/Cargo.toml); [frontend/package.json](https://github.com/fergana-labs/stash/blob/cfb7051ded81e3cef9323250a98793ddef191031/frontend/package.json)
+
+License evidence: [LICENSE](https://github.com/fergana-labs/stash/blob/cfb7051ded81e3cef9323250a98793ddef191031/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Background claims prevent some duplicate jobs, while embedding writes have uneven stale-result guards.** Reviewed commit `40c70217107472f6e6c5c15e9481ab9dd41096f1` (commit date `2026-10-27T17:03:05Z`). Compared with `cfb7051ded81e3cef9323250a98793ddef191031`; the complete Git comparison contains 784 changed paths.
+
+Embedding reconciliation selects batches of 32, clips text and clears empty embeddings to avoid poisoning a provider batch. Page updates compare original full content and deletion state before clearing stale, but table/history/trace/file/source-table writes use only row IDs after asynchronous embedding. Those paths can overwrite a newer invalidation with an old vector. All selected paths zip returned vectors with rows without asserting exact cardinality, and reported refreshed counts describe selected IDs rather than confirmed affected rows. Overlapping reconciliation workers are not claimed/locked in this module.
+
+Reward-model and scoring tasks use queued-to-running UPDATE RETURNING claims before dispatch, preventing ordinary duplicate broker delivery from restarting those jobs. Remote dispatch is separated from metadata persistence so a failed write does not falsely mark a submitted job failed. That leaves a recovery obligation if dispatch succeeds but its remote ID is not durably saved. The generic tracked helper is unconditional and GEPA calls it directly, so the claim discipline is not universal here. The UI maps finite [0,1] checkpoints, preserves null estimates and labels interpolation between observations; its smooth curve remains a display estimate, not a verified task-completion signal.
+
+Evidence: [backend/tasks/embeddings.py:25-252](https://github.com/fergana-labs/stash/blob/40c70217107472f6e6c5c15e9481ab9dd41096f1/backend/tasks/embeddings.py#L25-L252) · [backend/tasks/reward_models.py:14-121](https://github.com/fergana-labs/stash/blob/40c70217107472f6e6c5c15e9481ab9dd41096f1/backend/tasks/reward_models.py#L14-L121) · [frontend/src/components/reward-models/task-completion.ts:1-88](https://github.com/fergana-labs/stash/blob/40c70217107472f6e6c5c15e9481ab9dd41096f1/frontend/src/components/reward-models/task-completion.ts#L1-L88) · [frontend/src/components/reward-models/task-completion.test.ts:1-63](https://github.com/fergana-labs/stash/blob/40c70217107472f6e6c5c15e9481ab9dd41096f1/frontend/src/components/reward-models/task-completion.test.ts#L1-L63).
+
+**Harness consequence:** Use generation/content compare-and-swap for every derived-vector write, validate cardinality and record actual affected rows. Claim work durably and reconcile ambiguous remote submission with stable idempotency identity instead of replaying or inventing failure. Keep model-estimated/interpolated progress separate from acceptance evidence, and preserve unknowns and regressions in both UI and durable receipts.
+
+**Scope and limits:** Static scoped review of Celery reconciliation/claims and task-completion display helpers within the 784-path comparison. Embedding transport, database triggers, remote reconciliation, evaluator quality and frontend rendering were not fully audited or executed; no inference or training task launched.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [stash](https://github.com/fergana-labs/stash); analyzed commit `cfb7051ded81e3cef9323250a98793ddef191031`; commit date 2026-10-03T00:12:52Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--stash.md).
+<!-- teamagent-analysis:end -->

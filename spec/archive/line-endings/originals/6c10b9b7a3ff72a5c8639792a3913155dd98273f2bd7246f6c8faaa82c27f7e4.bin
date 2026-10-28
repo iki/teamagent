@@ -1,0 +1,258 @@
+[
+  {
+    "id": "ai-agents-proxy--bifrost",
+    "topics": [
+      "models",
+      "agents",
+      "decisions",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Strong gateway candidate; provider queues, plugin boundaries, and session affinity are distinct from agent orchestration."
+  },
+  {
+    "id": "ai-agents-proxy--litellm",
+    "topics": [
+      "models",
+      "decisions",
+      "generation",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Broad adapter/router reference; retain provider-specific capabilities and explicit cost, retry, and fallback policies."
+  },
+  {
+    "id": "ai-agents-proxy--cli-proxy-api",
+    "topics": [
+      "models",
+      "agents",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Useful protocol-translation reference, but default Codex backend routing is not evidence of an officially supported integration."
+  },
+  {
+    "id": "ai-agents-proxy--rtk",
+    "topics": [
+      "models",
+      "memory",
+      "agents",
+      "decisions"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Useful output compression with recovery; not a model proxy and not a substitute for complete tool evidence."
+  },
+  {
+    "id": "ai-agents-sandbox--opensandbox",
+    "topics": [
+      "agents",
+      "models",
+      "generation",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Self-hosted sandbox control plane candidate with runtime-specific container and network handling."
+  },
+  {
+    "id": "ai-agents-sandbox--e2b",
+    "topics": [
+      "agents",
+      "generation",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Good hosted execution adapter reference; SDK behavior must not be confused with proof of backend isolation."
+  },
+  {
+    "id": "ai-agents-sandbox--just-bash",
+    "topics": [
+      "agents",
+      "import-generation",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Fast controlled shell-like operations; trusted host hooks and Node runtime remain outside the protection boundary."
+  },
+  {
+    "id": "ai-agents-sandbox--anthropic-sandbox-runtime",
+    "topics": [
+      "agents",
+      "models",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Cross-platform local policy reference, including a Windows helper; verify setup and fail-closed enforcement per host."
+  },
+  {
+    "id": "ai-gen--a2ui",
+    "topics": [
+      "generation",
+      "channels",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Portable component-data protocol; explicit strict validation is necessary because absent config permits unknown elements."
+  },
+  {
+    "id": "ai-gen--json-render",
+    "topics": [
+      "generation",
+      "channels",
+      "skills",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Useful component catalog and validation pattern for generated app surfaces; not arbitrary executable UI."
+  },
+  {
+    "id": "ai-gen--open-design",
+    "topics": [
+      "agents",
+      "models",
+      "skills",
+      "generation",
+      "channels"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Strong product reference for shipped versus local agent definitions and provider-specific media readiness."
+  },
+  {
+    "id": "ai-gen--hyperframes",
+    "topics": [
+      "generation",
+      "skills",
+      "agents",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Render authored HTML/media timelines as queued artifacts; isolate the renderer and preserve exact composition inputs."
+  },
+  {
+    "id": "ai-media--vimax",
+    "topics": [
+      "generation",
+      "memory",
+      "agents",
+      "decisions"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Useful storyboard and character asset pipeline; checkpoint reuse needs content-aware invalidation and cost controls."
+  },
+  {
+    "id": "ai-media--voicestudio",
+    "topics": [
+      "generation",
+      "channels",
+      "models",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Agent-facing speech, transcription, and voice profile tools; file output avoids flooding model context."
+  },
+  {
+    "id": "ai-media--yue",
+    "topics": [
+      "generation",
+      "models",
+      "memory",
+      "decisions"
+    ],
+    "depth": "source-reviewed",
+    "summary": "This checkout is YuE2; symbolic plan and hashed artifacts are useful reproducibility patterns, quality claims unverified."
+  },
+  {
+    "id": "ai-model-run--colibri",
+    "topics": [
+      "models",
+      "decisions",
+      "agents"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Research candidate for storage/RAM/VRAM MoE placement and finite-choice scoring; profile on actual hardware."
+  },
+  {
+    "id": "ai-model-run--freetoken",
+    "topics": [
+      "models",
+      "decisions",
+      "memory"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Concrete GPU memory partitioning policy and local serving reference; semantic caching is distinct from durable memory."
+  },
+  {
+    "id": "ai-model-edit--obliteratus",
+    "topics": [
+      "models",
+      "evolution",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Study experimental provenance and reversible strategy contracts; refusal-removal is not a harness or skill optimization target."
+  },
+  {
+    "id": "ai-operate--artemis",
+    "topics": [
+      "agents",
+      "channels",
+      "decisions",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Device task queue, trace, watchdog, and locking patterns; distinguish controlling a phone from delivering a mobile client."
+  },
+  {
+    "id": "ai-security--codeql",
+    "topics": [
+      "security",
+      "agents",
+      "evolution"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Use language-aware query findings as evidence, with extraction and coverage limits; not a universal security verdict."
+  },
+  {
+    "id": "ai-security--osv-scanner",
+    "topics": [
+      "security",
+      "agents",
+      "import-generation",
+      "evolution"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Dependency vulnerability evidence with explicit language/source gates for call analysis."
+  },
+  {
+    "id": "ai-security--trivy",
+    "topics": [
+      "security",
+      "agents",
+      "generation",
+      "evolution"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Useful common scanner surface for containers, filesystems, repositories, and SBOMs, with explicit artifact provenance."
+  },
+  {
+    "id": "ai-security--skillspector",
+    "topics": [
+      "skills",
+      "security",
+      "import-generation",
+      "evolution"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Strong reference for bounded static/semantic checks and explicit incomplete-inspection ledgers."
+  },
+  {
+    "id": "ai-security--clawseccheck",
+    "topics": [
+      "security",
+      "skills",
+      "agents",
+      "evolution"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Adopt phase/coverage ledger semantics; configuration grades and pending adjudication are not proven runtime security."
+  }
+]

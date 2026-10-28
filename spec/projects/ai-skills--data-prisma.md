@@ -24,6 +24,13 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`c71e8ea254dbc5dba27af773b735679163395cf9`](https://github.com/prisma/skills/commit/c71e8ea254dbc5dba27af773b735679163395cf9). Scope: Complete current Prisma Compute skill and runtime-requirements reference read; other migration/provisioning references and the underlying CLI/packages not audited.
+
+The [Compute skill](https://github.com/prisma/skills/blob/c71e8ea254dbc5dba27af773b735679163395cf9/prisma-compute/SKILL.md) explicitly versions a Composer/Prisma-8 migration, distinguishes previews from implicit production targets, separates build/deploy/link operations, and warns that scaffolding can deploy by default. The [runtime reference](https://github.com/prisma/skills/blob/c71e8ea254dbc5dba27af773b735679163395cf9/prisma-compute/references/runtime-requirements.md) distinguishes a keep-awake deadline from cancellation/durability, flags streaming-buffer ambiguity and calls for stage testing. These are upstream instructions, not verified platform limits. Adapt explicit environment/target selection and durable-job requirements; do not copy its catch-all unhandled-error logging, raw unvalidated webhook JSON or best-effort background work as a durable acceptance path. Package installation/sync examples do not authorize changing Teamagent's adopted stack or vendored skills. No Prisma CLI, deploy, database, provider or runtime limit was tested.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [data-prisma](https://github.com/prisma/skills); analyzed commit `be16a8740d01363d13552b317042431ee8dfc581`; commit date 2026-10-01T01:24:56+05:30; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--data-prisma.md).
+Analysis metadata: source [data-prisma](https://github.com/prisma/skills); analyzed commit `c71e8ea254dbc5dba27af773b735679163395cf9`; commit date 2026-10-27T10:10:40+01:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--data-prisma.md).
 <!-- teamagent-analysis:end -->

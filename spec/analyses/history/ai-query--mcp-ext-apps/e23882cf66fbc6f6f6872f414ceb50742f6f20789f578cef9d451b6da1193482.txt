@@ -1,0 +1,40 @@
+# mcp-ext-apps
+
+Source: [mcp-ext-apps](https://github.com/modelcontextprotocol/ext-apps) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `82221c0c8ce7661efa6771c9d461511b1650495f`; commit timestamp `2026-09-25T15:47:56+01:00`; 503 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/modelcontextprotocol/ext-apps/blob/82221c0c8ce7661efa6771c9d461511b1650495f/README.md)):
+
+> Build interactive UIs for MCP tools — charts, forms, dashboards — that render inline in Claude, ChatGPT and any other compliant chat client. The fastest way to build an MCP App is to let your AI coding agent do it. This
+
+Build/package evidence: [examples/basic-host/package.json](https://github.com/modelcontextprotocol/ext-apps/blob/82221c0c8ce7661efa6771c9d461511b1650495f/examples/basic-host/package.json); [examples/basic-server-preact/package.json](https://github.com/modelcontextprotocol/ext-apps/blob/82221c0c8ce7661efa6771c9d461511b1650495f/examples/basic-server-preact/package.json); [examples/basic-server-react/package.json](https://github.com/modelcontextprotocol/ext-apps/blob/82221c0c8ce7661efa6771c9d461511b1650495f/examples/basic-server-react/package.json); [examples/basic-server-solid/package.json](https://github.com/modelcontextprotocol/ext-apps/blob/82221c0c8ce7661efa6771c9d461511b1650495f/examples/basic-server-solid/package.json); [examples/basic-server-svelte/package.json](https://github.com/modelcontextprotocol/ext-apps/blob/82221c0c8ce7661efa6771c9d461511b1650495f/examples/basic-server-svelte/package.json)
+
+License evidence: [LICENSE](https://github.com/modelcontextprotocol/ext-apps/blob/82221c0c8ce7661efa6771c9d461511b1650495f/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Default-on WebMCP bridging expands the tool surface and requires the same host authorization and bounded validation.** Reviewed commit `07cda2513b0b691ac261ac69c856062c9afb2824` (commit date `2026-10-27T09:03:11Z`). Compared with `82221c0c8ce7661efa6771c9d461511b1650495f`; the complete Git comparison contains 48 changed paths.
+
+The App now bridges registered tools into document.modelContext and page tools back into Apps tools/list and tools/call by default, with an explicit false option. App registrations take name precedence and mirrors are not echoed. Page tools are restricted to the current frame when a window is supplied, while descriptors with no window are accepted. Descriptors are read once and copied to plain JSON; malformed names/descriptors are dropped, object schemas are coerced to MCP's object shape, and an implementation compatibility heuristic serializes every call's input when any frame tool reports its schema as a string.
+
+Page calls forward the request AbortSignal, wrap non-object results and translate errors into isError. Mirror controllers are aborted and change listeners removed on close, then mirrors re-established on reconnect. Registration failures only warn; a broken model context becomes an empty list or not-found response. Neither bridge path shown adds its own input-schema enforcement, result byte limits, tool-count limits or authorization check. The internal test polyfill ignores cross-frame exposedTo, performs JSON copying and explicitly leaves an executing tool running when it is unregistered. It is a realm-local fixture, not native browser security evidence.
+
+Evidence: [src/app.ts:174-208](https://github.com/modelcontextprotocol/ext-apps/blob/07cda2513b0b691ac261ac69c856062c9afb2824/src/app.ts#L174-L208) · [src/app.ts:728-1003](https://github.com/modelcontextprotocol/ext-apps/blob/07cda2513b0b691ac261ac69c856062c9afb2824/src/app.ts#L728-L1003) · [src/app.ts:2270-2340](https://github.com/modelcontextprotocol/ext-apps/blob/07cda2513b0b691ac261ac69c856062c9afb2824/src/app.ts#L2270-L2340) · [src/webmcp.ts:1-288](https://github.com/modelcontextprotocol/ext-apps/blob/07cda2513b0b691ac261ac69c856062c9afb2824/src/webmcp.ts#L1-L288) · [src/webmcp-polyfill.ts:1-158](https://github.com/modelcontextprotocol/ext-apps/blob/07cda2513b0b691ac261ac69c856062c9afb2824/src/webmcp-polyfill.ts#L1-L158) · [src/react/useApp.tsx:127-160](https://github.com/modelcontextprotocol/ext-apps/blob/07cda2513b0b691ac261ac69c856062c9afb2824/src/react/useApp.tsx#L127-L160).
+
+**Harness consequence:** Treat bridge discovery as a new capability boundary: explicitly select whether to enable it, validate descriptors and results, enforce input schemas and current authorization for both entry points, and retain discoverability failures as diagnostics. Use close/reconnect cleanup patterns but verify native browser policy, isolation and cancellation separately; readOnlyHint and registration success are not permission grants.
+
+**Scope and limits:** Static review of the bridge changes and complete helper/polyfill implementations within the 48-path comparison. Test case names were inspected but the full interop/PDF test bodies and transport/CSP enforcement were not audited. No browser execution, upstream tests or current WebMCP specification conformance check.

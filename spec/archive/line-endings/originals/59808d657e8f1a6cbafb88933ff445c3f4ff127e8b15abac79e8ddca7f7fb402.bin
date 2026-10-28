@@ -1,0 +1,199 @@
+# Jev-like decisions and deterministic control
+
+[Home](README.md) · [Models](models.md) · [Skills](skills.md) · [Evaluation](evaluation.md)
+
+## Meaning of “Jev-like”
+
+Use a model to answer bounded typed questions about observed state; execute the chosen branch in ordinary code. TypeSafe describes Jev's Choice, Score and Noul primitives, including distributions/confidence for some outputs. Its fan-out pattern asks several independent questions against one shared state and ignores answers irrelevant to the selected branch. These are provider-described capabilities, not evidence that every probability is calibrated on our tasks. [TypeSafe introduction](https://docs.typesafe.ai/introduction), [fan-out pattern](https://docs.typesafe.ai/patterns/fan-out).
+
+The inspected [TypeSafe SDK](https://github.com/typesafe-ai/typesafe-sdk-js) ([review](projects/ai-agents--typesafe-sdk-js.md)), [Jev Ultrafast](https://github.com/browser-use/jev-ultrafast) ([review](projects/ai-query--jev-ultrafast.md)) and [Jevgrep](https://github.com/dzhng/jevgrep) ([review](projects/ai-query--jevgrep.md)) make this concrete. Jev is not a generic term for embeddings or a substitute for every reasoning task. Local classifiers, cross-encoders and constrained-output models may implement a comparable decision contract, but must be evaluated separately.
+
+## Where the pattern fits
+
+| Decision | Candidate set / state | Executor and fallback |
+|---|---|---|
+| Task routing | Eligible agent/model pairs, goal, modalities, privacy, budget | Deterministic eligibility first; select among feasible options; fallback to configured reliable agent |
+| Retrieval depth | Exact/lexical/hybrid/rerank/graph/no retrieval | Bounded cost ladder; expand when insufficient evidence |
+| Skill selection | Retrieved compatible skill IDs + trigger descriptions | Load only selected pinned variants; abstain on uncertainty |
+| Importer selection | MIME/magic bytes, language, document features | Deterministic file-type filter, then specialized converter; retry alternate on extraction failure |
+| Memory candidate classification | Evidence, source trust, novelty, contradiction, retention policy | Propose a memory operation; deterministic schema/ACL/provenance gate commits it |
+| Browser action | Fresh indexed elements and legal operations | Check state hash, target validity and policy before action |
+| Progress triage | Task objective, recent trace, checks and resource use | Suggest retry/replan/escalate; deterministic retry ceiling |
+| Generation routing | Modality, references, rights, hardware, quality/cost targets | Select compatible generator; job system owns execution and artifact checks |
+
+Do not put permission enforcement, account entitlement, path containment, source authentication, secrets redaction or destructive-effect approval solely behind a probabilistic model. A model may flag a risk or suggest an action; policy validates authority independently. Do not use classification when a reliable deterministic rule already decides the case.
+
+## Decision pipeline
+
+```text
+observe -> build versioned state -> deterministic eligibility filter
+        -> retrieve/rank a bounded candidate set
+        -> ask atomic typed questions (optionally one batched request)
+        -> validate response/schema/legal choices/probabilities
+        -> confidence and expected-loss gate
+        -> revalidate state freshness and permissions
+        -> execute exactly the relevant branch
+        -> independently verify outcome and record feedback
+```
+
+Always include `unknown`, `none` or an explicit abstain path when no candidate may fit. Candidate recall is an upper bound on decision success: a perfect classifier cannot select an omitted skill or DOM element. Separate shortlist evaluation from final-choice evaluation. Limit candidate payloads by tokens and preserve readable stable IDs with their observation generation.
+
+Jev Ultrafast checks finite normalized probabilities, legal membership and argmax consistency, requests an operation and operation-specific target heads together, and validates the selected target head. This avoids treating all speculative outputs as executable. Its small live demonstrations are not a broad browser benchmark; unsupported DOM patterns and independent completion checks remain material. See the [source review](projects/ai-query--jev-ultrafast.md) and [GitHub repository](https://github.com/browser-use/jev-ultrafast).
+
+## Cost-sensitive routing and abstention
+
+For an action `a`, estimate `U(a|x) = P(success|x,a) × value - inference_cost - execution_cost - latency_penalty - expected_failure_loss`. Choose the highest-utility eligible action only if its conservative advantage over fallback is positive. Costs include classifier overhead, extra retrieval, retries, cache disruption and coordination. This is a proposed objective, not a calibrated score supplied by the inspected systems.
+
+Thresholds must follow labeled validation, not a universal 0.5 or 0.9. Evaluate Brier score/log loss, reliability bins, top-k recall, abstention coverage and selective risk. Choose operating thresholds against task-specific failure budgets. Recalibrate for model, prompt/schema, candidate-set and distribution changes. Confidence, entropy and a top-two margin are signals; none is a proof of correctness. A separate conformal risk-control experiment may help when its distribution assumptions are defensible, but is not a claimed guarantee here.
+
+Cache only decisions whose key includes state digest, candidate IDs/versions, question schema, model/version, policy scope and relevant timestamp. Revalidate permissions and freshness at execution even on a cache hit. Do not share private state across tenants to improve cache hit rate.
+
+## Planning and model switching
+
+[Pi's router example](projects/ai-agents--pi.md) ([source](https://github.com/earendil-works/pi)) classifies complexity, chooses a planning model and switches after the first successful edit. It preserves phase state through session branches. The useful idea is explicit phase state with limited switching; the unproven assumption is that first edit means hard reasoning is over.
+
+The harness should permit escalation again after failed acceptance checks, rising uncertainty or a changed task. Add hysteresis/minimum useful phase duration to avoid rapid switching and cache loss. Serialize a source-grounded handoff and do not transfer provider-private reasoning fields as ordinary context. Benchmark fixed-model, rules-only routing and learned routing before enabling automatic selection.
+
+## Decision models in skill and memory evolution
+
+Use decision outputs as logged proposals with outcome labels. Do not train directly on “the agent chose this, therefore it was right.” Human correction, independently verified tests and source-backed retrieval judgments provide stronger labels. Selection propensities and skipped cases should be retained if comparing adaptive policies; otherwise feedback is biased toward already favored choices.
+
+[DSPy](https://github.com/stanfordnlp/dspy) ([review](projects/ai-agents--dspy.md)) and [MetaHarness](https://github.com/SuperagenticAI/metaharness) ([review](projects/ai-agents--metaharness.md)) can propose prompt/router variants offline. Freeze hidden tests, guard the evaluator and separate proposer from promoter. Start with deterministic routing plus a classifier in shadow mode; introduce contextual-bandit exploration only for reversible low-risk choices and within an explicit exploration budget.
+
+## Acceptance criteria
+
+Decision-service outage leaves a functioning deterministic fallback. Malformed output, stale state, unsupported choice and low confidence produce no side effect. Compare rules, constrained local model and Jev on the same state snapshots with total latency/cost, accuracy, abstention and downstream task success. No benchmark result from another task is accepted as a replacement for this evaluation.
+
+## October source refresh: validate decisions before effects
+
+[Pi's refreshed loop and Jev example](projects/ai-agents--pi.md) ([source](https://github.com/earendil-works/pi)) reinforce two separate gates: complete, schema-valid tool output before execution, and evaluated routing thresholds before model selection. Do not derive permission from a classifier score.
+
+The refreshed [OpenSpec report](projects/ai-spec--openspec.md) ([source](https://github.com/Fission-AI/OpenSpec)) distinguishes hard prerequisite identity checks from uncertain progress-display paths. Reject unknown dependencies, cycles and unsafe paths deterministically. Keep an unresolved display/progress observation visible without silently converting it into a hard authorization decision.
+
+<!-- coverage:start -->
+## Project coverage
+
+Every associated project has its own report. Source-reviewed associations reflect the inspected scope; screened associations derive from the input category and are not capability claims.
+
+| Source | Report | Depth |
+|---|---|---|
+| [ai.tanstack](https://github.com/tanstack/ai) | [Report](projects/ai-agents--ai.tanstack.md) | source-reviewed |
+| [dspy](https://github.com/stanfordnlp/dspy) | [Report](projects/ai-agents--dspy.md) | source-reviewed |
+| [pi](https://github.com/earendil-works/pi) | [Report](projects/ai-agents--pi.md) | source-reviewed |
+| [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) | [Report](projects/ai-agents--typesafe-sdk-js.md) | source-reviewed |
+| [hindsight](https://github.com/vectorize-io/hindsight) | [Report](projects/ai-agents-mem--hindsight.md) | source-reviewed |
+| [anex](https://github.com/anex-sh/anex) | [Report](projects/ai-agents-proxy--anex.md) | screened |
+| [bifrost](https://github.com/maximhq/bifrost) | [Report](projects/ai-agents-proxy--bifrost.md) | source-reviewed |
+| [cockpit-tools](https://github.com/jlcodes99/cockpit-tools) | [Report](projects/ai-agents-proxy--cockpit-tools.md) | screened |
+| [codexsaver](https://github.com/fendouai/CodexSaver) | [Report](projects/ai-agents-proxy--codexsaver.md) | screened |
+| [litellm](https://github.com/BerriAI/litellm) | [Report](projects/ai-agents-proxy--litellm.md) | source-reviewed |
+| [llm-observer-proxy-go](https://github.com/xxyyue/llm-observer-proxy-go) | [Report](projects/ai-agents-proxy--llm-observer-proxy-go.md) | screened |
+| [openrouter-ai-sdk-provider](https://github.com/OpenRouterTeam/ai-sdk-provider) | [Report](projects/ai-agents-proxy--openrouter-ai-sdk-provider.md) | screened |
+| [openrouter-go-sdk](https://github.com/OpenRouterTeam/go-sdk) | [Report](projects/ai-agents-proxy--openrouter-go-sdk.md) | screened |
+| [openrouter-python-sdk](https://github.com/OpenRouterTeam/python-sdk) | [Report](projects/ai-agents-proxy--openrouter-python-sdk.md) | screened |
+| [openrouter-typescript-sdk](https://github.com/OpenRouterTeam/typescript-sdk) | [Report](projects/ai-agents-proxy--openrouter-typescript-sdk.md) | screened |
+| [proxypilot-win](https://github.com/Finesssee/ProxyPilot) | [Report](projects/ai-agents-proxy--proxypilot-win.md) | screened |
+| [rtk](https://github.com/rtk-ai/rtk) | [Report](projects/ai-agents-proxy--rtk.md) | source-reviewed |
+| [switchyard](https://github.com/NVIDIA-NeMo/Switchyard) | [Report](projects/ai-agents-proxy--switchyard.md) | screened |
+| [evolve-claude.autoharness](https://github.com/tigerless-labs/autoharness) | [Report](projects/ai-agents-skills--evolve-claude.autoharness.md) | source-reviewed |
+| [agentnexus](https://github.com/kevinkaylie/AgentNexus) | [Report](projects/ai-agents-swarm--agentnexus.md) | screened |
+| [mirofish](https://github.com/666ghj/MiroFish) | [Report](projects/ai-agents-swarm--mirofish.md) | screened |
+| [miroshark](https://github.com/aaronjmars/MiroShark) | [Report](projects/ai-agents-swarm--miroshark.md) | screened |
+| [multi-fleet](https://github.com/supportersimulator/multi-fleet) | [Report](projects/ai-agents-swarm--multi-fleet.md) | screened |
+| [oasis](https://github.com/camel-ai/oasis) | [Report](projects/ai-agents-swarm--oasis.md) | screened |
+| [openswarm](https://github.com/unohee/OpenSwarm) | [Report](projects/ai-agents-swarm--openswarm.md) | source-reviewed |
+| [optio](https://github.com/jonwiggins/optio) | [Report](projects/ai-agents-swarm--optio.md) | screened |
+| [orca](https://github.com/stablyai/orca) | [Report](projects/ai-agents-swarm--orca.md) | screened |
+| [shadowbroker](https://github.com/BigBodyCobain/Shadowbroker) | [Report](projects/ai-agents-swarm--shadowbroker.md) | screened |
+| [xx-2603-mirofish-offline](https://github.com/nikmcfly/MiroFish-Offline) | [Report](projects/ai-agents-swarm--xx-2603-mirofish-offline.md) | screened |
+| [ccusage](https://github.com/ryoppippi/ccusage) | [Report](projects/ai-agents-tokens--ccusage.md) | source-reviewed |
+| [codeburn](https://github.com/getagentseal/codeburn) | [Report](projects/ai-agents-tokens--codeburn.md) | source-reviewed |
+| [falsify](https://github.com/studio-11-co/falsify) | [Report](projects/ai-eval--falsify.md) | screened |
+| [frontier-harness-eval](https://github.com/frontier-harness-eval/eval) | [Report](projects/ai-eval--frontier-harness-eval.md) | source-reviewed |
+| [ifixai](https://github.com/ifixai-ai/iFixAi) | [Report](projects/ai-eval--ifixai.md) | screened |
+| [langwatch](https://github.com/langwatch/langwatch) | [Report](projects/ai-eval--langwatch.md) | source-reviewed |
+| [mirrorcode](https://github.com/epoch-research/MirrorCode) | [Report](projects/ai-eval--mirrorcode.md) | screened |
+| [openeval](https://github.com/Hona/openeval) | [Report](projects/ai-eval--openeval.md) | screened |
+| [smevals](https://github.com/prime-radiant-inc/smevals) | [Report](projects/ai-eval--smevals.md) | screened |
+| [xx-2602-ragas](https://github.com/vibrantlabsai/ragas) | [Report](projects/ai-eval--xx-2602-ragas.md) | source-reviewed |
+| [game-schema-harness](https://github.com/schema-harness/schema-harness.github.io) | [Report](projects/ai-info--game-schema-harness.md) | source-reviewed |
+| [rearchitecting-llms](https://github.com/peremartra/Rearchitecting-LLMs) | [Report](projects/ai-info--rearchitecting-llms.md) | source-reviewed |
+| [vimax](https://github.com/HKUDS/ViMax) | [Report](projects/ai-media--vimax.md) | source-reviewed |
+| [yue](https://github.com/multimodal-art-projection/YuE) | [Report](projects/ai-media--yue.md) | source-reviewed |
+| [colibri](https://github.com/JustVugg/colibri) | [Report](projects/ai-model-run--colibri.md) | source-reviewed |
+| [freetoken](https://github.com/FlashML-org/FreeToken) | [Report](projects/ai-model-run--freetoken.md) | source-reviewed |
+| [artemis](https://github.com/google/artemis) | [Report](projects/ai-operate--artemis.md) | source-reviewed |
+| [xx-2604-agent-opt](https://github.com/future-agi/agent-opt) | [Report](projects/ai-prompts--xx-2604-agent-opt.md) | source-reviewed |
+| [aci](https://github.com/aipotheosis-labs/aci) | [Report](projects/ai-query--aci.md) | screened |
+| [agent-browser](https://github.com/vercel-labs/agent-browser) | [Report](projects/ai-query--agent-browser.md) | screened |
+| [anydoc](https://github.com/firecrawl/anydoc) | [Report](projects/ai-query--anydoc.md) | screened |
+| [book-to-skill](https://github.com/virgiliojr94/book-to-skill) | [Report](projects/ai-query--book-to-skill.md) | screened |
+| [browser-harness](https://github.com/browser-use/browser-harness) | [Report](projects/ai-query--browser-harness.md) | screened |
+| [clawpatrol](https://github.com/denoland/clawpatrol) | [Report](projects/ai-query--clawpatrol.md) | screened |
+| [codebase-radar](https://github.com/BleedingDev/codebase-radar) | [Report](projects/ai-query--codebase-radar.md) | screened |
+| [codeflow](https://github.com/braedonsaunders/codeflow) | [Report](projects/ai-query--codeflow.md) | screened |
+| [cowork-aion-ui](https://github.com/iOfficeAI/AionUi) | [Report](projects/ai-query--cowork-aion-ui.md) | screened |
+| [fastmcp](https://github.com/punkpeye/fastmcp) | [Report](projects/ai-query--fastmcp.md) | screened |
+| [get-md](https://github.com/Nano-Collective/get-md) | [Report](projects/ai-query--get-md.md) | screened |
+| [gflow-cli](https://github.com/ffroliva/gflow-cli) | [Report](projects/ai-query--gflow-cli.md) | screened |
+| [hyper-extract](https://github.com/yifanfeng97/Hyper-Extract) | [Report](projects/ai-query--hyper-extract.md) | screened |
+| [jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | [Report](projects/ai-query--jev-ultrafast.md) | source-reviewed |
+| [jevgrep](https://github.com/dzhng/jevgrep) | [Report](projects/ai-query--jevgrep.md) | source-reviewed |
+| [kanban-code](https://github.com/langwatch/kanban-code) | [Report](projects/ai-query--kanban-code.md) | screened |
+| [leaf](https://github.com/RivoLink/leaf) | [Report](projects/ai-query--leaf.md) | screened |
+| [lightpanda-browser](https://github.com/lightpanda-io/browser) | [Report](projects/ai-query--lightpanda-browser.md) | screened |
+| [litho-deepwiki-rs](https://github.com/sopaco/deepwiki-rs) | [Report](projects/ai-query--litho-deepwiki-rs.md) | screened |
+| [magika](https://github.com/google/magika) | [Report](projects/ai-query--magika.md) | source-reviewed |
+| [mantic.sh](https://github.com/marcoaapfortes/Mantic.sh) | [Report](projects/ai-query--mantic.sh.md) | screened |
+| [marker](https://github.com/datalab-to/marker) | [Report](projects/ai-query--marker.md) | screened |
+| [mcp-docs](https://github.com/modelcontextprotocol/modelcontextprotocol) | [Report](projects/ai-query--mcp-docs.md) | screened |
+| [mcp-ext-apps](https://github.com/modelcontextprotocol/ext-apps) | [Report](projects/ai-query--mcp-ext-apps.md) | screened |
+| [mcp-ext-auth](https://github.com/modelcontextprotocol/ext-auth) | [Report](projects/ai-query--mcp-ext-auth.md) | screened |
+| [mcp-inspector](https://github.com/modelcontextprotocol/inspector) | [Report](projects/ai-query--mcp-inspector.md) | screened |
+| [mcp-sdk-go](https://github.com/modelcontextprotocol/go-sdk) | [Report](projects/ai-query--mcp-sdk-go.md) | screened |
+| [mcp-sdk-python](https://github.com/modelcontextprotocol/python-sdk) | [Report](projects/ai-query--mcp-sdk-python.md) | screened |
+| [mcp-sdk-rust](https://github.com/modelcontextprotocol/rust-sdk) | [Report](projects/ai-query--mcp-sdk-rust.md) | screened |
+| [mcp-sdk-typescript](https://github.com/modelcontextprotocol/typescript-sdk) | [Report](projects/ai-query--mcp-sdk-typescript.md) | screened |
+| [md-page-extension](https://github.com/Ademking/MD-This-Page) | [Report](projects/ai-query--md-page-extension.md) | screened |
+| [mineru](https://github.com/opendatalab/MinerU) | [Report](projects/ai-query--mineru.md) | screened |
+| [office-parser](https://github.com/harshankur/officeParser) | [Report](projects/ai-query--office-parser.md) | screened |
+| [officecli](https://github.com/iOfficeAI/OfficeCLI) | [Report](projects/ai-query--officecli.md) | screened |
+| [omniparser](https://github.com/microsoft/OmniParser) | [Report](projects/ai-query--omniparser.md) | screened |
+| [oneglanse](https://github.com/aryamantodkar/oneglanse) | [Report](projects/ai-query--oneglanse.md) | screened |
+| [opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf) | [Report](projects/ai-query--opendataloader-pdf.md) | screened |
+| [pdf-inspector](https://github.com/firecrawl/pdf-inspector) | [Report](projects/ai-query--pdf-inspector.md) | screened |
+| [playwright](https://github.com/microsoft/playwright) | [Report](projects/ai-query--playwright.md) | screened |
+| [qmd](https://github.com/tobi/qmd) | [Report](projects/ai-query--qmd.md) | source-reviewed |
+| [regulated-ai-governance](https://github.com/ashutoshrana/regulated-ai-governance) | [Report](projects/ai-query--regulated-ai-governance.md) | screened |
+| [spotify-portal-ai-plugins](https://github.com/spotify/portal-ai-plugins) | [Report](projects/ai-query--spotify-portal-ai-plugins.md) | screened |
+| [stagehand](https://github.com/browserbase/stagehand) | [Report](projects/ai-query--stagehand.md) | screened |
+| [trafilatura](https://github.com/adbar/trafilatura) | [Report](projects/ai-query--trafilatura.md) | source-reviewed |
+| [understand-anything](https://github.com/Lum1104/Understand-Anything) | [Report](projects/ai-query--understand-anything.md) | screened |
+| [use-webmcp-tool](https://github.com/GoogleChromeLabs/use-webmcp-tool) | [Report](projects/ai-query--use-webmcp-tool.md) | screened |
+| [watermarks-remover](https://github.com/guillaumemeyer/watermarks-remover) | [Report](projects/ai-query--watermarks-remover.md) | screened |
+| [wigolo](https://github.com/KnockOutEZ/wigolo) | [Report](projects/ai-query--wigolo.md) | screened |
+| [xberg](https://github.com/xberg-io/xberg) | [Report](projects/ai-query--xberg.md) | screened |
+| [xx-2602-markform](https://github.com/jlevy/markform) | [Report](projects/ai-query--xx-2602-markform.md) | screened |
+<!-- coverage:end -->
+
+
+## Source refresh: 2026-10-27 — evidence before optimization
+
+The refreshed [Pi report](projects/ai-agents--pi.md) ([source](https://github.com/earendil-works/pi)) finds no change to the reviewed Jev router in this interval; its 0.5 complexity threshold and first-successful-edit phase transition remain uncalibrated heuristics. New durable progress and restart mechanisms offer test cases, not measured utility gains. Keep authorization, durable receipts and ambiguous-action reconciliation outside probabilistic routing and loss-tolerant progress storage.
+
+The [Paseo review](projects/ai-agents--paseo.md) ([source](https://github.com/getpaseo/paseo)) illustrates deterministic eligibility checks before an idle-resource optimization. Its baseline-only behavior when a provider probe is absent must be reported rather than promoted to verified safety. The [Emdash review](analyses/unreviewed/ai-agents--emdash.md) ([source](https://github.com/generalaction/emdash)) similarly requires explicit evidence levels for authentication and task completion. Measure end-to-end correct outcomes, latency, resource use and recovery costs before ranking these architecture choices.
+
+## Source refresh: 2026-10-28 — decision evidence and effect boundaries
+
+[Contextrie](https://github.com/feuersteiner/contextrie) ([review](projects/ai-agents-mem--xx-2604-contextrie.md)) validates score shape but does not establish calibration. Its composed text omits a returned selected-source manifest. A Jev-like router should rank only authorized candidates, preserve the input/output evidence versions, abstain when evidence is missing and be evaluated on held-out decisions. Prompt instructions about tightness are not an enforced inference budget.
+
+[LangWatch](https://github.com/langwatch/langwatch) ([review](projects/ai-eval--langwatch.md)) separates evaluator execution from cost-row deduplication. Judge/evaluation scheduling must account for repeated provider effects even when local billing receipts are unique. [Orca](https://github.com/stablyai/orca) ([review](projects/ai-agents-swarm--orca.md)) likewise shows that permission-handler cancellation and session cancellation can have different owners. Deterministic authorization, receipt reconciliation and resource settlement remain outside model ranking.
+
+<!-- analysis-additions:start -->
+## Newly catalogued sources
+
+These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
+
+- [awesome-jev-live](analyses/unreviewed/ai-info--awesome-jev-live.md) ([source](https://github.com/wh000wh000/awesome-jev-live)).
+- [best-of-agent-harnesses](analyses/unreviewed/ai-info--best-of-agent-harnesses.md) ([source](https://github.com/ryanalberts/best-of-agent-harnesses)).
+<!-- analysis-additions:end -->

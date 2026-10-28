@@ -2,7 +2,7 @@
 
 Source: [picoclaw](https://github.com/sipeed/picoclaw) · [Analysis](../../projects/ai-agents--picoclaw.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-27T18:19:07.717Z. Status: **current**. Reviewed SHA: `bbf6893ca7afad27f1d00a0f5a45982a549c6ed6`; commit date: 2026-08-19T17:17:32+08:00; review date: unknown; observed SHA: `bbf6893ca7afad27f1d00a0f5a45982a549c6ed6`.
+Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `bbf6893ca7afad27f1d00a0f5a45982a549c6ed6`; commit date: 2026-08-19T17:17:32+08:00; review date: unknown; observed SHA: `bbf6893ca7afad27f1d00a0f5a45982a549c6ed6`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/sipeed/picoclaw/compare/bbf6893ca7afad27f1d00a0f5a45982a549c6ed6...bbf6893ca7afad27f1d00a0f5a45982a549c6ed6). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 

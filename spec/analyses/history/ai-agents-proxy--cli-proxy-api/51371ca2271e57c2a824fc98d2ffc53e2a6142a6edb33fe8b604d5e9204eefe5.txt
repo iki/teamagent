@@ -1,0 +1,38 @@
+# CLIProxyAPI: compatibility bridge with authentication coupling
+
+Source: [cli-proxy-api](https://github.com/router-for-me/CLIProxyAPI) · Category: `ai-agents-proxy`
+
+Review depth: **source-reviewed**. Snapshot `d7914afdedca7af95ee974a42453dc49fc1388ce`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+The Codex executor implements a provider-specific contract, advertises an apply-patch capability, and retains configuration for model-level cooling. The execution path obtains credentials and a configurable base URL, falling back to `https://chatgpt.com/backend-api/codex`, then sends Responses requests. Source search also shows dedicated refresh handling and provider request headers. This establishes the mechanics of a compatibility bridge; it does not establish that every authentication or endpoint combination is an approved third-party integration.
+
+This distinction is important for a harness promising subscription use. A local agent process, an official app-server session, a provider's documented token-sharing integration, and a proxy that replays private backend traffic have different support and failure properties even when their outputs look OpenAI-compatible.
+
+## Harness adoption
+
+Prefer documented provider integration paths, including eligible Sign in with ChatGPT integrations where available; [models](../models.md) and the [agents direction](../agents.md) describe the separation. Keep CLIProxyAPI optional for explicitly selected compatibility experiments. Do not make it the universal credential or entitlement broker.
+
+Model the integration as `transport + authentication_mode + entitlement + capability_version`. Conformance tests should exercise streamed tool calls, cancellation, interrupted responses, context limits, usage accounting, and session renewal. Never infer media generation entitlement from a working text endpoint.
+
+## Limitations and decision
+
+The default URL is coupled to a provider backend that can change independently of an OpenAI-compatible API surface. Translation can lose native reasoning/session semantics. Credentials must remain in a local vault or tightly scoped worker, and account pooling should not be treated as a substitute for authorized capacity. Study its adapters and failure fixtures; defer making it a default until the selected route is verified against current provider documentation.
+
+## Evidence read
+
+- [Small Codex executor contract](https://github.com/router-for-me/CLIProxyAPI/blob/d7914afdedca7af95ee974a42453dc49fc1388ce/internal/runtime/executor/codex_executor.go#L1-L20)
+- [Default Codex upstream and request endpoint](https://github.com/router-for-me/CLIProxyAPI/blob/d7914afdedca7af95ee974a42453dc49fc1388ce/internal/runtime/executor/codex_executor_execute.go#L21-L79)
+
+## Related directions
+
+[Models](../models.md) · [Agents](../agents.md) · [Security](../security.md)
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`ad8bdd3f20bef44f0684b8a6096a216b2c76040d`](https://github.com/router-for-me/CLIProxyAPI/commit/ad8bdd3f20bef44f0684b8a6096a216b2c76040d). Scope: Full Codex executor capability facade, OAuth parser, watcher wrapper and auth-store interface read. Credential storage, executor request path and actual watcher/reload implementation were not audited.
+
+The [executor facade](https://github.com/router-for-me/CLIProxyAPI/blob/ad8bdd3f20bef44f0684b8a6096a216b2c76040d/internal/runtime/executor/codex_executor.go) exposes apply-patch support as an executor capability rather than deriving it from a provider label. That flag is a routing contract, not tool authorization. The [auth-store interface](https://github.com/router-for-me/CLIProxyAPI/blob/ad8bdd3f20bef44f0684b8a6096a216b2c76040d/sdk/cliproxy/auth/store.go) protects ID/registration epoch/credential version/generation and warns against mutating shared nested clones or reentering manager mutations during save. The [watcher facade](https://github.com/router-for-me/CLIProxyAPI/blob/ad8bdd3f20bef44f0684b8a6096a216b2c76040d/sdk/cliproxy/watcher.go) separates runtime and persisted updates and exposes revision-aware dispatch; the underlying concurrency guarantees remain unreviewed.
+
+The [OAuth helper](https://github.com/router-for-me/CLIProxyAPI/blob/ad8bdd3f20bef44f0684b8a6096a216b2c76040d/internal/misc/oauth.go) generates cryptographically random state and permissively parses manually pasted callbacks, including fragments and bare query strings. Parsing does not validate the expected state, redirect origin or client identity; those checks belong to the owning flow. Buffered prompt-result channels prevent a blocked send if abandoned, but do not cancel the prompt itself. Adapt explicit capability/credential generation contracts with authenticated callback checks and scoped cancellation. No authentication, credentials, proxy request or tests were exercised.

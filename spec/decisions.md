@@ -70,6 +70,13 @@ Decision-service outage leaves a functioning deterministic fallback. Malformed o
 
 The refreshed [OpenSpec report](projects/ai-spec--openspec.md) ([source](https://github.com/Fission-AI/OpenSpec)) distinguishes hard prerequisite identity checks from uncertain progress-display paths. Reject unknown dependencies, cycles and unsafe paths deterministically. Keep an unresolved display/progress observation visible without silently converting it into a hard authorization decision.
 
+## Additional scoped review references
+
+These catalog associations provide navigation to scoped source reviews. Each report records its inspected revision, findings and exclusions; inclusion here does not establish a capability or an adoption decision.
+
+- [awesome-jev-live](analyses/unreviewed/ai-info--awesome-jev-live.md)
+- [best-of-agent-harnesses](analyses/unreviewed/ai-info--best-of-agent-harnesses.md)
+
 <!-- coverage:start -->
 ## Project coverage
 
@@ -183,11 +190,8 @@ The refreshed [Pi report](projects/ai-agents--pi.md) ([source](https://github.co
 
 The [Paseo review](projects/ai-agents--paseo.md) ([source](https://github.com/getpaseo/paseo)) illustrates deterministic eligibility checks before an idle-resource optimization. Its baseline-only behavior when a provider probe is absent must be reported rather than promoted to verified safety. The [Emdash review](analyses/unreviewed/ai-agents--emdash.md) ([source](https://github.com/generalaction/emdash)) similarly requires explicit evidence levels for authentication and task completion. Measure end-to-end correct outcomes, latency, resource use and recovery costs before ranking these architecture choices.
 
-<!-- analysis-additions:start -->
-## Newly catalogued sources
+## Source refresh: 2026-10-28 — decision evidence and effect boundaries
 
-These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
+[Contextrie](https://github.com/feuersteiner/contextrie) ([review](projects/ai-agents-mem--xx-2604-contextrie.md)) validates score shape but does not establish calibration. Its composed text omits a returned selected-source manifest. A Jev-like router should rank only authorized candidates, preserve the input/output evidence versions, abstain when evidence is missing and be evaluated on held-out decisions. Prompt instructions about tightness are not an enforced inference budget.
 
-- [awesome-jev-live](analyses/unreviewed/ai-info--awesome-jev-live.md) ([source](https://github.com/wh000wh000/awesome-jev-live)).
-- [best-of-agent-harnesses](analyses/unreviewed/ai-info--best-of-agent-harnesses.md) ([source](https://github.com/ryanalberts/best-of-agent-harnesses)).
-<!-- analysis-additions:end -->
+[LangWatch](https://github.com/langwatch/langwatch) ([review](projects/ai-eval--langwatch.md)) separates evaluator execution from cost-row deduplication. Judge/evaluation scheduling must account for repeated provider effects even when local billing receipts are unique. [Orca](https://github.com/stablyai/orca) ([review](projects/ai-agents-swarm--orca.md)) likewise shows that permission-handler cancellation and session cancellation can have different owners. Deterministic authorization, receipt reconciliation and resource settlement remain outside model ranking.

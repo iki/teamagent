@@ -2,7 +2,7 @@
 
 Source: [harnessrouter](https://github.com/HarnessRouter/harnessrouter) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `f3192445c82da533fe83b125917efb8c3947aef0`; commit timestamp `2026-10-02T03:22:26-07:00`; 528 tracked paths.
 
@@ -24,6 +24,22 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `20d73fe727c82d13eff8f49b938acbb4d7ca294f` (commit date `2026-10-27T01:40:56-07:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete ACP turn client/terminal/stream translator and remote MCP bridge; runner server, container isolation, individual CLI drivers, SDK transports and tests were not reviewed.
+
+The [ACP client](https://github.com/HarnessRouter/harnessrouter/blob/20d73fe727c82d13eff8f49b938acbb4d7ca294f/runner/acp_turn.py#L92-L227) gates recording until the current prompt to avoid replaying loaded history as a new answer and wakes pending calls when the agent closes its stream. Close waits for the main agent to exit, escalating after a grace interval, but its final wait is unbounded and terminal kill/release does not await terminal settlement. Timed-out RPC slots are not removed on the timeout branch, incoming requests launch an unbounded thread per call, and line parsing has no ingress byte/schema budget. These limits matter even when output tail retention is bounded.
+
+The [permission and terminal handlers](https://github.com/HarnessRouter/harnessrouter/blob/20d73fe727c82d13eff8f49b938acbb4d7ca294f/runner/acp_turn.py#L207-L267) automatically choose an allow-like option, or the first option, on the stated assumption that the outer sandbox is the trust boundary. Terminal requests can supply command, working directory and environment additions; the requested output limit has a minimum but no maximum. This is a deliberate unattended-runner trust model, not a reusable authorization mechanism. The surrounding isolation implementation was not reviewed, so Teamagent must not import the automatic grant or arbitrary host-process capability without its own effect boundary.
+
+The [stream translator](https://github.com/HarnessRouter/harnessrouter/blob/20d73fe727c82d13eff8f49b938acbb4d7ca294f/runner/acp_turn.py#L287-L388) sends tool use/result events incrementally and keeps thinking separate from answer text. When an agent never reports completion, it emits explanatory unknown-result text but sets is_error false; consumers that inspect only that flag may treat the synthetic result as success. Tool output clipping is also not accompanied by an explicit truncation field. Preserve unknown, failed and succeeded as distinct machine-readable outcomes and retain source call identity instead of relying on inferred human titles.
+
+The [MCP bridge](https://github.com/HarnessRouter/harnessrouter/blob/20d73fe727c82d13eff8f49b938acbb4d7ca294f/runner/mcp_bridge.py#L27-L105) keeps structuredContent and remote isError, but disables local input validation and silently drops undeclared top-level arguments for closed schemas. That changes the submitted call rather than rejecting it; schema composition and remote validation remain the server's responsibility. Tool/resource/prompt listing does not follow pagination here, and invalid header JSON falls back to no headers. Teamagent should report transformed arguments and incomplete discovery explicitly, with validation and authority bound to the exact executed call.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [harnessrouter](https://github.com/HarnessRouter/harnessrouter); analyzed commit `f3192445c82da533fe83b125917efb8c3947aef0`; commit date 2026-10-02T03:22:26-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--harnessrouter.md).
+Analysis metadata: source [harnessrouter](https://github.com/HarnessRouter/harnessrouter); analyzed commit `20d73fe727c82d13eff8f49b938acbb4d7ca294f`; commit date 2026-10-27T01:40:56-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--harnessrouter.md).
 <!-- teamagent-analysis:end -->

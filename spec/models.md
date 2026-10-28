@@ -104,6 +104,48 @@ Execution boundaries belong in [security](security.md); asynchronous media provi
 
 The current [Pi/Jev example](projects/ai-agents--pi.md) ([source](https://github.com/earendil-works/pi)) still uses a 0.5 complexity cutoff and switches after the first successful edit. The source refresh supplies no new calibration or entitlement evidence. Keep provider availability, account authorization, selected model, context revision and routing reason in separate records; evaluate re-escalation and cache-miss cost before adopting this heuristic.
 
+## Source refresh: 2026-10-28 - resource admission and credential identity
+
+The [FreeToken review](projects/ai-model-run--freetoken.md) separates cache-budget arithmetic from allocation and rejects a minimum plan that cannot fit. Preserve measured baseline, units, revision and headroom in resource reservations; its best-effort readiness values can substitute zero for unavailable measurement, so expose those states separately. The [Colibri review](projects/ai-model-run--colibri.md) adds a model-management MCP wrapper whose detached installs survive the request and whose cancellation notifications are ignored. Such an adapter needs bounded admission, explicit install grants and durable job reconciliation; protocol-shaped progress alone does not prove cancellation enforcement.
+
+The initial [Hanzo Engine review](analyses/unreviewed/ai-model-run--hanzo-engine.md) traces real embedding dispatch and prefix truncation/renormalization, but finds no batch cap in the inspected handler and an informational smoke script that can finish after HTTP or dimension failures. Require bounded items/bytes/concurrency, exact output cardinality, finite vectors, private-input logging controls and retrieval evaluation for shortened dimensions before adoption. No local engine or accelerator benchmark was run.
+
+The [Glean TypeScript](projects/ai-agents-mem--glean-api-typescript.md), [Python](projects/ai-agents-mem--glean-api-python.md) and [Go](projects/ai-agents-mem--glean-api-go.md) contracts distinguish OAuth client identity from opaque spending identity and demonstrate that generated schemas can accept filters beyond their documented semantic subset. Keep identity domains separate and validate semantics inward. [MCP Server Cards](projects/ai-query--mcp-docs.md) remain advisory discovery; runtime capabilities and tools require live negotiation under the actual identity. The [MCP authorization-extension review](projects/ai-query--mcp-ext-auth.md) also separates machine credentials from enterprise delegation and limits IdP visibility to token issuance. These documentary/SDK observations do not establish provider entitlement, token revocation behavior or permission to forward credentials.
+
+The [MentisDB review](projects/ai-agents-mem--mentisdb.md) shares a model session and limits each inference chunk to four texts, yet retains all output vectors. Account separately for per-call activation memory, total request output and queued callers. The [Agentmemory embedding guard](projects/ai-agents-mem--agentmemory.md) rejects wrong dimensions but does not establish finite values or exact batch cardinality; validate all three alongside model revision. Upstream memory measurements remain attributed observations until reproduced under our runtime and workload.
+
+The [Open Design catalog review](projects/ai-gen--open-design.md) distinguishes account-specific remote models from shared presets and budgets one wait per refresh. That wait does not cancel the underlying request, and cached catalogs are not current entitlements. [FastMCP's credential-store review](projects/ai-query--fastmcp.md) supports non-destructive atomic replacement and narrowly bounded Windows retries, while leaving record validation, key collisions, crash durability and platform permissions as separate obligations. Refreshed session identity must update tool authorization independently of discovery metadata.
+
+The [TypeScript MCP review](projects/ai-query--mcp-sdk-typescript.md) leaves legacy audience enforcement opt-in and refresh-scope policy with a provider callback. Configure exact audience checks, validate scopes against recorded grants and distinguish absent from explicitly empty scope responses. [Go MCP's token lifecycle](projects/ai-query--mcp-sdk-go.md) fixes request-context cancellation during refresh, but background ownership, concurrent authorization and duplicate registration still need explicit host policies. [Rust MCP's cancellation guard](projects/ai-query--mcp-sdk-rust.md) sends best-effort cancellation after handle creation; it does not prove remote termination or cover bootstrap discovery lifetime. [Python MCP's extension binding](projects/ai-query--mcp-sdk-python.md) requires a live connection but adds no independent effect authorization.
+
+The [PageIndex review](projects/ai-agents-mem--pageindex.md) records cutoff answers as partial and refuses an unsupported native client route; preserve those explicit states alongside model and usage identity. [Contextrie's normalized judge scores](projects/ai-agents-mem--xx-2604-contextrie.md) and [Jevgrep's scoring bounds](projects/ai-query--jevgrep.md) constrain output shape, not relevance calibration. Evaluate thresholds against task outcomes and keep model ranking separate from permission, budget and completion decisions. All refreshed SDK observations refer to the exact report pins; moved checkouts remain separate pending deltas.
+
+The [Obliteratus snapshot review](projects/ai-model-edit--obliteratus.md) separates admission estimates, live-object identity and verified restoration: a failed copy can leave a model invalid, and estimates do not reserve memory. [Reef's reconnect path](projects/ai-agents-mem--reef.md) retains the same process instead of replaying work, but relay queues and cleanup still need owned aggregate bounds. [GFlow's renewal review](projects/ai-query--gflow-cli.md) distinguishes recognized stale credentials from unknown verdicts and places verification after browser closure; local timeouts do not establish one end-to-end deadline or atomic credential view.
+
+The [MCP Inspector review](projects/ai-query--mcp-inspector.md) reports credential presence separately from validity and exposes limits in clear counts, host-filter scope and error-message redaction. Require validated secret-store state, transactional scope receipts and log redaction independent of response shaping. [Agent Browser's key handling](projects/ai-query--agent-browser.md) correctly refuses malformed existing keys but still needs exclusive creation and platform-private permissions. Never infer authority from stored-token presence, proxy configuration or a normalized confidence score.
+
+The [Lightpanda auth/catalog review](projects/ai-query--lightpanda-browser.md) separates atomic credential-file replacement from serialized updates and successful refresh from durable persistence. A stale models.dev catalog filtered by tool-call metadata remains advisory, with no proof of account entitlement or measured capability. Its headless WebMCP requestUserInteraction method invokes a callback directly; that call and page-provided read-only hints cannot authorize effects. Keep model discovery, credentials, page tools and host grants in separate records.
+
+The [Gbrain review](projects/ai-agents-mem--gbrain.md) distinguishes generation-fenced embedding reuse from estimated or incomplete search-cost accounting. [RAGFlow's embedding path](projects/ai-agents-mem--ragflow.md) narrows overlong input and isolates failed items, but still needs exact output cardinality, explicit prefix coverage and one aggregate deadline. Missing usage is unknown, not zero cost. [Stagehand's cache client](projects/ai-query--stagehand.md) bounds request bytes and validates envelopes, yet cache-hit fields do not establish answer validity; its inspected extraction benchmark checks a minimum count and two exemplars rather than complete precision/recall. Keep saved-token hints and narrow fixture success separate from verified task outcomes.
+
+## Additional scoped review references
+
+These catalog associations provide navigation to scoped source reviews. Each report records its inspected revision, findings and exclusions; inclusion here does not establish a capability or an adoption decision.
+
+- [claude-code](analyses/unreviewed/ai-agents--claude-code.md)
+- [hanzo-cli](analyses/unreviewed/ai-agents--hanzo-cli.md)
+- [hanzo-dev](analyses/unreviewed/ai-agents--hanzo-dev.md)
+- [hanzo-hips](analyses/unreviewed/ai-agents--hanzo-hips.md)
+- [hanzo-sdk-ts](analyses/unreviewed/ai-agents--hanzo-sdk-ts.md)
+- [hanzo-sdk](analyses/unreviewed/ai-agents--hanzo-sdk.md)
+- [harness2](analyses/unreviewed/ai-agents--harness2.md)
+- [murage](analyses/unreviewed/ai-agents--murage.md)
+- [openrig](analyses/unreviewed/ai-agents--openrig.md)
+- [trellis](analyses/unreviewed/ai-agents--trellis.md)
+- [yoagent](analyses/unreviewed/ai-agents--yoagent.md)
+- [jantt](analyses/unreviewed/ai-gen--jantt.md)
+- [deepinfer](analyses/unreviewed/ai-model-run--deepinfer.md)
+
 <!-- coverage:start -->
 ## Project coverage
 
@@ -328,24 +370,3 @@ Every associated project has its own report. Source-reviewed associations reflec
 The [Emdash review](analyses/unreviewed/ai-agents--emdash.md) ([source](https://github.com/generalaction/emdash)) demonstrates why credential presence, authenticated identity, model access and account data policy need separate fields: its inspected helper can report authentication from an environment value alone. Passive catalogs must disclose the evidence level; an explicit diagnostic may verify only the capabilities its actual request exercised. Neither subscription presence nor an API key establishes training exclusion.
 
 The [Pi refresh](projects/ai-agents--pi.md) ([source](https://github.com/earendil-works/pi)) preserves a deferred response handle when a poll is interrupted, while ordinary request retry and clean-close behavior remain distinct. Model routing should retain provider/model identity, attempt policy and recoverable job identity rather than silently resubmit work. The [Paseo refresh](projects/ai-agents--paseo.md) ([source](https://github.com/getpaseo/paseo)) also distinguishes provider-specific background-work evidence from a baseline-only fallback. None of these source reviews changes Teamagent's media training gate, free/paid model choice or prohibition on blindly retrying ambiguous provider actions.
-
-<!-- analysis-additions:start -->
-## Newly catalogued sources
-
-These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
-
-- [claude-code](analyses/unreviewed/ai-agents--claude-code.md) ([source](https://github.com/anthropics/claude-code)).
-- [hanzo-cli](analyses/unreviewed/ai-agents--hanzo-cli.md) ([source](https://github.com/hanzoai/cli)).
-- [hanzo-dev](analyses/unreviewed/ai-agents--hanzo-dev.md) ([source](https://github.com/hanzoai/dev)).
-- [hanzo-hips](analyses/unreviewed/ai-agents--hanzo-hips.md) ([source](https://github.com/hanzoai/hips)).
-- [hanzo-sdk](analyses/unreviewed/ai-agents--hanzo-sdk.md) ([source](https://github.com/hanzoai/sdk)).
-- [hanzo-sdk-ts](analyses/unreviewed/ai-agents--hanzo-sdk-ts.md) ([source](https://github.com/hanzoai/js-sdk)).
-- [harness2](analyses/unreviewed/ai-agents--harness2.md) ([source](https://github.com/google-research/harness2)).
-- [murage](analyses/unreviewed/ai-agents--murage.md) ([source](https://github.com/ferroxlabs/murage)).
-- [openrig](analyses/unreviewed/ai-agents--openrig.md) ([source](https://github.com/mvschwarz/openrig)).
-- [trellis](analyses/unreviewed/ai-agents--trellis.md) ([source](https://github.com/mindfold-ai/trellis)).
-- [yoagent](analyses/unreviewed/ai-agents--yoagent.md) ([source](https://github.com/yologdev/yoagent)).
-- [jantt](analyses/unreviewed/ai-gen--jantt.md) ([source](https://github.com/ahmadhassan-bted/jantt)).
-- [deepinfer](analyses/unreviewed/ai-model-run--deepinfer.md) ([source](https://github.com/deepseek-ai/deepinfer)).
-- [hanzo-engine](analyses/unreviewed/ai-model-run--hanzo-engine.md) ([source](https://github.com/hanzoai/engine)).
-<!-- analysis-additions:end -->

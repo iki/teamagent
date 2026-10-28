@@ -29,6 +29,21 @@ Adopt as a generation tool, not as a general cinematic video model or the primar
 
 [Generation](../generation.md) · [Skills](../skills.md) · [Agents](../agents.md) · [Security](../security.md)
 
+
+## Change review - 2026-10-28
+
+**Extraction recovery now rejects empty sentinels but publication still needs complete frame identity.** Reviewed commit `696ca8f779cd36bfef53102658722c46e9c3e522` (commit date `2026-10-27T16:49:16Z`). Compared with `6149ec87e8e1e83e0df4862dfd8512331535eddb`; the complete Git comparison contains 4603 changed paths.
+
+The extraction cache includes frame-rate text, format, transform and source identity in its key, with an optional content hash replacing path/modification time. It writes into render-owned partial directories and publishes through rename; an empty completed directory now misses, and the recovery fixture deletes frames then checks cold recovery and warm reuse. A hit still requires only a sentinel and one filename with the frame prefix, not a full frame manifest or hash verification. The directory uses only 16 hex characters of the key without validating the full key at lookup. Recovery checks for a completed winner before deleting an incomplete target, leaving a check/delete race in which a newly published winner can be removed; a later adopt check does not fence that deletion.
+
+Studio render jobs are held in a per-API in-memory map. The timer that removes finished jobs is disabled in production, with no local map cap in this route. Malformed JSON defaults to an empty object and invalid requested FPS defaults to 30. Cancellation immediately changes the visible status and calls an optional hook; it neither awaits joined termination nor proves that output effects stopped. These route semantics must remain distinct from the engine's actual cancellation and admission guarantees.
+
+Evidence: [packages/engine/src/services/extractionCache.ts:65-291](https://github.com/heygen-com/hyperframes/blob/696ca8f779cd36bfef53102658722c46e9c3e522/packages/engine/src/services/extractionCache.ts#L65-L291) · [packages/engine/src/services/extractionCache.ts:519-554](https://github.com/heygen-com/hyperframes/blob/696ca8f779cd36bfef53102658722c46e9c3e522/packages/engine/src/services/extractionCache.ts#L519-L554) · [packages/studio-server/src/routes/render.ts:48-138](https://github.com/heygen-com/hyperframes/blob/696ca8f779cd36bfef53102658722c46e9c3e522/packages/studio-server/src/routes/render.ts#L48-L138) · [packages/studio-server/src/routes/render.ts:186-259](https://github.com/heygen-com/hyperframes/blob/696ca8f779cd36bfef53102658722c46e9c3e522/packages/studio-server/src/routes/render.ts#L186-L259) · [packages/engine/src/services/extractionCache.recovery.test.ts:1-77](https://github.com/heygen-com/hyperframes/blob/696ca8f779cd36bfef53102658722c46e9c3e522/packages/engine/src/services/extractionCache.recovery.test.ts#L1-L77).
+
+**Harness consequence:** Reuse private partial output plus explicit publication results, but validate complete frame count, sequence, format and hashes against a full recipe/source manifest. Fence replacement of incomplete generations so concurrent publishers cannot delete each other. Require bounded durable job admission and explicit cancellation-requested versus terminated states; reject invalid user settings instead of silently generating a different artifact.
+
+**Scope and limits:** Scoped static review of extraction-cache identity/publication, selected render routes and the recovery fixture within the 4,603-path comparison. The full parser, producer cancellation, cache GC and authentication composition were not audited. The ffmpeg-gated recovery fixture was read, not executed; no rendering performance or output-quality claim is made.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hyperframes](https://github.com/heygen-com/hyperframes); analyzed commit `6149ec87e8e1e83e0df4862dfd8512331535eddb`; commit date 2026-10-03T13:31:30-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--hyperframes.md).
+Analysis metadata: source [hyperframes](https://github.com/heygen-com/hyperframes); analyzed commit `696ca8f779cd36bfef53102658722c46e9c3e522`; commit date 2026-10-27T16:49:16Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--hyperframes.md).
 <!-- teamagent-analysis:end -->

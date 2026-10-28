@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`0874a27b17a22e2b7c2e2bcd725768e0803cad06`](https://github.com/wshobson/agents/commit/0874a27b17a22e2b7c2e2bcd725768e0803cad06). Scope: Full codebase-scan skill, AGENTS template and E2E testing navigation skill read. Optional plugins, scan implementation and detailed browser examples were not reviewed.
+
+The [scanner procedure](https://github.com/wshobson/agents/blob/0874a27b17a22e2b7c2e2bcd725768e0803cad06/plugins/ship-mate/skills/scan/SKILL.md) distinguishes descriptive project documentation from generated agent instructions and requires confirmation for architectural updates on delta runs. Its HEAD~1 delta is not the last successful scan baseline and misses untracked files; no changed tracked files therefore cannot prove documentation is current. First-run instructions also need to detect and preserve an existing AGENTS.md before writing the [template](https://github.com/wshobson/agents/blob/0874a27b17a22e2b7c2e2bcd725768e0803cad06/plugins/ship-mate/skills/scan/references/agents-template.md). Inferred code patterns must remain observations until adopted as policy.
+
+The [E2E guide](https://github.com/wshobson/agents/blob/0874a27b17a22e2b7c2e2bcd725768e0803cad06/plugins/developer-essentials/skills/e2e-testing-patterns/SKILL.md) emphasizes independent tests, user-visible assertions and explicit setup for accessibility selectors. Its categorical exclusion of edge cases is too broad for high-risk browser/native boundaries, and mocks cannot replace the real runtime checks required here. Adapt layered verification and trace-based debugging, preserve coverage as unknown unless measured, and retain Teamagent's dependency and instruction workflow. No plugins, scan, browser or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle-claude.wshobson](https://github.com/wshobson/agents); analyzed commit `156b7a5e7a8b93642628a339ee4039c925b34c7f`; commit date 2026-09-28T20:45:26-04:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle-claude.wshobson.md).
+Analysis metadata: source [bundle-claude.wshobson](https://github.com/wshobson/agents); analyzed commit `0874a27b17a22e2b7c2e2bcd725768e0803cad06`; commit date 2026-10-17T17:39:17-04:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle-claude.wshobson.md).
 <!-- teamagent-analysis:end -->

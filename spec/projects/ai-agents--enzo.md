@@ -2,7 +2,7 @@
 
 Source: [enzo](https://github.com/theguysudo/ENZO) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `066b7a1733979511bf677df4e3ee084bd5f8cb61`; commit timestamp `2026-10-03T07:26:54Z`; 607 tracked paths.
 
@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `378449cf868a0acf08ed9a2218e33c6e13779feb` (commit date `2026-10-27T11:25:43Z`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete 38-path inventory; runtime-permission diff, project authorization/route implementation, security policy and project IDOR fixtures. The main index.ts exceeded the 256 KiB collection cap, so complete route integration and vault-token construction were not inspected.
+
+The generated backend launcher adds a Node permission flag probe and read/write grants, but it does not enforce a fail-closed sandbox contract. [Permission setup](https://github.com/theguysudo/ENZO/blob/378449cf868a0acf08ed9a2218e33c6e13779feb/src/projects/project-runtime.ts#L71-L187) can return an empty flag set on unsupported runtime/listening probes. More seriously, a failed boot whose child-controlled log matches a permission-error pattern is [automatically retried without the restrictions](https://github.com/theguysudo/ENZO/blob/378449cf868a0acf08ed9a2218e33c6e13779feb/src/projects/project-runtime.ts#L417-L435). The environment allowlist does not prevent that unrestricted process from reading host files. The security policy also acknowledges unrestricted network egress and allows native addons. Teamagent must report confinement as unavailable and stop or move to an already-authorized compatible worker; error text cannot authorize broader execution.
+
+[Project management checks](https://github.com/theguysudo/ENZO/blob/378449cf868a0acf08ed9a2218e33c6e13779feb/src/projects/project.ts#L292-L337) require a valid instance token and equality with a recorded device header where one exists. [Save-over handling](https://github.com/theguysudo/ENZO/blob/378449cf868a0acf08ed9a2218e33c6e13779feb/src/projects/project.ts#L386-L430) and [fixtures](https://github.com/theguysudo/ENZO/blob/378449cf868a0acf08ed9a2218e33c6e13779feb/tests/project-idor.test.ts#L151-L220) cover mismatched devices, legacy first-updater claims, preview CSP and rate limiting. A caller-supplied device identifier is a bearer-like value, not a verified account/device identity; public preview routes intentionally retain ID-as-capability access. **Disposition:** useful failure cases for isolation and channel authorization tests; do not adopt the launcher as a security boundary or infer multitenant isolation from the test names.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [enzo](https://github.com/theguysudo/ENZO); analyzed commit `066b7a1733979511bf677df4e3ee084bd5f8cb61`; commit date 2026-10-03T07:26:54Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--enzo.md).
+Analysis metadata: source [enzo](https://github.com/theguysudo/ENZO); analyzed commit `378449cf868a0acf08ed9a2218e33c6e13779feb`; commit date 2026-10-27T11:25:43Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--enzo.md).
 <!-- teamagent-analysis:end -->

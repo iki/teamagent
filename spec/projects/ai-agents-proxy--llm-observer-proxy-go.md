@@ -24,6 +24,14 @@ This entry was catalogued under **ai-agents-proxy**. Its category places it in t
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`f07e370c78d4d6efc482e366edb6368bdcf292d6`](https://github.com/xxyyue/llm-observer-proxy-go/commit/f07e370c78d4d6efc482e366edb6368bdcf292d6). Scope: Full trajectory file reader, event recorder and proxy-capture regression tests read. Data-plane authorization/redaction, trajectory builder/parser and export assets remain outside scope.
+
+The [export reader](https://github.com/xxyyue/llm-observer-proxy-go/blob/f07e370c78d4d6efc482e366edb6368bdcf292d6/internal/trajectory/read.go) snapshots the file's opening size, reads only newline-terminated records and marks a partial final append with a diagnostic. It rejects malformed complete records and preserves source byte count. This is a useful snapshot contract, though line length and accumulated events remain unbounded here. The [recorder](https://github.com/xxyyue/llm-observer-proxy-go/blob/f07e370c78d4d6efc482e366edb6368bdcf292d6/internal/observer/observer.go) appends events and rebuilds a temporary-then-rename projection under a process-local mutex; it rereads history on every append, silently skips malformed JSON in that path and does not fsync or coordinate other processes.
+
+The [capture tests](https://github.com/xxyyue/llm-observer-proxy-go/blob/f07e370c78d4d6efc482e366edb6368bdcf292d6/internal/proxy/capture_test.go) check that observer headers stay out of upstream requests, upstream cannot replace local exchange identity, trailing JSON is rejected and a large integer is preserved. Those assertions are valuable provenance regressions, not an authentication proof for producer-supplied context. Event records include raw requests, responses, headers and query strings and use 0644 creation mode; Teamagent needs explicit redaction, private storage, bounded retention and owned export authorization. No proxy, capture, export or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [llm-observer-proxy-go](https://github.com/xxyyue/llm-observer-proxy-go); analyzed commit `dd809dfe1fd411f7eb3852353a8ac1d280643bad`; commit date 2026-08-04T15:48:59+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--llm-observer-proxy-go.md).
+Analysis metadata: source [llm-observer-proxy-go](https://github.com/xxyyue/llm-observer-proxy-go); analyzed commit `f07e370c78d4d6efc482e366edb6368bdcf292d6`; commit date 2026-10-25T21:20:15+08:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--llm-observer-proxy-go.md).
 <!-- teamagent-analysis:end -->

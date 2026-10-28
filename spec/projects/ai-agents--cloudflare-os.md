@@ -2,7 +2,7 @@
 
 Source: [cloudflare-os](https://github.com/cloudflare/cloudflare-os) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `5cae880e5e54563895a067e7f4dae67514e581be`; commit timestamp `2026-10-02T19:01:46-05:00`; 1,436 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `fbd0d33f5359bd5e05802edcb2dce3c26f200d1e` (commit date `2026-10-27T10:46:48-05:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete frontend auth hook, configurator frame and runtime build/fixture; backend agent lines 3970–4219 and 4325–4404 plus symbol inventory. Persistence-hook implementation, gatekeeper authentication, generated RPC validators and native/browser enforcement were not audited.
+
+The [agent event sink](https://github.com/cloudflare/cloudflare-os/blob/fbd0d33f5359bd5e05802edcb2dce3c26f200d1e/packages/workshop-backend/src/agent.ts#L4075-L4198) records a completed model turn and its buffered effects through one awaited commit hook, including tool failures and tools pre-empted by cancellation. It drains the buffers before the hook and does not blindly replay them after a failed barrier. The [finish decision](https://github.com/cloudflare/cloudflare-os/blob/fbd0d33f5359bd5e05802edcb2dce3c26f200d1e/packages/workshop-backend/src/agent.ts#L4325-L4392) ends for cancellation, connection requests or pending action decisions before considering compaction. This is useful ordering evidence: cancellation preserves earlier completed steps rather than reverting them. The transaction implementation and all effect-producing tools were not reviewed, so the comments' effects-if-and-only-if-record guarantee is not established for every external effect. Missing tool results are labeled aborted under an assumed Pi contract; that assumption needs adapter conformance tests.
+
+The [auth hook](https://github.com/cloudflare/cloudflare-os/blob/fbd0d33f5359bd5e05802edcb2dce3c26f200d1e/packages/workshop-frontend/src/useAuth.ts#L33-L61) invalidates stale whoami callbacks when their stub is replaced and only attributes telemetry to a user principal, explicitly distinguishing a gadget author's owner ID. Yet the hook marks authentication complete and isAuthenticated true immediately upon creating a pipelined stub, before server acceptance. During Cloudflare Access logout it waits for push-release completion before navigation, without a local timeout or immediate stub clearing. A cancelled telemetry callback and a disposed RPC stub do not themselves revoke server authority. Keep pending, verified and revoked session states explicit; server token validation, notification revocation and diagnostics redaction remain separate evidence gaps.
+
+The [configurator build](https://github.com/cloudflare/cloudflare-os/blob/fbd0d33f5359bd5e05802edcb2dce3c26f200d1e/packages/configurator-ui/build/runtime.ts#L31-L65) wires a validator-generation plugin into the bundle and makes source-map/error reporting conditional. The [frame](https://github.com/cloudflare/cloudflare-os/blob/fbd0d33f5359bd5e05802edcb2dce3c26f200d1e/packages/configurator-ui/src/runtime/frame.ts#L9-L70) narrows its RPC surface, checks finite viewport values and coalesces resize reports, but installs observers without returning teardown and accepts negative/very large finite geometry. The [build test](https://github.com/cloudflare/cloudflare-os/blob/fbd0d33f5359bd5e05802edcb2dce3c26f200d1e/packages/configurator-ui/build/runtime.test.ts#L4-L12) checks ASCII output only. Generated validator correctness, iframe origin/sandbox enforcement, real worker behavior and native acceptance were not established, and no build or test ran.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cloudflare-os](https://github.com/cloudflare/cloudflare-os); analyzed commit `5cae880e5e54563895a067e7f4dae67514e581be`; commit date 2026-10-02T19:01:46-05:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--cloudflare-os.md).
+Analysis metadata: source [cloudflare-os](https://github.com/cloudflare/cloudflare-os); analyzed commit `fbd0d33f5359bd5e05802edcb2dce3c26f200d1e`; commit date 2026-10-27T10:46:48-05:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--cloudflare-os.md).
 <!-- teamagent-analysis:end -->

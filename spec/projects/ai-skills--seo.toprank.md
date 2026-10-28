@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`ed835f273dce03a451c13fa0cb67305ae58ecb05`](https://github.com/nowork-studio/toprank/commit/ed835f273dce03a451c13fa0cb67305ae58ecb05). Scope: Full SXO, SEO-drift and Meta Ads wrappers, safety-rule tests and MCP skill-contract/live-discovery test file read. Canonical workflow bodies, remote server authorization and actual marketing/SEO outcomes were not audited.
+
+The [Meta Ads wrapper](https://github.com/nowork-studio/toprank/blob/ed835f273dce03a451c13fa0cb67305ae58ecb05/skills/meta-ads/SKILL.md) resolves the canonical workflow from the plugin root and explicitly rejects substituting a similarly named skill when packaging is broken. The [SXO](https://github.com/nowork-studio/toprank/blob/ed835f273dce03a451c13fa0cb67305ae58ecb05/skills/sxo/SKILL.md) and [drift](https://github.com/nowork-studio/toprank/blob/ed835f273dce03a451c13fa0cb67305ae58ecb05/skills/seo-drift/SKILL.md) entries are navigation wrappers, so their trigger descriptions do not establish complete audit or monitoring behavior. A monitoring keyword also does not itself create an authorized schedule.
+
+The [contract tests](https://github.com/nowork-studio/toprank/blob/ed835f273dce03a451c13fa0cb67305ae58ecb05/test/test_mcp_skill_e2e.py) check contained workflow links, matching frontmatter, unique names, one versioned connection and removal of active legacy endpoints. The production OAuth-discovery test is explicitly opt-in and credential-free, but it still contacts a live service and only establishes discovery metadata. [Safety tests](https://github.com/nowork-studio/toprank/blob/ed835f273dce03a451c13fa0cb67305ae58ecb05/test/unit/test_safety_rules.py) assert required text and links; avoiding scanner-trigger phrases is not injection resistance. Adapt packaging consistency and explicit live-test separation; no account, campaign, schedule, network or tests were exercised.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [seo.toprank](https://github.com/nowork-studio/toprank); analyzed commit `1a53d4e4da69a6060c24de42c23333fb48e927c4`; commit date 2026-09-30T22:11:58-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--seo.toprank.md).
+Analysis metadata: source [seo.toprank](https://github.com/nowork-studio/toprank); analyzed commit `ed835f273dce03a451c13fa0cb67305ae58ecb05`; commit date 2026-10-19T12:15:09-07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--seo.toprank.md).
 <!-- teamagent-analysis:end -->

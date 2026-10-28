@@ -24,6 +24,19 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review — 2026-10-27
+
+**Client-side ingestion instructions do not establish delivery guarantees.** Reviewed commit `e2df973fa3fc9281c3ea296dbf24c24877dd2234` (commit date `2026-10-05T13:01:04+02:00`) against `1e0d020d77c56269df38445c9a921673eba39874`. The complete Git comparison contains 1 changed paths.
+
+The complete one-path comparison changes only README guidance. It now asks clients to ingest the user's prompt and a planned answer before showing that answer, and to strengthen biography ingestion through client instructions. Those are documentation requests and unsupported adherence claims, not a delivery or persistence mechanism. No implementation is present in the reviewed delta to substantiate the advertised UI or ingestion guarantees.
+
+Evidence: [README.md:78-104](https://github.com/novotapeter-bs/bs_cortex/blob/e2df973fa3fc9281c3ea296dbf24c24877dd2234/README.md#L78-L104) · [README.md:184-205](https://github.com/novotapeter-bs/bs_cortex/blob/e2df973fa3fc9281c3ea296dbf24c24877dd2234/README.md#L184-L205).
+
+**Harness consequence:** Use a deterministic, consent-scoped event sink for accepted conversational evidence. Store planned, delivered and acknowledged output as distinct states; never turn an upstream MCP instruction into authority to upload all dialogue. Prompt wording cannot replace durable ingestion receipts or recovery.
+
+**Scope and limits:** README/change screening only; no remote service, client UI, ingestion guarantee or latency claim was tested.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bs_cortex](https://github.com/novotapeter-bs/bs_cortex); analyzed commit `1e0d020d77c56269df38445c9a921673eba39874`; commit date 2026-09-27T22:52:02+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--bs_cortex.md).
+Analysis metadata: source [bs_cortex](https://github.com/novotapeter-bs/bs_cortex); analyzed commit `e2df973fa3fc9281c3ea296dbf24c24877dd2234`; commit date 2026-10-05T13:01:04+02:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--bs_cortex.md).
 <!-- teamagent-analysis:end -->

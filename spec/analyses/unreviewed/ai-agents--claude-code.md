@@ -4,6 +4,16 @@ Source: [claude-code](https://github.com/anthropics/claude-code) · [agents](../
 
 Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-agents--claude-code.md).
 
+## 2026-10-28 scoped source review
+
+Source: [claude-code](https://github.com/anthropics/claude-code); inspected saved discovery revision `08c6a4f5121ae140d3c1b5c96e3e5ae53587b54b`. This is an initial scoped review of this newly catalogued source.
+
+**Scope:** Full AGENTS.md hook registrar and its register tests read. Files/Frames/Modes helpers, host hook implementation, instruction trust policy, nested-read tests and installed product behavior were not audited.
+
+The [hook registrar](https://github.com/anthropics/claude-code/blob/08c6a4f5121ae140d3c1b5c96e3e5ae53587b54b/mods/agents-md/hooks/register.ts) selects among CLAUDE-only, managed-only, fallback and combined instruction-file modes. Fallback checks the ancestor walk as well as already handed files, so withholding a loaded CLAUDE.md does not automatically make AGENTS.md eligible. It respects attachment-disable settings on each read and avoids adding instructions after a denied or failed Read. Forks inherit their parent's seen-file set; resumed forks retain their own set.
+
+The [register tests](https://github.com/anthropics/claude-code/blob/08c6a4f5121ae140d3c1b5c96e3e5ae53587b54b/mods/agents-md/tests/register.test.ts) cover an AGENTS-only project, CLAUDE precedence, failed discovery preserving existing context and optional telemetry. Failed walks can therefore leave instructions unadded, and nested discovery also suppresses failures into empty sets. Teamagent should preserve an unavailable-discovery state instead of treating it as proof that no policy exists. Seen entries are tracked by path in this registrar, so content-version semantics and host refresh need separate review. Managed-only filtering and path helpers are delegated, not enforcement verified here. Adapt explicit source precedence, per-agent context ownership and versioned provenance; no hooks, engine or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [claude-code](https://github.com/anthropics/claude-code); analyzed commit `none`; commit date unknown; review date unknown; depth unreviewed. [Maintenance record](../repos/ai-agents--claude-code.md).
+Analysis metadata: source [claude-code](https://github.com/anthropics/claude-code); analyzed commit `08c6a4f5121ae140d3c1b5c96e3e5ae53587b54b`; commit date 2026-10-26T21:51:04Z; review date 2026-10-28T09:27:32.685Z; depth reviewed. [Maintenance record](../repos/ai-agents--claude-code.md).
 <!-- teamagent-analysis:end -->

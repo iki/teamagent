@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped source review
+
+Source: [terminal-bench](https://github.com/harbor-framework/terminal-bench); inspected saved discovery revision `6964e9252c90227fc1cfa26cbc59aee4134792e4`. Prior analyzed revision `1dcda8716784493721921c23e4bc7f7d988b4494` remains historical evidence.
+
+**Scope:** Full CTRF validator, task staging script, one legacy cancellation solution and its Python/shell test launchers read. Actual test_outputs.py assertions, hosted job poller, container enforcement and rubric correctness were not audited.
+
+The [CTRF validator](https://github.com/harbor-framework/terminal-bench/blob/6964e9252c90227fc1cfa26cbc59aee4134792e4/scripts/ci/validate_ctrf.py) rejects missing/symlinked or oversized report files, malformed test rows, nonfinite durations, inconsistent counters and reports containing only skipped/pending/other statuses. This establishes report consistency, not correctness of the test oracle or task. Missing reward-details produces a warning rather than rejecting the CTRF report, and that file's contents are not validated here.
+
+The [review-task staging script](https://github.com/harbor-framework/terminal-bench/blob/6964e9252c90227fc1cfa26cbc59aee4134792e4/scripts/review/stage_task.py) validates repository, full commit and task-path syntax and fetches the named task snapshot. Its generated review verifier only checks that verdicts.json exists and is nonempty; it does not parse verdicts or judge their correctness. Ubuntu/package installation and the CLI remain mutable inputs despite the pinned task commit. Runtime network policies are generated configuration, not enforcement inspected in this scope.
+
+The [legacy cancellation example](https://github.com/harbor-framework/terminal-bench/blob/6964e9252c90227fc1cfa26cbc59aee4134792e4/legacy/cancel-async-tasks/solution/solve.sh) uses TaskGroup ownership around semaphore-limited execution. The [Python fixture](https://github.com/harbor-framework/terminal-bench/blob/6964e9252c90227fc1cfa26cbc59aee4134792e4/legacy/cancel-async-tasks/tests/test.py) awaits cleanup in finally, while the [shell launcher](https://github.com/harbor-framework/terminal-bench/blob/6964e9252c90227fc1cfa26cbc59aee4134792e4/legacy/cancel-async-tasks/tests/test.sh) runs assertions from a separate, unread test_outputs.py. Do not claim those cancellation assertions were inspected or passed. Adapt structured result provenance, frozen environments and independent semantic verifiers; no benchmark, installer or test ran.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [terminal-bench](https://github.com/harbor-framework/terminal-bench); analyzed commit `1dcda8716784493721921c23e4bc7f7d988b4494`; commit date 2026-09-28T19:22:01-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--terminal-bench.md).
+Analysis metadata: source [terminal-bench](https://github.com/harbor-framework/terminal-bench); analyzed commit `6964e9252c90227fc1cfa26cbc59aee4134792e4`; commit date 2026-10-26T17:05:41-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--terminal-bench.md).
 <!-- teamagent-analysis:end -->

@@ -29,6 +29,21 @@ Shortlist where cross-client interoperability matters. The repository states tha
 
 [Generation](../generation.md) · [Channels](../channels.md) · [Security](../security.md)
 
+
+## Change review - 2026-10-28
+
+**Renderer identity reuse preserves inputs but does not fence asynchronous generations.** Reviewed commit `02174297d59451bd293c3c995792274b5d333c58` (commit date `2026-10-27T13:42:14-04:00`). Compared with `1444719acd8833eeb5e70529c7ac47bc50b7390c`; the complete Git comparison contains 2409 changed paths.
+
+The Angular v0.8 renderer observes the processor version and reuses an existing component when ID and type match, updating inputs rather than recreating the DOM. Unknown catalog types produce a logged empty render. The lazy-resolution callback checks only ID and type: repeated updates while loading, or an A-to-B-to-A transition, can allow multiple pending callbacks for the same identity to create components and apply an old captured node/surface. It has no generation token, rejection handler or explicit destruction fence. Reused components receive present properties but removed properties are not cleared, and property-setting exceptions are only warnings.
+
+The Lit sample advertises v0.9 capabilities and requests a non-streamed A2A response. It parses object-like input text into data, casts the response to a Task and returns every data part without a MIME/schema check; unsupported response shapes collapse to an empty array. Renderer fixtures cover basic catalog resolution and missing inputs, not the competing lazy-load or property-removal cases. These paths do not establish the guarantees of other renderers or the sandbox implementation.
+
+Evidence: [typescript/renderers/angular/src/v0_8/rendering/renderer.ts:1-182](https://github.com/google/A2UI/blob/02174297d59451bd293c3c995792274b5d333c58/typescript/renderers/angular/src/v0_8/rendering/renderer.ts#L1-L182) · [samples/client/lit/shell/client.ts:1-123](https://github.com/google/A2UI/blob/02174297d59451bd293c3c995792274b5d333c58/samples/client/lit/shell/client.ts#L1-L123) · [typescript/renderers/angular/src/v0_8/rendering/renderer.spec.ts:1-247](https://github.com/google/A2UI/blob/02174297d59451bd293c3c995792274b5d333c58/typescript/renderers/angular/src/v0_8/rendering/renderer.spec.ts#L1-L247).
+
+**Harness consequence:** Keep declarative catalog selection and stable component identity, but decode transport messages before rendering and fence every lazy load by generation, lifecycle and surface. Report unsupported/partial renders explicitly, clear removed inputs according to a declared schema and test identity reuse under delayed completion. A generated UI remains a proposal; action authority belongs in the host policy boundary.
+
+**Scope and limits:** Scoped static review of the Angular v0.8 renderer, its fixtures and one Lit transport sample from the 2,409-path comparison. Other protocol versions, Swift/Dart renderers, sandbox internals and deployed behavior were not audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [a2ui](https://github.com/google/A2UI); analyzed commit `1444719acd8833eeb5e70529c7ac47bc50b7390c`; commit date 2026-10-02T21:54:49Z; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--a2ui.md).
+Analysis metadata: source [a2ui](https://github.com/google/A2UI); analyzed commit `02174297d59451bd293c3c995792274b5d333c58`; commit date 2026-10-27T13:42:14-04:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--a2ui.md).
 <!-- teamagent-analysis:end -->

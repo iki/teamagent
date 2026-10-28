@@ -31,6 +31,18 @@ Test missing or mismatched runtime, stale catalog, account changes, token refres
 
 Related directions: [agents](../agents.md) · [models](../models.md).
 
+## 2026-10-28 scoped source review
+
+Source: [copilot-sdk](https://github.com/github/copilot-sdk); inspected saved discovery revision `26536883459ba4cb23c735db8cb3de2c7b899d88`. Prior analyzed revision `ef04633cc84e4ba8e79888a39259ca276f5de732` remains historical evidence.
+
+**Scope:** Complete Rust tool definition, schema normalization and MCP result conversion module. Rust session dispatch, tool tests, other language SDKs and live Copilot transport were not audited.
+
+The [Rust schema helper](https://github.com/github/copilot-sdk/blob/26536883459ba4cb23c735db8cb3de2c7b899d88/rust/src/tool.rs#L85-L118) recursively sorts object keys for stable serialized definitions and offers a fallible alternative for dynamic schemas. It establishes object-map conversion, not validation of the full JSON Schema vocabulary or depth/size bounds. The [typed handler builder](https://github.com/github/copilot-sdk/blob/26536883459ba4cb23c735db8cb3de2c7b899d88/rust/src/tool.rs#L317-L390) deserializes invocation arguments into the chosen Rust type before calling the handler; the original argument value is taken out of the invocation, while session/call metadata remains. Serde decoding is not automatically enforcement of every advertised schema constraint or effect authorization. Declaration-only tools deliberately omit a local handler.
+
+The [MCP conversion helper](https://github.com/github/copilot-sdk/blob/26536883459ba4cb23c735db8cb3de2c7b899d88/rust/src/tool.rs#L120-L205) accepts any object with a content array, extracts selected text/image/resource fields, silently ignores unsupported or malformed blocks, and treats anything other than boolean `isError: true` as success. Binary data and MIME strings are copied without visible byte, encoding or MIME validation. This can produce an empty success from an all-unrecognized content array; transport decoding elsewhere may be stricter, but was not reviewed.
+
+Teamagent should preserve deterministic tool descriptions and typed handler boundaries, while returning explicit unsupported/partial results, validating binary payloads, and enforcing permissions/cancellation at dispatch. SDK type declarations do not prove cross-language parity or remote idempotency. No SDK, CLI, provider or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [copilot-sdk](https://github.com/github/copilot-sdk); analyzed commit `ef04633cc84e4ba8e79888a39259ca276f5de732`; commit date 2026-10-02T22:14:56Z; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--copilot-sdk.md).
+Analysis metadata: source [copilot-sdk](https://github.com/github/copilot-sdk); analyzed commit `26536883459ba4cb23c735db8cb3de2c7b899d88`; commit date 2026-10-26T22:46:23Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--copilot-sdk.md).
 <!-- teamagent-analysis:end -->

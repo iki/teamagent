@@ -24,6 +24,21 @@ This entry was catalogued under **ai-media**. Its category places it in the cand
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Provider cache merging preserves concurrent changes while stale reuse needs a visible contract.** Reviewed commit `3bc1d60c26505694816e66a2e40c59b68a873aa1` (commit date `2026-10-27T17:19:00Z`). Compared with `3957d70040c74424ee9477484059e05a53315537`; the complete Git comparison contains 1916 changed paths.
+
+Provider ID slices validate provider-name syntax, load lazily and save only changed keys. Each save snapshots pending changes, rereads under a shared directory lock, merges sets/deletes and renames a temporary file; failed slices are requeued without overwriting newer local changes, and other slices still get a save attempt before the first error is thrown. Fixtures describe overlapping saves, changes during save and failed-slice retries. Cache JSON is only checked as an object and unreadable data becomes an empty slice, so this is an optimization store rather than an authoritative record.
+
+cachedLookup validates a previously cached ID but does not validate a newly returned lookup value before saving it. After the default 30-day recheck interval, any failure not classified isGone can return the old ID indefinitely, with no stale marker; future checkedAt dates also count as fresh. DNS lookup coalesces misses and applies a provider-address guard to fresh answers, hits and waiters. Its cache has an entry cap and pacing, but the token queue and in-flight waiter lists rely on external caller concurrency and expose no local cancellation/deadline. The lock wrapper delegates protocol correctness and accepts an explicit infinite overall wait.
+
+Evidence: [provider-id-cache.mjs:1-115](https://github.com/santifer/career-ops/blob/3bc1d60c26505694816e66a2e40c59b68a873aa1/provider-id-cache.mjs#L1-L115) · [pipeline-lock.mjs:1-115](https://github.com/santifer/career-ops/blob/3bc1d60c26505694816e66a2e40c59b68a873aa1/pipeline-lock.mjs#L1-L115) · [providers/_cached-lookup.mjs:1-51](https://github.com/santifer/career-ops/blob/3bc1d60c26505694816e66a2e40c59b68a873aa1/providers/_cached-lookup.mjs#L1-L51) · [providers/_dns-cache.mjs:125-209](https://github.com/santifer/career-ops/blob/3bc1d60c26505694816e66a2e40c59b68a873aa1/providers/_dns-cache.mjs#L125-L209) · [providers/_dns-cache.mjs:225-346](https://github.com/santifer/career-ops/blob/3bc1d60c26505694816e66a2e40c59b68a873aa1/providers/_dns-cache.mjs#L225-L346) · [tests/provider-id-cache.test.mjs:1-126](https://github.com/santifer/career-ops/blob/3bc1d60c26505694816e66a2e40c59b68a873aa1/tests/provider-id-cache.test.mjs#L1-L126).
+
+**Harness consequence:** Keep per-slice read/merge/write ownership and retry preservation, but return freshness and degradation metadata with cached provider IDs and validate new values before persistence. Treat DNS guarding, result caching, request admission and cancellation as separate contracts; verify the called guard/lock implementations and enforce a finite host-level wait budget before adopting them.
+
+**Scope and limits:** Scoped static review of provider-ID persistence, lookup freshness, DNS coalescing/pacing and the lock wrapper in the 1,916-path comparison. The directory-lock protocol, IP classification, ranking pipeline and real provider behavior were not audited; fixtures were read without executing upstream code or contacting providers.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [career-ops](https://github.com/santifer/career-ops); analyzed commit `3957d70040c74424ee9477484059e05a53315537`; commit date 2026-10-03T17:57:50Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-media--career-ops.md).
+Analysis metadata: source [career-ops](https://github.com/santifer/career-ops); analyzed commit `3bc1d60c26505694816e66a2e40c59b68a873aa1`; commit date 2026-10-27T17:19:00Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-media--career-ops.md).
 <!-- teamagent-analysis:end -->

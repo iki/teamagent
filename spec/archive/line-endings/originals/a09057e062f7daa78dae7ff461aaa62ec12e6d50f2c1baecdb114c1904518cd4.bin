@@ -1,0 +1,47 @@
+# Text refresh review — 2026-10-27
+
+[Source catalog](README.md) · [Historical source state](source-state-pre-static-2026-10-27.json) · [Review measurements](review-2026-10-27.json) · [Maintenance contract](../../research-sync.md)
+
+This is the historical run before the later request to pin text resources by default. The subsequent static-policy implementation preserves its versions; it does not relabel this earlier run as a static check.
+
+The full public-source refresh started at 2026-10-27T17:26:12.068Z and attempted all 42 configured URLs, with no skipped entries. It produced 28 usable text extractions, eight partial extractions, one blocked PDF wrapper and five failed imports. The process exited 1 to report those incomplete sources. The prior run on 2026-10-24 had 29 usable, eight partial, one blocked and four failed sources.
+
+There were 22 new immutable versions, 15 unchanged imports and five failures. Fifteen of the 22 new versions have byte-identical extracted Markdown; a changed source version is not necessarily a changed article. Original evidence, earlier exports and their hashes remain retained. The exact source-list and current source-state hashes are in the linked review measurements.
+
+## Reviewed changes
+
+The seven changed Markdown exports were compared with their preceding immutable versions. This scoped review found no technical article-body change that warrants changing an architecture recommendation. It does not establish the factual accuracy of the imported articles or community comments.
+
+| Source | Observed change and assessment |
+| --- | --- |
+| [Miessler article on X](ai.260330.x-miesler-top-5-ideas-in-ai.md.report.md) | Page sections moved; avatar, counters, linked cover image and emphasis punctuation changed. No new architectural claim was identified in the article text. Public social coverage remains partial. |
+| [Camel agent article on X](agents.260728.camel-ai-on-durable-objects.md.report.md) | Social page layout, cover-image link and counters changed; the technical article body is unchanged. Public social coverage remains partial. |
+| [Factory compression evaluation](cx.251216.evaluating-compression.md.report.md) | A footer link was removed; the evaluation body is unchanged. |
+| [Anthropic long-running harnesses](cx.251126.effective-harnesses-for-long-running-agents.md.report.md) | The corporate mission footer changed; the harness article body is unchanged. |
+| [Karpathy knowledge-base post](kb.260402.x-karpathy-llm-kb.md.report.md) | Visible engagement counts changed. Public post/thread completeness remains unverified. |
+| [GitHub specification-driven development](spec.250902.spec-driven-dev.speckit.md.report.md) | Navigation image assets changed; article wording is unchanged. Image appearance was not visually reviewed. |
+| [Hugging Face intrusion timeline](security.260727.hf-openai-agent-intrusion-technical-timeline.md.report.md) | Header/profile images, counters, model cards and the community section changed. The technical article body from the summary through reflection is unchanged. Community changes are not promoted into security conclusions. Captured image count changed from 64 to 62; completeness and fidelity remain unverified. |
+
+## Incomplete sources and retained evidence
+
+[The Kiro harness article](agents.260803.how-we-built-the-kiro-agent-harness.md.report.md) newly failed the current import. Its preceding successful version is explicitly stale; the retained 20,272-character count and image are not evidence of a successful new extraction.
+
+Four previously failed imports remain failed: [QM company agents](agents.260731.qm-is-trying-to-solve-the-company-agent-problem.md.report.md), [agent-loop techniques](agents.260706.testing-17-agentic-loop-engineering-techniques-for-reliable-ai-agents.md.report.md), [OpenAI computer environment](agents.260311.equip-responses-api-computer-environment.md.report.md), and [TanStack code mode with skills](tools.260624.tanstack-ai-code-mode-with-skills.md.report.md). Their existing importer outcome is `invalid`; this generic code does not by itself identify an HTTP, network or conversion cause.
+
+[The Memento PDF source](cx.260408.memento.pdf.report.md) still resolves to an HTML wrapper rather than a captured PDF. Its configured locator was retained without substituting a raw-file URL. The eight partial sources retain their individual social, PDF-layout or missing-image warnings in the source catalog and reports.
+
+No authenticated X API, paid social access, alternate mirror, source-list rewrite or content substitution was used. No architecture baseline was advanced solely because a fetch or extraction succeeded. Usable-text is a coarse extraction check; PDF layout/OCR, complete social conversations and image fidelity remain unverified.
+
+## Subsequent static-source policy
+
+After this run, the requested default changed to capture-once static resources. The [maintenance contract](../../research-sync.md#text-resources-and-legacy-material) documents per-URL `refresh=true`, source creation dates with explicit provenance, preserved first-capture times, v1 ledger migration and local integrity checks. Missing recorded snapshots require restoration and never trigger silent replacement. The earlier Kiro failure above remains historical evidence; no separate Kiro HTTP diagnostic was run. Later verification is recorded separately from this initial refresh.
+
+The subsequent static run at 2026-10-27T18:18:37.040Z processed all 42 entries: **38 pinned snapshots checked locally**, four initial imports retried, and **zero captured versions updated**. All 38 source IDs, version IDs, content hashes and last remote-check timestamps match the preceding ledger. Kiro's retained successful snapshot was checked locally without another fetch. Results are 29 usable, eight partial, one blocked PDF wrapper and four failed initial imports.
+
+All 38 captured sources now retain their original first-capture dates. Twenty-four sources have publisher-provided publication dates (14 HTML metadata, ten Article JSON-LD); 18 remain unknown, including the four never-captured sources. Filename dates and HTTP Last-Modified were not used. See the [static policy verification](static-policy-verification-2026-10-27.json) and [exact static-run ledger](source-state-static-2026-10-27.json). Nine new text-policy fixtures cover defaults, date provenance, migration, missing/corrupt/forged exports and capture-success/export-failure recovery. The assembled step gate passed 333 tests with zero failures; the final review gate is tracked by the parent maintenance run.
+
+### Final alias and exact-URL validation
+
+The final run at 2026-10-27T18:40:39.721Z exercised the v2 ledger again after the alias and exact-locator guards. [Final measured evidence](static-policy-final-verification-2026-10-27.json) and its [immutable state snapshot](source-state-static-final-2026-10-27.json) are separate from the earlier 333-test-era run above. All 38 pinned source/version/hash identities, last remote-check times, first-capture dates and publication-date records remain unchanged; no captured version was updated. Only four never-captured sources entered the import path, and all four remain failed. Counts remain 29 usable, eight partial and one blocked PDF wrapper in addition to those four failures.
+
+Adding or renaming a static alias now reuses an unambiguous pin for the exact full URL. Conflicting historical pins block without network access until explicitly resolved or refreshed. Query-only changes in an export's stored input locator also fail local validation even when its content hashes still match. The fixture suite covers exact-query identity, conflicting aliases and locator tampering without printing private query values. Twelve new text-policy tests are included in the assembled step gate: 336 passed, zero failed, 1,240 assertions across 45 files. Live authenticated X/provider tests remain outside this verification.

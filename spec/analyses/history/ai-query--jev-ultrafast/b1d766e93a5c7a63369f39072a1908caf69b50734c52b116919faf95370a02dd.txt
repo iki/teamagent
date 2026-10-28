@@ -1,0 +1,27 @@
+# jev-ultrafast
+
+Finite browser-action classification with separate operation/target heads and independent text generation.
+
+Source: [jev-ultrafast](https://github.com/browser-use/jev-ultrafast) · Snapshot: `1231850a0bf1a0c0341fe408ef1668dbbfdfac46` · Category: `ai-query`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [jev_ultrafast/model.py:30-148](https://github.com/browser-use/jev-ultrafast/blob/1231850a0bf1a0c0341fe408ef1668dbbfdfac46/jev_ultrafast/model.py#L30-L148)
+
+The model adapter derives legal operations and targets from observed browser actions. It sends one TypeSafe request containing an operation-choice question and a target question for each available operation. DONE and BLOCKED are explicit alternatives. The response validator requires legal choice membership, exact probability keys, finite values within zero and one, approximately normalized total probability, and consistency between the selected choice and the maximum probability. It validates only the target head belonging to the chosen operation before resolving the observed action identifier.
+
+## Harness implications
+
+This demonstrates the useful meaning of a Jev-like decision model: classify among bounded options while ordinary language models generate unbounded text. Apply that pattern to parser selection, retrieval strategy, skill shortlist, agent/model selection and finite UI actions. Keep observation, candidate construction, classification and execution separate. Batch independent choice heads when this reduces latency, but execute only the relevant validated decision. Store candidate-set hashes and observed state versions with the decision record.
+
+## Limitations and tradeoffs
+
+Probability syntax is not calibration. A response can be normalized and internally consistent while selecting an unsafe or incorrect action. The inspected validator does not impose a minimum confidence threshold or prove that DONE is true. The implementation calls a specific hosted TypeSafe endpoint; it is a protocol/example reference, not a model-agnostic local decision engine. The review did not reproduce latency claims or evaluate success rates.
+
+## Adoption and validation
+
+Borrow the finite-choice contract and build a provider-neutral adapter with deterministic fallback and abstention. Retain independent policy checks for permissions and side effects; a classifier never grants authority. Test stale observations, candidate changes, malformed distributions, near ties, unavailable providers and false completion. Calibrate confidence against task-specific held-out outcomes before using it to bypass a slower verifier.
+
+Related directions: [decisions](../decisions.md) · [agents](../agents.md) · [models](../models.md) · [channels](../channels.md).

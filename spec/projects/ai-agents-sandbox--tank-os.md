@@ -24,6 +24,13 @@ This entry was catalogued under **ai-agents-sandbox**. Its category places it in
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`adc6532d2f064e67fd6ff0a6f15d2ddc92fbc77b`](https://github.com/LobsterTrap/tank-os/commit/adc6532d2f064e67fd6ff0a6f15d2ddc92fbc77b). Scope: All five changed paths inspected: full Containerfile and service unit, plus complete README/architecture/new llmman guide delta. Upstream llmman runtime not audited.
+
+The [Containerfile](https://github.com/LobsterTrap/tank-os/blob/adc6532d2f064e67fd6ff0a6f15d2ddc92fbc77b/bootc/Containerfile) pins llmman 0.1.491 to repository-owned per-architecture SHA-256 values, refuses unknown architectures, verifies bytes before installation and enables a [foreground user service](https://github.com/LobsterTrap/tank-os/blob/adc6532d2f064e67fd6ff0a6f15d2ddc92fbc77b/bootc/rootfs/usr/lib/systemd/user/llmman.service) with restart-on-failure. This strengthens artifact identity for that binary; the Fedora/CSB image tags and other runtime downloads are separate trust inputs. The unit itself does not specify a bind address or authentication options: loopback/auth behavior remains an upstream llmman default claimed in the [guide](https://github.com/LobsterTrap/tank-os/blob/adc6532d2f064e67fd6ff0a6f15d2ddc92fbc77b/docs/llmman.md), not locally proved enforcement. The guide explicitly says OpenClaw inside tank-csb is not yet wired to this host endpoint and describes runtime engine downloads plus persistent model storage. Adapt digest verification and explicit integration gaps; do not infer a reproducible whole image, model authorization or sandbox isolation. No image, VM, service or inference test was run.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [tank-os](https://github.com/LobsterTrap/tank-os); analyzed commit `4fc6acd775c4d782a581633cd4bd65af050aa871`; commit date 2026-08-08T11:56:05-04:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--tank-os.md).
+Analysis metadata: source [tank-os](https://github.com/LobsterTrap/tank-os); analyzed commit `adc6532d2f064e67fd6ff0a6f15d2ddc92fbc77b`; commit date 2026-10-23T14:30:58-04:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--tank-os.md).
 <!-- teamagent-analysis:end -->

@@ -30,6 +30,18 @@ Test two workers consuming the same remaining budget, late usage events, month b
 
 Related directions: [agents](../agents.md) · [models](../models.md) · [evolution](../evolution.md).
 
+## 2026-10-28 scoped source review
+
+Source: [paperclip](https://github.com/paperclipai/paperclip); inspected saved discovery revision `50b932a142216331b8d476042b454bc123739c40`. Prior analyzed revision `2a8a99e4a5f69aa803b3f10b982f583e75a87042` remains historical evidence.
+
+**Scope:** Complete CLI approval page plus budget service sections 1–94, 174–225, 274–365, 574–622 and 1060–1136. Accounting transaction internals, exposure calculations, authorization API and cancellation delivery were not inspected.
+
+The [budget handoff recheck](https://github.com/paperclipai/paperclip/blob/50b932a142216331b8d476042b454bc123739c40/server/src/services/budgets.ts#L174-L224) requires a held reservation matching company, agent, run and nullable project, then checks applicable billed-cost policies and pending/unpriced exposure. Its own contract is supplemental and read-only after authoritative admission; it does not take the company lock or eliminate later concurrent charges. Teamagent should distinguish reservation ownership, admission and post-admission cancellation rather than describing a budget check as an atomic provider-spend ceiling.
+
+[Budget reconciliation](https://github.com/paperclipai/paperclip/blob/50b932a142216331b8d476042b454bc123739c40/server/src/services/budgets.ts#L574-L620) separates unfinished accounting recovery from fresh work, preserves manual pauses, and releases only budget-owned pauses. [Enforcement generation](https://github.com/paperclipai/paperclip/blob/50b932a142216331b8d476042b454bc123739c40/server/src/services/budgets.ts#L274-L364) avoids advancing an already pending cancellation generation; the [service facade](https://github.com/paperclipai/paperclip/blob/50b932a142216331b8d476042b454bc123739c40/server/src/services/budgets.ts#L1092-L1136) routes mutations through accounting transactions and pages reconciliation in batches of 100. Transaction locking, cost calculations and the durable cancellation worker remain separate evidence gaps.
+
+The [CLI approval page](https://github.com/paperclipai/paperclip/blob/50b932a142216331b8d476042b454bc123739c40/ui/src/pages/CliAuth.tsx#L24-L69) retries only rate-limited challenge reads, with retry count and expiry/window limits; approve/cancel are explicit mutations. It carries the challenge token in the URL, query key and encoded sign-in return path. The [approval explanation](https://github.com/paperclipai/paperclip/blob/50b932a142216331b8d476042b454bc123739c40/ui/src/pages/CliAuth.tsx#L147-L208) says the client requests full board access and labels the organization as audit context, which must not be misread as an organization-scoped grant. Server token expiry, one-time consumption, identity checks and URL/log privacy were not established here. Teamagent should keep sensitive approval state outside public URLs and independently enforce grants. No upstream/browser/database tests or provider calls were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [paperclip](https://github.com/paperclipai/paperclip); analyzed commit `2a8a99e4a5f69aa803b3f10b982f583e75a87042`; commit date 2026-10-03T12:41:22-05:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paperclip.md).
+Analysis metadata: source [paperclip](https://github.com/paperclipai/paperclip); analyzed commit `50b932a142216331b8d476042b454bc123739c40`; commit date 2026-10-27T12:30:50-05:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paperclip.md).
 <!-- teamagent-analysis:end -->

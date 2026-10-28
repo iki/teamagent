@@ -1,0 +1,986 @@
+{
+  "id": "ai-agents-swarm--orca",
+  "generatedAt": "2026-10-28T08:26:04.502Z",
+  "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+  "source": "https://github.com/stablyai/orca",
+  "report": "spec/projects/ai-agents-swarm--orca.md",
+  "analyzedSha": "08c7152ab6e576951b33c2991ed2dedca4333096",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-02T21:48:17-07:00",
+  "observedSha": "ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c",
+      "date": "2026-10-27T10:36:03-07:00",
+      "subject": "fix(notifications): keep Windows notification history clicks working (#33649)"
+    },
+    {
+      "sha": "f87a746200ff6c92521209a4e81ad2c6b9ff6d98",
+      "date": "2026-10-27T17:35:31Z",
+      "subject": "feat(mobile): light and dark themes with desktop's palettes (#34217)"
+    },
+    {
+      "sha": "7cb23565c9e346be1ef9eb793e8b09c985d7257b",
+      "date": "2026-10-27T10:33:48-07:00",
+      "subject": "fix(native-chat): resting chat skill checks share one capped Codex process per account (#34349)"
+    },
+    {
+      "sha": "4a39d186da72a496b29a9ec5c523bbbf0a3460d8",
+      "date": "2026-10-27T10:27:58-07:00",
+      "subject": "Extract conversation switch foundations without activating them (#34384)"
+    },
+    {
+      "sha": "5429d20f4370d481e39c46e57ed7bd7176883362",
+      "date": "2026-10-27T17:21:27Z",
+      "subject": "fix(mobile): show files named like constructor as plain text instead of failing diffs (#34475)"
+    },
+    {
+      "sha": "94b06930b9fc71ac82a2ccaa7f9428f2ede05921",
+      "date": "2026-10-27T10:21:11-07:00",
+      "subject": "test: remove 49 low-value graph, host and layout tests (#34473)"
+    },
+    {
+      "sha": "1c8c0685fb8ac49917d7fff250ff507ce4b2ee2c",
+      "date": "2026-10-27T10:16:32-07:00",
+      "subject": "refactor: group shared native chat appearance settings (#34469)"
+    },
+    {
+      "sha": "13757d773d91b15e6223adaeeeffc562f8a0c531",
+      "date": "2026-10-27T10:15:28-07:00",
+      "subject": "test(e2e): update four stale e2e specs to match intentional product changes (#30115)"
+    },
+    {
+      "sha": "46c0a1f4537ecb26d8de758dab79e53bbc18cf9a",
+      "date": "2026-10-27T10:10:18-07:00",
+      "subject": "test(e2e): skip contributor git hooks and signing when seeding fixture repos (#31591)"
+    },
+    {
+      "sha": "1dec433da6f98d2ecefeff93ae1e2c2328b193ef",
+      "date": "2026-10-27T09:59:48-07:00",
+      "subject": "fix(i18n): translate the Claude account labels in switch toasts and dialogs (#34470)"
+    },
+    {
+      "sha": "b01bbb29c8e5d466c2080917ec0b250b6f32822c",
+      "date": "2026-10-27T09:54:19-07:00",
+      "subject": "test(daemon): pin the sqlite3 prompt in the exec-replaced shell repro (#34468)"
+    },
+    {
+      "sha": "5a0bf8ae6ebf13257b7ccaa515956c256a3a88eb",
+      "date": "2026-10-27T09:48:58-07:00",
+      "subject": "fix(terminal): keep account-switch restarts of hidden Claude panes out of the live cap (#34403)"
+    },
+    {
+      "sha": "b3089eef1d4b8e9ca35a23affd3ad32b625ac816",
+      "date": "2026-10-27T09:48:41-07:00",
+      "subject": "fix(scripts): preserve Git-quoted paths in ratchet checks (#34397)"
+    },
+    {
+      "sha": "efd0a09f6945a23d1721887924f5b7a01237f0e4",
+      "date": "2026-10-27T09:48:32-07:00",
+      "subject": "fix(native-chat): resolve /D:/ chat file links to the drive in Windows workspaces (#34367)"
+    },
+    {
+      "sha": "1aada40c24bd045d18828a64c9613a24e4f27c23",
+      "date": "2026-10-27T09:47:08-07:00",
+      "subject": "test: remove 43 low-value AppImage and CLI tests (#34465)"
+    },
+    {
+      "sha": "3ddaa8df6f61e77ef095fba03532b2a13b3b2fdf",
+      "date": "2026-10-27T16:38:00Z",
+      "subject": "fix(mermaid): keep flowchart labels readable on custom node fills (#34452)"
+    },
+    {
+      "sha": "53e6a7d4a948ff7c9bed422c975807b113fbe63a",
+      "date": "2026-10-27T16:34:48Z",
+      "subject": "feat(mobile): copy button on shell command rows in chat (#34432)"
+    },
+    {
+      "sha": "93a065031be508b0b6fe771a068ed61d69032938",
+      "date": "2026-10-27T09:26:47-07:00",
+      "subject": "test: remove 47 low-value CLI and runtime tests (#34451)"
+    },
+    {
+      "sha": "2a08315494519c4f08aa971c18d1fef2b0aed997",
+      "date": "2026-10-27T09:17:40-07:00",
+      "subject": "refactor: group Claude structured session lifecycle owners (#34449)"
+    },
+    {
+      "sha": "7140e7fccdfaec937766470de04a7aa887de7009",
+      "date": "2026-10-27T09:06:10-07:00",
+      "subject": "test: remove 22 low-value CLI tests (#34448)"
+    },
+    {
+      "sha": "dc735050b3c6f1c0913b3ab7cc4e5b70b3136a9c",
+      "date": "2026-10-27T08:47:04-07:00",
+      "subject": "test: remove 20 low-value CLI and runtime tests (#34445)"
+    },
+    {
+      "sha": "e310a63624c86c0e91e9d77df71f038b91d79ea0",
+      "date": "2026-10-27T15:34:56Z",
+      "subject": "fix(mobile): use desktop's rules for queued messages, turn status, Stop and the chat composer (#34000)"
+    },
+    {
+      "sha": "beb62feef14e41acf4ce9bb3edd1327e6922c512",
+      "date": "2026-10-27T08:28:06-07:00",
+      "subject": "test: remove 25 low-value tests and redundant parity suite (#34443)"
+    },
+    {
+      "sha": "16a29bc2fe7b82324d9d6eb6b45b862369589611",
+      "date": "2026-10-27T08:26:26-07:00",
+      "subject": "refactor(pty): group IPC test harness and provider fixtures (#34440)"
+    },
+    {
+      "sha": "c98a2d639c764b0146c5dc902a6185c114432a85",
+      "date": "2026-10-27T08:03:05-07:00",
+      "subject": "test: remove 19 low-value runtime file and Jira tests (#34436)"
+    },
+    {
+      "sha": "f776923c045fd327284234b43c87a6914415a803",
+      "date": "2026-10-27T15:00:27Z",
+      "subject": "fix(mobile): use desktop's rules for chat tool rows, pending echoes and session option picks (#33977)"
+    },
+    {
+      "sha": "dc57b3d6e81c9825446a520bf0aee8600a2f5586",
+      "date": "2026-10-27T07:30:16-07:00",
+      "subject": "test: remove 61 low-value runtime tests and five suites (#34431)"
+    },
+    {
+      "sha": "cb511d769e821f44336536b3ec0f6c75af0ac219",
+      "date": "2026-10-27T14:21:12Z",
+      "subject": "fix(native-chat): list an idle Claude chat's / commands from the account it will start on (#34429)"
+    },
+    {
+      "sha": "51d0dd1b27fa6e8b0bff8ec8fa7b4190229922d1",
+      "date": "2026-10-27T07:19:05-07:00",
+      "subject": "refactor(mobile): group native chat row and turn presentation (#34430)"
+    },
+    {
+      "sha": "7c921b0dcc1d75da2e507b9ae75f9998565c9b00",
+      "date": "2026-10-27T07:08:41-07:00",
+      "subject": "test: remove 81 low-value tests and five replay suites (#34426)"
+    },
+    {
+      "sha": "f61e7f8bfe2ca576723364080dec8861436dbec9",
+      "date": "2026-10-27T13:50:25Z",
+      "subject": "fix(browser): stop malformed localhost pages from freezing the new tab page probe (#34427)"
+    },
+    {
+      "sha": "14c04fe14352354f001c0ada7f873f3e3a2d5d8f",
+      "date": "2026-10-27T06:41:35-07:00",
+      "subject": "refactor(mobile): group native chat message presentation (#34424)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".claude/settings.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/build-mobile-web-bundle/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cloud-sql-rollout-lease/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cloud-sql-rollout-lease/action-contract.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cloud-sql-rollout-lease/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cloud-sql-rollout-lease/gcloud-access-token.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cloud-sql-rollout-lease/holder-identity.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cloud-sql-rollout-lease/main.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cloud-sql-rollout-lease/post.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cloud-sql-rollout-lease/renew.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cloud-sql-rollout-lease/runner-state.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cloud-sql-rollout-lease/storage-lease.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cloud-sql-rollout-lease/storage-lease.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/download-pinned-orca-release/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/install-mobile-dependencies/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/install-node-dependencies/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/install-signpath-module/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/prepare-dependency-audit/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/prepare-git-compatibility/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/prepare-headless-compiler/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/prepare-linux-package-fixture/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/prepare-linux-package-fixture/load-fixture.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/prepare-native-runtime/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/prepare-orcad-prebuilds/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/prepare-wayland-clipboard/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/prepare-wayland-clipboard/build-or-validate.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/prepare-windows-agent-hook/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/prepare-windows-cli-launcher/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/prepare-xterm-dependencies/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/restore-pnpm-verification/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-pnpm/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-wsl-test-runtime/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-wsl-test-runtime/setup.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/check-required-pr-context.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/check-root-directory-entries.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/e2e-with-window-manager.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/pr-test-loc-table.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/prepare-ubuntu-apt.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/render-readme-downloads-badge.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/adhoc-mac-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/agent-state-rules-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-cache-warmup-platform-jobs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-cache-warmup-platforms.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-cache-warmup.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-closed-pr-caches.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-runner-demand.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-xterm-cache.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/cloud-verify.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/computer-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/computer-macos-native.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/daemon-relocation-spike.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/daily-mac-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/dependency-security.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dev-channel-win-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/dev-channel-win-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/git-command-termination-runtime.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/golden-e2e-experiment.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/homebrew-bump.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/hourly-mac-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/issue-os-labeler.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/layout-owner-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/linux-wayland-gpu-sandbox.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/macos-updater-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mobile-android-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mobile-ios-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mobile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/node-next-compat.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/node-server-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/packaged-browser-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/performance-contracts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pi-owner-runtime.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pi-provider-runtime.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-test-loc.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/preflight-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/preflight-cli-platforms.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/preflight-critical-path-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pullfrog.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/qualified-orcad-template.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/readme-downloads-badge.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-cut.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/release-javascript-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/release-javascript.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-mac-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-policy.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/release-ref-validation.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/skill-update-roundtrip.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ssh-hostile-hosts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ssh-windows-hosts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/terminal-ime-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/terminal-perf.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/track-community-prs.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/unit-module-cache-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/unit-plan.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/unit-selection-evidence.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/unit-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/win-crash-survival-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/win-orcad-serve-switch-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/win-update-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/win-update-survival-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-native-preparation-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-signing-rehearsal.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-terminal-restart-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-typecheck-parity.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-wsl-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/wsl-orcad-e2e-frozen-runner-retry.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/wsl-orcad-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/zcode-account-contract.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/zcode-credential-contract.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/zcode-transcript-contract.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".mcp.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxfmtrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxlintrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Casks/orca.rb",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Casks/orca@rc.rb",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/.dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/.editorconfig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/.gitleaks.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/.node-version",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/.trufflehog-exclude-paths.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/.trufflehog-include-paths.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-adapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-background.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-copy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-core.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-database.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-events.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-hosts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-identities.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-inbox.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-inbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-posts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-schema-baseline.test-fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-schema-changes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-schema-upgrade.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-server-harness.test-fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-server.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-threads.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-token-verifier.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cloud/apps/connector/src/connector-token-verifier.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Explicit review of discovery snapshot ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c; checkout 32a50856ac388a419ffa18b2295a76d1744f7ec5 is a verified descendant whose later changes remain unreviewed.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

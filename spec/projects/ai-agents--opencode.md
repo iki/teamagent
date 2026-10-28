@@ -30,6 +30,18 @@ Run adapter conformance against the pinned executable: history recording, contin
 
 Related directions: [agents](../agents.md) · [models](../models.md) · [channels](../channels.md).
 
+## 2026-10-28 scoped source review
+
+Source: [opencode](https://github.com/anomalyco/opencode); inspected saved discovery revision `432d870b02683d2e40e895ddc70d437189b25276`. Prior analyzed revision `907b3bc518fa48e90e8ec24dd327d13eee71c36c` remains historical evidence.
+
+**Scope:** Three complete source files: AI tool construction, core agent selection and shared tool schema. Execution dispatch, permissions, JSON-schema validation elsewhere and tests were not inspected.
+
+The [AI tool constructor](https://github.com/anomalyco/opencode/blob/432d870b02683d2e40e895ddc70d437189b25276/packages/ai/src/tool.ts#L135-L207) has materially different typed and dynamic paths. Typed tools retain Effect codecs for input decoding and success encoding. Dynamic JSON-schema tools expose the schema to the model but use `Effect.succeed` for both local codecs; their handler receives unknown input and owns validation. An advertised JSON schema therefore does not itself establish runtime enforcement. The file also separates structured output from model-visible content and narrowly rewrites only the empty-object schema form, preserving other constraints.
+
+The [core agent service](https://github.com/anomalyco/opencode/blob/432d870b02683d2e40e895ddc70d437189b25276/packages/core/src/agent.ts#L49-L111) excludes hidden/subagent entries only when choosing the default. Explicit `resolve`/`select` performs direct lookup, and listing returns all entries with the default first. This is selection behavior, not an admission policy; callers still need to authorize a requested agent and handle missing information. The [shared tool contract](https://github.com/anomalyco/opencode/blob/432d870b02683d2e40e895ddc70d437189b25276/packages/schema/src/tool.ts#L14-L102) carries session, agent, message and call identities plus an optional permission string, but those declarations do not prove permission enforcement or safe file-URI handling.
+
+Teamagent can borrow the separation of tool description, boundary codecs, structured receipts and model presentation. Preserve its stricter unknown-value boundary rules rather than copying broad `any` types or treating raw JSON Schema as an executable validator. This scoped review did not execute upstream code or establish provider behavior, dispatch cancellation, policy enforcement or current test results.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [opencode](https://github.com/anomalyco/opencode); analyzed commit `907b3bc518fa48e90e8ec24dd327d13eee71c36c`; commit date 2026-10-02T21:55:40-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--opencode.md).
+Analysis metadata: source [opencode](https://github.com/anomalyco/opencode); analyzed commit `432d870b02683d2e40e895ddc70d437189b25276`; commit date 2026-10-27T17:40:04Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--opencode.md).
 <!-- teamagent-analysis:end -->

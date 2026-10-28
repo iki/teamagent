@@ -1,0 +1,38 @@
+{
+  "frozenAt": "2026-10-04T10:28:58.9988699Z",
+  "baselineCommit": "15fe30b75941c81d1891779c5a4c9c68037e6dd7",
+  "retrievalHoldoutStatus": "Not inspected before this product-policy freeze",
+  "parserHoldoutCaveat": "Extraction anchor availability was audited across all PDFs; parser validation used synthetic fixtures and development PDFs, so this is not a fully blind end-to-end parser holdout",
+  "policy": "Lexical OR candidates, Porter stemming, identifier components, informative-term coverage, 200-candidate bound; pypdf page text and embedded images. No query-specific vocabulary, embedding backend or gold-derived boost.",
+  "developmentHit5": {
+    "retrievalAndParser": "29/33",
+    "retrievalOnly": "25/33",
+    "baseline": "0/33"
+  },
+  "files": [
+    {
+      "path": "app/memory/index.ts",
+      "sha256": "00f10c1741da3725fa20c4ede65a252601066f2b14b139fc78f61deecaed5078"
+    },
+    {
+      "path": "lib/memory/retrieval.ts",
+      "sha256": "98a14382077922bb91bb0d3aa3d7d0499f8056899b67e1b2c8a279334a7b6c77"
+    },
+    {
+      "path": "app/imports/worker.py",
+      "sha256": "d231d7759e974ff9e9fe3ce59fe6559c72420874206001091e65ca189dbc14b4"
+    },
+    {
+      "path": "app/imports/documents.ts",
+      "sha256": "1c79c00ff5eddf6fba73d100c96fd98a546f9187869a2dc60ca2287750a88404"
+    },
+    {
+      "path": "app/benchmark/cases-code.json",
+      "sha256": "0a8b3f09aff5bfe8d1b1775a51050bfa2d9bfc4d9962ca7b3db8749e49159cc9"
+    },
+    {
+      "path": "app/benchmark/cases-documents.json",
+      "sha256": "19a35c92a41e413a71086d0ca2159de2827f8ca2f061a7a58c74f7aff1831921"
+    }
+  ]
+}

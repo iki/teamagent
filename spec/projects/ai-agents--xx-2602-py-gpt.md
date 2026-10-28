@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped source review
+
+Source: [xx-2602-py-gpt](https://github.com/szczyglis-dev/py-gpt); inspected saved discovery revision `a6766d0b2b7e839c2501f68575c1f00d7cfe012f`. Prior analyzed revision `016da1c48e363f76e619de6e9e1b068960047976` remains historical evidence.
+
+**Scope:** Complete desktop tool registry, Files tool lifecycle and one drop test. Filesystem path/transfer implementations, BaseTool policy and agent tool execution were not inspected.
+
+The [desktop tool registry](https://github.com/szczyglis-dev/py-gpt/blob/a6766d0b2b7e839c2501f68575c1f00d7cfe012f/src/pygpt_net/tools/__init__.py#L36-L167) attaches tools by ID, dispatches lifecycle events and finds a dialog's policy owner before resolving its ID. Registration overwrites an existing ID and exposes the live mapping; it is a trusted local object registry, not an untrusted plugin validation boundary. Existing-dialog lookup and `can_open_dialog` behavior depend on BaseTool and the UI owner, which this scope did not inspect.
+
+The [Files tool](https://github.com/szczyglis-dev/py-gpt/blob/a6766d0b2b7e839c2501f68575c1f00d7cfe012f/src/pygpt_net/tools/files/tool.py#L24-L117) keeps operations, transfers, paths and chat in separate components, resets chat on profile reload, refreshes the active project root without reopening a closed explorer, and stops an existing explorer on exit. These are useful UI ownership seams. They do not establish path containment, transfer atomicity, background cancellation acknowledgement or permission checks in the delegated components.
+
+The [drop test](https://github.com/szczyglis-dev/py-gpt/blob/a6766d0b2b7e839c2501f68575c1f00d7cfe012f/tests/tools/files/test_drop.py#L13-L54) verifies resulting bytes, move-versus-copy semantics and reveal behavior using temporary files, a real clipboard component and a mocked importer that can fail into fallback. It does not test symlink escapes, oversized files, collisions, partial copies or unauthorized destinations. No Python, Qt, filesystem operation or upstream test was executed in this review. Teamagent should pair comparable UI separation with independently tested path and effect boundaries.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [py-gpt](https://github.com/szczyglis-dev/py-gpt); analyzed commit `016da1c48e363f76e619de6e9e1b068960047976`; commit date 2026-10-03T04:52:01+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--xx-2602-py-gpt.md).
+Analysis metadata: source [py-gpt](https://github.com/szczyglis-dev/py-gpt); analyzed commit `a6766d0b2b7e839c2501f68575c1f00d7cfe012f`; commit date 2026-10-06T04:19:35+02:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--xx-2602-py-gpt.md).
 <!-- teamagent-analysis:end -->

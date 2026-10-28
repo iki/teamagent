@@ -2,6 +2,15 @@
 
 This log records changes to cross-project conclusions. Per-source ingestion/review events are kept in [repository analysis changes](analyses/CHANGELOG.md) and [text-resource changes](analyses/texts/CHANGELOG.md). The [initial survey](README.md) remains dated evidence, not a continuously current audit.
 
+## 2026-10-28
+
+- Completed the [original 368-item review queue](analyses/latest-run.md): 367 scoped report reviews/reconciliations and one verified duplicate archive. Preserved historical findings and left later checkout revisions pending. A prior same-commit PersonaLive addition and eight typographic corrections received separate acknowledgments.
+- Updated [agents](agents.md), [channels](channels.md), [memory](memory.md), [models](models.md), [import/generation](import-generation.md), [generation](generation.md), [decisions](decisions.md), [skills](skills.md), [evolution](evolution.md), [security](security.md) and [evaluation](evaluation.md) with pinned source findings and explicit scope limits. Prompt guidance, metadata and success signals remain separate from enforced authority and verified outcomes.
+- Hardened [analysis maintenance](analyses/README.md): bounded large comparisons, explicit reviewed-snapshot and divergent-history acknowledgment, publication rechecks, retained verified aliases, and recoverable CRLF metadata repair. Old hashes and source baselines remain preserved.
+- Recovered [three static text imports](analyses/texts/repair-2026-10-28.md), retained two HTTP 403 failures, and kept publication dates distinct from capture dates. Registered seven immutable external voice-source pins and resolved the 23 previously unmapped source citations with offline Git-object validation.
+- Established [LF-only maintained text](verification.md#lf-text-and-retained-originals), including owned caches, generated outputs, conversations and active evidence. The [migration ledger](analyses/line-endings.json) preserves original bytes and old/new hashes; 432 report digest updates retain their source/review metadata. Memory exports preserve raw sources separately from normalized text, and exact binary/original bytes remain protected across Git settings.
+- Retained the [October 27 run](analyses/run-2026-10-27.md). Current counts, actual local checks and remaining limits are recorded in [completion measurements](data/review-completion-2026-10-28.json); no live provider or upstream runtime tests are inferred.
+
 ## 2026-10-27
 
 - Made [repository maintenance](research-sync.md) portable: regenerable exports feed the owned [source inventory](../git-sources.json), while the [review ledger](analyses/README.md) retains analyzed revisions. Fixed declaration publication and timestamp deserialization without replacing source evidence.

@@ -26,6 +26,14 @@ Adopt the atomic instinct schema as candidate procedural memory, with separate e
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b`](https://github.com/affaan-m/everything-claude-code/commit/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b). Scope: Full hook-session resolver and tests plus context/decision and change-impact skills read. Installer, scoring engine, session manager and downstream filename sanitizers were not audited.
+
+The [hook-session resolver](https://github.com/affaan-m/everything-claude-code/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/scripts/lib/hook-session.js) accepts only a top-level nonblank string and applies explicit payload/ECC/legacy precedence, with [tests](https://github.com/affaan-m/everything-claude-code/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/tests/lib/hook-session.test.js) for malformed JSON and wrong types. It deliberately preserves raw IDs, including traversal characters, Windows device names and whitespace, for callers to sanitize. This is identity extraction, not a safe filename or authenticated session boundary; missing and malformed payloads both fall back to the environment.
+
+The [context skill](https://github.com/affaan-m/everything-claude-code/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/.agents/skills/context-and-decisions/SKILL.md) separates stable terminology from durable decisions and avoids duplicate document systems. The [impact skill](https://github.com/affaan-m/everything-claude-code/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/.agents/skills/change-impact/SKILL.md) requires call/schema evidence and compares the actual diff with the planned scope, explicitly refusing to infer dependencies from directory names. Adapt those evidence rules while retaining Teamagent's existing documentation and authorization workflow; source-specific confirmation and tracker preferences do not replace it. No hooks, installer, scorer or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle-claude.ecc.affaan-m](https://github.com/affaan-m/everything-claude-code); analyzed commit `ef648e01899ba3e8dc6371642deaaf64b4477775`; commit date 2026-10-01T21:01:14-05:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-skills--bundle-claude.ecc.affaan-m.md).
+Analysis metadata: source [bundle-claude.ecc.affaan-m](https://github.com/affaan-m/everything-claude-code); analyzed commit `25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b`; commit date 2026-10-26T00:03:57-04:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-skills--bundle-claude.ecc.affaan-m.md).
 <!-- teamagent-analysis:end -->

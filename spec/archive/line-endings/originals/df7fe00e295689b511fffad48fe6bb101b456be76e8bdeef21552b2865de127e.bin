@@ -1,0 +1,29 @@
+# SkillKit
+
+Source: [rohitg00/skillkit](https://github.com/rohitg00/skillkit) · Reviewed revision: `d2e5c346f73325c326820efd3188dcf2b6eb704f` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [skills](../skills.md) · [agents](../agents.md) · [evolution](../evolution.md).
+
+## Evidence inspected
+
+- [`packages/core/src/skill-translator.ts` lines 225–326](https://github.com/rohitg00/skillkit/blob/d2e5c346f73325c326820efd3188dcf2b6eb704f/packages/core/src/skill-translator.ts#L225-L326)
+
+## Observed architecture and behavior
+
+The cross-agent translator takes a canonical skill plus a target-agent format. It detects Claude-only hooks as incompatible on other agents and warns about permissionMode outside its known supported targets. The returned object nevertheless has success=true and separately exposes warnings and incompatible arrays. Generation rewrites frontmatter and appends the canonical body. This is useful packaging adaptation, not evidence that a skill's workflow, tools, permissions, or model behavior became equivalent across agents.
+
+## Implications and tradeoffs for Teamagent
+
+The harness should promote this separation into a compiler contract: compilation produces an artifact plus a capability report, and any required unsupported capability blocks activation. Optional capabilities can select a fallback implementation. Preserve canonical task intent and examples, while keeping agent-specific tool names, invocation syntax, hooks, and permission semantics in adapters. Model-specific changes need behavioral evaluation beyond format conversion. Rewriting an allowed-tools field must never grant authority beyond the task's policy. Store the translator version and input/output hashes so a generated variant is reproducible and can be rebuilt when the target format changes.
+
+## Adoption decision
+
+Borrow the canonical intermediate representation and compatibility diagnostics, and evaluate SkillKit as an optional management UI/CLI integration. Do not make a large third-party skill-management platform the sole source of truth. Require trigger tests, forbidden-action tests, and representative output checks per supported model/harness tuple. Especially test that an apparently successful translation with incompatible hooks cannot silently pass the team's release gate.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [search.skillkit](https://github.com/rohitg00/skillkit); analyzed commit `d2e5c346f73325c326820efd3188dcf2b6eb704f`; commit date 2026-06-02T10:43:06+01:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-skills--search.skillkit.md).
+<!-- teamagent-analysis:end -->

@@ -1,0 +1,42 @@
+# flock
+
+Source: [flock](https://github.com/whiteducksoftware/flock) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `006923b101178ac93d1360042adfb0d119de4540`; commit timestamp `2026-09-06T02:30:04+02:00`; 1,158 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/whiteducksoftware/flock/blob/006923b101178ac93d1360042adfb0d119de4540/README.md)):
+
+> 🦞 Flock now supports  OpenClaw  agents!  Use external AI agents with tools, skills, and multi-step reasoning in your Flock pipelines. 🧩 New: Dapr-backed blackboards.  Swap Flock's blackboard store to a Dapr state-store backend for distributed blackboard state.
+
+Build/package evidence: [pyproject.toml](https://github.com/whiteducksoftware/flock/blob/006923b101178ac93d1360042adfb0d119de4540/pyproject.toml); [requirements.txt](https://github.com/whiteducksoftware/flock/blob/006923b101178ac93d1360042adfb0d119de4540/requirements.txt); [src/flock/frontend/package.json](https://github.com/whiteducksoftware/flock/blob/006923b101178ac93d1360042adfb0d119de4540/src/flock/frontend/package.json)
+
+License evidence: [LICENSE](https://github.com/whiteducksoftware/flock/blob/006923b101178ac93d1360042adfb0d119de4540/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**UTC query pushdown and typed payload serialization improve context correctness without total-context bounds.** Reviewed commit `32a4710010a88cc4fd765574e8c6c00200f5d754` (commit date `2026-10-26T00:07:13+01:00`). Compared with `006923b101178ac93d1360042adfb0d119de4540`; the complete Git comparison contains 360 changed paths.
+
+TimeWindowContextProvider computes an aware UTC cutoff and pushes it into the store filter instead of fetching all artifacts then comparing against a naive local timestamp. Its base call path still applies identity visibility and exclusions after retrieval; fixtures cover recent/old artifacts with real memory and SQLite stores plus a deterministic agent engine. The query retains limit=-1, so a busy window can still return unbounded history before visibility filtering. SQLite now uses Pydantic's JSON-compatible conversion for datetime/date/UUID/Decimal payloads and reconstructs typed models; a round-trip fixture checks equality. Consumption lookup gains indexed implementations, while generic fallback scans 100-item pages without a global budget. The SQLite worker is now daemonized so an unclosed store does not keep process exit alive; fixtures check exit and explicit shutdown/reopen, but daemon termination is not proof of drained pending writes or crash durability.
+
+Evidence: [src/flock/core/context_provider.py:134-168](https://github.com/whiteducksoftware/flock/blob/32a4710010a88cc4fd765574e8c6c00200f5d754/src/flock/core/context_provider.py#L134-L168) · [src/flock/core/context_provider.py:452-479](https://github.com/whiteducksoftware/flock/blob/32a4710010a88cc4fd765574e8c6c00200f5d754/src/flock/core/context_provider.py#L452-L479) · [src/flock/core/store.py:134-167](https://github.com/whiteducksoftware/flock/blob/32a4710010a88cc4fd765574e8c6c00200f5d754/src/flock/core/store.py#L134-L167) · [src/flock/core/store.py:440-455](https://github.com/whiteducksoftware/flock/blob/32a4710010a88cc4fd765574e8c6c00200f5d754/src/flock/core/store.py#L440-L455) · [src/flock/core/store.py:511-524](https://github.com/whiteducksoftware/flock/blob/32a4710010a88cc4fd765574e8c6c00200f5d754/src/flock/core/store.py#L511-L524) · [src/flock/core/store.py:975-995](https://github.com/whiteducksoftware/flock/blob/32a4710010a88cc4fd765574e8c6c00200f5d754/src/flock/core/store.py#L975-L995) · [tests/test_context_provider.py:1207-1293](https://github.com/whiteducksoftware/flock/blob/32a4710010a88cc4fd765574e8c6c00200f5d754/tests/test_context_provider.py#L1207-L1293) · [tests/test_store.py:464-553](https://github.com/whiteducksoftware/flock/blob/32a4710010a88cc4fd765574e8c6c00200f5d754/tests/test_store.py#L464-L553).
+
+**Harness consequence:** Apply UTC time semantics consistently and push selective filters into storage, while independently bounding authorized context count/bytes and retrieval work. Enforce visibility at the trusted adapter boundary, rather than trusting custom provider inheritance as isolation. Preserve typed serialization/versioning and explicitly close/drain stores; process exit and completed task correctness require distinct receipts.
+
+**Scope and limits:** Scoped static review of UTC context retrieval, payload serialization, consumption lookup and SQLite lifetime changes in the 360-path comparison. DSPy execution, all visibility implementations, histogram arithmetic and complete storage behavior were not audited. Fixtures were read, not run; no process-exit, crash-recovery or scale experiment was executed.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [flock](https://github.com/whiteducksoftware/flock); analyzed commit `32a4710010a88cc4fd765574e8c6c00200f5d754`; commit date 2026-10-26T00:07:13+01:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--flock.md).
+<!-- teamagent-analysis:end -->

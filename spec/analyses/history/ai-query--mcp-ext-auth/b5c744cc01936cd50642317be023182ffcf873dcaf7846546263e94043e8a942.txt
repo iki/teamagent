@@ -1,0 +1,38 @@
+# mcp-ext-auth
+
+Source: [mcp-ext-auth](https://github.com/modelcontextprotocol/ext-auth) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `fb374c7db2b34f18ca9183882e0beecdf661892b`; commit timestamp `2026-06-18T09:45:54+01:00`; 11 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/modelcontextprotocol/ext-auth/blob/fb374c7db2b34f18ca9183882e0beecdf661892b/README.md)):
+
+> The Model Context Protocol (MCP) specification is defined in the main specification repository. This repository contains **extensions** to the core protocol that define additional authorization mechanisms. - **Optional** - Implementations can choose to adopt these extensions
+
+Build/package evidence: [package.json](https://github.com/modelcontextprotocol/ext-auth/blob/fb374c7db2b34f18ca9183882e0beecdf661892b/package.json)
+
+License evidence: [LICENSE](https://github.com/modelcontextprotocol/ext-auth/blob/fb374c7db2b34f18ca9183882e0beecdf661892b/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Enterprise identity exchange and machine credentials remain distinct negotiated authorization profiles.** Reviewed commit `15ca394e00a66434520b9ade26294999295a43ae` (commit date `2026-10-23T17:24:05+01:00`). Compared with `fb374c7db2b34f18ca9183882e0beecdf661892b`; the complete Git comparison contains 6 changed paths.
+
+The six-path comparison adds versioned and draft Client Credentials and Enterprise-Managed Authorization specifications plus repository metadata. The versioned client-credentials document describes pre-registered machine identities and excludes dynamic registration, but contains an interoperability inconsistency: prose/example put client_secret in the request body while metadata names client_secret_basic. That discrepancy needs resolution against the actual negotiated implementation before transmitting credentials. Enterprise authorization separates the IdP, resource authorization server and MCP resource server. Token exchange audience is the resource authorization-server issuer; optional resource identifies the MCP server, and the issued access token must be restricted to that resource. The IdP evaluates administrator policy during issuance, but the document explicitly says it cannot observe subsequent MCP traffic. These are specifications, not evidence that an SDK, provider or Teamagent implements the profiles.
+
+Evidence: [specification/stable/oauth-client-credentials/2026-07-28/oauth-client-credentials.mdx:1-163](https://github.com/modelcontextprotocol/ext-auth/blob/15ca394e00a66434520b9ade26294999295a43ae/specification/stable/oauth-client-credentials/2026-07-28/oauth-client-credentials.mdx#L1-L163) · [specification/stable/enterprise-managed-authorization/2026-07-28/enterprise-managed-authorization.mdx:1-51](https://github.com/modelcontextprotocol/ext-auth/blob/15ca394e00a66434520b9ade26294999295a43ae/specification/stable/enterprise-managed-authorization/2026-07-28/enterprise-managed-authorization.mdx#L1-L51) · [specification/stable/enterprise-managed-authorization/2026-07-28/enterprise-managed-authorization.mdx:123-156](https://github.com/modelcontextprotocol/ext-auth/blob/15ca394e00a66434520b9ade26294999295a43ae/specification/stable/enterprise-managed-authorization/2026-07-28/enterprise-managed-authorization.mdx#L123-L156) · [specification/stable/enterprise-managed-authorization/2026-07-28/enterprise-managed-authorization.mdx:179-270](https://github.com/modelcontextprotocol/ext-auth/blob/15ca394e00a66434520b9ade26294999295a43ae/specification/stable/enterprise-managed-authorization/2026-07-28/enterprise-managed-authorization.mdx#L179-L270).
+
+**Harness consequence:** Keep end-user enterprise delegation separate from machine-to-machine client credentials, bind tokens to the intended issuer/resource and negotiate actual supported authentication methods. Treat IdP issuance policy as one layer of authorization; tool-level grants and runtime audit remain the harness's responsibility. Do not use copied token examples or metadata labels as permission to send secrets, and gate any integration on contract fixtures including wrong audience, wrong resource, unsupported auth method and revocation.
+
+**Scope and limits:** Documentary source review of both versioned authorization profiles; draft Client Credentials content was also read, but the enterprise draft and linked IETF documents were not independently reviewed. No OAuth exchange, SDK conformance test, account entitlement or live authorization enforcement was exercised.

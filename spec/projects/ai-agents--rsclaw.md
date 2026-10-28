@@ -2,7 +2,7 @@
 
 Source: [rsclaw](https://github.com/rsclaw-ai/rsclaw) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `c1c53ae14e27e2b59f676711c96e512eb99c77ec`; commit timestamp `2026-09-03T08:01:16+08:00`; 1,177 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `7595cbdfb4b493fa5b0d23f63376bb33cf74fe60` (commit date `2026-10-07T01:28:53+08:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete sender-trust module and its embedded policy tests; channel authentication, tool-dispatch call sites and persistent task-queue integrity were not audited.
+
+The [trust module](https://github.com/rsclaw-ai/rsclaw/blob/7595cbdfb4b493fa5b0d23f63376bb33cf74fe60/crates/rsclaw-agent/src/trust.rs#L1-L107) distinguishes permission to converse from permission to invoke high-risk capabilities. Unknown senders default to User; a raw-name list restricts shell/file mutation/scheduling/cross-session tools unless explicitly exempted. This is a useful channel-admission distinction, but tools outside the list are allowed by this helper and aliases require manual coverage. Teamagent should classify capabilities at registration and use explicit principal-scoped grants rather than treating a growing denylist as complete policy.
+
+[Owner lookup](https://github.com/rsclaw-ai/rsclaw/blob/7595cbdfb4b493fa5b0d23f63376bb33cf74fe60/crates/rsclaw-agent/src/trust.rs#L109-L213) strips account suffixes from channel names, promotes literal static allowlist members only in direct messages, and lets explicit owners act in groups. Queued local-channel names become Owner; internal agent-to-agent channels remain User. Those choices depend on authenticated, unforgeable channel/sender fields and on whether peer IDs are globally unique across channel accounts—neither property is established by this helper. Queue recovery must preserve the original authenticated principal and policy version, not derive stronger trust from user-controlled labels.
+
+The [embedded tests](https://github.com/rsclaw-ai/rsclaw/blob/7595cbdfb4b493fa5b0d23f63376bb33cf74fe60/crates/rsclaw-agent/src/trust.rs#L216-L250) assert explicit-owner, direct/group, local-queue and wildcard-exception behavior; they were not executed. Retain the distinction between messaging access and effect authority, with separate authentication, complete tool registration policy and recovery tests required before adapting this pattern.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [rsclaw](https://github.com/rsclaw-ai/rsclaw); analyzed commit `c1c53ae14e27e2b59f676711c96e512eb99c77ec`; commit date 2026-09-03T08:01:16+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--rsclaw.md).
+Analysis metadata: source [rsclaw](https://github.com/rsclaw-ai/rsclaw); analyzed commit `7595cbdfb4b493fa5b0d23f63376bb33cf74fe60`; commit date 2026-10-07T01:28:53+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--rsclaw.md).
 <!-- teamagent-analysis:end -->

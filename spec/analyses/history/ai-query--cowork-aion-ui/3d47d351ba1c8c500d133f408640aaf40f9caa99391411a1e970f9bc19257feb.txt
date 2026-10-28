@@ -1,0 +1,38 @@
+# cowork-aion-ui
+
+Source: [cowork-aion-ui](https://github.com/iOfficeAI/AionUi) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `6744099b279b991c17e31c243f0920477bd31cb6`; commit timestamp `2026-09-09T07:56:13Z`; 2,344 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/iOfficeAI/AionUi/blob/6744099b279b991c17e31c243f0920477bd31cb6/readme.md)):
+
+> Built-in Agent | Zero Setup | Any API Key | Multi-Agents | Remote Access | Cross-Platform | 24/7 Automation English  |  简体中文  |  繁體中文  |  日本語  |  한국어  |  Español  |  Português  |  Türkçe  |  Русский  |  Українська  |  Official Website
+
+Build/package evidence: [mobile/package.json](https://github.com/iOfficeAI/AionUi/blob/6744099b279b991c17e31c243f0920477bd31cb6/mobile/package.json); [package.json](https://github.com/iOfficeAI/AionUi/blob/6744099b279b991c17e31c243f0920477bd31cb6/package.json); [packages/desktop/package.json](https://github.com/iOfficeAI/AionUi/blob/6744099b279b991c17e31c243f0920477bd31cb6/packages/desktop/package.json); [packages/shared-scripts/package.json](https://github.com/iOfficeAI/AionUi/blob/6744099b279b991c17e31c243f0920477bd31cb6/packages/shared-scripts/package.json); [packages/web-cli/package.json](https://github.com/iOfficeAI/AionUi/blob/6744099b279b991c17e31c243f0920477bd31cb6/packages/web-cli/package.json)
+
+License evidence: [LICENSE](https://github.com/iOfficeAI/AionUi/blob/6744099b279b991c17e31c243f0920477bd31cb6/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review — 2026-10-27
+
+**Community-link refresh does not extend channel capabilities.** Reviewed commit `11cd2a9a20d1e033157636efc570b41384c66d85` (commit date `2026-10-23T14:21:49Z`) against `6744099b279b991c17e31c243f0920477bd31cb6`. The complete Git comparison contains 12 changed paths.
+
+All twelve changed paths are localized readmes or the replaced community QR image. Inspected English, Chinese and Spanish diffs point the community links at the newer image. No application implementation or package manifest changed, so the earlier surface inventory gains no new verified desktop/mobile/channel behavior.
+
+Evidence: [readme.md:31-42](https://github.com/iOfficeAI/AionUi/blob/11cd2a9a20d1e033157636efc570b41384c66d85/readme.md#L31-L42) · [readme.md:691-703](https://github.com/iOfficeAI/AionUi/blob/11cd2a9a20d1e033157636efc570b41384c66d85/readme.md#L691-L703) · [docs/readme/readme_ch.md:31-42](https://github.com/iOfficeAI/AionUi/blob/11cd2a9a20d1e033157636efc570b41384c66d85/docs/readme/readme_ch.md#L31-L42) · [docs/readme/readme_es.md:31-42](https://github.com/iOfficeAI/AionUi/blob/11cd2a9a20d1e033157636efc570b41384c66d85/docs/readme/readme_es.md#L31-L42).
+
+**Harness consequence:** Keep channel capabilities tied to tested transport implementations and platform builds, not README freshness. Retain the existing application reference without inferring a new integration requirement from community asset churn.
+
+**Scope and limits:** Complete changed-path classification with three readme diffs inspected; other translations and QR contents were not independently interpreted. No application or native platform was executed.

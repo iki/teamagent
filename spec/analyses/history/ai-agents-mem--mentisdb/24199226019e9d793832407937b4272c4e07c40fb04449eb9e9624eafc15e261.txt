@@ -1,0 +1,45 @@
+# mentisdb
+
+Typed append-only memory records with hash chaining, explicit relations and derived-index synchronization.
+
+Source: [mentisdb](https://github.com/CloudLLM-ai/mentisdb) · Snapshot: `4c9b95041da68c5a26dece9f8776ff54b05b910c` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [src/lib.rs:5071-5149](https://github.com/CloudLLM-ai/mentisdb/blob/4c9b95041da68c5a26dece9f8776ff54b05b910c/src/lib.rs#L5071-L5149)
+- [src/lib.rs:5180-5244](https://github.com/CloudLLM-ai/mentisdb/blob/4c9b95041da68c5a26dece9f8776ff54b05b910c/src/lib.rs#L5180-L5244)
+
+Appending validates references and translates referenced indices into typed relations with validity timestamps. Optional deduplication compares normalized token sets against a bounded recent window using Jaccard similarity; a sufficient match adds a Supersedes relation. The record includes agent identity, confidence, importance, source episode and the previous record hash. The implementation computes a new hash, writes the record to durable storage, updates in-memory lexical/query indexes, records invalidating relations, and synchronizes vector sidecars and registries.
+
+## Harness implications
+
+The key reusable idea is durable evidence before derived views. Store human inputs, observable tool events and public agent conclusions as attributed records, then build searchable projections. A correction should append an explicit relationship to the earlier claim rather than erase the history. Hash chaining can detect some tampering when a trusted checkpoint exists, but it does not establish that an agent's assertion is true. Do not interpret the project's term thought as permission to retain hidden model chain-of-thought.
+
+## Limitations and tradeoffs
+
+Jaccard similarity is lexical similarity, not proof of semantic equivalence or supersession; near-identical statements can disagree through negation or a changed number. Automatically marking such a record superseded could hide useful evidence. Storage succeeds before several derived-index operations that may fail, so callers need reconciliation and idempotency semantics rather than assuming a returned error means nothing was written. An in-memory chain and sidecars need workload-specific scale testing.
+
+## Adoption and validation
+
+Borrow the event-log and correction-relationship design; evaluate the database as an optional local implementation. Disable automatic supersession until validated on the actual corpus. Test crash after durable append, duplicate client retries, invalid references, sidecar failure, replay integrity, contradictory near-duplicates and tenant separation. Keep deletion/redaction policy explicit because append-only auditability and erasure requirements need deliberate reconciliation.
+
+Related directions: [memory](../memory.md) · [evolution](../evolution.md) · [agents](../agents.md).
+
+
+## Change review - 2026-10-28
+
+**Scoped operation classes and small embedding chunks separate authorization from resource claims.** Reviewed commit `a3f32e5d4514beea1b3f96a585c5cc5844606326` (commit date `2026-10-22T10:54:01-06:00`). Compared with `4c9b95041da68c5a26dece9f8776ff54b05b910c`; the complete Git comparison contains 117 changed paths.
+
+A shared REST/MCP authorization table distinguishes any-active-token, global-only, chain-scoped and webhook-registration operations. The inspected REST middleware gathers body/query chain keys, requires global scope when a chain-scoped request has none, and checks authenticated scope before dispatch; fixtures cover denied cross/global operations, permitted explicit/injected single-chain calls and table parity. Unknown classifications still default to ChainScoped, so adding an administrative operation requires deliberate table coverage. FastEmbed shares one mutex-protected model session per stable model ID and processes at most four texts per inference call. Its helper still accumulates all returned vectors and does not validate batch cardinality; chunking bounds inference work per call, not total request memory. First use may download model assets, and the source's macOS RSS figures are upstream measurements, not reproduced here. RRF helpers exclude zero/negative/NaN signals and deterministically break ties, preventing absent vector results from receiving arbitrary rank bonuses.
+
+Evidence: [src/server.rs:2452-2479](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/server.rs#L2452-L2479) · [src/server.rs:2619-2643](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/server.rs#L2619-L2643) · [src/server.rs:7115-7160](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/server.rs#L7115-L7160) · [tests/server_auth_scope_tests.rs:79-256](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/tests/server_auth_scope_tests.rs#L79-L256) · [src/search/fastembed_provider.rs:25-31](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/search/fastembed_provider.rs#L25-L31) · [src/search/fastembed_provider.rs:74-98](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/search/fastembed_provider.rs#L74-L98) · [src/search/fastembed_provider.rs:140-169](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/search/fastembed_provider.rs#L140-L169) · [src/search/fastembed_provider.rs:186-239](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/search/fastembed_provider.rs#L186-L239) · [src/search/ranked.rs:84-148](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/search/ranked.rs#L84-L148) · [src/auth.rs:404-460](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/auth.rs#L404-L460).
+
+**Harness consequence:** Use a complete deny-by-default operation/scope registry and parity fixtures for each exposed surface. Track token-use timestamps as buffered audit metadata separately from durable authorization state. Own model acquisition and verified cache assets explicitly, limit total embedding input/output and waiting work, and validate vector cardinality/finiteness. Preserve absent retrieval signals instead of manufacturing a rank from storage order.
+
+**Scope and limits:** Scoped static review of operation classification and REST scope enforcement with scope fixtures, FastEmbed ownership/chunking and ranking helpers in the 117-path comparison. Full server/MCP dispatch, persistence, all authorization branches and benchmark validity were not audited. No fixtures, model download, inference, service or benchmark was executed.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [mentisdb](https://github.com/CloudLLM-ai/mentisdb); analyzed commit `4c9b95041da68c5a26dece9f8776ff54b05b910c`; commit date 2026-09-16T13:13:49-06:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--mentisdb.md).
+<!-- teamagent-analysis:end -->

@@ -24,6 +24,12 @@ This entry was catalogued under **ai-agents-tokens**. Its category places it in 
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit `dbc6d73092132f21502ddc4b9c6b30fadeb83530` (commit date `2026-10-27T16:40:19+01:00`). Complete 16-file delta: runtime, regression tests, protocol documentation and pinned workflow updates; unchanged monitor/updater paths not re-audited.
+
+The [statusline](https://github.com/iM3SK/cc-aio-mon/blob/dbc6d73092132f21502ddc4b9c6b30fadeb83530/statusline.py) adds a prompt-cache countdown gated on observed caching and valid expiry, using the same injected instant for its label and threshold. Malformed/missing telemetry hides the segment rather than inventing a TTL. [Shared rules](https://github.com/iM3SK/cc-aio-mon/blob/dbc6d73092132f21502ddc4b9c6b30fadeb83530/shared.py) now mark five-hour/Fable fallback usage stale after 30 minutes or the longer refresh threshold; an older session can yield to a fresher snapshot. Source observations remain distinct from display-only fallbacks, and the [tests](https://github.com/iM3SK/cc-aio-mon/blob/dbc6d73092132f21502ddc4b9c6b30fadeb83530/tests/test_statusline.py) exercise malformed values, time boundaries, display fitting and preservation of the original IPC payload. Adapt explicit unknown/stale telemetry and deterministic clock fixtures. Account-scoped snapshot ownership still needs independent validation before reusing the cross-session selector. Background refresher compatibility, documented Claude versions, pricing, and upstream test counts were not reproduced; no runtime or provider was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cc-aio-mon](https://github.com/iM3SK/cc-aio-mon); analyzed commit `4dab1d7f9bddabf6529ff5392c8d512907f49918`; commit date 2026-09-29T23:20:45+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--cc-aio-mon.md).
+Analysis metadata: source [cc-aio-mon](https://github.com/iM3SK/cc-aio-mon); analyzed commit `dbc6d73092132f21502ddc4b9c6b30fadeb83530`; commit date 2026-10-27T16:40:19+01:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--cc-aio-mon.md).
 <!-- teamagent-analysis:end -->

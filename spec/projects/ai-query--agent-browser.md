@@ -24,6 +24,21 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Malformed encryption keys no longer trigger replacement and inspect WebSockets check browser origin.** Reviewed commit `edb40f1878864f90e14f6c11e26fdafd3fecc8dc` (commit date `2026-10-26T17:16:54-03:00`). Compared with `526157cfd4ec64f45939f9ba0f10d5936aa7ac33`; the complete Git comparison contains 210 changed paths.
+
+ensure_encryption_key now reads and validates an existing environment key or file instead of silently generating a replacement after a parse/read failure. The added fixture confirms malformed environment input fails without creating a key file. AES-GCM profile encryption uses a random key/nonce, but first-time generation still checks existence then writes non-exclusively; concurrent creators can overwrite each other's key. Unix permission changes are best effort after creation, and no equivalent Windows ACL enforcement appears here.
+
+The inspect proxy binds loopback and now checks WebSocket Origin against the configured Chrome HTTP origin; foreign origins and null are rejected, while absent Origin is allowed. Invalid non-UTF-8 header conversion also becomes absent in this call site. Each connection receives a dedicated CDP session and a five-second attach wait. The accept loop spawns unbounded connection tasks, and shutdown aborts the listener handle without owning those child tasks. Origin filtering protects browser-origin requests but is not authentication of local non-browser clients.
+
+Evidence: [cli/src/native/auth.rs:57-175](https://github.com/vercel-labs/agent-browser/blob/edb40f1878864f90e14f6c11e26fdafd3fecc8dc/cli/src/native/auth.rs#L57-L175) · [cli/src/native/auth.rs:468-495](https://github.com/vercel-labs/agent-browser/blob/edb40f1878864f90e14f6c11e26fdafd3fecc8dc/cli/src/native/auth.rs#L468-L495) · [cli/src/native/inspect_server.rs:30-108](https://github.com/vercel-labs/agent-browser/blob/edb40f1878864f90e14f6c11e26fdafd3fecc8dc/cli/src/native/inspect_server.rs#L30-L108) · [cli/src/native/inspect_server.rs:174-237](https://github.com/vercel-labs/agent-browser/blob/edb40f1878864f90e14f6c11e26fdafd3fecc8dc/cli/src/native/inspect_server.rs#L174-L237) · [cli/src/native/inspect_server.rs:310-321](https://github.com/vercel-labs/agent-browser/blob/edb40f1878864f90e14f6c11e26fdafd3fecc8dc/cli/src/native/inspect_server.rs#L310-L321) · [cli/src/native/inspect_server.rs:373-401](https://github.com/vercel-labs/agent-browser/blob/edb40f1878864f90e14f6c11e26fdafd3fecc8dc/cli/src/native/inspect_server.rs#L373-L401).
+
+**Harness consequence:** Preserve malformed-secret errors and never silently replace existing encryption material. Use exclusive key creation with platform-private permissions and recovery for competing writers. Require explicit inspect capability grants, bounded handshakes/connections and joined child-task cleanup; treat missing Origin separately from trusted browser origin and keep loopback exposure distinct from authenticated access.
+
+**Scope and limits:** Static scoped review of key-generation refusal and inspect-proxy origin/lifecycle within the 210-path comparison; selected embedded fixture bodies read. Full profile persistence, CDP transport, browser/TLS behavior and operating-system permissions were not audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-browser](https://github.com/vercel-labs/agent-browser); analyzed commit `526157cfd4ec64f45939f9ba0f10d5936aa7ac33`; commit date 2026-10-03T03:28:26-03:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--agent-browser.md).
+Analysis metadata: source [agent-browser](https://github.com/vercel-labs/agent-browser); analyzed commit `edb40f1878864f90e14f6c11e26fdafd3fecc8dc`; commit date 2026-10-26T17:16:54-03:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--agent-browser.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,25 @@
+# tolaria
+
+Source: [tolaria](https://github.com/refactoringhq/tolaria) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `04030c3e0a23ce93f39a83d821b1b87ec03aec4e`; commit timestamp `2026-09-26T00:28:02+02:00`; 2,420 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/refactoringhq/tolaria/blob/04030c3e0a23ce93f39a83d821b1b87ec03aec4e/README.md)):
+
+> Tolaria is a desktop app for macOS, Windows, and Linux for managing **markdown knowledge bases**. People use it for a variety of use cases: Personally, I use it to **run my life** (hey 👋 Luca here). I have a massive workspace of 10,000+ notes, which are the result of my Refactoring work + a ton of personal journaling and *second braining*.
+
+Build/package evidence: [mcp-server/package.json](https://github.com/refactoringhq/tolaria/blob/04030c3e0a23ce93f39a83d821b1b87ec03aec4e/mcp-server/package.json); [package.json](https://github.com/refactoringhq/tolaria/blob/04030c3e0a23ce93f39a83d821b1b87ec03aec4e/package.json); [src-tauri/Cargo.toml](https://github.com/refactoringhq/tolaria/blob/04030c3e0a23ce93f39a83d821b1b87ec03aec4e/src-tauri/Cargo.toml); [src-tauri/gen/apple/assets/mcp-server/package.json](https://github.com/refactoringhq/tolaria/blob/04030c3e0a23ce93f39a83d821b1b87ec03aec4e/src-tauri/gen/apple/assets/mcp-server/package.json)
+
+License evidence: [LICENSE](https://github.com/refactoringhq/tolaria/blob/04030c3e0a23ce93f39a83d821b1b87ec03aec4e/LICENSE) Classification hint: AGPL; inspect version. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

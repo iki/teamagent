@@ -1,0 +1,35 @@
+# Schema Harness launch-site repository
+
+Source: [schema-harness/schema-harness.github.io](https://github.com/schema-harness/schema-harness.github.io) · Reviewed revision: `62dd126bc0f6329f789e484a74dc05ff8ab19ed7` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [decisions](../decisions.md) · [memory](../memory.md) · [evolution](../evolution.md) · [agents](../agents.md).
+
+## Evidence inspected
+
+- [`README.md` lines 1–10](https://github.com/schema-harness/schema-harness.github.io/blob/62dd126bc0f6329f789e484a74dc05ff8ab19ed7/README.md#L1-L10)
+- [`index.html` lines 1123–1126](https://github.com/schema-harness/schema-harness.github.io/blob/62dd126bc0f6329f789e484a74dc05ff8ab19ed7/index.html#L1123-L1126)
+- [`index.html` lines 1166–1197](https://github.com/schema-harness/schema-harness.github.io/blob/62dd126bc0f6329f789e484a74dc05ff8ab19ed7/index.html#L1166-L1197)
+
+## Observed architecture and behavior
+
+This checkout is a static article website, not the executable harness. Its own verification note describes the public-game scores as self-reported, not independently verified, and states that held-out performance is unknown. The article retains the better result from paired model runs per game. It describes logging all real transitions, backtesting an induced program against history, and planning with breadth-first search inside a reusable simulator. These are content-reviewed design claims, not locally reproduced implementation behavior.
+
+## Implications and tradeoffs for Teamagent
+
+The useful concept is to compile repeated observations into a falsifiable executable model and spend real actions on resolving model uncertainty. In a coding harness, analogous artifacts include reproductions, test fixtures, dependency models, and deterministic simulators for reversible workflows. The system should distinguish observation, hypothesis, validated model, and prediction. Passing historical tests does not prove unseen correctness, especially where several models fit the same observations. Retaining best-of-two runs also changes compute and selection budget, so the public score should not be compared directly with a single-run system without normalization.
+
+## Adoption decision
+
+Adopt as an experimental decision and memory pattern, not as a dependency or a general SOTA result. Build a small controlled study comparing direct tool use against hypothesis/backtest/planning on representative tasks. Include held-out transitions, explicit compute accounting, and adversarial counterexamples. Preserve simulator uncertainty and fall back to direct observation when predictions fail. Do not imply the website contains deployable harness source or that near-ceiling public-game performance transfers to team coding work.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`537a5f245408b91bc98b3cb77ec42b4633e96dd6`](https://github.com/schema-harness/schema-harness.github.io/commit/537a5f245408b91bc98b3cb77ec42b4633e96dd6). Scope: index.html lines 999-1130 read in full, plus selected source paragraphs/captions on mechanism, verification and retained runs. Embedded assets, playback scripts, released traces, linked paper/code and official benchmark results were not reviewed.
+
+The [numbers section](https://github.com/schema-harness/schema-harness.github.io/blob/537a5f245408b91bc98b3cb77ec42b4633e96dd6/index.html#L999) explicitly labels its 98.98% and 95.35% public-set scores as self-reported and unverified by ARC Prize, and distinguishes its aggregate action-efficiency metric from games solved. It says public-set performance cannot be extrapolated to Semi-private and makes no frozen-harness or held-out-performance claim. The Claude comparison is described as holding the model pairing fixed; the Sol comparison is explicitly contextual rather than a matched ablation. These are author disclosures, not reproduced results or independently checked model/service facts.
+
+The prose calls 42.83% to 98.98% a 56.15% improvement while the chart correctly labels the difference as 56.15 percentage points. The [retained-run caption](https://github.com/schema-harness/schema-harness.github.io/blob/537a5f245408b91bc98b3cb77ec42b4633e96dd6/index.html#L1170) also says the higher-scoring model run is selected per game and some Sol curves are indicative reconstructions, so retain selection and trace provenance. The stated mechanism validates executable world models against recorded transitions and discards remaining plans after a mismatch; consistency with past observations does not prove future correctness or safe code execution. Adapt falsifiable predictions and explicit metric provenance only after independent implementation and held-out evaluation. No page scripts, game environment, paper code or benchmark was run.

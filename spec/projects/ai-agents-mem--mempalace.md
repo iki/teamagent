@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Hub forwarding distinguishes uncertain mutation delivery and media retrieval uses bounded candidate pools.** Reviewed commit `84582fb055a6429261f9c779da86c0561ec80adc` (commit date `2026-10-25T01:41:28-03:00`). Compared with `43122aefb8ed58e9fa4e1953e15ce70026339ec2`; the complete Git comparison contains 445 changed paths.
+
+Hub discovery avoids forwarding to the same process, obtains local credential candidates and carries an exact-text wire header. Search configuration checks compare a resolved fingerprint, with explicit backend/environment overrides keeping search local in the caller contract. The client retries only HTTP 401 with another local token; other failures propagate and its error envelope warns that a mutation may still be executing instead of inviting local replay. This safety relies on the hub rejecting 401 before dispatch, which this client cannot establish. Request/response bodies are fully buffered, the ordinary timeout is 600 seconds and urllib redirect behavior is not overridden here.
+
+Experimental media/code search requires the embeddinggemma2 configuration and cosine collections, refuses a reported divergent Chroma index and caps requested results at 100 with bounded per-collection candidate pools. It merges text/media vectors by distance, preserves absent assets as available=false and reports candidate counts/date-window limitations. The wrapper itself does not compare every returned embedding identity; compatibility is delegated to collection/embedder construction. It zips parallel result arrays without cardinality validation and skips nonfinite distances. Asset availability checks use stored paths directly, and max_distance is not type/finite-validated here. These remain adapter boundary obligations even when the ranking pool is bounded.
+
+Evidence: [mempalace/hub_client.py:80-174](https://github.com/milla-jovovich/mempalace/blob/84582fb055a6429261f9c779da86c0561ec80adc/mempalace/hub_client.py#L80-L174) · [mempalace/hub_client.py:176-283](https://github.com/milla-jovovich/mempalace/blob/84582fb055a6429261f9c779da86c0561ec80adc/mempalace/hub_client.py#L176-L283) · [mempalace/searcher/media_search.py:16-181](https://github.com/milla-jovovich/mempalace/blob/84582fb055a6429261f9c779da86c0561ec80adc/mempalace/searcher/media_search.py#L16-L181) · [tests/test_hub_client.py:64-176](https://github.com/milla-jovovich/mempalace/blob/84582fb055a6429261f9c779da86c0561ec80adc/tests/test_hub_client.py#L64-L176).
+
+**Harness consequence:** Preserve uncertain-delivery states and use idempotency receipts before mutation replay; restrict endpoint/redirect destinations and bound response bytes as well as time. Pin embedding model/revision/preprocessing identity across collections, validate result cardinality and all ranking parameters, and check asset containment before filesystem access. Treat candidate-pool ranking as partial retrieval with explicit coverage metadata, not exhaustive search.
+
+**Scope and limits:** Static scoped review of hub forwarding, new media search and mocked hub fixtures within the 445-path comparison. Server-side authentication ordering, stored-text codec, embedding fallback/identity enforcement, real media inference and storage backends were not exhaustively audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mempalace](https://github.com/milla-jovovich/mempalace); analyzed commit `43122aefb8ed58e9fa4e1953e15ce70026339ec2`; commit date 2026-10-03T11:07:52-03:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--mempalace.md).
+Analysis metadata: source [mempalace](https://github.com/milla-jovovich/mempalace); analyzed commit `84582fb055a6429261f9c779da86c0561ec80adc`; commit date 2026-10-25T01:41:28-03:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--mempalace.md).
 <!-- teamagent-analysis:end -->

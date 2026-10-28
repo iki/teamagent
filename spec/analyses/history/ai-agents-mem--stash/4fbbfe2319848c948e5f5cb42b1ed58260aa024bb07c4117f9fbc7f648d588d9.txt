@@ -1,0 +1,25 @@
+# stash
+
+Source: [stash](https://github.com/fergana-labs/stash) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `cfb7051ded81e3cef9323250a98793ddef191031`; commit timestamp `2026-10-03T00:12:52Z`; 1,629 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/fergana-labs/stash/blob/cfb7051ded81e3cef9323250a98793ddef191031/README.md)):
+
+> Agents generate valuable experience every time they work: successful approaches, failed attempts, and human corrections. Stash captures that history and makes
+
+Build/package evidence: [backend/requirements.txt](https://github.com/fergana-labs/stash/blob/cfb7051ded81e3cef9323250a98793ddef191031/backend/requirements.txt); [chrome_extension/package.json](https://github.com/fergana-labs/stash/blob/cfb7051ded81e3cef9323250a98793ddef191031/chrome_extension/package.json); [desktop/package.json](https://github.com/fergana-labs/stash/blob/cfb7051ded81e3cef9323250a98793ddef191031/desktop/package.json); [desktop/src-tauri/Cargo.toml](https://github.com/fergana-labs/stash/blob/cfb7051ded81e3cef9323250a98793ddef191031/desktop/src-tauri/Cargo.toml); [frontend/package.json](https://github.com/fergana-labs/stash/blob/cfb7051ded81e3cef9323250a98793ddef191031/frontend/package.json)
+
+License evidence: [LICENSE](https://github.com/fergana-labs/stash/blob/cfb7051ded81e3cef9323250a98793ddef191031/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

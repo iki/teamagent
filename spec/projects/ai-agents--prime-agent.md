@@ -24,6 +24,16 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped source review
+
+Source: [prime-agent](https://github.com/PrimeIntellect-ai/prime-agent); inspected saved discovery revision `c13415b44239c1333b2c8503070310182e0d4b2d`. Prior analyzed revision `cfe398105ed8753d0fbcfbeb186934285730a5a3` remains historical evidence.
+
+**Scope:** Full abort helper including its embedded tests and crate entry module read. Agent-loop call coverage, provider adapters, tools and resource cleanup were not audited.
+
+The [abort helper](https://github.com/PrimeIntellect-ai/prime-agent/blob/c13415b44239c1333b2c8503070310182e0d4b2d/crates/pa-agent/src/abort.rs) uses a cloneable watch signal and a typed AbortedError marker instead of interpreting arbitrary provider error text as cancellation. It checks pre-aborted state and races the supplied future against the signal. Embedded tests cover observer wakeup, a pending operation interrupted by cancellation and a completed operation. The [crate entry](https://github.com/PrimeIntellect-ai/prime-agent/blob/c13415b44239c1333b2c8503070310182e0d4b2d/crates/pa-agent/src/lib.rs) keeps the agent message representation separate from model-bound messages at the call boundary.
+
+Dropping a future is only the local ownership mechanism: it does not prove a spawned task, subprocess or remote effect stopped. The select is not biased toward cancellation when both branches are ready, and the inspected tests do not assert external cleanup or ambiguous-effect reconciliation. Adapt typed cancellation with scoped resources and adapter-specific acceptance tests; do not infer every await point is covered from the module comment. No Rust build, provider call or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [prime-agent](https://github.com/PrimeIntellect-ai/prime-agent); analyzed commit `cfe398105ed8753d0fbcfbeb186934285730a5a3`; commit date 2026-10-03T12:30:09-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--prime-agent.md).
+Analysis metadata: source [prime-agent](https://github.com/PrimeIntellect-ai/prime-agent); analyzed commit `c13415b44239c1333b2c8503070310182e0d4b2d`; commit date 2026-10-27T12:20:00+01:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--prime-agent.md).
 <!-- teamagent-analysis:end -->

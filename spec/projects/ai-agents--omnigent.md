@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped source review
+
+Source: [omnigent](https://github.com/omnigent-ai/omnigent); inspected saved discovery revision `fd7b58b267e40ce900598222b625bf88f5d1d688`. Prior analyzed revision `f37a484a9238d21dac71b62dd79b87e016947c19` remains historical evidence.
+
+**Scope:** Complete inner tool hierarchy plus MCP invocation/result and reconnect-classification sections (608–729, 1539–1796). Other MCP lifecycle/auth/cache code, tests and oversize runner app were not reviewed.
+
+The [tool hierarchy](https://github.com/omnigent-ai/omnigent/blob/fd7b58b267e40ce900598222b625bf88f5d1d688/omnigent/inner/tools.py#L83-L178) generates model-facing schemas from a shallow Python type map, falling back to string for unrecognized annotations. It explicitly calls output schemas advisory, permits absent capability scopes, and describes unlimited sub-sessions when `max_sessions` is absent. These declarations require separate runtime validation, admission and bounds; a generated schema or cancellable protocol is not evidence that effects obey them.
+
+The [MCP invocation path](https://github.com/omnigent-ai/omnigent/blob/fd7b58b267e40ce900598222b625bf88f5d1d688/omnigent/tools/mcp.py#L608-L729) serializes calls on a shared connection, binds an active session for elicitation, increments an attempt serial and clears it in a finally block. It forwards full arguments and result data to a completion observer whose retention/redaction was not reviewed. The [reconnect classifier and retry loop](https://github.com/omnigent-ai/omnigent/blob/fd7b58b267e40ce900598222b625bf88f5d1d688/omnigent/tools/mcp.py#L1539-L1728) distinguish ordinary slow-tool timeouts from missing sessions or recorded transport failure. Crucially, the source itself acknowledges that reconnecting after a lost response is at-least-once delivery and may repeat an already executed effect; without a configured read timeout, a swallowed reset can remain pending.
+
+Teamagent should retain explicit session binding and failure classification, while requiring effect-specific retry policy and uncertain-effect receipts rather than automatic replay of arbitrary tools. The [formatter](https://github.com/omnigent-ai/omnigent/blob/fd7b58b267e40ce900598222b625bf88f5d1d688/omnigent/tools/mcp.py#L1731-L1796) preserves image envelopes and otherwise joins/serializes content without local output bounds. Schema enforcement, observer privacy, cache ownership, transport cancellation and remote idempotency remain unverified. No upstream code or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [omnigent](https://github.com/omnigent-ai/omnigent); analyzed commit `f37a484a9238d21dac71b62dd79b87e016947c19`; commit date 2026-10-03T12:04:00-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--omnigent.md).
+Analysis metadata: source [omnigent](https://github.com/omnigent-ai/omnigent); analyzed commit `fd7b58b267e40ce900598222b625bf88f5d1d688`; commit date 2026-10-27T10:48:40-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--omnigent.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,42 @@
+# LiteLLM: broad provider normalization and routing
+
+Source: [litellm](https://github.com/BerriAI/litellm) · Category: `ai-agents-proxy`
+
+Review depth: **source-reviewed**. Snapshot `252c71c0b22197d5dd99eac730696f28032796af`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+The router imports dedicated strategies for lowest cost, lowest latency, least busy, token/request limits, budgets, and tags. Cooldown and health state, retry-policy resolution, fallback handling, and reservation refunding are separate dependencies. This is richer than choosing the cheapest model name: availability and request accounting participate in routing.
+
+The inspected environment gate rejects invalid environment configuration and can suppress deployments not intended for the current environment. The stream-content helper recognizes tool calls, reasoning, audio, images, and annotations as generated content. That is a valuable pattern for deciding whether a retry is still safe before the user or a downstream tool has observed an answer.
+
+## Harness adoption
+
+Use LiteLLM where provider breadth and an existing Python integration ecosystem dominate. Hide it behind a harness-owned adapter contract so the application can switch gateways or call a provider directly when a specialized API is not faithfully normalized. Distinguish infrastructure routing among equivalent deployments from semantic task routing among models with different expected quality.
+
+Attach task and attempt identifiers, budget reservations, a maximum retry count, and an absolute deadline. Keep deployment health and cost accounting outside prompts. Return typed `unsupported_capability` errors for unavailable modalities or session features rather than silently deleting request fields.
+
+## Limitations and decision
+
+The inspected file is large and composes many changing strategies; adoption needs pinned releases, configuration migration tests, and provider-specific contract fixtures. Native subscriptions and OAuth remain provider-specific entitlements. The [official router documentation](https://docs.litellm.ai/docs/routing), checked 2026-10-04, confirms deployment balancing, cooldowns, fallbacks, timeouts, retries, and Redis-backed usage coordination; it does not prove workload quality or a universal subscription route. Benchmark against [Bifrost](ai-agents-proxy--bifrost.md) on the intended deployment rather than repeating marketing ratios.
+
+## Evidence read
+
+- [Router strategy imports and reliability dependencies](https://github.com/BerriAI/litellm/blob/252c71c0b22197d5dd99eac730696f28032796af/litellm/router.py#L105-L199)
+- [Environment gating and committed streaming content detection](https://github.com/BerriAI/litellm/blob/252c71c0b22197d5dd99eac730696f28032796af/litellm/router.py#L347-L430)
+
+## Related directions
+
+[Models](../models.md) · [Decisions](../decisions.md) · [Generation](../generation.md) · [Security](../security.md)
+
+## 2026-10-28 divergent-history investigation and scoped source review
+
+Source: [litellm](https://github.com/BerriAI/litellm); inspected snapshot `0a1dbc0fb4f6b52aec97700dddb457adf91d1cbd`; prior analyzed commit `252c71c0b22197d5dd99eac730696f28032796af`. The inspected snapshot is the saved discovery version, not a claim about the checkout's latest HEAD.
+
+**Scope:** Complete committed path inventory (15,184 paths); full clientside_credential_handler.py (155 lines), routing_read_batch.py (248 lines), and its 220-line unit-test file. Fallback implementation and provider calls were not audited or executed.
+
+**History outcome:** both full commits are available, but the analyzed commit is not an ancestor and the complete trees differ. The two-tree comparison contains 15,184 changed paths; common ancestor: `1f8bae7eabc8b8fac66700c9752a15e2d7f90a66`. These counts establish comparison coverage, not semantic review of every file. The prior analyzed baseline and findings remain preserved as historical evidence. A separately acknowledged, guarded reconciliation records the inspected revision as a new scoped analysis baseline; it does not establish ancestry, publisher intent or whole-project correctness. The managed metadata below is authoritative for whether that acknowledgment has been recorded.
+
+The [client credential boundary](https://github.com/BerriAI/litellm/blob/0a1dbc0fb4f6b52aec97700dddb457adf91d1cbd/litellm/router_utils/clientside_credential_handler.py) clears server-owned provider identity/config fields when a client changes the base URL, rejects an unresolved OIDC secret reference at that boundary and disables workload-identity minting for redirected hosts. It preserves the per-user Copilot mode because that downstream path owns its validated host. This is provider-specific credential isolation, not proof that every dynamic endpoint or fallback is authorized; ordinary api_key propagation and the downstream adapters still require explicit review. Teamagent must bind account evidence, training exclusions and credentials to the exact host/model/operation before ranking or fallback.
+
+[Routing read batching](https://github.com/BerriAI/litellm/blob/0a1dbc0fb4f6b52aec97700dddb457adf91d1cbd/litellm/router_utils/routing_read_batch.py) combines cooldown and usage reads, uses request-local context, consumes prefetch once so retries read fresh, and rolls back reservations on failed/cancelled prefetch. The [fixtures](https://github.com/BerriAI/litellm/blob/0a1dbc0fb4f6b52aec97700dddb457adf91d1cbd/tests/unit/router_utils/test_routing_read_batch.py) compare routing choices and one MGET with mocks. They also deliberately preserve simple-shuffle selection during Redis failure while usage-based routing raises no-deployment. These inspected assertions are not executed measurements. Batch efficiency must not silently redefine quota enforcement or unavailable-state semantics; measure latency and preserve the selected strategy's explicit failure policy.

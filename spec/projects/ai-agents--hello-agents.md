@@ -2,7 +2,7 @@
 
 Source: [hello-agents](https://github.com/datawhalechina/hello-agents) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `4b014ad47e2658af24b59f21e7bdb3f89a66205e`; commit timestamp `2026-09-29T21:53:44+10:00`; 2,434 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `36f583c233ea5cee4537ef93455702b55053af18` (commit date `2026-10-14T09:28:54+11:00`). The original snapshot above remains historical evidence.
+
+**Scope:** One contributed PaperAssistant orchestrator, including shared tool setup, chapter/review/assembly flow and stored excerpts; the surrounding course, retrieval services, source-download tools and underlying framework were not audited.
+
+The [PaperAssistant orchestrator](https://github.com/datawhalechina/hello-agents/blob/36f583c233ea5cee4537ef93455702b55053af18/Co-creation-projects/Lemoween-PaperAssistant/agent.py#L43-L133) creates specialist roles over one LLM client, shares note/memory tool instances through per-role registries, and gives the writer explicit library search/ask tools. Role names alone do not provide independent verification or process/permission isolation. Provider selection is delegated to ambient framework configuration; this reviewed entry point does not bind a task to an approved provider/data policy.
+
+The [chapter loop](https://github.com/datawhalechina/hello-agents/blob/36f583c233ea5cee4537ef93455702b55053af18/Co-creation-projects/Lemoween-PaperAssistant/agent.py#L136-L218) falls back to default sections, retrieves references, assigns generated content and marks the section completed. Previous-section context contains only the first 500 characters per section and notes contain 1,500-character excerpts. The [final flow](https://github.com/datawhalechina/hello-agents/blob/36f583c233ea5cee4537ef93455702b55053af18/Co-creation-projects/Lemoween-PaperAssistant/agent.py#L220-L274) runs a model review then assembly and stores at most 5,000 characters in the final note, while returning the full generated paper separately. Consumers must distinguish those excerpts from the complete artifact.
+
+Reference counts and an `indexed` flag indicate workflow progress, not that a citation supports its claim or that a paper has been checked for correctness. Tool-event drains are called here without their returned lists being retained in the orchestrator's result. Keep this as an educational workflow example; a Teamagent research adapter needs durable source/version/span evidence, explicit fallback and truncation metadata, bounded work and independently checked citations before promoting a generated 'completed' state to verified research.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hello-agents](https://github.com/datawhalechina/hello-agents); analyzed commit `4b014ad47e2658af24b59f21e7bdb3f89a66205e`; commit date 2026-09-29T21:53:44+10:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--hello-agents.md).
+Analysis metadata: source [hello-agents](https://github.com/datawhalechina/hello-agents); analyzed commit `36f583c233ea5cee4537ef93455702b55053af18`; commit date 2026-10-14T09:28:54+11:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--hello-agents.md).
 <!-- teamagent-analysis:end -->

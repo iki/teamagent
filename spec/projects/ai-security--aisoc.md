@@ -24,6 +24,14 @@ This entry was catalogued under **ai-security**. Its category places it in the c
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`3164fb54343f341de87eff4f42792690a3fb308d`](https://github.com/beenuar/AiSOC/commit/3164fb54343f341de87eff4f42792690a3fb308d). Scope: Full trusted-proxy and connector-header helpers plus realtime authentication tests read. Realtime verifier, remote connector enforcement, permission cache and production routing were not audited.
+
+The [trusted-proxy helper](https://github.com/beenuar/AiSOC/blob/3164fb54343f341de87eff4f42792690a3fb308d/services/api/app/core/trusted_proxy.py) ignores forwarded addresses unless the immediate peer belongs to configured trusted CIDRs, then walks the chain from the nearest hop. Invalid CIDRs are dropped with warnings, and malformed hops are skipped rather than rejecting the chain. This is attribution logic; it does not authenticate a user. The [connector-header helper](https://github.com/beenuar/AiSOC/blob/3164fb54343f341de87eff4f42792690a3fb308d/services/api/app/core/connectors_auth.py) centralizes the service credential and explicit tenant assertion, but permits an absent tenant and delegates rejection to the remote service, which was not reviewed.
+
+The [realtime tests](https://github.com/beenuar/AiSOC/blob/3164fb54343f341de87eff4f42792690a3fb308d/services/realtime/test/auth.test.ts) cover audience/type/tenant/signature checks and refusal of missing or known placeholder secrets. Their tampering fixture proves that decoded signature bytes actually change, avoiding a base64 padding-bit false negative. A locally mirrored signer is not cross-language integration evidence, and the advisory identifier in comments was not independently verified. Adapt the adversarial fixture and explicit tenant contract; do not infer enforcement at unread call sites. No credentials, requests or tests were exercised.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [aisoc](https://github.com/beenuar/AiSOC); analyzed commit `98883d9229865df1d6d0a5e643778efe4d61b5ce`; commit date 2026-10-03T11:40:41-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-security--aisoc.md).
+Analysis metadata: source [aisoc](https://github.com/beenuar/AiSOC); analyzed commit `3164fb54343f341de87eff4f42792690a3fb308d`; commit date 2026-10-27T10:09:11-07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-security--aisoc.md).
 <!-- teamagent-analysis:end -->

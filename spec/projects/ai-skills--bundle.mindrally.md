@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`7682ca77710e0971eab4e0ae5dddfa281aea0ba5`](https://github.com/Mindrally/skills/commit/7682ca77710e0971eab4e0ae5dddfa281aea0ba5). Scope: Full testing and LLM skills read. Other language/framework guides, implementation examples and empirical outcomes were not reviewed.
+
+The [testing guide](https://github.com/Mindrally/skills/blob/7682ca77710e0971eab4e0ae5dddfa281aea0ba5/testing/SKILL.md) emphasizes independent cases, minimal setup, invalid inputs and observable behavior. Its every-export coverage rule is a broad heuristic rather than a risk-based requirement; mapping each test to a real defect or contract is more useful than adding tests solely because a function is exported. Mocking persistence is appropriate only when persistence is not the behavior under test.
+
+The [LLM guide](https://github.com/Mindrally/skills/blob/7682ca77710e0971eab4e0ae5dddfa281aea0ba5/llm/SKILL.md) is a topic checklist spanning tokenization, adaptation, distributed training, evaluation and serving. It supplies no dataset split, model/version binding, metric acceptance threshold or measured result in the inspected text. Recommendations such as DeepSpeed or particular adaptation methods are candidates requiring a workload and compatibility evaluation, not adopted dependencies. Retain this bundle as navigation/reference material; no training, model evaluation or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle.mindrally](https://github.com/Mindrally/skills); analyzed commit `97184105b5daa3a6860a2aeb8e7e7fd1c42da40a`; commit date 2026-09-03T10:58:58-05:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.mindrally.md).
+Analysis metadata: source [bundle.mindrally](https://github.com/Mindrally/skills); analyzed commit `7682ca77710e0971eab4e0ae5dddfa281aea0ba5`; commit date 2026-10-08T18:37:42-05:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.mindrally.md).
 <!-- teamagent-analysis:end -->

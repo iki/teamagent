@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Memory graph keeps inferred links separate but exported summaries can lose layer and edge provenance.** Reviewed commit `5e2f2e8c0abde612da0e99c16c0d07d4ec21b88c` (commit date `2026-09-03T18:07:21-07:00`). Compared with `27c94f9342a404226d2411ac73d2b16acb1189fe`; the complete Git comparison contains 714 changed paths.
+
+MemoryGraph defaults to declared relationships and only adds lexical IDF/cosine links in the all layer. Candidate inference uses top-six outgoing matches and a score floor after building postings and candidate maps; that limits selected edges rather than total work, and symmetric union can give a node more than six neighbors. Duplicate node IDs keep the first path with a warning. Existing edges update only the graph's weight, not the separately exported edge record/kind, allowing analysis and serialized edge metadata to diverge.
+
+The emitter writes graph.json and PATTERNS.md separately, without a generation manifest or atomic pair publication. PATTERNS.md always labels its baseline declared-only even when build(all) supplies inferred edges. ContextSearch combines six channels, then applies the result limit; its ripgrep helper captures complete stdout, pipes but does not drain stderr, ignores exit status and has no timeout. An empty result can therefore include a failed search channel, while the output includes the raw user query and paths.
+
+Evidence: [LifeOS/install/LIFEOS/TOOLS/MemoryGraph.ts:254-402](https://github.com/danielmiessler/Personal_AI_Infrastructure/blob/5e2f2e8c0abde612da0e99c16c0d07d4ec21b88c/LifeOS/install/LIFEOS/TOOLS/MemoryGraph.ts#L254-L402) · [LifeOS/install/LIFEOS/TOOLS/MemoryGraph.ts:495-555](https://github.com/danielmiessler/Personal_AI_Infrastructure/blob/5e2f2e8c0abde612da0e99c16c0d07d4ec21b88c/LifeOS/install/LIFEOS/TOOLS/MemoryGraph.ts#L495-L555) · [LifeOS/install/skills/Cortex/Tools/ContextSearch.ts:366-424](https://github.com/danielmiessler/Personal_AI_Infrastructure/blob/5e2f2e8c0abde612da0e99c16c0d07d4ec21b88c/LifeOS/install/skills/Cortex/Tools/ContextSearch.ts#L366-L424) · [LifeOS/install/skills/Cortex/Tools/ContextSearch.ts:642-697](https://github.com/danielmiessler/Personal_AI_Infrastructure/blob/5e2f2e8c0abde612da0e99c16c0d07d4ec21b88c/LifeOS/install/skills/Cortex/Tools/ContextSearch.ts#L642-L697).
+
+**Harness consequence:** Treat lexical links as hypotheses with distinct provenance and keep analysis/export edge representations consistent. Bind graph and summary to one immutable layer/version manifest and publish them together. Bound retrieval work/output before final ranking, drain child streams, report channel failure separately from absence and protect query/path output according to task scope.
+
+**Scope and limits:** Static scoped graph inference/export and context-search orchestration within the 714-path comparison. Full source ingestion, graph algorithms, installer, mobile/UI behavior and all six search-channel implementations were not audited or executed; no generated bundle was treated as fresh runtime validation.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [pai-personal-ai-infrastructure](https://github.com/danielmiessler/Personal_AI_Infrastructure); analyzed commit `27c94f9342a404226d2411ac73d2b16acb1189fe`; commit date 2026-08-05T18:02:24-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--pai-personal-ai-infrastructure.md).
+Analysis metadata: source [pai-personal-ai-infrastructure](https://github.com/danielmiessler/Personal_AI_Infrastructure); analyzed commit `5e2f2e8c0abde612da0e99c16c0d07d4ec21b88c`; commit date 2026-09-03T18:07:21-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--pai-personal-ai-infrastructure.md).
 <!-- teamagent-analysis:end -->

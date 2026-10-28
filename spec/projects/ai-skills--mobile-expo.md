@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`8a0dc4fa57ae345923c357e1451cbcd8b6f2a7db`](https://github.com/expo/skills/commit/8a0dc4fa57ae345923c357e1451cbcd8b6f2a7db). Scope: Full EAS Observe and EAS Update entry skills read. Linked SDK/API references, pricing, native clients, update service and observability implementation were not verified.
+
+The [update skill](https://github.com/expo/skills/blob/8a0dc4fa57ae345923c357e1451cbcd8b6f2a7db/plugins/expo/skills/eas-update/SKILL.md) distinguishes installed native builds, compatible update artifacts, branches, channel mappings and runtime versions. It preserves existing dynamic configuration and treats runtime-policy changes separately from troubleshooting. Its download-then-apply explanation also distinguishes release cold launches from development-client behavior. These are useful compatibility questions for an update adapter, not executed native acceptance or permission to publish.
+
+The [Observe entry](https://github.com/expo/skills/blob/8a0dc4fa57ae345923c357e1451cbcd8b6f2a7db/plugins/expo/skills/eas-observe/SKILL.md) explicitly routes version-sensitive API details to canonical documentation and distinguishes native builds from Expo Go. Its metrics, pricing and SDK mappings are upstream descriptions here, not refreshed service facts. Feedback commands would disclose task context externally and require separate authorization. Mobile implementation remains deferred in Teamagent; this review does not adopt Expo or its package commands. No install, app, telemetry, feedback or update was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mobile-expo](https://github.com/expo/skills); analyzed commit `13ad8e05874195633b5c185f6947bb6400e228fc`; commit date 2026-10-02T18:45:26+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--mobile-expo.md).
+Analysis metadata: source [mobile-expo](https://github.com/expo/skills); analyzed commit `8a0dc4fa57ae345923c357e1451cbcd8b6f2a7db`; commit date 2026-10-26T12:58:59-07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--mobile-expo.md).
 <!-- teamagent-analysis:end -->

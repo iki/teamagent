@@ -1,0 +1,28 @@
+# ai-prompts
+
+[Analysis home](../README.md) · 5 projects catalogued; 2 focused source/content reviews.
+
+Screening entries provide identity and package evidence only. Source-reviewed entries explain the exact scope inspected; none is a runtime certification. See [methodology](../methodology.md).
+
+## Category assessment
+
+Prompt discovery, reusable examples, and offline instruction-optimization experiments.
+
+Use prompts.chat as a candidate source with preserved attribution, then convert selected prompts into bounded contracts and test cases. Evaluate agent-opt as one offline proposer alongside simpler search and DSPy-style optimization. Compare no-skill, upstream, and tuned variants before activation and keep the held-out evaluator independent.
+
+Popularity and optimizer score do not prove task benefit or safe trigger scope. Media recipes require compatible tools, and other screened prompt collections have no demonstrated maturity or quality advantage. Avoid importing a broad prompt catalog directly into every task.
+
+Start with:
+
+- [prompts.chat](https://github.com/f/prompts.chat) — [individual report](../projects/ai-prompts--prompts.chat.md).
+- [xx-2604-agent-opt](https://github.com/future-agi/agent-opt) — [individual report](../projects/ai-prompts--xx-2604-agent-opt.md).
+
+## Project catalogue
+
+| Project source | Individual report | Depth | Harness relevance / finding |
+|---|---|---|---|
+| [prompt-master](https://github.com/nidhinjs/prompt-master) | [Report](../projects/ai-prompts--prompt-master.md) | screened | Inventory / README only; implementation not independently established. |
+| [prompts.chat](https://github.com/f/prompts.chat) | [Report](../projects/ai-prompts--prompts.chat.md) | source-reviewed | Integrate as an optional search/import source, not as a trusted skill registry or optimizer. Convert selected prompts into versioned candidates with explicit input/output contracts and test examples. Use media recipes only through the generation-tool registry and its model capability checks. Preserve the original prompt separately from tuned variants and compare against a concise baseline. Add near-miss trigger tests before promoting any general prompt into an automatically selected skill. |
+| [system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | [Report](../projects/ai-prompts--system-prompts-and-models-of-ai-tools.md) | screened | Inventory / README only; implementation not independently established. |
+| [system-prompts-cl4r1t4s](https://github.com/elder-plinius/CL4R1T4S) | [Report](../projects/ai-prompts--system-prompts-cl4r1t4s.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2604-agent-opt](https://github.com/future-agi/agent-opt) | [Report](../projects/ai-prompts--xx-2604-agent-opt.md) | source-reviewed | Use as an optional offline optimizer adapter, alongside simpler random search and the separately reviewed DSPy/GEPA approach. Restrict the initial search space to description wording, examples, tool-order policy, and context budget. Require reproducible input hashes, explicit trials budget, and comparison against no-skill and upstream-skill baselines. Promote a winner only after independent validation and a small canary; a higher optimizer score alone must not rewrite the active team library. |

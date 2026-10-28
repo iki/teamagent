@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped source review
+
+Source: [pi-desktop](https://github.com/vastsa/PI-Desktop); inspected saved discovery revision `467bc51784d4fec001bfa856d0c8387e8c40012e`. Prior analyzed revision `c79b6ca564ab46355b99a2818d364574433ab1c4` remains historical evidence.
+
+**Scope:** Complete AskToolRichText renderer, two ask-tool test files and two public export facades. Review is pinned to the recorded SHA; checkout had advanced to c014b32060ca2dc7ace4c83f181685a6e0140c78 during export, whose delta is outside this review. Bridge/IPC production implementation and exported domain modules were not read.
+
+The [ask-tool rich-text renderer](https://github.com/vastsa/PI-Desktop/blob/467bc51784d4fec001bfa856d0c8387e8c40012e/apps/desktop/src/components/AskToolRichText.ts#L51-L96) skips raw HTML, replaces links with inert spans, renders image alt text rather than image elements, and makes list/task markers suitable for content embedded in a button. This reduces nested interactive content and remote-resource side effects in that renderer. It does not enforce input size or prove the surrounding card's accessibility, answer validation or renderer-library behavior.
+
+The [shared tests](https://github.com/vastsa/PI-Desktop/blob/467bc51784d4fec001bfa856d0c8387e8c40012e/packages/shared/src/asktool.test.ts#L9-L40) specify stable answer separators, skipped-answer placeholders and a Unicode question boundary. The [bridge regression test](https://github.com/vastsa/PI-Desktop/blob/467bc51784d4fec001bfa856d0c8387e8c40012e/apps/desktop/test/asktool-resolve-clears-host-input.test.mjs#L104-L207) goes beyond a mocked invoke by registering the real IPC handler and wiring it back into the bridge, then expects one fake-sidecar resolve and no pending card. This is useful re-entrancy coverage; the sender assertion, operation acquisition, persistence and sidecar are stubs, so it does not establish native authority, durable settlement or concurrent cross-client behavior.
+
+The [host-runtime barrel](https://github.com/vastsa/PI-Desktop/blob/467bc51784d4fec001bfa856d0c8387e8c40012e/packages/host-runtime/src/index.ts#L1-L22) and [shared type facade](https://github.com/vastsa/PI-Desktop/blob/467bc51784d4fec001bfa856d0c8387e8c40012e/packages/shared/src/types.ts#L1-L27) expose module names, not their implementation guarantees. Teamagent should borrow inert rich-text projection and tests that reproduce real callback wiring, while validating request ownership and settlement at the host boundary. No renderer, native app, test, provider or upstream code was executed; the newer checkout revision is deliberately not covered.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [pi-desktop](https://github.com/vastsa/PI-Desktop); analyzed commit `c79b6ca564ab46355b99a2818d364574433ab1c4`; commit date 2026-10-04T02:32:05+09:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--pi-desktop.md).
+Analysis metadata: source [pi-desktop](https://github.com/vastsa/PI-Desktop); analyzed commit `467bc51784d4fec001bfa856d0c8387e8c40012e`; commit date 2026-10-28T01:45:34+08:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--pi-desktop.md).
 <!-- teamagent-analysis:end -->

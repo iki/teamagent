@@ -1,0 +1,32 @@
+# pi
+
+Source: [pi](https://github.com/earendil-works/pi) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **focused source review**. Snapshot `83692682f095528f8b71652ddacff7075e36e893` (2026-10-03T15:23:44+02:00). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+A composable event-driven agent loop and a concrete Jev model-routing example; useful as an embedded runtime candidate.
+
+## Source evidence inspected
+
+- [packages/agent/src/agent-loop.ts, lines 34–180](https://github.com/earendil-works/pi/blob/83692682f095528f8b71652ddacff7075e36e893/packages/agent/src/agent-loop.ts#L34-L180)
+- [packages/coding-agent/examples/extensions/jev-router.ts, lines 25–112](https://github.com/earendil-works/pi/blob/83692682f095528f8b71652ddacff7075e36e893/packages/coding-agent/examples/extensions/jev-router.ts#L25-L112)
+
+## Observed design and algorithms
+
+The loop preserves AgentMessage values until the model boundary and publishes agent, turn, and message events through an event sink. Continuations reject empty context and a final assistant message. The router classifies the initial task, persists a planning/implementation phase on the session branch, and switches to a cheaper model after a successful edit/write tool result. It uses a probability threshold of 0.5 for the complex-work branch and a fixed fallback if the classifier is absent.
+
+## Harness decision
+
+Evaluate Pi as the native TypeScript worker behind the common AgentAdapter, alongside external installed-agent adapters. Reuse the explicit event stream and phase state pattern. Keep router model IDs in a capability-aware configuration rather than copying the example identifiers.
+
+## Limits and tradeoffs
+
+The first successful edit is only a heuristic for completion of planning. Difficult implementation or later user requests may require escalation again. The example threshold has no demonstrated calibration here. Its subscription-backed provider code does not independently establish account entitlement or permitted third-party use.
+
+## Validation before adoption
+
+Replay interrupted turns; test steering, failed tools, compaction and branch restoration. Compare fixed-model and routed runs at equal task success, total latency and total cost, including cache misses. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
+
+Related directions: [agents](../agents.md) · [models](../models.md) · [decisions](../decisions.md) · [skills](../skills.md).

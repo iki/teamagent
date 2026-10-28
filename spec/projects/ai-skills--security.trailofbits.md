@@ -24,6 +24,14 @@ Curate this as an opt-in security and architecture-analysis bundle, retaining na
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`196a9073ab10d35bacf111f945e02c00b2c6883a`](https://github.com/trailofbits/skills/commit/196a9073ab10d35bacf111f945e02c00b2c6883a). Scope: Full validate-bug and prove-patch skills, zeroize test-generation phase and ProVerif guidance tests read. Record validators, three-arm executor, native proof assessment and formal models were not audited.
+
+The [independent validation](https://github.com/trailofbits/skills/blob/196a9073ab10d35bacf111f945e02c00b2c6883a/plugins/patching-bugs/skills/validate-bug/SKILL.md) and [patch proof](https://github.com/trailofbits/skills/blob/196a9073ab10d35bacf111f945e02c00b2c6883a/plugins/patching-bugs/skills/prove-patch/SKILL.md) procedures retain unchanged reproductions, pin baseline/patch/reverted trees, require benign controls and treat setup failures or missing reachability markers as gaps. They explicitly limit proof to exercised cases and separate findings from inconclusive evidence. Adapt those receipt contracts; the unread validator and execution helpers still determine whether records can actually support the claims.
+
+The [zeroize phase](https://github.com/trailofbits/skills/blob/196a9073ab10d35bacf111f945e02c00b2c6883a/plugins/zeroize-audit/skills/zeroize-audit/workflows/phase-7-test-generation.md) makes runtime test generation conditional and leaves the report available after generation failure, so report presence must not imply tests exist. [ProVerif guidance tests](https://github.com/trailofbits/skills/blob/196a9073ab10d35bacf111f945e02c00b2c6883a/plugins/trailmark/skills/mermaid-to-proverif/tests/test_guidance.py) check result interpretation and optionally run the sample when the tool exists; absent-tool skips are not formal verification. The subprocess example has no explicit timeout and does not independently assert its exit status. No PoC, target binary, formal tool or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [security.trailofbits](https://github.com/trailofbits/skills); analyzed commit `82fe8226252622fa807643bdca1710901198553a`; commit date 2026-09-28T14:06:37-04:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-skills--security.trailofbits.md).
+Analysis metadata: source [security.trailofbits](https://github.com/trailofbits/skills); analyzed commit `196a9073ab10d35bacf111f945e02c00b2c6883a`; commit date 2026-10-23T11:26:17+02:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-skills--security.trailofbits.md).
 <!-- teamagent-analysis:end -->

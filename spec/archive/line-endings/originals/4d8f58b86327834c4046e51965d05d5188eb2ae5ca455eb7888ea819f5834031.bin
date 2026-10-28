@@ -1,0 +1,22 @@
+# jantt
+
+Source: [jantt](https://github.com/ahmadhassan-bted/jantt) · [generation](../../generation.md), [import-generation](../../import-generation.md), [models](../../models.md).
+
+Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-gen--jantt.md).
+
+
+## Initial source review - 2026-10-28
+
+**Schedule visualization repairs inputs but is not an authoritative task scheduler.** Reviewed commit `77f78de84b022435b8b81df9226032b14d0ddc58` (commit date `2026-10-22T14:03:34+05:00`). The enumerated snapshot contains 274 tracked paths.
+
+The default schedule pipeline composes sanitization, cycle detection and cascading, optionally adding critical-path analysis. Sanitization copies tasks, clamps inverted dates and removes self/dangling dependency edges; only the date correction is explicitly diagnosed in the inspected implementation. Cycle detection uses residual indegrees from Kahn traversal. With breakCycles enabled it clears all dependencies on every residual node; nodes downstream of a cycle can also remain residual, so this is broader than isolating only cyclic edges. The default reports a cycle but still proceeds to the following stage. Fixtures verify simple sanitization, a two-node cycle and ordinary cascades/critical paths; the inspected suite does not cover downstream-of-cycle pruning or require failed admission before continuing.
+
+Evidence: [packages/core/src/pipeline/schedule-pipeline.ts:1-90](https://github.com/ahmadhassan-bted/jantt/blob/77f78de84b022435b8b81df9226032b14d0ddc58/packages/core/src/pipeline/schedule-pipeline.ts#L1-L90) · [packages/core/src/pipeline/stages/sanitize-stage.ts:1-52](https://github.com/ahmadhassan-bted/jantt/blob/77f78de84b022435b8b81df9226032b14d0ddc58/packages/core/src/pipeline/stages/sanitize-stage.ts#L1-L52) · [packages/core/src/pipeline/stages/cycle-guard-stage.ts:1-73](https://github.com/ahmadhassan-bted/jantt/blob/77f78de84b022435b8b81df9226032b14d0ddc58/packages/core/src/pipeline/stages/cycle-guard-stage.ts#L1-L73) · [packages/core/tests/schedule-pipeline.test.ts:1-119](https://github.com/ahmadhassan-bted/jantt/blob/77f78de84b022435b8b81df9226032b14d0ddc58/packages/core/tests/schedule-pipeline.test.ts#L1-L119).
+
+**Harness consequence:** Use Jantt as a candidate editable schedule/diagram surface behind a separate validated task model. Preserve original schedule inputs and record every repair as a proposed change. A missing predecessor or cycle must block executable task admission until explicitly resolved; display sanitization must not silently remove execution dependencies. Evaluate rendering, keyboard interactions, date semantics and large-graph resource limits separately before adopting the widget.
+
+**Scope and limits:** First scoped source review of pipeline assembly, sanitization and cycle guard within the enumerated 274-path snapshot. No browser rendering, upstream tests, critical-path algorithm audit, cascade implementation audit, accessibility check or large-graph benchmark ran. Fixture expectations for uninspected stages are not treated as proof of their algorithms.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [jantt](https://github.com/ahmadhassan-bted/jantt); analyzed commit `77f78de84b022435b8b81df9226032b14d0ddc58`; commit date 2026-10-22T14:03:34+05:00; review date 2026-10-28T08:26:04.502Z; depth reviewed. [Maintenance record](../repos/ai-gen--jantt.md).
+<!-- teamagent-analysis:end -->

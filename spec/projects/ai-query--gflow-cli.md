@@ -24,6 +24,21 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Renewal records observed availability separately from session verdicts and shutdown drains detached jobs.** Reviewed commit `7b6b9054ba419761e3b610d1fd5ca0137b1d0a51` (commit date `2026-10-26T09:16:55Z`). Compared with `c9465a0d573bc0853253d68eb15f13cbc52f532f`; the complete Git comparison contains 374 changed paths.
+
+RenewResult preserves a public landing, the verifier outcome and whether the separate labs session was observed stale. Unknown labs state becomes labs_unverified rather than successful renewal, while the specifically recognized gone status delegates to the main verifier. The stale-session parser only checks a JSON object's error field; absence of that marker is not independent token validity. The renewal flow leases the profile before its browser-version guard, closes the persistent browser before verification and avoids logging URL/token bodies. Verification occurs after releasing the lease, so the result is not one locked snapshot across both phases.
+
+Navigation and session polling have local timeouts, but polling floors each request allowance at one second and may slightly exceed its nominal deadline; launch, close and the independent verifier are not covered by one total deadline here. Browser flags intentionally conceal automation indicators and choose the basic password store, which Teamagent should not inherit as an authentication strategy or storage guarantee. The MCP HTTP lifespan and stdio finally now await drain_detached before transport/process teardown; the drain implementation and its maximum wait were not in this scope. Mocked renewal fixtures assert lifecycle order, engine refusal, stale/unknown states and launch failure without an invented verdict.
+
+Evidence: [src/gflow_cli/auth/renew.py:64-233](https://github.com/ffroliva/gflow-cli/blob/7b6b9054ba419761e3b610d1fd5ca0137b1d0a51/src/gflow_cli/auth/renew.py#L64-L233) · [src/gflow_cli/mcp/server.py:281-304](https://github.com/ffroliva/gflow-cli/blob/7b6b9054ba419761e3b610d1fd5ca0137b1d0a51/src/gflow_cli/mcp/server.py#L281-L304) · [src/gflow_cli/mcp/server.py:361-381](https://github.com/ffroliva/gflow-cli/blob/7b6b9054ba419761e3b610d1fd5ca0137b1d0a51/src/gflow_cli/mcp/server.py#L361-L381) · [tests/auth/test_renew.py:88-104](https://github.com/ffroliva/gflow-cli/blob/7b6b9054ba419761e3b610d1fd5ca0137b1d0a51/tests/auth/test_renew.py#L88-L104) · [tests/auth/test_renew.py:177-230](https://github.com/ffroliva/gflow-cli/blob/7b6b9054ba419761e3b610d1fd5ca0137b1d0a51/tests/auth/test_renew.py#L177-L230) · [tests/auth/test_renew.py:273-365](https://github.com/ffroliva/gflow-cli/blob/7b6b9054ba419761e3b610d1fd5ca0137b1d0a51/tests/auth/test_renew.py#L273-L365).
+
+**Harness consequence:** Preserve explicit unavailable/unverified/partial account states and owned profile lifecycle. Use supported, authorized provider routes with platform-protected credentials and a total operation budget; a browser session verdict is not API entitlement or permission to conceal automation. Require bounded detached-job draining with durable job outcomes and distinguish observed cookie flush from independently verified token capability.
+
+**Scope and limits:** Static scoped review of renewal result/lifecycle and MCP drain call sites within the 374-path comparison. Browser/session verifier, profile lease internals, detached drain, full API/auth remediation and provider terms were not audited or executed. Upstream comments about live observations remain attributed source claims, not measurements reproduced here.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gflow-cli](https://github.com/ffroliva/gflow-cli); analyzed commit `c9465a0d573bc0853253d68eb15f13cbc52f532f`; commit date 2026-10-02T10:47:50+01:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--gflow-cli.md).
+Analysis metadata: source [gflow-cli](https://github.com/ffroliva/gflow-cli); analyzed commit `7b6b9054ba419761e3b610d1fd5ca0137b1d0a51`; commit date 2026-10-26T09:16:55Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--gflow-cli.md).
 <!-- teamagent-analysis:end -->

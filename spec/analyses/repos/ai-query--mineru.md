@@ -2,154 +2,16 @@
 
 Source: [mineru](https://github.com/opendatalab/MinerU) · [Analysis](../../projects/ai-query--mineru.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `ed50cc15bc2c9bfb00520dadfe61979866e62236`; commit date: 2026-09-29T07:16:39Z; review date: unknown; observed SHA: `b7f3dd0c5f6e6d66a298239ffd02b328b873918e`.
+Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `b7f3dd0c5f6e6d66a298239ffd02b328b873918e`; commit date: 2026-10-11T10:21:25+08:00; review date: 2026-10-28T08:47:42.123Z; observed SHA: `b7f3dd0c5f6e6d66a298239ffd02b328b873918e`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/opendatalab/MinerU/compare/ed50cc15bc2c9bfb00520dadfe61979866e62236...b7f3dd0c5f6e6d66a298239ffd02b328b873918e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/opendatalab/MinerU/compare/b7f3dd0c5f6e6d66a298239ffd02b328b873918e...b7f3dd0c5f6e6d66a298239ffd02b328b873918e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
 - Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
-## Recent commits (truncated)
+## Recent commits
 
-- [b7f3dd0c5f6e](https://github.com/opendatalab/MinerU/commit/b7f3dd0c5f6e6d66a298239ffd02b328b873918e) 2026-10-11T10:21:25+08:00: Merge pull request #5631 from opendatalab/dev
-- [dc60e7c6722e](https://github.com/opendatalab/MinerU/commit/dc60e7c6722ebf25a04ae2bc3b59f5b55118a040) 2026-10-11T10:15:30+08:00: chore(release): prepare MinerU 4.0.12
-- [3d0326e29975](https://github.com/opendatalab/MinerU/commit/3d0326e29975c37ab41b26784ffc9da5b4717306) 2026-10-11T10:15:30+08:00: fix(router): preserve retention and usage and validate output requests
-- [d90e43a8f6ac](https://github.com/opendatalab/MinerU/commit/d90e43a8f6ac510d6d4441ac51975794a6658e7f) 2026-10-11T10:11:23+08:00: Merge pull request #5630 from opendatalab/dev
-- [75c181a3873d](https://github.com/opendatalab/MinerU/commit/75c181a3873d225e661a89c1a27d9bb9236cfe32) 2026-10-11T04:27:47+08:00: fix(ci): translate retention help and isolate optional Torch tests
-- [193d193aa8cb](https://github.com/opendatalab/MinerU/commit/193d193aa8cbc77b91b6a1e57f4ce59686711397) 2026-10-11T04:19:10+08:00: fix(ci): require DocVortex 0.5.16 and repair docs and coverage checks
-- [78379ff635ff](https://github.com/opendatalab/MinerU/commit/78379ff635ff7398dbf770f226061999ae614563) 2026-10-11T00:26:04+08:00: fix(pdf): reuse shared CJK space handling for native text
-- [13bc9cf33eed](https://github.com/opendatalab/MinerU/commit/13bc9cf33eedd60a5dbacd084f99c34f9af839b6) 2026-10-10T22:36:35+08:00: test(pdf): preserve rejected native table inputs for model fallback
-- [b479e42d901a](https://github.com/opendatalab/MinerU/commit/b479e42d901a4a59b5d1174bc059a0b64f19bf77) 2026-10-10T12:07:39+08:00: fix(layout): restore PP-DocLayoutV2 model class thresholds
-- [197795402f7f](https://github.com/opendatalab/MinerU/commit/197795402f7f3c7a6c6bb2f63d1518ba872f9453) 2026-10-10T01:30:07+08:00: Record verified closure of six repaired pull requests
-- [27ecc16f0fab](https://github.com/opendatalab/MinerU/commit/27ecc16f0fabccf5f0ceaf46ee0478b16c57bfc7) 2026-10-10T01:27:27+08:00: Record authorized fix pushes and original PR closure scope
-- [5b477601a0af](https://github.com/opendatalab/MinerU/commit/5b477601a0af089959d0b546400a3e962d0e1d6d) 2026-10-10T01:17:33+08:00: Document PR triage outcomes and service retention and recovery settings
-- [7b19a73a2045](https://github.com/opendatalab/MinerU/commit/7b19a73a2045818f67a57a49064653cc4630d29e) 2026-10-10T01:14:30+08:00: Record loaded source paths in CPU acceptance measurements; Refs #5477
-- [143077ef273f](https://github.com/opendatalab/MinerU/commit/143077ef273ffb69f310c3b39760edacbc005176) 2026-10-10T01:11:59+08:00: Release lost upstream tasks and retry retained copy cleanup; Refs #5495
-- [aa30e0871fd2](https://github.com/opendatalab/MinerU/commit/aa30e0871fd28977b1623542a0f2e91853d6f80c) 2026-10-10T01:06:29+08:00: Verify first parse after worker recovery and retained failure history; Refs #5188
-- [26c31974c3a4](https://github.com/opendatalab/MinerU/commit/26c31974c3a439f2086c04a3610de91018805a0f) 2026-10-10T01:01:36+08:00: Add paired Linux PDF CPU thread acceptance benchmark; Refs #5477
-- [badb8cee0ef2](https://github.com/opendatalab/MinerU/commit/badb8cee0ef25bff90a99909eb54d7ec44202ff6) 2026-10-10T00:59:48+08:00: Forward retention through the kit CLI and preserve lifetime usage counters; Refs #5495
-- [6a5e7b2d9f9c](https://github.com/opendatalab/MinerU/commit/6a5e7b2d9f9cd4ada640bd0b0149997df765b641) 2026-10-10T00:56:57+08:00: Reject stale worker responses and classify fatal preload failures; Refs #5188
-- [329b6250cbd4](https://github.com/opendatalab/MinerU/commit/329b6250cbd47ecf73a55293f56c2714df51b1db) 2026-10-10T00:54:59+08:00: Keep ReDoc branding assets local during offline loading; Refs #5341
-- [56f90f988311](https://github.com/opendatalab/MinerU/commit/56f90f9883111f2fefc4aa5f9a4dcf5b2303c4a9) 2026-10-10T00:53:24+08:00: Expire terminal resources with shared blob leases and Router cache collection; Refs #5495
-- [c92834be15a0](https://github.com/opendatalab/MinerU/commit/c92834be15a0764153c1a4455b049dd08984100a) 2026-10-10T00:39:18+08:00: Latch fatal engines and recover managed worker generations; Refs #5188
-- [132a7728b24e](https://github.com/opendatalab/MinerU/commit/132a7728b24e4babe77a231d76d39ce651f2d100) 2026-10-10T00:37:26+08:00: Verify shared Office table hyperlinks through the public parser; Refs #5389
-- [2ce1df8719b9](https://github.com/opendatalab/MinerU/commit/2ce1df8719b9ab3ee22bb65fa38b11edfb056710) 2026-10-10T00:30:39+08:00: Serve API documentation assets offline with proxy-aware authorization; Refs #5341
-- [ae2f957ed422](https://github.com/opendatalab/MinerU/commit/ae2f957ed42283f4a1c0dd164f876776c904f5b2) 2026-10-10T00:29:32+08:00: Bound Torch CPU threads at initialization and worker entry; Refs #5477
-- [ee8244be0fac](https://github.com/opendatalab/MinerU/commit/ee8244be0fac720c0a84818807937dc62a3ca743) 2026-10-10T00:24:29+08:00: Restore CJK boundary punctuation in native span matching; Refs #5526
-- [e61475184757](https://github.com/opendatalab/MinerU/commit/e61475184757d3fe02aa1dd74b935493ce721f92) 2026-10-09T19:40:15+08:00: feat(api): add V1 task endpoints and balance Router workloads
-- [680ff2aec537](https://github.com/opendatalab/MinerU/commit/680ff2aec53743b037e96f58397f020c94dc99b5) 2026-10-09T17:05:45+08:00: test(pdf): cover searchable scan and digital background auto routing
-- [31e4e3d0a54e](https://github.com/opendatalab/MinerU/commit/31e4e3d0a54e5a82d169bdd81b2f3eddb652bb27) 2026-10-08T18:21:05Z: Update version.py with new version
-- [f232373fb319](https://github.com/opendatalab/MinerU/commit/f232373fb319d63e82aefd30be40a2ccc6005d73) 2026-10-08T15:39:47+08:00: refactor: remove remaining OpenCV calls and calibration branch
-- [e6d89a6af4d0](https://github.com/opendatalab/MinerU/commit/e6d89a6af4d0ab930af285a24f4a157225dbc733) 2026-10-08T15:08:18+08:00: refactor: remove OpenCV from base dependencies
-- [f504cff8b077](https://github.com/opendatalab/MinerU/commit/f504cff8b07776760c673023fab8847085158be0) 2026-09-29T19:49:14+08:00: feat(api): introduce virtual model ID and description for model endpoints
-- [ee87e8e6911e](https://github.com/opendatalab/MinerU/commit/ee87e8e6911e5931bf3974e4589e4f3c07500983) 2026-09-29T16:36:33+08:00: feat(parse): enhance output path validation and add tests for single and multi-file scenarios
+No commit evidence available or no changes.
 
 ## Changed paths
 
-- M: `.github/workflows/cli.yml`
-- M: `.github/workflows/docvortex-boundary.yml`
-- M: `docs/en/reference/migration_4.md`
-- M: `docs/en/usage/http_api.md`
-- M: `docs/next/api.md`
-- M: `docs/next/api/README.md`
-- M: `docs/next/api/chat.md`
-- M: `docs/next/api/health-models.md`
-- M: `docs/next/api/parse-jobs.md`
-- A: `docs/next/api/tasks.md`
-- M: `docs/next/api/uploads-files.md`
-- M: `docs/next/api/usage-limits.md`
-- M: `docs/next/cli/mineru-kit-api-server.md`
-- M: `docs/next/cli/mineru-kit.md`
-- M: `docs/next/middle-json/current-medium.md`
-- M: `docs/next/middle-json/rendering.md`
-- A: `docs/next/pr-review-20261010-closures.json`
-- A: `docs/next/pr-review-20261010-fix-closures.json`
-- A: `docs/next/pr-review-20261010.md`
-- M: `docs/zh/reference/migration_4.md`
-- M: `docs/zh/usage/http_api.md`
-- M: `mineru/backend/analysis/pdf/formulas.py`
-- M: `mineru/backend/analysis/pdf/ocr.py`
-- M: `mineru/backend/analysis/pdf/pipeline.py`
-- M: `mineru/backend/analysis/pdf/tables.py`
-- M: `mineru/backend/analysis/pdf/text/content.py`
-- M: `mineru/backend/analysis/pdf/text/native.py`
-- M: `mineru/backend/analysis/pdf/window.py`
-- M: `mineru/kit/commands/api_server.py`
-- M: `mineru/kit/common.py`
-- M: `mineru/kit/router/app.py`
-- M: `mineru/kit/router/cli.py`
-- M: `mineru/kit/router/proxy.py`
-- M: `mineru/kit/router/resources.py`
-- A: `mineru/kit/router/tasks.py`
-- M: `mineru/kit/router/workers.py`
-- M: `mineru/model/_internal/pytorchocr/data/imaug/operators.py`
-- M: `mineru/model/_internal/pytorchocr/infer/predict_cls.py`
-- M: `mineru/model/_internal/pytorchocr/infer/predict_rec.py`
-- M: `mineru/model/_internal/pytorchocr/infer/predict_system.py`
-- M: `mineru/model/_internal/pytorchocr/infer/pytorchocr_utility.py`
-- M: `mineru/model/layout/pp_doclayout_v2_base.py`
-- M: `mineru/model/layout/pp_doclayout_v2_onnx.py`
-- M: `mineru/model/layout/pp_doclayoutv2.py`
-- M: `mineru/model/mfr/pp_formulanet/processors.py`
-- M: `mineru/model/mfr/pp_formulanet_plus_m_onnx.py`
-- M: `mineru/model/mfr/unimernet/unimernet_hf/unimer_swin/image_processing_unimer_swin.py`
-- M: `mineru/model/ocr/db_postprocess.py`
-- M: `mineru/model/ocr/image.py`
-- M: `mineru/model/ocr/pp_ocr_v6_onnx.py`
-- M: `mineru/model/ocr/pytorch_paddle.py`
-- M: `mineru/model/ocr/seal_crop.py`
-- M: `mineru/model/ocr/seal_det_warp.py`
-- A: `mineru/model/runtime/cpu_threads.py`
-- M: `mineru/model/runtime/execution.py`
-- M: `mineru/model/runtime/hybrid.py`
-- M: `mineru/model/table/cls/mineru_table_ori_cls.py`
-- M: `mineru/model/table/cls/paddle_table_cls.py`
-- M: `mineru/model/table/rec/slanet_plus/main.py`
-- M: `mineru/model/table/rec/slanet_plus/table_structure_utils.py`
-- M: `mineru/model/table/rec/unet_table/main.py`
-- M: `mineru/model/table/rec/unet_table/table_structure_unet.py`
-- M: `mineru/model/table/rec/unet_table/utils.py`
-- M: `mineru/model/table/rec/unet_table/utils_table_line_rec.py`
-- M: `mineru/model/vlm/async_runtime.py`
-- A: `mineru/model/vlm/errors.py`
-- M: `mineru/model/vlm/runtime.py`
-- M: `mineru/parser/api_server.py`
-- A: `mineru/parser/task_api.py`
-- A: `mineru/utils/retention.py`
-- M: `mineru/utils/translations.py`
-- M: `mineru/version.py`
-- M: `pyproject.toml`
-- A: `scripts/http_task_example.sh`
-- A: `tests/benchmarks/opencv_paths.py`
-- M: `tests/benchmarks/pdf_cpu_gaps.py`
-- A: `tests/fixtures/model_image_reference.json`
-- A: `tests/fixtures/pr5389/table-links.docx`
-- A: `tests/fixtures/pr5389/table-links.pptx`
-- A: `tests/unittest/test_api_offline_docs.py`
-- M: `tests/unittest/test_docvortex_import_boundary.py`
-- M: `tests/unittest/test_docvortex_routing.py`
-- A: `tests/unittest/test_engine_dead_lifecycle.py`
-- M: `tests/unittest/test_kit_commands.py`
-- M: `tests/unittest/test_native_async_runtime.py`
-- M: `tests/unittest/test_native_pdf_table_pipeline.py`
-- A: `tests/unittest/test_office_table_links_integration.py`
-- M: `tests/unittest/test_onnx_detection_batching.py`
-- M: `tests/unittest/test_onnx_model_stack.py`
-- A: `tests/unittest/test_opencv_boundaries.py`
-- M: `tests/unittest/test_parser_api_contract.py`
-- M: `tests/unittest/test_pdf_analyze_block_content.py`
-- M: `tests/unittest/test_pdf_analyze_visual_blocks.py`
-- M: `tests/unittest/test_pdf_memory_lifecycle.py`
-- M: `tests/unittest/test_pdf_mfr_table_routing.py`
-- A: `tests/unittest/test_pdf_native_cjk_quote_span_edge.py`
-- A: `tests/unittest/test_pdf_scan_text_routing.py`
-- M: `tests/unittest/test_pdf_tight_spacing.py`
-- A: `tests/unittest/test_pp_doclayoutv2_thresholds.py`
-- A: `tests/unittest/test_resource_retention.py`
-- A: `tests/unittest/test_router_balancing.py`
-- A: `tests/unittest/test_task_api.py`
-- A: `tests/unittest/test_task_http.py`
-- A: `tests/unittest/test_torch_cpu_threads.py`
-- M: `tests/unittest/test_transformers5_models.py`
-- M: `tests/unittest/test_v1_router.py`
-- M: `tests/unittest/test_vlm_remote.py`
-- A: `tools/benchmark_torch_cpu_threads.py`
+No path evidence available or no changes.

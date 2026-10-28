@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`738451e40785750a8e8de5bce8112675f5f0df02`](https://github.com/tech-leads-club/agent-skills/commit/738451e40785750a8e8de5bce8112675f5f0df02). Scope: Full MCP read_skill, fetch_skill_files and prepare_skill_files wrappers read. Integrity verification, staging, pruning, registry trust and CDN helpers were not audited.
+
+The [read](https://github.com/tech-leads-club/agent-skills/blob/738451e40785750a8e8de5bce8112675f5f0df02/packages/mcp/src/tools/skill-tool.ts) and [reference](https://github.com/tech-leads-club/agent-skills/blob/738451e40785750a8e8de5bce8112675f5f0df02/packages/mcp/src/tools/fetcher-tool.ts) tools resolve indexed names and delegate whole-skill verification before returning content. The [prepare tool](https://github.com/tech-leads-club/agent-skills/blob/738451e40785750a8e8de5bce8112675f5f0df02/packages/mcp/src/tools/prepare-tool.ts) separates reading from staging executable files, checks requested membership/path safety and returns a dry-run preview before fetching or writing. These are useful stages; checksum agreement alone does not establish publisher trust or authorize running the content.
+
+The prepare tool declares destructiveHint false on an additive-write rationale, yet calls pruneSupersededRevisions after staging. Its annotation therefore needs reconciliation with the actual pruning lifecycle. The explicit twenty-path limit does not cover the default all-files selection, and all wrappers consume complete response bodies before helper validation, with no wrapper-level byte bound. Pruning failures occur after staging, so a thrown error need not mean nothing was written. Adapt revision-bound staging and explicit partial outcomes only after auditing helper containment, atomicity and retention. No MCP, CDN, filesystem staging or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle.tech-leads-club](https://github.com/tech-leads-club/agent-skills); analyzed commit `120b67676388241b314699fa8fa9af25ada6d1d4`; commit date 2026-09-20T09:37:16-03:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.tech-leads-club.md).
+Analysis metadata: source [bundle.tech-leads-club](https://github.com/tech-leads-club/agent-skills); analyzed commit `738451e40785750a8e8de5bce8112675f5f0df02`; commit date 2026-10-26T03:11:37Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.tech-leads-club.md).
 <!-- teamagent-analysis:end -->

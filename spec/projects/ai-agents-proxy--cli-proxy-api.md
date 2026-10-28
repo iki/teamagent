@@ -29,6 +29,14 @@ The default URL is coupled to a provider backend that can change independently o
 
 [Models](../models.md) · [Agents](../agents.md) · [Security](../security.md)
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`ad8bdd3f20bef44f0684b8a6096a216b2c76040d`](https://github.com/router-for-me/CLIProxyAPI/commit/ad8bdd3f20bef44f0684b8a6096a216b2c76040d). Scope: Full Codex executor capability facade, OAuth parser, watcher wrapper and auth-store interface read. Credential storage, executor request path and actual watcher/reload implementation were not audited.
+
+The [executor facade](https://github.com/router-for-me/CLIProxyAPI/blob/ad8bdd3f20bef44f0684b8a6096a216b2c76040d/internal/runtime/executor/codex_executor.go) exposes apply-patch support as an executor capability rather than deriving it from a provider label. That flag is a routing contract, not tool authorization. The [auth-store interface](https://github.com/router-for-me/CLIProxyAPI/blob/ad8bdd3f20bef44f0684b8a6096a216b2c76040d/sdk/cliproxy/auth/store.go) protects ID/registration epoch/credential version/generation and warns against mutating shared nested clones or reentering manager mutations during save. The [watcher facade](https://github.com/router-for-me/CLIProxyAPI/blob/ad8bdd3f20bef44f0684b8a6096a216b2c76040d/sdk/cliproxy/watcher.go) separates runtime and persisted updates and exposes revision-aware dispatch; the underlying concurrency guarantees remain unreviewed.
+
+The [OAuth helper](https://github.com/router-for-me/CLIProxyAPI/blob/ad8bdd3f20bef44f0684b8a6096a216b2c76040d/internal/misc/oauth.go) generates cryptographically random state and permissively parses manually pasted callbacks, including fragments and bare query strings. Parsing does not validate the expected state, redirect origin or client identity; those checks belong to the owning flow. Buffered prompt-result channels prevent a blocked send if abandoned, but do not cancel the prompt itself. Adapt explicit capability/credential generation contracts with authenticated callback checks and scoped cancellation. No authentication, credentials, proxy request or tests were exercised.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cli-proxy-api](https://github.com/router-for-me/CLIProxyAPI); analyzed commit `d7914afdedca7af95ee974a42453dc49fc1388ce`; commit date 2026-10-03T17:01:12+08:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--cli-proxy-api.md).
+Analysis metadata: source [cli-proxy-api](https://github.com/router-for-me/CLIProxyAPI); analyzed commit `ad8bdd3f20bef44f0684b8a6096a216b2c76040d`; commit date 2026-10-27T23:23:26+08:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--cli-proxy-api.md).
 <!-- teamagent-analysis:end -->

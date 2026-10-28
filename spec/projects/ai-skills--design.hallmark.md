@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`6033bab2a8051b5454552d2e8e6cb8f27c483a42`](https://github.com/nutlope/hallmark/commit/6033bab2a8051b5454552d2e8e6cb8f27c483a42). Scope: Full screenshot helper and composition reference read. Image-generation helper, theme implementation, design gates and live browser/app capture were not reviewed.
+
+The [capture helper](https://github.com/nutlope/hallmark/blob/6033bab2a8051b5454552d2e8e6cb8f27c483a42/skills/hallmark/scripts/capture.mjs) supports fixed viewport screenshots and existing local DevTools sessions, constrains constructed routes to the target origin and closes a launched browser in finally. It does not constrain redirected destinations or subresources, bounds neither the number of routes nor screenshot dimensions, and waits for document fonts without a surrounding deadline. Partial skips can still end successfully when one image exists; retain requested-versus-captured coverage. Attaching to an existing DevTools endpoint also exposes the real app's current state, so destination ownership and sensitive-screen review are required.
+
+The [composition guidance](https://github.com/nutlope/hallmark/blob/6033bab2a8051b5454552d2e8e6cb8f27c483a42/skills/hallmark/references/comp.md) separates a visual proposal from compliance evidence and requires comparing the rendered result at matching dimensions. Its controlled one-axis comparison and explicit medium inventory can improve design review. A detected provider key is capability, not authorization for paid generation, and the local tool/provider choices are not adopted here. No browser, app, screenshot, image generation or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [design.hallmark](https://github.com/nutlope/hallmark); analyzed commit `13ac0ec7e148655948100b6396439e481361d690`; commit date 2026-08-06T09:19:18-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.hallmark.md).
+Analysis metadata: source [design.hallmark](https://github.com/nutlope/hallmark); analyzed commit `6033bab2a8051b5454552d2e8e6cb8f27c483a42`; commit date 2026-10-27T16:05:53+01:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.hallmark.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,35 @@
+# metaharness
+
+Source: [metaharness](https://github.com/SuperagenticAI/metaharness) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **focused source review**. Snapshot `b8deaf6ba62cd2acac4b0a5b30f9f2d1c21ef71f` (2026-09-02T10:08:03+01:00). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+Candidate workspaces and deterministic scope gates provide a concrete architecture for evolving the harness itself.
+
+## Source evidence inspected
+
+- [src/metaharness/core/engine.py, lines 199–325](https://github.com/SuperagenticAI/metaharness/blob/b8deaf6ba62cd2acac4b0a5b30f9f2d1c21ef71f/src/metaharness/core/engine.py#L199-L325)
+
+## Observed design and algorithms
+
+Candidate evaluation prepares a proposal, invokes a proposer, captures the actual workspace diff and change manifest, then merges discovered changed files with the proposer report. It rejects failed proposals, out-of-scope paths and write-class violations. Optional leakage-token checks precede domain validation and search evaluation. No-change candidates inherit parent results instead of consuming a new evaluation.
+
+## Harness decision
+
+Adopt isolated candidate workspaces, captured diffs, strict allowed-write scope and an independent validator/promoter. Use this for improving retrieval settings, prompts and adapter strategies. Record both search and untouched test outcomes; keep credentials and production authority outside candidate workspaces.
+
+## Limits and tradeoffs
+
+The leakage gate is optional and token-based, so it cannot prove absence of semantic answer leakage. Reported changed files must never replace filesystem-level confinement. Improving the search objective may overfit the evaluation distribution.
+
+## Validation before adoption
+
+Attempt hidden modifications, test-answer leakage, no-op proposals, broad regressions and evaluator tampering. Require rollbackable artifact versions and evidence from held-out tasks before promotion. No tests, live inference, installation, or production operation were performed for this review. License indicator: not classified; inspect source; verify the exact files and dependencies before reuse.
+
+Related directions: [evolution](../evolution.md) · [agents](../agents.md) · [skills](../skills.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [metaharness](https://github.com/SuperagenticAI/metaharness); analyzed commit `b8deaf6ba62cd2acac4b0a5b30f9f2d1c21ef71f`; commit date 2026-09-02T10:08:03+01:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--metaharness.md).
+<!-- teamagent-analysis:end -->

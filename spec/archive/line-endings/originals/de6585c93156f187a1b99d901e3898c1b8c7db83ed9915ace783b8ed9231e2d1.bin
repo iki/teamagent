@@ -1,0 +1,46 @@
+# pageindex
+
+Source: [pageindex](https://github.com/VectifyAI/PageIndex) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `6d23caf416858f2ca136840305d1f479a86f6ef7`; commit timestamp `2026-10-01T23:20:09+08:00`; 177 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/VectifyAI/PageIndex/blob/6d23caf416858f2ca136840305d1f479a86f6ef7/README.md)):
+
+> Reasoning-based RAG&nbsp; ◦ &nbsp;No Vector DB, No Chunking&nbsp; ◦ &nbsp;Context-Aware Retrieval&nbsp; ◦ &nbsp;Reads Like a Human - [Aug '26] 🔥 **PageIndex SDK**: `pip install -U pageindex` now ships **local mode**: index, retrieve, and chat entirely on your machine with your own LLM key, or point the same client at PageIndex Cloud with an API key.
+
+Build/package evidence: [pyproject.toml](https://github.com/VectifyAI/PageIndex/blob/6d23caf416858f2ca136840305d1f479a86f6ef7/pyproject.toml); [requirements.txt](https://github.com/VectifyAI/PageIndex/blob/6d23caf416858f2ca136840305d1f479a86f6ef7/requirements.txt)
+
+License evidence: [LICENSE](https://github.com/VectifyAI/PageIndex/blob/6d23caf416858f2ca136840305d1f479a86f6ef7/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Partial-answer handling and explicit provider routes improve client semantics, while cloud schema operations remain delegated.** Reviewed commit `b81465d9ad3d80ee1df344508a85d1f2cdfb8a26` (commit date `2026-10-27T22:07:20+08:00`). Compared with `6d23caf416858f2ca136840305d1f479a86f6ef7`; the complete Git comparison contains 62 changed paths.
+
+The answer-lane client now reads the first completion choice and checks its finish reason against the imported cut-short set. On a match it raises an error carrying partial_answer, and attaches usage for own-model chat, instead of returning an apparently complete string. Missing response shape still includes up to 200 characters of the raw envelope in its diagnostic. Native Responses/Messages paths explicitly refuse claude-code/ routes; the Anthropic runner likewise rejects a Claude Code route and requires a selected model. These dispatch guards do not verify the uninspected subprocess/provider implementation or the full set of cut-short reasons.
+
+Cloud metadata-schema methods are thin cloud-mode-gated delegations; local mode has no equivalent. The docstrings describe declaration as removing incompatible existing metadata and describe account/folder inheritance, but the server behavior is not implemented in this client file. Mock HTTP fixtures cover encoded folder IDs, PUT/GET/DELETE methods and a 30-second request timeout, not remote validation or migration durability.
+
+PDF extraction adds per-character-code advance widths for simple fonts and Identity-H composites and shares the computed pen end across decomposed characters from one code. Type 3 and unsupported mappings deliberately retain the prior geometry fallback. Numeric parsing accepts float values without a finite-value check; range-form widths cap the code range, while explicit width arrays are fully materialized. Heading reconciliation accepts an exact normalized title on the page following a bookmark; fuzzy/suffix matching remains limited to same-page headings.
+
+Evidence: [pageindex/client.py:1485-1502](https://github.com/VectifyAI/PageIndex/blob/b81465d9ad3d80ee1df344508a85d1f2cdfb8a26/pageindex/client.py#L1485-L1502) · [pageindex/client.py:1565-1591](https://github.com/VectifyAI/PageIndex/blob/b81465d9ad3d80ee1df344508a85d1f2cdfb8a26/pageindex/client.py#L1565-L1591) · [pageindex/client.py:2341-2368](https://github.com/VectifyAI/PageIndex/blob/b81465d9ad3d80ee1df344508a85d1f2cdfb8a26/pageindex/client.py#L2341-L2368) · [pageindex/client.py:2732-2805](https://github.com/VectifyAI/PageIndex/blob/b81465d9ad3d80ee1df344508a85d1f2cdfb8a26/pageindex/client.py#L2732-L2805) · [tests/test_client.py:1937-1954](https://github.com/VectifyAI/PageIndex/blob/b81465d9ad3d80ee1df344508a85d1f2cdfb8a26/tests/test_client.py#L1937-L1954) · [pageindex/flash/parser_pdfium_charlevel/char_extract.py:255-348](https://github.com/VectifyAI/PageIndex/blob/b81465d9ad3d80ee1df344508a85d1f2cdfb8a26/pageindex/flash/parser_pdfium_charlevel/char_extract.py#L255-L348) · [pageindex/flash/parser_pdfium_charlevel/font_unicode.py:394-436](https://github.com/VectifyAI/PageIndex/blob/b81465d9ad3d80ee1df344508a85d1f2cdfb8a26/pageindex/flash/parser_pdfium_charlevel/font_unicode.py#L394-L436) · [pageindex/flash/embedded_toc.py:260-277](https://github.com/VectifyAI/PageIndex/blob/b81465d9ad3d80ee1df344508a85d1f2cdfb8a26/pageindex/flash/embedded_toc.py#L260-L277).
+
+**Harness consequence:** Preserve partial text with explicit completion/usage status and keep provider route selection separate from wire protocol. Do not log response payload fragments by default. Treat cloud schema declaration as a potentially destructive migration requiring a plan/receipt, and retain original PDF bytes, geometry and extraction diagnostics alongside heuristic text/tree improvements. Validate numeric font data and bound arrays before using it.
+
+**Scope and limits:** Static scoped review of client completion/routing/schema wrappers and selected font/bookmark changes in the 62-path comparison. Streaming internals, cut-short reason definitions, Claude Code integration, cloud implementation and all flash extraction stages were not audited or run; mock tests were read, not executed.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [pageindex](https://github.com/VectifyAI/PageIndex); analyzed commit `b81465d9ad3d80ee1df344508a85d1f2cdfb8a26`; commit date 2026-10-27T22:07:20+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--pageindex.md).
+<!-- teamagent-analysis:end -->

@@ -24,6 +24,14 @@ This entry was catalogued under **ai-security**. Its category places it in the c
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`33e340ffb237b173ba85d0294248bc72ae3a03e6`](https://github.com/supermhel/fengarde/commit/33e340ffb237b173ba85d0294248bc72ae3a03e6). Scope: Full test-wiring gate, evaluation-change filter and two browser MFA helpers read. Detection rules, production authentication and evaluation fingerprints were not audited.
+
+The [test-wiring gate](https://github.com/supermhel/fengarde/blob/33e340ffb237b173ba85d0294248bc72ae3a03e6/tools/check_test_wiring.py) inventories test files and requires a gate reference or documented live-only exception; its regex/basename matching is a useful drift check, not proof each discovered suite executes. The [evaluation filter](https://github.com/supermhel/fengarde/blob/33e340ffb237b173ba85d0294248bc72ae3a03e6/tools/ci_eval_filter.py) reuses fingerprint globs and adds evaluation consumers, supporting deleted and renamed-away paths through a NUL-delimited change list. Adapt shared measurement inputs and explicit live-test separation, but verify the imported fingerprint and CI invocation before relying on coverage.
+
+The [MFA exercise](https://github.com/supermhel/fengarde/blob/33e340ffb237b173ba85d0294248bc72ae3a03e6/tools/console_e2e/mfa.mjs) provisions a temporary user, enrolls through API calls and checks sign-in through the UI, waiting for the next TOTP window rather than reusing enrollment's code. It disables the user only on the normal completion path: errors before cleanup can leave the account active and browser open. The [helper](https://github.com/supermhel/fengarde/blob/33e340ffb237b173ba85d0294248bc72ae3a03e6/tools/console_e2e/lib.mjs) reads credentials in-process, while an environment-controlled base URL determines their destination; an authorized test-host allowlist is still needed. Do not import these scripts as a default credential-free gate. No browser, authentication flow or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [fengarde](https://github.com/supermhel/fengarde); analyzed commit `285ca7244032aed3e3402da437a07d97b9792ade`; commit date 2026-09-10T02:35:39+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-security--fengarde.md).
+Analysis metadata: source [fengarde](https://github.com/supermhel/fengarde); analyzed commit `33e340ffb237b173ba85d0294248bc72ae3a03e6`; commit date 2026-10-23T21:04:50+02:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-security--fengarde.md).
 <!-- teamagent-analysis:end -->

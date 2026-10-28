@@ -1,0 +1,22 @@
+# deepinfer
+
+Source: [deepinfer](https://github.com/deepseek-ai/deepinfer) · [models](../../models.md), [agents](../../agents.md).
+
+Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-model-run--deepinfer.md).
+
+
+## Change review â€” 2026-10-27
+
+**First scoped source review: specialized inference engine with explicit service gaps.** Reviewed commit `553741557a57df44a46fb3ab72b6aafeaf945337` (commit date `2026-10-25T19:59:27+08:00`). The enumerated snapshot contains 348 tracked paths.
+
+The pinned README describes offline DeepSeek-V4.1-Flash inference on Linux with NVIDIA SM100 or Ascend 950 hardware, and explicitly excludes the complete service KV-cache system, disaggregated deployment and load balancing. These are snapshot claims, not a verified deployment matrix. The inspected engine accepts already-tokenized arrays, rejects empty prompts, validates token bounds and returns no sequence for out-of-range tokens. It prepares compressed tokens and optional multimodal processing, submits structured-output matcher work before scheduling, and represents an aborted matcher as a failed sequence. When prefill truncation is enabled it mutates requested prompt-logprobs to false with a warning; an adapter must expose this as a capability conflict. The base engine has extension hooks with no implementation for persistent KV transfer and disaggregation. Sequence fixtures reject wrong dtype, noncontiguous arrays and list substitution. A model fixture compares an initial generation's logprobs with an appended-prompt pass, but was only read.
+
+Evidence: [README.md:1-84](https://github.com/deepseek-ai/deepinfer/blob/553741557a57df44a46fb3ab72b6aafeaf945337/README.md#L1-L84) Â· [deepinfer/engine/llm_engine.py:472-633](https://github.com/deepseek-ai/deepinfer/blob/553741557a57df44a46fb3ab72b6aafeaf945337/deepinfer/engine/llm_engine.py#L472-L633) Â· [deepinfer/engine/llm_engine.py:801-859](https://github.com/deepseek-ai/deepinfer/blob/553741557a57df44a46fb3ab72b6aafeaf945337/deepinfer/engine/llm_engine.py#L801-L859) Â· [tests/engine/test_sequence.py:1-92](https://github.com/deepseek-ai/deepinfer/blob/553741557a57df44a46fb3ab72b6aafeaf945337/tests/engine/test_sequence.py#L1-L92) Â· [tests/models/test_kl.py:134-198](https://github.com/deepseek-ai/deepinfer/blob/553741557a57df44a46fb3ab72b6aafeaf945337/tests/models/test_kl.py#L134-L198).
+
+**Harness consequence:** Register this as a specialized provisioned inference candidate, not a drop-in general local server or subscription route. Check exact accelerator/model/runtime resources before selection; keep checkpoint provisioning separate from inference. Convert silent no-sequence outcomes and parameter mutation into typed explicit errors or approved downgrades. Determinism must be qualified by batch, sampling seed, backend and feature settings, then measured on the target hardware.
+
+**Scope and limits:** Initial scoped architecture review in a 348-path tree. No accelerator, weights, kernels, distributed deployment, test execution, benchmark or output-quality validation. Attention, speculative decoding and scheduler algorithms were not audited by reading their configuration descriptions. Model/weight licensing remains separate from the repository's stated code license.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [deepinfer](https://github.com/deepseek-ai/deepinfer); analyzed commit `none`; commit date unknown; review date unknown; depth unreviewed. [Maintenance record](../repos/ai-model-run--deepinfer.md).
+<!-- teamagent-analysis:end -->

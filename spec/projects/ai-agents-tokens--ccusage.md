@@ -25,6 +25,14 @@ Use ccusage as an optional local accounting adapter or cross-check, with read-on
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`0c76c3e72b3a553be46f02feb9a9dbfab06e9fe9`](https://github.com/ryoppippi/ccusage/commit/0c76c3e72b3a553be46f02feb9a9dbfab06e9fe9). Scope: Full native CLI entry and JavaScript binary wrapper read. Rust usage/pricing parsers, compression tests and packaged native artifacts were not audited.
+
+The [Rust entry](https://github.com/ryoppippi/ccusage/blob/0c76c3e72b3a553be46f02feb9a9dbfab06e9fe9/rust/crates/ccusage/src/cli.rs) parses against one configuration view, validates timezone/window choices, resolves sources for unified output and returns usage errors with exit code 2; bare invocation becomes a unified daily report. The referenced validators and parsers were not inspected, so this is dispatch-contract evidence rather than accounting correctness.
+
+The [wrapper](https://github.com/ryoppippi/ccusage/blob/0c76c3e72b3a553be46f02feb9a9dbfab06e9fe9/apps/ccusage/src/cli.js) chooses an explicit platform/architecture native package, reports unsupported or missing artifacts, forwards arguments/signals and removes handlers on child completion. It does not silently substitute a JavaScript implementation. The missing-package guidance recommends removing release-age restrictions, which must not become a Teamagent trust-policy change; artifact identity and compatibility still require locked provenance. Non-Windows executable repair sets 0755 rather than preserving all prior mode bits. Adapt explicit unavailable-platform errors and scoped signal cleanup only; keep Teamagent's Aube/Bun launcher contract. No binary, transcript parser, package install or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ccusage](https://github.com/ryoppippi/ccusage); analyzed commit `7b9e09b09f8015cf082f191cbcc7739a44c699ff`; commit date 2026-10-03T20:01:22Z; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-tokens--ccusage.md).
+Analysis metadata: source [ccusage](https://github.com/ryoppippi/ccusage); analyzed commit `0c76c3e72b3a553be46f02feb9a9dbfab06e9fe9`; commit date 2026-10-27T04:47:23Z; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-tokens--ccusage.md).
 <!-- teamagent-analysis:end -->

@@ -27,6 +27,21 @@ Pilot as an optional code-intelligence adapter, with plain file search and langu
 
 Related directions: [memory](../memory.md) · [import-generation](../import-generation.md) · [agents](../agents.md).
 
+
+## Change review - 2026-10-28
+
+**Parser identities and persisted-shard receipts strengthen cache coherence while publication retains a crash window.** Reviewed commit `bad2422aa1bd6473e4cbb4da15873090944b67d6` (commit date `2026-10-27T16:46:58Z`). Compared with `5f9f95f22454b1f878ca549bc38b4c2ef5066b9a`; the complete Git comparison contains 2873 changed paths.
+
+Chunk keys now frame sorted path/content-hash pairs with the resolved base parser identity and optional PDG identity/resolved function-line cap. This avoids delimiter ambiguity and prevents parser changes from silently replaying foreign shards. Sharded loads validate the base identity and key grammar; cache publication includes only successfully written/copied shards, chooses staged repairs over live copies and returns the exact written key set for durable ParsedFile pruning. The inspected loader still casts array-shaped V8/legacy values instead of deeply validating parser payloads.
+
+Publication removes a fixed .tmp directory, writes a generation, removes the live directory and then renames the replacement. The source explicitly acknowledges a gap with no live cache; no writer lock or crash-atomic swap appears in this function. Hybrid search now awaits both keyword and semantic lanes with allSettled before propagating symbol-identity corruption, preventing a sibling query from outliving the shared database session. Other lane failures still become empty results, leaving degraded coverage implicit in the returned merged list.
+
+Evidence: [gitnexus/src/storage/parse-cache.ts:180-306](https://github.com/abhigyanpatwari/GitNexus/blob/bad2422aa1bd6473e4cbb4da15873090944b67d6/gitnexus/src/storage/parse-cache.ts#L180-L306) · [gitnexus/src/storage/parse-cache.ts:385-532](https://github.com/abhigyanpatwari/GitNexus/blob/bad2422aa1bd6473e4cbb4da15873090944b67d6/gitnexus/src/storage/parse-cache.ts#L385-L532) · [gitnexus/src/core/search/hybrid-search.ts:170-201](https://github.com/abhigyanpatwari/GitNexus/blob/bad2422aa1bd6473e4cbb4da15873090944b67d6/gitnexus/src/core/search/hybrid-search.ts#L170-L201).
+
+**Harness consequence:** Bind cache entries to actual parser/grammar/options identity and publish an exact successful-shard manifest shared by related stores. Validate cached dynamic values, serialize publication and retain the previous generation until replacement is durably committed. Drain sibling retrieval work before closing shared resources, while reporting unavailable lanes separately from a genuine empty result.
+
+**Scope and limits:** Static scoped parser-cache identity/publication and hybrid-search failure-lifetime review within the 2,873-path comparison. Parser-identity resolver, V8 sidecar integrity, full generation orchestrator, embeddings and graph correctness were not audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gitnexus](https://github.com/abhigyanpatwari/GitNexus); analyzed commit `5f9f95f22454b1f878ca549bc38b4c2ef5066b9a`; commit date 2026-10-03T18:22:21+01:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--gitnexus.md).
+Analysis metadata: source [gitnexus](https://github.com/abhigyanpatwari/GitNexus); analyzed commit `bad2422aa1bd6473e4cbb4da15873090944b67d6`; commit date 2026-10-27T16:46:58Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--gitnexus.md).
 <!-- teamagent-analysis:end -->

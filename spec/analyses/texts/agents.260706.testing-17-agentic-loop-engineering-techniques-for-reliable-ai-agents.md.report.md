@@ -6,7 +6,7 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://levelup.gitconnected.com/testing-17-agentic-loop-engineering-techniques-for-reliable-ai-agents-7966adad5835>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-27T18:40:39.721Z. Local validation: 2026-10-27T18:40:39.721Z. Import: **failed**. Content validation: **failed**.
+Mode: **static**. Last remote attempt: 2026-10-28T07:07:39.056Z. Local validation: 2026-10-28T07:07:39.056Z. Import: **failed**. Content validation: **failed**.
 
 First captured: unknown. Source creation/publication date: unknown. Date evidence: unknown. Filename dates and Last-Modified are not treated as creation dates.
 

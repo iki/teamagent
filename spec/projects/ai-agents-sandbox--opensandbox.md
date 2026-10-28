@@ -29,6 +29,14 @@ Container existence alone does not establish resistance to a hostile tenant; hos
 
 [Agents](../agents.md) · [Models](../models.md) · [Generation](../generation.md) · [Security](../security.md)
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`62a64f0b48cdd6b410f36e53c74dc7559c87719a`](https://github.com/alibaba/OpenSandbox/commit/62a64f0b48cdd6b410f36e53c74dc7559c87719a). Scope: Full PTY credential parser/tests and ingress HTTP proxy read. Authentication middleware implementation, sandbox lifecycle, pools and egress enforcement were not audited.
+
+The [PTY parser](https://github.com/alibaba/OpenSandbox/blob/62a64f0b48cdd6b410f36e53c74dc7559c87719a/components/execd/pkg/web/pty_auth.go) strips a credential-bearing WebSocket subprotocol before negotiation, requires exactly one canonical non-empty base64url token and the application protocol, and leaves other subprotocols intact. The [middleware fixtures](https://github.com/alibaba/OpenSandbox/blob/62a64f0b48cdd6b410f36e53c74dc7559c87719a/components/execd/pkg/web/pty_auth_test.go) cover duplicate/conflicting credentials, route/method scope, header precedence, runtime binding and no secret echo. They also explicitly show that supplying a subprotocol does not enable authentication when the server has no configured token. Preserve this configuration distinction and require authenticated session ownership separately.
+
+The [ingress proxy](https://github.com/alibaba/OpenSandbox/blob/62a64f0b48cdd6b410f36e53c74dc7559c87719a/components/ingress/pkg/proxy/http.go) removes control headers before forwarding and avoids appending an error body to an already-streaming response. Its error log includes RequestURI and raw upstream errors, so private query values still need redaction. The reverse-proxy target is derived from the request URL at this layer; upstream routing/authorization must be traced elsewhere before claiming destination safety. No sandbox, WebSocket, proxy or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [opensandbox](https://github.com/alibaba/OpenSandbox); analyzed commit `c7dc78a4090e5de2b9119e9bd93952cae24f87bd`; commit date 2026-10-01T10:21:12+08:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--opensandbox.md).
+Analysis metadata: source [opensandbox](https://github.com/alibaba/OpenSandbox); analyzed commit `62a64f0b48cdd6b410f36e53c74dc7559c87719a`; commit date 2026-10-27T20:35:47+08:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--opensandbox.md).
 <!-- teamagent-analysis:end -->

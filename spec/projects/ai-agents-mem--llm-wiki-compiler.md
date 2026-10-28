@@ -27,6 +27,21 @@ Adopt the compiler model and snapshot rules for curated team knowledge; evaluate
 
 Related directions: [memory](../memory.md) · [evolution](../evolution.md) · [skills](../skills.md) · [import-generation](../import-generation.md).
 
+
+## Change review - 2026-10-28
+
+**Extraction reuse binds supplied content and published ownership while citation-cache parsing stays permissive.** Reviewed commit `c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f` (commit date `2026-10-19T12:40:59-07:00`). Compared with `605461febe8206e6f78e987bb57f75fa1c5817c5`; the complete Git comparison contains 804 changed paths.
+
+Extraction snapshots hash the content actually passed to extraction and fingerprint prompt version, provider/model, rendered prompt and tool contract. Reuse validates a strict schema, source hash and exact live concept-slug set, rejects legacy title markup and resets is_new. Snapshots are only attached when every concept slug was written; review/frozen/deleted-source cases disable the reuse set. Index growth intentionally does not invalidate prior assignments, a stability tradeoff rather than evidence the assignments remain optimal under a larger corpus.
+
+Context retrieval preserves qualified page IDs, content hashes and independent stale-entry flags; provider/profile failures become bounded warning codes. Store-load rejection deliberately propagates, whereas zero hits from a usable store are labelled embedding-store-missing, conflating absence of matches with absence of storage. The public citation-cache reader reads all text, casts any parsable JSON as a judgment, retains duplicates and silently skips malformed lines; the summary buckets every non-1/non-2 score as unsupported. This is not a validated acceptance ledger.
+
+Evidence: [src/compiler/extraction-snapshot.ts:1-80](https://github.com/atomicmemory/llm-wiki-compiler/blob/c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f/src/compiler/extraction-snapshot.ts#L1-L80) · [src/context/retrieval.ts:148-202](https://github.com/atomicmemory/llm-wiki-compiler/blob/c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f/src/context/retrieval.ts#L148-L202) · [src/eval/cache.ts:49-108](https://github.com/atomicmemory/llm-wiki-compiler/blob/c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f/src/eval/cache.ts#L49-L108).
+
+**Harness consequence:** Adopt supplied-byte hashing, extraction-contract identity and ownership reconciliation while documenting deliberate reuse stability. Preserve no-match, unavailable, stale and failed channels distinctly. Citation judgments need bounded schema/semantic validation, exact claim/span/model identity, duplicate policy and explicit malformed/missing counts before contributing to evaluation.
+
+**Scope and limits:** Static scoped extraction-snapshot, semantic-outcome and public citation-cache review within the 804-path comparison. Atomic compile publication, underlying embedding loaders, judge keyed-cache implementation and complete evaluation were not audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [llm-wiki-compiler](https://github.com/atomicmemory/llm-wiki-compiler); analyzed commit `605461febe8206e6f78e987bb57f75fa1c5817c5`; commit date 2026-10-02T16:58:40-07:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--llm-wiki-compiler.md).
+Analysis metadata: source [llm-wiki-compiler](https://github.com/atomicmemory/llm-wiki-compiler); analyzed commit `c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f`; commit date 2026-10-19T12:40:59-07:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--llm-wiki-compiler.md).
 <!-- teamagent-analysis:end -->

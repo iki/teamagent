@@ -1,0 +1,37 @@
+# xx-2604-seeaifirst
+
+Source: [xx-2604-seeaifirst](https://github.com/BARONFANTHE/seeaifirst) · Category: [ai-info](../categories/ai-info.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `97b2f703bd72942223ea1c8b55f9fe807d94396e`; commit timestamp `2026-04-04T17:42:51+07:00`; 190 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/BARONFANTHE/seeaifirst/blob/97b2f703bd72942223ea1c8b55f9fe807d94396e/README.md)):
+
+> Curated directory of 66 AI developer tools across 13 categories, with evidence-first sourcing. There are hundreds of "awesome AI" lists. Most are link dumps with no opinion.
+
+Build/package evidence: [package.json](https://github.com/BARONFANTHE/seeaifirst/blob/97b2f703bd72942223ea1c8b55f9fe807d94396e/package.json)
+
+License evidence: [LICENSE](https://github.com/BARONFANTHE/seeaifirst/blob/97b2f703bd72942223ea1c8b55f9fe807d94396e/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-info**. Its category places it in the candidate set for agents, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`1c19caea72b019769852ce3be6aca8660ed73a9d`](https://github.com/baronfanthe/seeaifirst/commit/1c19caea72b019769852ce3be6aca8660ed73a9d). Scope: Complete deltas for artifact-integrity workflow, contribution policy, retired-tool records, repository overrides and deployment routes read. Catalog/pricing data and page generators were not audited.
+
+The [CI delta](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/.github/workflows/cip-0-artifacts-integrity.yml) removes a path filter from a required check and reads tracked names with NUL separators for a denylist guard. It explicitly admits this cannot prevent disclosure on a pushed branch and does not inspect contents. Adapt robust filename handling and required-check scheduling; this is not secret scanning or a reason to prohibit Teamagent's own required documentation.
+
+The [contribution policy](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/CONTRIBUTING.md) separates corrections from new-tool submissions and requests affiliation disclosure. [Retirement records](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/scripts/retired-tools.json) distinguish removal from a curated list from a project's lifecycle, although one lifecycle claim remains an unverified catalog assertion in this review. [Routes](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/vercel.json) preserve old identities via redirects and explicit retired pages. Adapt provenance-preserving catalog changes; deployment routing behavior, current tool status, prices and ranking quality were not tested or independently verified.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [seeaifirst](https://github.com/baronfanthe/seeaifirst); analyzed commit `1c19caea72b019769852ce3be6aca8660ed73a9d`; commit date 2026-10-26T13:07:28+07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-info--xx-2604-seeaifirst.md).
+<!-- teamagent-analysis:end -->

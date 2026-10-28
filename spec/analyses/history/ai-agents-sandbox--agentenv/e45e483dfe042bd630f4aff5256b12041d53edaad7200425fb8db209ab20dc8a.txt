@@ -1,0 +1,25 @@
+# agentenv
+
+Source: [agentenv](https://github.com/kvcache-ai/AgentEnv) · Category: [ai-agents-sandbox](../categories/ai-agents-sandbox.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `5843159b1eaf235a45a08a5329fc6647c6e5bc31`; commit timestamp `2026-10-03T14:03:10+08:00`; 802 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/kvcache-ai/AgentEnv/blob/5843159b1eaf235a45a08a5329fc6647c6e5bc31/README.md)):
+
+> AgentENV (AENV) is a platform for running agent environments at scale, powering agentic RL training for **Kimi K3**. - **Scale across diverse environments**: AENV runs massive numbers of Firecracker environments across machines, loading diverse OCI-compatible images on demand via overlaybd and scaling to 1.5 million images in production. Local disk acts as a bounded cache, retaining hot data and evicting cold, so the aggregate image and snapshot footprint can exceed local disk capacity by several orders of magnitude while startup stays fast clu
+
+Build/package evidence: [Cargo.toml](https://github.com/kvcache-ai/AgentEnv/blob/5843159b1eaf235a45a08a5329fc6647c6e5bc31/Cargo.toml); [adev/Cargo.toml](https://github.com/kvcache-ai/AgentEnv/blob/5843159b1eaf235a45a08a5329fc6647c6e5bc31/adev/Cargo.toml); [containerd-plain-snapshotter/go.mod](https://github.com/kvcache-ai/AgentEnv/blob/5843159b1eaf235a45a08a5329fc6647c6e5bc31/containerd-plain-snapshotter/go.mod); [crates/aenv/Cargo.toml](https://github.com/kvcache-ai/AgentEnv/blob/5843159b1eaf235a45a08a5329fc6647c6e5bc31/crates/aenv/Cargo.toml); [crates/benchmarks/Cargo.toml](https://github.com/kvcache-ai/AgentEnv/blob/5843159b1eaf235a45a08a5329fc6647c6e5bc31/crates/benchmarks/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/kvcache-ai/AgentEnv/blob/5843159b1eaf235a45a08a5329fc6647c6e5bc31/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-sandbox**. Its category places it in the candidate set for agents, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

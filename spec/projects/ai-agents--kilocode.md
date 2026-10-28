@@ -2,7 +2,7 @@
 
 Source: [kilocode](https://github.com/Kilo-Org/kilocode) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `76bcfd40be616a72f4697b3041565f322245b462`; commit timestamp `2026-10-02T12:24:46-07:00`; 10,677 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `6ee79bf99c49994c6d952d7f437af1abffadf3fe` (commit date `2026-10-27T16:41:03Z`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete MCP authentication store, glob adapter and provider-error classifier with their available glob/classifier fixtures; task-tool delta only. Storage/lock primitives, invalidation matching helper, permission engine and child-permission refresh implementation were not reviewed.
+
+The [MCP credential store](https://github.com/Kilo-Org/kilocode/blob/6ee79bf99c49994c6d952d7f437af1abffadf3fe/packages/opencode/src/mcp/auth.ts#L75-L183) performs conditional invalidation inside one lock-protected read/modify/write operation and returns missing, superseded or cleared outcomes. It also offers an exact server-URL retrieval path and preserves issuer fields. These are useful rotation-safe seams, but the actual comparison/clear helper and filesystem lock/atomicity were not inspected. Malformed JSON/schema or read errors are converted to an empty store, so a later update may overwrite previously inaccessible credentials rather than preserve a distinct unavailable state. A generic get operation remains separate from URL-bound lookup.
+
+The [glob adapter](https://github.com/Kilo-Org/kilocode/blob/6ee79bf99c49994c6d952d7f437af1abffadf3fe/packages/opencode/src/tool/glob.ts#L48-L108) asks permission, normalizes the search directory, calls an external-directory check and forwards cancellation plus a 100-item limit to search. It retains a truncation flag, but its partial-read warning is emitted only when at least one result exists, and partial status is absent from structured metadata. An empty partial result can therefore be presented as no files found. The [fixture](https://github.com/Kilo-Org/kilocode/blob/6ee79bf99c49994c6d952d7f437af1abffadf3fe/packages/opencode/test/tool/glob.test.ts#L37-L122) uses a no-op permission callback and skips directory/absolute-path cases on Windows; it cannot establish real permission enforcement or Windows behavior.
+
+The [provider-error classifier](https://github.com/Kilo-Org/kilocode/blob/6ee79bf99c49994c6d952d7f437af1abffadf3fe/packages/llm/src/provider-error.ts#L40-L56) excludes explicit rate-limit/retry wording before applying context-overflow patterns, and its fixture documents those examples. This avoids confusing some throttles with oversized context, but text patterns and a bare 400/413 fallback remain heuristics. The task delta changes resumed child permission handling from merge to refresh; without its helper implementation, this review does not certify monotonic child authority or effective sandbox inheritance.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [kilocode](https://github.com/Kilo-Org/kilocode); analyzed commit `76bcfd40be616a72f4697b3041565f322245b462`; commit date 2026-10-02T12:24:46-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--kilocode.md).
+Analysis metadata: source [kilocode](https://github.com/Kilo-Org/kilocode); analyzed commit `6ee79bf99c49994c6d952d7f437af1abffadf3fe`; commit date 2026-10-27T16:41:03Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--kilocode.md).
 <!-- teamagent-analysis:end -->

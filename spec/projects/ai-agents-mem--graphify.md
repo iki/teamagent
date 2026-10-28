@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Deterministic manifest edges remain approximations and global graph persistence needs coordinated recovery.** Reviewed commit `dac063456bc1f5d92354ec3936fd9dd1513a83f3` (commit date `2026-10-26T12:50:53Z`). Compared with `0b60d47e6cd9338c51143f39f35b6c45c8453385`; the complete Git comparison contains 539 changed paths.
+
+Manifest ingestion recognizes selected package filenames, checks a two-megabyte stat limit and returns explicit parse/read errors; missing TOML support no longer silently resembles an empty workspace. Cargo virtual roots are marked skipped and target runtime dependencies are included, while build/dev dependencies are intentionally excluded. Canonical IDs are based on package name alone across ecosystems, dependency version/alias semantics are simplified and source locations are all L1. Extracted confidence 1.0 therefore means parser output, not a resolved versioned dependency graph or exact evidence span. Replacement decoding and a separate stat/read also preserve neither exact bytes nor an atomic size snapshot.
+
+Global graph merge prefixes project nodes, remaps deduplicated external endpoints and direction markers, then recomputes cross-project calls. Its source hash reads the whole file before the graph-size check and truncates SHA-256 to 16 hex characters. The graph and manifest are saved separately, with no shared transaction/lock in this module. A corrupt manifest is backed up when possible and processing starts fresh; if backup rename fails it still starts fresh, allowing a later save to replace the unrecovered manifest. A hash hit can skip based on manifest state without checking graph consistency.
+
+Evidence: [graphify/manifest_ingest.py:1-340](https://github.com/safishamsi/graphify/blob/dac063456bc1f5d92354ec3936fd9dd1513a83f3/graphify/manifest_ingest.py#L1-L340) · [graphify/global_graph.py:1-201](https://github.com/safishamsi/graphify/blob/dac063456bc1f5d92354ec3936fd9dd1513a83f3/graphify/global_graph.py#L1-L201).
+
+**Harness consequence:** Use deterministic parsing for dependency hints but key package identity by ecosystem/resolved identity and preserve exact source bytes/ranges with declared coverage gaps. Stream/hash under admission limits, keep full digests and coordinate graph/manifest generations with recoverable commit receipts. Refuse overwrite when corruption cannot be preserved, and reconcile the graph before trusting a manifest-only unchanged result.
+
+**Scope and limits:** Static scoped review of manifest ingestion and global graph maintenance within the 539-path comparison. Large extractor entry points were not cached and were not inspected; graph security/path/atomic-write helpers, dependency resolution and graph tests were not fully audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [graphify](https://github.com/safishamsi/graphify); analyzed commit `0b60d47e6cd9338c51143f39f35b6c45c8453385`; commit date 2026-10-02T23:12:01+01:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--graphify.md).
+Analysis metadata: source [graphify](https://github.com/safishamsi/graphify); analyzed commit `dac063456bc1f5d92354ec3936fd9dd1513a83f3`; commit date 2026-10-26T12:50:53Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--graphify.md).
 <!-- teamagent-analysis:end -->

@@ -2,7 +2,7 @@
 
 Source: [halo](https://github.com/context-labs/halo) · [Analysis](../../projects/ai-agents--halo.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-27T18:19:07.717Z. Status: **current**. Reviewed SHA: `b7f8509745d67b499b4e80efe20ea37c03426a74`; commit date: 2026-08-14T09:39:25Z; review date: unknown; observed SHA: `b7f8509745d67b499b4e80efe20ea37c03426a74`.
+Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `b7f8509745d67b499b4e80efe20ea37c03426a74`; commit date: 2026-08-14T09:39:25Z; review date: unknown; observed SHA: `b7f8509745d67b499b4e80efe20ea37c03426a74`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/context-labs/halo/compare/b7f8509745d67b499b4e80efe20ea37c03426a74...b7f8509745d67b499b4e80efe20ea37c03426a74). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 

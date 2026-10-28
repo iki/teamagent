@@ -1,0 +1,25 @@
+# officecli
+
+Source: [officecli](https://github.com/iOfficeAI/OfficeCLI) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `b590a433a6a699bfe1008b9e4c581521528bcb77`; commit timestamp `2026-10-02T01:11:33+08:00`; 1,213 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/iOfficeAI/OfficeCLI/blob/b590a433a6a699bfe1008b9e4c581521528bcb77/README.md)):
+
+> OfficeCLI is the world's first and the best Office suite designed for AI agents. Give any AI agent full control over Word, Excel, and PowerPoint — in one line of code.
+
+Build/package evidence: [npm/package.json](https://github.com/iOfficeAI/OfficeCLI/blob/b590a433a6a699bfe1008b9e4c581521528bcb77/npm/package.json); [sdk/node/package.json](https://github.com/iOfficeAI/OfficeCLI/blob/b590a433a6a699bfe1008b9e4c581521528bcb77/sdk/node/package.json); [sdk/python/pyproject.toml](https://github.com/iOfficeAI/OfficeCLI/blob/b590a433a6a699bfe1008b9e4c581521528bcb77/sdk/python/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/iOfficeAI/OfficeCLI/blob/b590a433a6a699bfe1008b9e4c581521528bcb77/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

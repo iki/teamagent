@@ -1,0 +1,25 @@
+# md-page-extension
+
+Source: [md-page-extension](https://github.com/Ademking/MD-This-Page) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `83abd3032a43f22a4987dbfd6518ab325acf1574`; commit timestamp `2026-10-03T20:00:09+01:00`; 50 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/Ademking/MD-This-Page/blob/83abd3032a43f22a4987dbfd6518ab325acf1574/README.md)):
+
+> Strip the clutter, keep the structure, then copy or download instantly. 2. Click the toolbar icon, right-click → **Open Preview Tab**, or press `Alt+M`
+
+Build/package evidence: [package.json](https://github.com/Ademking/MD-This-Page/blob/83abd3032a43f22a4987dbfd6518ab325acf1574/package.json)
+
+License evidence: [LICENSE](https://github.com/Ademking/MD-This-Page/blob/83abd3032a43f22a4987dbfd6518ab325acf1574/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

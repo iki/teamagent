@@ -1,0 +1,38 @@
+# anydoc
+
+Source: [anydoc](https://github.com/firecrawl/anydoc) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `261fc257d17c3eab0f673be31c408fd9fdc2171a`; commit timestamp `2026-08-27T19:13:16-07:00`; 329 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/firecrawl/anydoc/blob/261fc257d17c3eab0f673be31c408fd9fdc2171a/README.md)):
+
+> Fast Rust library that converts documents (Word, PowerPoint, Excel, OpenDocument, RTF, EPUB, CSV, and PDF) into clean GitHub-Flavored Markdown. Includes bindings for Node.js, Python, and the browser (WebAssembly). Built by Firecrawl to turn any office document into LLM-ready Markdown in single-digit milliseconds, with one consistent output no matter which format goes in. It powers Firecrawl Parse, so if you'd rather not run it yourself, the hosted API gives you the same conversion plus our OCR models for the scanned pages anydoc can't read on i
+
+Build/package evidence: [Cargo.toml](https://github.com/firecrawl/anydoc/blob/261fc257d17c3eab0f673be31c408fd9fdc2171a/Cargo.toml); [bench/package.json](https://github.com/firecrawl/anydoc/blob/261fc257d17c3eab0f673be31c408fd9fdc2171a/bench/package.json); [bench/requirements.txt](https://github.com/firecrawl/anydoc/blob/261fc257d17c3eab0f673be31c408fd9fdc2171a/bench/requirements.txt); [fuzz/Cargo.toml](https://github.com/firecrawl/anydoc/blob/261fc257d17c3eab0f673be31c408fd9fdc2171a/fuzz/Cargo.toml); [node/Cargo.toml](https://github.com/firecrawl/anydoc/blob/261fc257d17c3eab0f673be31c408fd9fdc2171a/node/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/firecrawl/anydoc/blob/261fc257d17c3eab0f673be31c408fd9fdc2171a/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review — 2026-10-27
+
+**Explicit OCR routing and typed table evidence improve import control.** Reviewed commit `e7178e099b6bf9171e2c52b832cbdb4134b69112` (commit date `2026-10-23T17:55:34-05:00`) against `261fc257d17c3eab0f673be31c408fd9fdc2171a`. The complete Git comparison contains 14 changed paths.
+
+The fourteen-path inventory includes Rust header detection, Node/Python wrappers and tests, CLI/docs and CI metadata. Hosted OCR remains explicit: local conversion is attempted first and only a needs-OCR outcome with hosted mode sends bytes to Firecrawl Parse. Both wrappers now validate auto/fast/ocr parse mode before local work or upload; the CLI exposes it. The hosted request sends the entire document, not only failed pages, and may run keyless. Keyless access is still remote data transfer. Stub fixtures record each request and assert no upload on invalid parse mode; they also verify local-convertible documents do not invoke hosted fallback. Header inference now prioritizes numeric/type evidence over a text body value coincidentally equal to its column label, preserving the header in CSV/XLSX/ODS collision fixtures and leaving the no-collision case unchanged.
+
+Evidence: [src/shared/header.rs:91-150](https://github.com/firecrawl/anydoc/blob/e7178e099b6bf9171e2c52b832cbdb4134b69112/src/shared/header.rs#L91-L150) Â· [node/anydoc.js:8-68](https://github.com/firecrawl/anydoc/blob/e7178e099b6bf9171e2c52b832cbdb4134b69112/node/anydoc.js#L8-L68) Â· [python/anydoc/__init__.py:48-140](https://github.com/firecrawl/anydoc/blob/e7178e099b6bf9171e2c52b832cbdb4134b69112/python/anydoc/__init__.py#L48-L140) Â· [node/cli.js:21-37](https://github.com/firecrawl/anydoc/blob/e7178e099b6bf9171e2c52b832cbdb4134b69112/node/cli.js#L21-L37) Â· [node/cli.js:115-131](https://github.com/firecrawl/anydoc/blob/e7178e099b6bf9171e2c52b832cbdb4134b69112/node/cli.js#L115-L131) Â· [node/test.mjs:141-177](https://github.com/firecrawl/anydoc/blob/e7178e099b6bf9171e2c52b832cbdb4134b69112/node/test.mjs#L141-L177) Â· [python/tests/test_anydoc.py:146-181](https://github.com/firecrawl/anydoc/blob/e7178e099b6bf9171e2c52b832cbdb4134b69112/python/tests/test_anydoc.py#L146-L181) Â· [tests/header_collision.rs:1-60](https://github.com/firecrawl/anydoc/blob/e7178e099b6bf9171e2c52b832cbdb4134b69112/tests/header_collision.rs#L1-L60) Â· [tests/header_collision.rs:150-178](https://github.com/firecrawl/anydoc/blob/e7178e099b6bf9171e2c52b832cbdb4134b69112/tests/header_collision.rs#L150-L178) Â· [node/README.md:60-76](https://github.com/firecrawl/anydoc/blob/e7178e099b6bf9171e2c52b832cbdb4134b69112/node/README.md#L60-L76).
+
+**Harness consequence:** Represent local extraction and whole-document hosted OCR as separate plan routes with separate disclosure, policy, byte limits and approval scope. An OCR-needed result does not authorize egress. Preserve table rows and original document bytes; label inferred headers and extraction versions so changes can be compared without changing static-source creation dates. Validate options before costly or externally visible work.
+
+**Scope and limits:** Scoped source and fixture inspection after classifying all fourteen changed paths. No native build, document conversion, HTTP stub or hosted service executed. CI/release metadata was inventoried, not security-audited; whole-document policy, retention and commercial terms require independent route evidence.

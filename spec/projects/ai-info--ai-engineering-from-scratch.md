@@ -24,6 +24,14 @@ This entry was catalogued under **ai-info**. Its category places it in the candi
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`3f9715c62a3bedcffb68a260f1a65ee2dd9cc10a`](https://github.com/rohitg00/ai-engineering-from-scratch/commit/3f9715c62a3bedcffb68a260f1a65ee2dd9cc10a). Scope: Full course-guide and course-style skills plus isometric model-test template read. Curriculum lessons, referenced style resources, simulator implementation and deployed site were not reviewed.
+
+The [course router](https://github.com/rohitg00/ai-engineering-from-scratch/blob/3f9715c62a3bedcffb68a260f1a65ee2dd9cc10a/skills/course-guide/SKILL.md) separates portable skill names from host invocation syntax, selects focused lesson routes by manifest order and asks for lesson-content confirmation when a title alone cannot support a recommendation. Its fallback reads mutable main-branch content; Teamagent should retain the resolved revision and route-state provenance. Lesson counts, certification mappings and host-specific commands remain upstream claims within this review.
+
+The [style reference](https://github.com/rohitg00/ai-engineering-from-scratch/blob/3f9715c62a3bedcffb68a260f1a65ee2dd9cc10a/skills/course-style/SKILL.md) usefully separates shared design tokens from drawing methods and calls for dark-mode, focus and reduced-motion checks. Its exact typography and prose restrictions are product preferences, not universal requirements. The [model tests](https://github.com/rohitg00/ai-engineering-from-scratch/blob/3f9715c62a3bedcffb68a260f1a65ee2dd9cc10a/skills/isometric-explainer/templates/model.test.mjs) check deterministic simulated traces, nondecreasing clocks and URL-setting round trips; these are illustrative model contracts, not measured caching performance or rendered accessibility. No lesson, simulator, site or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch); analyzed commit `3be078b37ffd8f0c04953c0678e48f5c6d0c7775`; commit date 2026-10-02T05:37:23Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-info--ai-engineering-from-scratch.md).
+Analysis metadata: source [ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch); analyzed commit `3f9715c62a3bedcffb68a260f1a65ee2dd9cc10a`; commit date 2026-10-23T18:39:18+05:30; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-info--ai-engineering-from-scratch.md).
 <!-- teamagent-analysis:end -->

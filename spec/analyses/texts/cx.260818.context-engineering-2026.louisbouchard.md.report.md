@@ -6,7 +6,7 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://www.louisbouchard.ai/context-engineering-2026>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-10-27T18:40:39.721Z. Import: **pinned**. Content validation: **usable-text**.
+Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-10-28T07:07:39.056Z. Import: **pinned**. Content validation: **usable-text**.
 
 First captured: 2026-10-24T05:50:50.579Z. Source creation/publication date: 2026-08-18T22:30:00.000Z. Date evidence: publisher-html-meta (article:published_time). Filename dates and Last-Modified are not treated as creation dates.
 

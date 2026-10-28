@@ -1,0 +1,29 @@
+# search.smithery
+
+Source: [search.smithery](https://github.com/smithery-ai/cli) · Category: [ai-agents-skills](../categories/ai-agents-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `407ac3b33944a585357379bc213fdf1ee55464d7`; commit timestamp `2026-05-31T15:11:21+08:00`; 163 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/smithery-ai/cli/blob/407ac3b33944a585357379bc213fdf1ee55464d7/README.md)):
+
+> Smithery CLI connects your agents to thousands of skills and MCP servers directly from the command line. To get started, simply run `npx skills add smithery/cli`. Interact with tools from MCP servers connected via `smithery mcp`.
+
+Build/package evidence: [package.json](https://github.com/smithery-ai/cli/blob/407ac3b33944a585357379bc213fdf1ee55464d7/package.json); [test/fixtures/stateful-server/package.json](https://github.com/smithery-ai/cli/blob/407ac3b33944a585357379bc213fdf1ee55464d7/test/fixtures/stateful-server/package.json); [test/fixtures/stateless-server/package.json](https://github.com/smithery-ai/cli/blob/407ac3b33944a585357379bc213fdf1ee55464d7/test/fixtures/stateless-server/package.json)
+
+License evidence: [LICENSE](https://github.com/smithery-ai/cli/blob/407ac3b33944a585357379bc213fdf1ee55464d7/LICENSE) Classification hint: AGPL; inspect version. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-skills**. Its category places it in the candidate set for skills, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [search.smithery](https://github.com/smithery-ai/cli); analyzed commit `407ac3b33944a585357379bc213fdf1ee55464d7`; commit date 2026-05-31T15:11:21+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--search.smithery.md).
+<!-- teamagent-analysis:end -->

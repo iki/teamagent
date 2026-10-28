@@ -24,6 +24,14 @@ This entry was catalogued under **ai-agents-proxy**. Its category places it in t
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`06088198aa7ff3de169115abba13e03983a97396`](https://github.com/OpenRouterTeam/python-sdk/commit/06088198aa7ff3de169115abba13e03983a97396). Scope: Full generated deferred-tool/computer-use/search-call models and namespace smoke tests read. OAuth, transport and referenced base-model/union validation were not audited.
+
+The [deferred-tool shape](https://github.com/OpenRouterTeam/python-sdk/blob/06088198aa7ff3de169115abba13e03983a97396/src/openrouter/components/deferredtoolscontrol.py) exposes the versioned portable/runtime protocol, while [search-call serialization](https://github.com/OpenRouterTeam/python-sdk/blob/06088198aa7ff3de169115abba13e03983a97396/src/openrouter/components/toolsearchcallitem.py) distinguishes omitted optional fields from explicitly supplied null status/ID fields. Preserve call_id and missing-versus-null semantics in adapters; arbitrary arguments and forward-compatible status/execution strings still need semantic validation.
+
+The [computer-use model](https://github.com/OpenRouterTeam/python-sdk/blob/06088198aa7ff3de169115abba13e03983a97396/src/openrouter/components/computeruseservertool.py) declares integer display dimensions without visible positive/maximum bounds. The [namespace tests](https://github.com/OpenRouterTeam/python-sdk/blob/06088198aa7ff3de169115abba13e03983a97396/tests/test_responses_namespace.py) check that Responses is top-level with a beta alias and Analytics exists; they do not call a service or validate provider behavior. Adapt compatibility tests and protocol records, not a claim that every advertised tool is available or authorized. No Python SDK, OAuth, network request or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openrouter-python-sdk](https://github.com/OpenRouterTeam/python-sdk); analyzed commit `9e4603cff5c454dd777ef2e0ec4b73bb391d5654`; commit date 2026-10-02T21:49:15Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-python-sdk.md).
+Analysis metadata: source [openrouter-python-sdk](https://github.com/OpenRouterTeam/python-sdk); analyzed commit `06088198aa7ff3de169115abba13e03983a97396`; commit date 2026-10-27T17:48:23Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-python-sdk.md).
 <!-- teamagent-analysis:end -->

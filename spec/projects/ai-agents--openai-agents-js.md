@@ -2,7 +2,7 @@
 
 Source: [openai-agents-js](https://github.com/openai/openai-agents-js) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `96aa754b69282fef3bf8be2f15897985400ee0a6`; commit timestamp `2026-10-02T11:29:53-07:00`; 1,682 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570` (commit date `2026-10-21T13:19:06-07:00`). The original snapshot above remains historical evidence.
+
+**Scope:** MCP-to-function-tool conversion, function-tool timeout implementation and complete mcp.ts/tool.ts deltas; underlying MCP shim pagination, runner, providers and tests were not audited.
+
+The [MCP converter](https://github.com/openai/openai-agents-js/blob/be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570/packages/agents-core/src/mcp.ts#L1207-L1315) preserves raw server/tool identity separately from the display name, snapshots guardrail arrays and forwards a supplied abort signal. Structured content replaces the visible result only when the response is not marked as an error; custom data retains per-call argument/result provenance. Those are useful adapter distinctions, but argument JSON parsing, metadata forwarding and result-shape assumptions still need a typed host boundary and confidential-data policy.
+
+[Schema conversion](https://github.com/openai/openai-agents-js/blob/be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570/packages/agents-core/src/mcp.ts#L1334-L1395) can warn and fall back to non-strict mode when strict conversion fails, except for the explicitly handled depth-error path. Model-facing strictness is therefore not a guarantee of semantic validation or authorization. The reviewed delta documents a default limit of sixty-four listing pages, but its underlying shim implementation was not inspected; this review does not verify pagination enforcement. Computer safety callback wording likewise describes only model-reported pending checks, not a universal host action gate.
+
+The [tool timeout](https://github.com/openai/openai-agents-js/blob/be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570/packages/agents-core/src/tool.ts#L2104-L2218) races execution with a timer and aborts the combined signal, then clears listeners. It does not await the underlying invocation's eventual settlement after timeout, and its optional error formatter can itself remain pending. Teamagent must distinguish a timeout response from cancelled external work, retain operation identity for reconciliation and fence late effects. Output validation is optional, so an absent output schema cannot certify tool results. No SDK test, provider request or upstream code was executed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openai-agents-js](https://github.com/openai/openai-agents-js); analyzed commit `96aa754b69282fef3bf8be2f15897985400ee0a6`; commit date 2026-10-02T11:29:53-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--openai-agents-js.md).
+Analysis metadata: source [openai-agents-js](https://github.com/openai/openai-agents-js); analyzed commit `be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570`; commit date 2026-10-21T13:19:06-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openai-agents-js.md).
 <!-- teamagent-analysis:end -->

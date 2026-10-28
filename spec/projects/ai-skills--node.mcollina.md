@@ -2,7 +2,7 @@
 
 Source: [node.mcollina](https://github.com/mcollina/skills) · Category: [ai-skills](../categories/ai-skills.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `856efd268ae85482d882f3d0bed869fd020b5c06`; commit timestamp `2026-08-17T16:47:06Z`; 122 tracked paths.
 
@@ -24,6 +24,12 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-27
+
+Reviewed commit `c75d70dbfbe991d8cec42aeda0b64ff14fbb9ac7` (commit date `2026-10-18T07:20:30Z`). Complete five-file delta: trigger/metadata and three advisory procedure bodies.
+
+The [Octocat update](https://github.com/mcollina/skills/blob/c75d70dbfbe991d8cec42aeda0b64ff14fbb9ac7/skills/octocat/SKILL.md) adds [discussion retrieval](https://github.com/mcollina/skills/blob/c75d70dbfbe991d8cec42aeda0b64ff14fbb9ac7/skills/octocat/rules/security-advisory-comments.md), [lifecycle](https://github.com/mcollina/skills/blob/c75d70dbfbe991d8cec42aeda0b64ff14fbb9ac7/skills/octocat/rules/security-advisory-lifecycle.md) and [private-fork](https://github.com/mcollina/skills/blob/c75d70dbfbe991d8cec42aeda0b64ff14fbb9ac7/skills/octocat/rules/security-advisory-private-fork-prs.md) procedures. They distinguish accessible comments from total counts, paginate by ID/update time, reconcile timed-out POSTs, explicitly target private fork remotes/PR destinations, and separate publication authority from inspection. Retain those effect/destination boundaries. Do not inherit the broad any-GitHub-URL activation trigger or treat instruction prose as posting permission. Dated live-test accounts are upstream evidence, not independently repeated here; no advisory/comment/fork/PR was created.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [node.mcollina](https://github.com/mcollina/skills); analyzed commit `856efd268ae85482d882f3d0bed869fd020b5c06`; commit date 2026-08-17T16:47:06Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--node.mcollina.md).
+Analysis metadata: source [node.mcollina](https://github.com/mcollina/skills); analyzed commit `c75d70dbfbe991d8cec42aeda0b64ff14fbb9ac7`; commit date 2026-10-18T07:20:30Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--node.mcollina.md).
 <!-- teamagent-analysis:end -->

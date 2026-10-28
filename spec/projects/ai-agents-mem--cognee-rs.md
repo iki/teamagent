@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Shared graph retrieval preserves payload provenance but batch search loads full collections and graphs.** Reviewed commit `f19e531176e1e3194c035252ac884382ea7f3754` (commit date `2026-10-27T16:49:42+02:00`). Compared with `f4da3ba5d31a010a9886309f98acebc68e1b7589`; the complete Git comparison contains 735 changed paths.
+
+GraphRetrieverCore centralizes graph configuration, empty-graph behavior and edge-to-context mapping, retaining source/target IDs, text, descriptions and dataset_id. Node-set vector queries call server-side filtered search before limiting. The reviewed fixture bodies distinguish one-query seed-neighborhood retrieval from several queries sharing a full graph load; these modes are intentionally different ranking paths.
+
+Batch retrieval rejects an empty/blank batch and verifies embedding/result cardinality, but it embeds the entire batch, asks each collection for its full size and loads the full graph unless a node-set applies. Query count/bytes and aggregate graph/output work are not capped here; neighbor_cap defaults to None. Requesting neighborhood_depth in the batch path logs a warning and returns empty contexts rather than an unsupported-mode error. Graph prompt construction debug-logs the complete rendered user prompt, which can include private query/context text. A numeric edge score and dataset field do not independently establish calibrated confidence or tenant authorization.
+
+Evidence: [crates/search/src/retrievers/graph_core.rs:29-205](https://github.com/topoteretes/cognee-rs/blob/f19e531176e1e3194c035252ac884382ea7f3754/crates/search/src/retrievers/graph_core.rs#L29-L205) · [crates/search/src/retrievers/graph_core.rs:217-264](https://github.com/topoteretes/cognee-rs/blob/f19e531176e1e3194c035252ac884382ea7f3754/crates/search/src/retrievers/graph_core.rs#L217-L264) · [crates/search/src/retrievers/graph_core.rs:332-391](https://github.com/topoteretes/cognee-rs/blob/f19e531176e1e3194c035252ac884382ea7f3754/crates/search/src/retrievers/graph_core.rs#L332-L391) · [crates/search/src/retrievers/context_items.rs:1-59](https://github.com/topoteretes/cognee-rs/blob/f19e531176e1e3194c035252ac884382ea7f3754/crates/search/src/retrievers/context_items.rs#L1-L59) · [crates/search/src/graph_retrieval/brute_force_triplet_search.rs:377-499](https://github.com/topoteretes/cognee-rs/blob/f19e531176e1e3194c035252ac884382ea7f3754/crates/search/src/graph_retrieval/brute_force_triplet_search.rs#L377-L499).
+
+**Harness consequence:** Adopt centralized provenance mapping and pre-limit node-set filtering. Require explicit retrieval-mode/unsupported results, hard batch and graph budgets, tenant authorization below retrieval, and no raw context logging. Do not compare single/batch rankings as if they were equivalent or treat full-collection searches as bounded merely because final top_k is small.
+
+**Scope and limits:** Static scoped shared graph core, node filtering, batch search and embedded fixture review within the 735-path comparison. Graph/vector adapter isolation, complete ranking validation and production performance were not audited; no Rust test, database or provider call was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cognee-rs](https://github.com/topoteretes/cognee-rs); analyzed commit `f4da3ba5d31a010a9886309f98acebc68e1b7589`; commit date 2026-10-01T02:26:05+03:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--cognee-rs.md).
+Analysis metadata: source [cognee-rs](https://github.com/topoteretes/cognee-rs); analyzed commit `f19e531176e1e3194c035252ac884382ea7f3754`; commit date 2026-10-27T16:49:42+02:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--cognee-rs.md).
 <!-- teamagent-analysis:end -->

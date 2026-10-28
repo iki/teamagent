@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Version conversion validates geometry and stages replacement, but remains an in-memory rebuild operation.** Reviewed commit `c3b043b992290ff223b903046af7f6683768241c` (commit date `2026-10-06T22:14:55+02:00`). Compared with `c6cf0baba11ddc0b0ec7f95d4024d816df3bd8ec`; the complete Git comparison contains 142 changed paths.
+
+The converter reads v5-v8 containers into an explicit image and writes the target version without re-embedding source content. Legacy readers validate bit width, dimension/sentinel semantics and claimed row count against file length before size arithmetic. Public Image writes check code length, scale count, optional ID count and both calibration vectors; the paired calibration check prevents stray calibration bytes becoming IDs. The v6 embedded codebook is deliberately regenerated from geometry instead of copied, so conversion does not preserve arbitrary original container bytes.
+
+File conversion reads the complete source, materializes image and output buffers, writes an exclusive sibling temporary file, flushes and syncs it, then renames over the destination and calls parent-directory sync. Exclusive temporary creation retries collisions eight times and Windows rename retries selected errors with bounded backoff. No destination lock or expected-version compare appears in this operation, so concurrent successful converters remain last-writer-wins. The selected fixtures exercise hostile row counts, invalid sentinel/calibration shapes and successful conversion/search parity; the atomic-named fixture covers successful replacement and no leftover temp files, not injected crash durability.
+
+Evidence: [turbovec/src/convert.rs:268-370](https://github.com/RyanCodrai/turbovec/blob/c3b043b992290ff223b903046af7f6683768241c/turbovec/src/convert.rs#L268-L370) · [turbovec/src/convert.rs:378-476](https://github.com/RyanCodrai/turbovec/blob/c3b043b992290ff223b903046af7f6683768241c/turbovec/src/convert.rs#L378-L476) · [turbovec/src/convert.rs:546-578](https://github.com/RyanCodrai/turbovec/blob/c3b043b992290ff223b903046af7f6683768241c/turbovec/src/convert.rs#L546-L578) · [turbovec/src/io.rs:180-280](https://github.com/RyanCodrai/turbovec/blob/c3b043b992290ff223b903046af7f6683768241c/turbovec/src/io.rs#L180-L280) · [turbovec/tests/convert_versions.rs:181-265](https://github.com/RyanCodrai/turbovec/blob/c3b043b992290ff223b903046af7f6683768241c/turbovec/tests/convert_versions.rs#L181-L265) · [turbovec/tests/convert_versions.rs:340-365](https://github.com/RyanCodrai/turbovec/blob/c3b043b992290ff223b903046af7f6683768241c/turbovec/tests/convert_versions.rs#L340-L365).
+
+**Harness consequence:** Use explicit version/type rejection, geometry/cardinality validation and staged replacement for rebuildable indexes, preserving immutable source/index manifests outside the derived container. Apply source/output/memory quotas before reading or conversion, serialize writers or compare generations, and test crash/fault paths on supported filesystems. Do not infer ANN recall, performance or embedding-space compatibility from container round-trip parity.
+
+**Scope and limits:** Static scoped review of conversion validation/persistence and selected fixtures within the 142-path comparison. Native search kernels, v7/v8 container parser, parent-directory sync implementation and full concurrency tests were not exhaustively audited or executed; no index migration or benchmark performed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [turbovec](https://github.com/RyanCodrai/turbovec); analyzed commit `c6cf0baba11ddc0b0ec7f95d4024d816df3bd8ec`; commit date 2026-10-02T19:48:43+01:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--turbovec.md).
+Analysis metadata: source [turbovec](https://github.com/RyanCodrai/turbovec); analyzed commit `c3b043b992290ff223b903046af7f6683768241c`; commit date 2026-10-06T22:14:55+02:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--turbovec.md).
 <!-- teamagent-analysis:end -->

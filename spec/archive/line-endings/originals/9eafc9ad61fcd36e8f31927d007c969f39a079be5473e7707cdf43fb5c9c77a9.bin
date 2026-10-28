@@ -1,0 +1,116 @@
+{
+  "createdAt": "2026-10-04T20:06:47.558Z",
+  "source": [
+    {
+      "path": "C:\\_\\.mise\\marker-pdf\\2.0.0\\marker-pdf\\Lib\\site-packages\\surya\\settings.py",
+      "sha256": "d4c2bcf140c7f424a290fcd68a2f3eae745ab2c476a6781a6c4449977c8d88e4",
+      "excerpt": [
+        {
+          "line": 112,
+          "text": "    LLAMA_CPP_NGL: int = 99  # all layers on GPU (Metal on macOS, CUDA on Linux GPU); harmless no-op on pure-CPU builds"
+        },
+        {
+          "line": 113,
+          "text": "    LLAMA_CPP_NO_MMPROJ_OFFLOAD: bool = False"
+        }
+      ]
+    },
+    {
+      "path": "C:\\_\\.mise\\marker-pdf\\2.0.0\\marker-pdf\\Lib\\site-packages\\surya\\inference\\backends\\llamacpp.py",
+      "sha256": "fd2a097e21b913c0e89e14a747221fdbe3a2173ea5e1e97805bf5caf5e819df1",
+      "excerpt": [
+        {
+          "line": 144,
+          "text": "                \"-ngl\","
+        },
+        {
+          "line": 145,
+          "text": "                str(settings.LLAMA_CPP_NGL),"
+        },
+        {
+          "line": 154,
+          "text": "                \"--no-mmproj-offload\" if settings.LLAMA_CPP_NO_MMPROJ_OFFLOAD else \"\","
+        }
+      ]
+    }
+  ],
+  "logs": [
+    {
+      "path": ".cache/extractors-models/marker-home/.cache/datalab/surya/llamacpp_server.log",
+      "bytes": 6284,
+      "sha256": "3e6370320a274a35a69f03d213ed7f8ef5dc322500d71efcf6bed98100867b34",
+      "lineCount": 60,
+      "deviceEvidence": [],
+      "retainedContext": [
+        {
+          "line": 2,
+          "text": "0.03.257.309 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)"
+        },
+        {
+          "line": 4,
+          "text": "0.03.262.521 I srv    load_model: loading model 'C:/_/teamagent/.cache/extractors-models/marker-vlm/surya-2.gguf'"
+        },
+        {
+          "line": 6,
+          "text": "0.05.001.772 I cmn          init: llama threadpool init, n_threads = 16"
+        },
+        {
+          "line": 32,
+          "text": "0.03.133.616 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)"
+        },
+        {
+          "line": 34,
+          "text": "0.03.137.612 I srv    load_model: loading model 'C:/_/teamagent/.cache/extractors-models/marker-vlm/surya-2.gguf'"
+        },
+        {
+          "line": 36,
+          "text": "0.04.476.091 I cmn          init: llama threadpool init, n_threads = 16"
+        }
+      ]
+    },
+    {
+      "path": ".cache/extractors-smoke/adapter-marker-balanced/extractor-Qvoc57/marker-home/.cache/datalab/surya/llamacpp_server.log",
+      "bytes": 3142,
+      "sha256": "0b5eb028a0fe82709edc0d8043aec84485289a3fcbed901bcd74c5a78c078d89",
+      "lineCount": 30,
+      "deviceEvidence": [],
+      "retainedContext": [
+        {
+          "line": 2,
+          "text": "0.03.225.937 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)"
+        },
+        {
+          "line": 4,
+          "text": "0.03.234.892 I srv    load_model: loading model 'C:/_/teamagent/.cache/extractors-models/marker-vlm/surya-2.gguf'"
+        },
+        {
+          "line": 6,
+          "text": "0.04.523.505 I cmn          init: llama threadpool init, n_threads = 16"
+        }
+      ]
+    },
+    {
+      "path": ".cache/extractors-smoke/adapter-marker-balanced/extractor-RP4pfe/marker-home/.cache/datalab/surya/llamacpp_server.log",
+      "bytes": 3142,
+      "sha256": "9f97cff3d6843d388e176f55c921823a68b9e696d11b8a5102002c83395ed4a0",
+      "lineCount": 30,
+      "deviceEvidence": [],
+      "retainedContext": [
+        {
+          "line": 2,
+          "text": "0.03.260.779 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)"
+        },
+        {
+          "line": 4,
+          "text": "0.03.280.163 I srv    load_model: loading model 'C:/_/teamagent/.cache/extractors-models/marker-vlm/surya-2.gguf'"
+        },
+        {
+          "line": 6,
+          "text": "0.04.559.043 I cmn          init: llama threadpool init, n_threads = 16"
+        }
+      ]
+    }
+  ],
+  "assessment": "Configured Vulkan binary and 99 model layers requested for offload; actual GPU device execution is not confirmed by the retained setup logs. A CPU threadpool line does not prove CPU-only inference either.",
+  "method": "Read-only inspection of existing setup logs and installed pinned source. No executable, model, device probe, or extraction was run for this audit."
+}

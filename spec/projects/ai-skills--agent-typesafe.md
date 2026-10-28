@@ -2,7 +2,7 @@
 
 Source: [agent-typesafe](https://github.com/typesafe-ai/skills) · Category: [ai-skills](../categories/ai-skills.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `65a39f393687675ce170e6094757de20370365b9`; commit timestamp `2026-09-12T05:42:05Z`; 6 tracked paths.
 
@@ -24,6 +24,12 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-27
+
+Reviewed commit `302eea662c54bca6730873fe245bec1d69ebc23d` (commit date `2026-10-23T21:40:51Z`). Complete three-file instruction/version delta.
+
+The [skill](https://github.com/typesafe-ai/skills/blob/302eea662c54bca6730873fe245bec1d69ebc23d/skills/typesafe-ai/SKILL.md) now organizes Jev integrations around atomic judgments feeding deterministic truth tables. It separates confidence concentration from correctness, defines uncertain outcomes, pairs forced choices/boxes with a presence judgment, and batches independent questions sharing state. Suggested 0.3/0.7 thresholds and Jev 1.14 null-case advice are versioned upstream recommendations, not measured Teamagent defaults. It distinguishes service errors from negative answers and recommends held-out probes. Adapt raw-payload logging to redacted restricted fixtures; provider testing still needs authorized data/budget. No live API, SDK or calibration was tested. Use the decision-composition procedure as a candidate, not as authorization logic.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-typesafe](https://github.com/typesafe-ai/skills); analyzed commit `65a39f393687675ce170e6094757de20370365b9`; commit date 2026-09-12T05:42:05Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--agent-typesafe.md).
+Analysis metadata: source [agent-typesafe](https://github.com/typesafe-ai/skills); analyzed commit `302eea662c54bca6730873fe245bec1d69ebc23d`; commit date 2026-10-23T21:40:51Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--agent-typesafe.md).
 <!-- teamagent-analysis:end -->

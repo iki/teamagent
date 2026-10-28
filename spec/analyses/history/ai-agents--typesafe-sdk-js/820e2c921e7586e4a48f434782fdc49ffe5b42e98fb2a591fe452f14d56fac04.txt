@@ -1,0 +1,46 @@
+# typesafe-sdk-js
+
+Source: [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **focused source review**. Snapshot `66880ccded6cb642dc1809620c2b108c33730214` (2026-09-15T18:16:33Z). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+Typed decision API client with guarded construction and retry policy; keep it behind a replaceable DecisionProvider.
+
+## Source evidence inspected
+
+- [src/client.ts, lines 41–64](https://github.com/typesafe-ai/typesafe-sdk-js/blob/66880ccded6cb642dc1809620c2b108c33730214/src/client.ts#L41-L64)
+- [src/client.ts, lines 70–147](https://github.com/typesafe-ai/typesafe-sdk-js/blob/66880ccded6cb642dc1809620c2b108c33730214/src/client.ts#L70-L147)
+
+## Observed design and algorithms
+
+The client defaults to the TypeSafe endpoint and jev-latest, requires a credential, and refuses browser use unless an explicit dangerous override is set. Retry configuration validates counts, durations, probability-like jitter fractions and status sets; it copies retryable status sets to isolate mutation. This separates transport reliability from the decision schema presented by the application.
+
+## Harness decision
+
+Use on the host for finite choices such as importer selection, tool shortlist ranking and model-tier routing. Log state/schema/model digests and return validated decisions to deterministic code. A local classifier or constrained JSON model should implement the same harness contract.
+
+## Limits and tradeoffs
+
+This SDK is a network client, not local Jev model weights or an inference engine. Retry safety for an inference call does not make subsequent tool side effects safe to repeat. Typed responses do not prove semantic correctness, calibration, authorization, or adequate candidate recall.
+
+## Validation before adoption
+
+Test malformed probability payloads, missing credentials, timeout/cancellation, rate limits and unsupported schema versions. Calibrate choices against labeled tasks before using confidence as an execution gate. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
+
+Related directions: [decisions](../decisions.md) · [models](../models.md).
+
+## 2026-10-27 scoped update review
+
+Reviewed commit `b844cd1aca12855a5d24a2df52a1401c86e7d37a` (commit date `2026-10-14T21:20:38Z`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete 22-path inventory; focused review of multimodal serialization, transport/cancellation and question validation. Read full assets/compression/questions modules, client delta and transport body; selected regression fixtures. Packaging, all type tests and transitive dependencies were not audited.
+
+The client now supports image references and a `box` question in addition to finite choices. [Asset serialization](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/src/assets.ts#L232-L289) rejects unattached generated references and unused aliases; [byte snapshots](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/src/assets.ts#L358-L368) prevent caller mutation after request construction. [Multipart encoding](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/src/assets.ts#L377-L396) puts each reference in its own part and derives PNG/JPEG declarations from signatures. Other formats are sent as octet-stream, so this is not complete image integrity validation.
+
+[Compression](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/src/compression.ts#L31-L67) is runtime-capability dependent and uses zstd above the client's size threshold. [Transport](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/src/client.ts#L420-L501) resolves and compresses once, then reuses the encoded bytes on retry. The [native transport fixture](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/test/native-transport.test.ts#L56-L95) checks identical retry bytes; [stalled-body and abort cases](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/test/native-transport.test.ts#L97-L189) distinguish timeout, caller cancellation and broken response streams. These fixtures were read, not executed.
+
+Adoption requires a host boundary: encoding uses eager `Promise.all` over assets, body buffering has no inspected byte ceiling, and the transport timeout starts after asset reading/compression. Cancellation rejects the waiting promise but does not prove an underlying Blob read or compression operation stopped. Debug logging includes uncompressed textual state and provider error bodies. Apply overall deadlines, resource limits, redaction and route data policy before uploads. [Question validation](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/src/questions.ts#L104-L159) is narrower than a full external schema, and typed answers are not calibrated correctness or authority. Keep this behind the replaceable DecisionProvider; automatic inference retries must not become retries of downstream side effects.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.

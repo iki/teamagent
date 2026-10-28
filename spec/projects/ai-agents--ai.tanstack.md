@@ -30,6 +30,22 @@ Attempt calls to undocumented and unauthorized bindings, oversized fan-out, time
 
 Related directions: [agents](../agents.md) · [skills](../skills.md) · [decisions](../decisions.md).
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `669fd31d995a7134e9f39f386181edc5085039b2` (commit date `2026-10-27T11:25:47Z`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete AI-review PR metadata parser and Git helpers, plus selected production review, policy orchestration, push/publication and bounded process-runner branches; security scanners, verdict schema, workflow approval helper, MCP/harness runtime and tests were not reviewed.
+
+The [Git snapshot helper](https://github.com/tanstack/ai/blob/669fd31d995a7134e9f39f386181edc5085039b2/agent-scripts/ai-review/git.ts#L12-L124) fetches fixed commit IDs, derives one merge base and reads raw entries plus a full-index patch without checking out pull-request files. It disables external diff/text conversion, checks file/patch coverage, rejects unsupported file-type changes and preserves binary patches as unavailable text. The [metadata parser](https://github.com/tanstack/ai/blob/669fd31d995a7134e9f39f386181edc5085039b2/agent-scripts/ai-review/pr.ts#L36-L106) validates SHA shape and key response fields. These are useful evidence-binding practices; repository/ref/URL semantics and every returned field are not comprehensively validated by that parser.
+
+The [publication path](https://github.com/tanstack/ai/blob/669fd31d995a7134e9f39f386181edc5085039b2/agent-scripts/ai-review/run.ts#L432-L551) rechecks base/head repository, branch, SHA, open state and maintainer modification permission before patching and pushing. Push uses an explicit expected-head lease, and comments retain the reviewed commit identity. A post-push stale API read is deliberately tolerated. This limits stale-write races, but labels and comments are multiple external writes, and a successful push can precede a later failure. Teamagent needs recoverable publication receipts rather than treating the whole sequence as atomic.
+
+The [production review sandbox](https://github.com/tanstack/ai/blob/669fd31d995a7134e9f39f386181edc5085039b2/agent-scripts/ai-review/run.ts#L180-L265) pins the container image and checks checkout HEAD before installing the review CLI. It also passes a live provider key to code running in the review environment and explicitly notes that child commands/network access can expose it. Generated-diff scanning and exact-secret matching in review text occur after the model run; they cannot prove the key was never transmitted. The orchestration derives readiness/security labels and workflow approval from policy scanners plus a model verdict, without an independent test execution in the reviewed branch. The uninspected scanners may add checks, but ready is not verified task correctness.
+
+The [Git process adapter](https://github.com/tanstack/ai/blob/669fd31d995a7134e9f39f386181edc5085039b2/agent-scripts/ai-review/run.ts#L572-L609) bounds accumulated output while reading and strips two named secrets from its environment. It has no wall-clock deadline or forced-termination escalation here and otherwise retains ambient environment values. Git operations, provider calls, workflow approvals and publication were inspected only as source; none were performed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ai.tanstack](https://github.com/tanstack/ai); analyzed commit `632fd806bb3e68e52a2a8eae937873c5defe6786`; commit date 2026-10-03T15:31:51Z; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--ai.tanstack.md).
+Analysis metadata: source [ai.tanstack](https://github.com/tanstack/ai); analyzed commit `669fd31d995a7134e9f39f386181edc5085039b2`; commit date 2026-10-27T11:25:47Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--ai.tanstack.md).
 <!-- teamagent-analysis:end -->

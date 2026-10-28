@@ -1,0 +1,17 @@
+# trellis
+
+Source: [trellis](https://github.com/mindfold-ai/trellis) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md).
+
+Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-agents--trellis.md).
+
+## 2026-10-28 scoped source review
+
+Source: [trellis](https://github.com/mindfold-ai/trellis); inspected saved discovery revision `f089cb3286071199e84118dee86b6d76aab032f1`. This is an initial scoped review of this newly catalogued source.
+
+**Scope:** Complete Codex SessionStart hook only. Shared Python modules, task persistence, other platform hooks, channel implementation and host hook integration were not inspected.
+
+The [SessionStart hook](https://github.com/mindfold-ai/trellis/blob/f089cb3286071199e84118dee86b6d76aab032f1/.codex/hooks/session-start.py#L363-L548) assembles a compact current-state summary, workflow phase index and links to deeper context, rather than injecting every specification. It reports optional/missing planning artifacts and distinguishes no active task, stale pointer and completed state. This is a useful progressive-context pattern, but its upstream workflow prose remains source material; it does not alter Teamagent's own workflow or permissions.
+
+The [host boundary](https://github.com/mindfold-ai/trellis/blob/f089cb3286071199e84118dee86b6d76aab032f1/.codex/hooks/session-start.py#L106-L227) imports executable Python from the selected project's `.trellis/scripts`, accepts absolute task references and reads files without local size bounds. Stdin JSON gets an object check but `cwd` does not get a string/schema check; malformed values may raise outside the limited exception handler. A repository-supplied hook is therefore trusted executable integration, not a safe parser for untrusted imported documentation. Path containment, context authenticity and shared-module validation are not established in this file.
+
+[Git observation](https://github.com/mindfold-ai/trellis/blob/f089cb3286071199e84118dee86b6d76aab032f1/.codex/hooks/session-start.py#L301-L326) has a three-second subprocess timeout but returns an empty string on failure. The formatter then calls an unavailable branch detached and an unavailable status clean, losing the distinction between missing evidence and a clean checkout. Other context reads and captured subprocess output have no local byte cap. Teamagent should retain compact source links with explicit unavailable states, bounded reads and validated host inputs; it should not treat emitted JSON or a hook filename as proof that the installed host actually invokes the hook. No hook, Git subprocess from this source, test or provider was executed.

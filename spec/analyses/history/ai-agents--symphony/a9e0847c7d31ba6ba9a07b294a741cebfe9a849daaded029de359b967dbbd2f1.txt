@@ -1,0 +1,31 @@
+# symphony
+
+Source: [symphony](https://github.com/openai/symphony) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **focused source review**. Snapshot `be10a1b79df723d6d7612b5651c8522704dafb2e` (2026-09-15T15:12:07-07:00). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+Issue-backed orchestration illustrates a compact supervisor state model for coding workers.
+
+## Source evidence inspected
+
+- [elixir/lib/symphony_elixir/orchestrator.ex, lines 1–100](https://github.com/openai/symphony/blob/be10a1b79df723d6d7612b5651c8522704dafb2e/elixir/lib/symphony_elixir/orchestrator.ex#L1-L100)
+
+## Observed design and algorithms
+
+The GenServer state explicitly tracks running, completed, claimed, blocked and retry-attempt sets along with concurrency and polling configuration. It uses monotonic time for scheduling and tokenizes tick events so obsolete ticks are ignored. Startup refreshes configuration and invokes workspace cleanup before scheduling work. Codex token totals and rate-limit fields are separate runtime state.
+
+## Harness decision
+
+Use an issue/task queue feeding isolated workers, with a reconciliation loop rather than an always-chatting manager. Preserve stale-tick rejection and bounded concurrency. Generalize its Codex worker assumption through the harness adapter contract.
+
+## Limits and tradeoffs
+
+The inspected state is in-process GenServer state; this excerpt does not establish cross-replica durable claims or exactly-once execution. Issue status reconciliation and workspace cleanup need deeper validation before adapting the whole runtime. Tracker-based coding work is narrower than a general knowledge/media assistant.
+
+## Validation before adoption
+
+Test process restart during an active task, tracker changes during execution, delayed tick delivery, exhausted account quota and worktree cleanup with uncommitted artifacts. No tests, live inference, installation, or production operation were performed for this review. License indicator: Apache-2.0; verify the exact files and dependencies before reuse.
+
+Related directions: [agents](../agents.md) · [channels](../channels.md).

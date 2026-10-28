@@ -1,0 +1,33 @@
+# design.taste
+
+Source: [design.taste](https://github.com/Leonxlnx/taste-skill) · Category: [ai-skills](../categories/ai-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `ce26fc25c0e5e8cab638f883de62d9a86ee5e45b`; commit timestamp `2026-09-26T11:01:50+02:00`; 66 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/Leonxlnx/taste-skill/blob/ce26fc25c0e5e8cab638f883de62d9a86ee5e45b/README.md)):
+
+> Thanks to  Kimi (Moonshot AI) , our Open Source Friend, for supporting taste-skill! With 2.8T parameters, native vision, and a 1-million-token context window,  Kimi K3  delivers frontier performance across long-horizon coding, knowledge work, and reasoning. Get a Kimi API key  . Taste-skill users get  10% bonus API credits  on their first purchase.
+
+Build/package evidence: No common build manifest identified.
+
+License evidence: [LICENSE](https://github.com/Leonxlnx/taste-skill/blob/ce26fc25c0e5e8cab638f883de62d9a86ee5e45b/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-skills**. Its category places it in the candidate set for skills; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`12af471f627f866411b4bd785b19646d3672784c`](https://github.com/Leonxlnx/taste-skill/commit/12af471f627f866411b4bd785b19646d3672784c). Scope: Full evaluation definitions, static linter and profile-cleanup tests read. Browser helper, rendered inspector, scoring reference and actual evaluation runs were not reviewed.
+
+The [evaluation definitions](https://github.com/Leonxlnx/taste-skill/blob/12af471f627f866411b4bd785b19646d3672784c/skills/taste-skill/evals/evals.json) propose fresh skill/no-skill comparisons and a blinded screenshot judge across landing pages and application screens. They contain expected outputs, not outcome records. Many expectations encode this bundle's house style; task usability, accessibility and factual correctness need independent criteria to avoid rewarding only imitation of the skill.
+
+The [static linter](https://github.com/Leonxlnx/taste-skill/blob/12af471f627f866411b4bd785b19646d3672784c/skills/taste-skill/scripts/lint.mjs) changes severity for app screens, but uses line regexes rather than parsed styles, skips lines over 2,000 characters and follows stat-based directory traversal without a seen-path or depth bound. Oversized files are disclosed on stderr, not included as coverage gaps in JSON output; missing/unreadable descendants can disappear. A clean result is narrower than a complete design review. The [cleanup tests](https://github.com/Leonxlnx/taste-skill/blob/12af471f627f866411b4bd785b19646d3672784c/tests/profile-cleanup.mjs) preserve unowned/live/foreign-host profiles and delete only abandoned owned fixtures, but the fake-browser launch test skips Windows. Adapt ownership fixtures and blinded comparisons, not universal style bans. No browser, scan or tests were run.

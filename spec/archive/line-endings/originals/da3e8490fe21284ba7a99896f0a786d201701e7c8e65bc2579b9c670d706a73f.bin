@@ -1,0 +1,41 @@
+# xx-2602-py-gpt
+
+Source: [xx-2602-py-gpt](https://github.com/szczyglis-dev/py-gpt) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `016da1c48e363f76e619de6e9e1b068960047976`; commit timestamp `2026-10-03T04:52:01+02:00`; 4,919 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/szczyglis-dev/py-gpt/blob/016da1c48e363f76e619de6e9e1b068960047976/README.md)):
+
+> Release: **2.8.38** | build: **2026-10-03** | Python: **>=3.10,   Official website: pygpt.net | Documentation | Add-ons | Discord PyGPT** is an open-source desktop AI assistant for `Linux`, `Windows` and `macOS`. It supports models from `OpenAI` (`GPT-6 Astra`, `GPT-5.6`, `GPT-4`, etc.), `Google Gemini`, `Anthropic Claude`, `xAI Grok`, `Perplexity / Sonar`, `DeepSeek`, plus models available through `HuggingFace`, `LlamaIndex`, OpenAI-compatible APIs, and local `Ollama` installations such as `DeepSeek`, `Qwen`, `gpt-oss`, `Gemma`, `Mistral`, `Ll
+
+Build/package evidence: [docs/requirements.txt](https://github.com/szczyglis-dev/py-gpt/blob/016da1c48e363f76e619de6e9e1b068960047976/docs/requirements.txt); [pyproject.toml](https://github.com/szczyglis-dev/py-gpt/blob/016da1c48e363f76e619de6e9e1b068960047976/pyproject.toml); [requirements.txt](https://github.com/szczyglis-dev/py-gpt/blob/016da1c48e363f76e619de6e9e1b068960047976/requirements.txt); [src/pygpt_net/data/js/highlight/es/package.json](https://github.com/szczyglis-dev/py-gpt/blob/016da1c48e363f76e619de6e9e1b068960047976/src/pygpt_net/data/js/highlight/es/package.json); [src/pygpt_net/data/js/highlight/package.json](https://github.com/szczyglis-dev/py-gpt/blob/016da1c48e363f76e619de6e9e1b068960047976/src/pygpt_net/data/js/highlight/package.json)
+
+License evidence: [LICENSE](https://github.com/szczyglis-dev/py-gpt/blob/016da1c48e363f76e619de6e9e1b068960047976/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped source review
+
+Source: [xx-2602-py-gpt](https://github.com/szczyglis-dev/py-gpt); inspected saved discovery revision `a6766d0b2b7e839c2501f68575c1f00d7cfe012f`. Prior analyzed revision `016da1c48e363f76e619de6e9e1b068960047976` remains historical evidence.
+
+**Scope:** Complete desktop tool registry, Files tool lifecycle and one drop test. Filesystem path/transfer implementations, BaseTool policy and agent tool execution were not inspected.
+
+The [desktop tool registry](https://github.com/szczyglis-dev/py-gpt/blob/a6766d0b2b7e839c2501f68575c1f00d7cfe012f/src/pygpt_net/tools/__init__.py#L36-L167) attaches tools by ID, dispatches lifecycle events and finds a dialog's policy owner before resolving its ID. Registration overwrites an existing ID and exposes the live mapping; it is a trusted local object registry, not an untrusted plugin validation boundary. Existing-dialog lookup and `can_open_dialog` behavior depend on BaseTool and the UI owner, which this scope did not inspect.
+
+The [Files tool](https://github.com/szczyglis-dev/py-gpt/blob/a6766d0b2b7e839c2501f68575c1f00d7cfe012f/src/pygpt_net/tools/files/tool.py#L24-L117) keeps operations, transfers, paths and chat in separate components, resets chat on profile reload, refreshes the active project root without reopening a closed explorer, and stops an existing explorer on exit. These are useful UI ownership seams. They do not establish path containment, transfer atomicity, background cancellation acknowledgement or permission checks in the delegated components.
+
+The [drop test](https://github.com/szczyglis-dev/py-gpt/blob/a6766d0b2b7e839c2501f68575c1f00d7cfe012f/tests/tools/files/test_drop.py#L13-L54) verifies resulting bytes, move-versus-copy semantics and reveal behavior using temporary files, a real clipboard component and a mocked importer that can fail into fallback. It does not test symlink escapes, oversized files, collisions, partial copies or unauthorized destinations. No Python, Qt, filesystem operation or upstream test was executed in this review. Teamagent should pair comparable UI separation with independently tested path and effect boundaries.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [py-gpt](https://github.com/szczyglis-dev/py-gpt); analyzed commit `a6766d0b2b7e839c2501f68575c1f00d7cfe012f`; commit date 2026-10-06T04:19:35+02:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--xx-2602-py-gpt.md).
+<!-- teamagent-analysis:end -->

@@ -24,6 +24,21 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Diff search preserves match identity across layouts while the parser remains a tolerant display model.** Reviewed commit `29f6ad480d95a4240c63f63d390e9909afdad9e8` (commit date `2026-10-25T19:46:31Z`). Compared with `e4d08754c2d7f1e4fffa7650488f97f5d2513e4f`; the complete Git comparison contains 133 changed paths.
+
+Search now selects the active unified or split diff's normalized lines, adds a two-row context margin and pins the owning file. Layout changes map the current match, retaining a reversible prior mapping when it is still present; navigation clears that mapping. Search in the separate preview is explicitly rejected with a UI flash rather than silently searching another surface.
+
+The new diff parser distinguishes binary/submodule/word/combined representations, decodes Git-quoted paths and retains blob identifiers as display metadata. Saturating old/new hunk counts cap initial allocation at 4,096 entries, preventing advertised counts from directly requesting huge allocations; all actual parsed lines/files and the preliminary line list remain retained. It is deliberately tolerant: malformed numeric ranges default to zero/one, invalid timezone strings default to UTC, and quoted non-UTF-8 bytes are decoded lossily. Fixtures cover enormous advertised counts, wrong counts before a following file and malformed epoch timestamps. A displayable diff therefore does not establish a byte-exact patch or trustworthy path/line citation.
+
+Evidence: [src/app/search.rs:76-182](https://github.com/RivoLink/leaf/blob/29f6ad480d95a4240c63f63d390e9909afdad9e8/src/app/search.rs#L76-L182) · [src/diff/parser.rs:6-84](https://github.com/RivoLink/leaf/blob/29f6ad480d95a4240c63f63d390e9909afdad9e8/src/diff/parser.rs#L6-L84) · [src/diff/parser.rs:203-276](https://github.com/RivoLink/leaf/blob/29f6ad480d95a4240c63f63d390e9909afdad9e8/src/diff/parser.rs#L203-L276) · [src/diff/parser.rs:611-671](https://github.com/RivoLink/leaf/blob/29f6ad480d95a4240c63f63d390e9909afdad9e8/src/diff/parser.rs#L611-L671) · [src/diff/parser.rs:697-737](https://github.com/RivoLink/leaf/blob/29f6ad480d95a4240c63f63d390e9909afdad9e8/src/diff/parser.rs#L697-L737) · [src/diff/parser.rs:886-952](https://github.com/RivoLink/leaf/blob/29f6ad480d95a4240c63f63d390e9909afdad9e8/src/diff/parser.rs#L886-L952) · [src/tests/diff_parser.rs:322-336](https://github.com/RivoLink/leaf/blob/29f6ad480d95a4240c63f63d390e9909afdad9e8/src/tests/diff_parser.rs#L322-L336) · [src/tests/diff_parser.rs:669-678](https://github.com/RivoLink/leaf/blob/29f6ad480d95a4240c63f63d390e9909afdad9e8/src/tests/diff_parser.rs#L669-L678) · [src/tests/diff_parser.rs:717-739](https://github.com/RivoLink/leaf/blob/29f6ad480d95a4240c63f63d390e9909afdad9e8/src/tests/diff_parser.rs#L717-L739).
+
+**Harness consequence:** Use layout-aware evidence navigation and hostile-count fixtures for review surfaces. Keep original diff bytes and source SHA separately from this tolerant display representation, expose parse uncertainty, enforce total input/line/file budgets and validate paths before any file access. Do not feed normalized display paths or recovered numeric ranges into patch application or citation verification without an independent strict parser.
+
+**Scope and limits:** Static scoped review of diff-search state and selected new parser/fixture regions within the 133-path comparison. Terminal rendering, path-opening behavior, full word/combined parser and interactive layout tests were not exhaustively audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [leaf](https://github.com/RivoLink/leaf); analyzed commit `e4d08754c2d7f1e4fffa7650488f97f5d2513e4f`; commit date 2026-09-28T10:22:48Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--leaf.md).
+Analysis metadata: source [leaf](https://github.com/RivoLink/leaf); analyzed commit `29f6ad480d95a4240c63f63d390e9909afdad9e8`; commit date 2026-10-25T19:46:31Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--leaf.md).
 <!-- teamagent-analysis:end -->

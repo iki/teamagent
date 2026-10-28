@@ -24,6 +24,15 @@ This entry was catalogued under **ai-security**. Its category places it in the c
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`f3162c039ecd9c9d5d8bc404dd1373c7ca3152f7`](https://github.com/google/mantis/commit/f3162c039ecd9c9d5d8bc404dd1373c7ca3152f7). Scope: Full compatibility sandbox facade, isolation regression tests and skill-integrity tests read. Actual environment implementations and the security-analysis skills were not audited.
+
+The [sandbox facade](https://github.com/google/mantis/blob/f3162c039ecd9c9d5d8bc404dd1373c7ca3152f7/reference/core/sandbox.py) now delegates to environment implementations while preserving legacy aliases; it is not itself an isolation implementation. The [creation-contract tests](https://github.com/google/mantis/blob/f3162c039ecd9c9d5d8bc404dd1373c7ca3152f7/reference/tests/test_sandbox_isolation.py) mock the microVM creator and assert deny-all networking, no published ports, no host mounts/environment, no image pull during a run and bounded optional CPU/memory. These are useful regression expectations for an adapter, but cannot establish real guest isolation or image provenance without inspecting the implementation and exercising the runtime.
+
+The [integrity suite](https://github.com/google/mantis/blob/f3162c039ecd9c9d5d8bc404dd1373c7ca3152f7/test_skills_integrity.py) compares the skill index with discovered files, resolves tracked references and checks that a Python main guard is the final statement so directly launched tests cannot silently miss later classes. Adapt the index/reference completeness check and the test-discovery regression. Its frontmatter checks are string-based, not a manifest schema or skill-safety assessment. No tests, exploit payloads, environment creation or skill execution were performed.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mantis](https://github.com/google/mantis); analyzed commit `47099edfe7518345850ceaae947e2f91b554ec23`; commit date 2026-09-28T04:47:59-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-security--mantis.md).
+Analysis metadata: source [mantis](https://github.com/google/mantis); analyzed commit `f3162c039ecd9c9d5d8bc404dd1373c7ca3152f7`; commit date 2026-10-25T16:48:48Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-security--mantis.md).
 <!-- teamagent-analysis:end -->

@@ -24,6 +24,19 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Search cache identity includes engine policy while citation confidence remains heuristic.** Reviewed commit `9180e934442255fac68377c5537dc9b4fbc75469` (commit date `2026-10-25T01:55:22+06:00`). Compared with `da59eee72ee5e6c6a79a290e9c0f6d3720588711`; the complete Git comparison contains 152 changed paths.
+
+The search-cache fingerprint now includes normalized requested search engines alongside domain/date/language/depth/reranker constraints, with fixtures for case/order/duplicate equivalence and differing sets. The normalization helper is shared by import with dispatch, but its implementation was not part of this slice. MCP responses now emit one JSON text block and retain both an existing notice and synthesis warning, so a cache-miss notice is not overwritten. Citation sentence splitting now avoids decimal points, while abbreviations remain a stated limitation. The complete inspected citation function labels any in-range model-supplied citation marker 'high' without checking entailment; otherwise ASCII token Jaccard overlap supplies at most three sources per claim and fifty entries. Those labels measure linkage heuristics, not factual support. The rerank factory can select a remote provider, which creates a new data-placement boundary even though the interface is unchanged.
+
+Evidence: [src/cache/store.ts:345-419](https://github.com/KnockOutEZ/wigolo/blob/9180e934442255fac68377c5537dc9b4fbc75469/src/cache/store.ts#L345-L419) · [src/server/search-response.ts:1-30](https://github.com/KnockOutEZ/wigolo/blob/9180e934442255fac68377c5537dc9b4fbc75469/src/server/search-response.ts#L1-L30) · [src/research/citation-graph.ts:1-117](https://github.com/KnockOutEZ/wigolo/blob/9180e934442255fac68377c5537dc9b4fbc75469/src/research/citation-graph.ts#L1-L117) · [src/providers/rerank-provider.ts:76-109](https://github.com/KnockOutEZ/wigolo/blob/9180e934442255fac68377c5537dc9b4fbc75469/src/providers/rerank-provider.ts#L76-L109) · [tests/unit/cache/store-search-key.test.ts:59-91](https://github.com/KnockOutEZ/wigolo/blob/9180e934442255fac68377c5537dc9b4fbc75469/tests/unit/cache/store-search-key.test.ts#L59-L91) · [tests/integration/search-rerank-pipeline.test.ts:76-100](https://github.com/KnockOutEZ/wigolo/blob/9180e934442255fac68377c5537dc9b4fbc75469/tests/integration/search-rerank-pipeline.test.ts#L76-L100).
+
+**Harness consequence:** Include backend selection and retrieval policy in cache keys, preserve degraded/missing outcomes structurally, and keep attribution validation separate from citation syntax. Store exact supporting spans and calibrated evidence status rather than translating a marker or lexical overlap into high factual confidence. Remote reranking needs explicit source-text egress policy and provider evidence before activation.
+
+**Scope and limits:** Scoped static review of cache identity, result envelopes, citation mapping and reranker selection within a 152-path comparison. No search engine, remote reranker, source fetch, upstream test or relevance/entailment benchmark ran. The shared normalization implementation and remote transport/authentication were not audited.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [wigolo](https://github.com/KnockOutEZ/wigolo); analyzed commit `da59eee72ee5e6c6a79a290e9c0f6d3720588711`; commit date 2026-09-27T11:50:05+06:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--wigolo.md).
+Analysis metadata: source [wigolo](https://github.com/KnockOutEZ/wigolo); analyzed commit `9180e934442255fac68377c5537dc9b4fbc75469`; commit date 2026-10-25T01:55:22+06:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-query--wigolo.md).
 <!-- teamagent-analysis:end -->

@@ -24,6 +24,21 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Typed extension binding remains connection-scoped and prompt argument failures preserve protocol errors.** Reviewed commit `d7845c073a2b9ba5ab2817ecf93d3e45ef24cd14` (commit date `2026-10-27T12:15:09+01:00`). Compared with `2118f14f8a19bc158d8a1cf90af58d85d187f849`; the complete Git comparison contains 125 changed paths.
+
+The client snapshots registered extension instances at construction and exposes extension(type) only through its connected-session property. It searches by isinstance and invokes bind(session) on each access, returning the first matching instance; the accessor is not a binding cache or independent authorization check. The added in-process fixtures cover a typed session binding, an unregistered type and use before connection.
+
+Unknown prompts and missing required prompt arguments now raise INVALID_PARAMS MCPError and pass through unchanged, including errors deliberately raised by the prompt function. Other rendering failures become ValueError with a chained cause. Tool input schemas use an UntitledJsonSchema generator and explicitly remove the generated root title, while the nested generator implementation was outside this review. Several selected diffs otherwise only migrate Self/assert_type imports to standard typing.
+
+Evidence: [src/mcp/client/client.py:374-395](https://github.com/modelcontextprotocol/python-sdk/blob/d7845c073a2b9ba5ab2817ecf93d3e45ef24cd14/src/mcp/client/client.py#L374-L395) · [src/mcp/client/client.py:485-512](https://github.com/modelcontextprotocol/python-sdk/blob/d7845c073a2b9ba5ab2817ecf93d3e45ef24cd14/src/mcp/client/client.py#L485-L512) · [tests/client/test_client_extensions.py:169-201](https://github.com/modelcontextprotocol/python-sdk/blob/d7845c073a2b9ba5ab2817ecf93d3e45ef24cd14/tests/client/test_client_extensions.py#L169-L201) · [src/mcp/server/mcpserver/server.py:1342-1376](https://github.com/modelcontextprotocol/python-sdk/blob/d7845c073a2b9ba5ab2817ecf93d3e45ef24cd14/src/mcp/server/mcpserver/server.py#L1342-L1376) · [src/mcp/server/mcpserver/prompts/base.py:158-215](https://github.com/modelcontextprotocol/python-sdk/blob/d7845c073a2b9ba5ab2817ecf93d3e45ef24cd14/src/mcp/server/mcpserver/prompts/base.py#L158-L215) · [src/mcp/server/mcpserver/tools/base.py:101-116](https://github.com/modelcontextprotocol/python-sdk/blob/d7845c073a2b9ba5ab2817ecf93d3e45ef24cd14/src/mcp/server/mcpserver/tools/base.py#L101-L116).
+
+**Harness consequence:** Keep extension capabilities attached to an owned live session and define binding lifetime/idempotency if adapters retain resources. Preserve expected protocol errors across prompt wrappers, but map/redact unexpected chained exceptions at the transport boundary. Validate generated schemas against the pinned SDK and retain explicit limits for prompt messages; the extension accessor does not authorize tool effects.
+
+**Scope and limits:** Static scoped review of extension binding, prompt error classification and schema call-site changes within the 125-path comparison. Read new extension fixture bodies without execution; resolver, transport/conformance changes and the UntitledJsonSchema implementation were not exhaustively audited.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mcp-sdk-python](https://github.com/modelcontextprotocol/python-sdk); analyzed commit `2118f14f8a19bc158d8a1cf90af58d85d187f849`; commit date 2026-10-02T22:56:10+01:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-sdk-python.md).
+Analysis metadata: source [mcp-sdk-python](https://github.com/modelcontextprotocol/python-sdk); analyzed commit `d7845c073a2b9ba5ab2817ecf93d3e45ef24cd14`; commit date 2026-10-27T12:15:09+01:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-sdk-python.md).
 <!-- teamagent-analysis:end -->

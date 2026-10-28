@@ -28,6 +28,19 @@ Prototype the temporal adapter after immutable source versions and lexical retri
 
 Related directions: [memory](../memory.md) · [evolution](../evolution.md).
 
+
+## Change review — 2026-10-27
+
+**Contributor metadata does not change temporal-memory conclusions.** Reviewed commit `2b5db9e139b2627c3ba18ff55f9181569b0d8224` (commit date `2026-10-26T23:29:53Z`) against `8ce6d633bdcd3d178b3a47bc25b105dce106a754`. The complete Git comparison contains 1 changed paths.
+
+The complete baseline-to-observed comparison changes only signatures/version1/cla.json. The previously reviewed graph implementation and temporal relationship schema are unchanged. Re-reading the saga summary block confirms explicit selected/skipped episode counters, UTF-8 prompt bounding and separate ingestion/event watermarks remain the relevant design; the earlier oversized-suffix and equal-timestamp caveats remain.
+
+Evidence: [graphiti_core/graphiti.py:727-799](https://github.com/getzep/graphiti/blob/2b5db9e139b2627c3ba18ff55f9181569b0d8224/graphiti_core/graphiti.py#L727-L799).
+
+**Harness consequence:** Retain episode-backed claims and explicit summary coverage. Keep a deterministic source-position continuation key in Teamagent rather than treating a summary timestamp as complete evidence processing. This delta does not justify expanding graph use or changing the adoption sequence.
+
+**Scope and limits:** Metadata-only source reconciliation; contributor identities were not used as architectural evidence. No extraction model, graph service or summary correctness benchmark was run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [graphiti](https://github.com/getzep/graphiti); analyzed commit `8ce6d633bdcd3d178b3a47bc25b105dce106a754`; commit date 2026-10-24T05:17:10Z; review date 2026-10-24T06:36:54.441Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--graphiti.md).
+Analysis metadata: source [graphiti](https://github.com/getzep/graphiti); analyzed commit `2b5db9e139b2627c3ba18ff55f9181569b0d8224`; commit date 2026-10-26T23:29:53Z; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--graphiti.md).
 <!-- teamagent-analysis:end -->

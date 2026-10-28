@@ -24,6 +24,14 @@ This entry was catalogued under **ai-agents-sandbox**. Its category places it in
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`9bfdd5f4ade7998ca3f0068e7b88764eab132911`](https://github.com/microsoft/agent-governance-toolkit/commit/9bfdd5f4ade7998ca3f0068e7b88764eab132911). Scope: Full core compatibility shim and Node production-artifact test read. External agent-control-spec runtime, native bindings, dispatchers and host enforcement were not audited.
+
+The [core crate](https://github.com/microsoft/agent-governance-toolkit/blob/9bfdd5f4ade7998ca3f0068e7b88764eab132911/policy-engine/core/src/lib.rs) is now explicitly a deprecation shim over agent-control-spec rather than the policy runtime itself. Its documented verdict migration maps warnings to allow-plus-warning and escalation to deny-plus-approval, with transform as the value-changing decision. Preserve semantic migration tests; do not infer unchanged enforcement from renamed exports or treat advice as authorization.
+
+The [production-artifact tests](https://github.com/microsoft/agent-governance-toolkit/blob/9bfdd5f4ade7998ca3f0068e7b88764eab132911/policy-engine/sdk/node/test/production-artifact.mjs) load built distribution code, exercise two contract versions, reject implicit bundled annotators and verify that an explicit custom dispatcher receives restored source metadata. The custom fixture returns a constant safe label, so it establishes dispatch plumbing rather than classifier accuracy, URL trust or host action blocking. The shim itself says local manifests, custom dispatchers and network destinations need a host trust decision. Adapt explicit opt-in side effects and tests against packaged artifacts; no dependency, native runtime, policy evaluation, network or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-governance-toolkit](https://github.com/microsoft/agent-governance-toolkit); analyzed commit `c3e8229dfb19c697468cfb790495d7174ef8bc45`; commit date 2026-10-02T18:50:53-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--agent-governance-toolkit.md).
+Analysis metadata: source [agent-governance-toolkit](https://github.com/microsoft/agent-governance-toolkit); analyzed commit `9bfdd5f4ade7998ca3f0068e7b88764eab132911`; commit date 2026-10-27T08:46:34-07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--agent-governance-toolkit.md).
 <!-- teamagent-analysis:end -->

@@ -27,6 +27,19 @@ Adopt the buffer and adapter-registry patterns behind harness-owned session iden
 
 Related directions: [memory](../memory.md) · [agents](../agents.md) · [models](../models.md).
 
+
+## Change review — 2026-10-27
+
+**Popularity update leaves the inspected retrieval and adapter design unchanged.** Reviewed commit `da399d384f03ae9c28d955c2e56c834c56d6ea93` (commit date `2026-10-27T12:07:01Z`) against `dbfa57d50ccaacb37ade53dd226c5b0cf7bea335`. The complete Git comparison contains 1 changed paths.
+
+The complete comparison contains only stats.json: reported usage counters changed. The retained SQLite store still declares porter/unicode61 and trigram FTS5 indexes; the previously reviewed adapter-detection implementation is absent from the changed-path set. This revision is a metadata-only reconciliation of the existing architecture review, not a new retrieval-performance result.
+
+Evidence: [stats.json:1-8](https://github.com/mksglu/context-mode/blob/da399d384f03ae9c28d955c2e56c834c56d6ea93/stats.json#L1-L8) · [src/store.ts:475-543](https://github.com/mksglu/context-mode/blob/da399d384f03ae9c28d955c2e56c834c56d6ea93/src/store.ts#L475-L543).
+
+**Harness consequence:** Keep lexical/trigram retrieval as a bounded baseline and keep host identification separate from authorization. Do not use download/marketplace counts as effectiveness scores or reasons to change tool permissions.
+
+**Scope and limits:** Complete changed-path inventory and the counter diff were checked; only the cited existing implementation range was re-read. No runtime, migration or retrieval benchmark was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [context-mode](https://github.com/mksglu/context-mode); analyzed commit `dbfa57d50ccaacb37ade53dd226c5b0cf7bea335`; commit date 2026-10-03T13:35:57Z; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--context-mode.md).
+Analysis metadata: source [context-mode](https://github.com/mksglu/context-mode); analyzed commit `da399d384f03ae9c28d955c2e56c834c56d6ea93`; commit date 2026-10-27T12:07:01Z; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--context-mode.md).
 <!-- teamagent-analysis:end -->

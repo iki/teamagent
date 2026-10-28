@@ -1,0 +1,15 @@
+# hanzo-sdk-ts
+
+Source: [hanzo-sdk-ts](https://github.com/hanzoai/js-sdk) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md).
+
+Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-agents--hanzo-sdk-ts.md).
+
+## 2026-10-28 scoped source review
+
+Source: [hanzo-sdk-ts](https://github.com/hanzoai/js-sdk); inspected saved discovery revision `68b12ce641961edf2b8b4ea51e41a30317d71e0a`. This is an initial scoped review of this newly catalogued source.
+
+**Scope:** Full generated authz API wrapper and AgentSpec/ProviderPropSpec interfaces read. HTTP/auth helpers, OpenAPI source, server tenant enforcement, tool APIs and tests were not audited.
+
+The [generated authz client](https://github.com/hanzoai/js-sdk/blob/68b12ce641961edf2b8b4ea51e41a30317d71e0a/src/api/authz-api.ts) describes a subject/object/action request and tenant-bound allow/deny response, but its postAuthzCheck signature accepts only generic request options and returns AxiosPromise<void>. A caller can supply raw options, yet the generated public contract does not require the described body or type-check the returned decision. Health/readiness are described as unauthenticated while their parameter builders still invoke the bearer-auth helper; the helper's actual behavior was not inspected. Per-call options can override method and headers, so the wrapper is not an immutable authorization boundary.
+
+The [agent capacity interface](https://github.com/hanzoai/js-sdk/blob/68b12ce641961edf2b8b4ea51e41a30317d71e0a/src/models/agent-spec.ts) documents GPU-count limits and resource meaning without runtime checks, and [provider property descriptions](https://github.com/hanzoai/js-sdk/blob/68b12ce641961edf2b8b4ea51e41a30317d71e0a/src/models/provider-prop-spec.ts) use optional fields and an unconstrained type string. Generated types and comments cannot establish semantic validation, tenant isolation or declared capacity. Adapt schema-driven code generation only with request/response fixtures and validated server contracts; do not copy broad any or lint suppressions into Teamagent. No SDK, endpoint or tests were executed.

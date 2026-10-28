@@ -1,0 +1,75 @@
+{
+  "devices": [
+    {
+      "driverModel": "WDDM",
+      "utilizationMemory": "70 %",
+      "utilizationGpu": "96 %",
+      "ownedProcesses": [
+        {
+          "usedGpuMemory": "N/A",
+          "processName": "C:\\_\\teamagent\\.cache\\extractors-llama-b11146\\llama-server.exe",
+          "type": "C+G",
+          "processId": "4320"
+        }
+      ],
+      "gpuId": "00000000:01:00.0",
+      "uuid": "GPU-adc13967-b53d-e3ec-3840-4eba0af28795",
+      "usedMemory": "2462 MiB",
+      "totalMemory": "24463 MiB",
+      "name": "NVIDIA GeForce RTX 5090 Laptop GPU"
+    }
+  ],
+  "observedAt": "2026-10-04T21:12:46.319Z",
+  "ownedServers": [
+    {
+      "processId": 4320,
+      "ancestry": [
+        {
+          "ProcessId": 4320,
+          "ParentProcessId": 64964,
+          "Name": "llama-server.exe",
+          "ExecutablePath": "C:\\_\\teamagent\\.cache\\extractors-llama-b11146\\llama-server.exe",
+          "CommandLine": "C:/_/teamagent/.cache/extractors-llama-b11146/llama-server.exe -m C:/_/teamagent/.cache/extractors-models/marker-vlm/surya-2.gguf --mmproj C:/_/teamagent/.cache/extractors-models/marker-vlm/surya-2-mmproj.gguf -ngl 99 --host 127.0.0.1 --port 50555 --parallel 1 --ctx-size 16384 --alias datalab-to/surya-ocr-2 --jinja",
+          "CreationDate": "2026-10-04T23:10:47.648711+02:00"
+        },
+        {
+          "ProcessId": 64964,
+          "ParentProcessId": 26684,
+          "Name": "python.exe",
+          "ExecutablePath": "C:\\_\\.mise\\python\\3.12.14\\python.exe",
+          "CommandLine": "\"C:\\_\\.mise\\python\\3.12.14\\python.exe\" -I -B C:/_/teamagent/app/imports/marker-windows.py C:\\_\\teamagent\\.cache\\extractor-benchmark\\2026-10-04-full-v3\\marker-balanced\\pdf-hermes-kanban\\0\\work\\extractor-d0sQDl\\input.pdf --output_dir C:\\_\\teamagent\\.cache\\extractor-benchmark\\2026-10-04-full-v3\\marker-balanced\\pdf-hermes-kanban\\0\\work\\extractor-d0sQDl\\output --output_format markdown --disable_multiprocessing --mode balanced",
+          "CreationDate": "2026-10-04T23:10:32.063327+02:00"
+        },
+        {
+          "ProcessId": 26684,
+          "ParentProcessId": 54140,
+          "Name": "python.exe",
+          "ExecutablePath": "C:\\_\\.mise\\marker-pdf\\2.0.0\\marker-pdf\\Scripts\\python.exe",
+          "CommandLine": "C:/_/.mise/marker-pdf/2.0.0/marker-pdf/Scripts/python.exe -I -B C:/_/teamagent/app/imports/marker-windows.py C:\\_\\teamagent\\.cache\\extractor-benchmark\\2026-10-04-full-v3\\marker-balanced\\pdf-hermes-kanban\\0\\work\\extractor-d0sQDl\\input.pdf --output_dir C:\\_\\teamagent\\.cache\\extractor-benchmark\\2026-10-04-full-v3\\marker-balanced\\pdf-hermes-kanban\\0\\work\\extractor-d0sQDl\\output --output_format markdown --disable_multiprocessing --mode balanced",
+          "CreationDate": "2026-10-04T23:10:32.053201+02:00"
+        },
+        {
+          "ProcessId": 54140,
+          "ParentProcessId": 62228,
+          "Name": "bun.exe",
+          "ExecutablePath": "C:\\_\\.mise\\bun\\1.4.2\\bin\\bun.exe",
+          "CommandLine": "C:\\_\\.mise\\bun\\1.4.2\\bin\\bun.exe app/benchmark/extractors.ts --config data/extractor-benchmarks/config-v2-2026-10-04.json --profiles builtin,xberg-native,xberg-auto,xberg-ocr-text,opendataloader-xycut,opendataloader-structured,mineru-flash,mineru-basic,docling-fast-text,docling-accurate-ocr,marker-fast-text,marker-balanced --output .cache/extractor-benchmark/2026-10-04-full-v3 --repeat 1 --setup data/extractor-benchmarks/setup/runtime-final.json",
+          "CreationDate": "2026-10-04T22:27:39.356611+02:00"
+        }
+      ]
+    }
+  ],
+  "nvidiaSmiExitCode": 0,
+  "limitations": [
+    "GPU-wide utilization and total memory are not attributable to this process alone.",
+    "A matching listed GPU process observes device association/allocation; it does not verify the exact offloaded layer count or attribute compute utilization.",
+    "WDDM may report per-process memory as N/A.",
+    "No new inference, extraction, model setup, test or build was launched."
+  ],
+  "completedAt": "2026-10-04T21:12:47.288Z",
+  "method": "One read-only Win32_Process snapshot followed immediately by one nvidia-smi -q -x query; retain only task-owned inference process ancestry and matching GPU process entries.",
+  "benchmark": ".cache/extractor-benchmark/2026-10-04-full-v3",
+  "driverVersion": "617.14",
+  "kind": "active-marker-gpu-observation",
+  "nvidiaSmiPath": "C:/Windows/System32/nvidia-smi.exe"
+}

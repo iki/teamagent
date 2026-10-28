@@ -1,0 +1,26 @@
+# Source history reconciliation — 2026-10-28
+
+[Review workflow](README.md) · [Pending work](pending.md) · [Portable evidence](../data/reconciliation-review-2026-10-28.json)
+
+All eleven exceptional identities from the previous run were inspected against available full Git objects. No source repository was reset, cleaned or executed. A source review here is scoped inspection, not a claim that every changed file was audited.
+
+- [Contextrie](https://github.com/feuersteiner/contextrie) ([report](../projects/ai-agents-mem--xx-2604-contextrie.md)): both histories have the exact complete tree `506d9f057572f34e13cdc829b9c2bad8c16485e1`, despite no common ancestor. The narrow same-source tree-equivalence rule permits an explicit review acknowledgment; it never claims ancestry or automatically advances a baseline.
+- [Orca](https://github.com/stablyai/orca) ([report](../projects/ai-agents-swarm--orca.md)): the saved discovery revision descends from the analyzed baseline. Its complete 40,161-path comparison exceeded the former ordinary output cap. The bounded comparison reader now supports it; scoped permission/authority findings are retained.
+- [LangWatch](https://github.com/langwatch/langwatch) ([report](../projects/ai-eval--langwatch.md)): the saved discovery revision also descends from the baseline. Its 48,889-path comparison is now available; seven evaluation implementation/test files were read. Neither path count establishes whole-project review.
+- [Better Icons](https://github.com/better-auth/better-icons): the obsolete [prefixed skill identity](../projects/ai-skills--xx-2604-assets-icons.better.md) and the [replacement skill identity](unreviewed/ai-skills--assets-icons.better.md) share full commit `033316ecb8f4982235af4111a2257e80231f5ab1` and full tree `2ef7ca543ca4f3ebfbb722100b868686972e1041`. The separate query-category report remains legitimate. The obsolete same-category duplicate was explicitly archived with its evidence retained; absence alone was not the reason.
+
+Seven other histories have different complete trees. Their original analyzed revisions remain preserved in history. After scoped inspection and explicit `reconcileFrom` acknowledgment, all seven reviewed snapshots were recorded as the new analysis baselines:
+
+| Source | Changed paths in the two-tree comparison | Scoped report |
+|---|---:|---|
+| [Agentic Bug Hunter](https://github.com/awarexone/agentic-bug-hunter) | 67 | [Authentication propagation](../projects/ai-agents--agentic-bug-hunter.md) |
+| [CodeAF](https://github.com/agent-field/codeaf) | 6,262 | [Approval memory and bounded sessions](../projects/ai-agents--codeaf.md) |
+| [Fuigo](https://github.com/ferroxlabs/fuigo) | 2,747 | [Permission types and agent policy lifecycle](../projects/ai-agents--fuigo.md) |
+| [Foundry](https://github.com/promptise-com/foundry) | 859 | [Journals, sandbox lifecycle and remote health](../projects/ai-agents--promptise-foundry.md) |
+| [Sage](https://github.com/zhangzhengeric/sage) | 3,318 | [Response outcomes and identity attribution](../projects/ai-agents--sage.md) |
+| [LiteLLM](https://github.com/berriai/litellm) | 15,184 | [Credential scope and routing read batches](../projects/ai-agents-proxy--litellm.md) |
+| [Reverse Skill](https://github.com/zhaoxuya520/reverse-skill) | 209 | [Routing declarations and plugin scope](../projects/ai-skills--security-reverse.reverse.md) |
+
+The evidence file records both full commits, tree IDs, available common ancestors, complete path counts and comparison hashes. Different histories may be a rewrite or a changed upstream lineage; these observations do not prove publisher intent. The explicit `reconcileFrom` workflow requires the exact preserved baseline, the same canonical source and two available different complete trees, with both commits cited in the changed report. Its retained event and packet state that ancestry was not established. Ordinary promotion still refuses divergent histories; no baseline changes through a failed comparison or automatic reset.
+
+Some checkouts advanced again while this work continued. Their new HEADs are separate from the saved discovery snapshots that were reviewed. The explicit `checkoutSha` acknowledgment requires same-source ancestry and exact HEAD checks, records only the inspected snapshot and leaves newer content pending. It does not resolve a divergent history.

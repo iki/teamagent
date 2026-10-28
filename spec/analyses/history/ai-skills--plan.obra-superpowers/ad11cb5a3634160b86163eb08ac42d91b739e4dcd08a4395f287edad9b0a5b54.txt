@@ -1,0 +1,25 @@
+# Superpowers
+
+Source: [obra/superpowers](https://github.com/obra/superpowers) · Reviewed revision: `8ca22dba9a94f28898bbce59f2537ff4d87c747d` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [skills](../skills.md) · [evolution](../evolution.md) · [agents](../agents.md).
+
+## Evidence inspected
+
+- [`skills/writing-skills/SKILL.md` lines 1–85](https://github.com/obra/superpowers/blob/8ca22dba9a94f28898bbce59f2537ff4d87c747d/skills/writing-skills/SKILL.md#L1-L85)
+
+## Observed architecture and behavior
+
+The writing-skills procedure treats reusable process documentation as an experimentally tested intervention. It asks for pressure scenarios, baseline failures, a minimal corrective skill, and repeated verification. It explicitly separates reusable techniques from one-off narratives and suggests enforcing mechanical constraints in code. The repository also contains runtime-specific registration and bootstrap tests. This is a substantive skill-authoring method, but the inspected material expresses workflow instructions rather than an independently measured cross-model quality result.
+
+## Implications and tradeoffs for Teamagent
+
+Borrow its failure-first authoring discipline for candidate skills extracted from traces. A correction should address an observed failure with a bounded trigger and concrete success criteria. Avoid generalizing a single successful episode into an unconditional global rule. Compliance tests must be paired with outcome tests: an agent can obey a long procedure while producing worse work or incurring excessive latency. The harness should also be able to skip a workflow when its expected benefit is smaller than its interaction cost. Blanket requirements to run all planning or testing rituals would conflict with the user's demand to load only relevant skills.
+
+## Adoption decision
+
+Curate selected debugging, planning, and skill-authoring procedures as optional bundles. Maintain target-runtime overlays for tool names and orchestration semantics. Begin with reproducible failures in actual team tasks, then compare no-skill, upstream-skill, and tuned-variant runs. Retain pressure tests as adversarial regressions, but do not equate persuasion-resistant compliance with verified correctness. Keep routine low-impact tasks eligible for a short direct path.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.

@@ -1,0 +1,33 @@
+# Superpowers
+
+Source: [obra/superpowers](https://github.com/obra/superpowers) · Reviewed revision: `8ca22dba9a94f28898bbce59f2537ff4d87c747d` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [skills](../skills.md) · [evolution](../evolution.md) · [agents](../agents.md).
+
+## Evidence inspected
+
+- [`skills/writing-skills/SKILL.md` lines 1–85](https://github.com/obra/superpowers/blob/8ca22dba9a94f28898bbce59f2537ff4d87c747d/skills/writing-skills/SKILL.md#L1-L85)
+
+## Observed architecture and behavior
+
+The writing-skills procedure treats reusable process documentation as an experimentally tested intervention. It asks for pressure scenarios, baseline failures, a minimal corrective skill, and repeated verification. It explicitly separates reusable techniques from one-off narratives and suggests enforcing mechanical constraints in code. The repository also contains runtime-specific registration and bootstrap tests. This is a substantive skill-authoring method, but the inspected material expresses workflow instructions rather than an independently measured cross-model quality result.
+
+## Implications and tradeoffs for Teamagent
+
+Borrow its failure-first authoring discipline for candidate skills extracted from traces. A correction should address an observed failure with a bounded trigger and concrete success criteria. Avoid generalizing a single successful episode into an unconditional global rule. Compliance tests must be paired with outcome tests: an agent can obey a long procedure while producing worse work or incurring excessive latency. The harness should also be able to skip a workflow when its expected benefit is smaller than its interaction cost. Blanket requirements to run all planning or testing rituals would conflict with the user's demand to load only relevant skills.
+
+## Adoption decision
+
+Curate selected debugging, planning, and skill-authoring procedures as optional bundles. Maintain target-runtime overlays for tool names and orchestration semantics. Begin with reproducible failures in actual team tasks, then compare no-skill, upstream-skill, and tuned-variant runs. Retain pressure tests as adversarial regressions, but do not equate persuasion-resistant compliance with verified correctness. Keep routine low-impact tasks eligible for a short direct path.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`2ce8aa15d05bd57213e6f746f953aafb7ded7a8b`](https://github.com/obra/superpowers/commit/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b). Scope: Full review-request skill, session-diagnosis skill, builder-check prompt and skill-size test read. Main execution/debugging skills and diagnosis reference implementations were not audited.
+
+The [review-request skill](https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/requesting-code-review/SKILL.md) gives a separate reviewer a bounded description, requirements and base/head rather than the entire author conversation. The [builder check](https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/brainstorming/builder-check-prompt.md) asks only for ambiguities that materially change implementation. Adapt those context boundaries, while selecting the actual patch base and accounting for uncommitted changes instead of assuming HEAD~1 covers the work.
+
+The [diagnosis workflow](https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/diagnosing-superpowers/SKILL.md) distinguishes human prompts from hook/parent messages, demands transcript evidence for numbers and separates local analysis from export/sharing. Its mandatory seven-analyst fanout and refusal to propose fixes are local workflow choices, not Teamagent requirements. The [size gate](https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/tests/skill-size/test-skill-size.sh) checks bytes against a documented 20,000-character compaction assumption; the conservative byte check is observable, but that client behavior was not verified here and size alone does not guarantee recall. No session export, subagent analysis, hook or tests were run.

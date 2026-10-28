@@ -1,0 +1,43 @@
+# FreeToken: resource-aware local MoE serving
+
+Source: [freetoken](https://github.com/FlashML-org/FreeToken) · Category: `ai-model-run`
+
+Review depth: **source-reviewed**. Snapshot `d3512b43affe981465e03ee28cbd88f49c39b9aa`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+FreeToken advertises heterogeneous local MoE serving, expert caching, and context-cache reuse. The inspected memory policy is deliberately pure arithmetic over measured quantities. It computes a net budget after fixed weights/cache, reserves KV pages, fills expert slots within bounds, adjusts overlap feasibility, and rejects plans that exceed the budget before device allocation.
+
+This yields a useful engineering lesson: memory admission should be explicit and independently testable. The same policy is intended for startup sizing and runtime rebuilds, avoiding inconsistent equations across those paths. However, the policy file alone does not prove the allocator, kernels, and serving scheduler honor every invariant under concurrent load.
+
+## Harness adoption
+
+Evaluate as an optional local inference endpoint for hardware with a compatible backend. Feed actual free-memory measurements and required context into admission control. Record predicted and observed memory use, model load time, cold/warm prefill, and response latency. Reserve capacity before starting a task whose long context cannot fit.
+
+Separate engine KV or recurrent-state caching from the knowledge base. Engine caches speed repeated inference and may be evicted or invalidated by weight/configuration changes; durable memory needs provenance, access control, retrieval, and semantic updates independent of a particular GPU process.
+
+## Limitations and decision
+
+Prototype under workload measurements. Hardware support, quantization correctness, advertised interactive speed, and context-edit cache benefits were not reproduced. A fast warm-cache demo does not establish performance for many simultaneous agents with divergent contexts. Use conservative resource headroom, pin runtime and weight versions, and preserve cancellation/deadline propagation. Compare with [Colibri](ai-model-run--colibri.md) and other installed local servers using the same task traces instead of choosing by maximum parameter-count claims.
+
+## Evidence read
+
+- [Pure expert/KV memory budgeting](https://github.com/FlashML-org/FreeToken/blob/d3512b43affe981465e03ee28cbd88f49c39b9aa/python/freetoken/engine/cache_budget.py#L1-L128)
+- [Engine scope and advertised caching](https://github.com/FlashML-org/FreeToken/blob/d3512b43affe981465e03ee28cbd88f49c39b9aa/README.md#L15-L26)
+
+## Related directions
+
+[Models](../models.md) · [Decisions](../decisions.md) · [Memory](../memory.md)
+
+
+## Change review - 2026-10-28
+
+**Pure cache sizing rejects impossible plans while readiness metrics conflate missing and zero.** Reviewed commit `9221fd7fc2b923813d7f9563c6c08f0a38497590` (commit date `2026-10-26T22:38:53-07:00`). Compared with `d3512b43affe981465e03ee28cbd88f49c39b9aa`; the complete Git comparison contains 522 changed paths.
+
+The cache-budget policy computes available pool bytes from a recorded pre-model free-memory baseline, one memory-ratio application, model weights and fixed cache costs. It reserves KV pages before allocating expert slots, enforces a kernel slot cap, disables prefill overlap when the cap cannot hold two expert layers, and asserts that the final minimum geometry fits before allocation. The engine passes measured bank row bytes, pool-specific costs and recurrent-state cost into this policy. Read fixtures cover insufficient budgets, slot caps, overlap, byte accounting and applying the ratio once. Separately, cache-status telemetry deliberately catches measurement errors and substitutes zero; zero therefore means either absent cache or unavailable measurement, and should not be interpreted as a measured zero-cost configuration. Assertions and arithmetic are useful reference logic but are not a complete validated external configuration boundary.
+
+Evidence: [python/freetoken/engine/cache_budget.py:1-140](https://github.com/FlashML-org/FreeToken/blob/9221fd7fc2b923813d7f9563c6c08f0a38497590/python/freetoken/engine/cache_budget.py#L1-L140) · [python/freetoken/engine/engine.py:692-717](https://github.com/FlashML-org/FreeToken/blob/9221fd7fc2b923813d7f9563c6c08f0a38497590/python/freetoken/engine/engine.py#L692-L717) · [python/freetoken/kvcache/cache_status.py:16-71](https://github.com/FlashML-org/FreeToken/blob/9221fd7fc2b923813d7f9563c6c08f0a38497590/python/freetoken/kvcache/cache_status.py#L16-L71) · [python/freetoken/kvcache/cache_status.py:74-100](https://github.com/FlashML-org/FreeToken/blob/9221fd7fc2b923813d7f9563c6c08f0a38497590/python/freetoken/kvcache/cache_status.py#L74-L100) · [python/freetoken/kvcache/cache_status.py:139-197](https://github.com/FlashML-org/FreeToken/blob/9221fd7fc2b923813d7f9563c6c08f0a38497590/python/freetoken/kvcache/cache_status.py#L139-L197) · [tests/engine/test_cache_budget.py:1-122](https://github.com/FlashML-org/FreeToken/blob/9221fd7fc2b923813d7f9563c6c08f0a38497590/tests/engine/test_cache_budget.py#L1-L122).
+
+**Harness consequence:** Separate deterministic resource planning from GPU side effects and retain the measured baseline, model revision, units and headroom assumptions in reservation receipts. Use typed validation/errors rather than removable assertions for external inputs. Represent cache telemetry as measured/unavailable/not-applicable, and measure real peak allocation and concurrent admission before adopting this engine or promising fit.
+
+**Scope and limits:** Scoped source and arithmetic-fixture inspection within a 522-path comparison. No upstream tests, GPU allocation, model weights, kernels, runtime cache rebuild or throughput/quality benchmark ran; other changed engine/server/model code remains outside this slice.

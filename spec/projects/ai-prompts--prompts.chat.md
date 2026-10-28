@@ -24,6 +24,14 @@ Integrate as an optional search/import source, not as a trusted skill registry o
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`c785a7a1796afec709f8e857d5496df8cab617e9`](https://github.com/f/prompts.chat/commit/c785a7a1796afec709f8e857d5496df8cab617e9). Scope: Full admin-auth helper, proxy rewrites and bot-install component read. Authentication provider, API-key storage, bot-data validation, MCP implementation and route-level call coverage were not audited.
+
+The [admin helper](https://github.com/f/prompts.chat/blob/c785a7a1796afec709f8e857d5496df8cab617e9/src/lib/admin-auth.ts) rechecks the current database role for both session and API-key users, distinguishing unauthenticated from insufficient-role responses. An existing session takes precedence; a nonadmin session does not fall back to a different supplied admin key. Multiple key headers have precedence rather than ambiguity rejection, and the selected key is looked up directly by the apiKey field; storage protection was not established by this helper.
+
+The [proxy](https://github.com/f/prompts.chat/blob/c785a7a1796afec709f8e857d5496df8cab617e9/src/proxy.ts) exposes machine-readable bot and prompt aliases by rewriting to APIs; routing itself supplies no authorization. The [install UI](https://github.com/f/prompts.chat/blob/c785a7a1796afec709f8e857d5496df8cab617e9/src/components/bots/bot-install.tsx) separates copyable commands/prompts from external install links and tracks each interaction, but consumes prebuilt URLs without validation in this component. A copy event is not installation success, and machine-readable packaging does not make content trusted. Adapt current-role checks and explicit install stages while validating URLs, credentials and telemetry at their actual boundaries. No accounts, installs, MCP calls or tests were exercised.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [prompts.chat](https://github.com/f/prompts.chat); analyzed commit `7d3f248962d1dca209d59e033524bcb86c2b26b8`; commit date 2026-10-01T12:56:12+03:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-prompts--prompts.chat.md).
+Analysis metadata: source [prompts.chat](https://github.com/f/prompts.chat); analyzed commit `c785a7a1796afec709f8e857d5496df8cab617e9`; commit date 2026-10-27T10:26:25+03:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-prompts--prompts.chat.md).
 <!-- teamagent-analysis:end -->

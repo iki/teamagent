@@ -24,6 +24,14 @@ This entry was catalogued under **ai-agents-swarm**. Its category places it in t
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`8a1915851f379fddd51b1ef3e6e8d9b598068a45`](https://github.com/bigbodycobain/shadowbroker/commit/8a1915851f379fddd51b1ef3e6e8d9b598068a45). Scope: Full terminal-session lifecycle, admin-session route and LAN-mode backend/proxy tests read. Session store, production proxy/backend authorization and mesh privacy implementation were not audited.
+
+The [admin-session route](https://github.com/bigbodycobain/shadowbroker/blob/8a1915851f379fddd51b1ef3e6e8d9b598068a45/frontend/src/app/api/admin/session/route.ts) requires a configured local admin key before issuing a cookie, uses length-checked timing-safe comparison and no-store responses, and no longer treats success from a public backend endpoint as proof of authentication. The [LAN fixtures](https://github.com/bigbodycobain/shadowbroker/blob/8a1915851f379fddd51b1ef3e6e8d9b598068a45/frontend/src/__tests__/proxy/proxyLanMode.test.ts) require sign-in before forwarding server credentials and ignore spoofed forwarded-for locality. [Backend tests](https://github.com/bigbodycobain/shadowbroker/blob/8a1915851f379fddd51b1ef3e6e8d9b598068a45/backend/tests/test_lan_mode_auth.py) still permit loopback unless an explicit untrusted-loopback setting is used; deployment mode remains part of the trust contract.
+
+The [terminal lifecycle](https://github.com/bigbodycobain/shadowbroker/blob/8a1915851f379fddd51b1ef3e6e8d9b598068a45/frontend/src/lib/infonetTerminalSession.ts) shares an in-flight end promise and attempts to restore prior node state, but begin is not serialized with end, shared booleans can race across calls and most failures are swallowed. It can notify session end without confirmed service teardown. Adapt authenticated session minting and adversarial locality fixtures; use scoped lifecycle state and explicit cleanup outcomes for Teamagent. No admin session, network, mesh service or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [shadowbroker](https://github.com/bigbodycobain/shadowbroker); analyzed commit `f4aaeb45e53383ae59e652ca2d43b527dcd669ea`; commit date 2026-10-01T13:33:45-06:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--shadowbroker.md).
+Analysis metadata: source [shadowbroker](https://github.com/bigbodycobain/shadowbroker); analyzed commit `8a1915851f379fddd51b1ef3e6e8d9b598068a45`; commit date 2026-10-27T02:13:28-06:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--shadowbroker.md).
 <!-- teamagent-analysis:end -->

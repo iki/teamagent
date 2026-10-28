@@ -1,0 +1,29 @@
+# xx-2604-create.skr
+
+Source: [xx-2604-create.skr](https://github.com/andrewhowdencom/skr) · Category: [ai-agents-skills](../categories/ai-agents-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `15514552d3ea854cc10890b360ac33a4f11ce22e`; commit timestamp `2026-04-13T12:15:25+02:00`; 106 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/andrewhowdencom/skr/blob/15514552d3ea854cc10890b360ac33a4f11ce22e/README.md)):
+
+> skr** is a tool designed to manage Agent Skills—a lightweight, open format for extending AI agent capabilities with specialized knowledge and workflows. The primary goal of **skr** is to enable developers to natively install and manage Agent Skills directly from standard Git repositories. Under the hood, `skr` automatically creates OCI (Open Container Initiative) artifacts locally, allowing you to optionally leverage standard OCI registries for faster, pre-built distribution of your skills across environments like GitHub Packages or Docker Hub.
+
+Build/package evidence: [go.mod](https://github.com/andrewhowdencom/skr/blob/15514552d3ea854cc10890b360ac33a4f11ce22e/go.mod)
+
+License evidence: [LICENSE](https://github.com/andrewhowdencom/skr/blob/15514552d3ea854cc10890b360ac33a4f11ce22e/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-skills**. Its category places it in the candidate set for skills, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [create.skr](https://github.com/andrewhowdencom/skr); analyzed commit `15514552d3ea854cc10890b360ac33a4f11ce22e`; commit date 2026-04-13T12:15:25+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--xx-2604-create.skr.md).
+<!-- teamagent-analysis:end -->

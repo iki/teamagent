@@ -2,7 +2,7 @@
 
 Source: [open-code-review.alibaba](https://github.com/alibaba/open-code-review) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `a758d9cbfb689937c7857ad64b2dd66adb58c0c2`; commit timestamp `2026-09-29T17:08:37+08:00`; 955 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `375f64cd6f67a48a135da83cfcf59c52669a09cb` (commit date `2026-10-20T17:50:03+08:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete scan file provider and intent-tool schema/prompt; actual intent decoder/authorization, agent review loop, semantic findings and provider transport were not audited.
+
+The [scan provider](https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/internal/scan/provider.go#L55-L169) normalizes root selectors and now treats nonexistent requested paths as errors. [Selector resolution](https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/internal/scan/provider.go#L299-L433) tries exact enumerated spelling first, then uses filesystem identity/on-disk names instead of globally folding case; this avoids widening a request to a separate case-variant sibling. A selector resolving outside the repository yields no matching entries rather than a containment error. Teamagent should preserve the distinction between an intentionally empty selection, a missing target and a refused outside-root target.
+
+Enumeration keeps NUL-delimited Git filenames intact and excludes non-regular files, while binary files receive explicit placeholders. Other omissions—oversized, unreadable or unstatable files and walk errors—are warnings plus skips, not structured coverage entries. Files are size-checked before a separate unrestricted ReadFile, so this is not an immutable snapshot or a race-resistant hard read bound; all names and accepted contents are accumulated in memory. A clean result list cannot alone establish a complete repository review. Use bounded immutable reads and a receipt accounting for every selected, excluded, failed or unsupported item.
+
+The [intent tool](https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/acp/internal/intent/tool.go) excludes adapter-owned repository/provider/binary settings from its model schema and keeps executable intent in structured fields. Its prompt separates presentation language from operation/ref/path values. These are sensible intent-design constraints, but field descriptions and prompt rules are not enforcement: the decoder, extra-flag allowlist and execution adapter were outside this review. Teamagent must validate and authorize the final operation independently, with no automatic trust in model-produced CLI intent. No source tests or provider calls were run.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [open-code-review.alibaba](https://github.com/alibaba/open-code-review); analyzed commit `a758d9cbfb689937c7857ad64b2dd66adb58c0c2`; commit date 2026-09-29T17:08:37+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--open-code-review.alibaba.md).
+Analysis metadata: source [open-code-review.alibaba](https://github.com/alibaba/open-code-review); analyzed commit `375f64cd6f67a48a135da83cfcf59c52669a09cb`; commit date 2026-10-20T17:50:03+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--open-code-review.alibaba.md).
 <!-- teamagent-analysis:end -->

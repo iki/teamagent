@@ -30,6 +30,20 @@ Test worker eviction, code-update resets, callback schema migration, repeated qu
 
 Related directions: [agents](../agents.md) · [channels](../channels.md).
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `e8fdf188dde1b15ddb229bbe6137224fff8178d0` (commit date `2026-10-27T17:48:28Z`). The original snapshot above remains historical evidence.
+
+**Scope:** Agent-think model gateway and pool facade, selected workspace/turn cleanup implementation, complete agent.ts delta and mocked model fixtures; warm-pool allocator, lazy-workspace helper, durable execution engine and transport security were not audited.
+
+The [agent-think lifecycle](https://github.com/cloudflare/agents/blob/e8fdf188dde1b15ddb229bbe6137224fff8178d0/agent-think/src/agent.ts#L178-L229) obtains a workspace under the session's stable object name and resolves the remote stub lazily. Disposal clears the cached promise and installs a fresh lazy wrapper for the next turn. [Recovery waits for prior cleanup](https://github.com/cloudflare/agents/blob/e8fdf188dde1b15ddb229bbe6137224fff8178d0/agent-think/src/agent.ts#L530-L623) before authenticating a continuation, which is a useful ownership boundary. Cleanup failures are logged but do not change the original done/error outcome, and no whole-cleanup timeout appears in this branch. The pool facade similarly swallows release errors. A done status must therefore retain separate resource-release evidence.
+
+The [model factory](https://github.com/cloudflare/agents/blob/e8fdf188dde1b15ddb229bbe6137224fff8178d0/agent-think/src/model.ts) requires a configured gateway token, removes upstream credential headers and sets gateway authentication/project attribution. It configures an explicit provider fallback chain rather than treating every model as interchangeable. Its [mocked fixtures](https://github.com/cloudflare/agents/blob/e8fdf188dde1b15ddb229bbe6137224fff8178d0/agent-think/test/model.test.ts) assert request headers, Responses streaming shape, a fallback after a simulated payment error and rejection of missing tokens. They do not establish live account entitlement, fallback availability, redirect credential handling or gateway retention; `store: false` for one provider is not a complete data-retention policy.
+
+The turn's active-tool list limits what is advertised to the model, while shell/file authority and installation-token scope remain in other adapters. Truncating tool/cleanup error strings for logging also does not redact secrets or private payloads. Teamagent should keep advertised capability, authenticated effect grants, generation-scoped workspace ownership, cleanup state and confidential diagnostics distinct. No workerd, durable object, container, provider or upstream test execution was performed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agents.cloudflare](https://github.com/cloudflare/agents); analyzed commit `2f3176b9fa03c6429c805b560c8dc14371c15f64`; commit date 2026-10-02T22:15:08+01:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--agents.cloudflare.md).
+Analysis metadata: source [agents.cloudflare](https://github.com/cloudflare/agents); analyzed commit `e8fdf188dde1b15ddb229bbe6137224fff8178d0`; commit date 2026-10-27T17:48:28Z; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--agents.cloudflare.md).
 <!-- teamagent-analysis:end -->

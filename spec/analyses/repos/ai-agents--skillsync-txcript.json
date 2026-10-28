@@ -12,185 +12,28 @@
       "channels"
     ],
     "depth": "screened",
-    "analyzedSha": "8cd3b0e63f797b1531a14197f41a0e9eeedec8c6",
-    "analyzedAt": null,
-    "analyzedCommitDate": "2026-09-28T20:00:00-07:00",
-    "reportSha256": "3ae362fb7fddeb9770c30763335b17de02ca107da3b5d7628fb1c595bc24c8e6",
+    "analyzedSha": "c60e686e7ed30e67019288eed80c4be478512d64",
+    "analyzedAt": "2026-10-28T08:26:04.502Z",
+    "analyzedCommitDate": "2026-10-22T23:54:00-07:00",
+    "reportSha256": "b65e8af9e3b419ffc5310c01eeaf0a2654727c735f7cb792e8ad032383f53117",
     "lifecycle": "active"
   },
   "changes": {
     "id": "ai-agents--skillsync-txcript",
-    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "generatedAt": "2026-10-28T11:33:23.190Z",
     "observedAt": "2026-10-27T18:18:39.3637600+00:00",
     "source": "https://github.com/skillsynchq/txcript",
     "report": "spec/projects/ai-agents--skillsync-txcript.md",
-    "analyzedSha": "8cd3b0e63f797b1531a14197f41a0e9eeedec8c6",
-    "analyzedAt": null,
-    "analyzedCommitDate": "2026-09-28T20:00:00-07:00",
+    "analyzedSha": "c60e686e7ed30e67019288eed80c4be478512d64",
+    "analyzedAt": "2026-10-28T08:26:04.502Z",
+    "analyzedCommitDate": "2026-10-22T23:54:00-07:00",
     "observedSha": "c60e686e7ed30e67019288eed80c4be478512d64",
-    "status": "changed",
+    "status": "current",
     "shallow": false,
     "dirty": false,
     "reportModified": false,
-    "commits": [
-      {
-        "sha": "c60e686e7ed30e67019288eed80c4be478512d64",
-        "date": "2026-10-22T23:54:00-07:00",
-        "subject": "fix(codex): preserve interleaved text and tool call block ordering on export (#56)"
-      },
-      {
-        "sha": "0ec0e3f6f1ef365401c406bc9b473cbbf04521fe",
-        "date": "2026-10-22T23:36:40-07:00",
-        "subject": "fix(local): resolve a duplicated session id to its most recently modified copy (#87)"
-      },
-      {
-        "sha": "a77e5535ba7c5eccbf7766e7aad88c23b577ee72",
-        "date": "2026-10-13T18:24:19-07:00",
-        "subject": "fix(codex): read rollouts Codex has compressed to .jsonl.zst (#85)"
-      },
-      {
-        "sha": "d00a71092471a536eec359b7839406eb81516c69",
-        "date": "2026-10-12T21:10:32-07:00",
-        "subject": "chore: satisfy clippy 1.99"
-      },
-      {
-        "sha": "13289d537029ae61b98a14909be0278333046d25",
-        "date": "2026-10-12T20:25:10-07:00",
-        "subject": "fix(search): search one session at a time, and stop when the client does"
-      }
-    ],
-    "files": [
-      {
-        "status": "M",
-        "path": "CHANGELOG.md",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "Cargo.lock",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "Cargo.toml",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "cli/src/cache.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "cli/src/editpane.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "cli/src/lib.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "cli/src/mcp.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "cli/src/pager.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "cli/src/view.rs",
-        "previousPath": null
-      },
-      {
-        "status": "A",
-        "path": "cli/tests/duplicate_ids.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "docs/formats/codex.md",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "docs/usage.md",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "src/harness/codex.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "src/harness/cowork_remote.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "src/harness/pi.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "src/local.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "src/search.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "tests/README.md",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "tests/integration/codex.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "tests/integration/cowork.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "tests/integration/cursor.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "tests/integration/hermes.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "tests/integration/search.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "tests/integration/store_delete.rs",
-        "previousPath": null
-      },
-      {
-        "status": "A",
-        "path": "tests/regression/codex_compressed.rs",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "tests/regression/main.rs",
-        "previousPath": null
-      }
-    ],
+    "commits": [],
+    "files": [],
     "commitsTruncated": false,
     "filesTruncated": false,
     "notes": [

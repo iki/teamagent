@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 reconciliation and scoped source review
+
+Reviewed source: [ai-agents-mem--xx-2604-contextrie](https://github.com/feuersteiner/contextrie) at `abbf6b19717d1da7f260fcd8973ca17c8b2c252b`.
+
+**Scope:** Same-source history reconciliation and scoped inspection of core/agents/judge/index.ts (1–212) and core/agents/composer/index.ts (1–187). No upstream code or tests executed.
+
+The previously analyzed commit 547a4a3d2b85b4fce3c2eb46d4b9d65f83dbc6a8 and the observed revision have no common ancestor, but both resolve to complete Git tree 506d9f057572f34e13cdc829b9c2bad8c16485e1. The complete tracked-tree diff is empty. This is content equivalence within the same canonical upstream, not ancestry or proof about external LFS/submodule contents. Preserve both commits and the stable report identity; folder-prefix removal is not new source content.
+
+The [judge](https://github.com/feuersteiner/contextrie/blob/abbf6b19717d1da7f260fcd8973ca17c8b2c252b/core/agents/judge/index.ts#L25-L28) validates a numeric relevance score in [0,1]. Its [runner](https://github.com/feuersteiner/contextrie/blob/abbf6b19717d1da7f260fcd8973ca17c8b2c252b/core/agents/judge/index.ts#L162-L210) fans out every queued shallow/deep request with Promise.all, accumulates failures, throws rather than reporting complete success, and clears queues in finally. There is no visible task-level concurrency/token cap; raw caught errors are logged. Score shape is not relevance calibration or authorization.
+
+The [composer](https://github.com/feuersteiner/contextrie/blob/abbf6b19717d1da7f260fcd8973ca17c8b2c252b/core/agents/composer/index.ts#L125-L184) includes all ranked candidates, treats tightness as prompt guidance, filters returned IDs to the offered set and requires at least one valid ID. It returns only trimmed context text; that check does not prove that every textual claim is grounded or preserve selected IDs as a returned evidence manifest. Teamagent should authorize source expansion before inference, cap fan-out/context bytes, retain selected source/version IDs, and validate claim grounding separately. These are architecture requirements inferred from inspected code, not measured improvements.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [xx-2604-contextrie](https://github.com/feuersteiner/contextrie); analyzed commit `547a4a3d2b85b4fce3c2eb46d4b9d65f83dbc6a8`; commit date 2026-09-29T17:35:23+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--xx-2604-contextrie.md).
+Analysis metadata: source [contextrie](https://github.com/feuersteiner/contextrie); analyzed commit `abbf6b19717d1da7f260fcd8973ca17c8b2c252b`; commit date 2026-09-29T17:35:23+02:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--xx-2604-contextrie.md).
 <!-- teamagent-analysis:end -->

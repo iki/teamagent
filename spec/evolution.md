@@ -4,6 +4,26 @@ Teamagent should improve procedures, retrieval, routing, and model configuration
 
 Scope: static source/content analysis as of 2026-10-04, plus spot checks of primary upstream pages. The linked reports distinguish implemented code, documentation claims, and Teamagent design recommendations. Related directions: [skills](skills.md), [memory](memory.md), [decisions](decisions.md), [agents](agents.md), [models](models.md), and [import and generation](import-generation.md).
 
+## Evidence and effect receipts reviewed 2026-10-28
+
+[Hanzo HIPs](analyses/unreviewed/ai-agents--hanzo-hips.md) distinguishes unassessed implementation from explicit absence and refuses silent projection shrinkage, while an acknowledged shrink count does not identify exact deletions or protect equal-cardinality substitutions. Retain source identities and immutable version evidence alongside coverage, and treat a single final file write as distinct from transactional publication. Metadata consistency is not implementation verification.
+
+[Omnigent](projects/ai-agents--omnigent.md) explicitly acknowledges that a reconnect after a lost tool response can repeat an already executed effect. [Odysseus](projects/ai-agents--odysseus.md) binds streams and stop requests to exact runs and delays terminal delivery until generator unwind, while its replay remains process-local and unbounded during active runs. [Paperclip](projects/ai-agents--paperclip.md) separates held reservation ownership, later budget recheck, unfinished accounting and durable stop delivery. Preserve those as distinct receipts before evaluating or automatically retrying a candidate; successful delivery, recorded cost, persisted credentials and independently verified task correctness cannot substitute for one another.
+
+## Additional source findings reviewed 2026-10-28
+
+Usage observations must retain freshness, account ownership and whether values were measured or substituted for display. [CC AIO MON](projects/ai-agents-tokens--cc-aio-mon.md) tests stale fallbacks and cache countdowns without changing the original IPC record; [Claude Powerline](projects/ai-agents-tokens--claude-powerline.md) tests rounded unit boundaries, bounded bars and repository selection. Adapt these regression ideas when accounting informs experiments. A status display, catalog popularity, model-price file or upstream passing-test count is not independent evidence of savings, billing accuracy or improved task outcomes. No upstream runtime was executed for these updates.
+
+[OpenEval](projects/ai-eval--openeval.md) and [Autoharness](projects/ai-agents-skills--evolve-claude.autoharness.md) reinforce two separate records: immutable experiment attempts and the later promotion decision. Preserve failed or incomplete attempts, keep rejudging distinct from rerunning, and require independent outcome evidence before usage frequency can affect promotion. [Cockpit Tools](projects/ai-agents-proxy--cockpit-tools.md) separates completed deletion from projection refresh, including retry after partial progress; its in-memory progress is not durable crash recovery.
+
+[Codeburn](projects/ai-agents-tokens--codeburn.md), [RTK](projects/ai-agents-proxy--rtk.md) and [Switchyard](projects/ai-agents-proxy--switchyard.md) add distinctions between partial usage, unknown pricing, absent capacity information and measured activity. Preserve these states instead of converting them to zero cost or idle capacity. [OSV Scanner](projects/ai-security--osv-scanner.md) also separates deterministic advisory grouping from exploitability evidence: an alias relationship does not establish that a package-level finding applies independently to every identifier. Catalog grades and source counts in [Awesome Jev Live](analyses/unreviewed/ai-info--awesome-jev-live.md) remain discovery provenance rather than experimental outcomes.
+
+[LangWatch's receipt review](projects/ai-eval--langwatch.md) at `81135c1fa9f1b83580e7967eedeb972603180b35` distinguishes evaluation execution from cost recording. Production executes the evaluator before recording cost and deduplicates the cost record; a test fixture caches complete outcomes and therefore promises more than the production receipt. Record executed, cost-recorded, result-published and delivery states separately, and reconcile ambiguous effects before retrying. A stable billing identifier does not prove a provider call was performed once.
+
+[Schema Harness](projects/ai-info--game-schema-harness.md) explicitly discloses self-reported, unverified public-set scores and a contextual rather than matched Sol comparison. Preserve retained-run selection, percentage-point arithmetic and trace reconstruction details; validating a world model against past transitions cannot establish held-out performance or future behavior. [Vasilyu83's adaptation guide](projects/ai-skills--bundle.vasilyu83.md) adds useful split and exact-artifact checks, while its learning notes and example win logs remain hypotheses and templates rather than observed improvement.
+
+[Loop Engineering](projects/ai-skills--plan.loop-engineering.md) binds guardrail evidence to normalized policy bytes and requires both harmful and benign cases, but full reproducibility also needs executable and environment identity. [Pskoett's guides](projects/ai-skills--bundle.pskoett.md) use recurrence to triage potential lessons; recurrence is not a promotion rule. [ECC's context and change-impact guides](projects/ai-skills--bundle-claude.ecc.affaan-m.md) use real relationships and retained decisions, while a directory-name guess or latest-commit scan, as in [Wshobson's entry workflow](projects/ai-skills--bundle-claude.wshobson.md), cannot certify a current project model.
+
 ## 1. A durable improvement loop
 
 ```mermaid
@@ -169,6 +189,21 @@ The [analysis maintenance workflow](research-sync.md) implements the same separa
 
 [Spec Kit's refreshed trust ledger](projects/ai-spec--spec-kit.md) ([source](https://github.com/github/spec-kit)) and [Vercel Skills' ref-aware update grouping](projects/ai-agents-skills--search.vercel.md) ([source](https://github.com/vercel-labs/skills)) are concrete references for content-bound grants and independent candidate updates. Preserve rollback and evaluator separation when applying these patterns to prompts, skills, memory or routing policies.
 
+## Scoped evolution refinements: 2026-10-27
+
+[Warp's Hermes collector](https://github.com/warpdotdev/common-skills) ([review](projects/ai-skills--bundle.warp.md)) reads before transcript truncation and project filtering. Authorize/filter before access, bound source reads, and preserve malformed/omitted/time-imputed coverage. [Better Icons](https://github.com/better-auth/better-icons) ([review](analyses/unreviewed/ai-skills--assets-icons.better.md)) ranks by usage counts: preferences are not causal benefit, and atomic rename is not a transactional read-modify-write. Use scoped immutable observations and transactional projections.
+
+[Anatomy](https://github.com/wheresryan22/anatomy) ([review](analyses/unreviewed/ai-skills--render-anatomy.md)) caps idle time and excludes cache-read tokens. Preserve metric definitions instead of comparing that number to billing or wall time. [TypeSafe](https://github.com/typesafe-ai/skills) ([review](projects/ai-skills--agent-typesafe.md)) warns against fitting exact probabilities: state/question meaning changes invalidate cached judgments and evaluation evidence. [EthicalML's production catalog](https://github.com/EthicalML/awesome-production-machine-learning) ([review](projects/ai-info--awesome-production-machine-learning.md)) supplies new serving/evolution leads, not implementation or outcome validation.
+
+## Additional scoped review references
+
+These catalog associations provide navigation to scoped source reviews. Each report records its inspected revision, findings and exclusions; inclusion here does not establish a capability or an adoption decision.
+
+- [gittifacts](analyses/unreviewed/ai-agents-mem--gittifacts.md)
+- [helix-foundry](analyses/unreviewed/ai-agents-mem--helix-foundry.md)
+- [xerj](analyses/unreviewed/ai-agents-mem--xerj.md)
+- [best-of-agent-harnesses](analyses/unreviewed/ai-info--best-of-agent-harnesses.md)
+
 <!-- coverage:start -->
 ## Project coverage
 
@@ -326,20 +361,6 @@ Every associated project has its own report. Source-reviewed associations reflec
 | [techsio.ontos](https://github.com/TechsioCZ/ontos) | [Report](projects/ai-spec--techsio.ontos.md) | screened |
 | [trellis](https://github.com/mindfold-ai/Trellis) | [Report](projects/ai-spec--trellis.md) | screened |
 <!-- coverage:end -->
-
-<!-- analysis-additions:start -->
-## Newly catalogued sources
-
-These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
-
-- [gittifacts](analyses/unreviewed/ai-agents-mem--gittifacts.md) ([source](https://github.com/jovidecroock/gittifacts)).
-- [helix-foundry](analyses/unreviewed/ai-agents-mem--helix-foundry.md) ([source](https://github.com/helixdb/helix-foundry)).
-- [xerj](analyses/unreviewed/ai-agents-mem--xerj.md) ([source](https://github.com/xerj-org/xerj)).
-- [awesome-jev-live](analyses/unreviewed/ai-info--awesome-jev-live.md) ([source](https://github.com/wh000wh000/awesome-jev-live)).
-- [best-of-agent-harnesses](analyses/unreviewed/ai-info--best-of-agent-harnesses.md) ([source](https://github.com/ryanalberts/best-of-agent-harnesses)).
-- [assets-icons.better](analyses/unreviewed/ai-skills--assets-icons.better.md) ([source](https://github.com/better-auth/better-icons)).
-- [render-anatomy](analyses/unreviewed/ai-skills--render-anatomy.md) ([source](https://github.com/wheresryan22/anatomy)).
-<!-- analysis-additions:end -->
 
 ## Source refresh: 2026-10-27
 

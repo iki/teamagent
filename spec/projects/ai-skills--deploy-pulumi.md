@@ -24,6 +24,13 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`2517e28e4bc029424e9c9ee48016394296be0f6a`](https://github.com/pulumi/agent-skills/commit/2517e28e4bc029424e9c9ee48016394296be0f6a). Scope: Full Gemini package builder, release workflow and 408-line packaging/release test suite read; provider-upgrade guidance and other manifest changes not fully reviewed.
+
+The [builder](https://github.com/pulumi/agent-skills/blob/2517e28e4bc029424e9c9ee48016394296be0f6a/scripts/build_gemini_extension.py) derives one extension version from the combined plugin manifest, rejects malformed versions/tag mismatches and duplicate skill names, and preserves skill files while emitting identical platform-named archives. [Tests](https://github.com/pulumi/agent-skills/blob/2517e28e4bc029424e9c9ee48016394296be0f6a/tests/test_gemini_package.py) independently compare complete archive contents and optionally verify actual CLI discovery in an isolated profile; mock release scenarios cover failed uploads, conflicting tags and preserving newer latest releases. Adapt artifact-content parity plus installed-skill discovery as separate checks. The [workflow](https://github.com/pulumi/agent-skills/blob/2517e28e4bc029424e9c9ee48016394296be0f6a/.github/workflows/release-gemini.yml) checks existing public assets by name/nonzero size, not digest identity; local source paths are trusted inputs without containment/resource validation. Optional CLI tests can skip without GEMINI_CLI, so fixture success is not host compatibility. No archive build, CLI install, release or provider migration was executed.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deploy-pulumi](https://github.com/pulumi/agent-skills); analyzed commit `9b794aec9c4169f137285c2763c06064d247dd47`; commit date 2026-09-14T14:56:03-06:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--deploy-pulumi.md).
+Analysis metadata: source [deploy-pulumi](https://github.com/pulumi/agent-skills); analyzed commit `2517e28e4bc029424e9c9ee48016394296be0f6a`; commit date 2026-10-09T05:58:16-04:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--deploy-pulumi.md).
 <!-- teamagent-analysis:end -->

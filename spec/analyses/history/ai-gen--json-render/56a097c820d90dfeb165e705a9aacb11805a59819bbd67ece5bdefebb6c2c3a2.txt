@@ -1,0 +1,47 @@
+# json-render: application-owned generated component trees
+
+Source: [json-render](https://github.com/vercel-labs/json-render) · Category: `ai-gen`
+
+Review depth: **source-reviewed**. Snapshot `fc2a696a50a30cb30c878ab1eb65e102487eea0f`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+The core structural validator checks for a root, missing root elements, empty specs, invalid child references, and misplaced or out-of-scope dynamic properties. Errors and warnings are distinguished, and orphan detection is optional because unreachable elements need not affect rendering. This makes malformed model output a recoverable data-validation problem rather than a reason to execute generated code blindly.
+
+The README describes predefined component/action catalogs and renderers for web, native, video, document, and other output targets. This review checked the common validation path, not every renderer's feature completeness or security properties. Catalog constraints should be tested for each chosen renderer.
+
+## Harness adoption
+
+Use as a first-party generated-artifact layer when the product controls both schema and client implementation. A task might return a project comparison, memory inspector, or media storyboard as a validated spec. Retain an accessible text representation for Telegram, Slack, Discord, and clients without that renderer.
+
+Store the spec, catalog version, source task, and action binding references as artifacts. Compile only necessary catalog documentation into model context; retrieve task-relevant components just as the skill system retrieves relevant skills. Allow a bounded repair attempt on validation failure and then fall back to a plain artifact view.
+
+## Limitations and decision
+
+Shortlist for a TypeScript/React product. Structural validity does not prove semantic correctness, safe URLs, appropriate actions, or readable layout. Server authorization must recheck every action independently of what the generated interface says. Renderer-specific testing is required before assuming the same spec behaves identically on all platforms. Adopt one protocol initially and revisit [A2UI](ai-gen--a2ui.md) when interoperability with external agent/client ecosystems becomes a requirement.
+
+## Evidence read
+
+- [Structural validation contract and error cases](https://github.com/vercel-labs/json-render/blob/fc2a696a50a30cb30c878ab1eb65e102487eea0f/packages/core/src/spec-validator.ts#L1-L125)
+- [Component and renderer ecosystem](https://github.com/vercel-labs/json-render/blob/fc2a696a50a30cb30c878ab1eb65e102487eea0f/README.md#L1-L65)
+
+## Related directions
+
+[Generation](../generation.md) · [Channels](../channels.md) · [Skills](../skills.md) · [Security](../security.md)
+
+
+## Change review - 2026-10-28
+
+**Patch-state consistency improves while silent resource rejection and action authority remain separate concerns.** Reviewed commit `c6f73d7d5f69acb80fc89faefd12c0865c8603d1` (commit date `2026-10-23T20:52:23-05:00`). Compared with `fc2a696a50a30cb30c878ab1eb65e102487eea0f`; the complete Git comparison contains 75 changed paths.
+
+YAML patch streams now apply move/copy operations to their working spec before later edits and clone emitted values, preventing later array moves from mutating already emitted patches. Copy expansion has a cumulative 1,000,000-unit budget, but the estimator counts JavaScript string code units rather than UTF-8 bytes and only covers copied values; oversized copy patches and malformed lines are silently skipped. Core path helpers reject __proto__ segments, use own properties and prevent sparse array writes; the stream compiler removes line deduplication so identical repeated operations are not lost. React registry handlers now execute even without a state setter, passing a no-op setter; fixtures verify one invocation, real setters and propagated action errors. Therefore absence of mutable UI state no longer suppresses side effects. React-PDF repeat rendering creates one container around repeated children instead of repeating the container itself.
+
+Evidence: [packages/yaml/src/transform.ts:20-47](https://github.com/vercel-labs/json-render/blob/c6f73d7d5f69acb80fc89faefd12c0865c8603d1/packages/yaml/src/transform.ts#L20-L47) · [packages/yaml/src/transform.ts:119-133](https://github.com/vercel-labs/json-render/blob/c6f73d7d5f69acb80fc89faefd12c0865c8603d1/packages/yaml/src/transform.ts#L119-L133) · [packages/yaml/src/transform.ts:210-244](https://github.com/vercel-labs/json-render/blob/c6f73d7d5f69acb80fc89faefd12c0865c8603d1/packages/yaml/src/transform.ts#L210-L244) · [packages/yaml/src/transform.test.ts:129-281](https://github.com/vercel-labs/json-render/blob/c6f73d7d5f69acb80fc89faefd12c0865c8603d1/packages/yaml/src/transform.test.ts#L129-L281) · [packages/core/src/types.ts:287-308](https://github.com/vercel-labs/json-render/blob/c6f73d7d5f69acb80fc89faefd12c0865c8603d1/packages/core/src/types.ts#L287-L308) · [packages/core/src/types.ts:351-507](https://github.com/vercel-labs/json-render/blob/c6f73d7d5f69acb80fc89faefd12c0865c8603d1/packages/core/src/types.ts#L351-L507) · [packages/core/src/types.ts:884-940](https://github.com/vercel-labs/json-render/blob/c6f73d7d5f69acb80fc89faefd12c0865c8603d1/packages/core/src/types.ts#L884-L940) · [packages/react/src/renderer.tsx:1138-1154](https://github.com/vercel-labs/json-render/blob/c6f73d7d5f69acb80fc89faefd12c0865c8603d1/packages/react/src/renderer.tsx#L1138-L1154) · [packages/react/src/renderer.test.tsx:200-277](https://github.com/vercel-labs/json-render/blob/c6f73d7d5f69acb80fc89faefd12c0865c8603d1/packages/react/src/renderer.test.tsx#L200-L277) · [packages/react-pdf/src/render.tsx:75-108](https://github.com/vercel-labs/json-render/blob/c6f73d7d5f69acb80fc89faefd12c0865c8603d1/packages/react-pdf/src/render.tsx#L75-L108).
+
+**Harness consequence:** Treat generated UI/patches as untrusted declarative data, validate structure and total size/depth/operation counts, and surface rejected/partial streams explicitly. Keep immutable patch receipts and preserve repeated operation semantics. Authorize external actions at host dispatch independently of rendering or state availability; define artifact layout expectations per renderer and verify actual PDF output before delivery.
+
+**Scope and limits:** Scoped static review of patch mutation/budget helpers, React action handlers and PDF repetition in the 75-path comparison. Full catalog/schema validation, Solid rendering and final renderer output were not audited. Fixtures were read, not executed; no UI action, generated artifact or provider operation was run.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [json-render](https://github.com/vercel-labs/json-render); analyzed commit `fc2a696a50a30cb30c878ab1eb65e102487eea0f`; commit date 2026-10-01T14:18:31-03:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--json-render.md).
+<!-- teamagent-analysis:end -->

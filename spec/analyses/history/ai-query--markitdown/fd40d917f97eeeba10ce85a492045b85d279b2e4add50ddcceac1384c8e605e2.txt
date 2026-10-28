@@ -1,0 +1,28 @@
+# markitdown
+
+Priority-based converter registry producing normalized Markdown with explicit fallback diagnostics.
+
+Source: [markitdown](https://github.com/microsoft/markitdown) · Snapshot: `18d48cb287b91610fa131fa67f5c455d6a23f19c` · Category: `ai-query`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [packages/markitdown/src/markitdown/_markitdown.py:226-251](https://github.com/microsoft/markitdown/blob/18d48cb287b91610fa131fa67f5c455d6a23f19c/packages/markitdown/src/markitdown/_markitdown.py#L226-L251)
+- [packages/markitdown/src/markitdown/_markitdown.py:602-695](https://github.com/microsoft/markitdown/blob/18d48cb287b91610fa131fa67f5c455d6a23f19c/packages/markitdown/src/markitdown/_markitdown.py#L602-L695)
+
+The built-in registry includes plain text, archives, HTML and specialized document/media converters. At conversion time, registrations are sorted by priority and tried against stream metadata guesses, followed by an unspecified-format guess. Each converter first declares acceptance. The loop asserts that acceptance did not consume the stream, restores stream position after conversion attempts, collects failed attempts, and returns normalized text on the first successful conversion. If no converter succeeds, it distinguishes conversion failures from unsupported format.
+
+## Harness implications
+
+This is a practical model for an extensible import-tool registry: acceptance, conversion, priority, options and failure details should be explicit interfaces. Use a simple Markdown path for low-cost ingestion while retaining original bytes and converter diagnostics. Specific converters should precede generic text fallbacks. Separate local conversion from optional LLM description or cloud document services so the model router can respect privacy, subscription availability and budget.
+
+## Limitations and tradeoffs
+
+Markdown is a useful interchange representation but can lose table geometry, slide layout, chart structure and page-level coordinates. A converter accepting an input does not establish that it extracted everything relevant. Plugin code and nested archives extend the execution surface, and caught exceptions can conceal why a higher-quality converter failed unless surfaced to the caller. This source review verifies dispatch mechanics, not accuracy or completeness across all supported formats.
+
+## Adoption and validation
+
+Adopt as a baseline conversion adapter and fallback, not the sole canonical data representation. Return parser identity, attempted converters, status and quality indicators alongside text. Route documents needing layout evidence to a structured parser. Test ambiguous MIME types, extensionless files, malformed streams, unsupported content, archive depth limits and preservation of non-ASCII text. Reprocessing should reuse original bytes rather than a previously lossy Markdown export.
+
+Related directions: [import-generation](../import-generation.md) · [memory](../memory.md).

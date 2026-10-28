@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Note parsing preserves citation offsets and isolates cached frontmatter, while publication selection remains separate.** Reviewed commit `0c22a313f5b043b494d622e40cb00058f53dfe9e` (commit date `2026-10-27T18:12:26+01:00`). Compared with `b0b16933418997017eb0044375fe0a1424d52336`; the complete Git comparison contains 5147 changed paths.
+
+The parser shares a fence lexer across code blanking and quotation/link checks, retaining character offsets and newlines when neutralizing code. It handles matching fence characters/lengths and unclosed fences, excludes quoted bodies via the quotation helper and avoids date-shaped tails in longer tokens. Parsing caches at most 256 complete text keys and deep-copies frontmatter before return, preventing one caller from changing another's cached nested metadata. This is an entry-count cap, not a byte cap; regex links/inline code are a constrained Markdown model, and title extraction separately searches raw body text rather than the fence-cleaned headings.
+
+Directory listings are generated in memory with deterministic case-folded title/path ordering, omit replaced archives/type definitions and skip hidden/nested-repository directories. The site wrapper excludes messages/reports and limits instructions depth. Its optional include callback controls file enumeration and whether a subdirectory qualifies; fallback landing selection can still choose that directory's README or sole Markdown file without applying the callback. Titles, descriptions and path labels are interpolated into Markdown without escaping in this helper. The implementation itself says generated addresses do not prove publication/exclusion acceptance; recursion and accumulated output are otherwise unbounded.
+
+Evidence: [src/commonplace/lib/note_parser.py:1-200](https://github.com/zby/commonplace/blob/0c22a313f5b043b494d622e40cb00058f53dfe9e/src/commonplace/lib/note_parser.py#L1-L200) · [src/commonplace/lib/index_directory.py:1-264](https://github.com/zby/commonplace/blob/0c22a313f5b043b494d622e40cb00058f53dfe9e/src/commonplace/lib/index_directory.py#L1-L264) · [tests/commonplace/general/test_note_parser.py:1-205](https://github.com/zby/commonplace/blob/0c22a313f5b043b494d622e40cb00058f53dfe9e/tests/commonplace/general/test_note_parser.py#L1-L205) · [tests/commonplace/indexing/test_index_directory.py:1-181](https://github.com/zby/commonplace/blob/0c22a313f5b043b494d622e40cb00058f53dfe9e/tests/commonplace/indexing/test_index_directory.py#L1-L181).
+
+**Harness consequence:** Adopt offset-preserving masking and immutable cached parse results for evidence tooling, with explicit Markdown-subset limits and total input/cache bytes. Use the same publish/authorization predicate for both a directory and its selected landing, escape generated Markdown and independently verify the final published inventory. Keep generated navigation rebuildable; it must not authorize access or replace original notes/citations.
+
+**Scope and limits:** Static scoped review of note parsing and directory-index generation plus their cached fixtures within a 5,147-path comparison dominated by broader content/workflow changes. Frontmatter, quote matching, filesystem visibility/containment helpers and publication execution were not fully audited or run. This reviews original snapshot 0c22a313f5b043b494d622e40cb00058f53dfe9e; the later checkout HEAD is a separate unreviewed delta.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [commonplace](https://github.com/zby/commonplace); analyzed commit `b0b16933418997017eb0044375fe0a1424d52336`; commit date 2026-10-03T13:04:43+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--commonplace.md).
+Analysis metadata: source [commonplace](https://github.com/zby/commonplace); analyzed commit `0c22a313f5b043b494d622e40cb00058f53dfe9e`; commit date 2026-10-27T18:12:26+01:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--commonplace.md).
 <!-- teamagent-analysis:end -->

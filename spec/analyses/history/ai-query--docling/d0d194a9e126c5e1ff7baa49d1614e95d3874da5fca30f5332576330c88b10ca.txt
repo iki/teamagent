@@ -1,0 +1,44 @@
+# docling
+
+Structured document conversion with explicit partial outcomes, version-sensitive pipeline identity and resource cleanup.
+
+Source: [docling](https://github.com/docling-project/docling) · Snapshot: `53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4` · Category: `ai-query`.
+
+Evidence level: **Source-reviewed; the files below were read, not executed or benchmarked.** Review date: 2026-10-24. The inspected checkout was clean. This updates the 2026-10-04 review of `51fe9ff4578e9f150ef3bc6246433e6092a8ebfb`; the previous report is preserved in [review history](../analyses/history/ai-query--docling/). License and dependency compatibility still require a separate adoption review.
+
+## Verified source evidence
+
+- [Input types, HTTP-header precedence and explicit page/byte limits](https://github.com/docling-project/docling/blob/53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4/docling/document_converter.py#L630-L667).
+- [Conversion outcomes and chained input errors](https://github.com/docling-project/docling/blob/53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4/docling/document_converter.py#L752-L796).
+- [Batch concurrency and pipeline cache](https://github.com/docling-project/docling/blob/53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4/docling/document_converter.py#L878-L948).
+- [Input backend cleanup](https://github.com/docling-project/docling/blob/53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4/docling/document_converter.py#L1005-L1054).
+- [Concrete option serialization for pipeline identity](https://github.com/docling-project/docling/blob/53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4/docling/utils/pipeline_cache.py#L15-L60).
+
+The converter accepts paths, streams, URLs and HttpSource objects. Per-source HTTP headers can override batch header keys. Explicit maximum file size, page count and page range become DocumentLimits, but the API defaults for size and page count remain `sys.maxsize`. `raises_on_error=True` accepts both success and partial-success outcomes; callers must inspect status and errors rather than treating absence of an exception as complete extraction. Invalid input and pipeline initialization failures explicitly unload the input backend where the pipeline did not take ownership.
+
+Pipeline reuse is keyed by pipeline class and an options hash under a lock. The hash serializes concrete runtime option fields, including distinguishing nested subclasses, and incorporates the option class name. A fallback handles serialization failures. The helper uses MD5 as a non-security cache discriminator; it is not an integrity checksum. Batch execution can use a bounded ThreadPoolExecutor based on configured batch size and concurrency, but the inspected loop is not evidence of a hard memory ceiling or safe termination for arbitrary native work.
+
+## Harness implications
+
+Keep Docling as an optional rich parser behind the common importer, especially for layout, OCR and tables. Teamagent should retain original bytes and parser/model/options identity, then derive Markdown and retrieval chunks with explicit coverage. Include concrete backend type and relevant runtime options in cache keys; base-schema serialization can otherwise collapse different model backends. Continue using a separate cryptographic content hash for evidence integrity.
+
+The research text-sync validator is only a coarse text/PDF-type check. A future Docling adapter should add page-level coverage and carry partial results through reports and memory rather than flattening them into success. Credentials in source headers belong in trusted host configuration and must not appear in exported public metadata.
+
+## Limitations and adoption
+
+This source review does not validate OCR accuracy, image completeness, model weights, sandbox isolation or whole-document fidelity. Set practical page/byte/concurrency/time limits explicitly. Test encrypted documents, partial pages, changed concrete model options, initialization failure cleanup, large tables and cancellation. Measure citation fidelity and downstream answers alongside throughput. Cache reuse and fewer exceptions are not extraction-quality guarantees.
+
+Related directions: [import-generation](../import-generation.md) · [import-pipeline](../import-pipeline.md) · [memory](../memory.md) · [models](../models.md).
+
+
+## Change review - 2026-10-28
+
+**Archive cardinality and mixed native/OCR table evidence become explicit.** Reviewed commit `b361d7863fd264369486a1fcbda96c9fe4b58b57` (commit date `2026-10-27T17:11:46Z`). Compared with `53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4`; the complete Git comparison contains 53 changed paths.
+
+DocumentConverter.convert now consumes enough of convert_all to reject a source yielding multiple documents instead of returning only its first member; callers importing generic archives must use the multi-document path. This detects cardinality after conversion has begun, so it is not an up-front archive resource bound. Table extraction now uses page.parsed_page rather than re-decoding native words that OCR may have replaced. Its overlap helper retains surviving OCR lines, drops covered native words, prefers OCR word cells when available and assigns unique token IDs to avoid collisions between native/OCR indices. Synthetic fixtures cover a scanned header with a native value and OCR word/line precedence. Tesseract PNGs now carry 72*scale DPI metadata before and after rotation. VLM provider imports move inside their selected branches; the inspected fresh-process fixture checks optional local libraries remain unloaded and remote-service permission is still required.
+
+Evidence: [docling/document_converter.py:637-724](https://github.com/docling-project/docling/blob/b361d7863fd264369486a1fcbda96c9fe4b58b57/docling/document_converter.py#L637-L724) · [docling/models/stages/table_structure/table_structure_model.py:36-75](https://github.com/docling-project/docling/blob/b361d7863fd264369486a1fcbda96c9fe4b58b57/docling/models/stages/table_structure/table_structure_model.py#L36-L75) · [docling/models/stages/table_structure/table_structure_model.py:264-312](https://github.com/docling-project/docling/blob/b361d7863fd264369486a1fcbda96c9fe4b58b57/docling/models/stages/table_structure/table_structure_model.py#L264-L312) · [docling/models/stages/ocr/tesseract_ocr_cli_model.py:323-384](https://github.com/docling-project/docling/blob/b361d7863fd264369486a1fcbda96c9fe4b58b57/docling/models/stages/ocr/tesseract_ocr_cli_model.py#L323-L384) · [docling/pipeline/vlm_pipeline.py:201-233](https://github.com/docling-project/docling/blob/b361d7863fd264369486a1fcbda96c9fe4b58b57/docling/pipeline/vlm_pipeline.py#L201-L233) · [tests/test_table_structure_model.py:1-61](https://github.com/docling-project/docling/blob/b361d7863fd264369486a1fcbda96c9fe4b58b57/tests/test_table_structure_model.py#L1-L61) · [tests/test_vlm_pipeline_optional_dependencies.py:1-94](https://github.com/docling-project/docling/blob/b361d7863fd264369486a1fcbda96c9fe4b58b57/tests/test_vlm_pipeline_optional_dependencies.py#L1-L94).
+
+**Harness consequence:** Record archive member count and per-member outcomes without silently dropping documents. Keep coordinate systems, OCR/native origin and stable output token identity when producing table evidence; verify numerical values against original pages. Treat lazy imports as dependency isolation, not network authorization. Preserve existing partial-result handling and enforce harness-level archive/size/deadline ceilings before expensive conversion.
+
+**Scope and limits:** Scoped static review of conversion cardinality, table/OCR merge and optional-provider import changes with selected fixtures within a 53-path comparison. No archive conversion, OCR process, model download, provider request or upstream test ran. Service data-model, ASR catalog and dependency changes were not independently audited.

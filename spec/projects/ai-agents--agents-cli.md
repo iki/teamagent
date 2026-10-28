@@ -2,7 +2,7 @@
 
 Source: [agents-cli](https://github.com/google/agents-cli) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `2c3945901e8e5cc933fa94fa44d1d4aaf644b596`; commit timestamp `2026-09-30T11:14:13Z`; 469 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `f4e994044164ff6617f0799900dba0fc091ef0e3` (commit date `2026-10-27T11:23:25+01:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete extension manifest parser and selected credential/readiness/token helpers with the complete auth.py delta; extension loader/vendor/execution, compatibility-range implementation, command launcher and cloud APIs were not audited.
+
+The [extension parser](https://github.com/google/agents-cli/blob/f4e994044164ff6617f0799900dba0fc091ef0e3/src/google/agents/cli/extension/_spec.py#L68-L187) rejects unknown keys, unsupported schema values and invalid skill names/lexical paths, including traversal, control characters and Windows device names. Parsed command and skill collections become tuples in frozen records; installation scope is documented as loader-owned. These are useful descriptor boundaries, but filesystem containment, symlink handling, trusted installation and actual command execution remain in uninspected code. The [compatibility parser](https://github.com/google/agents-cli/blob/f4e994044164ff6617f0799900dba0fc091ef0e3/src/google/agents/cli/extension/_spec.py#L301-L345) intentionally warns and drops an invalid version range, so even an error-on-incompatible preference is not equivalent to a verified compatibility requirement.
+
+[Readiness detection](https://github.com/google/agents-cli/blob/f4e994044164ff6617f0799900dba0fc091ef0e3/src/google/agents/cli/auth.py#L400-L449) treats nonempty API-key environment variables as authenticated without checking them, while ADC checking can mint/refresh a token. The two branches provide different evidence and side effects. Teamagent must label configured credentials, successful authentication and specific model/service entitlement separately, and keep passive discovery distinct from a live probe. The credential singleton and global warning filter also carry process-wide lifetime effects that need explicit ownership in a multi-principal host.
+
+The [token helpers](https://github.com/google/agents-cli/blob/f4e994044164ff6617f0799900dba0fc091ef0e3/src/google/agents/cli/auth.py#L464-L540) can fall back from ADC to gcloud's configured account. ID-token generation retries without the requested audience when the audience-specific CLI command fails; that output must not be reported as satisfying the original audience requirement without validation. The IAM POST has no explicit timeout in this helper and indexes its JSON result without a schema. Preserve principal/audience binding, bounded I/O and validated token-response contracts rather than copying recovery literally. No credential lookup, command, fixture or network call was executed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agents-cli](https://github.com/google/agents-cli); analyzed commit `2c3945901e8e5cc933fa94fa44d1d4aaf644b596`; commit date 2026-09-30T11:14:13Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--agents-cli.md).
+Analysis metadata: source [agents-cli](https://github.com/google/agents-cli); analyzed commit `f4e994044164ff6617f0799900dba0fc091ef0e3`; commit date 2026-10-27T11:23:25+01:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agents-cli.md).
 <!-- teamagent-analysis:end -->

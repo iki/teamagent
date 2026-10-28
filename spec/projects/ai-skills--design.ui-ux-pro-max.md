@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`28b3b8dee8c976df4fa3e94aed4e092ad43fcb03`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/commit/28b3b8dee8c976df4fa3e94aed4e092ad43fcb03). Scope: Full uninstall command and corporate-identity generator tests read. Platform configuration, deletion helpers, generator implementation and provider/image validation were not audited.
+
+The [uninstaller](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/28b3b8dee8c976df4fa3e94aed4e092ad43fcb03/cli/src/commands/uninstall.ts) derives modern and legacy platform locations from shared configuration, includes bundled sibling skills and defaults confirmation to no. It recursively removes matching directories without checking an ownership manifest or local modifications in this function, and catches all platform-configuration errors before falling back to legacy locations. Confirmation of a product name does not prove every matching path is owned by that install; adopt contained, ownership-aware deletion receipts instead.
+
+The [generator fixtures](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/28b3b8dee8c976df4fa3e94aed4e092ad43fcb03/.claude/skills/design/scripts/tests/test_cip_generate.py) isolate the SDK and restore module state, test extension selection, model overrides, no-call prompt-only mode and failure exit codes. They explicitly accept exit zero when only part of a requested set succeeds. Their tiny signature-like byte fixtures are not valid decoded image verification, and a constant model ID assertion does not establish provider availability. Preserve requested/generated/failed item counts and validate bytes independently before publication. No uninstall, provider request, image generation or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [design.ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill); analyzed commit `477bcb28c9812b385cb51a4605ddf30d7b2266e2`; commit date 2026-10-03T23:05:26+07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.ui-ux-pro-max.md).
+Analysis metadata: source [design.ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill); analyzed commit `28b3b8dee8c976df4fa3e94aed4e092ad43fcb03`; commit date 2026-10-26T17:07:27+07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.ui-ux-pro-max.md).
 <!-- teamagent-analysis:end -->

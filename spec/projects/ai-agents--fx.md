@@ -2,7 +2,7 @@
 
 Source: [fx](https://github.com/vercel-labs/fx) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `6bdd49736abd4a85fb6dd60a824e4329784f34c0`; commit timestamp `2026-10-03T13:52:26-04:00`; 992 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `404b5ed7b7da357b889996bf2446846bb906f1a9` (commit date `2026-10-27T13:53:54-04:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete SDK OAuth helpers, custom-provider definition/authorization spec, MCP adapter and host tool-observation wrapper; native engine, subscription authorizer, transport implementation and end-to-end fixtures were not audited.
+
+The [custom-provider adapter](https://github.com/vercel-labs/fx/blob/404b5ed7b7da357b889996bf2446846bb906f1a9/sdk/custom-provider.js#L26-L123) rejects credential-bearing/query/fragment URLs, permits HTTP only for explicit loopback hosts, bounds model metadata and gives the engine an auth-free definition. Its host authorization specification matches the exact normalized chat endpoint. That is a useful separation of engine state from host-held credentials, but redirects and the subscription authorizer are outside this review. The [OAuth helper](https://github.com/vercel-labs/fx/blob/404b5ed7b7da357b889996bf2446846bb906f1a9/sdk/oauth.js#L15-L54) generates cryptographic secrets and S256 challenges and bounds pasted input to 16 KiB; address parsing extracts code/state without checking the pasted origin or comparing state. Those checks must be evidenced at the flow owner before treating a parsed code as an authorized callback.
+
+The [MCP adapter](https://github.com/vercel-labs/fx/blob/404b5ed7b7da357b889996bf2446846bb906f1a9/sdk/mcp.js#L31-L118) bounds pagination to 64 pages and rejects repeated/malformed cursors and duplicate raw tool names. Display names are sanitized and collision-suffixed while execution preserves the raw server name. Every imported tool defaults to non-idempotent despite server hints; correlation identifiers are explicitly separate from progress tokens. Page limits do not bound tools or bytes per page, and the 64 KiB instruction check occurs after resource/prompt text is accumulated. Teamagent still needs bounded ingress and source-tagged, untrusted external context.
+
+The [observation wrapper](https://github.com/vercel-labs/fx/blob/404b5ed7b7da357b889996bf2446846bb906f1a9/sdk/tool-observation.js#L20-L171) caps captured text with UTF-8-safe truncation and makes terminal emission one-shot. Abort can emit a cancelled observation while the awaited host effect continues; an already-aborted signal still invokes the supplied effect. Thus its cancellation event is an observation, not proof of effect termination. Start-event publication is outside the guarded terminal callback, so preservation of effects under a throwing emitter depends on the uninspected emitter contract. No engine, provider, OAuth server or upstream fixture was executed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [fx](https://github.com/vercel-labs/fx); analyzed commit `6bdd49736abd4a85fb6dd60a824e4329784f34c0`; commit date 2026-10-03T13:52:26-04:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--fx.md).
+Analysis metadata: source [fx](https://github.com/vercel-labs/fx); analyzed commit `404b5ed7b7da357b889996bf2446846bb906f1a9`; commit date 2026-10-27T13:53:54-04:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--fx.md).
 <!-- teamagent-analysis:end -->

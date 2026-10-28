@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418`](https://github.com/Donchitos/Claude-Code-Game-Studios/commit/05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418). Scope: Full adopt, test-setup and architecture-review entry skills read. Phase reference files, configuration resolver, review receipts, game engines and test runners were not audited.
+
+The [adoption skill](https://github.com/Donchitos/Claude-Code-Game-Studios/blob/05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418/.claude/skills/adopt/SKILL.md) distinguishes artifact existence from compatibility with its template pipeline and varies required documents by workflow size. The [test setup entry](https://github.com/Donchitos/Claude-Code-Game-Studios/blob/05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418/.claude/skills/test-setup/SKILL.md) preserves existing tests even under force and requires an identified engine before choosing infrastructure. Their actual phase procedures live in unread references; these entry points do not establish correct migration or CI behavior.
+
+The [architecture-review entry](https://github.com/Donchitos/Claude-Code-Game-Studios/blob/05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418/.claude/skills/architecture-review/SKILL.md) links requirements, decisions, stories and tests, demands a partial report on blocked work and checks that a named output exists rather than trusting a fluent agent summary. Existence is still only one receipt: contents, hashes, scope and verification must also be checked. Model names, host tool allowlists and automation modes are source-specific configuration, not Teamagent authority. Adapt compatible-artifact checks and explicit dependency failures without importing its documentation hierarchy. No resolver, agents, game engine, files or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [game-claude.studios](https://github.com/Donchitos/Claude-Code-Game-Studios); analyzed commit `b21fa0f7f289fc3e726cf36fb12b9bc1e7a51e4d`; commit date 2026-09-29T21:32:19+10:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--game-claude.studios.md).
+Analysis metadata: source [game-claude.studios](https://github.com/Donchitos/Claude-Code-Game-Studios); analyzed commit `05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418`; commit date 2026-10-19T13:09:09+11:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--game-claude.studios.md).
 <!-- teamagent-analysis:end -->

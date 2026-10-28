@@ -2,146 +2,16 @@
 
 Source: [plan.mattpocock](https://github.com/mattpocock/skills) · [Analysis](../../projects/ai-skills--plan.mattpocock.md) · [skills](../../skills.md)
 
-Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `d81f3a183412e71a5b1e84ca21bc1a35eea03a60`; commit date: 2026-09-29T13:37:40+01:00; review date: unknown; observed SHA: `59db609eb1e18aaf59b63284d0e52255aff0c63c`.
+Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `59db609eb1e18aaf59b63284d0e52255aff0c63c`; commit date: 2026-10-27T07:44:12Z; review date: 2026-10-28T08:26:04.502Z; observed SHA: `59db609eb1e18aaf59b63284d0e52255aff0c63c`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/mattpocock/skills/compare/d81f3a183412e71a5b1e84ca21bc1a35eea03a60...59db609eb1e18aaf59b63284d0e52255aff0c63c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/mattpocock/skills/compare/59db609eb1e18aaf59b63284d0e52255aff0c63c...59db609eb1e18aaf59b63284d0e52255aff0c63c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
 - Git discovery: updated; source lifecycle: active; upstream availability: available.
 
-## Recent commits (truncated)
+## Recent commits
 
-- [59db609eb1e1](https://github.com/mattpocock/skills/commit/59db609eb1e18aaf59b63284d0e52255aff0c63c) 2026-10-27T07:44:12Z: Close blank issues and route requests by kind (#1169)
-- [ed0de59eb5de](https://github.com/mattpocock/skills/commit/ed0de59eb5de8c2730a650cc69f588ffa64c1040) 2026-10-27T07:39:47Z: setup-matt-pocock-skills: reachable repo, legacy CONTEXT.md, tracker template fixes (#1228)
-- [5beb35b040e3](https://github.com/mattpocock/skills/commit/5beb35b040e3de97e54fa9e386d7e42d15c295c2) 2026-10-19T16:51:40+01:00: chief-of-staff: keep memory in a dated, commit-cited wiki (#1304)
-- [49dd158d1076](https://github.com/mattpocock/skills/commit/49dd158d1076134a641b33efb035946536778336) 2026-10-09T11:56:49+01:00: wizard: template fixes (#1220, #1142, #1081, #1041, #1003) (#1237)
-- [82672251ee9d](https://github.com/mattpocock/skills/commit/82672251ee9d9a0b823202c94a613f5038dd28c9) 2026-10-09T11:56:31+01:00: out-of-scope: retro always loads writing-for-agents (#1240)
-- [b0618bc436ad](https://github.com/mattpocock/skills/commit/b0618bc436ad893b3c5e84e55fba86586d34a404) 2026-10-08T09:44:34+01:00: docs(readme): lead with self-updating installs (#1218)
-- [f3fc5632f401](https://github.com/mattpocock/skills/commit/f3fc5632f401156837ee3872f14fe33ccf1024ea) 2026-10-07T11:22:44+01:00: diagnosing-bugs: prove a forced mutation landed before trusting the red (#1209)
-- [3da8c0111626](https://github.com/mattpocock/skills/commit/3da8c01116264675eeefbd6e9d59c734de9095cc) 2026-10-07T11:22:31+01:00: code-review: search for standards files, foreground sub-agents, tracker doc (#1208)
-- [5b7cade4d689](https://github.com/mattpocock/skills/commit/5b7cade4d68947f34dae71326a0ce89f09e22c9c) 2026-10-07T11:22:16+01:00: fix(setup-matt-pocock-skills): create triage labels, fix glab/gh tracker commands (#1197)
-- [6d6a5b9072f4](https://github.com/mattpocock/skills/commit/6d6a5b9072f47ee7ba1d972d8ce0ee98b7ed4394) 2026-10-07T11:22:07+01:00: implement: fetch a passed ticket reference and state its title (#1196)
-- [95249b0b4978](https://github.com/mattpocock/skills/commit/95249b0b49782349740fd9b8c6ce32b4e59e497a) 2026-10-07T11:21:22+01:00: grilling: word questions so yes accepts the recommendation (#706) (#1193)
-- [3f599139104d](https://github.com/mattpocock/skills/commit/3f599139104dfceabc7754eeb91319802f85e042) 2026-10-07T11:21:08+01:00: tdd: note what each proposed seam catches and misses (#1192)
-- [ad5400b930b2](https://github.com/mattpocock/skills/commit/ad5400b930b297b0c0cb231ff1ffe42a7da666aa) 2026-10-07T11:20:52+01:00: teach: anchor workspace paths, vary quiz answer position (#1183)
-- [8295b8e10d4c](https://github.com/mattpocock/skills/commit/8295b8e10d4cdb6cce772a56dda7b7c37075074d) 2026-10-07T11:20:24+01:00: wayfinder: no triage labels, no placeholder refs, no research PRs (#1181)
-- [5da500e727a5](https://github.com/mattpocock/skills/commit/5da500e727a5878bcd4d3278dfec741e01917652) 2026-10-07T11:02:28+01:00: Merge pull request #1194 from mattpocock/fix/ask-matt-verify-skill
-- [0e1b345683aa](https://github.com/mattpocock/skills/commit/0e1b345683aa137d8e9c343e3573f31cfc185c43) 2026-10-07T11:02:08+01:00: Merge pull request #1198 from mattpocock/wizard-template-fixes
-- [dd400c3ad65e](https://github.com/mattpocock/skills/commit/dd400c3ad65e57c06f05e832e0aac92c7992f34d) 2026-10-07T09:58:43+01:00: Merge pull request #1195 from mattpocock/readme-install-marketplace-update
-- [b645f47de3e1](https://github.com/mattpocock/skills/commit/b645f47de3e17ed3bf60586c9bebb8092e0f79fd) 2026-10-06T20:04:25+01:00: Add changeset for ask-matt reading skills first
-- [868c4cf20cb7](https://github.com/mattpocock/skills/commit/868c4cf20cb7e08bc805c388ff1f305dbedd261a) 2026-10-06T19:07:06+01:00: fix(wizard): template.sh readline, .env quoting, symlinks, EOF and opener warning
-- [954ee7fd7f19](https://github.com/mattpocock/skills/commit/954ee7fd7f1911b79bfa82589b4d35ab6c4b13b8) 2026-10-06T19:04:47+01:00: ask-matt: read a skill's SKILL.md before asserting or skipping its steps
-- [542543a5dae3](https://github.com/mattpocock/skills/commit/542543a5dae33434aa68afdc25b5fb9437a53cc7) 2026-10-06T19:04:41+01:00: docs(readme): run marketplace update if the plugin isn't found
-- [6fd947921b93](https://github.com/mattpocock/skills/commit/6fd947921b935b7e1e69293a200400f0fdd5c15f) 2026-10-06T14:41:22+01:00: Updates
-- [2b47ffcf2385](https://github.com/mattpocock/skills/commit/2b47ffcf2385995a536e43ddc9226e32cf9793d9) 2026-10-06T14:34:56+01:00: More playing around with chief-of-staff skill
-- [2237a047bd95](https://github.com/mattpocock/skills/commit/2237a047bd95abfd1427df94f65165c39e24d3c1) 2026-10-06T13:55:45+01:00: Merge pull request #1170 from mattpocock/issue-triage-action
-- [0f8999f837a5](https://github.com/mattpocock/skills/commit/0f8999f837a5366a19811ef4430c7138f70711d7) 2026-10-06T13:55:26+01:00: Merge pull request #1185 from mattpocock/fix/562-claude-handoff-quoting
-- [a02547cb8e8b](https://github.com/mattpocock/skills/commit/a02547cb8e8bfadc35ce94e7c6c3503c0001be2e) 2026-10-06T13:55:05+01:00: Merge pull request #1190 from mattpocock/out-of-scope-subagent-recursion
-- [4c8c36ba4cae](https://github.com/mattpocock/skills/commit/4c8c36ba4cae3e279c45288b8512eae114d35021) 2026-10-06T13:54:12+01:00: Merge pull request #1189 from mattpocock/fix/implement-skill-tool-wording
-- [4d04daaee3b7](https://github.com/mattpocock/skills/commit/4d04daaee3b71d4f81c37dba2d0a7dc2a611ebfb) 2026-10-06T13:53:57+01:00: docs(scope): subagent recursion is the harness's job, not skills'
-- [c07714b5b735](https://github.com/mattpocock/skills/commit/c07714b5b7359e0eb8fe5005dc1a484701830eb8) 2026-10-06T13:53:46+01:00: Merge pull request #1188 from mattpocock/fix/554-to-tickets-sub-issues
-- [93497a80710a](https://github.com/mattpocock/skills/commit/93497a80710a496b07a335b842fdbb0388d67296) 2026-10-06T13:53:12+01:00: Merge pull request #1187 from mattpocock/fix/468-github-external-pr-list
-- [9e2abf8611a3](https://github.com/mattpocock/skills/commit/9e2abf8611a345efbf779aacb171cff015bcdeb6) 2026-10-06T13:51:49+01:00: to-tickets: tighten sub-issue and Blocked-by wording, drop GitLab and table changes
-- [8e67db21543c](https://github.com/mattpocock/skills/commit/8e67db21543c1ed62b44913302e4a5a1eb341791) 2026-10-06T13:51:45+01:00: setup-matt-pocock-skills: tighten #468 fix text
+No commit evidence available or no changes.
 
 ## Changed paths
 
-- M: `.agents/adr/0002-ship-as-a-claude-code-plugin.md`
-- M: `.agents/install-block.md`
-- A: `.changeset/ask-matt-read-skill-first.md`
-- A: `.changeset/chief-of-staff-wiki.md`
-- A: `.changeset/code-review-standards-and-subagents.md`
-- A: `.changeset/diagnosing-bugs-prove-mutation.md`
-- D: `.changeset/domain-modeling-trigger-context-adr.md`
-- D: `.changeset/fix-yaml-frontmatter-colons.md`
-- A: `.changeset/github-tracker-external-pr-list.md`
-- A: `.changeset/github-tracker-own-repo.md`
-- D: `.changeset/graduate-implement-spec.md`
-- D: `.changeset/graduate-pr.md`
-- D: `.changeset/graduate-retro.md`
-- D: `.changeset/grilling-add-hr-between-questions.md`
-- D: `.changeset/grilling-remove-em-dashes.md`
-- A: `.changeset/grilling-yes-accepts-recommendation.md`
-- A: `.changeset/handoff-temp-dir.md`
-- A: `.changeset/implement-skill-tool-wording.md`
-- A: `.changeset/implement-ticket-reference.md`
-- D: `.changeset/remove-em-dashes-repo-wide.md`
-- D: `.changeset/remove-resolving-merge-conflicts.md`
-- D: `.changeset/rename-context-to-glossary.md`
-- A: `.changeset/setup-reachable-repo-and-tracker-recipes.md`
-- A: `.changeset/setup-tracker-fixes.md`
-- D: `.changeset/skill-tool-invocation-terminology.md`
-- A: `.changeset/tdd-seam-tradeoffs.md`
-- A: `.changeset/teach-quiz-answer-position.md`
-- A: `.changeset/teach-workspace-root.md`
-- A: `.changeset/to-tickets-sub-issues.md`
-- D: `.changeset/user-invoked-skill-invocation.md`
-- D: `.changeset/wait-what-context-map.md`
-- A: `.changeset/wayfinder-labels-refs-research-prs.md`
-- A: `.changeset/wizard-template-fixes-2.md`
-- A: `.changeset/wizard-template-fixes.md`
-- M: `.claude-plugin/plugin.json`
-- A: `.github/ISSUE_TEMPLATE/bug.yml`
-- A: `.github/ISSUE_TEMPLATE/config.yml`
-- A: `.github/ISSUE_TEMPLATE/idea.yml`
-- A: `.github/workflows/needs-info.yml`
-- A: `.github/workflows/triage-label.yml`
-- A: `.out-of-scope/frozen-misc-skills.md`
-- A: `.out-of-scope/harness-name-collisions.md`
-- A: `.out-of-scope/lazy-load-writing-for-agents.md`
-- M: `.out-of-scope/mainstream-issue-trackers-only.md`
-- A: `.out-of-scope/native-question-tool.md`
-- A: `.out-of-scope/new-skills.md`
-- A: `.out-of-scope/subagent-recursion.md`
-- M: `CHANGELOG.md`
-- M: `CLAUDE.md`
-- A: `CONTRIBUTING.md`
-- M: `README.md`
-- A: `SCOPE.md`
-- A: `docs/agents/triage-labels.md`
-- M: `docs/engineering/ask-matt.md`
-- M: `docs/engineering/code-review.md`
-- M: `docs/engineering/codebase-design.md`
-- M: `docs/engineering/diagnosing-bugs.md`
-- M: `docs/engineering/domain-modeling.md`
-- M: `docs/engineering/grill-with-docs.md`
-- M: `docs/engineering/implement-spec.md`
-- M: `docs/engineering/implement.md`
-- M: `docs/engineering/improve-codebase-architecture.md`
-- M: `docs/engineering/pr.md`
-- M: `docs/engineering/prototype.md`
-- M: `docs/engineering/research.md`
-- M: `docs/engineering/resolving-merge-conflicts.md`
-- M: `docs/engineering/retro.md`
-- M: `docs/engineering/setup-matt-pocock-skills.md`
-- M: `docs/engineering/tdd.md`
-- M: `docs/engineering/to-spec.md`
-- M: `docs/engineering/to-tickets.md`
-- M: `docs/engineering/triage.md`
-- M: `docs/engineering/wayfinder.md`
-- M: `docs/engineering/wizard.md`
-- M: `docs/productivity/grill-me.md`
-- M: `docs/productivity/grilling.md`
-- M: `docs/productivity/handoff.md`
-- M: `docs/productivity/teach.md`
-- M: `docs/productivity/to-questionnaire.md`
-- M: `docs/productivity/wait-what.md`
-- M: `docs/productivity/writing-for-agents.md`
-- M: `package.json`
-- M: `skills/engineering/ask-matt/SKILL.md`
-- M: `skills/engineering/code-review/SKILL.md`
-- M: `skills/engineering/diagnosing-bugs/SKILL.md`
-- M: `skills/engineering/implement/SKILL.md`
-- M: `skills/engineering/setup-matt-pocock-skills/SKILL.md`
-- M: `skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md`
-- M: `skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md`
-- M: `skills/engineering/setup-matt-pocock-skills/triage-labels.md`
-- M: `skills/engineering/tdd/SKILL.md`
-- M: `skills/engineering/to-tickets/SKILL.md`
-- M: `skills/engineering/wayfinder/SKILL.md`
-- M: `skills/engineering/wizard/template.sh`
-- A: `skills/in-progress/chief-of-staff/SKILL.md`
-- A: `skills/in-progress/chief-of-staff/agents/openai.yaml`
-- M: `skills/in-progress/claude-handoff/SKILL.md`
-- M: `skills/productivity/grilling/SKILL.md`
-- M: `skills/productivity/handoff/SKILL.md`
-- M: `skills/productivity/teach/SKILL.md`
+No path evidence available or no changes.

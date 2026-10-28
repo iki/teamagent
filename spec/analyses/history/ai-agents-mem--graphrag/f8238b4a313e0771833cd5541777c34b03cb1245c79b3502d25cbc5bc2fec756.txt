@@ -1,0 +1,40 @@
+# graphrag
+
+Community-summary map/reduce retrieval for broad corpus synthesis with explicit token/call accounting.
+
+Source: [graphrag](https://github.com/microsoft/graphrag) · Snapshot: `769542fbf1d8e5b4c6a8677fefc34621c87894c5` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [packages/graphrag/graphrag/query/structured_search/global_search/search.py:142-212](https://github.com/microsoft/graphrag/blob/769542fbf1d8e5b4c6a8677fefc34621c87894c5/packages/graphrag/graphrag/query/structured_search/global_search/search.py#L142-L212)
+
+Global search asks its context builder for chunks and records context-building model calls and token usage. It launches map responses over those chunks, emits callback events, aggregates map costs, and passes the intermediate results to a reduce response. The returned result contains the answer, original context records, map responses, reduce context, elapsed time and per-category usage. This is directly implemented multi-stage synthesis, not merely a vector query wrapped in an answer prompt.
+
+## Harness implications
+
+Use this shape for questions such as recurring themes, disagreements across many documents or an overview of a large body of research. Precomputed community summaries can reduce the amount of raw material considered repeatedly, while map/reduce creates an inspectable chain of intermediate evidence. Retain source links through each stage and expose partial completion. Budget both preprocessing and query-time model calls; repeated broad synthesis may justify the investment whereas one exact lookup will not.
+
+## Limitations and tradeoffs
+
+The quality of the final answer is constrained by what community summaries retained. A minority detail can disappear before query time and cannot be recovered by a polished reduce answer. Parallel map calls can increase instantaneous quota use and latency variance. Counting calls and tokens improves observability but does not show whether the result is faithful. The source review covers global search mechanics, not a complete comparison of local, DRIFT or basic modes.
+
+## Adoption and validation
+
+Adopt as an optional broad-research strategy, not the default path for coding or precise fact retrieval. Route by task and expected corpus coverage. Validate theme coverage, minority/contradictory evidence, attribution fidelity, unanswerable queries and interrupted map batches. Compare source-grounded completeness with direct hybrid retrieval at a matched cost budget, and regenerate summaries when source permissions or content change.
+
+Related directions: [memory](../memory.md) · [import-generation](../import-generation.md) · [models](../models.md).
+
+
+## Change review — 2026-10-27
+
+**Bulk cache reads preserve namespace and corruption-cleanup semantics.** Reviewed commit `c600ff80b77b9b62c47d539a3ac9569e95d8949b` (commit date `2026-10-20T08:21:20-07:00`) against `769542fbf1d8e5b4c6a8677fefc34621c87894c5`. The complete Git comparison contains 22 changed paths.
+
+The complete comparison includes the cache API and three concrete backends, cache tests/documentation, version/dependency metadata and a dependency-maintenance script. `get_many` deduplicates keys and omits absent or invalid values. SQLite dispatches once to a worker, opens one connection and splits SQL parameters into batches of 500, rather than issuing one connection per key. Its invalid-entry cleanup conditions deletion on namespace, key and the exact payload observed, so a replacement written after the read is not deleted. The default compatibility implementation still gathers all distinct requests concurrently; SQL batch size does not establish a bound on total input or resident result memory. Read fixtures cover namespace separation, duplicate keys, a 1,037-key case, invalid JSON/envelopes, replacement preservation and concurrent reads/writes. The benchmark is explicitly opt-in and warm: 1,000 entries, seven rounds, setup excluded, no machine-dependent threshold. No benchmark result was reproduced here. The previous global-search architecture findings remain historical evidence; the changed scope concerns cache transport, not retrieval quality.
+
+Evidence: [packages/graphrag-cache/graphrag_cache/cache.py:34-49](https://github.com/microsoft/graphrag/blob/c600ff80b77b9b62c47d539a3ac9569e95d8949b/packages/graphrag-cache/graphrag_cache/cache.py#L34-L49) · [packages/graphrag-cache/graphrag_cache/memory_cache.py:29-43](https://github.com/microsoft/graphrag/blob/c600ff80b77b9b62c47d539a3ac9569e95d8949b/packages/graphrag-cache/graphrag_cache/memory_cache.py#L29-L43) · [packages/graphrag-cache/graphrag_cache/noop_cache.py:25-36](https://github.com/microsoft/graphrag/blob/c600ff80b77b9b62c47d539a3ac9569e95d8949b/packages/graphrag-cache/graphrag_cache/noop_cache.py#L25-L36) · [packages/graphrag-cache/graphrag_cache/sqlite_cache.py:105-169](https://github.com/microsoft/graphrag/blob/c600ff80b77b9b62c47d539a3ac9569e95d8949b/packages/graphrag-cache/graphrag_cache/sqlite_cache.py#L105-L169) · [packages/graphrag-cache/graphrag_cache/sqlite_cache.py:210-232](https://github.com/microsoft/graphrag/blob/c600ff80b77b9b62c47d539a3ac9569e95d8949b/packages/graphrag-cache/graphrag_cache/sqlite_cache.py#L210-L232) · [tests/unit/cache/test_cache_get_many.py:1-107](https://github.com/microsoft/graphrag/blob/c600ff80b77b9b62c47d539a3ac9569e95d8949b/tests/unit/cache/test_cache_get_many.py#L1-L107) · [tests/unit/cache/test_sqlite_cache.py:77-130](https://github.com/microsoft/graphrag/blob/c600ff80b77b9b62c47d539a3ac9569e95d8949b/tests/unit/cache/test_sqlite_cache.py#L77-L130) · [tests/unit/cache/test_sqlite_cache.py:183-237](https://github.com/microsoft/graphrag/blob/c600ff80b77b9b62c47d539a3ac9569e95d8949b/tests/unit/cache/test_sqlite_cache.py#L183-L237) · [tests/unit/cache/test_cache_benchmark.py:1-98](https://github.com/microsoft/graphrag/blob/c600ff80b77b9b62c47d539a3ac9569e95d8949b/tests/unit/cache/test_cache_benchmark.py#L1-L98) · [packages/graphrag-cache/README.md:43-66](https://github.com/microsoft/graphrag/blob/c600ff80b77b9b62c47d539a3ac9569e95d8949b/packages/graphrag-cache/README.md#L43-L66) · [scripts/open-deps-update-issue.ts:15-28](https://github.com/microsoft/graphrag/blob/c600ff80b77b9b62c47d539a3ac9569e95d8949b/scripts/open-deps-update-issue.ts#L15-L28).
+
+**Harness consequence:** Give memory/import caches a bulk-read contract with explicit missing/invalid outcomes, namespace separation and compare-before-delete cleanup. Bound total batch input, concurrency and decoded bytes in Teamagent rather than copying the unbounded generic gather. Preserve warm/cold provenance if comparing stores, and do not use a cache throughput number as evidence of better answers.
+
+**Scope and limits:** Scoped source and fixture inspection against the complete 22-path inventory; no upstream code, tests or benchmark executed. Dependency/version files were classified by inventory, not independently audited. Existing retrieval quality and global-search limitations remain unchanged.

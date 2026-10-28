@@ -25,6 +25,14 @@ Keep as a research reference for a later specialized-local-model program. Separa
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`9c5dd9641915417508a99e9409f973600c843f70`](https://github.com/peremartra/Rearchitecting-LLMs/commit/9c5dd9641915417508a99e9409f973600c843f70). Scope: Full root/Appendix D/Chapter 12 READMEs and complete utils.py delta read. Notebooks, model weights and reported experiments were not reproduced.
+
+The [measurement helper delta](https://github.com/peremartra/Rearchitecting-LLMs/blob/9c5dd9641915417508a99e9409f973600c843f70/utils.py) removes implicit autocast, uses the loaded model's dtype and a monotonic timer, trims padding and defaults to equal generated-token work. Warm-up and CUDA synchronization remain explicit. These controls make comparison intent clearer, but fixed-length generation is a workload choice and cannot stand in for ordinary early-stopping task latency or quality. The whole helper, device variants and input edge cases were not re-audited.
+
+[Appendix D](https://github.com/peremartra/Rearchitecting-LLMs/blob/9c5dd9641915417508a99e9409f973600c843f70/APPD/README.md) describes repeated baselines to estimate noise. [Chapter 12](https://github.com/peremartra/Rearchitecting-LLMs/blob/9c5dd9641915417508a99e9409f973600c843f70/CH12/README.md) explicitly separates serving feasibility from model quality and illustrative hosting arithmetic from measured traces. Adapt those distinctions and record model/tokenizer/device/dtype/workload identity; do not infer that pruning improves Teamagent outcomes or costs. No notebooks, GPU benchmarks, model download, license acceptance or inference was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [rearchitecting-llms](https://github.com/peremartra/Rearchitecting-LLMs); analyzed commit `fa7027b6be9f68e8689dd0d561735a72f347eb33`; commit date 2026-10-01T17:55:13+02:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-info--rearchitecting-llms.md).
+Analysis metadata: source [rearchitecting-llms](https://github.com/peremartra/Rearchitecting-LLMs); analyzed commit `9c5dd9641915417508a99e9409f973600c843f70`; commit date 2026-10-25T10:51:58+01:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-info--rearchitecting-llms.md).
 <!-- teamagent-analysis:end -->

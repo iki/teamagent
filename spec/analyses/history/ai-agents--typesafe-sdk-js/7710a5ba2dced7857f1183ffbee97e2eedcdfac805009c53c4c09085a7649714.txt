@@ -1,0 +1,32 @@
+# typesafe-sdk-js
+
+Source: [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **focused source review**. Snapshot `66880ccded6cb642dc1809620c2b108c33730214` (2026-09-15T18:16:33Z). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+Typed decision API client with guarded construction and retry policy; keep it behind a replaceable DecisionProvider.
+
+## Source evidence inspected
+
+- [src/client.ts, lines 41–64](https://github.com/typesafe-ai/typesafe-sdk-js/blob/66880ccded6cb642dc1809620c2b108c33730214/src/client.ts#L41-L64)
+- [src/client.ts, lines 70–147](https://github.com/typesafe-ai/typesafe-sdk-js/blob/66880ccded6cb642dc1809620c2b108c33730214/src/client.ts#L70-L147)
+
+## Observed design and algorithms
+
+The client defaults to the TypeSafe endpoint and jev-latest, requires a credential, and refuses browser use unless an explicit dangerous override is set. Retry configuration validates counts, durations, probability-like jitter fractions and status sets; it copies retryable status sets to isolate mutation. This separates transport reliability from the decision schema presented by the application.
+
+## Harness decision
+
+Use on the host for finite choices such as importer selection, tool shortlist ranking and model-tier routing. Log state/schema/model digests and return validated decisions to deterministic code. A local classifier or constrained JSON model should implement the same harness contract.
+
+## Limits and tradeoffs
+
+This SDK is a network client, not local Jev model weights or an inference engine. Retry safety for an inference call does not make subsequent tool side effects safe to repeat. Typed responses do not prove semantic correctness, calibration, authorization, or adequate candidate recall.
+
+## Validation before adoption
+
+Test malformed probability payloads, missing credentials, timeout/cancellation, rate limits and unsupported schema versions. Calibrate choices against labeled tasks before using confidence as an execution gate. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
+
+Related directions: [decisions](../decisions.md) · [models](../models.md).

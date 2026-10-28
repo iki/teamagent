@@ -1,0 +1,38 @@
+# graft
+
+Source: [graft](https://github.com/NanoNets/Graft) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `fe30ead39d5e6f0c921018d364da2bdbc9d4b3ad`; commit timestamp `2026-09-30T12:57:02+05:30`; 357 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/NanoNets/Graft/blob/fe30ead39d5e6f0c921018d364da2bdbc9d4b3ad/README.md)):
+
+> You correct it, and by the next session it has forgotten. Trail manages your CLAUDE.md and AGENTS.md so it doesn't. &bull;&nbsp; Every correction you make becomes a rule your agent keeps.
+
+Build/package evidence: [package.json](https://github.com/NanoNets/Graft/blob/fe30ead39d5e6f0c921018d364da2bdbc9d4b3ad/package.json)
+
+License evidence: [LICENSE](https://github.com/NanoNets/Graft/blob/fe30ead39d5e6f0c921018d364da2bdbc9d4b3ad/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Extractor-specific caches avoid cross-version thrashing while Windows LSP launch narrows execution inheritance.** Reviewed commit `25ea4c7488b6f931f39ec8b95de0070ef954f5a8` (commit date `2026-10-27T21:15:11+05:30`). Compared with `fe30ead39d5e6f0c921018d364da2bdbc9d4b3ad`; the complete Git comparison contains 810 changed paths.
+
+Extraction cache files now include a stamp derived from sorted sibling graph-module names/content plus package version, allowing multiple installed versions to retain separate memos; pruning keeps two newest matching sidecars. Unknown identity disables memo use, while a package-version-only fallback is explicitly weaker for local edits. Cache reads check version, extractor and files-object shape but do not deeply validate cached nodes/edges or bound decoded file size, so disposable cache integrity is still a host boundary. Windows npm-style .cmd launch extracts the JavaScript entry and starts it with a selected executable directly, stripping NODE_OPTIONS case-insensitively instead of invoking a command shell. This special treatment applies only to recognized Windows shims; other commands inherit the environment. LSP requests resolve null on timeout/error, which becomes empty call edges, without cancelling the underlying request. The HTTP surface validates a bounded webhook body and queues a child-process review, but publishes private-page bearer tokens in query strings.
+
+Evidence: [src/graph/extract-cache.ts:65-100](https://github.com/NanoNets/Graft/blob/25ea4c7488b6f931f39ec8b95de0070ef954f5a8/src/graph/extract-cache.ts#L65-L100) · [src/graph/extract-cache.ts:143-227](https://github.com/NanoNets/Graft/blob/25ea4c7488b6f931f39ec8b95de0070ef954f5a8/src/graph/extract-cache.ts#L143-L227) · [src/graph/lsp/client.ts:35-91](https://github.com/NanoNets/Graft/blob/25ea4c7488b6f931f39ec8b95de0070ef954f5a8/src/graph/lsp/client.ts#L35-L91) · [src/graph/lsp/client.ts:121-132](https://github.com/NanoNets/Graft/blob/25ea4c7488b6f931f39ec8b95de0070ef954f5a8/src/graph/lsp/client.ts#L121-L132) · [src/graph/lsp/client.ts:191-215](https://github.com/NanoNets/Graft/blob/25ea4c7488b6f931f39ec8b95de0070ef954f5a8/src/graph/lsp/client.ts#L191-L215) · [src/app/server.ts:62-84](https://github.com/NanoNets/Graft/blob/25ea4c7488b6f931f39ec8b95de0070ef954f5a8/src/app/server.ts#L62-L84) · [src/app/server.ts:94-128](https://github.com/NanoNets/Graft/blob/25ea4c7488b6f931f39ec8b95de0070ef954f5a8/src/app/server.ts#L94-L128) · [src/app/server.ts:148-158](https://github.com/NanoNets/Graft/blob/25ea4c7488b6f931f39ec8b95de0070ef954f5a8/src/app/server.ts#L148-L158).
+
+**Harness consequence:** Key extraction reuse by verified parser/runtime/dependency identity and source hash; validate and size-limit cached records before replay. Launch language servers only from trusted host configuration with an allowlisted environment, and record unavailable/timed-out enrichment rather than silently equating it with no edges. Preserve Teamagent's prohibition on sensitive app state in public URLs; page access must use an authenticated channel. Queue admission, durable receipts and child-process ownership require separate review.
+
+**Scope and limits:** Scoped static inspection of cache identity, LSP process/request handling and HTTP admission in the 810-path comparison. Full extraction/resolution, page-token implementation, queue/worker internals and relevant Windows fixtures were not audited in this pass. No server, language server, source checkout code or performance test was executed.

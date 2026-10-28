@@ -4,6 +4,34 @@ The core rule is to keep user intent and authorization separate from model outpu
 
 This is an architectural threat analysis, not a penetration test or a claim that the reviewed projects are secure. Recommendations below are grounded in specific source mechanisms and their stated trust assumptions.
 
+## Adapter authority and credential findings reviewed 2026-10-28
+
+The [OpenClaude Gemini-auth review](projects/ai-agents--claude.fork.openclaude.md) distinguishes component-safe endpoint construction from account binding. Credential-file presence and cached ADC results do not establish current authentication, and selected environment hints do not isolate an SDK's ambient credential chain. This is the same canonical repository/revision as the separate OpenClaude tool-pool report, with a different inspected scope; it is not independent corroboration.
+
+[LiteLLM](projects/ai-agents-proxy--litellm.md), reviewed at `0a1dbc0fb4f6b52aec97700dddb457adf91d1cbd`, clears selected server-owned provider credentials/configuration when a client changes the endpoint and blocks unresolved identity references there. That provider-specific boundary does not establish every fallback's authority. [Agentic Bug Hunter](projects/ai-agents--agentic-bug-hunter.md), reviewed at `16dabf0cea8a43ad9d42733283e0fd8ed74313c0`, keeps values out of some summaries but still exposes credential material through malformed-input errors, partial redaction, process arguments and child environment helpers. Bind credentials to approved destinations and audit every propagation surface, not only logs.
+
+[Warp's MCP OAuth adapter](projects/ai-agents--warp.md) preserves refresh tokens omitted by a refresh response, but an in-memory save plus queued persistence is not a durable write acknowledgement. Its local clear operation also does not prove stored-token deletion. [Paperclip's approval page](projects/ai-agents--paperclip.md) explicitly describes broad board access while retaining the challenge token in URLs and navigation state; a displayed organization is audit context, not necessarily the grant scope. Require explicit expiry, consumption, persistence and deletion outcomes at the host boundary.
+
+[ZeroClaw](projects/ai-agents--zeroclaw.md) separates declared egress destinations from saved instance grants and refuses to extend existing grants during binding. Its typed artifact projection still needs path, identity and access validation. [Zero](projects/ai-agents--zero.md) records an unsandboxed direct-launch path explicitly and separates retained capture from emitted output; display redaction alone does not establish spill-file privacy. These are scoped source findings, not tested platform guarantees.
+
+## Additional source findings reviewed 2026-10-28
+
+The [Antfu attachment fallback](projects/ai-skills--bundle.antfu.md) illustrates why avoiding log output is insufficient credential protection: a bearer header supplied as a process argument remains exposed through that interface. Trusted upload adapters need a protected credential channel, bounded bytes/time, structural response validation and explicit destination authorization. Treat the new observability entries in [Awesome OpenRouter](projects/ai-info--awesome-openrouter.md) as discovery leads; a catalog claim to trace every prompt does not establish acceptable retention, tenant isolation or redaction.
+
+[Bifrost](projects/ai-agents-proxy--bifrost.md) binds connection pools to policy fingerprints and closes idle pools when configuration changes; call-site enforcement, existing in-flight requests and separate passthrough routes still need independent review. [OpenEval](projects/ai-eval--openeval.md) pins an allowed public IPv4 destination and checks TLS SNI, but the reviewed parser leaves a complete oversized-header case outside its size check and does not establish container-wide egress enforcement. [Mantis](projects/ai-security--mantis.md) supplies mocked isolation-creation tests, which should accompany real runtime acceptance checks.
+
+The [minimal harness and guard review](analyses/unreviewed/ai-info--best-of-agent-harnesses.md) found shell-prefix approval, full output capture before clipping, non-atomic transcript writes and fail-open guard paths. These are educational/advisory mechanisms, not production authorization, isolation or spend controls. [Codex Security's workflow](projects/ai-security--codex-security.md) usefully separates patch identity, consequence, evidence strength and advisory recommendations; the model's recommendation never grants merge authority. [REA's protocol review](analyses/unreviewed/ai-security--rea.md) similarly distinguishes validated shapes and cleanup acknowledgements from independently demonstrated runtime behavior.
+
+[OpenSandbox](projects/ai-agents-sandbox--opensandbox.md), [Optio](projects/ai-agents-swarm--optio.md) and [Shadowbroker](projects/ai-agents-swarm--shadowbroker.md) supply useful credential-transport and origin/locality fixtures. Cookie or subprotocol transport alone does not establish token lifetime, duplicate-credential rejection, per-message resource authorization or revocation. Reject policy-required proxy configuration failures rather than silently taking the direct route illustrated in [CodexBar Win](projects/ai-agents-tokens--codexbar-win.md). Retained request bodies, query values and raw errors in [LLM Observer](projects/ai-agents-proxy--llm-observer-proxy-go.md) and other diagnostic paths need explicit privacy controls.
+
+[E2B](projects/ai-agents-sandbox--e2b.md), [AgentEnv](projects/ai-agents-sandbox--agentenv.md) and [Anthropic's sandbox runtime](projects/ai-agents-sandbox--anthropic-sandbox-runtime.md) reinforce separate limits for queues, open connections, waiting and in-flight cancellation. Error-path rollback is weaker than cancellation-safe ownership. [Cloudflare Computer's stream parser](projects/ai-agents-sandbox--cloudflare-computer.md) and the reviewed OpenRouter SDK type declarations require semantic validation before dispatch; shape descriptions and casts are not enforcement. [OSV.dev's storage adapter](projects/ai-security--osv.dev.md) shows why create-only writes still need replay-safe input streams and explicit ownership of shared clients.
+
+[AISOC's proxy helper](projects/ai-security--aisoc.md) checks the immediate peer before accepting forwarded addresses; identity transport, connector credentials and downstream tenant enforcement remain separate responsibilities. [CodeQL's Go registry helper](projects/ai-security--codeql.md) shows that certificate-file creation failures, inherited environment and direct-network fallbacks require explicit policy handling. [Awesome LLM Apps' Excaliflow server](projects/ai-info--awesome-llm-apps.md) illustrates the difference between lexical path containment and resolved filesystem containment, and between a localhost URL in documentation and an explicitly loopback-bound listener.
+
+[TypeSafe's Python SDK](projects/ai-skills--typesafe-sdk-python.md) reference-counts asset scopes, but a shared client's attachments are not automatically isolated per async task. Its lenient JSON helper, configuration and multipart builder still need strict transport schemas, URL policy and byte bounds. [Ontos' adapters](projects/ai-spec--techsio.ontos.md) illustrate scoped service ownership and transaction-bound publication, while multi-statement test cleanup still needs an isolated destination and a partial-failure contract. These patterns do not select dependencies or alter Teamagent's adopted stack.
+
+The [Awesome MCP Servers delta](projects/ai-info--awesome-mcp-servers.md) is discovery evidence only. Catalog descriptions of signed receipts, read-only tools, logged-in browsers, payment caps or approval prompts do not establish enforcement. A byte-identical response for two principals is not sufficient evidence of unauthorized disclosure; a typed classifier can be wrong even without generating prose. Before adapting a listed service, inspect the exact implementation, principal/resource binding, transport, executable package identity, cancellation and replay behavior. Never turn mutable installation snippets, catalog labels or a model-supplied confirmation field into authorization.
+
 ## Boundaries that must remain explicit
 
 | Boundary | Main failure modes | Required control |
@@ -83,6 +111,14 @@ Skill, prompt, router, parser, and model changes should enter an evaluation bran
 
 Verify tenant/workspace separation, forged channel events, path traversal/symlinks, archive bombs, redirect/DNS private-address fetches, secret leakage through errors and media, unauthorized tool invocations, duplicate side effects after retry, cancellation/reaping, stale approval after artifact mutation, and incomplete-scan reporting. Use malicious fixtures in isolated test identities rather than real accounts. Measure false positives, missed known cases, escaped grants, and recovery time; publish limitations and coverage alongside the result. The target is a recoverable, observable system with enforced boundaries, not an unsupported claim of universal prompt-injection immunity.
 
+## Scoped evidence updates: 2026-10-27
+
+[Adrian](https://github.com/secureagentics/Adrian) ([review](projects/ai-security--adrian.md)) separates injected instructions from user intent and checks prompt/alert taxonomy consistency. Classification remains advisory; deterministic constraints precede dispatch. [Bumblebee](https://github.com/perplexityai/bumblebee) ([review](projects/ai-security--bumblebee.md)) demonstrates affected-range disagreement between a feed and verified advisory pages: preserve original ranges, retrieval dates and coverage instead of inferring omitted versions are safe.
+
+[Octocat](https://github.com/mcollina/skills) ([review](projects/ai-skills--node.mcollina.md)) supplies confidential destination and uncertain-POST reconciliation patterns; bind each effect to the authorized remote/repository. [Apify](https://github.com/apify/agent-skills) ([review](projects/ai-skills--api-apify.md)) removes model-controlled target headers but its allowlist-prefix wording needs exact parsed-origin enforcement here. [Better Icons](https://github.com/better-auth/better-icons) ([review](analyses/unreviewed/ai-skills--assets-icons.better.md)) needs independent SVG/path validation. [Anatomy](https://github.com/wheresryan22/anatomy) ([review](analyses/unreviewed/ai-skills--render-anatomy.md)) trusts pages given to its browser helpers; these are not an untrusted-content sandbox.
+
+The [EthicalML policy directory](https://github.com/EthicalML/awesome-artificial-intelligence-regulation) ([review](projects/ai-info--awesome-artificial-intelligence-regulation.md)) is discovery evidence, not authenticated legal/account policy verification.
+
 <!-- coverage:start -->
 ## Project coverage
 
@@ -110,14 +146,6 @@ Every associated project has its own report. Source-reviewed associations reflec
 | [trivy](https://github.com/aquasecurity/trivy) | [Report](projects/ai-security--trivy.md) | source-reviewed |
 <!-- coverage:end -->
 
-<!-- analysis-additions:start -->
-## Newly catalogued sources
-
-These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
-
-- [rea](analyses/unreviewed/ai-security--rea.md) ([source](https://github.com/morluto/rea)).
-<!-- analysis-additions:end -->
-
 ## Media training and recovery authority
 
 The [media policy contract](media-training.md) and [runtime contract](media-runtime.md) apply before ranking and again before content upload, including voice enrollment. General/shared model improvement is distinct from the requested private clone. Unknown, stale or mismatched policy is blocked. A known training-permitted route requires the invocation's explicit `--allow-training`; backend/model overrides, stored priorities and plan JSON cannot grant it. This option never changes provider sharing settings. Scoped documentary exclusions require current account/key binding; user assertions remain assertions, and authentication alone proves no exclusion.
@@ -125,14 +153,6 @@ The [media policy contract](media-training.md) and [runtime contract](media-runt
 Backend lists and plans are passive. `media diagnose` performs explicit authenticated metadata requests. Voice consent, retention, cloud egress, commercial rights and training exclusion remain separate decisions. Local inference requires trusted provisioned resources; Python socket restrictions are not an OS firewall.
 
 HeyGen mutations journal an encrypted receipt before submission. Responses preserve bounded redacted HTTP evidence and absent IDs as null. A completed artifact reference is encrypted before URL validation/download; public output discloses only a safe origin/path summary. Download recovery uses the reviewed exact HTTPS origin/path allowlist, no authorization or cookies, no redirects, bounded bytes/time, WAV integrity checks and atomic exclusive publication. It cannot synthesize again. Uncertain attempts require reconciliation; new filenames/keys do not authorize automatic retries. See the runtime contract for the narrower coverage of other adapters and expired URL recovery limits.
-
-<!-- analysis-additions:start -->
-## Newly catalogued sources
-
-These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
-
-- [rea](analyses/unreviewed/ai-security--rea.md) ([source](https://github.com/morluto/rea)).
-<!-- analysis-additions:end -->
 
 ## Source refresh: 2026-10-27
 

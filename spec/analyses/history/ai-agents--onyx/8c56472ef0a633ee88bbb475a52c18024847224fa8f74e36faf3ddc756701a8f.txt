@@ -1,0 +1,25 @@
+# onyx
+
+Source: [onyx](https://github.com/onyx-dot-app/onyx) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `f1fbc7a135eb844e21e13f29eaa8acfd83a608e9`; commit timestamp `2026-10-03T04:38:47Z`; 8,342 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/onyx-dot-app/onyx/blob/f1fbc7a135eb844e21e13f29eaa8acfd83a608e9/README.md)):
+
+> "LLMs know about everything public, but what if it could also know what's going on in our team? I want an AI coworker, not an AI new hire." Onyx** is the knowledge/context layer for your team and AI agents.
+
+Build/package evidence: [backend/onyx/server/features/build/sandbox/image/templates/outputs/web/package.json](https://github.com/onyx-dot-app/onyx/blob/f1fbc7a135eb844e21e13f29eaa8acfd83a608e9/backend/onyx/server/features/build/sandbox/image/templates/outputs/web/package.json); [cli/go.mod](https://github.com/onyx-dot-app/onyx/blob/f1fbc7a135eb844e21e13f29eaa8acfd83a608e9/cli/go.mod); [cli/pyproject.toml](https://github.com/onyx-dot-app/onyx/blob/f1fbc7a135eb844e21e13f29eaa8acfd83a608e9/cli/pyproject.toml); [desktop/package.json](https://github.com/onyx-dot-app/onyx/blob/f1fbc7a135eb844e21e13f29eaa8acfd83a608e9/desktop/package.json); [desktop/src-tauri/Cargo.toml](https://github.com/onyx-dot-app/onyx/blob/f1fbc7a135eb844e21e13f29eaa8acfd83a608e9/desktop/src-tauri/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/onyx-dot-app/onyx/blob/f1fbc7a135eb844e21e13f29eaa8acfd83a608e9/LICENSE) Classification hint: not classified; inspect source. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

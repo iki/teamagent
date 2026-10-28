@@ -1,0 +1,142 @@
+{
+  "createdAt": "2026-10-04T19:55:49.463528+00:00",
+  "previousSetup": {
+    "path": "data/extractor-benchmarks/setup/runtime-inventory.json",
+    "sha256": "0bf03389a3234654077c48ca08f23169cded2fb1cae9a923241f3a4d7012299f"
+  },
+  "previousFollowup": {
+    "path": "data/extractor-benchmarks/setup/runtime-followup.json",
+    "sha256": "4ee4ed896d0005bc7dfefa378a55ac7832feba02ec5f9db446f0a89c7bff91d8"
+  },
+  "candidateConfig": {
+    "path": ".cache/extractor-candidates.json",
+    "sha256": "610407315fc414f14e494db94ec6e37cb335bf4fad7111d154097b33504736ea",
+    "profiles": [
+      "xberg-native",
+      "xberg-auto",
+      "marker-fast-text",
+      "marker-balanced",
+      "mineru-flash",
+      "mineru-basic",
+      "docling-fast-text",
+      "docling-accurate-ocr",
+      "opendataloader-xycut",
+      "opendataloader-structured",
+      "xberg-ocr-text"
+    ]
+  },
+  "compatibilityLauncher": {
+    "path": "app/imports/marker-windows.py",
+    "sha256": "55153a17b7eddb999506785ae6fd2da02b832e2fdabf5ef0e8c8f4f9cf580de4",
+    "packagePins": {
+      "marker-pdf": "2.0.0",
+      "surya-ocr": "0.22.1"
+    },
+    "purpose": "Windows Job Object owns CLI and detached helpers, preserving exit status while avoiding unsafe upstream interpreter-exit cleanup. Changes lifecycle only, not extraction or model logic."
+  },
+  "setupCorrections": [
+    "Initial direct Marker balanced interruption was followed by an isolated direct CLI success; the importer failure was diagnosed as transient EBUSY during staging cleanup, not proof of parsing failure.",
+    "Bun ignored fs.rm maxRetries in the observed fixture. An explicit bounded cleanup retry was required and the earlier failed smoke receipts remain preserved.",
+    "The original inventory read-only wording means package source was not edited. Some isolated Python invocations initially relied on PYTHONDONTWRITEBYTECODE, which -I ignores; final Python profile arguments explicitly include -B to suppress bytecode writes.",
+    "Initial Xberg Markdown OCR discarded eleven lines through dictionary filtering. The additional xberg-ocr-text profile changes Tesseract output format to text before final Markdown rendering, without modifying extractor code."
+  ],
+  "smokeReceipts": [
+    {
+      "path": "data/extractor-benchmarks/setup/adapter-smoke-1791143123940.json",
+      "sha256": "c50fdf8cef60717610442249113f34feafb86add636e617e01c3efd91785e31c",
+      "results": [
+        {
+          "id": "mineru-flash",
+          "seconds": 8.3434826,
+          "markdownCharacters": 223,
+          "images": 0,
+          "parserVersion": "teamagent-extractor/1;mineru;mineru-flash;4.0.10;060ca74bf6ce17f44111c99db52fc4226249fad2e5b4d6c7e09524047f26654e",
+          "warnings": []
+        },
+        {
+          "id": "mineru-basic",
+          "seconds": 17.0549551,
+          "markdownCharacters": 225,
+          "images": 0,
+          "parserVersion": "teamagent-extractor/1;mineru;mineru-basic;4.0.10;243cccc945a0b1ba9dc2f8dcd43c755c95cac4d093b8c4bed64a8485acbdb0e2",
+          "warnings": []
+        },
+        {
+          "id": "docling-fast-text",
+          "seconds": 35.6557941,
+          "markdownCharacters": 225,
+          "images": 0,
+          "parserVersion": "teamagent-extractor/1;docling;docling-fast-text;2.132.0;2afb21ebe117602dadb6def02f7da602673f9122133737e66bee6c0d55827119",
+          "warnings": []
+        },
+        {
+          "id": "docling-accurate-ocr",
+          "seconds": 36.3030699,
+          "markdownCharacters": 225,
+          "images": 0,
+          "parserVersion": "teamagent-extractor/1;docling;docling-accurate-ocr;2.132.0;00efb3dd278656d688a46e757eea7999a44d361b1c5d745e507da275a326d578",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "path": "data/extractor-benchmarks/setup/adapter-smoke-1791143239087.json",
+      "sha256": "0d05838a9feb03cd7b10c22bacf172cfe7d7fb326b9b27c675cd29ec5ad8916e",
+      "results": [
+        {
+          "id": "marker-balanced",
+          "seconds": 59.8936635,
+          "error": "EBUSY: resource busy or locked, rm 'C:\\_\\teamagent\\.cache\\extractors-smoke\\adapter-marker-balanced\\extractor-Qvoc57'"
+        },
+        {
+          "id": "marker-fast-text",
+          "seconds": 32.5064721,
+          "markdownCharacters": 195,
+          "images": 0,
+          "parserVersion": "teamagent-extractor/1;marker;marker-fast-text;2.0.0;27153b17677f00a240a09ca160f271bf24d7f5268e91cc8f1bc1222b93b1d81c",
+          "warnings": [
+            "Extractor produced 1 sidecar files that were not imported; only selected Markdown and raster images are retained."
+          ]
+        }
+      ]
+    },
+    {
+      "path": "data/extractor-benchmarks/setup/adapter-smoke-1791143457747.json",
+      "sha256": "5ca195de0a037a6fb825c525310f0dabdce3e3eb6ce8d7c2ac8cf1bebfb9b4ee",
+      "results": [
+        {
+          "id": "marker-balanced",
+          "seconds": 59.140328000000004,
+          "error": "EBUSY: resource busy or locked, rm 'C:\\_\\teamagent\\.cache\\extractors-smoke\\adapter-marker-balanced\\extractor-RP4pfe'"
+        }
+      ]
+    },
+    {
+      "path": "data/extractor-benchmarks/setup/adapter-smoke-1791143716905.json",
+      "sha256": "c56ff04e293b1cf0bad38d03a6ef4fd830a1548dd7f9a322f6deaf388b79f241",
+      "results": [
+        {
+          "id": "marker-balanced",
+          "seconds": 63.9439055,
+          "markdownCharacters": 198,
+          "images": 0,
+          "parserVersion": "teamagent-extractor/1;marker;marker-balanced;2.0.0;394575c04d138053be80e5e6f02902c7abb40492e8529eacaea5cc62318ed3b0",
+          "warnings": [
+            "Extractor produced 1 sidecar files that were not imported; only selected Markdown and raster images are retained."
+          ]
+        }
+      ]
+    }
+  ],
+  "xbergOcrTextPilot": {
+    "profilePath": ".cache/extractor-xberg-ocr-text-candidate.json",
+    "profileSha256": "9c6716d03fa6327cf46dfcb99a344733c98b2b9a1282702d1291390410cf41be",
+    "result": {
+      "exitCode": 0,
+      "seconds": 1.2349999999860302
+    },
+    "markdownSha256": "60268c20bfd6e5a3236c6bb8b50c48504b9cce11b765f18efe5e84d12fe2be57",
+    "note": "Setup pilot only; measured quality/speed must come from the separate benchmark matrix."
+  },
+  "measurementReadiness": "All setup downloads and smoke conversions completed; benchmark-owned helper process absence checked before timing."
+}

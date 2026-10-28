@@ -1,0 +1,36 @@
+# create.openapi-to-skills
+
+Source: [create.openapi-to-skills](https://github.com/neutree-ai/openapi-to-skills) · Category: [ai-agents-skills](../categories/ai-agents-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `37696dfa4fc926c5cb527f89a4ba4a5ab3e0d247`; commit timestamp `2026-06-23T11:55:18+08:00`; 102 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/neutree-ai/openapi-to-skills/blob/37696dfa4fc926c5cb527f89a4ba4a5ab3e0d247/README.md)):
+
+> Convert OpenAPI specifications into Agent Skills format - structured markdown documentation that minimizes context size for AI agents. AI agents often need domain-specific knowledge to complete tasks. Rather than writing custom prompts or building MCP tools from scratch, leveraging existing API documentation is a practical approach - and OpenAPI is the de facto standard with battle-tested specifications maintained over years.
+
+Build/package evidence: [package.json](https://github.com/neutree-ai/openapi-to-skills/blob/37696dfa4fc926c5cb527f89a4ba4a5ab3e0d247/package.json)
+
+License evidence: [LICENSE](https://github.com/neutree-ai/openapi-to-skills/blob/37696dfa4fc926c5cb527f89a4ba4a5ab3e0d247/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-skills**. Its category places it in the candidate set for skills, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`dd3bedcab932a766e86039ad7d0115d58f98987d`](https://github.com/neutree-ai/openapi-to-skills/commit/dd3bedcab932a766e86039ad7d0115d58f98987d). Scope: Full generated-validator reducer, shipped validation runtime and validator tests read; parser/overlay/compact generation changes not fully reviewed.
+
+The [reducer](https://github.com/neutree-ai/openapi-to-skills/blob/dd3bedcab932a766e86039ad7d0115d58f98987d/src/validator.ts) emits operation-local input metadata and reachable schemas; the [offline runtime](https://github.com/neutree-ai/openapi-to-skills/blob/dd3bedcab932a766e86039ad7d0115d58f98987d/runtime/validate.mjs) supplies useful misspelling/filter-shape hints, checks required/type/enum values and separates unknown-key warnings from failures. [Fixtures](https://github.com/neutree-ai/openapi-to-skills/blob/dd3bedcab932a766e86039ad7d0115d58f98987d/src/validator.test.ts) cover those paths. This is a reduced advisory checker, not complete OpenAPI/JSON Schema validation: the reducer maps oneOf/anyOf to one representation, the runtime accepts any matching variant, omitted constraints are not enforced, unresolved/cyclic references and over-depth reductions can become unconstrained, and body-bearing operations omit separate parameter checks. Reads and recursive validation also lack comprehensive resource limits. Adapt human-readable diagnostics, but keep Effect Schema plus semantic authorization at Teamagent transport boundaries and expose unsupported validation coverage. No generated skill/API call or test was executed.
+
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [create.openapi-to-skills](https://github.com/neutree-ai/openapi-to-skills); analyzed commit `dd3bedcab932a766e86039ad7d0115d58f98987d`; commit date 2026-10-14T14:41:57+08:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--create.openapi-to-skills.md).
+<!-- teamagent-analysis:end -->

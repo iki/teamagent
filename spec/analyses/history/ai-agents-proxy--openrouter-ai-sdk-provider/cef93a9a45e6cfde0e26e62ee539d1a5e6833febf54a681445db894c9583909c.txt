@@ -1,0 +1,25 @@
+# openrouter-ai-sdk-provider
+
+Source: [openrouter-ai-sdk-provider](https://github.com/OpenRouterTeam/ai-sdk-provider) · Category: [ai-agents-proxy](../categories/ai-agents-proxy.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `1b22b05352cb0f9243a6c3fdd326038dd3705544`; commit timestamp `2026-09-19T07:14:33-07:00`; 167 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/OpenRouterTeam/ai-sdk-provider/blob/1b22b05352cb0f9243a6c3fdd326038dd3705544/README.md)):
+
+> The OpenRouter provider for the Vercel AI SDK gives access to over 300 large language models on the OpenRouter chat and completion APIs. This release line supports `ai@^7.0.0`, requires Node.js 22 or newer, and is ESM-only.
+
+Build/package evidence: [package.json](https://github.com/OpenRouterTeam/ai-sdk-provider/blob/1b22b05352cb0f9243a6c3fdd326038dd3705544/package.json)
+
+License evidence: [LICENSE](https://github.com/OpenRouterTeam/ai-sdk-provider/blob/1b22b05352cb0f9243a6c3fdd326038dd3705544/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-proxy**. Its category places it in the candidate set for models, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [models](../models.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

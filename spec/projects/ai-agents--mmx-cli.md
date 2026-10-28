@@ -2,7 +2,7 @@
 
 Source: [mmx-cli](https://github.com/MiniMax-AI/cli) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `06e47c70b76f419196678367dae62acca4c94076`; commit timestamp `2026-09-29T20:36:31+08:00`; 191 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-27 scoped update review
+
+Reviewed commit `38aba5f26173dd1065b115b221d79c9ddd87c6bb` (commit date `2026-10-19T18:26:46+08:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete 29-path inventory; focused passive discovery, Oh my Pi setup, publication/rollback and OAuth refresh coordination. Read relevant current implementation and fixture ranges. Other agent adapters, full text SDK changes, installer execution and provider behavior remain unverified.
+
+[Agent detection](https://github.com/MiniMax-AI/cli/blob/38aba5f26173dd1065b115b221d79c9ddd87c6bb/src/agent/availability.ts#L24-L57) checks file presence/executability on PATH and exact process environment markers without launching the candidate. [Fixtures](https://github.com/MiniMax-AI/cli/blob/38aba5f26173dd1065b115b221d79c9ddd87c6bb/test/agent/availability.test.ts#L25-L113) reject directories and near-match markers and distinguish Pi from Oh my Pi. These are discoverability hints, not proof of identity, authentication or working capabilities.
+
+[Oh my Pi setup](https://github.com/MiniMax-AI/cli/blob/38aba5f26173dd1065b115b221d79c9ddd87c6bb/src/agent/configurator.ts#L990-L1054) edits native YAML, preserves unrelated structure and validates expected object/array shapes. [Prepared configuration application](https://github.com/MiniMax-AI/cli/blob/38aba5f26173dd1065b115b221d79c9ddd87c6bb/src/agent/configurator.ts#L1337-L1462) rechecks targets and old contents, creates backups, writes exclusive temporary files, and avoids rolling back over another writer's changed content. [Tests](https://github.com/MiniMax-AI/cli/blob/38aba5f26173dd1065b115b221d79c9ddd87c6bb/test/agent/oh-my-pi.test.ts#L24-L130) cover preservation, dry runs, malformed YAML redaction and invalid profiles. The code writes credentials into target agent configuration; Teamagent must keep its own command-scoped credential policy rather than assume this configuration strategy is suitable.
+
+[Refresh coordination](https://github.com/MiniMax-AI/cli/blob/38aba5f26173dd1065b115b221d79c9ddd87c6bb/src/auth/refresh.ts#L102-L131) shares a pending refresh by resolved configuration path, region and refresh token, including persistence before waiters resume. [Fixtures](https://github.com/MiniMax-AI/cli/blob/38aba5f26173dd1065b115b221d79c9ddd87c6bb/test/auth/refresh-concurrency.test.ts#L95-L207) preserve old credentials on failures and separate stores/tokens/regions. This is process-local coordination. The [configuration writer](https://github.com/MiniMax-AI/cli/blob/38aba5f26173dd1065b115b221d79c9ddd87c6bb/src/config/loader.ts#L40-L61) uses a fixed temporary name and returns an empty object on read/parse failures; it is not a cross-process transactional credential store. Transport retries and automatic reauthentication advice also need review before use for rotating-token uncertainty. Borrow passive discovery and prepared-change verification, retaining explicit account diagnostics and protected credential storage.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mmx-cli](https://github.com/MiniMax-AI/cli); analyzed commit `06e47c70b76f419196678367dae62acca4c94076`; commit date 2026-09-29T20:36:31+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--mmx-cli.md).
+Analysis metadata: source [mmx-cli](https://github.com/MiniMax-AI/cli); analyzed commit `38aba5f26173dd1065b115b221d79c9ddd87c6bb`; commit date 2026-10-19T18:26:46+08:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mmx-cli.md).
 <!-- teamagent-analysis:end -->

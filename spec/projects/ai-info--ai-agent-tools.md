@@ -2,7 +2,7 @@
 
 Source: [ai-agent-tools](https://github.com/cporter202/ai-agent-tools) · Category: [ai-info](../categories/ai-info.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `017b11024524bdb97a2c636c53b1069ce4ebb3e3`; commit timestamp `2025-12-09T10:20:01-05:00`; 2 tracked paths.
 
@@ -24,6 +24,12 @@ This entry was catalogued under **ai-info**. Its category places it in the candi
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-27
+
+Reviewed commit `e7ac56a24f9888db24378fd3d6ccdd33464f2704` (commit date `2026-10-20T00:13:21-04:00`). Complete README delta; two added promotional images were inventoried but not visually examined.
+
+The [catalog](https://github.com/cporter202/ai-agent-tools/blob/e7ac56a24f9888db24378fd3d6ccdd33464f2704/README.md) adds APIMesa promotion and schema validation/inference, request conversion and webhook-replay listings, alongside paid-newsletter advertising. These are catalog claims, not service implementation evidence. The described lightweight JSON Schema subset does not replace Teamagent Effect Schema boundaries. Keep discovery status: entitlement, data policy, licenses and linked-service behavior were not verified. No backend is adopted.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ai-agent-tools](https://github.com/cporter202/ai-agent-tools); analyzed commit `017b11024524bdb97a2c636c53b1069ce4ebb3e3`; commit date 2025-12-09T10:20:01-05:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-info--ai-agent-tools.md).
+Analysis metadata: source [ai-agent-tools](https://github.com/cporter202/ai-agent-tools); analyzed commit `e7ac56a24f9888db24378fd3d6ccdd33464f2704`; commit date 2026-10-20T00:13:21-04:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-info--ai-agent-tools.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,44 @@
+# office-parser
+
+Source: [office-parser](https://github.com/harshankur/officeParser) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `43124945d65b90fd89ec942fdb5c6a3e8413649e`; commit timestamp `2026-09-29T23:24:28+02:00`; 522 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/harshankur/officeParser/blob/43124945d65b90fd89ec942fdb5c6a3e8413649e/README.md)):
+
+> A robust, strictly-typed **Node.js and Browser** library for parsing office files into a rich **Abstract Syntax Tree (AST)** and generating high-fidelity output in multiple formats. Parses:** `docx` · `pptx` · `xlsx` · `odt` · `odp` · `ods` · `odg` · `pdf` · `rtf` · `csv` · `md` · `html` · `epub` · `tex` (LaTeX, including Overleaf project zips)
+
+Build/package evidence: [package.json](https://github.com/harshankur/officeParser/blob/43124945d65b90fd89ec942fdb5c6a3e8413649e/package.json)
+
+License evidence: [LICENSE](https://github.com/harshankur/officeParser/blob/43124945d65b90fd89ec942fdb5c6a3e8413649e/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**CSV delimiter inference and PDF work budgets expose distinct partial-result and cancellation limits.** Reviewed commit `57f2d144916191ef0cca8677f40cf169195a66d7` (commit date `2026-10-26T23:11:44+01:00`). Compared with `43124945d65b90fd89ec942fdb5c6a3e8413649e`; the complete Git comparison contains 639 changed paths.
+
+CSV parsing now sniffs comma, semicolon, tab or pipe over at most 50 records and 64 KiB of JavaScript characters, with a decimal-comma tie rule. It writes the chosen delimiter back into the supplied configuration, so reusing that object can carry one document's inference into another. The full input is still decoded and parsed synchronously after a single entry abort check, retaining both record arrays and AST nodes; the sample cap is not an input, memory or cancellation bound. Unclosed quotes are accepted, bare carriage returns are ignored outside quotes and empty cells are omitted while retained cells carry original row/column indices.
+
+The reviewed PDF budget code weights long text items, separates annotation/operator limits, races requests against a stop signal and reports limit warnings. Its elapsed-work timer applies to the dedicated process's CPU clock, not same-process wall time. Operator filtering hooks private _renderPageChunk only when its expected shape is present; otherwise getOperatorList remains unbounded. Even the hooked path receives a whole chunk before filtering, counts selected operators rather than all upstream work, and admits bounded free path operators. These are useful partial-extraction controls, not a complete hostile-document resource envelope.
+
+Evidence: [src/parsers/CsvParser.ts:1-167](https://github.com/harshankur/officeParser/blob/57f2d144916191ef0cca8677f40cf169195a66d7/src/parsers/CsvParser.ts#L1-L167) · [src/parsers/PdfParser.ts:800-947](https://github.com/harshankur/officeParser/blob/57f2d144916191ef0cca8677f40cf169195a66d7/src/parsers/PdfParser.ts#L800-L947) · [src/parsers/PdfParser.ts:949-1066](https://github.com/harshankur/officeParser/blob/57f2d144916191ef0cca8677f40cf169195a66d7/src/parsers/PdfParser.ts#L949-L1066).
+
+**Harness consequence:** Use fresh per-document parser configuration and record inferred delimiter/ambiguity plus retained cell coordinates. Enforce actual input bytes, output nodes and cancellation in a host-owned worker/process. Pin and test any PDF.js private hook, reject an unavailable bounded mode or mark it explicitly, and retain per-page limit warnings/coverage instead of presenting partial text as a complete source.
+
+**Scope and limits:** Static scoped CSV parser and PDF work-budget review within the 639-path comparison. Other format parsers, PDF process implementation, complete layout/OCR pipeline and integration fixtures were not audited or executed; no extraction-quality or resource benchmark is claimed.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [office-parser](https://github.com/harshankur/officeParser); analyzed commit `57f2d144916191ef0cca8677f40cf169195a66d7`; commit date 2026-10-26T23:11:44+01:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-query--office-parser.md).
+<!-- teamagent-analysis:end -->

@@ -26,6 +26,21 @@ Borrow the context-assembly boundary even if the underlying stores differ. Make 
 
 Related directions: [memory](../memory.md) · [skills](../skills.md) · [evolution](../evolution.md) · [models](../models.md).
 
+
+## Change review - 2026-10-28
+
+**Context assembly records planner status and served-source dedup but model relevance remains advisory.** Reviewed commit `54d4c0fac91fae976325ebed618d7278ff9b5c77` (commit date `2026-10-27T22:31:53+08:00`). Compared with `9d9bc85e1f6a15afa7f23b0d7bf114a7c61cad14`; the complete Git comparison contains 1995 changed paths.
+
+Context assembly resolves account-owned expansion/rewrite planners, retains expansion/rewrite usage/status, reads bodies only for planned tiers and shares a request-scoped query embedding cache across fan-out. If the rewrite declares no_relevant it blanks rendered text and does not cool those URIs in the recall ledger, avoiding dedup suppression of unseen memory. The result still returns plan.entries, so consumers must distinguish selected entries from actually served context. Session/reranker failures degrade through logs, and planner relevance is not an authorization or factual-coverage decision.
+
+ZIP parsing delegates to safe_extract_zip and DirectoryParser, preserves extraction-temp ownership for the tree builder and filters metadata entries when choosing a root. The shown adapter provides no independent aggregate expansion/depth budget. Extraction runs in a background thread, while cleanup catches Exception rather than cancellation's BaseException path; cancellation can leave work/temp ownership unresolved unless the caller joins it. RetryEmbedder refuses double wrapping and keeps one concrete provider target, but total deadlines and retry classification remain delegated to retry helpers.
+
+Evidence: [openviking/retrieve/context_assembler/pipeline.py:42-243](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/retrieve/context_assembler/pipeline.py#L42-L243) · [openviking/parse/parsers/zip_parser.py:50-148](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/parse/parsers/zip_parser.py#L50-L148) · [openviking/models/embedder/retry_embedder.py:14-58](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/models/embedder/retry_embedder.py#L14-L58).
+
+**Harness consequence:** Preserve selected/served source manifests and explicit degraded planner/session status; a model no-relevant verdict must not erase evidence availability. Require account-scoped retrieval/rewrites and independently bounded fan-out. Archive expansion needs joined cancellation-safe temp leases, aggregate byte/entry/nesting limits and exact source identity. Keep retry policy owned once per target with a total request deadline.
+
+**Scope and limits:** Static scoped context orchestration, ZIP adapter and embedding retry wrapper within the 1,995-path comparison. Gather/budget/render helpers, safe ZIP extraction, directory recursion, retry algorithms and OAuth enforcement were not fully audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [open-viking](https://github.com/volcengine/OpenViking); analyzed commit `9d9bc85e1f6a15afa7f23b0d7bf114a7c61cad14`; commit date 2026-10-03T19:10:51+08:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--open-viking.md).
+Analysis metadata: source [open-viking](https://github.com/volcengine/OpenViking); analyzed commit `54d4c0fac91fae976325ebed618d7278ff9b5c77`; commit date 2026-10-27T22:31:53+08:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--open-viking.md).
 <!-- teamagent-analysis:end -->

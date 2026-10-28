@@ -1,0 +1,37 @@
+# bundle.pskoett
+
+Source: [bundle.pskoett](https://github.com/pskoett/pskoett-ai-skills) · Category: [ai-skills](../categories/ai-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `92a21ceb0c9e97ea9b4783de6c1955f40960aae6`; commit timestamp `2026-10-03T11:05:22+02:00`; 305 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/pskoett/pskoett-ai-skills/blob/92a21ceb0c9e97ea9b4783de6c1955f40960aae6/README.md)):
+
+> A collection of skills for AI agents. Follows the Agent Skills specification and ships an Agent Plugins 1.0 portable package. Every skill in this collection is built around a philosophy — a principle that addresses a specific failure mode in how agents work today. `plan-interview` is about collaborative planning: before codebase exploration starts, user and agent run a structured interview to align on constraints, scope, risk, and success criteria — and to surface whether a preparatory refactor should come before the main change. `intent-framed
+
+Build/package evidence: [skills/context-decay/evals/fixtures/promotion/package.json](https://github.com/pskoett/pskoett-ai-skills/blob/92a21ceb0c9e97ea9b4783de6c1955f40960aae6/skills/context-decay/evals/fixtures/promotion/package.json); [skills/self-healing/evals/fixtures/lockfile-mismatch/package.json](https://github.com/pskoett/pskoett-ai-skills/blob/92a21ceb0c9e97ea9b4783de6c1955f40960aae6/skills/self-healing/evals/fixtures/lockfile-mismatch/package.json); [skills/self-healing/evals/fixtures/recurring-heal/pyproject.toml](https://github.com/pskoett/pskoett-ai-skills/blob/92a21ceb0c9e97ea9b4783de6c1955f40960aae6/skills/self-healing/evals/fixtures/recurring-heal/pyproject.toml)
+
+License evidence: No root license file identified; reuse rights unverified. Classification hint: not classified; inspect source. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-skills**. Its category places it in the candidate set for skills; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`878b0e48bca74849c6219815882e75e60cfa2b72`](https://github.com/pskoett/pskoett-ai-skills/commit/878b0e48bca74849c6219815882e75e60cfa2b72). Scope: Full session-context and pre-flight-check skills read. History tools, hooks, relevance classifier, learning stores and evaluation runners were not audited.
+
+The [session-context procedure](https://github.com/pskoett/pskoett-ai-skills/blob/878b0e48bca74849c6219815882e75e60cfa2b72/skills/session-context/SKILL.md) sets shared retrieval budgets across workers, excludes the current session, requires source reading beyond snippets and distinguishes reported, historically verified and currently checked evidence. It treats no useful match as a valid result and unavailable history as a different state. Historical access does not authorize redistribution, and retrieved permission claims cannot replace current instructions.
+
+The [pre-flight guide](https://github.com/pskoett/pskoett-ai-skills/blob/878b0e48bca74849c6219815882e75e60cfa2b72/skills/pre-flight-check/SKILL.md) separately surfaces saved learning/evaluation signals and explicitly labels incremental caching as future work. Its recurrence threshold is a triage signal, not independent evidence for promotion; its automatic hook and compounding-benefit claims were not verified by reading the hook or running outcomes. Adapt bounded, source-cited retrieval and conflict handling without creating duplicate stores or assuming startup automation exists. No session history, hooks, learning data or tests were accessed or executed.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [bundle.pskoett](https://github.com/pskoett/pskoett-ai-skills); analyzed commit `878b0e48bca74849c6219815882e75e60cfa2b72`; commit date 2026-10-27T16:30:12Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.pskoett.md).
+<!-- teamagent-analysis:end -->

@@ -29,6 +29,14 @@ This repository review establishes SDK behavior, not the complete hosted infrast
 
 [Agents](../agents.md) · [Generation](../generation.md) · [Security](../security.md)
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`ee355b765ac0e884fbeaa69e4b44f4c7c58ed6b1`](https://github.com/e2b-dev/e2b/commit/ee355b765ac0e884fbeaa69e4b44f4c7c58ed6b1). Scope: Full retry wrapper and command-input stream handle read. Retry tests, underlying transport deadlines, sandbox networking and service idempotency were not audited.
+
+The [retry wrapper](https://github.com/e2b-dev/e2b/blob/ee355b765ac0e884fbeaa69e4b44f4c7c58ed6b1/packages/js-sdk/src/retry.ts) avoids retrying direct streaming bodies, distinguishes connection-establishment failures from uncertain post-write errors, honors explicit Should-Retry and bounds backoff by a monotonic wait budget. Abortable sleeps and injected clocks/randomness support deterministic fixtures. However, Request-form replay safety relies on the documented openapi-fetch producer contract; generic callers could pass live streams. The local deadline controls retries/waits rather than aborting an in-flight fetch, and resolveRetries has no upper cap. Server idempotency and total request deadlines still require independent enforcement.
+
+The [input handle](https://github.com/e2b-dev/e2b/blob/ee355b765ac0e884fbeaa69e4b44f4c7c58ed6b1/packages/js-sdk/src/sandbox/commands/inputHandle.ts) copies binary input, preserves send order and makes close await service acknowledgement. Its documentation correctly says send means queued rather than delivered. The queue is unbounded and provides no producer backpressure; timeout zero can keep it alive indefinitely. Adapt explicit acknowledgement and uncertain-effect semantics with bounded queues, owned cancellation and tested transport deadlines. No sandbox, process input, provider or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [e2b](https://github.com/e2b-dev/e2b); analyzed commit `a9e893bcb9b44cc53778a45975c58fdfa0f0da7e`; commit date 2026-10-02T14:22:20-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--e2b.md).
+Analysis metadata: source [e2b](https://github.com/e2b-dev/e2b); analyzed commit `ee355b765ac0e884fbeaa69e4b44f4c7c58ed6b1`; commit date 2026-10-26T16:23:01Z; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--e2b.md).
 <!-- teamagent-analysis:end -->

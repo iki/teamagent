@@ -4,6 +4,16 @@ Source: [openrig](https://github.com/mvschwarz/openrig) · [agents](../../agents
 
 Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-agents--openrig.md).
 
+## 2026-10-28 scoped source review
+
+Source: [openrig](https://github.com/mvschwarz/openrig); inspected saved discovery revision `84d6bbdbd92abdcfe818e7d3f8097b4cc31ac175`. This is an initial scoped review of this newly catalogued source.
+
+**Scope:** Full CLI session-name parser, provider-readiness helper and agent-validation CLI tests read. Gateway admission, daemon provider selection, client transport, schema validator and actual provider authentication were not audited.
+
+The [session-name contract](https://github.com/mvschwarz/openrig/blob/84d6bbdbd92abdcfe818e7d3f8097b4cc31ac175/packages/cli/src/session-name.ts) separates lexical classification from gateway admission. External references are classified before canonical member/rig names, and additional at-signs remain in the rig component for a later lookup to reject. It deliberately does not trim or validate the full character set. Human-seat classification must occur at callers; neither a human-shaped identifier nor successful parsing authenticates a person. The comments describe three mirrored copies and a parity test, but that parity test and the admission boundary were not inspected.
+
+The [provider-readiness helper](https://github.com/mvschwarz/openrig/blob/84d6bbdbd92abdcfe818e7d3f8097b4cc31ac175/packages/cli/src/provider-auth.ts) distinguishes absent tools, local credential presence and unresolved configuration. An explicitly non-OpenAI provider can use a validated environment-variable name, and its success message correctly disclaims provider acceptance and propagation to managed seats. Other configuration layers remain unresolved. Raw caught error messages enter diagnostics, so the execution adapter needs redaction and bounds. The [agent CLI tests](https://github.com/mvschwarz/openrig/blob/84d6bbdbd92abdcfe818e7d3f8097b4cc31ac175/packages/cli/test/agent.test.ts) exercise a fake daemon that accepts/rejects by an INVALID substring; they do not validate production schemas or authorization. Adapt honest readiness states and separate name parsing, identity and admission; no daemon, provider or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openrig](https://github.com/mvschwarz/openrig); analyzed commit `none`; commit date unknown; review date unknown; depth unreviewed. [Maintenance record](../repos/ai-agents--openrig.md).
+Analysis metadata: source [openrig](https://github.com/mvschwarz/openrig); analyzed commit `84d6bbdbd92abdcfe818e7d3f8097b4cc31ac175`; commit date 2026-10-27T10:12:52-07:00; review date 2026-10-28T09:27:32.685Z; depth reviewed. [Maintenance record](../repos/ai-agents--openrig.md).
 <!-- teamagent-analysis:end -->

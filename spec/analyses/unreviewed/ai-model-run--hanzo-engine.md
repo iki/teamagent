@@ -4,6 +4,19 @@ Source: [hanzo-engine](https://github.com/hanzoai/engine) · [models](../../mode
 
 Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-model-run--hanzo-engine.md).
 
+
+## Initial source review - 2026-10-28
+
+**Embedding endpoint exposes real dispatch while batch bounds and smoke-test assertions remain incomplete.** Reviewed commit `8d686834290ac43b60b8ab9f4e639dc1da50582c` (commit date `2026-10-17T19:57:25-07:00`). The enumerated snapshot contains 1740 tracked paths.
+
+The embedding endpoint normalizes string/token/image inputs, rejects empty outer input and zero requested dimensions, dispatches distinct engine embedding request variants with code execution disabled, and aggregates usage using saturating counters. It waits for all inputs through join_all with no per-request admission bound visible in this handler; a failing item returns an error after the batch has been awaited. Requested dimensions truncate the vector prefix and renormalize it, with a small arithmetic unit fixture, but that mechanism alone does not establish retrieval quality or that every chosen model was trained for truncation. The handler sends serialized request/response values to optional logging hooks; logging configuration and redaction need inspection before private inputs. The standalone test_embeddings.py script prints HTTP errors, placeholder warnings and dimension mismatches yet can return True, so its final 'completed' status is not an acceptance signal.
+
+Evidence: [hanzo-server-core/src/embeddings.rs:65-175](https://github.com/hanzoai/engine/blob/8d686834290ac43b60b8ab9f4e639dc1da50582c/hanzo-server-core/src/embeddings.rs#L65-L175) · [hanzo-server-core/src/embeddings.rs:178-245](https://github.com/hanzoai/engine/blob/8d686834290ac43b60b8ab9f4e639dc1da50582c/hanzo-server-core/src/embeddings.rs#L178-L245) · [hanzo-server-core/src/embeddings.rs:338-444](https://github.com/hanzoai/engine/blob/8d686834290ac43b60b8ab9f4e639dc1da50582c/hanzo-server-core/src/embeddings.rs#L338-L444) · [test_embeddings.py:1-123](https://github.com/hanzoai/engine/blob/8d686834290ac43b60b8ab9f4e639dc1da50582c/test_embeddings.py#L1-L123).
+
+**Harness consequence:** Keep this as an experimental model/embedding adapter. Bound items, bytes and in-flight embedding calls at the harness boundary, require finite vectors and exact cardinality/dimensions, and preserve model/weight/tokenizer identity in index keys. Verify logging is disabled or redacted for private source text. Replace informational smoke output with assertions before claiming protocol conformance; evaluate semantic recall for any shortened embedding dimensions.
+
+**Scope and limits:** First scoped static review of the embedding HTTP handler, its dimension fixture and standalone smoke script within the enumerated 1,740-path tree. No Rust build, Python script, endpoint request, model weight, accelerator, retrieval benchmark or image-fetch/auth/logging implementation audit ran. Other engine capabilities remain unverified.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hanzo-engine](https://github.com/hanzoai/engine); analyzed commit `none`; commit date unknown; review date unknown; depth unreviewed. [Maintenance record](../repos/ai-model-run--hanzo-engine.md).
+Analysis metadata: source [hanzo-engine](https://github.com/hanzoai/engine); analyzed commit `8d686834290ac43b60b8ab9f4e639dc1da50582c`; commit date 2026-10-17T19:57:25-07:00; review date 2026-10-28T08:26:04.502Z; depth reviewed. [Maintenance record](../repos/ai-model-run--hanzo-engine.md).
 <!-- teamagent-analysis:end -->

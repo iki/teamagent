@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4`](https://github.com/JuliusBrussee/caveman/commit/9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4). Scope: Full caveman and cavecrew skills read. Hooks, mode persistence implementation, subagent presets, proxy/store code and token benchmarks were not reviewed.
+
+The [voice skill](https://github.com/JuliusBrussee/caveman/blob/9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4/skills/caveman/SKILL.md) preserves negation, technical payloads and explicit language choice, exempts persisted artifacts from compression and distinguishes querying status from activating a mode. When no host hook reports state, it requires an untracked-state label rather than inferring activation from defaults. These are useful semantic-preservation constraints; prompt-only persistence is not demonstrated host state.
+
+The [delegation guide](https://github.com/JuliusBrussee/caveman/blob/9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4/skills/cavecrew/SKILL.md) uses compact locator/findings contracts and explicit too-large/ambiguous outcomes. Its context savings are hypothetical examples, not measurements, and a builder's reread receipt is not independent behavioral verification. Location-only or highly compressed findings still need commit identity, inspected scope, uncertainty and enough reasoning to assess the defect. Evaluate total tokens, recovery overhead and correctness on paired tasks before adopting compression, and keep full sentences where ambiguity would change an action. No modes, hooks, agents, proxy or benchmarks were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [optimize-caveman](https://github.com/JuliusBrussee/caveman); analyzed commit `aeb45e2f787c0757a8af383a291a280cb6aeb4c1`; commit date 2026-10-03T08:45:26+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--optimize-caveman.md).
+Analysis metadata: source [optimize-caveman](https://github.com/JuliusBrussee/caveman); analyzed commit `9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4`; commit date 2026-10-25T08:57:37+01:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--optimize-caveman.md).
 <!-- teamagent-analysis:end -->

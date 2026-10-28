@@ -1,0 +1,42 @@
+# glean-api-python
+
+Source: [glean-api-python](https://github.com/gleanwork/api-client-python) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `922fd9ba79a64a957f8e99cc3e9efaecf8f209c7`; commit timestamp `2026-10-03T07:21:21-06:00`; 2,914 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/gleanwork/api-client-python/blob/922fd9ba79a64a957f8e99cc3e9efaecf8f209c7/README.md)):
+
+> The Glean Python SDK provides convenient access to the Glean REST API from any Python 3.8+ application. It includes type hints for all request parameters and response fields, and supports both synchronous and asynchronous usage via httpx. This SDK combines both the Client and Indexing API namespaces into a single unified package:
+
+Build/package evidence: [pyproject.toml](https://github.com/gleanwork/api-client-python/blob/922fd9ba79a64a957f8e99cc3e9efaecf8f209c7/pyproject.toml); [tests/mockserver/go.mod](https://github.com/gleanwork/api-client-python/blob/922fd9ba79a64a957f8e99cc3e9efaecf8f209c7/tests/mockserver/go.mod)
+
+License evidence: [LICENSE](https://github.com/gleanwork/api-client-python/blob/922fd9ba79a64a957f8e99cc3e9efaecf8f209c7/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**OAuth administration separates spend identity but needs semantic filter validation.** Reviewed commit `50e64f3be7cc7adb2dc4966b4381296cf4739faa` (commit date `2026-10-22T11:03:55-07:00`). Compared with `922fd9ba79a64a957f8e99cc3e9efaecf8f209c7`; the complete Git comparison contains 269 changed paths.
+
+The inspected generated OAuth-client models distinguish authentication client_id from ai_gateway.usage_client_id, an opaque case-sensitive billing/limit identity that must not be derived from client_id. They expose public/confidential client type, grant types, redirect URIs and active state. The filter contract has an actionable inconsistency: its comments restrict supported field/operator to is_active/EQUALS, while the generated operator enum accepts NOT_EQUALS and ordered comparisons and the field remains an unrestricted string. Therefore schema acceptance alone cannot establish server-supported query semantics. The generated GET mock checks bearer/accept/user-agent headers and returns an inactive static client; that fixture does not exercise revocation enforcement, tenant authorization or billing-ID mapping. Python uses Pydantic models, optional metadata and an open client-type enum, with serializers omitting absent optional fields.
+
+Evidence: [src/glean/api_client/models/platformoauthclient.py:1-120](https://github.com/gleanwork/api-client-python/blob/50e64f3be7cc7adb2dc4966b4381296cf4739faa/src/glean/api_client/models/platformoauthclient.py#L1-L120) · [src/glean/api_client/models/platformoauthclienttype.py:1-14](https://github.com/gleanwork/api-client-python/blob/50e64f3be7cc7adb2dc4966b4381296cf4739faa/src/glean/api_client/models/platformoauthclienttype.py#L1-L14) · [src/glean/api_client/models/platformoauthclientfilter.py:1-61](https://github.com/gleanwork/api-client-python/blob/50e64f3be7cc7adb2dc4966b4381296cf4739faa/src/glean/api_client/models/platformoauthclientfilter.py#L1-L61) · [src/glean/api_client/models/platformoauthclientaigateway.py:1-23](https://github.com/gleanwork/api-client-python/blob/50e64f3be7cc7adb2dc4966b4381296cf4739faa/src/glean/api_client/models/platformoauthclientaigateway.py#L1-L23) · [tests/mockserver/internal/handler/pathgetapiadminoauthclientsclientid.go:1-74](https://github.com/gleanwork/api-client-python/blob/50e64f3be7cc7adb2dc4966b4381296cf4739faa/tests/mockserver/internal/handler/pathgetapiadminoauthclientsclientid.go#L1-L74).
+
+**Harness consequence:** At the Glean adapter boundary preserve authentication and spending identities separately, validate the documented semantic subset and expose unknown client variants without inferring permissions. Add boundary fixtures for unsupported operators, missing billing identity and inactive clients before enabling administrative operations. These SDKs remain transport references, not a replacement for versioned evidence storage or proof of service-side authorization.
+
+**Scope and limits:** Scoped static inspection of generated OAuth-client contracts and one generated HTTP fixture within the enumerated change inventory. Other changed APIs, retries, streaming helpers and dependency generation were not audited. No SDK tests, Glean account, live authorization, search quality or subscription eligibility was exercised. Historical inventory-screening limitations remain outside this slice.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [glean-api-python](https://github.com/gleanwork/api-client-python); analyzed commit `50e64f3be7cc7adb2dc4966b4381296cf4739faa`; commit date 2026-10-22T11:03:55-07:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--glean-api-python.md).
+<!-- teamagent-analysis:end -->

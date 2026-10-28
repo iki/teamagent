@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Extraction merges retain mention identity while confidence and persistence still need independent semantics.** Reviewed commit `9d45af5529ecb5f2fe352013468a11087f3163d4` (commit date `2026-10-27T06:41:27-06:00`). Compared with `412020c20dbfad4ed3b128e02f3f57ddb60150b4`; the complete Git comparison contains 818 changed paths.
+
+The extraction merger now carries a replaced entity's mention ID onto the surviving copy and remaps relation endpoint IDs. Its confidence-floor pass drops relations whose endpoints did not survive, preferring explicit mention IDs over a normalized-name fallback. Relations are still deduplicated first by textual triple, and a multi-stage result retains the first nonempty source_text rather than a full stage-to-claim provenance manifest.
+
+The TypeScript graph extractor uses a structured model-output schema and creates relationships only between entity names resolved during that call. Its default lowercase-name heuristic can discard legitimate lowercase proper names; find-then-create is not an atomic uniqueness claim. Feedback writes mark input.confidence >= 0.8 as confirmed, conflating a caller score with confirmation. Feedback and relationship failures are logged and swallowed, and the function returns void, so partial graph writes have no explicit result receipt. Python notification suppression is restricted to library query helpers while raw sessions keep notifications, but connect assigns the driver before connectivity verification and leaves it assigned after failure.
+
+Evidence: [src/neo4j_agent_memory/extraction/pipeline.py:285-448](https://github.com/neo4j-labs/agent-memory/blob/9d45af5529ecb5f2fe352013468a11087f3163d4/src/neo4j_agent_memory/extraction/pipeline.py#L285-L448) · [typescript/packages/vercel-ai-provider/src/vercel-ai-provider-extract.ts:1-101](https://github.com/neo4j-labs/agent-memory/blob/9d45af5529ecb5f2fe352013468a11087f3163d4/typescript/packages/vercel-ai-provider/src/vercel-ai-provider-extract.ts#L1-L101) · [src/neo4j_agent_memory/graph/client.py:21-39](https://github.com/neo4j-labs/agent-memory/blob/9d45af5529ecb5f2fe352013468a11087f3163d4/src/neo4j_agent_memory/graph/client.py#L21-L39) · [src/neo4j_agent_memory/graph/client.py:64-173](https://github.com/neo4j-labs/agent-memory/blob/9d45af5529ecb5f2fe352013468a11087f3163d4/src/neo4j_agent_memory/graph/client.py#L64-L173).
+
+**Harness consequence:** Preserve survivor/remapping identity with per-stage source lineage and explicit partial-write results. Keep model/caller confidence separate from user confirmation and independently validated facts. Use transactional identity resolution, typed error receipts and failed-connect cleanup; suppression of expected schema notices must not hide query coverage or connection state.
+
+**Scope and limits:** Static scoped mention-ID merge, confidence pruning, TypeScript graph extraction and Python connection/notification wiring within the 818-path comparison. Complete pipeline scheduling, entity constraints, authentication and storage transactions were not audited or executed; no model or Neo4j call was made.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-memory.neo4j](https://github.com/neo4j-labs/agent-memory); analyzed commit `412020c20dbfad4ed3b128e02f3f57ddb60150b4`; commit date 2026-09-24T18:40:06-06:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--agent-memory.neo4j.md).
+Analysis metadata: source [agent-memory.neo4j](https://github.com/neo4j-labs/agent-memory); analyzed commit `9d45af5529ecb5f2fe352013468a11087f3163d4`; commit date 2026-10-27T06:41:27-06:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--agent-memory.neo4j.md).
 <!-- teamagent-analysis:end -->

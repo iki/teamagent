@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped source review
+
+Source: [cline](https://github.com/cline/cline); inspected saved discovery revision `943d6284ccc43521637a6d5bf9d51d052c36e1fc`. Prior analyzed revision `39ff2359f7e08231281539696e48a166ce49270c` remains historical evidence.
+
+**Scope:** Complete CLI run-agent host adapter and default loop/checkpoint constants. Core session start/send, hook shutdown, approvals, checkpoint implementation and tests were not inspected.
+
+The [CLI adapter](https://github.com/cline/cline/blob/943d6284ccc43521637a6d5bf9d51d052c36e1fc/apps/cli/src/runtime/run-agent.ts#L217-L271) subscribes using a planned session ID before startup and memoizes cleanup so signal and finally paths share shutdown. However, abort only calls the session manager once an active ID exists; an earlier signal sets the flag without a visible post-start replay. The [local timeout](https://github.com/cline/cline/blob/943d6284ccc43521637a6d5bf9d51d052c36e1fc/apps/cli/src/runtime/run-agent.ts#L285-L352) is scheduled only after `start` returns, and the adjacent comment explicitly allows `start` to have already executed the first turn. This host timeout therefore does not itself bound startup or that first-turn path; any core-enforced bound must be established separately.
+
+Cleanup awaits hook shutdown, stop and disposal while swallowing their errors, without its own deadline. A second SIGINT also waits for that cleanup before process exit, so it is not an unconditional prompt hard stop. The source separates abort-requested events, result publication and finish reason, which Teamagent should preserve along with explicit cleanup failures and uncertain effects rather than inferring successful termination from an aborted label.
+
+The [CLI defaults](https://github.com/cline/cline/blob/943d6284ccc43521637a6d5bf9d51d052c36e1fc/apps/cli/src/runtime/defaults.ts#L1-L24) enable loop detection and checkpoints even though the core defaults differ. These constants and host configuration do not prove checkpoint recoverability or OS isolation. Usage display can zero cost through a provider-specific helper; that helper's eligibility and billing semantics were not audited. No CLI, provider, checkpoint, subprocess or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cline](https://github.com/cline/cline); analyzed commit `39ff2359f7e08231281539696e48a166ce49270c`; commit date 2026-10-03T00:33:13+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--cline.md).
+Analysis metadata: source [cline](https://github.com/cline/cline); analyzed commit `943d6284ccc43521637a6d5bf9d51d052c36e1fc`; commit date 2026-10-27T11:57:10-05:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--cline.md).
 <!-- teamagent-analysis:end -->

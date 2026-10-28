@@ -1,0 +1,32 @@
+# cognee
+
+Versioned document-to-knowledge pipelines and a separately gated improvement loop.
+
+Source: [cognee](https://github.com/topoteretes/cognee) · Snapshot: `37f788bd287750e10d7610173e5332b3843f6ebd` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; the files below were read, not executed or benchmarked.** Review date: 2026-10-24. The inspected checkout was clean. This updates the 2026-10-04 review of `b32d8afc59e1064d9291b9828a8a147be9cc8bab`; the previous report is preserved in [review history](../analyses/history/ai-agents-mem--cognee/). License and dependency compatibility still require a separate adoption review.
+
+## Verified source evidence
+
+- [Cognify compatibility handling and pipeline selection](https://github.com/topoteretes/cognee/blob/37f788bd287750e10d7610173e5332b3843f6ebd/cognee/api/v1/cognify/cognify.py#L57-L82), [removed functional-relationship option](https://github.com/topoteretes/cognee/blob/37f788bd287750e10d7610173e5332b3843f6ebd/cognee/api/v1/cognify/cognify.py#L339-L354).
+- [Document pipeline and deterministic DLT pipeline](https://github.com/topoteretes/cognee/blob/37f788bd287750e10d7610173e5332b3843f6ebd/cognee/api/v1/cognify/cognify.py#L590-L694).
+- [Improvement stage execution, failure and budget handling](https://github.com/topoteretes/cognee/blob/37f788bd287750e10d7610173e5332b3843f6ebd/cognee/api/v1/improve/improve.py#L238-L318).
+- [Conflict-review admission, watermarks and retry entities](https://github.com/topoteretes/cognee/blob/37f788bd287750e10d7610173e5332b3843f6ebd/cognee/modules/improve/stages.py#L525-L631).
+
+The default document pipeline still classifies, chunks, extracts a graph and summaries, and persists data points; provenance remains opt-in. The inspected current task list does **not** append the former contradiction and deterministic temporal-supersession stages. Passing `functional_relationships` now raises a TypeError directing callers to `improve(review_conflicts=True)`. The deprecated `temporal_cognify` flag is explicitly removed with a warning. Its compatibility message says old Event-node datasets require rebuilding for the current Timestamp-based temporal behavior; the migration's correctness was not tested in this review.
+
+The separate conflict-review stage requires explicit opt-in, an available LLM and enabled edge evidence. It tracks changed entities and carries failed entity IDs forward so a watermark does not permanently hide failed work. Improvement records stage outcomes, stops subsequent stages after an exhausted model budget, and treats designated fatal failures differently from recoverable stage errors. A separate DLT manifest pipeline declares its stages deterministic, purges stale derived artifacts, creates row chunks and extracts schema edges; its end-to-end transactional behavior was not assessed.
+
+## Harness implications
+
+Keep deterministic domain constraints in Teamagent rather than assuming an enrichment backend still implements them. Adapter capabilities must include versioned option support, migration requirements and provenance prerequisites. Import completion should make source evidence searchable independently of model enrichment. Optional conflict review should yield attributable proposals and explicit skipped/failed outcomes, with a retry set that survives watermark advancement. A provider payment or quota failure should stop dependent enrichment stages instead of spending repeated failing calls.
+
+## Limitations and adoption
+
+This is an optional enrichment reference, not a requirement for the basic source store. The code demonstrates gates and retry bookkeeping; it does not prove conflict judgments are correct or all writes are atomic. Model-generated summaries, graph edges and conflict descriptions remain derived assertions. Test disabled provenance, unavailable models, partial entity failures, budget exhaustion, out-of-order source changes and old-dataset migration before enabling an adapter. The previous report's deterministic functional-relation supersession claim applies only to its older snapshot and must not be used as a current capability.
+
+Related directions: [memory](../memory.md) · [import-generation](../import-generation.md) · [evolution](../evolution.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [cognee](https://github.com/topoteretes/cognee); analyzed commit `37f788bd287750e10d7610173e5332b3843f6ebd`; commit date 2026-10-16T22:07:34+02:00; review date 2026-10-24T06:36:54.441Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--cognee.md).
+<!-- teamagent-analysis:end -->

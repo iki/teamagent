@@ -28,6 +28,14 @@ Adopt where supported language extraction and distribution terms fit the deploym
 
 [Security](../security.md) · [Agents](../agents.md) · [Evolution](../evolution.md)
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`fd2bfc8a3da9c73a0c8be05d110efaf14a856445`](https://github.com/github/codeql/commit/fd2bfc8a3da9c73a0c8be05d110efaf14a856445). Scope: Full Go registry-proxy implementation and tests read. C# rollback, Rust toolchain selection, query changes and scanner execution were not audited.
+
+The [Go registry adapter](https://github.com/github/codeql/blob/fd2bfc8a3da9c73a0c8be05d110efaf14a856445/go/extractor/registries/registryproxy.go) passes a temporary CA file through SSL_CERT_FILE and GIT_SSL_CAINFO so both Go and spawned Git processes receive the configured trust material. The [test](https://github.com/github/codeql/blob/fd2bfc8a3da9c73a0c8be05d110efaf14a856445/go/extractor/registries/registryproxy_test.go) checks those environment entries, without contacting a registry or verifying certificate semantics. Trust configuration belongs to the controlled subprocess environment, not an incidental global certificate install.
+
+The reviewed helper logs temporary-file creation errors but continues to dereference the file, and a write error can still be followed by publication if Close succeeds. Its globals cache environment inspection without synchronization or refresh, while ApplyProxyEnvVars rebuilds from the process environment rather than preserving an existing command-specific environment. Debug output includes full command arguments and proxy variables; registry URLs can carry sensitive values. Adapt scoped certificate plumbing only with typed failures, resource cleanup, redaction and explicit policy for the public/direct registry fallback. No extractor, dependency fetch or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codeql](https://github.com/github/codeql); analyzed commit `f7617abe602d4763cd08c6a57b6a6bc347e7e325`; commit date 2026-10-02T16:57:06+01:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--codeql.md).
+Analysis metadata: source [codeql](https://github.com/github/codeql); analyzed commit `fd2bfc8a3da9c73a0c8be05d110efaf14a856445`; commit date 2026-10-27T17:43:02+01:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--codeql.md).
 <!-- teamagent-analysis:end -->

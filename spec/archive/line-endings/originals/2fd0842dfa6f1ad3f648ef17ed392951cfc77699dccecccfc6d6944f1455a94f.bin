@@ -1,0 +1,23 @@
+# ai-operate
+
+[Analysis home](../README.md) · 1 projects catalogued; 1 focused source/content reviews.
+
+Screening entries provide identity and package evidence only. Source-reviewed entries explain the exact scope inspected; none is a runtime certification. See [methodology](../methodology.md).
+
+## Category assessment
+
+Agent-directed interaction with devices and applications through specialized operational tools.
+
+Artemis offers a concrete Android worker pattern with exclusive device ownership, trace storage, daemon submission, and startup watchdogs. Integrate it only for authorized device testing or operation, with bounded tasks, state-aware recovery, and durable cancellation. Its resource-locking pattern also applies to browsers and GPUs.
+
+Controlling a phone does not supply the harness's mobile client. This one-project category provides no broad maturity comparison; benchmark badges do not establish arbitrary-app reliability, and UI actions may lack transactional acknowledgements or safe blind retries.
+
+Start with:
+
+- [artemis](https://github.com/google/artemis) — [individual report](../projects/ai-operate--artemis.md).
+
+## Project catalogue
+
+| Project source | Individual report | Depth | Harness relevance / finding |
+|---|---|---|---|
+| [artemis](https://github.com/google/artemis) | [Report](../projects/ai-operate--artemis.md) | source-reviewed | Device task queue, trace, watchdog, and locking patterns; distinguish controlling a phone from delivering a mobile client. |

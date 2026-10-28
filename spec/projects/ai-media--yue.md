@@ -30,6 +30,19 @@ Prototype only until hardware memory, latency, weight licensing, and task-level 
 
 [Generation](../generation.md) · [Models](../models.md) · [Memory](../memory.md) · [Decisions](../decisions.md)
 
+
+## Change review — 2026-10-27
+
+**Paper and community updates preserve the inspected generation pipeline.** Reviewed commit `1647252d68b70cbead046ffd3f7caf036dde47ee` (commit date `2026-10-06T15:30:39+08:00`) against `1dc1c50ef9a98597e2e82fe6bac232a05b160acf`. The complete Git comparison contains 3 changed paths.
+
+The complete three-path comparison changes the README, a community QR asset and the SheetSage2 report PDF. The README now links the SheetSage2 arXiv entry and revises its citation. The previously inspected src/yue2/pipeline.py is unchanged; its result metadata still separates audio duration/sample rate, request identity, configuration, weight identity and artifact hashes.
+
+Evidence: [README.md:70-82](https://github.com/multimodal-art-projection/YuE/blob/1647252d68b70cbead046ffd3f7caf036dde47ee/README.md#L70-L82) · [README.md:247-265](https://github.com/multimodal-art-projection/YuE/blob/1647252d68b70cbead046ffd3f7caf036dde47ee/README.md#L247-L265) · [src/yue2/pipeline.py:110-165](https://github.com/multimodal-art-projection/YuE/blob/1647252d68b70cbead046ffd3f7caf036dde47ee/src/yue2/pipeline.py#L110-L165).
+
+**Harness consequence:** Retain the plan-first music-generation research candidate and its reproducibility requirements. A new paper link does not establish new adapter functionality, transcription accuracy or perceptual quality. Keep weight/model identity separate from documentation revision.
+
+**Scope and limits:** Source-code continuity and README changes reviewed. The changed PDF/QR content, models, weights and benchmark claims were not reproduced or independently assessed; the paper remains separate research evidence.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [yue](https://github.com/multimodal-art-projection/YuE); analyzed commit `1dc1c50ef9a98597e2e82fe6bac232a05b160acf`; commit date 2026-10-03T00:29:34+08:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-media--yue.md).
+Analysis metadata: source [yue](https://github.com/multimodal-art-projection/YuE); analyzed commit `1647252d68b70cbead046ffd3f7caf036dde47ee`; commit date 2026-10-06T15:30:39+08:00; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-media--yue.md).
 <!-- teamagent-analysis:end -->

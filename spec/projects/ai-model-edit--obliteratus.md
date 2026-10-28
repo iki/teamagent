@@ -30,6 +30,21 @@ Keep outside the production harness roadmap. Removing refusal behavior is not ev
 
 [Models](../models.md) · [Evolution](../evolution.md) · [Security](../security.md)
 
+
+## Change review - 2026-10-28
+
+**Disk restore points preflight geometry and invalidate incomplete restoration.** Reviewed commit `7e8cf557053f7e1a756c37d86e6a68682b9f7421` (commit date `2026-10-24T15:19:02-04:00`). Compared with `b847511776a2afa7ed076f676184a4abfef2b162`; the complete Git comparison contains 535 changed paths.
+
+The new snapshot planner validates nonnegative exact integer size/count inputs, positive caps and explicit disabled reasons, estimates disk backing plus per-tensor overhead and host staging, and marks unknown availability as requiring runtime admission. Creation rechecks available disk/host capacity, rejects unsupported packed/quantized parameter storage, snapshots logical tensors one at a time to safetensors and stores streamed SHA-256 digests. The restore point is bound to the same live model object and module/shape/dtype signature, not a portable restart checkpoint.
+
+Validation checks inventory, hashes, target storage and numerical compatibility before copying, and any failure after restore starts marks both snapshot and model invalid, requiring reload. This is fail-closed partial-restore handling rather than atomic rollback of the whole model. Validation and later payload reload are separate without a lock, so private directory ownership and exclusion of concurrent writers remain required. Memory/disk observations are admission estimates, not reserved resources, and cleanup ignores deletion errors while declaring the snapshot closed. Placement parsing rejects negative GPU indices, meta execution, duplicate normalized budgets and nonpositive limits, but offload-folder containment is delegated.
+
+Evidence: [obliteratus/models/snapshot.py:1-280](https://github.com/elder-plinius/OBLITERATUS/blob/7e8cf557053f7e1a756c37d86e6a68682b9f7421/obliteratus/models/snapshot.py#L1-L280) · [obliteratus/model_placement.py:1-91](https://github.com/elder-plinius/OBLITERATUS/blob/7e8cf557053f7e1a756c37d86e6a68682b9f7421/obliteratus/model_placement.py#L1-L91).
+
+**Harness consequence:** Reuse explicit snapshot availability, exact artifact hashes, one-tensor staging and irreversible-invalid-state reporting for authorized model experiments. Preserve immutable baseline model/checkpoint identity, serialize model mutations and use owned restricted backing paths with observable cleanup. Validate actual memory/disk peaks and recovery under injected failures; snapshot availability alone does not establish model quality, behavioral acceptability or permission to change a deployed model.
+
+**Scope and limits:** Static scoped review of snapshot/restore resource handling and placement validation within the 535-path comparison. Numerical-update/offload helpers, full model loader, concept-edit algorithms and accelerator/failure fixtures were not fully audited or executed; no model loaded or edited.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [obliteratus](https://github.com/elder-plinius/OBLITERATUS); analyzed commit `b847511776a2afa7ed076f676184a4abfef2b162`; commit date 2026-09-20T21:04:56-04:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-edit--obliteratus.md).
+Analysis metadata: source [obliteratus](https://github.com/elder-plinius/OBLITERATUS); analyzed commit `7e8cf557053f7e1a756c37d86e6a68682b9f7421`; commit date 2026-10-24T15:19:02-04:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-edit--obliteratus.md).
 <!-- teamagent-analysis:end -->

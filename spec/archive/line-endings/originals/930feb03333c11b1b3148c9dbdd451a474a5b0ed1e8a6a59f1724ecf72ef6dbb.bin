@@ -1,0 +1,19 @@
+# assets-icons.better
+
+Source: [assets-icons.better](https://github.com/better-auth/better-icons) · [skills](../../skills.md), [evolution](../../evolution.md), [agents](../../agents.md).
+
+Original discovery depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed at discovery; see the scoped review below. [Change evidence](../repos/ai-skills--assets-icons.better.md).
+
+## Source update reviewed 2026-10-27
+
+Reviewed commit `033316ecb8f4982235af4111a2257e80231f5ab1` (commit date `2026-04-02T08:54:17-07:00`). Initial scoped source review: full 25-path inventory, manifest, skill, acquisition/SVG, preferences, project writer and agent detection/tests. Setup/search paths remain unaudited.
+
+[Better Icons](https://github.com/better-auth/better-icons) exposes CLI/MCP icon retrieval and code generation. The [server](https://github.com/better-auth/better-icons/blob/033316ecb8f4982235af4111a2257e80231f5ab1/src/server.ts) bounds batches to 20 IDs and groups by collection; frequency counts reorder recommendations. This is preference personalization, not semantic memory or causal quality evidence. The [store](https://github.com/better-auth/better-icons/blob/033316ecb8f4982235af4111a2257e80231f5ab1/src/memory.ts) caps recent IDs at 50 but uses unchecked JSON and silent fallback. Write-temp/rename is not a concurrent read-modify-write transaction; rename failure attempts a direct destination write and retries have no actual delay.
+
+The [SVG helper](https://github.com/better-auth/better-icons/blob/033316ecb8f4982235af4111a2257e80231f5ab1/src/icon-utils.ts) caps alias traversal but concatenates remote body/color. The [writer](https://github.com/better-auth/better-icons/blob/033316ecb8f4982235af4111a2257e80231f5ab1/src/project-sync.ts) writes caller paths without containment or SVG sanitization in that function; server schemas/shallow response checks do not supply those boundaries. Generated code needs validation before publication. [Discovery](https://github.com/better-auth/better-icons/blob/033316ecb8f4982235af4111a2257e80231f5ab1/src/agents.ts) checks config directories; [tests](https://github.com/better-auth/better-icons/blob/033316ecb8f4982235af4111a2257e80231f5ab1/src/agents.test.ts) assert shapes/paths, not executable or authentication readiness. Generated MCP launch config uses an unpinned runner.
+
+**Disposition:** candidate only; require scoped transactional preferences, schema validation, per-collection license evidence, bounded network/preview and exclusive writes. The [skill](https://github.com/better-auth/better-icons/blob/033316ecb8f4982235af4111a2257e80231f5ab1/skills/SKILL.md) installation commands must be adapted to Teamagent's pinned dependency workflow. No upstream code/API/tests were executed.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [assets-icons.better](https://github.com/better-auth/better-icons); analyzed commit `033316ecb8f4982235af4111a2257e80231f5ab1`; commit date 2026-04-02T08:54:17-07:00; review date 2026-10-28T08:26:04.502Z; depth reviewed. [Maintenance record](../repos/ai-skills--assets-icons.better.md).
+<!-- teamagent-analysis:end -->

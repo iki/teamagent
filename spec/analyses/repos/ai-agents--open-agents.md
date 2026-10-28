@@ -2,7 +2,7 @@
 
 Source: [open-agents](https://github.com/vercel-labs/open-agents) · [Analysis](../../projects/ai-agents--open-agents.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-27T18:19:07.717Z. Status: **current**. Reviewed SHA: `cf865e94de7729751c747171785b6ce57e7b178c`; commit date: 2026-06-04T10:48:13+02:00; review date: unknown; observed SHA: `cf865e94de7729751c747171785b6ce57e7b178c`.
+Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `cf865e94de7729751c747171785b6ce57e7b178c`; commit date: 2026-06-04T10:48:13+02:00; review date: unknown; observed SHA: `cf865e94de7729751c747171785b6ce57e7b178c`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/vercel-labs/open-agents/compare/cf865e94de7729751c747171785b6ce57e7b178c...cf865e94de7729751c747171785b6ce57e7b178c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 

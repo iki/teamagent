@@ -24,6 +24,14 @@ This entry was catalogued under **ai-agents-proxy**. Its category places it in t
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`b57c5927f6d9e186df23697247a38a7b7fc7eb14`](https://github.com/NVIDIA-NeMo/Switchyard/commit/b57c5927f6d9e186df23697247a38a7b7fc7eb14). Scope: Full protocol infrastructure/client contracts and core fake-client driver read. Routing algorithms, HTTP client, streaming implementation and observability tests were not audited.
+
+The [infrastructure contract](https://github.com/NVIDIA-NeMo/Switchyard/blob/b57c5927f6d9e186df23697247a38a7b7fc7eb14/crates/protocol/src/infra.rs) makes unavailable pool load None rather than idle, timestamps the oldest underlying observation with a monotonic clock and keeps host-local in-flight accounting separate from pool totals. Adapt this provenance-aware routing input; the serving host still owns coverage and freshness validation. The [client contract](https://github.com/NVIDIA-NeMo/Switchyard/blob/b57c5927f6d9e186df23697247a38a7b7fc7eb14/crates/protocol/src/client.rs) separates invalid requests, translation failures, temporary unavailability, timeouts and bounded response-state conflicts, allowing fallback reasons to remain explicit. Its raw upstream-body error representation requires redaction before Teamagent logging.
+
+The [test driver](https://github.com/NVIDIA-NeMo/Switchyard/blob/b57c5927f6d9e186df23697247a38a7b7fc7eb14/crates/libsy/src/core/testing.rs) routes model calls through asynchronous fakes that can block on barriers and uses production-shaped error mapping. This is a good basis for deterministic concurrency/fallback fixtures. Its default decision stub returns empty answers and zero-like usage, so the helper alone does not validate decision accuracy or billing. No algorithm, transport, model or tests were executed, and route-state ownership guarantees were not traced into runtime code.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [switchyard](https://github.com/NVIDIA-NeMo/Switchyard); analyzed commit `c8848511a7e2e1d605070c7a68905bdc24c6481a`; commit date 2026-10-02T14:59:36-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--switchyard.md).
+Analysis metadata: source [switchyard](https://github.com/NVIDIA-NeMo/Switchyard); analyzed commit `b57c5927f6d9e186df23697247a38a7b7fc7eb14`; commit date 2026-10-27T10:03:30-07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--switchyard.md).
 <!-- teamagent-analysis:end -->

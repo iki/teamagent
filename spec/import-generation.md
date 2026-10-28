@@ -65,6 +65,41 @@ The refreshed [Docling report](projects/ai-query--docling.md) ([source](https://
 
 The implemented [text synchronization workflow](research-sync.md) uses this distinction for web, PDF and explicitly selected social posts. Store originals, Markdown and images with source-version provenance; report unsupported article shapes, access shells, failed images and parser limits. The same principle applies to generated media: receiving a file is not evidence of complete or visually correct output.
 
+## Source refresh: 2026-10-28 - route policy and complete extraction
+
+The [Docling refresh](projects/ai-query--docling.md) now rejects multi-document sources through its single-result API, and preserves surviving OCR text beside native table words with distinct token IDs. Import jobs must enumerate members and retain per-member status; detecting a second result after conversion starts does not replace archive admission limits. Preserve coordinate, DPI and OCR/native provenance, then verify table numbers against original pages. Optional provider imports and successful parser construction are separate from permission to transmit source content.
+
+Hosted policy statements need route-specific evidence. The [Marker refresh](projects/ai-query--marker.md) describes zero-data-retention as an opt-in hosted assertion, not proof of an account's configured policy. The [HyperExtract review](projects/ai-query--hyper-extract.md) identifies a foreign-endpoint fallback to `OPENAI_API_KEY` that Teamagent must reject: bind credentials to their approved endpoint rather than inferring authority from protocol compatibility. The [AnyDoc review](projects/ai-query--anydoc.md) supplies useful explicit OCR routing and typed table evidence, but whole-document egress, retention and account terms still require independent evidence. These observations refine adapter requirements; they do not enable a new route or change the implemented training-policy gate.
+
+The [MarkItDown review](projects/ai-query--markitdown.md) makes Document Intelligence add-ons explicit and preserves separate extracted-document fields, but its presentation front matter omits confidence and source spans. Retain the raw extraction response and page coordinates with conversion diagnostics. [Trafilatura's feed/normalization review](projects/ai-query--trafilatura.md) similarly distinguishes useful retrieval text from lossless evidence: replacement decoding and whitespace normalization require the original bytes to remain available, and candidate caps must cover JSON feeds as well as RSS/Atom.
+
+The [Magika review](projects/ai-query--magika.md) shows why bounded channels are insufficient on their own: an ordered-result buffer can accumulate later results behind one slow input. Bound admission, retained results and native-work lifetime together. Type classification remains routing evidence, with actual backend/model/rule provenance; it does not establish that a document is valid or safe to execute.
+
+The [Book-to-Skill review](projects/ai-query--book-to-skill.md) preserves input order/duplicates in converter identity, but a post-conversion hash does not establish that the converter read one stable file snapshot. [RAG-Anything's cache review](projects/ai-query--rag-anything.md) normalizes parser options and source hashes while omitting an explicit parser/model build identity in the inspected key. Own immutable input bytes and include converter/model revisions; keep fallback, partial conversion and provenance gaps visible.
+
+The [MinerU task adapter](projects/ai-query--mineru.md) retains background job identity after a synchronous wait expires and reports partial file results. Its per-file limits do not bound total uploads or expanded ZIP output. Enforce total input/result/archive budgets, tenant ownership and cancellation-safe source leases before dispatch. [OpenDataLoader's failure wrapper](projects/ai-query--opendataloader-pdf.md) returns bounded cause types while still logging exception details; apply privacy controls to both responses and logs and verify actual JVM cleanup. [Repomix's cancellation path](projects/ai-query--repomix.md) settles started output before cleanup, but not every phase receives the signal and a shutdown timeout exits successfully. Receipts must distinguish partial output, cancellation and forced shutdown.
+
+The [Watermarks Remover review](projects/ai-query--watermarks-remover.md) is a boundary warning for ordinary memory import: vendor metadata is not proof of AI authorship, and cleanup removes provenance/add-ins rather than merely extracting content. Preserve originals and annotations; do not adopt that cleanup as an implicit ingestion step. [OfficeCLI's resident-process review](projects/ai-query--officecli.md) also requires observed retirement rather than a printed success message before direct-file fallback. The [Leaf parser](projects/ai-query--leaf.md) is a tolerant display model, so recovered ranges and lossy decoded paths need independent verification before becoming exact citations or patch inputs.
+
+The [OfficeParser review](projects/ai-query--office-parser.md) separates a bounded delimiter sample from the synchronous full CSV parse and finds that PDF operator filtering depends on a private PDF.js hook. Require fresh per-document options, actual byte/node budgets, effective cancellation and explicit bounded-mode availability. [Codegraph's ordered parse dispatch](projects/ai-agents-mem--codegraph.md) offers useful backpressure on both active and completed work, while its synchronous fallback and differing symlink policies need stronger host contracts. Preserve embedded-block warnings even when a health view excludes them from fatal parse errors.
+
+The [Codeflow review](projects/ai-query--codeflow.md) treats conservative patch generation as a reviewable proposal tied to source identity; fixture expectations and no-write checks do not establish runtime isolation. [Agent Beacon's corpus installation](projects/ai-agents-mem--agent-beacon.md) validates rule data before staging, but ignored rollback failures and concurrent publication still need durable recovery receipts. Explicitly distinguish unreadable stores from empty stores and unsupported rule versions from successful coverage.
+
+The [Xberg RTF review](projects/ai-query--xberg.md) supplies useful whitespace-to-offset remapping and table-literal fidelity fixes, while auxiliary Unicode capture and group-depth bounds need further work. Its strict-parse fixtures distinguish fallback text and truncation warnings from structured success. [Diagram Design's draw.io importer](projects/ai-gen--diagram-design.md) rejects unsafe XML declarations and bounds individual inflation, pages and cells, but still needs bounded actual reads and an aggregate expansion budget. Preserve feature-level loss and fallback warnings in import receipts and citations; a successful conversion does not establish complete structure.
+
+The initial [yt-dlp review](analyses/unreviewed/ai-query--yt-dlp.md) treats delegated URLs and wrapper referers as separate provenance edges, with worker-level redirect, byte, page and output limits. Its process-global token cache is bounded by entry count, which does not establish byte limits or account isolation. Provider documentation and executable examples are evidence to inspect, not trusted instructions. [CareerOps' provider-cache review](projects/ai-media--career-ops.md) adds a related freshness rule: a failed recheck can reuse an old ID indefinitely, so return age and degradation explicitly and validate newly resolved values before storing them. DNS pacing still requires bounded admission and cancellation.
+
+## Additional scoped review references
+
+These catalog associations provide navigation to scoped source reviews. Each report records its inspected revision, findings and exclusions; inclusion here does not establish a capability or an adoption decision.
+
+- [gittifacts](analyses/unreviewed/ai-agents-mem--gittifacts.md)
+- [helix-foundry](analyses/unreviewed/ai-agents-mem--helix-foundry.md)
+- [xerj](analyses/unreviewed/ai-agents-mem--xerj.md)
+- [jantt](analyses/unreviewed/ai-gen--jantt.md)
+- [better-icons](analyses/unreviewed/ai-query--better-icons.md)
+- [dbx](analyses/unreviewed/ai-query--dbx.md)
+
 <!-- coverage:start -->
 ## Project coverage
 
@@ -155,17 +190,3 @@ Every associated project has its own report. Source-reviewed associations reflec
 ## Hosted and local voice comparisons
 
 The [voice backend expansion](media-processing.md#voice-backend-expansion-and-astra-provenance) compares direct services, managed hosts and local checkpoints, with individual reports, dated pricing, license distinctions and the confirmed Astra analysis's partial-retrieval provenance. The [comparative evaluation](media-processing.md#comparative-voice-evaluation) defines speaker-fidelity, pronunciation, latency and cost checks; [runtime documentation](media-runtime.md) records what is actually implemented.
-
-<!-- analysis-additions:start -->
-## Newly catalogued sources
-
-These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
-
-- [gittifacts](analyses/unreviewed/ai-agents-mem--gittifacts.md) ([source](https://github.com/jovidecroock/gittifacts)).
-- [helix-foundry](analyses/unreviewed/ai-agents-mem--helix-foundry.md) ([source](https://github.com/helixdb/helix-foundry)).
-- [xerj](analyses/unreviewed/ai-agents-mem--xerj.md) ([source](https://github.com/xerj-org/xerj)).
-- [jantt](analyses/unreviewed/ai-gen--jantt.md) ([source](https://github.com/ahmadhassan-bted/jantt)).
-- [better-icons](analyses/unreviewed/ai-query--better-icons.md) ([source](https://github.com/better-auth/better-icons)).
-- [dbx](analyses/unreviewed/ai-query--dbx.md) ([source](https://github.com/t8y2/dbx)).
-- [yt-dlp](analyses/unreviewed/ai-query--yt-dlp.md) ([source](https://github.com/yt-dlp/yt-dlp)).
-<!-- analysis-additions:end -->

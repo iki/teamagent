@@ -1,0 +1,34 @@
+# openeval
+
+Source: [openeval](https://github.com/Hona/openeval) · Category: [ai-eval](../categories/ai-eval.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `61eeb43d7bea371d00f813500cd1cf56f9116f8d`; commit timestamp `2026-10-03T19:19:43+10:00`; 386 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/Hona/openeval/blob/61eeb43d7bea371d00f813500cd1cf56f9116f8d/README.md)):
+
+> Code and LLM judges for agents. Plain functions, isolated runs, inspectable scores. Interactive documentation example. Viewer screenshots use illustrative data and fictional model labels.
+
+Build/package evidence: [package.json](https://github.com/Hona/openeval/blob/61eeb43d7bea371d00f813500cd1cf56f9116f8d/package.json); [packages/openeval/package.json](https://github.com/Hona/openeval/blob/61eeb43d7bea371d00f813500cd1cf56f9116f8d/packages/openeval/package.json); [packages/openeval/src/infra/containers/runtime/noninteractive/package.json](https://github.com/Hona/openeval/blob/61eeb43d7bea371d00f813500cd1cf56f9116f8d/packages/openeval/src/infra/containers/runtime/noninteractive/package.json); [packages/openeval/src/infra/containers/runtime/package.json](https://github.com/Hona/openeval/blob/61eeb43d7bea371d00f813500cd1cf56f9116f8d/packages/openeval/src/infra/containers/runtime/package.json); [packages/openeval/src/infra/verification/runtime/package.json](https://github.com/Hona/openeval/blob/61eeb43d7bea371d00f813500cd1cf56f9116f8d/packages/openeval/src/infra/verification/runtime/package.json)
+
+License evidence: [LICENSE](https://github.com/Hona/openeval/blob/61eeb43d7bea371d00f813500cd1cf56f9116f8d/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-eval**. Its category places it in the candidate set for evolution, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [evolution](../evolution.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`0aa21c8e188ff43968d1a18cefac2ac51f3eb2a2`](https://github.com/Hona/openeval/commit/0aa21c8e188ff43968d1a18cefac2ac51f3eb2a2). Scope: Full retry-run implementation, retry-plan tests, egress proxy and proxy tests read. Container/network setup, cost accounting and remaining changed paths were not audited.
+
+The [retry coordinator](https://github.com/Hona/openeval/blob/0aa21c8e188ff43968d1a18cefac2ac51f3eb2a2/packages/openeval/src/app/retry-run.ts) preserves completed evidence, plans explicit unresolved recordings without writing during preflight, then rechecks active slots inside a transaction before scheduling. The [fixtures](https://github.com/Hona/openeval/blob/0aa21c8e188ff43968d1a18cefac2ac51f3eb2a2/packages/openeval/src/app/plan-retries.test.ts) distinguish retry from rejudging, preserve fully scored zero results and reject superseded, duplicate or incompatible inputs. Adapt immutable attempts, transaction-time revalidation and explicit deferred work. Spending is an estimate/reservation mechanism: missing new and recorded costs fall back to zero, and a null next-attempt estimate defers execution; this is not proof of a hard provider billing ceiling.
+
+The [egress proxy](https://github.com/Hona/openeval/blob/0aa21c8e188ff43968d1a18cefac2ac51f3eb2a2/packages/openeval/src/infra/containers/runtime/egress-proxy.mjs) permits allowlisted CONNECT destinations on port 443, rejects private IPv4 resolutions, pins the selected resolved address and waits for matching TLS SNI before opening an upstream connection. Its [tests](https://github.com/Hona/openeval/blob/0aa21c8e188ff43968d1a18cefac2ac51f3eb2a2/packages/openeval/src/infra/containers/egress-proxy.test.ts) exercise wrong methods, ports, DNS results and ClientHello inputs. The header-size check occurs only while the delimiter is missing, so a complete oversized header is not rejected by that branch; buffering happens before the check. Established tunnels have no timeout. Treat this as a reviewed proxy mechanism, not evidence that every container egress route is constrained. No test, container or provider call was executed.
+

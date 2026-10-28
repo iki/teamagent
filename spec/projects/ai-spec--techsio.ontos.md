@@ -24,6 +24,14 @@ This entry was catalogued under **ai-spec**. Its category places it in the candi
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`ed7ecb1fcf395ccfbffab7c2bff3edf0c0c15a2f`](https://github.com/TechsioCZ/ontos/commit/ed7ecb1fcf395ccfbffab7c2bff3edf0c0c15a2f). Scope: Full core/tax database adapters, owner-evidence test helper and privacy/projects runtime configs read. Pool configuration, publication authority, schemas, package API compatibility and runtime integration were not audited.
+
+The [core database adapter](https://github.com/TechsioCZ/ontos/blob/ed7ecb1fcf395ccfbffab7c2bff3edf0c0c15a2f/app/packages/core-runtime/src/db/client.ts) wraps connection strings as Redacted values, delegates pool deadlines and returns a scoped Effect service with typed initialization errors. The [tax adapter](https://github.com/TechsioCZ/ontos/blob/ed7ecb1fcf395ccfbffab7c2bff3edf0c0c15a2f/app/verticals/tax/src/database/client.ts) uses the shared pool configurator while keeping domain-specific relations and errors. These illustrate adapter ownership and shared policy placement; unread helpers and dependency versions determine actual deadlines and cleanup behavior.
+
+The [test evidence helper](https://github.com/TechsioCZ/ontos/blob/ed7ecb1fcf395ccfbffab7c2bff3edf0c0c15a2f/app/packages/core-runtime/src/testing/owner-evidence.ts) separates disposable outbox cleanup from authority publication and serializes the latter in a transaction with a publication lock. Outbox deletion is three tenant-filtered statements without an enclosing transaction in this helper, and no test-only destination guard is visible; callers must own both isolation and partial-failure handling. The [privacy](https://github.com/TechsioCZ/ontos/blob/ed7ecb1fcf395ccfbffab7c2bff3edf0c0c15a2f/app/verticals/privacy/src/modern.runtime.ts) and [projects](https://github.com/TechsioCZ/ontos/blob/ed7ecb1fcf395ccfbffab7c2bff3edf0c0c15a2f/app/verticals/projects/src/modern.runtime.ts) configs use separate i18n instances and explicit route namespaces, not a demonstrated full shared-state design. Adapt ownership boundaries without changing Teamagent's stack. No database, runtime or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [techsio.ontos](https://github.com/TechsioCZ/ontos); analyzed commit `f1527a059cccae7c391a429d4e3d27eaad378bd5`; commit date 2026-10-03T20:16:43Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-spec--techsio.ontos.md).
+Analysis metadata: source [techsio.ontos](https://github.com/TechsioCZ/ontos); analyzed commit `ed7ecb1fcf395ccfbffab7c2bff3edf0c0c15a2f`; commit date 2026-10-23T17:42:24Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-spec--techsio.ontos.md).
 <!-- teamagent-analysis:end -->

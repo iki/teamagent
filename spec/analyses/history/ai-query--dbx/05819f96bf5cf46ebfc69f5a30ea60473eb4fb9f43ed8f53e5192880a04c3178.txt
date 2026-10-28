@@ -1,0 +1,20 @@
+# dbx
+
+Source: [dbx](https://github.com/t8y2/dbx) · [memory](../../memory.md), [import-generation](../../import-generation.md).
+
+Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-query--dbx.md).
+
+
+## Initial source review - 2026-10-28
+
+**Transfer-state serialization and generated database models are useful adapter references, not execution guarantees.** Reviewed commit `6ea903e33904f479bc7cd626e8d2d6320dd84fa2` (commit date `2026-10-28T01:14:18+08:00`). The enumerated snapshot contains 7928 tracked paths.
+
+This initial inspection covers DBX's desktop transfer-task store, deterministic model renderers and MCP binary launcher. The transfer store rejects unknown library versions and invalid top-level entries before allowing queued mutations, retries a failed initialization, serializes public mutations within one store instance and rolls back optimistic state when whole-library persistence fails. It deliberately resets dropTargetConfirmed on load. Nested data is still normalized by partial casts and coercion: unknown object-kind keys survive, several enum-like values are passed through, and any positive numeric batch size is accepted. The queue has no local admission cap or deadline and does not establish cross-process compare-and-swap persistence.
+
+The model registry emits 15 language/schema targets and deduplicates normalized names, preserving original field-name mappings explicitly for Go/Rust. It maps TypeScript integer columns to number, which does not preserve every database integer's precision; generated shapes do not reproduce all database constraints. Fixtures check selected emitted strings and registry membership, not compilation and round-trip validity across every target. The MCP launcher selects an installed platform package or an explicit executable override, inherits environment/stdio and forwards signals. --verify-platform checks the platform table only; it does not resolve the binary or verify its integrity or execution.
+
+Evidence: [apps/desktop/src/stores/transferTaskStore.ts:50-243](https://github.com/t8y2/dbx/blob/6ea903e33904f479bc7cd626e8d2d6320dd84fa2/apps/desktop/src/stores/transferTaskStore.ts#L50-L243) · [apps/desktop/src/stores/transferTaskStore.ts:470-496](https://github.com/t8y2/dbx/blob/6ea903e33904f479bc7cd626e8d2d6320dd84fa2/apps/desktop/src/stores/transferTaskStore.ts#L470-L496) · [apps/desktop/src/lib/model/modelRendererRegistry.ts:1-243](https://github.com/t8y2/dbx/blob/6ea903e33904f479bc7cd626e8d2d6320dd84fa2/apps/desktop/src/lib/model/modelRendererRegistry.ts#L1-L243) · [apps/desktop/src/lib/model/modelRendererRegistry.spec.ts:1-37](https://github.com/t8y2/dbx/blob/6ea903e33904f479bc7cd626e8d2d6320dd84fa2/apps/desktop/src/lib/model/modelRendererRegistry.spec.ts#L1-L37) · [packages/mcp-server/bin/dbx-mcp-server.js:1-71](https://github.com/t8y2/dbx/blob/6ea903e33904f479bc7cd626e8d2d6320dd84fa2/packages/mcp-server/bin/dbx-mcp-server.js#L1-L71).
+
+**Harness consequence:** Reuse serialized state mutations and removal of persisted destructive confirmation, but validate nested data with schemas and require a versioned transactional backend for shared writers. Generated model artifacts need original-name mappings, exact numeric semantics and target compiler/round-trip checks. Wrap the native MCP executable with a pinned artifact manifest, explicit environment, bounded lifecycle and host authorization; platform recognition alone is not an installation or safety check.
+
+**Scope and limits:** Initial scoped static review of selected implementation files and renderer fixtures from the enumerated 7,928-path snapshot. Database drivers, SQL execution/authorization, backend persistence, release packaging, license/dependency suitability and native application behavior remain outside this review. No database connection, binary, generated code or upstream test was executed; README capability and size claims are not validated here.

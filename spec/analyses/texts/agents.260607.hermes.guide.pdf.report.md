@@ -6,7 +6,7 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://github.com/alchaincyf/hermes-agent-orange-book/raw/main/Hermes-Agent-The-Complete-Guide-v260607.pdf>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-10-27T18:40:39.721Z. Import: **pinned**. Content validation: **partial**.
+Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-10-28T07:07:39.056Z. Import: **pinned**. Content validation: **partial**.
 
 First captured: 2026-10-24T05:51:35.848Z. Source creation/publication date: unknown. Date evidence: unknown. Filename dates and Last-Modified are not treated as creation dates.
 

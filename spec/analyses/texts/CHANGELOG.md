@@ -171,3 +171,9 @@ Records source-version and extraction-status changes. Unchanged checks update so
 ### Final static alias and locator verification — 2026-10-27
 
 [Final measured run](static-policy-final-verification-2026-10-27.json) preserves the earlier verification separately. All 38 pinned identities and dates are unchanged, with zero captured-version updates. Added alias rename/addition, conflicting-pin and exact private-locator integrity regressions; the assembled step gate now passes 336 tests.
+
+## 2026-10-28T07:07:39.056Z
+
+- agents.260731.qm-is-trying-to-solve-the-company-agent-problem.md: created, usable-text; version 3882bc7a-579c-4af0-80d5-38c30a85c5cb; content abd27c4e1c79a46650c61afa4f4cdc2c91849de5e2b691ba92bcd927837ee353.
+- cx.260408.memento.pdf: created, partial; version 60c06d9f-d037-4995-a6c9-09c84ad65e5f; content e6d92826080f8c8c46eaafab48f0231b64af93747c64550ed3fd69e4ec569a95.
+- tools.260624.tanstack-ai-code-mode-with-skills.md: created, usable-text; version 1942316c-4d07-47ab-9f72-d401ae75acba; content a3b223a361c92e375e1be8fb54c889d6ea8d1552f9460ddca746eb72a62b17a1.

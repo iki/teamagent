@@ -6,7 +6,7 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://x.com/Vercantez/status/2082138839888589200>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-10-27T18:40:39.721Z. Import: **pinned**. Content validation: **partial**.
+Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-10-28T07:07:39.056Z. Import: **pinned**. Content validation: **partial**.
 
 First captured: 2026-10-24T05:50:25.663Z. Source creation/publication date: 2026-07-28T16:19:18.000Z. Date evidence: publisher-html-meta (article:published_time). Filename dates and Last-Modified are not treated as creation dates.
 

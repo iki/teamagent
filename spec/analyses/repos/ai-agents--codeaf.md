@@ -2,12 +2,11 @@
 
 Source: [codeaf](https://github.com/Agent-Field/CodeAF) · [Analysis](../../projects/ai-agents--codeaf.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-27T18:19:07.717Z. Status: **history-diverged**. Reviewed SHA: `06a3283dd74385bf3c86ffc799c47b51b24fb0f7`; commit date: 2026-10-02T14:23:42-04:00; review date: unknown; observed SHA: `3bf6072fdd8a64f6497634191fa20f23730fe8cb`.
+Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `3bf6072fdd8a64f6497634191fa20f23730fe8cb`; commit date: 2026-10-27T11:49:16-04:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `3bf6072fdd8a64f6497634191fa20f23730fe8cb`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Agent-Field/CodeAF/compare/06a3283dd74385bf3c86ffc799c47b51b24fb0f7...3bf6072fdd8a64f6497634191fa20f23730fe8cb). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Agent-Field/CodeAF/compare/3bf6072fdd8a64f6497634191fa20f23730fe8cb...3bf6072fdd8a64f6497634191fa20f23730fe8cb). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
 - Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Analyzed SHA is not an ancestor of observed HEAD; inspect rewritten or unrelated history.
 
 ## Recent commits
 

@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 divergent-history investigation and scoped source review
+
+Source: [fuigo](https://github.com/FerroxLabs/fuigo); inspected snapshot `0da71d3fc96e4fdb8332bbc448b61d88bc497924`; prior analyzed commit `2eb306e08ae24d05c15c74b6b1c1d3235e0f1d96`. The inspected snapshot is the saved discovery version, not a claim about the checkout's latest HEAD.
+
+**Scope:** Complete committed path inventory (2,747 paths); full permission.rs (73 lines) and agent.rs (258 lines). Builder/enforcement paths and upstream tests were not executed or audited.
+
+**History outcome:** both full commits are available, but the analyzed commit is not an ancestor and the complete trees differ. The two-tree comparison contains 2,747 changed paths; common ancestor: `none`. These counts establish comparison coverage, not semantic review of every file. The prior analyzed baseline and findings remain preserved as historical evidence. A separately acknowledged, guarded reconciliation records the inspected revision as a new scoped analysis baseline; it does not establish ancestry, publisher intent or whole-project correctness. The managed metadata below is authoritative for whether that acknowledgment has been recorded.
+
+The [permission value types](https://github.com/FerroxLabs/fuigo/blob/0da71d3fc96e4fdb8332bbc448b61d88bc497924/crates/codegen/fuigo-config-types/src/permission.rs) make Deny the Rust enum default and include a fixture rejecting unknown tool-filter values. PermissionRule.action is required in the shown deserializer; the enum default alone does not prove the comment's omitted-TOML-action behavior. The actual evaluation/defaulting path needs its own tests.
+
+The [agent object](https://github.com/FerroxLabs/fuigo/blob/0da71d3fc96e4fdb8332bbc448b61d88bc497924/crates/codegen/fuigo-agent/src/agent.rs) preserves unresolved tool-allowlist names for diagnostics and stores hosted-tool capability information separately. Its comments describe an earlier allowlist expansion failure, but the filtering builder was not inspected here. More directly, update_policies_from_definition is a no-op with a TODO, and prompt rendering uses unwrap_or_default. Teamagent should expose policy-update support as a capability, reject unsupported changes explicitly, preserve a validated prior prompt on rendering failure, and treat hosted capabilities as eligibility signals rather than grants.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [fuigo](https://github.com/FerroxLabs/fuigo); analyzed commit `2eb306e08ae24d05c15c74b6b1c1d3235e0f1d96`; commit date 2026-09-17T18:52:23+07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--fuigo.md).
+Analysis metadata: source [fuigo](https://github.com/FerroxLabs/fuigo); analyzed commit `0da71d3fc96e4fdb8332bbc448b61d88bc497924`; commit date 2026-10-26T13:24:25+07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--fuigo.md).
 <!-- teamagent-analysis:end -->

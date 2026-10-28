@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents-swarm**. Its category places it in t
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 reconciliation and scoped source review
+
+Reviewed source: [ai-agents-swarm--orca](https://github.com/stablyai/orca) at `ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c`.
+
+**Scope:** Complete 40,161-path committed change inventory; scoped reads of ACP permission implementation (1–144), its tests (1–170), and authority-fence implementation (1–246). This is not an audit of all changed subsystems. No upstream tests executed.
+
+The full analyzed commit 08c7152ab6e576951b33c2991ed2dedca4333096 is an ancestor of the observed revision in the newly categorized checkout. Its complete no-renames inventory is 2,462,658 UTF-8 bytes. The previous rename block came from the comparison output limit, not missing history. Retain the original report ID and category provenance while recording the current checkout identity ai-agents--orca as an alias.
+
+[ACP permission handling](https://github.com/stablyai/orca/blob/ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c/src/main/acp/acp-permission-requests.ts#L43-L144) requires usable routing IDs/options, diagnoses dropped malformed optional fields, cancels without a handler or on invalid/unoffered replies, and settles once on its request-context abort. A handler exception is interpolated into a diagnostic; Teamagent must sanitize it. Compatibility repair must not remove authority-critical information or turn an unfamiliar option into an implicit grant.
+
+The [tests](https://github.com/stablyai/orca/blob/ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c/src/main/acp/acp-permission-requests.test.ts#L101-L169) distinguish prompt cancellation from the owner of an autonomous permission: session/cancel alone intentionally leaves that handler signal active. Do not advertise universal cancellation enforcement from a session cancel method. [Authority retirement/restoration](https://github.com/stablyai/orca/blob/ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c/src/main/agent-hooks/server/server-authority-fences.ts#L11-L126) removes aliases, cached observations and hydrated grants, then restores only matching fences that have not been superseded or closed. Persistence is scheduled rather than established as an atomic durable transaction in this slice. Adopt explicit ownership/epoch checks and negotiate cancellation capability; no distributed fencing or complete isolation guarantee was verified.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [orca](https://github.com/stablyai/orca); analyzed commit `08c7152ab6e576951b33c2991ed2dedca4333096`; commit date 2026-09-02T21:48:17-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--orca.md).
+Analysis metadata: source [orca](https://github.com/stablyai/orca); analyzed commit `ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c`; commit date 2026-10-27T10:36:03-07:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--orca.md).
 <!-- teamagent-analysis:end -->

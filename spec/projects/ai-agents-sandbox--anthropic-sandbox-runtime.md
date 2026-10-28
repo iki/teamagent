@@ -29,6 +29,14 @@ Source comments and wrappers establish intended mechanisms, not verified resista
 
 [Agents](../agents.md) · [Models](../models.md) · [Security](../security.md)
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`98a4016d27609ed34dd1fb43d23ed6efb6eeeb77`](https://github.com/anthropic-experimental/sandbox-runtime/commit/98a4016d27609ed34dd1fb43d23ed6efb6eeeb77). Scope: Full own-install warning and multiplexed proxy implementation read. Windows isolation, manager policy, HTTP/SOCKS handlers and certificate/SigV4 paths were not audited.
+
+The [own-install warning](https://github.com/anthropic-experimental/sandbox-runtime/blob/98a4016d27609ed34dd1fb43d23ed6efb6eeeb77/src/sandbox/own-files.ts) recognizes a key host boundary: a sandboxed command able to rewrite the installed unsandboxed runtime can affect the next host execution. It checks literal and resolved spellings for node_modules installations, but intentionally excludes checkouts, compiled bundles and wildcard policy judgments; it warns rather than enforces. Keep trusted host executables outside writable task data and validate the actual configured policy.
+
+The [multiplexed proxy](https://github.com/anthropic-experimental/sandbox-runtime/blob/98a4016d27609ed34dd1fb43d23ed6efb6eeeb77/src/sandbox/mux-proxy.ts) owns backend startup/close, preserves the first protocol byte, tracks open sockets and uses a first-byte timeout. It avoids injecting a plaintext error after upstream data has begun, improving stream integrity. Windows uses loopback TCP while other platforms use a predictable temporary Unix socket; the reviewed module sets no explicit socket permissions or connection-count bound and relies on separate platform/network policy. Adapt lifecycle and stream-error semantics, but do not infer OS isolation or private-endpoint access control from the multiplexer. No proxy, certificate, sandbox or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [anthropic-sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime); analyzed commit `9e93406ab2e0b6e9794624896f729560dc9445db`; commit date 2026-10-03T13:33:01+01:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--anthropic-sandbox-runtime.md).
+Analysis metadata: source [anthropic-sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime); analyzed commit `98a4016d27609ed34dd1fb43d23ed6efb6eeeb77`; commit date 2026-10-25T15:32:22-07:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--anthropic-sandbox-runtime.md).
 <!-- teamagent-analysis:end -->

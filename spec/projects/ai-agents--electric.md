@@ -2,7 +2,7 @@
 
 Source: [electric](https://github.com/electric-sql/electric) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `236293974902a08990ffc9ece5ab6ce58d76cd84`; commit timestamp `2026-10-03T10:34:25-06:00`; 3,911 tracked paths.
 
@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-27 scoped update review
+
+Reviewed commit `3f9809fb0bd894cb74470d434749673492ad7acf` (commit date `2026-10-06T10:09:42-06:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete one-file delta and the 164-line image-publication workflow read. No application runtime paths changed in this comparison; no container build or registry request was made.
+
+The delta restores image publication from the temporary Docker Hub destination to `electricsql/electric`, with canary images also targeting `electricsql/electric-canary`. The [workflow's destination and tagging logic](https://github.com/electric-sql/electric/blob/3f9809fb0bd894cb74470d434749673492ad7acf/.github/workflows/sync_service_dockerhub_image.yml#L33-L35) and [release/custom/canary branches](https://github.com/electric-sql/electric/blob/3f9809fb0bd894cb74470d434749673492ad7acf/.github/workflows/sync_service_dockerhub_image.yml#L117-L132) are deployment evidence, not a change to sync semantics.
+
+The workflow continues to resolve an exact commit and pass it to the [build job and revision labels](https://github.com/electric-sql/electric/blob/3f9809fb0bd894cb74470d434749673492ad7acf/.github/workflows/sync_service_dockerhub_image.yml#L145-L164). Teamagent should similarly retain source revision and artifact digest separately from a mutable image tag or registry destination. **Disposition:** retain Electric as a synchronization reference; this small deployment delta does not establish task scheduling, agent isolation, delivery guarantees, image availability or runtime compatibility. Existing runtime questions remain open.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [electric](https://github.com/electric-sql/electric); analyzed commit `236293974902a08990ffc9ece5ab6ce58d76cd84`; commit date 2026-10-03T10:34:25-06:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--electric.md).
+Analysis metadata: source [electric](https://github.com/electric-sql/electric); analyzed commit `3f9809fb0bd894cb74470d434749673492ad7acf`; commit date 2026-10-06T10:09:42-06:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--electric.md).
 <!-- teamagent-analysis:end -->

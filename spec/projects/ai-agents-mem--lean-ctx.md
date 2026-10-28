@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Policy updates compare stored state and task signals preserve many uncertainty states, with missing-record gaps.** Reviewed commit `10a74ea6e7224b21547f92e6f46fb4b7d52b280f` (commit date `2026-10-27T13:45:19+01:00`). Compared with `9594b1cc244f8747112bb5fd730f2951a4d94090`; the complete Git comparison contains 1788 changed paths.
+
+The policy store scopes filenames by a digest, rejects unknown fields and validates policy schema on reads under a one-megabyte stat limit. update_in acquires the shared file lock, compares current state to the caller's expected value, applies a change and atomically writes it, preventing ordinary lost promotions. It retains one predecessor. Missing, malformed, oversized and invalid stored policies all become the same default no-policy state. save_in enforces serialized size but does not validate the policy; its fixture deliberately saves invalid policy then reads no policy, so a successful write/update does not necessarily mean the intended policy became active.
+
+Task signals preserve task/scope attribution, saturate counters and mark multi-process observation, damaged records or recorded incomplete markers as unknown. The fixtures cover scope isolation and lost-event markers. However observe inserts every origin into a process-global unbounded set and spawns one detached thread per first-seen task. Before that thread persists, a missing file reads as clean default; if recording and best-effort marker creation both fail, uncertainty may not survive process loss. Metadata-size checks precede separate whole-file reads. These are useful monitoring signals, not complete outcome evidence or promotion authorization.
+
+Evidence: [rust/src/core/context_store/policy_store.rs:1-216](https://github.com/yvgude/lean-ctx/blob/10a74ea6e7224b21547f92e6f46fb4b7d52b280f/rust/src/core/context_store/policy_store.rs#L1-L216) · [rust/src/core/context_store/task_signals.rs:1-265](https://github.com/yvgude/lean-ctx/blob/10a74ea6e7224b21547f92e6f46fb4b7d52b280f/rust/src/core/context_store/task_signals.rs#L1-L265).
+
+**Harness consequence:** Make absent/disabled/corrupt policy states distinct and validate candidates before persistence, returning a verified active-version receipt after comparison-and-swap. Persist observer registration before serving reads or represent an unregistered task as unknown, bound background work/state and surface marker/write failures durably. Use these signals only alongside held-out task acceptance and independently controlled promotion/rollback rules.
+
+**Scope and limits:** Static scoped review of policy persistence and per-task observation code including embedded tests within the 1,788-path comparison. Lock/atomic-write helpers, licensed policy learner, planner shadow/apply enforcement and transport tests were not fully audited or executed. No policy promoted or runtime signals generated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [lean-ctx](https://github.com/yvgude/lean-ctx); analyzed commit `9594b1cc244f8747112bb5fd730f2951a4d94090`; commit date 2026-10-03T21:27:08+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--lean-ctx.md).
+Analysis metadata: source [lean-ctx](https://github.com/yvgude/lean-ctx); analyzed commit `10a74ea6e7224b21547f92e6f46fb4b7d52b280f`; commit date 2026-10-27T13:45:19+01:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--lean-ctx.md).
 <!-- teamagent-analysis:end -->

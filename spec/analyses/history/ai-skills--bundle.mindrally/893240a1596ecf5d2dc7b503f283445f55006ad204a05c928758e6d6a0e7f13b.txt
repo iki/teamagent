@@ -1,0 +1,33 @@
+# bundle.mindrally
+
+Source: [bundle.mindrally](https://github.com/Mindrally/skills) · Category: [ai-skills](../categories/ai-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `97184105b5daa3a6860a2aeb8e7e7fd1c42da40a`; commit timestamp `2026-09-03T10:58:58-05:00`; 268 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/Mindrally/skills/blob/97184105b5daa3a6860a2aeb8e7e7fd1c42da40a/README.md)):
+
+> 265+ Claude Code skills converted from Cursor rules. Supercharge your AI coding with expert guidelines for React, Python, TypeScript, and everything in between. A comprehensive collection of skills for Claude Code, Anthropic's official CLI for Claude.
+
+Build/package evidence: No common build manifest identified.
+
+License evidence: [LICENSE](https://github.com/Mindrally/skills/blob/97184105b5daa3a6860a2aeb8e7e7fd1c42da40a/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-skills**. Its category places it in the candidate set for skills; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`7682ca77710e0971eab4e0ae5dddfa281aea0ba5`](https://github.com/Mindrally/skills/commit/7682ca77710e0971eab4e0ae5dddfa281aea0ba5). Scope: Full testing and LLM skills read. Other language/framework guides, implementation examples and empirical outcomes were not reviewed.
+
+The [testing guide](https://github.com/Mindrally/skills/blob/7682ca77710e0971eab4e0ae5dddfa281aea0ba5/testing/SKILL.md) emphasizes independent cases, minimal setup, invalid inputs and observable behavior. Its every-export coverage rule is a broad heuristic rather than a risk-based requirement; mapping each test to a real defect or contract is more useful than adding tests solely because a function is exported. Mocking persistence is appropriate only when persistence is not the behavior under test.
+
+The [LLM guide](https://github.com/Mindrally/skills/blob/7682ca77710e0971eab4e0ae5dddfa281aea0ba5/llm/SKILL.md) is a topic checklist spanning tokenization, adaptation, distributed training, evaluation and serving. It supplies no dataset split, model/version binding, metric acceptance threshold or measured result in the inspected text. Recommendations such as DeepSpeed or particular adaptation methods are candidates requiring a workload and compatibility evaluation, not adopted dependencies. Retain this bundle as navigation/reference material; no training, model evaluation or tests were run.

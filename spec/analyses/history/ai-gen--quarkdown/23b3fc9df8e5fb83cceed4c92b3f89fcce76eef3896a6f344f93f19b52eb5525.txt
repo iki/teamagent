@@ -1,0 +1,42 @@
+# quarkdown
+
+Source: [quarkdown](https://github.com/iamgio/quarkdown) · Category: [ai-gen](../categories/ai-gen.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `c81f8db1d0abce2e66f957cb0006d6785e7fbe0f`; commit timestamp `2026-10-03T00:04:07-07:00`; 2,241 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/iamgio/quarkdown/blob/c81f8db1d0abce2e66f957cb0006d6785e7fbe0f/README.md)):
+
+> Quarkdown is a modern Markdown-based typesetting system designed for **versatility**. It allows a single project to compile seamlessly into a print-ready book, academic paper, knowledge base, or interactive presentation. All through an incredibly powerful Turing-complete extension of Markdown, ensuring your ideas flow automatically into paper.
+
+Build/package evidence: [quarkdown-html/package.json](https://github.com/iamgio/quarkdown/blob/c81f8db1d0abce2e66f957cb0006d6785e7fbe0f/quarkdown-html/package.json)
+
+License evidence: [LICENSE](https://github.com/iamgio/quarkdown/blob/c81f8db1d0abce2e66f957cb0006d6785e7fbe0f/LICENSE) Classification hint: GPL; inspect version. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-gen**. Its category places it in the candidate set for import-generation, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [import-generation](../import-generation.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Host-provided package resolution defaults to unsupported and preview startup distinguishes bind failure.** Reviewed commit `0bacdef6bd32c6dba1b6ef34c45a83c864a716c7` (commit date `2026-10-25T20:14:41-07:00`). Compared with `c81f8db1d0abce2e66f957cb0006d6785e7fbe0f`; the complete Git comparison contains 218 changed paths.
+
+PipelineOptions now accepts a host-provided package resolver and defaults to Unsupported; detached contexts use the same unsupported fallback. This establishes an extension seam, not evidence that arbitrary document imports are safely resolved. The new latest-version helper compares parsed semantic versions, ignores invalid names and may select a prerelease when it outranks older stable releases; fixtures explicitly demonstrate that policy. Preview startup classifies bind failures only before readiness, handles asynchronous engine errors through a coroutine handler and logs later errors normally. A loopback hostname constant is defined, but the inspected embeddedServer call passes only engine/port and does not pass that constant, so this file alone does not prove loopback-only binding. Stacked rendering now carries node style/width/height; page-format tests assert generated CSS for paged versus slide layouts, without demonstrating final browser/PDF pagination.
+
+Evidence: [quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/pipeline/PipelineOptions.kt:36-62](https://github.com/iamgio/quarkdown/blob/0bacdef6bd32c6dba1b6ef34c45a83c864a716c7/quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/pipeline/PipelineOptions.kt#L36-L62) · [quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/context/Context.kt:170-179](https://github.com/iamgio/quarkdown/blob/0bacdef6bd32c6dba1b6ef34c45a83c864a716c7/quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/context/Context.kt#L170-L179) · [quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/model/Versions.kt:1-14](https://github.com/iamgio/quarkdown/blob/0bacdef6bd32c6dba1b6ef34c45a83c864a716c7/quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/model/Versions.kt#L1-L14) · [quarkdown-package-manager/src/commonTest/kotlin/com/quarkdown/pm/model/VersionsTest.kt:10-32](https://github.com/iamgio/quarkdown/blob/0bacdef6bd32c6dba1b6ef34c45a83c864a716c7/quarkdown-package-manager/src/commonTest/kotlin/com/quarkdown/pm/model/VersionsTest.kt#L10-L32) · [quarkdown-server/src/main/kotlin/com/quarkdown/server/LocalFileWebServer.kt:24-129](https://github.com/iamgio/quarkdown/blob/0bacdef6bd32c6dba1b6ef34c45a83c864a716c7/quarkdown-server/src/main/kotlin/com/quarkdown/server/LocalFileWebServer.kt#L24-L129) · [quarkdown-html/src/commonMain/kotlin/com/quarkdown/rendering/html/node/QuarkdownHtmlNodeRenderer.kt:158-177](https://github.com/iamgio/quarkdown/blob/0bacdef6bd32c6dba1b6ef34c45a83c864a716c7/quarkdown-html/src/commonMain/kotlin/com/quarkdown/rendering/html/node/QuarkdownHtmlNodeRenderer.kt#L158-L177) · [quarkdown-html/src/jvmTest/kotlin/com/quarkdown/rendering/html/HtmlPostRendererTest.kt:254-349](https://github.com/iamgio/quarkdown/blob/0bacdef6bd32c6dba1b6ef34c45a83c864a716c7/quarkdown-html/src/jvmTest/kotlin/com/quarkdown/rendering/html/HtmlPostRendererTest.kt#L254-L349).
+
+**Harness consequence:** Keep package acquisition in a trusted host adapter with immutable version/hash resolution, containment and explicit prerelease policy. Pass and verify loopback binding explicitly for local preview, and scope server lifetime to the owning task. Treat generated CSS as an intermediate artifact: verify paginated/browser output and distinguish compilation readiness from successful artifact rendering.
+
+**Scope and limits:** Scoped static review of package-resolver wiring, version policy, preview error handling and selected rendering changes in the 218-path comparison. Package download/cache implementation, Ktor default binding and complete HTML post-renderer were not verified. Fixtures were read, not executed; no preview server, package installation, browser or PDF render was run.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [quarkdown](https://github.com/iamgio/quarkdown); analyzed commit `c81f8db1d0abce2e66f957cb0006d6785e7fbe0f`; commit date 2026-10-03T00:04:07-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-gen--quarkdown.md).
+<!-- teamagent-analysis:end -->

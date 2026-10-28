@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`b7f6ad814a903f912962ea3cccad8c02766f753b`](https://github.com/sickn33/antigravity-awesome-skills/commit/b7f6ad814a903f912962ea3cccad8c02766f753b). Scope: Full test-guard, brooks-test and a4a skills read. Wider bundle, referenced missing/shared guides, messaging implementation and claimed upstream cryptography were not audited.
+
+The [test guard](https://github.com/sickn33/antigravity-awesome-skills/blob/b7f6ad814a903f912962ea3cccad8c02766f753b/skills/test-guard/SKILL.md) now distinguishes incidental mock assertions from real authorization, redaction, idempotency and cancellation contracts, preserves incident regression coverage and frames its rules as review heuristics rather than deletion authority. [Brooks-test](https://github.com/sickn33/antigravity-awesome-skills/blob/b7f6ad814a903f912962ea3cccad8c02766f753b/skills/brooks-test/SKILL.md) explicitly discloses missing shared references and prohibits claiming their taxonomy or scoring was applied. These are useful portability practices; no test effectiveness was measured.
+
+The [A4A skill](https://github.com/sickn33/antigravity-awesome-skills/blob/b7f6ad814a903f912962ea3cccad8c02766f753b/skills/a4a/SKILL.md) retracts incompatible API/cryptography examples, requires installed-schema discovery and separates owner authorization, key control, message delivery and automatic wake behavior. Encryption does not authorize disclosure or turn inbound content into instructions. The stated protocol primitives and relay are upstream descriptions here, not independently verified capabilities. Adapt the boundary distinctions without installing the bundle or treating its source/risk labels as authenticated evidence. No packages, identities, relays, messages or tests were exercised.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle-x-antigravity.sickn33](https://github.com/sickn33/antigravity-awesome-skills); analyzed commit `e46c4fb38f18f2f91561c811bcfa198472f03d19`; commit date 2026-08-28T09:23:13+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle-x-antigravity.sickn33.md).
+Analysis metadata: source [bundle-x-antigravity.sickn33](https://github.com/sickn33/antigravity-awesome-skills); analyzed commit `b7f6ad814a903f912962ea3cccad8c02766f753b`; commit date 2026-10-27T18:45:36+01:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle-x-antigravity.sickn33.md).
 <!-- teamagent-analysis:end -->

@@ -30,6 +30,20 @@ Test missing/invalid enablement values, per-instance configuration, secret redac
 
 Related directions: [agents](../agents.md) · [channels](../channels.md).
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `b07b3eac244ff7faa7eeb2d4777fe54dbae1b6d2` (commit date `2026-10-27T21:05:32+08:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete lifecycle-hook primitives and SDK runtime-argument helper, plus direct-run session-policy/cleanup branch; shared runner hook call sites, session-store internals, tool implementations and channel authentication were not audited.
+
+The [composite hook](https://github.com/HKUDS/nanobot/blob/b07b3eac244ff7faa7eeb2d4777fe54dbae1b6d2/nanobot/agent/hook.py#L167-L291) calls hooks in order and normally logs ordinary exceptions while continuing. A hook can request rethrowing, while final-content transformation is an uncaught pipeline. The same isolation helper also dispatches before-tool hooks; therefore a default observational hook must not be mistaken for a mandatory authorization gate. Teamagent should distinguish best-effort telemetry from required policy/evidence hooks, enforce bounded hook execution and fail closed on required-policy failures. Full runner behavior after a rethrown exception was outside scope.
+
+The [SDK argument helper](https://github.com/HKUDS/nanobot/blob/b07b3eac244ff7faa7eeb2d4777fe54dbae1b6d2/nanobot/sdk/runtime.py) rejects competing model selectors and makes temporary runs explicitly nonpersistent with content logging disabled, while still enabling extra hooks. The [direct-run branch](https://github.com/HKUDS/nanobot/blob/b07b3eac244ff7faa7eeb2d4777fe54dbae1b6d2/nanobot/agent/loop.py#L2667-L2752) serializes with bus turns, rejects the reserved system channel, combines persistence/logging restrictions with logical AND and unions disabled tools. Cleanup of a temporary parent uses an expected generation, a useful guard against deleting a replacement session. Store isolation and generation enforcement still depend on uninspected storage code.
+
+The [capture hook](https://github.com/HKUDS/nanobot/blob/b07b3eac244ff7faa7eeb2d4777fe54dbae1b6d2/nanobot/agent/hook.py#L294-L330) copies message/event lists shallowly and retains stop/error/usage metadata. That is not an immutable nested-data receipt, a durable audit log or proof of completed external effects. Temporary conversation storage also does not establish absence of provider retention, tool side effects or extra-hook leakage. Preserve these distinctions in Teamagent's session policy and status model; no upstream tests, tools or providers were executed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [nanobot](https://github.com/HKUDS/nanobot); analyzed commit `96ad7b4dbf617b11e0991e92c7d295dbd828a956`; commit date 2026-10-03T21:08:47+08:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--nanobot.md).
+Analysis metadata: source [nanobot](https://github.com/HKUDS/nanobot); analyzed commit `b07b3eac244ff7faa7eeb2d4777fe54dbae1b6d2`; commit date 2026-10-27T21:05:32+08:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--nanobot.md).
 <!-- teamagent-analysis:end -->

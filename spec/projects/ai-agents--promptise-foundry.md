@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 divergent-history investigation and scoped source review
+
+Source: [promptise-foundry](https://github.com/promptise-com/foundry); inspected snapshot `8c2f12df49cd935cbff6d42ae493ef9bb7fa500f`; prior analyzed commit `816cec532485c03281dcc9c60ee585c3ef9dad34`. The inspected snapshot is the saved discovery version, not a claim about the checkout's latest HEAD.
+
+**Scope:** Complete committed path inventory (859 paths); full journal/memory.py (75 lines), sandbox/session.py (253 lines), and coordinator.py lines 231–460. No distributed service or upstream tests executed.
+
+**History outcome:** both full commits are available, but the analyzed commit is not an ancestor and the complete trees differ. The two-tree comparison contains 859 changed paths; common ancestor: `none`. These counts establish comparison coverage, not semantic review of every file. The prior analyzed baseline and findings remain preserved as historical evidence. A separately acknowledged, guarded reconciliation records the inspected revision as a new scoped analysis baseline; it does not establish ancestry, publisher intent or whole-project correctness. The managed metadata below is authoritative for whether that acknowledgment has been recorded.
+
+The [in-memory journal](https://github.com/promptise-com/foundry/blob/8c2f12df49cd935cbff6d42ae493ef9bb7fa500f/src/promptise/runtime/journal/memory.py) is explicitly nonpersistent. Checkpoints use shallow dict copies and last_checkpoint returns the stored object; nested state is not an immutable recovery snapshot. The [sandbox session](https://github.com/promptise-com/foundry/blob/8c2f12df49cd935cbff6d42ae493ef9bb7fa500f/src/promptise/sandbox/session.py) normalizes paths under fixed container roots and shell-quotes listing/package arguments. Lexical containment does not resolve symlinks inside the container. Listing returns an empty list after a failed command, and cleanup marks the session stopped before sequential kill/remove calls, so failure can leave an artifact without a retry path in this object. Preserve incomplete cleanup and listing failures explicitly.
+
+The inspected [coordinator request and health paths](https://github.com/promptise-com/foundry/blob/8c2f12df49cd935cbff6d42ae493ef9bb7fa500f/src/promptise/runtime/distributed/coordinator.py#L231-L460) bound HTTP duration and distinguish unreachable nodes from HTTP failures. They gather all node checks concurrently without an explicit fan-out cap and parse whole response bodies before truncating fallback text. Retained heartbeat grace is an operational liveness observation, not task completion or fencing. Teamagent needs bounded transport bodies/concurrency, resource settlement records and persistent journals for recovery; these conclusions do not establish the behavior of other journal or sandbox implementations.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [promptise-foundry](https://github.com/promptise-com/foundry); analyzed commit `816cec532485c03281dcc9c60ee585c3ef9dad34`; commit date 2026-08-18T19:42:01+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--promptise-foundry.md).
+Analysis metadata: source [promptise-foundry](https://github.com/promptise-com/foundry); analyzed commit `8c2f12df49cd935cbff6d42ae493ef9bb7fa500f`; commit date 2026-10-25T13:39:11+01:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--promptise-foundry.md).
 <!-- teamagent-analysis:end -->

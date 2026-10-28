@@ -28,6 +28,14 @@ Adopt as a baseline supply-chain and deployment scanner after selecting relevant
 
 [Security](../security.md) · [Agents](../agents.md) · [Generation](../generation.md) · [Evolution](../evolution.md)
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`d18962e8f8177361e8397924f6aa6838c4a351aa`](https://github.com/aquasecurity/trivy/commit/d18962e8f8177361e8397924f6aa6838c4a351aa). Scope: Full cryptographic-asset ID helper/tests and CSAF applicability adapter read. Registry downloads, advisory authenticity, package matching internals and scanning runtime were not audited.
+
+The [asset identifier](https://github.com/aquasecurity/trivy/blob/d18962e8f8177361e8397924f6aa6838c4a351aa/pkg/crypto/id.go) derives a stable display identity from descriptor, path and format. Its [tests](https://github.com/aquasecurity/trivy/blob/d18962e8f8177361e8397924f6aa6838c4a351aa/pkg/crypto/id_test.go) intentionally exclude encoding/name and image-layer identity while distinguishing different paths. This is not a cryptographic content digest or sufficient provenance for the same asset observed across source versions; hashing failure also yields a string after logging rather than a typed failure. Retain full source/version identity separately.
+
+The [CSAF adapter](https://github.com/aquasecurity/trivy/blob/d18962e8f8177361e8397924f6aa6838c4a351aa/pkg/vex/csaf.go) requires a subcomponent before matching a product relationship, preventing a relationship assertion from automatically applying to a standalone component. It recognizes selected relationship categories and preserves modification status, source and statement. Malformed PURLs are logged and skipped; conflicting fixed/not-affected statuses traverse a map without an explicit precedence rule. Adapt contextual applicability and retained suppression evidence, while validating advisory trust, ambiguity and complete coverage independently. No scan, registry request, advisory refresh or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [trivy](https://github.com/aquasecurity/trivy); analyzed commit `8f815546c7b57dc11229b0098463dff0cfc9ed2c`; commit date 2026-10-02T03:26:05Z; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--trivy.md).
+Analysis metadata: source [trivy](https://github.com/aquasecurity/trivy); analyzed commit `d18962e8f8177361e8397924f6aa6838c4a351aa`; commit date 2026-10-27T13:22:50Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--trivy.md).
 <!-- teamagent-analysis:end -->

@@ -2,7 +2,7 @@
 
 Source: [skillsync-txcript](https://github.com/skillsynchq/txcript) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `8cd3b0e63f797b1531a14197f41a0e9eeedec8c6`; commit timestamp `2026-09-28T20:00:00-07:00`; 139 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-27 scoped update review
+
+Reviewed commit `c60e686e7ed30e67019288eed80c4be478512d64` (commit date `2026-10-22T23:54:00-07:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete 26-path inventory; focused local duplicate-session ordering, streaming search, Codex compressed imports and Cowork event deduplication. Full local/search diffs and cited format/test ranges were inspected; other format conversions and CLI surfaces remain outside this scope.
+
+The new [Scan path](https://github.com/skillsynchq/txcript/blob/c60e686e7ed30e67019288eed80c4be478512d64/src/search.rs#L665-L725) reuses matching scratch space while releasing each document, unlike the retained index. Its caller must apply document limits and ranking; the [equivalence fixture](https://github.com/skillsynchq/txcript/blob/c60e686e7ed30e67019288eed80c4be478512d64/tests/integration/search.rs#L553-L610) checks scan/index matches across fuzzy, literal, origin and harness filters. This is a useful cold-query option, not a measured performance result.
+
+[Codex discovery](https://github.com/skillsynchq/txcript/blob/c60e686e7ed30e67019288eed80c4be478512d64/src/harness/codex.rs#L1193-L1258) supports optional zstd decoding and prefers the plain form while both exist, avoiding duplicate display during compression. [Regression fixtures](https://github.com/skillsynchq/txcript/blob/c60e686e7ed30e67019288eed80c4be478512d64/tests/regression/codex_compressed.rs#L14-L47) compare discovery and loaded content. Discovery still omits unreadable files, and [full loading](https://github.com/skillsynchq/txcript/blob/c60e686e7ed30e67019288eed80c4be478512d64/src/harness/codex.rs#L1261-L1268) reads the decompressed text without an inspected size ceiling. A Teamagent importer needs decompressed-byte/line/time bounds and explicit partial coverage; an unreadable source must not silently become an empty corpus.
+
+[Local ordering](https://github.com/skillsynchq/txcript/blob/c60e686e7ed30e67019288eed80c4be478512d64/src/local.rs#L199-L216) uses start time then modification time for copies of a session ID, with [CLI fixtures](https://github.com/skillsynchq/txcript/blob/c60e686e7ed30e67019288eed80c4be478512d64/cli/tests/duplicate_ids.rs) checking newest-copy resolution and ambiguous distinct-ID prefixes. Modification time is a selection heuristic, not proof that copies have identical ancestry. Preserve source location identity and content/version digests. [Cowork conversion](https://github.com/skillsynchq/txcript/blob/c60e686e7ed30e67019288eed80c4be478512d64/src/harness/cowork_remote.rs#L47-L66) accepts identical repeated event IDs and rejects conflicting duplicates, a useful invariant for paginated imports. Transcript portability does not transfer tool authority or guarantee every target format preserves every semantic field.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [skillsync-txcript](https://github.com/skillsynchq/txcript); analyzed commit `8cd3b0e63f797b1531a14197f41a0e9eeedec8c6`; commit date 2026-09-28T20:00:00-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--skillsync-txcript.md).
+Analysis metadata: source [skillsync-txcript](https://github.com/skillsynchq/txcript); analyzed commit `c60e686e7ed30e67019288eed80c4be478512d64`; commit date 2026-10-22T23:54:00-07:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--skillsync-txcript.md).
 <!-- teamagent-analysis:end -->

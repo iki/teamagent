@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-25T21:24:40.606303+00:00",
+  "pathsRelativeTo": "project root",
+  "scope": "Media training defaults, HeyGen interoperability and encrypted recovery; credential-free validation only",
+  "runtime": {
+    "bun": "1.4.2 (744846f84)",
+    "aube": "2.5.1 windows-x64 (2026-09-27)",
+    "python": "3.12.15",
+    "os": "Windows"
+  },
+  "gates": [
+    {
+      "command": "aube run --no-install step:check",
+      "exitCode": 0,
+      "testsPassed": 316,
+      "testsFailed": 0,
+      "testFiles": 43,
+      "testSeconds": 172.08,
+      "format": "passed",
+      "strictTypeScriptProjects": 4,
+      "typeAwareLint": "passed",
+      "logSha256": "79030d55e6385b5c2affc4729483ee245394fa21847b5529addf497f197786d3"
+    },
+    {
+      "command": "aube run --no-install review:check",
+      "exitCode": 0,
+      "testsPassed": 316,
+      "testsFailed": 0,
+      "testFiles": 43,
+      "testSeconds": 193.14,
+      "format": "passed",
+      "strictTypeScriptProjects": 4,
+      "typeAwareLint": "passed",
+      "logSha256": "8e4ceaa7e7f0bb9eb0896c08efd5c659266a728082e1618522a53a28cd780fef"
+    }
+  ],
+  "documentationLinks": {
+    "record": "spec/data/media-policy-links-2026-10-25.json",
+    "status": "passed"
+  },
+  "crossDirectorySmoke": {
+    "cwd": "../x-trigon",
+    "entry": "app/cli/index.ts",
+    "operations": [
+      "media setup heygen",
+      "media import-text synthetic.srt --text-format srt"
+    ],
+    "textAndCueMapping": "verified",
+    "outputDirectory": ".cache/research",
+    "providerRequests": 0,
+    "trigonFilesWritten": 0
+  },
+  "baselineRegression": {
+    "kind": "executed synthetic fixture against old adapter before replacement",
+    "httpStatus": 400,
+    "declaredMime": "audio/wav",
+    "sameBytes": true,
+    "syntheticReferenceSha256": "2976da01e205a110c9fa41d47659e238a5c6d3c3f3137582f2949853faa201dd",
+    "oldResource2GuardRejected": true,
+    "liveProviderCall": false
+  },
+  "reportedWorkflowEvidence": {
+    "classification": "User-reported live results; original cache files read only for bounded hashing; no new provider inference or perceptual identity evaluation",
+    "files": [
+      {
+        "path": "../x-trigon/.cache/demo/v2/temp/voice-clone/heygen/MEDIA-TRAINING-ANALYSIS.txt",
+        "status": "read-only-hash-recorded",
+        "bytes": 7133,
+        "sha256": "db00321a34bf93b5aed1144d402334c49c28d6793891aa8264d73514de706d22"
+      },
+      {
+        "path": "../x-trigon/.cache/demo/v2/temp/voice-clone/heygen/host-clone-http.json",
+        "status": "read-only-hash-recorded",
+        "bytes": 655,
+        "sha256": "fa0db7613425e8d0b105e1b96455d474f13dddda7c5df222f63437f76ac6ddbb"
+      },
+      {
+        "path": "../x-trigon/.cache/demo/v2/temp/voice-clone/heygen/host-clone-wavfix-http.json",
+        "status": "read-only-hash-recorded",
+        "bytes": 782,
+        "sha256": "b79865435850fe751df62d07e70c818500418eb949ffe7b3d93e7cb7a56efb46"
+      },
+      {
+        "path": "../x-trigon/.cache/demo/v2/temp/voice-clone/heygen/host-clone-wavfix-result.json",
+        "status": "read-only-hash-recorded",
+        "bytes": 1256,
+        "sha256": "ca8f6393f2a3e13ae54721a72a3b760799793322fa99e793f59a08c2da62230c"
+      },
+      {
+        "path": "../x-trigon/.cache/demo/v2/temp/voice-clone/heygen/voice-active.json",
+        "status": "read-only-hash-recorded",
+        "bytes": 193,
+        "sha256": "f7943cbd96089eb43955af6d8c298ef7ab631e2d0d53362e4abb3253df7755bd"
+      },
+      {
+        "path": "../x-trigon/.cache/demo/v2/temp/voice-clone/heygen/synthesis.stderr.log",
+        "status": "read-only-hash-recorded",
+        "bytes": 72,
+        "sha256": "1c2ea29909b67760fcf182469285ad5b06823b07b3efb8b258c23db5a6122c73"
+      },
+      {
+        "path": "../x-trigon/.cache/demo/v2/temp/voice-clone/heygen/native-synthesis-result.json",
+        "status": "read-only-hash-recorded",
+        "bytes": 946,
+        "sha256": "c4f3bbf352eed3b624559c1cdb7d9a49a240875bc93a54479af16582908345ee"
+      },
+      {
+        "path": "../x-trigon/.cache/demo/v2/temp/voice-clone/heygen/delivery.json",
+        "status": "read-only-hash-recorded",
+        "bytes": 990,
+        "sha256": "a6c83c23f3eae2f88e2fa055a5f2052afec5d66f6673fd03e02674d09b0fdd5f"
+      }
+    ],
+    "reportedReferenceSha256": "746b4393575f8baedb5157c5b6ffdb8c1cdfb8811eb50d7aba79d8bd4387e4a7",
+    "optOutEvidence": "user assertion, not authenticated provider setting verification"
+  },
+  "limitations": [
+    "No live enrollment, synthesis or account-policy verification was performed.",
+    "Unknown/stale training policy stays blocked; current review expires 2026-11-24, including local routes.",
+    "HeyGen identity checks authenticate account/key metadata, not opt-out settings or model entitlement.",
+    "Durable clone and generated-audio recovery is implemented for HeyGen; other adapters retain explicitly narrower coverage.",
+    "Expired artifact URLs have no implemented provider refresh endpoint and never trigger regeneration.",
+    "No package publication or Trigon integration was performed."
+  ],
+  "sourceSha256": {
+    "app/cli/index.ts": "f15af7b4183f0d6ab5ae678e2907429d9c0c97bac58a9b1bc28a701fd0e14d45",
+    "app/cli/media.ts": "14dbf4c650555cf49063dbb6309e36d30d722074103e5ff7cbc4ea1747a45b9d",
+    "app/media/audio.ts": "4ea4d89dd218bf783434559a2cfa9501d3f57fa8bcae4f9a8759742c09e99975",
+    "app/media/catalog.ts": "f8d0c80c873ec0574ec0d38a5c56589acf973d7f2cb1d86191f212383943f9dc",
+    "app/media/config.ts": "f1c2ab286e3fcfc4564982bf34344d14db57f368a44afbf91d369265965a98df",
+    "app/media/files.ts": "39273504f863f10d7f425cd2a278af1ecdf4cb6be80755b70c70ace686701006",
+    "app/media/fish.ts": "72022cba9b7cf6da74211f01983ea55e1bee1c3841d111f21727a5f221906423",
+    "app/media/heygen-lifecycle.ts": "83f548e9d5532cb9e3d2e75ca2bf55d26d28b86c4a640535c01db738b1351696",
+    "app/media/heygen.ts": "046bb5016abed99a779b64075e126234d875a8ee508310ea5af66ad84e4d7e2c",
+    "app/media/index.ts": "fa1ca4c91b7d043b0d8e70152813bca1b7bd58404b0b36ec2507963bf35cdbf8",
+    "app/media/local.ts": "b11ddba6fefe53888377205dfdb08de7e4d6d7b79f4420d205d83f414fc2ff06",
+    "app/media/omnivoice.ts": "78c8247181f32edd1dd1ff05302b859c833a6f5ad8176300eda46f94285595a5",
+    "app/media/providers.ts": "fae8fc1feb2f9c65a5752da9ef7d2597ece7284cf4fe94ff0aed6beca6015f84",
+    "app/media/receipts.ts": "b727ec7dbf8db054c8be1c65506f8b9c63565c195600cbe21a10fe08d5b5652f",
+    "app/media/training.ts": "75ce05fc51b177f6e4cb5c2455e09dbdbcd8f89f76ba3a6f1c00f61d02cd31de",
+    "app/media/transport.ts": "03dc97d99e9606b817b09215fc48be6371449000b430d7b6d0bcf29c3c4e0372",
+    "lib/media/cli.ts": "1bcdaee554de0fc9a4329008fad525147f91e177307a09fd8944b9fc0ae5c97f",
+    "lib/media/contracts.ts": "0189fafde1ad45b0ffa08b38fc47add465cd2fb34ca9a86653b4001142ae9edc",
+    "lib/media/diagnostics.ts": "10d641bdd4a587dd24a74e634e7e6bb0e57c8dc9e181e062b0424068653a1e90",
+    "lib/media/index.ts": "0684e1f1e3e2588ca39a71269d077c3db47a4e2d820588c1fb6791514e981b59",
+    "lib/media/lifecycle.ts": "2dadd3f523caa4893c95b2b3e317fe2eaf2caa845f12b00bb8e083c18034760b",
+    "lib/media/recovery.ts": "1acb90a8331a74b03d933cc609c58762592f83e171c04f8e9f5a7d7245e67580",
+    "lib/media/selection.ts": "c70b83f303ee66528b42edf88c9498f8cfd7dbe3c620e6b513f3bff362075c24",
+    "lib/media/setup.ts": "e3afa7afb36ce85b0abd1224a7b7a98f97c5d5e29561490380afe665054a3b97",
+    "lib/media/subtitles.ts": "c4d66c4927eb181d53009765e618bf4003b4d96491aca8811cfdea4f8b4392f5",
+    "lib/media/training.ts": "e79438a46e205aafd3b39e96003f0bcf96ab720e51594aeca2dfbc39a58b3f3f",
+    "test/media-audio-validation.test.ts": "bfb9d41fae178900daa2d2e433f91904450b3cf4a2614d55a62d2433bea6d9e4",
+    "test/media-cli-policy.test.ts": "cb5a3c9e44c335f622c14bd3a59d1d750763af8ea0c7eb69defb01a608f3307c",
+    "test/media-cli.test.ts": "bdae693eec31b55436f533f524e2f433727a3633f3ca196c01e57e55826a6eff",
+    "test/media-domain.test.ts": "9d35145dfe75af64e076f9655b7116c4e98b40e100c00fe736def9f0b2c0c181",
+    "test/media-heygen-recovery.test.ts": "9196db2dc6baeaf41ab0b38e08c7a6cf08d99f32cb8ebafe9e47e45e1dfc1110",
+    "test/media-host.test.ts": "fe9a8caa9599f17e8ce094fd29324540b5d9e0acbdf4e229b16aadc3ea7a5fcc",
+    "test/media-omnivoice.test.ts": "579eb716ab5ad35bf2c31c5637de35f66174c108f3806a1fe7587cddde6c9934",
+    "test/media-policy-provenance.test.ts": "5b9cd6f4831c11c6bce61057c6f2efe61eb3cba2b217b0ca31848c77caec4d30",
+    "test/media-receipts.test.ts": "a18dfdf91b2087fb231e67cc9317c2728bf58b6b93f3fa82b49b47509823e7af",
+    "test/media-services.test.ts": "ba27b4cfa4dd3b6cb3e5fc0bec2fba4e137f2051de861b1c214f872c31be28e4",
+    "test/media-subtitles.test.ts": "0f2091b83f31c169ca965079ed17bed221260957f9c2a311ffe040bfa9e2cd60",
+    "test/media-training.test.ts": "410370e9172689a7a62fbfbdfc4843d429099f1ec19f706976e41a7b79889843"
+  }
+}

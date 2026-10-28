@@ -1,0 +1,44 @@
+# lightrag
+
+Entity/relation retrieval with separate low/high-level keywords and optional direct chunk retrieval.
+
+Source: [lightrag](https://github.com/HKUDS/LightRAG) · Snapshot: `453dce83d6d0354a06e46c8d4029a0895c4e054b` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [lightrag/operate.py:5320-5428](https://github.com/HKUDS/LightRAG/blob/453dce83d6d0354a06e46c8d4029a0895c4e054b/lightrag/operate.py#L5320-L5428)
+
+The inspected query path distinguishes low-level keywords used for entity retrieval from high-level keywords used for relationship retrieval. Depending on mode, it embeds the original query and required keyword strings together, then dispatches to entity, relationship or both retrieval paths. Mix mode additionally retrieves vector chunks directly and records their source metadata. Local/global/hybrid/mix therefore designate materially different evidence paths rather than presentation options.
+
+## Harness implications
+
+Use graph-enriched retrieval as an optional arm alongside source chunks. Entity descriptions can help locate concepts and relationships, while direct chunks recover details omitted from an extracted graph. Cache shared embeddings within the query and keep arm contribution metadata. Expose a task-level choice between narrow entity questions, broad relationship questions and mixed retrieval; the answer generator should receive original source references in every mode.
+
+## Limitations and tradeoffs
+
+Graph extraction and keyword generation may lose exact identifiers, negative statements and numerical details. Modes named global here should not be assumed identical to another project's global community-summary search. This excerpt batches embeddings, but the local/global retrieval calls shown in the mixed branch are sequential; do not infer end-to-end parallelism from the batch optimization. A failed precompute logs a warning and downstream behavior depends on the called functions. No quality, cost or latency benchmark was reproduced.
+
+## Adoption and validation
+
+Keep as an alternative enrichment/retrieval backend, especially where multimodal processing already uses its stores. Compare it against the same source corpus under a lexical/vector baseline before adopting graph extraction broadly. Test exact code names, entity ambiguity, contradictory sources, sparse graphs, absent keywords and retrieval failures. Preserve raw chunks so rebuilding graph views under a new model never requires recovering data from generated summaries.
+
+Related directions: [memory](../memory.md) · [import-generation](../import-generation.md) · [models](../models.md).
+
+
+## Change review — 2026-10-27
+
+**Non-destructive vector initialization and transaction-local filtered ANN mitigation.** Reviewed commit `aaebfe1bb8d55deb6a4304d357a3bf4c92fcd40a` (commit date `2026-10-14T22:55:37+08:00`) against `453dce83d6d0354a06e46c8d4029a0895c4e054b`. The complete Git comparison contains 7 changed paths.
+
+The complete seven-path comparison contains two storage implementations, their regression fixtures, a design note, environment guidance and README marketing removal. Milvus initialization no longer drops a collection after an unclassified initialization error: it first establishes target absence and refuses to create an empty target over a legacy, `_old` or `_temp` collection. Unknown existence fails closed. The PostgreSQL adapter adds transaction-local iterative scans for HNSW/HNSW_HALFVEC and IVFFLAT. It probes pgvector support, binds `SET LOCAL` and fetch to one transaction, and only falls back after failure of the setting; a query failure propagates without a second plain fetch. IVFFLAT relaxed-order results pass through a materialized distance re-sort and remove the helper column. The fixtures cover setting/query transaction order, old/unknown versions, failed settings versus failed queries, allowed index types and destructive Milvus fallback cases. The design note explicitly describes bounded recall and latency tradeoffs; its PostgreSQL measurements are upstream claims, not locally reproduced results.
+
+Evidence: [lightrag/kg/milvus_impl.py:2375-2435](https://github.com/HKUDS/LightRAG/blob/aaebfe1bb8d55deb6a4304d357a3bf4c92fcd40a/lightrag/kg/milvus_impl.py#L2375-L2435) · [lightrag/kg/postgres_impl.py:326-365](https://github.com/HKUDS/LightRAG/blob/aaebfe1bb8d55deb6a4304d357a3bf4c92fcd40a/lightrag/kg/postgres_impl.py#L326-L365) · [lightrag/kg/postgres_impl.py:967-1008](https://github.com/HKUDS/LightRAG/blob/aaebfe1bb8d55deb6a4304d357a3bf4c92fcd40a/lightrag/kg/postgres_impl.py#L967-L1008) · [lightrag/kg/postgres_impl.py:1388-1443](https://github.com/HKUDS/LightRAG/blob/aaebfe1bb8d55deb6a4304d357a3bf4c92fcd40a/lightrag/kg/postgres_impl.py#L1388-L1443) · [lightrag/kg/postgres_impl.py:5065-5099](https://github.com/HKUDS/LightRAG/blob/aaebfe1bb8d55deb6a4304d357a3bf4c92fcd40a/lightrag/kg/postgres_impl.py#L5065-L5099) · [tests/kg/milvus_impl/test_milvus_migration_retry.py:315-423](https://github.com/HKUDS/LightRAG/blob/aaebfe1bb8d55deb6a4304d357a3bf4c92fcd40a/tests/kg/milvus_impl/test_milvus_migration_retry.py#L315-L423) · [tests/kg/postgres_impl/test_postgres_iterative_scan.py:1-324](https://github.com/HKUDS/LightRAG/blob/aaebfe1bb8d55deb6a4304d357a3bf4c92fcd40a/tests/kg/postgres_impl/test_postgres_iterative_scan.py#L1-L324) · [docs/design/PgVectorFilteredSearch.md:1-178](https://github.com/HKUDS/LightRAG/blob/aaebfe1bb8d55deb6a4304d357a3bf4c92fcd40a/docs/design/PgVectorFilteredSearch.md#L1-L178).
+
+**Harness consequence:** Treat vector rebuild/migration as a recoverable operation with explicit old/new ownership; a transient store error is not evidence of corruption or authorization to delete. Evaluate tenant-filtered recall and result coverage separately from transport success, especially when a small workspace shares a global ANN index. Scope query settings to the transaction, disclose degraded fallback and retain exact source chunks as the rebuild authority. This supports optional graph/vector enrichment without changing Teamagent's lexical baseline or selecting a new database.
+
+**Scope and limits:** Inspected all changed implementation hunks, relevant regression fixtures and the full design note after classifying the complete seven-path inventory. No Milvus/PostgreSQL deployment, upstream test or performance/recall experiment ran; environment-example contents were not independently reviewed. The note's Qdrant comparison was not verified against that unchanged adapter in this pass.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [lightrag](https://github.com/HKUDS/LightRAG); analyzed commit `aaebfe1bb8d55deb6a4304d357a3bf4c92fcd40a`; commit date 2026-10-14T22:55:37+08:00; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--lightrag.md).
+<!-- teamagent-analysis:end -->

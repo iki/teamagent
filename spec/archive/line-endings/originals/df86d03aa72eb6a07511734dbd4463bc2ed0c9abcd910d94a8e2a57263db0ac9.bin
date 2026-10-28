@@ -1,0 +1,38 @@
+{
+  "kind": "development-only parser regression validation, not benchmark timing",
+  "createdAt": "2026-10-04T10:14:17.856831+00:00",
+  "sources": [
+    {
+      "sourceId": "pdf-hermes-kanban",
+      "sourceSha256": "708469e633223b2e52478b008d6a5fbe75b8da305cabfdd8248c0d02913455f7",
+      "parserVersion": "teamagent-import/2;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+      "anchors": 22,
+      "anchorsPresent": 22,
+      "physicalPageHeadings": 33,
+      "convertedSha256": "78a7ab27d4981fc50bd6779815fab5b42a8596f70d7911ea68fd469cf48952c6",
+      "warnings": [
+        "PDF text stream and physical page boundaries retained; reading order, table layout, equations, vector artwork and OCR are not reconstructed; original PDF retained"
+      ]
+    },
+    {
+      "sourceId": "pdf-ncm-czech",
+      "sourceSha256": "23acdb843213057ad4a653a78e7871a3e48dd1ae9e0e04847007e365c13f2ea1",
+      "parserVersion": "teamagent-import/2;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+      "anchors": 19,
+      "anchorsPresent": 19,
+      "physicalPageHeadings": 5,
+      "convertedSha256": "9cfe694e4c33cba37403749ac689d6c06e3d26760568ee7c117282143d4261d7",
+      "warnings": [
+        "PDF text stream and physical page boundaries retained; reading order, table layout, equations, vector artwork and OCR are not reconstructed; original PDF retained"
+      ]
+    }
+  ],
+  "priorConverterRegressionProof": {
+    "converter": "markitdown/0.1.8 PdfConverter",
+    "fixture": "test/import-fixtures.py positioned.pdf",
+    "fixtureSha256": "94304c82e8f082855fd11f1e3b0d820a23dea3eaca1150af8d5088939809a620",
+    "containsAllProseSentences": false,
+    "synthesizesPipeRows": true,
+    "physicalPageHeadings": 0
+  }
+}

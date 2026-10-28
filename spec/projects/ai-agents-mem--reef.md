@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Remote execution reconnects to the same process, but relay admission and timeout cleanup need hard bounds.** Reviewed commit `5d4174bbebafd98d94cbad407d464cd2468309a6` (commit date `2026-10-27T20:25:24+08:00`). Compared with `297af97ab0483d0e52169b364c1be70a239453e8`; the complete Git comparison contains 1041 changed paths.
+
+The E2B adapter retries selected connection failures by reconnecting to the same process ID, avoiding side-effect replay. Its monotonic command deadline constrains reconnect attempts, and finally attempts process termination and result pullback; failed pullback after a finished command becomes a launch error. Upload happens before the command deadline, so this is not an end-to-end job budget. The session keeper extends sandbox life and stops on extension refusal; alias-based image reuse does not by itself verify immutable image contents.
+
+The relay authenticates tunnel operations with a shared secret, sequences response pieces and distinguishes interrupted chunked responses from a completed stream. However it reads the entire POST body before checking that secret, uses unbounded thread/queue/open-request structures and allows each response-piece wait up to an hour. A timeout waiting for the first piece returns before the later cleanup finally, leaving that request in open; waiting entries can also outlive their callers. The local lease watcher kills its own process group after owner-pipe closure only if still group leader, correctly documenting that this is lifecycle protection rather than a containment boundary. PipelineContext separately validates mode and positive non-boolean sample counts.
+
+Evidence: [reef/sandbox/e2b.py:46-64](https://github.com/Human-Agent-Society/reef/blob/5d4174bbebafd98d94cbad407d464cd2468309a6/reef/sandbox/e2b.py#L46-L64) · [reef/sandbox/e2b.py:173-194](https://github.com/Human-Agent-Society/reef/blob/5d4174bbebafd98d94cbad407d464cd2468309a6/reef/sandbox/e2b.py#L173-L194) · [reef/sandbox/e2b.py:236-307](https://github.com/Human-Agent-Society/reef/blob/5d4174bbebafd98d94cbad407d464cd2468309a6/reef/sandbox/e2b.py#L236-L307) · [reef/sandbox/relay.py:27-206](https://github.com/Human-Agent-Society/reef/blob/5d4174bbebafd98d94cbad407d464cd2468309a6/reef/sandbox/relay.py#L27-L206) · [reef/sandbox/lease.py:1-35](https://github.com/Human-Agent-Society/reef/blob/5d4174bbebafd98d94cbad407d464cd2468309a6/reef/sandbox/lease.py#L1-L35) · [reef/pipeline_context.py:17-52](https://github.com/Human-Agent-Society/reef/blob/5d4174bbebafd98d94cbad407d464cd2468309a6/reef/pipeline_context.py#L17-L52).
+
+**Harness consequence:** Reuse same-process reconnect and explicit incomplete-stream semantics, with durable process identity, artifact receipts and uncertain-effect states. Authenticate before body admission, cap bytes/concurrency/queue depth and use one absolute request deadline with cleanup covering the initial wait. Budget staging and pullback independently, pin image digests and verify process-group/remote cancellation under real platform failure tests before adopting remote worker guarantees.
+
+**Scope and limits:** Static scoped review of new E2B reconnect/lifecycle, relay and lease code within the 1,041-path comparison. Remote helpers, upload/pull containment, cloud provider APIs, training stages and sandbox tests were not fully audited or executed; no remote resource was created.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [reef](https://github.com/Human-Agent-Society/reef); analyzed commit `297af97ab0483d0e52169b364c1be70a239453e8`; commit date 2026-10-02T08:11:44Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--reef.md).
+Analysis metadata: source [reef](https://github.com/Human-Agent-Society/reef); analyzed commit `5d4174bbebafd98d94cbad407d464cd2468309a6`; commit date 2026-10-27T20:25:24+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--reef.md).
 <!-- teamagent-analysis:end -->

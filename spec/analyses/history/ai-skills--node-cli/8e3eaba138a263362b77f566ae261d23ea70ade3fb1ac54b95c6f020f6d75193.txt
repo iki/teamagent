@@ -1,0 +1,25 @@
+# node-cli
+
+Source: [node-cli](https://github.com/lirantal/nodejs-cli-apps-best-practices) · Category: [ai-skills](../categories/ai-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `e6374e4f64a4708cc01d3a398cb15e532ab3d847`; commit timestamp `2026-07-08T22:57:50+03:00`; 26 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/lirantal/nodejs-cli-apps-best-practices/blob/e6374e4f64a4708cc01d3a398cb15e532ab3d847/README.md)):
+
+> Learn Node.js Secure Coding techniques and best practices from  Liran Tal A collection of curated best practices on how to build successful, empathic and user-friendly Node.js Command Line Interface (CLI) applications.
+
+Build/package evidence: No common build manifest identified.
+
+License evidence: [LICENSE](https://github.com/lirantal/nodejs-cli-apps-best-practices/blob/e6374e4f64a4708cc01d3a398cb15e532ab3d847/LICENSE) Classification hint: not classified; inspect source. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-skills**. Its category places it in the candidate set for skills; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

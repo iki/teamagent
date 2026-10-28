@@ -2,7 +2,7 @@
 
 Source: [bundle.evilmartians](https://github.com/evilmartians/agent-skills) · Category: [ai-skills](../categories/ai-skills.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `a0d1b65e55b0f989aa196d89e01a91213767dfdd`; commit timestamp `2026-09-24T16:24:04+03:00`; 13 tracked paths.
 
@@ -24,6 +24,12 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-27
+
+Reviewed commit `b35b6cdbb21ef34a6e15fe9da125f428690c6d98` (commit date `2026-10-15T01:49:54+03:00`). Complete four-file delta, including full new skill and encoding script.
+
+The [skill](https://github.com/evilmartians/agent-skills/blob/b35b6cdbb21ef34a6e15fe9da125f428690c6d98/skills/web-video/SKILL.md) and [script](https://github.com/evilmartians/agent-skills/blob/b35b6cdbb21ef34a6e15fe9da125f428690c6d98/skills/web-video/scripts/web-video.sh) distinguish alpha-capable formats from transparent pixels, handle Apple layered HEVC explicitly and check encoders before output encoding. Output codec tags/source order are derived from media. Direct reuse conflicts with Teamagent: final ffmpeg uses -y, avconvert uses --replace, numeric options enter filters without typed validation, and no process/byte/time budget is enforced. Alpha scanning already decodes before encoder preflight. Speed changes drop audio and must appear in an explicit plan. Shell-word-split project defaults are not C12 configuration. Retain preflight ideas only; supply bounded trusted adapters and exclusive publication. No encoding, visual quality or performance claim was reproduced.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle.evilmartians](https://github.com/evilmartians/agent-skills); analyzed commit `a0d1b65e55b0f989aa196d89e01a91213767dfdd`; commit date 2026-09-24T16:24:04+03:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.evilmartians.md).
+Analysis metadata: source [bundle.evilmartians](https://github.com/evilmartians/agent-skills); analyzed commit `b35b6cdbb21ef34a6e15fe9da125f428690c6d98`; commit date 2026-10-15T01:49:54+03:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.evilmartians.md).
 <!-- teamagent-analysis:end -->

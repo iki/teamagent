@@ -2,7 +2,7 @@
 
 Source: [orchard](https://github.com/microsoft/Orchard) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `8cc370aef528f075741f2e1f76ab4d740cb564b2`; commit timestamp `2026-10-02T21:44:35-07:00`; 199 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-27 scoped update review
+
+Reviewed commit `bd8da32b3a075128700caab75bbc491fb6fdc16e` (commit date `2026-10-08T22:14:11-07:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete 25-path inventory; focused job transport and evaluation restart review, including JobClient, sandbox/runner integration, Harbor exec and selected transport/retry fixtures. Other evaluation adapters, result-table changes and remote deployment behavior remain outside this scope.
+
+[JobClient](https://github.com/microsoft/Orchard/blob/bd8da32b3a075128700caab75bbc491fb6fdc16e/orchard_eval/orchard_evalkit/jobs.py#L117-L174) separates command submission from [read-only waiting by job ID](https://github.com/microsoft/Orchard/blob/bd8da32b3a075128700caab75bbc491fb6fdc16e/orchard_eval/orchard_evalkit/jobs.py#L176-L247). A disconnect or timeout after a potentially sent POST raises `ExecDispatchError` instead of resubmitting. Waiting can retry transient reads with a bounded outage window, while a missing job gets a distinct error. [Fixtures](https://github.com/microsoft/Orchard/blob/bd8da32b3a075128700caab75bbc491fb6fdc16e/orchard_eval/tests/test_jobs.py#L115-L212) assert one submit across dropped waits, no replay after ambiguous submission, and distinct known HTTP errors.
+
+The submit loop retries connection establishment failures and HTTP 503. The latter relies on this orchestrator's asserted non-acceptance semantics; an HTTP status alone is not universal proof that an effect did not happen. The inspected client has no durable request-intent receipt or provider idempotency key, so its “exactly once” wording must not be generalized to crash recovery.
+
+[Sandbox integration](https://github.com/microsoft/Orchard/blob/bd8da32b3a075128700caab75bbc491fb6fdc16e/orchard_eval/orchard_evalkit/sandbox.py#L250-L296) prevents further commands after a poisoned infrastructure state. [Harbor retry configuration](https://github.com/microsoft/Orchard/blob/bd8da32b3a075128700caab75bbc491fb6fdc16e/orchard_eval/orchard_evalkit/harbor_bridge.py#L264-L272) can nevertheless restart an infrastructure-failed trial in a fresh pod; [tests](https://github.com/microsoft/Orchard/blob/bd8da32b3a075128700caab75bbc491fb6fdc16e/orchard_eval/tests/test_harbor_bridge.py#L242-L280) exclude ordinary agent failure/timeouts from that default. This preserves evaluation semantics better than selecting the best retry, but a new sandbox cannot undo an external effect from an uncertain old attempt. Adopt the submit/wait/error taxonomy with durable reconciliation for Teamagent; do not import evaluation restart rules into billable media or external writes.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [orchard](https://github.com/microsoft/Orchard); analyzed commit `8cc370aef528f075741f2e1f76ab4d740cb564b2`; commit date 2026-10-02T21:44:35-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--orchard.md).
+Analysis metadata: source [orchard](https://github.com/microsoft/Orchard); analyzed commit `bd8da32b3a075128700caab75bbc491fb6fdc16e`; commit date 2026-10-08T22:14:11-07:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--orchard.md).
 <!-- teamagent-analysis:end -->

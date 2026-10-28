@@ -24,6 +24,21 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**WebMCP interaction callbacks do not provide consent and model catalogs remain advisory.** Reviewed commit `92eb451400b589e5bcd2c0fa362504c14afc0db2` (commit date `2026-10-27T16:52:13+01:00`). Compared with `6fbbeeec369b1ff293374d45a3799bdbc7551a44`; the complete Git comparison contains 1079 changed paths.
+
+ModelContext registration validates tool-name syntax/length, rejects duplicate names and empty descriptions, supports pre-aborted no-op registration and dispatches removal notifications when a tool's signal fires. It retains caller-provided inputSchema and annotations without validating their semantics or bounding tool count/description size here. In this headless implementation, requestUserInteraction directly invokes the supplied JavaScript callback and resolves its result. This is an execution convenience, not observed human permission; readOnlyHint and autoSubmitHint are stored hints.
+
+The provider auth store bounds reads to 64 KiB and atomically replaces a 0600 JSON file, but maps unreadable/malformed state to empty and performs read-modify-write without cross-process serialization. Refresh preserves the displaced access token for borrowers, tolerates refresh errors while the old token is valid and continues after persistence failure with a warning. The models.dev adapter uses a 24-hour disk cache and filters catalog entries by tool_call; refresh failures silently return stale IDs. Its HTTP catalog body has no explicit size/deadline bound in this function. Catalog membership cannot prove account access, actual model capabilities or current availability.
+
+Evidence: [src/agent/auth/auth.zig:1-296](https://github.com/lightpanda-io/browser/blob/92eb451400b589e5bcd2c0fa362504c14afc0db2/src/agent/auth/auth.zig#L1-L296) · [src/agent/auth/models_dev.zig:1-114](https://github.com/lightpanda-io/browser/blob/92eb451400b589e5bcd2c0fa362504c14afc0db2/src/agent/auth/models_dev.zig#L1-L114) · [src/browser/webapi/ModelContext.zig:1-234](https://github.com/lightpanda-io/browser/blob/92eb451400b589e5bcd2c0fa362504c14afc0db2/src/browser/webapi/ModelContext.zig#L1-L234).
+
+**Harness consequence:** Keep deterministic host authorization outside page tool hints and browser callback APIs. Bound registry growth, decode tool schemas and attach scope/origin identity before exposing page tools. Treat subscription credentials as sensitive host state with serialized updates and explicit persistence degradation; keep model catalog age/source separate from measured capability and entitlement checks.
+
+**Scope and limits:** Scoped static review of three complete cached auth/catalog/WebMCP files and their embedded fixtures in the 1,079-path comparison. OAuth provider implementation, actual invocation policy, browser compatibility, network cache and platform permission behavior were not audited or run. No login, model or network request was made.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [lightpanda-browser](https://github.com/lightpanda-io/browser); analyzed commit `6fbbeeec369b1ff293374d45a3799bdbc7551a44`; commit date 2026-10-03T16:02:42+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--lightpanda-browser.md).
+Analysis metadata: source [lightpanda-browser](https://github.com/lightpanda-io/browser); analyzed commit `92eb451400b589e5bcd2c0fa362504c14afc0db2`; commit date 2026-10-27T16:52:13+01:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-query--lightpanda-browser.md).
 <!-- teamagent-analysis:end -->

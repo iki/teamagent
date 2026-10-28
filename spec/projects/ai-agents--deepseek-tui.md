@@ -2,7 +2,7 @@
 
 Source: [deepseek-tui](https://github.com/Hmbown/DeepSeek-TUI) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `9e19f03e68bf0ffaf4ea3d609def6b582db49f33`; commit timestamp `2026-10-03T08:13:51-07:00`; 2,992 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `eaff21a8b8e62e4693c69e71faa03db866820b9c` (commit date `2026-10-27T09:08:28-07:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete headless-runtime module facade; tool registry/dispatch, selected value/action validators, provider-scoped model resolution and three embedded routing fixtures. Concrete tools, TUI/runtime policy wiring, prepared calls and execution cleanup were not audited.
+
+This source is now the Codewhale repository under the historical deepseek-tui entry. The [tool registry](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e62e4693c69e71faa03db866820b9c/crates/tools/src/lib.rs#L638-L708) validates handler kind and a mutation flag before dispatch, but registration overwrites names and is explicitly infallible. Input/output schemas are stored without enforcement in this dispatcher, and handlers default is_mutating to false. A tool invocation described as validated therefore still depends on concrete handler validation and an outer authority boundary. The [required-action helper](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e62e4693c69e71faa03db866820b9c/crates/tools/src/lib.rs#L293-L320) rejects missing/non-string discriminators rather than silently selecting another operation, but accepts any string and leaves membership checks to dispatchers.
+
+The [execution lock](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e62e4693c69e71faa03db866820b9c/crates/tools/src/lib.rs#L581-L617) gives parallel calls a read lock and serial calls a write lock. Its re-entrancy marker bypasses acquisition entirely, without carrying the lock identity or held mode; nested serial work therefore requires an explicit caller contract rather than assuming exclusive access. [Timeouts](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e62e4693c69e71faa03db866820b9c/crates/tools/src/lib.rs#L698-L730) start only after lock acquisition and drop the handler future on expiry. There is no default timeout or local queue/concurrency bound, and dropping the future does not demonstrate subprocess/remote cleanup. Value-preview diagnostics serialize the complete value before clipping and can expose input excerpts, so confidentiality and input bounds must precede error formatting.
+
+The [model resolver](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e62e4693c69e71faa03db866820b9c/crates/agent/src/lib.rs#L183-L395) requires an explicit provider, resolves aliases within it and refuses to infer credential/route authority from model text. The [fixtures](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e62e4693c69e71faa03db866820b9c/crates/agent/src/lib.rs#L574-L634) specify provider-less refusal and no borrowing another provider's default. Pass-through/default rows still supply assumed capability fields, including supports_tools true, rather than measured provider support. The [runtime facade](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e62e4693c69e71faa03db866820b9c/crates/runtime/src/lib.rs#L1-L67) documents a headless/TUI split but does not establish the exported modules' behavior or boundary-check execution. Preserve provider-scoped identity and capability provenance; no Rust build, native runtime, provider or test ran.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codewhale](https://github.com/codewhale-hq/codewhale); analyzed commit `9e19f03e68bf0ffaf4ea3d609def6b582db49f33`; commit date 2026-10-03T08:13:51-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepseek-tui.md).
+Analysis metadata: source [codewhale](https://github.com/codewhale-hq/codewhale); analyzed commit `eaff21a8b8e62e4693c69e71faa03db866820b9c`; commit date 2026-10-27T09:08:28-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepseek-tui.md).
 <!-- teamagent-analysis:end -->

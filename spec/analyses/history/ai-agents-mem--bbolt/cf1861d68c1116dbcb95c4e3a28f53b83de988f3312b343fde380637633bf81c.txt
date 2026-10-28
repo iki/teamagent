@@ -1,0 +1,38 @@
+# bbolt
+
+Source: [bbolt](https://github.com/etcd-io/bbolt) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `4dc08f7187c709d355a8bcf334fcbcf7d7cfedf6`; commit timestamp `2026-09-15T04:40:46+01:00`; 158 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/etcd-io/bbolt/blob/4dc08f7187c709d355a8bcf334fcbcf7d7cfedf6/README.md)):
+
+> store. The purpose of this fork is to provide the Go community with an active maintenance and development target for Bolt; the goal is improved reliability
+
+Build/package evidence: [go.mod](https://github.com/etcd-io/bbolt/blob/4dc08f7187c709d355a8bcf334fcbcf7d7cfedf6/go.mod)
+
+License evidence: [LICENSE](https://github.com/etcd-io/bbolt/blob/4dc08f7187c709d355a8bcf334fcbcf7d7cfedf6/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Bucket moves preserve live identity and compaction rejects aliases of its source.** Reviewed commit `a4ef19710eb7ddc41fd1155336baf331b5c57ba8` (commit date `2026-10-16T11:37:58+01:00`). Compared with `4dc08f7187c709d355a8bcf334fcbcf7d7cfedf6`; the complete Git comparison contains 17 changed paths.
+
+The inspected changes convert bucket construction and transaction roots to pointers and add a noCopy vet marker, reflecting that cached nodes/sub-buckets must share one mutable identity. MoveBucket now rejects self/descendant destinations before mutation, carries the child's current header including sequence, reinitializes the existing child object and installs that same pointer in the destination cache. Fixtures cover writes through retained handles after movement, repeated/cyclic moves including inline buckets, and sequence persistence. The compaction command checks os.SameFile before opening the source/destination; fixtures include identical, relative, hard-link and symlink paths and compare source bytes after rejection. This preflight is useful identity validation, but does not by itself eliminate a path substitution race between stat and open.
+
+Evidence: [bucket.go:27-73](https://github.com/etcd-io/bbolt/blob/a4ef19710eb7ddc41fd1155336baf331b5c57ba8/bucket.go#L27-L73) · [bucket.go:137-177](https://github.com/etcd-io/bbolt/blob/a4ef19710eb7ddc41fd1155336baf331b5c57ba8/bucket.go#L137-L177) · [bucket.go:400-483](https://github.com/etcd-io/bbolt/blob/a4ef19710eb7ddc41fd1155336baf331b5c57ba8/bucket.go#L400-L483) · [tx.go:23-44](https://github.com/etcd-io/bbolt/blob/a4ef19710eb7ddc41fd1155336baf331b5c57ba8/tx.go#L23-L44) · [movebucket_test.go:267-440](https://github.com/etcd-io/bbolt/blob/a4ef19710eb7ddc41fd1155336baf331b5c57ba8/movebucket_test.go#L267-L440) · [movebucket_test.go:564-590](https://github.com/etcd-io/bbolt/blob/a4ef19710eb7ddc41fd1155336baf331b5c57ba8/movebucket_test.go#L564-L590) · [cmd/bbolt/command/command_compact.go:48-97](https://github.com/etcd-io/bbolt/blob/a4ef19710eb7ddc41fd1155336baf331b5c57ba8/cmd/bbolt/command/command_compact.go#L48-L97) · [cmd/bbolt/command/command_compact_test.go:103-170](https://github.com/etcd-io/bbolt/blob/a4ef19710eb7ddc41fd1155336baf331b5c57ba8/cmd/bbolt/command/command_compact_test.go#L103-L170).
+
+**Harness consequence:** For source-store maintenance, preserve logical object identity and current metadata when moving hierarchy nodes, reject cycles before mutation, and test retained handles after commit. Compare underlying file identity rather than path spelling before copy/compaction and use a controlled destination lifecycle where concurrent replacement is possible. This is a reliability reference for existing SQLite/blob adapters, not a reason to replace them with a Go store.
+
+**Scope and limits:** Scoped static review of changed bucket ownership/move and compaction code with regression fixtures in the complete 17-path inventory. No Go build, vet, database operation, crash-consistency test or performance benchmark ran. Architecture-specific constants and release/dependency metadata were not independently validated.

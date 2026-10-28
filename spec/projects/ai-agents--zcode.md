@@ -24,6 +24,16 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped source review
+
+Source: [zcode](https://github.com/zai-org/ZCode); inspected saved discovery revision `3c5b227649371507ddc4eb46ac5133afe6db1cab`. Prior analyzed revision `29628c9acdb81b703bbd4080c207a0e7ce5e276e` remains historical evidence.
+
+**Scope:** Full shared OAuth types/lifetime helper, provider schema module and tool-error presentation helper read. OAuth transport, JWT signature checks, native credential storage, UI rendering and tests were not audited.
+
+The [OAuth contract](https://github.com/zai-org/ZCode/blob/3c5b227649371507ddc4eb46ac5133afe6db1cab/packages/shared/src/oauth.ts) distinguishes real sessions, attribution-only callbacks, duplicate callbacks, signed-out state and expired-session reauthentication. Its local JWT helper explicitly parses expiry without verifying signatures and returns unknown for unrecognized payloads. Keep that distinction: its valid label means only the local expiry calculation, never authenticated identity. The helper checks finite positive exp before multiplying by 1,000 but not after, so an extreme finite numeric exp can produce an infinite expiresAt; caller clock/skew values are also not validated here.
+
+The [provider module](https://github.com/zai-org/ZCode/blob/3c5b227649371507ddc4eb46ac5133afe6db1cab/packages/shared/src/providers.ts) derives a runtime enum and type from one declared provider set, reducing duplicated schema drift without establishing transport enforcement. The [tool-error helper](https://github.com/zai-org/ZCode/blob/3c5b227649371507ddc4eb46ac5133afe6db1cab/packages/ui/src/lib/toolError.ts) preserves errors found in nested raw output even when a top-level status says completed. It can also interpret an ordinary output.message as an error independent of status, and the text is not bounded or redacted here. Adapt explicit outcome/error fields, validated transport data and safe presentation; no OAuth, credential access, UI or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [zcode](https://github.com/zai-org/ZCode); analyzed commit `29628c9acdb81b703bbd4080c207a0e7ce5e276e`; commit date 2026-09-24T14:49:06+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--zcode.md).
+Analysis metadata: source [zcode](https://github.com/zai-org/ZCode); analyzed commit `3c5b227649371507ddc4eb46ac5133afe6db1cab`; commit date 2026-10-20T14:23:05+08:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--zcode.md).
 <!-- teamagent-analysis:end -->

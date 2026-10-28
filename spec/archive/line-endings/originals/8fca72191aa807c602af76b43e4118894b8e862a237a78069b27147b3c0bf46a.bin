@@ -1,0 +1,21 @@
+# ElevenLabs hosted speech landscape review
+
+Reviewed: 2026-10-25. Scope: current official service contracts and pricing; no source-code commit applies to these mutable pages. Related: [media processing](../media-processing.md), [channel input](../channel-input.md). This supplements the existing STT/TTS/enrollment contract rather than changing its implementation status.
+
+The [API pricing page](https://elevenlabs.io/pricing/api) now lists Eleven v4 at $0.08/1,000 characters and v4 Turbo at $0.04/1,000 characters. These are API prices, not a conversion from ElevenCreative subscription credits. The same page's language and latency descriptions are vendor claims; the roughly 100 ms figure cannot be compared directly with a local cold-start measurement or a provider's server-only first-byte metric.
+
+The established [streaming TTS contract](https://elevenlabs.io/docs/api-reference/text-to-speech/stream) uses a voice in the URL, `model_id` in JSON and `output_format` in the query. New marketing names do not automatically change the endpoint default or prove a configured account can access a model. Record selected model/voice separately, query or configure capabilities explicitly, and validate returned audio. Timestamp streaming, dialogue and realtime STT are distinct capabilities.
+
+[Instant enrollment](https://elevenlabs.io/docs/api-reference/voices/ivc/create) returns `requires_verification`; preserve it alongside the voice ID. Access to the original recording is insufficient evidence of permission to synthesize with the voice. The adapter should retain rights evidence and provider verification state while keeping private recordings out of ordinary logs.
+
+Adoption: keep as an existing hosted baseline in comparative evaluations, including native-speaker pronunciation and reference fidelity. Compare v4/Turbo on identical prompts, samples and account regions before changing defaults. A broader catalog and an API price do not establish a global quality winner. New models remain operationally unverified until exercised by a separately authorized acceptance run.
+
+## Training policy review 2026-10-25
+
+The [data-use guide](https://elevenlabs.io/docs/help-center/legal/is-my-data-used-to-improve-eleven-labs-ai-models) allows ordinary data use for model improvement, describes Enterprise exclusion and a saved account opt-out affecting subsequently submitted data. These are distinct from [zero retention](https://elevenlabs.io/docs/eleven-api/resources/zero-retention-mode); instant and professional voice cloning require persistence and are not eligible for that mode.
+
+The harness treats Enterprise/opt-out status as a scoped documentary condition requiring live account/key binding. API authentication, payment and a private voice flag do not establish it. Without matching evidence, the known-permitted default requires explicit per-invocation opt-in. The current increment adds no ElevenLabs identity inspector or account-setting mutation. See the [training boundary](../media-training.md) and [policy ledger](../analyses/media-training-reviews.md). Reviewed 2026-10-25; mutable service policy has no analyzed source SHA.
+
+## Public-source refresh 2026-10-27
+
+The current data-use and zero-retention guides continue to support the distinctions above; no account setting or Enterprise agreement was verified. See the [dated refresh](../analyses/media-refresh-2026-10-27.md#training-policy-continuity). Earlier prices and model capabilities retain their 2026-10-25 review date; this policy check does not revalidate them.

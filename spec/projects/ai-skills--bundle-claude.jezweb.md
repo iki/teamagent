@@ -24,6 +24,13 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`1260fa7439b36b18dbf16648ccc7fb44783f6c23`](https://github.com/jezweb/claude-skills/commit/1260fa7439b36b18dbf16648ccc7fb44783f6c23). Scope: Complete CLAUDE.md guidance delta and ten-path inventory reviewed; deleted helper/artifact contents and .gitignore delta were not read.
+
+The [authoring guidance](https://github.com/jezweb/claude-skills/blob/1260fa7439b36b18dbf16648ccc7fb44783f6c23/CLAUDE.md) removes duplicated catalog/layout prose, retains critical workflow instructions inline, and points variant/supporting details to the canonical skill-shape guide. It preserves version-specific errata states (active, absorbed, outdated) and calls for tangible outputs and real-task checks. Adapt the critical-path distinction and explicit errata lifecycle without interpreting the instruction to run helpers without reading them as permission to trust executable imports. This update removes three helper scripts and several historical artifacts, but their contents were not re-audited and no behavior is inferred from deletion alone. Current skill implementations and claimed plugin compatibility were not tested; no catalog-wide adoption or quality claim follows.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle-claude.jezweb](https://github.com/jezweb/claude-skills); analyzed commit `ee91a87a5c5edccd0910780dcd00aa28cec13a46`; commit date 2026-09-29T14:23:25+10:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle-claude.jezweb.md).
+Analysis metadata: source [bundle-claude.jezweb](https://github.com/jezweb/claude-skills); analyzed commit `1260fa7439b36b18dbf16648ccc7fb44783f6c23`; commit date 2026-10-09T22:36:45+11:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle-claude.jezweb.md).
 <!-- teamagent-analysis:end -->

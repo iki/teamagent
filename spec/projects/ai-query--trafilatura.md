@@ -26,6 +26,19 @@ Adopt for static web content behind a bounded fetch adapter. Keep response heade
 
 Related directions: [import-generation](../import-generation.md) · [memory](../memory.md) · [decisions](../decisions.md).
 
+
+## Change review - 2026-10-28
+
+**RSS root detection avoids embedded-HTML confusion while extraction remains lossy.** Reviewed commit `e14c0334488f208c313c349e6a2cc6761fa31ef9` (commit date `2026-10-27T18:14:09+01:00`). Compared with `6c1977a00b4e82ebb7e6fad1192467adaf24d430`; the complete Git comparison contains 37 changed paths.
+
+RSS link extraction now checks the document root before Atom-style link attributes, avoiding stylesheet links embedded in RSS item HTML. The root helper advances through declarations/comments/doctype without nested regex backtracking; fixtures include RSS/RDF roots, BOM/comments and 50,000 malformed preambles. RSS/Atom paths cap matched links with MAX_LINKS, whereas the inspected JSON-feed branch builds candidates from every parsed item without that local cap. Utility changes normalize whitespace, strip invalid XML characters conditionally and use plain HtmlElement classes instead of specialized form helpers. The existing decode path still falls back to UTF-8 replacement when guesses fail, and string input bypasses its decompression-size parameter, so output text alone is not lossless source evidence. CLI directory processing now propagates the pipeline exit status; URL-derived naming is restricted to compatible input/output combinations.
+
+Evidence: [trafilatura/feeds.py:98-176](https://github.com/adbar/trafilatura/blob/e14c0334488f208c313c349e6a2cc6761fa31ef9/trafilatura/feeds.py#L98-L176) · [tests/feeds_tests.py:144-166](https://github.com/adbar/trafilatura/blob/e14c0334488f208c313c349e6a2cc6761fa31ef9/tests/feeds_tests.py#L144-L166) · [trafilatura/utils.py:267-288](https://github.com/adbar/trafilatura/blob/e14c0334488f208c313c349e6a2cc6761fa31ef9/trafilatura/utils.py#L267-L288) · [trafilatura/utils.py:293-343](https://github.com/adbar/trafilatura/blob/e14c0334488f208c313c349e6a2cc6761fa31ef9/trafilatura/utils.py#L293-L343) · [trafilatura/utils.py:398-432](https://github.com/adbar/trafilatura/blob/e14c0334488f208c313c349e6a2cc6761fa31ef9/trafilatura/utils.py#L398-L432) · [trafilatura/cli.py:175-196](https://github.com/adbar/trafilatura/blob/e14c0334488f208c313c349e6a2cc6761fa31ef9/trafilatura/cli.py#L175-L196) · [trafilatura/cli.py:246-262](https://github.com/adbar/trafilatura/blob/e14c0334488f208c313c349e6a2cc6761fa31ef9/trafilatura/cli.py#L246-L262).
+
+**Harness consequence:** Keep downloaded bytes and decoding/conversion diagnostics alongside extracted text. Apply byte and candidate-count bounds consistently across JSON/RSS/Atom feeds, and validate fetch destinations independently of domain-similarity heuristics. Use normalized article text for retrieval while citing stable source snapshots and retaining explicit partial/failure outcomes; do not let successful text output erase decoding loss.
+
+**Scope and limits:** Scoped static review of feed detection, normalization/decode helpers and CLI control-flow changes in the 37-path comparison. Core article extraction, XML serialization and URL-filename implementation were not fully audited. Fixtures were read, not run, and no crawl, malformed-input timing or extraction-quality measurement was performed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [trafilatura](https://github.com/adbar/trafilatura); analyzed commit `6c1977a00b4e82ebb7e6fad1192467adaf24d430`; commit date 2026-10-02T18:53:21+02:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--trafilatura.md).
+Analysis metadata: source [trafilatura](https://github.com/adbar/trafilatura); analyzed commit `e14c0334488f208c313c349e6a2cc6761fa31ef9`; commit date 2026-10-27T18:14:09+01:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--trafilatura.md).
 <!-- teamagent-analysis:end -->

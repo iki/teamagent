@@ -1,0 +1,33 @@
+# deploy-cloudflare
+
+Source: [deploy-cloudflare](https://github.com/cloudflare/cloudflare-docs) · Category: [ai-skills](../categories/ai-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `e43015cd6cddad3ee1c0fa087c4d5022e65e7c98`; commit timestamp `2026-10-03T15:34:24-04:00`; 13,801 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/README.md)):
+
+> Welcome to the open-source repository for all Cloudflare's Documentation. Except as otherwise noted, Cloudflare and any contributors grant you a license to the Cloudflare Developer Documentation and other content in this repository under the Creative Commons Attribution 4.0 International Public License, see the LICENSE file, and grant you a license to any code in the repository under the MIT License, see the LICENSE-CODE file.
+
+Build/package evidence: [.flue/package.json](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/.flue/package.json); [.github/actions/check-codeowner/package.json](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/.github/actions/check-codeowner/package.json); [.github/actions/issue-label-assign/package.json](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/.github/actions/issue-label-assign/package.json); [package.json](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/package.json); [tools/go.mod](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/tools/go.mod)
+
+License evidence: [LICENSE](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/LICENSE); [LICENSE-CODE](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/LICENSE-CODE) Classification hint: not classified; inspect source. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-skills**. Its category places it in the candidate set for skills; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`021cca55c71563adc33f365f7cd1904e379a0d92`](https://github.com/cloudflare/cloudflare-docs/commit/021cca55c71563adc33f365f7cd1904e379a0d92). Scope: Full member-permission, Gateway policy-context and Browser Run permission partials plus repository-file renderer tests read. Live account behavior, renderer implementation and broader deployment changes were not reviewed.
+
+The [Gateway documentation](https://github.com/cloudflare/cloudflare-docs/blob/021cca55c71563adc33f365f7cd1904e379a0d92/src/content/partials/cloudflare-one/gateway/policy-context.mdx) says optional policy context can append user email, original URL/referrer and device/account identifiers to a redirect query. This is a concrete privacy boundary: Teamagent must not place sensitive state in public URLs merely because a provider supports it. [Member permissions](https://github.com/cloudflare/cloudflare-docs/blob/021cca55c71563adc33f365f7cd1904e379a0d92/src/content/partials/fundamentals/edit-member-permissions.mdx) and [Browser Run access](https://github.com/cloudflare/cloudflare-docs/blob/021cca55c71563adc33f365f7cd1904e379a0d92/src/content/partials/browser-run/rest-api-token-permissions.mdx) describe separate account-role, API-token and Worker-binding paths. The absence of a token in the binding path is not absence of authorization.
+
+The [renderer tests](https://github.com/cloudflare/cloudflare-docs/blob/021cca55c71563adc33f365f7cd1904e379a0d92/.flue/lib/github-repo-tools.test.ts) distinguish bounded line spans, continuation positions, invalid ranges and binary metadata without dumping binary content. These are useful evidence-reader fixtures, but omit an oversized single-line case in this inspected test file and do not prove upstream response-body bounds. Treat the documentation as revision-specific provider guidance, not verified account state. No cloud account, deployment, renderer or tests were exercised.

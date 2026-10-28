@@ -24,6 +24,16 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 divergent-history investigation and scoped source review
+
+Source: [agentic-bug-hunter](https://github.com/Awarexone/Agentic-Bug-Hunter); inspected snapshot `16dabf0cea8a43ad9d42733283e0fd8ed74313c0`; prior analyzed commit `977ba6ac0bd63e3fa2eaf4e9dcce924f71bca001`. The inspected snapshot is the saved discovery version, not a claim about the checkout's latest HEAD.
+
+**Scope:** Complete committed path inventory (67 paths); full 304-line auth_session.py. No upstream test or target action executed.
+
+**History outcome:** both full commits are available, but the analyzed commit is not an ancestor and the complete trees differ. The two-tree comparison contains 67 changed paths; common ancestor: `5b44b116b4cebac0bedf9fedf0cc2108f07f0a5f`. These counts establish comparison coverage, not semantic review of every file. The prior analyzed baseline and findings remain preserved as historical evidence. A separately acknowledged, guarded reconciliation records the inspected revision as a new scoped analysis baseline; it does not establish ancestry, publisher intent or whole-project correctness. The managed metadata below is authoritative for whether that acknowledgment has been recorded.
+
+The [authentication session](https://github.com/Awarexone/Agentic-Bug-Hunter/blob/16dabf0cea8a43ad9d42733283e0fd8ed74313c0/bughunter/tools/auth_session.py) rejects CR/LF injection, merges sources by header name, clears stale exported authentication on an empty session and keeps raw values out of repr/describe. These are useful boundaries, but the malformed-header exception includes the first 40 input characters, the redacted view exposes a value prefix/suffix, curl_args returns credentials in process arguments, and env_overlay can propagate them to children. The helper has no origin-bound credential policy; that must exist at the request adapter. Its truncated deterministic header hash is correlation data, not an authenticated identity or access grant. Teamagent should bind secrets to approved destinations, keep them out of process arguments and error text, and record command-scoped injection separately from authentication verification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agentic-bug-hunter](https://github.com/Awarexone/Agentic-Bug-Hunter); analyzed commit `977ba6ac0bd63e3fa2eaf4e9dcce924f71bca001`; commit date 2026-10-04T00:57:30+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--agentic-bug-hunter.md).
+Analysis metadata: source [agentic-bug-hunter](https://github.com/Awarexone/Agentic-Bug-Hunter); analyzed commit `16dabf0cea8a43ad9d42733283e0fd8ed74313c0`; commit date 2026-10-23T16:02:42+08:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agentic-bug-hunter.md).
 <!-- teamagent-analysis:end -->

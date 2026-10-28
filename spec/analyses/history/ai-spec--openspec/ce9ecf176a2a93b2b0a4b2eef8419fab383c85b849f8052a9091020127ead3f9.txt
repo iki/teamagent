@@ -1,0 +1,25 @@
+# OpenSpec
+
+Source: [Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec) · Reviewed revision: `2500d6da971336167548b53731a35b2127df35ac` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [skills](../skills.md) · [evolution](../evolution.md) · [agents](../agents.md) · [memory](../memory.md).
+
+## Evidence inspected
+
+- [`src/core/artifact-graph/graph.ts` lines 1–145](https://github.com/Fission-AI/OpenSpec/blob/2500d6da971336167548b53731a35b2127df35ac/src/core/artifact-graph/graph.ts#L1-L145)
+
+## Observed architecture and behavior
+
+OpenSpec represents workflow artifacts as a dependency graph constructed from a validated schema. The inspected graph implementation computes build order with Kahn's algorithm and uses declaration order to resolve ties deterministically. It exposes artifact lookup, schema name/version, and readiness based on completed dependencies. Comments illustrate a proposal-to-specs/design-to-tasks workflow while keeping the graph generic enough for custom schemas. This is a concrete scheduling primitive for artifact production.
+
+## Implications and tradeoffs for Teamagent
+
+Teamagent can reuse the distinction between artifact existence, dependency readiness, and task execution state. For example, an imported source can unlock extraction, extraction can unlock indexing, and a completed evaluation can unlock a candidate skill's promotion review. However, file completion is not semantic validity: a specification may exist while contradicting the implementation. Add content hashes, verification statuses, and invalidation edges so changes to upstream evidence mark downstream artifacts stale. Graph validation should reject unknown dependencies and cycles before execution. Parallel-ready nodes need explicit resource and write-conflict constraints rather than unrestricted simultaneous edits.
+
+## Adoption decision
+
+Adopt the schema-driven artifact graph pattern and provide an OpenSpec integration for teams already using it. Keep durable execution, cancellation, retries, and permissions in the harness engine. Treat the graph's deterministic order as a reproducibility aid, not a quality guarantee. Evaluate partial completion, changed prerequisites, interrupted transitions, and concurrent workers. Use its spec/change artifacts as queryable project memory, retaining both the current accepted state and historical decisions that explain why it changed.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.

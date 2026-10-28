@@ -24,6 +24,14 @@ This entry was catalogued under **ai-agents-sandbox**. Its category places it in
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`d84f912b8c423138d8fea64ca1974eb296ddfc8d`](https://github.com/cloudflare/computer/commit/d84f912b8c423138d8fea64ca1974eb296ddfc8d). Scope: Full runtime wire codec/tests, exec public export/tests and non-workerd proxy stub read. Exec implementation, bridge, RPC authorization and real workerd integration were not audited.
+
+The [wire codec](https://github.com/cloudflare/computer/blob/d84f912b8c423138d8fea64ca1974eb296ddfc8d/packages/computer/src/runtime/wire.ts) transports sequence-tagged text/binary output and structured exit results in newline JSON. It casts parsed data directly to a frame, buffers unfinished lines without a size limit and accepts a final unterminated frame; no ID/order/type/base64 bounds are validated here. The [tests](https://github.com/cloudflare/computer/blob/d84f912b8c423138d8fea64ca1974eb296ddfc8d/packages/computer/src/runtime/wire.test.ts) cover only two exit-event round trips. Teamagent must decode unknown values through bounded schemas and distinguish incomplete transport from successful process completion.
+
+The [exec fixtures](https://github.com/cloudflare/computer/blob/d84f912b8c423138d8fea64ca1974eb296ddfc8d/packages/computer/src/tools/core.test.ts) check backend-dependent object parsing without mutating the input and demonstrate an agent-library-independent interface. They do not establish execution isolation. The [proxy stub](https://github.com/cloudflare/computer/blob/d84f912b8c423138d8fea64ca1974eb296ddfc8d/packages/computer/src/proxy-stub.ts) deliberately throws outside workerd, correctly separating import compatibility from runtime availability. Adapt that platform distinction and richer adversarial wire fixtures. No command, Worker, container, RPC or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cloudflare-computer](https://github.com/cloudflare/computer); analyzed commit `2f76387771c9e4a64dc08a7bbd82cbbcf9fadec1`; commit date 2026-10-02T13:23:47+01:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--cloudflare-computer.md).
+Analysis metadata: source [cloudflare-computer](https://github.com/cloudflare/computer); analyzed commit `d84f912b8c423138d8fea64ca1974eb296ddfc8d`; commit date 2026-10-27T16:30:53Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--cloudflare-computer.md).
 <!-- teamagent-analysis:end -->

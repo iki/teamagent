@@ -1,0 +1,25 @@
+# prompts.chat
+
+Source: [f/prompts.chat](https://github.com/f/prompts.chat) · Reviewed revision: `7d3f248962d1dca209d59e033524bcb86c2b26b8` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [skills](../skills.md) · [import-generation](../import-generation.md) · [evolution](../evolution.md).
+
+## Evidence inspected
+
+- [`src/pages/api/mcp.ts` lines 272–341](https://github.com/f/prompts.chat/blob/7d3f248962d1dca209d59e033524bcb86c2b26b8/src/pages/api/mcp.ts#L272-L341)
+
+## Observed architecture and behavior
+
+The inspected MCP endpoint exposes prompt search with a query, bounded result count, prompt type, category, and tag filters. The database query checks public visibility or ownership of private prompts, excludes deleted/unlisted records, and searches title, description, and content. Results include prompt content and attribution metadata. Ordering is by creation time in this path, rather than a measured task-specific quality score. Text, structured, image, video, and audio prompts share the discovery interface.
+
+## Implications and tradeoffs for Teamagent
+
+This is a useful source of candidate prompts and media-generation recipes, with an API shape that can join Teamagent's resource catalog. Discovery must not make returned prompt text authoritative instructions. Store source attribution, license status, version/digest, and the query that found it, then evaluate a candidate under the actual model and toolchain. A popular or recent prompt may have poor trigger precision, unsupported assumptions, or misleading claims. Private prompt access must follow the connector identity and remain scoped in the knowledge store; a later search should not reveal another user's imported private content.
+
+## Adoption decision
+
+Integrate as an optional search/import source, not as a trusted skill registry or optimizer. Convert selected prompts into versioned candidates with explicit input/output contracts and test examples. Use media recipes only through the generation-tool registry and its model capability checks. Preserve the original prompt separately from tuned variants and compare against a concise baseline. Add near-miss trigger tests before promoting any general prompt into an automatically selected skill.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.

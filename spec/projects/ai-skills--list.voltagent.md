@@ -2,7 +2,7 @@
 
 Source: [list.voltagent](https://github.com/VoltAgent/awesome-agent-skills) · Category: [ai-skills](../categories/ai-skills.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `fd4c28d3be5576a88b1a0b0c4f5267c448d94ef5`; commit timestamp `2026-10-02T20:24:52+03:00`; 4 tracked paths.
 
@@ -24,6 +24,12 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-27
+
+Reviewed commit `ec7ae694479aaed73f4a655e3c346dde5e61b8c4` (commit date `2026-10-25T16:18:50+03:00`). Complete README-only delta including additions, removals and path changes.
+
+The [directory](https://github.com/VoltAgent/awesome-agent-skills/blob/ec7ae694479aaed73f4a655e3c346dde5e61b8c4/README.md) adds social publishing, source-linked learning, testing, privacy, rendering and voice candidates and corrects source paths. No linked implementation is present in this delta. A Fish Audio skill listing establishes neither training exclusion nor a supported Teamagent route. Keep immutable source review before activation; verify identity/history for URL renames. Messaging, publishing, calls and payments require distinct effect scopes. Linked tools and quality/token claims were not validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [list.voltagent](https://github.com/VoltAgent/awesome-agent-skills); analyzed commit `fd4c28d3be5576a88b1a0b0c4f5267c448d94ef5`; commit date 2026-10-02T20:24:52+03:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--list.voltagent.md).
+Analysis metadata: source [list.voltagent](https://github.com/VoltAgent/awesome-agent-skills); analyzed commit `ec7ae694479aaed73f4a655e3c346dde5e61b8c4`; commit date 2026-10-25T16:18:50+03:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--list.voltagent.md).
 <!-- teamagent-analysis:end -->

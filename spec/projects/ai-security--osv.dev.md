@@ -24,6 +24,14 @@ This entry was catalogued under **ai-security**. Its category places it in the c
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`083210c7e7923eccd17278305cbe1fef27309c00`](https://github.com/google/osv.dev/commit/083210c7e7923eccd17278305cbe1fef27309c00). Scope: Full source-repository sync script and CloudStorage interface/GCS implementation read. Feed generation, allowlist sync and live cloud behavior were not audited.
+
+The [source sync script](https://github.com/google/osv.dev/blob/083210c7e7923eccd17278305cbe1fef27309c00/tools/sourcerepo-sync/source_sync.py) defaults to dry-run/test resources, rejects duplicate source names and local copies of dynamic sync fields, and has validation-only mode before cloud access. Actual synchronization can delete absent sources, is not transactional and skips new attributes absent from an existing datastore record. Adapt explicit desired-versus-runtime fields and a reviewable plan, with stronger schema validation, deletion authorization and optimistic concurrency.
+
+The [storage contract](https://github.com/google/osv.dev/blob/083210c7e7923eccd17278305cbe1fef27309c00/go/osv/clients/cloudstorage.go) exposes generation preconditions, object metadata and streamed writes. The [GCS adapter](https://github.com/google/osv.dev/blob/083210c7e7923eccd17278305cbe1fef27309c00/go/osv/clients/gcs_client.go) translates generation zero into create-only semantics and bounds retries to three attempts. Its streamed retry only rewinds io.Seeker values: a transient failure can otherwise retry from a partially consumed non-seekable reader. Backoff sleeps are not context-selectable, reads use unbounded ReadAll, and bucket wrappers close a shared client. Teamagent should require replayable input or a fresh-reader factory, bounded reads, cancellable waits and explicit client ownership. No cloud access, synchronization or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [osv.dev](https://github.com/google/osv.dev); analyzed commit `7d0483198bef3059311832bcbe00faf895991f46`; commit date 2026-10-02T04:17:35Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-security--osv.dev.md).
+Analysis metadata: source [osv.dev](https://github.com/google/osv.dev); analyzed commit `083210c7e7923eccd17278305cbe1fef27309c00`; commit date 2026-10-27T07:04:44Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-security--osv.dev.md).
 <!-- teamagent-analysis:end -->

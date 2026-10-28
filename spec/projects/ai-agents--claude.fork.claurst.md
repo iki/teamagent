@@ -2,7 +2,7 @@
 
 Source: [claude.fork.claurst](https://github.com/Kuberwastaken/claurst) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `b0637c97ec34144387cbf2f74f65df6d16a6cef1`; commit timestamp `2026-09-02T23:57:57+08:00`; 395 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `e4228cc6757d804d7c25ff4fb6d89c06d4ae3b88` (commit date `2026-10-26T21:23:29+05:30`). The original snapshot above remains historical evidence.
+
+**Scope:** ACP runtime construction/MCP admission and sandbox settings/effective-state rendering; trust-store internals, actual Seatbelt profile and full ACP session/permission loop were not audited.
+
+The [ACP runtime](https://github.com/Kuberwastaken/claurst/blob/e4228cc6757d804d7c25ff4fb6d89c06d4ae3b88/src-rust/crates/acp/src/runtime.rs#L17-L162) shares provider clients, tool collections and a cost tracker per working directory while documenting session-specific transcript, cancellation and permission state in a separate layer. It snapshots instructions/skills and separates stable prompt additions from dynamic context. This is a useful cache/ownership distinction, but the separate session layer and mutation behavior were not inspected. Settings-load failure falls back to defaults, and Plan mode maps to the default ACP permission bridge; those transitions must remain observable and must not widen a Teamagent caller's declared authority.
+
+[Project MCP admission](https://github.com/Kuberwastaken/claurst/blob/e4228cc6757d804d7c25ff4fb6d89c06d4ae3b88/src-rust/crates/acp/src/runtime.rs#L177-L210) partitions configured servers through a trust store and connects only the allowed set, logging pending names. This supports passive discovery before executable launch. It is call-site evidence only: the trust-store identity/hash binding and server startup isolation were not audited.
+
+The [sandbox configuration](https://github.com/Kuberwastaken/claurst/blob/e4228cc6757d804d7c25ff4fb6d89c06d4ae3b88/src-rust/crates/core/src/sandbox.rs#L1-L112) is explicitly macOS Seatbelt-specific. The effective mode is off when the fixed executable is unavailable, and the prompt/badge are omitted in that case; the inspected source tests check that distinction. Default `workspace-write` configuration must therefore never be advertised as cross-platform confinement. Teamagent should expose unsupported protection explicitly, retain requested versus effective policy and verify the real profile/OS behavior before admitting a protected task.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [claude.fork.claurst](https://github.com/Kuberwastaken/claurst); analyzed commit `b0637c97ec34144387cbf2f74f65df6d16a6cef1`; commit date 2026-09-02T23:57:57+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--claude.fork.claurst.md).
+Analysis metadata: source [claude.fork.claurst](https://github.com/Kuberwastaken/claurst); analyzed commit `e4228cc6757d804d7c25ff4fb6d89c06d4ae3b88`; commit date 2026-10-26T21:23:29+05:30; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--claude.fork.claurst.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,586 @@
+{
+  "format": "teamagent-extractor-partial-archive-v1",
+  "archivedAt": "2026-10-04T20:21:25.916029+00:00",
+  "sourceRun": ".cache/extractor-benchmark/2026-10-04-full-v2",
+  "scoringVersion": "teamagent-extractor-quality/2",
+  "completedMeasurements": 102,
+  "plannedMeasurements": 144,
+  "completedProfileCount": 8,
+  "partiallyCompletedProfile": "docling-fast-text",
+  "reason": "The operator intentionally stopped the run after observing unresolved absolute file image links in Docling output. A separate code review found an output/source basename collision risk, confirmed by a regression fixture but not observed in measured outputs. Completed observations are preserved. A corrected full adapter rerun supersedes this partial run; gold and quality evaluator version2 remain unchanged.",
+  "interruption": "The unfinished active conversion has no completed observation; no failure, quality score or elapsed time is fabricated for it.",
+  "retention": "Raw provenance and completed measurement JSON bytes only; full third-party outputs remain in ignored local cache.",
+  "files": [
+    {
+      "path": "provenance.json",
+      "bytes": 17640,
+      "sha256": "ddf65bb1d3a15c46904e189c4a7401298ee70eddd221a0a599c7156dc3bdf612"
+    },
+    {
+      "path": "builtin/pdf-disney-q1-fy25/0/measurement.json",
+      "bytes": 6958,
+      "sha256": "b0233db2d9e58c693ea6ef01d3b16637709acb2898faee56c3a812077aa155c6"
+    },
+    {
+      "path": "builtin/pdf-disney-q1-fy25/1/measurement.json",
+      "bytes": 6957,
+      "sha256": "b7f7594b610cc2f07cf14d8e22fc5dac0382f3916bc1a279415a4b1d4885505c"
+    },
+    {
+      "path": "builtin/pdf-dynamodb-transactions/0/measurement.json",
+      "bytes": 6525,
+      "sha256": "4e5de45151ab710af67ead157628a0421d50ab8297dde98d851772fae7490408"
+    },
+    {
+      "path": "builtin/pdf-dynamodb-transactions/1/measurement.json",
+      "bytes": 6525,
+      "sha256": "138f32b00d3c9792c53cda77ec1b022445d3efd2e209af6822213993080cda62"
+    },
+    {
+      "path": "builtin/pdf-hermes-kanban/0/measurement.json",
+      "bytes": 6268,
+      "sha256": "daea268dc63a300d3243aa5613caa3b1479714d68a7e452360b355c850d325b4"
+    },
+    {
+      "path": "builtin/pdf-hermes-kanban/1/measurement.json",
+      "bytes": 6267,
+      "sha256": "9cd173dcc5defa9cc0cc15be0affc59402d5dc363a15558698d5a4ed9bf1a92c"
+    },
+    {
+      "path": "builtin/pdf-memento/0/measurement.json",
+      "bytes": 6474,
+      "sha256": "74b04eafe4f4f071ac7599bf28e7af91d91871e9878491840274c67fcaf56193"
+    },
+    {
+      "path": "builtin/pdf-memento/1/measurement.json",
+      "bytes": 6482,
+      "sha256": "f261c69823b6f8cd551f98849033c8a2bfd073887c998e72af4585a26ccbc42b"
+    },
+    {
+      "path": "builtin/pdf-ncm-czech/0/measurement.json",
+      "bytes": 6052,
+      "sha256": "b3f4f0eb15dbe501a5171660ec0741123fbce84de1ff29b047b025bf4fc57f77"
+    },
+    {
+      "path": "builtin/pdf-ncm-czech/1/measurement.json",
+      "bytes": 6052,
+      "sha256": "9ebf612de47b87147d5d9a94bf6901200633136534eac5d6a61091088934db3f"
+    },
+    {
+      "path": "builtin/synthetic-scanned-en-cs/0/measurement.json",
+      "bytes": 8551,
+      "sha256": "a3755909ba2cf7a74cead08f7047704848300f937dc2e79b8720125ecbdfe96c"
+    },
+    {
+      "path": "builtin/synthetic-scanned-en-cs/1/measurement.json",
+      "bytes": 8550,
+      "sha256": "0428a8ec15d6c8bcd4fedc1bd60129d2884f20be79dcb215bb9252a1f00cf4c3"
+    },
+    {
+      "path": "docling-fast-text/pdf-hermes-kanban/0/measurement.json",
+      "bytes": 6473,
+      "sha256": "7e9c8b199afa8552c8cf5900d6ab781331e27f55e80873aecb5677c1f47d22f9"
+    },
+    {
+      "path": "docling-fast-text/pdf-hermes-kanban/1/measurement.json",
+      "bytes": 6472,
+      "sha256": "c8303f7748c6c4d480d34c58f050374b421a1efbbae2572ea7fb62d2d99882d7"
+    },
+    {
+      "path": "docling-fast-text/pdf-memento/0/measurement.json",
+      "bytes": 6700,
+      "sha256": "00f69aa0cb61c9231f2032e5f26c4e072ecc81153e99f35c8ace150bc8bb56ac"
+    },
+    {
+      "path": "docling-fast-text/pdf-memento/1/measurement.json",
+      "bytes": 6699,
+      "sha256": "149ed279e34428b0db94e62c19d306379cf8a1cbe58f8d975521403e36e769c2"
+    },
+    {
+      "path": "docling-fast-text/pdf-ncm-czech/0/measurement.json",
+      "bytes": 5950,
+      "sha256": "bf0f8dac7d28c10ba4b076a571f98c3266352055f50bd5c7d966f0ee0a0df9c1"
+    },
+    {
+      "path": "docling-fast-text/pdf-ncm-czech/1/measurement.json",
+      "bytes": 5950,
+      "sha256": "d75f9e9164a560e3da00ab2d6a175c95075bb63aa4d21d40f6273aa5df5a69cf"
+    },
+    {
+      "path": "mineru-basic/pdf-disney-q1-fy25/0/measurement.json",
+      "bytes": 6875,
+      "sha256": "cd45a4b63c1634c4b2297b6889b621525b3bf9b8736cd174bc4557df1edb3130"
+    },
+    {
+      "path": "mineru-basic/pdf-disney-q1-fy25/1/measurement.json",
+      "bytes": 6881,
+      "sha256": "0928be08eb021e6630436be911fb4922c2d5171680b10aa45f51b0f5b9102576"
+    },
+    {
+      "path": "mineru-basic/pdf-dynamodb-transactions/0/measurement.json",
+      "bytes": 6675,
+      "sha256": "86801501c14f2bf61b5d539f9c5db584d975f64cc4027d65fefe93e2321603ba"
+    },
+    {
+      "path": "mineru-basic/pdf-dynamodb-transactions/1/measurement.json",
+      "bytes": 6673,
+      "sha256": "af364406c342fda1da889862ecfff09307cd571d85406800cce189e7eaa2db2e"
+    },
+    {
+      "path": "mineru-basic/pdf-hermes-kanban/0/measurement.json",
+      "bytes": 6464,
+      "sha256": "0d88f60bb9bb349669fa1bc98034ab987687c1f9fd008fdbec3f819e0485d375"
+    },
+    {
+      "path": "mineru-basic/pdf-hermes-kanban/1/measurement.json",
+      "bytes": 6464,
+      "sha256": "5cd2b3be88df360e6133f190540f91723323253d7cd2b33ec9c87bcbfb8434f0"
+    },
+    {
+      "path": "mineru-basic/pdf-memento/0/measurement.json",
+      "bytes": 6677,
+      "sha256": "e785a703881508ed07cecc0831272a556041cf9c1a9ed30a877a64bf875af7e8"
+    },
+    {
+      "path": "mineru-basic/pdf-memento/1/measurement.json",
+      "bytes": 6675,
+      "sha256": "69a7457f1582639ee9bbde296abf1b25ac74cf1ef6f5642deee1d9e0d0349881"
+    },
+    {
+      "path": "mineru-basic/pdf-ncm-czech/0/measurement.json",
+      "bytes": 5947,
+      "sha256": "03c8d8587ad5ac7bab8ad952ed25fa26bffee7938be99c110a4d27c2da3f021c"
+    },
+    {
+      "path": "mineru-basic/pdf-ncm-czech/1/measurement.json",
+      "bytes": 5946,
+      "sha256": "74a1f62213990041b9270931a405a6375bdc36278e41eb110b099518aeb623a3"
+    },
+    {
+      "path": "mineru-basic/synthetic-scanned-en-cs/0/measurement.json",
+      "bytes": 8315,
+      "sha256": "0d8aaedc02bff36c22c068745688784656769b1b30401a8e0a2110b5be4bb2a6"
+    },
+    {
+      "path": "mineru-basic/synthetic-scanned-en-cs/1/measurement.json",
+      "bytes": 8314,
+      "sha256": "8988efe87240c76e9d7bcb9bd76dc7416ff32a255f094e23042445ff0354fed0"
+    },
+    {
+      "path": "mineru-flash/pdf-disney-q1-fy25/0/measurement.json",
+      "bytes": 7157,
+      "sha256": "b8b69eb3018ef50ea06cddb597991820526f88e24c69ced44af4331618595d78"
+    },
+    {
+      "path": "mineru-flash/pdf-disney-q1-fy25/1/measurement.json",
+      "bytes": 7156,
+      "sha256": "bc7680d3843188986c4760ca46de07f9a8fad359c715900dacc5fa2b7e0b8c29"
+    },
+    {
+      "path": "mineru-flash/pdf-dynamodb-transactions/0/measurement.json",
+      "bytes": 6675,
+      "sha256": "22ed1c3ff2580a9322da28e554410bb2b12e76dbf4bb424a3e6d614900abac9a"
+    },
+    {
+      "path": "mineru-flash/pdf-dynamodb-transactions/1/measurement.json",
+      "bytes": 6674,
+      "sha256": "a0c3530d10df86a337a95d51ba37f65fa62e4ad04ebda4241e0ff8b5de0c7865"
+    },
+    {
+      "path": "mineru-flash/pdf-hermes-kanban/0/measurement.json",
+      "bytes": 6465,
+      "sha256": "ac9593b3c70536d9991165eb1c95836f1e2d77eef1d76542629c908fcaa17d0f"
+    },
+    {
+      "path": "mineru-flash/pdf-hermes-kanban/1/measurement.json",
+      "bytes": 6464,
+      "sha256": "d5a980d069c844436afb533ffb616aca8a2d6a538f060d8b137aa6e96e0f6a4a"
+    },
+    {
+      "path": "mineru-flash/pdf-memento/0/measurement.json",
+      "bytes": 6634,
+      "sha256": "f833cc41dd80056f309295fcb97f958feca0d9c0c80fc137608e70b6e8343989"
+    },
+    {
+      "path": "mineru-flash/pdf-memento/1/measurement.json",
+      "bytes": 6632,
+      "sha256": "889c122668d8ec2ac5aeeb7f3b00ef0d0344be1fe2374549239cbe93351d7283"
+    },
+    {
+      "path": "mineru-flash/pdf-ncm-czech/0/measurement.json",
+      "bytes": 5947,
+      "sha256": "ec7512cef7626ef026b8656da04b0b64dab2ff0d9737aec250a6ab6a41c9722b"
+    },
+    {
+      "path": "mineru-flash/pdf-ncm-czech/1/measurement.json",
+      "bytes": 5946,
+      "sha256": "e674b24057a9252181bdfbbcbabf7a2032a9843139480d23764c305513068e6f"
+    },
+    {
+      "path": "mineru-flash/synthetic-scanned-en-cs/0/measurement.json",
+      "bytes": 8634,
+      "sha256": "f4e854c76685c633c436cc405baa298e6cb6f84bc47a4cb28255db0ffc8ae137"
+    },
+    {
+      "path": "mineru-flash/synthetic-scanned-en-cs/1/measurement.json",
+      "bytes": 8633,
+      "sha256": "d4a348aaf4774818bd8f853009684dca65346317c3434dbdcc964af976fe225a"
+    },
+    {
+      "path": "opendataloader-structured/pdf-disney-q1-fy25/0/measurement.json",
+      "bytes": 6871,
+      "sha256": "544284dc3751bc2268b7e52b8a75b7d371dcd1d5f124688386496ca57b375a75"
+    },
+    {
+      "path": "opendataloader-structured/pdf-disney-q1-fy25/1/measurement.json",
+      "bytes": 6871,
+      "sha256": "2d42ece9efbe4c88b06702592fefba6107754970fc9383d9937145d377e5c287"
+    },
+    {
+      "path": "opendataloader-structured/pdf-dynamodb-transactions/0/measurement.json",
+      "bytes": 6440,
+      "sha256": "309c40e252016b620885e3651cb981b49e0e2018fc4a5549683cbbc18ccf0ed1"
+    },
+    {
+      "path": "opendataloader-structured/pdf-dynamodb-transactions/1/measurement.json",
+      "bytes": 6439,
+      "sha256": "98886018f67d511e9a2595ecc866ed24ebf6763528b2f2ff4c46648261202f50"
+    },
+    {
+      "path": "opendataloader-structured/pdf-hermes-kanban/0/measurement.json",
+      "bytes": 6182,
+      "sha256": "0f6363f7a957a3eb0e0691f9bcbb9ed03d3baa0bbf7b7cbb5a0ad55559c4086c"
+    },
+    {
+      "path": "opendataloader-structured/pdf-hermes-kanban/1/measurement.json",
+      "bytes": 6181,
+      "sha256": "2fa8a36a4f231fd9b1f9157e66077d94bc3147a91f84ce825f1b9c353297444e"
+    },
+    {
+      "path": "opendataloader-structured/pdf-memento/0/measurement.json",
+      "bytes": 6444,
+      "sha256": "009bd6db777c34921c90ecc42e760a5f66100b45104f22b8b924dadb688dd993"
+    },
+    {
+      "path": "opendataloader-structured/pdf-memento/1/measurement.json",
+      "bytes": 6443,
+      "sha256": "090c38d200aff0336156d2fbe5163295a64b3135e76cc06376a249ee36fdc230"
+    },
+    {
+      "path": "opendataloader-structured/pdf-ncm-czech/0/measurement.json",
+      "bytes": 5972,
+      "sha256": "69107fc61f2a9be2823891a7b9e5dade7b00aaa290e952f605fd52c40de2f5f5"
+    },
+    {
+      "path": "opendataloader-structured/pdf-ncm-czech/1/measurement.json",
+      "bytes": 5971,
+      "sha256": "f28a885206e19ba6fd237bc4b6b329da3aa946c83cc90f642abacd1bd2dfcd7e"
+    },
+    {
+      "path": "opendataloader-structured/synthetic-scanned-en-cs/0/measurement.json",
+      "bytes": 8395,
+      "sha256": "e36f69b4f7e5cb98b205feb347f71bf14b401da6189bec8feb62d572f52458db"
+    },
+    {
+      "path": "opendataloader-structured/synthetic-scanned-en-cs/1/measurement.json",
+      "bytes": 8395,
+      "sha256": "4a85e1c3a1b59e628fef6a5d55bafd91ec53a620e9fbcd3699885069148ade6a"
+    },
+    {
+      "path": "opendataloader-xycut/pdf-disney-q1-fy25/0/measurement.json",
+      "bytes": 6862,
+      "sha256": "a0ec9f0350433bbde734a20c888cf02f2371a7802e8b9e31f26546e677b8d677"
+    },
+    {
+      "path": "opendataloader-xycut/pdf-disney-q1-fy25/1/measurement.json",
+      "bytes": 6860,
+      "sha256": "f55a79b90b02cfa2980ceedcdee5a0af327c60f4cc9556f26773478da2ecbe1a"
+    },
+    {
+      "path": "opendataloader-xycut/pdf-dynamodb-transactions/0/measurement.json",
+      "bytes": 6430,
+      "sha256": "0b1053ea12b2d677f81d620e3f4c89e530125b09495515e4b80300ab62e43b96"
+    },
+    {
+      "path": "opendataloader-xycut/pdf-dynamodb-transactions/1/measurement.json",
+      "bytes": 6429,
+      "sha256": "5eca200e53207e7e0de0fc2656214f73184fc8b0de21f43f4c41198cdc0cccd5"
+    },
+    {
+      "path": "opendataloader-xycut/pdf-hermes-kanban/0/measurement.json",
+      "bytes": 6172,
+      "sha256": "93c48af74e92703dae014fbdff59aeb76dd9bc9867a6eea964497aeabe2f1e45"
+    },
+    {
+      "path": "opendataloader-xycut/pdf-hermes-kanban/1/measurement.json",
+      "bytes": 6171,
+      "sha256": "2004fdfe3b2e2b035736a51a65c4305fc80964631420715396ff5eea6fd4b1f0"
+    },
+    {
+      "path": "opendataloader-xycut/pdf-memento/0/measurement.json",
+      "bytes": 6434,
+      "sha256": "f26aa2adebc9747aaca848199db2db4df13f6938f04220c157ca15d200d73573"
+    },
+    {
+      "path": "opendataloader-xycut/pdf-memento/1/measurement.json",
+      "bytes": 6434,
+      "sha256": "9b2c3da2af2e1df4d8bc6116a75fff7bedecfff2f781eb93f0a6deb9db38cbf1"
+    },
+    {
+      "path": "opendataloader-xycut/pdf-ncm-czech/0/measurement.json",
+      "bytes": 5962,
+      "sha256": "59d9358ba9978c9e64fc018e236a67234e7c793f0b0d88f978ac8b4019ef3f1a"
+    },
+    {
+      "path": "opendataloader-xycut/pdf-ncm-czech/1/measurement.json",
+      "bytes": 5960,
+      "sha256": "05e9571c6b0734e926220c1f73b24dd1d2cf5ec665bfee65f75d8461825c5f07"
+    },
+    {
+      "path": "opendataloader-xycut/synthetic-scanned-en-cs/0/measurement.json",
+      "bytes": 8386,
+      "sha256": "cbdb5ef4308f217bee0f922e618a4968bf2bb2420c8bce3a0d0d88b0126ab0e9"
+    },
+    {
+      "path": "opendataloader-xycut/synthetic-scanned-en-cs/1/measurement.json",
+      "bytes": 8384,
+      "sha256": "415dedaf040646bbdc93bec8f634cc3ae3a4c3bdece11cc5b01f66ef2d37911e"
+    },
+    {
+      "path": "xberg-auto/pdf-disney-q1-fy25/0/measurement.json",
+      "bytes": 6835,
+      "sha256": "49b0cd4ba1e55209b879aad8e3634c8323e7752b2a919005947005cd764fac1b"
+    },
+    {
+      "path": "xberg-auto/pdf-disney-q1-fy25/1/measurement.json",
+      "bytes": 6833,
+      "sha256": "26fb65b2ab7ebb11b3c5922e623ea74fa3c0b1f66203923f7f2fd23a7292c603"
+    },
+    {
+      "path": "xberg-auto/pdf-dynamodb-transactions/0/measurement.json",
+      "bytes": 6400,
+      "sha256": "d3711ee35cdf3c2901917bf2d871c5c9bead8c3d628b73bf17a1a77af9acfda3"
+    },
+    {
+      "path": "xberg-auto/pdf-dynamodb-transactions/1/measurement.json",
+      "bytes": 6399,
+      "sha256": "07ac410ccad2a64e025d7779ca4ed12b19c6b9dadc4f76c1849edf6fda704817"
+    },
+    {
+      "path": "xberg-auto/pdf-hermes-kanban/0/measurement.json",
+      "bytes": 6148,
+      "sha256": "aea2875f06f69cd250bce01c46aa74353244149a21ce61ebb7b49940b971f01d"
+    },
+    {
+      "path": "xberg-auto/pdf-hermes-kanban/1/measurement.json",
+      "bytes": 6147,
+      "sha256": "4c2cc87cd1ffe811673eedad0c1ff439ada262338b311d17d1f2603d018bf229"
+    },
+    {
+      "path": "xberg-auto/pdf-memento/0/measurement.json",
+      "bytes": 6362,
+      "sha256": "cfa01af06ac9b55fdac62692b683fcc26e2974c6e2b8f4fe0091871a2a94e1cc"
+    },
+    {
+      "path": "xberg-auto/pdf-memento/1/measurement.json",
+      "bytes": 6361,
+      "sha256": "3a3ac6c7aefafa99ac5c5aa78464c476e7d5210a28d3c6f6406c9d6f00237659"
+    },
+    {
+      "path": "xberg-auto/pdf-ncm-czech/0/measurement.json",
+      "bytes": 5940,
+      "sha256": "3a7756bc35ce385fcc35597b5650ac5b2be2c1bbf7056b4245b3f38da464b580"
+    },
+    {
+      "path": "xberg-auto/pdf-ncm-czech/1/measurement.json",
+      "bytes": 5940,
+      "sha256": "01b6b05f58c0e5c0b73c930816d62911aad66e4b8e24599313d877a55b005f5c"
+    },
+    {
+      "path": "xberg-auto/synthetic-scanned-en-cs/0/measurement.json",
+      "bytes": 8356,
+      "sha256": "55963a773287f50450f84ecf64dd51531a8a98ac923a6881c126fc960d24bd8c"
+    },
+    {
+      "path": "xberg-auto/synthetic-scanned-en-cs/1/measurement.json",
+      "bytes": 8355,
+      "sha256": "27ccbb946347e424b7175cfd702b19a0ebd8d5a839b52cbd85f87ec77fdca869"
+    },
+    {
+      "path": "xberg-native/pdf-disney-q1-fy25/0/measurement.json",
+      "bytes": 6838,
+      "sha256": "465457276cf2357456ac4356e26d2d95663cf042e71d6396c7f1cda5fa176f97"
+    },
+    {
+      "path": "xberg-native/pdf-disney-q1-fy25/1/measurement.json",
+      "bytes": 6838,
+      "sha256": "12831e34d7b746da1d4ce6e243d2b2bb6c01311672666221a7f3963b318636f9"
+    },
+    {
+      "path": "xberg-native/pdf-dynamodb-transactions/0/measurement.json",
+      "bytes": 6404,
+      "sha256": "d46afec491931caf20943bf8dc0bb96ce8cd18729bebe09401237fda8c0a37e5"
+    },
+    {
+      "path": "xberg-native/pdf-dynamodb-transactions/1/measurement.json",
+      "bytes": 6402,
+      "sha256": "b031dbeaebd78ba96a57ced00914f395325104207dfc21ffe45d001affba1599"
+    },
+    {
+      "path": "xberg-native/pdf-hermes-kanban/0/measurement.json",
+      "bytes": 6153,
+      "sha256": "2b1610221f2b937cfb84f089251c4ebd89ab241b1c6dfa4def319e84583e3135"
+    },
+    {
+      "path": "xberg-native/pdf-hermes-kanban/1/measurement.json",
+      "bytes": 6151,
+      "sha256": "e8dae185b488fe8ac26804f5447f3f47f4c799cca2f233f092452556d0f6b033"
+    },
+    {
+      "path": "xberg-native/pdf-memento/0/measurement.json",
+      "bytes": 6365,
+      "sha256": "ec4662de0fdae42e0c5e6eb2116dc20ff5ada47e2ce7151a56b6ddb4ce4fc069"
+    },
+    {
+      "path": "xberg-native/pdf-memento/1/measurement.json",
+      "bytes": 6365,
+      "sha256": "0433e1f0cec79323d8e5ebd02feacd1faf9faec1a58379838ca2a48549f2c4a0"
+    },
+    {
+      "path": "xberg-native/pdf-ncm-czech/0/measurement.json",
+      "bytes": 5944,
+      "sha256": "5e0454fe000ba630249231b413e7d24b14bacc1321c5952536284d35926bce06"
+    },
+    {
+      "path": "xberg-native/pdf-ncm-czech/1/measurement.json",
+      "bytes": 5944,
+      "sha256": "c3551417c7c0158aeb3276be6901687730a40de2f159da9ed1aa5dd95a85776f"
+    },
+    {
+      "path": "xberg-native/synthetic-scanned-en-cs/0/measurement.json",
+      "bytes": 8358,
+      "sha256": "e25c029ebbc580bf3961c1b393e7e77cf7f7cda175a65e5cf84de68ba91c8e1b"
+    },
+    {
+      "path": "xberg-native/synthetic-scanned-en-cs/1/measurement.json",
+      "bytes": 8359,
+      "sha256": "8d7a881aba1b4ecdbb978b06caa816e9e51651e95b2327ba47883dbc629ccc4a"
+    },
+    {
+      "path": "xberg-ocr-text/pdf-disney-q1-fy25/0/measurement.json",
+      "bytes": 6842,
+      "sha256": "27a5b60779455c848a1d2943aa903cc10e779b3b16160050b4c9f44dc4bf4371"
+    },
+    {
+      "path": "xberg-ocr-text/pdf-disney-q1-fy25/1/measurement.json",
+      "bytes": 6842,
+      "sha256": "1a62618d443199b7af246fb0ac278331789ece9360c9b99900e4061dc48b4562"
+    },
+    {
+      "path": "xberg-ocr-text/pdf-dynamodb-transactions/0/measurement.json",
+      "bytes": 6408,
+      "sha256": "61a1e68203228601f81a51d64112c23516ba8341780529a194455075f5e04edf"
+    },
+    {
+      "path": "xberg-ocr-text/pdf-dynamodb-transactions/1/measurement.json",
+      "bytes": 6407,
+      "sha256": "b7cf2def039ae9731356f408ad1abbfbd07941266eeacd1dbec22af78a2d4278"
+    },
+    {
+      "path": "xberg-ocr-text/pdf-hermes-kanban/0/measurement.json",
+      "bytes": 6156,
+      "sha256": "44c1316127877d8fd62684ff38577fd3aceac5e6b32297935195e02fb302bbb5"
+    },
+    {
+      "path": "xberg-ocr-text/pdf-hermes-kanban/1/measurement.json",
+      "bytes": 6155,
+      "sha256": "f698eadf6ce20ce1640575b112249e9616531911d8a19e279f62b6849c4ec40c"
+    },
+    {
+      "path": "xberg-ocr-text/pdf-memento/0/measurement.json",
+      "bytes": 6370,
+      "sha256": "0a0b245205d398929fd6903629887a03a8c1b0e9fb2e278003fe2be17ec229a5"
+    },
+    {
+      "path": "xberg-ocr-text/pdf-memento/1/measurement.json",
+      "bytes": 6369,
+      "sha256": "8239b74977abafc9b86211181926fcefe6fc37283c0887b01b952890e8fa5a64"
+    },
+    {
+      "path": "xberg-ocr-text/pdf-ncm-czech/0/measurement.json",
+      "bytes": 5948,
+      "sha256": "1dc598b99bcf5c57f233aead2fcdb0973f6aa1d3a3e44d60625026dca1aa4d41"
+    },
+    {
+      "path": "xberg-ocr-text/pdf-ncm-czech/1/measurement.json",
+      "bytes": 5946,
+      "sha256": "8beaf01804b1bef8580502e7b7112f6a4c4f67717c70b7aa11829af9c179af82"
+    },
+    {
+      "path": "xberg-ocr-text/synthetic-scanned-en-cs/0/measurement.json",
+      "bytes": 8338,
+      "sha256": "fd0013cbb3c532c996146d26489be37aa246732161f50ca5ed43a67a65fe620b"
+    },
+    {
+      "path": "xberg-ocr-text/synthetic-scanned-en-cs/1/measurement.json",
+      "bytes": 8338,
+      "sha256": "91247ea8d0256471e4b63af420bfbe34f2214b0c8f4f5934890bced77ba8d231"
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "app/benchmark/extractors.ts",
+      "retained": true,
+      "sha256": "46684425782063679f2eec427f7591cf21feeec3e655b00ee152d81c188cc736",
+      "snapshot": "source-snapshots/app/benchmark/extractors.ts.txt"
+    },
+    {
+      "path": "app/benchmark/extractors-metrics.ts",
+      "retained": true,
+      "sha256": "71c56d5a9b1dd18501e0128e51dc671ff65ebd1d60a1d5846da975a4408c952c",
+      "snapshot": "source-snapshots/app/benchmark/extractors-metrics.ts.txt"
+    },
+    {
+      "path": "app/imports/documents.ts",
+      "retained": true,
+      "sha256": "b41d30b3edee7da20508bf86e77f5fb76933fc85a3f3d703730bb3ebbde54354",
+      "snapshot": "source-snapshots/app/imports/documents.ts.txt"
+    },
+    {
+      "path": "app/imports/extractors.ts",
+      "retained": true,
+      "sha256": "3f3b5d4c069ec1b26fed343fcc682b2f17e03bd79ae85bedea1adef6b4a97da6",
+      "snapshot": "source-snapshots/app/imports/extractors.ts.txt"
+    },
+    {
+      "path": "app/imports/process.ts",
+      "retained": true,
+      "sha256": "18d06ee444d6484468e11f536f86af43004f3d5bb831c27967bede9cc2d50572",
+      "snapshot": "source-snapshots/app/imports/process.ts.txt"
+    },
+    {
+      "path": "app/imports/worker.py",
+      "retained": true,
+      "sha256": "d231d7759e974ff9e9fe3ce59fe6559c72420874206001091e65ca189dbc14b4",
+      "snapshot": "source-snapshots/app/imports/worker.py.txt"
+    },
+    {
+      "path": "app/imports/marker-windows.py",
+      "retained": true,
+      "sha256": "55153a17b7eddb999506785ae6fd2da02b832e2fdabf5ef0e8c8f4f9cf580de4",
+      "snapshot": "source-snapshots/app/imports/marker-windows.py.txt"
+    },
+    {
+      "path": "app/imports/limits.ts",
+      "retained": true,
+      "sha256": "455b31794b52b7adf1a6f4e1057f1b830b72e9d20bf91e72551dfc64987b7694",
+      "snapshot": "source-snapshots/app/imports/limits.ts.txt"
+    },
+    {
+      "path": "lib/memory/extractors.ts",
+      "retained": true,
+      "sha256": "718e8513eb79143b12527a577836bccae5d4c544e6b44c288193ae87d0e9f44e",
+      "snapshot": "source-snapshots/lib/memory/extractors.ts.txt"
+    }
+  ]
+}

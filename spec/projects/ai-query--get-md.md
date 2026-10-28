@@ -24,6 +24,19 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review — 2026-10-27
+
+**Badge regeneration is not converter evidence.** Reviewed commit `0678c564ed98ac2f706c1c495b1cb317888fcc51` (commit date `2026-10-27T02:52:48Z`) against `fdd24fd8d010557ad14de224c15da0f16f4e78c8`. The complete Git comparison contains 2 changed paths.
+
+The complete two-path comparison changes only the npm-download and star SVG badges. README, package metadata and conversion implementation are outside the changed-path set. This clears revision drift for the existing screening record without upgrading its evidence depth or validating the advertised conversion latency.
+
+Evidence: [badges/npm-downloads-monthly.svg:1-1](https://github.com/Nano-Collective/get-md/blob/0678c564ed98ac2f706c1c495b1cb317888fcc51/badges/npm-downloads-monthly.svg#L1-L1) · [badges/stars.svg:1-1](https://github.com/Nano-Collective/get-md/blob/0678c564ed98ac2f706c1c495b1cb317888fcc51/badges/stars.svg#L1-L1).
+
+**Harness consequence:** Continue to select conversion backends by measured content fidelity, bounded execution and provenance. Popularity counters are operational metadata and must not become quality-ranking features by default.
+
+**Scope and limits:** Badge/changed-path reconciliation only; the prior inventory/README screening remains a screening, not a source correctness audit or benchmark.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [get-md](https://github.com/Nano-Collective/get-md); analyzed commit `fdd24fd8d010557ad14de224c15da0f16f4e78c8`; commit date 2026-10-02T03:06:40Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--get-md.md).
+Analysis metadata: source [get-md](https://github.com/Nano-Collective/get-md); analyzed commit `0678c564ed98ac2f706c1c495b1cb317888fcc51`; commit date 2026-10-27T02:52:48Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-query--get-md.md).
 <!-- teamagent-analysis:end -->

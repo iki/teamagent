@@ -1,0 +1,25 @@
+# tracedecay
+
+Source: [tracedecay](https://github.com/ScriptedAlchemy/tracedecay) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `413755b1f699477f7ca7d1ca744ed0b4000dedc3`; commit timestamp `2026-10-03T11:55:23-07:00`; 6,792 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/ScriptedAlchemy/tracedecay/blob/413755b1f699477f7ca7d1ca744ed0b4000dedc3/README.md)):
+
+> TraceDecay builds a local semantic graph of your repository so AI coding agents can ask for the right symbols, call relationships, impact radius, docs, and source snippets without scanning the tree. Instead of repeated `grep`, `glob`, and file reads, agents use MCP tools such as `tracedecay_context`, `tracedecay_search`, `tracedecay_callers`, and `tracedecay_impact`.
+
+Build/package evidence: [Cargo.toml](https://github.com/ScriptedAlchemy/tracedecay/blob/413755b1f699477f7ca7d1ca744ed0b4000dedc3/Cargo.toml); [crates/tracedecay-agent-hosts/Cargo.toml](https://github.com/ScriptedAlchemy/tracedecay/blob/413755b1f699477f7ca7d1ca744ed0b4000dedc3/crates/tracedecay-agent-hosts/Cargo.toml); [crates/tracedecay-api/Cargo.toml](https://github.com/ScriptedAlchemy/tracedecay/blob/413755b1f699477f7ca7d1ca744ed0b4000dedc3/crates/tracedecay-api/Cargo.toml); [crates/tracedecay-application/Cargo.toml](https://github.com/ScriptedAlchemy/tracedecay/blob/413755b1f699477f7ca7d1ca744ed0b4000dedc3/crates/tracedecay-application/Cargo.toml); [crates/tracedecay-automation-runtime/Cargo.toml](https://github.com/ScriptedAlchemy/tracedecay/blob/413755b1f699477f7ca7d1ca744ed0b4000dedc3/crates/tracedecay-automation-runtime/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/ScriptedAlchemy/tracedecay/blob/413755b1f699477f7ca7d1ca744ed0b4000dedc3/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

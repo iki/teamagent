@@ -2,7 +2,7 @@
 
 Source: [agent-zero](https://github.com/agent0ai/agent-zero) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `e3051fb584b1a36be2b0a0c90606f1c2c2d356ec`; commit timestamp `2026-09-23T19:39:16+02:00`; 3,081 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `ff2a5b9c9c4e490ba38dd7c313e779510bb2071a` (commit date `2026-10-13T17:23:11+02:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Selected chat serialization, atomic-save and provider-response deletion branches; file helper containment, deserialization, provider deletion transport and full agent execution were not audited.
+
+The [chat persistence path](https://github.com/agent0ai/agent-zero/blob/ff2a5b9c9c4e490ba38dd7c313e779510bb2071a/helpers/persist_chat.py#L50-L137) skips ephemeral background contexts and marks a chat saved only after writing. Atomic replacement uses a temporary file in the target directory, file fsync and then directory fsync, giving a concrete durability pattern. Real filesystem/platform behavior was not tested. Bulk loading catches individual chat errors and returns only loaded IDs, so callers need separate failed-record coverage rather than interpreting the returned set as a complete restored history.
+
+[Serialization](https://github.com/agent0ai/agent-zero/blob/ff2a5b9c9c4e490ba38dd7c313e779510bb2071a/helpers/persist_chat.py#L185-L225) excludes underscore-prefixed context/output keys while retaining profile, agents and log references. That naming convention is not a general secret-redaction rule or a migration/version validation contract. Path construction delegates to file helpers outside this scope; checking only a nonempty ID at the deletion entry point does not itself establish containment.
+
+[Chat removal](https://github.com/agent0ai/agent-zero/blob/ff2a5b9c9c4e490ba38dd7c313e779510bb2071a/helpers/persist_chat.py#L168-L182) first attempts provider-response cleanup. Its [collector](https://github.com/agent0ai/agent-zero/blob/ff2a5b9c9c4e490ba38dd7c313e779510bb2071a/helpers/persist_chat.py#L396-L460) recursively gathers response IDs from state/metadata, including nested JSON strings, and silently returns when the saved chat cannot be read/parsed; explicit opt-out fields skip remote deletion. Local absence therefore cannot be presented as verified remote erasure. Teamagent needs principal-bound response provenance, bounded parsing, durable cleanup receipts and explicit local/remote/unknown deletion results. The provider transport was not inspected and no deletion was performed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-zero](https://github.com/agent0ai/agent-zero); analyzed commit `e3051fb584b1a36be2b0a0c90606f1c2c2d356ec`; commit date 2026-09-23T19:39:16+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--agent-zero.md).
+Analysis metadata: source [agent-zero](https://github.com/agent0ai/agent-zero); analyzed commit `ff2a5b9c9c4e490ba38dd7c313e779510bb2071a`; commit date 2026-10-13T17:23:11+02:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agent-zero.md).
 <!-- teamagent-analysis:end -->

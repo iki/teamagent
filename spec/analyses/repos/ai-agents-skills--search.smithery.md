@@ -2,7 +2,7 @@
 
 Source: [search.smithery](https://github.com/smithery-ai/cli) · [Analysis](../../projects/ai-agents-skills--search.smithery.md) · [skills](../../skills.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-27T18:19:07.717Z. Status: **current**. Reviewed SHA: `407ac3b33944a585357379bc213fdf1ee55464d7`; commit date: 2026-05-31T15:11:21+08:00; review date: unknown; observed SHA: `407ac3b33944a585357379bc213fdf1ee55464d7`.
+Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `407ac3b33944a585357379bc213fdf1ee55464d7`; commit date: 2026-05-31T15:11:21+08:00; review date: unknown; observed SHA: `407ac3b33944a585357379bc213fdf1ee55464d7`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/smithery-ai/cli/compare/407ac3b33944a585357379bc213fdf1ee55464d7...407ac3b33944a585357379bc213fdf1ee55464d7). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 

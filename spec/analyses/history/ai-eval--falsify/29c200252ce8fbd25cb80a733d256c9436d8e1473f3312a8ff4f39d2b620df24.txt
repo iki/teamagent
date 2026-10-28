@@ -1,0 +1,25 @@
+# falsify
+
+Source: [falsify](https://github.com/studio-11-co/falsify) · Category: [ai-eval](../categories/ai-eval.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `0e2eda33aeffecd252eaeab4d098d4550b1434bd`; commit timestamp `2026-10-02T17:27:09Z`; 456 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/studio-11-co/falsify/blob/0e2eda33aeffecd252eaeab4d098d4550b1434bd/README.md)):
+
+> ML evaluation claims should be locked before the experiment runs, not reported after. PRML commits a claim — metric, threshold, dataset hash, seed — as a SHA-256 manifest. Run the eval. The hash either matches or it doesn't.
+
+Build/package evidence: [examples/deepeval/requirements.txt](https://github.com/studio-11-co/falsify/blob/0e2eda33aeffecd252eaeab4d098d4550b1434bd/examples/deepeval/requirements.txt); [examples/lm-eval-harness/requirements.txt](https://github.com/studio-11-co/falsify/blob/0e2eda33aeffecd252eaeab4d098d4550b1434bd/examples/lm-eval-harness/requirements.txt); [impl/go/go.mod](https://github.com/studio-11-co/falsify/blob/0e2eda33aeffecd252eaeab4d098d4550b1434bd/impl/go/go.mod); [impl/rust/Cargo.toml](https://github.com/studio-11-co/falsify/blob/0e2eda33aeffecd252eaeab4d098d4550b1434bd/impl/rust/Cargo.toml); [pyproject.toml](https://github.com/studio-11-co/falsify/blob/0e2eda33aeffecd252eaeab4d098d4550b1434bd/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/studio-11-co/falsify/blob/0e2eda33aeffecd252eaeab4d098d4550b1434bd/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-eval**. Its category places it in the candidate set for evolution, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [evolution](../evolution.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

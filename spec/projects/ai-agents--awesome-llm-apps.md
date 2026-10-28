@@ -2,7 +2,7 @@
 
 Source: [awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `4bf51ab704fb2c5b3803cd5191b30d7dcdb51dc2`; commit timestamp `2026-09-28T23:56:53-05:00`; 1,976 tracked paths.
 
@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `6c16b23f1bacd0fdf240bb5141ef45e59e82c306` (commit date `2026-10-21T16:23:38-07:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete 30-path inventory; complete math-RAG guardrails, query router and benchmark scorer. Other application examples, Git archaeology changes and UI tool changes were not reviewed.
+
+The math tutorial's [guardrail parser](https://github.com/Shubhamsaboo/awesome-llm-apps/blob/6c16b23f1bacd0fdf240bb5141ef45e59e82c306/rag_tutorials/agentic_rag_math_agent/rag/guardrails.py#L29-L38) accepts a leading Yes/No token and returns unknown otherwise; both validators reject an unknown result. The [router](https://github.com/Shubhamsaboo/awesome-llm-apps/blob/6c16b23f1bacd0fdf240bb5141ef45e59e82c306/rag_tutorials/agentic_rag_math_agent/rag/query_router.py#L107-L178) applies a fixed 0.80 retrieval threshold, falls back to web/model-only generation, and checks a second answer when the first output fails its model validator. The fallback source distinction is printed to logs but the public function returns only answer text. A rejected second answer is still returned with a warning.
+
+These are educational routing heuristics, not calibrated reliability or an authorization gate. Similarity is not proof that the selected KB text is correct, yet the KB prompt labels it correct and forbids recalculation. [The benchmark scorer](https://github.com/Shubhamsaboo/awesome-llm-apps/blob/6c16b23f1bacd0fdf240bb5141ef45e59e82c306/rag_tutorials/agentic_rag_math_agent/app/benchmark.py#L13-L20) improves on raw substring matching by requiring token boundaries, but still accepts a gold token anywhere in a response, including a rejected alternative. It does not establish mathematical correctness. **Disposition:** retain as examples for retrieval and evaluation failure analysis. Teamagent should return structured provenance/fallback state, calibrate thresholds on held-out queries, retain unknown outcomes and verify final answers with task-specific independent checks. Raw question/retrieved-content logging and ambient model configuration also need host-boundary redesign before reuse.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps); analyzed commit `4bf51ab704fb2c5b3803cd5191b30d7dcdb51dc2`; commit date 2026-09-28T23:56:53-05:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--awesome-llm-apps.md).
+Analysis metadata: source [awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps); analyzed commit `6c16b23f1bacd0fdf240bb5141ef45e59e82c306`; commit date 2026-10-21T16:23:38-07:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--awesome-llm-apps.md).
 <!-- teamagent-analysis:end -->

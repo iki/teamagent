@@ -24,6 +24,14 @@ This entry was catalogued under **ai-info**. Its category places it in the candi
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`1c19caea72b019769852ce3be6aca8660ed73a9d`](https://github.com/baronfanthe/seeaifirst/commit/1c19caea72b019769852ce3be6aca8660ed73a9d). Scope: Complete deltas for artifact-integrity workflow, contribution policy, retired-tool records, repository overrides and deployment routes read. Catalog/pricing data and page generators were not audited.
+
+The [CI delta](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/.github/workflows/cip-0-artifacts-integrity.yml) removes a path filter from a required check and reads tracked names with NUL separators for a denylist guard. It explicitly admits this cannot prevent disclosure on a pushed branch and does not inspect contents. Adapt robust filename handling and required-check scheduling; this is not secret scanning or a reason to prohibit Teamagent's own required documentation.
+
+The [contribution policy](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/CONTRIBUTING.md) separates corrections from new-tool submissions and requests affiliation disclosure. [Retirement records](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/scripts/retired-tools.json) distinguish removal from a curated list from a project's lifecycle, although one lifecycle claim remains an unverified catalog assertion in this review. [Routes](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/vercel.json) preserve old identities via redirects and explicit retired pages. Adapt provenance-preserving catalog changes; deployment routing behavior, current tool status, prices and ranking quality were not tested or independently verified.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [seeaifirst](https://github.com/baronfanthe/seeaifirst); analyzed commit `97b2f703bd72942223ea1c8b55f9fe807d94396e`; commit date 2026-04-04T17:42:51+07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-info--xx-2604-seeaifirst.md).
+Analysis metadata: source [seeaifirst](https://github.com/baronfanthe/seeaifirst); analyzed commit `1c19caea72b019769852ce3be6aca8660ed73a9d`; commit date 2026-10-26T13:07:28+07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-info--xx-2604-seeaifirst.md).
 <!-- teamagent-analysis:end -->

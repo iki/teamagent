@@ -2,7 +2,7 @@
 
 Source: [oasis](https://github.com/camel-ai/oasis) · Category: [ai-agents-swarm](../categories/ai-agents-swarm.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `affe52e8dcbc70bba0a4162bfea1057aa5df9316`; commit timestamp `2026-09-30T16:26:51+03:00`; 462 tracked paths.
 
@@ -24,6 +24,12 @@ This entry was catalogued under **ai-agents-swarm**. Its category places it in t
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-27
+
+Reviewed commit `ba892e0667eb84b312e4c0e5630f275154bbb98f` (commit date `2026-10-27T18:08:26+08:00`). Complete README delta; the other changed path is a community QR-code image, inventoried but not visually examined.
+
+The [README](https://github.com/camel-ai/oasis/blob/ba892e0667eb84b312e4c0e5630f275154bbb98f/README.md) adds BazaarBench as a marketplace-delegation safety discovery lead. No executable source changed. This does not establish OASIS marketplace authorization or benchmark reproducibility. Retain the earlier runtime screening and unverified scaling claims. No code/tests were run; no runtime adoption changes.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [oasis](https://github.com/camel-ai/oasis); analyzed commit `affe52e8dcbc70bba0a4162bfea1057aa5df9316`; commit date 2026-09-30T16:26:51+03:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--oasis.md).
+Analysis metadata: source [oasis](https://github.com/camel-ai/oasis); analyzed commit `ba892e0667eb84b312e4c0e5630f275154bbb98f`; commit date 2026-10-27T18:08:26+08:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--oasis.md).
 <!-- teamagent-analysis:end -->

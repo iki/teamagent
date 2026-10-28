@@ -33,6 +33,18 @@ License correction from implementation audit, 2026-10-04: the [LICENSE at this s
 
 Related directions: [channels](../channels.md) · [agents](../agents.md).
 
+## 2026-10-28 scoped source review
+
+Source: [multica](https://github.com/multica-ai/multica); inspected saved discovery revision `d7d1831fcf39b874911aae1e48b2fbf804bd068e`. Prior analyzed revision `b2561aad61055dd9937fc08f6497846b1458d018` remains historical evidence.
+
+**Scope:** Complete common agent contract/constructor and one runtime-sharing browser test. Provider implementations, daemon admission and the sharing API were not read; declarations are distinguished from enforced behavior.
+
+The [common execution contract](https://github.com/multica-ai/multica/blob/d7d1831fcf39b874911aae1e48b2fbf804bd068e/server/pkg/agent/agent.go#L25-L217) separates startup, inactivity, tool, interrupt and overall budgets; `runContext` actually applies a wall-clock timeout only when positive. Zero or negative values create a cancellable context without a deadline. It also distinguishes authoritative terminal observation from cleanup acknowledgement and marks supplemental-input readiness separately. These are useful adapter requirements, but this file does not prove each provider honors them: many option comments explicitly identify supported backends or say other backends ignore the field.
+
+[Resume and usage metadata](https://github.com/multica-ai/multica/blob/d7d1831fcf39b874911aae1e48b2fbf804bd068e/server/pkg/agent/agent.go#L245-L326) distinguish permanent rejection, transient inability and undetectable rejection rather than treating a missing session ID as permission to restart. Provider-reported cost has a separate integer unit and zero means unreported; it should not be conflated with a verified free run. Constructor filtering is centralized, while the filter and process-launch implementation remain outside this scope.
+
+The [runtime-sharing test](https://github.com/multica-ai/multica/blob/d7d1831fcf39b874911aae1e48b2fbf804bd068e/e2e/runtime-sharing.spec.ts#L4-L60) checks owner-side draft/save/reload behavior, revocation to private, member removal and re-addition remaining private. Although it creates a member client, it does not attempt member-side execution or access after revocation. Thus it supports a UI persistence scenario, not comprehensive runtime authorization evidence. Teamagent should carry explicit capability and cleanup receipts into adapter conformance tests and separately test denied use after revocation. This review read test source but ran no browser, provider or subprocess.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [multica](https://github.com/multica-ai/multica); analyzed commit `b2561aad61055dd9937fc08f6497846b1458d018`; commit date 2026-10-02T07:25:26-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--multica.md).
+Analysis metadata: source [multica](https://github.com/multica-ai/multica); analyzed commit `d7d1831fcf39b874911aae1e48b2fbf804bd068e`; commit date 2026-10-27T18:18:32+08:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--multica.md).
 <!-- teamagent-analysis:end -->

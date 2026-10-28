@@ -1,0 +1,25 @@
+# ghidra
+
+Source: [ghidra](https://github.com/NationalSecurityAgency/ghidra) · Category: [ai-security](../categories/ai-security.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `a462673d2f1543d153c61d10bcd6c68f85555194`; commit timestamp `2026-09-30T05:01:14-04:00`; 20,604 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/NationalSecurityAgency/ghidra/blob/a462673d2f1543d153c61d10bcd6c68f85555194/README.md)):
+
+> Ghidra is a software reverse engineering (SRE) framework created and maintained by the [National Security Agency][nsa] Research Directorate. This framework includes a suite of
+
+Build/package evidence: [GPL/DMG/build.gradle](https://github.com/NationalSecurityAgency/ghidra/blob/a462673d2f1543d153c61d10bcd6c68f85555194/GPL/DMG/build.gradle); [GPL/DemanglerGnu/build.gradle](https://github.com/NationalSecurityAgency/ghidra/blob/a462673d2f1543d153c61d10bcd6c68f85555194/GPL/DemanglerGnu/build.gradle); [GPL/GnuDisassembler/build.gradle](https://github.com/NationalSecurityAgency/ghidra/blob/a462673d2f1543d153c61d10bcd6c68f85555194/GPL/GnuDisassembler/build.gradle); [Ghidra/Configurations/Public_Release/build.gradle](https://github.com/NationalSecurityAgency/ghidra/blob/a462673d2f1543d153c61d10bcd6c68f85555194/Ghidra/Configurations/Public_Release/build.gradle); [Ghidra/Debug/AnnotationValidator/build.gradle](https://github.com/NationalSecurityAgency/ghidra/blob/a462673d2f1543d153c61d10bcd6c68f85555194/Ghidra/Debug/AnnotationValidator/build.gradle)
+
+License evidence: [LICENSE](https://github.com/NationalSecurityAgency/ghidra/blob/a462673d2f1543d153c61d10bcd6c68f85555194/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-security**. Its category places it in the candidate set for agents, skills, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [skills](../skills.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

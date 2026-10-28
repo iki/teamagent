@@ -30,6 +30,20 @@ Inject crashes, identical repeated failures, noisy no-progress logs and long sil
 
 Related directions: [agents](../agents.md) · [evolution](../evolution.md).
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `e73ebbfb48fd7f6d2e44e336da4f5fecad7f9fe6` (commit date `2026-10-27T14:24:46Z`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete Dolt-auth environment wrapper and runtime CLI registration; circuit-breaker configuration, transition, restore, persistence and progress-signature ranges. Supervisor call-site enforcement, session store/codec, auth resolver and tests were not audited.
+
+The [session circuit breaker](https://github.com/gastownhall/gascity/blob/e73ebbfb48fd7f6d2e44e336da4f5fecad7f9fe6/cmd/gc/session_circuit_breaker.go#L191-L323) trips only when restarts exceed a rolling threshold without recent progress. First observation establishes a baseline rather than inventing progress; progress does not clear an already-open circuit, while cooldown/manual reset can. The [signature builder](https://github.com/gastownhall/gascity/blob/e73ebbfb48fd7f6d2e44e336da4f5fecad7f9fe6/cmd/gc/session_circuit_breaker.go#L894-L981) rejects ambiguous aliases and hashes sorted assigned-work ID/status pairs. A changed status signature measures metadata movement, not correctness, and repeated toggles can continue counting as progress. Retain this as restart admission evidence rather than task acceptance or a global resource ceiling.
+
+The [restore and reset paths](https://github.com/gastownhall/gascity/blob/e73ebbfb48fd7f6d2e44e336da4f5fecad7f9fe6/cmd/gc/session_circuit_breaker.go#L330-L389) reject unknown states and snapshots below the remembered reset generation. The [restart persistence helper](https://github.com/gastownhall/gascity/blob/e73ebbfb48fd7f6d2e44e336da4f5fecad7f9fe6/cmd/gc/session_circuit_breaker.go#L657-L696) holds the local mutex and restores a copied entry after a store failure, including a separately cloned restart slice. Store-level atomicity and supervisor enforcement were not inspected. Restored timestamps are parsed but not sorted or checked for implausible future values, while trimming assumes chronological order and recent-progress comparison has no upper time bound. Idle pruning also deliberately retains reset-generation entries, so identity history needs its own lifecycle bound. Use explicit clock/validation rules and durable generations without equating a process-local mutex to distributed fencing.
+
+The [Dolt environment wrapper](https://github.com/gastownhall/gascity/blob/e73ebbfb48fd7f6d2e44e336da4f5fecad7f9fe6/cmd/gc/dolt_auth.go#L9-L32) delegates scoped credential resolution and deletes keys whose resolved value is empty, preventing a stale value from simply remaining in the supplied map. It trims every value, including passwords, and the actual concurrent native-open guard was not reviewed. The [runtime command registry](https://github.com/gastownhall/gascity/blob/e73ebbfb48fd7f6d2e44e336da4f5fecad7f9fe6/cmd/gc/cmd_runtime.go#L10-L48) exposes distinct drain, acknowledgement, heartbeat and conformance operations; registration alone proves neither their authority nor provider conformance. No supervisor, database, process or upstream test ran.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gascity](https://github.com/gastownhall/gascity); analyzed commit `802b6134df87b1d7519df63ed44ad63e1570a5c5`; commit date 2026-10-03T13:44:32-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--gascity.md).
+Analysis metadata: source [gascity](https://github.com/gastownhall/gascity); analyzed commit `e73ebbfb48fd7f6d2e44e336da4f5fecad7f9fe6`; commit date 2026-10-27T14:24:46Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--gascity.md).
 <!-- teamagent-analysis:end -->

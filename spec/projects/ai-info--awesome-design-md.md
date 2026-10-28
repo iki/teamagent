@@ -24,6 +24,14 @@ This entry was catalogued under **ai-info**. Its category places it in the candi
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`3b605329240ce735b510037cca322f1831fdd7f8`](https://github.com/VoltAgent/awesome-design-md/commit/3b605329240ce735b510037cca322f1831fdd7f8). Scope: Complete README delta and four five-line brand pointer READMEs read; DJI DESIGN.md lines 1-100 sampled. Remaining design documents, previews and images were not reviewed.
+
+The [catalog delta](https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/README.md) adds brand-inspired design references and removes a promotional block. Its count badge is catalog metadata rather than validated coverage. Several [local pointer documents](https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/dji/README.md) direct readers to an external design site; preserve the pinned local capture and identify any later external retrieval as a different source version.
+
+The sampled [DJI document](https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/dji/DESIGN.md#L1) labels itself alpha and records a descriptive palette and typography with intended roles. This supports storing design observations as structured, provenance-bearing reference material. It does not establish official brand specifications, accessibility, visual fidelity or implementation quality. No design was rendered, external page opened or new catalog entry endorsed; the uninspected designs and binary assets remain outside this update.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [awesome-design-md](https://github.com/VoltAgent/awesome-design-md); analyzed commit `f6961238d5cddcf8042a74a70fc400ec67181abb`; commit date 2026-09-21T11:23:37+03:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-info--awesome-design-md.md).
+Analysis metadata: source [awesome-design-md](https://github.com/VoltAgent/awesome-design-md); analyzed commit `3b605329240ce735b510037cca322f1831fdd7f8`; commit date 2026-10-14T08:46:47+03:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-info--awesome-design-md.md).
 <!-- teamagent-analysis:end -->

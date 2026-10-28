@@ -1,0 +1,986 @@
+{
+  "id": "ai-eval--langwatch",
+  "generatedAt": "2026-10-28T08:26:04.502Z",
+  "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+  "source": "https://github.com/langwatch/langwatch",
+  "report": "spec/projects/ai-eval--langwatch.md",
+  "analyzedSha": "8f81ac27475a33c2a58c2fb07b95c109ec721ccb",
+  "analyzedAt": "2026-10-04",
+  "analyzedCommitDate": "2026-10-03T18:14:24Z",
+  "observedSha": "81135c1fa9f1b83580e7967eedeb972603180b35",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "81135c1fa9f1b83580e7967eedeb972603180b35",
+      "date": "2026-10-27T17:38:54Z",
+      "subject": "Release docs (auto-release on merge to main) [skip ci]"
+    },
+    {
+      "sha": "150e9e7ea02b265305636048c6e8c5d851e69246",
+      "date": "2026-10-28T01:37:33+08:00",
+      "subject": "fix(organization): an open tab ignores another tab's remembered scope (#9107)"
+    },
+    {
+      "sha": "821b467e8a628e599951b42d3c871f0db454efd8",
+      "date": "2026-10-28T01:37:14+08:00",
+      "subject": "feat(dashboards): a per-dashboard Langy traces setting (#9099)"
+    },
+    {
+      "sha": "fe8037c9c83da4daea26ad70cf9849e6da931601",
+      "date": "2026-10-27T17:25:53Z",
+      "subject": "Release docs (auto-release on merge to main) [skip ci]"
+    },
+    {
+      "sha": "22e3a67582a0a9ae4258607a5a47a715d2c8a70f",
+      "date": "2026-10-28T01:22:38+08:00",
+      "subject": "docs(dashboards): launch-day docs and api reference pages for boards and widgets (#9076)"
+    },
+    {
+      "sha": "ca0f237485317fa8159e0a0a77d33c499a7d08b0",
+      "date": "2026-10-27T16:32:25Z",
+      "subject": "Release docs (auto-release on merge to main) [skip ci]"
+    },
+    {
+      "sha": "d7b623874e55e0b6af4d81ce9671114d54dfb2cc",
+      "date": "2026-10-27T16:31:08Z",
+      "subject": "fix(langevals): judges reach a verdict on gpt-6 reasoning models (#9102)"
+    },
+    {
+      "sha": "e2125b4add3f78d0667287c5f4ec486201b26166",
+      "date": "2026-10-27T15:27:14Z",
+      "subject": "chore: sync model registry (532 models) (#9109)"
+    },
+    {
+      "sha": "4a5dbf0ee29eece1f842c31dc61faea1e83ccff7",
+      "date": "2026-10-27T16:25:32+01:00",
+      "subject": "Revert \"perf(clickhouse): optimize the fold rebuild's event_log history read\" (#8874) (#9112)"
+    },
+    {
+      "sha": "d18555a93d5c9d3a6c8905b9f8ea17147702f090",
+      "date": "2026-10-27T16:18:49+01:00",
+      "subject": "perf(clickhouse): optimize the fold rebuild's event_log history read (#8874)"
+    },
+    {
+      "sha": "56a97230da044058109a3c741f697a6b6a6a8218",
+      "date": "2026-10-27T13:30:17+01:00",
+      "subject": "fix(coding-agent): drop hook_execution_start before it becomes a contribution (#9011)"
+    },
+    {
+      "sha": "56fa502f86cf83867c4c2e3386fe5484284b4fdc",
+      "date": "2026-10-27T12:39:18+01:00",
+      "subject": "fix(deps): raise qs to 6.17.0 for CVE-2026-110910 (#9100)"
+    },
+    {
+      "sha": "6488299ed5a4c39ab7acd04280152f2e632e15e7",
+      "date": "2026-10-27T11:38:28Z",
+      "subject": "Release docs (auto-release on merge to main) [skip ci]"
+    },
+    {
+      "sha": "552534d24487441ac5395d91c1af69ed072a0c00",
+      "date": "2026-10-27T19:37:12+08:00",
+      "subject": "feat(sdk)!: one product per dashboards path; dashboards means the new product everywhere (#9089)"
+    },
+    {
+      "sha": "41480c094cfcd85f7e65228f72e0344c5568016a",
+      "date": "2026-10-27T19:36:31+08:00",
+      "subject": "feat(dashboards): a dashboards section in the project sidebar with add and pin (#9090)"
+    },
+    {
+      "sha": "0e9ae7a2d0953860fea8a1b22e7f75926cdbecdc",
+      "date": "2026-10-27T18:12:58+08:00",
+      "subject": "feat(analytics): open dashboards from the analytics entry and point back to the old analytics (#9055)"
+    },
+    {
+      "sha": "96a4bf61c903ffb0f75b64e93cef7fd43d0897cd",
+      "date": "2026-10-27T16:19:24+08:00",
+      "subject": "fix(mcp): repair main after the board-reading merge (#9087)"
+    },
+    {
+      "sha": "a5ea0eda1d886635096da02bb76b2b99f9bed6f6",
+      "date": "2026-10-27T15:11:55+08:00",
+      "subject": "fix(dashboards): refresh moves fixed ranges, hidden stars keep their place, agents read boards by id (#9048)"
+    },
+    {
+      "sha": "fa04f4d5e8eece67860a72386051c1201b91e7f6",
+      "date": "2026-10-27T03:58:59+01:00",
+      "subject": "ci(embedded-binaries): build darwin-x64 on macos-15-intel (#9084)"
+    },
+    {
+      "sha": "d13ccae59f80dd4c138255153311a6ccbe159c64",
+      "date": "2026-10-27T03:20:15+01:00",
+      "subject": "ci(gateway-matrix): seed the fresh stack per run instead of reading stored virtual keys (#9081)"
+    },
+    {
+      "sha": "932521396afdac651949613ce0df0fabcd4e0c0f",
+      "date": "2026-10-27T02:48:45+01:00",
+      "subject": "fix(browser): a full browser storage no longer breaks the page; read mirror recovers and skips impersonation (#9072)"
+    },
+    {
+      "sha": "08aef76b9de5b46533b6d01075f79968ab5a7752",
+      "date": "2026-10-26T16:46:03+01:00",
+      "subject": "fix(ops): pause the pending-counter keyspace sweep after it adopts (#9073)"
+    },
+    {
+      "sha": "a267197ee5ce732f73319ef3c7f7b3d77879115b",
+      "date": "2026-10-26T16:12:01+01:00",
+      "subject": "test(api): cover a legacy key scope named beside a permission target (#9069)"
+    },
+    {
+      "sha": "abe537a9a71f3a9a48459a5c61d955a980d64279",
+      "date": "2026-10-26T14:09:09Z",
+      "subject": "Release docs (auto-release on merge to main) [skip ci]"
+    },
+    {
+      "sha": "fbc1469027d6ef59c920243f63e2ebaf2264bcf8",
+      "date": "2026-10-26T22:08:15+08:00",
+      "subject": "feat(dashboard): add REST create and delete for Dashboards boards (#8896)"
+    },
+    {
+      "sha": "2cd1992b34bae1925760c7d3994471730397f1a1",
+      "date": "2026-10-26T14:50:19+01:00",
+      "subject": "feat(auth): legacy key scope flag for annotation reads (#9024)"
+    },
+    {
+      "sha": "39016ddbb47437a5a03cfaf92035aa5578d93d23",
+      "date": "2026-10-26T13:42:31Z",
+      "subject": "Release docs (auto-release on merge to main) [skip ci]"
+    },
+    {
+      "sha": "4f2dc7299f2cb5620dcd41f4509849863ed68708",
+      "date": "2026-10-26T21:41:33+08:00",
+      "subject": "fix(langy): never tell the user to sign in when the sandbox CLI fails (#8775)"
+    },
+    {
+      "sha": "71361a45d44f1d3fd4a4e8e1faf7e4a4c08c7f58",
+      "date": "2026-10-26T13:18:05Z",
+      "subject": "Release docs (auto-release on merge to main) [skip ci]"
+    },
+    {
+      "sha": "b8e23efcdbaed3f6768d244da0cc56516e4185d4",
+      "date": "2026-10-26T14:17:26+01:00",
+      "subject": "fix(presence): keep a project's presence keys on one Redis cluster slot and make leave atomic (#9068)"
+    },
+    {
+      "sha": "86a85eebcb59d045bb540516ad6b690b720e2300",
+      "date": "2026-10-26T21:17:07+08:00",
+      "subject": "fix: run ClickHouse image 0.4.0 in the dev and self-host compose so custom_ settings work (#9057)"
+    },
+    {
+      "sha": "da82f751a18a7e838e4c0842df9006aad3a6591a",
+      "date": "2026-10-26T14:07:08+01:00",
+      "subject": "fix(api-key): warn in the replacement drawer that the legacy key no longer works (#9067)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".agents/skills",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/agents/lane-haiku-low.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/agents/lane-haiku.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/agents/lane-opus-low.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/agents/lane-opus-medium.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/agents/lane-opus-xhigh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/agents/lane-opus.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/agents/lane-sonnet-low.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/agents/lane-sonnet-medium.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/agents/lane-sonnet.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/agents/lane.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/agents/residue.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/coordinator/COORDINATOR.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/coordinator/LANE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/coordinator/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/coordinator/handoff-template.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/coordinator/manifest-template.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/handoffs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/manifests/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/rules/backend.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/rules/browser.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/rules/database.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/rules/docs-site.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/rules/errors.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/rules/go.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/rules/lint-tooling.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/rules/module-readme.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/rules/scripts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/rules/testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/rules/workspace-config.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/settings.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/analyticssim/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/api-transports/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/architecture-guide/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/architecture-guide/evals/evals.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/architecture-review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/architecture-review/evals/evals.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/authorization/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/backend/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/browser-module/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/browser-pair/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/browser-telemetry-and-errors/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/browser-test/HOW_TO.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/browser-test/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/browser-test/history/2026-02-05-scenario-archiving.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/browser-test/history/2026-02-05-scenario-deletion.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/browser-test/history/_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/chakra-ui-builder/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/chakra-ui-builder/references/charts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/chakra-ui-builder/references/component-decision-tree.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/chakra-ui-builder/references/theming.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/chakra-ui-refactor/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/clickhouse-migration/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/clickhouse-migration/evals/evals.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".claude/skills/code-review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/code-search/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/code-search/sgrep.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/contract/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/coordinator/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/core/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/core/handoff-rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/core/repository-rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/core/testing-rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/design-system/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/design-system/references/component-apis.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/design-system/references/internal-console.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/dev-runtime/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/eventing-and-worker/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/feature-map/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/frontend/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/githubsim/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/haven-auth/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/haven-browser/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/haven-db/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/haven-env/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/haven-lifecycle/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/haven-logs/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/haven-machine/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/haven-orb/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/haven-play/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/haven-seed/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".claude/skills/haven-setup/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/haven/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/haven/troubleshooting.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/idpsim/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/lambdasim/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/langwatch-kanban/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/lint-rule/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/linting/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/llmsim/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/mail-template/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/mailsim/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/mcpsim/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/merge-drive/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/mfasim/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/migration-data-step/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/migration-data-step/evals/evals.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/migration/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/migration/evals/evals.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/module-client/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/module-dependencies/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/module-dependencies/evals/evals.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/module/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/outboundsim/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/ownership/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/paymentsim/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/platform-primitives/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/postgres-migration/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/postgres-migration/evals/evals.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/process-composition/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/process-composition/evals/evals.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/process-module/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/readmes/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/repo-tree/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/reseed-architecture/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/server-cli/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/sims/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/spec-binding-review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/spec-binding-review/evals/evals.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/storagesim/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/system-migrations/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/telemetrysim/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/testing/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/upgrade/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/upgradelab/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/voicesim/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".coderabbit.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".githooks/post-checkout",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/.release-please-manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug-report.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/chore.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/feature-request.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/actions/boxd-ssh-agent/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/detect-changes/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/go-build-cache/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/nx-cache/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/prepare-generated-files/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/prune-pr-caches/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-pnpm-node/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": ".github/assets/logo-header.webp",
+      "previousPath": "assets/logo-header.webp"
+    },
+    {
+      "status": "R100",
+      "path": ".github/assets/mcp-server/cursor-example.png",
+      "previousPath": "assets/mcp-server/cursor-example.png"
+    },
+    {
+      "status": "R100",
+      "path": ".github/assets/trace-view.webp",
+      "previousPath": "assets/trace-view.webp"
+    },
+    {
+      "status": "M",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/package-suites.excluded",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/package-suites.weights",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/pr-filters.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/readme/areas.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/readme/cover.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/readme/cover.jpg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/readme/render.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/readme/signup.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/release-please-config.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/__fixtures__/intentional-failure.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Explicit review of discovery snapshot 81135c1fa9f1b83580e7967eedeb972603180b35; checkout fdac9b4ae47549c21b132bb3dd9e78c116a2b575 is a verified descendant whose later changes remain unreviewed.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

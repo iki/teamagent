@@ -27,6 +27,19 @@ Adopt as a baseline conversion adapter and fallback, not the sole canonical data
 
 Related directions: [import-generation](../import-generation.md) · [memory](../memory.md).
 
+
+## Change review - 2026-10-28
+
+**Document Intelligence extraction preserves document grouping and makes paid add-ons explicit.** Reviewed commit `7482c092d9c0074a89803c9fdb63a969e7fe17fc` (commit date `2026-10-22T15:31:47-07:00`). Compared with `18d48cb287b91610fa131fa67f5c455d6a23f19c`; the complete Git comparison contains 53 changed paths.
+
+The Document Intelligence adapter now forwards model selection, analysis features and query fields from the library and CLI. Add-ons default to an empty list instead of enabling formulas/high-resolution/font extraction implicitly; query fields automatically enable their required feature only for OCR-compatible types, while Office/HTML paths suppress those requests. Structured field output prefers typed values, preserves multi-document order including empty positions, and emits YAML front matter with modelId. Fixtures exercise separate invoices, selection groups, control-character escaping, string and finite-float round trips, and mocked call arguments. This normalization retains values but discards field confidence, spans and bounding regions, so it is not a complete evidence record. Conversion still reads the whole stream into a cloud request and blocks on the poller without a visible adapter-specific byte or deadline bound. Image and markdownify hunks inspected here are formatting-only.
+
+Evidence: [packages/markitdown/src/markitdown/converters/_doc_intel_converter.py:131-320](https://github.com/microsoft/markitdown/blob/7482c092d9c0074a89803c9fdb63a969e7fe17fc/packages/markitdown/src/markitdown/converters/_doc_intel_converter.py#L131-L320) · [packages/markitdown/src/markitdown/converters/_doc_intel_converter.py:403-479](https://github.com/microsoft/markitdown/blob/7482c092d9c0074a89803c9fdb63a969e7fe17fc/packages/markitdown/src/markitdown/converters/_doc_intel_converter.py#L403-L479) · [packages/markitdown/src/markitdown/_markitdown.py:266-290](https://github.com/microsoft/markitdown/blob/7482c092d9c0074a89803c9fdb63a969e7fe17fc/packages/markitdown/src/markitdown/_markitdown.py#L266-L290) · [packages/markitdown/src/markitdown/__main__.py:121-149](https://github.com/microsoft/markitdown/blob/7482c092d9c0074a89803c9fdb63a969e7fe17fc/packages/markitdown/src/markitdown/__main__.py#L121-L149) · [packages/markitdown/tests/test_docintel_converter.py:220-562](https://github.com/microsoft/markitdown/blob/7482c092d9c0074a89803c9fdb63a969e7fe17fc/packages/markitdown/tests/test_docintel_converter.py#L220-L562).
+
+**Harness consequence:** Treat cloud extraction and billable feature selection as explicit adapter configuration with size/deadline/egress policy. Preserve raw provider result plus source-page spans and confidence outside presentation front matter, and keep document identities separate. Pin converter/model/configuration provenance; a syntactically valid YAML field is still an extraction claim requiring traceable source evidence.
+
+**Scope and limits:** Scoped static review of Document Intelligence configuration, typed-field serialization and fixtures within the 53-path comparison, plus selected formatting-only utility hunks. Other PDF/CSV/Content Understanding changes were not audited. Tests were read, not executed; no Azure request, billing or extraction-quality measurement was performed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [markitdown](https://github.com/microsoft/markitdown); analyzed commit `18d48cb287b91610fa131fa67f5c455d6a23f19c`; commit date 2026-10-03T11:38:13-07:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--markitdown.md).
+Analysis metadata: source [markitdown](https://github.com/microsoft/markitdown); analyzed commit `7482c092d9c0074a89803c9fdb63a969e7fe17fc`; commit date 2026-10-22T15:31:47-07:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--markitdown.md).
 <!-- teamagent-analysis:end -->

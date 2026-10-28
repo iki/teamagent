@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Ordered parse backpressure bounds buffered work while fallback parsing and symlink scope need explicit contracts.** Reviewed commit `f93e89a82d415408f46f5ee5887506df66478b02` (commit date `2026-10-27T17:47:28Z`). Compared with `6560052a6f856855d3f71eee838fd66ccfa4285d`; the complete Git comparison contains 626 changed paths.
+
+The indexing loop commits parse results in original file order and applies backpressure to dispatched-but-not-committed work, including completed results blocked behind a slow file. Read batches are separate from the parse window; oversize files produce recorded warnings. Parse/store workers are drained and closed before subsequent main-thread database work, and detected store failure breaks the waiting condition instead of spinning forever. The retry path re-reads sources and decodes raw kernel results before storing, preventing a successful retry from being recorded as zero symbols.
+
+The no-worker fallback still runs extraction synchronously, so worker timeout behavior cannot be assumed there. Bulk reads explicitly allow symlink escape after lexical validation, whereas retry reads use the stricter default; that changes source scope between attempts. Worker messages rely on typed declarations/non-null assertions rather than runtime decoding, suppress selected stderr strings globally and identify fatal WASM corruption by message substrings. The CFML fixture distinguishes a failed embedded block from a file with no symbols; an empty parseErrors health list therefore does not mean every block parsed completely.
+
+Evidence: [src/extraction/parse-worker.ts:25-155](https://github.com/colbymchenry/codegraph/blob/f93e89a82d415408f46f5ee5887506df66478b02/src/extraction/parse-worker.ts#L25-L155) · [src/extraction/index.ts:2359-2377](https://github.com/colbymchenry/codegraph/blob/f93e89a82d415408f46f5ee5887506df66478b02/src/extraction/index.ts#L2359-L2377) · [src/extraction/index.ts:2515-2669](https://github.com/colbymchenry/codegraph/blob/f93e89a82d415408f46f5ee5887506df66478b02/src/extraction/index.ts#L2515-L2669) · [src/extraction/index.ts:2695-2748](https://github.com/colbymchenry/codegraph/blob/f93e89a82d415408f46f5ee5887506df66478b02/src/extraction/index.ts#L2695-L2748) · [__tests__/cfml-embedded-parse-warning.test.ts:1-93](https://github.com/colbymchenry/codegraph/blob/f93e89a82d415408f46f5ee5887506df66478b02/__tests__/cfml-embedded-parse-warning.test.ts#L1-L93).
+
+**Harness consequence:** Use ordered commit plus buffered-work backpressure and explicit per-file/partial-block receipts. Keep byte limits and cancellation effective in every fallback, validate worker payloads and bind all retry attempts to the same allowed root/version policy. Treat partial_parse warnings as coverage evidence even when they are excluded from the fatal health count; do not adopt the upstream symlink escape or stderr filter as a security boundary.
+
+**Scope and limits:** Static scoped worker transport, ordered dispatch/retry and CFML fixture review within the 626-path comparison. Parse-pool and bounded-read helper internals, complete grammar extraction and all fallback recovery paths were not audited; no indexing run, Node worker or fixture was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codegraph](https://github.com/colbymchenry/codegraph); analyzed commit `6560052a6f856855d3f71eee838fd66ccfa4285d`; commit date 2026-10-03T06:38:45Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--codegraph.md).
+Analysis metadata: source [codegraph](https://github.com/colbymchenry/codegraph); analyzed commit `f93e89a82d415408f46f5ee5887506df66478b02`; commit date 2026-10-27T17:47:28Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--codegraph.md).
 <!-- teamagent-analysis:end -->

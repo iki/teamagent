@@ -2,7 +2,7 @@
 
 Source: [bundle.warp](https://github.com/warpdotdev/common-skills) · Category: [ai-skills](../categories/ai-skills.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `69b4753651ab7fab518c82be087b9f1d5b966631`; commit timestamp `2026-09-16T17:47:55-04:00`; 72 tracked paths.
 
@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-27
+
+Reviewed commit `8792394ff1b655e0af451b8fabb68ef0cfcbd208` (commit date `2026-10-20T17:07:08-04:00`). Complete six-path delta: instruction changes, Hermes collector and test diffs.
+
+The [collector](https://github.com/warpdotdev/common-skills/blob/8792394ff1b655e0af451b8fabb68ef0cfcbd208/.agents/skills/skill-doctor/scripts/collect_sessions.py) adds Hermes SQLite ingestion, required message-column checks, parameterized queries and child-session filtering. [Tests](https://github.com/warpdotdev/common-skills/blob/8792394ff1b655e0af451b8fabb68ef0cfcbd208/.agents/skills/skill-doctor/scripts/test_collect_sessions.py) cover schema mismatch, timestamps, repeated calls, argument shapes and authoritative explicit database discovery. Reads still use fetchall before transcript truncation; project filtering follows content parsing; malformed tool JSON becomes an empty list and missing times can be imputed as now. Thus bounded exports do not imply bounded/authorized input access. Preserve inferred skill names separately from explicit skill_view calls.
+
+The [merge-risk procedure](https://github.com/warpdotdev/common-skills/blob/8792394ff1b655e0af451b8fabb68ef0cfcbd208/.agents/skills/merge-risk/SKILL.md) averages impact/verification/rollback/detection/alignment. Authorization/isolation failures must remain hard gates that favorable dimensions cannot offset. Research model-name changes are host-specific. No conversation history was collected; tests were inspected, not run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle.warp](https://github.com/warpdotdev/common-skills); analyzed commit `69b4753651ab7fab518c82be087b9f1d5b966631`; commit date 2026-09-16T17:47:55-04:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.warp.md).
+Analysis metadata: source [bundle.warp](https://github.com/warpdotdev/common-skills); analyzed commit `8792394ff1b655e0af451b8fabb68ef0cfcbd208`; commit date 2026-10-20T17:07:08-04:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.warp.md).
 <!-- teamagent-analysis:end -->

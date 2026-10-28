@@ -1,0 +1,42 @@
+# mcp-sdk-go
+
+Source: [mcp-sdk-go](https://github.com/modelcontextprotocol/go-sdk) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `25a53e3f27df62cef7066d81a8704b3df695800a`; commit timestamp `2026-10-02T17:24:41+02:00`; 226 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/modelcontextprotocol/go-sdk/blob/25a53e3f27df62cef7066d81a8704b3df695800a/README.md)):
+
+> [](https://scorecard.dev/viewer/?uri=github.com/modelcontextprotocol/go-sdk) This repository contains an implementation of the official Go software
+
+Build/package evidence: [examples/server/auth-middleware/go.mod](https://github.com/modelcontextprotocol/go-sdk/blob/25a53e3f27df62cef7066d81a8704b3df695800a/examples/server/auth-middleware/go.mod); [examples/server/rate-limiting/go.mod](https://github.com/modelcontextprotocol/go-sdk/blob/25a53e3f27df62cef7066d81a8704b3df695800a/examples/server/rate-limiting/go.mod); [go.mod](https://github.com/modelcontextprotocol/go-sdk/blob/25a53e3f27df62cef7066d81a8704b3df695800a/go.mod)
+
+License evidence: [LICENSE](https://github.com/modelcontextprotocol/go-sdk/blob/25a53e3f27df62cef7066d81a8704b3df695800a/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**OAuth token isolation improves, but mutex protection does not serialize authorization outcomes.** Reviewed commit `3a4636928357264e894e5e3ec96eb5c6be0bed33` (commit date `2026-10-27T17:58:09+01:00`). Compared with `25a53e3f27df62cef7066d81a8704b3df695800a`; the complete Git comparison contains 85 changed paths.
+
+Bearer verification now checks expiration before scopes, so an expired under-scoped token produces an authentication failure instead of a scope-expansion challenge; forbidden responses gain insufficient_scope when options are supplied. OIDC login validates the returned issuer before token exchange, requiring it when advertised and rejecting a mismatching issuer even when not advertised. The enterprise exchange refuses to forward an intermediate token unless its issued_token_type is ID-JAG, preventing another token type from being sent onward. This is a type-discriminator check, not proof of the JWT's signature/audience validation.
+
+Client-credentials authorization fetches the initial token using the request context, then installs a reusable token source with a background refresh context, fixing later refreshes inheriting a canceled initial request. Mutexes protect token source/scope fields. They do not serialize whole authorization flows: two calls may read the same old scope set, finish in either order and overwrite state; a failed call unconditionally clears the source even if another call has just succeeded. The concurrent fixture exercises race-free access, not distinct concurrent scope unions or success/failure ordering. Background refresh also needs a host-owned lifetime and explicit HTTP deadlines.
+
+Dynamic client registrations are cached by issuer, expired secrets trigger re-registration and failure invalidation compares the exact cached pointer before deletion. Registration itself occurs outside the lock, so concurrent misses can register more than once. Token/registration paths use a redirect-restricting utility and a local HTTP fixture asserts zero requests to an off-origin token redirect target; the helper implementation was not cached for this review, and configuration comments explicitly preserve caller-provided redirect policy.
+
+Evidence: [auth/auth.go:101-184](https://github.com/modelcontextprotocol/go-sdk/blob/3a4636928357264e894e5e3ec96eb5c6be0bed33/auth/auth.go#L101-L184) · [auth/extauth/client_credentials.go:85-204](https://github.com/modelcontextprotocol/go-sdk/blob/3a4636928357264e894e5e3ec96eb5c6be0bed33/auth/extauth/client_credentials.go#L85-L204) · [auth/extauth/enterprise_handler.go:192-238](https://github.com/modelcontextprotocol/go-sdk/blob/3a4636928357264e894e5e3ec96eb5c6be0bed33/auth/extauth/enterprise_handler.go#L192-L238) · [auth/extauth/oidc_login.go:85-110](https://github.com/modelcontextprotocol/go-sdk/blob/3a4636928357264e894e5e3ec96eb5c6be0bed33/auth/extauth/oidc_login.go#L85-L110) · [auth/extauth/oidc_login.go:181-214](https://github.com/modelcontextprotocol/go-sdk/blob/3a4636928357264e894e5e3ec96eb5c6be0bed33/auth/extauth/oidc_login.go#L181-L214) · [auth/authorization_code.go:623-671](https://github.com/modelcontextprotocol/go-sdk/blob/3a4636928357264e894e5e3ec96eb5c6be0bed33/auth/authorization_code.go#L623-L671) · [auth/extauth/client_credentials_test.go:396-542](https://github.com/modelcontextprotocol/go-sdk/blob/3a4636928357264e894e5e3ec96eb5c6be0bed33/auth/extauth/client_credentials_test.go#L396-L542) · [auth/extauth/oidc_login_test.go:267-356](https://github.com/modelcontextprotocol/go-sdk/blob/3a4636928357264e894e5e3ec96eb5c6be0bed33/auth/extauth/oidc_login_test.go#L267-L356).
+
+**Harness consequence:** Adopt issuer/token-type checks and authentication-before-scope classification, while binding all credential/token caches to the full resource/principal context. Use per-authority coordination or generation-checked commits for concurrent authorization, and host-scoped refresh cancellation with bounded network clients. Verify redirect policy implementations and overrides, token validation and external protocol requirements independently.
+
+**Scope and limits:** Static scoped review of selected authorization and cache-lifetime changes within the 85-path comparison, plus context-cancellation/concurrency/redirect/issuer fixture bodies. No auth servers or tests executed; redirect utility, complete metadata/SSRF policy, callback handling, JWT verification and all protocol changes were not audited.

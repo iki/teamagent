@@ -24,6 +24,13 @@ This entry was catalogued under **ai-agents-skills**. Its category places it in 
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`fece258123879acf4ac6535dc4986b32e13df0c9`](https://github.com/virgiliojr94/book-to-skill/commit/fece258123879acf4ac6535dc4986b32e13df0c9). Scope: Full Unicode sanitizer, synthetic-trajectory scorer and replay tests read; document parsers, path/fingerprint implementation and broader tests remain unaudited in this update.
+
+The [sanitizer](https://github.com/virgiliojr94/book-to-skill/blob/fece258123879acf4ac6535dc4986b32e13df0c9/book_to_skill/sanitize.py) shares an explicit invisible-codepoint predicate and narrowly folds Kangxi radicals rather than applying blanket NFKC; it reports removal counts separately from visible-character repairs. Its comments disclose changed Mongolian/Khmer shaping and static-Unicode coverage. Preserve original bytes and a transformation ledger: removing joiners/variation controls can change legitimate text and does not neutralize visible prompt injection. The [scorer](https://github.com/virgiliojr94/book-to-skill/blob/fece258123879acf4ac6535dc4986b32e13df0c9/tools/evals/score.py) keeps missing/nonboolean outcomes and malformed/negative usage unknown, distinguishes routing/answer failures, and reports observation counts separately from token totals. [Replay tests](https://github.com/virgiliojr94/book-to-skill/blob/fece258123879acf4ac6535dc4986b32e13df0c9/tests/evals/test_replay.py) exercise deterministic output and negative-usage rejection using synthetic situations. Adapt provenance and missing-observation semantics; these fixtures are not model-quality or token-savings measurements. No parser, generated skill, replay or live model was run.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [create.book-to-skill](https://github.com/virgiliojr94/book-to-skill); analyzed commit `c108d25b0cb58e1bdc361f3de02ed9f37075152f`; commit date 2026-09-29T10:08:28-04:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--create.book-to-skill.md).
+Analysis metadata: source [create.book-to-skill](https://github.com/virgiliojr94/book-to-skill); analyzed commit `fece258123879acf4ac6535dc4986b32e13df0c9`; commit date 2026-10-27T10:53:55-04:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--create.book-to-skill.md).
 <!-- teamagent-analysis:end -->

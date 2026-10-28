@@ -1,0 +1,461 @@
+{
+  "version": 1,
+  "checkedDate": "2026-10-25",
+  "scope": "Supplemental scoped source/API review; does not advance original repository analysis baselines",
+  "pathsRelativeTo": "project root",
+  "astra": {
+    "title": "Compare voice cloning models",
+    "threadId": "6adde828-e1b4-83ed-a549-fc2116307f5b",
+    "confirmedByUser": true,
+    "cachePath": ".cache/research/astra-voice-analysis.json",
+    "retrievedCharacters": 20000,
+    "truncated": true,
+    "completeAttachment": false,
+    "status": "secondary hypotheses; no independent quality measurements",
+    "cacheSha256": "7b017b805d0637ab551d04ab739f47d0cef4c59611db3666851ea634228db230",
+    "originalCitationUrlsComplete": false,
+    "citationLimitation": "Some source-reference markers in the retrieved excerpt have no resolved original source URLs.",
+    "unreviewedLocalCandidates": [
+      "VoxCPM2",
+      "Qwen3-TTS Base",
+      "Chatterbox V3/Turbo/Nano",
+      "Ming3",
+      "CosyVoice3",
+      "IndexTTS2.5",
+      "GPT-SoVITS V5"
+    ]
+  },
+  "files": [
+    {
+      "repository": "fishaudio/fish-speech",
+      "commit": "541566932abbaebcb0a40e562a1f846738383f38",
+      "commitDate": "2026-10-14T06:14:37Z",
+      "path": "LICENSE",
+      "scope": "license terms",
+      "blobSha": "3109ed8be76ee63f8b79e8752deef2bce2886675",
+      "lineCount": 115,
+      "url": "https://github.com/fishaudio/fish-speech/blob/541566932abbaebcb0a40e562a1f846738383f38/LICENSE",
+      "method": "Read exact-commit upstream file with GitHub connector; no local checkout match claimed"
+    },
+    {
+      "repository": "fishaudio/fish-speech",
+      "commit": "541566932abbaebcb0a40e562a1f846738383f38",
+      "commitDate": "2026-10-14T06:14:37Z",
+      "path": "README.md",
+      "scope": "model variants and stated capabilities",
+      "blobSha": "28280ae1c80d2a2297117d53a52f3aae836b48d9",
+      "lineCount": 194,
+      "url": "https://github.com/fishaudio/fish-speech/blob/541566932abbaebcb0a40e562a1f846738383f38/README.md",
+      "method": "Read exact-commit upstream file with GitHub connector; no local checkout match claimed"
+    },
+    {
+      "repository": "fishaudio/fish-speech",
+      "commit": "541566932abbaebcb0a40e562a1f846738383f38",
+      "commitDate": "2026-10-14T06:14:37Z",
+      "path": "fish_speech/utils/schema.py",
+      "scope": "local reference decoding and TTS schema",
+      "blobSha": "b116c6f0c77002d89df6d1428ec4c09a8d997349",
+      "lineCount": 144,
+      "url": "https://github.com/fishaudio/fish-speech/blob/541566932abbaebcb0a40e562a1f846738383f38/fish_speech/utils/schema.py",
+      "method": "Read exact-commit upstream file with GitHub connector; no local checkout match claimed"
+    },
+    {
+      "repository": "fishaudio/fish-speech",
+      "commit": "541566932abbaebcb0a40e562a1f846738383f38",
+      "commitDate": "2026-10-14T06:14:37Z",
+      "path": "tools/api_server.py",
+      "scope": "configured authentication",
+      "blobSha": "53969dc35f1e3a8bd4c69ebfa936affe7e99f2ea",
+      "lineCount": 146,
+      "url": "https://github.com/fishaudio/fish-speech/blob/541566932abbaebcb0a40e562a1f846738383f38/tools/api_server.py",
+      "method": "Read exact-commit upstream file with GitHub connector; no local checkout match claimed"
+    },
+    {
+      "repository": "fishaudio/fish-speech",
+      "commit": "541566932abbaebcb0a40e562a1f846738383f38",
+      "commitDate": "2026-10-14T06:14:37Z",
+      "path": "tools/server/inference.py",
+      "scope": "local native-endian conversion",
+      "blobSha": "8ca2c7fc1cf606973accf00b7af4a89d39c2e357",
+      "lineCount": 58,
+      "url": "https://github.com/fishaudio/fish-speech/blob/541566932abbaebcb0a40e562a1f846738383f38/tools/server/inference.py",
+      "method": "Read exact-commit upstream file with GitHub connector; no local checkout match claimed"
+    },
+    {
+      "repository": "k2-fsa/OmniVoice",
+      "commit": "08be0b4ccbac3e13e374e86fbfead4b4cac343e2",
+      "commitDate": "2026-08-24T03:03:01Z",
+      "path": "README.md",
+      "scope": "reference API and vendor claims",
+      "blobSha": "014ae45f62ff09c3f66a0b9a0d1b83dbadad0c96",
+      "lineCount": 424,
+      "url": "https://github.com/k2-fsa/OmniVoice/blob/08be0b4ccbac3e13e374e86fbfead4b4cac343e2/README.md",
+      "method": "Read exact-commit upstream file with GitHub connector; no local checkout match claimed"
+    },
+    {
+      "repository": "k2-fsa/OmniVoice",
+      "commit": "08be0b4ccbac3e13e374e86fbfead4b4cac343e2",
+      "commitDate": "2026-08-24T03:03:01Z",
+      "path": "omnivoice/models/omnivoice.py",
+      "scope": "loader dependencies and codec fallback",
+      "blobSha": "96effb12f929f9f8e189cf9b7f937360a6e5fa5a",
+      "lineCount": 1728,
+      "url": "https://github.com/k2-fsa/OmniVoice/blob/08be0b4ccbac3e13e374e86fbfead4b4cac343e2/omnivoice/models/omnivoice.py",
+      "method": "Read exact-commit upstream file with GitHub connector; no local checkout match claimed"
+    },
+    {
+      "repository": "fishaudio/fish-audio-python",
+      "commit": "448150989781e6f91c3ca9f6cc59711a87df8130",
+      "commitDate": "2026-07-31T09:41:11Z",
+      "path": "src/fishaudio/utils/stream.py",
+      "scope": "buffering and playback cleanup",
+      "blobSha": "27db4788d4063c3f3113f81914642ae5184feae5",
+      "lineCount": 80,
+      "url": "https://github.com/fishaudio/fish-audio-python/blob/448150989781e6f91c3ca9f6cc59711a87df8130/src/fishaudio/utils/stream.py",
+      "method": "Read exact-commit upstream file with GitHub connector; no local checkout match claimed"
+    },
+    {
+      "repository": "fishaudio/fish-audio-python",
+      "commit": "448150989781e6f91c3ca9f6cc59711a87df8130",
+      "commitDate": "2026-07-31T09:41:11Z",
+      "path": "src/fishaudio/types/tts.py",
+      "scope": "TTS and reference types",
+      "blobSha": "a6bfbc33ddfd4e5d2460c6d6e9079adad7251a70",
+      "lineCount": 206,
+      "url": "https://github.com/fishaudio/fish-audio-python/blob/448150989781e6f91c3ca9f6cc59711a87df8130/src/fishaudio/types/tts.py",
+      "method": "Read exact-commit upstream file with GitHub connector; no local checkout match claimed"
+    }
+  ],
+  "serviceSources": [
+    {
+      "scope": "heygen",
+      "url": "https://developers.heygen.com/docs/voices/heygen-voice-speech",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "heygen-enrollment",
+      "url": "https://developers.heygen.com/docs/voices/heygen-voice-instant-clone",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "heygen-price-conflict",
+      "url": "https://www.heygen.com/heygen-voice",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "heygen-price-conflict",
+      "url": "https://www.heygen.com/blog/heygen-voice-turbo",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "fish-openapi",
+      "url": "https://docs.fish.audio/api-reference/openapi.json",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "fish-tts",
+      "url": "https://docs.fish.audio/api-reference/endpoint/openapi-v1/text-to-speech",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "fish-enrollment",
+      "url": "https://docs.fish.audio/api-reference/endpoint/model/create-model",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "fish-pricing",
+      "url": "https://docs.fish.audio/developer-guide/models-pricing/pricing-and-rate-limits",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "elevenlabs-pricing",
+      "url": "https://elevenlabs.io/pricing/api",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "cartesia-pricing",
+      "url": "https://www.cartesia.ai/pricing",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "cartesia-contract",
+      "url": "https://docs.cartesia.ai/api-reference/tts/bytes",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "inworld-pricing",
+      "url": "https://inworld.ai/pricing",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "inworld-contract",
+      "url": "https://docs.inworld.ai/tts/synthesize-speech",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "inworld-index",
+      "url": "https://docs.inworld.ai/llms.txt",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "qwen-pricing",
+      "url": "https://help.aliyun.com/en/model-studio/qwen-audio-3-1-tts-plus",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "qwen-connection",
+      "url": "https://help.aliyun.com/en/model-studio/qwen-audio-tts-model-access",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "minimax-pricing",
+      "url": "https://platform.minimax.io/subscribe/token-plan?tab=api-enterprise",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "minimax-enrollment",
+      "url": "https://platform.minimax.io/docs/api-reference/voice-cloning-clone",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "mistral-model",
+      "url": "https://docs.mistral.ai/models/voxtral-mini-tts-3-0",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "mistral-announcement",
+      "url": "https://mistral.ai/news/voxtral-3/",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "fal-standard",
+      "url": "https://fal.ai/models/heygen/heygen-voice",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "fal-turbo",
+      "url": "https://fal.ai/models/heygen/heygen-voice/turbo/api",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    },
+    {
+      "scope": "livekit-fish",
+      "url": "https://docs.livekit.io/agents/models/tts/fishaudio/",
+      "checkedDate": "2026-10-25",
+      "revision": null,
+      "evidence": "public primary documentation; mutable, no account or inference validation"
+    }
+  ],
+  "modelResources": [
+    {
+      "repository": "https://huggingface.co/k2-fsa/OmniVoice",
+      "revision": "c5fdb5ccb189668d56333f77ba2629f4cd7535f4",
+      "readUrls": [
+        "https://huggingface.co/k2-fsa/OmniVoice/blob/c5fdb5ccb189668d56333f77ba2629f4cd7535f4/README.md",
+        "https://huggingface.co/k2-fsa/OmniVoice/blob/c5fdb5ccb189668d56333f77ba2629f4cd7535f4/audio_tokenizer/LICENSE"
+      ],
+      "licenseObservation": "model card says CC-BY-NC without version; code Apache2.0; bundled codec Boson Higgs Audio2 Community License",
+      "downloadedWeights": false
+    }
+  ],
+  "identityChecks": [
+    {
+      "repository": "echonerve/omnivoice",
+      "githubId": 1231118997,
+      "fork": true,
+      "parent": "k2-fsa/OmniVoice",
+      "canonicalId": 1197198701,
+      "result": "distinct fork, not verified rename"
+    }
+  ],
+  "reports": [
+    {
+      "id": "service--heygen-voice",
+      "path": "spec/projects/service--heygen-voice.md",
+      "topics": [
+        "media-processing",
+        "generation"
+      ],
+      "depth": "primary-service-doc-review"
+    },
+    {
+      "id": "external--fish-speech",
+      "path": "spec/projects/external--fish-speech.md",
+      "topics": [
+        "media-processing",
+        "generation"
+      ],
+      "depth": "scoped-source-review"
+    },
+    {
+      "id": "external--fish-audio-python",
+      "path": "spec/projects/external--fish-audio-python.md",
+      "topics": [
+        "media-processing",
+        "generation"
+      ],
+      "depth": "scoped-source-review"
+    },
+    {
+      "id": "external--omnivoice",
+      "path": "spec/projects/external--omnivoice.md",
+      "topics": [
+        "media-processing",
+        "generation"
+      ],
+      "depth": "scoped-source-review"
+    },
+    {
+      "id": "service--elevenlabs-speech",
+      "path": "spec/projects/service--elevenlabs-speech.md",
+      "topics": [
+        "media-processing",
+        "generation"
+      ],
+      "depth": "primary-service-doc-review"
+    },
+    {
+      "id": "service--cartesia-speech",
+      "path": "spec/projects/service--cartesia-speech.md",
+      "topics": [
+        "media-processing",
+        "generation"
+      ],
+      "depth": "primary-service-doc-review"
+    },
+    {
+      "id": "service--inworld-speech",
+      "path": "spec/projects/service--inworld-speech.md",
+      "topics": [
+        "media-processing",
+        "generation"
+      ],
+      "depth": "primary-service-doc-review"
+    },
+    {
+      "id": "service--qwen-speech",
+      "path": "spec/projects/service--qwen-speech.md",
+      "topics": [
+        "media-processing",
+        "generation"
+      ],
+      "depth": "primary-service-doc-review"
+    },
+    {
+      "id": "service--minimax-speech",
+      "path": "spec/projects/service--minimax-speech.md",
+      "topics": [
+        "media-processing",
+        "generation"
+      ],
+      "depth": "primary-service-doc-review"
+    },
+    {
+      "id": "service--mistral-speech",
+      "path": "spec/projects/service--mistral-speech.md",
+      "topics": [
+        "media-processing",
+        "generation"
+      ],
+      "depth": "primary-service-doc-review"
+    },
+    {
+      "id": "service--fal-speech",
+      "path": "spec/projects/service--fal-speech.md",
+      "topics": [
+        "media-processing",
+        "generation"
+      ],
+      "depth": "primary-service-doc-review"
+    }
+  ],
+  "discrepancies": [
+    {
+      "id": "heygen-standard-price",
+      "status": "unresolved",
+      "observation": "Direct primary pages list $15 and $30 per million characters; route/account quote required"
+    },
+    {
+      "id": "mistral-language-count",
+      "status": "unresolved",
+      "observation": "Current model page says9languages, announcement35+; no combined verified number"
+    },
+    {
+      "id": "fish-reference-encoding",
+      "status": "resolved",
+      "observation": "Hosted OpenAPI requires MessagePack rawbytes; local base64 schema is separate"
+    },
+    {
+      "id": "fish-pcm-byte-order",
+      "status": "unknown",
+      "observation": "Hosted docs and inspected SDK do not establish byteorder; local NumPyint16 is native-endian"
+    },
+    {
+      "id": "qwen-usd-price",
+      "status": "unverified",
+      "observation": "Primary observed rates in CNY byregion; Astra USD rates not independently established"
+    },
+    {
+      "id": "fal-turbo-price",
+      "status": "unverified",
+      "observation": "Current retrieved route page exposes no rate; Astra promotional figure not verified"
+    }
+  ],
+  "validation": {
+    "paidRequests": 0,
+    "modelDownloads": 0,
+    "liveInference": false,
+    "listeningTests": false,
+    "hardwareCompatibilityTested": false,
+    "integratedGatesOwnedBy": "parent",
+    "priorPassingTestsNotClaimedForThisChange": true,
+    "relativeLinksChecked": 228,
+    "documentsChecked": 15,
+    "pinnedLineAnchorsChecked": 7,
+    "issues": []
+  },
+  "compactMarkdownLedger": "spec/analyses/voice-backends-reviews.md"
+}

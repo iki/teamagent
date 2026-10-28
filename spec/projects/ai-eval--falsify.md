@@ -24,6 +24,13 @@ This entry was catalogued under **ai-eval**. Its category places it in the candi
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`1b3950487b4fe730aaef005800d9b2f47bf77ff9`](https://github.com/studio-11-co/falsify/commit/1b3950487b4fe730aaef005800d9b2f47bf77ff9). Scope: Focused source/content review of receipt-gate workflow, acceptance-record description, PREP-Eval final report and paper erratum; remaining specification/docs delta not fully reread.
+
+The [erratum](https://github.com/studio-11-co/falsify/blob/1b3950487b4fe730aaef005800d9b2f47bf77ff9/spec/paper/ERRATA.md) narrows timestamp evidence to matching a disclosed copy with an anchored version, explicitly excluding intervening versions, execution order and compliance. The [acceptance example](https://github.com/studio-11-co/falsify/blob/1b3950487b4fe730aaef005800d9b2f47bf77ff9/examples/acceptance-record/README.md) discloses demo signers, a known result and a missing model-artifact hash; the PREP-Eval report labels its score illustrative. Adopt these evidence qualifications and immutable deviations. The [receipt gate](https://github.com/studio-11-co/falsify/blob/1b3950487b4fe730aaef005800d9b2f47bf77ff9/examples/require-receipt/gate.yml) selects only the first matching manifest and accepts an HTTP-success lookup; it does not itself verify every submission or the described signature/timestamp/transparency proofs. Treat it as an incomplete workflow example, not a cryptographic acceptance boundary. No signature, public registry, test runner, legal/compliance mapping or model outcome was independently verified.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [falsify](https://github.com/studio-11-co/falsify); analyzed commit `0e2eda33aeffecd252eaeab4d098d4550b1434bd`; commit date 2026-10-02T17:27:09Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-eval--falsify.md).
+Analysis metadata: source [falsify](https://github.com/studio-11-co/falsify); analyzed commit `1b3950487b4fe730aaef005800d9b2f47bf77ff9`; commit date 2026-10-23T17:29:42Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-eval--falsify.md).
 <!-- teamagent-analysis:end -->

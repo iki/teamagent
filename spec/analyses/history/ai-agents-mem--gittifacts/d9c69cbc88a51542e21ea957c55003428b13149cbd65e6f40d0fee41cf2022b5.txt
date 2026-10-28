@@ -1,0 +1,22 @@
+# gittifacts
+
+Source: [gittifacts](https://github.com/jovidecroock/gittifacts) · [memory](../../memory.md), [import-generation](../../import-generation.md), [evolution](../../evolution.md).
+
+Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-agents-mem--gittifacts.md).
+
+
+## Change review â€” 2026-10-27
+
+**First scoped source review: durable CI evidence and status reconstruction.** Reviewed commit `30c373de1461a41230e66e737eaeef70d456c8bc` (commit date `2026-10-12T08:20:04+02:00`). The enumerated snapshot contains 2369 tracked paths.
+
+This Cloudflare-oriented Git platform separates a Change, its intent and its conformance evidence in the documented product model. The inspected implementation slice is the CI contract and persisted run reducer, not the merge-lane decision algorithm. Run requests bind head/base SHA, a change ID, pipeline provenance, cache scopes and explicit limits; pipeline selection defaults to the base revision. Artifact references carry byte count and SHA-256. The status reducer combines stored run/pipeline/step/cancellation/summary records with workflow state: a completed workflow with invalid output becomes failed, a retained valid summary takes precedence, and unfinished steps become cancelled when a run ends. Fake-binding fixtures specify same-run idempotency, conflicting-head refusal, recovery after record persistence but before workflow creation, cancellation and dependent-step invalidation on restart. The schema defaults network policy to open, despite offering a registries-only mode. `readRecord` returns null for both absent and invalid records; callers must not assume it distinguishes corruption from missing state.
+
+Evidence: [README.md:1-16](https://github.com/jovidecroock/gittifacts/blob/30c373de1461a41230e66e737eaeef70d456c8bc/README.md#L1-L16) Â· [packages/ci-engine/src/engine.ts:15-147](https://github.com/jovidecroock/gittifacts/blob/30c373de1461a41230e66e737eaeef70d456c8bc/packages/ci-engine/src/engine.ts#L15-L147) Â· [packages/ci-engine/src/engine.ts:169-292](https://github.com/jovidecroock/gittifacts/blob/30c373de1461a41230e66e737eaeef70d456c8bc/packages/ci-engine/src/engine.ts#L169-L292) Â· [packages/ci-engine/src/run-store.ts:101-258](https://github.com/jovidecroock/gittifacts/blob/30c373de1461a41230e66e737eaeef70d456c8bc/packages/ci-engine/src/run-store.ts#L101-L258) Â· [packages/ci-engine/test/unit/engine.test.ts:69-246](https://github.com/jovidecroock/gittifacts/blob/30c373de1461a41230e66e737eaeef70d456c8bc/packages/ci-engine/test/unit/engine.test.ts#L69-L246) Â· [packages/ci-engine/test/unit/cache.test.ts:96-145](https://github.com/jovidecroock/gittifacts/blob/30c373de1461a41230e66e737eaeef70d456c8bc/packages/ci-engine/test/unit/cache.test.ts#L96-L145).
+
+**Harness consequence:** Borrow the explicit evidence/job/result model for coding traces and recoverable generation, with stable attempts and dependency-aware invalidation. Preserve a separate outcome for corrupt receipts and require Teamagent's deny-by-default grants before any executor is invoked. A workflow's passed status is not independent correctness, and this review does not establish that upstream automatic merging or rollback is safe.
+
+**Scope and limits:** Initial source architecture review over a 2,369-path enumerated tree; inspected CI contracts, status reconstruction and selected fake-binding fixtures only. No platform deployment, workflow execution, cache implementation audit, merge-policy calibration, OAuth audit or benchmark. README claims about review lanes and automatic rollback remain unverified.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [gittifacts](https://github.com/jovidecroock/gittifacts); analyzed commit `none`; commit date unknown; review date unknown; depth unreviewed. [Maintenance record](../repos/ai-agents-mem--gittifacts.md).
+<!-- teamagent-analysis:end -->

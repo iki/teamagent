@@ -24,6 +24,13 @@ This entry was catalogued under **ai-agents-skills**. Its category places it in 
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`dd3bedcab932a766e86039ad7d0115d58f98987d`](https://github.com/neutree-ai/openapi-to-skills/commit/dd3bedcab932a766e86039ad7d0115d58f98987d). Scope: Full generated-validator reducer, shipped validation runtime and validator tests read; parser/overlay/compact generation changes not fully reviewed.
+
+The [reducer](https://github.com/neutree-ai/openapi-to-skills/blob/dd3bedcab932a766e86039ad7d0115d58f98987d/src/validator.ts) emits operation-local input metadata and reachable schemas; the [offline runtime](https://github.com/neutree-ai/openapi-to-skills/blob/dd3bedcab932a766e86039ad7d0115d58f98987d/runtime/validate.mjs) supplies useful misspelling/filter-shape hints, checks required/type/enum values and separates unknown-key warnings from failures. [Fixtures](https://github.com/neutree-ai/openapi-to-skills/blob/dd3bedcab932a766e86039ad7d0115d58f98987d/src/validator.test.ts) cover those paths. This is a reduced advisory checker, not complete OpenAPI/JSON Schema validation: the reducer maps oneOf/anyOf to one representation, the runtime accepts any matching variant, omitted constraints are not enforced, unresolved/cyclic references and over-depth reductions can become unconstrained, and body-bearing operations omit separate parameter checks. Reads and recursive validation also lack comprehensive resource limits. Adapt human-readable diagnostics, but keep Effect Schema plus semantic authorization at Teamagent transport boundaries and expose unsupported validation coverage. No generated skill/API call or test was executed.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [create.openapi-to-skills](https://github.com/neutree-ai/openapi-to-skills); analyzed commit `37696dfa4fc926c5cb527f89a4ba4a5ab3e0d247`; commit date 2026-06-23T11:55:18+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--create.openapi-to-skills.md).
+Analysis metadata: source [create.openapi-to-skills](https://github.com/neutree-ai/openapi-to-skills); analyzed commit `dd3bedcab932a766e86039ad7d0115d58f98987d`; commit date 2026-10-14T14:41:57+08:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--create.openapi-to-skills.md).
 <!-- teamagent-analysis:end -->

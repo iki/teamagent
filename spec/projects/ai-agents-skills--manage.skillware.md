@@ -25,6 +25,15 @@ Use individual bundles only after dependency, license, and behavior review, and 
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`ad55a64ea41191e52fa9ee5d93d13ff414e3eec5`](https://github.com/ARPAHLS/skillware/commit/ad55a64ea41191e52fa9ee5d93d13ff414e3eec5). Scope: Read secret-provider, environment-loader and UI-schema implementations in full. Dynamic loading, discovery, matching and skill catalog execution were not audited.
+
+The [secret-provider boundary](https://github.com/ARPAHLS/skillware/blob/ad55a64ea41191e52fa9ee5d93d13ff414e3eec5/skillware/core/secrets.py) supports injected mappings and host callbacks, resolves only manifest-declared keys and reports missing required names without printing values. This is useful for separating tenant credentials from process-global state, but a manifest's declaration is not authorization to receive a secret: Teamagent still needs an independent capability allowlist and bounded provider access. The [environment loader](https://github.com/ARPAHLS/skillware/blob/ad55a64ea41191e52fa9ee5d93d13ff414e3eec5/skillware/core/env.py) directly overwrites process environment entries and raises on malformed non-comment lines; it is unsuitable as a multi-tenant isolation mechanism.
+
+The [UI-schema check](https://github.com/ARPAHLS/skillware/blob/ad55a64ea41191e52fa9ee5d93d13ff414e3eec5/skillware/core/ui_schema.py) verifies that each declared output-card key resolves in at least one sample. It does not validate field value types, require each sample to contain every key or reject all malformed sample entries. Preserve that narrow coverage meaning instead of claiming complete schema conformance. Adapt injected credential resolution and explicit output-shape fixtures behind Teamagent's Effect Schema and authorization boundaries; do not adopt the executable loader or catalog on this evidence. No skills or tests were executed.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [manage.skillware](https://github.com/ARPAHLS/skillware); analyzed commit `2d59fadc583b67071c47a7e0870bfaf9f95431b8`; commit date 2026-10-02T19:00:24+03:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-skills--manage.skillware.md).
+Analysis metadata: source [manage.skillware](https://github.com/ARPAHLS/skillware); analyzed commit `ad55a64ea41191e52fa9ee5d93d13ff414e3eec5`; commit date 2026-10-26T18:44:59+03:00; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-skills--manage.skillware.md).
 <!-- teamagent-analysis:end -->

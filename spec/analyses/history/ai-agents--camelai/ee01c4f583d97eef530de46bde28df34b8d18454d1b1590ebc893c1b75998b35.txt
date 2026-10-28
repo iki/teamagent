@@ -1,0 +1,25 @@
+# camelai
+
+Source: [camelai](https://github.com/qaml-ai/camelAI) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `3825a9a671b2260cc6138929535de30e435c1f93`; commit timestamp `2026-10-03T09:38:47-05:00`; 1,829 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/qaml-ai/camelAI/blob/3825a9a671b2260cc6138929535de30e435c1f93/README.md)):
+
+> An AI coding assistant for persistent workspaces, connected data, and deployable applications. camelAI gives teams persistent AI coding workspaces backed by Cloudflare. Each
+
+Build/package evidence: [package.json](https://github.com/qaml-ai/camelAI/blob/3825a9a671b2260cc6138929535de30e435c1f93/package.json); [sandbox/create-worker/templates/starter/package.json](https://github.com/qaml-ai/camelAI/blob/3825a9a671b2260cc6138929535de30e435c1f93/sandbox/create-worker/templates/starter/package.json); [workers/eval-reports/package.json](https://github.com/qaml-ai/camelAI/blob/3825a9a671b2260cc6138929535de30e435c1f93/workers/eval-reports/package.json); [workers/main/db-query-sandbox-assets/runner/package.json](https://github.com/qaml-ai/camelAI/blob/3825a9a671b2260cc6138929535de30e435c1f93/workers/main/db-query-sandbox-assets/runner/package.json); [workers/main/project-build-sandbox-warmup/crud/package.json](https://github.com/qaml-ai/camelAI/blob/3825a9a671b2260cc6138929535de30e435c1f93/workers/main/project-build-sandbox-warmup/crud/package.json)
+
+License evidence: [LICENSE](https://github.com/qaml-ai/camelAI/blob/3825a9a671b2260cc6138929535de30e435c1f93/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

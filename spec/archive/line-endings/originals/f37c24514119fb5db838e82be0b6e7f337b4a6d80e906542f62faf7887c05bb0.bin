@@ -1,0 +1,49 @@
+# rag-anything
+
+Multimodal-derived chunks and graph entities with content/configuration-aware parse caching.
+
+Source: [rag-anything](https://github.com/HKUDS/RAG-Anything) · Snapshot: `1f73f0154c48b3d616674608af98748585b856f3` · Category: `ai-query`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [raganything/processor.py:54-125](https://github.com/HKUDS/RAG-Anything/blob/1f73f0154c48b3d616674608af98748585b856f3/raganything/processor.py#L54-L125)
+- [raganything/modalprocessors.py:532-612](https://github.com/HKUDS/RAG-Anything/blob/1f73f0154c48b3d616674608af98748585b856f3/raganything/modalprocessors.py#L532-L612)
+
+The parse cache key incorporates absolute source path, modification time, a streaming SHA-256 content fingerprint, parser identity, parse method and relevant parser options; this configuration is serialized into a cache-key digest. The multimodal processor creates a token-counted text chunk, writes it to chunk and vector stores, then writes a graph entity whose source_id points back to that chunk. Entity vectors include a generated name and summary. The method finally invokes additional extraction over the chunk.
+
+## Harness implications
+
+Multimodal knowledge should have both native assets and searchable derived descriptions. Index an image region, table or equation through OCR/caption/structured data, but keep a link to the original page, asset and coordinates. The code illustrates why provenance must connect modal-derived entities to retrievable source chunks. Parsing and semantic enrichment need distinct caches: changing the parser or vision model can invalidate a description even if the source bytes remain identical.
+
+## Limitations and tradeoffs
+
+Generated descriptions can hallucinate visible details or lose table relationships, and content-only chunk identity can merge identical descriptions from different sources unless provenance remains multi-valued. The examined upserts occur across several stores; a partial failure requires reconciliation. Path-inclusive cache identity reduces reuse after moving an unchanged document. Neither a content fingerprint nor a successful embedding proves extraction correctness or safe model access to private assets.
+
+## Adoption and validation
+
+Pilot for image/table-heavy knowledge collections after text ingestion is stable. Keep modality-specific schemas and an optional direct-vision retrieval path for evidence verification. Test duplicate captions in different documents, moved files, parser-version changes, failed graph writes, figure captions that contradict images and exact numerical table questions. Compare derived-text-only answers with answers that reopen the native asset.
+
+Related directions: [import-generation](../import-generation.md) · [memory](../memory.md) · [models](../models.md).
+
+
+## Change review - 2026-10-28
+
+**Ingestion now waits for text work and isolates document context, but completion and provenance still need explicit failure states.** Reviewed commit `5fec59b62dc7e2840e335bb13b9579907d50d79f` (commit date `2026-10-27T18:08:51+08:00`). Compared with `1f73f0154c48b3d616674608af98748585b856f3`; the complete Git comparison contains 89 changed paths.
+
+Text ingestion now waits after LightRAG insertion before writing RAG-Anything's handling status, avoiding taking a merely queued document out of LightRAG's eligible statuses. It removes a prior status placeholder only when no full document exists, propagates terminal FAILED and recognizes a cancellation phrase in shared pipeline history. The wait exponentially backs off to two seconds but has no deadline; a missing record or another unexpected status exits normally. Placeholder cleanup uses separate reads/deletion, not an atomic ownership check.
+
+Page annotation requires matching track ID, processed status, stored sanitized text and the same known chunker; replayed chunk IDs must match the recorded set and identical-content occurrences receive pages only when all agree. It avoids annotating rows owned by another document and clears unverifiable old page values. Annotation exceptions only warn and do not expose a structured partial-provenance result; get_by_ids is zipped with IDs without a cardinality check. The chunk-span replay implementation itself was not inspected.
+
+Operation-local ContextVar mappings now isolate source settings for shared modal processors and reset them in finally. Mapping copies prevent child setters mutating the inherited mapping, but referenced source objects remain shared and direct processor usage still falls back to mutable instance defaults. Shared parser-option normalization adds OCR/table/model-directory/classifier settings, hashes credential-bearing VLM URLs for persisted configuration and disables incremental reuse for non-serializable custom options. Parse-cache identity also includes source SHA-256, path and mtime, but no explicit parser/model build version in the inspected key.
+
+Evidence: [raganything/processor.py:54-128](https://github.com/HKUDS/RAG-Anything/blob/5fec59b62dc7e2840e335bb13b9579907d50d79f/raganything/processor.py#L54-L128) · [raganything/processor.py:168-392](https://github.com/HKUDS/RAG-Anything/blob/5fec59b62dc7e2840e335bb13b9579907d50d79f/raganything/processor.py#L168-L392) · [raganything/processor.py:2080-2115](https://github.com/HKUDS/RAG-Anything/blob/5fec59b62dc7e2840e335bb13b9579907d50d79f/raganything/processor.py#L2080-L2115) · [raganything/document_context.py:1-39](https://github.com/HKUDS/RAG-Anything/blob/5fec59b62dc7e2840e335bb13b9579907d50d79f/raganything/document_context.py#L1-L39) · [raganything/modalprocessors.py:430-473](https://github.com/HKUDS/RAG-Anything/blob/5fec59b62dc7e2840e335bb13b9579907d50d79f/raganything/modalprocessors.py#L430-L473) · [raganything/parse_options.py:1-50](https://github.com/HKUDS/RAG-Anything/blob/5fec59b62dc7e2840e335bb13b9579907d50d79f/raganything/parse_options.py#L1-L50) · [raganything/batch_parser.py:393-425](https://github.com/HKUDS/RAG-Anything/blob/5fec59b62dc7e2840e335bb13b9579907d50d79f/raganything/batch_parser.py#L393-L425) · [tests/testparse_cache_key.py:80-218](https://github.com/HKUDS/RAG-Anything/blob/5fec59b62dc7e2840e335bb13b9579907d50d79f/tests/testparse_cache_key.py#L80-L218).
+
+**Harness consequence:** Keep queue completion distinct from enqueue acknowledgment and require explicit recognized terminal states, an operation deadline and atomic ownership before cleanup. Preserve exact replay-based page evidence with a separate incomplete-provenance status and cardinality checks. Use operation-scoped immutable context and versioned converter/model fingerprints; URL hashing reduces direct credential persistence in configuration but is not proof of redaction across outputs/logs.
+
+**Scope and limits:** Static scoped review of text-queue coordination, page annotation, context isolation and cache identities within the 89-path comparison; stubbed converter/cache fixture bodies read. Full chunk replay, OMML/media parsing, model calls and pipeline races were not executed or exhaustively audited.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [rag-anything](https://github.com/HKUDS/RAG-Anything); analyzed commit `5fec59b62dc7e2840e335bb13b9579907d50d79f`; commit date 2026-10-27T18:08:51+08:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--rag-anything.md).
+<!-- teamagent-analysis:end -->

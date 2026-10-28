@@ -24,6 +24,14 @@ This entry was catalogued under **ai-agents-proxy**. Its category places it in t
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`1817a54ddc2a43786412bf0fb7802868f19d35e1`](https://github.com/OpenRouterTeam/go-sdk/commit/1817a54ddc2a43786412bf0fb7802868f19d35e1). Scope: Full generated deferred-tool and computer-use model files read. Serializer utility, tool-search unions, transport and example requests were not audited.
+
+The [deferred-tool model](https://github.com/OpenRouterTeam/go-sdk/blob/1817a54ddc2a43786412bf0fb7802868f19d35e1/models/components/deferredtoolscontrol.go) rejects unknown profile/protocol/validation strings during enum JSON decoding and exposes router search strategies. Go string aliases can still be directly constructed, and this file provides no corresponding outbound semantic validator; a declared runtime-validation mode is not evidence of executed server validation. Stable catalog and continuation requirements belong in an adapter contract with tests.
+
+The [computer-use model](https://github.com/OpenRouterTeam/go-sdk/blob/1817a54ddc2a43786412bf0fb7802868f19d35e1/models/components/computeruseservertool.go) preserves unknown environment strings via an explicit IsExact check, but stores dimensions as unconstrained int64 values and delegates JSON handling to an unread utility. Nil getters return zero/empty values, which must not collapse missing configuration into a valid display. Adapt explicit unsupported-enum handling and missing-value semantics; do not select the SDK or trust provider capability based on generated fields. No network, computer-use action, SDK example or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openrouter-go-sdk](https://github.com/OpenRouterTeam/go-sdk); analyzed commit `b6813fe66149d84ea00758cb2f8b233ccbc76e29`; commit date 2026-10-02T21:54:29Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-go-sdk.md).
+Analysis metadata: source [openrouter-go-sdk](https://github.com/OpenRouterTeam/go-sdk); analyzed commit `1817a54ddc2a43786412bf0fb7802868f19d35e1`; commit date 2026-10-27T17:50:19Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-go-sdk.md).
 <!-- teamagent-analysis:end -->

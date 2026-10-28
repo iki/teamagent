@@ -30,6 +30,14 @@ Test transitive-looking conflict graphs, resource wildcards, stable tie-breaks, 
 
 Related directions: [agents](../agents.md) · [decisions](../decisions.md).
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`d8b63a60aeae38dfd4060d7abba353a4c109882c`](https://github.com/unohee/openswarm/commit/d8b63a60aeae38dfd4060d7abba353a4c109882c). Scope: Full conflict-admission, tool-summary, unattended-adapter policy, project-runtime projection and stage-boundary helpers read. Enforcement call sites, OS runner and the broader orchestration state machine were not audited.
+
+The [unattended policy](https://github.com/unohee/openswarm/blob/d8b63a60aeae38dfd4060d7abba353a4c109882c/src/adapters/unattendedPolicy.ts) acknowledges that delegated CLIs bypass the owner's tool-loop fences, checks nested executable fanout/fallback adapters and provides a matching provider-switch rule. This is a useful boundary inventory; coverage of every switch call site and unknown future adapter remains unproved. The [stage boundary](https://github.com/unohee/openswarm/blob/d8b63a60aeae38dfd4060d7abba353a4c109882c/src/agents/stageExecutionBoundary.ts) propagates uncertain execution before ordinary operator blocking, preventing a model success claim from erasing a native unknown-outcome signal.
+
+The [conflict selector](https://github.com/unohee/openswarm/blob/d8b63a60aeae38dfd4060d7abba353a4c109882c/src/orchestration/conflictAdmission.ts) builds deterministic greedy waves from caller ordering, which assumes a valid symmetric conflict predicate and is maximal rather than globally optimal. [Project state](https://github.com/unohee/openswarm/blob/d8b63a60aeae38dfd4060d7abba353a4c109882c/src/coordination/projectRuntime.ts) consults scheduler/stage events rather than conversational recency. [Argument summaries](https://github.com/unohee/openswarm/blob/d8b63a60aeae38dfd4060d7abba353a4c109882c/src/adapters/toolArgsSummary.ts) include read offsets to distinguish progress from loops, but command prefixes and search patterns can carry private data and need redaction. Adapt explicit delegated-control gaps and unknown outcomes; no workers, CLI, scheduling or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openswarm](https://github.com/unohee/openswarm); analyzed commit `47f446dd5125e38d485dd55bb46df8dda8eaa969`; commit date 2026-10-04T00:48:18+09:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-swarm--openswarm.md).
+Analysis metadata: source [openswarm](https://github.com/unohee/openswarm); analyzed commit `d8b63a60aeae38dfd4060d7abba353a4c109882c`; commit date 2026-10-25T12:50:37+09:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-swarm--openswarm.md).
 <!-- teamagent-analysis:end -->

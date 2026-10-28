@@ -1,0 +1,24 @@
+# better-icons
+
+Source: [better-icons](https://github.com/better-auth/better-icons) · [memory](../../memory.md), [import-generation](../../import-generation.md).
+
+Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-query--better-icons.md).
+
+
+## Initial source review - 2026-10-28
+
+**Icon retrieval is a useful adapter reference, but remote data, file writes and preference concurrency remain weak boundaries.** Reviewed commit `033316ecb8f4982235af4111a2257e80231f5ab1` (commit date `2026-04-02T08:54:17-07:00`). The enumerated snapshot contains 24 tracked paths.
+
+The CLI and stdio MCP surface search Iconify, retrieve SVGs and optionally synchronize generated components into a caller-specified icons file. MCP search bounds the requested result count and bulk retrieval caps input at 20 IDs, groups requests by collection, preserves request ordering and reports per-icon HTTP/missing-data failures. A network rejection or JSON parse exception in the bulk loop still escapes the per-item result path. Requests shown have no deadline or response-byte cap. Remote validators check only an icons array/number total or the presence of icons/aliases, not member types, valid IDs, SVG safety or finite dimensions; CLI decoding uses casts directly. The sync tool accepts an unrestricted string path and forwards it to an uninspected project-sync helper, so this review establishes no containment guarantee.
+
+Usage memory retains the most recent 50 distinct icons and collection counters in a home-directory JSON file. A PID-named temporary file is renamed over the destination, but rename failure falls back to a direct destination write and then rethrows, while the comment calls this cleanup. Read-modify-write retries have no synchronization or actual delay; concurrent successful writes can lose increments. JSON is not schema-checked, malformed files become empty preferences, the collections map is unbounded and shallow default copies share their nested map. CLI downloads derive filenames from unvalidated remote prefix/name values before joining them to the output directory.
+
+Evidence: [src/index.ts:1-54](https://github.com/better-auth/better-icons/blob/033316ecb8f4982235af4111a2257e80231f5ab1/src/index.ts#L1-L54) · [src/memory.ts:1-137](https://github.com/better-auth/better-icons/blob/033316ecb8f4982235af4111a2257e80231f5ab1/src/memory.ts#L1-L137) · [src/commands/search.ts:1-152](https://github.com/better-auth/better-icons/blob/033316ecb8f4982235af4111a2257e80231f5ab1/src/commands/search.ts#L1-L152) · [src/utils.ts:1-35](https://github.com/better-auth/better-icons/blob/033316ecb8f4982235af4111a2257e80231f5ab1/src/utils.ts#L1-L35) · [src/server.ts:1-178](https://github.com/better-auth/better-icons/blob/033316ecb8f4982235af4111a2257e80231f5ab1/src/server.ts#L1-L178) · [src/server.ts:389-475](https://github.com/better-auth/better-icons/blob/033316ecb8f4982235af4111a2257e80231f5ab1/src/server.ts#L389-L475) · [src/server.ts:518-627](https://github.com/better-auth/better-icons/blob/033316ecb8f4982235af4111a2257e80231f5ab1/src/server.ts#L518-L627).
+
+**Harness consequence:** Retain grouped retrieval, stable result ordering and explicit partial results as small design references. Adoption requires typed external schemas, identifier/path containment, restricted SVG processing, bounded fetches, per-source license/provenance and a serialized durable preference store. Keep installation/config edits and source-file synchronization behind separate host capabilities; the repository's Commander/Node choices do not replace Teamagent's adopted CLI/runtime stack.
+
+**Scope and limits:** Initial static source review of the CLI, preference store and selected MCP handlers in the 24-path snapshot. SVG generation/alias utilities, project-sync containment, setup/config commands, licensing of individual icon collections and fixture bodies were not audited; no service calls, installation, file synchronization or upstream execution.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [better-icons](https://github.com/better-auth/better-icons); analyzed commit `033316ecb8f4982235af4111a2257e80231f5ab1`; commit date 2026-04-02T08:54:17-07:00; review date 2026-10-28T08:47:42.123Z; depth reviewed. [Maintenance record](../repos/ai-query--better-icons.md).
+<!-- teamagent-analysis:end -->

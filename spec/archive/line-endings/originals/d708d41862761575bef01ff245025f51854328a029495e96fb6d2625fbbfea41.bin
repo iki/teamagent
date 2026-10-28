@@ -1,0 +1,39 @@
+# prime-agent
+
+Source: [prime-agent](https://github.com/PrimeIntellect-ai/prime-agent) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `cfe398105ed8753d0fbcfbeb186934285730a5a3`; commit timestamp `2026-10-03T12:30:09-07:00`; 1,440 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/PrimeIntellect-ai/prime-agent/blob/cfe398105ed8753d0fbcfbeb186934285730a5a3/README.md)):
+
+> Prime Agent is an open-source coding and research agent for general and long-running work. It is designed around two core abstractions: - The **Recursive Language Model (RLM)** treats context as variables (*prompt-as-a-variable*) and tools like recursive subagents as function calls (*programmatic tool /sub-agent calling*) inside a persistent REPL.
+
+Build/package evidence: [Cargo.toml](https://github.com/PrimeIntellect-ai/prime-agent/blob/cfe398105ed8753d0fbcfbeb186934285730a5a3/Cargo.toml); [crates/pa-agent/Cargo.toml](https://github.com/PrimeIntellect-ai/prime-agent/blob/cfe398105ed8753d0fbcfbeb186934285730a5a3/crates/pa-agent/Cargo.toml); [crates/pa-ai/Cargo.toml](https://github.com/PrimeIntellect-ai/prime-agent/blob/cfe398105ed8753d0fbcfbeb186934285730a5a3/crates/pa-ai/Cargo.toml); [crates/pa-cli/Cargo.toml](https://github.com/PrimeIntellect-ai/prime-agent/blob/cfe398105ed8753d0fbcfbeb186934285730a5a3/crates/pa-cli/Cargo.toml); [crates/pa-core/Cargo.toml](https://github.com/PrimeIntellect-ai/prime-agent/blob/cfe398105ed8753d0fbcfbeb186934285730a5a3/crates/pa-core/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/PrimeIntellect-ai/prime-agent/blob/cfe398105ed8753d0fbcfbeb186934285730a5a3/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped source review
+
+Source: [prime-agent](https://github.com/PrimeIntellect-ai/prime-agent); inspected saved discovery revision `c13415b44239c1333b2c8503070310182e0d4b2d`. Prior analyzed revision `cfe398105ed8753d0fbcfbeb186934285730a5a3` remains historical evidence.
+
+**Scope:** Full abort helper including its embedded tests and crate entry module read. Agent-loop call coverage, provider adapters, tools and resource cleanup were not audited.
+
+The [abort helper](https://github.com/PrimeIntellect-ai/prime-agent/blob/c13415b44239c1333b2c8503070310182e0d4b2d/crates/pa-agent/src/abort.rs) uses a cloneable watch signal and a typed AbortedError marker instead of interpreting arbitrary provider error text as cancellation. It checks pre-aborted state and races the supplied future against the signal. Embedded tests cover observer wakeup, a pending operation interrupted by cancellation and a completed operation. The [crate entry](https://github.com/PrimeIntellect-ai/prime-agent/blob/c13415b44239c1333b2c8503070310182e0d4b2d/crates/pa-agent/src/lib.rs) keeps the agent message representation separate from model-bound messages at the call boundary.
+
+Dropping a future is only the local ownership mechanism: it does not prove a spawned task, subprocess or remote effect stopped. The select is not biased toward cancellation when both branches are ready, and the inspected tests do not assert external cleanup or ambiguous-effect reconciliation. Adapt typed cancellation with scoped resources and adapter-specific acceptance tests; do not infer every await point is covered from the module comment. No Rust build, provider call or tests were executed.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [prime-agent](https://github.com/PrimeIntellect-ai/prime-agent); analyzed commit `c13415b44239c1333b2c8503070310182e0d4b2d`; commit date 2026-10-27T12:20:00+01:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--prime-agent.md).
+<!-- teamagent-analysis:end -->

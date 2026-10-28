@@ -1,0 +1,40 @@
+# Media training policy
+
+[Media processing](media-processing.md) · [Runtime contract](media-runtime.md) · [Policy review ledger](analyses/media-training-reviews.md) · [Security](security.md)
+
+Reviewed 2026-10-25. This contract concerns reuse of submitted recordings, text, generated output or derived voice data to improve a provider's general or shared models. It does not prohibit processing needed to create the requested private voice resource. Retention, voice publication, licensing, lawful use and network isolation remain separate decisions.
+
+The [2026-10-27 public-source refresh](analyses/media-refresh-2026-10-27.md) found no basis to change these classifications. It does not renew runtime policy expiry, authenticate account settings or promote the reported HeyGen opt-out beyond a user assertion.
+
+## Default and evidence boundary
+
+The portable [policy module](../lib/media/training.ts) represents `excluded`, `permitted`, `conditional` and `unknown` source policy states. Evaluation returns effective `excluded`, `permitted` or `blocked`, eligibility and evidence identifiers. Missing metadata and unknown or stale policy remain blocked, including explicit backend/model selection. General training is disabled by default. A source-backed `permitted` state becomes eligible only with a per-invocation `allowTraining: true`; that flag changes neither provider settings nor later invocations.
+
+The [host resolver](../app/media/training.ts) binds a policy to the exact backend, host, account, operation, model and route revision. Its review date is fixed at 2026-10-25 and expires 2026-11-24; restarting the process does not renew research. The same deadline gates all five local routes, including inspection, conversion and recording. This conservative review-freshness requirement needs an explicit metadata review; training opt-in cannot override expiry. Pure decisions receive epoch milliseconds; host/domain integration supplies the clock. Policy or account configuration changes invalidate evidence with different revisions.
+
+An account exclusion needs both current documentary evidence and a live authenticated identity receipt. Evidence names a provider's nonsecret credential identifier, account/config revision, policy revision, exact scope, condition, source URL, artifact SHA-256, reviewer, review/expiry dates and invalidation state. Assertions remain visibly labeled `user-assertion` and cannot satisfy a condition. A hash records artifact identity; it does not prove that the contents are true. A document or provider response still requires an accountable review.
+
+A live binding identifies backend, host, account and credential identifier, with verification/expiry times no more than five minutes apart. It is supplied by the authenticated host operation, never accepted from account configuration. This prevents exclusion evidence from silently following a replacement credential. Authentication establishes account identity, not the account's training setting; the reviewed document establishes that separate condition. Missing, stale, conflicting or mismatched evidence fails closed. No persistent credential fingerprint store is introduced.
+
+Passive listing/planning has no live identity receipt and therefore cannot assert a conditional exclusion. Execution must resolve the current binding and policy before ranking a conditional route or uploading content, then recheck before the provider effect. Providers without an implemented authenticated identity adapter remain unresolved for exclusions. A known training-permitted default can still be explicitly authorized; an unknown policy cannot.
+
+## Reviewed provider distinctions
+
+| Route | Reviewed general-training position | What the boundary requires |
+|---|---|---|
+| Provisioned local FFmpeg, whisper.cpp, Piper, Chatterbox and OmniVoice | The reviewed local adapters have no provider-training route | Trusted executable/assets and an unchanged supported operation; this does not attest that arbitrary installed code cannot access the network. See [local speech reports](analyses/media-reviews.md) and [OmniVoice](projects/external--omnivoice.md). |
+| OpenAI direct API | Excluded unless the organization opts in | Current sharing-setting evidence and live account binding; neither an API key nor ordinary API default proves the current account setting. [Policy report](projects/service--openai-speech.md). |
+| ElevenLabs direct API | Standard data may improve models; Enterprise coverage or a saved opt-out can exclude it | Exact account/operation evidence and binding. The documented opt-out applies prospectively; voice clone retention has separate rules. [Report](projects/service--elevenlabs-speech.md#training-policy-review-2026-10-25). |
+| HeyGen direct API | Non-enterprise content may improve models; Enterprise and completed opt-out paths exist | Matching Enterprise coverage or completed opt-out evidence and live identity. Free/Turbo status is not a training exclusion. [Report](projects/service--heygen-voice.md#training-policy-review-2026-10-25). |
+| Fish direct API | Standard terms permit improvement; eligible ZDR processing can exclude it | Exact model/feature/operation coverage. Persistent clone creation cannot reuse a general synthesis ZDR record; use operation-specific evidence. [Report](projects/external--fish-speech.md#training-policy-review-2026-10-25). |
+| Other hosted candidates, proxies and third-party hosts | Not reviewed in this policy increment | Unknown and blocked until the actual host, contract and operation are reviewed. A model vendor's terms cannot substitute for hosting terms. |
+
+## Result disclosure
+
+[Result validation](../lib/media/index.ts) rejects a supplied training decision that contradicts the authorized plan. If the result omits that decision, the library fills it from the authorized plan. This is an authorization record, not an independently authenticated report of the provider's actual data use. The [provenance fixtures](../test/media-policy-provenance.test.ts) cover both paths and verify that failed remote identity discovery does not prevent an eligible automatic local route.
+
+## Checks and limits
+
+Focused fixtures cover missing/unknown metadata, per-invocation opt-in without mutation, documentary assertions, artifact requirements, credential replacement, identity/route/model mismatch, expiry, conflicting evidence and denial before a composed execution effect. See [tests](../test/media-training.test.ts). Assembled runtime verification belongs to the [runtime contract](media-runtime.md); source review and synthetic fixtures are not authenticated checks of a user's provider account or a live inference test.
+
+The saved user analysis was read without modifying it. Its project-relative provenance and SHA-256 are recorded in the [supplemental evidence ledger](data/media-training-review-2026-10-25.json). Official policies were independently checked; no private recordings, credentials or provider account data were read for this research. Opt-out requests, provider setting changes, purchases and voice uploads were not performed.

@@ -1,0 +1,39 @@
+# agentic-stack
+
+Source: [agentic-stack](https://github.com/codejunkie99/agentic-stack) · Category: [ai-agents](../categories/ai-agents.md)
+
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `3848f275f5d227f355984d6c9ba67072202f94f9`; commit timestamp `2026-09-26T23:29:05+05:30`; 274 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/codejunkie99/agentic-stack/blob/3848f275f5d227f355984d6c9ba67072202f94f9/README.md)):
+
+> Keep one portable memory-and-skills layer across coding-agent harnesses, so switching tools doesn't reset how your agent works. A portable `.agent/` folder (memory + skills + protocols) that plugs into Claude Code, Cursor, Windsurf, OpenCode, OpenClaw, GitHub Copilot CLI, Google Gemini CLI, Hermes, Pi Coding Agent, Codex, Autohand Code CLI, Antigravity, or a DIY Python loop — and keeps its knowledge when you switch.
+
+Build/package evidence: [docs/demo/package.json](https://github.com/codejunkie99/agentic-stack/blob/3848f275f5d227f355984d6c9ba67072202f94f9/docs/demo/package.json); [requirements.txt](https://github.com/codejunkie99/agentic-stack/blob/3848f275f5d227f355984d6c9ba67072202f94f9/requirements.txt)
+
+License evidence: [LICENSE](https://github.com/codejunkie99/agentic-stack/blob/3848f275f5d227f355984d6c9ba67072202f94f9/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped update review
+
+Reviewed commit `11a75e16b6cb08a436b3124474273fdb9f08b4de` (commit date `2026-10-12T19:34:40+05:30`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete 48-path inventory; focused DAG validation, dispatch, verdict, approval and scheduling implementation; full plan CLI; selected orchestration fixtures. Memory/evolution/proactive modules and cross-process crash recovery were not audited.
+
+The new planner checks [cycles, executor eligibility and declared dependency artifacts](https://github.com/codejunkie99/agentic-stack/blob/11a75e16b6cb08a436b3124474273fdb9f08b4de/.agent/harness/dag.py#L205-L275), writes prompts before dispatch, and [withholds output references after failed verdicts](https://github.com/codejunkie99/agentic-stack/blob/11a75e16b6cb08a436b3124474273fdb9f08b4de/.agent/harness/dag.py#L406-L456). Suspended nodes produce evidence and explicit continue/abandon/replan resolutions. [Fixtures](https://github.com/codejunkie99/agentic-stack/blob/11a75e16b6cb08a436b3124474273fdb9f08b4de/tests/test_orchestration_evolution_memory.py#L334-L436) cover admission, blocked dependents, exceptions and output-limit classification.
+
+The guarantees are narrower than the terminology suggests. [run_bounded](https://github.com/codejunkie99/agentic-stack/blob/11a75e16b6cb08a436b3124474273fdb9f08b4de/.agent/harness/dag.py#L108-L128) captures full subprocess streams before slicing, so its cap bounds stored text rather than process-output memory. [Verdicts](https://github.com/codejunkie99/agentic-stack/blob/11a75e16b6cb08a436b3124474273fdb9f08b4de/.agent/harness/dag.py#L370-L404) can accept nonempty exit-zero text when no independent verifier is configured; string/regex checks do not establish task correctness. The host then records quality 1.0 for that result, which must not be reused as an empirical success label without its verification scope.
+
+[Parallel waves](https://github.com/codejunkie99/agentic-stack/blob/11a75e16b6cb08a436b3124474273fdb9f08b4de/.agent/harness/dag.py#L598-L631) select ready nodes by count while dispatch uses the shared project root. No workspace-conflict admission or lease fencing is established by this path. Approval depends on editable plan/card declarations, so those files must be trusted policy inputs. **Disposition:** reuse the explicit exception and artifact-reference patterns, while Teamagent retains independent acceptance checks, isolated writing workers, bounded streaming capture and transactional task/lease ownership.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.

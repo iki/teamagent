@@ -27,6 +27,21 @@ Pilot as an optional richer memory service and borrow its retain/recall/reflect 
 
 Related directions: [memory](../memory.md) · [evolution](../evolution.md) · [decisions](../decisions.md).
 
+
+## Change review - 2026-10-28
+
+**Reflect distinguishes empty answers and completed JSON repair from cutoff output but citation membership is only a first check.** Reviewed commit `1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf` (commit date `2026-10-27T13:37:18-04:00`). Compared with `f7dd3f4fd7420f7beec60c32c965e5e5cf7be066`; the complete Git comparison contains 2202 changed paths.
+
+Reflect divides a remaining context allowance across concurrent tool calls, but deliberately floors each request above zero, so the sum can still exceed the remainder. Parallel tool execution and split-synthesis map calls use gather over all tasks/chunks; the reviewed call sites have no local concurrency cap. Oversized history is split into claim summaries then reduced instead of silently dropping whole blocks, but summarization and the final reduce remain model transformations with separate coverage and resource needs.
+
+JSON repair is restricted to completed finish reasons, avoiding invented closing delimiters that make cutoff output look complete. Empty done/final answers raise explicit errors rather than storing placeholders. The done path filters listed IDs to retrieved IDs and strips unseen IDs after a length rewrite, yet malformed citation fields become empty lists and retrieved membership does not establish claim support. answer_found defaults to true unless explicitly false. These permissive cases and repaired structures must not be mistaken for independently verified completion.
+
+Evidence: [hindsight-api-slim/hindsight_api/engine/reflect/agent.py:104-118](https://github.com/vectorize-io/hindsight/blob/1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf/hindsight-api-slim/hindsight_api/engine/reflect/agent.py#L104-L118) · [hindsight-api-slim/hindsight_api/engine/reflect/agent.py:1110-1196](https://github.com/vectorize-io/hindsight/blob/1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf/hindsight-api-slim/hindsight_api/engine/reflect/agent.py#L1110-L1196) · [hindsight-api-slim/hindsight_api/engine/reflect/agent.py:1881-1945](https://github.com/vectorize-io/hindsight/blob/1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf/hindsight-api-slim/hindsight_api/engine/reflect/agent.py#L1881-L1945) · [hindsight-api-slim/hindsight_api/engine/reflect/agent.py:2437-2655](https://github.com/vectorize-io/hindsight/blob/1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf/hindsight-api-slim/hindsight_api/engine/reflect/agent.py#L2437-L2655).
+
+**Harness consequence:** Keep finish reason, repair provenance, source manifest and incomplete citations visible. Use hard aggregate admission/concurrency bounds in addition to per-tool token requests, and validate claim-to-evidence support after every rewrite/reduce. Preserve no-answer failures and require typed completion fields instead of turning malformed/missing judgments into successful answers.
+
+**Scope and limits:** Static selected reflect budgeting, synthesis, JSON repair and done-result regions within the 2,202-path comparison. Full provider/transport limits, prompt splitter, citation presenter and storage write barriers were not audited or executed; upstream benchmark comments are not reproduced measurements.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hindsight](https://github.com/vectorize-io/hindsight); analyzed commit `f7dd3f4fd7420f7beec60c32c965e5e5cf7be066`; commit date 2026-10-02T18:52:39+02:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--hindsight.md).
+Analysis metadata: source [hindsight](https://github.com/vectorize-io/hindsight); analyzed commit `1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf`; commit date 2026-10-27T13:37:18-04:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--hindsight.md).
 <!-- teamagent-analysis:end -->

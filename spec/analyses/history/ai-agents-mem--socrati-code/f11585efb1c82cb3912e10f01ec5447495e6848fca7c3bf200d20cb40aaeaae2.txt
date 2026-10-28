@@ -1,0 +1,44 @@
+# socrati-code
+
+Source: [socrati-code](https://github.com/giancarloerra/SocratiCode) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `1e829bf7ddf1e34c4cc6713227f00422cee791cc`; commit timestamp `2026-10-02T17:37:55+01:00`; 292 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/giancarloerra/SocratiCode/blob/1e829bf7ddf1e34c4cc6713227f00422cee791cc/README.md)):
+
+> "There is only one good, knowledge, and one evil, ignorance."* — Socrates The open-source codebase context engine: give any AI instant automated knowledge of your entire codebase (and infrastructure) — at scale, zero configuration, fully private, completely free.
+
+Build/package evidence: [extension/package.json](https://github.com/giancarloerra/SocratiCode/blob/1e829bf7ddf1e34c4cc6713227f00422cee791cc/extension/package.json); [package.json](https://github.com/giancarloerra/SocratiCode/blob/1e829bf7ddf1e34c4cc6713227f00422cee791cc/package.json)
+
+License evidence: [LICENSE](https://github.com/giancarloerra/SocratiCode/blob/1e829bf7ddf1e34c4cc6713227f00422cee791cc/LICENSE); [LICENSE-COMMERCIAL](https://github.com/giancarloerra/SocratiCode/blob/1e829bf7ddf1e34c4cc6713227f00422cee791cc/LICENSE-COMMERCIAL) Classification hint: AGPL; inspect version. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Ambiguity limits stop definition resolution and report totals, while Qdrant retry is narrowly targeted.** Reviewed commit `dae6d3a073f9b2df08b52921b08640ceb4e1330a` (commit date `2026-10-24T00:34:57+01:00`). Compared with `1e829bf7ddf1e34c4cc6713227f00422cee791cc`; the complete Git comparison contains 37 changed paths.
+
+The impact, flow and symbol tools accept an optional positive integer limit and display shown-versus-total counts with file-narrowing advice. getSymbolContextResult stops after that many successfully resolved definitions, reports the filtered name-index total/file count and releases its reader token in finally; a stale entry does not consume the result allowance. New mock fixtures check that a limit of one reads one valid definition payload and can advance past a stale one. The limit is neither a mandatory default nor a hard service maximum, and each selected definition can still expand all callers/callees. Totals describe index matches, including unresolved entries, rather than a verified complete result set.
+
+The symbol store wraps its Qdrant operations with one retry only when an UND_ERR_SOCKET code appears within five cause-chain entries. A second failure or other error propagates. This recognizes that a server may have applied the first request; deterministic IDs and replay-safe operations matter. Collection creation already accepts an already-exists response. The wrapper itself provides no backoff, deadline or cancellation, and replaying a destructive collection operation is not a concurrency-safe transaction when another actor can recreate or modify the collection between attempts.
+
+Evidence: [src/services/graph-impact.ts:198-232](https://github.com/giancarloerra/SocratiCode/blob/dae6d3a073f9b2df08b52921b08640ceb4e1330a/src/services/graph-impact.ts#L198-L232) · [src/services/graph-impact.ts:541-670](https://github.com/giancarloerra/SocratiCode/blob/dae6d3a073f9b2df08b52921b08640ceb4e1330a/src/services/graph-impact.ts#L541-L670) · [src/tools/graph-tools.ts:482-533](https://github.com/giancarloerra/SocratiCode/blob/dae6d3a073f9b2df08b52921b08640ceb4e1330a/src/tools/graph-tools.ts#L482-L533) · [src/tools/graph-tools.ts:628-666](https://github.com/giancarloerra/SocratiCode/blob/dae6d3a073f9b2df08b52921b08640ceb4e1330a/src/tools/graph-tools.ts#L628-L666) · [src/index.ts:307-350](https://github.com/giancarloerra/SocratiCode/blob/dae6d3a073f9b2df08b52921b08640ceb4e1330a/src/index.ts#L307-L350) · [src/services/symbol-graph-store.ts:34-86](https://github.com/giancarloerra/SocratiCode/blob/dae6d3a073f9b2df08b52921b08640ceb4e1330a/src/services/symbol-graph-store.ts#L34-L86) · [src/services/symbol-graph-store.ts:544-576](https://github.com/giancarloerra/SocratiCode/blob/dae6d3a073f9b2df08b52921b08640ceb4e1330a/src/services/symbol-graph-store.ts#L544-L576) · [tests/unit/graph-impact.test.ts:692-756](https://github.com/giancarloerra/SocratiCode/blob/dae6d3a073f9b2df08b52921b08640ceb4e1330a/tests/unit/graph-impact.test.ts#L692-L756).
+
+**Harness consequence:** Carry over separate shown/total counts, explicit ambiguity and reader cleanup. Enforce bounded defaults/maxima for definition resolution, edge expansion and payload reads, retaining unresolved counts instead of describing them as absent. Restrict retries to operations with proven replay semantics under concurrent writers and tie them to deadlines, cancellation and generation identity.
+
+**Scope and limits:** Static scoped review of ambiguity/payload limits and socket retry behavior in the 37-path comparison, with new limit fixture bodies. The larger C# symbol extraction/resolution changes, complete graph traversal, storage generation lifecycle and live Qdrant behavior were not audited or executed.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [socrati-code](https://github.com/giancarloerra/SocratiCode); analyzed commit `1e829bf7ddf1e34c4cc6713227f00422cee791cc`; commit date 2026-10-02T17:37:55+01:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--socrati-code.md).
+<!-- teamagent-analysis:end -->

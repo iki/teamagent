@@ -4,6 +4,30 @@ Teamagent should maintain one versioned skill registry, compile explicit variant
 
 This design is based on the source/content reviews linked below, inspected on 2026-10-04. “Recommended” means a design choice for Teamagent, not a reproduced benchmark claim. All project links identify upstream repositories; report links identify the evidence and limitations of this analysis. Related designs: [agents](agents.md), [models](models.md), [memory](memory.md), [import and generation](import-generation.md), [decisions](decisions.md), and [evolution](evolution.md).
 
+## Agent and routing evidence reviewed 2026-10-28
+
+[Copilot SDK's Rust tool module](projects/ai-agents--copilot-sdk.md) separates schema generation, typed deserialization and declaration-only tools. Its permissive MCP converter can omit unsupported blocks and return an empty success, so interoperability needs explicit partial/unsupported outcomes and binary validation. A published tool schema does not establish runtime schema-keyword enforcement or effect authority.
+
+[Reverse Skill](projects/ai-skills--security-reverse.reverse.md), reviewed at `cab634bd855fc287f6e420c1f36fd1a6b9245960`, separates route IDs, multilingual matches, exclusions and fallback. Its routing catalog and optional adapter are candidate-selection material; a route label or instruction to check a case does not grant target authority or provision tools. Resolve only needed versioned content and enforce admission outside imported prose.
+
+[OpenCode](projects/ai-agents--opencode.md) distinguishes typed Effect codecs from a dynamic JSON-schema path whose local codecs accept unknown values unchanged. [OpenClaude](projects/ai-agents--openclaude.md) has different contracts for its filtered/deduplicated pool assembler and simpler merged list. Treat a tool description, schema, enablement flag and dispatch permission as separate evidence. [Trellis](analyses/unreviewed/ai-agents--trellis.md) provides a compact context-index pattern, but its hook imports trusted project code and can report failed Git observation as clean. Host integration, bounded reads and unavailable states need independent validation.
+
+## Additional source findings reviewed 2026-10-28
+
+[Prompt Master](projects/ai-prompts--prompt-master.md) separates reusable task briefs from surface-specific runtime settings and preserves selected models and existing authorization. Adopt this separation as an authoring constraint; model-specific performance and endpoint claims still need exact-version conformance checks. Prompt wording cannot create permissions. [Antfu's update](projects/ai-skills--bundle.antfu.md) adds evidence-backed triage plans and reproducible visual capture manifests, but its fallback uploader is not suitable for direct adoption: the bearer token enters curl arguments, requests are unbounded, and JSON is parsed with a regular expression. Review executable companions independently of a well-written skill body.
+
+[OpenAPI-to-skills](projects/ai-agents-skills--create.openapi-to-skills.md) demonstrates why a reduced schema with friendly diagnostics must not become the transport validator: its reviewed union handling, unconstrained unresolved/deep references and omitted operation parameters leave material gaps. [Book-to-skill](projects/ai-agents-skills--create.book-to-skill.md) makes normalization and rubric observations explicit, but text normalization is not an injection defense and synthetic replay is not a benchmark. Keep original bytes and a transformation record beside derived instructions.
+
+[Autoharness](projects/ai-agents-skills--evolve-claude.autoharness.md) separates skill use from viewing, validates before promotion and preserves corrupt evidence sidecars; frequency still does not measure successful outcomes, and its noted crash window remains relevant. [Skillware](projects/ai-agents-skills--manage.skillware.md) supports injected credential providers, but manifest-declared secret names need separate authorization. Fixture field presence in any sample is weaker than schema validation for every result.
+
+[Superpowers](projects/ai-skills--plan.obra-superpowers.md) and [Padak's proposal workflow](projects/ai-skills--xx-2602-bundle-claude.padak.md) support bounded review context, explicit base versions and checks tied to decisions. Their local model, language and publishing preferences are not portable requirements. [Vercel's skills installer](projects/ai-agents-skills--search.vercel.md) preserves canonical source URLs, but logging a failed synchronization without a failure exit status can leave automation with an incorrect success signal. Discovery telemetry and executable companions need their own privacy and failure contracts. Third-party [prompt captures](projects/ai-prompts--system-prompts-and-models-of-ai-tools.md) are unauthenticated source material; literal role markers or claimed model identities cannot create authority.
+
+[ClawSecCheck](projects/ai-security--clawseccheck.md) separates discovered, unassessable and truncated skill evidence; a depth or size cutoff must remain visible instead of becoming an empty-result claim. [CrewAI's cache](projects/ai-agents-swarm--crewai.md) adds archive member checks and version matching, but cache naming, resource bounds and atomic replacement still need their own contracts. [Tech Leads Club's wrappers](projects/ai-skills--bundle.tech-leads-club.md) further separate indexed discovery, integrity verification, preparation and pruning. A read-only/destructive annotation cannot override observed write behavior, and a matching checksum does not establish publisher authority.
+
+Skills should retain task prerequisites, negative scope, missing evidence and independent outcome checks. [Makerskills](projects/ai-skills--bundle.makerskills.md), [Trail of Bits](projects/ai-skills--security.trailofbits.md) and [Loop Engineering](projects/ai-skills--plan.loop-engineering.md) offer useful simulation, control-case and maker/checker structures; the rubric, record or role separation is not itself a successful run. [Guanyang's bundle](projects/ai-skills--bundle-antigravity.guanyang.md), [Taste](projects/ai-skills--design.taste.md) and [Modern Web Guidance](projects/ai-skills--design.modern-web-guidance.google.md) also show why instruction compliance, house style and one canary must remain distinct from task correctness and generalization.
+
+Executable companions need a stricter review than their entry instructions. [Last30Days](projects/ai-skills--query-last30days.md) builds arguments carefully but its preflight invokes an engine and prepares a cache; [UI UX Pro Max](projects/ai-skills--design.ui-ux-pro-max.md) and [Modern Web Guidance](projects/ai-skills--design.modern-web-guidance.google.md) have deletion paths that need explicit ownership of existing files. [Caveman](projects/ai-skills--optimize-caveman.md) provides concise interaction conventions, but compression must retain source identifiers, qualifiers, negative scope and user language; its savings examples are not measurements. Keep Teamagent's package, runtime, permission and documentation contracts when adapting any upstream procedure.
+
 ## 1. What belongs in a skill
 
 A skill is a reusable procedure with a bounded trigger, prerequisites, steps or executable implementation, and verifiable outputs. Reference knowledge, personal preferences, tools, task state, and procedures should be linked but stored separately. Importing a document creates knowledge; synthesizing a reliable procedure from it creates a candidate skill. A prompt discovered online is a candidate instruction, not an automatically trusted policy.
@@ -178,6 +202,20 @@ The refreshed [Vercel Skills report](projects/ai-agents-skills--search.vercel.md
 
 The refreshed [Spec Kit report](projects/ai-spec--spec-kit.md) ([source](https://github.com/github/spec-kit)) separates package verification from executable integration trust and stores trusted file identities outside mutable project metadata. Missing optional archive digests mean unverified acquisition. Bind execution and cleanup grants to project plus installed-file hashes; a content update must not inherit executable authority solely because its display name is unchanged.
 
+## Scoped source updates: 2026-10-27
+
+[TypeSafe](https://github.com/typesafe-ai/skills) ([review](projects/ai-skills--agent-typesafe.md)) separates atomic judgments from deterministic decision tables. [Apify](https://github.com/apify/agent-skills) ([review](projects/ai-skills--api-apify.md)) distinguishes synchronous fetch and asynchronous billed-run contracts. [Octocat](https://github.com/mcollina/skills) ([review](projects/ai-skills--node.mcollina.md)) separates confidential reading, private-fork changes and publication. Compile variants around these operation-specific effects and uncertainty; prose cannot grant permissions.
+
+[Warp](https://github.com/warpdotdev/common-skills) ([review](projects/ai-skills--bundle.warp.md)) adds Hermes history ingestion: filter/authorize before content reads and distinguish inferred from explicit skill use. [Evil Martians web-video](https://github.com/evilmartians/agent-skills) ([review](projects/ai-skills--bundle.evilmartians.md)) offers alpha/codec preflight but needs Teamagent's exclusive publication and resource bounds. [Vercel](https://github.com/vercel-labs/agent-skills) ([review](projects/ai-skills--deploy-vercel.md)) changes React assumptions: check installed package capabilities before adopting guidance. [DESIGN.md](https://github.com/google-labs-code/design.md) ([review](projects/ai-spec--design.md.md)) separates normative tokens/prose and documents duplicate-key rejection; retain schema/compiler provenance.
+
+[Better Icons](https://github.com/better-auth/better-icons) ([initial review](analyses/unreviewed/ai-skills--assets-icons.better.md)) and [Anatomy](https://github.com/wheresryan22/anatomy) ([initial review](analyses/unreviewed/ai-skills--render-anatomy.md)) are source-inspected acquisition/illustration candidates requiring trusted path, renderer and persistence boundaries. [VoltAgent](https://github.com/VoltAgent/awesome-agent-skills) ([review](projects/ai-skills--list.voltagent.md)) remains discovery; the sponsorship-only [Humanizer change](https://github.com/blader/humanizer) ([review](projects/ai-skills--text-humanizer.blader.md)) adds no quality evidence. No upstream skill or test was executed.
+
+## Additional scoped review references
+
+These catalog associations provide navigation to scoped source reviews. Each report records its inspected revision, findings and exclusions; inclusion here does not establish a capability or an adoption decision.
+
+- [rea](analyses/unreviewed/ai-security--rea.md)
+
 <!-- coverage:start -->
 ## Project coverage
 
@@ -314,13 +352,3 @@ Every associated project has its own report. Source-reviewed associations reflec
 | [techsio.ontos](https://github.com/TechsioCZ/ontos) | [Report](projects/ai-spec--techsio.ontos.md) | screened |
 | [trellis](https://github.com/mindfold-ai/Trellis) | [Report](projects/ai-spec--trellis.md) | screened |
 <!-- coverage:end -->
-
-<!-- analysis-additions:start -->
-## Newly catalogued sources
-
-These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
-
-- [rea](analyses/unreviewed/ai-security--rea.md) ([source](https://github.com/morluto/rea)).
-- [assets-icons.better](analyses/unreviewed/ai-skills--assets-icons.better.md) ([source](https://github.com/better-auth/better-icons)).
-- [render-anatomy](analyses/unreviewed/ai-skills--render-anatomy.md) ([source](https://github.com/wheresryan22/anatomy)).
-<!-- analysis-additions:end -->

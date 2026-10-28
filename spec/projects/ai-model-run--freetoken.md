@@ -29,6 +29,19 @@ Prototype under workload measurements. Hardware support, quantization correctnes
 
 [Models](../models.md) · [Decisions](../decisions.md) · [Memory](../memory.md)
 
+
+## Change review - 2026-10-28
+
+**Pure cache sizing rejects impossible plans while readiness metrics conflate missing and zero.** Reviewed commit `9221fd7fc2b923813d7f9563c6c08f0a38497590` (commit date `2026-10-26T22:38:53-07:00`). Compared with `d3512b43affe981465e03ee28cbd88f49c39b9aa`; the complete Git comparison contains 522 changed paths.
+
+The cache-budget policy computes available pool bytes from a recorded pre-model free-memory baseline, one memory-ratio application, model weights and fixed cache costs. It reserves KV pages before allocating expert slots, enforces a kernel slot cap, disables prefill overlap when the cap cannot hold two expert layers, and asserts that the final minimum geometry fits before allocation. The engine passes measured bank row bytes, pool-specific costs and recurrent-state cost into this policy. Read fixtures cover insufficient budgets, slot caps, overlap, byte accounting and applying the ratio once. Separately, cache-status telemetry deliberately catches measurement errors and substitutes zero; zero therefore means either absent cache or unavailable measurement, and should not be interpreted as a measured zero-cost configuration. Assertions and arithmetic are useful reference logic but are not a complete validated external configuration boundary.
+
+Evidence: [python/freetoken/engine/cache_budget.py:1-140](https://github.com/FlashML-org/FreeToken/blob/9221fd7fc2b923813d7f9563c6c08f0a38497590/python/freetoken/engine/cache_budget.py#L1-L140) · [python/freetoken/engine/engine.py:692-717](https://github.com/FlashML-org/FreeToken/blob/9221fd7fc2b923813d7f9563c6c08f0a38497590/python/freetoken/engine/engine.py#L692-L717) · [python/freetoken/kvcache/cache_status.py:16-71](https://github.com/FlashML-org/FreeToken/blob/9221fd7fc2b923813d7f9563c6c08f0a38497590/python/freetoken/kvcache/cache_status.py#L16-L71) · [python/freetoken/kvcache/cache_status.py:74-100](https://github.com/FlashML-org/FreeToken/blob/9221fd7fc2b923813d7f9563c6c08f0a38497590/python/freetoken/kvcache/cache_status.py#L74-L100) · [python/freetoken/kvcache/cache_status.py:139-197](https://github.com/FlashML-org/FreeToken/blob/9221fd7fc2b923813d7f9563c6c08f0a38497590/python/freetoken/kvcache/cache_status.py#L139-L197) · [tests/engine/test_cache_budget.py:1-122](https://github.com/FlashML-org/FreeToken/blob/9221fd7fc2b923813d7f9563c6c08f0a38497590/tests/engine/test_cache_budget.py#L1-L122).
+
+**Harness consequence:** Separate deterministic resource planning from GPU side effects and retain the measured baseline, model revision, units and headroom assumptions in reservation receipts. Use typed validation/errors rather than removable assertions for external inputs. Represent cache telemetry as measured/unavailable/not-applicable, and measure real peak allocation and concurrent admission before adopting this engine or promising fit.
+
+**Scope and limits:** Scoped source and arithmetic-fixture inspection within a 522-path comparison. No upstream tests, GPU allocation, model weights, kernels, runtime cache rebuild or throughput/quality benchmark ran; other changed engine/server/model code remains outside this slice.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [freetoken](https://github.com/FlashML-org/FreeToken); analyzed commit `d3512b43affe981465e03ee28cbd88f49c39b9aa`; commit date 2026-10-01T16:59:45-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-run--freetoken.md).
+Analysis metadata: source [freetoken](https://github.com/FlashML-org/FreeToken); analyzed commit `9221fd7fc2b923813d7f9563c6c08f0a38497590`; commit date 2026-10-26T22:38:53-07:00; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-run--freetoken.md).
 <!-- teamagent-analysis:end -->

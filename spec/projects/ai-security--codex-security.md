@@ -24,6 +24,15 @@ This entry was catalogued under **ai-security**. Its category places it in the c
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`fd01ea565cb23c834f99a815043ab1c4f3b76f02`](https://github.com/openai/codex-security/commit/fd01ea565cb23c834f99a815043ab1c4f3b76f02). Scope: Read complete scan skill-path/session helpers, retry helper and two security workflow documents. Policy/authentication/runtime implementations and referenced rubric/schema files remain outside scope.
+
+The [patch-risk workflow](https://github.com/openai/codex-security/blob/fd01ea565cb23c834f99a815043ab1c4f3b76f02/plugins/codex-security/skills/assess-patch-risk/SKILL.md) binds an immutable patch hash and base/head, distinguishes impact, likelihood, protection, recovery and confidence, and labels recommendations advisory rather than merge authority. The [attack-path workflow](https://github.com/openai/codex-security/blob/fd01ea565cb23c834f99a815043ab1c4f3b76f02/plugins/codex-security/skills/attack-path-analysis/SKILL.md) retains candidate identities and explicit suppressed/deferred decisions. These are useful review contracts; their prose and named validators are not evidence that every execution enforces them, and the referenced schemas/rubrics were not read here.
+
+The [skill-config helper](https://github.com/openai/codex-security/blob/fd01ea565cb23c834f99a815043ab1c4f3b76f02/sdk/typescript/src/scan-skill-paths.ts) disables native injection from an installed plugin under the denied credential home while preserving malformed settings for native diagnostics. Its containment helper was not inspected. [Session filtering](https://github.com/openai/codex-security/blob/fd01ea565cb23c834f99a815043ab1c4f3b76f02/sdk/typescript/src/scan-sessions.ts) uses UUIDv7 ordering with a timestamp fallback and a narrowly shaped artifact directory; ordering alone is not an authorization or ancestry proof. The [retry helper](https://github.com/openai/codex-security/blob/fd01ea565cb23c834f99a815043ab1c4f3b76f02/sdk/typescript/src/deduplication/retry.ts) preserves abortability and splits waits above the platform timer maximum, but neither caps retry count nor total elapsed time and does not validate finite delays itself. Adapt provenance and explicit closure; retain independent path, ownership and finite-budget validation. No scans, helper execution or tests were run.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codex-security](https://github.com/openai/codex-security); analyzed commit `775e48ffbf682075e60303eb019131aa2390c3b2`; commit date 2026-10-03T13:30:46-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-security--codex-security.md).
+Analysis metadata: source [codex-security](https://github.com/openai/codex-security); analyzed commit `fd01ea565cb23c834f99a815043ab1c4f3b76f02`; commit date 2026-10-27T20:29:37+05:30; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-security--codex-security.md).
 <!-- teamagent-analysis:end -->

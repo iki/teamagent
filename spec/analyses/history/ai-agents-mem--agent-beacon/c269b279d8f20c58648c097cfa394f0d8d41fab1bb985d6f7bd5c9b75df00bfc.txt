@@ -1,0 +1,40 @@
+# agent-beacon
+
+Source: [agent-beacon](https://github.com/Asymptote-Labs/agent-beacon) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `5937da1cd812660d256c367374b9752316f51cbc`; commit timestamp `2026-10-02T22:06:57-07:00`; 1,659 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/Asymptote-Labs/agent-beacon/blob/5937da1cd812660d256c367374b9752316f51cbc/README.md)):
+
+> Beacon captures **agent session history** across Claude Code, Cursor, Codex, OpenCode, and 20+ other harnesses, then turns useful workflows, corrections, and debugging patterns into reusable knowledge for future agents. A problem solved by one agent shouldn't need to be learned from scratch by another.
+
+Build/package evidence: [beacon-sandbox/go.mod](https://github.com/Asymptote-Labs/agent-beacon/blob/5937da1cd812660d256c367374b9752316f51cbc/beacon-sandbox/go.mod); [browser-extension/package.json](https://github.com/Asymptote-Labs/agent-beacon/blob/5937da1cd812660d256c367374b9752316f51cbc/browser-extension/package.json); [cli/beacon-hooks/go.mod](https://github.com/Asymptote-Labs/agent-beacon/blob/5937da1cd812660d256c367374b9752316f51cbc/cli/beacon-hooks/go.mod); [cli/beacon/go.mod](https://github.com/Asymptote-Labs/agent-beacon/blob/5937da1cd812660d256c367374b9752316f51cbc/cli/beacon/go.mod); [collector-builder/exporter/beaconjsonexporter/go.mod](https://github.com/Asymptote-Labs/agent-beacon/blob/5937da1cd812660d256c367374b9752316f51cbc/collector-builder/exporter/beaconjsonexporter/go.mod)
+
+License evidence: [LICENSE](https://github.com/Asymptote-Labs/agent-beacon/blob/5937da1cd812660d256c367374b9752316f51cbc/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Rule-corpus installation validates before staging but rollback and forwarding cleanup remain best effort.** Reviewed commit `90b19ae0626fd6fd060c62ddbc70827a23242f4e` (commit date `2026-10-27T04:47:59+01:00`). Compared with `5937da1cd812660d256c367374b9752316f51cbc`; the complete Git comparison contains 1417 changed paths.
+
+The extracted rule-store module retains the embedded baseline unless an explicit override directory is supplied; stored IDs override matching baseline IDs, and unsupported newer-spec rules can be returned separately as skipped. Installation decodes, checks rule fixtures and revalidates ID grammar before joining destination paths, then stages files and renames them with backups. This is useful preflight, but it has no store lock, reads/retains all candidate bytes and ignores rollback/backup-restoration errors. HasRuleFiles also maps any directory-read failure to no rules, allowing baseline-only loading after an unreadable store.
+
+The forwarding probe generates a test credential inside the guest, writes private files and records only auth success in request receipts. It captures a later runtime-log snapshot for the comparison and marks missing artifacts. Its stand-in nevertheless reads/decompresses the whole body before checking authentication and uses unbounded threading. Cleanup runs process-name/path-wide pkill commands and ignores their result, so the helper is suitable only for an explicitly isolated guest, not a shared host ownership model.
+
+Evidence: [pkg/asymptoteobserve/rulestore/rulestore.go:103-161](https://github.com/Asymptote-Labs/agent-beacon/blob/90b19ae0626fd6fd060c62ddbc70827a23242f4e/pkg/asymptoteobserve/rulestore/rulestore.go#L103-L161) · [pkg/asymptoteobserve/rulestore/rulestore.go:186-345](https://github.com/Asymptote-Labs/agent-beacon/blob/90b19ae0626fd6fd060c62ddbc70827a23242f4e/pkg/asymptoteobserve/rulestore/rulestore.go#L186-L345) · [pkg/asymptoteobserve/rulestore/rulestore.go:364-413](https://github.com/Asymptote-Labs/agent-beacon/blob/90b19ae0626fd6fd060c62ddbc70827a23242f4e/pkg/asymptoteobserve/rulestore/rulestore.go#L364-L413) · [beacon-sandbox/runner/forward.go:38-114](https://github.com/Asymptote-Labs/agent-beacon/blob/90b19ae0626fd6fd060c62ddbc70827a23242f4e/beacon-sandbox/runner/forward.go#L38-L114) · [beacon-sandbox/runner/forward.go:116-165](https://github.com/Asymptote-Labs/agent-beacon/blob/90b19ae0626fd6fd060c62ddbc70827a23242f4e/beacon-sandbox/runner/forward.go#L116-L165) · [beacon-sandbox/runner/forward.go:232-284](https://github.com/Asymptote-Labs/agent-beacon/blob/90b19ae0626fd6fd060c62ddbc70827a23242f4e/beacon-sandbox/runner/forward.go#L232-L284).
+
+**Harness consequence:** Keep validated, versioned rule data separate from executable detection logic and report skipped specifications and unreadable stores distinctly. Use locked transactional corpus publication with retained recovery receipts, byte/count limits and explicit partial rollback status. Forwarding acceptance fixtures should own exact child processes, bound input/decompression before authentication-sensitive work and independently verify delivery and cleanup.
+
+**Scope and limits:** Static scoped rule-store and forwarding-probe review within the 1,417-path comparison. Rule decoder/checker semantics, threat-detection efficacy, sandbox isolation and the complete runner were not audited; no rule fixture, guest, command or network probe was executed.

@@ -2,9 +2,9 @@
 
 Source: [trellis](https://github.com/mindfold-ai/trellis) · [Analysis](../unreviewed/ai-agents--trellis.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-27T18:19:07.717Z. Status: **unreviewed**. Reviewed SHA: `none`; commit date: unknown; review date: unknown; observed SHA: `f089cb3286071199e84118dee86b6d76aab032f1`.
+Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `f089cb3286071199e84118dee86b6d76aab032f1`; commit date: 2026-09-29T20:35:32+08:00; review date: 2026-10-28T09:27:32.685Z; observed SHA: `f089cb3286071199e84118dee86b6d76aab032f1`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. No comparable review baseline. Working-tree changes: false; shallow history: false; report changed since recorded review: true.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/mindfold-ai/trellis/compare/f089cb3286071199e84118dee86b6d76aab032f1...f089cb3286071199e84118dee86b6d76aab032f1). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
 - Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 

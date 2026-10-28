@@ -1,0 +1,29 @@
+# Trivy: artifact and deployment scanning
+
+Source: [trivy](https://github.com/aquasecurity/trivy) · Category: `ai-security`
+
+Review depth: **source-reviewed**. Snapshot `8f815546c7b57dc11229b0098463dff0cfc9ed2c`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+The inspected scanner factory separates container images, image archives, local filesystems, repositories, and SBOM artifacts. Each path constructs the appropriate artifact representation and returns a scan service plus cleanup behavior. Dependencies include local/remote caches, OS and language package scanning, and vulnerability support. This is a useful unified artifact interface rather than a reason to flatten all scan results into one undifferentiated risk score.
+
+The repository's wider scope includes other scanners, but this focused review does not establish every mode's default settings or coverage. Scanner construction is also distinct from the freshness and completeness of the databases and analyzers used at execution time.
+
+## Harness adoption
+
+Use for worker images, browser/media-render containers, plugin bundles, repositories, and SBOMs. Scan the immutable image digest or exact bundle hash that will execute, not only a mutable tag or its source Dockerfile. Attach results to the plugin/environment release record and prevent a later artifact substitution from inheriting an earlier approval.
+
+Normalize findings by target digest, package/configuration location, rule/vulnerability identity, severity, and evidence. Preserve analyzer coverage and database age. The evolution pipeline should distinguish new findings from inherited ones and expire suppressions when artifacts or policy change.
+
+## Limitations and decision
+
+Adopt as a baseline supply-chain and deployment scanner after selecting relevant modes. It does not inspect agent intent, guarantee a sandbox boundary, or prove a generated codebase safe. Remote cache/server configuration can affect confidentiality of scan metadata. Large media and model artifacts need size/time budgets and selective analysis rather than unlimited recursive processing. Pair with [CodeQL](ai-security--codeql.md) for modeled source flows and [SkillSpector](ai-security--skillspector.md) for instruction/plugin-specific risks; preserve independent evidence instead of averaging away a critical result.
+
+## Evidence read
+
+- [Artifact scanner services and cleanup contracts](https://github.com/aquasecurity/trivy/blob/8f815546c7b57dc11229b0098463dff0cfc9ed2c/pkg/commands/artifact/scanner.go#L1-L110)
+
+## Related directions
+
+[Security](../security.md) · [Agents](../agents.md) · [Generation](../generation.md) · [Evolution](../evolution.md)

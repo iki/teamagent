@@ -2,7 +2,7 @@
 
 Source: [agentfield](https://github.com/Agent-Field/agentfield) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `ba7da28c45e1dace96250fa5914ce7ee304b320d`; commit timestamp `2026-10-01T21:51:23Z`; 2,852 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `7d4fd1fad6f9b98a5b1b2e92e7906659d0dfae61` (commit date `2026-10-27T13:05:29Z`). The original snapshot above remains historical evidence.
+
+**Scope:** Go agent harness wrapper/usage collection and selected runner execution, schema and retry paths, plus runner-initialization fixtures; provider subprocess adapters, control-plane persistence and the full tool loop were not audited.
+
+The [Go harness runner](https://github.com/Agent-Field/agentfield/blob/7d4fd1fad6f9b98a5b1b2e92e7906659d0dfae61/sdk/go/harness/runner.go#L56-L179) isolates structured output in a per-run temporary directory and carries the resolved provider into its result. It uses native schema flags when expressible and otherwise falls back to local validation. However, [local schema enforcement](https://github.com/Agent-Field/agentfield/blob/7d4fd1fad6f9b98a5b1b2e92e7906659d0dfae61/sdk/go/harness/runner.go#L644-L653) explicitly skips validation when the destination is nil, even if a schema is supplied. An error-valued Result can also accompany a nil Go error. Callers need to check the complete result contract, and schema-conforming output is still not independent task verification.
+
+[Usage collection](https://github.com/Agent-Field/agentfield/blob/7d4fd1fad6f9b98a5b1b2e92e7906659d0dfae61/sdk/go/agent/usage.go#L55-L207) distinguishes missing LLM usage from known zero cost, preserves token data independently of provider pricing and strips reasoning variants from model attribution. Harness results with neither tokens nor cost are omitted rather than marked missing. [Transient execution retries](https://github.com/Agent-Field/agentfield/blob/7d4fd1fad6f9b98a5b1b2e92e7906659d0dfae61/sdk/go/harness/runner.go#L318-L383) discard earlier raw attempts when they retry; the later schema-attempt accumulator can only total the raw results it receives. Therefore its cost rollup does not by itself establish that every paid transient attempt was counted. Preserve attempt-level usage and explicit unknown/partial status before using such totals for budgets.
+
+The wrapper lazily initializes one runner under a mutex and exposes static environment/PATH health checks; the inspected fixtures assert shared initialization and option propagation, without exercising real provider health. Retry classification uses error text and bounded exponential waiting, with cancellation delegated to provider execution. A transient-looking error does not prove that retrying an external agent's side effects is safe. Teamagent needs operation identity, host-owned retry policy, deadline/settlement evidence and explicit credential scope before adapting this provider-neutral harness.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agentfield](https://github.com/Agent-Field/agentfield); analyzed commit `ba7da28c45e1dace96250fa5914ce7ee304b320d`; commit date 2026-10-01T21:51:23Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--agentfield.md).
+Analysis metadata: source [agentfield](https://github.com/Agent-Field/agentfield); analyzed commit `7d4fd1fad6f9b98a5b1b2e92e7906659d0dfae61`; commit date 2026-10-27T13:05:29Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agentfield.md).
 <!-- teamagent-analysis:end -->

@@ -24,6 +24,12 @@ This entry was catalogued under **ai-info**. Its category places it in the candi
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit `decf139c432afcb1d269b8492e4982d5ab6d2c52` (commit date `2026-10-22T00:15:46+02:00`). Complete nine-text-file delta across README, contribution criteria, generated catalog and six app manifests; five added logos inventoried but not visually examined.
+
+The [catalog](https://github.com/OpenRouterTeam/awesome-openrouter/blob/decf139c432afcb1d269b8492e4982d5ab6d2c52/README.md) adds CoWork OS, Laminar, Omnara, TraceRoot and ViralMint, with matching app metadata and an Octomind documentation-link correction. These descriptions identify candidates for desktop control, observability, durable execution and media; they do not establish their implementation or account compatibility. [Contribution rules](https://github.com/OpenRouterTeam/awesome-openrouter/blob/decf139c432afcb1d269b8492e4982d5ab6d2c52/CONTRIBUTING.md) now favor attributed OpenRouter usage, with separate signals for libraries/gateways. Usage or popularity is not correctness evidence. Treat prompt tracing as a privacy-review lead before collecting raw content. Retain directory-only discovery status; no linked app implementation, credentials, attribution flow, logo rights or live provider behavior was verified.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [awesome-openrouter](https://github.com/OpenRouterTeam/awesome-openrouter); analyzed commit `17b880faab67db699594c84c9ffb68578ec972e4`; commit date 2026-10-02T21:59:56Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-info--awesome-openrouter.md).
+Analysis metadata: source [awesome-openrouter](https://github.com/OpenRouterTeam/awesome-openrouter); analyzed commit `decf139c432afcb1d269b8492e4982d5ab6d2c52`; commit date 2026-10-21T16:15:46-06:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-info--awesome-openrouter.md).
 <!-- teamagent-analysis:end -->

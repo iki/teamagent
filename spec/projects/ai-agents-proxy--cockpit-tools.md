@@ -24,6 +24,13 @@ This entry was catalogued under **ai-agents-proxy**. Its category places it in t
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`2cfe5e51314bfc0bf70bdda1ba08aed82c7dc8bf`](https://github.com/jlcodes99/cockpit-tools/commit/2cfe5e51314bfc0bf70bdda1ba08aed82c7dc8bf). Scope: Focused review of account-proxy eligibility, card projection, removal/reload implementation and the complete 77-line removal regression suite. Other 1,667 changed paths not fully reviewed.
+
+The [removal helper](https://github.com/jlcodes99/cockpit-tools/blob/2cfe5e51314bfc0bf70bdda1ba08aed82c7dc8bf/src/utils/codexProxyRemoval.ts) separates committed deletion from refresh completion, always rereads account/target projections after partial deletion, and retains a successful catalog result so a refresh retry need not delete twice. [Tests](https://github.com/jlcodes99/cockpit-tools/blob/2cfe5e51314bfc0bf70bdda1ba08aed82c7dc8bf/src/utils/codexProxyRemoval.test.ts) cover partial unbinding, failed projection reads and waiting for all refreshes. The [card projection](https://github.com/jlcodes99/cockpit-tools/blob/2cfe5e51314bfc0bf70bdda1ba08aed82c7dc8bf/src/utils/codexProxyDisplay.ts) also distinguishes saved bindings from live running nodes. Adopt the mutation-versus-projection distinction and truthful partial results, adding durable operation identity for crash recovery because this helper's progress is only in memory. These UI predicates are not server authorization. Native OAuth, credential handling, network kernels, subscription eligibility and packaged behavior remain unaudited in this update; no source tests or application were executed.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cockpit-tools](https://github.com/jlcodes99/cockpit-tools); analyzed commit `2d0f13f9e2b1c7a2b30bab08b3805829808aa85f`; commit date 2026-10-01T17:54:42Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--cockpit-tools.md).
+Analysis metadata: source [cockpit-tools](https://github.com/jlcodes99/cockpit-tools); analyzed commit `2cfe5e51314bfc0bf70bdda1ba08aed82c7dc8bf`; commit date 2026-10-27T14:44:35+08:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--cockpit-tools.md).
 <!-- teamagent-analysis:end -->

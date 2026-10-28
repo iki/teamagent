@@ -1,0 +1,43 @@
+# LangWatch
+
+Source: [langwatch/langwatch](https://github.com/langwatch/langwatch) · Reviewed revision: `8f81ac27475a33c2a58c2fb07b95c109ec721ccb` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [evolution](../evolution.md) · [memory](../memory.md) · [decisions](../decisions.md) · [channels](../channels.md).
+
+## Evidence inspected
+
+- [`platform/app/src/server/app-layer/evaluations/evaluation-execution.service.ts` lines 1–145](https://github.com/langwatch/langwatch/blob/8f81ac27475a33c2a58c2fb07b95c109ec721ccb/platform/app/src/server/app-layer/evaluations/evaluation-execution.service.ts#L1-L145)
+
+## Observed architecture and behavior
+
+The inspected evaluation execution service integrates trace mapping, native evaluators, code evaluators, model environment resolution, and workflow-based evaluators. It carries parent trace/span identifiers into evaluation workflows and validates their shape. Root selection is deterministic when multiple parentless spans exist. Comments describe a causality-depth mechanism to prevent evaluation-generated traces from feeding an unbounded evaluation loop. Internal evaluation access explicitly includes captured inputs, outputs, and costs even when user-facing trace views may be protected.
+
+## Implications and tradeoffs for Teamagent
+
+This supports an evaluation control plane attached to the same event graph as production execution. Teamagent should retain parent task/run IDs, evaluator versions, causality depth, and evaluation cost separately from task cost. Automated evaluators are themselves workloads that can fail, leak data, consume budget, or trigger further monitoring. Trace access and data export therefore need independent scope enforcement. The observed internal protection setting makes it especially important to verify which evaluators receive raw sensitive content, rather than assuming a redacted UI means redacted evaluation inputs. The large platform also brings operational complexity beyond a small local harness.
+
+## Adoption decision
+
+Integrate through an optional observability/evaluation exporter before adopting the whole platform as a required runtime dependency. Keep a local evaluation interface and storage path for offline use. Evaluate code-based verifiers first for deterministic tasks, supplementing them with calibrated model judges. Test evaluator recursion, unavailable models, tenant isolation, interrupted runs, and artifact retention. Review deployment and license requirements separately before selecting a hosted or self-hosted production configuration.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+## 2026-10-28 reconciliation and scoped source review
+
+Reviewed source: [ai-eval--langwatch](https://github.com/langwatch/langwatch) at `81135c1fa9f1b83580e7967eedeb972603180b35`.
+
+**Scope:** Complete 48,889-path inventory and seven selected evaluation-service/rule/test files. All seven were read, including the 304-line test fixture. No upstream tests, evaluator services or billing calls executed.
+
+The analyzed commit 8f81ac27475a33c2a58c2fb07b95c109ec721ccb remains an ancestor. The complete no-renames inventory is 3,816,825 UTF-8 bytes; the former inspection failure was a bounded-output limitation, not absent source. The inspected evaluation implementation moved from platform/app into modules/evaluation; this review does not cover the repository-wide reorganization.
+
+[Evaluation execution](https://github.com/langwatch/langwatch/blob/81135c1fa9f1b83580e7967eedeb972603180b35/modules/evaluation/process/src/features/execution/services/evaluation-execution.service.ts#L148-L288) preserves skipped outcomes, passes field protections into trace reads, and obtains an internal project-scoped proof for earlier-evaluation expansion. Internal queued evaluation defaults to full input/output/cost visibility. [Dispatch](https://github.com/langwatch/langwatch/blob/81135c1fa9f1b83580e7967eedeb972603180b35/modules/evaluation/process/src/features/execution/services/evaluation-execution.service.ts#L311-L399) separates custom, instant-judge, native and remote routes; the shown custom branch does not forward the idempotency key or cancellation signal passed to the remote evaluator branch. These differences require per-route privacy, cancellation and deduplication contracts.
+
+The production [receipt service](https://github.com/langwatch/langwatch/blob/81135c1fa9f1b83580e7967eedeb972603180b35/modules/evaluation/process/src/features/execution/services/evaluation-execution-receipt.service.ts#L12-L87) executes the evaluator before recording cost and explicitly protects cost only. The [cost service](https://github.com/langwatch/langwatch/blob/81135c1fa9f1b83580e7967eedeb972603180b35/modules/evaluation/process/src/features/execution/services/evaluation-cost.service.ts#L28-L59) reuses an already-recorded ID within the project. A failed cost write retains the evaluation result with a null cost ID. This is not provider-side exactly-once inference or proof that repeated calls incur no additional charge.
+
+The [retry tests](https://github.com/langwatch/langwatch/blob/81135c1fa9f1b83580e7967eedeb972603180b35/modules/evaluation/process/src/__tests__/execute-evaluation-retry-receipt.unit.test.ts#L34-L75) use an [in-memory receipt fixture](https://github.com/langwatch/langwatch/blob/81135c1fa9f1b83580e7967eedeb972603180b35/modules/evaluation/process/src/__tests__/support/evaluation-execution.fixtures.ts#L184-L235) that caches complete outcomes. Its reuse assertion must not be attributed to the production receipt service. The crash case explicitly permits two evaluator executions while preserving one cost record. [Retry delay](https://github.com/langwatch/langwatch/blob/81135c1fa9f1b83580e7967eedeb972603180b35/modules/evaluation/process/src/rules/evaluation-retry-window.rules.ts#L6-L37) has a caller-supplied time window and caps exponential delay at ten minutes; it is scheduling policy, not evidence of safe external replay. Teamagent should report executed, cost-recorded, result-published and delivery states separately, expose unavailable cost attribution, and reconcile ambiguous effects before retry.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [langwatch](https://github.com/langwatch/langwatch); analyzed commit `81135c1fa9f1b83580e7967eedeb972603180b35`; commit date 2026-10-27T17:38:54Z; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-eval--langwatch.md).
+<!-- teamagent-analysis:end -->

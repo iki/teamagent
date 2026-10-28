@@ -2,7 +2,7 @@
 
 Source: [open-multi-agent](https://github.com/JackChen-me/open-multi-agent) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `3563a9312b304fffca49873c0dcf6c3b259a0f58`; commit timestamp `2026-10-03T00:26:29+08:00`; 663 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `009bdbe079a9dfa00ec1ae5819b79000a2889135` (commit date `2026-10-24T11:41:14+08:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Tool execution/gating, delegation and path-safety implementation with selected gate/truncation fixtures; durable approval storage and complete built-in-tool behavior were not audited.
+
+The [executor](https://github.com/JackChen-me/open-multi-agent/blob/009bdbe079a9dfa00ec1ae5819b79000a2889135/packages/core/src/tool/executor.ts#L180-L355) validates input before the optional tool gate, rejects malformed decisions, checks cancellation again after awaiting a decision, and compares durable decision content with the current call before execution. These are useful ordering requirements. This scope did not inspect the durable approval store or its trust model, and an omitted gate permits execution; the library hook is not by itself a mandatory authorization service. The inspected [deny/cancel fixtures](https://github.com/JackChen-me/open-multi-agent/blob/009bdbe079a9dfa00ec1ae5819b79000a2889135/packages/core/tests/tool-executor.test.ts#L130-L194) assert that the tool is not invoked after rejection or cancellation during a pending gate.
+
+The [delegation tool](https://github.com/JackChen-me/open-multi-agent/blob/009bdbe079a9dfa00ec1ae5819b79000a2889135/packages/core/src/tool/built-in/delegate.ts) checks roster membership, self/cyclic delegation, depth and available pool slots before waiting for a child, avoiding one nested-pool deadlock path. It returns child success/error and token usage, with shared-memory writes treated as best effort. Teamagent still needs aggregate budgets, durable child identity and explicit memory-write failures where memory is required for the task.
+
+[Path safety](https://github.com/JackChen-me/open-multi-agent/blob/009bdbe079a9dfa00ec1ae5819b79000a2889135/packages/core/src/tool/built-in/path-safety.ts) resolves existing ancestors/symlinks, checks workspace containment and returns the canonical candidate. A null workspace disables that boundary, and a pathname checked before opening remains exposed to mutable-ancestor races; canonicalization is not an OS sandbox. Likewise [output truncation](https://github.com/JackChen-me/open-multi-agent/blob/009bdbe079a9dfa00ec1ae5819b79000a2889135/packages/core/src/tool/executor.ts#L499-L519) bounds returned text after production, with a tiny budget falling back to an unmarked slice. Separate host resource limits, explicit truncation metadata and effect-time filesystem enforcement remain necessary.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [open-multi-agent](https://github.com/JackChen-me/open-multi-agent); analyzed commit `3563a9312b304fffca49873c0dcf6c3b259a0f58`; commit date 2026-10-03T00:26:29+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--open-multi-agent.md).
+Analysis metadata: source [open-multi-agent](https://github.com/JackChen-me/open-multi-agent); analyzed commit `009bdbe079a9dfa00ec1ae5819b79000a2889135`; commit date 2026-10-24T11:41:14+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--open-multi-agent.md).
 <!-- teamagent-analysis:end -->

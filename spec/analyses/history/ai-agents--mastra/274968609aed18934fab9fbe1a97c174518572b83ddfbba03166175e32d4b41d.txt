@@ -1,0 +1,31 @@
+# mastra
+
+Source: [mastra](https://github.com/mastra-ai/mastra) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **focused source review**. Snapshot `b2433eb8d90597295de0327c3756d7a2b83a65ff` (2026-10-03T13:48:39-07:00). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+Durable-agent configuration exposes the difference between replayable streams and recoverable execution.
+
+## Source evidence inspected
+
+- [packages/core/src/agent/durable/create-durable-agent.ts, lines 38–108](https://github.com/mastra-ai/mastra/blob/b2433eb8d90597295de0327c3756d7a2b83a65ff/packages/core/src/agent/durable/create-durable-agent.ts#L38-L108)
+
+## Observed design and algorithms
+
+The factory contract accepts event cache, pubsub, maximum steps and snapshot policy. Cache can be disabled, and the default may be in-memory; this matters for reconnect guarantees. Pending, paused and suspended snapshots are documented as persisted by default, whereas running checkpoints require the durable-agents recovery setting. Per-topic replay can be disabled to reduce publication latency.
+
+## Harness decision
+
+Shortlist Mastra as an application framework alternative if its workflows, agents and memory reduce implementation effort. Independently specify the harness durability contract so an in-memory cache or disabled running checkpoint cannot silently weaken it.
+
+## Limits and tradeoffs
+
+This review inspected the configuration contract, not a full recovery implementation. The word durable does not imply every stream item and in-flight tool is persisted under every configuration. Remote cache latency and cleanup retention affect client catch-up.
+
+## Validation before adoption
+
+Kill the process during a model call, tool call, approval suspension and stream disconnect. Verify configured storage, replay retention and idempotent recovery rather than relying on type names. No tests, live inference, installation, or production operation were performed for this review. License indicator: Apache-2.0; verify the exact files and dependencies before reuse.
+
+Related directions: [agents](../agents.md) · [memory](../memory.md) · [channels](../channels.md).

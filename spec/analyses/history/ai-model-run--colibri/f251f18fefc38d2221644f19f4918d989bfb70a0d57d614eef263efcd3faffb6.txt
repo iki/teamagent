@@ -1,0 +1,31 @@
+# Colibri: tiered local inference and constrained scoring
+
+Source: [colibri](https://github.com/JustVugg/colibri) · Category: `ai-model-run`
+
+Review depth: **source-reviewed**. Snapshot `ce370e87d7b623d7759b52ec2007d75fc5b0e87e`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+Colibri describes storage, RAM, and VRAM as an inference hierarchy for sparse MoE models. The inspected C registry supports named expert-store backends and resolves overrides at static-link initialization. This is a concrete extension point for placement and loading strategies, not evidence that every advertised model fits comfortably or responds quickly on any consumer machine.
+
+The serving-budget helper treats requested output tokens as a ceiling, clamps them to remaining context, and distinguishes read-only scoring from generation that needs an additional token position. That distinction matters for decision models which score a finite answer set without producing a long completion. The README describes a Brio mode returning answer probabilities and entropy; the scoring internals were not inspected in this focused review.
+
+## Harness adoption
+
+Treat Colibri as an optional local engine behind a protocol adapter. Discover actual architecture, quantization, context window, tool-call behavior, modality support, available memory, and measured throughput. Preserve the exact weight and engine identity in traces. The harness should schedule by observed time-to-first-token and completion latency, not parameter count alone.
+
+Investigate finite-choice scoring for routing, retrieval sufficiency, and skill selection. Raw probabilities need calibration on held-out harness tasks; low entropy is not itself proof of correctness, especially out of distribution.
+
+## Limitations and decision
+
+Research pilot rather than default engine until representative task benchmarks are available. Expert streaming can trade fast-memory requirements for storage bandwidth and latency. The README itself disclaims a speed SLA; advertised model rosters and performance are not independently verified here. Test long contexts, simultaneous tasks, cancellation, exact semantics, and memory pressure. Prefer capability-based registration so other local servers can be added without rewriting the harness.
+
+## Evidence read
+
+- [Expert-store registration and backend lookup](https://github.com/JustVugg/colibri/blob/ce370e87d7b623d7759b52ec2007d75fc5b0e87e/c/expert_store_registry.c#L1-L80)
+- [Context-aware serving budget](https://github.com/JustVugg/colibri/blob/ce370e87d7b623d7759b52ec2007d75fc5b0e87e/c/serve_budget.h#L1-L21)
+- [Project claims and Brio scoring description](https://github.com/JustVugg/colibri/blob/ce370e87d7b623d7759b52ec2007d75fc5b0e87e/README.md#L15-L64)
+
+## Related directions
+
+[Models](../models.md) · [Decisions](../decisions.md) · [Agents](../agents.md)

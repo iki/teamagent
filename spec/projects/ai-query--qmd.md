@@ -26,6 +26,21 @@ Adopt the algorithm and expose QMD as an optional retrieval adapter. Start with 
 
 Related directions: [memory](../memory.md) · [decisions](../decisions.md) · [models](../models.md).
 
+
+## Change review - 2026-10-28
+
+**Collection-partitioned vectors introduce resumable migration with a transactional flip and a destructive legacy-shape branch.** Reviewed commit `86d2365d17fc682e491c2c53d1e4a884aee8682a` (commit date `2026-10-14T20:04:06-07:00`). Compared with `26b703c5daa8037df089a8104cbf7eeab4e51874`; the complete Git comparison contains 51 changed paths.
+
+The new vector layout stores one vector per chunk and active collection, with stable integer collection IDs so a rename need not rewrite vector partitions. The migration copies one legacy chunk per immediate transaction and persists its cursor inside that lock. A final immediate transaction copies stragglers, removes vectorless content markers so they can be embedded again, stamps the version and drops the legacy table. Missing sqlite-vec defers migration; a dimension mismatch with an existing partitioned table throws. A post-flip VACUUM failure is warned without reversing the completed migration.
+
+The migration is not uniformly non-destructive: a readable legacy table without the expected hash/sequence key or parseable dimensions is dropped in a versioned step without the normal copy/verification route. The chunk loop skips malformed keys, absent blobs and vectors without a content marker; its copied counter measures visited live slots, not verified retained vectors. The final missing-row query materializes its entire result, so chunk-sized copying does not bound the verification transaction or memory. Existing vector storage is selected from the first available partition without checking equivalent bytes across all partitions.
+
+Evidence: [src/store-migrations.ts:1-294](https://github.com/tobi/qmd/blob/86d2365d17fc682e491c2c53d1e4a884aee8682a/src/store-migrations.ts#L1-L294) · [src/vec-layout.ts:1-303](https://github.com/tobi/qmd/blob/86d2365d17fc682e491c2c53d1e4a884aee8682a/src/vec-layout.ts#L1-L303).
+
+**Harness consequence:** Use stable collection IDs, restartable cursor checkpoints and a locked verify-and-switch transaction as migration references. Teamagent must quarantine unknown layouts rather than drop them, account separately for copied/skipped/re-embedded rows, page verification work and validate dimensions/cardinality/content before an explicit recoverable switch. Collection partitioning improves query scope but cannot replace authorization.
+
+**Scope and limits:** Static implementation review of the complete two new migration/layout files within the 51-path comparison. Store/search integration, metadata filters, migration/concurrency fixtures and actual sqlite-vec compatibility were not fully reviewed or executed; no performance or crash-recovery measurement.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [qmd](https://github.com/tobi/qmd); analyzed commit `26b703c5daa8037df089a8104cbf7eeab4e51874`; commit date 2026-10-01T20:41:53-04:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--qmd.md).
+Analysis metadata: source [qmd](https://github.com/tobi/qmd); analyzed commit `86d2365d17fc682e491c2c53d1e4a884aee8682a`; commit date 2026-10-14T20:04:06-07:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--qmd.md).
 <!-- teamagent-analysis:end -->

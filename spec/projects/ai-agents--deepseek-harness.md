@@ -2,7 +2,7 @@
 
 Source: [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `5badb15009ae1756c3afe0ae0cef1faafc290ccc`; commit timestamp `2026-10-03T11:48:13+08:00`; 14,208 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `22ddee3792402c3e70ec5f86a63c3e3e895a2f60` (commit date `2026-10-23T19:48:59+08:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete persistence structural-review and format-archive/verification modules plus structural-review fixture; compatibility classifier, canonicalization/parser implementation, runtime replay and migration execution were not audited.
+
+The [persistence review helper](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/scripts/persistence-review.ts#L57-L179) keeps every root's classifier result intact while presenting deduplicated structural evidence by canonical type digest. Union variants are matched only through unique literal selectors, including unchanged alternatives in that uniqueness test; ambiguous matches remain additions/removals. Recursive pair tracking prevents a cycle from endlessly expanding without suppressing sibling evidence. The [fixture](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/scripts/persistence-review.spec.ts#L53-L136) describes ordinal/reordering independence, ambiguity, recursive/tuple cases and read-only command behavior. This is a useful separation between explanatory prose and deterministic compatibility policy; the underlying classifier and canonicalizer were not independently validated here.
+
+The [format loader](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/scripts/persistence-formats.ts#L41-L181) requires contiguous historical artifacts, one machine record, matching bilingual records, exact root digests and coverage of every reachable schema type. It rejects unknown record fields and distinguishes current-writer version requirements from legacy header allowances. The [archive path](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/scripts/persistence-formats.ts#L184-L220) permits only the current declared version, uses exclusive creation and removes obsolete source line metadata from the archived inventory. Its source reference is a tag or pull-request number rather than an immutable resolved commit, so Teamagent should additionally retain exact source identity when importing analogous history.
+
+These checks establish consistency of declared schema artifacts, not empirical compatibility of persisted records with a new reader/writer. Complete files are read into memory, the structural walk has no overall work budget, and refreshing multiple generated facts is a sequence of writes rather than an all-files transaction in this module. Teamagent should pair such structural evidence with bounded parsing, explicit migration/replay fixtures and atomic publication of the final versioned artifact set. No generator, classifier test or upstream runtime was executed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness); analyzed commit `5badb15009ae1756c3afe0ae0cef1faafc290ccc`; commit date 2026-10-03T11:48:13+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepseek-harness.md).
+Analysis metadata: source [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness); analyzed commit `22ddee3792402c3e70ec5f86a63c3e3e895a2f60`; commit date 2026-10-23T19:48:59+08:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepseek-harness.md).
 <!-- teamagent-analysis:end -->

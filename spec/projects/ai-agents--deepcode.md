@@ -2,7 +2,7 @@
 
 Source: [deepcode](https://github.com/HKUDS/DeepCode) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `84c37f79c726bd12e74e39541adceb8b5e47b0d5`; commit timestamp `2026-09-28T15:47:21+08:00`; 1,035 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `cd7ab47d09cf059cca391f84b900234baff6b3d3` (commit date `2026-10-27T02:07:15+08:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete headless goal adapter and its completed-goal outcome fixture; goal service decisions, execution security enforcement, RPC transport validation and live execution were not audited.
+
+The [headless adapter](https://github.com/HKUDS/DeepCode/blob/cd7ab47d09cf059cca391f84b900234baff6b3d3/cli/goal_runner.py#L84-L188) retains session and goal identity, rejects replacement of the attached goal during polling, and requires an explicit `executionSettled` field rather than treating a status change as settled execution. A completed goal is returned with its associated outcome; the inspected [fixture](https://github.com/HKUDS/DeepCode/blob/cd7ab47d09cf059cca391f84b900234baff6b3d3/tests/test_goal_runner.py) checks that this paired outcome is not replaced by a later reopened state. The fixture was not executed.
+
+[Resume-budget handling](https://github.com/HKUDS/DeepCode/blob/cd7ab47d09cf059cca391f84b900234baff6b3d3/cli/goal_runner.py#L191-L215) refuses an exhausted budget without an explicit increase and requires a new budget above usage already recorded. Client cancellation sets a detach flag; the worker's exit message explicitly states that the goal continues in the service. Teamagent should retain the operation reference and separate stopping observation from stopping remote work, with a durable policy/identity check on resumption.
+
+The [completion-evidence option](https://github.com/HKUDS/DeepCode/blob/cd7ab47d09cf059cca391f84b900234baff6b3d3/cli/goal_runner.py#L218-L229) appends a requested command to objective text. This adapter does not independently execute or verify that command. Neither an agent-authored COMPLETE outcome nor an instruction to run a check establishes that the check passed; the service's enforcement path would need separate inspection. The polling loop also has no overall timeout here. Preserve explicit bounded execution, evidence receipts and typed transport semantics before applying this pattern.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deepcode](https://github.com/HKUDS/DeepCode); analyzed commit `84c37f79c726bd12e74e39541adceb8b5e47b0d5`; commit date 2026-09-28T15:47:21+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepcode.md).
+Analysis metadata: source [deepcode](https://github.com/HKUDS/DeepCode); analyzed commit `cd7ab47d09cf059cca391f84b900234baff6b3d3`; commit date 2026-10-27T02:07:15+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepcode.md).
 <!-- teamagent-analysis:end -->

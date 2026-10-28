@@ -24,6 +24,13 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`59db609eb1e18aaf59b63284d0e52255aff0c63c`](https://github.com/mattpocock/skills/commit/59db609eb1e18aaf59b63284d0e52255aff0c63c). Scope: Four full current procedures read: handoff, implementation, ticket decomposition and two-axis review. Other changed skills, setup and wizard code remain unreviewed.
+
+The [ticket procedure](https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/to-tickets/SKILL.md) records blocking edges and favors verifiable vertical slices, while explicitly using expand/migrate/contract or a shared integration branch for wide refactors. [Review guidance](https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/code-review/SKILL.md) pins a comparison baseline and separates standards compliance from fulfillment of the originating spec, labeling smell findings as judgment. Adopt explicit dependency graphs and independent review axes, but include working-tree changes when the task concerns uncommitted work: the prescribed HEAD comparison alone excludes them. Handoffs reference existing evidence and require redaction. Automatic commit instructions and publishing tickets still require the task's actual authorization; fixed word limits and automatic auxiliary skills are not Teamagent policy. No tracker operation, handoff recovery or review-quality evaluation was run.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [plan.mattpocock](https://github.com/mattpocock/skills); analyzed commit `d81f3a183412e71a5b1e84ca21bc1a35eea03a60`; commit date 2026-09-29T13:37:40+01:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--plan.mattpocock.md).
+Analysis metadata: source [plan.mattpocock](https://github.com/mattpocock/skills); analyzed commit `59db609eb1e18aaf59b63284d0e52255aff0c63c`; commit date 2026-10-27T07:44:12Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--plan.mattpocock.md).
 <!-- teamagent-analysis:end -->

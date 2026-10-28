@@ -31,6 +31,20 @@ Test a slow or unavailable memory provider, malformed schemas, shutdown with bac
 
 Related directions: [agents](../agents.md) · [memory](../memory.md) · [skills](../skills.md) · [channels](../channels.md).
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `e5ea5fd9ccdf2913c0b21b24eb3d22b321d2e2a6` (commit date `2026-10-27T08:02:46-07:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete emergency-stop helper and dependency-manager runtime module, plus selected platform registry resolution/registration/construction branches and partial delta; scheduler admission call sites, filesystem/lease primitives, installer implementation and tests were not audited.
+
+The [emergency-stop helper](https://github.com/NousResearch/hermes-agent/blob/e5ea5fd9ccdf2913c0b21b24eb3d22b321d2e2a6/agent/estop.py#L31-L138) explicitly pauses new work without killing work already in flight. It checks both profile and fleet-root sentinels and treats a corrupt body as an engaged marker. However, engage returns the intended path even if both writing and touching fail, and disengage can remove one visible marker while another removal fails. Teamagent should expose verified admission state separately from the requested pause/resume action and from cancellation/settlement of existing work. Scheduler call sites and actual filesystem error behavior were not exercised.
+
+The [dependency runtime](https://github.com/NousResearch/hermes-agent/blob/e5ea5fd9ccdf2913c0b21b24eb3d22b321d2e2a6/pm/runtime.py#L113-L215) publishes a new generation under a preparation lock, retains the previous generation on staging failure and takes a parent-held lease before a child can start. Collection skips the selected generation, symlinks, active leases and pre-lease legacy generations. This gives useful upgrade/cleanup ordering, but the lock, lease and atomic-write primitives were not reviewed, and the input identity hashes lock/config bytes plus the interpreter path rather than all executable bytes. Runtime launch and dependency realization remain trusted host effects, not passive capability probes.
+
+The [platform registry](https://github.com/NousResearch/hermes-agent/blob/e5ea5fd9ccdf2913c0b21b24eb3d22b321d2e2a6/gateway/platform_registry.py#L406-L526) separates unloaded membership from resolving a loader and constructing an adapter. Lookup can execute deferred code and wait without a timeout; entries are stored and returned by reference, with last-writer-wins registration. Construction runs a dependency installer after a failed probe and before configuration validation. Thus a configured/enabled platform is not by itself evidence that installation was separately authorized or configuration accepted. Teamagent should keep passive discovery, trusted loading, dependency mutation and connection authorization as distinct steps with immutable scoped descriptors.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hermes-agent](https://github.com/NousResearch/hermes-agent); analyzed commit `3b9a963b8e5cdb804a422755bed9a60fcd778273`; commit date 2026-08-16T21:20:29-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--hermes-agent.md).
+Analysis metadata: source [hermes-agent](https://github.com/NousResearch/hermes-agent); analyzed commit `e5ea5fd9ccdf2913c0b21b24eb3d22b321d2e2a6`; commit date 2026-10-27T08:02:46-07:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--hermes-agent.md).
 <!-- teamagent-analysis:end -->

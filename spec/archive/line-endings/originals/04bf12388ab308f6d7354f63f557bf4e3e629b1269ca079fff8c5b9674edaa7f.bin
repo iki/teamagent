@@ -1,0 +1,29 @@
+# opensage-adk
+
+Source: [opensage-adk](https://github.com/opensage-agent/opensage-adk) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `54d64702e18d195c8f0fed711c6db5dc1d62ab29`; commit timestamp `2026-07-09T11:12:11+08:00`; 711 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/opensage-agent/opensage-adk/blob/54d64702e18d195c8f0fed711c6db5dc1d62ab29/README.md)):
+
+> Next generation agent development kit that enables AI to self-create agent topology, synthesize toolsets, and manage structured memory. Instead of requiring developers to hand-craft agent topology, tool lists, and memory, OpenSage-ADK provides a minimal scaffold that lets the model **create** and **orchestrate** these components at runtime.
+
+Build/package evidence: [agent_library/local_support/server/requirements.txt](https://github.com/opensage-agent/opensage-adk/blob/54d64702e18d195c8f0fed711c6db5dc1d62ab29/agent_library/local_support/server/requirements.txt); [pyproject.toml](https://github.com/opensage-agent/opensage-adk/blob/54d64702e18d195c8f0fed711c6db5dc1d62ab29/pyproject.toml); [third_party/cybergym/pyproject.toml](https://github.com/opensage-agent/opensage-adk/blob/54d64702e18d195c8f0fed711c6db5dc1d62ab29/third_party/cybergym/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/opensage-agent/opensage-adk/blob/54d64702e18d195c8f0fed711c6db5dc1d62ab29/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [opensage-adk](https://github.com/opensage-agent/opensage-adk); analyzed commit `54d64702e18d195c8f0fed711c6db5dc1d62ab29`; commit date 2026-07-09T11:12:11+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--opensage-adk.md).
+<!-- teamagent-analysis:end -->

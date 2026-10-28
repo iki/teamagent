@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`d75b41863510272ed217a3074c7045202b96e93f`](https://github.com/github/awesome-copilot/commit/d75b41863510272ed217a3074c7045202b96e93f). Scope: Full LSP setup and caption-QA skills plus WebMCP launcher-consent test read. Referenced standards, LSP clients, launcher implementation and real browser integration were not reviewed.
+
+The [LSP skill](https://github.com/github/awesome-copilot/blob/d75b41863510272ed217a3074c7045202b96e93f/skills/lsp-setup/SKILL.md) preserves existing configuration and separates user from repository scope, while acknowledging a specific client-version observation rather than claiming universal file discovery. Binary presence and JSON validity are only setup checks; semantic navigation still needs the restarted host. The [WebMCP fixture](https://github.com/github/awesome-copilot/blob/d75b41863510272ed217a3074c7045202b96e93f/skills/webmcpify/tests/workbench-cli.test.mjs) separately tests package-install and browser-download consent, including noninteractive denial, using fake package/browser machinery. It does not demonstrate a real browser or cross-platform launcher.
+
+The [caption procedure](https://github.com/github/awesome-copilot/blob/d75b41863510272ed217a3074c7045202b96e93f/skills/caption-qa/SKILL.md) usefully distinguishes target-specific limits, advice and certification, and recommends rechecking after retiming. Its embedded example silently ignores unparsed blocks and reports an empty cue set as passing; its regex also does not support the stated seconds-only timestamp form. It does not explicitly skip NOTE/STYLE/REGION blocks. Do not adopt it as a delivery gate without format validation and negative fixtures. The quoted standard limits were not independently refreshed here. No installation, captions, browser or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-copilot](https://github.com/github/awesome-copilot); analyzed commit `143a3d976b3c1603cc8932984d5e1f28501cb5fc`; commit date 2026-10-02T08:21:25+10:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--agent-copilot.md).
+Analysis metadata: source [agent-copilot](https://github.com/github/awesome-copilot); analyzed commit `d75b41863510272ed217a3074c7045202b96e93f`; commit date 2026-10-27T15:48:46+11:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--agent-copilot.md).
 <!-- teamagent-analysis:end -->

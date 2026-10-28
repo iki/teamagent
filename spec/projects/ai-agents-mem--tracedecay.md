@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Reconciliation ownership is explicit while cached reads still trust modification times.** Reviewed commit `950f37db306a12bc3503a290ebfedf22b46f0bd3` (commit date `2026-10-27T10:31:27-07:00`). Compared with `413755b1f699477f7ca7d1ca744ed0b4000dedc3`; the complete Git comparison contains 4525 changed paths.
+
+The reconciliation-task wrapper snapshots owners from ready, recovery-required and faulted profile/project slots and skips opening, replacing and retiring slots. Shutdown waits for owners sequentially and aggregates failures. It accepts both CancelledAndJoined and RuntimeUnavailable, whereas retirement clears an attached owner only after CancelledAndJoined and treats the other terminal outcome as an error. Those distinctions are useful lifecycle evidence, but the wrapper contains no aggregate shutdown deadline and does not itself prove the underlying owner's cancellation contract.
+
+The read cache keys project, session, file, mode and a canonical argument hash, with an explicit global-session key. A cache hit compares modification time only; the stored digest is returned rather than recomputed against the current body. Insertion is transactional but trusts the supplied modification time, digest and body. Same-timestamp content replacement can therefore remain stale. The stored signed token count is clamped at zero then cast to u32, leaving oversized values able to wrap; these boundaries have no local content-size or digest validation.
+
+Evidence: [crates/tracedecay-store-runtime/src/session_registry/memory_graph_reconciliation_tasks.rs:1-143](https://github.com/ScriptedAlchemy/tracedecay/blob/950f37db306a12bc3503a290ebfedf22b46f0bd3/crates/tracedecay-store-runtime/src/session_registry/memory_graph_reconciliation_tasks.rs#L1-L143) · [crates/tracedecay-session-memory/src/context/read_cache.rs:1-242](https://github.com/ScriptedAlchemy/tracedecay/blob/950f37db306a12bc3503a290ebfedf22b46f0bd3/crates/tracedecay-session-memory/src/context/read_cache.rs#L1-L242).
+
+**Harness consequence:** Reuse explicit owner states and joined-retirement receipts, while checking the underlying cancellation guarantee and bounding aggregate shutdown. Treat a read cache as a derived optimization keyed by immutable content identity and recipe, not modification time alone; validate stored row types, counts, byte limits and content hashes before reuse.
+
+**Scope and limits:** Scoped static review of two complete implementation files and the embedded argument-hash fixture within the 4,525-path comparison. Runtime-owner internals, graph publication, database migrations and the full application were not audited; no upstream tests or services were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [tracedecay](https://github.com/ScriptedAlchemy/tracedecay); analyzed commit `413755b1f699477f7ca7d1ca744ed0b4000dedc3`; commit date 2026-10-03T11:55:23-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tracedecay.md).
+Analysis metadata: source [tracedecay](https://github.com/ScriptedAlchemy/tracedecay); analyzed commit `950f37db306a12bc3503a290ebfedf22b46f0bd3`; commit date 2026-10-27T10:31:27-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tracedecay.md).
 <!-- teamagent-analysis:end -->

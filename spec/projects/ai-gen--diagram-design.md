@@ -24,6 +24,21 @@ This entry was catalogued under **ai-gen**. Its category places it in the candid
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Diagram ingestion has explicit local bounds while rendering remains a trusted job.** Reviewed commit `c7588454ee986827ec0321cf006616ce9f89c3c2` (commit date `2026-10-27T15:02:25Z`). Compared with `f903933a534ba92cde1c85a28186267b3a317bb2`; the complete Git comparison contains 479 changed paths.
+
+The draw.io extractor caps input metadata at 32 MiB, individual inflation at 64 MiB, pages at 100 and cells per page at 10,000. It rejects DTD/entity declarations, duplicate cell IDs and non-finite numeric geometry, and its cycle walk is iterative. These are substantive hostile-input checks. The input-size decision precedes an unrestricted read, however, and inflation limits apply per payload rather than across all pages. Invalid or absent compressed page content can produce an empty page, while unparsable numeric geometry becomes zero; callers need to distinguish these cases from a faithful extraction.
+
+The render linter blocks network requests with both Chromium resolver rules and request routing, allowing optional fonts only at exact HTTPS hostnames. It reports the browser version and returns an environment failure when Playwright/browser startup is unavailable; render errors become findings. Local file/data/blob access is allowed, and waiting for document.fonts.ready has no explicit evaluation deadline in the inspected path. The linter is useful verification infrastructure for trusted local fixtures, not an isolation boundary for arbitrary imported HTML.
+
+Evidence: [skills/diagram-design/scripts/drawio_extract.py:43-209](https://github.com/cathrynlavery/diagram-design/blob/c7588454ee986827ec0321cf006616ce9f89c3c2/skills/diagram-design/scripts/drawio_extract.py#L43-L209) · [skills/diagram-design/scripts/drawio_extract.py:365-440](https://github.com/cathrynlavery/diagram-design/blob/c7588454ee986827ec0321cf006616ce9f89c3c2/skills/diagram-design/scripts/drawio_extract.py#L365-L440) · [skills/diagram-design/scripts/drawio_extract.py:603-659](https://github.com/cathrynlavery/diagram-design/blob/c7588454ee986827ec0321cf006616ce9f89c3c2/skills/diagram-design/scripts/drawio_extract.py#L603-L659) · [scripts/lint-render.py:309-351](https://github.com/cathrynlavery/diagram-design/blob/c7588454ee986827ec0321cf006616ce9f89c3c2/scripts/lint-render.py#L309-L351) · [scripts/lint-render.py:485-515](https://github.com/cathrynlavery/diagram-design/blob/c7588454ee986827ec0321cf006616ce9f89c3c2/scripts/lint-render.py#L485-L515) · [scripts/lint-render.py:1587-1662](https://github.com/cathrynlavery/diagram-design/blob/c7588454ee986827ec0321cf006616ce9f89c3c2/scripts/lint-render.py#L1587-L1662).
+
+**Harness consequence:** Adopt separate structural extraction and rendered-output verification with explicit environment failures. Add bounded reads, an aggregate expansion/work budget and structured per-page degradation receipts. Run generated or imported executable HTML in a constrained worker with a hard overall deadline and deliberate file/network grants; a network route filter alone is not that containment.
+
+**Scope and limits:** Scoped static inspection of extraction bounds, XML/page handling, cycle traversal and render-linter launch/error paths in the 479-path comparison. Slope/streamgraph validators, the entire drawing toolkit and browser isolation behavior were not audited; no upstream scripts or fixtures were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [diagram-design](https://github.com/cathrynlavery/diagram-design); analyzed commit `f903933a534ba92cde1c85a28186267b3a317bb2`; commit date 2026-10-01T17:03:05Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-gen--diagram-design.md).
+Analysis metadata: source [diagram-design](https://github.com/cathrynlavery/diagram-design); analyzed commit `c7588454ee986827ec0321cf006616ce9f89c3c2`; commit date 2026-10-27T15:02:25Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-gen--diagram-design.md).
 <!-- teamagent-analysis:end -->

@@ -2,7 +2,7 @@
 
 Source: [langsmith-sdk](https://github.com/langchain-ai/langsmith-sdk) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `61793baa489b316c55a53705da7332a80c2e5db0`; commit timestamp `2026-10-02T14:49:29-07:00`; 1,026 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `290f06a628dffb2ca690e389dc48b629f5623312` (commit date `2026-10-16T16:18:32+02:00`). The original snapshot above remains historical evidence.
+
+**Scope:** JavaScript sandbox command handle and service URL helpers; WebSocket transport decoding, server process control, token issuer and end-to-end reconnect tests were not audited.
+
+The [command handle](https://github.com/langchain-ai/langsmith-sdk/blob/290f06a628dffb2ca690e389dc48b629f5623312/js/src/sandbox/command_handle.ts#L188-L295) reattaches to a server-assigned command ID rather than resubmitting its command, tracks stdout/stderr offsets in UTF-8 bytes, and only accepts a matching started frame as a reconnect acknowledgment. This preserves the distinction between an operation and its client connection. Its five-attempt budget is consecutive: matching acknowledgments or data reset it, so it does not bound total lifetime or total reconnects. Output parts accumulate for the final result with no cap in this class; frame validation, duplicate/overlap handling and server offset guarantees were outside this scope.
+
+The [control methods](https://github.com/langchain-ai/langsmith-sdk/blob/290f06a628dffb2ca690e389dc48b629f5623312/js/src/sandbox/command_handle.ts#L297-L370) distinguish closing stdin, killing and reconnecting. Calling `kill()` sends control through the active transport; only a later result/exit provides completion evidence. A lost wait must not trigger command replay, and Teamagent must retain bounded output plus durable operation/offset state across client restarts.
+
+[Service URL helpers](https://github.com/langchain-ai/langsmith-sdk/blob/290f06a628dffb2ca690e389dc48b629f5623312/js/src/sandbox/service_url.ts) distinguish a short-lived token-bearing URL from login-gated access. Refresh is attempted within sixty seconds of expiry, but an invalid expiry suppresses refresh, concurrent calls have no shared in-flight refresh, and the fetch helper relies on default fetch redirect behavior while injecting a custom token header. An adapter needs validated URL/expiry data, destination/redirect policy and coordinated refresh; these helpers do not establish issuer authorization, account eligibility or safe publication of service links.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [langsmith-sdk](https://github.com/langchain-ai/langsmith-sdk); analyzed commit `61793baa489b316c55a53705da7332a80c2e5db0`; commit date 2026-10-02T14:49:29-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--langsmith-sdk.md).
+Analysis metadata: source [langsmith-sdk](https://github.com/langchain-ai/langsmith-sdk); analyzed commit `290f06a628dffb2ca690e389dc48b629f5623312`; commit date 2026-10-16T16:18:32+02:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--langsmith-sdk.md).
 <!-- teamagent-analysis:end -->

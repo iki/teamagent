@@ -2,7 +2,7 @@
 
 Source: [design.md](https://github.com/google-labs-code/design.md) · Category: [ai-spec](../categories/ai-spec.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `9bf8eae67128b6cc55ad9bf86665767deb4c11cd`; commit timestamp `2026-07-27T16:09:10-04:00`; 134 tracked paths.
 
@@ -24,6 +24,12 @@ This entry was catalogued under **ai-spec**. Its category places it in the candi
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-27
+
+Reviewed commit `6e5da5382f41edbba9d73b2c62f33f32e9971f15` (commit date `2026-10-16T14:21:40-04:00`). Complete eight-file spec/generator/renderer/test delta.
+
+The [spec](https://github.com/google-labs-code/design.md/blob/6e5da5382f41edbba9d73b2c62f33f32e9971f15/docs/spec.md) allows front matter plus interleaved YAML blocks, merged into one token tree with each top-level key defined only once. Normative tokens remain separate from explanatory prose. The [renderer](https://github.com/google-labs-code/design.md/blob/6e5da5382f41edbba9d73b2c62f33f32e9971f15/packages/cli/src/linter/spec-gen/renderers.ts) and [generator](https://github.com/google-labs-code/design.md/blob/6e5da5382f41edbba9d73b2c62f33f32e9971f15/packages/cli/src/linter/spec-gen/generate.ts) derive a hybrid example from shared configuration. The [linter test](https://github.com/google-labs-code/design.md/blob/6e5da5382f41edbba9d73b2c62f33f32e9971f15/packages/cli/src/linter/index.test.ts) checks hybrid metadata/tokens and Tailwind output; renderer/compiler changes check wiring. No parser implementation changed, so the positive test is not new proof of duplicate-key rejection. Preserve schema/compiler provenance in source-derived skills. Tests were read, not executed; visual correctness is not established.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [design.md](https://github.com/google-labs-code/design.md); analyzed commit `9bf8eae67128b6cc55ad9bf86665767deb4c11cd`; commit date 2026-07-27T16:09:10-04:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-spec--design.md.md).
+Analysis metadata: source [design.md](https://github.com/google-labs-code/design.md); analyzed commit `6e5da5382f41edbba9d73b2c62f33f32e9971f15`; commit date 2026-10-16T14:21:40-04:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-spec--design.md.md).
 <!-- teamagent-analysis:end -->

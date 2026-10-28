@@ -29,6 +29,14 @@ Adopt as a tool interpreter, not as the sole multi-tenant security boundary. Int
 
 [Agents](../agents.md) · [Import Generation](../import-generation.md) · [Security](../security.md)
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`7a2a7a57d46095bf6cc8195680a13f76f784681b`](https://github.com/vercel-labs/just-bash/commit/7a2a7a57d46095bf6cc8195680a13f76f784681b). Scope: Full rg command facade and Grep-tool boundary tests; threat-model lines 1-110 read. Search/parser implementations, filesystem/network confinement and comparison fixture corpus were not audited.
+
+The [rg boundary tests](https://github.com/vercel-labs/just-bash/blob/7a2a7a57d46095bf6cc8195680a13f76f784681b/packages/just-bash/src/commands/rg/rg.grep-tool.test.ts) distinguish no matches from invalid options, malformed patterns and read failures, preserve successful matches when another path fails, and pin the special quiet-mode success-with-error behavior. That distinction matters when search output becomes model evidence: an exit-zero quiet result does not establish complete coverage. The [command facade](https://github.com/vercel-labs/just-bash/blob/7a2a7a57d46095bf6cc8195680a13f76f784681b/packages/just-bash/src/commands/rg/rg.ts) delegates parser/search logic, so the tests do not substitute for inspecting those implementations.
+
+The sampled [threat model](https://github.com/vercel-labs/just-bash/blob/7a2a7a57d46095bf6cc8195680a13f76f784681b/THREAT_MODEL.md#L1) explicitly trusts host hooks, dependencies and runtime and excludes concurrent hostile host filesystem mutation. It also documents an unbounded overlapping-root mutation queue that is not integrated with cancellation. Adapt explicit trust assumptions and search-error provenance; do not equate an in-process interpreter with OS isolation or complete Bash/ripgrep compatibility. No script, search command, network or tests from this source were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [just-bash](https://github.com/vercel-labs/just-bash); analyzed commit `7537a260e38648e8998db7a95504102ad80b0194`; commit date 2026-10-01T21:34:36+09:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--just-bash.md).
+Analysis metadata: source [just-bash](https://github.com/vercel-labs/just-bash); analyzed commit `7a2a7a57d46095bf6cc8195680a13f76f784681b`; commit date 2026-10-22T08:52:03+09:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--just-bash.md).
 <!-- teamagent-analysis:end -->

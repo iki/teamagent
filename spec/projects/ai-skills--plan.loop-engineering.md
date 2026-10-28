@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`9fb7538bb4c858b3b00dd8d14fc701a20c1e1483`](https://github.com/cobusgreyling/loop-engineering/commit/9fb7538bb4c858b3b00dd8d14fc701a20c1e1483). Scope: Full audit proof-reader, loop-verifier and minimal-fix skills read. Drill execution, proof-writer tests, MCP server and policy enforcement were not audited.
+
+The [proof reader](https://github.com/cobusgreyling/loop-engineering/blob/9fb7538bb4c858b3b00dd8d14fc701a20c1e1483/tools/loop-audit/src/proof.ts) distinguishes present, invalid, stale, failed and untested records and requires both seeded-fault detection and benign acceptance before labeling a guardrail proven. Gate evidence is bound to normalized policy bytes; other canaries expire by age, while breaker evidence is timeless. Neither elapsed time nor a policy hash binds all executable implementation and environment dependencies, and the parser does not authenticate the recorder or require a known guardrail/test-ID set. The label means the supplied record satisfies this local rule, not universal enforcement.
+
+The [verifier](https://github.com/cobusgreyling/loop-engineering/blob/9fb7538bb4c858b3b00dd8d14fc701a20c1e1483/skills/loop-verifier/SKILL.md) separates maker and checker and reports unavailable verification; [minimal-fix](https://github.com/cobusgreyling/loop-engineering/blob/9fb7538bb4c858b3b00dd8d14fc701a20c1e1483/skills/minimal-fix/SKILL.md) constrains the proposal and keeps untrusted issue/log content as data. A worktree alone does not isolate test execution, and skill prose does not enforce denylisted paths. Adapt two-direction fixtures and content-bound receipts with complete executable provenance and host authorization. No drill, verifier, agent or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [plan.loop-engineering](https://github.com/cobusgreyling/loop-engineering); analyzed commit `00e3a66089f8907cdee31f3bd8c2442ec0c98f24`; commit date 2026-10-03T02:44:05Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--plan.loop-engineering.md).
+Analysis metadata: source [plan.loop-engineering](https://github.com/cobusgreyling/loop-engineering); analyzed commit `9fb7538bb4c858b3b00dd8d14fc701a20c1e1483`; commit date 2026-10-27T08:02:05Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--plan.loop-engineering.md).
 <!-- teamagent-analysis:end -->

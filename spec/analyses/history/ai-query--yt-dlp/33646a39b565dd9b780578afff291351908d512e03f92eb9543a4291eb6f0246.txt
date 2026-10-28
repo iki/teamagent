@@ -1,0 +1,20 @@
+# yt-dlp
+
+Source: [yt-dlp](https://github.com/yt-dlp/yt-dlp) · [memory](../../memory.md), [import-generation](../../import-generation.md).
+
+Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-query--yt-dlp.md).
+
+
+## Initial source review - 2026-10-28
+
+**Media extraction needs explicit nested-source provenance and isolated credential caches.** Reviewed commit `f264a6cbd1f630894da0f368df00f8aae50140e0` (commit date `2026-10-26T22:07:14Z`). The enumerated snapshot contains 1235 tracked paths.
+
+The inspected built-in PO-token cache uses a shared process-global dictionary with locked get/store/delete, default capacity 25 and LRU ordering refreshed on a hit. Expired entries are removed on access and an expired replacement does not overwrite a still-valid entry. Equality at the expiry second remains accepted because expiry tests use strictly less-than. The cap limits entry count, not bytes; keys and values are trusted here, and identity/tenant binding belongs to callers not inspected in this cache. Fixtures cover expiry, replacement, eviction and sharing, but not concurrent initialization or a full extraction lifecycle.
+
+The Embedly extractor unwraps nested source URLs and passes the wrapper as referer to the delegated extractor; the Google video-search generator paginates until a page lacks its next marker, with no local page cap in that function. This reinforces the need to preserve wrapper-to-final-source provenance and impose host-level URL, redirect, result and byte budgets. The cached JS-challenge provider documentation marks most internals unstable and includes an illustrative shell=True command built from challenge/player text and logged in full. That example is not evidence that the built-in provider executes this way, and it must not be copied into a trusted adapter.
+
+Evidence: [yt_dlp/extractor/youtube/pot/_builtin/memory_cache.py:1-78](https://github.com/yt-dlp/yt-dlp/blob/f264a6cbd1f630894da0f368df00f8aae50140e0/yt_dlp/extractor/youtube/pot/_builtin/memory_cache.py#L1-L78) · [test/test_pot/test_pot_builtin_memorycache.py:1-117](https://github.com/yt-dlp/yt-dlp/blob/f264a6cbd1f630894da0f368df00f8aae50140e0/test/test_pot/test_pot_builtin_memorycache.py#L1-L117) · [yt_dlp/extractor/embedly.py:1-109](https://github.com/yt-dlp/yt-dlp/blob/f264a6cbd1f630894da0f368df00f8aae50140e0/yt_dlp/extractor/embedly.py#L1-L109) · [yt_dlp/extractor/googlesearch.py:1-38](https://github.com/yt-dlp/yt-dlp/blob/f264a6cbd1f630894da0f368df00f8aae50140e0/yt_dlp/extractor/googlesearch.py#L1-L38) · [yt_dlp/extractor/youtube/jsc/README.md:1-93](https://github.com/yt-dlp/yt-dlp/blob/f264a6cbd1f630894da0f368df00f8aae50140e0/yt_dlp/extractor/youtube/jsc/README.md#L1-L93) · [yt_dlp/extractor/youtube/pot/README.md:1-95](https://github.com/yt-dlp/yt-dlp/blob/f264a6cbd1f630894da0f368df00f8aae50140e0/yt_dlp/extractor/youtube/pot/README.md#L1-L95).
+
+**Harness consequence:** Treat yt-dlp as an isolated, version-pinned media-acquisition worker with explicitly authorized source URLs, output limits, cancellation and provenance for every delegated URL. Keep token caches scoped to validated identity/recipe and bounded by bytes as well as count. Use structured subprocess arguments, redact sensitive values and verify provider lifecycle/capabilities from actual implementation before enabling plugins; example code does not expand the harness's execution authority.
+
+**Scope and limits:** Initial scoped static review of the token cache, two extraction/delegation paths, cache fixtures and provider API documentation from the enumerated 1,235-path snapshot. The full downloader, YouTube provider/runtime, authorization, all site extractors, dependencies and license suitability were not audited. No download, shell example, challenge solver, credential operation or upstream test was executed.

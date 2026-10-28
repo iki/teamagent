@@ -1,0 +1,42 @@
+# utopia
+
+Source: [utopia](https://github.com/deeplethe/utopia) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `3c55e8be3ad77ec2d9c72444d7456e48f10594d8`; commit timestamp `2026-10-03T16:50:45+08:00`; 830 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/deeplethe/utopia/blob/3c55e8be3ad77ec2d9c72444d7456e48f10594d8/README.md)):
+
+> The enterprise world model built by DeepLethe.** It is the first open substrate for knowledge engineering that learns passively and governs itself. Where a knowledge graph or a vector store works to hold present knowledge, Utopia puts time awareness and ontology in the base layer: the knowledge system evolves as material arrives, and conflict detection, reasoning and decision making all run against that ontology. It deploys offline, so a company can stand up a knowledge foundation, a decision core its agents can trust, and a compliance audit tr
+
+Build/package evidence: [Cargo.toml](https://github.com/deeplethe/utopia/blob/3c55e8be3ad77ec2d9c72444d7456e48f10594d8/Cargo.toml); [crates/utopia-cli/Cargo.toml](https://github.com/deeplethe/utopia/blob/3c55e8be3ad77ec2d9c72444d7456e48f10594d8/crates/utopia-cli/Cargo.toml); [crates/utopia-core/Cargo.toml](https://github.com/deeplethe/utopia/blob/3c55e8be3ad77ec2d9c72444d7456e48f10594d8/crates/utopia-core/Cargo.toml); [crates/utopia-extract/Cargo.toml](https://github.com/deeplethe/utopia/blob/3c55e8be3ad77ec2d9c72444d7456e48f10594d8/crates/utopia-extract/Cargo.toml); [crates/utopia-ingest/Cargo.toml](https://github.com/deeplethe/utopia/blob/3c55e8be3ad77ec2d9c72444d7456e48f10594d8/crates/utopia-ingest/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/deeplethe/utopia/blob/3c55e8be3ad77ec2d9c72444d7456e48f10594d8/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Historical hybrid retrieval exposes channel use but retains incomplete lexical history.** Reviewed commit `1142792979b61272d92cf322cbfd2f86615f6cb3` (commit date `2026-10-27T15:37:10+08:00`). Compared with `3c55e8be3ad77ec2d9c72444d7456e48f10594d8`; the complete Git comparison contains 395 changed paths.
+
+Hybrid retrieval runs synchronous BM25 on a blocking worker alongside vector embedding/search, applies source-document filtering inside both recall channels, and exposes RRF score plus per-channel ranks. Scored pages request a consistent 100-candidate depth per channel and report vector_used; model absence, embedding failure and empty embedding responses all become the same unavailable-vector state, while database vector errors still propagate. Each page recomputes retrieval, so fixed depth alone does not provide a snapshot across concurrent updates. The module explicitly states that current-only Tantivy indexing cannot recall superseded historical chunks; as-of filtering of returned candidates does not recover missing lexical history. The historical fixture exercises preserved vectors/tombstones against a database but returns success without assertions when no test database URL exists. SessionOrToken retains a personal-token identity and narrowing helpers, while ordinary AuthUser remains JWT-only; helper use and underlying role checks are still route responsibilities.
+
+Evidence: [crates/utopia-server/src/retrieval.rs:1-15](https://github.com/deeplethe/utopia/blob/1142792979b61272d92cf322cbfd2f86615f6cb3/crates/utopia-server/src/retrieval.rs#L1-L15) · [crates/utopia-server/src/retrieval.rs:24-135](https://github.com/deeplethe/utopia/blob/1142792979b61272d92cf322cbfd2f86615f6cb3/crates/utopia-server/src/retrieval.rs#L24-L135) · [crates/utopia-server/src/retrieval.rs:147-220](https://github.com/deeplethe/utopia/blob/1142792979b61272d92cf322cbfd2f86615f6cb3/crates/utopia-server/src/retrieval.rs#L147-L220) · [crates/utopia-server/src/retrieval.rs:233-275](https://github.com/deeplethe/utopia/blob/1142792979b61272d92cf322cbfd2f86615f6cb3/crates/utopia-server/src/retrieval.rs#L233-L275) · [crates/utopia-store/tests/store/a_search_reads_the_base_as_it_was.rs:141-209](https://github.com/deeplethe/utopia/blob/1142792979b61272d92cf322cbfd2f86615f6cb3/crates/utopia-store/tests/store/a_search_reads_the_base_as_it_was.rs#L141-L209) · [crates/utopia-server/src/auth.rs:140-171](https://github.com/deeplethe/utopia/blob/1142792979b61272d92cf322cbfd2f86615f6cb3/crates/utopia-server/src/auth.rs#L140-L171) · [crates/utopia-server/src/auth.rs:188-252](https://github.com/deeplethe/utopia/blob/1142792979b61272d92cf322cbfd2f86615f6cb3/crates/utopia-server/src/auth.rs#L188-L252).
+
+**Harness consequence:** Report historical/channel coverage explicitly, distinguish provider failure from intentionally disabled retrieval, and bind pagination/citations to a stable source revision or snapshot. Preserve superseded source chunks and vector/model provenance if historical queries are promised. Gate personal-token routes individually and require both token scope and role authorization; count skipped external-database fixtures separately from tested behavior.
+
+**Scope and limits:** Scoped static review of retrieval orchestration, historical fixture and token extractor/helpers within the 395-path comparison. Underlying document SQL/index transactions, all token-enabled route checks, graph migrations and ingest parsing were not audited. No database fixture, native search, authentication or model operation was executed.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [utopia](https://github.com/deeplethe/utopia); analyzed commit `1142792979b61272d92cf322cbfd2f86615f6cb3`; commit date 2026-10-27T15:37:10+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--utopia.md).
+<!-- teamagent-analysis:end -->

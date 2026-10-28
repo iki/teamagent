@@ -24,6 +24,13 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`aeac41d4d005999432bb7312f7ff06383a91d59d`](https://github.com/addyosmani/agent-skills/commit/aeac41d4d005999432bb7312f7ff06383a91d59d). Scope: Full validation wrapper and complete skill-lint/persona-test deltas plus new trigger grader read; remaining procedure and eval-runner changes not fully inspected.
+
+The [linter delta](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/scripts/lib/skill-lint.js) stops nested metadata/comments from overwriting top-level frontmatter, removes a legacy skill exemption and adds persona checks for name/file identity, description and a final Composition section outside fenced examples. [Fixtures](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/scripts/lib/skill-lint-test.js) cover positive and negative cases; the [wrapper](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/scripts/validate-skills.js) reports unexpected filesystem failures and exits nonzero for errors. Adapt structural identity/reference checks, but this regex-oriented parser is not a general YAML/schema security boundary, and warnings remain nonfatal upstream. The new TDD grader only recognizes a Skill tool invocation; invocation is distinct from useful application or artifact correctness. No linter, grader, model eval or claimed workflow improvement was executed.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [plan.addyosmani](https://github.com/addyosmani/agent-skills); analyzed commit `1401c8b8030e023baeebb31781a6653fe8e93026`; commit date 2026-10-03T11:21:09-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--plan.addyosmani.md).
+Analysis metadata: source [plan.addyosmani](https://github.com/addyosmani/agent-skills); analyzed commit `aeac41d4d005999432bb7312f7ff06383a91d59d`; commit date 2026-10-13T16:21:06-04:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--plan.addyosmani.md).
 <!-- teamagent-analysis:end -->

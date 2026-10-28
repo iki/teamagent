@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped source review
+
+Source: [deer-flow](https://github.com/bytedance/deer-flow); inspected saved discovery revision `fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7`. Prior analyzed revision `9eb01b371a478d9be477476eb19bc8381433b2ba` remains historical evidence.
+
+**Scope:** Complete channel base class and lightweight sandbox-mode shell detector. MessageBus, platform adapters, connection-code validation, outbox, local isolation implementation and tests were not inspected; large README/test captures were not substituted for source evidence.
+
+The [channel base](https://github.com/bytedance/deer-flow/blob/fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7/backend/app/channels/base.py#L320-L440) closes submission intake under a lock, retains actual asyncio tasks, releases reservations on refusal/finalization and waits on shielded completion futures during shutdown. This addresses cross-thread ownership rather than merely cancelling proxy futures. Its drain has no local timeout, and a closed loop can prevent a scheduled task/finalizer from settling; the platform adapter must own the stop budget and unresolved-worker outcome. The [private-loop helper](https://github.com/bytedance/deer-flow/blob/fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7/backend/app/channels/base.py#L68-L109) bounds waiting for pending tasks, but its subsequent async-generator shutdown has no independent bound here.
+
+[Inbound admission](https://github.com/bytedance/deer-flow/blob/fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7/backend/app/channels/base.py#L492-L532) explicitly drops when immediate queue reservation is unavailable; it is not durable guaranteed delivery. [Outbound handling](https://github.com/bytedance/deer-flow/blob/fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7/backend/app/channels/base.py#L534-L585) sends text before files, reports unsupported/failed attachments in the same conversation, removes interactive-input metadata from feedback and avoids proactive fallback. Text-send failure is caught and logged, so this callback returning is not a successful delivery receipt. The generic retry helper retries ordinary exceptions with exponential delay, without a local per-attempt deadline or idempotency condition.
+
+The [sandbox detector](https://github.com/bytedance/deer-flow/blob/fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7/scripts/sandbox-mode.sh#L1-L43) openly supports only a narrow block-mapping syntax and defaults missing/unknown configurations to local mode. It does not validate URLs, YAML aliases or actual isolation. Teamagent should retain explicit unsupported attachments, bounded intake and real task ownership, while separately validating channel identity/binding, durable receipt semantics and runtime enforcement. No channel, shell script, provider, attachment transfer or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deer-flow](https://github.com/bytedance/deer-flow); analyzed commit `9eb01b371a478d9be477476eb19bc8381433b2ba`; commit date 2026-10-03T23:11:48+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--deer-flow.md).
+Analysis metadata: source [deer-flow](https://github.com/bytedance/deer-flow); analyzed commit `fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7`; commit date 2026-10-27T22:19:33+08:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deer-flow.md).
 <!-- teamagent-analysis:end -->

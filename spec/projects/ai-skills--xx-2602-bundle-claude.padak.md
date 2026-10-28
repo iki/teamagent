@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`7f8c97c39d58102adc367ddc0217776e0c8a8b2d`](https://github.com/padak/claude-code-kit/commit/7f8c97c39d58102adc367ddc0217776e0c8a8b2d). Scope: Full product-proposal skill, bilingual structural checker and ship-with-astra skill read. Design builder/assets, private content systems and referenced second-opinion implementation were not audited.
+
+The [proposal workflow](https://github.com/padak/claude-code-kit/blob/7f8c97c39d58102adc367ddc0217776e0c8a8b2d/plugins/product-proposal/skills/product-proposal/SKILL.md) separates observed product screenshots from proposed concepts, records alternatives and decision consequences, and uses base-version updates. The [checker](https://github.com/padak/claude-code-kit/blob/7f8c97c39d58102adc367ddc0217776e0c8a8b2d/plugins/product-proposal/skills/product-proposal/assets/check_proposal.py) splits language blocks and calls an external content-system validator, but does not validate balanced language markers, translation equivalence or factual evidence; the subprocess has no timeout. This is authoring structure rather than verified proposal correctness.
+
+The [delivery workflow](https://github.com/padak/claude-code-kit/blob/7f8c97c39d58102adc367ddc0217776e0c8a8b2d/plugins/ship-with-astra/skills/ship-with-astra/SKILL.md) carries explicit risks through design, implementation and independent review and calls for concrete counterexamples. Its personal model selection, Czech reporting, no-local-tests rule, external publishing and auto-merge steps are environment-specific and must not override Teamagent's English, mandatory local gates or task authorization. Adapt self-contained decision briefs and risk-to-test traceability only. No external system, reviewer model, publication, tracker change or merge was invoked.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle-claude.padak](https://github.com/padak/claude-code-kit); analyzed commit `8c8d57dfa888db193bbf5f17289f1b47f0a51380`; commit date 2026-09-17T21:33:03+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--xx-2602-bundle-claude.padak.md).
+Analysis metadata: source [bundle-claude.padak](https://github.com/padak/claude-code-kit); analyzed commit `7f8c97c39d58102adc367ddc0217776e0c8a8b2d`; commit date 2026-10-26T23:13:43Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--xx-2602-bundle-claude.padak.md).
 <!-- teamagent-analysis:end -->

@@ -24,6 +24,14 @@ This entry was catalogued under **ai-prompts**. Its category places it in the ca
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`162db92f54d717d8ebd12292e155aeef32bb4b3c`](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/commit/162db92f54d717d8ebd12292e155aeef32bb4b3c). Scope: Focused reading of Hermes prompt lines 1-40 and complete 126-line OpenCode gpt.5.6.sol prompt; remaining nine changed prompt captures were inventoried only. These are third-party captures, not authenticated product specifications.
+
+The sampled [Hermes capture](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/162db92f54d717d8ebd12292e155aeef32bb4b3c/Open%20Source%20prompts/Hermes/Agent%20Prompt%20%28nemotron.3.5.lightning-free%29%202026-09-11.txt) combines behavioral instructions with a specific machine, profile, shell and messaging environment. Its literal out-of-band marker illustrates a trust requirement: Teamagent must authenticate steering through transport metadata rather than grant authority to matching strings in retrieved text. Stale profile/shell descriptions are not portable defaults.
+
+The [OpenCode capture](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/162db92f54d717d8ebd12292e155aeef32bb4b3c/Open%20Source%20prompts/OpenCode/Agent%20Prompt%20%28gpt.5.6.sol%29%202026-09-11.txt) mixes engineering preferences, tool conventions and a model/environment identity. Preserve these as versioned research data; the filename and self-description do not authenticate upstream provenance, active product behavior or model identity. Adapt the idea of separating portable task guidance from host-specific adapters, not the text wholesale. No captured instruction was adopted or executed, and no prompt-quality benchmark was run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools); analyzed commit `1e4203a7d88873c1b37ab2d1c07074fea498c274`; commit date 2026-08-11T15:01:09+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-prompts--system-prompts-and-models-of-ai-tools.md).
+Analysis metadata: source [system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools); analyzed commit `162db92f54d717d8ebd12292e155aeef32bb4b3c`; commit date 2026-10-12T17:19:01+02:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-prompts--system-prompts-and-models-of-ai-tools.md).
 <!-- teamagent-analysis:end -->

@@ -29,6 +29,14 @@ Adopt as a baseline dependency scanner. Database freshness and package resolutio
 
 [Security](../security.md) · [Agents](../agents.md) · [Import Generation](../import-generation.md) · [Evolution](../evolution.md)
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`8748c7ca24ecb3fb35a1319c983f41b4a6cf5833`](https://github.com/google/osv-scanner/commit/8748c7ca24ecb3fb35a1319c983f41b4a6cf5833). Scope: Full source-analysis dispatcher, result formatter, alias grouping, group annotation and inventory test comparator read. Language analyzers, scanner integration and vulnerability-feed results were not exercised.
+
+The [alias grouper](https://github.com/google/osv-scanner/blob/8748c7ca24ecb3fb35a1319c983f41b4a6cf5833/internal/grouper/grouper.go) uses connected components across record IDs and aliases, preserving first-record group ordering and sorting/deduplicating aliases. This avoids treating transitive aliases as unrelated findings. The [annotation builder](https://github.com/google/osv-scanner/blob/8748c7ca24ecb3fb35a1319c983f41b4a6cf5833/internal/grouper/build.go) keeps ecosystem priority distinct from numeric severity and preserves 'unimportant' separately from call analysis. Its uncalled annotation is derived from package-level exploitability signals and applied across grouped vulnerability IDs; verify signal provenance and granularity before suppressing a particular finding.
+
+The [analysis dispatcher](https://github.com/google/osv-scanner/blob/8748c7ca24ecb3fb35a1319c983f41b4a6cf5833/internal/sourceanalysis/sourceanalysis.go) only invokes selected Go/Rust analysis for the matching lockfile types. No analysis for another ecosystem must remain unknown rather than safe. The [formatter](https://github.com/google/osv-scanner/blob/8748c7ca24ecb3fb35a1319c983f41b4a6cf5833/internal/utility/results/results.go) safely shortens commits for display, while full identity still belongs in retained evidence. Adapt alias closure and explicit evidence categories; do not treat absence of displayed calls or a low ecosystem priority as proof of non-exploitability. No scans, language analyzers, advisory lookups or tests were run for this update.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [osv-scanner](https://github.com/google/osv-scanner); analyzed commit `1b86129be1f0285c403616cb362ac188de676c6e`; commit date 2026-10-02T15:16:32+10:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--osv-scanner.md).
+Analysis metadata: source [osv-scanner](https://github.com/google/osv-scanner); analyzed commit `8748c7ca24ecb3fb35a1319c983f41b4a6cf5833`; commit date 2026-10-27T03:45:34Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--osv-scanner.md).
 <!-- teamagent-analysis:end -->

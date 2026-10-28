@@ -2,7 +2,7 @@
 
 Source: [future-agi](https://github.com/future-agi/future-agi) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `d794a49b0310e226815f503c7bf3f8426bb56d3f`; commit timestamp `2026-10-01T18:26:33+05:30`; 11,774 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `14ba8a4474e9901b3f917d1d6e89cf6808aec58f` (commit date `2026-10-27T15:53:26+05:30`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete AI-tool base class, collector authentication facade and SAML login-state purge activity; transport authentication, database/cache internals, middleware, SAML verification and tests were not reviewed.
+
+The [tool entry point](https://github.com/future-agi/future-agi/blob/14ba8a4474e9901b3f917d1d6e89cf6808aec58f/futureagi/ai_tools/base.py#L136-L201) parses JSON-looking parameter strings, validates the resulting model and executes under a request-local workspace/organization/user context. This separates host context from model parameters, but the class accepts supplied context objects and cannot prove their authentication or database isolation. Validation failures return the raw submitted parameters and exception text to the caller, while execution failures log exception details. Teamagent should preserve structured error codes and scoped context while avoiding unrestricted payload/error reflection and enforcing budgets before parsing.
+
+The [collector facade](https://github.com/future-agi/future-agi/blob/14ba8a4474e9901b3f917d1d6e89cf6808aec58f/fi-collector/pkg/auth/auth.go#L137-L257) requires organization/workspace scope when resolving project names and checks that scope again when adding cache mappings. Reserved simulation names are not created as visible projects. Fresh/warm cached credentials can be returned without a current database check; warm hits start background refresh, and a separate Redis watcher evicts revoked entries. Singleflight coalesces database queries, but a goroutine is launched for each warm hit before singleflight, so the comment's implication of bounded goroutine creation is not established. Cache misses use a ten-second detached shared lookup; the waiting caller does not select its own cancellation in this facade. Cache invalidation races and cache capacity require inspecting the unreviewed cache implementation.
+
+The [SAML purge activity](https://github.com/future-agi/future-agi/blob/14ba8a4474e9901b3f917d1d6e89cf6808aec58f/futureagi/saml2_auth/tasks.py#L12-L35) limits each model pass to 50 batches of at most 1,000 selected IDs and distinguishes expired candidate material from retained attempts. This is bounded cleanup work per invocation, not proof that all expired data has gone or that a scheduled activity always runs within its declared time limit. The collector's disabled-auth branch returns a nil authenticator, and deployment/middleware handling was not audited. No database, Redis service, SAML exchange or upstream suite ran.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [future-agi](https://github.com/future-agi/future-agi); analyzed commit `d794a49b0310e226815f503c7bf3f8426bb56d3f`; commit date 2026-10-01T18:26:33+05:30; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--future-agi.md).
+Analysis metadata: source [future-agi](https://github.com/future-agi/future-agi); analyzed commit `14ba8a4474e9901b3f917d1d6e89cf6808aec58f`; commit date 2026-10-27T15:53:26+05:30; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--future-agi.md).
 <!-- teamagent-analysis:end -->

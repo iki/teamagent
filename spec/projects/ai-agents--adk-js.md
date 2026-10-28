@@ -2,7 +2,7 @@
 
 Source: [adk-js](https://github.com/google/adk-js) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `4395fad8da70a4123cb0b49da98c89883541b0ea`; commit timestamp `2026-10-02T14:22:32-07:00`; 1,067 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `eed31475067c2392fcafeabf196d0fb3ca17718e` (commit date `2026-10-26T09:54:20-07:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete session State mapping implementation; schema helper, write-order implementation, backing session services and parallel runner behavior were not audited.
+
+The [State mapping](https://github.com/google/adk-js/blob/eed31475067c2392fcafeabf196d0fb3ca17718e/core/src/sessions/state.ts#L24-L90) keeps current values and a pending delta, validates an entire update before applying it, and exposes a specific schema error. Validation is optional and intentionally skips every colon-containing key, not only the declared app/user/temp prefixes. An unrecognized schema shape also returns without checks. This is a scoped convenience contract; Teamagent still needs explicit schemas and principal authorization for every shared-state namespace at the external boundary.
+
+[Reads and writes](https://github.com/google/adk-js/blob/eed31475067c2392fcafeabf196d0fb3ca17718e/core/src/sessions/state.ts#L92-L166) use own-property checks so inherited names do not appear present. Values returned by `get` and spread into `toRecord` remain shallow references, so nested object mutation is not automatically observed as a new validated delta. `safeParse` success is checked but its transformed value is not stored; consumers must not assume parsing normalized the state. The generic getter is a type assertion, not runtime decoding.
+
+Writes call a separate ordering helper to mark pending changes, but that helper and the eventual session commit were not inspected. This review therefore makes no claim of atomic persistence, concurrent-write conflict resolution or cross-process consistency. Use typed immutable snapshots/deltas, validated namespace policies and host-owned revision checks for Teamagent; no SDK or backing-service integration was executed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [adk-js](https://github.com/google/adk-js); analyzed commit `4395fad8da70a4123cb0b49da98c89883541b0ea`; commit date 2026-10-02T14:22:32-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-js.md).
+Analysis metadata: source [adk-js](https://github.com/google/adk-js); analyzed commit `eed31475067c2392fcafeabf196d0fb3ca17718e`; commit date 2026-10-26T09:54:20-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-js.md).
 <!-- teamagent-analysis:end -->

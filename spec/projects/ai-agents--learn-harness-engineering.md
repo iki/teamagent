@@ -2,7 +2,7 @@
 
 Source: [learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `38ddcd2bf8d65271f668b94e7c875ca1d629d622`; commit timestamp `2026-10-01T12:30:39+08:00`; 2,750 tracked paths.
 
@@ -24,6 +24,22 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `a9342ff471f2c0e60be0c08b9f4a7c502df4e442` (commit date `2026-10-22T22:02:14+08:00`). The original snapshot above remains historical evidence.
+
+**Scope:** English lectures 05 and 09 in full plus selected conceptual/evidence sections of lecture 14, using the pinned additional export; companion simulations, graph runtime code, other languages and cited external primary sources were not reviewed.
+
+The [continuity lecture](https://github.com/walkinglabs/learn-harness-engineering/blob/a9342ff471f2c0e60be0c08b9f4a7c502df4e442/docs/en/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md#L70-L154) proposes progress, decision and verification records tied to repository checkpoints. Its updated case explicitly identifies companion code as a teaching simulation and withdraws previously reported feature-completion/hidden-defect/rebuild percentages. It also attributes a benchmark change to multiple harness changes together, rather than progress files alone. This is valuable evidence hygiene. Teamagent should persist approved decisions and concise rationale, exact artifact state, unfinished work and check receipts, then revalidate them on resume; a saved summary is not proof that current files or external operations still match it.
+
+The [termination lecture](https://github.com/walkinglabs/learn-harness-engineering/blob/a9342ff471f2c0e60be0c08b9f4a7c502df4e442/docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md#L77-L128) separates static checks, runtime behavior and end-to-end acceptance, with actionable failure reports and observed cleanup. Its game-editor comparison explicitly retains remaining defects in the longer multi-agent run. However, the lecture generalizes neural-network calibration and selected agent examples into broad claims about all agents' confidence and verification behavior. Those citations were not verified here, and this review does not adopt a universal effect size, benchmark conclusion or claim that another model acting as checker is independent ground truth. Check scope and artifact version must remain explicit.
+
+The [graph lecture](https://github.com/walkinglabs/learn-harness-engineering/blob/a9342ff471f2c0e60be0c08b9f4a7c502df4e442/docs/en/lectures/lecture-14-graph-engineering/index.md#L124-L167) makes target ownership, veto/repair relationships, external reference data and recovery observable design choices. Its [limitations section](https://github.com/walkinglabs/learn-harness-engineering/blob/a9342ff471f2c0e60be0c08b9f4a7c502df4e442/docs/en/lectures/lecture-14-graph-engineering/index.md#L270-L316) warns about mismatched benchmark baselines and coordination/review cost. Retain those questions without adopting its overly sharp deterministic-workflow versus agent-graph taxonomy, naming-history narrative, download counts or informal three-of-five selection threshold as established facts. Returning to an earlier graph node also does not roll back an external side effect.
+
+These are educational design leads, not verified runtime guarantees or grounds to select another framework. The cited primary articles and companion code need separate pinned review before using their quantitative or implementation claims. Teamagent's existing host authorization, bounded execution, provenance, scoped tests and uncertain-effect reconciliation remain the requirements; no teaching code, model run or benchmark was executed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering); analyzed commit `38ddcd2bf8d65271f668b94e7c875ca1d629d622`; commit date 2026-10-01T12:30:39+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--learn-harness-engineering.md).
+Analysis metadata: source [learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering); analyzed commit `a9342ff471f2c0e60be0c08b9f4a7c502df4e442`; commit date 2026-10-22T22:02:14+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--learn-harness-engineering.md).
 <!-- teamagent-analysis:end -->

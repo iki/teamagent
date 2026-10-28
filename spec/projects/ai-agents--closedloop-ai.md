@@ -2,7 +2,7 @@
 
 Source: [closedloop-ai](https://github.com/closedloop-ai/closedloop-ai) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `fb0ca91eaf59c9706ad6e2d7a4c86cd38d1d54d1`; commit timestamp `2026-08-18T00:16:33-05:00`; 10,478 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-27 scoped update review
+
+Reviewed commit `e812713cd7332d455e315079ee3b362a5051b92e` (commit date `2026-10-23T21:07:48-05:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete 35-path inventory; changed required-plugin lists and installer repair list, selected health classification/remediation code and matching fixtures. Package manifests show dependency updates; the full dependency graph and platform runtime were not tested.
+
+The [required plugin inventory](https://github.com/closedloop-ai/closedloop-ai/blob/e812713cd7332d455e315079ee3b362a5051b92e/apps/desktop/src/server/operations/plugin-cache.ts#L56-L60), [enable list](https://github.com/closedloop-ai/closedloop-ai/blob/e812713cd7332d455e315079ee3b362a5051b92e/apps/desktop/src/server/operations/health-check-plugin-enable.ts#L28-L47) and installer now require code, code-review and platform, removing judges and self-learning from these mandatory checks. The [matching fixture](https://github.com/closedloop-ai/closedloop-ai/blob/e812713cd7332d455e315079ee3b362a5051b92e/apps/desktop/test/plugin-cache.test.ts#L146-L154) confirms that set. This does not prove those optional capabilities were removed from the platform; it changes the onboarding contract. Do not make experimental evolution a prerequisite for basic agent readiness.
+
+The currently inspected [inventory classifier](https://github.com/closedloop-ai/closedloop-ai/blob/e812713cd7332d455e315079ee3b362a5051b92e/apps/desktop/src/server/operations/plugin-cache.ts#L579-L636) distinguishes known disabled state from unreadable/missing enabled-state evidence. The [post-enable result](https://github.com/closedloop-ai/closedloop-ai/blob/e812713cd7332d455e315079ee3b362a5051b92e/apps/desktop/src/server/operations/health-check-plugin-enable.ts#L280-L319) retains an unknown result when verification failed, rather than asserting the enable failed and prescribing another install/enable. These mechanisms predate parts of this small functional delta and are assessed as current implementation, not all newly introduced behavior.
+
+Borrow the separation of installed, enabled, verified and required capabilities. A completed mutation and a failed follow-up read are separate facts; repeat writes should not be the default remedy. Dependency bumps and desktop package changes still require platform acceptance testing, and local CLI inventory is not authenticated provider/model readiness.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [closedloop-ai](https://github.com/closedloop-ai/closedloop-ai); analyzed commit `fb0ca91eaf59c9706ad6e2d7a4c86cd38d1d54d1`; commit date 2026-08-18T00:16:33-05:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--closedloop-ai.md).
+Analysis metadata: source [closedloop-ai](https://github.com/closedloop-ai/closedloop-ai); analyzed commit `e812713cd7332d455e315079ee3b362a5051b92e`; commit date 2026-10-23T21:07:48-05:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--closedloop-ai.md).
 <!-- teamagent-analysis:end -->

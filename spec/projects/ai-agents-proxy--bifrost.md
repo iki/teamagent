@@ -29,6 +29,13 @@ Adopt behind an adapter after protocol conformance and cancellation tests. Upstr
 
 [Models](../models.md) · [Agents](../agents.md) · [Decisions](../decisions.md) · [Security](../security.md)
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`659f4ce1e7201e28d4db1fe1a21e4dfa92bcb975`](https://github.com/maximhq/bifrost/commit/659f4ce1e7201e28d4db1fe1a21e4dfa92bcb975). Scope: Focused current-source review of agent network-policy transport, passthrough route policy and injected-tool authorization facade; underlying network package, callers and the broader 2,249-path delta not audited.
+
+The [agent transport](https://github.com/maximhq/bifrost/blob/659f4ce1e7201e28d4db1fe1a21e4dfa92bcb975/core/agent/networkpolicy.go) snapshots a validated private-target allowlist, fingerprints the sorted policy, separates direct/proxy pools, replaces the proxy pool when configuration changes, and bounds extra credential origins to 32 canonical HTTP(S) origins without path/query/userinfo. Public-only context deliberately cannot inherit private-network permissions. Adapt immutable policy identity per pool and explicit credential destination binding, but verify call sites actually recheck policyCurrent and how in-flight operations behave after revocation; this file closes idle connections without interrupting existing calls. The [passthrough policy](https://github.com/maximhq/bifrost/blob/659f4ce1e7201e28d4db1fe1a21e4dfa92bcb975/core/passthroughpolicy.go) allows nil policies and host-backed upstream routes, relying on a separate fixed-route/credential contract. Those are explicit trust boundaries to audit, not proof of complete mediation. The injected authorization wrapper delegates to an unread internal package. No gateway, DNS-rebinding, proxy, tenant-isolation or revocation test was executed; broad security correctness is unestablished.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bifrost](https://github.com/maximhq/bifrost); analyzed commit `e8b579fd1a710753cfa97611b5cff6c3411b0825`; commit date 2026-10-03T00:57:43-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--bifrost.md).
+Analysis metadata: source [bifrost](https://github.com/maximhq/bifrost); analyzed commit `659f4ce1e7201e28d4db1fe1a21e4dfa92bcb975`; commit date 2026-10-27T23:17:14+05:30; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--bifrost.md).
 <!-- teamagent-analysis:end -->

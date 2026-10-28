@@ -39,6 +39,16 @@ A capture-lifecycle concern also deserves a focused fixture: the inspected `stop
 Disposition: optional visual-generation worker, separately budgeted from STT/TTS. Preserve frame timestamps, reference-image provenance, user access and generated-media disclosure. Reject architecture claims that avatar similarity establishes voice identity or cloning capability. No GPU inference, webcam capture, latency measurement or model-license audit was performed.
 
 Related: [channel input](../channel-input.md) · [media processing](../media-processing.md) · [generation](../generation.md).
+## Same-snapshot source acknowledgment - 2026-10-28
+
+The 2026-10-25 speech review above is now acknowledged after re-reading all three cited files at unchanged commit `abdd112e01dcf7d89122c2e5efa29fcff0669740`. Their local bytes reproduce the exact Git blob IDs already recorded in [source validation](../data/media-source-validation.json): capture `a2caa8a112aac1efad038e6d08853c84d357e0d9`, pipeline `6f6be78a5df2fb3eeecdf8b895e2135c86f45635` and connection management `88699f41c72fd1ae26b39344245ac026ad618ee0`. This records review of the previously added report content; it is not an upstream revision change.
+
+The scoped conclusions remain supported: camera and screen capture request no audio, the worker receives image/reference data, per-connection input replacement favors recent frames, and the inspected queues have no configured maximum. The browser stop method acquires and stops a new stream without explicitly stopping the stored stream. Preserve the October 25 distinctions between video previews and speech processing, and between a source-level lifecycle concern and measured runtime leakage. A separate speech path, owned capture handles, timestamps and aggregate queue/job limits remain adoption requirements.
+
+Evidence: [capture implementation, complete file](https://github.com/GVCLab/PersonaLive/blob/abdd112e01dcf7d89122c2e5efa29fcff0669740/webcam/frontend/src/lib/mediaStream.ts#L1-L106) · [video pipeline, complete file](https://github.com/GVCLab/PersonaLive/blob/abdd112e01dcf7d89122c2e5efa29fcff0669740/webcam/vid2vid.py#L1-L160) · [connection management, complete file](https://github.com/GVCLab/PersonaLive/blob/abdd112e01dcf7d89122c2e5efa29fcff0669740/webcam/connection_manager.py#L1-L175).
+
+**Scope and limits:** Same-SHA acknowledgment of three complete source files and the existing speech subsection only. No webcam capture, GPU inference, model/provider call, upstream tests, performance measurement or full-repository/license audit was performed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [personalive](https://github.com/GVCLab/PersonaLive); analyzed commit `abdd112e01dcf7d89122c2e5efa29fcff0669740`; commit date 2026-08-28T12:01:07+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-media--personalive.md).
+Analysis metadata: source [personalive](https://github.com/GVCLab/PersonaLive); analyzed commit `abdd112e01dcf7d89122c2e5efa29fcff0669740`; commit date 2026-08-28T12:01:07+08:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-media--personalive.md).
 <!-- teamagent-analysis:end -->

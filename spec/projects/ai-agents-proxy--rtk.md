@@ -29,6 +29,14 @@ Shortlist for optional terminal adapters after regression checks on Windows and 
 
 [Models](../models.md) · [Memory](../memory.md) · [Agents](../agents.md) · [Decisions](../decisions.md)
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5`](https://github.com/rtk-ai/rtk/commit/e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5). Scope: Full proxy HTTP-error mapping and model-registry module including embedded tests read. Compression, proxy request handling, persistence and model-call runtime were not audited.
+
+The [error adapter](https://github.com/rtk-ai/rtk/blob/e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5/proxy/src/error.rs) returns generic server-error messages and tests that upstream/internal details do not reach the HTTP body. It still logs the original details, including possible upstream URLs, so this is client-response redaction rather than end-to-end secret protection. Teamagent needs structured redacted diagnostics at the logging boundary as well as safe user errors.
+
+The [model registry](https://github.com/rtk-ai/rtk/blob/e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5/proxy/src/models.rs) deliberately ships no price estimates and returns None unless both input/output prices are supplied. It documents a shared database copy as authority over per-pod bootstrap seeds, but those persistence paths were not inspected. Matching is first substring, floating prices/cache multipliers lack visible semantic bounds, and poisoned-lock writes silently do nothing. Preserve unknown cost and operator/source provenance, with explicit finite-value validation and update failure reporting. This review establishes neither compression savings nor proxy security. No proxy, model, database or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [rtk](https://github.com/rtk-ai/rtk); analyzed commit `c356374fc1c9cff132c02484d2b9195c796b8e8f`; commit date 2026-10-03T18:03:05+02:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--rtk.md).
+Analysis metadata: source [rtk](https://github.com/rtk-ai/rtk); analyzed commit `e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5`; commit date 2026-10-25T13:57:20+01:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--rtk.md).
 <!-- teamagent-analysis:end -->

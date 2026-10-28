@@ -24,6 +24,19 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Server Cards are advisory remote discovery rather than negotiated capability authority.** Reviewed commit `ccaf9102ec5eb656eab50ca8333ef49dcd259c26` (commit date `2026-10-27T17:10:04Z`). Compared with `75db1e987cbbba6d170315dc99d0dfc440754aef`; the complete Git comparison contains 69 changed paths.
+
+SEP-2127 is marked Final and charters the optional Server Card extension, but delegates normative schema and discovery details to a separate extension repository. It describes remote connection metadata, reserves a recommended server-card endpoint and distinguishes cards from Registry package-installation metadata. The charter explicitly excludes tools/resources/prompts, capabilities and extension support because these can vary by user and session; conflicting live discovery should take precedence. Public cards must omit credentials, private topology and user-specific data. The document links experimental SDK implementations, which were not inspected in this pass. The 69-path inventory also contains inspector documentation, skills and release-cycle SEPs, governance and build metadata; those changes are not silently validated by reviewing this charter.
+
+Evidence: [seps/2127-mcp-server-cards.md:1-186](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/ccaf9102ec5eb656eab50ca8333ef49dcd259c26/seps/2127-mcp-server-cards.md#L1-L186).
+
+**Harness consequence:** Treat discovered cards as untrusted candidate endpoint metadata. Validate URL/size/redirect boundaries before fetching, then negotiate capabilities and authorize runtime listing under the actual identity. A public card must not add installation, tool execution or token-forwarding authority. Pin and inspect the separate normative schema before adopting card support; this documentation update does not change the already adopted MCP SDK or demonstrate Teamagent support.
+
+**Scope and limits:** Documentary review of the Server Card charter at an exact source revision; no protocol implementation, external normative schema, linked pull request, network discovery or conformance test was run. Other changed documentation remains outside the scoped review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mcp-docs](https://github.com/modelcontextprotocol/modelcontextprotocol); analyzed commit `75db1e987cbbba6d170315dc99d0dfc440754aef`; commit date 2026-10-03T01:52:20Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-docs.md).
+Analysis metadata: source [mcp-docs](https://github.com/modelcontextprotocol/modelcontextprotocol); analyzed commit `ccaf9102ec5eb656eab50ca8333ef49dcd259c26`; commit date 2026-10-27T17:10:04Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-docs.md).
 <!-- teamagent-analysis:end -->

@@ -24,6 +24,16 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped source review
+
+Source: [oh-my-pi](https://github.com/can1357/oh-my-pi); inspected saved discovery revision `e996e1c7ac476f60e02b8ed9764cf30fa8c00a8e`. Prior analyzed revision `d4d49e71bef3ac1420d45febf215b951decf5ae9` remains historical evidence.
+
+**Scope:** Full pi-vfs runtime bridge, cancellation scope and deferred-close tracker read. File/provider call sites, close scheduling, VFS isolation, agent loop and tests were not audited.
+
+The [VFS runtime bridge](https://github.com/can1357/oh-my-pi/blob/e996e1c7ac476f60e02b8ed9764cf30fa8c00a8e/crates/pi-vfs/src/runtime.rs#L19-L80) distinguishes synchronous callers inside a Tokio runtime, a captured fallback runtime and futures that can run without a runtime. Blocking host I/O is offloaded when a runtime is available. The current-thread runtime restriction is explicit: calling the synchronous bridge from its own async thread can panic, so this helper is not a universal sync/async interoperation layer.
+
+The [close tracker](https://github.com/can1357/oh-my-pi/blob/e996e1c7ac476f60e02b8ed9764cf30fa8c00a8e/crates/pi-vfs/src/runtime.rs#L108-L201) registers its notification before testing for idle, retains the first close failure, and uses a drop ticket to report a close abandoned by runtime shutdown exactly once. This is stronger evidence than treating a dropped task as successful cleanup. The drain consumes the stored first error; it is not an immutable history of all cleanup failures, and it has no deadline here. Cancellation can stop waiting on a guarded future, but spawned blocking I/O and remote effects still require their own ownership contracts. Adapt explicit close outcomes, bounded drains and platform acceptance tests; no runtime, filesystem operation or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [oh-my-pi](https://github.com/can1357/oh-my-pi); analyzed commit `d4d49e71bef3ac1420d45febf215b951decf5ae9`; commit date 2026-10-03T20:14:39+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--oh-my-pi.md).
+Analysis metadata: source [oh-my-pi](https://github.com/can1357/oh-my-pi); analyzed commit `e996e1c7ac476f60e02b8ed9764cf30fa8c00a8e`; commit date 2026-10-27T18:12:27+01:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--oh-my-pi.md).
 <!-- teamagent-analysis:end -->

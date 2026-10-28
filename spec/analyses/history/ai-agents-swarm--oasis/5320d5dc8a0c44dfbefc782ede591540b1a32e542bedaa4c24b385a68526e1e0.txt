@@ -1,0 +1,25 @@
+# oasis
+
+Source: [oasis](https://github.com/camel-ai/oasis) · Category: [ai-agents-swarm](../categories/ai-agents-swarm.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `affe52e8dcbc70bba0a4162bfea1057aa5df9316`; commit timestamp `2026-09-30T16:26:51+03:00`; 462 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/camel-ai/oasis/blob/affe52e8dcbc70bba0a4162bfea1057aa5df9316/README.md)):
+
+> OASIS: Open Agent Social Interaction Simulations with One Million Agents 🏝️ OASIS is a scalable, open-source social media simulator that incorporates large language model agents to realistically mimic the behavior of up to one million users on platforms like Twitter and Reddit. It's designed to facilitate the study of complex social phenomena such as information spread, group polarization, and herd behavior, offering a versatile tool for exploring diverse social dynamics and user interactions in digital environments.
+
+Build/package evidence: [pyproject.toml](https://github.com/camel-ai/oasis/blob/affe52e8dcbc70bba0a4162bfea1057aa5df9316/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/camel-ai/oasis/blob/affe52e8dcbc70bba0a4162bfea1057aa5df9316/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-swarm**. Its category places it in the candidate set for agents, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

@@ -31,6 +31,20 @@ Test malformed probability payloads, missing credentials, timeout/cancellation, 
 
 Related directions: [decisions](../decisions.md) · [models](../models.md).
 
+## 2026-10-27 scoped update review
+
+Reviewed commit `b844cd1aca12855a5d24a2df52a1401c86e7d37a` (commit date `2026-10-14T21:20:38Z`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete 22-path inventory; focused review of multimodal serialization, transport/cancellation and question validation. Read full assets/compression/questions modules, client delta and transport body; selected regression fixtures. Packaging, all type tests and transitive dependencies were not audited.
+
+The client now supports image references and a `box` question in addition to finite choices. [Asset serialization](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/src/assets.ts#L232-L289) rejects unattached generated references and unused aliases; [byte snapshots](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/src/assets.ts#L358-L368) prevent caller mutation after request construction. [Multipart encoding](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/src/assets.ts#L377-L396) puts each reference in its own part and derives PNG/JPEG declarations from signatures. Other formats are sent as octet-stream, so this is not complete image integrity validation.
+
+[Compression](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/src/compression.ts#L31-L67) is runtime-capability dependent and uses zstd above the client's size threshold. [Transport](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/src/client.ts#L420-L501) resolves and compresses once, then reuses the encoded bytes on retry. The [native transport fixture](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/test/native-transport.test.ts#L56-L95) checks identical retry bytes; [stalled-body and abort cases](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/test/native-transport.test.ts#L97-L189) distinguish timeout, caller cancellation and broken response streams. These fixtures were read, not executed.
+
+Adoption requires a host boundary: encoding uses eager `Promise.all` over assets, body buffering has no inspected byte ceiling, and the transport timeout starts after asset reading/compression. Cancellation rejects the waiting promise but does not prove an underlying Blob read or compression operation stopped. Debug logging includes uncompressed textual state and provider error bodies. Apply overall deadlines, resource limits, redaction and route data policy before uploads. [Question validation](https://github.com/typesafe-ai/typesafe-sdk-js/blob/b844cd1aca12855a5d24a2df52a1401c86e7d37a/src/questions.ts#L104-L159) is narrower than a full external schema, and typed answers are not calibrated correctness or authority. Keep this behind the replaceable DecisionProvider; automatic inference retries must not become retries of downstream side effects.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js); analyzed commit `66880ccded6cb642dc1809620c2b108c33730214`; commit date 2026-09-15T18:16:33Z; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--typesafe-sdk-js.md).
+Analysis metadata: source [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js); analyzed commit `b844cd1aca12855a5d24a2df52a1401c86e7d37a`; commit date 2026-10-14T21:20:38Z; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--typesafe-sdk-js.md).
 <!-- teamagent-analysis:end -->

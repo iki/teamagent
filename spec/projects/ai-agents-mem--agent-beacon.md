@@ -24,6 +24,21 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+
+## Change review - 2026-10-28
+
+**Rule-corpus installation validates before staging but rollback and forwarding cleanup remain best effort.** Reviewed commit `90b19ae0626fd6fd060c62ddbc70827a23242f4e` (commit date `2026-10-27T04:47:59+01:00`). Compared with `5937da1cd812660d256c367374b9752316f51cbc`; the complete Git comparison contains 1417 changed paths.
+
+The extracted rule-store module retains the embedded baseline unless an explicit override directory is supplied; stored IDs override matching baseline IDs, and unsupported newer-spec rules can be returned separately as skipped. Installation decodes, checks rule fixtures and revalidates ID grammar before joining destination paths, then stages files and renames them with backups. This is useful preflight, but it has no store lock, reads/retains all candidate bytes and ignores rollback/backup-restoration errors. HasRuleFiles also maps any directory-read failure to no rules, allowing baseline-only loading after an unreadable store.
+
+The forwarding probe generates a test credential inside the guest, writes private files and records only auth success in request receipts. It captures a later runtime-log snapshot for the comparison and marks missing artifacts. Its stand-in nevertheless reads/decompresses the whole body before checking authentication and uses unbounded threading. Cleanup runs process-name/path-wide pkill commands and ignores their result, so the helper is suitable only for an explicitly isolated guest, not a shared host ownership model.
+
+Evidence: [pkg/asymptoteobserve/rulestore/rulestore.go:103-161](https://github.com/Asymptote-Labs/agent-beacon/blob/90b19ae0626fd6fd060c62ddbc70827a23242f4e/pkg/asymptoteobserve/rulestore/rulestore.go#L103-L161) · [pkg/asymptoteobserve/rulestore/rulestore.go:186-345](https://github.com/Asymptote-Labs/agent-beacon/blob/90b19ae0626fd6fd060c62ddbc70827a23242f4e/pkg/asymptoteobserve/rulestore/rulestore.go#L186-L345) · [pkg/asymptoteobserve/rulestore/rulestore.go:364-413](https://github.com/Asymptote-Labs/agent-beacon/blob/90b19ae0626fd6fd060c62ddbc70827a23242f4e/pkg/asymptoteobserve/rulestore/rulestore.go#L364-L413) · [beacon-sandbox/runner/forward.go:38-114](https://github.com/Asymptote-Labs/agent-beacon/blob/90b19ae0626fd6fd060c62ddbc70827a23242f4e/beacon-sandbox/runner/forward.go#L38-L114) · [beacon-sandbox/runner/forward.go:116-165](https://github.com/Asymptote-Labs/agent-beacon/blob/90b19ae0626fd6fd060c62ddbc70827a23242f4e/beacon-sandbox/runner/forward.go#L116-L165) · [beacon-sandbox/runner/forward.go:232-284](https://github.com/Asymptote-Labs/agent-beacon/blob/90b19ae0626fd6fd060c62ddbc70827a23242f4e/beacon-sandbox/runner/forward.go#L232-L284).
+
+**Harness consequence:** Keep validated, versioned rule data separate from executable detection logic and report skipped specifications and unreadable stores distinctly. Use locked transactional corpus publication with retained recovery receipts, byte/count limits and explicit partial rollback status. Forwarding acceptance fixtures should own exact child processes, bound input/decompression before authentication-sensitive work and independently verify delivery and cleanup.
+
+**Scope and limits:** Static scoped rule-store and forwarding-probe review within the 1,417-path comparison. Rule decoder/checker semantics, threat-detection efficacy, sandbox isolation and the complete runner were not audited; no rule fixture, guest, command or network probe was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-beacon](https://github.com/Asymptote-Labs/agent-beacon); analyzed commit `5937da1cd812660d256c367374b9752316f51cbc`; commit date 2026-10-02T22:06:57-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--agent-beacon.md).
+Analysis metadata: source [agent-beacon](https://github.com/Asymptote-Labs/agent-beacon); analyzed commit `90b19ae0626fd6fd060c62ddbc70827a23242f4e`; commit date 2026-10-27T04:47:59+01:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--agent-beacon.md).
 <!-- teamagent-analysis:end -->

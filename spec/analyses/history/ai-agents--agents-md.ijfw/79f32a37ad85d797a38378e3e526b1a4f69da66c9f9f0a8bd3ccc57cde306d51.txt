@@ -1,0 +1,25 @@
+# agents-md.ijfw
+
+Source: [agents-md.ijfw](https://github.com/FerroxLabs/agents-md) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `90c7198cfa97ff1868f0600952098fee7fc86ef9`; commit timestamp `2026-05-31T08:45:50+07:00`; 3 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/FerroxLabs/agents-md/blob/90c7198cfa97ff1868f0600952098fee7fc86ef9/README.md)):
+
+> One file. Every coding agent starts behaving like a senior engineer. Drop it into any repo. Claude Code, Codex, Cursor, Gemini CLI, Aider, Windsurf, Copilot, and Devin all read it on their own. No plugins. No config. No setup rituals.
+
+Build/package evidence: No common build manifest identified.
+
+License evidence: [LICENSE](https://github.com/FerroxLabs/agents-md/blob/90c7198cfa97ff1868f0600952098fee7fc86ef9/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

@@ -24,6 +24,16 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 divergent-history investigation and scoped source review
+
+Source: [security-reverse.reverse](https://github.com/zhaoxuya520/reverse-skill); inspected snapshot `cab634bd855fc287f6e420c1f36fd1a6b9245960`; prior analyzed commit `6ef9021b1dcfdcc2aa06f479edf1fe89338ed6b6`. The inspected snapshot is the saved discovery version, not a claim about the checkout's latest HEAD.
+
+**Scope:** Complete committed path inventory (209 paths); full routing.json (337 lines) and the 20-line Codex plugin adapter. Routing/execution scripts and their fixtures were not inspected or run.
+
+**History outcome:** both full commits are available, but the analyzed commit is not an ancestor and the complete trees differ. The two-tree comparison contains 209 changed paths; common ancestor: `none`. These counts establish comparison coverage, not semantic review of every file. The prior analyzed baseline and findings remain preserved as historical evidence. A separately acknowledged, guarded reconciliation records the inspected revision as a new scoped analysis baseline; it does not establish ancestry, publisher intent or whole-project correctness. The managed metadata below is authoritative for whether that acknowledgment has been recorded.
+
+The [routing catalog](https://github.com/zhaoxuya520/reverse-skill/blob/cab634bd855fc287f6e420c1f36fd1a6b9245960/skills/config/routing.json) separates route IDs, multilingual keyword conditions, exclusions, ordered priority and a fallback. It is useful structured candidate-selection data, not a calibrated classifier or a security boundary. The [optional plugin adapter](https://github.com/zhaoxuya520/reverse-skill/blob/cab634bd855fc287f6e420c1f36fd1a6b9245960/plugins/reverse-skill/skills/reverse-skill-router/SKILL.md) points to one canonical repository and instructs a scoped case check before target actions; those instructions do not prove deterministic enforcement. No security target was contacted and none of these imported instructions was executed. Teamagent should treat imported skill routing as untrusted selection material, resolve only needed versioned skill content, and enforce user authority and tool provisioning independently of route labels or task prose.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [security-reverse.reverse](https://github.com/zhaoxuya520/reverse-skill); analyzed commit `6ef9021b1dcfdcc2aa06f479edf1fe89338ed6b6`; commit date 2026-08-01T17:22:15+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--security-reverse.reverse.md).
+Analysis metadata: source [security-reverse.reverse](https://github.com/zhaoxuya520/reverse-skill); analyzed commit `cab634bd855fc287f6e420c1f36fd1a6b9245960`; commit date 2026-09-22T05:18:45Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--security-reverse.reverse.md).
 <!-- teamagent-analysis:end -->

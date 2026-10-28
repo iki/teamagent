@@ -1,0 +1,38 @@
+# tera
+
+Source: [tera](https://github.com/Keats/tera) · Category: [ai-gen](../categories/ai-gen.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `6ead3c0ffa1e731f58694f94130253a559da68f4`; commit timestamp `2026-09-11T14:27:19+02:00`; 670 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/Keats/tera/blob/6ead3c0ffa1e731f58694f94130253a559da68f4/README.md)):
+
+> Tera is a template engine inspired by Jinja2 and the Django template language. It intentionally deviates from Jinja2/Django in many ways, only the overall look and feel is similar.
+
+Build/package evidence: [Cargo.toml](https://github.com/Keats/tera/blob/6ead3c0ffa1e731f58694f94130253a559da68f4/Cargo.toml); [tera-contrib/Cargo.toml](https://github.com/Keats/tera/blob/6ead3c0ffa1e731f58694f94130253a559da68f4/tera-contrib/Cargo.toml); [tera/Cargo.toml](https://github.com/Keats/tera/blob/6ead3c0ffa1e731f58694f94130253a559da68f4/tera/Cargo.toml); [tera/fuzz/Cargo.toml](https://github.com/Keats/tera/blob/6ead3c0ffa1e731f58694f94130253a559da68f4/tera/fuzz/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/Keats/tera/blob/6ead3c0ffa1e731f58694f94130253a559da68f4/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-gen**. Its category places it in the candidate set for import-generation, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [import-generation](../import-generation.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Partial block rendering has an explicit completion boundary and stricter undefined values.** Reviewed commit `ad95994b2c19edcae8ddc0b98dcb8137cceed58d` (commit date `2026-10-27T14:27:32+01:00`). Compared with `6ead3c0ffa1e731f58694f94130253a559da68f4`; the complete Git comparison contains 13 changed paths.
+
+The interpreter now records block_captured, temporarily detaches enclosing capture buffers, restores state and returns immediately after the requested block, including propagation through super(). The render_block API documentation explicitly says later template content is not evaluated; fixtures exercise blocks inside filter/set captures, inheritance and an undefined variable after versus inside the selected block. String coercion rejects Undefined rather than converting it to empty text, with safe-filter regression cases. Arithmetic changes make integer/float floor division and modulo follow negative-infinity/divisor-sign semantics, with mixed-sign fixtures. HTML escaping writes unchanged byte runs in chunks while preserving escaped punctuation and Unicode fixtures. Unique uses hashable keys for strings/integral numbers and a separate linear fallback for maps/arrays/non-integral or oversized numbers; this is not a universal linear-time bound.
+
+Evidence: [tera/src/vm/interpreter.rs:481-513](https://github.com/Keats/tera/blob/ad95994b2c19edcae8ddc0b98dcb8137cceed58d/tera/src/vm/interpreter.rs#L481-L513) · [tera/src/vm/interpreter.rs:574-606](https://github.com/Keats/tera/blob/ad95994b2c19edcae8ddc0b98dcb8137cceed58d/tera/src/vm/interpreter.rs#L574-L606) · [tera/src/vm/state.rs:39-95](https://github.com/Keats/tera/blob/ad95994b2c19edcae8ddc0b98dcb8137cceed58d/tera/src/vm/state.rs#L39-L95) · [tera/src/tera.rs:1469-1530](https://github.com/Keats/tera/blob/ad95994b2c19edcae8ddc0b98dcb8137cceed58d/tera/src/tera.rs#L1469-L1530) · [tera/src/tera.rs:2020-2121](https://github.com/Keats/tera/blob/ad95994b2c19edcae8ddc0b98dcb8137cceed58d/tera/src/tera.rs#L2020-L2121) · [tera/src/args.rs:199-210](https://github.com/Keats/tera/blob/ad95994b2c19edcae8ddc0b98dcb8137cceed58d/tera/src/args.rs#L199-L210) · [tera/tests/undefined.rs:1-52](https://github.com/Keats/tera/blob/ad95994b2c19edcae8ddc0b98dcb8137cceed58d/tera/tests/undefined.rs#L1-L52) · [tera/src/value/number.rs:145-230](https://github.com/Keats/tera/blob/ad95994b2c19edcae8ddc0b98dcb8137cceed58d/tera/src/value/number.rs#L145-L230) · [tera/src/value/number.rs:315-337](https://github.com/Keats/tera/blob/ad95994b2c19edcae8ddc0b98dcb8137cceed58d/tera/src/value/number.rs#L315-L337) · [tera/src/utils.rs:112-161](https://github.com/Keats/tera/blob/ad95994b2c19edcae8ddc0b98dcb8137cceed58d/tera/src/utils.rs#L112-L161) · [tera/src/filters.rs:612-658](https://github.com/Keats/tera/blob/ad95994b2c19edcae8ddc0b98dcb8137cceed58d/tera/src/filters.rs#L612-L658) · [tera/src/filters.rs:823-842](https://github.com/Keats/tera/blob/ad95994b2c19edcae8ddc0b98dcb8137cceed58d/tera/src/filters.rs#L823-L842).
+
+**Harness consequence:** Generated-fragment verification must distinguish successful selected-block rendering from validity of the complete artifact. Preserve missing-data errors across convenience filters, and add numeric-sign/Unicode fixtures when swapping a renderer. Keep trusted templates separate from untrusted data and retain resource bounds for fallback comparisons; these changes do not make Tera an isolation mechanism or justify moving generation into the portable domain.
+
+**Scope and limits:** Static review of changed renderer/argument/arithmetic/escaping/deduplication hunks and associated fixtures within a 13-path comparison. No Rust build, template execution, performance measurement or hostile-template resource test ran; unchanged VM operations and feature-dependent escape implementation were not audited.

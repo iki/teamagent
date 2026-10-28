@@ -101,6 +101,12 @@ No common benchmark was run across the 507 projects. Their feature lists and tas
 
 ## Research evidence and update boundary
 
+The 2026-10-28 source reviews reinforce separate ownership for authorization, external effects and evidence. [Orca](https://github.com/stablyai/orca) ([scoped review](projects/ai-agents-swarm--orca.md)) cancels malformed permission decisions but gives the permission handler a lifetime distinct from session cancellation. The harness must state which owner cancels, settles and persists each resource; one cancellation flag cannot establish all three outcomes.
+
+[LangWatch](https://github.com/langwatch/langwatch) ([scoped review](projects/ai-eval--langwatch.md)) deduplicates cost rows after evaluator execution. A deduplicated accounting row is not proof of a deduplicated provider call. Evaluation receipts must identify the actual effect boundary, preserve uncertainty and distinguish production behavior from stronger test doubles. Apply this distinction to voice enrollment, synthesis, deployment and message delivery as well as evaluation.
+
+[Contextrie](https://github.com/feuersteiner/contextrie) ([scoped review](projects/ai-agents-mem--xx-2604-contextrie.md)) illustrates why validated relevance scores and prompt-based context tightness need explicit fan-out and byte/token budgets. Retain the selected source/version manifest alongside composed text; the text alone does not establish grounding. These conclusions refine the proposed architecture without asserting runtime adoption or benchmark gains.
+
 The implemented [maintenance workflow](research-sync.md) separates source discovery, successful fetch, extraction, scoped review and recommendation changes. Preserve original source bytes and full Git revisions. A repository rename must retain the report identity and aliases; an unavailable origin cannot silently become a deleted analysis. The [incremental index](analyses/repositories.md) and [architecture changelog](CHANGELOG.md) expose remaining review work.
 
 Apply the same boundary to the product: fetched knowledge is a candidate input; analyzed claims and executable skills require their own promotion receipt. Source age, commit volume and cache hits are operational signals, not estimates of truth or task success. An automated change packet must carry truncation, shallow-history and dirty-worktree limits to the human or agent reviewer.

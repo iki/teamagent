@@ -24,6 +24,14 @@ This entry was catalogued under **ai-agents-proxy**. Its category places it in t
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`0d2e6922091b77b71cc44e81eba69ed5fbd92f0f`](https://github.com/OpenRouterTeam/ai-sdk-provider/commit/0d2e6922091b77b71cc44e81eba69ed5fbd92f0f). Scope: Complete chat/index.ts and schema deltas, four changesets and missing-argument end-to-end test read. Incremental scanner/helper implementations and broad unit suite were not audited or run.
+
+The [chat adapter delta](https://github.com/OpenRouterTeam/ai-sdk-provider/blob/0d2e6922091b77b71cc44e81eba69ed5fbd92f0f/src/chat/index.ts) preserves strict/cache-control fields, keeps signed reasoning blocks separate on replay, avoids adding undefined metadata and forwards invalid non-empty tool arguments instead of replacing them with an empty object. This preserves the real failure for downstream validation/repair. It uses a completeness scanner to gate reparsing, but that scanner was not inspected, so neither complexity nor adversarial correctness was established here.
+
+The [cache-control changeset](https://github.com/OpenRouterTeam/ai-sdk-provider/blob/0d2e6922091b77b71cc44e81eba69ed5fbd92f0f/.changeset/tool-cache-control.md) explicitly says forwarding a field does not establish documented OpenRouter support for that shape. The [missing-arguments test](https://github.com/OpenRouterTeam/ai-sdk-provider/blob/0d2e6922091b77b71cc44e81eba69ed5fbd92f0f/e2e/issues/issue-287-tool-calls-missing-arguments.test.ts) calls a live model and verifies a no-parameter tool path; it does not deterministically force a wire response with omitted arguments. Adapt lossless malformed-payload reporting and signed-block preservation with credential-free transport fixtures. Keep strictness, cache acceptance and cost/BYOK metadata claims separate from actual provider conformance. No live tests, model or tools were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openrouter-ai-sdk-provider](https://github.com/OpenRouterTeam/ai-sdk-provider); analyzed commit `1b22b05352cb0f9243a6c3fdd326038dd3705544`; commit date 2026-09-19T07:14:33-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-ai-sdk-provider.md).
+Analysis metadata: source [openrouter-ai-sdk-provider](https://github.com/OpenRouterTeam/ai-sdk-provider); analyzed commit `0d2e6922091b77b71cc44e81eba69ed5fbd92f0f`; commit date 2026-10-27T01:27:57-04:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-ai-sdk-provider.md).
 <!-- teamagent-analysis:end -->

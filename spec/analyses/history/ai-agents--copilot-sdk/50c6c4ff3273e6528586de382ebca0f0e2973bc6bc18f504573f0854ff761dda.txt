@@ -1,0 +1,32 @@
+# copilot-sdk
+
+Source: [copilot-sdk](https://github.com/github/copilot-sdk) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **focused source review**. Snapshot `ef04633cc84e4ba8e79888a39259ca276f5de732` (2026-10-02T22:14:56Z). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+A first-party runtime SDK offers session and authentication operations that are stronger than terminal-output scraping.
+
+## Source evidence inspected
+
+- [nodejs/src/client.ts, lines 5–95](https://github.com/github/copilot-sdk/blob/ef04633cc84e4ba8e79888a39259ca276f5de732/nodejs/src/client.ts#L5-L95)
+- [nodejs/src/client.ts, lines 2485–2525](https://github.com/github/copilot-sdk/blob/ef04633cc84e4ba8e79888a39259ca276f5de732/nodejs/src/client.ts#L2485-L2525)
+
+## Observed design and algorithms
+
+The client manages a Copilot runtime connection and imports explicit JSON-RPC, session, permission/configuration and runtime-host abstractions. getAuthStatus performs an auth.getStatus request over the connected channel. listModels caches results and uses promise-based locking to avoid concurrent catalog fetches, returning a copy to prevent accidental cache mutation.
+
+## Harness decision
+
+Prefer an official SDK-backed adapter when an installed agent exposes one. Treat auth status and model catalog as separate probes, with timeout and timestamp. Negotiate supported runtime/protocol versions instead of depending on private session files.
+
+## Limits and tradeoffs
+
+A connected SDK and cached model list do not guarantee that an inference turn is entitled, affordable or currently below quota. The reviewed client supports more than a simple process-spawn path; do not infer all transport behaviors from the import list. Current plan eligibility must be verified with the provider.
+
+## Validation before adoption
+
+Test missing or mismatched runtime, stale catalog, account changes, token refresh, permission callbacks and cancellation. Verify a minimal authorized turn in an explicit connection test before marking a model usable. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
+
+Related directions: [agents](../agents.md) · [models](../models.md).

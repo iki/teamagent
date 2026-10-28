@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`021cca55c71563adc33f365f7cd1904e379a0d92`](https://github.com/cloudflare/cloudflare-docs/commit/021cca55c71563adc33f365f7cd1904e379a0d92). Scope: Full member-permission, Gateway policy-context and Browser Run permission partials plus repository-file renderer tests read. Live account behavior, renderer implementation and broader deployment changes were not reviewed.
+
+The [Gateway documentation](https://github.com/cloudflare/cloudflare-docs/blob/021cca55c71563adc33f365f7cd1904e379a0d92/src/content/partials/cloudflare-one/gateway/policy-context.mdx) says optional policy context can append user email, original URL/referrer and device/account identifiers to a redirect query. This is a concrete privacy boundary: Teamagent must not place sensitive state in public URLs merely because a provider supports it. [Member permissions](https://github.com/cloudflare/cloudflare-docs/blob/021cca55c71563adc33f365f7cd1904e379a0d92/src/content/partials/fundamentals/edit-member-permissions.mdx) and [Browser Run access](https://github.com/cloudflare/cloudflare-docs/blob/021cca55c71563adc33f365f7cd1904e379a0d92/src/content/partials/browser-run/rest-api-token-permissions.mdx) describe separate account-role, API-token and Worker-binding paths. The absence of a token in the binding path is not absence of authorization.
+
+The [renderer tests](https://github.com/cloudflare/cloudflare-docs/blob/021cca55c71563adc33f365f7cd1904e379a0d92/.flue/lib/github-repo-tools.test.ts) distinguish bounded line spans, continuation positions, invalid ranges and binary metadata without dumping binary content. These are useful evidence-reader fixtures, but omit an oversized single-line case in this inspected test file and do not prove upstream response-body bounds. Treat the documentation as revision-specific provider guidance, not verified account state. No cloud account, deployment, renderer or tests were exercised.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deploy-cloudflare](https://github.com/cloudflare/cloudflare-docs); analyzed commit `e43015cd6cddad3ee1c0fa087c4d5022e65e7c98`; commit date 2026-10-03T15:34:24-04:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--deploy-cloudflare.md).
+Analysis metadata: source [deploy-cloudflare](https://github.com/cloudflare/cloudflare-docs); analyzed commit `021cca55c71563adc33f365f7cd1904e379a0d92`; commit date 2026-10-27T17:40:19Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--deploy-cloudflare.md).
 <!-- teamagent-analysis:end -->

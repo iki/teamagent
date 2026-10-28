@@ -2,7 +2,7 @@
 
 Source: [loopx](https://github.com/huangruiteng/loopx) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `99839aeb8fed5fae38a5d319391cd050672a6508`; commit timestamp `2026-10-04T01:14:41+08:00`; 5,643 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `fff09ead9b17190d9cc8385f0c4da70669a4f272` (commit date `2026-10-28T01:50:26+08:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete runtime-goal archive implementation and native-chat Codex authentication fixture. Path/registry/lock primitives, credential broker implementation, chat agent and native runtime were not audited.
+
+The [archive operation](https://github.com/huangruiteng/loopx/blob/fff09ead9b17190d9cc8385f0c4da70669a4f272/loopx/runtime.py#L100-L238) separates planning from execution, requires an explicit override for registered goals and resolves the source under the goals root. It acquires artifact, source-registry, maintenance and registry locks in a documented order, then rereads membership, source routes, exact goal-instance references and containment before moving. This provides useful protection against stale preflight decisions among cooperating writers. The lock implementation and all writer call sites were not inspected; the initial runtime-root choice is not re-resolved from the locked registry. A goal ID alone is insufficient when an instance can be replaced.
+
+The [destination checks and result](https://github.com/huangruiteng/loopx/blob/fff09ead9b17190d9cc8385f0c4da70669a4f272/loopx/runtime.py#L18-L36) prevent moving a goal inside itself and choose a currently unused suffix, while the result explicitly distinguishes would-move from moved. Existence-check naming is not an atomic destination reservation, and shutil.move can perform a cross-filesystem copy/remove sequence with partial failure. The routine does not establish a durable archive transaction, contents hash or post-move verification. Keep approved source/destination identity and recovery records through the operation, and report partial outcomes rather than interpreting a successful preflight as a completed archive.
+
+The [authentication fixture](https://github.com/huangruiteng/loopx/blob/fff09ead9b17190d9cc8385f0c4da70669a4f272/tests/test_chat_codex_auth.py#L21-L129) specifies a narrow access-token/account projection, rejection of symlinked or malformed credentials, refresh coalescing and account-preserving errors. Its [start/resume cases](https://github.com/huangruiteng/loopx/blob/fff09ead9b17190d9cc8385f0c4da70669a4f272/tests/test_chat_codex_auth.py#L132-L195) expect credentials only over private RPC, a fixed provider/permission profile, no copied auth file and refusal of provider mismatch before a turn. The process and refresh paths are mocked and the implementation was not reviewed, so these are valuable acceptance requirements rather than proven native isolation or credential confinement. No credential file, subprocess, archive or upstream test was used in this review.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [loopx](https://github.com/huangruiteng/loopx); analyzed commit `99839aeb8fed5fae38a5d319391cd050672a6508`; commit date 2026-10-04T01:14:41+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--loopx.md).
+Analysis metadata: source [loopx](https://github.com/huangruiteng/loopx); analyzed commit `fff09ead9b17190d9cc8385f0c4da70669a4f272`; commit date 2026-10-28T01:50:26+08:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--loopx.md).
 <!-- teamagent-analysis:end -->

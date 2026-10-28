@@ -24,6 +24,12 @@ This entry was catalogued under **ai-prompts**. Its category places it in the ca
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit `49b3a72469b1e7287d66387004ccfcca90e5968a` (commit date `2026-10-22T15:26:17+02:00`). Complete four-file instruction/template delta; no executable implementation or measured prompt evaluation changed.
+
+The [skill](https://github.com/nidhinjs/prompt-master/blob/49b3a72469b1e7287d66387004ccfcca90e5968a/SKILL.md) and [OpenAI task brief](https://github.com/nidhinjs/prompt-master/blob/49b3a72469b1e7287d66387004ccfcca90e5968a/references/templates.md) separate goal/context/constraints/actions/done/output, retain existing authorization and selected models, replace per-action chatter with milestones, and remove an arbitrary reasoning-prompt word limit. Related tasks can share acceptance criteria; delegation remains bounded. These are useful candidate authoring rules, not evidence that prompting enforces permissions or improves outcomes. The same delta asserts model families, tool-call availability and model-specific tendencies without local conformance results; keep those claims unverified and consult exact surface documentation before use. Runtime settings remain outside prompt prose. No prompt benchmark, external model documentation check or provider execution was performed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [prompt-master](https://github.com/nidhinjs/prompt-master); analyzed commit `2bd92518e26bf659e21e3d9ab90573fcf3ddeccb`; commit date 2026-08-24T13:00:40+05:30; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-prompts--prompt-master.md).
+Analysis metadata: source [prompt-master](https://github.com/nidhinjs/prompt-master); analyzed commit `49b3a72469b1e7287d66387004ccfcca90e5968a`; commit date 2026-10-22T18:56:17+05:30; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-prompts--prompt-master.md).
 <!-- teamagent-analysis:end -->

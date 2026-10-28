@@ -30,6 +30,14 @@ Compare single-agent and role-team baselines with equal budgets. Resume after to
 
 Related directions: [agents](../agents.md) · [memory](../memory.md) · [evolution](../evolution.md).
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`3adab2895836ddde6a2150867e2b998a0a1f5334`](https://github.com/crewaiinc/crewai/commit/3adab2895836ddde6a2150867e2b998a0a1f5334). Scope: Full skill cache implementation and cache tests read. Call-site identifier validation, loaders, registry downloads and execution paths were not audited.
+
+The [skill cache](https://github.com/crewaiinc/crewai/blob/3adab2895836ddde6a2150867e2b998a0a1f5334/lib/crewai/src/crewai/skills/cache.py) distinguishes pinned version matches from unknown or corrupt metadata; an unpinned lookup checks only directory and metadata-file presence. Its fallback tar extractor validates every member before extraction and rejects links and special files, with [regression cases](https://github.com/crewaiinc/crewai/blob/3adab2895836ddde6a2150867e2b998a0a1f5334/lib/crewai/tests/skills/test_cache.py) for escaping symlinks, hardlinks and link chains. The modern tar path delegates to the standard library data filter.
+
+The cache uses one organization/name directory and removes the previous version before extracting the replacement. Publication is not atomic, archive expansion has no byte/file-count bound here, and organization/name containment is not validated in this helper; upstream validation was not reviewed. Listing cached metadata also lacks structural schema checks. Adapt version-aware cache misses and adversarial archive fixtures, while retaining the old artifact until a bounded, verified replacement can be published atomically. No archives, registry operations or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [crewai](https://github.com/crewaiinc/crewai); analyzed commit `738c8e19e35c2888d8e0663bc5cc45c5acf6ac2d`; commit date 2026-10-02T17:03:54-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-swarm--crewai.md).
+Analysis metadata: source [crewai](https://github.com/crewaiinc/crewai); analyzed commit `3adab2895836ddde6a2150867e2b998a0a1f5334`; commit date 2026-10-27T13:18:16-03:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-swarm--crewai.md).
 <!-- teamagent-analysis:end -->

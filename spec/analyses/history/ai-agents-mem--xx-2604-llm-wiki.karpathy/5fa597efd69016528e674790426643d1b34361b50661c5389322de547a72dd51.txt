@@ -1,0 +1,28 @@
+# xx-2604-llm-wiki.karpathy
+
+Design-only pattern for immutable sources, an incrementally compiled wiki and an explicit maintenance schema.
+
+Source: [xx-2604-llm-wiki.karpathy](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) · Snapshot: `ac46de1ad27f92b28ac95459c782c07f6b8c964a` · Category: `ai-agents-mem`.
+
+Evidence level: **Design source reviewed; no executable implementation in this checkout.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [llm-wiki.md:25-53](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f/ac46de1ad27f92b28ac95459c782c07f6b8c964a#file-llm-wiki-md-L25-L53)
+- [llm-wiki.md:73-75](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f/ac46de1ad27f92b28ac95459c782c07f6b8c964a#file-llm-wiki-md-L73-L75)
+
+This checkout contains an idea document rather than an executable memory system. It describes three layers: retained raw sources, model-maintained linked Markdown pages, and a schema defining conventions and workflows. Its operations are ingest, query and lint. It distinguishes a content index from a chronological append-only activity log and suggests retaining useful query results as wiki pages. The note explicitly leaves concrete structure, tooling and conventions to the implementation. This report therefore classifies its evidence as a reviewed design source, not implemented or benchmarked behavior.
+
+## Harness implications
+
+The valuable architecture is compilation at ingest time: repeated questions can reuse maintained synthesis instead of reconstructing every relationship from raw chunks. Keep the original material available and make each page's dependencies machine-readable. A source update should schedule affected pages, not silently rewrite unrelated knowledge. Pair the wiki with lexical/hybrid search and exact-source retrieval; generated summaries are a navigational layer, while citations and raw evidence support answers.
+
+## Limitations and tradeoffs
+
+Claims that bookkeeping is effortless or that a wiki remains consistent are aspirations, not guarantees. Model-maintained pages can accumulate unsupported statements, circular citations and contradictions. A single large index eventually becomes expensive to read and maintain. Team editing requires concurrency control and review policy absent from the idea note. Saving every answer would amplify mistakes and fill the knowledge base with redundant generated material.
+
+## Adoption and validation
+
+Adopt as a user-visible knowledge representation, with a compiler and validation pipeline around it. Promote only useful, source-supported answers; attach source spans, generation version, confidence and revision history. Test stale and orphan pages, cycles in citations, contradictory evidence, concurrent edits and deletion propagation. Compare repeated research tasks with raw retrieval to quantify whether precomputed synthesis repays its maintenance cost.
+
+Related directions: [memory](../memory.md) · [evolution](../evolution.md) · [import-generation](../import-generation.md).

@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 divergent-history investigation and scoped source review
+
+Source: [sage](https://github.com/ZHangZHengEric/Sage); inspected snapshot `358f925822e07035c35e610af19bea14de3e01df`; prior analyzed commit `7d97f0e8ce0311042796fb2e7699462012bbd87a`. The inspected snapshot is the saved discovery version, not a claim about the checkout's latest HEAD.
+
+**Scope:** Complete committed path inventory (3,318 paths); full agent_router_service.py (176 lines), auth.py (31 lines), and model_invocation_service.py lines 1–240. Remaining routing/auth middleware and live services were outside scope.
+
+**History outcome:** both full commits are available, but the analyzed commit is not an ancestor and the complete trees differ. The two-tree comparison contains 3,318 changed paths; common ancestor: `0b0dbeae1025612080b59b660bab0509c352f778`. These counts establish comparison coverage, not semantic review of every file. The prior analyzed baseline and findings remain preserved as historical evidence. A separately acknowledged, guarded reconciliation records the inspected revision as a new scoped analysis baseline; it does not establish ancestry, publisher intent or whole-project correctness. The managed metadata below is authoritative for whether that acknowledgment has been recorded.
+
+The [agent response adapters](https://github.com/ZHangZHengEric/Sage/blob/358f925822e07035c35e610af19bea14de3e01df/app/v1/common/services/agent_router_service.py) forward ownership metadata to async submissions, but workspace deletion ignores the supplied deleter's Boolean result before reporting deletion. A response wrapper should preserve failure/partial outcomes instead of converting a completed await into success. The [auth helper](https://github.com/ZHangZHengEric/Sage/blob/358f925822e07035c35e610af19bea14de3e01df/app/v1/common/services/auth.py) uses Argon2 password hashing and constructs session claims; this file does not establish authorization or session-transport protections.
+
+The reviewed [model configuration boundary](https://github.com/ZHangZHengEric/Sage/blob/358f925822e07035c35e610af19bea14de3e01df/app/v1/common/services/model_invocation_service.py#L1-L240) resolves providers by IDs, excludes known provider credentials/config fields from ordinary request passthrough and keeps fast-provider settings separate. _resolve_runtime_user_id prefers a nonempty body user_id over the configured value. That is an attribution boundary requiring a trusted upstream check; this limited inspection is not evidence of an exploitable authorization bypass or proof that such a check exists. Teamagent should bind effective identity and provider grants at the authenticated boundary, before request extras or model routing are considered.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [sage](https://github.com/ZHangZHengEric/Sage); analyzed commit `7d97f0e8ce0311042796fb2e7699462012bbd87a`; commit date 2026-09-30T18:25:07+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--sage.md).
+Analysis metadata: source [sage](https://github.com/ZHangZHengEric/Sage); analyzed commit `358f925822e07035c35e610af19bea14de3e01df`; commit date 2026-10-27T17:41:30+08:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--sage.md).
 <!-- teamagent-analysis:end -->

@@ -2,7 +2,7 @@
 
 Source: [eve](https://github.com/vercel/eve) · Category: [ai-agents](../categories/ai-agents.md)
 
-Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
 
 Snapshot: `6c2e941946383a7a3d1f8f90b5bc6828de40c724`; commit timestamp `2026-10-03T15:08:36-04:00`; 5,782 tracked paths.
 
@@ -24,6 +24,20 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `afc64ba3a14faad7346ee8e6cb660e4003daf54b` (commit date `2026-10-27T10:13:21-07:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Channel CORS normalization and its focused fixture, tool authentication descriptor, and selected JSON-schema construction/refinement/default branches with the schema delta; transport emission, authentication runtime and tool-dispatch callers were not audited.
+
+The [CORS normalizer](https://github.com/vercel/eve/blob/afc64ba3a14faad7346ee8e6cb660e4003daf54b/packages/eve/src/channel/cors.ts#L1-L201) rejects unknown top-level options and gives explicit migration messages for renamed fields. Its [fixture](https://github.com/vercel/eve/blob/afc64ba3a14faad7346ee8e6cb660e4003daf54b/packages/eve/src/channel/cors.test.ts#L1-L31) covers origin normalization, empty strings and misspelled/retired fields. This is useful configuration hygiene, but nested preflight keys are not exhaustively rejected and nonempty origin/header strings are not comprehensive semantic validation. The normalizer alone does not establish emitted browser policy or authenticated caller identity; the H3/Nitro integration was not inspected.
+
+The [JSON-schema adapter](https://github.com/vercel/eve/blob/afc64ba3a14faad7346ee8e6cb660e4003daf54b/packages/eve/src/tools/schema.ts#L359-L400) explicitly passes values through when validator construction is unsupported, and also when validation throws for a defined input. The warning is emitted once, subsequent construction-failure inputs skip validation, and the optional check callback is bypassed in these branches. Successful base validation is followed by default insertion, which can itself produce a value outside the declared schema unless another check rejects it. The new [refinement wrapper](https://github.com/vercel/eve/blob/afc64ba3a14faad7346ee8e6cb660e4003daf54b/packages/eve/src/tools/schema.ts#L278-L308) sequences its callback after the base result, but cannot turn that base adapter into a fail-closed trust boundary. Teamagent should retain structured unsupported-schema errors and validate the final transformed value before a tool effect. Model-facing strict schema rewriting is a separate concern from runtime acceptance.
+
+The [authentication descriptor](https://github.com/vercel/eve/blob/afc64ba3a14faad7346ee8e6cb660e4003daf54b/packages/eve/src/tools/auth.ts#L1-L40) distinguishes display labels, flow/cache keys and provider scope/resource settings. Its app/user principal defaults are a documented contract, not evidence that the uninspected runtime authenticates the caller or enforces resource scope. Reusable names and cache keys must not substitute for the authority that obtained a credential. These conclusions are limited to source and fixture inspection; no upstream tests or authentication flow ran.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [eve](https://github.com/vercel/eve); analyzed commit `6c2e941946383a7a3d1f8f90b5bc6828de40c724`; commit date 2026-10-03T15:08:36-04:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--eve.md).
+Analysis metadata: source [eve](https://github.com/vercel/eve); analyzed commit `afc64ba3a14faad7346ee8e6cb660e4003daf54b`; commit date 2026-10-27T10:13:21-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--eve.md).
 <!-- teamagent-analysis:end -->

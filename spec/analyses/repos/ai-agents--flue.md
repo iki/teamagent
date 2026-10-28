@@ -2,144 +2,16 @@
 
 Source: [flue](https://github.com/withastro/flue) · [Analysis](../../projects/ai-agents--flue.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `658325942b0f4eecd888f9698ab0bebb3b749163`; commit date: 2026-09-28T16:34:41-04:00; review date: unknown; observed SHA: `deee93b40d275ecc9a50c50af2158f20089d54bc`.
+Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `deee93b40d275ecc9a50c50af2158f20089d54bc`; commit date: 2026-10-12T11:48:06-07:00; review date: 2026-10-28T08:47:42.123Z; observed SHA: `deee93b40d275ecc9a50c50af2158f20089d54bc`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/withastro/flue/compare/658325942b0f4eecd888f9698ab0bebb3b749163...deee93b40d275ecc9a50c50af2158f20089d54bc). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/withastro/flue/compare/deee93b40d275ecc9a50c50af2158f20089d54bc...deee93b40d275ecc9a50c50af2158f20089d54bc). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
 - Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 
-- [deee93b40d27](https://github.com/withastro/flue/commit/deee93b40d275ecc9a50c50af2158f20089d54bc) 2026-10-12T11:48:06-07:00: v2.3.0
-- [95a8c8624455](https://github.com/withastro/flue/commit/95a8c86244557e4c257b0fbd7eef2481de2c2150) 2026-10-12T00:21:15-07:00: chore: remove Changesets release tooling
+No commit evidence available or no changes.
 
 ## Changed paths
 
-- D: `.changeset/README.md`
-- D: `.changeset/changelog.mjs`
-- D: `.changeset/config.json`
-- M: `.github/workflows/pr-redirect.yml`
-- D: `.github/workflows/release.yml`
-- M: `.gitignore`
-- M: `CHANGELOG.md`
-- M: `CONTRIBUTING.md`
-- M: `apps/docs/src/content/docs/ecosystem/sandboxes/e2b.md`
-- M: `apps/docs/src/content/docs/reference/provider-api.md`
-- M: `apps/ecosystem-catalog.ts`
-- M: `apps/www/package.json`
-- D: `apps/www/tests/models.json.test.ts`
-- M: `blueprints/sandbox--e2b.md`
-- M: `examples/chat-sdk/package.json`
-- M: `examples/discord-channel/package.json`
-- M: `examples/github-channel/package.json`
-- M: `examples/google-chat-channel/package.json`
-- M: `examples/hello-world/package.json`
-- M: `examples/intercom-channel/package.json`
-- M: `examples/linear-channel/package.json`
-- M: `examples/messenger-channel/package.json`
-- M: `examples/notion-channel/package.json`
-- M: `examples/react-chat/package.json`
-- M: `examples/resend-channel/package.json`
-- M: `examples/salesforce-marketing-cloud-channel/package.json`
-- M: `examples/shopify-channel/package.json`
-- M: `examples/slack-channel/package.json`
-- M: `examples/stripe-channel/package.json`
-- M: `examples/teams-channel/package.json`
-- M: `examples/telegram-channel/package.json`
-- M: `examples/twilio-channel/package.json`
-- M: `examples/whatsapp-channel/package.json`
-- M: `examples/zendesk-channel/package.json`
-- M: `knip.json`
-- M: `package.json`
-- D: `packages/cli/CHANGELOG.md`
-- M: `packages/cli/package.json`
-- M: `packages/cli/src/lib/init.ts`
-- D: `packages/discord/CHANGELOG.md`
-- M: `packages/discord/package.json`
-- D: `packages/github/CHANGELOG.md`
-- M: `packages/github/package.json`
-- D: `packages/google-chat/CHANGELOG.md`
-- M: `packages/google-chat/package.json`
-- D: `packages/intercom/CHANGELOG.md`
-- M: `packages/intercom/package.json`
-- D: `packages/libsql/CHANGELOG.md`
-- M: `packages/libsql/package.json`
-- D: `packages/linear/CHANGELOG.md`
-- M: `packages/linear/package.json`
-- D: `packages/messenger/CHANGELOG.md`
-- M: `packages/messenger/package.json`
-- D: `packages/mongodb/CHANGELOG.md`
-- M: `packages/mongodb/package.json`
-- D: `packages/mysql/CHANGELOG.md`
-- M: `packages/mysql/package.json`
-- D: `packages/notion/CHANGELOG.md`
-- M: `packages/notion/package.json`
-- D: `packages/opentelemetry/CHANGELOG.md`
-- M: `packages/opentelemetry/package.json`
-- D: `packages/opentelemetry/src/tool-content.test.ts`
-- D: `packages/postgres/CHANGELOG.md`
-- M: `packages/postgres/package.json`
-- D: `packages/react/CHANGELOG.md`
-- M: `packages/react/package.json`
-- D: `packages/redis/CHANGELOG.md`
-- M: `packages/redis/package.json`
-- D: `packages/resend/CHANGELOG.md`
-- M: `packages/resend/package.json`
-- D: `packages/runtime/CHANGELOG.md`
-- M: `packages/runtime/package.json`
-- D: `packages/runtime/src/abort.test.ts`
-- M: `packages/runtime/src/agent.ts`
-- M: `packages/runtime/src/client.ts`
-- D: `packages/runtime/src/cloudflare/anthropic-binding-request.test.ts`
-- D: `packages/runtime/src/cloudflare/tracing/index.test.ts`
-- D: `packages/runtime/src/cloudflare/workers-ai-provider.test.ts`
-- D: `packages/runtime/src/document-attachments.test.ts`
-- M: `packages/runtime/src/document-attachments.ts`
-- D: `packages/runtime/src/harness-tool-lineage.test.ts`
-- D: `packages/runtime/src/mcp.test.ts`
-- D: `packages/runtime/src/message-timestamp-projection.test.ts`
-- D: `packages/runtime/src/model-request-info.test.ts`
-- M: `packages/runtime/src/node/local-env.ts`
-- D: `packages/runtime/src/persisted-submission-output.test.ts`
-- D: `packages/runtime/src/runtime/conversation-history-window.test.ts`
-- D: `packages/runtime/src/runtime/handle-conversation-history.test.ts`
-- D: `packages/runtime/src/runtime/providers.test.ts`
-- M: `packages/runtime/src/runtime/providers.ts`
-- D: `packages/runtime/src/session-abort.test.ts`
-- D: `packages/runtime/src/session-overflow.test.ts`
-- D: `packages/runtime/src/session-system-prompt.test.ts`
-- M: `packages/runtime/src/session.ts`
-- D: `packages/runtime/src/telemetry/content.test.ts`
-- D: `packages/runtime/src/tool-deadline.test.ts`
-- D: `packages/runtime/src/tool-output-types.test-d.ts`
-- D: `packages/runtime/src/transient-retry-projection.test.ts`
-- D: `packages/runtime/src/truncated-tool-call.test.ts`
-- D: `packages/salesforce-marketing-cloud/CHANGELOG.md`
-- M: `packages/salesforce-marketing-cloud/package.json`
-- D: `packages/sdk/CHANGELOG.md`
-- M: `packages/sdk/package.json`
-- D: `packages/sdk/src/public/conversation-stream.test.ts`
-- D: `packages/sdk/src/public/history-runtime.test.ts`
-- D: `packages/sdk/src/public/observe-bounded.test.ts`
-- D: `packages/shopify/CHANGELOG.md`
-- M: `packages/shopify/package.json`
-- D: `packages/slack/CHANGELOG.md`
-- M: `packages/slack/package.json`
-- D: `packages/stripe/CHANGELOG.md`
-- M: `packages/stripe/package.json`
-- D: `packages/teams/CHANGELOG.md`
-- M: `packages/teams/package.json`
-- D: `packages/telegram/CHANGELOG.md`
-- M: `packages/telegram/package.json`
-- D: `packages/twilio/CHANGELOG.md`
-- M: `packages/twilio/package.json`
-- D: `packages/vite/CHANGELOG.md`
-- M: `packages/vite/package.json`
-- D: `packages/vite/src/markdown-import-plugin.test.ts`
-- D: `packages/whatsapp/CHANGELOG.md`
-- M: `packages/whatsapp/package.json`
-- D: `packages/zendesk/CHANGELOG.md`
-- M: `packages/zendesk/package.json`
-- M: `pnpm-lock.yaml`
-- D: `scripts/build-docs.mjs`
-- D: `scripts/smoke-test-package-docs.mjs`
+No path evidence available or no changes.

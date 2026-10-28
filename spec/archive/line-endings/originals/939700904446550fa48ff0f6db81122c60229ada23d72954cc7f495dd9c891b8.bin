@@ -1,0 +1,32 @@
+# ai-eval
+
+[Analysis home](../README.md) · 8 projects catalogued; 3 focused source/content reviews.
+
+Screening entries provide identity and package evidence only. Source-reviewed entries explain the exact scope inspected; none is a runtime certification. See [methodology](../methodology.md).
+
+## Category assessment
+
+Comparable task runs, trace retention, deterministic verifiers, model judges, and retrieval-quality metrics.
+
+Build one evaluation contract that freezes the entire configuration and preserves raw evidence. FrontierHarness Eval contributes comparability gates; LangWatch provides an optional observability/evaluation integration; Ragas provides selected evidence-consistency metrics. Use task-specific scorecards and independently verified outcomes before relying on judge scores or public rankings.
+
+Faithfulness to retrieved text is not absolute truth. Unknown scores and failed evaluators remain incomplete, while unrecorded environment differences invalidate comparisons. No benchmark was reproduced here, and screened suites do not establish a universal winner.
+
+Start with:
+
+- [frontier-harness-eval](https://github.com/frontier-harness-eval/eval) — [individual report](../projects/ai-eval--frontier-harness-eval.md).
+- [langwatch](https://github.com/langwatch/langwatch) — [individual report](../projects/ai-eval--langwatch.md).
+- [xx-2602-ragas](https://github.com/vibrantlabsai/ragas) — [individual report](../projects/ai-eval--xx-2602-ragas.md).
+
+## Project catalogue
+
+| Project source | Individual report | Depth | Harness relevance / finding |
+|---|---|---|---|
+| [falsify](https://github.com/studio-11-co/falsify) | [Report](../projects/ai-eval--falsify.md) | screened | Inventory / README only; implementation not independently established. |
+| [frontier-harness-eval](https://github.com/frontier-harness-eval/eval) | [Report](../projects/ai-eval--frontier-harness-eval.md) | source-reviewed | Adopt its frozen-manifest, retained-evidence, and comparability-gate patterns for the evaluation service. Treat its public suite as one external benchmark slice, complemented by private team tasks and safety regressions. Do not select a default agent solely from the published rankings. Before running the workflow, review its external runtime requirements and network permissions; this analysis did not execute the benchmark or reproduce its performance claims. |
+| [ifixai](https://github.com/ifixai-ai/iFixAi) | [Report](../projects/ai-eval--ifixai.md) | screened | Inventory / README only; implementation not independently established. |
+| [langwatch](https://github.com/langwatch/langwatch) | [Report](../projects/ai-eval--langwatch.md) | source-reviewed | Integrate through an optional observability/evaluation exporter before adopting the whole platform as a required runtime dependency. Keep a local evaluation interface and storage path for offline use. Evaluate code-based verifiers first for deterministic tasks, supplementing them with calibrated model judges. Test evaluator recursion, unavailable models, tenant isolation, interrupted runs, and artifact retention. Review deployment and license requirements separately before selecting a hosted or self-hosted production configuration. |
+| [mirrorcode](https://github.com/epoch-research/MirrorCode) | [Report](../projects/ai-eval--mirrorcode.md) | screened | Inventory / README only; implementation not independently established. |
+| [openeval](https://github.com/Hona/openeval) | [Report](../projects/ai-eval--openeval.md) | screened | Inventory / README only; implementation not independently established. |
+| [smevals](https://github.com/prime-radiant-inc/smevals) | [Report](../projects/ai-eval--smevals.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2602-ragas](https://github.com/vibrantlabsai/ragas) | [Report](../projects/ai-eval--xx-2602-ragas.md) | source-reviewed | Adopt selected metrics behind the evaluation protocol for knowledge-query tasks, after calibrating them on the team's domain. Prefer deterministic verifiers for compilation, tests, tool effects, and citation existence. Keep faithfulness as one dimension in a scorecard instead of collapsing it into a universal quality score. Treat NaN and evaluator errors as unknown with explicit coverage statistics. Re-evaluate when the retrieval pipeline, source parser, or judge changes, not only when the answering model changes. |

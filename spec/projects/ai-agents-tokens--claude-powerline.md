@@ -24,6 +24,12 @@ This entry was catalogued under **ai-agents-tokens**. Its category places it in 
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit `88a5e810bdf5423f0c42cbcb765a8c00d8a6fa85` (commit date `2026-10-25T07:16:31Z`). Complete 13-file delta: Git directory selection, formatting/rendering, regression test changes and pricing metadata; unchanged acquisition paths not audited.
+
+The [Git adapter](https://github.com/Owloops/claude-powerline/blob/88a5e810bdf5423f0c42cbcb765a8c00d8a6fa85/src/segments/git.ts) now chooses the nearest repository containing the working directory before falling back to the configured project and recognizes unborn branches. [Formatters](https://github.com/Owloops/claude-powerline/blob/88a5e810bdf5423f0c42cbcb765a8c00d8a6fa85/src/utils/formatters.ts) compare whole path segments, advance units at rounding boundaries, and clamp bar cell counts while preserving out-of-range usage text. Renderer/TUI changes align warning colors with displayed percentages and expose conflicts consistently. [Regression fixtures](https://github.com/Owloops/claude-powerline/blob/88a5e810bdf5423f0c42cbcb765a8c00d8a6fa85/test/git-worktree.test.ts) cover nested worktrees and project fallback, but mock subprocess behavior. Adapt tests for workspace identity and numeric presentation; lexical path display helpers are not canonical containment checks. The new pricing entries remain upstream data, not independently verified billing rates. No tests, terminal integration, API or subscription checks were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [claude-powerline](https://github.com/Owloops/claude-powerline); analyzed commit `e8696d7dd9791e5cfd45bca8cead6f9204c9284f`; commit date 2026-09-27T07:36:19Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--claude-powerline.md).
+Analysis metadata: source [claude-powerline](https://github.com/Owloops/claude-powerline); analyzed commit `88a5e810bdf5423f0c42cbcb765a8c00d8a6fa85`; commit date 2026-10-25T07:16:31Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--claude-powerline.md).
 <!-- teamagent-analysis:end -->

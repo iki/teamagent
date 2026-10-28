@@ -27,6 +27,21 @@ Prototype as an optional high-recall code-retrieval stage behind exact search, l
 
 Related directions: [decisions](../decisions.md) · [memory](../memory.md) · [agents](../agents.md) · [models](../models.md).
 
+
+## Change review - 2026-10-28
+
+**Retrieval bounds active scoring and revalidates evidence, but byte budgets and cache sweeps remain soft limits.** Reviewed commit `28cf384d444e1f4bf5571142ec32357cb84973ae` (commit date `2026-10-21T23:34:38+04:00`). Compared with `703aba1a36a3b854be405244ea748f607cd630c0`; the complete Git comparison contains 107 changed paths.
+
+Retrieval caps active stage work at 32 and groups navigation requests by encoded bytes and item count, preserving source order when completed groups arrive out of order. Provider/source failures can split a group recursively, while each attempt rechecks donor content hashes through a serialized validation queue. The navigation byte budget only stops low-confidence exploration after enough positive scores; confident evidence permits further work. Ordered groups and results are retained through the stage, so active-worker limits do not bound all retained state. In reportSnapshot, inspected is a Set but the code tests the return of Set.add as if it indicated a new entry; that always-truthy return can count a repeated snapshot's bytes again while the unique-file count stays unchanged.
+
+Selection validates finite scores in [0,1], rechecks source freshness before attempts and applies settled batches in source order. Invalidated source clears evidence; a valid contextual rejection removes earlier overlapping evidence, whereas failed or unprocessed groups retain the earlier selection. These score ranges establish shape, not calibrated confidence. Cache maintenance uses 16 filesystem workers, expiry and an oldest-entry eviction target below its budget, and writes exclusive temporary files before rename. However it first collects every matching filename and retained record, estimates only local writes between sweeps, and coordinates concurrent sweeps only within one process. A shared timestamp does not serialize cross-process maintenance; recent writers may exceed the byte budget, as its comment acknowledges.
+
+Evidence: [packages/core/src/retrieve.ts:25-109](https://github.com/dzhng/jevgrep/blob/28cf384d444e1f4bf5571142ec32357cb84973ae/packages/core/src/retrieve.ts#L25-L109) · [packages/core/src/retrieve.ts:111-336](https://github.com/dzhng/jevgrep/blob/28cf384d444e1f4bf5571142ec32357cb84973ae/packages/core/src/retrieve.ts#L111-L336) · [packages/core/src/retrieve.ts:805-843](https://github.com/dzhng/jevgrep/blob/28cf384d444e1f4bf5571142ec32357cb84973ae/packages/core/src/retrieve.ts#L805-L843) · [packages/core/src/selection.ts:163-335](https://github.com/dzhng/jevgrep/blob/28cf384d444e1f4bf5571142ec32357cb84973ae/packages/core/src/selection.ts#L163-L335) · [packages/core/src/cache.ts:165-350](https://github.com/dzhng/jevgrep/blob/28cf384d444e1f4bf5571142ec32357cb84973ae/packages/core/src/cache.ts#L165-L350).
+
+**Harness consequence:** Keep immutable content-hash checks and deterministic evidence replacement, with explicit partial results for failed refinements. Make request/byte/retained-state budgets unconditional and fix unique-snapshot accounting before using it for usage receipts. Treat the answer cache as rebuildable and soft-budgeted; add bounded enumeration and cross-process ownership if it must enforce a hard disk quota. Evaluate confidence thresholds on held-out tasks rather than treating normalized scores as probabilities.
+
+**Scope and limits:** Static scoped review of retrieval scheduling, evidence refinement and cache maintenance within the 107-path comparison. Evaluator transport, all parser/language changes and end-to-end filesystem/provider tests were not fully audited or executed. Cache maintenance was inspected as source/diff; no cache files were modified.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [jevgrep](https://github.com/dzhng/jevgrep); analyzed commit `703aba1a36a3b854be405244ea748f607cd630c0`; commit date 2026-10-02T12:02:25-07:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--jevgrep.md).
+Analysis metadata: source [jevgrep](https://github.com/dzhng/jevgrep); analyzed commit `28cf384d444e1f4bf5571142ec32357cb84973ae`; commit date 2026-10-21T23:34:38+04:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--jevgrep.md).
 <!-- teamagent-analysis:end -->

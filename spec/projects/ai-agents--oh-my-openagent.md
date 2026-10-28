@@ -24,6 +24,16 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped source review
+
+Source: [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent); inspected saved discovery revision `43eec3ddaf64c52dceb14b3c7898195a7525e257`. Prior analyzed revision `94e954721ccb02fbcbc8bb583f9da1d244a0a06b` remains historical evidence.
+
+**Scope:** Full tool-name normalizer, development-runtime pruner and agent-environment tests read. Runtime-pruner tests, actual hook dispatch, bootstrap/isolation scripts and source-agent loop were not audited.
+
+The [runtime pruner](https://github.com/code-yeongyu/oh-my-openagent/blob/43eec3ddaf64c52dceb14b3c7898195a7525e257/script/omob-runtime-prune.ts) computes a separate plan, reserves a slot for the runtime being provisioned, preserves names identified as in use and skips deletion if process enumeration fails. Its ownership test is a string prefix over one process-list snapshot. That leaves enumeration completeness, executable-path representation and process-start races outside the guarantee; the child process has no explicit timeout, and the helper does not validate directory ownership through a manifest before recursive removal. This is useful lifecycle design evidence, not proof that every live runtime is protected.
+
+The [tool-name normalizer](https://github.com/code-yeongyu/oh-my-openagent/blob/43eec3ddaf64c52dceb14b3c7898195a7525e257/packages/utils/src/tool-name.ts#L15-L27) uses the in operator on an ordinary object: inherited names such as constructor can take the special-mapping branch and return a non-string despite the declared return type. Normalize display names separately from tool identity and use own-property lookup with validated output at dispatch boundaries. The [environment tests](https://github.com/code-yeongyu/oh-my-openagent/blob/43eec3ddaf64c52dceb14b3c7898195a7525e257/script/agent-env.test.ts) check pin consistency and script text, including credential-injection markers; they do not execute isolation or establish that secrets cannot escape. No pruning, bootstrap or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent); analyzed commit `94e954721ccb02fbcbc8bb583f9da1d244a0a06b`; commit date 2026-08-17T06:41:22+09:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--oh-my-openagent.md).
+Analysis metadata: source [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent); analyzed commit `43eec3ddaf64c52dceb14b3c7898195a7525e257`; commit date 2026-10-28T02:19:42+09:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--oh-my-openagent.md).
 <!-- teamagent-analysis:end -->

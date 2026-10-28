@@ -12,195 +12,28 @@
       "decisions"
     ],
     "depth": "screened",
-    "analyzedSha": "1181fd4e8cc581931a5ee672697a646721e92c78",
-    "analyzedAt": null,
-    "analyzedCommitDate": "2026-10-02T19:05:55+05:30",
-    "reportSha256": "d29516bcdccac24cc05cbc6ab1f3b91204c05ad4f0cf3e2fb8b61a4ae298bdb9",
+    "analyzedSha": "5c180932a00c793261177f79aee21db8929f3fe2",
+    "analyzedAt": "2026-10-28T08:47:42.123Z",
+    "analyzedCommitDate": "2026-10-21T16:02:50-06:00",
+    "reportSha256": "8242464fcc0c883979960dae2aab8b060c92295f8d426d3e762ad01b736a0e25",
     "lifecycle": "active"
   },
   "changes": {
     "id": "ai-query--watermarks-remover",
-    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "generatedAt": "2026-10-28T11:33:23.190Z",
     "observedAt": "2026-10-27T18:18:39.3637600+00:00",
     "source": "https://github.com/guillaumemeyer/watermarks-remover",
     "report": "spec/projects/ai-query--watermarks-remover.md",
-    "analyzedSha": "1181fd4e8cc581931a5ee672697a646721e92c78",
-    "analyzedAt": null,
-    "analyzedCommitDate": "2026-10-02T19:05:55+05:30",
+    "analyzedSha": "5c180932a00c793261177f79aee21db8929f3fe2",
+    "analyzedAt": "2026-10-28T08:47:42.123Z",
+    "analyzedCommitDate": "2026-10-21T16:02:50-06:00",
     "observedSha": "5c180932a00c793261177f79aee21db8929f3fe2",
-    "status": "changed",
+    "status": "current",
     "shallow": false,
     "dirty": false,
     "reportModified": false,
-    "commits": [
-      {
-        "sha": "5c180932a00c793261177f79aee21db8929f3fe2",
-        "date": "2026-10-21T16:02:50-06:00",
-        "subject": "fix(container): parse HTML meta attributes without a backtracking regex (#407)"
-      },
-      {
-        "sha": "980c0b4c5786ca710ed77276b6e55b622f340d4c",
-        "date": "2026-10-17T10:58:05+05:30",
-        "subject": "fix(container): value-scan Markdown frontmatter values that span lines (block scalars, wrapped values, lists) (#402)"
-      },
-      {
-        "sha": "0fd2ded1ff78cc67a1ab31596c9cce5dda9f4e12",
-        "date": "2026-10-17T10:55:48+05:30",
-        "subject": "fix(docker): copy humanize_pass and detect_gumbel into the markllm image (#387)"
-      },
-      {
-        "sha": "374f003b4baa52e2dc126e4bc822b7c23eb2ebd8",
-        "date": "2026-10-17T10:49:52+05:30",
-        "subject": "fix: preserve XML-escaped OOXML relationship targets (#394)"
-      },
-      {
-        "sha": "6fd70ecbcd22784eb0f33747547ee3798babdabd",
-        "date": "2026-10-17T10:44:58+05:30",
-        "subject": "feat(research): add DeepSeek sidecar benchmark fixture and guide (#385)"
-      },
-      {
-        "sha": "5b3cb35b12191838423e178b86f353d6e2679ad0",
-        "date": "2026-10-17T10:41:02+05:30",
-        "subject": "Inspect and clean Office web-extension metadata (#380)"
-      },
-      {
-        "sha": "2ce56b65e9de5630a8857e63545b32fdf1900c45",
-        "date": "2026-10-17T10:36:34+05:30",
-        "subject": "fix(container): honor quoted attribute values in <meta> tag scan (#401)"
-      },
-      {
-        "sha": "f8635e1cfab07a0e165b14dcf422b857ad21e42d",
-        "date": "2026-10-17T10:33:26+05:30",
-        "subject": "fix(container): require a separator in the data-ai* attribute scan (#400)"
-      },
-      {
-        "sha": "c5297e9e69fec0779c29127c7892427e673fafd9",
-        "date": "2026-10-09T06:38:52+05:30",
-        "subject": "Add OpenAI Codex skill installation support (#379)"
-      },
-      {
-        "sha": "bb9d6b1d5cf18edfc599a3e471124361d98e5d5c",
-        "date": "2026-10-09T04:22:18+05:30",
-        "subject": "fix(image): gate the ISOBMFF byte-scan on an 8-byte tail, not any tail (#382)"
-      }
-    ],
-    "files": [
-      {
-        "status": "M",
-        "path": "README.md",
-        "previousPath": null
-      },
-      {
-        "status": "A",
-        "path": "benchmarks/providers/deepseek.json",
-        "previousPath": null
-      },
-      {
-        "status": "A",
-        "path": "docs/deepseek-benchmark.md",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "docs/synthid-text-benchmark.md",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "install_skill.py",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "service/Dockerfile.markllm",
-        "previousPath": null
-      },
-      {
-        "status": "A",
-        "path": "service/scripts/bench_deepseek_smoke.py",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "service/scripts/clean_file.py",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "service/scripts/common.py",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "service/scripts/container_meta.py",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "service/scripts/image_meta.py",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "skills/clean-user-facing-text/scripts/common.py",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "skills/remove-ai-marks/references/removal-matrix.md",
-        "previousPath": null
-      },
-      {
-        "status": "A",
-        "path": "tests/test_bench_deepseek_smoke.py",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "tests/test_container_meta.py",
-        "previousPath": null
-      },
-      {
-        "status": "A",
-        "path": "tests/test_dockerfile_markllm_copies.py",
-        "previousPath": null
-      },
-      {
-        "status": "A",
-        "path": "tests/test_frontmatter_multiline_values.py",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "tests/test_install_skill.py",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "tests/test_isobmff_truncated_bytescan.py",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "tests/test_ooxml_xlsx_pptx.py",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "tests/test_prose_values_not_provenance.py",
-        "previousPath": null
-      },
-      {
-        "status": "A",
-        "path": "tests/test_relationship_xml_entities.py",
-        "previousPath": null
-      },
-      {
-        "status": "M",
-        "path": "tests/test_security_hardening.py",
-        "previousPath": null
-      }
-    ],
+    "commits": [],
+    "files": [],
     "commitsTruncated": false,
     "filesTruncated": false,
     "notes": [

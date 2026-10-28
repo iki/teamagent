@@ -24,6 +24,14 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`dbefc83e32a42b7319fef8af75e3e307506251c8`](https://github.com/guanyang/antigravity-skills/commit/dbefc83e32a42b7319fef8af75e3e307506251c8). Scope: Full Remotion creation skill, sound-effect reference and CLAUDE.md testing reference read. Rendering code, media licenses, subagent evaluation harness and the wider bundle were not reviewed.
+
+The [creation skill](https://github.com/guanyang/antigravity-skills/blob/dbefc83e32a42b7319fef8af75e3e307506251c8/skills/remotion-create/SKILL.md) checks hidden directory contents before choosing an existing folder or new subfolder and distinguishes meaningful .env/.git entries from disposable metadata. That preservation rule is useful; its latest-version scaffold and npm instructions do not fit Teamagent's pinned dependency workflow. The [sound-effect list](https://github.com/guanyang/antigravity-skills/blob/dbefc83e32a42b7319fef8af75e3e307506251c8/skills/remotion-markup/sfx.md) supplies remote assets, without demonstrating license rights, immutable versions or media integrity.
+
+The [documentation experiment](https://github.com/guanyang/antigravity-skills/blob/dbefc83e32a42b7319fef8af75e3e307506251c8/skills/writing-skills/references/CLAUDE_MD_TESTING.md) includes a no-skill baseline and pressure scenarios, but its success criterion is compliance with skill loading, not independent task correctness. Expected results are predictions, and the harness is listed as future work in this file. Test selection precision, unnecessary loading, authority preservation and outcomes alongside compliance; a skill should not override user instructions merely to pass its own rubric. No project, media, subagent experiment or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle-antigravity.guanyang](https://github.com/guanyang/antigravity-skills); analyzed commit `2e93d3a2acdf71a51eef31b9eb5cdb02ecd54d65`; commit date 2026-10-02T04:49:36Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle-antigravity.guanyang.md).
+Analysis metadata: source [bundle-antigravity.guanyang](https://github.com/guanyang/antigravity-skills); analyzed commit `dbefc83e32a42b7319fef8af75e3e307506251c8`; commit date 2026-10-27T04:19:02Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle-antigravity.guanyang.md).
 <!-- teamagent-analysis:end -->

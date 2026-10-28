@@ -24,6 +24,18 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## 2026-10-28 scoped source review
+
+Source: [world-model-optimizer](https://github.com/experientiallabs/world-model-optimizer); inspected saved discovery revision `5f4348efd714894d8def5a498117e9b830598350`. Prior analyzed revision `d85ca8553118cdd718e529238289820a7eb12472` remains historical evidence.
+
+**Scope:** Full deployment-health registry and provider environment-name helper read. Gateway dispatch, lane-ejection policy, failure normalization, ledger/accounting and tests were not audited.
+
+The [health registry](https://github.com/experientiallabs/world-model-optimizer/blob/5f4348efd714894d8def5a498117e9b830598350/exp/runtime/gateway/health.py) keeps catalog/deployment/connection identities, uses an injectable monotonic clock and serializes state under a lock. It distinguishes provider authentication/quota failures, transport failures, refusals and throttling, with clamped provider backoff windows. Opening a stream restores reachability before terminal success, so that observation must remain distinct from task correctness. A release_probe path exists for dispatches that never began, but cancellation-safe use of it was not reviewed.
+
+Suppression is explicitly a routing heuristic: forced claims can pass an open circuit and throttle-redial claims can pass a throttle window. The latter helper does not bind the caller to the original throttled request; call-site policy must establish that precondition. Per-deployment dictionary entries have no eviction in this file, so bounded state assumes a bounded catalog/connection lifecycle. Constructor positivity checks do not reject every nonfinite float. These are not hard spend or concurrency guarantees.
+
+The [credential override-name helper](https://github.com/experientiallabs/world-model-optimizer/blob/5f4348efd714894d8def5a498117e9b830598350/exp/common/auth/env_names.py) retains known provider names but sanitizes, uppercases and truncates punctuation distinctions in custom connection IDs. Distinct IDs such as a-b and a_b therefore share an override name unless callers reject collisions. Adapt separate content-free health, policy identity and credential namespaces with explicit collision checks; no gateway, credentials, model calls or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [world-model-optimizer](https://github.com/experientiallabs/world-model-optimizer); analyzed commit `d85ca8553118cdd718e529238289820a7eb12472`; commit date 2026-10-03T12:42:32-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--world-model-optimizer.md).
+Analysis metadata: source [world-model-optimizer](https://github.com/experientiallabs/world-model-optimizer); analyzed commit `5f4348efd714894d8def5a498117e9b830598350`; commit date 2026-10-27T09:41:38-04:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--world-model-optimizer.md).
 <!-- teamagent-analysis:end -->

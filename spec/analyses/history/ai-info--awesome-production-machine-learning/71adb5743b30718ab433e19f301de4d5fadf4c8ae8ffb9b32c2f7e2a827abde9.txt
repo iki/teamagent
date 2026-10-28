@@ -1,0 +1,25 @@
+# awesome-production-machine-learning
+
+Source: [awesome-production-machine-learning](https://github.com/EthicalML/awesome-production-machine-learning) · Category: [ai-info](../categories/ai-info.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `4efc0a16249c6a3a67561faa7975507d2fcd756e`; commit timestamp `2026-10-03T08:11:50-04:00`; 13 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/EthicalML/awesome-production-machine-learning/blob/4efc0a16249c6a3a67561faa7975507d2fcd756e/README.md)):
+
+> This repository contains a curated list of awesome open source libraries that will help you deploy, monitor, version, scale, and secure your production machine learning 🚀 You can keep up to date by watching this github repo to get a summary of the new production ML libraries added every month via releases 🤩
+
+Build/package evidence: No common build manifest identified.
+
+License evidence: [LICENSE](https://github.com/EthicalML/awesome-production-machine-learning/blob/4efc0a16249c6a3a67561faa7975507d2fcd756e/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-info**. Its category places it in the candidate set for agents, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

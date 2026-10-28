@@ -24,6 +24,14 @@ This entry was catalogued under **ai-agents-skills**. Its category places it in 
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`5a3ae56ed3dccbbd0c5d34f01c533080ebbff5c8`](https://github.com/Tencent/teamai-cli/commit/5a3ae56ed3dccbbd0c5d34f01c533080ebbff5c8). Scope: Full session scoring driver, save-session command and sharing skill read. Lease implementation, redaction/summary collector, timeout cancellation and report-worktree publisher were not audited.
+
+The [scoring driver](https://github.com/Tencent/teamai-cli/blob/5a3ae56ed3dccbbd0c5d34f01c533080ebbff5c8/src/score-sessions.ts) keeps local labels pending for later publication, offers verified versus best-effort isolation levels and uses per-scope locks with finally cleanup. Its thirty-minute deadline bounds taking new leases, not completion of an in-flight judge; isolation capability is supplied by an unread helper. [Session saving](https://github.com/Tencent/teamai-cli/blob/5a3ae56ed3dccbbd0c5d34f01c533080ebbff5c8/src/save-session.ts) separates local persistence from opt-in team publication, excludes the prompt from uploads by default and preserves explicit busy/failed/already-present outcomes. It propagates dry-run into configuration loaders to avoid migration writes.
+
+Local logs still include a redacted prompt line, and the collector's redaction was not inspected. The outer ten-second timeout does not itself demonstrate cancellation of an uncertain publish. The [sharing skill](https://github.com/Tencent/teamai-cli/blob/5a3ae56ed3dccbbd0c5d34f01c533080ebbff5c8/skill-data/share/SKILL.md) proposes direct team-branch publication and a local language preference; neither grants authorization in Teamagent. Adapt independent scoring attempts, dry-run propagation and publication receipts, while keeping privacy, approval and durable recovery in enforced host code. No session, judge, upload or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [admin.teamai-cli.tencent](https://github.com/Tencent/teamai-cli); analyzed commit `6c5949f86e5ef9a8051d0454a8c6e3be440b2cf1`; commit date 2026-10-03T22:20:41+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--admin.teamai-cli.tencent.md).
+Analysis metadata: source [admin.teamai-cli.tencent](https://github.com/Tencent/teamai-cli); analyzed commit `5a3ae56ed3dccbbd0c5d34f01c533080ebbff5c8`; commit date 2026-10-27T17:56:04+01:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--admin.teamai-cli.tencent.md).
 <!-- teamagent-analysis:end -->

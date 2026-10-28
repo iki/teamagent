@@ -30,6 +30,20 @@ Test cancellation and worker loss between graph nodes, malformed graphs, missing
 
 Related directions: [import-generation](../import-generation.md) · [agents](../agents.md).
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `426f5eea52a7ece1dd599fff4cb6cd1f352ddd24` (commit date `2026-10-26T21:12:41-04:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete optional agent-host bridge and selected mocked host/lifecycle fixtures; the separate comfy-agent package, its proxy/authentication, graph execution and model inference were not audited.
+
+The [agent-host bridge](https://github.com/comfy-org/comfyui/blob/426f5eea52a7ece1dd599fff4cb6cd1f352ddd24/app/agent_host.py#L1-L93) discovers a `comfyui.agent` v1 entry point, checks for callable host methods and distinguishes missing, incompatible and failed packages without aborting the main application's startup. Loading the entry point executes installed code; protocol discovery is therefore a trusted-plugin boundary, not passive inspection of untrusted package metadata. The bridge explicitly delegates process/storage/proxy and same-origin trust behavior to the separate package, which was not inspected.
+
+[Startup](https://github.com/comfy-org/comfyui/blob/426f5eea52a7ece1dd599fff4cb6cd1f352ddd24/app/agent_host.py#L96-L176) refuses to start after route registration fails, moves blocking host startup off the event loop when available and publishes state/reason rather than an internal URL. Exceptions become explicit failure states; stop exceptions are logged. Status values are copied from host-returned data without full enum/schema validation at this boundary, and the bridge does not enforce an outer startup/shutdown deadline. A callable interface and a ready flag are not proofs of safe confinement or completed cleanup.
+
+The inspected [fixtures](https://github.com/comfy-org/comfyui/blob/426f5eea52a7ece1dd599fff4cb6cd1f352ddd24/tests-unit/app_test/agent_host_test.py#L82-L299) use fake entry points/hosts to cover missing/incompatible packages, SystemExit, registration failure, URL omission, duplicate-status suppression and nonblocking startup dispatch. They were not executed and do not test the real wheel's origin/authentication boundary. Teamagent can use the explicit capability/failure states and versioned host interface, with typed external status, observed cleanup and actual package/transport acceptance tests required before integration.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [comfyui](https://github.com/comfy-org/comfyui); analyzed commit `e9027f2b30f37bb3052714eb08fcf479542f4fc0`; commit date 2026-10-03T01:20:37-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--comfyui.md).
+Analysis metadata: source [comfyui](https://github.com/comfy-org/comfyui); analyzed commit `426f5eea52a7ece1dd599fff4cb6cd1f352ddd24`; commit date 2026-10-26T21:12:41-04:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--comfyui.md).
 <!-- teamagent-analysis:end -->

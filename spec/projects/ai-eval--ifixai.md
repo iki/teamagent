@@ -24,6 +24,15 @@ This entry was catalogued under **ai-eval**. Its category places it in the candi
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`28dca412279635361d626574810aae8d91ab6b45`](https://github.com/ifixai-ai/iFixAi/commit/28dca412279635361d626574810aae8d91ab6b45). Scope: Full layout validator, finite-model policy exploration/repair and empty-permission-matrix regression tests read. Other inspection runners, discovery implementation and provider integration were not audited.
+
+The [layout validator](https://github.com/ifixai-ai/iFixAi/blob/28dca412279635361d626574810aae8d91ab6b45/ifixai/harness/validator.py) rejects inspection-like misspellings rather than silently excluding them, checks duplicate and folder-derived IDs, and forbids rubric/reference artifacts for structural-only tests so unmeasured dimensions are not advertised. [Policy exploration](https://github.com/ifixai-ai/iFixAi/blob/28dca412279635361d626574810aae8d91ab6b45/ifixai/policy_lab/search.py) snapshots inputs, records state/transition/depth cutoffs, retains safety and legitimate-goal witnesses and makes a no-enabled-transitions result inconclusive. Its hashes establish integrity rather than authenticity; verification covers the declared finite model, and reachable goals prove existence rather than universal completion.
+
+The [repair search](https://github.com/ifixai-ai/iFixAi/blob/28dca412279635361d626574810aae8d91ab6b45/ifixai/policy_lab/repair.py) bounds permission-removal cardinality, candidates and transitions, preserves coverage limits and limits minimality to the explored removal space. It does not modify deployed authorization, code or guards. The [discovery tests](https://github.com/ifixai-ai/iFixAi/blob/28dca412279635361d626574810aae8d91ab6b45/ifixai/tests/core/test_discovery_empty_permission_matrix.py) preserve an explicitly empty grant matrix as deny-all evidence, while unavailable capability retains inferred grants; those inferred permissions must remain visibly non-authoritative in Teamagent. Adapt explicit coverage, fixture completeness and separate modeled/observed results. No inspection, model search, repair, provider call or tests were executed.
+
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ifixai](https://github.com/ifixai-ai/iFixAi); analyzed commit `5b9b12764614950e11208f45fca96ffe5e183c8c`; commit date 2026-10-02T19:36:20Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-eval--ifixai.md).
+Analysis metadata: source [ifixai](https://github.com/ifixai-ai/iFixAi); analyzed commit `28dca412279635361d626574810aae8d91ab6b45`; commit date 2026-10-24T23:10:50Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-eval--ifixai.md).
 <!-- teamagent-analysis:end -->

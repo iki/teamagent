@@ -133,6 +133,51 @@ The baseline must be strong enough to expose whether advanced memory pays for it
 
 First ship immutable source versions, imports, lexical search, evidence spans and a context packet. Next add dense retrieval/reranking and code navigation. Then pilot temporal relations, curated wiki compilation and consolidation on workloads that demonstrate need. Keep advanced backends optional until they improve outcome quality or operating cost on the held-out suite. Promote changes through the [evolution workflow](evolution.md), with rollback to the previous parser, index and policy versions.
 
+## Source refresh: 2026-10-28 - recovery, coverage and decision evidence
+
+The [GraphRAG cache review](projects/ai-agents-mem--graphrag.md) supports namespace-aware bulk reads and compare-before-delete cleanup of corrupt entries. SQLite's 500-key SQL batches bound statement parameters; the generic outer gather and total decoded results still need independent input, concurrency and byte limits. The [LightRAG review](projects/ai-agents-mem--lightrag.md) reinforces non-destructive recovery: an initialization error does not authorize dropping a collection, and legacy/migration state must be reconciled before creating an empty replacement. Evaluate recall after tenant filtering separately from successful query transport; transaction-local iterative scans trade bounded work for coverage and do not guarantee full recall.
+
+The [bbolt review](projects/ai-agents-mem--bbolt.md) adds a narrower maintenance lesson: moving a hierarchy node must preserve live identity and metadata, reject cycles and protect compaction sources against path aliases. This does not select bbolt for Teamagent. The [LEANN review](projects/ai-query--leann.md) likewise supports model/template-scoped cache identity and owned connections while retaining byte budgets and explicit thread-sharing limits. Exact model revisions and source permissions remain part of Teamagent's stronger cache contract.
+
+Memory delivery and judgment are separate from instructions to produce them. The [bs_cortex refresh](projects/ai-agents-mem--bs_cortex.md) describes planned client-side answer ingestion without demonstrating successful delivery. The [TencentDB review](projects/ai-agents-mem--tencentdb-agent-memory.md) shows why an unavailable model judgment must remain distinct from false: its parser coerces values with `Boolean`, and its parse-failure branch returns negative flags. Teamagent should require typed decisions and observed ingestion receipts. Similarly, [Wigolo's citation mapper](projects/ai-query--wigolo.md) gives an in-range citation marker a high label without checking support; citation syntax and lexical overlap cannot substitute for exact evidence spans and claim validation. These source findings are static review evidence, not new implemented Teamagent capabilities or measured retrieval gains.
+
+The [Agentmemory review](projects/ai-agents-mem--agentmemory.md) provides a concrete derived-index pattern: bounded projections retain incomplete-coverage flags, pending journals block readers, and final generation/revision checks reject stale views. Its byte accounting happens after the storage read, so transport allocation and aggregate request admission still need separate limits. Its source-authorization callback is optional; Teamagent must make ownership checks mandatory. [Utopia's historical retrieval](projects/ai-agents-mem--utopia.md) exposes another coverage limit: filtering current lexical results by an old timestamp cannot recover superseded chunks absent from the lexical index. Report channel availability, historical completeness and snapshot identity separately from ranking scores.
+
+The [Mem0 review](projects/ai-agents-mem--mem0.md) rejects blank entity IDs before deletion, yet omitted `deleteUsers` scope still deletes every listed entity. Require an explicit ownership scope and a separate grant for broad deletion. [Open Design's extraction-origin snapshot](projects/ai-gen--open-design.md) correctly copies caller identity before asynchronous work, but its small in-memory history is a UI aid rather than a durable source receipt. Preserve attribution and observed write status in the evidence store independently of presentation history.
+
+The [QMD migration review](projects/ai-query--qmd.md) requires a separate recovery decision for readable legacy data whose key/dimension cannot be identified: the inspected branch can drop that table without copying or final verification. Preserve the original index and migration manifest until semantic coverage is proven. [Turbovec's conversion review](projects/ai-agents-mem--turbovec.md) validates container geometry and stages replacement, but full input/output buffering and last-writer-wins replacement still require memory admission and writer ownership. Neither container parity nor a successful migration establishes embedding-space compatibility or retrieval recall.
+
+The [Jevgrep refresh](projects/ai-query--jevgrep.md) qualifies its bounded-traversal pattern: active scoring is capped, but retained results and confident navigation can exceed the low-confidence byte budget, and a `Set.add` return-value check can recount snapshot bytes. Require independent hard budgets and accurate unique-source receipts. The [Contextrie scoped review](projects/ai-agents-mem--xx-2604-contextrie.md) similarly finds unrestricted judge fan-out and a composer whose tightness is prompt guidance; it returns context text without the selected-source manifest. Preserve source/version IDs through composition, verify claims separately and calibrate score thresholds on held-out tasks. Its reconciled commits have identical tracked trees despite unrelated ancestry, which supports content equivalence at those pins rather than current-head coverage.
+
+The [RAG-Anything review](projects/ai-query--rag-anything.md) separates queued text work from completed ingestion and attempts exact chunk/page replay. Missing or unexpected status must not become successful completion, and annotation warnings need explicit incomplete-provenance receipts. [MemPalace's media search](projects/ai-agents-mem--mempalace.md) provides bounded candidate pools and missing-asset flags; require exact embedding identity, result cardinality and asset containment in addition to cosine ranking. [Honcho's schema review](projects/ai-agents-mem--honcho.md) adds deletion-generation fields but does not establish the full reader/worker erasure barrier. Treat unavailable caches, stale workers and partial retrieval as distinct states.
+
+The [Commonplace review](projects/ai-agents-mem--commonplace.md) retains fenced-text offsets and copies cached parse output, but its fallback link selection and directory rendering still need exact containment, escaping and output limits. [GNO's source reads](projects/ai-agents-mem--gno.md) illustrate the separate need for post-read byte checks and immutable input snapshots. [Graphify's manifest cache](projects/ai-agents-mem--graphify.md) cannot substitute a hash hit for a verified, atomically published graph. Keep missing supersession information and failed manifest recovery explicit.
+
+The [Stash refresh](projects/ai-agents-mem--stash.md) distinguishes guarded page-embedding updates from other ID-only writes that can publish stale vectors. [FokosDB's tombstone protocol](projects/ai-agents-mem--fokosdb.md) provides revision/reader-position ideas, but callers still own transactional ordering. [Beads' remote-cache review](projects/ai-agents-mem--beads.md) adds a related ownership requirement: a lock's age does not establish that its holder is dead, and reader/eviction lifetimes must participate in the lease. [Leanctx's policy store](projects/ai-agents-mem--lean-ctx.md) also shows why successful persistence and successful validation must be separate receipts; invalid saved policy must not silently appear as the default policy.
+
+The [memory-techniques notebooks](projects/ai-agents-mem--agent-memory-techniques.md) are educational examples: optional version checks, mutable shared entries and graph queries without user scope do not meet the memory authority contract. Their judgment failures and unexamined cross-batch contradiction pairs must remain missing coverage, never neutral scores or evidence of consistency. [Cognee's batch retrieval](projects/ai-agents-mem--cognee-rs.md) preserves graph provenance, yet searches full collections and usually loads the full graph; a final top-k limit does not bound retrieval work. Unsupported retrieval modes require explicit results, and raw rendered query/context logging is excluded.
+
+The [Tolaria search review](projects/ai-agents-mem--tolaria.md) makes source-coordinate and coverage requirements concrete: removing front matter/code without an offset map shifts returned snippets, while failed incremental reads can leave a current head with missing notes. [TraceDecay's read cache](projects/ai-agents-mem--tracedecay.md) trusts modification time even though it retains a digest. Bind every published index and cache entry to immutable bytes, exact normalization mappings and a complete source manifest; freshness of a revision label does not prove completeness. Its reconciliation owner states are useful lifecycle evidence, but a wrapper accepting a terminal status does not itself prove joined cancellation.
+
+The [GitNexus cache review](projects/ai-agents-mem--gitnexus.md) verifies base identity before reuse and drains both hybrid-search lanes before propagating identity corruption, while other lane failures still become empty results. [Omnigraph's persisted graph](projects/ai-agents-mem--omnigraph.md) checks bounded sections, digests, endpoints and trailing bytes, but delegates atomic storage publication to its adapter. [Dolt's chunk checks](projects/ai-agents-mem--dolt.md) distinguish content integrity from optional reference checks and whole-value allocation. Combine these ideas with explicit degraded-lane receipts, bounded input/output and fenced publication; structural validity is not semantic retrieval coverage.
+
+The [Neo4j agent-memory merger](projects/ai-agents-mem--agent-memory.neo4j.md) retains survivor mention identity, yet the TypeScript extractor can call a high caller-confidence value confirmed and swallow partial relationship failures. [Hindsight's reflection path](projects/ai-agents-mem--hindsight.md) validates citation-ID membership but does not establish entailment, and its map/tool fan-out still needs aggregate bounds. Preserve per-stage lineage and partial-write receipts; confirmation requires its own evidence. [LLM Wiki Compiler's snapshot](projects/ai-agents-mem--llm-wiki-compiler.md) binds extraction to a recipe and supplied content identity, while evaluation-cache JSON still needs semantic validation.
+
+The [OpenViking review](projects/ai-agents-mem--open-viking.md) distinguishes selected entries from rendered context when a model judges them irrelevant. [PAI's memory graph](projects/ai-agents-mem--pai-personal-ai-infrastructure.md) similarly shows why a thresholded relationship score and an exported graph view need separate identity and consistency checks. Return exactly what the consuming model saw, retain original evidence and record advisory judgments separately. [Kanban Code's distributed search](projects/ai-query--kanban-code.md) keeps truncation and unreachable peers in its UI but drops them in CLI JSON; every harness result format must retain those coverage fields.
+
+## Additional scoped review references
+
+These catalog associations provide navigation to scoped source reviews. Each report records its inspected revision, findings and exclusions; inclusion here does not establish a capability or an adoption decision.
+
+- [gittifacts](analyses/unreviewed/ai-agents-mem--gittifacts.md)
+- [helix-foundry](analyses/unreviewed/ai-agents-mem--helix-foundry.md)
+- [xerj](analyses/unreviewed/ai-agents-mem--xerj.md)
+- [awesome-jev-live](analyses/unreviewed/ai-info--awesome-jev-live.md)
+- [best-of-agent-harnesses](analyses/unreviewed/ai-info--best-of-agent-harnesses.md)
+- [better-icons](analyses/unreviewed/ai-query--better-icons.md)
+- [dbx](analyses/unreviewed/ai-query--dbx.md)
+- [yt-dlp](analyses/unreviewed/ai-query--yt-dlp.md)
+
 <!-- coverage:start -->
 ## Project coverage
 
@@ -281,18 +326,3 @@ Every associated project has its own report. Source-reviewed associations reflec
 | [get-shit-done](https://github.com/gsd-build/get-shit-done) | [Report](projects/ai-spec--get-shit-done.md) | source-reviewed |
 | [openspec](https://github.com/Fission-AI/OpenSpec) | [Report](projects/ai-spec--openspec.md) | source-reviewed |
 <!-- coverage:end -->
-
-<!-- analysis-additions:start -->
-## Newly catalogued sources
-
-These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
-
-- [gittifacts](analyses/unreviewed/ai-agents-mem--gittifacts.md) ([source](https://github.com/jovidecroock/gittifacts)).
-- [helix-foundry](analyses/unreviewed/ai-agents-mem--helix-foundry.md) ([source](https://github.com/helixdb/helix-foundry)).
-- [xerj](analyses/unreviewed/ai-agents-mem--xerj.md) ([source](https://github.com/xerj-org/xerj)).
-- [awesome-jev-live](analyses/unreviewed/ai-info--awesome-jev-live.md) ([source](https://github.com/wh000wh000/awesome-jev-live)).
-- [best-of-agent-harnesses](analyses/unreviewed/ai-info--best-of-agent-harnesses.md) ([source](https://github.com/ryanalberts/best-of-agent-harnesses)).
-- [better-icons](analyses/unreviewed/ai-query--better-icons.md) ([source](https://github.com/better-auth/better-icons)).
-- [dbx](analyses/unreviewed/ai-query--dbx.md) ([source](https://github.com/t8y2/dbx)).
-- [yt-dlp](analyses/unreviewed/ai-query--yt-dlp.md) ([source](https://github.com/yt-dlp/yt-dlp)).
-<!-- analysis-additions:end -->

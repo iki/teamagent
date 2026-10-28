@@ -1,0 +1,25 @@
+# flock
+
+Source: [flock](https://github.com/whiteducksoftware/flock) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `006923b101178ac93d1360042adfb0d119de4540`; commit timestamp `2026-09-06T02:30:04+02:00`; 1,158 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/whiteducksoftware/flock/blob/006923b101178ac93d1360042adfb0d119de4540/README.md)):
+
+> 🦞 Flock now supports  OpenClaw  agents!  Use external AI agents with tools, skills, and multi-step reasoning in your Flock pipelines. 🧩 New: Dapr-backed blackboards.  Swap Flock's blackboard store to a Dapr state-store backend for distributed blackboard state.
+
+Build/package evidence: [pyproject.toml](https://github.com/whiteducksoftware/flock/blob/006923b101178ac93d1360042adfb0d119de4540/pyproject.toml); [requirements.txt](https://github.com/whiteducksoftware/flock/blob/006923b101178ac93d1360042adfb0d119de4540/requirements.txt); [src/flock/frontend/package.json](https://github.com/whiteducksoftware/flock/blob/006923b101178ac93d1360042adfb0d119de4540/src/flock/frontend/package.json)
+
+License evidence: [LICENSE](https://github.com/whiteducksoftware/flock/blob/006923b101178ac93d1360042adfb0d119de4540/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

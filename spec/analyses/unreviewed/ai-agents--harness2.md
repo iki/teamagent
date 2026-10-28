@@ -4,6 +4,20 @@ Source: [harness2](https://github.com/google-research/harness2) · [agents](../.
 
 Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-agents--harness2.md).
 
+## 2026-10-28 scoped update review
+
+Reviewed commit `1cfe254e8d25b15f37048c3730134686abe60335` (commit date `2026-10-13T21:22:49-05:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Selection, experience library and judge modules, plus selected scheduling, tree-acceptance and leakage-tripwire branches; benchmark executors, full recursion scheduling and claimed empirical gains were not audited.
+
+The [selection implementation](https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/selection.py#L93-L153) builds a finals-only pool, drops failed/non-delivering candidates, and can explicitly mark trajectory evidence for tasks whose output is state rather than a file. Stable anonymous IDs reduce label cues; adapter-named asset copies avoid handing the whole run directory to the selector. Selection establishes which artifact to deliver, not whether it passes an independent judge.
+
+The failure path is verified in code: [fallback](https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/selection.py#L237-L357) can retain a stand-in artifact but leaves `ok` false. [Scheduling](https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/schedule.py#L513-L563) records that failure and gates reflection/library storage on successful selection. [Judging](https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/judge.py#L61-L143) skips unsuccessful selection records and retains judge exceptions as ungraded results rather than zero scores. A positive criteria count marks a result graded; the adapter result is not comprehensively schema-validated in this function. Reports need both valid-score denominators and missing/failed coverage so excluded measurements cannot masquerade as a fully evaluated cohort.
+
+The [experience library](https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/library.py#L106-L180) stores full adopted component trees with cue/lesson/evidence and rebuilds its index; it does not certify that a model-authored lesson is correct or grant that tree executable authority. [Grader-marker scans](https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/context.py#L399-L518) reject declared leak paths and known strings in selected file types, and explicitly describe themselves as tripwires. They are not comprehensive leakage detection or a filesystem sandbox. Retain selection, measurement, missing-result coverage and reusable-memory approval as separate boundaries. No training/evaluation runs or comparative gains were reproduced.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [harness2](https://github.com/google-research/harness2); analyzed commit `none`; commit date unknown; review date unknown; depth unreviewed. [Maintenance record](../repos/ai-agents--harness2.md).
+Analysis metadata: source [harness2](https://github.com/google-research/harness2); analyzed commit `1cfe254e8d25b15f37048c3730134686abe60335`; commit date 2026-10-13T21:22:49-05:00; review date 2026-10-28T08:47:42.123Z; depth reviewed. [Maintenance record](../repos/ai-agents--harness2.md).
 <!-- teamagent-analysis:end -->
