@@ -23,6 +23,17 @@ Use the pinned local tool through its repository launcher, not a throwaway
 the dependency's scripts; do not relax build trust or switch linkers merely to
 clear an install failure. Registry credentials stay in environment references.
 
+[Dependency maintenance](../dependencies.md) uses Trigon as the central source of
+shared-stack patches. Pin and retain applicable supplied artifacts here; another
+checkout must not need a sibling repository. A necessary absent, incompatible or
+unverified fix requires a user decision before the affected update proceeds.
+Automated repair, CI and overrides cannot create an independent workaround.
+
+The [repository workflow](../workflow.md) owns development task scope and signed
+publication. The [cache contract](../cache.md) distinguishes local build outputs,
+Git-stored cooperative results, and checks that must run against live state.
+These maintenance tools do not replace the product's durable task service.
+
 Configure Bun to disable implicit dotenv loading and runtime auto-install.
 Select Bun explicitly in launchers and package scripts rather than depending on
 automatic shebang rewriting. Native prerequisites remain explicit: Bun does not

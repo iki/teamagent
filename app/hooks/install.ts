@@ -24,8 +24,10 @@ if (existing.stdout.trim() && existing.stdout.trim() !== ".githooks") {
     "Existing core.hooksPath differs; integrate its hooks before changing this setting",
   );
 }
-if (process.platform !== "win32")
+if (process.platform !== "win32") {
   chmodSync(new URL("../../.githooks/pre-commit", import.meta.url), 0o755);
+  chmodSync(new URL("../../.githooks/commit-msg", import.meta.url), 0o755);
+}
 for (const [key, value] of [
   ["teamagent.bunPath", process.execPath],
   ["core.hooksPath", ".githooks"],

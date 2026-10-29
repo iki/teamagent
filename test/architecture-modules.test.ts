@@ -288,6 +288,55 @@ await test("parsed module dependencies and rendering boundaries accept interface
       rule: "module-dependencies",
     },
     {
+      path: "app/web/build.ts",
+      valid: 'export { runBuildStage } from "../check/build-cache.ts";',
+      invalid: 'export { safePath } from "../check/cache-io.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/desktop/build.ts",
+      valid:
+        'export { runBuildStage } from "../check/build-cache.ts"; export { createDependencyRuntime } from "../dependencies/runtime.ts";',
+      invalid: 'export { check } from "../check/index.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/web/cache-consumer.ts",
+      valid: 'export { Task } from "@/tasks";',
+      invalid: 'export const load = () => import("../check/build-cache.ts");',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/desktop/cache-consumer.ts",
+      valid: 'export { Task } from "@/tasks";',
+      invalid: 'export { runBuildStage } from "../check/build-cache.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/web/nested/build.ts",
+      valid: 'export { Task } from "@/tasks";',
+      invalid: 'export { runBuildStage } from "../../check/build-cache.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/web/dependency-consumer.ts",
+      valid: 'export { Task } from "@/tasks";',
+      invalid: 'export { createDependencyRuntime } from "../dependencies/runtime.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/desktop/workflow-consumer.ts",
+      valid: 'export { Task } from "@/tasks";',
+      invalid: 'export { workflow } from "../workflow/index.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/web/build-consumer.ts",
+      valid: 'export { Task } from "@/tasks";',
+      invalid: 'export { runBuildStage } from "./build.ts";',
+      rule: "module-dependencies",
+    },
+    {
       path: "app/storage/store.ts",
       valid: 'export { Task } from "@/tasks";',
       invalid: 'export { View } from "../web/view.tsx";',

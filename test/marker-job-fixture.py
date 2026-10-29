@@ -3,16 +3,23 @@ import importlib.util
 from pathlib import Path
 import subprocess
 import sys
+import tempfile
 import time
 
 spec = importlib.util.spec_from_file_location("marker_job", sys.argv[1])
 if spec is None or spec.loader is None:
     raise RuntimeError("Missing launcher fixture module")
 module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(module)
+previous_prefix = sys.pycache_prefix
+try:
+    with tempfile.TemporaryDirectory(prefix="teamagent-marker-bytecode-") as bytecode:
+        sys.pycache_prefix = bytecode
+        spec.loader.exec_module(module)
+finally:
+    sys.pycache_prefix = previous_prefix
 job = module.own_windows_job()
 child = subprocess.Popen(
-    [sys.executable, "-I", "-c", "import time; time.sleep(60)"],
+    [sys.executable, "-I", "-B", "-c", "import time; time.sleep(60)"],
     stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
     creationflags=subprocess.CREATE_NEW_PROCESS_GROUP | subprocess.CREATE_NO_WINDOW,
 )

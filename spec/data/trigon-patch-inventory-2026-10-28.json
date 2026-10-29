@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "https://github.com/iki/trigon",
+  "sourceRevision": "454e372cbc6bb75eafbbc4795391c492bc4fbf96",
+  "sourceRegistry": "../x-trigon/spec/patches.md",
+  "evidenceLevel": "Inspected local source and dated Trigon registry; remote fork/signature/status claims were not reverified in this audit",
+  "entries": [
+    {
+      "id": "portless-bun-tls",
+      "packages": ["portless@0.15.12"],
+      "kind": "aube-package-patch",
+      "atomicSource": "../x-trigon/patches/portless/0.15.12/bun-tls-contexts.patch",
+      "bundle": "../x-trigon/patches/portless@0.15.12.patch",
+      "fork": "https://github.com/iki/portless",
+      "forkHead": "5ffe9ead3435e672c7ca815ed1cc7d0c64ed25c5",
+      "base": "0c0ff893a5a481d3d1b53d0b4766e32cd35dd5e3",
+      "teamagentApplicability": "Not currently installed; only if HTTPS preview adoption is explicitly included"
+    },
+    {
+      "id": "wrangler-verified-bun-fetch",
+      "packages": ["wrangler@4.153.0"],
+      "kind": "aube-package-patch",
+      "atomicSource": "../x-trigon/patches/wrangler/4.153.0/verified-bun-fetch.patch",
+      "bundle": "../x-trigon/patches/wrangler@4.153.0.patch",
+      "fork": "https://github.com/iki/workers-sdk",
+      "forkHead": "1c0977d2f5485af9a65562f8fafeaa6b3a4124de",
+      "base": "2c623aa91d1dac5d43b8c66830d3e4b38c4ae32b",
+      "requires": ["bun-undici-resolution", "bun-undici-fetch"],
+      "teamagentApplicability": "Not currently installed; future workerd/Wrangler integration must carry the complete reviewed adapter stack"
+    },
+    {
+      "id": "bun-undici-resolution",
+      "packages": ["undici@8.12.3", "wrangler@4.153.0", "miniflare@5.20261023.0-beta"],
+      "kind": "tooling-preload-adapter",
+      "source": "../x-trigon/app/wrangler-preload.ts",
+      "fork": "https://github.com/iki/workers-sdk",
+      "forkHead": "af29a6e53f361bde5d14e5ec0f36295b42bd52b5",
+      "base": "ec6edddadd8395b4991b23c5300ea68b701ce720",
+      "teamagentApplicability": "Not currently installed; never apply globally to the Teamagent daemon or media HTTP clients"
+    },
+    {
+      "id": "bun-undici-fetch",
+      "packages": ["undici@8.12.3", "wrangler@4.153.0", "miniflare@5.20261023.0-beta"],
+      "kind": "tooling-preload-adapter",
+      "source": "../x-trigon/app/wrangler-preload.ts",
+      "fork": "https://github.com/iki/workers-sdk",
+      "forkHead": "2c623aa91d1dac5d43b8c66830d3e4b38c4ae32b",
+      "base": "af29a6e53f361bde5d14e5ec0f36295b42bd52b5",
+      "requires": ["bun-undici-resolution"],
+      "teamagentApplicability": "Not currently installed; retain independent module-resolution and global-fetch removal tests"
+    },
+    {
+      "id": "cf-bun-config",
+      "packages": ["cf@1.0.0-beta.14", "@cloudflare/config@0.28.1"],
+      "kind": "build-output-adapter",
+      "source": "../x-trigon/app/cloudflare-build.ts",
+      "fork": "https://github.com/iki/cf",
+      "forkHead": "972f9ef57f545117d9be4aeb0413bd4a3d592cdf",
+      "base": "6808c0f8449e0dfe9d2c41ef0143485265432ed1",
+      "teamagentApplicability": "Not currently installed; cloud deployment is not an implemented Teamagent surface"
+    },
+    {
+      "id": "cf-api-config-coupling",
+      "packages": ["cf@1.0.0-beta.14"],
+      "kind": "activation-adapter",
+      "source": "../x-trigon/app/trigon-release/deploy-cloudflare.ts",
+      "fork": "https://github.com/iki/cf",
+      "forkHead": "6ce83dc92afba5f354002643c4260c6e59bb93b6",
+      "base": "6808c0f8449e0dfe9d2c41ef0143485265432ed1",
+      "teamagentApplicability": "Not currently installed; independent of general cf config-loader workaround"
+    },
+    {
+      "id": "tauri-native-lifetime",
+      "packages": ["@tauri-apps/cli@2.12.4"],
+      "historicallyAffectedPin": "@tauri-apps/cli@2.12.1",
+      "kind": "native-cli-lifetime-adapter",
+      "sources": ["../x-trigon/app/trigon-check/native-lifetime.ts", "../x-trigon/app/trigon-check/tauri-cli.ts"],
+      "regression": "../x-trigon/test/tauri-lifecycle.test.ts",
+      "fork": "https://github.com/iki/tauri",
+      "forkHead": "4cfdc3bbcfc4c32d5998f22281db0a628e0261c3",
+      "base": "136a28eaa879e8aa706f9b2e05a050c46dcc1f4f",
+      "teamagentApplicability": "Directly applicable: current desktop launcher calls tauri.js at 2.12.1; import the supplied adapter and verify Teamagent desktop completion"
+    },
+    {
+      "id": "avif-encoder-types",
+      "packages": ["@jsquash/avif@2.1.1"],
+      "kind": "declaration-adapter-and-upstream-source-patch",
+      "source": "../x-trigon/spec/patches/upstream/avif-encoder-types.patch",
+      "fork": "https://github.com/iki/jSquash",
+      "forkHead": "c343c9af6ff0377080b6d0bb09bc0ad6551d7dc2",
+      "base": "da47a2be3b302beb5a5ae164a2ab7aa21a041d90",
+      "teamagentApplicability": "Not currently installed; no reason to add the codec solely to import its patch"
+    }
+  ],
+  "retired": [{"package": "zstddec@0.3.4", "status": "Trigon records the old declaration-export fix as shipped and removed; not a current patch"}],
+  "policy": {
+    "authoritativeOwner": "Trigon",
+    "absentWorkaround": "Stop and ask the user before implementing, adapting to a new unsupported dependency version, or applying a new dependency workaround not provided by Trigon",
+    "ordinaryHostAdaptation": "Teamagent-owned wiring, bounded I/O, LF logs and process/cache contracts may adapt the reviewed Trigon host tooling without modifying shared third-party patch bytes",
+    "remoteMutation": "No contribution, reaction, comment, fork, push or trust change is authorized merely by copying this policy"
+  }
+}

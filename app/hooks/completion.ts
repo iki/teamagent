@@ -1,22 +1,22 @@
 import { checkDecision } from "./decision.ts";
 
 /** Logging and code verification are independent obligations; either can fail. */
-export function completeHook(
+export async function completeHook(
   event: "Stop" | "SubagentStop",
   alreadyContinued: boolean,
-  archive: () => boolean,
-  verify: () => boolean,
+  archive: () => boolean | Promise<boolean>,
+  verify: () => boolean | Promise<boolean>,
 ) {
-  function attempt(action: () => boolean): boolean {
+  async function attempt(action: () => boolean | Promise<boolean>): Promise<boolean> {
     try {
-      return action();
+      return await action();
     } catch {
       return false;
     }
   }
-  const archived = attempt(archive);
+  const archived = await attempt(archive);
   // Concurrent subagents share a checkout; only the main Stop checks assembled work.
-  const decision = event === "Stop" ? checkDecision(attempt(verify), alreadyContinued) : {};
+  const decision = event === "Stop" ? checkDecision(await attempt(verify), alreadyContinued) : {};
   if (archived) return decision;
   return {
     ...decision,

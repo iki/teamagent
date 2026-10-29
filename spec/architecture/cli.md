@@ -96,9 +96,27 @@ acknowledgment. Semantic examples still need tests beyond structural mirrors.
 
 The check entry point is root-relative regardless of invocation directory. Its
 default checks formatting, strict TypeScript, type-aware/custom lint and tests,
-returns nonzero on failure and stops at the first failed stage. `--format` is the
-explicit write mode used by `step:check`; `review:check` remains read-only apart
-from clearly designated test fixtures/build caches.
+returns nonzero on failure and stops at the first failed stage. `--format` or
+`step` is the explicit source-write mode used by `step:check`. `review:check`
+does not fix sources, but may publish cooperative `.verification/` receipts and
+owned fixture/cache outputs. `--force-fresh` runs the checks instead of accepting
+matching success receipts. Module layout, dependency-artifact integrity and raw
+LF/export checks remain live. See [verification](../verification.md) and the
+[cache contract](../cache.md).
+
+The developer entry points are separate from the product module CLI:
+
+| Entry                                 | Canonical contract                           | Input                                                                       |
+| ------------------------------------- | -------------------------------------------- | --------------------------------------------------------------------------- |
+| `task:run`                            | [Repository workflow](../workflow.md)        | Bounded JSON stdin; fixed `.workflow.json` policy                           |
+| `deps`, `deps:check`                  | [Dependency maintenance](../dependencies.md) | Strict action-specific flags; no implicit installation                      |
+| `cache:status`, `cache:verify-staged` | [Verification cache](../cache.md)            | Passive history inspection or actual staged-index validation                |
+| `build:web`, `build:desktop`          | [Build cache](../cache.md)                   | Explicit `--cache` or `--force-fresh-cache`; native acceptance remains live |
+
+Their help/version paths are passive. Fixed JSON policies are decoded data;
+these tools do not discover executable C12 configuration or add unused config
+and data flags. The conversation writer and Git hook wrappers remain internal
+JSON/finite-argument protocol adapters.
 
 Document expensive integration checks separately, including browser downloads,
 native prerequisites, loopback servers, credentials and output reports. Do not

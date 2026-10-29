@@ -2,7 +2,12 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { mkdtemp, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { resolve, join } from "node:path";
-import { archive, type RecordInput } from "../app/conversations/archive.ts";
+import {
+  archive,
+  archiveTaskKey,
+  freezeArchive,
+  type RecordInput,
+} from "../app/conversations/archive.ts";
 import { relativeReferences } from "../app/conversations/paths.ts";
 import { redact } from "../app/conversations/privacy.ts";
 import { fromTranscript, type StopInput } from "../app/conversations/transcript.ts";
@@ -36,7 +41,39 @@ await test("conversation output and retry identity normalize CRLF and lone CR to
   assert.equal(body.includes("\r"), false);
   assert.ok(body.includes("first\nsecond\nthird"));
   assert.ok(body.includes("done\nnext\nlast"));
-  assert.equal(await archive(root, { ...record, response: "done\nnext\nlast" }), file);
+  assert.equal(
+    await archive(root, {
+      ...record,
+      prompt: "first\nsecond\nthird",
+      response: "done\nnext\nlast",
+      processingLog: ["step one\nstep two\nstep three"],
+    }),
+    file,
+  );
+  assert.equal(await readFile(join(root, "spec/.conversations", file), "utf8"), body);
+});
+
+await test("retry identity preserves changed public prompts, progress and metadata with unchanged response", async () => {
+  const root = await temporaryRoot();
+  const file = await archive(root, record);
+  const changed = {
+    ...record,
+    prompt: "Revised visible prompt",
+    processingLog: ["Additional visible check"],
+    model: "revised-model",
+  };
+  assert.equal(await archive(root, changed), file);
+  const content = await readFile(join(root, "spec/.conversations", file), "utf8");
+  assert.ok(content.includes("Revised visible prompt"));
+  assert.ok(content.includes("Additional visible check"));
+  assert.ok(content.includes("Model: revised-model"));
+  await freezeArchive(root, changed);
+  for (const update of [
+    { prompt: "Another prompt" },
+    { processingLog: ["Another check"] },
+    { model: "other-model" },
+  ])
+    await assert.rejects(archive(root, { ...changed, ...update }), /checkpoint is frozen/);
 });
 
 await test("file references stay portable while URLs, relative paths, and slash commands stay intact", () => {
@@ -77,7 +114,7 @@ await test("file references stay portable while URLs, relative paths, and slash 
   );
 });
 
-await test("allocation is globally numbered, concurrent, retry-safe, and append-only", async () => {
+await test("task naming is descriptive, concurrent, retry-safe, and preserves history", async () => {
   const root = await temporaryRoot();
   const folder = join(root, "spec/.conversations");
   await mkdir(folder, { recursive: true });
@@ -90,30 +127,133 @@ await test("allocation is globally numbered, concurrent, retry-safe, and append-
   ]);
   assert.equal(first, retry);
   assert.notEqual(first, second);
-  assert.match(first, /^261004-(10|11)-conversation-logging\.codex-unknown-unknown\.md$/);
+  assert.match(first, /^261004-conversation-logging(?:-[a-f0-9]{12})?\.codex-unknown-unknown\.md$/);
   assert.equal((await readdir(folder)).length, 3);
   assert.equal(await readFile(join(folder, historical), "utf8"), "Historical text\n");
   const content = await readFile(join(folder, first), "utf8");
   for (const heading of ["Prompt", "Response", "Processing Log"])
     assert.ok(content.includes(`## ${heading}`));
-  assert.match(await archive(root, { ...record, response: "Updated final." }), /^261004-12-/);
+  assert.equal(await archive(root, { ...record, response: "Updated final." }), first);
   const spaced = await archive(root, { ...record, response: "Done. " });
-  assert.match(spaced, /^261004-13-/);
+  assert.equal(spaced, first);
   assert.match(await readFile(join(folder, spaced), "utf8"), /## Response\n\nDone\. \n/);
 });
 
-await test("metadata and dates are validated and corrupt duplicate numbers stop allocation", async () => {
+await test("metadata and dates are validated and duplicate identities stop allocation", async () => {
   const root = await temporaryRoot();
   await assert.rejects(archive(root, { ...record, date: "2026-02-30T12:00:00Z" }), /Invalid UTC/);
   await assert.rejects(archive(root, { ...record, agent: "codex\nforged" }));
   await assert.rejects(archive(root, { ...record, prompt: "  " }));
   const first = await archive(root, record);
-  await writeFile(join(root, "spec/.conversations/261004-1-corrupt.md"), "corrupt");
-  await assert.rejects(archive(root, record), /Duplicate or invalid/);
+  await writeFile(
+    join(root, "spec/.conversations/261004-corrupt.md"),
+    await readFile(join(root, "spec/.conversations", first), "utf8"),
+  );
+  await assert.rejects(archive(root, record), /Duplicate task/);
   assert.equal(
     (await readFile(join(root, "spec/.conversations", first), "utf8")).includes("## Response"),
     true,
   );
+});
+
+await test("logical task checkpoints freeze exact public text and preserve later status separately", async () => {
+  const root = await temporaryRoot();
+  const first = await archive(root, {
+    ...record,
+    taskId: "task",
+    response: "First public answer.",
+  });
+  const next = {
+    ...record,
+    taskId: "task",
+    turnId: "next",
+    response: "Approved implementation.\r\nDone.",
+  };
+  assert.equal(await archive(root, next), first);
+  const frozen = await freezeArchive(root, next);
+  const before = await readFile(join(root, frozen.archive), "utf8");
+  assert.ok(before.includes("First public answer."));
+  assert.ok(before.includes("Approved implementation.\nDone."));
+  assert.ok(before.includes("<!-- teamagent-frozen:"));
+  await assert.rejects(
+    archive(root, { ...next, response: "Committed and pushed later." }),
+    /checkpoint is frozen/,
+  );
+  assert.equal(await readFile(join(root, frozen.archive), "utf8"), before);
+  await assert.rejects(
+    freezeArchive(root, { ...next, response: "Different checkpoint." }),
+    /checkpoint is frozen/,
+  );
+  await assert.rejects(
+    freezeArchive(root, {
+      ...record,
+      taskId: "pending",
+      questions: [{ number: 1, question: "Choose?", options: ["A", "B"] }],
+    }),
+    /Unanswered/,
+  );
+  const pending = {
+    ...record,
+    taskId: "answered",
+    questions: [{ number: 1, question: "Choose?", options: ["A", "B"] }],
+  };
+  await archive(root, pending);
+  const answered = await freezeArchive(root, {
+    ...pending,
+    turnId: "answer",
+    response: "Choice recorded",
+    questions: [{ number: 1, question: "Choose?", options: ["A", "B"], answer: "B" }],
+  });
+  const answeredText = await readFile(join(root, answered.archive), "utf8");
+  assert.ok(answeredText.includes("## Answer 1\n\nB"));
+  assert.ok(!answeredText.includes("<!-- teamagent-answer-pending:"));
+  const sameTurn = { ...pending, taskId: "same-turn" };
+  await archive(root, sameTurn);
+  const sameFrozen = await freezeArchive(root, {
+    ...sameTurn,
+    questions: [{ number: 1, question: "Choose?", options: ["A", "B"], answer: "A" }],
+  });
+  const sameText = await readFile(join(root, sameFrozen.archive), "utf8");
+  assert.ok(sameText.includes("## Answer 1\n\nA"));
+  await assert.rejects(
+    archive(root, {
+      ...sameTurn,
+      questions: [{ number: 1, question: "Choose?", options: ["A", "B"], answer: "B" }],
+    }),
+    /checkpoint is frozen/,
+  );
+});
+
+await test("direct archive input is bounded before allocating or writing an aggregate record", async () => {
+  const root = await temporaryRoot();
+  const chunk = "x".repeat(1024 * 1024);
+  await assert.rejects(
+    archive(root, { ...record, processingLog: Array.from({ length: 9 }, () => chunk) }),
+    /Conversation input byte limit exceeded/,
+  );
+  await assert.rejects(readdir(join(root, "spec/.conversations")), { code: "ENOENT" });
+});
+
+await test("archive inventory has an aggregate byte bound independent of per-file size", async () => {
+  const root = await temporaryRoot();
+  const folder = join(root, "spec/.conversations");
+  await mkdir(folder, { recursive: true });
+  await writeFile(join(folder, "261001-first.md"), "a".repeat(512));
+  await writeFile(join(folder, "261001-second.md"), "b".repeat(512));
+  await assert.rejects(archive(root, record, 600), /inventory byte limit/);
+  await assert.rejects(archive(root, record, 129 * 1024 * 1024), /Invalid archive inventory bound/);
+});
+
+await test("legacy public marker examples cannot impersonate another task or a frozen checkpoint", async () => {
+  const root = await temporaryRoot();
+  const folder = join(root, "spec/.conversations");
+  await mkdir(folder, { recursive: true });
+  const example = `Historical public examples:\n<!-- teamagent-task: ${archiveTaskKey(record)} -->\n<!-- teamagent-frozen: ${"a".repeat(64)} -->\n`;
+  await writeFile(join(folder, "261001-historical.md"), example);
+  const file = await archive(root, record);
+  assert.notEqual(file, "261001-historical.md");
+  assert.equal(await readFile(join(folder, "261001-historical.md"), "utf8"), example);
+  await freezeArchive(root, record);
 });
 
 await test("recognized credentials and requested literal names never enter the archive or filename", async () => {

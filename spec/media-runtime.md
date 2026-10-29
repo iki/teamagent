@@ -4,6 +4,10 @@
 
 The [2026-10-27 public-document refresh](analyses/media-refresh-2026-10-27.md) leaves runtime behavior and the 2026-11-24 policy expiry unchanged. HeyGen speech-to-speech remains unimplemented. Fish still accepts explicit `s1`; its announced 2026-12-31 upstream substitution requires a route review before that date. Source refresh does not authorize inference, account changes or replacement of the prepared Czech-to-English artifacts.
 
+The OmniVoice worker uses Python `-I -B` to preserve isolated execution and prevent
+new bytecode-cache writes. This permits reading existing provisioned bytecode;
+it is not a claim that an environment-provided cache prefix applies under `-I`.
+
 ## Implemented interfaces
 
 `@/media` provides validated requests, capability catalogs, deterministic selection plans, typed results and the `Media` Effect service. `@/channels` provides bound input envelopes, attachment processing ports, durable receipt contracts and the speech-event reducer. Both libraries are portable. The Bun implementations are composed in `app/media` and `app/runtime/channels.ts`; package exports are `teamagent/media`, `teamagent/media/bun`, `teamagent/channels` and `teamagent/channels/bun`.

@@ -1,4 +1,10 @@
 """Bounded, offline document conversion. Original bytes are owned by the Bun host."""
+import sys
+
+if not sys.flags.isolated or not sys.dont_write_bytecode or sys.pycache_prefix is not None:
+    sys.stderr.buffer.write(b"Document worker requires isolated, read-only Python bytecode.\n")
+    sys.exit(1)
+
 import base64
 import hashlib
 import io
@@ -6,7 +12,6 @@ import json
 import mimetypes
 import pathlib
 import re
-import sys
 import warnings
 import zipfile
 from urllib.parse import urljoin, urlparse

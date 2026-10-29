@@ -65,7 +65,7 @@ async function runDocumentWorker(
   try {
     const script = join(directory, "worker.py");
     await writeFile(script, workerSource, { flag: "wx", mode: 0o600 });
-    return await runProcess(python, ["-I", script, ...arguments_], {
+    return await runProcess(python, ["-I", "-B", script, ...arguments_], {
       signal,
       bytes,
       cwd: directory,

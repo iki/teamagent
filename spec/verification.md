@@ -4,21 +4,45 @@ The root [agent rules](../AGENTS.md) govern implementation. The CLI/web/desktop 
 
 ## Commands and failures
 
-| Task                          | Command                                      | Contract                                                                                     |
-| ----------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| Reproducible installation     | `aube install --frozen-lockfile`             | Exact manifest/lockfile agreement; no secondary lockfile                                     |
-| Completed implementation step | `aube run --no-install step:check`           | Format owned sources, strict TS7, type-aware Oxlint, regression tests                        |
-| Review or delivery            | `aube run --no-install review:check`         | Check formatting, strict TS7, type-aware Oxlint, regression tests; no automatic source fixes |
-| Hook installation             | `aube run --no-install hooks:install`        | Install repository Git hook and record this checkout's Bun executable                        |
-| Conversation archive          | `aube run --no-install conversations:record` | Read validated JSON from stdin and preserve a public response record                         |
+| Task                          | Command                                            | Contract                                                                                                 |
+| ----------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Reproducible installation     | `aube install --frozen-lockfile`                   | Exact manifest/lockfile agreement; no secondary lockfile                                                 |
+| Completed implementation step | `aube run --no-install step:check`                 | Format owned sources, strict TS7, type-aware Oxlint, regression tests                                    |
+| Review or delivery            | `aube run --no-install review:check`               | Check formatting, strict TS7, type-aware Oxlint, regression tests; no automatic source fixes             |
+| Hook installation             | `aube run --no-install hooks:install`              | Install repository Git hook and record this checkout's Bun executable                                    |
+| Conversation archive          | `aube run --no-install conversations:record`       | Read validated JSON from stdin and preserve a public response record                                     |
+| Task workflow                 | `aube run --no-install task:run`                   | JSON begin/checkpoint/revision/verification/publication protocol; exact destination and signature guards |
+| Dependency integrity          | `aube run --no-install deps:check`                 | Offline checks of supplied Trigon artifacts and pin coverage; no installation                            |
+| Fresh verification            | `aube run --no-install review:check --force-fresh` | Execute checks even when a cooperative receipt matches                                                   |
+| Receipt inspection            | `aube run --no-install cache:status --json`        | Git-history and repository-input equivalence, without readiness or publication claims                    |
+| Staged receipt verification   | `aube run --no-install cache:verify-staged`        | Validate changed receipts against the actual staged index                                                |
 
 Either Aube or Bun may dispatch package scripts; Aube alone installs JavaScript dependencies. Complete a frozen install first, then use `aube run --no-install` or direct Bun for checks: ordinary Aube run/exec may install missing or stale dependencies, which is inappropriate inside a read-only verification gate. The check launcher invokes installed tool entries with the running Bun executable and resolves the platform-native `oxlint-tsgolint` backend directly. It does not depend on Node shebangs, shell interpolation, shortened PATH, or fallback to syntax-only lint.
 
 Any missing dependency, nonzero result, timeout or missing backend is a failure. Repair the cause before advancing. Do not turn off type-aware lint, relax strictness, add blanket suppressions or silently skip checks. Research documents in `spec/` and imported material in `data/research/texts/` and historical output in `spec/archive/legacy-research/` remain source evidence; formatting covers owned implementation files and the new development specifications without wholesale research rewrites.
 
-Tool launches have a 120-second cap; the complete test subprocess has a 240-second cap. The root Stop hook separately caps its assembled verification subprocess at 300 seconds. Its outer command budget is 420 seconds, allowing the unchanged 60-second archive operation and cleanup overhead. SubagentStop retains its 90-second outer budget. A timeout is a failed gate, not a skipped check; longer specialized integration/benchmark jobs need explicit separately bounded tasks.
+The [cache contract](cache.md) permits exact-input reuse for format, all four
+type programs, lint and unit tests. Review preserves source bytes but may write
+cooperative `.verification/` success receipts and owned test/cache outputs.
+Installed prerequisite identity, dependency artifacts, module layout and raw
+LF/export integrity remain live. The test key includes consumed research Python
+tools and the distributable memory skill; ignored compiler inputs cannot be
+silently omitted. Reuse is not independent verification or publication authority.
 
-The 2026-10-28 assembled step check passed 358 tests with 1,321 assertions: the
+Tool launches have a 120-second cap; the complete unit phase, including every admitted child, has a 240-second cap. The root Stop hook separately caps its assembled verification subprocess at 300 seconds. Its outer command budget is 420 seconds, allowing the unchanged 60-second archive operation and cleanup overhead. SubagentStop retains its 90-second outer budget. A timeout is a failed gate, not a skipped check; longer specialized integration/benchmark jobs need explicit separately bounded tasks.
+
+The resource-aware unit scheduler and audited process groups are specified in
+the [cache contract](cache.md#measurements-and-scheduling). Every group shares
+the same 240-second deadline; parallel execution does not extend it. The live
+prerequisite probe permits read-only use of provisioned Python bytecode and
+fingerprints its bytes before accepting cache reuse. Environment-honoring unit
+fixtures receive fresh bytecode prefixes; isolated converter and OmniVoice
+workers use explicit `-I -B` and may read the fingerprinted provisioned bytecode.
+Ignored source-tree bytecode fails the live consumed-input check. Isolated
+repository-import fixtures use a temporary prefix for those imports.
+
+The historical 2026-10-28 assembled step check, before the expanded workflow,
+dependency and cache suites, passed 358 tests with 1,321 assertions: the
 test subprocess took 223.44 seconds and the full check took 266.94 seconds, including
 about 38 seconds for the LF inventory and text-export verification. Citation
 validation was running concurrently, so this is an observed combined run, not an
@@ -34,6 +58,9 @@ gate never installs it implicitly and fails when required conversion coverage
 is unavailable. Python worker dependencies have their own exact requirements
 lock; Aube remains the sole manager of JavaScript dependencies. The full import,
 CLI, MCP and library fixtures run without credentials or paid inference.
+PowerShell 7 is also required by the local Git maintenance fixtures. Prerequisite
+inspection describes the actual runtime and provisioned bytes; it does not
+install, repair, or claim that every declared provider route has been exercised.
 
 TypeScript enforces strict mode, unchecked-index safety, exact optional fields, explicit returns, switch fallthrough and override checks. Oxlint rejects `any`, unsafe typed operations, non-null assertions and floating promises. Repository rules guard portable library boundaries, public import paths, hidden I/O/clock/logger setup and Effect execution, unsafe casts, executable input and runtime launchers. The lint implementation is explicitly host tooling, not a portable product library. Tests exercise valid and invalid rule fixtures.
 
@@ -42,10 +69,61 @@ Structural checks are not proof of correctness or a sandbox. Schema and semantic
 ## Hooks and scope
 
 - `.agents/hooks/after-step.json` and `before-review.json` describe required workflow commands. They are portable instructions, not undocumented automatic integrations.
-- `.githooks/pre-commit` executes the read-only review gate. `hooks:install` preserves conflicting existing hook configuration by failing with an explanation. It stores `teamagent.bunPath` only in local Git configuration, so the machine-specific runtime path is not committed.
-- `.codex/hooks.json` registers `Stop` and `SubagentStop` through `app/hooks/stop.ts`. Both archive public conversation text. Only root `Stop` checks the assembled codebase; concurrent subagents must not test incomplete shared edits on every subagent completion.
-- A failed root check requests one repair continuation. If verification still fails on an already continued stop, it reports the failure without an endless loop. Logging and verification run independently: an archive error cannot skip the code gate, and the hook explicitly reports an unsaved reply. Check diagnostics go to stderr; successful hook stdout is JSON.
+- `.githooks/pre-commit` executes review and validates changed staged receipts. Review may write cooperative results but does not fix sources. `.githooks/commit-msg` validates the bounded conventional message. `hooks:install` preserves conflicting hook configuration and stores `teamagent.bunPath` only in local Git configuration. Both hook files must have executable Git index modes for portable checkouts.
+- `.codex/hooks.json` registers `Stop` and `SubagentStop` through `app/hooks/stop.ts`. Root recording requires an active changed task; no active task, unchanged work and frozen records are explicit skips. Subagent progress belongs to the root task instead of a separate record. Only root `Stop` checks assembled code; concurrent subagents must not test incomplete shared edits on every completion.
+- A failed root check requests one repair continuation. If verification still fails on an already continued stop, it reports the failure without an endless loop. Logging and verification run independently: an archive error cannot skip the code gate, and the hook explicitly reports an unsaved reply. Hook stdout remains JSON; failed operations return relative references to retained sanitized diagnostics.
 - Until automatic hooks are trusted and observed, agents invoke the commands and writer explicitly. Installation does not self-approve product hook trust or alter account-wide settings.
+
+The Stop adapter awaits bounded asynchronous subprocesses. Archive work retains
+its 60-second/2,000,000-byte limits; review retains its 300-second/16-MiB limits.
+On Windows, the shared process runner resolves `taskkill.exe` through the absolute
+system directory, independently of `PATH`, and terminates the owned child tree on timeout
+or cancellation, including the detached unit-worker fixture, and bounds cleanup.
+The POSIX fallback terminates the owned process group; deliberately detached
+descendants require separate platform validation and are not certified by the
+Windows fixtures. Receipts identify this cleanup scope. An unconfirmed
+termination is a failed hook even if a status
+of zero was observed. The 420-second root and 90-second subagent outer budgets
+remain unchanged; no stale cache lock is automatically reclaimed.
+
+Each operation reserves capacity and writes a pending receipt under `.cache/hook-diagnostics/`,
+then retains a completed receipt and LF, redacted log with unique names. Receipts
+record the host PID, phase, configured bounds, elapsed time, exit status, outcome,
+cleanup confirmation and log hash/path. Missing status or cleanup information
+stays null. A pending receipt does not prove that the child started or completed.
+Raw hook input, environment dumps and unsanitized child output are never saved.
+Logs are bounded after redaction as well as during capture; truncation is marked.
+`termination: "closed"` means the observed parent/pipes closed and any attempted
+OS cleanup reported success. It does not independently prove the absence of
+already orphaned children or detached descendants outside the reported cleanup
+scope. An unconfirmed result requires process-tree inspection before lock recovery.
+New hook diagnostics have a separate 64-MiB, 4096-file, 1024-operation-slot budget.
+A short admission/finalization lock accounts for actual completed files and full
+pending reservations, including temporary-file and metadata allowances. It is
+released before running a child. Only checked completed publication releases a
+reservation; publication failures, abandoned reservations and malformed reservations require explicit
+inspection and are never reclaimed by age or PID. Historical
+`.cache/workflow/hooks/` evidence remains untouched in the workflow cache.
+The main workflow's existing capacity checks are separate per-operation inventory
+checks; standalone pre-commit and conversation Git-error writers do not share a
+transactional aggregate reservation. The hook budget does not claim otherwise.
+These files remain available across a repair continuation. Inspect the named receipt and log before drawing a
+conclusion about a timeout, rejection, transport failure or missing dependency.
+
+On 2026-10-28, an observed Stop failure left successful format/type/lint receipts,
+no successful unit receipt, an orphan unit process and a dead-owner unit lock.
+The former synchronous parent timeout retained no status/timeout diagnostics,
+so the exact initial failure remained unconfirmed. Recovery inspected the owned
+process tree and preserved the exact lock evidence before removing the stale
+lock; no running process or unrelated work was discarded. The asynchronous
+runner and child-tree fixtures cover that cleanup and diagnostic boundary.
+
+Signed publication uses the [workflow](workflow.md), which rechecks scope,
+destination, actual signature and remote state at the action boundary. A final
+check failure does not authorize replacing frozen hashes: use the explicit
+checkpoint revision operation, preserve its receipt and verify again. Neither
+the Git hooks nor a successful cache lookup independently grants publication
+permission or automatically reconciles an uncertain push.
 
 Codex's [official hook documentation](https://learn.chatgpt.com/docs/hooks) defines events, the Windows command override and trust review. The repository enables `features.hooks`. Native transcript formats are not stable APIs; the archiver tests supported event shapes and retains a validated manual fallback.
 

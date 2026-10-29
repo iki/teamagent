@@ -133,10 +133,21 @@ web/desktop/mobile builds. App directories are source, not separate published
 packages. Use one real Aube package-manager declaration and lockfile; retain
 `Cargo.lock` for native Rust and use `--locked`.
 
-Use an explicit build graph without a custom incremental cache initially.
+Use an explicit build graph. The [development cache](../cache.md) adds opt-in
+web-output and desktop-daemon preparation reuse after complete input/output
+validation. Cargo compilation and real browser/native acceptance remain live.
+The initial warm web build is already below one second; fingerprint overhead
+must be measured before enabling this cache by default.
 Do not add Turborepo with disabled package-manager checks or pretend Aube uses
 another lockfile. Reconsider Turborepo only after correct Aube lockfile hashing is
 supported and tested; add Nx or other orchestration only for a concrete need.
+
+Only the exact `app/web/build.ts` and `app/desktop/build.ts` host entry points may
+import `app/check/build-cache.ts`. The desktop entry may additionally use the
+dependency integrity adapter. Client runtime code cannot import these build
+entries or other check, dependency or workflow internals; parsed lint fixtures
+enforce the narrow exception. This does not merge the browser and host type
+environments.
 
 Asset staging is a fixed generated folder under `.cache/apps/`. Validate the
 resolved folder before cleanup; copy only current approved assets/manifests,

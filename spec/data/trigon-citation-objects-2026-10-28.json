@@ -1,0 +1,818 @@
+{
+  "format": "teamagent-local-partial-citation-objects-v1",
+  "createdAt": "2026-10-28T17:12:15.072546+00:00",
+  "sourceRepository": "https://github.com/iki/trigon",
+  "sourceRevision": "454e372cbc6bb75eafbbc4795391c492bc4fbf96",
+  "collectionKind": "partial-citation-objects-not-a-clone",
+  "provenance": "Original commit, root/path-ancestor tree and cited blob bytes read from the inspected local Git object database; each original Git OID and SHA-256 verified.",
+  "sourceOriginChecked": true,
+  "publicReachabilityVerified": false,
+  "sourceWorkingTreeUsed": false,
+  "sourceModified": false,
+  "normalization": "none-immutable-git-object-bytes",
+  "reports": [
+    {
+      "path": "spec/analyses/trigon-process-sync-2026-10-28.md",
+      "sha256": "c169c27c9e056d808b5c5a0d0d3b22854f1c474e6b04479dae35eda3adba164c",
+      "bytes": 10275
+    },
+    {
+      "path": "spec/analyses/trigon-process-sync/workflow.md",
+      "sha256": "766f8f194480945d6382d3e8ce1dcb3344b72cf9695486f4439a382fdf5618d8",
+      "bytes": 18515
+    },
+    {
+      "path": "spec/analyses/trigon-process-sync/dependencies.md",
+      "sha256": "8d877455ead6030809719236f182384011816a494db8ddc9ad8cd531b7300fa5",
+      "bytes": 24436
+    },
+    {
+      "path": "spec/analyses/trigon-process-sync/verification.md",
+      "sha256": "500d5887d697d55f7ecd0e31ab96e8f8510d3b1282ea6402681b3cf2a3474b1b",
+      "bytes": 19947
+    },
+    {
+      "path": "spec/analyses/trigon-process-sync/implementation-plan.md",
+      "sha256": "070c377d7b91169d5fb4d12944546e161551800caedaaa4ff78c85e6cab0f0cf",
+      "bytes": 15359
+    }
+  ],
+  "citations": {
+    ".github/actions/mobile-setup/action.yml": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/.github/actions/mobile-setup/action.yml"
+      }
+    ],
+    "app/desktop/src-tauri/Cargo.toml": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/desktop/src-tauri/Cargo.toml"
+      }
+    ],
+    "app/trigon-check/deps.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-check/deps.ts"
+      }
+    ],
+    "app/trigon-check/input-cache.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/verification.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-check/input-cache.ts"
+      }
+    ],
+    "app/trigon-check/patch-policy.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-check/patch-policy.ts"
+      }
+    ],
+    "app/trigon-check/skills-maintain.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-check/skills-maintain.ts"
+      }
+    ],
+    "app/trigon-check/task-policy.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/implementation-plan.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-check/task-policy.ts"
+      }
+    ],
+    "app/trigon-check/upgrade-plan.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-check/upgrade-plan.ts"
+      }
+    ],
+    "app/trigon-conversations/archive.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-conversations/archive.ts"
+      }
+    ],
+    "app/trigon-conversations/compact-run.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-conversations/compact-run.ts#L26-L100"
+      }
+    ],
+    "app/trigon-conversations/review.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-conversations/review.ts#L32-L34"
+      }
+    ],
+    "app/trigon-conversations/state-lock.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-conversations/state-lock.ts#L77-L90"
+      }
+    ],
+    "app/trigon-conversations/task-complete.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-conversations/task-complete.ts"
+      }
+    ],
+    "app/trigon-conversations/task-integration.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-conversations/task-integration.ts"
+      }
+    ],
+    "app/trigon-conversations/task-publish.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-conversations/task-publish.ts#L98-L111"
+      },
+      {
+        "document": "spec/analyses/trigon-process-sync/implementation-plan.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-conversations/task-publish.ts"
+      }
+    ],
+    "app/trigon-conversations/task-readiness.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-conversations/task-readiness.ts#L78-L83"
+      },
+      {
+        "document": "spec/analyses/trigon-process-sync/implementation-plan.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-conversations/task-readiness.ts"
+      }
+    ],
+    "app/trigon-conversations/transcript.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-conversations/transcript.ts"
+      }
+    ],
+    "app/trigon-conversations/verified-review.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-conversations/verified-review.ts"
+      }
+    ],
+    "app/trigon-conversations/workflow.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/implementation-plan.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-conversations/workflow.ts"
+      }
+    ],
+    "app/trigon-release/deploy-diagnostics.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/implementation-plan.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/app/trigon-release/deploy-diagnostics.ts"
+      }
+    ],
+    "mise.toml": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/mise.toml"
+      }
+    ],
+    "package.json": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/package.json"
+      }
+    ],
+    "patches/portless@0.15.12.patch": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/patches/portless@0.15.12.patch"
+      }
+    ],
+    "patches/series.json": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/patches/series.json"
+      }
+    ],
+    "patches/wrangler@4.153.0.patch": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/patches/wrangler@4.153.0.patch"
+      }
+    ],
+    "spec/conversation-logging.md": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/spec/conversation-logging.md"
+      }
+    ],
+    "spec/deps.md": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/spec/deps.md"
+      }
+    ],
+    "spec/development-intro.md": [
+      {
+        "document": "spec/analyses/trigon-process-sync/verification.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/spec/development-intro.md"
+      }
+    ],
+    "spec/patches.md": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/spec/patches.md"
+      }
+    ],
+    "spec/patching.md": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/spec/patching.md"
+      }
+    ],
+    "spec/releases.md": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/spec/releases.md"
+      }
+    ],
+    "spec/rules.md": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/spec/rules.md"
+      }
+    ],
+    "spec/runtime.md": [
+      {
+        "document": "spec/analyses/trigon-process-sync/dependencies.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/spec/runtime.md"
+      }
+    ],
+    "spec/task-lifecycle.md": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/spec/task-lifecycle.md"
+      }
+    ],
+    "spec/workflow-intro.md": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/spec/workflow-intro.md#two-week-trace-audit"
+      }
+    ],
+    "spec/workflow.md": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/spec/workflow.md"
+      }
+    ],
+    "test/input-cache.test.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/verification.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/test/input-cache.test.ts"
+      }
+    ],
+    "test/stop-handoff.test.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/test/stop-handoff.test.ts#L26-L46"
+      },
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/test/stop-handoff.test.ts#L240-L278"
+      }
+    ],
+    "test/task-hook-fixture.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/test/task-hook-fixture.ts#L17-L30"
+      }
+    ],
+    "test/task-integration.test.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/test/task-integration.test.ts#L290-L316"
+      }
+    ],
+    "test/workflow-runner.test.ts": [
+      {
+        "document": "spec/analyses/trigon-process-sync/workflow.md",
+        "url": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/test/workflow-runner.test.ts"
+      }
+    ]
+  },
+  "objects": [
+    {
+      "oid": "053633561578f5b622160ec1c1baaae25d82f457",
+      "type": "tree",
+      "bytes": 389,
+      "sha256": "9c36d4cd69bdb556f5da8c47af0bb7f92f600fc71b0e412a70bd20e87b99eee3",
+      "paths": [
+        "app/desktop/src-tauri"
+      ]
+    },
+    {
+      "oid": "0573faf6ee384c02f1b1575a2a14580baabf12b8",
+      "type": "blob",
+      "bytes": 546,
+      "sha256": "d6e8edff99cfdc22696d7e8df8a879cbdc269bc96d919d12ce0d844539b6e1c3",
+      "paths": [
+        "app/desktop/src-tauri/Cargo.toml"
+      ]
+    },
+    {
+      "oid": "087e90e0feb43c0325ae0d6e00b8ac14813cc340",
+      "type": "tree",
+      "bytes": 70,
+      "sha256": "00402dd12da59d6370f2611aee51a423ca65c269a29739f1a708798247a8c484",
+      "paths": [
+        ".github"
+      ]
+    },
+    {
+      "oid": "0e5180599dde79bb8111e7ee38b84ebbcc20b0ca",
+      "type": "blob",
+      "bytes": 7839,
+      "sha256": "c0fc3cfce76b1d884462c4ffd491fb247cf0d35c43889049b58ef12d9ee2ddb8",
+      "paths": [
+        "spec/workflow.md"
+      ]
+    },
+    {
+      "oid": "0eefbabf68e89cd5330aec1f41ad95b4895b7a27",
+      "type": "tree",
+      "bytes": 71,
+      "sha256": "cdf59a928f4303df7a958b284a705278cf82ca3d0186f4d4f2cda13d0f2ab23b",
+      "paths": [
+        ".github/actions"
+      ]
+    },
+    {
+      "oid": "1004402583cd99096025aa995ffb4f98a2212bf4",
+      "type": "blob",
+      "bytes": 19500,
+      "sha256": "869e99e38ae30a2770a8a0743a7bc924c5e3a94cba167b1ebeddb299300ae628",
+      "paths": [
+        "app/trigon-check/input-cache.ts"
+      ]
+    },
+    {
+      "oid": "19e85da62f8a06686561ec5b262ac02a90021dc6",
+      "type": "blob",
+      "bytes": 1015,
+      "sha256": "05cd7223ea533c59071a481afcbad959d35f3ee09f90915805cb202e609ad418",
+      "paths": [
+        "app/trigon-check/deps.ts"
+      ]
+    },
+    {
+      "oid": "2239caee822d8a40f8c5a8d58ad0efc1db65fa92",
+      "type": "blob",
+      "bytes": 476,
+      "sha256": "05d5cc0c4c4a4cfee46fc1cd0a7f5612f4beca005c158f802bfb2921d42cd0c0",
+      "paths": [
+        "patches/series.json"
+      ]
+    },
+    {
+      "oid": "22573747c1b27f56e3e28707e25afe3e92db413d",
+      "type": "blob",
+      "bytes": 6380,
+      "sha256": "40b6ec340ee64c1f0688b29e341f5e6b805354cb1f5aa7df96e5dd45d48928a6",
+      "paths": [
+        "app/trigon-conversations/archive.ts"
+      ]
+    },
+    {
+      "oid": "22d3ff0c59fd36b7f9323efcb1a7a38e69d1898e",
+      "type": "blob",
+      "bytes": 18050,
+      "sha256": "521cb0ea620813a9843fb14f8ed3d201d66256b6081108355e26706017757b97",
+      "paths": [
+        "test/input-cache.test.ts"
+      ]
+    },
+    {
+      "oid": "27af4902134e25ea01ecfdf6515d9819dc10322e",
+      "type": "blob",
+      "bytes": 9142,
+      "sha256": "e612203777ec511a1416ad88f4bfc90728c1c3f11fb7e178365167961aaf4b4d",
+      "paths": [
+        "test/task-hook-fixture.ts"
+      ]
+    },
+    {
+      "oid": "2a8420e3b9f58fc80651e34fa6ed5c2201dcabb5",
+      "type": "blob",
+      "bytes": 7674,
+      "sha256": "585649536495a034c4be8d6a05eda7e35c5620ce51aa1e43d61f4f0938cbaea9",
+      "paths": [
+        "app/trigon-conversations/transcript.ts"
+      ]
+    },
+    {
+      "oid": "2d36234bf2a936ef1d9c0bf14955834b71a2422d",
+      "type": "blob",
+      "bytes": 4139,
+      "sha256": "afdb5f16f19c14db98078fb323a3d9967a031baf315a36498ce7711ed1236107",
+      "paths": [
+        "app/trigon-conversations/compact-run.ts"
+      ]
+    },
+    {
+      "oid": "2de1abfd1f21d13863b825a54a232726a01cfd79",
+      "type": "blob",
+      "bytes": 26516,
+      "sha256": "444dd97be7c69afc011a8c67ba660a44de3d485b9a51a390e052240cc1612af7",
+      "paths": [
+        "spec/patches.md"
+      ]
+    },
+    {
+      "oid": "306d6848f5086be8df01ca644fbb85b00fd848e3",
+      "type": "blob",
+      "bytes": 10690,
+      "sha256": "7ae0c7649abd32dcdb6dcab9a4698a7d68da5c96536d53bfce1d93d077f71ff0",
+      "paths": [
+        "spec/task-lifecycle.md"
+      ]
+    },
+    {
+      "oid": "34a55b4e210a0ddfaf8a7d85d5d1ba9c014faaa9",
+      "type": "blob",
+      "bytes": 4074,
+      "sha256": "21f4bcea53fc9a55891c28b7782da161a30534cc556df5d1ae58ba4f06014d14",
+      "paths": [
+        "app/trigon-conversations/task-complete.ts"
+      ]
+    },
+    {
+      "oid": "3916c9ca71fde5c748baf23323a897178dc6e41d",
+      "type": "blob",
+      "bytes": 27968,
+      "sha256": "567ce84fee0171b1febeb07487ff41b9b412c43cd27df901ef122635d24c13e2",
+      "paths": [
+        "spec/development-intro.md"
+      ]
+    },
+    {
+      "oid": "3b203535bccf42b327cc0052435381bb13ca7caf",
+      "type": "blob",
+      "bytes": 9516,
+      "sha256": "81697abf66516e65945067287278641da8b2318bec7a8c55c2574f55fb6e8a6b",
+      "paths": [
+        "spec/deps.md"
+      ]
+    },
+    {
+      "oid": "454e372cbc6bb75eafbbc4795391c492bc4fbf96",
+      "type": "commit",
+      "bytes": 664,
+      "sha256": "ab979fd8e2b7f6cdb61f6cb6c1ecee496e90b8ebbc790f394efc6cdb8e1f857d",
+      "paths": [
+        "<commit>"
+      ]
+    },
+    {
+      "oid": "47eec81a3b777b6f804659b7b6bd4cad98ca2a1a",
+      "type": "tree",
+      "bytes": 1514,
+      "sha256": "1be9513a5066952e2243f084d920b51584e04f074061a82222a5ea6de2df2b63",
+      "paths": [
+        "<root-tree>"
+      ]
+    },
+    {
+      "oid": "4a25d22362b83fbdc2847192e56c56ddfedc6954",
+      "type": "tree",
+      "bytes": 38,
+      "sha256": "d64c8c723cf476d2b52829aff26fb7c1b023645f9f07064b85e4a26cc09806dc",
+      "paths": [
+        ".github/actions/mobile-setup"
+      ]
+    },
+    {
+      "oid": "4abfad55f8a3775109089bd5ea969564ae8ed9ca",
+      "type": "blob",
+      "bytes": 2108,
+      "sha256": "c2b64e3e344439056117aebdaad1cdb55f9c03f018c5254177bec5fdb3be63e8",
+      "paths": [
+        ".github/actions/mobile-setup/action.yml"
+      ]
+    },
+    {
+      "oid": "4b2389ab87aed6126e8bcfb062d368be989a7a79",
+      "type": "blob",
+      "bytes": 3431,
+      "sha256": "0f81282e6c0b54355f3a3754276d0ccd29c0ef57a3d2f4392507de467d6785f8",
+      "paths": [
+        "app/trigon-conversations/state-lock.ts"
+      ]
+    },
+    {
+      "oid": "555417d8a952da55378e9659d9177fc16e8f635c",
+      "type": "tree",
+      "bytes": 9237,
+      "sha256": "bb11d7ca9dc42f2e32355f3763bc6e8194c21fa02644f3654c37a0ee0843cca7",
+      "paths": [
+        "test"
+      ]
+    },
+    {
+      "oid": "57f607c8370da4c5fd47ffe0af185cc4546987e6",
+      "type": "blob",
+      "bytes": 5730,
+      "sha256": "c431b0882a09f2ff33325902e712d88aa632e9bdd6a0b9f4a491f0231ad5ded9",
+      "paths": [
+        "spec/conversation-logging.md"
+      ]
+    },
+    {
+      "oid": "59f45eb51031fa525adad80276ccca6073c1be28",
+      "type": "blob",
+      "bytes": 10048,
+      "sha256": "702f3012782a9113701ef9751addbf91ddee7564d761f12156da31b19c4147a0",
+      "paths": [
+        "app/trigon-conversations/task-integration.ts"
+      ]
+    },
+    {
+      "oid": "60b2dd3a0f1385f330d0fd239963dbd5fb4cea78",
+      "type": "blob",
+      "bytes": 10637,
+      "sha256": "d392b59f21c79af078afcf79f57f11ebe34867c7d1af768b0ca45e305780651b",
+      "paths": [
+        "app/trigon-conversations/workflow.ts"
+      ]
+    },
+    {
+      "oid": "619a8e9792cbb2a3c2190d37bb3174c02b930192",
+      "type": "blob",
+      "bytes": 3384,
+      "sha256": "03af965637418c9d045a0d9361ec33d553c0ec95caa4510b460e6b8039fb20ed",
+      "paths": [
+        "app/trigon-conversations/verified-review.ts"
+      ]
+    },
+    {
+      "oid": "64778e80192fdd07de74fbe131fe4686f029af47",
+      "type": "blob",
+      "bytes": 2648,
+      "sha256": "84a0bfbb735ec68187e11165e6e7e807d8e5f81947a5ba12b35792dc0f678a18",
+      "paths": [
+        "test/workflow-runner.test.ts"
+      ]
+    },
+    {
+      "oid": "6a2f6833071c17ed86a7f068794f6f4dd287da57",
+      "type": "blob",
+      "bytes": 4331,
+      "sha256": "1107cfffbbcf08d3e6ffad452b5c5fd0533ca471bf69ed753a74e9b069a8c66a",
+      "paths": [
+        "app/trigon-release/deploy-diagnostics.ts"
+      ]
+    },
+    {
+      "oid": "6ee0f2b73cf202f358d80bd0985adfef7f5c454b",
+      "type": "blob",
+      "bytes": 11310,
+      "sha256": "fefd20a7afba4e4b71e2b4c3889850b6fc3e011b8943ef65e45d1f38ae2288d3",
+      "paths": [
+        "test/stop-handoff.test.ts"
+      ]
+    },
+    {
+      "oid": "702dc7d2f9667959c070bb57e6278ed07f606b1b",
+      "type": "blob",
+      "bytes": 2648,
+      "sha256": "71f8435183916913ddd2bf08e427dccc4112f598311ff887a6f0de1ed4026a9d",
+      "paths": [
+        "app/trigon-check/patch-policy.ts"
+      ]
+    },
+    {
+      "oid": "7054bd2b9c8b84c3baa99a5b368ff1d84b4c29f2",
+      "type": "blob",
+      "bytes": 4293,
+      "sha256": "83cab59a27b7a0960f4b485b996d0ba78aa27dc3cc3d21244cca7d262661dfd6",
+      "paths": [
+        "app/trigon-check/upgrade-plan.ts"
+      ]
+    },
+    {
+      "oid": "760635a9636ffa0ed3f3e681a03c1c80cf669581",
+      "type": "blob",
+      "bytes": 1812,
+      "sha256": "6eb8f0637d4506a890f57a556e9025dcf4caa377eb8863ceb6cae6a80988e5e0",
+      "paths": [
+        "patches/wrangler@4.153.0.patch"
+      ]
+    },
+    {
+      "oid": "7e20e3f597dc559765a5dc61a82ebd3153254dd5",
+      "type": "blob",
+      "bytes": 8973,
+      "sha256": "bd179959e55abe5554bb5999f30eeed8bb8f66dbf21659a8fd388b4a1a1d0e35",
+      "paths": [
+        "app/trigon-conversations/task-readiness.ts"
+      ]
+    },
+    {
+      "oid": "8c2a507be67921fd37d4b64fb99c541a1d095ad8",
+      "type": "blob",
+      "bytes": 6627,
+      "sha256": "2f84d9189b27ec3ed9a07f643b13cfe3085f7de94346584fb51382e4ead3c532",
+      "paths": [
+        "patches/portless@0.15.12.patch"
+      ]
+    },
+    {
+      "oid": "8e2e9acb17aac55171a0b4fda4f054231770471c",
+      "type": "blob",
+      "bytes": 2920,
+      "sha256": "de5a271c74a93992aacd7f89c80652d38d9d8883e58da65d664ae572b2ea175f",
+      "paths": [
+        "mise.toml"
+      ]
+    },
+    {
+      "oid": "8f361d66894693605e07d23aa2d4c57f9422363e",
+      "type": "blob",
+      "bytes": 7493,
+      "sha256": "051e8d62978bf2a2b88038a8e64f150c60d59a40b3cb7f6751342cae4b691a45",
+      "paths": [
+        "spec/rules.md"
+      ]
+    },
+    {
+      "oid": "91478461c59e666bc864f807c4ad48f4e810aa68",
+      "type": "tree",
+      "bytes": 1745,
+      "sha256": "a7c0cbb69f9cf123f0bf98f7862a6c9b601ceb05e3d8dc12da2fdb704cd232d7",
+      "paths": [
+        "app/trigon-conversations"
+      ]
+    },
+    {
+      "oid": "97014eb35ad276c9b41ba776814278af2e629ae9",
+      "type": "tree",
+      "bytes": 1042,
+      "sha256": "c80aafd6a4081cac8c1a0b603a2cda7f618e8d07bd617ca791d1048a3efb8d0b",
+      "paths": [
+        "app"
+      ]
+    },
+    {
+      "oid": "98506f80046c6875499d80a52dd49935dc06b42e",
+      "type": "tree",
+      "bytes": 209,
+      "sha256": "5beb2d511d4b532e2ae565c841b6456ad33de0fcea19ec626f064e09a465fd32",
+      "paths": [
+        "patches"
+      ]
+    },
+    {
+      "oid": "98e5078b5071b7c919a7b2fec34b44d0cd0c9696",
+      "type": "tree",
+      "bytes": 237,
+      "sha256": "61df3f50c838010f70fdc839291811d35371fa9d7eafb6d53cc5965887437ee2",
+      "paths": [
+        "app/desktop"
+      ]
+    },
+    {
+      "oid": "9e3f88b97d09087c7c79e3644ac3129a56fea4f8",
+      "type": "blob",
+      "bytes": 4115,
+      "sha256": "d8a6822d0ebc3d6541e63d6cf6c44c0c3f38da6fbcd9e33f230432c5bc23b286",
+      "paths": [
+        "spec/workflow-intro.md"
+      ]
+    },
+    {
+      "oid": "a3f4005857d34937057a7988d09b61be4b92ad83",
+      "type": "blob",
+      "bytes": 3656,
+      "sha256": "c97c17a685ccea024a4b91b3815511114be266fb31144b774a47f5332db22228",
+      "paths": [
+        "app/trigon-check/task-policy.ts"
+      ]
+    },
+    {
+      "oid": "a80e1c04d3eca79c25fba5b50d691e9a802c6742",
+      "type": "tree",
+      "bytes": 4548,
+      "sha256": "3326d4951f548ef15ec88befa7051be0f6304dd23fd22aa49f09cf2dd2f42df2",
+      "paths": [
+        "app/trigon-check"
+      ]
+    },
+    {
+      "oid": "c3ad4248bcbc624f4a5e28d44aed4c0f92114830",
+      "type": "blob",
+      "bytes": 9197,
+      "sha256": "36c591f1dbe90bce3e00a06f201e8c1e71e8760c4fab2872895ff4493dcdf653",
+      "paths": [
+        "spec/runtime.md"
+      ]
+    },
+    {
+      "oid": "cd53349b12f0929b1f2768bdeb0f38154fc11e8a",
+      "type": "blob",
+      "bytes": 8233,
+      "sha256": "773d45e460979c533f9e6497fa6aa70a387dc195fe0a7b4b16a04b025a6e2ede",
+      "paths": [
+        "package.json"
+      ]
+    },
+    {
+      "oid": "d500323401ab41680900992be5a978001c3cf8bc",
+      "type": "blob",
+      "bytes": 6340,
+      "sha256": "b3264fb27ef1360b1e76a38ff5aa1d1d1a6a62cf27b681d5fab05cae9d66af51",
+      "paths": [
+        "app/trigon-check/skills-maintain.ts"
+      ]
+    },
+    {
+      "oid": "d73be11d09d46e1f371a111d241e275da6ab9f7f",
+      "type": "blob",
+      "bytes": 14112,
+      "sha256": "9064b858d7bc282abc47eb7fe67154345c106a4eb372ff8951957a47fc3b8b86",
+      "paths": [
+        "test/task-integration.test.ts"
+      ]
+    },
+    {
+      "oid": "d9459e0e0a875a26d282712edee7c6026d2e98ad",
+      "type": "blob",
+      "bytes": 13472,
+      "sha256": "295aba86bc15832bec853ce183669eb846153b4918508ffc2ebf8d460e174b78",
+      "paths": [
+        "spec/releases.md"
+      ]
+    },
+    {
+      "oid": "eeb3125db13bd5d30db6f1ae3c4ecb99d9212b63",
+      "type": "blob",
+      "bytes": 3661,
+      "sha256": "be882c444fd5cc7bdcf4db8fee555bfab3dea16550b22054cf382d24863f2a1c",
+      "paths": [
+        "app/trigon-conversations/review.ts"
+      ]
+    },
+    {
+      "oid": "ef7c6a4fbc7e26216f6da83b43628ced263da629",
+      "type": "blob",
+      "bytes": 7311,
+      "sha256": "0897841cdfc34db5001c906c88dd27c927b1e87fe467225c2d324bb73fd7df33",
+      "paths": [
+        "app/trigon-conversations/task-publish.ts"
+      ]
+    },
+    {
+      "oid": "f1be048cfd3dfc062c6ccf726518d409d7122352",
+      "type": "tree",
+      "bytes": 6499,
+      "sha256": "dcf8364d3b648e8adbf46dfb4dc1bbbcfa0962e11bf018a4cf15704a26c977a9",
+      "paths": [
+        "spec"
+      ]
+    },
+    {
+      "oid": "fafc737b5e79723c26c7c7a77379ffd574264bc1",
+      "type": "blob",
+      "bytes": 15530,
+      "sha256": "28e88697ae18fa680e0fbd28c19f32fe0e774f613299161d5f1f228d3436d7a6",
+      "paths": [
+        "spec/patching.md"
+      ]
+    },
+    {
+      "oid": "fb927106bf8aef4b4c54bf04f56f45bbdfcf079a",
+      "type": "tree",
+      "bytes": 1252,
+      "sha256": "7e6f4d970fc9b58e5d586849139edddf4c622ef7699b7ab7368f07ae3286be1e",
+      "paths": [
+        "app/trigon-release"
+      ]
+    }
+  ],
+  "objectBytes": 355060,
+  "bounds": {
+    "objectBytes": 8388608,
+    "commitBytes": 1048576,
+    "objects": 512,
+    "totalObjectBytes": 67108864,
+    "paths": 128,
+    "seconds": 180,
+    "gitCommandSeconds": 15,
+    "repositoryBytes": 134217728,
+    "cacheBytes": 536870912
+  },
+  "limitations": [
+    "Uncited blobs, unrelated subtrees and parent commits are intentionally absent unless already present; this is not a complete clone or a full-history fsck claim.",
+    "Canonical configured origin and exact object identity do not establish GitHub access, publication, signature validity or semantic correctness.",
+    "Cited files retain original Git bytes, with no LF normalization or working-tree substitution."
+  ],
+  "state": "complete",
+  "completedAt": "2026-10-28T17:12:20.528542+00:00",
+  "planSha256": "f11ebec32a9019c1c3779e0513e1dcc49b165272c82666519ecff4c8f5aa7d4c",
+  "resultSha256": "ec7cf7db5be6d6b5ffec5fb78e0cbc15c8110330004e708e8c6d5992ca97c448"
+}

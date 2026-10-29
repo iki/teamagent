@@ -8,6 +8,10 @@ The recommendation is a **local-first durable control plane with replaceable age
 
 Implementation rules: [development stack and platform architecture](architecture/README.md), [verification and agent hooks](verification.md), and [conversation logging](conversation-logging.md). These complement the product design and evidence catalog below.
 
+Development maintenance adds [task workflow](workflow.md), [dependency patches](dependencies.md)
+and [build/verification caching](cache.md). The [Trigon process analysis](analyses/trigon-process-sync-2026-10-28.md)
+records the inspected source revision, required adaptations and benchmark limits.
+
 1. [Architecture and component choices](architecture.md): system boundaries, deployment and failure semantics.
 2. [Requirements map](requirements.md): each requested capability and its acceptance evidence.
 3. [Contracts and data model](contracts.md): tasks, agents, models, knowledge, skills, decisions and generation jobs.

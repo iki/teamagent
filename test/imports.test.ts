@@ -62,7 +62,7 @@ beforeAll(async () => {
   expect(doctor.available, "Run memory setup before testing document conversion").toBe(true);
   await runProcess(
     defaultImportPython(),
-    ["-I", join(import.meta.dir, "import-fixtures.py"), workspace],
+    ["-I", "-B", join(import.meta.dir, "import-fixtures.py"), workspace],
     { signal: signal(), bytes: 1_048_576 },
   );
 });
@@ -75,6 +75,54 @@ afterAll(async () => {
 });
 
 describe("source acquisition and conversion", () => {
+  test("isolated Python reads provisioned bytecode without writing new import caches", async () => {
+    const fixture = join(directory, "bytecode");
+    await mkdir(fixture);
+    // Start safely. Only literal modules inside this owned fixture reproduce the old write mode.
+    const output = await runProcess(
+      defaultImportPython(),
+      [
+        "-I",
+        "-B",
+        "-c",
+        `
+import importlib, pathlib, sys
+assert sys.flags.isolated == 1
+assert sys.dont_write_bytecode
+assert sys.pycache_prefix is None
+root = pathlib.Path(sys.argv[1])
+sys.path.insert(0, str(root))
+(root / "old_mode.py").write_bytes(b"value = 1\\n")
+(root / "safe_mode.py").write_bytes(b"value = 2\\n")
+try:
+    sys.dont_write_bytecode = False
+    assert importlib.import_module("old_mode").value == 1
+finally:
+    sys.dont_write_bytecode = True
+before = {path.name: path.read_bytes() for path in root.rglob("*.pyc")}
+assert len(before) == 1
+assert importlib.import_module("safe_mode").value == 2
+del sys.modules["old_mode"]
+assert importlib.import_module("old_mode").value == 1
+after = {path.name: path.read_bytes() for path in root.rglob("*.pyc")}
+assert before == after
+sys.stdout.buffer.write(b"isolated-bytecode-read-only\\n")
+`,
+        fixture,
+      ],
+      {
+        signal: signal(),
+        bytes: 4096,
+        env: {
+          ...processEnvironment(),
+          PYTHONDONTWRITEBYTECODE: "0",
+          PYTHONPYCACHEPREFIX: join(fixture, "ignored-prefix"),
+        },
+      },
+    );
+    expect(decoded(output)).toBe("isolated-bytecode-read-only\n");
+  });
+
   test("preserves original text and binary data with explicit unsupported conversion", async () => {
     await writeFile(join(workspace, "notes.txt"), "Unicode evidence: příliš\n");
     const text = captured(await Effect.runPromise(createSourceCapture()(request("notes.txt"))));

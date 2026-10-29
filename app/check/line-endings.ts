@@ -50,6 +50,10 @@ export const lineEndingOutputRoots: readonly string[] = [
   ".cache/research",
   ".cache/commit-split-2026-10-27",
   ".cache/conversations",
+  ".cache/workflow",
+  ".cache/hook-diagnostics",
+  ".cache/dependencies",
+  ".cache/verification",
   ".cache/text",
   ".cache/line-endings/migrations",
   ".cache/benchmark-documents",
@@ -72,6 +76,9 @@ export const lineEndingOutputRoots: readonly string[] = [
 
 function excluded(path: string): boolean {
   const parts = path.split("/");
+  // Exact owned temporary Git indexes are binary scratch, not maintained text.
+  if (/^\.cache\/workflow\/indexes\/[a-zA-Z0-9._-]+\/(?:index|index\.lock)$/u.test(path))
+    return true;
   if (parts.some((part) => part === ".git" || part === "node_modules")) return true;
   // Exports have a stricter manifest/file validator; the source store retains immutable inputs.
   if (path.startsWith(".cache/text/exports/") || path.startsWith(".cache/text/store/")) return true;

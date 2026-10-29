@@ -314,6 +314,42 @@ await test("inventory includes owned ignored outputs without following vendors, 
   });
 });
 
+await test("Git whitespace checks preserve exact originals while rejecting active text defects", () => {
+  fixture((root) => {
+    const git = (args: readonly string[]) => {
+      const result = spawnSync("git", [...args], {
+        cwd: root,
+        encoding: "utf8",
+        timeout: 10_000,
+        windowsHide: true,
+        shell: false,
+      });
+      assert.ifError(result.error);
+      return result;
+    };
+    assert.equal(git(["init", "--quiet"]).status, 0);
+    write(
+      root,
+      ".gitattributes",
+      readFileSync(fileURLToPath(new URL("../.gitattributes", import.meta.url))),
+    );
+    const original = "Historical wording with preserved space \n\n";
+    const sha256 = createHash("sha256").update(original).digest("hex");
+    const path = `spec/archive/line-endings/originals/${sha256}.bin`;
+    write(root, path, original);
+    manifest(root, path, sha256);
+    assert.equal(git(["add", "--", ".gitattributes", path]).status, 0);
+    assert.equal(git(["diff", "--cached", "--check"]).status, 0);
+    assert.equal(readFileSync(join(root, path), "utf8"), original);
+    assert.equal(inspectLineEndings(root, [path]).violations.length, 0);
+    write(root, "active.txt", "New maintained text with trailing whitespace \n");
+    assert.equal(git(["add", "--", "active.txt"]).status, 0);
+    assert.notEqual(git(["diff", "--cached", "--check"]).status, 0);
+    write(root, path, "Changed original\n");
+    assert.throws(() => inspectLineEndings(root, [path]), /hash mismatch/u);
+  });
+});
+
 await test("real Git preserves binary and original bytes while active text checks out LF under either autocrlf setting", () => {
   fixture((root) => {
     function git(args: readonly string[]): void {

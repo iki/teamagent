@@ -8,6 +8,19 @@ See the [implemented contract](harness.md) and [verification](harness-verificati
 Mobile is deferred. The phases below include future features; this increment does
 not establish their exit criteria or live-provider benchmarks.
 
+## Development process increment
+
+The [Trigon process review](analyses/trigon-process-sync-2026-10-28.md) precedes
+implementation of the [repository workflow](workflow.md),
+[central dependency patch process](dependencies.md), and
+[local/Git-stored verification cache](cache.md). The user selected signed commits
+and ordinary pushes after review, one frozen public record per changed logical
+task with descriptive filenames, and a separate shared-dependency alignment
+step. The 86 historical record names have been migrated with exact originals
+retained. Source review, local fixture execution, real signing/publication,
+browser/native acceptance and repeatable performance measurements remain distinct
+evidence. These maintenance tools do not complete the product phases below.
+
 ## Research maintenance increment
 
 The [research sync workflow](research-sync.md) maintains source lists, checkouts, text imports, and reviewed analysis baselines. Execution results, partial sources and remaining source-review work belong in [incremental analyses](analyses/README.md); implementing synchronization does not establish the product phases below or promote fetched findings automatically.

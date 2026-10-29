@@ -1,0 +1,30 @@
+{
+  "format": "teamagent-trigon-patches-v1",
+  "sourceRepository": "https://github.com/iki/trigon",
+  "sourceRevision": "454e372cbc6bb75eafbbc4795391c492bc4fbf96",
+  "license": {
+    "sourcePath": "LICENSE.md",
+    "artifactPath": "patches/trigon/LICENSE.md",
+    "sha256": "319664e96ae8627ec41a39e583c7a88491cf20fe0696d55882719258ab45d8e8"
+  },
+  "fixes": [
+    {
+      "id": "tauri-native-lifetime",
+      "kind": "host-adapter",
+      "packages": [{ "name": "@tauri-apps/cli", "versions": ["2.12.1", "2.12.4"] }],
+      "files": [
+        {
+          "sourcePath": "app/trigon-check/native-lifetime.ts",
+          "artifactPath": "app/dependencies/trigon/native-lifetime.ts",
+          "sha256": "eaa3d76d8a35f1e67a41f30dbc23eb4ef24c6c798ca3ca26cb012782f9891480"
+        },
+        {
+          "sourcePath": "app/trigon-check/tauri-cli.ts",
+          "artifactPath": "app/dependencies/trigon/tauri-cli.ts",
+          "sha256": "7c8cc2f93df58823a54dae5879ef2d8f1ab32ba7bdfe3f517ae5b00dd6b055fc"
+        }
+      ],
+      "evidence": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/spec/runtime.md: historical CLI 2.12.1 early exit; supplied conservative guard retained at 2.12.4, where the unguarded issue was not reproduced. Remove only after upstream lifecycle guarantees and deterministic success/rejection/cleanup regression justify removal."
+    }
+  ]
+}

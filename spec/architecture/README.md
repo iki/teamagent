@@ -12,6 +12,9 @@ evidence that its application or platform integration has been implemented.
 | Public module APIs, CLI exports and dependency graph | [Modules](modules.md)                |
 | Prior project reuse and source license evidence      | [Reuse decisions](reuse.md)          |
 | Bun, Aube, native launchers and measurement          | [Runtime](runtime.md)                |
+| Repository task lifecycle and signed publication     | [Workflow](../workflow.md)           |
+| Central dependency patches and controlled updates    | [Dependencies](../dependencies.md)   |
+| Local builds and Git-stored verification evidence    | [Cache contract](../cache.md)        |
 | Command interfaces and trusted configuration         | [CLI contracts](cli.md)              |
 | React, state, Workers, desktop and build graph       | [Applications](applications.md)      |
 | Android/iOS, previews, native builds and delivery    | [Mobile](mobile.md)                  |

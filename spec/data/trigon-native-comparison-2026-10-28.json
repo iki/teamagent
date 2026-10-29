@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "454e372cbc6bb75eafbbc4795391c492bc4fbf96",
+  "teamagentBaseline": "176569773159e4eb907fb11feda252ecc307e8f7",
+  "evidenceLevel": "Read-only local source comparison; no rustc/cargo/Tauri execution, installation or live compatibility test",
+  "manifests": {
+    "sharedDirect": [
+      {
+        "name": "tauri",
+        "teamagent": "=2.12.1",
+        "trigon": "=2.12.1",
+        "features": []
+      },
+      {
+        "name": "tauri-build",
+        "teamagent": "=2.7.1",
+        "trigon": "=2.7.1",
+        "features": []
+      }
+    ],
+    "teamagentOnlyDirect": {
+      "serde": "=1.0.229 (derive)",
+      "serde_json": "=1.0.151",
+      "getrandom": "=0.4.3",
+      "url": "=2.5.8"
+    },
+    "trigonOnlyDirect": {
+      "tauri-plugin-geolocation": "=2.4.1; android or ios only"
+    },
+    "edition": {
+      "teamagent": "2024",
+      "trigon": "2021",
+      "recommendation": "Preserve Teamagent edition"
+    },
+    "minimumRust": {
+      "teamagent": "1.90",
+      "trigon": null,
+      "meaning": "Minimum supported Rust version, not a pinned installed toolchain"
+    },
+    "trigonReleaseProfile": {
+      "panic": "abort",
+      "codegen-units": 1,
+      "lto": true,
+      "opt-level": "s",
+      "strip": true,
+      "recommendation": "Separate benchmark and behavior review; not required for JS dependency alignment"
+    }
+  },
+  "toolchain": {
+    "teamagentRepositoryPin": null,
+    "teamagentLauncher": "rustc and cargo from PATH; cargo test/build use --locked",
+    "trigonRustPin": "1.99.0",
+    "trigonPinSources": [
+      "../x-trigon/mise.toml",
+      "../x-trigon/.github/actions/mobile-setup/action.yml"
+    ],
+    "installedToolchain": "Not queried",
+    "checkedPinLocations": [
+      {
+        "path": "rust-toolchain",
+        "teamagentExists": false,
+        "trigonExists": false
+      },
+      {
+        "path": "rust-toolchain.toml",
+        "teamagentExists": false,
+        "trigonExists": false
+      },
+      {
+        "path": "mise.toml",
+        "teamagentExists": false,
+        "trigonExists": true
+      },
+      {
+        "path": ".mise.toml",
+        "teamagentExists": false,
+        "trigonExists": false
+      },
+      {
+        "path": ".tool-versions",
+        "teamagentExists": false,
+        "trigonExists": false
+      },
+      {
+        "path": ".cargo/config.toml",
+        "teamagentExists": false,
+        "trigonExists": false
+      },
+      {
+        "path": "app/desktop/src-tauri/rust-toolchain",
+        "teamagentExists": false,
+        "trigonExists": false
+      },
+      {
+        "path": "app/desktop/src-tauri/rust-toolchain.toml",
+        "teamagentExists": false,
+        "trigonExists": false
+      },
+      {
+        "path": "app/desktop/src-tauri/.cargo/config.toml",
+        "teamagentExists": false,
+        "trigonExists": false
+      }
+    ],
+    "recommendation": "No Rust installation or toolchain mutation in the JS pin scope; record 1.99.0 as a separately reviewed portable setup candidate"
+  },
+  "locks": {
+    "formatVersion": 4,
+    "teamagentPackageNames": 382,
+    "teamagentPackageIdentities": 417,
+    "trigonPackageNames": 384,
+    "trigonPackageIdentities": 419,
+    "sharedPackageNames": 381,
+    "sharedPackageIdentities": 412,
+    "versionDifferences": [
+      {
+        "name": "cc",
+        "teamagent": [
+          "1.6.0"
+        ],
+        "trigon": [
+          "1.5.1"
+        ],
+        "recommendation": "Retain Teamagent selection; Trigon is older"
+      },
+      {
+        "name": "libc",
+        "teamagent": [
+          "0.2.190"
+        ],
+        "trigon": [
+          "0.2.189"
+        ],
+        "recommendation": "Retain Teamagent selection; Trigon is older"
+      },
+      {
+        "name": "mio",
+        "teamagent": [
+          "1.2.4"
+        ],
+        "trigon": [
+          "1.2.3"
+        ],
+        "recommendation": "Retain Teamagent selection; Trigon is older"
+      },
+      {
+        "name": "tokio",
+        "teamagent": [
+          "1.53.2"
+        ],
+        "trigon": [
+          "1.53.1"
+        ],
+        "recommendation": "Retain Teamagent selection; Trigon is older"
+      }
+    ],
+    "sharedIdentitySourceOrChecksumDifferences": [],
+    "selected": [
+      {
+        "name": "tauri",
+        "teamagent": [
+          "2.12.1"
+        ],
+        "trigon": [
+          "2.12.1"
+        ]
+      },
+      {
+        "name": "tauri-build",
+        "teamagent": [
+          "2.7.1"
+        ],
+        "trigon": [
+          "2.7.1"
+        ]
+      },
+      {
+        "name": "tauri-codegen",
+        "teamagent": [
+          "2.7.1"
+        ],
+        "trigon": [
+          "2.7.1"
+        ]
+      },
+      {
+        "name": "tauri-macros",
+        "teamagent": [
+          "2.7.1"
+        ],
+        "trigon": [
+          "2.7.1"
+        ]
+      },
+      {
+        "name": "tauri-runtime",
+        "teamagent": [
+          "2.12.1"
+        ],
+        "trigon": [
+          "2.12.1"
+        ]
+      },
+      {
+        "name": "tauri-runtime-wry",
+        "teamagent": [
+          "2.12.1"
+        ],
+        "trigon": [
+          "2.12.1"
+        ]
+      },
+      {
+        "name": "tauri-utils",
+        "teamagent": [
+          "2.10.1"
+        ],
+        "trigon": [
+          "2.10.1"
+        ]
+      },
+      {
+        "name": "serde",
+        "teamagent": [
+          "1.0.229"
+        ],
+        "trigon": [
+          "1.0.229"
+        ]
+      },
+      {
+        "name": "serde_json",
+        "teamagent": [
+          "1.0.151"
+        ],
+        "trigon": [
+          "1.0.151"
+        ]
+      },
+      {
+        "name": "getrandom",
+        "teamagent": [
+          "0.3.4",
+          "0.4.3"
+        ],
+        "trigon": [
+          "0.3.4",
+          "0.4.3"
+        ]
+      },
+      {
+        "name": "url",
+        "teamagent": [
+          "2.5.8"
+        ],
+        "trigon": [
+          "2.5.8"
+        ]
+      },
+      {
+        "name": "tauri-plugin-geolocation",
+        "teamagent": null,
+        "trigon": [
+          "2.4.1"
+        ]
+      }
+    ],
+    "teamagentOnlyNames": [
+      "teamagent-desktop"
+    ],
+    "trigonOnlyNames": [
+      "tauri-plugin",
+      "tauri-plugin-geolocation",
+      "trigon-desktop"
+    ]
+  },
+  "scope": {
+    "sharedJsAlignmentRequiresCargoManifestChange": false,
+    "basis": "Trigon already combines JS Tauri API/CLI 2.12.4 with the same Rust tauri 2.12.1 and tauri-build 2.7.1; this is source evidence, not a new runtime compatibility guarantee",
+    "retainCargoLock": true,
+    "retainTeamagentOnlyJs": {
+      "@earendil-works/pi-agent-core": "1.0.1",
+      "@earendil-works/pi-ai": "1.0.1",
+      "typebox": "1.3.27",
+      "@types/bun": "1.4.2"
+    },
+    "retainTeamagentOnlyRust": true,
+    "doNotImportMobilePlugin": true,
+    "requiredAcceptanceIfJsTauriAligned": [
+      "Fresh locked desktop/native validation",
+      "Supplied Tauri lifetime adapter regression",
+      "Confirm Cargo.lock remains unchanged"
+    ]
+  }
+}

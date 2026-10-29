@@ -65,6 +65,11 @@ for actual browser/native evidence and live-provider limitations.
 
 [Development architecture](spec/architecture/README.md) defines our TypeScript, Effect, Oxc, CLI, web, desktop and mobile choices. [Agent rules](AGENTS.md), [verification](spec/verification.md) and [conversation logging](spec/conversation-logging.md) apply to every implementation task.
 
+[Repository workflow](spec/workflow.md), [dependency and patch maintenance](spec/dependencies.md),
+and [build/verification caching](spec/cache.md) define the imported development
+process. The [Trigon comparison](spec/analyses/trigon-process-sync-2026-10-28.md)
+records source provenance, review findings and measured limits.
+
 The [installed skill audit](spec/skills-audit.md) records applicable guidance, compatibility caveats and future integration requirements.
 
 Use Bun **1.4.2** and Aube **2.5.1**:
@@ -75,9 +80,16 @@ aube run --no-install imports:setup
 aube run --no-install hooks:install
 aube run --no-install step:check
 aube run --no-install review:check
+aube run --no-install deps:check
+aube run --no-install cache:status --json
 ```
 
-Aube owns dependencies; Bun runs scripts and tests. The installer registers this checkout's Git pre-commit checks and records the current Bun path locally. Review/trust the repository lifecycle hooks in Codex for automatic logging and end-of-turn verification. Other agents use the same explicit commands and JSON conversation writer.
+Aube owns dependencies; Bun runs scripts and tests. The installer registers this checkout's Git verification/message hooks and records the Bun path locally. Review/trust the repository lifecycle hooks in Codex separately; installation does not activate trust. Other agents use the same explicit commands and task-level JSON writer. `task:run --help` describes the repository workflow, including explicit repair of a frozen checkpoint and signed publication to the configured Teamagent upstream. Start a logical task before changing files; preserve its baseline through follow-ups.
+
+Verification can reuse matching cooperative results committed under
+`.verification/`; use `review:check --force-fresh` to execute every group. Raw
+LF/export checks remain live. Web and desktop preparation caches are opt-in
+with `--cache`; native compilation and platform acceptance are separate checks.
 
 Each module exports its public API and CLI descriptor. [Module rules](spec/architecture/modules.md)
 enforce those entry points and dependency boundaries. [Reuse decisions](spec/architecture/reuse.md)

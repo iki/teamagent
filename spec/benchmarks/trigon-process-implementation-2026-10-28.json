@@ -1,0 +1,1446 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-28T23:23:40.355536+00:00",
+  "phase": "current-pin-process-transfer",
+  "status": "incomplete-full-unit-gate-and-publication-pending",
+  "baseline": "176569773159e4eb907fb11feda252ecc307e8f7",
+  "source": {
+    "repository": "https://github.com/iki/trigon",
+    "commit": "454e372cbc6bb75eafbbc4795391c492bc4fbf96"
+  },
+  "manifestSha256": "87429b9944349f506e2788188a37d0da1b30f7a25e0acae9a9c01d71b8488a23",
+  "lockSha256": "7b2714de8693ee3ab5d583d50d93d94e41839479f54700319fd76e76795d32cc",
+  "prerequisitePair": {
+    "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/paired-prerequisites-cda30fbe-a24d-4731-9871-929d499c2ab0.json",
+    "sha256": "abd4b3fd06a4550e4f2d85d1a233777a14c7e50ad2f5943d977716296d9b2195",
+    "record": {
+      "version": 1,
+      "bun": "1.4.2",
+      "platform": "win32",
+      "driverSha256": "cbd1440f16260b66ddbd29c7e4547e3646d0c2da2498d7a6ec2307bc2ccf268e",
+      "baselineSource": {
+        "originalWrapperSha256": "3ed4f83297ca1b38974a95b3592609a82157163b42305ef2100a363580203c65",
+        "helperSha256": "bce0d124be2d0bd74422b72116045d4b6a483d8a4bb1f4f79b2d42fc76e62c3a",
+        "adjustments": [
+          "Relative module imports refer to unchanged production modules",
+          "Python helper path points at byte-identical baseline source copy"
+        ],
+        "rewrittenWrapperSha256": "b14b8bb1633d5f417986feaacc1dcf7fb79ad30b383dd9f90fa8d103445fae09"
+      },
+      "policy": "Sequential baseline fresh-prefix probe then provisioned-bytecode probe. Current process and existing OS caches; no machine-cold or repeated-run claim. No application build or full tests.",
+      "rows": [
+        {
+          "name": "baseline-fresh-prefix",
+          "resourcesBefore": {
+            "availableParallelism": 16,
+            "freeBytes": 1827201024,
+            "totalBytes": 68112752640
+          },
+          "status": "passed",
+          "seconds": 70.13769309999999,
+          "identity": [
+            "c554a652f364b847ee59cf184a1ad62af5604c7b23c59740c91709d2bea22e66",
+            "dce0e2b48be81c9a9cc8629d21714e1d2264599a51292b254b18e2f2ddadc962",
+            "31fb93287cf1d4cf81ffb5363fc076abd9013897941f4cd6096b19af2d8d3232",
+            "8e581789b7f2c8f3a065dc388c9502d637c50ef8f223d530dbfc8e11bd1abccc",
+            "4ad4cdf2b4512c97f9a0065cea36f707653e5bbfb275caf8e016aedd2c0a068f",
+            "0675f9b6571515e2208a346ed864185eebc052de69bf327e8d098400a15f0e18",
+            "abc543aa9fbffc7f97c4af8b586ea84b8d172d14ec6a796cf9c3ab845fee8d4d"
+          ]
+        },
+        {
+          "name": "provisioned-bytecode-no-writes",
+          "resourcesBefore": {
+            "availableParallelism": 16,
+            "freeBytes": 2062602240,
+            "totalBytes": 68112752640
+          },
+          "status": "passed",
+          "seconds": 50.8899673,
+          "identity": [
+            "c554a652f364b847ee59cf184a1ad62af5604c7b23c59740c91709d2bea22e66",
+            "dce0e2b48be81c9a9cc8629d21714e1d2264599a51292b254b18e2f2ddadc962",
+            "31fb93287cf1d4cf81ffb5363fc076abd9013897941f4cd6096b19af2d8d3232",
+            "8e581789b7f2c8f3a065dc388c9502d637c50ef8f223d530dbfc8e11bd1abccc",
+            "4ad4cdf2b4512c97f9a0065cea36f707653e5bbfb275caf8e016aedd2c0a068f",
+            "0675f9b6571515e2208a346ed864185eebc052de69bf327e8d098400a15f0e18",
+            "abc543aa9fbffc7f97c4af8b586ea84b8d172d14ec6a796cf9c3ab845fee8d4d"
+          ]
+        }
+      ]
+    }
+  },
+  "viteEnvironmentDiagnosis": {
+    "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/vite-environment-588a03a5-f025-4122-9178-259b9fa14e13.json",
+    "sha256": "92f529ea1ff9302a4a612eb6fed0d62262fca144610ba5c3080d297e7e7d460b",
+    "record": {
+      "bun": "1.4.2",
+      "changedIdentityParts": ["environment"],
+      "before": [
+        "c554a652f364b847ee59cf184a1ad62af5604c7b23c59740c91709d2bea22e66",
+        "dce0e2b48be81c9a9cc8629d21714e1d2264599a51292b254b18e2f2ddadc962",
+        "31fb93287cf1d4cf81ffb5363fc076abd9013897941f4cd6096b19af2d8d3232"
+      ],
+      "after": [
+        "c554a652f364b847ee59cf184a1ad62af5604c7b23c59740c91709d2bea22e66",
+        "dce0e2b48be81c9a9cc8629d21714e1d2264599a51292b254b18e2f2ddadc962",
+        "a10d01f6f32ac95d823cd0bf53783e0d32fd632ba34741fcfad6ff78a2641cca"
+      ],
+      "changedEnvironment": [
+        {
+          "name": "NODE_ENV",
+          "before": null,
+          "afterImport": null,
+          "after": "ab8e18ef4ebebeddc0b3152ce9c9006e14fc05242e3fc9ce32246ea6a9543074"
+        }
+      ]
+    }
+  },
+  "captures": [
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/process-current-pin-step-fb1978606ffc4e7badd235df99aeba38.json",
+      "sha256": "9bf4dbec669b1240eb942d2ffe56d0eacac96011b629f15bc966a9b704b088c6",
+      "record": {
+        "recordedAt": "2026-10-28T20:06:40.178096+00:00",
+        "name": "process-current-pin-step",
+        "seconds": 327.765999999996,
+        "exitCode": 1,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": ["aube.exe", "run", "--no-install", "step:check"],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/process-current-pin-step-fb1978606ffc4e7badd235df99aeba38.log",
+          "originalPath": ".cache/line-endings/originals/f200962bcbeafdaf93101ee5b2e158a311f1f839ee702442f77ea50265e67836.bin",
+          "originalSha256": "f200962bcbeafdaf93101ee5b2e158a311f1f839ee702442f77ea50265e67836",
+          "sha256": "f200962bcbeafdaf93101ee5b2e158a311f1f839ee702442f77ea50265e67836",
+          "originalBytes": 46425,
+          "bytes": 46425
+        },
+        "driverSha256": "5f914dec03a2cf5f29f63428d99dbe5887498c2437f15b6783a0645f32588bc7"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/process-current-pin-step-grouped-869f64049af74cf99f6ff2d5cf052332.json",
+      "sha256": "c1bdabf79d90740811e3476990caf46bd9353731b3307f7c3db58bf68fa13e61",
+      "record": {
+        "recordedAt": "2026-10-28T20:39:03.821052+00:00",
+        "name": "process-current-pin-step-grouped",
+        "seconds": 317.5149999999994,
+        "exitCode": 1,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": ["aube.exe", "run", "--no-install", "step:check"],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/process-current-pin-step-grouped-869f64049af74cf99f6ff2d5cf052332.log",
+          "originalPath": ".cache/line-endings/originals/f39a329cd72a647419572af63d7e8c89b0142d31b3f4dcb1569ebe90d4b706c9.bin",
+          "originalSha256": "f39a329cd72a647419572af63d7e8c89b0142d31b3f4dcb1569ebe90d4b706c9",
+          "sha256": "f39a329cd72a647419572af63d7e8c89b0142d31b3f4dcb1569ebe90d4b706c9",
+          "originalBytes": 47078,
+          "bytes": 47078
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/process-citation-validation-87290aca46c74965a252433f6c52d436.json",
+      "sha256": "6d75dd85088d099b5b596e9be4604d8d7c49c5ac037ff41abbb6ccff11a2ce5f",
+      "record": {
+        "recordedAt": "2026-10-28T20:43:40.979054+00:00",
+        "name": "process-citation-validation",
+        "seconds": 108.9690000000046,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": ["python.exe", "-B", "spec/tools/validate.py"],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/process-citation-validation-87290aca46c74965a252433f6c52d436.log",
+          "originalPath": ".cache/line-endings/originals/62d2a228da9ebe57b7985ea0d0a188907c6d0ad909f356053f0a1b08937747d3.bin",
+          "originalSha256": "62d2a228da9ebe57b7985ea0d0a188907c6d0ad909f356053f0a1b08937747d3",
+          "sha256": "62d2a228da9ebe57b7985ea0d0a188907c6d0ad909f356053f0a1b08937747d3",
+          "originalBytes": 1048,
+          "bytes": 1048
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/vite-final-types-23d57019b6b348aa94ed779fab651f9c.json",
+      "sha256": "8b994de3226ef482699421d529dd10590adeaab6f9d0b51d0a8b944005bd55e8",
+      "record": {
+        "recordedAt": "2026-10-28T21:26:05.004463+00:00",
+        "name": "vite-final-types",
+        "seconds": 0.4690000000045984,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": [
+          "bun.exe",
+          "app/check/tool.ts",
+          "typecheck",
+          "--noEmit",
+          "--project",
+          "tsconfig.lib.json"
+        ],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/vite-final-types-23d57019b6b348aa94ed779fab651f9c.log",
+          "originalPath": ".cache/line-endings/originals/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bin",
+          "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "originalBytes": 0,
+          "bytes": 0
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/vite-final-types-2e5561bffe41410dbc783cec1c3bf9ef.json",
+      "sha256": "aa783bd228771b5820ed04df0557b42915d6ee2544f67ef181b621a62f668a5f",
+      "record": {
+        "recordedAt": "2026-10-28T21:26:04.382311+00:00",
+        "name": "vite-final-types",
+        "seconds": 1.7030000000013388,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": [
+          "bun.exe",
+          "app/check/tool.ts",
+          "typecheck",
+          "--noEmit",
+          "--project",
+          "tsconfig.json"
+        ],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/vite-final-types-2e5561bffe41410dbc783cec1c3bf9ef.log",
+          "originalPath": ".cache/line-endings/originals/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bin",
+          "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "originalBytes": 0,
+          "bytes": 0
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/vite-final-types-b8df9e6d196a43aa8645d1e34f92738c.json",
+      "sha256": "c8a162866c2b4b251474f6a2f9951ce888934cc4de68e9946f7a68ffd5228861",
+      "record": {
+        "recordedAt": "2026-10-28T21:26:06.402687+00:00",
+        "name": "vite-final-types",
+        "seconds": 0.625,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": [
+          "bun.exe",
+          "app/check/tool.ts",
+          "typecheck",
+          "--noEmit",
+          "--project",
+          "app/web/tsconfig.json"
+        ],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/vite-final-types-b8df9e6d196a43aa8645d1e34f92738c.log",
+          "originalPath": ".cache/line-endings/originals/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bin",
+          "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "originalBytes": 0,
+          "bytes": 0
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/vite-final-types-da8df27c00be413d889d2703cc24fced.json",
+      "sha256": "5b3a13720bc93eaa80d0948b800c18af94ae7a8f000efcca961897fefc871830",
+      "record": {
+        "recordedAt": "2026-10-28T21:26:05.646298+00:00",
+        "name": "vite-final-types",
+        "seconds": 0.4680000000007567,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": [
+          "bun.exe",
+          "app/check/tool.ts",
+          "typecheck",
+          "--noEmit",
+          "--project",
+          "tsconfig.tools.json"
+        ],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/vite-final-types-da8df27c00be413d889d2703cc24fced.log",
+          "originalPath": ".cache/line-endings/originals/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bin",
+          "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "originalBytes": 0,
+          "bytes": 0
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/vite-final-lint-f6f55c38071148e1887c2660f0070cb0.json",
+      "sha256": "59200cd92bcb0aebf99b9f7f81ac5eeade31478c8b8f74d6e604ee37ea6d013c",
+      "record": {
+        "recordedAt": "2026-10-28T21:26:09.030542+00:00",
+        "name": "vite-final-lint",
+        "seconds": 2.452999999994063,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": ["bun.exe", "app/check/tool.ts", "lint", "--type-aware", "--deny-warnings"],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/vite-final-lint-f6f55c38071148e1887c2660f0070cb0.log",
+          "originalPath": ".cache/line-endings/originals/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bin",
+          "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "originalBytes": 0,
+          "bytes": 0
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/vite-final-fixtures-45603ee57f014319a93937dd1a63df9f.json",
+      "sha256": "4e634acdd6ca9429b479106fa2d3a49ecfe0e929bf3fbcfd12b50c14e3e67c04",
+      "record": {
+        "recordedAt": "2026-10-28T21:26:35.659448+00:00",
+        "name": "vite-final-fixtures",
+        "seconds": 26.468999999997322,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": ["bun.exe", "test", "--timeout", "30000", "./test/verification-cache.test.ts"],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/vite-final-fixtures-45603ee57f014319a93937dd1a63df9f.log",
+          "originalPath": ".cache/line-endings/originals/8c3ba133d8ba5817e80d73baaa171146d257c06b711eadce0f35f2797dff98af.bin",
+          "originalSha256": "8c3ba133d8ba5817e80d73baaa171146d257c06b711eadce0f35f2797dff98af",
+          "sha256": "8c3ba133d8ba5817e80d73baaa171146d257c06b711eadce0f35f2797dff98af",
+          "originalBytes": 2127,
+          "bytes": 2127
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/process-web-acceptance-1163f9837c254424a4ea0ce54ee045dd.json",
+      "sha256": "889b480e77d34e52fec243a10a8457e7f7d2f55a3eaf2b6a415b4267109d5ae6",
+      "record": {
+        "recordedAt": "2026-10-28T21:38:27.888728+00:00",
+        "name": "process-web-acceptance",
+        "seconds": 10.56300000000192,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": ["aube.exe", "run", "--no-install", "test:web"],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/process-web-acceptance-1163f9837c254424a4ea0ce54ee045dd.log",
+          "originalPath": ".cache/line-endings/originals/f04261b766a6a79886c84ab9791716b82fd67e70138a7e06c93b48a0a2bbd915.bin",
+          "originalSha256": "f04261b766a6a79886c84ab9791716b82fd67e70138a7e06c93b48a0a2bbd915",
+          "sha256": "f04261b766a6a79886c84ab9791716b82fd67e70138a7e06c93b48a0a2bbd915",
+          "originalBytes": 539,
+          "bytes": 539
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/process-desktop-acceptance-16bd3bedfd7741049d242406198d5267.json",
+      "sha256": "f220e9c66872d57b3523f747abba754bb44e7f3e9cb37ae024aa09bfb3b5f3ac",
+      "record": {
+        "recordedAt": "2026-10-28T21:40:01.344589+00:00",
+        "name": "process-desktop-acceptance",
+        "seconds": 49.28199999999924,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": ["aube.exe", "run", "--no-install", "test:desktop"],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/process-desktop-acceptance-16bd3bedfd7741049d242406198d5267.log",
+          "originalPath": ".cache/line-endings/originals/80b271d61e584ec9e195641da93d39457e969d19074c5570fcca703d7bcec69a.bin",
+          "originalSha256": "80b271d61e584ec9e195641da93d39457e969d19074c5570fcca703d7bcec69a",
+          "sha256": "80b271d61e584ec9e195641da93d39457e969d19074c5570fcca703d7bcec69a",
+          "originalBytes": 2409,
+          "bytes": 2409
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/process-bootstrap-check-a019789aae214e2292d512478246b6cb.json",
+      "sha256": "42225d4295ace002822326ac2ebcec2ae75136f46e5694135de93cfc9e7dbba6",
+      "record": {
+        "recordedAt": "2026-10-28T21:43:12.416861+00:00",
+        "name": "process-bootstrap-check",
+        "seconds": 0.6720000000059372,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": [
+          "bun.exe",
+          "node_modules/@typescript/native-preview/bin/tsgo",
+          "--project",
+          ".cache/review-2026-10-27/trigon-sync-2026-10-28/root/manual-bootstrap.tsconfig.json"
+        ],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/process-bootstrap-check-a019789aae214e2292d512478246b6cb.log",
+          "originalPath": ".cache/line-endings/originals/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bin",
+          "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "originalBytes": 0,
+          "bytes": 0
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/process-independent-final-c8fcdf38d034485f899d1d7708deff44.json",
+      "sha256": "f6bf308d299019c6eeaad91b3301bcb4c50af31efad05f6dea677051d0ec9935",
+      "record": {
+        "recordedAt": "2026-10-28T21:45:38.040848+00:00",
+        "name": "process-independent-final",
+        "seconds": 43.79699999999866,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": [
+          "bun.exe",
+          ".cache/review-2026-10-27/trigon-sync-2026-10-28/root/independent-checks.ts"
+        ],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/process-independent-final-c8fcdf38d034485f899d1d7708deff44.log",
+          "originalPath": ".cache/line-endings/originals/ac26936cefc56673434d1c3cae1d91eed759619bf745d50f1d227eda22ff637d.bin",
+          "originalSha256": "ac26936cefc56673434d1c3cae1d91eed759619bf745d50f1d227eda22ff637d",
+          "sha256": "ac26936cefc56673434d1c3cae1d91eed759619bf745d50f1d227eda22ff637d",
+          "originalBytes": 683,
+          "bytes": 683
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/installed-binding-fixtures-0ca8302f15234f72a09c92c26dbed443.json",
+      "sha256": "2ec66ab7f2876fd8ef0cbb12cd5119bd81e7439189e7f89443c322b289a9beb5",
+      "record": {
+        "recordedAt": "2026-10-28T23:18:35.404191+00:00",
+        "name": "installed-binding-fixtures",
+        "seconds": 14.468999999997322,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": [
+          "bun.exe",
+          "test",
+          "--timeout",
+          "30000",
+          "./test/verification-cache.test.ts",
+          "--test-name-pattern",
+          "installed|manifest"
+        ],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/installed-binding-fixtures-0ca8302f15234f72a09c92c26dbed443.log",
+          "originalPath": ".cache/line-endings/originals/fbd5938e146b587470fcaccf1aab7b8d13a068111d2116292233f86f90f3cf45.bin",
+          "originalSha256": "fbd5938e146b587470fcaccf1aab7b8d13a068111d2116292233f86f90f3cf45",
+          "sha256": "fbd5938e146b587470fcaccf1aab7b8d13a068111d2116292233f86f90f3cf45",
+          "originalBytes": 1330,
+          "bytes": 1330
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/installed-binding-format-04d05b2733fc4d00bae159d62f16606f.json",
+      "sha256": "03c0fb7c8ef23c9bb0f068129ddf55f3b7edfa51ddf40852edd60e4b9a1db5fe",
+      "record": {
+        "recordedAt": "2026-10-28T23:18:08.659363+00:00",
+        "name": "installed-binding-format",
+        "seconds": 0.28100000000267755,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": [
+          "bun.exe",
+          "node_modules/oxfmt/bin/oxfmt",
+          "app/check/installed-inputs.ts",
+          "test/verification-cache.test.ts"
+        ],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/installed-binding-format-04d05b2733fc4d00bae159d62f16606f.log",
+          "originalPath": ".cache/line-endings/originals/a8a6f0d1f7cbc13520c592d2a88445e202fb1eff20cf8cc9f8bd9a61c8a71a38.bin",
+          "originalSha256": "a8a6f0d1f7cbc13520c592d2a88445e202fb1eff20cf8cc9f8bd9a61c8a71a38",
+          "sha256": "a8a6f0d1f7cbc13520c592d2a88445e202fb1eff20cf8cc9f8bd9a61c8a71a38",
+          "originalBytes": 46,
+          "bytes": 46
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/installed-binding-lint-eddf2fd9a8374c44b27c6ae3f9672eea.json",
+      "sha256": "5d6c935733374ff6add11cda5584d5474d8f396b8c632c289a60c5333984ea68",
+      "record": {
+        "recordedAt": "2026-10-28T23:18:19.919991+00:00",
+        "name": "installed-binding-lint",
+        "seconds": 2.5939999999973224,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": ["bun.exe", "app/check/tool.ts", "lint", "--type-aware", "--deny-warnings"],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/installed-binding-lint-eddf2fd9a8374c44b27c6ae3f9672eea.log",
+          "originalPath": ".cache/line-endings/originals/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bin",
+          "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "originalBytes": 0,
+          "bytes": 0
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/installed-binding-types-3f321ec3e9b94632a0001d066d524936.json",
+      "sha256": "f3bace68dc100367e6799eaa271da191296a0dd9f52a24767b94fef7c33ee1f7",
+      "record": {
+        "recordedAt": "2026-10-28T23:18:13.130621+00:00",
+        "name": "installed-binding-types",
+        "seconds": 3.3590000000040163,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": [
+          "bun.exe",
+          "app/check/tool.ts",
+          "typecheck",
+          "--noEmit",
+          "--project",
+          "tsconfig.json"
+        ],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/installed-binding-types-3f321ec3e9b94632a0001d066d524936.log",
+          "originalPath": ".cache/line-endings/originals/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bin",
+          "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "originalBytes": 0,
+          "bytes": 0
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/installed-binding-types-44f1ab0abbd64e9ab0e9c7645b0a3fb7.json",
+      "sha256": "bc27e885bd22e1dce3563754d24242167b80b8356355cc4ba28ddbdf9bde97ca",
+      "record": {
+        "recordedAt": "2026-10-28T23:18:15.655453+00:00",
+        "name": "installed-binding-types",
+        "seconds": 0.7189999999973224,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": [
+          "bun.exe",
+          "app/check/tool.ts",
+          "typecheck",
+          "--noEmit",
+          "--project",
+          "tsconfig.tools.json"
+        ],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/installed-binding-types-44f1ab0abbd64e9ab0e9c7645b0a3fb7.log",
+          "originalPath": ".cache/line-endings/originals/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bin",
+          "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "originalBytes": 0,
+          "bytes": 0
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/installed-binding-types-837f917e968c43799efc29b7cb61bd75.json",
+      "sha256": "00e9ca7a2a3ddae29e96b910be524efbcdb25dbc541a599317453edce7188b45",
+      "record": {
+        "recordedAt": "2026-10-28T23:18:17.037823+00:00",
+        "name": "installed-binding-types",
+        "seconds": 0.6869999999980791,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": [
+          "bun.exe",
+          "app/check/tool.ts",
+          "typecheck",
+          "--noEmit",
+          "--project",
+          "app/web/tsconfig.json"
+        ],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/installed-binding-types-837f917e968c43799efc29b7cb61bd75.log",
+          "originalPath": ".cache/line-endings/originals/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bin",
+          "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "originalBytes": 0,
+          "bytes": 0
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/installed-binding-types-93f22291e08746a28e5cb7f9b3a38bba.json",
+      "sha256": "50a32cf857e7d8792862cec4dd75cc6c9e5138c29dc10ce6dc8a7ea0d43eaab5",
+      "record": {
+        "recordedAt": "2026-10-28T23:18:14.417414+00:00",
+        "name": "installed-binding-types",
+        "seconds": 0.625,
+        "exitCode": 0,
+        "failures": [],
+        "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+        "command": [
+          "bun.exe",
+          "app/check/tool.ts",
+          "typecheck",
+          "--noEmit",
+          "--project",
+          "tsconfig.lib.json"
+        ],
+        "log": {
+          "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/installed-binding-types-93f22291e08746a28e5cb7f9b3a38bba.log",
+          "originalPath": ".cache/line-endings/originals/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bin",
+          "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "originalBytes": 0,
+          "bytes": 0
+        },
+        "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+      }
+    }
+  ],
+  "actualBuilds": [
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/actual-build-web-0b7f13ac-5b88-41b9-9503-824a45887051.json",
+      "sha256": "68ee9d060519ed2b65d2d489c6939b0842d8ca6a9fad6bb15118ca68a0d39726",
+      "record": {
+        "version": 1,
+        "phase": "web",
+        "bun": "1.4.2",
+        "bunIdentity": "dce0e2b48be81c9a9cc8629d21714e1d2264599a51292b254b18e2f2ddadc962",
+        "driverSha256": "a7c790ee162698ebedae5f85965aa64593dd445719635b3fdbc90a6dda6856af",
+        "helperSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760",
+        "source": {
+          "definition": "999f73de427904cfc717c2d42c5bf9ad97e84c1988c5011eca726c460c6774dd",
+          "projection": "633a9be3ec2cecd03550e1bc7c571308436b29575a4a8a7674fe11d47d7eac2f",
+          "external": "587690126fb379c174c56be8c54ab0ed2e89b84d023c07967654248117e9e973",
+          "runtime": ["1.4.2", "win32", "x64"],
+          "key": "872b6fdecf90d72d02867697b3210f054043d3166f0624cbfa8f32d9ca5b991a"
+        },
+        "policy": "Sequential fresh process commands; current installed pins and existing OS caches. Command times include production cache validation. Desktop samples include Vite and locked Cargo tests; they are not daemon-only timing or packaged native acceptance. No machine-cold claim.",
+        "rows": [
+          {
+            "name": "uncached",
+            "resourcesBefore": {
+              "availableParallelism": 16,
+              "freeBytes": 1183944704,
+              "totalBytes": 68112752640
+            },
+            "mutation": null,
+            "seconds": 1.0939999999973224,
+            "exitCode": 0,
+            "failures": [],
+            "log": {
+              "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/web-uncached-0b7f13ac-5b88-41b9-9503-824a45887051-1890b95ad27746d9ab354aa109d2ce29.log",
+              "sha256": "ccfcb632995ac1f1570402376dc69216166e7aa253e92588948f6e2ce797e70f",
+              "originalPath": ".cache/line-endings/originals/ccfcb632995ac1f1570402376dc69216166e7aa253e92588948f6e2ce797e70f.bin",
+              "originalSha256": "ccfcb632995ac1f1570402376dc69216166e7aa253e92588948f6e2ce797e70f"
+            },
+            "status": "passed",
+            "outputs": {
+              "digest": "7ca0bd5ead5c0af7056e386d5774adb81ecbf166b1da603498ad0833c421eebd",
+              "files": [
+                {
+                  "path": "data/web/assets/core-VQY9Nyze.js",
+                  "mode": 33206,
+                  "bytes": 158,
+                  "sha256": "9894e64d4488d21197bc57e27fc407e8ffb2539159918d5208dcf57633ca2975"
+                },
+                {
+                  "path": "data/web/assets/index-DQ8Uc_ew.css",
+                  "mode": 33206,
+                  "bytes": 11275,
+                  "sha256": "4118119d09d46ddd2f5220d85dfe5d792120da8ae2afdcae8227590002ca3343"
+                },
+                {
+                  "path": "data/web/assets/index-rSh1eU4Q.js",
+                  "mode": 33206,
+                  "bytes": 321209,
+                  "sha256": "c585a855690e82db73f7a4ea523a9ce50d97d3b10150a6586c2f8b5fcdbf16b4"
+                },
+                {
+                  "path": "data/web/index.html",
+                  "mode": 33206,
+                  "bytes": 493,
+                  "sha256": "52fb3cc3cdf62302b10f91d5f698493f1b2798515833b34e75695c4762000660"
+                }
+              ]
+            },
+            "equalToPreviousOutput": null
+          },
+          {
+            "name": "fresh",
+            "resourcesBefore": {
+              "availableParallelism": 16,
+              "freeBytes": 1250856960,
+              "totalBytes": 68112752640
+            },
+            "mutation": null,
+            "seconds": 51,
+            "exitCode": 1,
+            "failures": [],
+            "log": {
+              "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/web-fresh-0b7f13ac-5b88-41b9-9503-824a45887051-d9d4da008a9e46efb868bcbd95bfa174.log",
+              "sha256": "7690ac8ee642a944af2c8d8955fa2baafe913efc97dfb0e2a87d6356bfc7d75a",
+              "originalPath": ".cache/line-endings/originals/7690ac8ee642a944af2c8d8955fa2baafe913efc97dfb0e2a87d6356bfc7d75a.bin",
+              "originalSha256": "7690ac8ee642a944af2c8d8955fa2baafe913efc97dfb0e2a87d6356bfc7d75a"
+            },
+            "status": "failed"
+          }
+        ],
+        "status": "failed"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/actual-build-web-c575a3af-abe7-457d-aebf-af9d60432417.json",
+      "sha256": "c646d9875c2f66f33ef2eaf18c8d8d7f0ef31c4f453b33f6db77695cf1a3e41c",
+      "record": {
+        "version": 1,
+        "phase": "web",
+        "bun": "1.4.2",
+        "bunIdentity": "dce0e2b48be81c9a9cc8629d21714e1d2264599a51292b254b18e2f2ddadc962",
+        "driverSha256": "8567bd7a4c58b812c0e5fc13e58d605d4f28d01c175826f4282f033f1170dc87",
+        "helperSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760",
+        "source": {
+          "definition": "d11ddcce466d95c9511a8ab2788e8a0a0f17d829e506e6f03f0a61e338c5ad55",
+          "projection": "cc175d329ea23fe3f635e73edc958121fcf9f94ef917d05a2fee5562e1bb1dee",
+          "external": "64ce5c88a2e4363f7ea1b9ecaadbeac4478ce0b6355fa92b6dd4c805d62fcd2b",
+          "runtime": ["1.4.2", "win32", "x64"],
+          "key": "491631e1ed32d8f30bf80ee3070b73806cc37191db63b28aa4a4310f90f15ad6"
+        },
+        "policy": "Sequential fresh process commands; current installed pins and existing OS caches. Command times include production cache validation. Desktop samples include Vite and locked Cargo tests; they are not daemon-only timing or packaged native acceptance. No machine-cold claim.",
+        "rows": [
+          {
+            "name": "uncached",
+            "resourcesBefore": {
+              "availableParallelism": 16,
+              "freeBytes": 688992256,
+              "totalBytes": 68112752640
+            },
+            "mutation": null,
+            "seconds": 1,
+            "exitCode": 0,
+            "failures": [],
+            "log": {
+              "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/web-uncached-c575a3af-abe7-457d-aebf-af9d60432417-596759971c674c6ebc1a0fcd767a2bf2.log",
+              "sha256": "acb7df580c0d3424f7a88ceb5f454693e52d843b56b11e6d112968ec42fad3d6",
+              "originalPath": ".cache/line-endings/originals/acb7df580c0d3424f7a88ceb5f454693e52d843b56b11e6d112968ec42fad3d6.bin",
+              "originalSha256": "acb7df580c0d3424f7a88ceb5f454693e52d843b56b11e6d112968ec42fad3d6"
+            },
+            "status": "passed",
+            "outputs": {
+              "digest": "7ca0bd5ead5c0af7056e386d5774adb81ecbf166b1da603498ad0833c421eebd",
+              "files": [
+                {
+                  "path": "data/web/assets/core-VQY9Nyze.js",
+                  "mode": 33206,
+                  "bytes": 158,
+                  "sha256": "9894e64d4488d21197bc57e27fc407e8ffb2539159918d5208dcf57633ca2975"
+                },
+                {
+                  "path": "data/web/assets/index-DQ8Uc_ew.css",
+                  "mode": 33206,
+                  "bytes": 11275,
+                  "sha256": "4118119d09d46ddd2f5220d85dfe5d792120da8ae2afdcae8227590002ca3343"
+                },
+                {
+                  "path": "data/web/assets/index-rSh1eU4Q.js",
+                  "mode": 33206,
+                  "bytes": 321209,
+                  "sha256": "c585a855690e82db73f7a4ea523a9ce50d97d3b10150a6586c2f8b5fcdbf16b4"
+                },
+                {
+                  "path": "data/web/index.html",
+                  "mode": 33206,
+                  "bytes": 493,
+                  "sha256": "52fb3cc3cdf62302b10f91d5f698493f1b2798515833b34e75695c4762000660"
+                }
+              ]
+            },
+            "equalToPreviousOutput": null
+          },
+          {
+            "name": "fresh",
+            "resourcesBefore": {
+              "availableParallelism": 16,
+              "freeBytes": 493776896,
+              "totalBytes": 68112752640
+            },
+            "mutation": null,
+            "seconds": 55.0309999999954,
+            "exitCode": 0,
+            "failures": [],
+            "log": {
+              "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/web-fresh-c575a3af-abe7-457d-aebf-af9d60432417-3cd24ee1bfac417194790b77ea2f82a7.log",
+              "sha256": "4fb9be268935764babc3db9db7a904eaa98b18147a865371242d7c367b68af01",
+              "originalPath": ".cache/line-endings/originals/4fb9be268935764babc3db9db7a904eaa98b18147a865371242d7c367b68af01.bin",
+              "originalSha256": "4fb9be268935764babc3db9db7a904eaa98b18147a865371242d7c367b68af01"
+            },
+            "status": "passed",
+            "outputs": {
+              "digest": "7ca0bd5ead5c0af7056e386d5774adb81ecbf166b1da603498ad0833c421eebd",
+              "files": [
+                {
+                  "path": "data/web/assets/core-VQY9Nyze.js",
+                  "mode": 33206,
+                  "bytes": 158,
+                  "sha256": "9894e64d4488d21197bc57e27fc407e8ffb2539159918d5208dcf57633ca2975"
+                },
+                {
+                  "path": "data/web/assets/index-DQ8Uc_ew.css",
+                  "mode": 33206,
+                  "bytes": 11275,
+                  "sha256": "4118119d09d46ddd2f5220d85dfe5d792120da8ae2afdcae8227590002ca3343"
+                },
+                {
+                  "path": "data/web/assets/index-rSh1eU4Q.js",
+                  "mode": 33206,
+                  "bytes": 321209,
+                  "sha256": "c585a855690e82db73f7a4ea523a9ce50d97d3b10150a6586c2f8b5fcdbf16b4"
+                },
+                {
+                  "path": "data/web/index.html",
+                  "mode": 33206,
+                  "bytes": 493,
+                  "sha256": "52fb3cc3cdf62302b10f91d5f698493f1b2798515833b34e75695c4762000660"
+                }
+              ]
+            },
+            "equalToPreviousOutput": true
+          },
+          {
+            "name": "hit",
+            "resourcesBefore": {
+              "availableParallelism": 16,
+              "freeBytes": 512638976,
+              "totalBytes": 68112752640
+            },
+            "mutation": null,
+            "seconds": 44.109000000004016,
+            "exitCode": 0,
+            "failures": [],
+            "log": {
+              "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/web-hit-c575a3af-abe7-457d-aebf-af9d60432417-c29532f473b6470fbde862da3e05ff3e.log",
+              "sha256": "a5f9292ac9b50b89a9b3198aaf341d7508b9f9b09515b7dda112d03b7a404602",
+              "originalPath": ".cache/line-endings/originals/a5f9292ac9b50b89a9b3198aaf341d7508b9f9b09515b7dda112d03b7a404602.bin",
+              "originalSha256": "a5f9292ac9b50b89a9b3198aaf341d7508b9f9b09515b7dda112d03b7a404602"
+            },
+            "status": "passed",
+            "outputs": {
+              "digest": "7ca0bd5ead5c0af7056e386d5774adb81ecbf166b1da603498ad0833c421eebd",
+              "files": [
+                {
+                  "path": "data/web/assets/core-VQY9Nyze.js",
+                  "mode": 33206,
+                  "bytes": 158,
+                  "sha256": "9894e64d4488d21197bc57e27fc407e8ffb2539159918d5208dcf57633ca2975"
+                },
+                {
+                  "path": "data/web/assets/index-DQ8Uc_ew.css",
+                  "mode": 33206,
+                  "bytes": 11275,
+                  "sha256": "4118119d09d46ddd2f5220d85dfe5d792120da8ae2afdcae8227590002ca3343"
+                },
+                {
+                  "path": "data/web/assets/index-rSh1eU4Q.js",
+                  "mode": 33206,
+                  "bytes": 321209,
+                  "sha256": "c585a855690e82db73f7a4ea523a9ce50d97d3b10150a6586c2f8b5fcdbf16b4"
+                },
+                {
+                  "path": "data/web/index.html",
+                  "mode": 33206,
+                  "bytes": 493,
+                  "sha256": "52fb3cc3cdf62302b10f91d5f698493f1b2798515833b34e75695c4762000660"
+                }
+              ]
+            },
+            "equalToPreviousOutput": true
+          },
+          {
+            "name": "missing",
+            "resourcesBefore": {
+              "availableParallelism": 16,
+              "freeBytes": 361000960,
+              "totalBytes": 68112752640
+            },
+            "mutation": {
+              "kind": "missing",
+              "before": {
+                "digest": "54305b19bd56616154780328ff44f20a0de762b3afdccda567e11c2e7468c3de",
+                "files": [
+                  {
+                    "path": "data/web/index.html",
+                    "mode": 33206,
+                    "bytes": 493,
+                    "sha256": "52fb3cc3cdf62302b10f91d5f698493f1b2798515833b34e75695c4762000660"
+                  }
+                ]
+              }
+            },
+            "seconds": 48.96899999999732,
+            "exitCode": 0,
+            "failures": [],
+            "log": {
+              "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/web-missing-c575a3af-abe7-457d-aebf-af9d60432417-3fd325994fa9433596884cabf68b5114.log",
+              "sha256": "768460cad1fd5456f4bc92185eeaa8c4ac188c22bc58ba720258da96f2a11afd",
+              "originalPath": ".cache/line-endings/originals/768460cad1fd5456f4bc92185eeaa8c4ac188c22bc58ba720258da96f2a11afd.bin",
+              "originalSha256": "768460cad1fd5456f4bc92185eeaa8c4ac188c22bc58ba720258da96f2a11afd"
+            },
+            "status": "passed",
+            "outputs": {
+              "digest": "7ca0bd5ead5c0af7056e386d5774adb81ecbf166b1da603498ad0833c421eebd",
+              "files": [
+                {
+                  "path": "data/web/assets/core-VQY9Nyze.js",
+                  "mode": 33206,
+                  "bytes": 158,
+                  "sha256": "9894e64d4488d21197bc57e27fc407e8ffb2539159918d5208dcf57633ca2975"
+                },
+                {
+                  "path": "data/web/assets/index-DQ8Uc_ew.css",
+                  "mode": 33206,
+                  "bytes": 11275,
+                  "sha256": "4118119d09d46ddd2f5220d85dfe5d792120da8ae2afdcae8227590002ca3343"
+                },
+                {
+                  "path": "data/web/assets/index-rSh1eU4Q.js",
+                  "mode": 33206,
+                  "bytes": 321209,
+                  "sha256": "c585a855690e82db73f7a4ea523a9ce50d97d3b10150a6586c2f8b5fcdbf16b4"
+                },
+                {
+                  "path": "data/web/index.html",
+                  "mode": 33206,
+                  "bytes": 493,
+                  "sha256": "52fb3cc3cdf62302b10f91d5f698493f1b2798515833b34e75695c4762000660"
+                }
+              ]
+            },
+            "equalToPreviousOutput": true
+          },
+          {
+            "name": "corrupt",
+            "resourcesBefore": {
+              "availableParallelism": 16,
+              "freeBytes": 590422016,
+              "totalBytes": 68112752640
+            },
+            "mutation": {
+              "kind": "corrupt",
+              "before": {
+                "digest": "54305b19bd56616154780328ff44f20a0de762b3afdccda567e11c2e7468c3de",
+                "files": [
+                  {
+                    "path": "data/web/index.html",
+                    "mode": 33206,
+                    "bytes": 493,
+                    "sha256": "52fb3cc3cdf62302b10f91d5f698493f1b2798515833b34e75695c4762000660"
+                  }
+                ]
+              }
+            },
+            "seconds": 53.95300000000134,
+            "exitCode": 0,
+            "failures": [],
+            "log": {
+              "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/web-corrupt-c575a3af-abe7-457d-aebf-af9d60432417-65a8548bf06b4952bc7e7f79f77047a8.log",
+              "sha256": "71e227c8d9bb31596bccff353a0f397629934de707dff04fb581450555470c87",
+              "originalPath": ".cache/line-endings/originals/71e227c8d9bb31596bccff353a0f397629934de707dff04fb581450555470c87.bin",
+              "originalSha256": "71e227c8d9bb31596bccff353a0f397629934de707dff04fb581450555470c87"
+            },
+            "status": "passed",
+            "outputs": {
+              "digest": "7ca0bd5ead5c0af7056e386d5774adb81ecbf166b1da603498ad0833c421eebd",
+              "files": [
+                {
+                  "path": "data/web/assets/core-VQY9Nyze.js",
+                  "mode": 33206,
+                  "bytes": 158,
+                  "sha256": "9894e64d4488d21197bc57e27fc407e8ffb2539159918d5208dcf57633ca2975"
+                },
+                {
+                  "path": "data/web/assets/index-DQ8Uc_ew.css",
+                  "mode": 33206,
+                  "bytes": 11275,
+                  "sha256": "4118119d09d46ddd2f5220d85dfe5d792120da8ae2afdcae8227590002ca3343"
+                },
+                {
+                  "path": "data/web/assets/index-rSh1eU4Q.js",
+                  "mode": 33206,
+                  "bytes": 321209,
+                  "sha256": "c585a855690e82db73f7a4ea523a9ce50d97d3b10150a6586c2f8b5fcdbf16b4"
+                },
+                {
+                  "path": "data/web/index.html",
+                  "mode": 33206,
+                  "bytes": 493,
+                  "sha256": "52fb3cc3cdf62302b10f91d5f698493f1b2798515833b34e75695c4762000660"
+                }
+              ]
+            },
+            "equalToPreviousOutput": true
+          }
+        ],
+        "status": "passed"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/actual-build-desktop-11aee6b5-78f5-404f-872a-30750941ecfb.json",
+      "sha256": "de99da8d99b764df9ba3f9ed841a0f6aef77dcff6ef9dbd13061bf4019b26514",
+      "record": {
+        "version": 1,
+        "phase": "desktop",
+        "bun": "1.4.2",
+        "bunIdentity": "dce0e2b48be81c9a9cc8629d21714e1d2264599a51292b254b18e2f2ddadc962",
+        "driverSha256": "8567bd7a4c58b812c0e5fc13e58d605d4f28d01c175826f4282f033f1170dc87",
+        "helperSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760",
+        "source": {
+          "definition": "376a02b8dd48d0d4a27ad56973001918fa526d19d24eb5588de35896d08e44c0",
+          "projection": "cc175d329ea23fe3f635e73edc958121fcf9f94ef917d05a2fee5562e1bb1dee",
+          "external": "64ce5c88a2e4363f7ea1b9ecaadbeac4478ce0b6355fa92b6dd4c805d62fcd2b",
+          "runtime": ["1.4.2", "win32", "x64"],
+          "key": "17dce5a7a6c4e0a9fef52455c6385b567afad130ddb80c079b4cd8f6056b50a7"
+        },
+        "policy": "Sequential fresh process commands; current installed pins and existing OS caches. Command times include production cache validation. Desktop samples include Vite and locked Cargo tests; they are not daemon-only timing or packaged native acceptance. No machine-cold claim.",
+        "rows": [
+          {
+            "name": "rust-target-metadata",
+            "seconds": 0.25,
+            "exitCode": 0,
+            "failures": [],
+            "log": {
+              "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/desktop-rust-target-11aee6b5-78f5-404f-872a-30750941ecfb-b716f6f4d03d404b983b1d226621f975.log",
+              "sha256": "23c920e087a9b3cc50152a10be1114264965ba0d6637c528fa8dba57c4d463fb",
+              "originalPath": ".cache/line-endings/originals/23c920e087a9b3cc50152a10be1114264965ba0d6637c528fa8dba57c4d463fb.bin",
+              "originalSha256": "23c920e087a9b3cc50152a10be1114264965ba0d6637c528fa8dba57c4d463fb"
+            }
+          },
+          {
+            "name": "fresh",
+            "resourcesBefore": {
+              "availableParallelism": 16,
+              "freeBytes": 407928832,
+              "totalBytes": 68112752640
+            },
+            "mutation": null,
+            "seconds": 125.46899999999732,
+            "exitCode": 0,
+            "failures": [],
+            "log": {
+              "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/desktop-fresh-11aee6b5-78f5-404f-872a-30750941ecfb-b39c7d92c5194fa5a23d694881bf86db.log",
+              "sha256": "1ac06be9a98689d4643c641d154e7387075e2b4bdf84a13713ca8b901a0e0a58",
+              "originalPath": ".cache/line-endings/originals/1ac06be9a98689d4643c641d154e7387075e2b4bdf84a13713ca8b901a0e0a58.bin",
+              "originalSha256": "1ac06be9a98689d4643c641d154e7387075e2b4bdf84a13713ca8b901a0e0a58"
+            },
+            "status": "passed",
+            "outputs": {
+              "digest": "84d24bbfc9b64f38a02922dcadbd3e78e3626ae5b2d696414ad5163df81bd3fc",
+              "files": [
+                {
+                  "path": "app/desktop/src-tauri/binaries/teamagent-daemon-x86_64-pc-windows-msvc.exe",
+                  "mode": 33206,
+                  "bytes": 88336384,
+                  "sha256": "40ef1aec6523bac101d209079ae8a921071c972fa17923d7127781381b4e79f5"
+                }
+              ]
+            },
+            "equalToPreviousOutput": null
+          },
+          {
+            "name": "hit",
+            "resourcesBefore": {
+              "availableParallelism": 16,
+              "freeBytes": 1415987200,
+              "totalBytes": 68112752640
+            },
+            "mutation": null,
+            "seconds": 72.03100000000268,
+            "exitCode": 0,
+            "failures": [],
+            "log": {
+              "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/desktop-hit-11aee6b5-78f5-404f-872a-30750941ecfb-9f8dfc497c0043789b2061a67575877a.log",
+              "sha256": "9eea1526b26f3edada224aa693176a2710deb8924c9b761aa9779b49321c03c2",
+              "originalPath": ".cache/line-endings/originals/9eea1526b26f3edada224aa693176a2710deb8924c9b761aa9779b49321c03c2.bin",
+              "originalSha256": "9eea1526b26f3edada224aa693176a2710deb8924c9b761aa9779b49321c03c2"
+            },
+            "status": "passed",
+            "outputs": {
+              "digest": "84d24bbfc9b64f38a02922dcadbd3e78e3626ae5b2d696414ad5163df81bd3fc",
+              "files": [
+                {
+                  "path": "app/desktop/src-tauri/binaries/teamagent-daemon-x86_64-pc-windows-msvc.exe",
+                  "mode": 33206,
+                  "bytes": 88336384,
+                  "sha256": "40ef1aec6523bac101d209079ae8a921071c972fa17923d7127781381b4e79f5"
+                }
+              ]
+            },
+            "equalToPreviousOutput": true
+          }
+        ],
+        "status": "passed"
+      }
+    },
+    {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/actual-build-desktop-fa4d06f3-3725-4d26-8044-5453c3c20f3e.json",
+      "sha256": "efbe3571f09d44119f4f3c93a64b630c2eca6e7d17db6afa04aaaaa8f1b50934",
+      "record": {
+        "version": 1,
+        "phase": "desktop",
+        "bun": "1.4.2",
+        "bunIdentity": "dce0e2b48be81c9a9cc8629d21714e1d2264599a51292b254b18e2f2ddadc962",
+        "driverSha256": "8567bd7a4c58b812c0e5fc13e58d605d4f28d01c175826f4282f033f1170dc87",
+        "helperSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760",
+        "source": {
+          "definition": "376a02b8dd48d0d4a27ad56973001918fa526d19d24eb5588de35896d08e44c0",
+          "projection": "cc175d329ea23fe3f635e73edc958121fcf9f94ef917d05a2fee5562e1bb1dee",
+          "external": "64ce5c88a2e4363f7ea1b9ecaadbeac4478ce0b6355fa92b6dd4c805d62fcd2b",
+          "runtime": ["1.4.2", "win32", "x64"],
+          "key": "17dce5a7a6c4e0a9fef52455c6385b567afad130ddb80c079b4cd8f6056b50a7"
+        },
+        "policy": "Sequential fresh process commands; current installed pins and existing OS caches. Command times include production cache validation. Desktop samples include Vite and locked Cargo tests; they are not daemon-only timing or packaged native acceptance. No machine-cold claim.",
+        "rows": [
+          {
+            "name": "rust-target-metadata",
+            "seconds": 6.360000000000582,
+            "exitCode": 0,
+            "failures": [],
+            "log": {
+              "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/desktop-rust-target-fa4d06f3-3725-4d26-8044-5453c3c20f3e-5211809ca4404b79a3370c78e4513e93.log",
+              "sha256": "66b67b60a8aabfea67ddb61529e52f07003ce1cdea1ebd75f7b0e77af5f8a423",
+              "originalPath": ".cache/line-endings/originals/66b67b60a8aabfea67ddb61529e52f07003ce1cdea1ebd75f7b0e77af5f8a423.bin",
+              "originalSha256": "66b67b60a8aabfea67ddb61529e52f07003ce1cdea1ebd75f7b0e77af5f8a423"
+            }
+          }
+        ],
+        "status": "failed"
+      }
+    }
+  ],
+  "stopRepairContinuation": {
+    "hookRecovery": {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/root/hook-recovery-a69fa40090f4469ea773cff73f70a089/result.json",
+      "sha256": "c210cf3d7a7409b64bf9cee5329557b2ceb4e857b03e0682001d3518ad51040f",
+      "terminationPerformed": false,
+      "lockPreserved": true,
+      "observation": "The confirmed orphan exited before the strict termination attempt; host inspection confirmed the recorded owner and orphan absent before explicit lock preservation."
+    },
+    "pythonBytecodeQuarantine": {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/deps/python-bytecode-originals/completed.json",
+      "sha256": "91a9b0713c340aea4b950360bc8b846cd92e24ea0a7ecade5ef43bfdbc3bca91",
+      "record": {
+        "files": [
+          {
+            "source": "spec/tools/__pycache__/external_sources.cpython-312.pyc",
+            "bytes": 15011,
+            "sha256": "2bba7d333820924714ff0be71308a75d7a8acaea1adf3ce93a17d1b2466a85da",
+            "preserved": ".cache/review-2026-10-27/trigon-sync-2026-10-28/deps/python-bytecode-originals/2bba7d333820924714ff0be71308a75d7a8acaea1adf3ce93a17d1b2466a85da.pyc"
+          },
+          {
+            "source": "spec/tools/__pycache__/text_output.cpython-312.pyc",
+            "bytes": 1341,
+            "sha256": "d937dfc7714beae843ceaab9472190838de2152ae084fd159125fd99986dbaa7",
+            "preserved": ".cache/review-2026-10-27/trigon-sync-2026-10-28/deps/python-bytecode-originals/d937dfc7714beae843ceaab9472190838de2152ae084fd159125fd99986dbaa7.pyc"
+          },
+          {
+            "source": "spec/tools/__pycache__/validate.cpython-312.pyc",
+            "bytes": 20588,
+            "sha256": "f93241fa86d51d4b85a900199044118ad950f87ee5d040498e33fa1d95b2ba77",
+            "preserved": ".cache/review-2026-10-27/trigon-sync-2026-10-28/deps/python-bytecode-originals/f93241fa86d51d4b85a900199044118ad950f87ee5d040498e33fa1d95b2ba77.pyc"
+          }
+        ],
+        "version": 1,
+        "copiesVerified": true,
+        "sourceDirectoryRetained": true,
+        "verifiedOriginalFilesRemoved": true
+      }
+    },
+    "pythonFocusedChecks": {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/deps/python-bytecode-checks/receipt.json",
+      "sha256": "3e6a753d3a4c08bcd4d97472b82186c89bed4f92d901d054eec30b0842bb350e",
+      "record": {
+        "version": 1,
+        "bun": "1.4.2",
+        "scope": "focused adapter/cache regression; no full gate or dependency changes",
+        "results": [
+          {
+            "name": "format",
+            "status": 0,
+            "signal": null,
+            "durationMs": 821,
+            "error": false
+          },
+          {
+            "name": "focused-tests",
+            "status": 0,
+            "signal": null,
+            "durationMs": 107317,
+            "error": false
+          },
+          {
+            "name": "types",
+            "status": 0,
+            "signal": null,
+            "durationMs": 3402,
+            "error": false
+          },
+          {
+            "name": "scoped-lint",
+            "status": 0,
+            "signal": null,
+            "durationMs": 1049,
+            "error": false
+          }
+        ]
+      }
+    },
+    "hookFocusedChecks": {
+      "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/deps/hook-budget-checks/receipt.json",
+      "sha256": "268355e90c3759c20a463f148e4cc09786e249cae18874258e8f1265224d774f",
+      "record": {
+        "version": 1,
+        "bun": "1.4.2",
+        "scope": "hook diagnostics reservations and Windows cleanup only; no full gate or benchmarks",
+        "results": [
+          {
+            "name": "format",
+            "status": 0,
+            "signal": null,
+            "durationMs": 784,
+            "error": false
+          },
+          {
+            "name": "hooks",
+            "status": 0,
+            "signal": null,
+            "durationMs": 20026,
+            "error": false
+          },
+          {
+            "name": "types",
+            "status": 0,
+            "signal": null,
+            "durationMs": 3781,
+            "error": false
+          },
+          {
+            "name": "scoped-lint",
+            "status": 0,
+            "signal": null,
+            "durationMs": 1280,
+            "error": false
+          }
+        ]
+      }
+    },
+    "workflowFixtureExperiment": {
+      "adopted": false,
+      "baseline": {
+        "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/workflow/fixture-setup-baseline.json",
+        "sha256": "98e0a7a70d4652d600036e3bb1066656897c3db536eb83a52e9c3180618c4353",
+        "record": {
+          "phase": "baseline",
+          "source": {
+            "sha256": "99e64624876eca4263171af7e759433ae2aca57226446b1093127ce76649ad4a",
+            "bytes": 21205,
+            "testNames": [
+              "workflow publishes a real SSH-signed fixture commit once and verifies its remote",
+              "publication rechecks disabled signing and forbidden destinations at its mutation boundary",
+              "publication invalidates changed signer trust and rechecks ignored live evidence",
+              "unrelated initial dirt is preserved and rejected before archive freeze",
+              "managed receipts already dirty at begin require explicit adoption",
+              "ambiguous commit outcome persists and cannot be blindly retried or cancelled",
+              "frozen scope and unrelated partial staging cannot bypass publication checks",
+              "live, foreign and dead lock owners require explicit recovery and are never stolen",
+              "workflow aggregate cache bounds reject new writes without deleting evidence",
+              "process time, total output, long lines and cancellation are bounded",
+              "process timeout terminates its child tree instead of leaving inherited pipes open",
+              "explicit checkpoint revision repairs a failed final check without replacing baseline or frozen public text",
+              "checkpoint revision resumes retained receipts after interrupted state persistence",
+              "checkpoint revision rejects altered archives, unscoped changes and post-publication states",
+              "checkpoint revision requires renewed adoption of pre-existing files and retains bounded history"
+            ],
+            "fixtureConstructions": 11,
+            "setupConfigLaunchesPerFixture": 10
+          },
+          "runtime": {
+            "bun": "1.4.2",
+            "python": "3.12.16",
+            "platform": "Windows-11-10.0.26300-SP0"
+          },
+          "resourcesBefore": {
+            "recordedAt": "2026-10-28T22:54:03.813262+00:00",
+            "logicalCpuCount": 16,
+            "memoryLoadPercent": 99,
+            "totalPhysicalBytes": 68112752640,
+            "availablePhysicalBytes": 227115008,
+            "availablePageFileBytes": 44372512768
+          },
+          "resourcesAfter": {
+            "recordedAt": "2026-10-28T22:55:29.963123+00:00",
+            "logicalCpuCount": 16,
+            "memoryLoadPercent": 99,
+            "totalPhysicalBytes": 68112752640,
+            "availablePhysicalBytes": 394272768,
+            "availablePageFileBytes": 45931454464
+          },
+          "capture": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/workflow-setup-baseline-706bbb7a16f04a76bb3419fbe180c0d9.json",
+          "captureDriverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760",
+          "measurementDriverSha256": "a7bb02b4decb16e080d15f6848059ee0cd1b1234e91160946840e96923910148",
+          "captureExitCode": 0,
+          "limitations": "One sequential pair; resource snapshots are not peak usage. Git launch reduction is a static setup count, not OS process tracing. Fresh independent repositories/keys/remotes; OS caches are uncontrolled."
+        }
+      },
+      "candidate": {
+        "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/workflow/fixture-setup-optimized.json",
+        "sha256": "1910d777770204d0f49cf461be0e463c688a6907b11e651054eb0eb5969a78ff",
+        "record": {
+          "phase": "optimized",
+          "source": {
+            "sha256": "540f8fe6ee24e643beddceac0583f375cca05cdc457ca829102e88900ee5d47b",
+            "bytes": 21881,
+            "testNames": [
+              "workflow publishes a real SSH-signed fixture commit once and verifies its remote",
+              "publication rechecks disabled signing and forbidden destinations at its mutation boundary",
+              "publication invalidates changed signer trust and rechecks ignored live evidence",
+              "unrelated initial dirt is preserved and rejected before archive freeze",
+              "managed receipts already dirty at begin require explicit adoption",
+              "ambiguous commit outcome persists and cannot be blindly retried or cancelled",
+              "frozen scope and unrelated partial staging cannot bypass publication checks",
+              "live, foreign and dead lock owners require explicit recovery and are never stolen",
+              "workflow aggregate cache bounds reject new writes without deleting evidence",
+              "process time, total output, long lines and cancellation are bounded",
+              "process timeout terminates its child tree instead of leaving inherited pipes open",
+              "explicit checkpoint revision repairs a failed final check without replacing baseline or frozen public text",
+              "checkpoint revision resumes retained receipts after interrupted state persistence",
+              "checkpoint revision rejects altered archives, unscoped changes and post-publication states",
+              "checkpoint revision requires renewed adoption of pre-existing files and retains bounded history"
+            ],
+            "fixtureConstructions": 11,
+            "setupConfigLaunchesPerFixture": 0
+          },
+          "runtime": {
+            "bun": "1.4.2",
+            "python": "3.12.16",
+            "platform": "Windows-11-10.0.26300-SP0"
+          },
+          "resourcesBefore": {
+            "recordedAt": "2026-10-28T22:56:54.734966+00:00",
+            "logicalCpuCount": 16,
+            "memoryLoadPercent": 99,
+            "totalPhysicalBytes": 68112752640,
+            "availablePhysicalBytes": 258625536,
+            "availablePageFileBytes": 45858115584
+          },
+          "resourcesAfter": {
+            "recordedAt": "2026-10-28T22:58:55.025873+00:00",
+            "logicalCpuCount": 16,
+            "memoryLoadPercent": 98,
+            "totalPhysicalBytes": 68112752640,
+            "availablePhysicalBytes": 697643008,
+            "availablePageFileBytes": 45888557056
+          },
+          "capture": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/workflow-setup-optimized-97bbca68499d4bb18bd811ec73743c0f.json",
+          "captureDriverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760",
+          "measurementDriverSha256": "a7bb02b4decb16e080d15f6848059ee0cd1b1234e91160946840e96923910148",
+          "captureExitCode": 1,
+          "limitations": "One sequential pair; resource snapshots are not peak usage. Git launch reduction is a static setup count, not OS process tracing. Fresh independent repositories/keys/remotes; OS caches are uncontrolled."
+        }
+      },
+      "baselineCapture": {
+        "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/workflow-setup-baseline-706bbb7a16f04a76bb3419fbe180c0d9.json",
+        "sha256": "63af01abbb5dcefead44bdc1ccb5763f45cc2672d4040fe3d92dd44fff9b516c",
+        "record": {
+          "recordedAt": "2026-10-28T22:55:29.917941+00:00",
+          "name": "workflow-setup-baseline",
+          "seconds": 85.70300000000134,
+          "exitCode": 0,
+          "failures": [],
+          "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+          "command": ["bun.exe", "test", "--timeout", "30000", "./test/workflow.test.ts"],
+          "log": {
+            "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/workflow-setup-baseline-706bbb7a16f04a76bb3419fbe180c0d9.log",
+            "originalPath": ".cache/line-endings/originals/17db9422acdd074ae54847c9c08a3a0e5656bf243b33bf375d92ff0bc336684b.bin",
+            "originalSha256": "17db9422acdd074ae54847c9c08a3a0e5656bf243b33bf375d92ff0bc336684b",
+            "sha256": "17db9422acdd074ae54847c9c08a3a0e5656bf243b33bf375d92ff0bc336684b",
+            "originalBytes": 1616,
+            "bytes": 1616
+          },
+          "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+        }
+      },
+      "candidateCapture": {
+        "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/workflow-setup-optimized-97bbca68499d4bb18bd811ec73743c0f.json",
+        "sha256": "8edf52d1ff4329acb3c5282ff65a8bc2223e1c7a8035ed303933a01574427eb3",
+        "record": {
+          "recordedAt": "2026-10-28T22:58:54.977103+00:00",
+          "name": "workflow-setup-optimized",
+          "seconds": 119.67200000000594,
+          "exitCode": 1,
+          "failures": [],
+          "timingMethod": "Gated wrapper launch through process exit, complete process-group cleanup and output EOF; excludes evidence persistence.",
+          "command": ["bun.exe", "test", "--timeout", "30000", "./test/workflow.test.ts"],
+          "log": {
+            "path": ".cache/review-2026-10-27/trigon-sync-2026-10-28/cache/workflow-setup-optimized-97bbca68499d4bb18bd811ec73743c0f.log",
+            "originalPath": ".cache/line-endings/originals/d521630a0861058d27306f146ea5e27c4c40393a87dd5dbfcaac3f730acb8863.bin",
+            "originalSha256": "d521630a0861058d27306f146ea5e27c4c40393a87dd5dbfcaac3f730acb8863",
+            "sha256": "d521630a0861058d27306f146ea5e27c4c40393a87dd5dbfcaac3f730acb8863",
+            "originalBytes": 2892,
+            "bytes": 2892
+          },
+          "driverSha256": "9ed6433d7fc254d2e5099ed04c65d15392f0d1818709ec10df81e33c705f8760"
+        }
+      },
+      "restoredSourceSha256": "99e64624876eca4263171af7e759433ae2aca57226446b1093127ce76649ad4a",
+      "limitation": "One pair under 99% memory load; candidate failed and was reverted. No performance benefit is established."
+    },
+    "focusedCoverage": {
+      "pythonAffectedFiles": 6,
+      "pythonTests": 56,
+      "hookTests": 10,
+      "installedInputTests": 12,
+      "installedInputTestsFiltered": 20
+    },
+    "parallelPackageHashing": "deferred; serial 64-KiB reader retained",
+    "reviewOutcome": "A separate full review outcome must follow these focused checks."
+  },
+  "fullGateFailures": [
+    {
+      "capture": "process-current-pin-step-fb1978606ffc4e7badd235df99aeba38.json",
+      "workers": 1,
+      "completedPassingTests": 394,
+      "unitDeadlineSeconds": 240
+    },
+    {
+      "capture": "process-current-pin-step-grouped-869f64049af74cf99f6ff2d5cf052332.json",
+      "workers": 1,
+      "completedPassingTests": 401,
+      "unitDeadlineSeconds": 240
+    }
+  ],
+  "limits": [
+    "Original benchmark records, failed attempts and retained logs are unchanged; cache paths identify local evidence, with its hashes preserved here.",
+    "Fresh process measurements retain OS and installed-tool caches; none is machine-cold or a repeated speedup estimate.",
+    "Desktop cache samples include Vite and locked Cargo tests; they are not isolated daemon timings or packaged-native acceptance.",
+    "Only a separate successful actual acceptance receipt establishes the browser/native checks it names.",
+    "Earlier retries were deferred under memory pressure. The Stop repair requires a separately recorded full review; focused passes do not replace that gate.",
+    "No real Teamagent commit/push or dependency-pin alignment is established by this record."
+  ]
+}

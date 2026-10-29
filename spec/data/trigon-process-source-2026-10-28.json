@@ -1,0 +1,1968 @@
+{
+  "schemaVersion": 1,
+  "analysisDate": "2026-10-28",
+  "sourceRepository": "https://github.com/iki/trigon",
+  "sourceRevision": "454e372cbc6bb75eafbbc4795391c492bc4fbf96",
+  "sourceCommitDate": "2026-10-28T14:02:13+01:00",
+  "teamagentBaseline": "176569773159e4eb907fb11feda252ecc307e8f7",
+  "files": [
+    {
+      "path": ".bun-version",
+      "sha256": "b99b4c7cdf236f59bc9f65d963deaecae3b16a7dad87939cacb9057f7664daee",
+      "bytes": 6,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": ".codex/hooks.json",
+      "sha256": "1e01f3de0995f42a15db1b390598fb1c0bf84e2de9b993d2f6bb537dbf03b43f",
+      "bytes": 3343,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": ".editorconfig",
+      "sha256": "0f9342da7f9c5d820b258f25abb4edaa7364de40fb16d6fdefffbedf180ecfbb",
+      "bytes": 295,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "4e511e46db615a2ccdc6ee7d4cbadd871f868c97567eb1a1de552a06493235e1",
+      "bytes": 505,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": ".githooks/commit-msg",
+      "sha256": "13d523598e9817609a6727889b0bb7bfa3a4a899bdb9393015042ee4d6c8d4f6",
+      "bytes": 184,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": ".githooks/pre-commit",
+      "sha256": "eb5b667488866e3ed146bd45a8b4c8aa3e3ed5350352d399a135c35ae1d04e6f",
+      "bytes": 648,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "sha256": "bd4d7d9282c760d7dbc95c0864af8e1dc541b2ee047858cece95db00cdf46242",
+      "bytes": 670,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "6eade5974894c2e01fcea624299a98e2fba03323e4d5adfb5019ab6de9e544ce",
+      "bytes": 240,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": ".oxfmtrc.json",
+      "sha256": "e6908f43135683fc1273aa0533f9a9498e78893e0eb57e6b9b09af423b9fe7bc",
+      "bytes": 289,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": ".verification/policy-actions.json",
+      "sha256": "8c2799925465cb07267677a8205545d3f58ca4af30cd24f15e2949e989a7405c",
+      "bytes": 472,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/policy-api.json",
+      "sha256": "8925d5edf619d8cfad46ff98ce9daa99c07a9ce9a9c8f4e8201eb85714e6b6d2",
+      "bytes": 468,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/policy-bots.json",
+      "sha256": "bc942e1be1a643b5df552bde2a8b53fe7e9cfc0ec99f332bb3bd405bfff1a58c",
+      "bytes": 469,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/policy-design.json",
+      "sha256": "2c84833dd28e1f13f749cf0827fab8fa3d19ec939f6da0abc8241465d14576e1",
+      "bytes": 471,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/policy-documentation.json",
+      "sha256": "96becb044bfc79d0810a3193974bb3e65beaac2c08f196dccde01aed3fa92448",
+      "bytes": 478,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/policy-i18n.json",
+      "sha256": "7731fc97dbf4d50c8f95e09ef869d75e1829342efa9c47516ced748008069df9",
+      "bytes": 469,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/policy-maintenance.json",
+      "sha256": "f4d8413c450a0dd80e7559bbc38194ac129e6c3eb117b6713a447d5ab5e1c0a7",
+      "bytes": 476,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/policy-patches.json",
+      "sha256": "832d38a49068e237c9331299f068d3b4f5b968fe7d359bfe7caff6fe9908e33e",
+      "bytes": 472,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/policy-secrets.json",
+      "sha256": "54367c3d2d1ae482ab376af8fe2d02fa7f5e0c54c6dc888d7bc1c92ee6def4d4",
+      "bytes": 472,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/policy-skills.json",
+      "sha256": "b7000b322253f49cb085f72417147ad663d0c9f4910bbaba7d75da6333f4e18b",
+      "bytes": 471,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/policy-tasks.json",
+      "sha256": "1736262ecc0d0949b35794ce19b2ce87e591c05ff6a6933118bd7ceb8fa8b87a",
+      "bytes": 470,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-calendar-navigation-browser.json",
+      "sha256": "fb25d3164f8a26c034d9c3595b0f23af6f55cbe26d6f32dc898966846b874f93",
+      "bytes": 499,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-deployment-browser-selectors.json",
+      "sha256": "dc3678fb33936b235095796fdaf88ba04701d8ab7b91d60bdea74a42679b942e",
+      "bytes": 500,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-deployment-layout.json",
+      "sha256": "adf1532216728d77d2f1d7c98b34e5d356f8d51ac6345f16cd1565225029ab3d",
+      "bytes": 489,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-filter-popup-browser.json",
+      "sha256": "9cee7e3edcad3b422208a6d2ac2cfb3568f8cb0d7f5234467a1fe94e5a00eb27",
+      "bytes": 492,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-location-refresh-browser.json",
+      "sha256": "41cdf76e028e1a70a344b436efa23a2fa48db24c07c89cfe90e2f80e6557f204",
+      "bytes": 496,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-location-suggestions-browser.json",
+      "sha256": "9c5797db3def4e447c4a833758f075373bdae6196db5b65b0df1d6b46c9f6115",
+      "bytes": 500,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-popup-layout-browser.json",
+      "sha256": "144103261797be880abd15c9407b6ee1d287bfb0dc5642fd66a2290af52aaa79",
+      "bytes": 492,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-profile-polish-browser.json",
+      "sha256": "2754e033fb1e5d96d45a3bad9d681d4087a93e7a9ee8dd578f4ca322f8595d1f",
+      "bytes": 494,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-profile-selector-browser.json",
+      "sha256": "cbf1e796b7370fae402fe75aa7eff952320398702b8281ff3cd02b8b28bc9334",
+      "bytes": 496,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-search-tooltips-browser.json",
+      "sha256": "0370b929d8b412baad1d420cdea57c4622fe9fcff28da02e2907c844b5eac897",
+      "bytes": 495,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-selector-position-browser.json",
+      "sha256": "ed8b20681fa12c4c1be7be0d66755c3f07da9ab5157ff8a3135d8dcb299d22d8",
+      "bytes": 497,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-settings-refinement-browser.json",
+      "sha256": "40055ba854bc3fa1c30ca90220d3e84f32ca19936af7f3ca5a8f89ec7090b185",
+      "bytes": 499,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-summary-browser.json",
+      "sha256": "91d8f4f22dabf15c4083afc876c59a094582d8468ee275e7cd0b038c83847ae4",
+      "bytes": 487,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-theme-editor-browser.json",
+      "sha256": "649d3677199d23618043bd80a79185dce84cae7f85341c13b96fd356effb4f14",
+      "bytes": 492,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-timeline-controls-browser.json",
+      "sha256": "b935c29ab00d5efacc6876946779033ae27e8f3429fcbece260cbc492003b43b",
+      "bytes": 497,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-timezone-repair-browser.json",
+      "sha256": "ce2cb3b4db840c7093b59cfc9ee1d96db3eeb559e71913533b63336007ce325b",
+      "bytes": 495,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-timezone-selector-browser.json",
+      "sha256": "391287d5224faa24779c4d40fde34156e6681159b66869dcb0094298aa325c05",
+      "bytes": 497,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-ui-followup-browser.json",
+      "sha256": "e9a0f35fff6d93804d60048060c11b233eae8e4ebabe5f2af1d19f8653b97a79",
+      "bytes": 491,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser-visual-browser.json",
+      "sha256": "51d589e5d6ea88456040320ae5c88ebba9458e245c68747cd232bc1dac16b8cc",
+      "bytes": 486,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-browser.json",
+      "sha256": "42820a59d9e763e60c0ba786c14b8c03bd93f4f39b342dcfae01c560a6f2b989",
+      "bytes": 471,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-direct.json",
+      "sha256": "8ca38cb49e2e54e15df802b6b535d27c1e34d115af2b7e340c15e7bc541c6307",
+      "bytes": 470,
+      "workingTreeModified": false,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-unit-cli.json",
+      "sha256": "62d6b7c4b2e1a55b2158165795455e36f03f148b51158961c2184e3e7cb30d35",
+      "bytes": 472,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-unit-deployment-ci.json",
+      "sha256": "cc43f7bde45f3342f4fbf4a2a47114a042cb56db770cd7160e2cfd144c8f4825",
+      "bytes": 482,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-unit-other.json",
+      "sha256": "571b0731a65c10781b9ae9f55282f761a6c7de540b4a497be98fcc5d8ed78566",
+      "bytes": 474,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-unit-query.json",
+      "sha256": "53f5527786aaf020e993c08b25da10e5a737ed751e1d46ec91e0bc5e2c545fbc",
+      "bytes": 474,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-unit-releases.json",
+      "sha256": "4efa59d3d9755c6b74b49707f709568595fa5cbe888eb65382b665ac32245b05",
+      "bytes": 477,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-unit-repository-fixture.json",
+      "sha256": "552c72c8f80a198bd5635d29336a4ec0a688bf5fc12ce9881b118235a7ae7812",
+      "bytes": 487,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-unit-stop-handoff.json",
+      "sha256": "65b766a37026ebed790e96af6d72cda615de5938cf60e1699dd1439d6ebe3625",
+      "bytes": 481,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-unit-task-handoff.json",
+      "sha256": "57cec2d73d0a8856fddb12550541d5eed43b61805908cb0a6b3555d9868a0837",
+      "bytes": 481,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-unit-task-hooks.json",
+      "sha256": "01caa66fea1c36b7b4740c2606410eb84ebf3c00bc0085ac83bae03d12e3d57b",
+      "bytes": 479,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-unit-task-publication.json",
+      "sha256": "85e0e66b13a191725954c66feed04a5f7e1c3fcd8b3b7b2655e8e1755e0e2dbb",
+      "bytes": 485,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tests-unit-tauri-lifecycle.json",
+      "sha256": "e1be9fed5162c3d46e1e76166774dab0641aefbf8d33d062bdfbf50b2e363a36",
+      "bytes": 484,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tool-format.json",
+      "sha256": "76bc06e90961a607ea599ee48a24cd5c5bed6a1367c03b7eee8cb99d39225b4e",
+      "bytes": 469,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tool-lint.json",
+      "sha256": "56047406efc7b933f2554bc74acb56fb62f059331e2a94e7df1321fe651a7caf",
+      "bytes": 467,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": ".verification/tool-typecheck.json",
+      "sha256": "1cae1e7df355f57bcf0acca01b8b1a737784cd2827239f4f57c2405837472486",
+      "bytes": 472,
+      "workingTreeModified": true,
+      "verificationReceiptExample": true
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "6f39f614ab6f7a9b19e3ec406ad48baec577a373bd4dc13a2041400102e2b614",
+      "bytes": 4123,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/build-cache.ts",
+      "sha256": "2e8e9022d2d12ef4cb25a6f1ea51887e42c757651e528b3346b543179b1bf05b",
+      "bytes": 1716,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/build-settings.ts",
+      "sha256": "0978b961b95daffdcb42ec90ace8ef52a162363b023d0fd3df3ff54aa033efc4",
+      "bytes": 4272,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/build-wasm.ts",
+      "sha256": "68df74ef8dc9305fcc21a3b3c6e30a5a9f2c60d34fa7ac879dd43869266538a2",
+      "bytes": 1042,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/build.ts",
+      "sha256": "3772ec62d7061d5c1ee710336479c7abb05c5e08f5b65022a9f5cfe6797e54f6",
+      "bytes": 14187,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/cloudflare-build.ts",
+      "sha256": "beedc1d8627e223af22a76e9d9515205da3b42300ce3d08020249f5439b809f3",
+      "bytes": 3836,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/actions-policy.ts",
+      "sha256": "72f63a6d75a8b10ee992443cc913150100dd4aa4b0d004b4918dc4e4d4c530ac",
+      "bytes": 4521,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/android-smoke.ts",
+      "sha256": "e47c2a421de0fb97db37586566db8a0f90394fd88ccf39827f6ed9a5d4c024d2",
+      "bytes": 5705,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/anonymous-benchmark.ts",
+      "sha256": "1b95ece86df713b0232e4640a522abf9f34fecf45ab23e5495ef3169edfdc92a",
+      "bytes": 5233,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/api-client.ts",
+      "sha256": "69c59c7eea049dde7c9bcfabbaa00d181e6d3159ab86eef08be67f5dcdddc441",
+      "bytes": 349,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/api-policy.ts",
+      "sha256": "e8251572a7375373d0d138058174202c8aae949577a13230c8f306ac5b3f9761",
+      "bytes": 3370,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/appearance-smoke.ts",
+      "sha256": "dac97b7016cf614c2fe2549df027bac399023102939f3fa914e7e3996f9b2122",
+      "bytes": 12248,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/apps-smoke.ts",
+      "sha256": "ef33d7018715efaa4a5f1593640068aeab4cb0e630a5987efe24a7d0307cbf60",
+      "bytes": 31855,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/bot-policy.ts",
+      "sha256": "9e035cb2329508399a88d7210166c39a74e62b258d1d43ee6f9656b94530bd6a",
+      "bytes": 1449,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/bots-smoke.ts",
+      "sha256": "8de5bfc159694c36ef4389f8218d48afdf28497e6594b04e3f2942eecdb0e59f",
+      "bytes": 3749,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/browser-client.ts",
+      "sha256": "4e512f778f9b841b810e725f29c14e6400d4af677269f87d37c1e560b62e4ff7",
+      "bytes": 1958,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/browser-history.ts",
+      "sha256": "649580906db0dd30be8c01db6c622d3dfb1cbd8414ce2817ec3c80a1bfc4ffe8",
+      "bytes": 1277,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/browser-houses.ts",
+      "sha256": "ac36f01ee4b07fd6cc13ce0f975bebae2a8fe77821b04f803f97fc7680088110",
+      "bytes": 681,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/browser-layout.ts",
+      "sha256": "7f4191b9d0b8c3146a76d6d970dc6c45d70468533eef3dd9479b457646c15d56",
+      "bytes": 2517,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/browser-selectors.ts",
+      "sha256": "8eed04dc3e9847374436f4857674b369e43c286d5bda8dd4c280e0b451e1e747",
+      "bytes": 508,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/browser-strength.ts",
+      "sha256": "8107903f25396f44338e9a993d9e745911de71c78afb130ba4e7f08078181643",
+      "bytes": 833,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/cache.ts",
+      "sha256": "ab9cf9e78b0a68350dd9b51dc81064d7520b9fa4b2d4e6e5510bc1b17ae5874b",
+      "bytes": 965,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/CHANGELOG.md",
+      "sha256": "0799fca1bee4dd23adf86bcbf5ac23db4af1c888015eeb92ab3104b066d2f879",
+      "bytes": 38137,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/chart-smoke.ts",
+      "sha256": "43c0683a3575e9f9b91db18c1e475e847183385ddbc102ca95b35c2a0d146209",
+      "bytes": 13259,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/client-limit-smoke.ts",
+      "sha256": "c83ed110d2f10f94af0508e62c35e7804c33d4d369ceb1bc01fb38f006f626a3",
+      "bytes": 2656,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/codex-rpc.ts",
+      "sha256": "b689935214fe6ed2eb64561d1562ec8bc6b9d88e62942902acdecf9f749e0d3d",
+      "bytes": 4451,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/css-policy.ts",
+      "sha256": "09e8dd45177a333e9982ce3a76e6dfb576fa44919e30711bd31b38cb134e358d",
+      "bytes": 4984,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/current-location-client.tsx",
+      "sha256": "4c90b90ebef955a9c923357d175698b9dc48eef2dcc9e467413aef4c74201017",
+      "bytes": 3485,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/data-cache.ts",
+      "sha256": "4c7f811c486705c110bc56b6f445010e4c54afa1dc0a36dfd9f372d10121ebb7",
+      "bytes": 3958,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/dependency-policy.ts",
+      "sha256": "f5a4c60bcd1f600ef243e01df627f076c7009d34ef08ee6d82aa1db5f3a32fbd",
+      "bytes": 1024,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/deployment-requests.ts",
+      "sha256": "6d153366978f070365eb428a4da2df868917753a83c307a65eaef84e66eec111",
+      "bytes": 1754,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/deps-acp.ts",
+      "sha256": "50e15d5c4517771058281342e750cb9b0e71e83ffa934fdcf9131444ce76f6b2",
+      "bytes": 8475,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/deps-agent-prompt.ts",
+      "sha256": "729ac5c4a0436531efe8e8c0b544ec8c354973ca004cc9ec5b3b415181709bf6",
+      "bytes": 4464,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/deps-desktop.ts",
+      "sha256": "869312cd56a44b72e88e28805aff82e6439eb864a430492ee7a45d0c1f414057",
+      "bytes": 8952,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/deps-options.ts",
+      "sha256": "954e363f72754bb72ba1474bcd0a61161bed2722cd08f2fe22325db0bb5977a0",
+      "bytes": 4222,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/deps-plan.ts",
+      "sha256": "71afbeda348a113b5b7db384636514d8f9cce356d5cadf573da50b2b4455f33c",
+      "bytes": 4071,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/deps-runtime.ts",
+      "sha256": "368e96f9a8cf056d48e9a7098fcc6ac0a33571e3dc3103fece1e55abf516791a",
+      "bytes": 12369,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/deps-state.ts",
+      "sha256": "d8b6e47ef25735dd81a633a1a42fe9a41f24dc2502b19ffe827c6138b0653f62",
+      "bytes": 1256,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/deps.ts",
+      "sha256": "05cd7223ea533c59071a481afcbad959d35f3ee09f90915805cb202e609ad418",
+      "bytes": 1015,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/design-sync.ts",
+      "sha256": "80eadcb83ff842f9c6a0fa2744e6ab6452c532418bbaa595e8d54f25504da3cb",
+      "bytes": 168,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/design-system.ts",
+      "sha256": "1397f2ce12392657a0d6469e4c3e06cee460cc119216112f7e6c3b91a16867a1",
+      "bytes": 2705,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/documentation.ts",
+      "sha256": "1bd28d0628b75d46f667c7ed481534efbc03cb621b927073fe54dc45903fb028",
+      "bytes": 7839,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/executable.ts",
+      "sha256": "817dc5e1a02f9c790acb7ede4269c335c1ed3d962085d4a7eb480e734e164a60",
+      "bytes": 1196,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/generate-countries.ts",
+      "sha256": "bbacdc364c59c0345dc93f91c98510c3e10a56afafb31623f9907fd475fb77e1",
+      "bytes": 5868,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/generate-icons.ts",
+      "sha256": "636ff05c9236b95a672609ea28a6bfcb8b5c5e4a1a2874c1979a88d4a6b88cc5",
+      "bytes": 4296,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/header-smoke.ts",
+      "sha256": "e1f275dbe3e9910c4e55e4b65c84481a4b24a65bf09f18545110ccb5eeb90b01",
+      "bytes": 13423,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/help.ts",
+      "sha256": "5e972b97b1582ee1ceb83e3cd7dbda0e80a44c8b2743a3afe96f0701d70af0e5",
+      "bytes": 2179,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/history.ts",
+      "sha256": "e8c6fdf82e154c695205737fa04735de5c6b6f37b39a2bca4f44dc7b5d10b1c9",
+      "bytes": 5924,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/hook-trust-plan.ts",
+      "sha256": "d0f4e8574eea1dbfdcea0fe9ca0ef9b2f1655c8ab570acf4046662a47bf4f356",
+      "bytes": 4134,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/hook-trust.ts",
+      "sha256": "d9677810b5ad0e80c749ba820c2bfc0e066ef2614a8b6497d208d121c731ef52",
+      "bytes": 3528,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/hooks-trust.ts",
+      "sha256": "15e1cc50096c3ac5da7658422d35917cb194d5de9483ca32c17eebf6e7ff7077",
+      "bytes": 973,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/houses.ts",
+      "sha256": "eb6d3bf12b4daa400b83888f919df444d565fd6b1b7100c7c0eaf19602e1bd53",
+      "bytes": 7235,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/i18n-smoke.ts",
+      "sha256": "84d96cf5ee67f31001f5c629d44cc1305354126a5b3b5cd5ffa13773e1a7f4ae",
+      "bytes": 6094,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/i18n-sync.ts",
+      "sha256": "4e1b227cf620a65227ed746ae562e2699d46953009ea21b058bca30f5b7a5b4c",
+      "bytes": 269,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/i18n.ts",
+      "sha256": "35d7181b55021fcc9c2320f45befb224ed1ac74b587652885ff6bbf6339f8964",
+      "bytes": 4671,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/index.ts",
+      "sha256": "ab1d744b0babc2c0ffd56699fda1ad05c53fe54f063ab5320afa885cfb0b241c",
+      "bytes": 5936,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/input-cache.ts",
+      "sha256": "869e99e38ae30a2770a8a0743a7bc924c5e3a94cba167b1ebeddb299300ae628",
+      "bytes": 19500,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/landing-smoke.ts",
+      "sha256": "2d8dcb7c412918dd10ef7404292ad206c82189703f24c4c1f6f14253f8d4ad27",
+      "bytes": 1905,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/location-d1-worker.ts",
+      "sha256": "a24459911f046583d48d02e916b9f6c35e4e53e7f32e1db73182cfc9d786109c",
+      "bytes": 812,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/location-d1.ts",
+      "sha256": "84aa4099a2dd6b555ec62d19ce3a0154a2545284ef22e615904c3911e95f7f29",
+      "bytes": 5985,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/locations-browser-client.ts",
+      "sha256": "83277fe57f3f5b76a9b512a4123d0515b71b244bdaf011c66c943357559b21b9",
+      "bytes": 1070,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/maintenance-plan.ts",
+      "sha256": "976a7a00fe69d345f14456567e3eac2fbf241dd7f768949131e0677a06263f09",
+      "bytes": 844,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/maintenance-policy.ts",
+      "sha256": "f6535a40d53a6048debbdc4fb5ee231075b3a017cc158d99943b37e1f1aecb5d",
+      "bytes": 2304,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/maintenance.ts",
+      "sha256": "470602dc2c3982237b22c0b207f71225fcb8508989ecd98c7779ff1e201fbc13",
+      "bytes": 1365,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/measure.ts",
+      "sha256": "df4009419869088ec9eca1a41f6f46a663edecd6daa3de4374befc71f0f24e32",
+      "bytes": 1887,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/mobile-policy.ts",
+      "sha256": "fd9d8141483e7a68843c07c71d96773a58b355b304091ef8904b2fc7057dcae1",
+      "bytes": 7647,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/native-lifetime.ts",
+      "sha256": "eaa3d76d8a35f1e67a41f30dbc23eb4ef24c6c798ca3ca26cb012782f9891480",
+      "bytes": 305,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/patch-policy.ts",
+      "sha256": "71f8435183916913ddd2bf08e427dccc4112f598311ff887a6f0de1ed4026a9d",
+      "bytes": 2648,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/prepare-lunar-variants.ts",
+      "sha256": "b33ba700989cc8da83d997d7d5700974feb37176bd572c90468b6adc8350326e",
+      "bytes": 4098,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/README.md",
+      "sha256": "41d967fee37cd7b1eecf2559875322c8818190887a73311ad0e0b3b552d704f6",
+      "bytes": 3519,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/runner.ts",
+      "sha256": "9b6a6a29a649376224e5c1aad85c2a4582db45d48eee129ec3f1d5e01ae42697",
+      "bytes": 2262,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/runtime-benchmark.ts",
+      "sha256": "704d7df881d8b8dc4bbfb2aa6e74a5cd8a20b9eaf592da9504973b4d81b91417",
+      "bytes": 3874,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/runtime-probe.ts",
+      "sha256": "9fa286b7e1e65536e165c105705c1f986aa3e15b778f90ff6f10f64af2484617",
+      "bytes": 1453,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/secrets-policy.ts",
+      "sha256": "ae8260b868d29466f08c878a286c21f3a1481e898cbe450d74c92dc977d65c73",
+      "bytes": 2724,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/security-headers-smoke.ts",
+      "sha256": "771c0ebe0a8dd61b467fffdb40b9ab7ec46e350a30ce2cee78299e776c3583ad",
+      "bytes": 1822,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/sharing-smoke.ts",
+      "sha256": "864b803bd3eee7e849394e84bb3125507593c13233bda814d92334fbf4217358",
+      "bytes": 4321,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/significance.ts",
+      "sha256": "75b81e2eca968e0b1af39ce13aff7bb88f1f48cbb63f59a2765d2f489d626615",
+      "bytes": 3637,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/skills-maintain.ts",
+      "sha256": "b3264fb27ef1360b1e76a38ff5aa1d1d1a6a62cf27b681d5fab05cae9d66af51",
+      "bytes": 6340,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/skills-plan.ts",
+      "sha256": "ef0a396994e81aef6ae4f91bb7c396e9a9090ae48074e81991d90284b40a43e9",
+      "bytes": 3592,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/skills-policy.ts",
+      "sha256": "b04f8f7ef67852a97070c52eaeeeb32c71b78d72130dbbce958768c8a04eab40",
+      "bytes": 821,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/skills.ts",
+      "sha256": "4be818bf2d610ad24951179459c4cc7b7823c938540006142270507f9f620f91",
+      "bytes": 647,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/strength-distribution.ts",
+      "sha256": "7fcc1918ec06a16d49228c27c40e58a186d5ffb91e20031d28978a2e8aeccaa2",
+      "bytes": 4147,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/strength.ts",
+      "sha256": "70f8636520eeff59a04b85fe98b40607ca88ab8f36a0d4885ec6cccdcfbb461c",
+      "bytes": 4309,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/summary-evidence.ts",
+      "sha256": "06204b568f709e78fa3fa887b1b75553043c63b0ae6671707b8cfa34a032a244",
+      "bytes": 10504,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/summary-person-evidence.ts",
+      "sha256": "9f1ddd9408268f1245ddec5859cfef00edacfc0e9e7880c50ac1635d4eee9d5d",
+      "bytes": 5745,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/sync-branding.ts",
+      "sha256": "3de1f2a389d5d99df561bff1d29cf27a5bef068396e941c5078118ebe8bebe62",
+      "bytes": 6517,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/task-policy.ts",
+      "sha256": "c97c17a685ccea024a4b91b3815511114be266fb31144b774a47f5332db22228",
+      "bytes": 3656,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/tauri-cli.ts",
+      "sha256": "7c8cc2f93df58823a54dae5879ef2d8f1ab32ba7bdfe3f517ae5b00dd6b055fc",
+      "bytes": 417,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/test-groups.ts",
+      "sha256": "01867104b14cd6a9fd181fffe1281a03bb295b267e7dbff06c496cf2d8f978b5",
+      "bytes": 6847,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/test.ts",
+      "sha256": "3806c95175f955b67c962ed97c6f5de8bf69f10a90d53391d5071bcef63d2db2",
+      "bytes": 956,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/timeline-audit-client.ts",
+      "sha256": "404a5cd49aa032e813f54e2d1e6dcff43eb6cb89f86dd9d8cc6d3f01a2855536",
+      "bytes": 5839,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/timeline-audit-worker.ts",
+      "sha256": "2219b4300d86fefdc873ff81bbfdeda7ba51cc5c32184733db9d98a51d64df50",
+      "bytes": 561,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/timeline-audit.ts",
+      "sha256": "7b70f4a04e2d54ac5dc131ae465cbe35fff7b1ceef440c6319397f7aa315f6d6",
+      "bytes": 4518,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/timeline-binary-probe.ts",
+      "sha256": "540258cc5fdf566c0e287ca4ad09a7eb8950b6a454c57c8cc8b1e123fe82aa12",
+      "bytes": 5668,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/timeline-binary-verify.ts",
+      "sha256": "0747bf50507467bcae68c387e9a3e68ac3a74733776921aaa07a0f9ff38255db",
+      "bytes": 2412,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/tool.ts",
+      "sha256": "5f22802fc652b50abea6476df6b270b2eab4880158986246ddaedc61a0f9ba71",
+      "bytes": 373,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/tools.ts",
+      "sha256": "198044f7c54cce5612a1e524ed4641c6556aa2d33d6b532183f2a0483670cdec",
+      "bytes": 2330,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/typography-smoke.ts",
+      "sha256": "cfbd7c3f8897207c0f53d2360764567ac65749675578ac2d49ade43c5e595b74",
+      "bytes": 5314,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/upgrade-plan.ts",
+      "sha256": "83cab59a27b7a0960f4b485b996d0ba78aa27dc3cc3d21244cca7d262661dfd6",
+      "bytes": 4293,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/verification-cache.ts",
+      "sha256": "d0eedc4881a26f12a1904ea3728e9907c5d2bc1b22a260140593880fd77bc924",
+      "bytes": 2423,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/verify-data-help.ts",
+      "sha256": "00b0f4d3cf5ef3d0ba8728553c9feba62a843c5b14382c1c117729a1483e2e9b",
+      "bytes": 1290,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/verify-data.README.md",
+      "sha256": "146a94160158fb9bf12538a5f60b43e2585d63d91f486ee72d19c7d98e2abc55",
+      "bytes": 1590,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/verify-data.ts",
+      "sha256": "45140bb6e8a5394c51b95b5bf057f4643e3f69b492163ffbb1e29f3723b6f64a",
+      "bytes": 10654,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/verify-locations-help.ts",
+      "sha256": "4e180efc2975ca7a6c47baa3829254942dd507e9855cf58930dd6a2ec747ee9b",
+      "bytes": 923,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/verify-locations.README.md",
+      "sha256": "9f1a2d709f96bfc07d93a4ba69b918f42afe65fa4a979ae1acfd2718b566349a",
+      "bytes": 1243,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/verify-locations.ts",
+      "sha256": "77984205a6980559e4518e0a1aaa3fca44edb050acbe3f909ea8857998aa25c7",
+      "bytes": 12847,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/version.json",
+      "sha256": "f887152479a252ee5657dacddebfb3cd554454a289721fda58e7fdf36255f75d",
+      "bytes": 26,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/visual-browser-client.ts",
+      "sha256": "49ae01e35b6677e6ed90cc14cb65607825d4b60b94a347d84bdc883abaf4434b",
+      "bytes": 17665,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-check/worker-lifetime-smoke.ts",
+      "sha256": "e388f8e3cee122ea3adbea2666653917358b4e59dfcc1f72c36d1c1226401911",
+      "bytes": 3244,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/api-client.ts",
+      "sha256": "3c07241cc0d82b6424d4e3c4891c618717b9a7b426e78daf6559e5674f25ef9d",
+      "bytes": 357,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/archive-index.ts",
+      "sha256": "667eeb31cd4a55d8c5bfc947fb89d9f7b46604698e206db0258afb3fd9706199",
+      "bytes": 2616,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/archive.ts",
+      "sha256": "40b6ec340ee64c1f0688b29e341f5e6b805354cb1f5aa7df96e5dd45d48928a6",
+      "bytes": 6380,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/atomic-rename.ts",
+      "sha256": "31285edf3bf6e96e82c2034918cee05adf84450038c8bad53868c1c01e402dcc",
+      "bytes": 1149,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/CHANGELOG.md",
+      "sha256": "351d98e7ab7691a39d3d50079dfd76143aef04c70ffde6c14fd9cae096dc9101",
+      "bytes": 32821,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/commit-message.ts",
+      "sha256": "912d42ea5d44a940c69f29b912850cc38d5ba2c043ae192642a4b15b010c95c7",
+      "bytes": 386,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/compact-run.ts",
+      "sha256": "afdb5f16f19c14db98078fb323a3d9967a031baf315a36498ce7711ed1236107",
+      "bytes": 4139,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/context-hook.ts",
+      "sha256": "1251da5e5fae659c3c0c4738c25d7858b9eebef922b55f3a8ff08857bfd4f797",
+      "bytes": 794,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/docs.ts",
+      "sha256": "bc5de1de4609fc40635cef6a6a3b6d4fd818ecf6f416ad100639f2e597f8bc49",
+      "bytes": 3084,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/handoff-file.ts",
+      "sha256": "5ca5af1aed0ab29c0eb8a47e2a83449d4c6f03905d5fd4a74f11b8ad4b401582",
+      "bytes": 3451,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/hook-input.ts",
+      "sha256": "cfa6fc08256760163683103dfc9543bc72e1feb12c90b5788b6b18e4e8bebe52",
+      "bytes": 350,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/hook.ts",
+      "sha256": "b17fc639cbd28c74746504625e9822e48f1a393e910bf97d725decd877a75339",
+      "bytes": 506,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/integration-queue.ts",
+      "sha256": "00c9708917f3c3592fe70efcc0a0f65c29d0941ce44db377ba4e0be0f2e5b572",
+      "bytes": 4554,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/paths.ts",
+      "sha256": "b730a92bf960cda0993811fe098f3ae7ce2c1695c03bde3c60bd15c7acf18efd",
+      "bytes": 2501,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/readiness.ts",
+      "sha256": "f159414ec62b16242178c23be394cc748a11f04f04f7f22850c5197f2d99cb7d",
+      "bytes": 999,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/record.ts",
+      "sha256": "6334e1245b6bd11e5c896c7cf6b49d11ddbed1869c618d3b4a497a92910611d2",
+      "bytes": 1754,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/review.ts",
+      "sha256": "be882c444fd5cc7bdcf4db8fee555bfab3dea16550b22054cf382d24863f2a1c",
+      "bytes": 3661,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/state-lock.ts",
+      "sha256": "0f81282e6c0b54355f3a3754276d0ccd29c0ef57a3d2f4392507de467d6785f8",
+      "bytes": 3431,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/state-retention.ts",
+      "sha256": "50037a91bc79de589dd258d98f844c8e4e40ae1de007c20e83744c1fcbef9685",
+      "bytes": 4624,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/stop-handoff.ts",
+      "sha256": "8df435b325d0c8fb529e5582104bfdc8935656971bb9949ac7b88ac232bab4e2",
+      "bytes": 3491,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-changes.ts",
+      "sha256": "bc22ff3d0776bd4fd7a803f5bacd40c5b7a12f96d1ee86db8705f72ea2bef6c6",
+      "bytes": 1535,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-complete.ts",
+      "sha256": "21f4bcea53fc9a55891c28b7782da161a30534cc556df5d1ae58ba4f06014d14",
+      "bytes": 4074,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-context.ts",
+      "sha256": "e699a1ea80448a543451edd474900e9b5d376b8f46a50266a4e6652d0038cef2",
+      "bytes": 3598,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-git.ts",
+      "sha256": "24ee33c8782c9d27cd6db5e2047d9676ce5211e96930609b2849cbcfed419c50",
+      "bytes": 11788,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-handoff.ts",
+      "sha256": "c8420ab9dcd3c14a5b33912630d3cd6b252149cd310ccd6680b1d80232ab2e1f",
+      "bytes": 1444,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-hook.ts",
+      "sha256": "5496c7f958c75424ac3ddb54325ce673ac2fe6b21ee8f24a9a5c9b97330924aa",
+      "bytes": 8319,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-integration.ts",
+      "sha256": "702f3012782a9113701ef9751addbf91ddee7564d761f12156da31b19c4147a0",
+      "bytes": 10048,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-mode.ts",
+      "sha256": "17b2735ee6bebe54dd3f824e0dceff44049a2136d357d9041d4725a08713496f",
+      "bytes": 6183,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-model.ts",
+      "sha256": "e03ac3651b988489b3551031c6fa89cc507c69d5b6b8bfedca86193fcb87f935",
+      "bytes": 2279,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-progress.ts",
+      "sha256": "bfed115ba976c07993eb5119f33a35b76b66bb6844cd07c69ce385cba7262e2b",
+      "bytes": 1885,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-publish.ts",
+      "sha256": "0897841cdfc34db5001c906c88dd27c927b1e87fe467225c2d324bb73fd7df33",
+      "bytes": 7311,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-readiness.ts",
+      "sha256": "bd179959e55abe5554bb5999f30eeed8bb8f66dbf21659a8fd388b4a1a1d0e35",
+      "bytes": 8973,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-state.ts",
+      "sha256": "e2ac74c09fd7dd498477336a00b5e5efe8a97ffc70c47d9bf6b3eff9b41d8eb4",
+      "bytes": 6665,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-status.ts",
+      "sha256": "374b23c3ba02f8229f08cf4f5bf053e621107eba63f95ea871af26ae0933117d",
+      "bytes": 3409,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task-worktree.ts",
+      "sha256": "86efaac9a6868186e40e8ff80a49c1c3c71a3789a13b6cf7d9e35a2e441430ea",
+      "bytes": 2057,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/task.ts",
+      "sha256": "9fd041392f7b6730f0b900ec3b054149ddb2c8cfc0638b06bbd1355d2470e1af",
+      "bytes": 3885,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/trace-audit.ts",
+      "sha256": "c2790159723822cac96b0f09a2fd09ad0fb91264aec3ec5205d4d4681b652c35",
+      "bytes": 3574,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/trace-summary.ts",
+      "sha256": "3bd0a4dba76fa1bd3814212739ad00893e2f2762110a4d76c9f68b1f36153eb7",
+      "bytes": 5123,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/transcript.ts",
+      "sha256": "585649536495a034c4be8d6a05eda7e35c5620ce51aa1e43d61f4f0938cbaea9",
+      "bytes": 7674,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/verified-review.ts",
+      "sha256": "03af965637418c9d045a0d9361ec33d553c0ec95caa4510b460e6b8039fb20ed",
+      "bytes": 3384,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/version.json",
+      "sha256": "f887152479a252ee5657dacddebfb3cd554454a289721fda58e7fdf36255f75d",
+      "bytes": 26,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "app/trigon-conversations/workflow.ts",
+      "sha256": "d392b59f21c79af078afcf79f57f11ebe34867c7d1af768b0ca45e305780651b",
+      "bytes": 10637,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "aube-lock.yaml",
+      "sha256": "ae503054818c9291904bb61e2ffd35bbcd84719d192aa503256d4a2fc6fd7825",
+      "bytes": 124360,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "bunfig.toml",
+      "sha256": "05961f32a43a77977ea5b286e56693770bd12202bb9d7bfe6b2299d79f816fa5",
+      "bytes": 156,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "deps.toml",
+      "sha256": "330a3a1080e15f3f15fe049e54a8824f0b649e5d81d4def1da1890492ca5538d",
+      "bytes": 382,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "mise.toml",
+      "sha256": "de5a271c74a93992aacd7f89c80652d38d9d8883e58da65d664ae572b2ea175f",
+      "bytes": 2920,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "oxlint.config.ts",
+      "sha256": "c5622727f00c502fa49e1b525b371da76992541b35c009ee55a0fab690d6697e",
+      "bytes": 2085,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "package.json",
+      "sha256": "773d45e460979c533f9e6497fa6aa70a387dc195fe0a7b4b16a04b025a6e2ede",
+      "bytes": 8233,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "patches/portless/0.15.12/bun-tls-contexts.patch",
+      "sha256": "2f84d9189b27ec3ed9a07f643b13cfe3085f7de94346584fb51382e4ead3c532",
+      "bytes": 6627,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "patches/portless@0.15.12.patch",
+      "sha256": "2f84d9189b27ec3ed9a07f643b13cfe3085f7de94346584fb51382e4ead3c532",
+      "bytes": 6627,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "patches/series.json",
+      "sha256": "05d5cc0c4c4a4cfee46fc1cd0a7f5612f4beca005c158f802bfb2921d42cd0c0",
+      "bytes": 476,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "patches/wrangler/4.153.0/verified-bun-fetch.patch",
+      "sha256": "6eb8f0637d4506a890f57a556e9025dcf4caa377eb8863ceb6cae6a80988e5e0",
+      "bytes": 1812,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "patches/wrangler@4.153.0.patch",
+      "sha256": "6eb8f0637d4506a890f57a556e9025dcf4caa377eb8863ceb6cae6a80988e5e0",
+      "bytes": 1812,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/benchmarks/anonymous-cpu-2026-10-21.json",
+      "sha256": "74a4bcd6a1ec9d48ecca7337598ac0d9af40f3cd84b649a0140d936cbf3915d8",
+      "bytes": 46065,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/benchmarks/apps-2026-10-02.json",
+      "sha256": "3aec74c95a275497859620c3e668750338a50da998b8955dd3150ed342e18950",
+      "bytes": 3128,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/benchmarks/mobile-2026-10-03.json",
+      "sha256": "7807204120d443a2a1f81a372eb6b9d19933ee29156c036f5993b3e3943405a7",
+      "bytes": 2543,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/benchmarks/runtime-2026-09-30.json",
+      "sha256": "25d619d136798ffce8df9a5fd8d36ff6abd2f70c0bfdb8d088cda5ebc20bae2b",
+      "bytes": 23819,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/benchmarks/runtime-bun-verification-2026-09-30.json",
+      "sha256": "f6662b30b097605c61f8703de77b9074210729201be7ebbb31080e593471bfc4",
+      "bytes": 923,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/benchmarks/runtime-timing-investigation-2026-09-30.json",
+      "sha256": "61a97ce8b1203a2621acfb26be8a43a5996396a15f0a88eb6b826236e40008f0",
+      "bytes": 6876,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/benchmarks/workflow-traces-2026-10-20.json",
+      "sha256": "fa2d4823ba3fa68f2bc9a5bbbed3c9ae335b79977c3317163aa833fcbe2a99a2",
+      "bytes": 3396,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/cache-intro.md",
+      "sha256": "c91bf79f03a29efb3ab3d8a0f9567847dc8f151397255f21c0a40a47a3354668",
+      "bytes": 4532,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/cache.md",
+      "sha256": "266856600a8eaac6c625e0bbe94d1d960624e0be3325d0f87fd55fa24260a761",
+      "bytes": 5076,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/cli-tools-intro.md",
+      "sha256": "fc6ca2c18e0d18cbba65422a6b57d2754babc820cfd80e32160fb541adce359e",
+      "bytes": 2748,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/cli-tools.md",
+      "sha256": "97619983bd8d164a610fe97975211e7d6238ebd33cdfee4638685ce0a9b4fa61",
+      "bytes": 20318,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/conversation-logging-intro.md",
+      "sha256": "8c3d46e9f69fb1871ceea56317ffdf0da6fd3fcedd36f39617a0b7c92b5dfb56",
+      "bytes": 3646,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/conversation-logging.md",
+      "sha256": "c431b0882a09f2ff33325902e712d88aa632e9bdd6a0b9f4a491f0231ad5ded9",
+      "bytes": 5730,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/deps-intro.md",
+      "sha256": "47b87038e857c63d61450500a35933c30344bfad58f323513e225f4af3fd1169",
+      "bytes": 1448,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/deps.md",
+      "sha256": "81697abf66516e65945067287278641da8b2318bec7a8c55c2574f55fb6e8a6b",
+      "bytes": 9516,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/development-intro.md",
+      "sha256": "567ce84fee0171b1febeb07487ff41b9b412c43cd27df901ef122635d24c13e2",
+      "bytes": 27968,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/development.md",
+      "sha256": "ce8159b63be4c44b772f0dd97b7502510252bf6a914fa710b2dcad5b818d81ed",
+      "bytes": 21606,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/patch-history-intro.md",
+      "sha256": "ff707bc5ed27b6cda431fa96238161d0ee160b4f92dcc76a7bc8230dc170e941",
+      "bytes": 1415,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/patch-history.md",
+      "sha256": "9ed79deadfa482bdfc259f0f219186d02b5d71ebe1a1a0fdc61b59813aa332a0",
+      "bytes": 11197,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/patches-intro.md",
+      "sha256": "d6cf3dd7c70b61a0bc0c9098897ce77bf9d7a145d3b5c4c46e6355e831be99a5",
+      "bytes": 4396,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/patches.md",
+      "sha256": "444dd97be7c69afc011a8c67ba660a44de3d485b9a51a390e052240cc1612af7",
+      "bytes": 26516,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/patching-intro.md",
+      "sha256": "b4556c38840ce9b1b862508d5b34e3b9e32ce18204d6676028bbe6009fcbcfe3",
+      "bytes": 1813,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/patching.md",
+      "sha256": "28e88697ae18fa680e0fbd28c19f32fe0e774f613299161d5f1f228d3436d7a6",
+      "bytes": 15530,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/releases-intro.md",
+      "sha256": "1edb43718f071c3cda8af85597c0af9c8513932b4b3ac21599a1216539c30df7",
+      "bytes": 1046,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/releases.md",
+      "sha256": "295aba86bc15832bec853ce183669eb846153b4918508ffc2ebf8d460e174b78",
+      "bytes": 13472,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/rules-intro.md",
+      "sha256": "1f5375c8596c9679a8c3459efdbf02ee630ded42de93d05bfff807ef57af41fd",
+      "bytes": 2149,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/rules.md",
+      "sha256": "051e8d62978bf2a2b88038a8e64f150c60d59a40b3cb7f6751342cae4b691a45",
+      "bytes": 7493,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/runtime-intro.md",
+      "sha256": "1cca533d6acf58e6cc3faa1e4c172ca2e05048916f4eb902db2d190b66a0822e",
+      "bytes": 6550,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/runtime.md",
+      "sha256": "36c591f1dbe90bce3e00a06f201e8c1e71e8760c4fab2872895ff4493dcdf653",
+      "bytes": 9197,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/stack-intro.md",
+      "sha256": "bb15da382ef3789201b54916e16bc5d2c2be403c74dfc11f71bdffe49dc7b1e5",
+      "bytes": 7071,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/stack.md",
+      "sha256": "4577059f2cdf1e8962dd7f836f4e2fe9ff4f77e84caedc26c4b2576a704ac4a9",
+      "bytes": 4294,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/task-lifecycle-intro.md",
+      "sha256": "27de4ef5e278fb6dc4bd1a369e8b1948cd18d4a324238b76614186fcddaf21e1",
+      "bytes": 3926,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/task-lifecycle.md",
+      "sha256": "7ae0c7649abd32dcdb6dcab9a4698a7d68da5c96536d53bfce1d93d077f71ff0",
+      "bytes": 10690,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/workflow-intro.md",
+      "sha256": "d8a6822d0ebc3d6541e63d6cf6c44c0c3f38da6fbcd9e33f230432c5bc23b286",
+      "bytes": 4115,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "spec/workflow.md",
+      "sha256": "c0fc3cfce76b1d884462c4ffd491fb247cf0d35c43889049b58ef12d9ee2ddb8",
+      "bytes": 7839,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/app-hooks.test.ts",
+      "sha256": "214af6121ba66763a3b6bbe16a0ff2ccc245d71e0228757425bc53892b620afb",
+      "bytes": 1266,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/build-cache.test.ts",
+      "sha256": "e8962500d189a91a5f92c0df6ed500a0e8c38da2734f1a91ddb6ecc51c0910a5",
+      "bytes": 2736,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/conversations.test.ts",
+      "sha256": "3ebaa74e1c9948afa293c2734301180902c0a6419a28a607e56bbe72bfd402e1",
+      "bytes": 15634,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/demo-cache.test.ts",
+      "sha256": "9d75416bbb95ce1feda281da347e3444c0944577f86c92cddf2b55c96d7ca865",
+      "bytes": 2225,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/deps-acp.test.ts",
+      "sha256": "56769374201a5e1ae6cc2a5415f3d1daec111d09c37f21e1a3a9ec5cd05a3a59",
+      "bytes": 6035,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/deps-workflow.test.ts",
+      "sha256": "33685c325e52aabdfe1113c4766fea99401172f058f07f7b9584cbab9dc3e876",
+      "bytes": 8609,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/input-cache.test.ts",
+      "sha256": "521cb0ea620813a9843fb14f8ed3d201d66256b6081108355e26706017757b97",
+      "bytes": 18050,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/locations-cache.test.ts",
+      "sha256": "0e70d0faf70f50360b05209c524c8194796b11ebfb9315406ccb27e44426232a",
+      "bytes": 7870,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/mobile-cache.test.ts",
+      "sha256": "4a685f8705c44c741e513a67bb91a44b728d778d3809a5714148bcdd8855005a",
+      "bytes": 2474,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/patch-policy.test.ts",
+      "sha256": "c1cfdf16aa36005d04157c8f59f6b9d52987522152befe9f709cf7e19a833f53",
+      "bytes": 2847,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/profile-location-cache.test.ts",
+      "sha256": "ae198e049f7e0916e4b24f3e70f5e49abc72be150973bbb26c4591c2d7cfde11",
+      "bytes": 3907,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/task-handoff.test.ts",
+      "sha256": "e65aff9b97e68cf3731a70e22c1a936b31caf4ef11550fac569fb610be2c7e53",
+      "bytes": 8620,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/task-hooks.test.ts",
+      "sha256": "56e739c5ea5017ea584e0abc156385888e840c981a514225bd36aa4cfab19ebe",
+      "bytes": 13572,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/task-integration.test.ts",
+      "sha256": "9064b858d7bc282abc47eb7fe67154345c106a4eb372ff8951957a47fc3b8b86",
+      "bytes": 14112,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/task-isolation.test.ts",
+      "sha256": "0f3f8190cffe8954ea6dd76cbc00ff808edfca04a82256084aea22f557223d26",
+      "bytes": 5539,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/task-modes.test.ts",
+      "sha256": "49f8c3183277b6d8be4aa86ba67cd99b299d9ac23c9b65d15444fd861808d6f5",
+      "bytes": 4585,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/task-publication.test.ts",
+      "sha256": "c8e0cd7051b3c94bda6764b88b288c43528a1ab0ed839b82a3c839cc833d7dc5",
+      "bytes": 8429,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/task-readiness.test.ts",
+      "sha256": "9b189b142119c1a93e4d0422a77da19545e4c42a4ea9256a5442f52a1d1769f7",
+      "bytes": 8126,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/verification-cache.test.ts",
+      "sha256": "143107a85ab143ff3a4e2391395ea725e6355cdb49d06c3abe55745246a7e7fa",
+      "bytes": 2995,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/view-tasks.test.ts",
+      "sha256": "0389a37f920fb5ef45e98d7548599aafcfde3ce4f0eae2794fcfcf0142dfd43b",
+      "bytes": 1437,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/workflow-docs.test.ts",
+      "sha256": "ebe60fe0360235213b710fcdbbe70540733237592d649616d90953147270a2f6",
+      "bytes": 839,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/workflow-efficiency.test.ts",
+      "sha256": "fc8fd76b1f5d81bfb97b96f33343406d5b5fce611f7066c37ed6bd3a601156c1",
+      "bytes": 2178,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/workflow-protocol.test.ts",
+      "sha256": "33b57929995cee830e3c37bade014ce24f5cb38ba64d4e69f0de99725c31264f",
+      "bytes": 3871,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/workflow-runner.test.ts",
+      "sha256": "84a0bfbb735ec68187e11165e6e7e807d8e5f81947a5ba12b35792dc0f678a18",
+      "bytes": 2648,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "test/workflow-traces.test.ts",
+      "sha256": "e240529071103f2b0de525c0d17d12453d409a84236a37150281ae5f7d61981b",
+      "bytes": 1585,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "c881fdb09b3939f50b54949635403a721d30640af1a6d9581554694a408e275c",
+      "bytes": 1087,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    },
+    {
+      "path": "tsconfig.portable.json",
+      "sha256": "90b902a14d031a1b3563e5443226484924906f29b1b472c5030dda4d9024ea9e",
+      "bytes": 668,
+      "workingTreeModified": false,
+      "verificationReceiptExample": false
+    }
+  ],
+  "limits": [
+    "Working-tree verification receipts were inspected only as format examples; they are not Teamagent success evidence.",
+    "All captured files were already LF. Source files were not executed.",
+    "Mutable/unrelated Trigon work remains untouched."
+  ]
+}

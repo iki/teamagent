@@ -1,5 +1,17 @@
 # Third-party notices
 
+## Trigon development tooling
+
+The supplied Tauri lifetime adapter is retained byte-for-byte from
+[Trigon](https://github.com/iki/trigon), revision
+`454e372cbc6bb75eafbbc4795391c492bc4fbf96`, at the user's explicit request.
+Its [provenance registry](patches/trigon/registry.json) records exact artifact and
+source hashes. The original [Trigon license](patches/trigon/LICENSE.md) is retained:
+copyright 2026 Jan Killian and Lucie Manawa, all rights reserved. It is a
+proprietary EULA, not an open-source license; this import does not relicense the
+source or claim an additional redistribution grant. Repository workflow and cache
+adaptations are described in the [source review](spec/analyses/trigon-process-sync-2026-10-28.md).
+
 Team Agent uses the Pi packages listed below. Their installed package manifests
 declare MIT licensing and identify the same upstream project. The published
 1.0.1 package archives do not include a LICENSE file, so the complete notice below

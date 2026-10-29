@@ -175,6 +175,20 @@ function importProblem(file: string, source: string): string | undefined {
     ? posix.normalize(posix.join(posix.dirname(file), source))
     : source;
   const importedLayer = resolved.split("/app/")[1]?.split("/")[0];
+  const applicationRoot = `${file.split("/app/")[0]}/app`;
+  const clientLayer = layer === "web" || layer === "desktop";
+  const buildEntry = clientLayer && file === `${applicationRoot}/${layer}/build.ts`;
+  // These two host entrypoints are excluded from the browser runtime program.
+  const buildHelper =
+    buildEntry &&
+    (resolved === `${applicationRoot}/check/build-cache.ts` ||
+      (layer === "desktop" && resolved === `${applicationRoot}/dependencies/runtime.ts`));
+  if (
+    clientLayer &&
+    !buildEntry &&
+    ["web", "desktop"].some((name) => resolved === `${applicationRoot}/${name}/build.ts`)
+  )
+    return "Client runtime modules cannot import host build entrypoints.";
   const mediaOrChannels = layer === "media" || layer === "channels";
   const importsMediaOrChannels = importedLayer === "media" || importedLayer === "channels";
   if (
@@ -186,7 +200,6 @@ function importProblem(file: string, source: string): string | undefined {
     return `The ${layer} adapter cannot import the ${importedLayer} implementation; depend on a public library contract.`;
   if (mediaOrChannels && importedLayer !== undefined && importedLayer !== layer) {
     // Reuse only the existing scoped worker/staging utilities, not the acquisition pipeline.
-    const applicationRoot = `${file.split("/app/")[0]}/app`;
     const sharedHostHelper =
       importedLayer === "imports" &&
       ((layer === "media" &&
@@ -224,6 +237,8 @@ function importProblem(file: string, source: string): string | undefined {
           "check",
           "hooks",
           "conversations",
+          "workflow",
+          "dependencies",
           "memory",
           "imports",
           "integrations",
@@ -283,7 +298,7 @@ function importProblem(file: string, source: string): string | undefined {
                     "runtime",
                   ]
                 : [];
-  if (importedLayer !== undefined && forbidden.includes(importedLayer))
+  if (importedLayer !== undefined && forbidden.includes(importedLayer) && !buildHelper)
     return `The ${layer} adapter cannot import the ${importedLayer} implementation; depend on a public library contract.`;
   if ((layer === "web" || layer === "desktop") && target === "lint")
     return "Client applications cannot import host lint tooling.";

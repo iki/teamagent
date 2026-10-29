@@ -8,8 +8,15 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "spec/tools"))
-import external_sources
-import validate
+previous_prefix = sys.pycache_prefix
+try:
+    # -I ignores the scheduler environment; keep direct fixture runs off source caches too.
+    with tempfile.TemporaryDirectory(prefix="teamagent-citation-bytecode-") as bytecode:
+        sys.pycache_prefix = bytecode
+        import external_sources
+        import validate
+finally:
+    sys.pycache_prefix = previous_prefix
 
 
 class CitationSources(unittest.TestCase):

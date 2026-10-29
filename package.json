@@ -14,6 +14,11 @@
     "./channels/bun": "./app/channels/index.ts"
   },
   "scripts": {
+    "task:run": "bun app/workflow/index.ts",
+    "deps": "bun app/dependencies/index.ts",
+    "deps:check": "bun app/dependencies/index.ts check",
+    "cache:status": "bun app/check/cache.ts status",
+    "cache:verify-staged": "bun app/check/cache.ts verify-staged",
     "typecheck": "bun app/check/typecheck.ts",
     "dev": "bun app/cli/index.ts harness serve",
     "cli": "bun app/cli/index.ts",

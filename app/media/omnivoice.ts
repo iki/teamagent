@@ -151,7 +151,7 @@ export async function executeOmniVoice(context: MediaExecution): Promise<MediaRe
   if (payload.byteLength > 65_536)
     throw new MediaHostFailure("limit", "OmniVoice worker request exceeds its byte limit.");
   const worker = fileURLToPath(new URL("./omnivoice-worker.py", import.meta.url));
-  const response = await runLocal(context, availability.omnivoice, ["-I", worker], payload);
+  const response = await runLocal(context, availability.omnivoice, ["-I", "-B", worker], payload);
   const reply = Schema.decodeUnknownSync(WorkerReply)(jsonBytes(response), {
     onExcessProperty: "error",
   });

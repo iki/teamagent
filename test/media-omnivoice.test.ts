@@ -70,6 +70,8 @@ import pathlib
 import socket
 import sys
 from numpy import ndarray
+assert sys.flags.isolated == 1 and sys.dont_write_bytecode
+assert sys.pycache_prefix is None
 __version__ = "fixture-0.2.1"
 ROOT = pathlib.Path(__file__).parent.parent
 print("private dependency stdout")
@@ -154,7 +156,7 @@ async function invokeWorker(
   override: Readonly<Record<string, unknown>> = {},
   signal = new AbortController().signal,
 ) {
-  return runMediaProcess(await pythonExecutable(), ["-I", worker], {
+  return runMediaProcess(await pythonExecutable(), ["-I", "-B", worker], {
     signal,
     cwd: f.root,
     maxBytes: 8192,
@@ -216,6 +218,10 @@ test("OmniVoice Python protocol uses offline explicit API and suppresses depende
     assert.equal(response.includes("private"), false);
     assert.equal((await readFile(join(f.root, "output.wav"))).subarray(8, 12).toString(), "WAVE");
     assert.equal((await readdir(f.packageRoot)).includes("loaded.json"), true);
+    assert.equal(
+      (await readdir(f.packageRoot, { recursive: true })).some((path) => path.endsWith(".pyc")),
+      false,
+    );
   } finally {
     await f.cleanup();
   }
@@ -299,7 +305,7 @@ test("OmniVoice host performs bounded normalization and publishes only validated
       process: async (command, args, options) => {
         if (args.includes(worker)) {
           calls.push("worker");
-          assert.deepEqual(args, ["-I", worker]);
+          assert.deepEqual(args, ["-I", "-B", worker]);
           const response = await runMediaProcess(command, args, options);
           return corruptReply ? json({ sampleRate: 8000 }) : response;
         }
