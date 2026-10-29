@@ -21,6 +21,13 @@ retained. Source review, local fixture execution, real signing/publication,
 browser/native acceptance and repeatable performance measurements remain distinct
 evidence. These maintenance tools do not complete the product phases below.
 
+The separately begun [shared-pin alignment](analyses/trigon-dependency-alignment-2026-10-29.md)
+installed seven runtime and eleven development targets, including stable Effect
+`4.0.6`, and passed a frozen install. Teamagent-only pins, lifecycle denials,
+Cargo lock and supplied Trigon adapter bytes remain unchanged. The full
+implementation check and real browser/Windows desktop acceptance passed.
+Final review and publication outcomes are recorded separately in that report.
+
 ## Research maintenance increment
 
 The [research sync workflow](research-sync.md) maintains source lists, checkouts, text imports, and reviewed analysis baselines. Execution results, partial sources and remaining source-review work belong in [incremental analyses](analyses/README.md); implementing synchronization does not establish the product phases below or promote fetched findings automatically.

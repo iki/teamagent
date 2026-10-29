@@ -2,6 +2,10 @@
 
 This log records changes to cross-project conclusions. Per-source ingestion/review events are kept in [repository analysis changes](analyses/CHANGELOG.md) and [text-resource changes](analyses/texts/CHANGELOG.md). The [initial survey](README.md) remains dated evidence, not a continuously current audit.
 
+## 2026-10-29
+
+- Installed the [18 reviewed shared dependency pins](analyses/trigon-dependency-alignment-2026-10-29.md) as a separate task after process publication, including stable Effect `4.0.6`, MCP SDK `2.4.0` and Zod `4.6.7`. Aube's frozen install passed without changing the resulting manifest or lockfile. Teamagent-only pins, lifecycle denials, Cargo lock and supplied Trigon artifacts were preserved. Updated active stack guidance; compatibility, platform acceptance, full review and signed publication remain separately tracked checks.
+
 ## 2026-10-28
 
 - Reviewed [Trigon's development processes](analyses/trigon-process-sync-2026-10-28.md) at an immutable source revision. Added operational contracts for [task workflow](workflow.md), [central dependency patches](dependencies.md) and [verification/build caches](cache.md), with scoped publication, frozen task records, explicit repair receipts and separate shared-pin alignment. The [86-name archive migration](analyses/conversation-names.json) preserves exact contents and originals; local fixture results remain distinct from final verification and real publication.

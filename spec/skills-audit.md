@@ -2,12 +2,18 @@
 
 Reviewed 2026-10-04 against the 23 repository skills and their relevant references, the pinned installed package APIs, and the current implementation. The inventory is `.agents/skills/`; `skills-lock.json` records their sources and hashes. Installed skills are guidance inputs, not proof that a framework, service or integration exists here.
 
+The [2026-10-29 dependency follow-up](analyses/trigon-dependency-alignment-2026-10-29.md)
+updates the installed baseline to stable Effect `4.0.6` and `effect-oxlint` `0.4.0`.
+The complete newly installed Effect guide was read before compatibility work.
+This retains the original skill audit and imported skill bytes; the follow-up
+report records compatibility verification separately.
+
 ## Implemented foundation
 
 | Skill                                                     | Application and audit result                                                                                                                                                                                                      |
 | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [aube](../.agents/skills/aube/SKILL.md)                   | Retain pinned Aube, the existing lockfile and frozen installs. Gates and hook descriptors use `aube run --no-install` so validation cannot implicitly install dependencies. Bun still owns execution.                             |
-| [effect-ts](../.agents/skills/effect-ts/SKILL.md)         | Effect v4 RC is installed; agent rules require reading the complete installed Effect guide and relevant source. The package-manager example does not override Aube. Host adapters use Schema at JSON/stream boundaries.           |
+| [effect-ts](../.agents/skills/effect-ts/SKILL.md)         | Stable Effect `4.0.6` is installed; agent rules require reading the complete installed Effect guide and relevant source. The package-manager example does not override Aube. Host adapters use Schema at JSON/stream boundaries.  |
 | [effect-oxlint](../.agents/skills/effect-oxlint/SKILL.md) | Use typed visitors, diagnostics and Effect-managed per-file rule state. Check examples against the pinned version rather than assuming a newer visitor signature.                                                                 |
 | [oxlint](../.agents/skills/oxlint/SKILL.md)               | Strict type-aware lint and deny-warnings remain mandatory. The Bun launcher resolves the native backend explicitly. Unsafe operations, assertions, hidden I/O and dependency boundaries stay checked.                             |
 | [oxlint-rules](../.agents/skills/oxlint-rules/SKILL.md)   | Validate rules with accepted/rejected fixtures and real parsed-source Oxlint integration. Rules must distinguish same-library relative imports from cross-library private imports and recognize aliased/namespaced runtime calls. |

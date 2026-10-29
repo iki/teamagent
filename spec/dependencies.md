@@ -46,6 +46,13 @@ that sibling directory.
 
 The user approved a separate implementation step aligning 18 shared JavaScript pins, including stable Effect 4.0.6. The [exact comparison](data/trigon-dependency-comparison-2026-10-28.json) distinguishes the 24 shared packages from Teamagent-only and unrelated Trigon packages. Preserve the Pi packages, TypeBox and Bun types; keep C12, Cleye and Consola in their required runtime roles.
 
+The [2026-10-29 alignment report](analyses/trigon-dependency-alignment-2026-10-29.md)
+records installation of all 18 targets in their existing groups and a successful
+frozen install with unchanged manifest and lock bytes. This explicitly selected
+Trigon source comparison is distinct from the CLI's Aube registry-report plans;
+no registry eligibility report was fabricated. Compatibility checks, platform
+acceptance and signed publication are tracked separately in that report.
+
 Keep Teamagent's Cargo lock and Rust edition. The native Tauri manifest pins already match; four locked crates are newer here. Trigon's Rust setup pin is a separate toolchain decision and does not authorize a downgrade of the observed installation. Read the complete newly installed Effect guidance before adapting APIs, and run fresh compatibility checks after the JavaScript alignment.
 
 ## Verification and operational limits

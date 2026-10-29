@@ -54,7 +54,7 @@ the reviewed 79-entry snapshot and its license notice. Codex's global skill
 location is updated from current official documentation. No upstream CLI,
 installation scripts or agent executables run during discovery.
 
-Protocol implementation uses the official MCP SDK `2.3.0`, with Zod `4.6.5`
+Protocol implementation uses the official MCP SDK `2.4.0`, with Zod `4.6.7`
 restricted to its adapter. Agent configuration formats were checked against
 [Codex MCP](https://developers.openai.com/codex/mcp),
 [Claude Code MCP](https://code.claude.com/docs/en/mcp), and

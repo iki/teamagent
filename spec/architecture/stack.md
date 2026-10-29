@@ -6,28 +6,30 @@ Use English for agent communication, code identifiers/comments and repository
 documentation. Preserve meaningful proper names, multilingual source data and
 language-sensitive fixtures; add localized UI or documentation when requested.
 
-| Component           | Adopted choice                                                                                                                          |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Language            | TypeScript 7 native preview, pinned as `@typescript/native-preview`; run `tsgo --noEmit`, not an assumed stable `typescript@7` package. |
-| Effects and schemas | Pinned Effect v4 RC. Public fallible operations return typed Effects; decode external data with Effect Schema and semantic validation.  |
-| Lint                | Oxlint plus `oxlint-tsgolint` for type-aware rules; fail on warnings and unsafe boundary operations.                                    |
-| Effect lint         | `effect-oxlint`, augmented by narrowly scoped repository architecture rules with valid and invalid fixtures.                            |
-| Format              | Oxfmt, with separate check and explicit write modes.                                                                                    |
-| Runtime logs        | LogTape in libraries; only application composition roots configure sinks and levels.                                                    |
-| Developer CLI logs  | Consola in CLI and generation adapters, with human status on stderr.                                                                    |
-| CLI and config      | Cleye for strict option parsing; C12 for trusted local configuration; Effect Schema for decoded configuration.                          |
-| Package management  | Aube owns dependency mutations and the only JavaScript lockfile.                                                                        |
-| Execution and tests | Bun runs repository JS/TS scripts, tests and tool launchers.                                                                            |
-| Web UI              | React 19 and Vite 8; explicit typed state and dedicated workers.                                                                        |
-| Native shells       | Tauri 2 for desktop, Android and iOS.                                                                                                   |
-| Web hosting         | Cloudflare Workers + Static Assets; retain durable task service and authentication boundaries.                                          |
-| MCP                 | Official MCP SDK v2. Zod is confined to the protocol adapter; Effect validates inward domain values.                                    |
+| Component           | Adopted choice                                                                                                                           |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Language            | TypeScript 7 native preview, pinned as `@typescript/native-preview`; run `tsgo --noEmit`, not an assumed stable `typescript@7` package.  |
+| Effects and schemas | Stable Effect `4.0.6`. Public fallible operations return typed Effects; decode external data with Effect Schema and semantic validation. |
+| Lint                | Oxlint plus `oxlint-tsgolint` for type-aware rules; fail on warnings and unsafe boundary operations.                                     |
+| Effect lint         | `effect-oxlint`, augmented by narrowly scoped repository architecture rules with valid and invalid fixtures.                             |
+| Format              | Oxfmt, with separate check and explicit write modes.                                                                                     |
+| Runtime logs        | LogTape in libraries; only application composition roots configure sinks and levels.                                                     |
+| Developer CLI logs  | Consola in CLI and generation adapters, with human status on stderr.                                                                     |
+| CLI and config      | Cleye for strict option parsing; C12 for trusted local configuration; Effect Schema for decoded configuration.                           |
+| Package management  | Aube owns dependency mutations and the only JavaScript lockfile.                                                                         |
+| Execution and tests | Bun runs repository JS/TS scripts, tests and tool launchers.                                                                             |
+| Web UI              | React 19 and Vite 8; explicit typed state and dedicated workers.                                                                         |
+| Native shells       | Tauri 2 for desktop, Android and iOS.                                                                                                    |
+| Web hosting         | Cloudflare Workers + Static Assets; retain durable task service and authentication boundaries.                                           |
+| MCP                 | Official MCP SDK v2. Zod is confined to the protocol adapter; Effect validates inward domain values.                                     |
 
 Exact installed pins belong in `package.json` and the Aube lockfile. Preview/RC
 upgrades require reading their installed source and rerunning compatibility
 checks; do not translate examples from a different major version by assumption.
 Before writing Effect code, read all of the installed `node_modules/effect/AGENTS.md`
 and follow its linked guides as needed.
+The [2026-10-29 alignment](../analyses/trigon-dependency-alignment-2026-10-29.md)
+records the RC-to-stable transition and its separate compatibility evidence.
 The table includes adopted requirements for future applications. An installed
 skill does not imply that its package or application exists: consult the
 manifest and source before describing implementation. Add a selected dependency
