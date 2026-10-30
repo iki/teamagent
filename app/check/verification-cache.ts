@@ -12,6 +12,10 @@ import {
 import { installedPackageIdentity } from "./installed-inputs.ts";
 import { hashExecutable, nativeToolIdentity } from "./tool-prerequisites.ts";
 import { formatPaths, sourcePaths } from "./tools.ts";
+import {
+  verificationEnvironmentIdentity,
+  verificationLocaleEnvironment,
+} from "./verification-policy.ts";
 
 const configurationInputs = [
   ".editorconfig",
@@ -78,16 +82,6 @@ export function assertTrackedVerificationInputs(root: string): void {
   }
 }
 export type VerificationTask = "format" | "types" | "lint" | "tests";
-const environmentIdentity = (): string =>
-  encodedDigest(
-    Object.entries(process.env)
-      .filter(([name]) =>
-        /^(?:CI|NODE_ENV|NODE_OPTIONS|NODE_PATH|TZ|LANG|LC_ALL|TEAMAGENT_[A-Z0-9_]+|PLAYWRIGHT_[A-Z0-9_]+|BUN_[A-Z0-9_]+|VITE_[A-Z0-9_]+|PYTHON[A-Z0-9_]+)$/u.test(
-          name,
-        ),
-      )
-      .sort(([a], [b]) => a.localeCompare(b, "en")),
-  );
 function boundedProbe(
   executable: string,
   args: readonly string[],
@@ -96,7 +90,7 @@ function boundedProbe(
   pythonResult = false,
 ): string {
   const env: NodeJS.ProcessEnv = {
-    ...process.env,
+    ...verificationLocaleEnvironment(process.env),
     PYTHONDONTWRITEBYTECODE: "1",
     GIT_OPTIONAL_LOCKS: "0",
   };
@@ -139,7 +133,7 @@ export async function verificationPrerequisites(
   const values = [
     await installedPackageIdentity(root),
     await hashExecutable(process.execPath),
-    environmentIdentity(),
+    verificationEnvironmentIdentity(process.env),
   ];
   if (includeTests) {
     const tools = await nativeToolIdentity(root);

@@ -28,11 +28,14 @@ unrelated work or certify a filtered tree using checks run on different bytes.
 A failed transport does not prove that a remote update failed. Reconcile the saved attempt and remote ref before any retry. If an outcome cannot be confirmed, retain the commit, attempt and diagnostics and report the uncertainty. No entry point may silently restart a committing or pushing attempt.
 
 The pre-commit hook also compares the staged tree and complete non-ignored
-working tree before and after review. A successful check that rewrites a
-verification receipt, source file or index still stops the commit. Review and
-stage those changes, then obtain a fresh proof. The hook preserves existing
-unstaged work and binds Git's validated active index, including an alternate
-index; this does not replace the workflow's separate requirement that the
+working tree before and after review. It selects local verification receipts,
+as does the workflow's final verification phase. A required check can run and
+record success in the ignored cache without rewriting tracked evidence. A
+successful check that changes a tracked verification receipt, source file or
+index still stops the commit. Review and stage those changes, then obtain a
+fresh proof. The hook preserves existing unstaged work and binds Git's validated
+active index, including an alternate index; this does not replace the workflow's
+separate requirement that the
 verified working tree equal the intended commit. Configured public signing
 metadata does not establish that an SSH agent currently holds the private key.
 
@@ -53,6 +56,15 @@ stdin or execute task work.
 | `prepare`           | Require the frozen record, current proof, exact scope, hooks, signing identity and unchanged remote baseline                                                       |
 | `publish`           | Recheck those boundaries, sign and verify the exact commit, push its exact ref, then verify the remote result                                                      |
 | `cancel`            | Close an open/checkpointed/ready task; retain evidence and reject cancellation after publication has begun                                                         |
+
+Step and ordinary review honor `TEAMAGENT_VERIFICATION_CACHE_WRITE`: unset means
+`tracked`, `local` selects ignored receipt writes, and invalid values fail.
+Final verification and pre-commit explicitly select `local`. Both stores remain
+subject to the same schema, exact input identity, rejection history and live
+checks; tracked mode may promote a revalidated local success. This routing is
+excluded from input keys and grants no permission to skip verification, alter
+the frozen scope or publish. See [the cache contract](cache.md) for execution
+locale, failure-history bounds and staged receipt validation.
 
 For example, an initial request is data, not executable configuration:
 

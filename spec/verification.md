@@ -23,11 +23,27 @@ Any missing dependency, nonzero result, timeout or missing backend is a failure.
 
 The [cache contract](cache.md) permits exact-input reuse for format, all four
 type programs, lint and unit tests. Review preserves source bytes but may write
-cooperative `.verification/` success receipts and owned test/cache outputs.
+cooperative success receipts and owned test/cache outputs.
+`TEAMAGENT_VERIFICATION_CACHE_WRITE` defaults to `tracked`; `local` routes new
+successes to ignored `.cache/verification/` files. Empty or unsupported values
+fail. Both modes validate tracked evidence first, then local evidence; tracked
+mode can promote a revalidated local hit. Routing is excluded from input keys,
+and local mode never rewrites tracked receipts. Pre-commit and workflow final
+verification select local writes while preserving exact staged/tree drift checks.
 Installed prerequisite identity, dependency artifacts, module layout and raw
 LF/export integrity remain live. The test key includes consumed research Python
 tools and the distributable memory skill; ignored compiler inputs cannot be
 silently omitted. Reuse is not independent verification or publication authority.
+
+Verification actually executes with `LANG` and `LC_ALL` set to `C.UTF-8`; keys
+bind those values together with the running runtime's resolved `Intl` locale and
+time zone. Other meaningful environment settings remain inputs. Unit workers
+drop inherited receipt-write policy so their fixtures use the ordinary default.
+Builds retain their ambient locale and bind its raw values separately. The
+[cache contract](cache.md#bounds-and-concurrency) defines cumulative bounded
+rejection history, legacy migration and invalidation of both receipt stores;
+success for different inputs does not clear earlier failed keys, and switching
+stores cannot bypass a force-fresh failure.
 
 Tool launches have a 120-second cap; the complete unit phase, including every admitted child, has a 240-second cap. The root Stop hook separately caps its assembled verification subprocess at 300 seconds. Its outer command budget is 420 seconds, allowing the unchanged 60-second archive operation and cleanup overhead. SubagentStop retains its 90-second outer budget. A timeout is a failed gate, not a skipped check; longer specialized integration/benchmark jobs need explicit separately bounded tasks.
 
@@ -69,7 +85,7 @@ Structural checks are not proof of correctness or a sandbox. Schema and semantic
 ## Hooks and scope
 
 - `.agents/hooks/after-step.json` and `before-review.json` describe required workflow commands. They are portable instructions, not undocumented automatic integrations.
-- `.githooks/pre-commit` executes review and validates changed staged receipts. Review may write cooperative results but does not fix sources. `.githooks/commit-msg` validates the bounded conventional message. `hooks:install` preserves conflicting hook configuration and stores `teamagent.bunPath` only in local Git configuration. Both hook files must have executable Git index modes for portable checkouts.
+- `.githooks/pre-commit` executes review with local receipt writes and validates changed staged receipts against Git's actual active index. It rejects any staged or nonignored working-tree drift and does not fix sources. `.githooks/commit-msg` validates the bounded conventional message. `hooks:install` preserves conflicting hook configuration and stores `teamagent.bunPath` only in local Git configuration. Both hook files must have executable Git index modes for portable checkouts.
 - `.codex/hooks.json` registers `Stop` and `SubagentStop` through `app/hooks/stop.ts`. Root recording requires an active changed task; no active task, unchanged work and frozen records are explicit skips. Subagent progress belongs to the root task instead of a separate record. Only root `Stop` checks assembled code; concurrent subagents must not test incomplete shared edits on every completion.
 - A failed root check requests one repair continuation. If verification still fails on an already continued stop, it reports the failure without an endless loop. Logging and verification run independently: an archive error cannot skip the code gate, and the hook explicitly reports an unsaved reply. Hook stdout remains JSON; failed operations return relative references to retained sanitized diagnostics.
 - Until automatic hooks are trusted and observed, agents invoke the commands and writer explicitly. Installation does not self-approve product hook trust or alter account-wide settings.

@@ -4,6 +4,7 @@ import { constants } from "node:fs";
 import { basename, delimiter, dirname, isAbsolute, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 import { encodedDigest } from "./cache-io.ts";
+import { verificationLocaleEnvironment } from "./verification-policy.ts";
 
 export async function hashExecutable(path: string): Promise<string> {
   const handle = await open(await realpath(path), "r");
@@ -128,7 +129,7 @@ export async function resolveVerificationTool(name: string, root: string): Promi
 export async function verificationEnvironment(
   root: string,
 ): Promise<Record<string, string | undefined>> {
-  const environment = { ...process.env };
+  const environment = verificationLocaleEnvironment(process.env);
   if (process.platform !== "win32") return environment;
   const git = await resolveVerificationTool("git", root);
   const directory = dirname(git);

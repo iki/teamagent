@@ -108,6 +108,37 @@ await test("pre-commit rejects a successful review that rewrites a tracked verif
   }
 });
 
+await test("pre-commit requests local receipts and can verify changed prerequisites without tree drift", async () => {
+  const f = await fixture();
+  try {
+    const tracked = await readFile(join(f.root, receipt), "utf8");
+    const staged = await f.git(["write-tree"]);
+    let executions = 0;
+    const review = async (
+      root: string,
+      options: { readonly receiptWritePolicy: "tracked" | "local" },
+    ) => {
+      assert.equal(options.receiptWritePolicy, "local");
+      await runCachedTask(
+        root,
+        { ...definition, values: ["different prerequisite identity"] },
+        async () => {
+          executions++;
+        },
+        options,
+      );
+    };
+    await verifyPreCommit(f.root, { git: f.git, review });
+    await verifyPreCommit(f.root, { git: f.git, review });
+    assert.equal(executions, 1);
+    assert.equal(await readFile(join(f.root, receipt), "utf8"), tracked);
+    assert.equal(await f.git(["write-tree"]), staged);
+    assert.equal(await f.git(["diff", "--name-only"]), "");
+  } finally {
+    await f.close();
+  }
+});
+
 await test("pre-commit rejects source changes and index-only changes during a successful review", async () => {
   for (const change of ["source", "index"] as const) {
     const f = await fixture();

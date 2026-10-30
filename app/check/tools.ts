@@ -3,6 +3,7 @@ import { existsSync } from "node:fs";
 import { createRequire } from "node:module";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { verificationLocaleEnvironment } from "./verification-policy.ts";
 
 export const root = fileURLToPath(new URL("../../", import.meta.url));
 
@@ -55,7 +56,7 @@ export function isTool(value: string | undefined): value is Tool {
 export function runTool(tool: Tool, args: readonly string[]): number {
   if (!process.versions.bun) throw new Error("Repository tools require Bun");
 
-  const env = { ...process.env };
+  const env = verificationLocaleEnvironment(process.env);
   if (tool === "lint") {
     // Use the native backend directly: Windows package-manager shims require Node.
     const backend = createRequire(import.meta.resolve("oxlint-tsgolint/package.json"));

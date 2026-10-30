@@ -10,6 +10,7 @@ import { invalidateCachedTask } from "./input-cache.ts";
 import { runUnitTests } from "./test-groups.ts";
 import { root, runTool } from "./tools.ts";
 import { verificationEnvironment } from "./tool-prerequisites.ts";
+import { resolveVerificationWritePolicy } from "./verification-policy.ts";
 import {
   cachedVerification,
   reviewSourceIdentity,
@@ -48,8 +49,11 @@ if (argv._.mode !== undefined && argv._.mode !== "review" && argv._.mode !== "st
 const forceFresh = argv.flags.forceFresh ?? false;
 
 try {
+  resolveVerificationWritePolicy(process.env);
   const environment = await verificationEnvironment(root);
   if (environment.PATH !== undefined) process.env.PATH = environment.PATH;
+  process.env.LANG = environment.LANG;
+  process.env.LC_ALL = environment.LC_ALL;
   await Effect.runPromise(createDependencyRuntime({ root }).check());
   if (argv.flags.format || argv._.mode === "step") {
     if (runTool("format", []) !== 0) throw new Error("Formatting failed");
@@ -92,8 +96,23 @@ try {
         "Installed prerequisites or verification environment changed during the gate",
       );
   } catch (error) {
-    for (const id of ["format", "types", "lint", "tests"] as const)
-      await invalidateCachedTask(root, verificationTask(id, prerequisites));
+    // Reject every group's retained evidence even when one input can no longer be read.
+    const invalidations = await Promise.allSettled(
+      (["format", "types", "lint", "tests"] as const).map((id) =>
+        invalidateCachedTask(root, verificationTask(id, prerequisites)),
+      ),
+    );
+    const failures: unknown[] = [error];
+    for (const result of invalidations) {
+      if (result.status !== "rejected") continue;
+      const reason: unknown = result.reason;
+      failures.push(reason);
+    }
+    if (failures.length > 1)
+      throw new AggregateError(
+        failures,
+        "Verification prerequisites failed; one or more receipt invalidations also failed",
+      );
     throw error;
   }
   logger.info("Checking live LF text and export integrity");

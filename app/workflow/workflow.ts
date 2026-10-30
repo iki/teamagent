@@ -7,6 +7,11 @@ import {
 } from "../check/verification-cache.ts";
 import { inspectLineEndings } from "../check/line-endings.ts";
 import { verificationEnvironment } from "../check/tool-prerequisites.ts";
+import {
+  resolveVerificationWritePolicy,
+  verificationWriteVariable,
+  type VerificationWritePolicy,
+} from "../check/verification-policy.ts";
 import { inspectTextExports } from "../research/text-reports.ts";
 import {
   atomicText,
@@ -38,7 +43,11 @@ import { checkpointHash, reviseCheckpoint } from "./revisions.ts";
 
 export type VerificationHost = {
   identity(root: string): Promise<{ key: string }>;
-  run(root: string, phase: "step" | "review" | "final"): Promise<void>;
+  run(
+    root: string,
+    phase: "step" | "review" | "final",
+    options?: { readonly receiptWritePolicy: VerificationWritePolicy },
+  ): Promise<void>;
   staged(root: string): Promise<void>;
   live(root: string): Promise<void>;
 };
@@ -50,7 +59,10 @@ export const verificationHost: VerificationHost = {
       throw new Error("Live LF evidence check failed");
     await inspectTextExports(root);
   },
-  async run(root, phase) {
+  async run(root, phase, options) {
+    const policy =
+      options?.receiptWritePolicy ??
+      (phase === "final" ? "local" : resolveVerificationWritePolicy(process.env));
     await workflowCapacity(root, 20 * 1024 * 1024);
     const result = await runProcess(
       root,
@@ -59,7 +71,7 @@ export const verificationHost: VerificationHost = {
       {
         timeoutMs: 300_000,
         maximumBytes: 16 * 1024 * 1024,
-        env: await verificationEnvironment(root),
+        env: { ...(await verificationEnvironment(root)), [verificationWriteVariable]: policy },
       },
     );
     await atomicText(

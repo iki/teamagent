@@ -243,6 +243,23 @@ export async function fileDigest(root: string, path: string, maximum: number): P
 }
 
 export async function atomicJson(root: string, path: string, value: unknown): Promise<void> {
+  await atomicWrite(root, path, new TextEncoder().encode(`${JSON.stringify(value)}\n`));
+}
+
+/** Preserve a validated receipt snapshot without changing its JSON representation. */
+export async function atomicReceiptText(
+  root: string,
+  path: string,
+  bytes: Uint8Array,
+): Promise<void> {
+  if (bytes.length > cacheLimits.receiptBytes)
+    throw new Error("Verification receipt exceeds byte bound");
+  if (new TextDecoder("utf-8", { fatal: true }).decode(bytes).includes("\r"))
+    throw new Error("Verification receipt promotion requires LF text");
+  await atomicWrite(root, path, bytes);
+}
+
+async function atomicWrite(root: string, path: string, bytes: Uint8Array): Promise<void> {
   const destination = await safePath(root, path, true);
   await mkdir(dirname(destination), { recursive: true });
   await safePath(root, path, true);
@@ -250,7 +267,7 @@ export async function atomicJson(root: string, path: string, value: unknown): Pr
   const temporary = await safePath(root, temporaryPath, true);
   const handle = await open(temporary, "wx", 0o600);
   try {
-    await handle.writeFile(`${JSON.stringify(value)}\n`, "utf8");
+    await handle.writeFile(bytes);
     await handle.sync();
   } finally {
     await handle.close();

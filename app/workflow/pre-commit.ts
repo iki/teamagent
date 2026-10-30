@@ -4,12 +4,16 @@ import { resolve } from "node:path";
 import { verifyStagedVerificationReceipts } from "../check/verification-cache.ts";
 import { gitAt, worktreeTree, type Git } from "./git.ts";
 import { verificationHost } from "./workflow.ts";
+import type { VerificationWritePolicy } from "../check/verification-policy.ts";
 
 class PreCommitBoundaryError extends Error {}
 
 interface PreCommitHost {
   readonly git?: Git;
-  readonly review?: (root: string) => Promise<void>;
+  readonly review?: (
+    root: string,
+    options: { readonly receiptWritePolicy: VerificationWritePolicy },
+  ) => Promise<void>;
   readonly staged?: typeof verifyStagedVerificationReceipts;
   readonly indexFile?: string;
 }
@@ -49,7 +53,9 @@ export async function verifyPreCommit(root: string, host: PreCommitHost = {}): P
     return { staged, working };
   }
   const before = await snapshot();
-  await (host.review ?? ((directory) => verificationHost.run(directory, "review")))(root);
+  await (
+    host.review ?? ((directory, options) => verificationHost.run(directory, "review", options))
+  )(root, { receiptWritePolicy: "local" });
   await (host.staged ?? verifyStagedVerificationReceipts)(
     root,
     indexFile === undefined ? {} : { indexFile },

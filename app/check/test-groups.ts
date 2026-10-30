@@ -4,9 +4,11 @@ import { availableParallelism, freemem } from "node:os";
 import { resolve } from "node:path";
 import { Schema } from "effect";
 import { cacheDirectory, safePath } from "./cache-io.ts";
+import { verificationLocaleEnvironment, verificationWriteVariable } from "./verification-policy.ts";
 
 export function unitEnvironment(base: NodeJS.ProcessEnv, pycache: string): NodeJS.ProcessEnv {
-  const env = { ...base };
+  const env = verificationLocaleEnvironment(base);
+  Reflect.deleteProperty(env, verificationWriteVariable);
   for (const name of Object.keys(env))
     if (
       /^GIT_(?:DIR|WORK_TREE|INDEX_FILE|COMMON_DIR|OBJECT_DIRECTORY|ALTERNATE_OBJECT_DIRECTORIES|NAMESPACE|PREFIX|CONFIG(?:_.*)?|QUARANTINE_PATH|INTERNAL_SUPER_PREFIX|IMPLICIT_WORK_TREE|SHALLOW_FILE|GRAFT_FILE|REPLACE_REF_BASE)$/u.test(

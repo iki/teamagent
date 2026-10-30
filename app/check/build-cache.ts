@@ -45,6 +45,10 @@ export interface BuildStage {
   readonly externalInputs?: readonly string[];
   readonly values?: readonly string[];
 }
+/** Builds retain their caller's locale; verification children normalize theirs separately. */
+function buildLocaleIdentity(): string {
+  return encodedDigest({ LANG: process.env.LANG ?? null, LC_ALL: process.env.LC_ALL ?? null });
+}
 export async function runBuildStage(
   root: string,
   stage: BuildStage,
@@ -59,6 +63,7 @@ export async function runBuildStage(
     await run();
     return { hit: false, key: null };
   }
+  const locale = buildLocaleIdentity();
   const prerequisites = await verificationPrerequisites(root, false);
   const task: CacheTask = {
     ...stage,
@@ -82,17 +87,20 @@ export async function runBuildStage(
       "patches",
       "app/dependencies",
     ],
-    values: [root, ...(stage.values ?? []), ...prerequisites],
+    values: [root, locale, ...(stage.values ?? []), ...prerequisites],
   };
   return runCachedTask(root, task, run, {
     ...options,
     validate: async () => {
       if (
         JSON.stringify(await verificationPrerequisites(root, false)) !==
-        JSON.stringify(prerequisites)
+          JSON.stringify(prerequisites) ||
+        buildLocaleIdentity() !== locale
       )
         throw new Error("Build prerequisites changed during preparation");
       await options.validate?.();
+      if (buildLocaleIdentity() !== locale)
+        throw new Error("Build prerequisites changed during preparation");
     },
   });
 }

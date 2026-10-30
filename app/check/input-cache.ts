@@ -5,6 +5,7 @@ import { relative, resolve } from "node:path";
 import { Schema } from "effect";
 import {
   atomicJson,
+  atomicReceiptText,
   boundedRead,
   cacheDirectory,
   cacheLimits,
@@ -19,6 +20,10 @@ import {
   scopePath,
   withCacheLock,
 } from "./cache-io.ts";
+import {
+  resolveVerificationWritePolicy,
+  type VerificationWritePolicy,
+} from "./verification-policy.ts";
 
 export interface CacheTask {
   readonly id: string;
@@ -201,16 +206,71 @@ export async function inputIdentity(
 }
 const receiptPath = (task: Task): string =>
   `${task.kind === "verification" && task.portable !== false ? receiptDirectory : cacheDirectory}/${task.kind}-${task.id}.json`;
+const localReceiptPath = (task: Task): string => `${cacheDirectory}/${task.kind}-${task.id}.json`;
+const receiptPaths = (task: Task): readonly string[] =>
+  task.kind === "verification" && task.portable !== false
+    ? [receiptPath(task), localReceiptPath(task)]
+    : [localReceiptPath(task)];
 const decodeReceipt = (bytes: Uint8Array): Receipt =>
-  Schema.decodeUnknownSync(Schema.fromJsonString(Receipt))(
+  Schema.decodeUnknownSync(Schema.fromJsonString(Receipt), { onExcessProperty: "error" })(
     new TextDecoder("utf-8", { fatal: true }).decode(bytes),
   );
-const Rejection = Schema.Struct({ key: Digest });
+const rejectionLimit = 256;
+const Rejection = Schema.Union([
+  Schema.Struct({ key: Digest }),
+  Schema.Struct({
+    version: Schema.Literal(2),
+    keys: Schema.Array(Digest).check(Schema.isMinLength(1), Schema.isMaxLength(rejectionLimit)),
+  }),
+  Schema.Struct({ version: Schema.Literal(2), blocked: Schema.Literal(true) }),
+]);
 const rejectionPath = (task: Task): string =>
   `${cacheDirectory}/rejected-${task.kind}-${task.id}.json`;
-async function readReceipt(root: string, task: Task): Promise<Receipt | undefined> {
+async function readRejections(root: string, task: Task): Promise<readonly string[]> {
   try {
-    return decodeReceipt(await boundedRead(root, receiptPath(task), cacheLimits.receiptBytes));
+    const rejection = Schema.decodeUnknownSync(Schema.fromJsonString(Rejection), {
+      onExcessProperty: "error",
+    })(
+      new TextDecoder("utf-8", { fatal: true }).decode(
+        await boundedRead(root, rejectionPath(task), 32 * 1024),
+      ),
+    );
+    if ("blocked" in rejection)
+      throw new Error("Verification rejection history is blocked; inspect retained receipts");
+    return "keys" in rejection ? rejection.keys : [rejection.key];
+  } catch (error) {
+    if (hasCode(error, "ENOENT")) return [];
+    throw error;
+  }
+}
+async function updateRejections(
+  root: string,
+  task: Task,
+  changedKeys: readonly string[],
+  rejected: boolean,
+): Promise<void> {
+  const keys = new Set(await readRejections(root, task));
+  for (const key of changedKeys) {
+    if (rejected) keys.add(key);
+    else keys.delete(key);
+  }
+  if (keys.size > rejectionLimit) {
+    await atomicJson(root, rejectionPath(task), { version: 2, blocked: true });
+    throw new Error("Verification rejection history exceeds bounds; inspect retained receipts");
+  }
+  if (keys.size) {
+    await atomicJson(root, rejectionPath(task), { version: 2, keys: [...keys].sort() });
+  } else {
+    await unlink(await safePath(root, rejectionPath(task), true)).catch((error: unknown) => {
+      if (!hasCode(error, "ENOENT")) throw error;
+    });
+  }
+}
+type ReceiptSnapshot = { readonly receipt: Receipt; readonly bytes: Uint8Array };
+async function readReceipt(root: string, path: string): Promise<ReceiptSnapshot | undefined> {
+  try {
+    const bytes = await boundedRead(root, path, cacheLimits.receiptBytes);
+    return { receipt: decodeReceipt(bytes), bytes };
   } catch (error) {
     if (hasCode(error, "EACCES") || hasCode(error, "EPERM")) throw error;
     return undefined;
@@ -220,54 +280,64 @@ async function matches(
   root: string,
   task: Task,
   identity: Awaited<ReturnType<typeof inputIdentity>>,
-): Promise<boolean> {
+): Promise<(ReceiptSnapshot & { readonly path: string }) | undefined> {
   try {
-    const rejection = Schema.decodeUnknownSync(Schema.fromJsonString(Rejection))(
-      new TextDecoder().decode(await boundedRead(root, rejectionPath(task), 4096)),
-    );
-    if (rejection.key === identity.key) return false;
-  } catch (error) {
-    if (!hasCode(error, "ENOENT")) return false;
+    if ((await readRejections(root, task)).includes(identity.key)) return undefined;
+  } catch {
+    return undefined;
   }
-  const receipt = await readReceipt(root, task);
-  if (
-    !receipt ||
-    receipt.id !== task.id ||
-    receipt.kind !== task.kind ||
-    receipt.definition !== identity.definition ||
-    receipt.projection !== identity.projection ||
-    receipt.external !== identity.external ||
-    receipt.key !== identity.key ||
-    JSON.stringify(receipt.runtime) !== JSON.stringify(identity.runtime) ||
-    JSON.stringify(receipt.inputs) !== JSON.stringify(task.inputs) ||
-    JSON.stringify(receipt.excludeInputs) !== JSON.stringify(task.excludeInputs)
-  )
-    return false;
-  if (task.kind !== "build") return true;
-  try {
-    return receipt.output === (await inventory(root, task.outputs, true));
-  } catch (error) {
-    if (hasCode(error, "EACCES") || hasCode(error, "EPERM")) throw error;
-    return false;
+  for (const path of receiptPaths(task)) {
+    const snapshot = await readReceipt(root, path);
+    if (!snapshot) continue;
+    const { receipt } = snapshot;
+    if (
+      receipt.id !== task.id ||
+      receipt.kind !== task.kind ||
+      receipt.definition !== identity.definition ||
+      receipt.projection !== identity.projection ||
+      receipt.external !== identity.external ||
+      receipt.key !== identity.key ||
+      JSON.stringify(receipt.runtime) !== JSON.stringify(identity.runtime) ||
+      JSON.stringify(receipt.inputs) !== JSON.stringify(task.inputs) ||
+      JSON.stringify(receipt.excludeInputs) !== JSON.stringify(task.excludeInputs)
+    )
+      continue;
+    if (task.kind !== "build") return { path, ...snapshot };
+    try {
+      if (receipt.output === (await inventory(root, task.outputs, true)))
+        return { path, ...snapshot };
+    } catch (error) {
+      if (hasCode(error, "EACCES") || hasCode(error, "EPERM")) throw error;
+    }
   }
+  return undefined;
 }
 export async function runCachedTask(
   root: string,
   definition: CacheTask,
   run: () => Promise<void>,
-  options: { readonly forceFresh?: boolean; readonly validate?: () => Promise<void> } = {},
+  options: {
+    readonly forceFresh?: boolean;
+    readonly validate?: () => Promise<void>;
+    readonly receiptWritePolicy?: VerificationWritePolicy;
+  } = {},
 ): Promise<{ hit: boolean; key: string }> {
   const task = normalize(definition);
+  const writePolicy =
+    task.kind === "verification" && task.portable !== false
+      ? (options.receiptWritePolicy ?? resolveVerificationWritePolicy(process.env))
+      : "local";
+  const writePath = writePolicy === "tracked" ? receiptPath(task) : localReceiptPath(task);
   return withCacheLock(root, `${task.kind}-${task.id}`, async () => {
     const before = await inputIdentity(root, task);
     try {
       if (!options.forceFresh && (await matches(root, task, before))) {
         await options.validate?.();
-        if (
-          !(await matches(root, task, before)) ||
-          (await inputIdentity(root, task)).key !== before.key
-        )
+        const validated = await matches(root, task, before);
+        if (!validated || (await inputIdentity(root, task)).key !== before.key)
           throw new Error(`Cache inputs or outputs changed during ${task.id} reuse validation`);
+        if (writePolicy === "tracked" && validated.path !== writePath)
+          await atomicReceiptText(root, writePath, validated.bytes);
         return { hit: true, key: before.key };
       }
       await run();
@@ -279,7 +349,7 @@ export async function runCachedTask(
         throw new Error(
           `Verification inputs changed during ${task.id}; no new receipt was recorded`,
         );
-      await atomicJson(root, receiptPath(task), {
+      await atomicJson(root, writePath, {
         version: 1,
         id: task.id,
         kind: task.kind,
@@ -289,11 +359,9 @@ export async function runCachedTask(
         passed: true,
         ...(output === undefined ? {} : { output }),
       });
-      await unlink(await safePath(root, rejectionPath(task), true)).catch((error: unknown) => {
-        if (!hasCode(error, "ENOENT")) throw error;
-      });
+      await updateRejections(root, task, [before.key], false);
     } catch (error) {
-      await atomicJson(root, rejectionPath(task), { key: before.key });
+      await updateRejections(root, task, [before.key], true);
       throw error;
     }
     return { hit: false, key: before.key };
@@ -302,8 +370,25 @@ export async function runCachedTask(
 
 export async function invalidateCachedTask(root: string, definition: CacheTask): Promise<void> {
   const task = normalize(definition);
-  const receipt = await readReceipt(root, task);
-  if (receipt) await atomicJson(root, rejectionPath(task), { key: receipt.key });
+  await withCacheLock(root, `${task.kind}-${task.id}`, async () => {
+    const keys = new Set<string>();
+    for (const path of receiptPaths(task)) {
+      const receipt = (await readReceipt(root, path))?.receipt;
+      if (
+        receipt?.id === task.id &&
+        receipt.kind === task.kind &&
+        receipt.key === keyFor(receipt.definition, receipt.projection, receipt.external)
+      )
+        keys.add(receipt.key);
+    }
+    try {
+      keys.add((await inputIdentity(root, task)).key);
+    } catch (error) {
+      if (keys.size) await updateRejections(root, task, [...keys], true);
+      throw error;
+    }
+    await updateRejections(root, task, [...keys], true);
+  });
 }
 
 /** Always validate changed staged receipt bytes against the actual staged index. */

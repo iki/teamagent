@@ -15,12 +15,29 @@ aube run --no-install build:desktop --force-fresh-cache
 ```
 
 The four cooperative verification groups are format, types, lint and tests.
-Their compact success files are `.verification/verification-<group>.json`;
-local build receipts and locks live in `.cache/verification/`. Status reports
+Their compact tracked success files are `.verification/verification-<group>.json`;
+local successes use `.cache/verification/verification-<group>.json`. Local build
+receipts and locks also live in `.cache/verification/`. Status reports
 repository-input equivalence and Git-history provenance, not tool readiness or
 permission to publish. `cache:verify-staged --index-file PATH` validates an
 explicit alternate index. It never substitutes the working tree for staged
 receipt inputs.
+
+`TEAMAGENT_VERIFICATION_CACHE_WRITE` selects `tracked` or `local`; an unset
+variable defaults to `tracked`, and empty or unsupported values fail explicitly.
+Both modes check tracked evidence first, then local evidence, using the same
+schema, current input identity, rejection history and live validation. A miss
+writes only the selected store. Tracked mode promotes a matching local success
+to the tracked path only after revalidation; local mode never creates or rewrites
+tracked receipts, including during force-fresh execution or failure. The policy
+controls storage only and is excluded from verification input keys. Portable
+success receipts retain their version-one schema; build and nonportable tasks
+continue to use only local receipts.
+
+Promotion atomically preserves the exact bounded, schema-validated local bytes,
+including valid JSON property order and whitespace. Undeclared receipt fields
+are rejected. Non-LF text cannot be promoted; retained evidence is not silently
+normalized or overwritten to make it acceptable.
 
 Normal verification preserves source files, but writes result receipts and
 owned fixture/cache outputs. Step formatting is explicit and precedes the
@@ -52,10 +69,20 @@ path. This avoids treating Git's hook-added core directory as a different
 verification toolchain without ignoring executable or environment changes.
 POSIX executable selection is unchanged.
 
-The pre-commit hook rejects any staged or working-tree change during review,
-including a refreshed result receipt. Successful verification alone does not
-authorize committing a different prepared tree; review and stage the changed
-receipts before obtaining a new publication proof.
+Verification executes with `LANG=C.UTF-8` and `LC_ALL=C.UTF-8`, including direct
+checks, workflow children, prerequisite probes and unit workers. Its environment
+identity uses those same values and also binds the runtime's actual resolved
+`Intl` locale and time zone: changing environment variables does not necessarily
+change defaults already selected by a running runtime. Meaningful settings such
+as `TZ` remain inputs. Building a child environment does not mutate its caller.
+
+The pre-commit hook and workflow final verification select local receipt writes.
+A newly required check can therefore finish without changing tracked evidence
+or requiring a new staging cycle solely for that local result. The pre-commit
+hook still rejects every staged or nonignored working-tree change during review,
+including unexpected changes to tracked receipts. Successful verification does
+not authorize committing a different prepared tree; review actual changes, stage
+the intended bytes and obtain a new publication proof when the tree changed.
 
 ## Cache identities and trust
 
@@ -87,6 +114,19 @@ Validate inputs before execution and again after success. Never publish success 
 
 Bound file counts, bytes, depth, receipt sizes, process time, log output and concurrent workers. Reject path escapes and unexpected links; external prerequisites need explicit declared ownership. Use atomic output/receipt publication and exclusive per-task locks. Never reclaim a live or unknown owner merely because the lock is old.
 
+Local rejection history is cumulative per task, with at most 256 unique keys
+and a 32-KiB read bound. Legacy single-key records remain readable; updates use
+the version-two key set. Success removes only its own rejected key, so a later
+result for different inputs cannot revive an earlier failure retained in either
+receipt store. Exceeding capacity persists a blocked marker before reporting
+failure. Malformed, oversized or blocked rejection state cannot authorize reuse
+and requires inspection; entries are never silently evicted to admit a new key.
+
+Explicit invalidation holds the same task lock and rejects both retained valid
+receipt keys plus the current input key when it can be computed. If current
+inputs cannot be hashed, the retained keys are still rejected before that error
+is reported. Restoring earlier source bytes cannot undo that invalidation.
+
 New hook diagnostics use the independently reserved `.cache/hook-diagnostics/`
 budget: 64 MiB, 4096 files and 1024 operation slots. Short admission and finalization
 locks charge completed bytes or each pending operation's full output/metadata
@@ -103,6 +143,8 @@ Cancellation must terminate and reap owned processes. A displayed summary is not
 
 Unit children remove repository-local Git overrides and disable inherited
 system/global Git configuration while preserving fixture-local configuration.
+They also remove inherited receipt-write policy so fixture checks retain their
+ordinary tracked default, and execute with the normalized verification locale.
 Environment-honoring Python fixtures receive a fresh bytecode prefix and disable
 bytecode writes. Isolated document and OmniVoice workers explicitly use `-I -B`:
 `-I` ignores those environment settings, while `-B` prevents writes but permits
@@ -138,6 +180,12 @@ Both build caches remain opt-in. Web reuse verifies the complete `data/web`
 inventory. Desktop reuse covers the compiled Bun daemon preparation only;
 Vite, locked Cargo/Tauri work and real platform acceptance remain live. The
 supplied Tauri lifetime adapter is governed by the [central patch policy](dependencies.md).
+
+Build execution retains its ambient locale. Its keys and final prerequisite
+validation separately bind the actual `LANG` and `LC_ALL` values rather than
+inheriting verification's normalized-locale equivalence. Runtime `Intl` defaults
+also remain bound. A locale change can therefore invalidate a build result even
+when normalized verification would reuse its own evidence.
 
 ## Measurements and scheduling
 

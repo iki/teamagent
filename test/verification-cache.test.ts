@@ -20,6 +20,7 @@ import { join } from "node:path";
 import {
   checkStagedVerificationCache,
   inputIdentity,
+  invalidateCachedTask,
   runCachedTask,
   verificationCacheStatus,
   type CacheTask,
@@ -75,6 +76,325 @@ const task: CacheTask = {
   inputs: ["input.ts"],
   values: ["fixture-v1"],
 };
+
+test("local verification keeps Git clean and tracked mode promotes validated local success", async () => {
+  const root = await fixture();
+  let calls = 0;
+  try {
+    const run = async (): Promise<void> => {
+      calls++;
+    };
+    const cold = await runCachedTask(root, task, run, { receiptWritePolicy: "local" });
+    expect(cold.hit).toBe(false);
+    expect((await runCachedTask(root, task, run, { receiptWritePolicy: "local" })).hit).toBe(true);
+    expect(git(root, ["status", "--porcelain"])).toBe("");
+    await rejects(readFile(join(root, ".verification/verification-fixture.json")), /ENOENT/u);
+    const local = await readFile(join(root, ".cache/verification/verification-fixture.json"));
+    expect(await runCachedTask(root, task, run, { receiptWritePolicy: "tracked" })).toEqual({
+      hit: true,
+      key: cold.key,
+    });
+    expect(calls).toBe(1);
+    expect(await readFile(join(root, ".verification/verification-fixture.json"))).toEqual(local);
+    git(root, ["add", ".verification"]);
+    await checkStagedVerificationCache(root);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("tracked verification writes one store and takes precedence without rewriting either receipt", async () => {
+  const root = await fixture();
+  const trackedPath = join(root, ".verification/verification-fixture.json");
+  const localPath = join(root, ".cache/verification/verification-fixture.json");
+  try {
+    await runCachedTask(root, task, async () => {}, { receiptWritePolicy: "tracked" });
+    await rejects(readFile(localPath), /ENOENT/u);
+    const tracked = `${await readFile(trackedPath, "utf8")}\n`;
+    await writeFile(trackedPath, tracked, "utf8");
+    await writeFile(localPath, tracked.trimEnd() + "\n", "utf8");
+    const run = async (): Promise<void> => {
+      throw new Error("Both stores describe a passing verification");
+    };
+    expect((await runCachedTask(root, task, run, { receiptWritePolicy: "tracked" })).hit).toBe(
+      true,
+    );
+    expect((await runCachedTask(root, task, run, { receiptWritePolicy: "local" })).hit).toBe(true);
+    expect(await readFile(trackedPath, "utf8")).toBe(tracked);
+    expect(await readFile(localPath, "utf8")).toBe(tracked.trimEnd() + "\n");
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("promotion preserves reordered and whitespace-formatted validated local receipt bytes", async () => {
+  const root = await fixture();
+  const localPath = join(root, ".cache/verification/verification-fixture.json");
+  try {
+    await runCachedTask(root, task, async () => {}, { receiptWritePolicy: "local" });
+    const original = await readFile(localPath, "utf8");
+    expect(original.startsWith('{"version":1,')).toBe(true);
+    const reordered = original
+      .replace('{"version":1,', "{\n  ")
+      .replace(/\}\n$/u, ',\n  "version":1\n}\n');
+    await writeFile(localPath, reordered, "utf8");
+    const local = await readFile(localPath);
+    const result = await runCachedTask(
+      root,
+      task,
+      async () => {
+        throw new Error("Valid local evidence must be promoted without executing again");
+      },
+      { receiptWritePolicy: "tracked" },
+    );
+    expect(result.hit).toBe(true);
+    expect(await readFile(join(root, ".verification/verification-fixture.json"))).toEqual(local);
+    expect(await readFile(localPath)).toEqual(local);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("promotion rejects non-LF receipt text without rewriting its original bytes", async () => {
+  const root = await fixture();
+  const localPath = join(root, ".cache/verification/verification-fixture.json");
+  try {
+    await runCachedTask(root, task, async () => {}, { receiptWritePolicy: "local" });
+    const original = (await readFile(localPath, "utf8")).replaceAll("\n", "\r\n");
+    await writeFile(localPath, original, "utf8");
+    await rejects(
+      runCachedTask(root, task, async () => {}, { receiptWritePolicy: "tracked" }),
+      /promotion requires LF text/u,
+    );
+    await rejects(readFile(join(root, ".verification/verification-fixture.json")), /ENOENT/u);
+    expect(await readFile(localPath, "utf8")).toBe(original);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("local receipts with undeclared fields cannot be reused or copied into tracked evidence", async () => {
+  const root = await fixture();
+  const localPath = join(root, ".cache/verification/verification-fixture.json");
+  let calls = 0;
+  try {
+    await runCachedTask(root, task, async () => {}, { receiptWritePolicy: "local" });
+    const original = await readFile(localPath, "utf8");
+    const undeclared = original.replace('{"version":1,', '{"undeclared":"fixture","version":1,');
+    await writeFile(localPath, undeclared, "utf8");
+    const result = await runCachedTask(
+      root,
+      task,
+      async () => {
+        calls++;
+      },
+      { receiptWritePolicy: "tracked" },
+    );
+    expect(result.hit).toBe(false);
+    expect(calls).toBe(1);
+    expect(await readFile(join(root, ".verification/verification-fixture.json"), "utf8")).toBe(
+      original,
+    );
+    expect(await readFile(localPath, "utf8")).toBe(undeclared);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("malformed tracked receipts fall back to valid local evidence but invalid local receipts rerun", async () => {
+  const root = await fixture();
+  const trackedPath = join(root, ".verification/verification-fixture.json");
+  const localPath = join(root, ".cache/verification/verification-fixture.json");
+  let calls = 0;
+  try {
+    const run = async (): Promise<void> => {
+      calls++;
+    };
+    await runCachedTask(root, task, run, { receiptWritePolicy: "local" });
+    await mkdir(join(root, ".verification"));
+    await writeFile(trackedPath, "malformed tracked evidence\n", "utf8");
+    expect((await runCachedTask(root, task, run, { receiptWritePolicy: "local" })).hit).toBe(true);
+    expect(await readFile(trackedPath, "utf8")).toBe("malformed tracked evidence\n");
+    const local = await readFile(localPath, "utf8");
+    await writeFile(localPath, local.replace('"passed":true', '"passed":false'), "utf8");
+    expect((await runCachedTask(root, task, run, { receiptWritePolicy: "local" })).hit).toBe(false);
+    expect(calls).toBe(2);
+    expect(await readFile(trackedPath, "utf8")).toBe("malformed tracked evidence\n");
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("local promotion rejects source drift during final validation", async () => {
+  const root = await fixture();
+  try {
+    await runCachedTask(root, task, async () => {}, { receiptWritePolicy: "local" });
+    await rejects(
+      runCachedTask(root, task, async () => {}, {
+        receiptWritePolicy: "tracked",
+        validate: async () => {
+          await writeFile(join(root, "input.ts"), "export const value = 2;\n", "utf8");
+        },
+      }),
+      /reuse validation/u,
+    );
+    await rejects(readFile(join(root, ".verification/verification-fixture.json")), /ENOENT/u);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+for (const laterOutcome of ["success", "failure"]) {
+  test(`failed tracked evidence stays rejected across a later local ${laterOutcome}`, async () => {
+    const root = await fixture();
+    const trackedPath = join(root, ".verification/verification-fixture.json");
+    let calls = 0;
+    try {
+      await runCachedTask(root, task, async () => {}, { receiptWritePolicy: "tracked" });
+      const tracked = await readFile(trackedPath);
+      const fail = async (): Promise<void> => {
+        throw new Error("Failed fresh verification");
+      };
+      await rejects(
+        runCachedTask(root, task, fail, { forceFresh: true, receiptWritePolicy: "local" }),
+        /Failed fresh verification/u,
+      );
+      await writeFile(join(root, "input.ts"), "export const value = 2;\n", "utf8");
+      if (laterOutcome === "success") {
+        await runCachedTask(root, task, async () => {}, { receiptWritePolicy: "local" });
+      } else {
+        await rejects(runCachedTask(root, task, fail, { receiptWritePolicy: "local" }));
+      }
+      await writeFile(join(root, "input.ts"), "export const value = 1;\n", "utf8");
+      expect(
+        (
+          await runCachedTask(
+            root,
+            task,
+            async () => {
+              calls++;
+            },
+            { receiptWritePolicy: "local" },
+          )
+        ).hit,
+      ).toBe(false);
+      expect(calls).toBe(1);
+      expect(await readFile(trackedPath)).toEqual(tracked);
+      expect((await runCachedTask(root, task, fail, { receiptWritePolicy: "local" })).hit).toBe(
+        true,
+      );
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
+  });
+}
+
+test("explicit invalidation rejects the current local key even when tracked evidence is stale", async () => {
+  const root = await fixture();
+  let calls = 0;
+  try {
+    const run = async (): Promise<void> => {
+      calls++;
+    };
+    await runCachedTask(root, task, run, { receiptWritePolicy: "tracked" });
+    const tracked = await readFile(join(root, ".verification/verification-fixture.json"));
+    await writeFile(join(root, "input.ts"), "export const value = 2;\n", "utf8");
+    await runCachedTask(root, task, run, { receiptWritePolicy: "local" });
+    await invalidateCachedTask(root, task);
+    expect((await runCachedTask(root, task, run, { receiptWritePolicy: "local" })).hit).toBe(false);
+    expect(calls).toBe(3);
+    expect(await readFile(join(root, ".verification/verification-fixture.json"))).toEqual(tracked);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("explicit invalidation rejects both retained receipt keys after source drift", async () => {
+  const root = await fixture();
+  let calls = 0;
+  try {
+    const run = async (): Promise<void> => {
+      calls++;
+    };
+    await runCachedTask(root, task, run, { receiptWritePolicy: "tracked" });
+    await writeFile(join(root, "input.ts"), "export const value = 2;\n", "utf8");
+    await runCachedTask(root, task, run, { receiptWritePolicy: "local" });
+    await writeFile(join(root, "input.ts"), "export const value = 3;\n", "utf8");
+    await invalidateCachedTask(root, task);
+    await writeFile(join(root, "input.ts"), "export const value = 1;\n", "utf8");
+    expect((await runCachedTask(root, task, run, { receiptWritePolicy: "tracked" })).hit).toBe(
+      false,
+    );
+    await writeFile(join(root, "input.ts"), "export const value = 2;\n", "utf8");
+    expect((await runCachedTask(root, task, run, { receiptWritePolicy: "local" })).hit).toBe(false);
+    expect(calls).toBe(4);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("explicit invalidation revokes retained evidence even when current inputs cannot be hashed", async () => {
+  const root = await fixture();
+  const input = join(root, "input.ts");
+  let calls = 0;
+  try {
+    const run = async (): Promise<void> => {
+      calls++;
+    };
+    await runCachedTask(root, task, run, { receiptWritePolicy: "tracked" });
+    await writeFile(input, "export const value = 2;\n", "utf8");
+    await runCachedTask(root, task, run, { receiptWritePolicy: "local" });
+    await rm(input);
+    await mkdir(input);
+    await rejects(invalidateCachedTask(root, task), /Unsupported verification input/u);
+    await rm(input, { recursive: true });
+    await writeFile(input, "export const value = 1;\n", "utf8");
+    expect((await runCachedTask(root, task, run, { receiptWritePolicy: "tracked" })).hit).toBe(
+      false,
+    );
+    await writeFile(input, "export const value = 2;\n", "utf8");
+    expect((await runCachedTask(root, task, run, { receiptWritePolicy: "local" })).hit).toBe(false);
+    expect(calls).toBe(4);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("legacy rejections remain effective and bounded rejection overflow blocks retained evidence", async () => {
+  const root = await fixture();
+  const rejectionPath = join(root, ".cache/verification/rejected-verification-fixture.json");
+  let calls = 0;
+  try {
+    const run = async (): Promise<void> => {
+      calls++;
+    };
+    const saved = await runCachedTask(root, task, run, { receiptWritePolicy: "tracked" });
+    await writeFile(rejectionPath, `${JSON.stringify({ key: saved.key })}\n`, "utf8");
+    expect((await runCachedTask(root, task, run, { receiptWritePolicy: "local" })).hit).toBe(false);
+    expect(calls).toBe(2);
+    const keys = Array.from({ length: 256 }, (_, index) => encodedDigest(["rejected", index]));
+    await writeFile(rejectionPath, `${JSON.stringify({ version: 2, keys })}\n`, "utf8");
+    await rejects(
+      runCachedTask(
+        root,
+        task,
+        async () => {
+          throw new Error("Fresh failure must not revive retained evidence");
+        },
+        { forceFresh: true, receiptWritePolicy: "local" },
+      ),
+      /rejection history exceeds bounds/u,
+    );
+    expect(await readFile(rejectionPath, "utf8")).toBe('{"version":2,"blocked":true}\n');
+    await rejects(
+      runCachedTask(root, task, run, { receiptWritePolicy: "local" }),
+      /history is blocked/u,
+    );
+    expect(calls).toBe(3);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
 
 test("cache reuses unchanged bytes, force-fresh executes, and a failed fresh run invalidates reuse", async () => {
   const root = await fixture();
@@ -308,6 +628,81 @@ test("build reuse validates complete output bytes and ignored explicit inputs", 
     await rm(root, { recursive: true, force: true });
   }
 });
+
+test("build keys preserve raw locale and reject locale drift during execution or reuse", async () => {
+  const root = await fixture();
+  const saved = ["LANG", "LC_ALL"].map((name) => [name, process.env[name]] as const);
+  let calls = 0;
+  try {
+    await writeFile(join(root, "package.json"), '{"version":"1"}\n', "utf8");
+    process.env.LANG = "C";
+    process.env.LC_ALL = "C";
+    const stage = {
+      id: "build-locale-fixture",
+      inputs: ["input.ts"],
+      outputs: ["output"],
+    };
+    const run = async (): Promise<void> => {
+      calls++;
+      await mkdir(join(root, "output"), { recursive: true });
+      await writeFile(
+        join(root, "output/result.txt"),
+        `${process.env.LANG}\n${process.env.LC_ALL}\n`,
+        "utf8",
+      );
+    };
+    const execute = () => runBuildStage(root, stage, run, { enabled: true });
+    const first = await execute();
+    expect(first.hit).toBe(false);
+    expect((await execute()).hit).toBe(true);
+    expect(await readFile(join(root, "output/result.txt"), "utf8")).toBe("C\nC\n");
+    process.env.LANG = "cs_CZ.UTF-8";
+    const changedLanguage = await execute();
+    expect(changedLanguage.hit).toBe(false);
+    expect(changedLanguage.key).not.toBe(first.key);
+    process.env.LC_ALL = "cs_CZ.UTF-8";
+    const changedLocale = await execute();
+    expect(changedLocale.hit).toBe(false);
+    expect(changedLocale.key).not.toBe(changedLanguage.key);
+    expect(await readFile(join(root, "output/result.txt"), "utf8")).toBe(
+      "cs_CZ.UTF-8\ncs_CZ.UTF-8\n",
+    );
+    await rejects(
+      runBuildStage(
+        root,
+        stage,
+        async () => {
+          process.env.LC_ALL = "C";
+          await run();
+        },
+        { enabled: true, forceFresh: true },
+      ),
+      /Build prerequisites changed/u,
+    );
+    process.env.LC_ALL = "cs_CZ.UTF-8";
+    expect((await execute()).hit).toBe(false);
+    const beforeRejectedHit = calls;
+    await rejects(
+      runBuildStage(root, stage, run, {
+        enabled: true,
+        validate: async () => {
+          process.env.LANG = "C";
+        },
+      }),
+      /Build prerequisites changed/u,
+    );
+    expect(calls).toBe(beforeRejectedHit);
+    process.env.LANG = "cs_CZ.UTF-8";
+    expect((await execute()).hit).toBe(false);
+    expect(calls).toBe(6);
+  } finally {
+    for (const [name, value] of saved) {
+      if (value === undefined) Reflect.deleteProperty(process.env, name);
+      else process.env[name] = value;
+    }
+    await rm(root, { recursive: true, force: true });
+  }
+}, 30_000);
 
 test("Vite defaults precede build keys while exact ignored dotenv inputs and later mutations remain guarded", async () => {
   const root = await fixture();
