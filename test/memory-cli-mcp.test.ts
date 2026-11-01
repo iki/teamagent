@@ -1,7 +1,8 @@
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { strict as assert } from "node:assert";
-import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join, resolve, relative, isAbsolute } from "node:path";
+import { join, resolve } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 import { Client, type CallToolResult } from "@modelcontextprotocol/client";
@@ -27,10 +28,7 @@ async function fixture() {
 }
 async function removeFixture(directory: string) {
   const target = resolve(directory);
-  const path = relative(resolve(tmpdir()), target);
-  assert.ok(
-    !isAbsolute(path) && path.startsWith("teamagent-memory-surface-") && !path.includes(".."),
-  );
+  await assertTemporaryFixture(target);
   await rm(target, { recursive: true, force: true });
 }
 async function command(args: readonly string[]) {

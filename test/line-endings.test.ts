@@ -1,17 +1,10 @@
+import { assertTemporaryFixtureSync, mkdtempSync } from "./temporary.ts";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import {
-  mkdirSync,
-  mkdtempSync,
-  readFileSync,
-  rmSync,
-  symlinkSync,
-  truncateSync,
-  writeFileSync,
-} from "node:fs";
+import { mkdirSync, readFileSync, rmSync, symlinkSync, truncateSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { dirname, isAbsolute, join, relative, resolve } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 import {
@@ -23,12 +16,10 @@ import {
 function fixture(run: (root: string) => void): void {
   const root = mkdtempSync(join(tmpdir(), "teamagent-lf-"));
   const target = resolve(root);
-  const child = relative(resolve(tmpdir()), target);
-  if (isAbsolute(child) || child.startsWith("..") || !child.startsWith("teamagent-lf-"))
-    throw new Error("Unexpected LF fixture directory");
   try {
     run(root);
   } finally {
+    assertTemporaryFixtureSync(target);
     rmSync(target, { recursive: true, force: true });
   }
 }

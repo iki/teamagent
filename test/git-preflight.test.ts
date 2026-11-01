@@ -1,9 +1,10 @@
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { test } from "bun:test";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { mkdir, mkdtemp, readdir, realpath, rm } from "node:fs/promises";
+import { mkdir, readdir, realpath, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { isAbsolute, join, relative, resolve, sep } from "node:path";
+import { join, resolve } from "node:path";
 import { Effect } from "effect";
 import { MemoryError } from "@/memory";
 import { preflightGitEntries } from "../app/imports/git.ts";
@@ -176,14 +177,7 @@ test("real Git import rejects 257 eligible files before attempting to read their
     assert.match(outcome.error.message, /more than 256 eligible files/);
     assert.deepEqual(await readdir(temporaryDirectory), []);
   } finally {
-    const canonical = await realpath(directory);
-    const part = relative(parent, canonical);
-    if (
-      canonical === directory &&
-      !isAbsolute(part) &&
-      part.startsWith("teamagent-git-preflight-") &&
-      !part.includes(sep)
-    )
-      await rm(canonical, { recursive: true, force: true });
+    await assertTemporaryFixture(directory);
+    await rm(directory, { recursive: true, force: true });
   }
 });

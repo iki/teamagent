@@ -1,12 +1,13 @@
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { test, expect } from "bun:test";
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
-import { mkdir, mkdtemp, readFile, realpath } from "node:fs/promises";
+import { mkdir, readFile, realpath } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 import { Schema } from "effect";
 import { defaultImportPython } from "../app/imports/documents.ts";
-import { contained } from "../app/imports/limits.ts";
+
 import { processEnvironment } from "../app/imports/process.ts";
 import { removeExtractorStaging } from "../app/imports/extractors.ts";
 
@@ -60,7 +61,8 @@ test.skipIf(process.platform !== "win32")(
       if (timer !== undefined) clearTimeout(timer);
       child.kill("SIGKILL");
       await completion;
-      await removeExtractorStaging(directory, parent);
+      await assertTemporaryFixture(directory);
+      await removeExtractorStaging(directory, dirname(directory));
     }
   },
 );
@@ -128,8 +130,8 @@ test.skipIf(process.platform !== "win32")(
         }
       }
     } finally {
-      if (contained(parent, directory) && directory !== parent)
-        await removeExtractorStaging(directory, parent);
+      await assertTemporaryFixture(directory);
+      await removeExtractorStaging(directory, dirname(directory));
     }
   },
 );

@@ -1,9 +1,10 @@
-import { spawnSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { createRequire } from "node:module";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { verificationLocaleEnvironment } from "./verification-policy.ts";
+import { spawnOwned } from "./owned-process.ts";
+import { createTemporaryWorkspace, temporaryParent } from "./temporary-workspace.ts";
 
 export const root = fileURLToPath(new URL("../../", import.meta.url));
 
@@ -43,6 +44,7 @@ export const formatPaths = [
   "spec/workflow.md",
   "spec/dependencies.md",
   "spec/cache.md",
+  "spec/resources.md",
   ".workflow.json",
   "patches/trigon/registry.json",
   "spec/skills-audit.md",
@@ -53,7 +55,7 @@ export function isTool(value: string | undefined): value is Tool {
 }
 
 /** Run installed JavaScript tool entries through the current Bun executable. */
-export function runTool(tool: Tool, args: readonly string[]): number {
+export async function runTool(tool: Tool, args: readonly string[]): Promise<number> {
   if (!process.versions.bun) throw new Error("Repository tools require Bun");
 
   const env = verificationLocaleEnvironment(process.env);
@@ -66,15 +68,43 @@ export function runTool(tool: Tool, args: readonly string[]): number {
   }
 
   const paths = tool === "format" ? formatPaths : tool === "lint" ? sourcePaths : [];
-  const result = spawnSync(
-    process.execPath,
-    [
-      resolve(root, "node_modules", entries[tool]),
-      ...args,
-      ...paths.filter((path) => existsSync(resolve(root, path))),
-    ],
-    { cwd: root, stdio: "inherit", shell: false, windowsHide: true, env, timeout: 120_000 },
-  );
-  if (result.error) throw result.error;
-  return result.status ?? 1;
+  const parent = await temporaryParent(env, root);
+  const controller = new AbortController();
+  const interrupt = (): void => controller.abort();
+  process.once("SIGINT", interrupt);
+  process.once("SIGTERM", interrupt);
+  let workspace: Awaited<ReturnType<typeof createTemporaryWorkspace>> | undefined;
+  let safeToDispose = true;
+  try {
+    workspace = await createTemporaryWorkspace(parent?.root ?? root, `tool-${tool}`, parent);
+    const owned = await spawnOwned(
+      process.execPath,
+      [
+        resolve(root, "node_modules", entries[tool]),
+        ...args,
+        ...paths.filter((path) => existsSync(resolve(root, path))),
+      ],
+      {
+        cwd: root,
+        stdio: "inherit",
+        env: workspace.environment(env),
+        timeoutMs: 120_000,
+        signal: controller.signal,
+      },
+    );
+    safeToDispose = false;
+    const result = await owned.closed;
+    safeToDispose = result.termination === "closed";
+    if (!safeToDispose) throw new Error("Verification tool cleanup could not be confirmed");
+    if (result.error) throw result.error;
+    controller.signal.throwIfAborted();
+    return result.code ?? 1;
+  } finally {
+    try {
+      if (safeToDispose) await workspace?.dispose();
+    } finally {
+      process.removeListener("SIGINT", interrupt);
+      process.removeListener("SIGTERM", interrupt);
+    }
+  }
 }

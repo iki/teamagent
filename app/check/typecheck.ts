@@ -6,7 +6,7 @@ for (const project of [
   "tsconfig.tools.json",
   "app/web/tsconfig.json",
 ]) {
-  const status = runTool("typecheck", ["--noEmit", "--project", project]);
+  const status = await runTool("typecheck", ["--noEmit", "--project", project]);
   if (status !== 0) {
     process.exitCode = status;
     break;

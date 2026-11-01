@@ -1,7 +1,8 @@
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { afterAll, beforeAll, describe, expect, test } from "bun:test";
 import assert from "node:assert/strict";
 import { Database } from "bun:sqlite";
-import { copyFile, mkdir, mkdtemp, realpath, rm, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, realpath, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { Effect, Schema } from "effect";
@@ -19,7 +20,7 @@ import {
 import { defaultImportPython, parserVersion } from "../app/imports/documents.ts";
 import { extractorProfileIdentity } from "../app/imports/extractors.ts";
 import { createSourceCapture } from "../app/imports/index.ts";
-import { contained, digest } from "../app/imports/limits.ts";
+import { digest } from "../app/imports/limits.ts";
 import { runProcess } from "../app/imports/process.ts";
 import { openMemory } from "../app/memory/index.ts";
 
@@ -155,11 +156,8 @@ else await writeFile(join(output, "document.md"), "# External PDF evidence\\n");
 
 afterAll(async () => {
   for (const store of stores) await Effect.runPromise(store.close());
-  if (
-    contained(await realpath(tmpdir()), directory) &&
-    directory.includes("teamagent-provenance-tests-")
-  )
-    await rm(directory, { recursive: true, force: true });
+  await assertTemporaryFixture(directory);
+  await rm(directory, { recursive: true, force: true });
 });
 
 describe("source extraction provenance", () => {

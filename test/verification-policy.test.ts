@@ -1,7 +1,8 @@
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { mkdir, mkdtemp, readFile, realpath, rm, writeFile } from "node:fs/promises";
-import { join, relative, resolve, sep } from "node:path";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { test } from "node:test";
 import {
@@ -14,14 +15,11 @@ import { unitEnvironment } from "../app/check/test-groups.ts";
 import { verificationHost } from "../app/workflow/workflow.ts";
 
 async function fixture() {
-  await mkdir(".cache/conversations", { recursive: true });
-  const base = await realpath(".cache/conversations");
-  const root = await mkdtemp(join(base, "test-verification-policy-"));
+  const root = await mkdtemp("test-verification-policy-");
   return {
     root,
     async close() {
-      const child = relative(base, root);
-      assert.ok(child && child !== ".." && !child.startsWith(`..${sep}`));
+      await assertTemporaryFixture(root);
       await rm(root, { recursive: true, force: true });
     },
   };

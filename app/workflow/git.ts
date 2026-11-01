@@ -6,6 +6,7 @@ import { Schema } from "effect";
 import { Path, Policy, type Snapshot, type Task } from "./model.ts";
 import { atomicText, boundedText, containedPath, digest, workflowCapacity } from "./storage.ts";
 import { diagnostic, runProcess, type ProcessResult } from "./process.ts";
+import { currentBunEnvironment } from "../check/toolchain.ts";
 
 export type Git = (args: readonly string[], input?: string, index?: string) => Promise<string>;
 export class GitFailure extends Error {
@@ -17,7 +18,7 @@ export class GitFailure extends Error {
 }
 export function gitEnvironment(index?: string): Record<string, string | undefined> {
   const env = {
-    ...process.env,
+    ...currentBunEnvironment(process.env),
     GIT_TERMINAL_PROMPT: "0",
     GCM_INTERACTIVE: "never",
     GIT_OPTIONAL_LOCKS: "0",

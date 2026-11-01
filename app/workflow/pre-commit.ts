@@ -67,8 +67,7 @@ export async function verifyPreCommit(root: string, host: PreCommitHost = {}): P
     );
 }
 
-if (import.meta.main) {
-  const root = fileURLToPath(new URL("../../", import.meta.url));
+export async function runPreCommit(root: string): Promise<void> {
   try {
     const indexFile = process.env.GIT_INDEX_FILE;
     await verifyPreCommit(root, indexFile === undefined ? {} : { indexFile });
@@ -82,3 +81,5 @@ if (import.meta.main) {
     process.exitCode = 1;
   }
 }
+
+if (import.meta.main) await runPreCommit(fileURLToPath(new URL("../../", import.meta.url)));

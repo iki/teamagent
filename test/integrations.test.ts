@@ -1,8 +1,8 @@
+import { assertTemporaryFixtureSync, mkdtempSync } from "./temporary.ts";
 import { afterEach, expect, test } from "bun:test";
 import { createHash } from "node:crypto";
 import {
   mkdirSync,
-  mkdtempSync,
   readFileSync,
   readdirSync,
   realpathSync,
@@ -23,8 +23,7 @@ import {
 const temporary: string[] = [];
 afterEach(() => {
   for (const path of temporary.splice(0)) {
-    if (!realpathSync(path).startsWith(realpathSync(tmpdir())))
-      throw new Error("Test cleanup escaped temporary root.");
+    assertTemporaryFixtureSync(path);
     rmSync(path, { recursive: true, force: true });
   }
 });

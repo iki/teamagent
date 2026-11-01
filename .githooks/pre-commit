@@ -1,4 +1,5 @@
 #!/bin/sh
 set -eu
-runtime="$(git config --local --get teamagent.bunPath || printf bun)"
-exec "$runtime" "$(git rev-parse --show-toplevel)/app/workflow/pre-commit.ts"
+hook=pre-commit
+root="$(git rev-parse --show-toplevel)"
+. "$root/app/hooks/git-launch.sh"

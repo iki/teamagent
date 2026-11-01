@@ -1,20 +1,19 @@
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
-import { join, relative, resolve, sep } from "node:path";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { join } from "node:path";
 import { runCachedTask } from "../app/check/input-cache.ts";
 import { verifyStagedVerificationReceipts } from "../app/check/verification-cache.ts";
 import { gitEnvironment, type Git } from "../app/workflow/git.ts";
 import { verifyPreCommit } from "../app/workflow/pre-commit.ts";
 import { runProcess } from "../app/workflow/process.ts";
 
-const base = resolve(".cache/conversations");
 const receipt = ".verification/verification-fixture.json";
 const definition = { id: "fixture", kind: "verification", inputs: ["source.ts"] } as const;
 
 async function fixture() {
-  await mkdir(base, { recursive: true });
-  const root = await mkdtemp(join(base, "test-pre-commit-"));
+  const root = await mkdtemp("test-pre-commit-");
   const template = join(root, ".cache/template");
   await mkdir(template, { recursive: true });
   const nullFile = process.platform === "win32" ? "NUL" : "/dev/null";
@@ -50,8 +49,7 @@ async function fixture() {
     root,
     git,
     async close() {
-      const child = relative(base, root);
-      assert.ok(child && child !== ".." && !child.startsWith(`..${sep}`));
+      await assertTemporaryFixture(root);
       await rm(root, { recursive: true, force: true });
     },
   };

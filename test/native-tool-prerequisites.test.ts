@@ -1,7 +1,8 @@
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { expect, test } from "bun:test";
 import { rejects } from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { mkdir, mkdtemp, realpath, rename, rm, symlink, writeFile } from "node:fs/promises";
+import { mkdir, realpath, rename, rm, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { delimiter, dirname, join, resolve } from "node:path";
 import { encodedDigest } from "../app/check/cache-io.ts";
@@ -16,10 +17,10 @@ import {
 async function fixture(run: (root: string) => Promise<void>): Promise<void> {
   const parent = resolve(tmpdir());
   const root = await mkdtemp(join(parent, "teamagent-git-layout-"));
-  if (dirname(root) !== parent) throw new Error("Fixture escaped its temporary parent");
   try {
     await run(root);
   } finally {
+    await assertTemporaryFixture(root);
     await rm(root, { recursive: true, force: true });
   }
 }

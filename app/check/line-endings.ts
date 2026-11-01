@@ -54,6 +54,8 @@ export const lineEndingOutputRoots: readonly string[] = [
   ".cache/hook-diagnostics",
   ".cache/dependencies",
   ".cache/verification",
+  ".cache/temporary",
+  ".tmp",
   ".cache/text",
   ".cache/line-endings/migrations",
   ".cache/benchmark-documents",
@@ -378,7 +380,7 @@ function authoredText(path: string): boolean {
   if (path.startsWith(".cache/review-2026-10-27/") && /\/[a-f0-9]{64}\.txt$/u.test(path))
     return false;
   return (
-    /\.(?:[cm]?[jt]sx?|json[cl5]?|ya?ml|mdx?|txt|py|ps1|psm1|psd1|sh|bat|cmd|toml|rs|css|html?|xml|svg|csv|tsv|sql|ini|conf|config|lock|log|out|err|patch|diff|srt|vtt)$/iu.test(
+    /\.(?:[cm]?[jt]sx?|json[cl5]?|ya?ml|mdx?|txt|py|ps1|psm1|psd1|sh|bat|cmd|toml|rs|cs|css|html?|xml|svg|csv|tsv|sql|ini|conf|config|lock|log|out|err|patch|diff|srt|vtt)$/iu.test(
       path,
     ) ||
     /(?:^|\/)(?:Dockerfile|Makefile|\.editorconfig|\.gitattributes|\.gitignore|\.env(?:\.[^/]+)?)$/u.test(

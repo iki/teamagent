@@ -1,8 +1,8 @@
 import { createReadStream } from "node:fs";
 import { stat } from "node:fs/promises";
-import { createInterface } from "node:readline";
 import { Schema } from "effect";
 import { slug, type RecordInput } from "./archive.ts";
+import { maximumInputBytes, readBoundedLines } from "./input.ts";
 
 export const StopInput = Schema.Struct({
   hook_event_name: Schema.Literals(["Stop", "SubagentStop"]),
@@ -38,7 +38,9 @@ export async function fromTranscript(value: StopInput): Promise<RecordInput> {
   const subagent = input.hook_event_name === "SubagentStop";
   const file = subagent ? input.agent_transcript_path : input.transcript_path;
   if (!file) throw new Error("No transcript supplied; use the explicit RecordInput fallback");
-  if ((await stat(file)).size > 128 * 1024 * 1024)
+  const metadata = await stat(file);
+  if (!metadata.isFile()) throw new Error("Transcript must be a regular file");
+  if (metadata.size > 128 * 1024 * 1024)
     throw new Error("Transcript exceeds 128 MiB; use an explicit public record");
   let active = false;
   let found = false;
@@ -50,13 +52,26 @@ export async function fromTranscript(value: StopInput): Promise<RecordInput> {
   let response = "";
   const prompts: string[] = [];
   const log: string[] = [];
-  const stream = createReadStream(file, { encoding: "utf8" });
-  const lines = createInterface({ input: stream, crlfDelay: Infinity });
+  const explicitResponse = input.last_assistant_message?.trim()
+    ? input.last_assistant_message
+    : undefined;
+  let publicBytes = Buffer.byteLength(explicitResponse ?? "");
+  const retain = (text: string, separatorBytes = 0): void => {
+    const bytes = Buffer.byteLength(text) + separatorBytes;
+    if (bytes > maximumInputBytes - publicBytes)
+      throw new Error("Selected public transcript exceeds 8 MiB; use an explicit public record");
+    publicBytes += bytes;
+  };
+  if (publicBytes > maximumInputBytes)
+    throw new Error("Selected public transcript exceeds 8 MiB; use an explicit public record");
+  const stream = createReadStream(file, { highWaterMark: 64 * 1024 });
+  const lines = readBoundedLines(stream, {
+    bytes: 128 * 1024 * 1024,
+    lineBytes: maximumInputBytes,
+  });
   try {
     for await (const line of lines) {
       if (!line.trim()) continue;
-      if (Buffer.byteLength(line) > 8 * 1024 * 1024)
-        throw new Error("Transcript line exceeds 8 MiB");
       const envelope = Schema.decodeUnknownSync(Schema.fromJsonString(Envelope))(line);
       if (envelope.type === "session_meta") {
         const session = Schema.decodeUnknownSync(Session)(envelope.payload);
@@ -69,6 +84,7 @@ export async function fromTranscript(value: StopInput): Promise<RecordInput> {
           prompts.length = 0;
           log.length = 0;
           response = "";
+          publicBytes = Buffer.byteLength(explicitResponse ?? "");
           model = "unknown";
           reasoning = "unknown";
         }
@@ -91,36 +107,49 @@ export async function fromTranscript(value: StopInput): Promise<RecordInput> {
           )
         )
           continue;
-        const text = message.content
-          .map((part) => {
-            const decoded = Schema.decodeUnknownSync(Text)(part);
-            return ["input_text", "output_text", "text"].includes(decoded.type)
-              ? (decoded.text ?? "")
-              : "";
-          })
-          .filter(Boolean)
-          .join("\n\n");
+        const parts: string[] = [];
+        let messageBytes = 0;
+        for (const part of message.content) {
+          const decoded = Schema.decodeUnknownSync(Text)(part);
+          if (!["input_text", "output_text", "text"].includes(decoded.type) || !decoded.text)
+            continue;
+          messageBytes += Buffer.byteLength(decoded.text) + (parts.length ? 2 : 0);
+          if (messageBytes > maximumInputBytes)
+            throw new Error(
+              "Selected public transcript exceeds 8 MiB; use an explicit public record",
+            );
+          parts.push(decoded.text);
+        }
+        const text = parts.join("\n\n");
         if (!text.trim()) continue;
         if (message.role === "user") {
           if (
             !/^(?:\s*<environment_context>|\s*<external_codex_apps_open_page>|\s*# AGENTS\.md)/.test(
               text,
             )
-          )
+          ) {
+            retain(text, prompts.length ? 7 : 0);
             prompts.push(text);
-        } else if (message.phase === "commentary") log.push(text);
-        else response = text;
+          }
+        } else if (message.phase === "commentary") {
+          retain(text);
+          log.push(text);
+        } else if (explicitResponse === undefined) {
+          publicBytes -= Buffer.byteLength(response);
+          retain(text);
+          response = text;
+        }
       }
     }
   } finally {
-    lines.close();
     stream.destroy();
   }
-  response = input.last_assistant_message?.trim() ? input.last_assistant_message : response;
+  response = explicitResponse ?? response;
   if (subagent && found && !prompts.length) {
-    prompts.push(
-      "[Delegated prompt unavailable in native subagent transcript; consult the parent conversation.]",
-    );
+    const missingPrompt =
+      "[Delegated prompt unavailable in native subagent transcript; consult the parent conversation.]";
+    retain(missingPrompt);
+    prompts.push(missingPrompt);
   }
   if (!found || !prompts.length || !response.trim())
     throw new Error("Transcript lacks matching turn, prompt or final response; nothing archived");

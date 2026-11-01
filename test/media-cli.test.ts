@@ -1,5 +1,6 @@
+import { mkdtemp } from "./temporary.ts";
 import { strict as assert } from "node:assert";
-import { mkdtemp, mkdir, writeFile, rm } from "node:fs/promises";
+import { mkdir, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";

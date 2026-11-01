@@ -116,6 +116,15 @@ Workflow subprocesses have a 16 MiB combined output bound, 1 MiB line bound and
 termination. Review proofs expire after 30 minutes and bind the exact tree,
 source/prerequisite key and runtime; live LF/export checks still run before use.
 
+The [resource contract](resources.md) binds command scratch to a validated owner
+and holds it until descendant shutdown is confirmed. Native Windows Job Objects
+and POSIX process groups replace direct-child-only completion. Failed cleanup
+retains scratch and cannot produce a successful reusable result. Explicit
+recovery is limited to newly marked temporary workspaces; it never reclaims
+workflow locks or prunes receipts or conversation history. Git subprocesses
+inherit the current pinned physical Bun on PATH; Git hooks require the locally
+configured pinned executable and propagate the adapter's actual exit status.
+
 Keep `.env.local`, signing configuration, runtime paths and account credentials local. Never copy source-repository configuration, task state, successful verification receipts or historical authorizations. A cache receipt reports input equivalence and successful local checks; it does not grant publication authority.
 
 ## Archives and hooks

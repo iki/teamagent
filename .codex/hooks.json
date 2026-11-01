@@ -7,7 +7,7 @@
           {
             "type": "command",
             "command": "runtime=$(git config --local --get teamagent.bunPath || printf bun); exec \"$runtime\" \"$(git rev-parse --show-toplevel)/app/hooks/stop.ts\"",
-            "commandWindows": "$runtime = git config --local --get teamagent.bunPath; if (-not $runtime) { $runtime = 'bun' }; & $runtime (Join-Path (git rev-parse --show-toplevel) 'app/hooks/stop.ts')",
+            "commandWindows": "$root = git rev-parse --show-toplevel; if ($LASTEXITCODE -ne 0) { exit 1 }; $runtime = git config --local --get teamagent.bunPath; if ($LASTEXITCODE -ne 0 -and $LASTEXITCODE -ne 1) { exit 1 }; & (Join-Path $root 'app/toolchain.ps1') -Tool bun -ConfiguredBunPath $runtime (Join-Path $root 'app/hooks/stop.ts'); exit $LASTEXITCODE",
             "timeout": 420,
             "statusMessage": "Saving conversation and checking codebase"
           }
@@ -20,7 +20,7 @@
           {
             "type": "command",
             "command": "runtime=$(git config --local --get teamagent.bunPath || printf bun); exec \"$runtime\" \"$(git rev-parse --show-toplevel)/app/hooks/stop.ts\"",
-            "commandWindows": "$runtime = git config --local --get teamagent.bunPath; if (-not $runtime) { $runtime = 'bun' }; & $runtime (Join-Path (git rev-parse --show-toplevel) 'app/hooks/stop.ts')",
+            "commandWindows": "$root = git rev-parse --show-toplevel; if ($LASTEXITCODE -ne 0) { exit 1 }; $runtime = git config --local --get teamagent.bunPath; if ($LASTEXITCODE -ne 0 -and $LASTEXITCODE -ne 1) { exit 1 }; & (Join-Path $root 'app/toolchain.ps1') -Tool bun -ConfiguredBunPath $runtime (Join-Path $root 'app/hooks/stop.ts'); exit $LASTEXITCODE",
             "timeout": 90,
             "statusMessage": "Saving subagent conversation"
           }

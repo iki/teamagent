@@ -24,3 +24,8 @@
 - Maintain one public record per changed logical task through `.codex/hooks.json` and `spec/conversation-logging.md`, including user prompts and visible progress, never private reasoning or raw tool output. Use descriptive filenames without global numbering, stable task identities and archive-relative links. Freeze the exact implementation response before final verification/publication; later outcomes belong in receipts. Until product hooks are trusted/observed, invoke the JSON writer explicitly. Preserve previous records and the authorized filename migration map. Apply explicit redactions when requested and label redacted content honestly.
 
 Verification and hook operation: `spec/verification.md`.
+
+Verification resource ownership: `spec/resources.md`. Use streaming fingerprints,
+live memory admission and owned processes; hold marked scratch until descendant
+shutdown is confirmed. Tests allocate fixtures through `test/temporary.ts`.
+Explicit temporary recovery never authorizes evidence pruning or lock reclamation.

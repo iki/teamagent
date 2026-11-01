@@ -8,8 +8,10 @@ import {
   safeRendering,
 } from "./modularity.ts";
 import { noExecutableInput, noUnsafeCasts, runtimeLaunchers } from "./reliability.ts";
+import { temporaryFixtures } from "./temporary-fixtures.ts";
 
 export { boundaries, noExecutableInput, noUnsafeCasts, runtimeLaunchers };
+export { temporaryFixtures };
 export { cli } from "./cli.ts";
 export { adapterAuthority, clientState, moduleContract, moduleDependencies, safeRendering };
 export { inspectModuleLayout, moduleDefinitions, validateModuleGraph } from "./modules.ts";
@@ -23,6 +25,7 @@ export default Plugin.define({
     "no-unsafe-casts": noUnsafeCasts,
     "no-executable-input": noExecutableInput,
     "runtime-launchers": runtimeLaunchers,
+    "temporary-fixtures": temporaryFixtures,
     "module-contract": moduleContract,
     "module-dependencies": moduleDependencies,
     "safe-rendering": safeRendering,

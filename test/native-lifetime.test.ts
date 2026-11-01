@@ -1,8 +1,9 @@
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { mkdir, mkdtemp, writeFile, rm } from "node:fs/promises";
-import { delimiter, dirname, resolve, relative, sep } from "node:path";
+import { writeFile, rm } from "node:fs/promises";
+import { delimiter, dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const root = dirname(fileURLToPath(new URL("../package.json", import.meta.url)));
@@ -40,9 +41,7 @@ await test("supplied Tauri adapter completes 160 independent native callbacks an
 });
 
 await test("supplied native lifetime waits for unreferenced callback success/rejection and releases its timer", async () => {
-  const base = resolve(root, ".cache/dependencies/tests");
-  await mkdir(base, { recursive: true });
-  const directory = await mkdtemp(resolve(base, "native-"));
+  const directory = await mkdtemp("native-");
   const entry = resolve(directory, "fixture.ts");
   const imported = pathToFileURL(resolve(root, "app/dependencies/trigon/native-lifetime.ts")).href;
   await writeFile(
@@ -64,8 +63,7 @@ await test("supplied native lifetime waits for unreferenced callback success/rej
       );
     }
   } finally {
-    const contained = relative(base, directory);
-    assert.ok(contained !== ".." && !contained.startsWith(`..${sep}`));
+    await assertTemporaryFixture(directory);
     await rm(directory, { recursive: true, force: true });
   }
 });

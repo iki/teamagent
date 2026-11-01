@@ -11,7 +11,9 @@ import {
 } from "./input-cache.ts";
 import { installedPackageIdentity } from "./installed-inputs.ts";
 import { hashExecutable, nativeToolIdentity } from "./tool-prerequisites.ts";
-import { formatPaths, sourcePaths } from "./tools.ts";
+import { formatPaths, sourcePaths, root as resourceRoot } from "./tools.ts";
+import { temporaryParent } from "./temporary-workspace.ts";
+import { ownedProcessIdentity } from "./owned-process.ts";
 import {
   verificationEnvironmentIdentity,
   verificationLocaleEnvironment,
@@ -129,8 +131,11 @@ export async function verificationPrerequisites(
   includeTests = true,
 ): Promise<readonly string[]> {
   if (!process.versions.bun) throw new Error("Verification requires Bun");
+  // Even a cache-only gate must reject incomplete, stale or foreign scratch routing.
+  await temporaryParent(process.env, resourceRoot);
   assertTrackedVerificationInputs(root);
   const values = [
+    await ownedProcessIdentity(),
     await installedPackageIdentity(root),
     await hashExecutable(process.execPath),
     verificationEnvironmentIdentity(process.env),

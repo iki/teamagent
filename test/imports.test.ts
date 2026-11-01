@@ -1,6 +1,7 @@
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { afterAll, beforeAll, describe, expect, test } from "bun:test";
 import assert from "node:assert/strict";
-import { mkdir, mkdtemp, readFile, readdir, realpath, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, realpath, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { Effect } from "effect";
@@ -67,11 +68,8 @@ beforeAll(async () => {
   );
 });
 afterAll(async () => {
-  if (
-    directory.startsWith(await realpath(tmpdir())) &&
-    directory.includes("teamagent-import-tests-")
-  )
-    await rm(directory, { recursive: true, force: true });
+  await assertTemporaryFixture(directory);
+  await rm(directory, { recursive: true, force: true });
 });
 
 describe("source acquisition and conversion", () => {

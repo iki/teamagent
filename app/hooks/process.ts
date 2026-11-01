@@ -20,7 +20,8 @@ export const HookReceipt = Schema.Struct({
   elapsedMs: Schema.NullOr(Schema.Number),
   timeoutMs: Schema.Int,
   maximumOutputBytes: Schema.Int,
-  cleanupScope: Schema.Literals(["windows-child-tree", "process-group"]),
+  // Retain the former Windows scope for immutable historical receipt decoding.
+  cleanupScope: Schema.Literals(["windows-job-object", "windows-child-tree", "process-group"]),
   result: Schema.NullOr(
     Schema.Struct({
       status: Schema.NullOr(Schema.Int),
@@ -88,7 +89,7 @@ export async function runHookCommand(
     elapsedMs: null,
     timeoutMs,
     maximumOutputBytes,
-    cleanupScope: process.platform === "win32" ? "windows-child-tree" : "process-group",
+    cleanupScope: process.platform === "win32" ? "windows-job-object" : "process-group",
     result: null,
     log: null,
   };

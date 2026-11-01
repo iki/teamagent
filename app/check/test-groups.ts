@@ -1,9 +1,10 @@
-import { spawn, spawnSync } from "node:child_process";
-import { mkdir, mkdtemp, readdir, rm } from "node:fs/promises";
+import { spawnOwned } from "./owned-process.ts";
+import { createTemporaryWorkspace, temporaryParent } from "./temporary-workspace.ts";
+import { mkdir, readdir } from "node:fs/promises";
 import { availableParallelism, freemem } from "node:os";
 import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { Schema } from "effect";
-import { cacheDirectory, safePath } from "./cache-io.ts";
 import { verificationLocaleEnvironment, verificationWriteVariable } from "./verification-policy.ts";
 
 export function unitEnvironment(base: NodeJS.ProcessEnv, pycache: string): NodeJS.ProcessEnv {
@@ -48,6 +49,12 @@ export function testConcurrency(resources: {
   readonly memoryBytes: number;
 }): number {
   if (
+    Number.isFinite(resources.memoryBytes) &&
+    resources.memoryBytes >= 0 &&
+    resources.memoryBytes < 1024 ** 3
+  )
+    return 0;
+  if (
     !Number.isInteger(resources.cpus) ||
     resources.cpus < 2 ||
     !Number.isFinite(resources.memoryBytes) ||
@@ -60,130 +67,178 @@ export async function scheduleTestBatches(
   files: readonly string[],
   concurrency: number,
   run: (batch: TestBatch) => Promise<void>,
+  resources?: () => { readonly cpus: number; readonly memoryBytes: number },
 ): Promise<void> {
   if (!Number.isInteger(concurrency) || concurrency < 1 || concurrency > 3)
     throw new Error("Test concurrency must be between one and three");
-  if (concurrency === 1) {
-    await run({ name: "all", files });
-    return;
-  }
-  const batches = [...testBatches(files, concurrency === 3)];
+  const batches =
+    concurrency === 1 ? [{ name: "all", files }] : [...testBatches(files, concurrency === 3)];
   const failures: unknown[] = [];
-  async function worker(): Promise<void> {
-    for (let batch = batches.shift(); batch; batch = batches.shift()) {
+  const active = new Set<Promise<void>>();
+  let incompleteFiles = 0;
+  while (batches.length || active.size) {
+    let admitted = concurrency;
+    if (resources) {
       try {
-        await run(batch);
-      } catch (error) {
-        failures.push(error);
+        admitted = Math.min(concurrency, testConcurrency(resources()));
+      } catch {
+        admitted = 1;
       }
     }
+    if (batches.length && active.size < admitted) {
+      const batch = batches.shift();
+      if (!batch) throw new Error("Test batch inventory changed unexpectedly");
+      const work = (async () => {
+        try {
+          await run(batch);
+        } catch (error) {
+          failures.push(error);
+        }
+      })();
+      active.add(work);
+      void work.then(() => {
+        active.delete(work);
+      });
+      continue;
+    }
+    if (active.size) {
+      await Promise.race(active);
+      continue;
+    }
+    incompleteFiles = batches.reduce((count, batch) => count + batch.files.length, 0);
+    break;
   }
-  await Promise.all(Array.from({ length: Math.min(concurrency, batches.length) }, worker));
+  if (incompleteFiles)
+    throw new Error(
+      `${incompleteFiles} test file(s) not run: insufficient available memory (at least 1 GiB required); ${failures.length} batch(es) failed; running children were joined and verification remains incomplete`,
+    );
   if (failures.length)
     throw new Error(`${failures.length} test batch(es) failed; every scheduled child was joined`);
 }
-function boundedTests(
+
+/** Preserve native line boundaries when CRLF or lone CR spans output chunks. */
+export function normalizeOutputChunk(
+  text: string,
+  pendingCR: boolean,
+  final = false,
+): { text: string; pendingCR: boolean } {
+  const combined = (pendingCR ? "\r" : "") + text;
+  const trailingCR = !final && combined.endsWith("\r");
+  return {
+    text: (trailingCR ? combined.slice(0, -1) : combined).replace(/\r\n?/gu, "\n"),
+    pendingCR: trailingCR,
+  };
+}
+
+async function boundedTests(
   root: string,
   files: readonly string[],
   signal: AbortSignal,
   env: NodeJS.ProcessEnv,
+  unconfirmed: () => void,
 ): Promise<void> {
   signal.throwIfAborted();
-  return new Promise((done, fail) => {
-    const child = spawn(
-      process.execPath,
-      ["test", "--timeout", "120000", ...files.map((file) => `./${file}`)],
-      {
-        cwd: root,
-        env,
-        shell: false,
-        windowsHide: true,
-        detached: true,
-        stdio: ["ignore", "pipe", "pipe"],
-      },
-    );
-    let bytes = 0;
-    let problem: Error | undefined;
-    function stop(): void {
-      if (child.exitCode === null && child.signalCode === null && child.pid) {
-        if (process.platform === "win32")
-          spawnSync(
-            resolve(process.env.SystemRoot ?? "C:\\Windows", "System32/taskkill.exe"),
-            ["/PID", String(child.pid), "/T", "/F"],
-            {
-              shell: false,
-              windowsHide: true,
-              stdio: "ignore",
-              timeout: 10_000,
-            },
-          );
-        else {
-          try {
-            process.kill(-child.pid, "SIGKILL");
-          } catch {
-            child.kill("SIGKILL");
-          }
+  const owned = await spawnOwned(
+    process.execPath,
+    ["test", "--timeout", "120000", ...files.map((file) => `./${file}`)],
+    { cwd: root, env, stdio: "pipe", signal },
+  );
+  const { child } = owned;
+  const stdoutStream = child.stdout,
+    stderrStream = child.stderr;
+  if (!stdoutStream || !stderrStream || !child.stdin) {
+    await owned.stop("Missing unit streams");
+    if ((await owned.closed).termination !== "closed") unconfirmed();
+    throw new Error("Unit streams are unavailable");
+  }
+  let bytes = 0;
+  let problem: Error | undefined;
+  let stopping: Promise<void> | undefined;
+  const stop = (): void => {
+    stopping ??= owned.stop("Unit verification stopped").catch(() => {
+      unconfirmed();
+      problem ??= new Error("Unit descendant cleanup could not be confirmed");
+    });
+  };
+  const abort = (): void => {
+    problem ??= new Error("Complete unit phase exceeded its 240-second deadline or was cancelled");
+    stop();
+  };
+  function outputWriter() {
+    const decoder = new TextDecoder("utf-8", { fatal: true });
+    let line = "";
+    let lineBytes = 0;
+    let pendingCR = false;
+    const publish = (text: string, final = false): void => {
+      const normalized = normalizeOutputChunk(text, pendingCR, final);
+      pendingCR = normalized.pendingCR;
+      const parts = normalized.text.split("\n");
+      for (const [index, part] of parts.entries()) {
+        const additional = Buffer.byteLength(part);
+        if (additional > 1024 * 1024 - lineBytes)
+          throw new Error("Unit child output exceeded its line bound");
+        line += part;
+        lineBytes += additional;
+        if (index !== parts.length - 1) {
+          process.stderr.write(line + "\n");
+          line = "";
+          lineBytes = 0;
         }
-        child.kill("SIGKILL");
       }
-      // A dead parent with inherited open pipes cannot establish descendant cleanup.
-      // Bound stream ownership and fail; never turn that uncertainty into success.
-      child.stdout.destroy();
-      child.stderr.destroy();
-    }
-    const abort = (): void => {
-      problem ??= new Error(
-        "Complete unit phase exceeded its 240-second deadline or was cancelled",
-      );
-      stop();
+      if (final && line) {
+        process.stderr.write(line + "\n");
+        line = "";
+        lineBytes = 0;
+      }
     };
-    signal.addEventListener("abort", abort, { once: true });
-    if (signal.aborted) abort();
-    function outputWriter(): { write: (chunk: unknown) => void; finish: () => void } {
-      const decoder = new TextDecoder("utf-8", { fatal: true });
-      let pending = "";
-      const publish = (text: string, final = false): void => {
-        const combined = pending + text;
-        pending = !final && combined.endsWith("\r") ? "\r" : "";
-        process.stderr.write(
-          (pending ? combined.slice(0, -1) : combined)
-            .replaceAll("\r\n", "\n")
-            .replaceAll("\r", "\n"),
-        );
-      };
-      const write = (chunk: unknown): void => {
-        try {
-          const value = Schema.decodeUnknownSync(Schema.instanceOf(Uint8Array))(chunk);
-          bytes += value.byteLength;
-          if (bytes > 16 * 1024 ** 2) throw new Error("Unit child output exceeded 16 MiB");
-          publish(decoder.decode(value, { stream: true }));
-        } catch {
-          problem = new Error("Unit child output exceeded its validated boundary");
-          stop();
-        }
-      };
-      return { write, finish: () => publish(decoder.decode(), true) };
-    }
-    const stdout = outputWriter(),
-      stderr = outputWriter();
-    child.stdout.on("data", stdout.write);
-    child.stderr.on("data", stderr.write);
-    child.on("error", (error) => {
-      problem = error;
-    });
-    child.on("close", (status) => {
-      signal.removeEventListener("abort", abort);
+    const write = (chunk: unknown): void => {
+      if (problem) return;
       try {
-        stdout.finish();
-        stderr.finish();
+        const value = Schema.decodeUnknownSync(Schema.instanceOf(Uint8Array))(chunk);
+        bytes += value.byteLength;
+        if (bytes > 16 * 1024 ** 2) throw new Error("Unit child output exceeded 16 MiB");
+        publish(decoder.decode(value, { stream: true }));
       } catch {
-        problem = new Error("Unit output ended with malformed UTF-8");
+        problem = new Error("Unit child output exceeded its validated boundary");
+        stop();
       }
-      if (problem || status !== 0)
-        fail(problem ?? new Error(`Unit child exited ${status ?? "without status"}`));
-      else done();
-    });
+    };
+    return { write, finish: () => publish(decoder.decode(), true) };
+  }
+  const stdout = outputWriter(),
+    stderr = outputWriter();
+  stdoutStream.on("data", stdout.write);
+  stderrStream.on("data", stderr.write);
+  child.stdin.on("error", () => {
+    problem ??= new Error("Unit input stream failed");
+    stop();
   });
+  child.on("error", (error) => {
+    problem = error;
+  });
+  signal.addEventListener("abort", abort, { once: true });
+  try {
+    if (signal.aborted) abort();
+    child.stdin.end();
+    const result = await owned.closed;
+    await stopping;
+    if (result.termination !== "closed") {
+      unconfirmed();
+      throw new Error("Unit descendant cleanup could not be confirmed");
+    }
+    try {
+      stdout.finish();
+      stderr.finish();
+    } catch {
+      problem ??= new Error("Unit output ended with malformed UTF-8");
+    }
+    if (problem || result.error || result.code !== 0)
+      throw (
+        problem ?? result.error ?? new Error(`Unit child exited ${result.code ?? "without status"}`)
+      );
+  } finally {
+    signal.removeEventListener("abort", abort);
+  }
 }
 export async function runUnitTests(root: string): Promise<void> {
   const files = (await readdir(resolve(root, "test")))
@@ -192,9 +247,13 @@ export async function runUnitTests(root: string): Promise<void> {
     .map((file) => `test/${file}`);
   if (!files.length || files.length > 1000)
     throw new Error("Test discovery returned an empty or oversized inventory");
+  const resources = () => ({
+    cpus: availableParallelism(),
+    memoryBytes: Math.min(freemem(), process.availableMemory()),
+  });
   let concurrency = 1;
   try {
-    concurrency = testConcurrency({ cpus: availableParallelism(), memoryBytes: freemem() });
+    concurrency = testConcurrency(resources());
   } catch {
     /* Unknown resource availability stays sequential. */
   }
@@ -202,22 +261,31 @@ export async function runUnitTests(root: string): Promise<void> {
     `Unit inventory: ${files.length} files, ${concurrency} process(es); unchanged 240-second phase deadline\n`,
   );
   const controller = new AbortController();
-  const cache = await safePath(root, cacheDirectory, true);
-  await mkdir(cache, { recursive: true });
-  const pycache = await mkdtemp(resolve(cache, "python-unit-"));
-  const env = unitEnvironment(process.env, pycache);
+  const resourceRoot = fileURLToPath(new URL("../../", import.meta.url));
+  const parent = await temporaryParent(process.env, resourceRoot);
+  const workspace = await createTemporaryWorkspace(resourceRoot, "unit", parent);
+  let safeToDispose = true;
   const interrupt = (): void => controller.abort();
   process.once("SIGINT", interrupt);
   process.once("SIGTERM", interrupt);
   const timer = setTimeout(() => controller.abort(), 240_000);
   try {
-    await scheduleTestBatches(files, concurrency, (batch) =>
-      boundedTests(root, batch.files, controller.signal, env),
+    const pycache = resolve(workspace.path, "python");
+    await mkdir(pycache);
+    const env = unitEnvironment(workspace.environment(process.env), pycache);
+    await scheduleTestBatches(
+      files,
+      Math.max(1, concurrency),
+      (batch) =>
+        boundedTests(root, batch.files, controller.signal, env, () => {
+          safeToDispose = false;
+        }),
+      resources,
     );
   } finally {
     clearTimeout(timer);
     process.removeListener("SIGINT", interrupt);
     process.removeListener("SIGTERM", interrupt);
-    await rm(pycache, { recursive: true, force: true });
+    if (safeToDispose) await workspace.dispose();
   }
 }

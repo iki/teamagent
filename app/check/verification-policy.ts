@@ -1,6 +1,12 @@
 import { encodedDigest } from "./cache-io.ts";
 
 export const verificationWriteVariable = "TEAMAGENT_VERIFICATION_CACHE_WRITE";
+// Owned scratch routing changes per child; callers validate the complete lease before use.
+const temporaryRoutingVariables = new Set([
+  "TEAMAGENT_TEMPORARY_ROOT",
+  "TEAMAGENT_TEMPORARY_PARENT",
+  "TEAMAGENT_TEMPORARY_PARENT_ID",
+]);
 export type VerificationWritePolicy = "tracked" | "local";
 
 /** Storage routing is not verification evidence or permission to publish. */
@@ -30,6 +36,7 @@ export function verificationEnvironmentIdentity(
       .filter(
         ([name]) =>
           name !== verificationWriteVariable &&
+          !temporaryRoutingVariables.has(name) &&
           /^(?:CI|NODE_ENV|NODE_OPTIONS|NODE_PATH|TZ|LANG|LC_ALL|TEAMAGENT_[A-Z0-9_]+|PLAYWRIGHT_[A-Z0-9_]+|BUN_[A-Z0-9_]+|VITE_[A-Z0-9_]+|PYTHON[A-Z0-9_]+)$/u.test(
             name,
           ),

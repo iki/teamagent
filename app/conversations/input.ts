@@ -23,3 +23,50 @@ export async function readInput(
   parts.push(decoder.decode());
   return parts.join("");
 }
+
+/** Decode one bounded line at a time; enforce byte limits before retaining decoded text. */
+export async function* readBoundedLines(
+  source: AsyncIterable<unknown>,
+  limits: { readonly bytes: number; readonly lineBytes: number },
+): AsyncGenerator<string> {
+  if (![limits.bytes, limits.lineBytes].every((value) => Number.isSafeInteger(value) && value > 0))
+    throw new Error("Invalid transcript limits");
+  const decoder = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
+  let bytes = 0;
+  let lineBytes = 0;
+  let pending = "";
+  let skipLineFeed = false;
+  const append = (part: Uint8Array) => {
+    if (part.byteLength > limits.lineBytes - lineBytes)
+      throw new Error("Transcript line byte limit exceeded");
+    lineBytes += part.byteLength;
+    pending += decoder.decode(part, { stream: true });
+  };
+  for await (const value of source) {
+    const chunk = decodeChunk(value);
+    if (chunk.byteLength > limits.bytes - bytes) throw new Error("Transcript byte limit exceeded");
+    bytes += chunk.byteLength;
+    let start = 0;
+    for (let index = 0; index < chunk.byteLength; index++) {
+      const byte = chunk[index];
+      if (skipLineFeed) {
+        skipLineFeed = false;
+        if (byte === 10) {
+          start = index + 1;
+          continue;
+        }
+      }
+      if (byte !== 10 && byte !== 13) continue;
+      append(chunk.subarray(start, index));
+      pending += decoder.decode();
+      yield pending;
+      pending = "";
+      lineBytes = 0;
+      start = index + 1;
+      skipLineFeed = byte === 13;
+    }
+    append(chunk.subarray(start));
+  }
+  pending += decoder.decode();
+  if (pending) yield pending;
+}

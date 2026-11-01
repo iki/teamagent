@@ -47,7 +47,7 @@ stores cannot bypass a force-fresh failure.
 
 Tool launches have a 120-second cap; the complete unit phase, including every admitted child, has a 240-second cap. The root Stop hook separately caps its assembled verification subprocess at 300 seconds. Its outer command budget is 420 seconds, allowing the unchanged 60-second archive operation and cleanup overhead. SubagentStop retains its 90-second outer budget. A timeout is a failed gate, not a skipped check; longer specialized integration/benchmark jobs need explicit separately bounded tasks.
 
-The resource-aware unit scheduler and audited process groups are specified in
+The resource-aware unit scheduler and audited batches are specified in
 the [cache contract](cache.md#measurements-and-scheduling). Every group shares
 the same 240-second deadline; parallel execution does not extend it. The live
 prerequisite probe permits read-only use of provisioned Python bytecode and
@@ -56,6 +56,20 @@ fixtures receive fresh bytecode prefixes; isolated converter and OmniVoice
 workers use explicit `-I -B` and may read the fingerprinted provisioned bytecode.
 Ignored source-tree bytecode fails the live consumed-input check. Isolated
 repository-import fixtures use a temporary prefix for those imports.
+
+The [resource contract](resources.md) defines bounded streaming fingerprints,
+memory admission, process ownership and temporary-file cleanup. Available
+memory is resampled before each admitted batch; less than 1 GiB admits no new
+batch. Unrun files fail the phase. Tests keep their original coverage and
+deadlines. Managed fixture allocation and a fixture-tested lint rule prevent
+new native temporary directories outside the audited ownership helpers.
+Only the three validated temporary-parent routing variables are excluded from
+verification keys; malformed routing fails the live prerequisite check before
+reuse. Temporary paths cannot waive input identity or authorize deletion.
+The live prerequisite identity also validates the Windows supervisor's binary
+against its source/compiler key and receipt before accepting any cached result.
+Corrupt or partial native artifacts require explicit inspection, not automatic
+replacement or fallback to weaker process ownership.
 
 The historical 2026-10-28 assembled step check, before the expanded workflow,
 dependency and cache suites, passed 358 tests with 1,321 assertions: the
@@ -92,15 +106,16 @@ Structural checks are not proof of correctness or a sandbox. Schema and semantic
 
 The Stop adapter awaits bounded asynchronous subprocesses. Archive work retains
 its 60-second/2,000,000-byte limits; review retains its 300-second/16-MiB limits.
-On Windows, the shared process runner resolves `taskkill.exe` through the absolute
-system directory, independently of `PATH`, and terminates the owned child tree on timeout
-or cancellation, including the detached unit-worker fixture, and bounds cleanup.
-The POSIX fallback terminates the owned process group; deliberately detached
-descendants require separate platform validation and are not certified by the
-Windows fixtures. Receipts identify this cleanup scope. An unconfirmed
-termination is a failed hook even if a status
-of zero was observed. The 420-second root and 90-second subagent outer budgets
-remain unchanged; no stale cache lock is automatically reclaimed.
+On Windows, the shared process runner uses the native Job Object supervisor
+described in [resource ownership](resources.md#process-ownership). It attaches
+children before execution and joins descendants on normal exit, cancellation
+or owner death. The POSIX fallback terminates and joins the owned process group;
+abrupt owner death and descendants that deliberately leave that group are not
+certified by the Windows fixtures. New Windows receipts identify
+`windows-job-object`; historical `windows-child-tree` receipts remain readable
+without rewriting them. An unconfirmed termination is a failed hook even if a
+status of zero was observed. The 420-second root and 90-second subagent outer
+budgets remain unchanged; no stale cache lock is automatically reclaimed.
 
 Each operation reserves capacity and writes a pending receipt under `.cache/hook-diagnostics/`,
 then retains a completed receipt and LF, redacted log with unique names. Receipts
@@ -109,9 +124,11 @@ cleanup confirmation and log hash/path. Missing status or cleanup information
 stays null. A pending receipt does not prove that the child started or completed.
 Raw hook input, environment dumps and unsanitized child output are never saved.
 Logs are bounded after redaction as well as during capture; truncation is marked.
-`termination: "closed"` means the observed parent/pipes closed and any attempted
-OS cleanup reported success. It does not independently prove the absence of
-already orphaned children or detached descendants outside the reported cleanup
+`termination: "closed"` means the observed process streams closed and the
+reported ownership mechanism confirmed cleanup. A scope label describes the
+configured mechanism, including in pending receipts; it is not proof the process
+started. Historical receipts retain their original, weaker tree-cleanup meaning.
+No receipt certifies unrelated processes or descendants outside its reported
 scope. An unconfirmed result requires process-tree inspection before lock recovery.
 New hook diagnostics have a separate 64-MiB, 4096-file, 1024-operation-slot budget.
 A short admission/finalization lock accounts for actual completed files and full

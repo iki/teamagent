@@ -1,8 +1,12 @@
-import { spawn } from "node:child_process";
-import { isAbsolute, join } from "node:path";
+import { spawnOwned, type OwnedProcess } from "../check/owned-process.ts";
+import { createTemporaryWorkspace, temporaryParent } from "../check/temporary-workspace.ts";
+import { isAbsolute } from "node:path";
+import { fileURLToPath } from "node:url";
 import { stripVTControlCharacters } from "node:util";
 import { redact } from "../conversations/privacy.ts";
 import { lf } from "./storage.ts";
+
+const resourceRoot = fileURLToPath(new URL("../../", import.meta.url));
 
 export type ProcessResult = {
   code: number | null;
@@ -32,7 +36,7 @@ export function diagnostic(text: string): string {
   );
 }
 
-/** Bounded in memory; write the redacted result once, never queue unbounded log writes. */
+/** Bounded capture owns descendants and scratch until joined cleanup completes. */
 export async function runProcess(
   root: string,
   command: string,
@@ -58,89 +62,68 @@ export async function runProcess(
   )
     throw new Error("Invalid process bounds");
   if (options.signal?.aborted) return { code: null, outcome: "cancelled", stdout: "", stderr: "" };
-  return await new Promise<ProcessResult>((done) => {
+  const environment = options.env ?? process.env;
+  const executable = isAbsolute(command)
+    ? command
+    : Bun.which(command, { PATH: environment.PATH ?? "", cwd: root });
+  if (!executable)
+    return { code: null, outcome: "transport", stdout: "", stderr: "", termination: "closed" };
+  const parent = await temporaryParent(environment, resourceRoot);
+  const workspace = await createTemporaryWorkspace(resourceRoot, "command", parent);
+  let safeToDispose = true;
+  try {
+    let owned: OwnedProcess;
+    try {
+      owned = await spawnOwned(executable, args, {
+        cwd: root,
+        env: workspace.environment(environment),
+        stdio: "pipe",
+        ...(options.signal === undefined ? {} : { signal: options.signal }),
+      });
+    } catch {
+      return {
+        code: null,
+        outcome: options.signal?.aborted ? "cancelled" : "transport",
+        stdout: "",
+        stderr: "Owned command could not be launched.\n",
+        termination: "closed",
+      };
+    }
+    safeToDispose = false;
+    const { child } = owned;
+    const stdin = child.stdin,
+      stdout = child.stdout,
+      stderr = child.stderr;
+    if (!stdin || !stdout || !stderr) {
+      await owned.stop("Required process streams are unavailable");
+      safeToDispose = (await owned.closed).termination === "closed";
+      throw new Error("Required process streams are unavailable");
+    }
     const stdoutDecoder = new TextDecoder("utf-8", { fatal: true });
     const stderrDecoder = new TextDecoder("utf-8", { fatal: true });
-    const child = spawn(command, [...args], {
-      cwd: root,
-      shell: false,
-      windowsHide: true,
-      detached: process.platform !== "win32",
-      stdio: ["pipe", "pipe", "pipe"],
-      env: options.env ?? process.env,
-    });
-    let outcome: ProcessResult["outcome"] = "exited",
-      bytes = 0,
+    let outcome: ProcessResult["outcome"] = "exited";
+    let bytes = 0,
       out = "",
       err = "",
       outLine = 0,
       errLine = 0;
-    let deadline: ReturnType<typeof setTimeout> | undefined;
-    let treeTermination: Promise<boolean> | undefined;
-    let finished = false;
-    const finish = (code: number | null, confirmed: boolean) => {
-      if (finished) return;
-      finished = true;
-      clearTimeout(timer);
-      if (deadline) clearTimeout(deadline);
-      options.signal?.removeEventListener("abort", abort);
-      done({
-        code,
-        outcome: code === null && outcome === "exited" ? "transport" : outcome,
-        stdout: out,
-        stderr: err,
-        termination: confirmed ? "closed" : "unconfirmed",
-      });
-    };
-    const stop = (reason: ProcessResult["outcome"]) => {
+    let stopFailure = false;
+    let stopping: Promise<void> | undefined;
+    const stop = (reason: ProcessResult["outcome"]): void => {
       if (outcome !== "exited") return;
       outcome = reason;
-      const pid = child.pid;
-      if (pid !== undefined && child.exitCode === null && process.platform === "win32") {
-        treeTermination = new Promise<boolean>((resolveTree) => {
-          const windowsRoot = process.env.SystemRoot ?? process.env.SYSTEMROOT ?? "C:\\Windows";
-          if (!isAbsolute(windowsRoot)) {
-            resolveTree(false);
-            return;
-          }
-          const killer = spawn(
-            join(windowsRoot, "System32/taskkill.exe"),
-            ["/PID", String(pid), "/T", "/F"],
-            {
-              shell: false,
-              windowsHide: true,
-              stdio: "ignore",
-              timeout: 3000,
-            },
-          );
-          killer.on("error", () => resolveTree(false));
-          killer.on("close", (code) => resolveTree(code === 0));
-        });
-      } else if (pid !== undefined && process.platform !== "win32") {
-        try {
-          process.kill(-pid, "SIGKILL");
-          treeTermination = Promise.resolve(true);
-        } catch {
-          treeTermination = Promise.resolve(false);
-        }
-      } else {
-        treeTermination = Promise.resolve(pid === undefined);
-      }
-      deadline = setTimeout(() => {
-        child.stdin.destroy();
-        child.stdout.destroy();
-        child.stderr.destroy();
-        finish(null, false);
-      }, 5000);
+      stopping = owned.stop("Bounded command stopped").catch(() => {
+        stopFailure = true;
+      });
     };
-    const receive = (chunk: unknown, stderr: boolean) => {
+    const receive = (chunk: unknown, isError: boolean): void => {
       if (!(chunk instanceof Uint8Array)) {
         stop("transport");
         return;
       }
       if (outcome !== "exited") return;
       bytes += chunk.byteLength;
-      let line = stderr ? errLine : outLine;
+      let line = isError ? errLine : outLine;
       for (const byte of chunk) {
         line = byte === 10 ? 0 : line + 1;
         if (line > lineMaximum) {
@@ -148,29 +131,32 @@ export async function runProcess(
           return;
         }
       }
-      if (stderr) errLine = line;
+      if (isError) errLine = line;
       else outLine = line;
       if (bytes > maximum) {
         stop("output-limit");
         return;
       }
       try {
-        const text = (stderr ? stderrDecoder : stdoutDecoder).decode(chunk, { stream: true });
-        if (stderr) err += text;
+        const text = (isError ? stderrDecoder : stdoutDecoder).decode(chunk, { stream: true });
+        if (isError) err += text;
         else out += text;
       } catch {
         stop("transport");
       }
     };
-    child.stdout.on("data", (chunk: unknown) => receive(chunk, false));
-    child.stderr.on("data", (chunk: unknown) => receive(chunk, true));
-    child.on("error", () => stop("transport"));
-    child.stdin.on("error", () => stop("transport"));
+    const abort = (): void => stop("cancelled");
     const timer = setTimeout(() => stop("timeout"), timeout);
-    const abort = () => stop("cancelled");
+    stdout.on("data", (chunk: unknown) => receive(chunk, false));
+    stderr.on("data", (chunk: unknown) => receive(chunk, true));
+    child.on("error", () => stop("transport"));
+    stdin.on("error", () => stop("transport"));
     options.signal?.addEventListener("abort", abort, { once: true });
-    if (options.signal?.aborted) abort();
-    child.on("close", (code) => {
+    try {
+      if (options.signal?.aborted) abort();
+      stdin.end(options.input);
+      const result = await owned.closed;
+      await stopping;
       if (outcome === "exited") {
         try {
           out += stdoutDecoder.decode();
@@ -178,13 +164,30 @@ export async function runProcess(
         } catch {
           outcome = "transport";
         }
+        if (result.error || result.code === null) outcome = "transport";
       }
-      if (treeTermination)
-        treeTermination
-          .then((confirmed) => finish(code, confirmed))
-          .catch(() => finish(code, false));
-      else finish(code, true);
-    });
-    child.stdin.end(options.input);
-  });
+      safeToDispose = !stopFailure && result.termination === "closed";
+      if (!safeToDispose && outcome === "exited") outcome = "transport";
+      return {
+        code: result.code,
+        outcome,
+        stdout: out,
+        stderr: err,
+        termination: safeToDispose ? "closed" : "unconfirmed",
+      };
+    } finally {
+      clearTimeout(timer);
+      options.signal?.removeEventListener("abort", abort);
+      if (!safeToDispose) {
+        await owned.stop("Command scope closed").catch(() => {
+          stopFailure = true;
+        });
+        const result = await owned.closed;
+        safeToDispose = !stopFailure && result.termination === "closed";
+      }
+    }
+  } finally {
+    // Retain scratch when descendant shutdown cannot be proved; never infer cleanup from a PID.
+    if (safeToDispose) await workspace.dispose();
+  }
 }

@@ -1,9 +1,21 @@
 import { chromium, expect, type Browser } from "@playwright/test";
-import { spawn } from "node:child_process";
-import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
+import { Database } from "bun:sqlite";
+import { Schema } from "effect";
+import { mkdir, writeFile } from "node:fs/promises";
 import { createServer } from "node:net";
-import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
+import { spawnOwned, type OwnedProcess } from "../app/check/owned-process.ts";
+import { createTemporaryWorkspace, temporaryParent } from "../app/check/temporary-workspace.ts";
+
+function daemonOwner(directory: string): unknown {
+  const database = new Database(join(directory, "daemon.sqlite"), { readonly: true, strict: true });
+  try {
+    const row: unknown = database.query("SELECT pid,nonce FROM owner WHERE singleton = 1").get();
+    return row;
+  } finally {
+    database.close();
+  }
+}
 
 async function withTimeout<A>(work: Promise<A>, milliseconds: number): Promise<A> {
   let timer: ReturnType<typeof setTimeout> | undefined;
@@ -25,48 +37,67 @@ async function withTimeout<A>(work: Promise<A>, milliseconds: number): Promise<A
 if (process.platform !== "win32")
   throw new Error("This smoke runner targets the Windows WebView2 integration.");
 const root = resolve(import.meta.dir, "..");
-const temporary = await mkdtemp(join(tmpdir(), "teamagent-desktop-smoke-"));
-const data = join(temporary, "service");
-const workspace = join(temporary, "workspace");
-await mkdir(workspace);
-const evidence = join(root, ".cache/web-evidence");
-await mkdir(evidence, { recursive: true });
-const configuration = join(temporary, "teamagent.config.ts");
-await writeFile(
-  configuration,
-  'export default { pi: { provider: "openai", model: "gpt-4.1" } } satisfies Record<string, unknown>;',
+const temporary = await createTemporaryWorkspace(
+  root,
+  "desktop-browser",
+  await temporaryParent(process.env, root),
 );
+const data = join(temporary.path, "service");
+const workspace = join(temporary.path, "workspace");
 const socket = createServer();
-await new Promise<void>((done) => socket.listen(0, "127.0.0.1", done));
-const address = socket.address();
-if (!address || typeof address === "string") throw new Error("Could not reserve a debug port.");
-const port = address.port;
-await new Promise<void>((done, reject) =>
-  socket.close((error) => (error ? reject(error) : done())),
-);
-const child = spawn(join(root, "app/desktop/src-tauri/target/debug/teamagent-desktop.exe"), [], {
-  cwd: root,
-  windowsHide: true,
-  stdio: ["pipe", "pipe", "pipe"],
-  env: {
-    ...process.env,
-    TEAMAGENT_DESKTOP_SMOKE_DATA: data,
-    TEAMAGENT_CONFIG: configuration,
-    OPENAI_API_KEY: "native-catalog-test-key-no-network-calls",
-    WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS: `--remote-debugging-port=${port}`,
-  },
-});
-let diagnostic = "";
-child.stderr.on("data", (chunk: unknown) => {
-  if (Buffer.isBuffer(chunk)) diagnostic = `${diagnostic}${chunk.toString()}`.slice(-4096);
-});
-const exited = new Promise<number | null>((done, reject) => {
-  child.once("exit", done);
-  child.once("error", reject);
-});
+let owned: OwnedProcess | undefined;
 let browser: Browser | undefined;
-let serviceUrl = "";
+let operationFailed = false;
+let operationFailure: unknown;
+const cleanupFailures: unknown[] = [];
 try {
+  await mkdir(workspace);
+  const evidence = join(root, ".cache/web-evidence");
+  await mkdir(evidence, { recursive: true });
+  const configuration = join(temporary.path, "teamagent.config.ts");
+  await writeFile(
+    configuration,
+    'export default { pi: { provider: "openai", model: "gpt-4.1" } } satisfies Record<string, unknown>;\n',
+  );
+  await new Promise<void>((done, reject) => {
+    socket.once("error", reject);
+    socket.listen(0, "127.0.0.1", done);
+  });
+  const address = socket.address();
+  if (!address || typeof address === "string") throw new Error("Could not reserve a debug port.");
+  const port = address.port;
+  await new Promise<void>((done, reject) =>
+    socket.close((error) => (error ? reject(error) : done())),
+  );
+  owned = await spawnOwned(
+    join(root, "app/desktop/src-tauri/target/debug/teamagent-desktop.exe"),
+    [],
+    {
+      cwd: root,
+      stdio: "pipe",
+      env: temporary.environment({
+        ...process.env,
+        TEAMAGENT_DESKTOP_SMOKE_DATA: data,
+        TEAMAGENT_CONFIG: configuration,
+        OPENAI_API_KEY: "native-catalog-test-key-no-network-calls",
+        WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS: `--remote-debugging-port=${port}`,
+      }),
+    },
+  );
+  const child = owned.child;
+  if (!child.stdin || !child.stdout || !child.stderr)
+    throw new Error("Native process streams are unavailable.");
+  child.stdout.resume();
+  let streamFailure: Error | undefined;
+  child.stdin.on("error", (error) => {
+    streamFailure = error;
+  });
+  let diagnostic = "";
+  child.stderr.on("data", (chunk: unknown) => {
+    if (Buffer.isBuffer(chunk)) diagnostic = `${diagnostic}${chunk.toString()}`.slice(-4096);
+  });
+  const exited = owned.closed;
+  let serviceUrl = "";
   for (let attempt = 0; attempt < 100; attempt++) {
     if (child.exitCode !== null)
       throw new Error(`Desktop exited before its WebView became available: ${diagnostic}`);
@@ -89,6 +120,12 @@ try {
   page.on("pageerror", (error) => errors.push(error.message));
   await expect(page.getByRole("heading", { name: "All tasks" })).toBeVisible({ timeout: 20000 });
   await expect(page.getByText("Service connected")).toBeVisible();
+  Schema.decodeUnknownSync(
+    Schema.Struct({
+      pid: Schema.Int.check(Schema.isGreaterThan(0)),
+      nonce: Schema.String.check(Schema.isPattern(/^[a-f0-9]{32}$/u)),
+    }),
+  )(daemonOwner(data));
   await page.getByRole("button", { name: "Agents", exact: false }).click();
   await expect(
     page
@@ -123,18 +160,67 @@ try {
   browser = undefined;
   child.stdin.end("shutdown\n");
   const result = await withTimeout(exited, 10000);
-  expect(result).toBe(0);
+  if (streamFailure) throw streamFailure;
+  if (result.error) throw result.error;
+  expect(result.code).toBe(0);
+  expect(result.termination).toBe("closed");
+  // Only daemon.close() releases this row; forced Job Object cleanup cannot fake it.
+  Schema.decodeUnknownSync(Schema.Null)(daemonOwner(data));
   expect(serviceUrl).not.toBe("");
   await expect(
     fetch(`${serviceUrl}/api/health`, { signal: AbortSignal.timeout(1000) }),
   ).rejects.toThrow();
   process.stdout.write(`Native WebView2 workflow and managed shutdown passed with ${version}.\n`);
+} catch (error) {
+  operationFailed = true;
+  operationFailure = error;
 } finally {
-  if (browser) await browser.close();
-  if (child.exitCode === null) {
-    if (!child.stdin.writableEnded) child.stdin.end("shutdown\n");
-    await withTimeout(exited, 5000).catch(() => undefined);
+  if (browser) {
+    try {
+      await browser.close();
+    } catch (error) {
+      cleanupFailures.push(error);
+    }
   }
-  if (child.exitCode === null) child.kill();
-  await rm(temporary, { recursive: true, force: true });
+  if (owned) {
+    const child = owned.child;
+    if (child.exitCode === null) {
+      try {
+        if (child.stdin && !child.stdin.writableEnded && !child.stdin.destroyed)
+          child.stdin.end("shutdown\n");
+        await withTimeout(owned.closed, 5000);
+      } catch {
+        try {
+          await owned.stop("Native smoke shutdown exceeded its grace period");
+        } catch (error) {
+          cleanupFailures.push(error);
+        }
+      }
+    }
+    const result = await owned.closed;
+    if (result.termination !== "closed")
+      cleanupFailures.push(new Error("Native descendant shutdown could not be confirmed."));
+  }
+  if (socket.listening) {
+    try {
+      await new Promise<void>((done, reject) =>
+        socket.close((error) => (error ? reject(error) : done())),
+      );
+    } catch (error) {
+      cleanupFailures.push(error);
+    }
+  }
+  if (!cleanupFailures.length) {
+    try {
+      await temporary.dispose();
+    } catch (error) {
+      cleanupFailures.push(error);
+    }
+  }
 }
+if (cleanupFailures.length)
+  throw new AggregateError(
+    operationFailed ? [operationFailure, ...cleanupFailures] : cleanupFailures,
+    "Native resource cleanup failed; scratch was retained.",
+  );
+if (operationFailed) throw operationFailure;

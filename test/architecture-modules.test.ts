@@ -1,22 +1,31 @@
+import { assertTemporaryFixtureSync, mkdtempSync } from "./temporary.ts";
 import { strict as assert } from "node:assert";
 import { spawnSync } from "node:child_process";
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { dirname, isAbsolute, join, relative, resolve } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { test } from "node:test";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { Effect } from "effect";
 import { inspectModuleLayout, validateModuleGraph } from "@/lint";
 
+function fixtureConfig(repository: string, fixture: string): string {
+  const config = join(fixture, "oxlint.config.ts");
+  // Retain all production rules while admitting the explicit owned fixture under .cache.
+  writeFileSync(
+    config,
+    [
+      `import config from ${JSON.stringify(pathToFileURL(join(repository, "oxlint.config.ts")).href)};`,
+      `export default { ...config, ignorePatterns: [], jsPlugins: [${JSON.stringify(join(repository, "lib/lint/index.ts"))}] };`,
+    ].join("\n") + "\n",
+    "utf8",
+  );
+  return config;
+}
+
 function removeFixture(directory: string): void {
   const target = resolve(directory);
-  const contained = relative(resolve(tmpdir()), target);
-  if (
-    isAbsolute(contained) ||
-    contained.startsWith("..") ||
-    !contained.startsWith("teamagent-module-")
-  )
-    throw new Error("Refusing to remove an unexpected module fixture path.");
+  assertTemporaryFixtureSync(target);
   rmSync(target, { recursive: true, force: true });
 }
 
@@ -79,6 +88,7 @@ await test("module inventory detects absent API/CLI files and unregistered direc
 await test("parsed module contracts require useful API exports and literal CLI metadata", () => {
   const repository = fileURLToPath(new URL("../", import.meta.url));
   const fixture = mkdtempSync(join(tmpdir(), "teamagent-module-contract-"));
+  const config = fixtureConfig(repository, fixture);
   const files = ["lib/tasks/index.ts", "lib/tasks/cli.ts"];
   for (const file of files) mkdirSync(dirname(join(fixture, file)), { recursive: true });
   const run = () =>
@@ -87,7 +97,8 @@ await test("parsed module contracts require useful API exports and literal CLI m
       [
         join(repository, "node_modules", "oxlint", "bin", "oxlint"),
         "--config",
-        join(repository, "oxlint.config.ts"),
+        config,
+        "--no-ignore",
         "--deny-warnings",
         ...files.map((file) => join(fixture, file)),
       ],
@@ -148,6 +159,7 @@ await test("parsed module contracts require useful API exports and literal CLI m
 await test("parsed module dependencies and rendering boundaries accept interfaces and reject implementation coupling", () => {
   const repository = fileURLToPath(new URL("../", import.meta.url));
   const fixture = mkdtempSync(join(tmpdir(), "teamagent-module-imports-"));
+  const config = fixtureConfig(repository, fixture);
   const fixtures = [
     {
       path: "app/media/process.ts",
@@ -399,9 +411,10 @@ await test("parsed module dependencies and rendering boundaries accept interface
       [
         join(repository, "node_modules", "oxlint", "bin", "oxlint"),
         "--config",
-        join(repository, "oxlint.config.ts"),
+        config,
+        "--no-ignore",
         "--deny-warnings",
-        fixture,
+        ...fixtures.map((fixtureCase) => join(fixture, fixtureCase.path)),
       ],
       { cwd: repository, encoding: "utf8", windowsHide: true, timeout: 60_000 },
     );

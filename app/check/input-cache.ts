@@ -1,8 +1,8 @@
 /** Adapted from Trigon's cooperative input cache at 454e372c; hashes actual working bytes. */
-import { createHash } from "node:crypto";
 import { lstat, unlink } from "node:fs/promises";
 import { relative, resolve } from "node:path";
 import { Schema } from "effect";
+import { fileContentDigest, inventoryDigest } from "./cache-fingerprint.ts";
 import {
   atomicJson,
   atomicReceiptText,
@@ -121,12 +121,12 @@ function projection(
   entries: ReadonlyMap<string, Entry>,
   task: Pick<Task, "inputs" | "excludeInputs">,
 ): string {
-  return encodedDigest(
-    [...entries]
-      .filter(([path]) => selected(path, task))
-      .sort(([left], [right]) => left.localeCompare(right, "en"))
-      .map(([path, entry]) => [path, entry.mode, entry.object]),
-  );
+  const digest = inventoryDigest();
+  for (const [path, entry] of [...entries]
+    .filter(([path]) => selected(path, task))
+    .sort(([left], [right]) => left.localeCompare(right, "en")))
+    digest.record([path, entry.mode, entry.object]);
+  return digest.finish();
 }
 async function workingProjection(root: string, task: Task): Promise<string> {
   const indexed = indexEntries(root);
@@ -147,20 +147,26 @@ async function workingProjection(root: string, task: Task): Promise<string> {
     if (old && old.mode !== "100644" && old.mode !== "100755")
       throw new Error(`Linked/submodule verification inputs are unsupported: ${path}`);
     try {
-      const stat = await lstat(await safePath(root, path));
+      const target = await safePath(root, path);
+      const stat = await lstat(target, { bigint: true });
       if (!stat.isFile()) throw new Error(`Unsupported verification input: ${path}`);
-      totalBytes += stat.size;
+      if (stat.size > BigInt(cacheLimits.fileBytes))
+        throw new Error(`Verification input exceeds byte bounds: ${path}`);
+      totalBytes += Number(stat.size);
       if (totalBytes > cacheLimits.totalBytes)
         throw new Error("Verification source inventory exceeds byte bounds");
-      const bytes = await boundedRead(root, path);
-      const object = createHash(format)
-        .update(`blob ${bytes.length}\0`)
-        .update(bytes)
-        .digest("hex");
+      const object = await fileContentDigest(target, stat, {
+        maximumBytes: cacheLimits.fileBytes,
+        algorithm: format,
+        gitBlob: true,
+        validatePath: async () => {
+          await safePath(root, path);
+        },
+      });
       const mode =
         process.platform === "win32"
           ? (old?.mode ?? "100644")
-          : stat.mode & 0o111
+          : stat.mode & 0o111n
             ? "100755"
             : "100644";
       entries.set(path, { mode, object });

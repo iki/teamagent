@@ -1,10 +1,25 @@
+import { mkdtempSync } from "./temporary.ts";
 import { strict as assert } from "node:assert";
 import { spawnSync } from "node:child_process";
-import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { test } from "node:test";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
+
+function fixtureConfig(repository: string, fixture: string): string {
+  const config = join(fixture, "oxlint.config.ts");
+  // Retain all production rules while admitting the explicit owned fixture under .cache.
+  writeFileSync(
+    config,
+    [
+      `import config from ${JSON.stringify(pathToFileURL(join(repository, "oxlint.config.ts")).href)};`,
+      `export default { ...config, ignorePatterns: [], jsPlugins: [${JSON.stringify(join(repository, "lib/lint/index.ts"))}] };`,
+    ].join("\n") + "\n",
+    "utf8",
+  );
+  return config;
+}
 
 await test("Oxlint loads the registered rules and checks parsed TypeScript", () => {
   const root = fileURLToPath(new URL("../", import.meta.url));
@@ -15,7 +30,8 @@ await test("Oxlint loads the registered rules and checks parsed TypeScript", () 
   const args = [
     join(root, "node_modules", "oxlint", "bin", "oxlint"),
     "--config",
-    join(root, "oxlint.config.ts"),
+    fixtureConfig(root, fixture),
+    "--no-ignore",
     "--deny-warnings",
     file,
   ];
@@ -73,7 +89,8 @@ await test("parsed library paths and child-process aliases keep their boundaries
   const args = [
     join(root, "node_modules", "oxlint", "bin", "oxlint"),
     "--config",
-    join(root, "oxlint.config.ts"),
+    fixtureConfig(root, fixture),
+    "--no-ignore",
     "--deny-warnings",
     libraryFile,
     hostFile,

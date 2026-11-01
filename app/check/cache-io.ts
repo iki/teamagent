@@ -1,9 +1,11 @@
 /** Bounded host I/O for cooperative verification evidence; never publication authority. */
 import { spawnSync } from "node:child_process";
 import { createHash, randomUUID } from "node:crypto";
-import { lstat, mkdir, open, readdir, rename, unlink } from "node:fs/promises";
+import type { BigIntStats } from "node:fs";
+import { lstat, mkdir, open, opendir, rename, unlink } from "node:fs/promises";
 import { hostname } from "node:os";
 import { dirname, isAbsolute, relative, resolve } from "node:path";
+import { fileContentDigest, inventoryDigest } from "./cache-fingerprint.ts";
 
 export const cacheLimits = {
   files: 25_000,
@@ -133,18 +135,42 @@ export async function safePath(root: string, path: string, missing = false): Pro
   return target;
 }
 
+function sameFileIdentity(left: BigIntStats, right: BigIntStats): boolean {
+  return (
+    left.isFile() &&
+    right.isFile() &&
+    left.dev === right.dev &&
+    left.ino === right.ino &&
+    left.mode === right.mode &&
+    left.nlink === right.nlink &&
+    left.size === right.size &&
+    left.mtimeNs === right.mtimeNs &&
+    left.ctimeNs === right.ctimeNs
+  );
+}
+
 export async function boundedRead(
   root: string,
   path: string,
   maximum = cacheLimits.fileBytes,
+  options: {
+    readonly observe?: (phase: "before-open" | "opened" | "read") => void | Promise<void>;
+  } = {},
 ): Promise<Uint8Array> {
+  if (!Number.isSafeInteger(maximum) || maximum < 0 || maximum > cacheLimits.outputFileBytes)
+    throw new Error("Invalid bounded cache read limit");
   const target = await safePath(root, path);
+  const original = await lstat(target, { bigint: true });
+  if (!original.isFile() || original.size > BigInt(maximum))
+    throw new Error(`Cache input exceeds file bounds: ${path}`);
+  await options.observe?.("before-open");
   const handle = await open(target, "r");
   try {
-    const before = await handle.stat();
-    if (!before.isFile() || before.size > maximum)
-      throw new Error(`Cache input exceeds file bounds: ${path}`);
-    const bytes = new Uint8Array(before.size);
+    const before = await handle.stat({ bigint: true });
+    if (!sameFileIdentity(original, before))
+      throw new Error(`Cache input changed before reading: ${path}`);
+    await options.observe?.("opened");
+    const bytes = new Uint8Array(Number(before.size));
     let offset = 0;
     while (offset < bytes.length) {
       const read = await handle.read(
@@ -155,12 +181,14 @@ export async function boundedRead(
       );
       if (!read.bytesRead) throw new Error(`Cache input changed while reading: ${path}`);
       offset += read.bytesRead;
+      await options.observe?.("read");
     }
-    const after = await handle.stat();
+    const extra = await handle.read(new Uint8Array(1), 0, 1, offset);
+    await safePath(root, path);
     if (
-      before.size !== after.size ||
-      before.mtimeMs !== after.mtimeMs ||
-      before.ctimeMs !== after.ctimeMs
+      extra.bytesRead ||
+      !sameFileIdentity(before, await handle.stat({ bigint: true })) ||
+      !sameFileIdentity(before, await lstat(target, { bigint: true }))
     )
       throw new Error(`Cache input changed while reading: ${path}`);
     return bytes;
@@ -174,8 +202,9 @@ export async function inventory(
   paths: readonly string[],
   required = false,
 ): Promise<string> {
-  const rows: Array<readonly [string, string, string]> = [];
+  const rows = inventoryDigest();
   let bytes = 0;
+  let queued = 0;
   const visited = new Set<string>();
   async function visit(path: string, depth: number): Promise<void> {
     if (visited.has(path)) return;
@@ -184,62 +213,57 @@ export async function inventory(
       throw new Error("Cache inventory exceeded path bounds");
     let stat;
     try {
-      stat = await lstat(await safePath(root, path));
+      stat = await lstat(await safePath(root, path), { bigint: true });
     } catch (error) {
       if (!hasCode(error, "ENOENT")) throw error;
       if (required) throw new Error(`Required cache output is missing: ${path}`);
-      rows.push([path, "missing", ""]);
+      rows.record([path, "missing", ""]);
       return;
     }
     if (stat.isDirectory()) {
-      rows.push([path, "directory", ""]);
-      const children = await readdir(resolve(root, path));
-      if (children.length + visited.size > cacheLimits.files)
-        throw new Error("Cache inventory exceeded path bounds");
-      for (const name of children.sort()) await visit(scopePath(`${path}/${name}`), depth + 1);
+      rows.record([path, "directory", ""]);
+      const children: string[] = [];
+      const directory = await opendir(await safePath(root, path));
+      for await (const entry of directory) {
+        if (queued + visited.size >= cacheLimits.files)
+          throw new Error("Cache inventory exceeded path bounds");
+        children.push(entry.name);
+        queued++;
+      }
+      for (const name of children.sort()) {
+        queued--;
+        await visit(scopePath(`${path}/${name}`), depth + 1);
+      }
     } else {
       if (!stat.isFile()) throw new Error(`Unsupported cache inventory entry: ${path}`);
-      bytes += stat.size;
+      if (stat.size > BigInt(cacheLimits.outputFileBytes))
+        throw new Error("Cache inventory file exceeded byte bounds");
+      bytes += Number(stat.size);
       if (bytes > cacheLimits.totalBytes) throw new Error("Cache inventory exceeded byte bounds");
-      rows.push([
+      rows.record([
         path,
-        process.platform === "win32" ? "file" : String(stat.mode & 0o777),
-        await fileDigest(root, path, cacheLimits.outputFileBytes),
+        process.platform === "win32" ? "file" : String(Number(stat.mode & 0o777n)),
+        await fileDigest(root, path, cacheLimits.outputFileBytes, stat),
       ]);
     }
   }
   for (const path of [...new Set(paths.map(scopePath))].sort()) await visit(path, 0);
-  return encodedDigest(rows);
+  return rows.finish();
 }
 
-export async function fileDigest(root: string, path: string, maximum: number): Promise<string> {
-  const handle = await open(await safePath(root, path), "r");
-  try {
-    const before = await handle.stat();
-    if (!before.isFile() || before.size > maximum)
-      throw new Error(`Cache file exceeds byte bound: ${path}`);
-    const hash = createHash("sha256"),
-      chunk = new Uint8Array(64 * 1024);
-    let size = 0;
-    for (;;) {
-      const read = await handle.read(chunk, 0, chunk.length, size);
-      if (!read.bytesRead) break;
-      size += read.bytesRead;
-      if (size > maximum) throw new Error(`Cache file grew beyond byte bound: ${path}`);
-      hash.update(chunk.subarray(0, read.bytesRead));
-    }
-    const after = await handle.stat();
-    if (
-      size !== before.size ||
-      before.size !== after.size ||
-      before.mtimeMs !== after.mtimeMs ||
-      before.ctimeMs !== after.ctimeMs
-    )
-      throw new Error(`Cache file changed during inspection: ${path}`);
-    return hash.digest("hex");
-  } finally {
-    await handle.close();
-  }
+export async function fileDigest(
+  root: string,
+  path: string,
+  maximum: number,
+  expected?: BigIntStats,
+): Promise<string> {
+  const target = await safePath(root, path);
+  return fileContentDigest(target, expected ?? (await lstat(target, { bigint: true })), {
+    maximumBytes: maximum,
+    validatePath: async () => {
+      await safePath(root, path);
+    },
+  });
 }
 
 export async function atomicJson(root: string, path: string, value: unknown): Promise<void> {

@@ -1,6 +1,7 @@
+import { mkdtemp } from "./temporary.ts";
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { chmod, mkdir, mkdtemp, readFile, readdir, writeFile } from "node:fs/promises";
+import { chmod, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { hostname } from "node:os";
 import { join, resolve } from "node:path";
 import { workflow, loadTask, saveTask, type VerificationHost } from "../app/workflow/workflow.ts";
@@ -85,6 +86,7 @@ async function fixture(verifier = fixtureVerifier, persist?: typeof saveTask) {
     await chmod(path, 0o755);
   }
   await git(["config", "core.hooksPath", ".githooks"]);
+  await git(["config", "teamagent.bunPath", process.execPath]);
   await git(["add", "."]);
   await git(["commit", "-m", "test: Initialize fixture"]);
   await git(["remote", "add", "origin", bare]);

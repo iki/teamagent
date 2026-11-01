@@ -1,4 +1,5 @@
 #!/bin/sh
 set -eu
-runtime="$(git config --local --get teamagent.bunPath || printf bun)"
-exec "$runtime" "$(git rev-parse --show-toplevel)/app/workflow/commit-message.ts" "$1"
+hook=commit-msg
+root="$(git rev-parse --show-toplevel)"
+. "$root/app/hooks/git-launch.sh"

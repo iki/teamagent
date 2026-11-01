@@ -56,7 +56,7 @@ try {
   process.env.LC_ALL = environment.LC_ALL;
   await Effect.runPromise(createDependencyRuntime({ root }).check());
   if (argv.flags.format || argv._.mode === "step") {
-    if (runTool("format", []) !== 0) throw new Error("Formatting failed");
+    if ((await runTool("format", [])) !== 0) throw new Error("Formatting failed");
   }
   const prerequisites = await verificationPrerequisites(root);
   const sourceBefore = await reviewSourceIdentity(root, prerequisites);
@@ -69,11 +69,14 @@ try {
       `${id}: ${result.hit ? "reused matching cooperative receipt" : "executed and verified"}`,
     );
   };
-  const checkedTool = (tool: "format" | "typecheck" | "lint", args: readonly string[]): void => {
-    if (runTool(tool, args) !== 0) throw new Error(`${tool} failed`);
+  const checkedTool = async (
+    tool: "format" | "typecheck" | "lint",
+    args: readonly string[],
+  ): Promise<void> => {
+    if ((await runTool(tool, args)) !== 0) throw new Error(`${tool} failed`);
   };
   await run("format", async () => {
-    checkedTool("format", ["--check"]);
+    await checkedTool("format", ["--check"]);
   });
   const violations = await Effect.runPromise(inspectModuleLayout(root));
   if (violations.length) throw new Error(violations.join("\n"));
@@ -84,10 +87,10 @@ try {
       "tsconfig.tools.json",
       "app/web/tsconfig.json",
     ])
-      checkedTool("typecheck", ["--noEmit", "--project", project]);
+      await checkedTool("typecheck", ["--noEmit", "--project", project]);
   });
   await run("lint", async () => {
-    checkedTool("lint", ["--type-aware", "--deny-warnings"]);
+    await checkedTool("lint", ["--type-aware", "--deny-warnings"]);
   });
   await run("tests", () => runUnitTests(root));
   try {

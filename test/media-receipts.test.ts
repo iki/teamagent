@@ -1,3 +1,4 @@
+import { mkdtemp } from "./temporary.ts";
 import { test } from "bun:test";
 import { parseMediaConfig } from "../app/media/config.ts";
 import { providerRequest } from "../app/media/providers.ts";
@@ -6,7 +7,7 @@ import { Database } from "bun:sqlite";
 import { randomBytes } from "node:crypto";
 import { IncomingMessage } from "node:http";
 import { Socket } from "node:net";
-import { mkdir, mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { Effect, Schema } from "effect";
 import { createMediaHost } from "../app/media/index.ts";

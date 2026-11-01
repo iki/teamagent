@@ -1,7 +1,8 @@
+import { assertTemporaryFixtureSync, mkdtempSync } from "./temporary.ts";
 import { afterEach, describe, expect, test } from "bun:test";
-import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { isAbsolute, join, relative, resolve } from "node:path";
+import { join, resolve } from "node:path";
 import { Effect } from "effect";
 import { type Store } from "@/tasks";
 import { openStore } from "../app/storage/index.ts";
@@ -18,13 +19,7 @@ const temporaryDirectories: string[] = [];
 afterEach(() => {
   for (const directory of temporaryDirectories.splice(0)) {
     const target = resolve(directory);
-    const contained = relative(resolve(tmpdir()), target);
-    if (
-      isAbsolute(contained) ||
-      contained.startsWith("..") ||
-      !contained.startsWith("teamagent-store-")
-    )
-      throw new Error("Refusing to remove a path outside the test's temporary directory.");
+    assertTemporaryFixtureSync(target);
     rmSync(target, { recursive: true, force: true });
   }
 });

@@ -1,6 +1,7 @@
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { afterAll, beforeAll, describe, expect, test } from "bun:test";
 import assert from "node:assert/strict";
-import { mkdir, mkdtemp, readFile, readdir, realpath, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, realpath, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { Effect, Schema } from "effect";
@@ -12,7 +13,7 @@ import {
   loadExtractorConfig,
   resolveExtractorProfile,
 } from "../app/imports/extractors.ts";
-import { contained, digest } from "../app/imports/limits.ts";
+import { digest } from "../app/imports/limits.ts";
 import { createSourceCapture } from "../app/imports/index.ts";
 
 let directory = "";
@@ -116,11 +117,8 @@ beforeAll(async () => {
   await writeFile(script, worker);
 });
 afterAll(async () => {
-  if (
-    contained(await realpath(tmpdir()), directory) &&
-    directory.includes("teamagent-extractor-tests-")
-  )
-    await rm(directory, { recursive: true, force: true });
+  await assertTemporaryFixture(directory);
+  await rm(directory, { recursive: true, force: true });
 });
 
 describe("external document extractor boundary", () => {

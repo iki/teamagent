@@ -1,6 +1,7 @@
 import { spawnSync } from "node:child_process";
 import { chmodSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { physicalToolPath, toolchainPins } from "../check/toolchain.ts";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
 function git(args: readonly string[]) {
@@ -16,6 +17,9 @@ function git(args: readonly string[]) {
 
 if (!process.versions.bun) throw new Error("Hook installation requires Bun");
 if (process.argv.length > 2) throw new Error("Usage: bun app/hooks/install.ts");
+if (process.versions.bun !== toolchainPins(root).bun)
+  throw new Error("Hook installation requires the repository's pinned Bun version");
+const runtime = physicalToolPath(process.execPath, "bun");
 const existing = git(["config", "--get", "core.hooksPath"]);
 if (existing.status !== 0 && existing.status !== 1)
   throw new Error("Cannot read Git hook configuration");
@@ -29,7 +33,7 @@ if (process.platform !== "win32") {
   chmodSync(new URL("../../.githooks/commit-msg", import.meta.url), 0o755);
 }
 for (const [key, value] of [
-  ["teamagent.bunPath", process.execPath],
+  ["teamagent.bunPath", runtime],
   ["core.hooksPath", ".githooks"],
 ] as const) {
   if (git(["config", "--local", key, value]).status !== 0) throw new Error(`Cannot set ${key}`);

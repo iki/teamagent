@@ -1,5 +1,6 @@
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { strict as assert } from "node:assert";
-import { mkdtemp, mkdir, readFile, readdir, realpath, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, realpath, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { test } from "node:test";
@@ -11,7 +12,7 @@ import {
   loadExtractorConfig,
   resolveExtractorProfile,
 } from "../app/imports/extractors.ts";
-import { contained } from "../app/imports/limits.ts";
+
 import { defaultImportPython } from "../app/imports/documents.ts";
 import { withHostInterruption } from "../app/runtime/interruption.ts";
 import { scopedHostPromise } from "../app/imports/lifecycle.ts";
@@ -123,11 +124,8 @@ async function cleanup(directory: string, readyPath: string) {
   } catch {
     /* Non-Windows fixture or console host was not started. */
   }
-  const base = await realpath(tmpdir());
   const target = resolve(directory);
-  assert.ok(
-    contained(base, target) && target !== base && target.includes("teamagent-host-interruption-"),
-  );
+  await assertTemporaryFixture(target);
   await rm(target, { recursive: true, force: true });
 }
 

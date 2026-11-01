@@ -1,6 +1,7 @@
+import { mkdtemp } from "./temporary.ts";
 import { describe, expect, test } from "bun:test";
 import { rejects } from "node:assert/strict";
-import { mkdtemp, rm, writeFile } from "node:fs/promises";
+import { rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { loadResearchSettings, parseResearchEnv } from "../app/research/settings.ts";

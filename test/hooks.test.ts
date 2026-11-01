@@ -1,6 +1,7 @@
+import { mkdtemp } from "./temporary.ts";
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { mkdir, mkdtemp, readFile, readdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { Schema } from "effect";
 import { checkDecision } from "../app/hooks/decision.ts";
@@ -119,6 +120,15 @@ await test("hook receipts retain pending intent and distinguish confirmed exit w
     assert.equal(saved.result?.status, status);
     assert.equal(saved.result?.outcome, "exited");
     assert.equal(saved.result?.termination, "closed");
+    assert.equal(
+      saved.cleanupScope,
+      process.platform === "win32" ? "windows-job-object" : "process-group",
+    );
+    const historical = Schema.decodeUnknownSync(HookReceipt)({
+      ...saved,
+      cleanupScope: "windows-child-tree",
+    });
+    assert.equal(historical.cleanupScope, "windows-child-tree");
     assert.ok(saved.log);
     const text = await readFile(join(root, saved.log.path), "utf8");
     assert.doesNotMatch(text, /fixture-private-value|fixture-bearer-value|\r/u);
@@ -151,7 +161,7 @@ await test("hook timeout terminates its actual child tree and retains a failed o
   assert.equal(saved.result?.termination, "closed");
   assert.equal(
     saved.cleanupScope,
-    process.platform === "win32" ? "windows-child-tree" : "process-group",
+    process.platform === "win32" ? "windows-job-object" : "process-group",
   );
   const pid = Number((await readFile(join(root, "child.pid"), "utf8")).trim());
   assert.ok(Number.isSafeInteger(pid) && pid > 0);
@@ -288,7 +298,7 @@ await test("abandoned and malformed hook reservations fail closed without age re
 });
 
 await test(
-  "Windows timeout cleanup uses the system utility with an empty launcher PATH",
+  "Windows Job Object timeout cleanup works with an empty launcher PATH",
   { skip: process.platform !== "win32" },
   async () => {
     const root = await hookFixture();

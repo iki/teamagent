@@ -28,6 +28,13 @@ Cargo lock and supplied Trigon adapter bytes remain unchanged. The full
 implementation check and real browser/Windows desktop acceptance passed.
 Final review and publication outcomes are recorded separately in that report.
 
+The [verification resource update](analyses/verification-resources-2026-11-01.md)
+adapts bounded fingerprints, memory admission, owned process/temp lifetimes,
+pinned hooks and streaming public conversation ingestion. The
+[resource contract](resources.md) separates disposable scratch from preserved
+workflow and research evidence. This is development infrastructure, not a
+completion claim for the product phases below.
+
 ## Research maintenance increment
 
 The [research sync workflow](research-sync.md) maintains source lists, checkouts, text imports, and reviewed analysis baselines. Execution results, partial sources and remaining source-review work belong in [incremental analyses](analyses/README.md); implementing synchronization does not establish the product phases below or promote fetched findings automatically.

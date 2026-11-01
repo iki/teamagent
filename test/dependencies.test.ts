@@ -1,12 +1,13 @@
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { mkdtemp, mkdir, readFile, writeFile, rm, readdir } from "node:fs/promises";
+import { mkdir, readFile, writeFile, rm, readdir } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
 import { Effect, Schema } from "effect";
-import { createDependencyRuntime } from "../app/dependencies/runtime.ts";
+import { createDependencyRuntime as createRuntime } from "../app/dependencies/runtime.ts";
 import {
   buildDependencyPlan,
   decodeRegistry,
@@ -22,6 +23,9 @@ import {
 import { PlanSchema } from "../app/dependencies/model.ts";
 
 const repository = dirname(fileURLToPath(new URL("../package.json", import.meta.url)));
+function createDependencyRuntime(options: Parameters<typeof createRuntime>[0]) {
+  return createRuntime({ ...options, resolveAube: (root) => resolve(root, "fixture-aube.exe") });
+}
 const bytes = (value: string): Uint8Array => new TextEncoder().encode(value);
 const result = (stdout = "", status = 0, stderr = ""): CommandResult => ({
   status,
@@ -78,7 +82,7 @@ async function fixture() {
     root,
     write,
     close: async () => {
-      assert.equal(dirname(root), resolve(tmpdir()));
+      await assertTemporaryFixture(root);
       assert.ok(basename(root).startsWith("teamagent-deps-"));
       await rm(root, { recursive: true, force: true });
     },
@@ -158,8 +162,11 @@ await test("dependency plans validate exact pins, preserve groups and block abse
 await test("offline checks/plans need no sibling checkout or subprocess and reject modified mirrors", async () => {
   const setup = await fixture();
   let calls = 0;
-  const runtime = createDependencyRuntime({
+  const runtime = createRuntime({
     root: setup.root,
+    resolveAube: () => {
+      throw new Error("Offline checks must not resolve Aube");
+    },
     command: async () => {
       calls++;
       throw new Error("Must remain passive");
@@ -212,9 +219,27 @@ await test("discovery checks output before remote work and records only validate
     const found = await Effect.runPromise(runtime.discover(".cache/dependencies/found.json"));
     assert.equal(found.upgrades, 1);
     assert.equal(calls.length, 2);
+    assert.ok(
+      calls.every(
+        (call) =>
+          call.executable === "aube" &&
+          call.physicalExecutable === resolve(setup.root, "fixture-aube.exe"),
+      ),
+    );
     assert.ok(calls[1]?.arguments.includes("--fetch-retries"));
     assert.equal(JSON.stringify(found).includes("PRIVATE_FIXTURE_TOKEN"), false);
     Schema.decodeUnknownSync(PlanSchema)(json(await readFile(join(setup.root, found.plan))));
+    const relativeRuntime = createRuntime({
+      root: setup.root,
+      resolveAube: () => "aube",
+      command: async () => {
+        throw new Error("Relative executable must never launch");
+      },
+    });
+    await assert.rejects(
+      Effect.runPromise(relativeRuntime.discover(".cache/dependencies/relative.json")),
+      /absolute physical/,
+    );
   } finally {
     await setup.close();
   }
@@ -499,6 +524,32 @@ await test("dependency CLI help/version and bare invocation stay passive and fla
 });
 
 await test("dependency subprocess adapter caps output and classifies an aborted process as uncertain", async () => {
+  for (const physicalExecutable of [undefined, "aube"]) {
+    await assert.rejects(
+      runCommand({
+        executable: "aube",
+        arguments: ["--version"],
+        cwd: repository,
+        timeoutMs: 1000,
+        bytes: 1024,
+        signal: new AbortController().signal,
+        ...(physicalExecutable === undefined ? {} : { physicalExecutable }),
+      }),
+      /host-resolved absolute Aube/,
+    );
+  }
+  await assert.rejects(
+    runCommand({
+      executable: "git",
+      physicalExecutable: process.execPath,
+      arguments: ["--version"],
+      cwd: repository,
+      timeoutMs: 1000,
+      bytes: 1024,
+      signal: new AbortController().signal,
+    }),
+    /fixed Git operation/,
+  );
   const controller = new AbortController();
   controller.abort();
   const outcome = await runCommand({

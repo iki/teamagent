@@ -213,6 +213,8 @@ export interface CommandResult {
 }
 export interface CommandRequest {
   readonly executable: "aube" | "git";
+  /** Trusted host-resolved Aube path; command JSON never selects an executable. */
+  readonly physicalExecutable?: string;
   readonly arguments: readonly string[];
   readonly cwd: string;
   readonly timeoutMs: number;
@@ -238,10 +240,24 @@ function commandEnvironment(git: boolean): NodeJS.ProcessEnv {
   };
 }
 
-export const runCommand: CommandRunner = (request) =>
-  new Promise((done) => {
+export const runCommand: CommandRunner = (request) => {
+  const executable =
+    request.executable === "aube" ? request.physicalExecutable : request.executable;
+  if (
+    !executable ||
+    (request.executable === "aube" && !isAbsolute(executable)) ||
+    (request.executable === "git" && request.physicalExecutable !== undefined)
+  )
+    return Promise.reject(
+      new DependencyError({
+        code: "blocked",
+        message:
+          "Dependency commands require a host-resolved absolute Aube path or the fixed Git operation.",
+      }),
+    );
+  return new Promise((done) => {
     execFile(
-      request.executable,
+      executable,
       [...request.arguments],
       {
         cwd: request.cwd,
@@ -263,6 +279,7 @@ export const runCommand: CommandRunner = (request) =>
       },
     );
   });
+};
 
 export function diagnostic(result: CommandResult) {
   return {

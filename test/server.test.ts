@@ -1,8 +1,9 @@
+import { assertTemporaryFixtureSync, mkdtempSync } from "./temporary.ts";
 import { afterEach, describe, expect, test } from "bun:test";
 import { Database } from "bun:sqlite";
-import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { isAbsolute, join, relative, resolve } from "node:path";
+import { join, resolve } from "node:path";
 import { Effect, Schema } from "effect";
 import {
   ArtifactsSchema,
@@ -21,13 +22,7 @@ const directories: string[] = [];
 afterEach(() => {
   for (const directory of directories.splice(0)) {
     const target = resolve(directory);
-    const contained = relative(resolve(tmpdir()), target);
-    if (
-      isAbsolute(contained) ||
-      contained.startsWith("..") ||
-      !contained.startsWith("teamagent-http-")
-    )
-      throw new Error("Refusing removal outside the HTTP test directory.");
+    assertTemporaryFixtureSync(target);
     rmSync(target, { recursive: true, force: true });
   }
 });

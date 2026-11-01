@@ -1,7 +1,8 @@
 import { randomUUID } from "node:crypto";
 import { lstat, realpath } from "node:fs/promises";
 import { isDeepStrictEqual } from "node:util";
-import { relative, resolve, sep } from "node:path";
+import { isAbsolute, relative, resolve, sep } from "node:path";
+import { pinnedTool } from "../check/toolchain.ts";
 import { DateTime, Effect, Schema } from "effect";
 import {
   DependencyError,
@@ -136,6 +137,8 @@ function rootFields(value: unknown): Record<string, unknown> {
 export interface DependencyRuntimeOptions {
   readonly root: string;
   readonly command?: CommandRunner;
+  /** Trusted host capability for fixtures; executable names never come from command JSON. */
+  readonly resolveAube?: (root: string) => string;
 }
 
 /** Host operations are explicit; ordinary check/plan never launch Aube or Git. */
@@ -146,15 +149,25 @@ export function createDependencyRuntime(options: DependencyRuntimeOptions) {
     args: readonly string[],
     signal: AbortSignal,
     timeoutMs: number = dependencyLimits.processMs,
-  ) =>
-    command({
+  ) => {
+    const executable = (options.resolveAube ?? ((directory) => pinnedTool(directory, "aube")))(
+      root,
+    );
+    if (!isAbsolute(executable))
+      throw new DependencyError({
+        code: "blocked",
+        message: "Aube must resolve to an absolute physical executable.",
+      });
+    return command({
       executable: "aube",
+      physicalExecutable: executable,
       arguments: args,
       cwd: root,
       timeoutMs,
       bytes: dependencyLimits.processBytes,
       signal,
     });
+  };
   const checkAube = async (signal: AbortSignal): Promise<void> => {
     const version = await aube(["--version"], signal);
     ensureResult(version, [0]);

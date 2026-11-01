@@ -1,6 +1,7 @@
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { afterAll, beforeAll, describe, expect, test } from "bun:test";
 import assert from "node:assert/strict";
-import { mkdir, mkdtemp, realpath, rm } from "node:fs/promises";
+import { mkdir, realpath, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { Effect, Schema } from "effect";
@@ -13,7 +14,7 @@ import {
   type SourceVersion,
 } from "@/memory";
 import { createSourceCapture } from "../app/imports/index.ts";
-import { contained, digest } from "../app/imports/limits.ts";
+import { digest } from "../app/imports/limits.ts";
 import { openMemoryHost } from "../app/runtime/memory.ts";
 
 let directory = "";
@@ -29,8 +30,8 @@ beforeAll(async () => {
 });
 afterAll(async () => {
   for (const store of stores) await Effect.runPromise(store.close());
-  if (contained(await realpath(tmpdir()), directory) && directory.includes("teamagent-http-cache-"))
-    await rm(directory, { recursive: true, force: true });
+  await assertTemporaryFixture(directory);
+  await rm(directory, { recursive: true, force: true });
 });
 async function memory(name: string) {
   const store = await Effect.runPromise(

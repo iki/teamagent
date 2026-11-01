@@ -1,9 +1,9 @@
+import { mkdtemp } from "./temporary.ts";
 import { expect, test } from "bun:test";
 import { rejects } from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import {
-  mkdtemp,
   mkdir,
   readFile,
   rm,

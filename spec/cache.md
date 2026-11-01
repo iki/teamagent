@@ -1,6 +1,6 @@
 # Build and verification cache contract
 
-This contract transfers the useful parts of [Trigon's cache design](analyses/trigon-process-sync/verification.md) into Teamagent's development tooling. Implementation and measured results must be distinguished from these requirements. The [benchmark record](benchmarks/trigon-process-sync-2026-10-28.json) retains the initial fixed-pin comparison and its limitations.
+This contract defines Teamagent's build and verification evidence. Implementation and measured results must be distinguished from these requirements. The [adoption record](analyses/trigon-process-sync/verification.md) and [benchmark record](benchmarks/trigon-process-sync-2026-10-28.json) retain the initial fixed-pin comparison and its limitations.
 
 ## Commands and evidence
 
@@ -76,6 +76,14 @@ identity uses those same values and also binds the runtime's actual resolved
 change defaults already selected by a running runtime. Meaningful settings such
 as `TZ` remain inputs. Building a child environment does not mutate its caller.
 
+The three validated temporary-owner routing fields are excluded from verification
+environment keys because fresh child scopes receive new ownership tokens. Their
+complete lease and trusted repository root are validated before cache reuse,
+including when every verification group is a hit. This exception covers only
+`TEAMAGENT_TEMPORARY_ROOT`, `TEAMAGENT_TEMPORARY_PARENT` and
+`TEAMAGENT_TEMPORARY_PARENT_ID`; other `TEAMAGENT_` settings remain inputs. Routing
+does not establish authority to delete a borrowed parent or to publish a result.
+
 The pre-commit hook and workflow final verification select local receipt writes.
 A newly required check can therefore finish without changing tracked evidence
 or requiring a new staging cycle solely for that local result. The pre-commit
@@ -114,6 +122,21 @@ Validate inputs before execution and again after success. Never publish success 
 
 Bound file counts, bytes, depth, receipt sizes, process time, log output and concurrent workers. Reject path escapes and unexpected links; external prerequisites need explicit declared ownership. Use atomic output/receipt publication and exclusive per-task locks. Never reclaim a live or unknown owner merely because the lock is old.
 
+Source and output fingerprints stream every byte through 64-KiB buffers. The
+fingerprint reader admits at most four open readers and 256 queued requests in
+one process; exceeding that queue fails explicitly. This is an I/O bound, not
+permission to run more verification children. Reads bind the original file
+identity to the opened handle and final path, compare precise metadata and
+probe beyond the expected end to reject growth, truncation and replacement.
+Caller-specific file and aggregate byte limits remain in force.
+
+Git blob fingerprints retain their exact object-format header and complete raw
+bytes. Inventory hashing writes the same ordered JSON array encoding
+incrementally, including names, modes, missing entries and directory rows. The
+streaming change does not alter the digest format, canonicalize LF, use stat
+values as a byte substitute or sample large files. Installed-package inventories
+retain their separate serial reader contract described above.
+
 Local rejection history is cumulative per task, with at most 256 unique keys
 and a 32-KiB read bound. Legacy single-key records remain readable; updates use
 the version-two key set. Success removes only its own rejected key, so a later
@@ -140,6 +163,15 @@ error log can be written outside the task workflow lock. The independent hook
 budget does not change that guarantee.
 
 Cancellation must terminate and reap owned processes. A displayed summary is not a bound on queued writes or raw output. Retain useful redacted failure diagnostics without credentials or private payloads. Cache failures must be visible; they cannot silently convert into successful verification.
+
+The [resource ownership contract](resources.md) separates disposable scratch
+from persistent evidence. Workflow commands, verification tools and unit batches
+hold marked scratch until their owned process scope confirms descendant shutdown.
+Windows uses atomic Job Object assignment and parent-handle supervision; POSIX
+uses an owned process group with explicitly narrower owner-death guarantees.
+Unconfirmed shutdown retains scratch and fails verification. Borrowed temporary
+parents grant use only. Fresh allocation performs no automatic recovery of old
+scratch, workflow locks, rejection history or conversation records.
 
 Unit children remove repository-local Git overrides and disable inherited
 system/global Git configuration while preserving fixture-local configuration.
@@ -193,13 +225,20 @@ Preserve all four TypeScript programs and their distinct host/browser/portable e
 
 Only suites with audited private state can run in separate processes. Keep unknown suites together, preserve exact file/test coverage, enforce one bounded phase deadline and cap concurrency using available resources. The initial Teamagent experiments isolated the research-Git suite and then analysis-sync; all variants passed the same 359 tests and 1,321 Bun expectations. Node assertion calls are not individually counted by that Bun metric.
 
-The implemented scheduler admits one worker below 2 GiB available memory or
-two CPUs, two workers from 2 GiB, and three from 4 GiB with at least four CPUs.
+The implemented scheduler refuses new work below 1 GiB available memory, admits
+one worker from 1 GiB below 2 GiB or with fewer than two CPUs, two workers from
+2 GiB, and three from 4 GiB with at least four CPUs. Available memory is the
+smaller of host free memory and the runtime's process-available estimate. Unknown
+availability remains conservatively sequential. Admission is checked again
+before each batch. If memory falls below the floor, running children are joined;
+queued files remain explicitly unrun and verification fails without a receipt.
 With multiple workers it starts the remaining suites first and isolates the
 audited research-Git and workflow suites; three-worker mode also isolates
 analysis-sync. Unknown suites stay together in their original order. The
 one-worker path retains the original complete file order. All groups share the
-unchanged 240-second unit deadline.
+unchanged 240-second unit deadline and 120-second per-test setting. The one-GiB
+floor is a conservative admission policy, not a measured optimum. Historical
+samples below describe the policy in force when those samples were collected.
 
 The first assembled process-transfer check timed out at that deadline after
 394 tests across 51 files had passed, before completing the workflow suite.
