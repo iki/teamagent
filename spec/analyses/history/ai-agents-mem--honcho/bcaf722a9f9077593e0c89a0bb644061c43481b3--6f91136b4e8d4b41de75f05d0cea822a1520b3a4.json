@@ -1,0 +1,930 @@
+{
+  "id": "ai-agents-mem--honcho",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/plastic-labs/honcho",
+  "report": "spec/projects/ai-agents-mem--honcho.md",
+  "analyzedSha": "bcaf722a9f9077593e0c89a0bb644061c43481b3",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T12:38:39-04:00",
+  "observedSha": "6f91136b4e8d4b41de75f05d0cea822a1520b3a4",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "6f91136b4e8d4b41de75f05d0cea822a1520b3a4",
+      "date": "2026-10-30T15:08:02-04:00",
+      "subject": "chore(mcp): require @honcho-ai/sdk 2.8.0 so conclusions carry source_message_ids (#1503)"
+    },
+    {
+      "sha": "2c8b28bfc644eaebaaf78816713cf32fc69bc314",
+      "date": "2026-10-30T10:07:36-04:00",
+      "subject": "fix(llm): record failed structured-output attempts with their output (#1498)"
+    },
+    {
+      "sha": "7dd3702933d5cc1ce1f0a44bba6525cc61ee6e16",
+      "date": "2026-10-29T18:06:54-04:00",
+      "subject": "chore(hermes-plugin): bump hermes-plugin-honcho to 1.1.0 (#1499)"
+    },
+    {
+      "sha": "07385272845a628f8c4fff16ad85025795abb1bd",
+      "date": "2026-10-29T15:41:39-04:00",
+      "subject": "docs: stop listing abduction as a current reasoning capability (#1489)"
+    },
+    {
+      "sha": "f8d1fc9fe52556a86b70c7115f35ca420dee2abd",
+      "date": "2026-10-29T14:17:33-04:00",
+      "subject": "fix(hermes-plugin): fall back to peer search when the perspective search is empty (#1490)"
+    },
+    {
+      "sha": "0cd37ddbd88f51cdac7c660d7372f4b2fd40a4b3",
+      "date": "2026-10-29T14:12:21-04:00",
+      "subject": "fix(release): declare the compat floor for the v3.5.0 alembic head (#1496)"
+    },
+    {
+      "sha": "2eb6218ead3a6745aeea857f379bc36b9a14f6dc",
+      "date": "2026-10-29T14:06:06-04:00",
+      "subject": "chore: add changelog and version updates (#1486)"
+    },
+    {
+      "sha": "105093e301b38f5d8ea1e7fe9887808c8a2b912f",
+      "date": "2026-10-29T14:05:17-04:00",
+      "subject": "fix(hermes-plugin): local gateway keys follow sessionStrategy, not per-chat isolation (#1487)"
+    },
+    {
+      "sha": "ff75eb2c484b427059de4b288033f1b5cb2346e0",
+      "date": "2026-10-29T13:45:50-04:00",
+      "subject": "fix(dialectic): configurable chat query limit, stream the loop's own answer (#1443)"
+    },
+    {
+      "sha": "ce6b9d323ec40c0bf02bc665dd4fdac24f2ee73e",
+      "date": "2026-10-29T13:34:42-04:00",
+      "subject": "fix(summarizer): keep both summaries at a combined short/long boundary (#1493)"
+    },
+    {
+      "sha": "2260a83902bf31b34ab6507d782e9a5798abe198",
+      "date": "2026-10-29T13:30:46-04:00",
+      "subject": "fix(deriver): mark a queue item errored when its error text has NUL (#1492)"
+    },
+    {
+      "sha": "5f14cc50f087a43a12e581a24c7cb72dfa8dc1d1",
+      "date": "2026-10-29T13:21:25-04:00",
+      "subject": "fix(summarizer): count content-filtered summaries instead of reporting them to Sentry (#1457)"
+    },
+    {
+      "sha": "5ca089e70ac0b3ad6888086500dd68ce5c173039",
+      "date": "2026-10-29T10:50:36-04:00",
+      "subject": "fix(hermes-plugin): keep test deps out of the plugin's pyproject.toml (#1488)"
+    },
+    {
+      "sha": "64a78ae812448cda60efbfaf0846bbf154468d31",
+      "date": "2026-10-29T10:07:05-04:00",
+      "subject": "feat(scopes): remove up to 100 sessions from a scope in one request (#1480)"
+    },
+    {
+      "sha": "712702184017fbfe66b66e8e108524b9765a30f1",
+      "date": "2026-10-29T09:40:39-04:00",
+      "subject": "feat(scopes): count each scope's sessions and filter scopes by name (#1478)"
+    },
+    {
+      "sha": "96806bc29236331ed3f1749589b7b1442c2325e5",
+      "date": "2026-10-28T17:26:59-04:00",
+      "subject": "fix(scopes): skip a stale scope removal once the session is a member again (#1479)"
+    },
+    {
+      "sha": "f8ae8ba7aa1c7e93b3c04629d62a8e1ab53423a4",
+      "date": "2026-10-28T17:18:49-04:00",
+      "subject": "feat(sessions): list a session's scopes and filter sessions by scope (#1477)"
+    },
+    {
+      "sha": "18fe5dd10a3b1bdc1195b5b2554f37eff3a56ddf",
+      "date": "2026-10-28T16:52:02-04:00",
+      "subject": "fix(hermes): drop group-chat and hosted-room harness turns (#1461)"
+    },
+    {
+      "sha": "8ff458270cb15920a06bb0e5449c5638b19a9eca",
+      "date": "2026-10-28T14:58:00-04:00",
+      "subject": "fix(llm): Claude 5.x thinking, tool_choice, prefill and thinking replay (#1442)"
+    },
+    {
+      "sha": "6f1bea5621a9d040a8fca25df5c0a1677239134b",
+      "date": "2026-10-28T13:10:21-04:00",
+      "subject": "fix(files): bump pypdf to 6.21.2 and parse PDFs off the event loop (#1476)"
+    },
+    {
+      "sha": "0dd6af3cefc418c955e8092163392458f99ee376",
+      "date": "2026-10-28T10:13:32-04:00",
+      "subject": "feat(deriver): add message to conclusion source indices (#935)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".env.template",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/hermes-plugin-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/live-llm-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config.toml.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/changelog/compatibility-guide.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/changelog/introduction.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/snippets/cli-commands.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/contributing/configuration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/core-concepts/reasoning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/core-concepts/representation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/features/advanced/directional-representations.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/features/advanced/evidence.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/features/advanced/scopes.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/features/advanced/streaming-response.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/features/advanced/structured-outputs.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/features/advanced/using-filters.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/features/chat.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/openapi.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/plugin.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/session_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "hermes-plugin-honcho/tests/.python-version",
+      "previousPath": "hermes-plugin-honcho/.python-version"
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/tests/test_auth_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/tests/test_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/tests/test_honcho_startup_fail_open.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/tests/test_session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/tests/test_session_routing_integration.py",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "hermes-plugin-honcho/tests/uv.lock",
+      "previousPath": "hermes-plugin-honcho/uv.lock"
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/src/honcho_cli/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/src/honcho_cli/commands/conclusion.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/tests/test_conclusion_attribution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/instructions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/server.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/src/tools/conclusions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/src/tools/conclusions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/src/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "migrations/compat.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "migrations/versions/c4d8e2f6a1b3_add_conclusion_source_messages_table.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/python/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/python/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/python/src/honcho/aio.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/python/src/honcho/api_types.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/python/src/honcho/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/python/src/honcho/conclusions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/python/src/honcho/http/routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/python/src/honcho/scope.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/python/src/honcho/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/python/src/honcho/utils/scopes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/__tests__/conclusions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdks/typescript/__tests__/scope-bulk-remove.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdks/typescript/__tests__/scope-list.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/__tests__/scope.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdks/typescript/__tests__/session-scopes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/src/api-version.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/src/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/src/conclusions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/src/peer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/src/scope.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/src/session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/src/types/api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/src/validation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/crud/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/crud/document.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/crud/representation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/crud/scope.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/crud/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/crud/workspace.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/deriver/deriver.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/deriver/enqueue.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/deriver/prompts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/deriver/queue_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/deriver/scope_backfill.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/dialectic/chat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/dialectic/core.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/exceptions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/llm/api.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/llm/backends/anthropic.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/llm/backends/openai.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/llm/capabilities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/llm/conversation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/llm/executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/llm/structured_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/llm/tool_loop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/routers/scopes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/routers/sessions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/schemas/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/schemas/api.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/schemas/internal.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/telemetry/langfuse_exporter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/telemetry/prometheus/metrics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/telemetry/sentry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/files.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/filter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/representation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/sanitization.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/summarizer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/alembic/revisions/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/alembic/revisions/test_c4d8e2f6a1b3_add_conclusion_source_messages_table.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/crud/test_conclusion_source_messages.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/crud/test_representation_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/deriver/test_deriver_processing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/deriver/test_queue_processing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/deriver/test_representation_crud.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/deriver/test_scope_backfill.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/dialectic/test_evidence.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/integration/test_representation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/integration/test_token_metrics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/live_llm/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/live_llm/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/live_llm/model_matrix.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/live_llm/test_live_anthropic.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/live_llm/test_live_anthropic_preserved_thinking.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/live_llm/test_live_tools_structured_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/llm/test_backends/test_anthropic.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/llm/test_backends/test_openai.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/llm/test_capabilities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/llm/test_conversation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/llm/test_failed_attempt_capture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/llm/test_retry_condition.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/llm/test_structured_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/llm/test_tool_loop_stream_final.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/llm/test_tool_loop_structured_answer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/llm/test_tool_loop_thinking_replay.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/llm/test_validate_response.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/routes/test_conclusions.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/routes/test_scope_bulk_remove.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/routes/test_scope_list.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/routes/test_scopes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sdk/test_conclusions.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sdk/test_scope_bulk_remove.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sdk/test_scope_list.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sdk/test_session_list_scopes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/telemetry/test_langfuse_exporter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/telemetry/test_metric_zero_init.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/telemetry/test_sentry_before_send.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/telemetry/test_trace_capture_paths.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/utils/test_files.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/utils/test_filter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/utils/test_sanitization.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/utils/test_summarizer.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

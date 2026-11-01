@@ -1,0 +1,60 @@
+# career-ops
+
+Source: [career-ops](https://github.com/santifer/career-ops) · Category: [ai-media](../categories/ai-media.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `3957d70040c74424ee9477484059e05a53315537`; commit timestamp `2026-10-03T17:57:50Z`; 1,779 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/santifer/career-ops/blob/3957d70040c74424ee9477484059e05a53315537/README.md)):
+
+> 740&nbsp;listings&nbsp;evaluated. 68&nbsp;applied. 12&nbsp;interviews.&nbsp;1&nbsp;offer. I was its first user. I got the&nbsp;job. Then&nbsp;I&nbsp;open-&#8288;sourced&nbsp;it.
+
+Build/package evidence: [dashboard/go.mod](https://github.com/santifer/career-ops/blob/3957d70040c74424ee9477484059e05a53315537/dashboard/go.mod); [package.json](https://github.com/santifer/career-ops/blob/3957d70040c74424ee9477484059e05a53315537/package.json); [scaffolder/package.json](https://github.com/santifer/career-ops/blob/3957d70040c74424ee9477484059e05a53315537/scaffolder/package.json); [web/package.json](https://github.com/santifer/career-ops/blob/3957d70040c74424ee9477484059e05a53315537/web/package.json)
+
+License evidence: [LICENSE](https://github.com/santifer/career-ops/blob/3957d70040c74424ee9477484059e05a53315537/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-media**. Its category places it in the candidate set for import-generation; those associations are navigational and have not been individually validated as implemented capabilities. See [import-generation](../import-generation.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Provider cache merging preserves concurrent changes while stale reuse needs a visible contract.** Reviewed commit `3bc1d60c26505694816e66a2e40c59b68a873aa1` (commit date `2026-10-27T17:19:00Z`). Compared with `3957d70040c74424ee9477484059e05a53315537`; the complete Git comparison contains 1916 changed paths.
+
+Provider ID slices validate provider-name syntax, load lazily and save only changed keys. Each save snapshots pending changes, rereads under a shared directory lock, merges sets/deletes and renames a temporary file; failed slices are requeued without overwriting newer local changes, and other slices still get a save attempt before the first error is thrown. Fixtures describe overlapping saves, changes during save and failed-slice retries. Cache JSON is only checked as an object and unreadable data becomes an empty slice, so this is an optimization store rather than an authoritative record.
+
+cachedLookup validates a previously cached ID but does not validate a newly returned lookup value before saving it. After the default 30-day recheck interval, any failure not classified isGone can return the old ID indefinitely, with no stale marker; future checkedAt dates also count as fresh. DNS lookup coalesces misses and applies a provider-address guard to fresh answers, hits and waiters. Its cache has an entry cap and pacing, but the token queue and in-flight waiter lists rely on external caller concurrency and expose no local cancellation/deadline. The lock wrapper delegates protocol correctness and accepts an explicit infinite overall wait.
+
+Evidence: [provider-id-cache.mjs:1-115](https://github.com/santifer/career-ops/blob/3bc1d60c26505694816e66a2e40c59b68a873aa1/provider-id-cache.mjs#L1-L115) · [pipeline-lock.mjs:1-115](https://github.com/santifer/career-ops/blob/3bc1d60c26505694816e66a2e40c59b68a873aa1/pipeline-lock.mjs#L1-L115) · [providers/_cached-lookup.mjs:1-51](https://github.com/santifer/career-ops/blob/3bc1d60c26505694816e66a2e40c59b68a873aa1/providers/_cached-lookup.mjs#L1-L51) · [providers/_dns-cache.mjs:125-209](https://github.com/santifer/career-ops/blob/3bc1d60c26505694816e66a2e40c59b68a873aa1/providers/_dns-cache.mjs#L125-L209) · [providers/_dns-cache.mjs:225-346](https://github.com/santifer/career-ops/blob/3bc1d60c26505694816e66a2e40c59b68a873aa1/providers/_dns-cache.mjs#L225-L346) · [tests/provider-id-cache.test.mjs:1-126](https://github.com/santifer/career-ops/blob/3bc1d60c26505694816e66a2e40c59b68a873aa1/tests/provider-id-cache.test.mjs#L1-L126).
+
+**Harness consequence:** Keep per-slice read/merge/write ownership and retry preservation, but return freshness and degradation metadata with cached provider IDs and validate new values before persistence. Treat DNS guarding, result caching, request admission and cancellation as separate contracts; verify the called guard/lock implementations and enforce a finite host-level wait budget before adopting them.
+
+**Scope and limits:** Scoped static review of provider-ID persistence, lookup freshness, DNS coalescing/pacing and the lock wrapper in the 1,916-path comparison. The directory-lock protocol, IP classification, ranking pipeline and real provider behavior were not audited; fixtures were read without executing upstream code or contacting providers.
+
+## Follow-up change review — 2026-10-28
+
+**This interval updates community presentation and signatures only.** Reviewed commit `ecca12b7bb78b74e87caae412a690bac8608a0e2` (commit date `2026-10-28T05:23:06+01:00`), compared with `3bc1d60c26505694816e66a2e40c59b68a873aa1`. The complete no-rename Git path inventory contains 22 changed paths.
+
+The complete path inventory contains localized README updates, contributor illustrations and signatures. The English README adds the contributor stack and a builders anchor. No speech, voice-cloning, image/video processing or provider-adapter implementation changes appear in this interval. Contributor counts are upstream presentation claims rather than independently verified adoption measurements.
+
+Evidence: [README.md:25-33](https://github.com/santifer/career-ops/blob/ecca12b7bb78b74e87caae412a690bac8608a0e2/README.md#L25-L33).
+
+**Harness consequence:** Do not infer media capability from directory classification, popularity or community artwork. Keep the project's prior functional assessment and separate documentation/community maintenance from runtime evidence.
+
+**Scope and limits:** Reviewed the complete path inventory and English README delta; localized wording and contributor identities were not individually verified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`6210e4414ad052f83baa560b5ab8e5bdcd2def6a`](https://github.com/santifer/career-ops/commit/6210e4414ad052f83baa560b5ab8e5bdcd2def6a), compared with `ecca12b7bb78b74e87caae412a690bac8608a0e2`.
+
+The new [privacy guard](https://github.com/santifer/career-ops/blob/6210e4414ad052f83baa560b5ab8e5bdcd2def6a/lib/privacy-guard.mjs) separates configured values from opt-in pattern detection and exposes distinct configuration/inspection failures. Selected code decodes byte views, refuses known opaque body types, and returns category/key labels rather than matched values. The reviewed [fixtures](https://github.com/santifer/career-ops/blob/6210e4414ad052f83baa560b5ab8e5bdcd2def6a/tests/privacy-guard.test.mjs) cover opaque bodies, nested buffers, cyclic data, pre-network refusal and explicit bypass flags.
+
+Absent configuration means no protected values and automatic detection disabled; a successful check in that state is not proof that personal data was removed. The environment bypass requires two variables, but the second is merely nonempty and is not authenticated approval. These distinctions must remain visible if Teamagent adopts similar checks. Pattern matching cannot establish anonymity, provider non-training policy, retention or voice consent. This review read selected implementation and fixture ranges from the 1,816-line delta, not every helper or outbound caller; no upstream tests or external requests were executed.

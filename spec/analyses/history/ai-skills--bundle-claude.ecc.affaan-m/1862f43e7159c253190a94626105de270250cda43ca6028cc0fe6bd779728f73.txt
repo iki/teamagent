@@ -1,0 +1,47 @@
+# Everything Claude Code: continuous learning
+
+Source: [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) · Reviewed revision: `ef648e01899ba3e8dc6371642deaaf64b4477775` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [skills](../skills.md) · [memory](../memory.md) · [evolution](../evolution.md).
+
+## Evidence inspected
+
+- [`skills/continuous-learning-v2/SKILL.md` lines 1–110](https://github.com/affaan-m/everything-claude-code/blob/ef648e01899ba3e8dc6371642deaaf64b4477775/skills/continuous-learning-v2/SKILL.md#L1-L110)
+- [`skills/continuous-learning-v2/scripts/instinct-cli.py` lines 125–132](https://github.com/affaan-m/everything-claude-code/blob/ef648e01899ba3e8dc6371642deaaf64b4477775/skills/continuous-learning-v2/scripts/instinct-cli.py#L125-L132)
+- [`skills/continuous-learning-v2/scripts/instinct-cli.py` lines 937–979](https://github.com/affaan-m/everything-claude-code/blob/ef648e01899ba3e8dc6371642deaaf64b4477775/skills/continuous-learning-v2/scripts/instinct-cli.py#L937-L979)
+
+## Observed architecture and behavior
+
+The reviewed continuous-learning subsystem stores atomic trigger/action instincts with confidence, domain, source evidence, and project scope. Its documentation describes hooks that capture observations, an observer that extracts patterns, and clustering into larger skills, commands, or agents. It distinguishes project and global stores; the code sets a two-project promotion threshold. Import logic deduplicates IDs by confidence and filters against a confidence threshold. These are operational heuristics, not calibrated probabilities of correctness.
+
+## Implications and tradeoffs for Teamagent
+
+Project scope is especially valuable for avoiding contamination between codebases with incompatible conventions. Teamagent should preserve the observation-to-instinct-to-skill distinction, along with user corrections and outcome evidence. Confidence needs a definition tied to empirical support and uncertainty; a numeric field written by an observer is not enough. Two projects can share the same mistaken convention, or be forks of the same repository, so cross-project count should not alone authorize global promotion. Imports also need source trust and conflict handling instead of accepting the highest reported confidence from any library.
+
+## Adoption decision
+
+Adopt the atomic instinct schema as candidate procedural memory, with separate evidence and validation scores. Use explicit project identity and provenance-aware inheritance. Keep promotion to global scope behind independent held-out evaluation across unrelated repositories. Evaluate hook completeness and privacy under each target harness rather than accepting the documentation's reliability language as measured fact. Preserve original instincts when clustering so regressions can be traced and reversed.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b`](https://github.com/affaan-m/everything-claude-code/commit/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b). Scope: Full hook-session resolver and tests plus context/decision and change-impact skills read. Installer, scoring engine, session manager and downstream filename sanitizers were not audited.
+
+The [hook-session resolver](https://github.com/affaan-m/everything-claude-code/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/scripts/lib/hook-session.js) accepts only a top-level nonblank string and applies explicit payload/ECC/legacy precedence, with [tests](https://github.com/affaan-m/everything-claude-code/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/tests/lib/hook-session.test.js) for malformed JSON and wrong types. It deliberately preserves raw IDs, including traversal characters, Windows device names and whitespace, for callers to sanitize. This is identity extraction, not a safe filename or authenticated session boundary; missing and malformed payloads both fall back to the environment.
+
+The [context skill](https://github.com/affaan-m/everything-claude-code/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/.agents/skills/context-and-decisions/SKILL.md) separates stable terminology from durable decisions and avoids duplicate document systems. The [impact skill](https://github.com/affaan-m/everything-claude-code/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/.agents/skills/change-impact/SKILL.md) requires call/schema evidence and compares the actual diff with the planned scope, explicitly refusing to infer dependencies from directory names. Adapt those evidence rules while retaining Teamagent's existing documentation and authorization workflow; source-specific confirmation and tracker preferences do not replace it. No hooks, installer, scorer or tests were executed.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `b38be6a7f6350964d59328b52f0624e1d1d552d1` (commit date `2026-10-29T20:06:32-07:00`), compared with `25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b`. Earlier observations remain historical evidence.
+
+**Scope:** Complete verification-loop skill guidance diff; 266 changed paths inventoried. Executable enforcement and other bundled skills not audited.
+
+The [verification skill](https://github.com/affaan-m/everything-claude-code/blob/b38be6a7f6350964d59328b52f0624e1d1d552d1/.agents/skills/verification-loop/SKILL.md) distinguishes local checks from target acceptance, calls for environment/version and evidence records, and reserves verified/failed labels for executed checks while retaining not-performed/not-applicable states. It asks for authorization before external actions. This is authored workflow guidance, not evidence of runtime enforcement or a completed deployment test.
+
+**Teamagent implication (inference):** Preserve target, inputs, command, observed result and limitations in portable verification receipts. Reuse the user's existing scoped authorization rather than adding redundant approval prompts, while keeping unexecuted native/provider acceptance visibly separate from local success.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.

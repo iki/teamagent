@@ -1,0 +1,875 @@
+{
+  "id": "ai-agents-proxy--cockpit-tools",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/jlcodes99/cockpit-tools",
+  "report": "spec/projects/ai-agents-proxy--cockpit-tools.md",
+  "analyzedSha": "2cfe5e51314bfc0bf70bdda1ba08aed82c7dc8bf",
+  "analyzedAt": "2026-10-28T08:26:04.502Z",
+  "analyzedCommitDate": "2026-10-27T14:44:35+08:00",
+  "observedSha": "3edfff631a57244ebafde75dc6f7d02ffb6ad7ba",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3edfff631a57244ebafde75dc6f7d02ffb6ad7ba",
+      "date": "2026-11-01T07:57:26Z",
+      "subject": "chore(homebrew): update cask for v1.3.78 (#2980)"
+    },
+    {
+      "sha": "02cbd8ddbc58eb54fad44145726db606d7bdf770",
+      "date": "2026-11-01T15:10:00+08:00",
+      "subject": "release: v1.3.78"
+    },
+    {
+      "sha": "88cd0973e4b10d0448ecb33a968a3bc67c9c0442",
+      "date": "2026-11-01T09:37:23+08:00",
+      "subject": "docs: clarify Double 11 offer announcement in all languages"
+    },
+    {
+      "sha": "812c95bb2f786b38ff64f79ab7943c33a34f3f9b",
+      "date": "2026-11-01T09:32:58+08:00",
+      "subject": "chore: publish APIKEY.FAN Double 11 announcement"
+    },
+    {
+      "sha": "063d1802da633ddebcff0cc5340f20c1a8df194f",
+      "date": "2026-10-31T15:58:21Z",
+      "subject": "chore(homebrew): update cask for v1.3.77 (#2975)"
+    },
+    {
+      "sha": "9eba7495e9e676fb4ff2a71866dc475448284663",
+      "date": "2026-10-31T23:12:32+08:00",
+      "subject": "release: v1.3.77"
+    },
+    {
+      "sha": "97c1c25c127c6f44ad705145d698f68bd6e0baeb",
+      "date": "2026-10-30T23:43:43+08:00",
+      "subject": "docs: update QQ group"
+    },
+    {
+      "sha": "2b5bae022c9bfcd1e537044aa0a1ca86a6a7e499",
+      "date": "2026-10-30T11:24:12Z",
+      "subject": "chore(homebrew): update cask for v1.3.76 (#2966)"
+    },
+    {
+      "sha": "1e00a230a6f0a2a5a4fb3471f9c3c8a58c4dd394",
+      "date": "2026-10-30T18:39:59+08:00",
+      "subject": "release: v1.3.76"
+    },
+    {
+      "sha": "19f0069925358c9400ce4dbcba3eebe8a38bf88a",
+      "date": "2026-10-28T14:47:17+08:00",
+      "subject": "docs: update sponsor links to apikey.fan"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/build-matrix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Casks/cockpit-tools.rb",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.en.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.pt-br.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "announcements.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/codex-local-project-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/codex-proxy-reference-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/codex-remote-service.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/images/qq_group_1025957317.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/local-data-performance.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/query-and-migration-rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/release-process.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/third-party/mihomo-v1.19.31.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/third-party/mihomo-v1.19.33.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/third-party/sing-box-v1.14.1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "resources/codex/LICENSE.CLIProxyAPI",
+      "previousPath": "sidecars/cockpit-cliproxy/third_party/CLIProxyAPI/LICENSE"
+    },
+    {
+      "status": "A",
+      "path": "resources/codex/code-mode/apply_patch.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "resources/codex/code-mode/instructions.txt",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "resources/codex/codex_client_models.json",
+      "previousPath": "sidecars/cockpit-cliproxy/third_party/CLIProxyAPI/internal/registry/models/codex_client_models.json"
+    },
+    {
+      "status": "R096",
+      "path": "resources/codex/models.json",
+      "previousPath": "sidecars/cockpit-cliproxy/third_party/CLIProxyAPI/internal/registry/models/models.json"
+    },
+    {
+      "status": "R076",
+      "path": "scripts/check_codex_protocol_parity.cjs",
+      "previousPath": "scripts/check_codex_native_go_parity.cjs"
+    },
+    {
+      "status": "M",
+      "path": "scripts/claude-desktop-auth-helper.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/release/assets/dmg-readme.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/release/build_windows_portable.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/release/build_windows_portable.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/release/macos-signing.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/release/macos-signing.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/release/macos-universal.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/release/macos-universal.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/release/release_workflow.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/tauri.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-proxy-engine-archive.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/UPSTREAM.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/USAGE_ATTRIBUTION_REVIEW.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/account_concurrency.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/account_concurrency_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/account_pause.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/account_pause_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/account_pause_provider_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/account_pause_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/api_service_tier_default.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/api_service_tier_default_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/audio_relay.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/audio_relay_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/audio_runtime.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/audio_runtime_regression_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/auth_scope_diagnostics.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/auth_scope_diagnostics_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/auth_scope_selector.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/auth_scope_selector_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/auth_selection.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/auth_selection_rotation.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/auth_selection_rotation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/automatic_model_routing.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/automatic_model_routing_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/cancel_host_compat_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/capacity_recovery_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/codex_retired_models.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/codex_retired_models_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/continuity_automatic_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/continuity_client.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/continuity_client_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/continuity_host_results_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/continuity_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/continuity_large_request_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/continuity_legacy_forwarding_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/continuity_legacy_history_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/continuity_plaintext_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/continuity_process_other.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/continuity_process_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/continuity_worker.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/executor_error_payload.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/executor_error_payload_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/gateway_drain.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/gateway_drain_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/gateway_drain_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/gateway_identity.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/gateway_identity_endpoint_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/gateway_identity_proxy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/gateway_identity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/grok_provider_model_scope_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/image_accounts_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/image_api_download.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/image_api_download_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/image_api_full_model_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/image_api_model_selection_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/image_api_upstream.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/image_api_upstream_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/image_api_usage_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/image_continuity.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/image_continuity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/image_main_model_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/image_relay.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/image_relay_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/manifest_policy.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/manifest_policy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/model_scope_error.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/model_scope_error_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/moderation_notice.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/moderation_notice_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/oauth_reserve_manifest_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/official_account_binding.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/official_account_binding_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/ollama_bridge.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/parent_monitor_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/parent_monitor_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/parity22_media_reference_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/parity22_policy_reference_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/parity22_protocol_reference_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_admission.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_admission_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_call_ids.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_call_ids_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_eof_boundary_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_item_ids.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_item_ids_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_multi_agent_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_native_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_reasoning_identity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_responses_stream_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_responses_vision_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_stream_identity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_tool_order.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_tool_order_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/provider_gateway_truncation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/proxy_route_usage_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/quota_capacity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/quota_cooldown.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/quota_cooldown_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/quota_protection.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/quota_protection_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/relay_execution.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/relay_protocol_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/relay_server.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/request_cancellation.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/request_diagnostics.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/request_diagnostics_config.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/request_diagnostics_identity.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/request_diagnostics_identity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/request_diagnostics_observer.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/request_diagnostics_privacy.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/request_diagnostics_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/request_disconnect_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/request_output_speed.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/request_output_speed_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/request_proxy_route.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sidecars/cockpit-cliproxy/request_proxy_route_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

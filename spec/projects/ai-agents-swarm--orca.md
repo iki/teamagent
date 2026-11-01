@@ -44,6 +44,14 @@ In [src/main/skills/skill-install-discovery-verification.ts](https://github.com/
 
 **Harness implication and limits:** Installed bytes and discoverable provider placement are separate acceptance checks. Retained pre-install scans must not certify new writes, and a partial multi-agent installation must stay partial. This is discoverability evidence rather than content-hash verification or proof the agent can execute the skill. The broad repository diff was truncated; only this captured module and focused test contract were reviewed. No upstream code or live service was executed for this review.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`f29cc1aa82043ef8056ce641251eb4bf4bae5dcd`](https://github.com/stablyai/orca/commit/f29cc1aa82043ef8056ce641251eb4bf4bae5dcd), compared with `478743dbbaba368b9795463f6770966bc0baf341`.
+
+The [session-result validator](https://github.com/stablyai/orca/blob/f29cc1aa82043ef8056ce641251eb4bf4bae5dcd/src/main/ai-vault/session-list-result-validation.ts) adds an imported account-home schema and optional WSL identity, plus structured localization hints for scan issues. Malformed optional hints fall back to the base English issue, and invalid session entries generate an explicit skipped-count issue. The [fixture](https://github.com/stablyai/orca/blob/f29cc1aa82043ef8056ce641251eb4bf4bae5dcd/src/main/ai-vault/session-list-result-validation.test.ts) verifies preservation of a valid code/parameter pair and dropping malformed optional fields while keeping the issue itself.
+
+This is a useful boundary for heterogeneous installed-agent histories: bind records to execution/account scope and preserve incomplete-scan evidence independently of presentation. The imported account-home schema and remote scanner were not inspected here, so containment and authorization are not established. The15,261-path update required targeted review; no remote host, scanner or upstream tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [orca](https://github.com/stablyai/orca); analyzed commit `478743dbbaba368b9795463f6770966bc0baf341`; commit date 2026-10-28T03:17:25-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--orca.md).
+Analysis metadata: source [orca](https://github.com/stablyai/orca); analyzed commit `f29cc1aa82043ef8056ce641251eb4bf4bae5dcd`; commit date 2026-11-01T01:52:57-08:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--orca.md).
 <!-- teamagent-analysis:end -->

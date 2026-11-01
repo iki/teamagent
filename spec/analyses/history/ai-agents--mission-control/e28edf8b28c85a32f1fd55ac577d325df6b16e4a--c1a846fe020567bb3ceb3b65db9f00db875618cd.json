@@ -1,0 +1,150 @@
+{
+  "id": "ai-agents--mission-control",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/builderz-labs/mission-control",
+  "report": "spec/projects/ai-agents--mission-control.md",
+  "analyzedSha": "e28edf8b28c85a32f1fd55ac577d325df6b16e4a",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-22T20:01:50+07:00",
+  "observedSha": "c1a846fe020567bb3ceb3b65db9f00db875618cd",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c1a846fe020567bb3ceb3b65db9f00db875618cd",
+      "date": "2026-10-28T17:22:07+01:00",
+      "subject": "fix(tokens): count each posted usage record once (#1007)"
+    },
+    {
+      "sha": "092628dcd46eee65f03d6c0b624670498ae51fc0",
+      "date": "2026-10-28T17:14:32+01:00",
+      "subject": "fix(deps): bump next to 16.4.2 for critical RCE advisories (#1006)"
+    },
+    {
+      "sha": "0c54eb2fa8caedcff95710179fce4c559338482e",
+      "date": "2026-10-28T17:07:15+01:00",
+      "subject": "fix(security): reject line breaks in dotenv values written by API routes (#1005)"
+    },
+    {
+      "sha": "f112691a991c4d98af07a382f770a151c3431a14",
+      "date": "2026-10-28T16:58:59+01:00",
+      "subject": "ci: inline the OSV PR scan without the oversized job-output export (#1008)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/osv-scanner.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/app/api/hermes/__tests__/set-env-route.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/app/api/hermes/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/app/api/integrations/__tests__/put-env-value.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/app/api/integrations/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/app/api/tokens/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/app/login/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/app/setup/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/panels/agent-squad-panel-phase3.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/panels/settings-panel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/lib/__tests__/dotenv-writer-atomic.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/lib/__tests__/dotenv-writer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/__tests__/hermes-route-security.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/__tests__/osv-scanner-workflow-security.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/lib/__tests__/token-post-dedupe.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/api-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/lib/dotenv-writer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/lib/full-page-navigation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/hermes-route-security.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

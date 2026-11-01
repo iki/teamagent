@@ -2,11 +2,11 @@
 
 Source: [ghidra](https://github.com/NationalSecurityAgency/ghidra) · [Analysis](../../projects/ai-security--ghidra.md) · [agents](../../agents.md), [skills](../../skills.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `1b9e58a915cf867e106495eaa2a4b18eb4971c9d`; commit date: 2026-10-27T05:11:25-04:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `1b9e58a915cf867e106495eaa2a4b18eb4971c9d`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `4718f50d9941b9d7b7ebd1febc2982f055560a73`; commit date: 2026-10-30T11:27:06-04:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `4718f50d9941b9d7b7ebd1febc2982f055560a73`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/NationalSecurityAgency/ghidra/compare/1b9e58a915cf867e106495eaa2a4b18eb4971c9d...1b9e58a915cf867e106495eaa2a4b18eb4971c9d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/NationalSecurityAgency/ghidra/compare/4718f50d9941b9d7b7ebd1febc2982f055560a73...4718f50d9941b9d7b7ebd1febc2982f055560a73). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

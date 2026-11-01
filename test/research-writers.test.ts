@@ -11,6 +11,7 @@ test("Research Python writers publish UTF-8/LF files and streams", () => {
         : ".cache/import-python/bin/python",
     );
   const result = Bun.spawnSync([python, "-B", resolve("test/research-writers-fixtures.py")], {
+    windowsHide: true,
     cwd: resolve("."),
     stdout: "pipe",
     stderr: "pipe",

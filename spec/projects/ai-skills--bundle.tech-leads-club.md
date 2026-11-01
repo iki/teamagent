@@ -32,6 +32,18 @@ The [read](https://github.com/tech-leads-club/agent-skills/blob/738451e40785750a
 
 The prepare tool declares destructiveHint false on an additive-write rationale, yet calls pruneSupersededRevisions after staging. Its annotation therefore needs reconciliation with the actual pruning lifecycle. The explicit twenty-path limit does not cover the default all-files selection, and all wrappers consume complete response bodies before helper validation, with no wrapper-level byte bound. Pruning failures occur after staging, so a thrown error need not mean nothing was written. Adapt revision-bound staging and explicit partial outcomes only after auditing helper containment, atomicity and retention. No MCP, CDN, filesystem staging or tests were executed.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `5929de5cd34f8cca03f3745265571f07b80c9106` (commit date `2026-10-31T13:21:38Z`), compared with `738451e40785750a8e8de5bce8112675f5f0df02`. Earlier observations remain historical evidence.
+
+**Scope:** Complete registry update-detection diff; 72 changed paths inventoried. Lock production, installation integrity and surrounding fixtures not audited.
+
+[Update detection](https://github.com/tech-leads-club/agent-skills/blob/5929de5cd34f8cca03f3745265571f07b80c9106/libs/core/src/lib/services/registry.service.ts) now compares the remote content hash with installed project/global lock entries that have agents attached, falling back to the shared cache only when there is no installed copy. A missing remote hash still returns no update. Lock comparison distinguishes installed state from cache freshness, but does not independently hash the installed bytes or distinguish unknown remote identity from confirmed currency.
+
+**Teamagent implication (inference):** Track shared download cache, installed skill variant and active harness binding as separate identities. Treat missing integrity metadata as unknown, and verify real installed content before reuse or promotion rather than trusting a lock assertion alone.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle.tech-leads-club](https://github.com/tech-leads-club/agent-skills); analyzed commit `738451e40785750a8e8de5bce8112675f5f0df02`; commit date 2026-10-26T03:11:37Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.tech-leads-club.md).
+Analysis metadata: source [bundle.tech-leads-club](https://github.com/tech-leads-club/agent-skills); analyzed commit `5929de5cd34f8cca03f3745265571f07b80c9106`; commit date 2026-10-31T13:21:38Z; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.tech-leads-club.md).
 <!-- teamagent-analysis:end -->

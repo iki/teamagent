@@ -8,6 +8,26 @@ The [2026-10-27 source refresh](analyses/media-refresh-2026-10-27.md) preserves 
 
 ## Training restrictions and account evidence
 
+The November 1 source refresh adds [YuE2 Studio](https://github.com/timoncool/yue2-studio)
+([review](analyses/unreviewed/ai-gen--yue2-studio.md)) as a research candidate for
+measured music facts and owned local process lifetimes, and updates
+[YuE](https://github.com/multimodal-art-projection/YuE)
+([review](projects/ai-media--yue.md)) on effective device/attention capability
+admission. No adapter, model weights or quality benchmark was added by this
+research sync. Preserve the existing Czech-to-English voice workflow and explicit
+provider/model choice.
+
+[VoiceStudio](https://github.com/debpalash/VoiceStudio)
+([review](projects/ai-media--voicestudio.md)) adds packaging privacy checks in the
+selected iOS code; manifest declarations are separate from actual egress,
+provider reuse of voice data, consent and commercial rights.
+[Career Ops](https://github.com/santifer/career-ops)
+([review](projects/ai-media--career-ops.md)) illustrates configured-value and
+heuristic PII checks: absent configuration, inspected content and uninspectable
+payloads require different receipts. Neither successful inspection nor an
+environment bypass proves a provider training exclusion. Provider policy dates
+below remain the dates actually reviewed; this Git refresh does not renew them.
+
 General provider training is disabled by default. The [training policy contract](media-training.md) separates reviewed exclusions, known permissions, conditional account evidence and unknown policy. Missing, stale or unknown metadata cannot be bypassed with a backend override. Known training-permitted routes require explicit per-invocation opt-in; it does not change provider settings. An account exclusion needs both current scoped documentary evidence and live account/key binding. Authentication alone does not prove the training setting.
 
 The [compact policy ledger](analyses/media-training-reviews.md) links the four reviewed hosted providers and preserves service-policy dates separately from source-code commits. Private clone creation, retention, publication, licensing and network isolation remain separate concerns. Other hosted candidates in this document remain unreviewed for training policy even when their speech API or pricing was reviewed.

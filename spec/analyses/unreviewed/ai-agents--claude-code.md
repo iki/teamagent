@@ -2,7 +2,7 @@
 
 Source: [claude-code](https://github.com/anthropics/claude-code) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md).
 
-Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-agents--claude-code.md).
+Historical discovery: 2026-10-24T06:36:54.441Z, initially unreviewed. Dated scoped reviews below supersede that discovery-only status; they do not establish runtime validation. [Change evidence](../repos/ai-agents--claude-code.md).
 
 ## 2026-10-28 scoped source review
 
@@ -22,6 +22,18 @@ In [mods/diff/hooks/turns/turn-of/file-edit-of/file-edit-of.ts](https://github.c
 
 **Harness implication and limits:** A proposed patch held for review is not a filesystem change. Preserve proposal, approval and application states separately in event schemas and UI counts. This display helper trusts the transcript's staged marker; it does not verify filesystem hashes, effect execution or patch completeness. The broader changed files and producer of staged results were not audited, and no upstream tests were run. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `80c6959d28c4c30ecd14fc1cdf172f19d9adad81` (commit date `2026-10-31T01:01:10Z`), compared with `58d6da1e34d6cd1c6379dcbf568bd66f5f9b6102`. Earlier observations remain historical evidence.
+
+**Scope:** Complete new refreshRestOf helper and comment-only security/fetch-hook diffs; 22 changed paths inventoried. Scheduling call sites, constants and wider tests not audited.
+
+The public [diff helper](https://github.com/anthropics/claude-code/blob/80c6959d28c4c30ecd14fc1cdf172f19d9adad81/mods/diff/hooks/refresh-rest-of/refresh-rest-of.ts) derives refresh rest time from the previous listing duration and bounded exponential delay after repeated timeouts, returning zero when the existing debounce already covers the rest. The [security hook](https://github.com/anthropics/claude-code/blob/80c6959d28c4c30ecd14fc1cdf172f19d9adad81/mods/sec-default/hooks/register.ts) change only clarifies an engine-side no-op hook optimization; its claimed engine test is outside this public source slice. Neither establishes measured responsiveness or complete hook enforcement.
+
+**Teamagent implication (inference):** Use measured refresh cost and explicit timeout state to avoid repeated expensive background work, while retaining a freshness indicator and live invalidation. Optimize proven no-op hooks only under versioned contracts and regression coverage, not comments alone.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [claude-code](https://github.com/anthropics/claude-code); analyzed commit `58d6da1e34d6cd1c6379dcbf568bd66f5f9b6102`; commit date 2026-10-27T22:22:36Z; review date 2026-10-28T14:29:27.414Z; depth reviewed. [Maintenance record](../repos/ai-agents--claude-code.md).
+Analysis metadata: source [claude-code](https://github.com/anthropics/claude-code); analyzed commit `80c6959d28c4c30ecd14fc1cdf172f19d9adad81`; commit date 2026-10-31T01:01:10Z; review date 2026-11-01T11:33:30.893Z; depth reviewed. [Maintenance record](../repos/ai-agents--claude-code.md).
 <!-- teamagent-analysis:end -->

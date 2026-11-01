@@ -1,0 +1,405 @@
+{
+  "id": "ai-agents-mem--mem0",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/mem0ai/mem0",
+  "report": "spec/projects/ai-agents-mem--mem0.md",
+  "analyzedSha": "26cdefb46600c0fa5953c4b5ee5003c125539fc4",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-26T10:51:39-04:00",
+  "observedSha": "753496cf1435d76c3a711f3af51303f7fdcb6420",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "753496cf1435d76c3a711f3af51303f7fdcb6420",
+      "date": "2026-10-30T17:35:34-04:00",
+      "subject": "fix(memory): never re-create a deleted memory when update races delete (#7787)"
+    },
+    {
+      "sha": "d2b8432b772a5923ab5ba145cf1ae2a9f8b1c3f2",
+      "date": "2026-10-30T17:35:20-04:00",
+      "subject": "fix(ts): never re-create a deleted memory when update races delete (#7788)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/memory/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/tests/chroma.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/tests/mongodb.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/tests/pinecone.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/azure_ai_search.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/azure_mysql.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/base.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/chroma.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/databricks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/elasticsearch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/memory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/mongodb.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/neptune_analytics.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/opensearch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/oracledb.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/pgvector.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/pinecone.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/qdrant.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/redis.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/upstash_vector.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/valkey.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/src/vector_stores/weaviate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/tests/elasticsearch.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/tests/memory.crud.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/tests/opensearch.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/tests/oracledb.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/tests/pgvector.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/tests/qdrant-keyword-search.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/tests/redis.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/tests/upstash_vector.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/tests/valkey.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/tests/vector-store.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0-ts/src/oss/tests/vector-stores-compat.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/memory/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/azure_ai_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/azure_mysql.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/chroma.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/databricks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/elasticsearch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/faiss.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/mongodb.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/neptune_analytics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/opensearch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/oracledb.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/pgvector.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/pinecone.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/qdrant.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/redis.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/supabase.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/upstash_vector.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/valkey.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/vertex_ai_vector_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem0/vector_stores/weaviate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/memory/test_main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_azure_ai_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_azure_mysql.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_chroma.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_databricks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_elasticsearch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_faiss.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_mongodb.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_neptune_analytics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_opensearch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_oracledb.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_pgvector.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_pinecone.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_qdrant.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_redis.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_supabase.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_upstash_vector.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_valkey.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_vertex_ai_vector_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vector_stores/test_weaviate.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -2,11 +2,11 @@
 
 Source: [adk-go](https://github.com/google/adk-go) · [Analysis](../../projects/ai-agents--adk-go.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `4bd9638d01cfe49df79c196d3322b2b451e34ed8`; commit date: 2026-10-28T10:19:21+01:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `4bd9638d01cfe49df79c196d3322b2b451e34ed8`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `beea418caa2b5cc9417251a37e7ee527ae7f99df`; commit date: 2026-10-30T15:41:14+01:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `beea418caa2b5cc9417251a37e7ee527ae7f99df`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/google/adk-go/compare/4bd9638d01cfe49df79c196d3322b2b451e34ed8...4bd9638d01cfe49df79c196d3322b2b451e34ed8). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/google/adk-go/compare/beea418caa2b5cc9417251a37e7ee527ae7f99df...beea418caa2b5cc9417251a37e7ee527ae7f99df). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

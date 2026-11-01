@@ -1,0 +1,450 @@
+{
+  "id": "ai-skills--bundle.tech-leads-club",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/tech-leads-club/agent-skills",
+  "report": "spec/projects/ai-skills--bundle.tech-leads-club.md",
+  "analyzedSha": "738451e40785750a8e8de5bce8112675f5f0df02",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-26T03:11:37Z",
+  "observedSha": "5929de5cd34f8cca03f3745265571f07b80c9106",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "5929de5cd34f8cca03f3745265571f07b80c9106",
+      "date": "2026-10-31T13:21:38Z",
+      "subject": "chore(release): publish"
+    },
+    {
+      "sha": "f69e6154b3ac900ea661687479b407cc1be9d4a9",
+      "date": "2026-10-31T23:08:55+10:00",
+      "subject": "feat(skills-catalog): run the build line before building, name what follows"
+    },
+    {
+      "sha": "5ba10a65d8a83014661f3a18326983208c8108d3",
+      "date": "2026-10-31T23:08:55+10:00",
+      "subject": "chore(skills-catalog): bump the tlc skills as minor, not major"
+    },
+    {
+      "sha": "b9caf0c014f9df8e32852425d5658c02105cadbe",
+      "date": "2026-10-31T23:08:55+10:00",
+      "subject": "feat(skills-catalog): run proofs with the project's own test commands and drop mutations"
+    },
+    {
+      "sha": "cebf9d4adc132f92dede7ec99b81b1ef0976d768",
+      "date": "2026-10-30T22:17:12Z",
+      "subject": "chore(release): publish"
+    },
+    {
+      "sha": "0a82ad72f0b51a4db2d529d803150fc4617fc419",
+      "date": "2026-10-31T08:09:48+10:00",
+      "subject": "fix(core): judge update need by the installed lockfile hash, not the shared cache"
+    },
+    {
+      "sha": "eabc1bef76708eb2078c28248e6d6b8eda4e78b3",
+      "date": "2026-10-31T08:09:48+10:00",
+      "subject": "fix(skills-catalog): clean dist before build so a rebuild does not nest skills/skills"
+    },
+    {
+      "sha": "29e5cf487c86a7ebc584f151e18ef62274054d87",
+      "date": "2026-10-31T08:09:48+10:00",
+      "subject": "fix(release): write the new version into the built manifests before publish"
+    },
+    {
+      "sha": "836bed1b29b087a4991b6dbb1ea141858f7959a2",
+      "date": "2026-10-30T21:42:33Z",
+      "subject": "chore(release): publish"
+    },
+    {
+      "sha": "2e4f23f08d925bf29d3ac96ece55091c8a8fc44e",
+      "date": "2026-10-30T21:39:11Z",
+      "subject": "chore(release): update generated skills data"
+    },
+    {
+      "sha": "98454f9ea49f07d9820ccf69ab0f11c113324e9d",
+      "date": "2026-10-31T07:34:18+10:00",
+      "subject": "ci: run every skill selftest in one job per os"
+    },
+    {
+      "sha": "de9114cebb13cadbf71f7a79c08ded5ca43c0609",
+      "date": "2026-10-31T07:34:18+10:00",
+      "subject": "fix(skills-catalog): run tlc scripts on windows and fail a broken mutation run"
+    },
+    {
+      "sha": "fc01d74acb0cc3eef5febf2d3b411c1de5fa283a",
+      "date": "2026-10-31T07:34:18+10:00",
+      "subject": "ci: run skill script selftests on linux, macos and windows"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/workflows/skill-scripts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "libs/core/src/lib/services/__tests__/registry.service.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "libs/core/src/lib/services/registry.service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nx.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/marketplace/public/llms.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/marketplace/src/data/skills.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp/project.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/project.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills-registry.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/references/build.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/references/checks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/references/memory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/references/verify.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/scripts/check_commit.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/scripts/check_proofs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/scripts/fixtures/checks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/scripts/fixtures/proofs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/scripts/fixtures/verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/scripts/lean_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/scripts/lessons.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/scripts/mutate.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/scripts/runners.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/scripts/selftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/scripts/validate_checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-implement/scripts/validate_verification.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-plan/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-plan/scripts/lean_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-plan/scripts/lessons.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-plan/scripts/selftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/references/implement.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/references/lessons.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/references/sub-agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/references/tasks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/references/validate.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/scripts/check_commit.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/scripts/check_proofs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/scripts/fixtures/checks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/scripts/fixtures/proofs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/scripts/fixtures/verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/scripts/lean_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/scripts/lessons.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/scripts/mutate.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/scripts/runners.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/scripts/selftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/scripts/validate_tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-driven/scripts/validate_verification.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/references/build.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/references/checks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/references/memory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/references/verify.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/scripts/check_commit.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/scripts/check_proofs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/scripts/fixtures/checks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/scripts/fixtures/proofs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/scripts/fixtures/verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/scripts/lean_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/scripts/lessons.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/scripts/mutate.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/scripts/runners.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/scripts/selftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/scripts/validate_checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/skills-catalog/skills/(development)/tlc-spec-lean/scripts/validate_verification.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

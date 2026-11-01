@@ -55,6 +55,18 @@ For Teamagent, retain a user-readable label separately from the authenticated co
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `68de1a7afe4bc9e7435d185825043bd9dc9c47cf` (commit date `2026-11-01T02:19:22Z`), compared with `9bc718cb608c4cd3b63e0e71c637dcf1ebfd5409`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete Go byte-range provider/fixture diff. Whole-repository diff was oversized; concrete filesystem providers, transport limits and other languages not audited.
+
+The [Go adapter](https://github.com/github/copilot-sdk/blob/68de1a7afe4bc9e7435d185825043bd9dc9c47cf/go/session_fs_provider.go) adds an optional raw-byte range capability independent of binary-file access. It validates non-negative safe-integer offsets/lengths, preserves total byte length and rejects provider responses with inconsistent range sizes. [Fixtures](https://github.com/github/copilot-sdk/blob/68de1a7afe4bc9e7435d185825043bd9dc9c47cf/go/session_fs_range_test.go) cover split UTF-8 bytes, EOF/zero lengths, unsupported providers and errors. An omitted length still reads through EOF, so the interface itself does not impose a practical response-size cap.
+
+**Teamagent implication (inference):** Advertise filesystem capabilities only when each route implements them, distinguish byte offsets from text coordinates, and bind partial reads to source-version evidence. Add actual byte/time budgets and containment checks at host boundaries; numeric validity alone is not bounded resource use.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [copilot-sdk](https://github.com/github/copilot-sdk); analyzed commit `9bc718cb608c4cd3b63e0e71c637dcf1ebfd5409`; commit date 2026-10-27T22:50:27Z; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--copilot-sdk.md).
+Analysis metadata: source [copilot-sdk](https://github.com/github/copilot-sdk); analyzed commit `68de1a7afe4bc9e7435d185825043bd9dc9c47cf`; commit date 2026-11-01T02:19:22Z; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--copilot-sdk.md).
 <!-- teamagent-analysis:end -->

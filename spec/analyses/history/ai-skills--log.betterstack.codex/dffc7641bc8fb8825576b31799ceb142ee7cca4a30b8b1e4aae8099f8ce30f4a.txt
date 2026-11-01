@@ -1,0 +1,13 @@
+# log.betterstack.codex
+
+Source: [log.betterstack.codex](https://github.com/betterstackhq/codex-plugin) · [skills](../../skills.md), [evolution](../../evolution.md), [agents](../../agents.md).
+
+Initially discovered 2026-11-01T10:08:32.081Z as unreviewed. The scoped initial source review below supersedes that discovery-only status; it does not establish runtime validation. [Change evidence](../repos/ai-skills--log.betterstack.codex.md).
+
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`898524c2ecf3e9060cd1532f8f78dc85bd965780`](https://github.com/betterstackhq/codex-plugin/commit/898524c2ecf3e9060cd1532f8f78dc85bd965780).
+
+Initial review of the complete [incident investigation skill](https://github.com/betterstackhq/codex-plugin/blob/898524c2ecf3e9060cd1532f8f78dc85bd965780/skills/investigate-incident/SKILL.md) and [logs query guide](https://github.com/betterstackhq/codex-plugin/blob/898524c2ecf3e9060cd1532f8f78dc85bd965780/skills/logs-query/SKILL.md). They require source/schema discovery, bounded windows, metrics before expensive raw scans, multiple hypotheses and explicit disclosure of missing sources. Incident acknowledgements, comments and escalation are explicitly separated from read-only investigation. These are useful skill-selection and tool-policy distinctions, not enforcement by the Markdown itself.
+
+The logs guide contains a tension between its opening instruction to substitute concrete values for ad hoc queries and later generic template-variable rules. Its absolute claim that an existing baseline feature cannot be causal is too strong: interaction or magnitude changes can still matter. Tune these instructions to the actual tool contract and preserve uncertainty rather than copying them verbatim. No live telemetry, hosted account, authentication, notification or upstream tests were exercised.

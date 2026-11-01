@@ -44,6 +44,16 @@ In [app/src/ai/blocklist/block/status_bar.rs](https://github.com/warpdotdev/warp
 
 **Harness implication and limits:** Drive channel/UI status from shared, identified events rather than a callback bound only to the currently visible exchange. Keep exchange, conversation and surface identity explicit to avoid stale usage displays. This is presentation invalidation, not evidence that accounting values or task completion are correct. Rendering frequency, subscriptions and native acceptance were not exercised. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `d57d9760dba0590416eca4c94379ce7653f347b5` against prior analyzed commit `eafc6d18d18bea8c6cf78dc21a4e0eab59f4c6c6`. Historical reviews above remain separate evidence.
+
+The new [preview-retention module](https://github.com/warpdotdev/warp/blob/d57d9760dba0590416eca4c94379ce7653f347b5/app/src/ai/agent_sdk/driver/preview_retention.rs) applies a five-second remote check and sixty-second recheck interval to keep eligible idle preview work alive. Positive execution IDs are validated and a response for a different expected execution is ignored. Query failure/timeout allows idle exit; this is an availability/cost policy, not a security authorization fallback.
+
+The complete [fixtures](https://github.com/warpdotdev/warp/blob/d57d9760dba0590416eca4c94379ce7653f347b5/app/src/ai/agent_sdk/driver/preview_retention_tests.rs) cover feature/platform gating, invalid IDs, stale responses after a follow-up, explicit exit bypassing pending queries, zero/absent idle windows and failure/timeout exit. Several exercise IdleTimeoutSender integration with controlled futures; its production implementation was not inspected here. Teamagent should bind keep-alive decisions to task/attempt identity and let explicit stop override optional retention. Missing expected execution identity is accepted by this helper, so stronger reuse requires the caller to supply a verified identity. Remote-preview presence is not proof of ongoing user engagement or a license for unlimited retention.
+
+**Coverage:** Read the complete new 102-line module and 339-line fixture. IdleTimeoutSender, server filtering, secret/environment changes and real native behavior were not reviewed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [warp](https://github.com/warpdotdev/warp); analyzed commit `eafc6d18d18bea8c6cf78dc21a4e0eab59f4c6c6`; commit date 2026-10-27T14:31:32-04:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--warp.md).
+Analysis metadata: source [warp](https://github.com/warpdotdev/warp); analyzed commit `d57d9760dba0590416eca4c94379ce7653f347b5`; commit date 2026-10-30T15:27:58-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--warp.md).
 <!-- teamagent-analysis:end -->

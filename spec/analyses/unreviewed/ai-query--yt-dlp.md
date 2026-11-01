@@ -2,7 +2,7 @@
 
 Source: [yt-dlp](https://github.com/yt-dlp/yt-dlp) · [memory](../../memory.md), [import-generation](../../import-generation.md).
 
-Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-query--yt-dlp.md).
+Historical discovery: 2026-10-24T06:36:54.441Z, initially unreviewed. Dated scoped reviews below supersede that discovery-only status; they do not establish runtime validation. [Change evidence](../repos/ai-query--yt-dlp.md).
 
 
 ## Initial source review - 2026-10-28
@@ -19,6 +19,16 @@ Evidence: [yt_dlp/extractor/youtube/pot/_builtin/memory_cache.py:1-78](https://g
 
 **Scope and limits:** Initial scoped static review of the token cache, two extraction/delegation paths, cache fixtures and provider API documentation from the enumerated 1,235-path snapshot. The full downloader, YouTube provider/runtime, authorization, all site extractors, dependencies and license suitability were not audited. No download, shell example, challenge solver, credential operation or upstream test was executed.
 
+## Change review — 2026-11-01
+
+**Verification configuration changes do not demonstrate new extraction behavior.** Reviewed `b77c9304e1c4220cca450c583491904daf8455af` (commit date `2026-10-29T20:36:17Z`) against `f264a6cbd1f630894da0f368df00f8aae50140e0`. The complete six-path delta changes build/release/test workflows and pytest configuration. Quick checks and workflow lint now cover pushes to every branch, and pytest settings move under `tool.pytest.ini_options`. The macOS build moves to an Intel runner, with a separate arm64 update-verification job controlled by `verify_macos` and a repository setting. Scheduled nightly releases explicitly disable that additional verification; reusable and manually dispatched release paths have different defaults.
+
+Evidence: [.github/workflows/build.yml:391-421](https://github.com/yt-dlp/yt-dlp/blob/b77c9304e1c4220cca450c583491904daf8455af/.github/workflows/build.yml#L391-L421), [.github/workflows/release-nightly.yml:81-91](https://github.com/yt-dlp/yt-dlp/blob/b77c9304e1c4220cca450c583491904daf8455af/.github/workflows/release-nightly.yml#L81-L91), [.github/workflows/release.yml:17-35](https://github.com/yt-dlp/yt-dlp/blob/b77c9304e1c4220cca450c583491904daf8455af/.github/workflows/release.yml#L17-L35) and [pyproject.toml:475-487](https://github.com/yt-dlp/yt-dlp/blob/b77c9304e1c4220cca450c583491904daf8455af/pyproject.toml#L475-L487).
+
+**Harness consequence:** Track the effective acceptance matrix by release route, platform and enabling conditions. A universal binary or a successful build is not proof of tested update behavior on both architectures. Importer selection and execution permission remain separate from release labels.
+
+**Scope and limits:** Complete workflow/configuration delta read; no extractor code changed in this interval. No workflow, downloader, update operation, installation or platform binary was executed. Earlier source findings remain scoped to their original revision.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [yt-dlp](https://github.com/yt-dlp/yt-dlp); analyzed commit `f264a6cbd1f630894da0f368df00f8aae50140e0`; commit date 2026-10-26T22:07:14Z; review date 2026-10-28T09:27:32.685Z; depth reviewed. [Maintenance record](../repos/ai-query--yt-dlp.md).
+Analysis metadata: source [yt-dlp](https://github.com/yt-dlp/yt-dlp); analyzed commit `b77c9304e1c4220cca450c583491904daf8455af`; commit date 2026-10-29T20:36:17Z; review date 2026-11-01T11:37:37.120Z; depth reviewed. [Maintenance record](../repos/ai-query--yt-dlp.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,175 @@
+{
+  "id": "ai-agents-sandbox--agent-governance-toolkit",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/microsoft/agent-governance-toolkit",
+  "report": "spec/projects/ai-agents-sandbox--agent-governance-toolkit.md",
+  "analyzedSha": "4eca1f5b44d30ebe5e9745ac36ca394f887e617b",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T01:30:29-07:00",
+  "observedSha": "d1d0ccea5f1cfd7ae41dda05b0b791f95739c8c1",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d1d0ccea5f1cfd7ae41dda05b0b791f95739c8c1",
+      "date": "2026-10-30T11:36:44-07:00",
+      "subject": "fix(examples): india cert-in and sebi policies deny every evaluation (#4480)"
+    },
+    {
+      "sha": "95cd5f20de2a63a770dec26a990b90ecdd1f4c75",
+      "date": "2026-10-30T07:23:10-07:00",
+      "subject": "fix(agent-sre): keep a rollout step's analysis criteria in the AgentRollout CRD (#4476)"
+    },
+    {
+      "sha": "6d2a138bfdd4426bacb757894aeb68e98869690d",
+      "date": "2026-10-29T12:45:16-07:00",
+      "subject": "fix(agent-rag-governance): audit a denied collection with the query's hash (#4475)"
+    },
+    {
+      "sha": "e14fe19845b37b5c9671467ae4713e65a2fdf087",
+      "date": "2026-10-29T04:49:16-07:00",
+      "subject": "fix(agent-runtime): include the agent's stderr in DockerDeployer.logs (#4474)"
+    },
+    {
+      "sha": "7ee2accdffe97c5bfb083fea851ff6e985404dd5",
+      "date": "2026-10-29T00:48:04-07:00",
+      "subject": "fix(agent-sre): reject chaos blackout times that cannot be read (#4473)"
+    },
+    {
+      "sha": "1b6805366554cc0ed8d8b8453ed745fff98fd755",
+      "date": "2026-10-28T09:44:30-07:00",
+      "subject": "fix(agent-sre): prefer the higher-quality model at equal cost in CostOptimizer.recommend (#4469)"
+    },
+    {
+      "sha": "ea12b738173539de4a6bb5237070a6dc33c5c6df",
+      "date": "2026-10-28T08:46:10-07:00",
+      "subject": "fix(agent-sre): block the end minute of a chaos blackout window to its last second (#4468)"
+    },
+    {
+      "sha": "e9250241d594f516dd428ca56999fbb7ff18e08c",
+      "date": "2026-10-28T07:25:55-07:00",
+      "subject": "fix(agent-sre): stop blue-green validation at its timeout (#4470)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".cspell-repo-terms.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-rag-governance/src/agent_rag_governance/governor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-rag-governance/tests/test_governor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-runtime/src/agent_runtime/deploy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-runtime/tests/test_deploy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/deployments/helm/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/deployments/helm/agent-sre/templates/crd.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/chaos/scheduler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/cost/optimizer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/delivery/blue_green.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/k8s/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/test_blue_green.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/test_chaos_scheduler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/test_cost_optimizer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/test_k8s.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/policies/india-regulatory/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/policies/india-regulatory/rego/certin-2022-directions.rego",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/policies/india-regulatory/rego/certin-2022-directions_test.rego",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/policies/india-regulatory/rego/rbi-data-localization_test.rego",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/policies/india-regulatory/rego/sebi-governance.rego",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/policies/india-regulatory/rego/sebi-governance_test.rego",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

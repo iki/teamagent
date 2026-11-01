@@ -51,6 +51,14 @@ Evidence: [src/parsers/pdf/pdfAssets.ts:31-42](https://github.com/harshankur/off
 
 **Scope and limits:** Reviewed complete selected target-revision asset code after the capped aggregate diff; worker isolation, every parser and network containment were not certified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `2c1bb5e3db111d8f9531249460b783e2bd76063f` against `15f1f22d668f631859440f916b252b4879edcf3b`. The selected [ActualText handling](https://github.com/harshankur/officeParser/blob/2c1bb5e3db111d8f9531249460b783e2bd76063f/src/parsers/pdf/actualText.ts) delegates file/program reading to a shared PDF reader, retains per-page/document event budgets, caches form events by resources and falls back to glyph text when marked content cannot be read. It marks text whose control characters were removed. Selected [glyph matching](https://github.com/harshankur/officeParser/blob/2c1bb5e3db111d8f9531249460b783e2bd76063f/src/parsers/pdf/textGlyphs.ts) hunks bound local candidate inspection and conditionally recover glyph-name text only when ordered correspondence can be established. The [types](https://github.com/harshankur/officeParser/blob/2c1bb5e3db111d8f9531249460b783e2bd76063f/src/parsers/pdf/pdfTypes.ts) distinguish form-field text and PNG/JPEG image payloads.
+
+**Harness consequence:** Preserve transformation and fallback provenance alongside extracted text; unavailable structure is not proof that no semantic text exists. Keep original document bytes and geometry for later reconciliation and separate form values from headings. Shared-reader bounds require their own validation, not trust transferred from this caller.
+
+**Scope and limits:** Selected surviving ActualText hunks, glyph matching/recovery and type changes; deleted reader internals, replacement reader and full extraction tests were not audited. No PDF was rendered or parsed and no upstream tests were executed; no general language-fidelity improvement is claimed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [office-parser](https://github.com/harshankur/officeParser); analyzed commit `15f1f22d668f631859440f916b252b4879edcf3b`; commit date 2026-10-28T08:24:38+01:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--office-parser.md).
+Analysis metadata: source [office-parser](https://github.com/harshankur/officeParser); analyzed commit `2c1bb5e3db111d8f9531249460b783e2bd76063f`; commit date 2026-11-01T00:13:03+01:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--office-parser.md).
 <!-- teamagent-analysis:end -->

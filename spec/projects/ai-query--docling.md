@@ -55,6 +55,14 @@ Evidence: [docling/utils/text_quality.py:15-122](https://github.com/docling-proj
 
 **Scope and limits:** Reviewed the complete heuristic and selected ordinary/damaged-text fixtures; OCR selection integration and recognition accuracy were not executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `764b5d4dc22b03ea87afd4c2207f510300b27a5b` against `26ef35ac26ae9a3f959ce3e9de26e46c82ca1194` (123 changed paths). The new [stop-reason normalizer](https://github.com/docling-project/docling/blob/764b5d4dc22b03ea87afd4c2207f510300b27a5b/docling/utils/stop_reason.py) maps token limits, filtering and abort/error to distinct incomplete states, recognizes sequence/explicit-stop endings and preserves unknown reasons as unspecified. The [fixtures](https://github.com/docling-project/docling/blob/764b5d4dc22b03ea87afd4c2207f510300b27a5b/tests/test_stop_reason.py) cover stop strings, unknown values and inference errors.
+
+**Harness consequence:** Carry the raw provider reason and normalized state separately, preserving unknown rather than declaring success. Normal sequence termination only establishes that generation stopped normally; document completeness, exact wording, page coverage and extraction accuracy need independent checks. A configured stop string can terminate a syntactically normal response before the desired task is complete.
+
+**Scope and limits:** Complete normalizer and fixture files; full propagation through every model engine, ASR/video/OCR changes and the remaining 123-path comparison were not audited. No model or upstream tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [docling](https://github.com/docling-project/docling); analyzed commit `26ef35ac26ae9a3f959ce3e9de26e46c82ca1194`; commit date 2026-10-28T10:52:44+01:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--docling.md).
+Analysis metadata: source [docling](https://github.com/docling-project/docling); analyzed commit `764b5d4dc22b03ea87afd4c2207f510300b27a5b`; commit date 2026-10-31T13:14:48+08:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--docling.md).
 <!-- teamagent-analysis:end -->

@@ -38,6 +38,18 @@ The wrapper lazily initializes one runner under a mutex and exposes static envir
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `d4c963bacd57b5e05013997e5eae54b099d51ed1` (commit date `2026-10-31T13:08:06Z`), compared with `7d4fd1fad6f9b98a5b1b2e92e7906659d0dfae61`. Earlier observations remain historical evidence.
+
+**Scope:** Memory subscription matching/query construction diff and corresponding literal-pattern/URL fixture branches; 37 changed paths inventoried.
+
+The [memory event client](https://github.com/Agent-Field/agentfield/blob/d4c963bacd57b5e05013997e5eae54b099d51ed1/sdk/python/agentfield/memory_events.py) now escapes regex metacharacters before expanding only the documented star wildcard, and encodes scope/pattern query values through urlencode. [Fixtures](https://github.com/Agent-Field/agentfield/blob/d4c963bacd57b5e05013997e5eae54b099d51ed1/sdk/python/tests/test_memory_events.py) distinguish literal dots/pluses/brackets and round-trip ampersands, fragments, spaces and Unicode. This prevents accidental pattern broadening and malformed query framing at the client boundary; it does not establish server authorization or durable event delivery.
+
+**Teamagent implication (inference):** Define one explicit subscription grammar, encode structured transport fields, and validate server-side scope against the authenticated principal. Keep routing/filtering correctness distinct from access control and replay/completeness guarantees in evolving memory.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agentfield](https://github.com/Agent-Field/agentfield); analyzed commit `7d4fd1fad6f9b98a5b1b2e92e7906659d0dfae61`; commit date 2026-10-27T13:05:29Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agentfield.md).
+Analysis metadata: source [agentfield](https://github.com/Agent-Field/agentfield); analyzed commit `d4c963bacd57b5e05013997e5eae54b099d51ed1`; commit date 2026-10-31T13:08:06Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agentfield.md).
 <!-- teamagent-analysis:end -->

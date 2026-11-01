@@ -8,7 +8,24 @@ Trigon is the source of shared-stack dependency fixes. Reuse an applicable suppl
 
 If a required workaround is absent, incompatible or no longer verifiable in Trigon, stop the affected change and ask the user. Present the bounded reproduction and why the supplied fixes do not apply. Do not silently create an independent patch, fork, monkeypatch, declaration shim or repair-agent workaround. This rule applies to normal commands, CI, manual overrides and fallback/repair paths. A direct repository implementation fix is not automatically a third-party dependency patch; record that distinction explicitly.
 
-Do not import all patched packages merely because Trigon uses them. In the inspected snapshot, only the Tauri native-lifetime adapter applies to Teamagent's current stack. Its conservative historical workaround is not proof that the latest upstream release still reproduces the defect. The [reviewed patch inventory](data/trigon-patch-inventory-2026-10-28.json) records all eight active supplied fixes and their applicability.
+Do not import all patched packages merely because Trigon uses them. In the October 28 snapshot, only the Tauri native-lifetime adapter applied to Teamagent's stack. Its conservative historical workaround is not proof that the latest upstream release still reproduces the defect. The [reviewed patch inventory](data/trigon-patch-inventory-2026-10-28.json) preserves that dated assessment of eight active supplied fixes.
+
+The November 1 addition selects Trigon's Tinypool 2.2.0 process-worker patch for
+the existing Oxfmt 0.74.0 route. Its
+[signed source revision](https://github.com/iki/trigon/commit/9ef18967b46fe01571933c3ba6216823ad961c16)
+was published only to `codex/tinypool-windows-hide-2-2-0`; it remains unmerged.
+The [artifact record](../patches/trigon/README.md) retains original patch bytes,
+exact provenance, consumer tests and the unchanged supplied Tauri/license hashes.
+This selection changes no dependency version and adds no direct Tinypool package.
+
+For a registered `package-patch`, a package without a direct project pin is
+covered only when an exact active `aube.patchedDependencies` name/version selector
+matches a supported version and points to an artifact belonging to that same fix.
+A selector for another version or another fix's artifact is insufficient.
+Existing direct pins must still match; host adapters still require their supported
+direct pin. Unknown selectors, missing artifacts and changed hashes remain errors.
+This is manifest/artifact admission, not a general transitive lock-graph or
+installed-output verification system.
 
 ## Process
 
@@ -58,5 +75,13 @@ Keep Teamagent's Cargo lock and Rust edition. The native Tauri manifest pins alr
 ## Verification and operational limits
 
 Required evidence includes malformed/stale plans, unknown fixes, modified artifacts, missing prerequisites, unauthorized package changes, failure retention and no implicit network activity in ordinary checks. Test supplied Tauri lifecycle handling and real platform acceptance when its launch path changes. Browser/native execution must be reported separately from type checks, fixture execution and successful bundles.
+
+For the supplied Tinypool patch, check the lockfile patch digest, Oxfmt's patched
+consumer edge and the installed dependency resolved from Oxfmt. Run Aube's frozen
+install and the [consumer regression](../test/tinypool-windows-hide.test.ts);
+the real worker may start only after its hidden-options prerequisite passes.
+Keep actual application and regression receipts separate from the offline
+`deps check` result and from Trigon's own verification. Do not infer native
+visibility, unchanged timing or full repository acceptance from the option check.
 
 Do not relax lifecycle trust, disable type-aware lint, weaken schemas or replace native tooling solely to make an update pass. A failing new dependency without an applicable supplied fix triggers the user decision above. No new agent chat, external message, fork push or release is implicitly authorized by dependency maintenance.

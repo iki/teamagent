@@ -2,11 +2,11 @@
 
 Source: [pi-desktop](https://github.com/vastsa/PI-Desktop) · [Analysis](../../projects/ai-agents--pi-desktop.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `93620a80635431b62f8d73b64339a96e1de56a04`; commit date: 2026-10-28T13:18:35+08:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `93620a80635431b62f8d73b64339a96e1de56a04`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `d2c85a95a599002672e1592df7bc58fb11f8d79b`; commit date: 2026-11-01T14:37:35+08:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `d2c85a95a599002672e1592df7bc58fb11f8d79b`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/vastsa/PI-Desktop/compare/93620a80635431b62f8d73b64339a96e1de56a04...93620a80635431b62f8d73b64339a96e1de56a04). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/vastsa/PI-Desktop/compare/d2c85a95a599002672e1592df7bc58fb11f8d79b...d2c85a95a599002672e1592df7bc58fb11f8d79b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

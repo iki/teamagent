@@ -2,11 +2,11 @@
 
 Source: [llm-wiki-compiler](https://github.com/atomicmemory/llm-wiki-compiler) · [Analysis](../../projects/ai-agents-mem--llm-wiki-compiler.md) · [memory](../../memory.md), [evolution](../../evolution.md), [skills](../../skills.md), [import-generation](../../import-generation.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f`; commit date: 2026-10-19T12:40:59-07:00; review date: 2026-10-28T09:27:32.685Z; observed SHA: `c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `0f8ff86ef0a28f4c15627a2ea5e94a96cadd834e`; commit date: 2026-10-30T16:58:21-07:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `0f8ff86ef0a28f4c15627a2ea5e94a96cadd834e`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/atomicmemory/llm-wiki-compiler/compare/c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f...c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/atomicmemory/llm-wiki-compiler/compare/0f8ff86ef0a28f4c15627a2ea5e94a96cadd834e...0f8ff86ef0a28f4c15627a2ea5e94a96cadd834e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

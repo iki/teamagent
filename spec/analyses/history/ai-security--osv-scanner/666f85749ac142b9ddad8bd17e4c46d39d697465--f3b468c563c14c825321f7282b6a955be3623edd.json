@@ -1,0 +1,210 @@
+{
+  "id": "ai-security--osv-scanner",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/google/osv-scanner",
+  "report": "spec/projects/ai-security--osv-scanner.md",
+  "analyzedSha": "666f85749ac142b9ddad8bd17e4c46d39d697465",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T15:01:14+11:00",
+  "observedSha": "f3b468c563c14c825321f7282b6a955be3623edd",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f3b468c563c14c825321f7282b6a955be3623edd",
+      "date": "2026-10-30T13:55:08+11:00",
+      "subject": "test: add some E2E tests for fixes in scalibr (#3077)"
+    },
+    {
+      "sha": "6b34f608589bb4c77464b681704ab587d6b79eb6",
+      "date": "2026-10-30T14:22:44+13:00",
+      "subject": "refactor: spell \"license\" consistently (#3187)"
+    },
+    {
+      "sha": "2ac72ba7f40a031fe7e8620f2eef48377f66e09d",
+      "date": "2026-10-30T14:22:16+13:00",
+      "subject": "feat: update `osv-scalibr` and bindings (#3185)"
+    },
+    {
+      "sha": "c9c5077ed23b5f6bd6318394fe97aaa247871f0d",
+      "date": "2026-10-28T23:13:39Z",
+      "subject": "feat(config): deprecate `IgnoreUntil` in favor of `EffectiveUntil` for vuln ignores (#3184)"
+    },
+    {
+      "sha": "1b01455227cdc894f6079aebf8015d59badb27a8",
+      "date": "2026-10-29T09:25:18+11:00",
+      "subject": "docs: update link to sarif (#3186)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/internal/helper/flags.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/internal/helper/getters.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/internal/testcmd/testdata/vuln_severities.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/mcp/configuration-instructions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/scan/source/__snapshots__/command_test.snap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/scan/source/command_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/scan/source/testdata/cassettes/TestCommand_CycloneDX_npm_SBOM_with_scope_namespace.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "cmd/osv-scanner/scan/source/testdata/cassettes/TestCommand_Go_project_with_an_overridden_go_version_and_licenses.yaml",
+      "previousPath": "cmd/osv-scanner/scan/source/testdata/cassettes/TestCommand_Go_project_with_an_overridden_go_version_and_licences.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "cmd/osv-scanner/scan/source/testdata/cassettes/TestCommand_Go_project_with_an_overridden_go_version_and_licenses_grpc.yaml",
+      "previousPath": "cmd/osv-scanner/scan/source/testdata/cassettes/TestCommand_Go_project_with_an_overridden_go_version_and_licences_grpc.yaml"
+    },
+    {
+      "status": "A",
+      "path": "cmd/osv-scanner/scan/source/testdata/cassettes/TestCommand_SPDX_npm_SBOM_with_scope_namespace.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/osv-scanner/scan/source/testdata/cassettes/TestCommand_Transitive_requirements.txt_special_names_transitive_default.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/osv-scanner/scan/source/testdata/cassettes/TestCommand_Transitive_requirements.txt_special_names_transitive_default_grpc.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/scan/source/testdata/cassettes/TestCommand_requirements.txt_can_have_all_kinds_of_names.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/osv-scanner/scan/source/testdata/locks-requirements/requirements-special-names.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/scan/source/testdata/osv-scanner-duplicate-config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/scan/source/testdata/osv-scanner-partial-ignores-config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/scan/source/testdata/osv-scanner-unknown-config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/scan/source/testdata/sbom-grouping/npm-scope.cdx.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/osv-scanner/scan/source/testdata/sbom-grouping/npm-scope.spdx.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/output.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/config_internal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/ignores.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/manager.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/testdatainner/osv-scanner.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/unknown-key-1.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/unknown-key-2.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/unknown-key-3.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/scalibrplugin/__snapshots__/resolve_test.snap",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

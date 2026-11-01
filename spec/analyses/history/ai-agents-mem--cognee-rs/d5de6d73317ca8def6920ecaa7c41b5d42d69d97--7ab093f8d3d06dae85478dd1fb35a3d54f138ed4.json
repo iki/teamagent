@@ -1,0 +1,875 @@
+{
+  "id": "ai-agents-mem--cognee-rs",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/topoteretes/cognee-rs",
+  "report": "spec/projects/ai-agents-mem--cognee-rs.md",
+  "analyzedSha": "d5de6d73317ca8def6920ecaa7c41b5d42d69d97",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-27T22:51:04+02:00",
+  "observedSha": "7ab093f8d3d06dae85478dd1fb35a3d54f138ed4",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "7ab093f8d3d06dae85478dd1fb35a3d54f138ed4",
+      "date": "2026-10-30T11:40:20+01:00",
+      "subject": "Routing constraints (SDK-1259) (#370)"
+    },
+    {
+      "sha": "bc09bda34c419044018f9946ba36ed9983b2e82f",
+      "date": "2026-10-29T22:33:15+02:00",
+      "subject": "feat(improve): remove the session graph-context feature (SDK-1044, step 7/7) (#387)"
+    },
+    {
+      "sha": "9782235de77740cdba47829ece0eacdff2f8b5a8",
+      "date": "2026-10-29T21:29:26+02:00",
+      "subject": "feat(improve): port extract_agent_context and update_user_preferences, personalized retrieval (SDK-1044, step 6/7) (#384)"
+    },
+    {
+      "sha": "54401cf1c52c8f141971508941fc167bf415277a",
+      "date": "2026-10-29T19:58:13+02:00",
+      "subject": "feat(improve): global context index, from_entities + LLM methods and graph completion prelude (SDK-1044, step 5/7) (#380)"
+    },
+    {
+      "sha": "17d4d391b2a226c29148bfb45ae1760a437a53c2",
+      "date": "2026-10-29T19:19:31+02:00",
+      "subject": "feat(improve): waiting dataset lock and session claim, stage watermarks (SDK-1044, step 4/7) (#377)"
+    },
+    {
+      "sha": "b2aa5d2ac41cce3f3f9bd28189b22c7caa604d5b",
+      "date": "2026-10-29T17:44:40+02:00",
+      "subject": "feat(improve): improve settings, personalization knobs, detached debounced auto-improve (SDK-1044, step 3/7) (#376)"
+    },
+    {
+      "sha": "55f1d07cb4e2cbc1cf1a3d0ddbbf84e009b54665",
+      "date": "2026-10-29T16:57:14+02:00",
+      "subject": "feat(session): session-context entry store and StateRowWatermark (SDK-1044, step 2/7) (#373)"
+    },
+    {
+      "sha": "6bce71d401cc08a296623f34132e7949fab22b94",
+      "date": "2026-10-29T15:47:44+02:00",
+      "subject": "feat(improve): staged orchestrator with Python's ImproveResult (SDK-1044, step 1/7) (#372)"
+    },
+    {
+      "sha": "6139e724aec4b6527c01e9082ec9f54069d29b29",
+      "date": "2026-10-28T14:32:18+01:00",
+      "subject": "Query router (SDK-1259) (#343)"
+    },
+    {
+      "sha": "6ad5c6500d513190a0a9437aec4a5d7d27aebe58",
+      "date": "2026-10-28T12:15:41+02:00",
+      "subject": "test(search): end-to-end decomposition and graph report; GRAPH_REPORT only_context text and per-dataset fan-out fixes (SDK-1062) (#344)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/sdk.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/sdk_admin.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/sdk_memory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/sdk_retrieval.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/examples/sdk_retrieval_smoke.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/include/cognee_sdk.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/handle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/ops/lifecycle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/ops/memory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/ops/sessions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/improve.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/remember.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/teardown.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/tests/golden/cli_config_keys.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/fact_extraction/cascade.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/fact_extraction/extractor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/failure.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/global_context_index/content.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/global_context_index/document_index.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/global_context_index/llm.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/global_context_index/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/global_context_index/persist.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/global_context_index/prompts/global_context_bucket_summary.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/global_context_index/prompts/global_context_root_summary.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/memify/distill_sessions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/memify/feedback_weights.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/memify/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/memify/persist_sessions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/memify/pipeline.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/cognify/src/memify/sync_graph_session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/summarization/extractor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/tasks.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/temporal_extraction/entity_enricher.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/temporal_extraction/event_extractor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/tests/fixtures/global_context_index/from_entities.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/tests/fixtures/global_context_index/gen_from_entities.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/tests/global_context_index.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/cognify/tests/memify_sync_graph_session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/components/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/components/src/registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/components/src/sections.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/core/src/dataset_locks.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/database/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/database/src/entities/graph_sync_checkpoint.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/database/src/ops/checkpoint.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/database/src/pipelines/repository.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/database/src/pipelines/sea_orm_impl.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/database/src/session_qa/entity.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/database/src/session_qa/migrator/m20261028_000001_session_context_entries.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/database/src/session_qa/migrator/m20261029_000001_drop_session_graph_context.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/database/src/session_qa/migrator/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/database/src/session_qa/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/database/src/session_qa/ops.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/database/src/traits/session_qa_db.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/database/tests/session_schema.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/delete/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/graph/src/dataset_routed.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/graph/src/ladybug.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/graph/src/mock.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/graph/src/pg_graph_adapter.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/graph/src/traits.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/graph/tests/common/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ingestion/src/pipeline.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/lib/src/api/auto_improve_debounce.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/src/api/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/lib/src/api/improve.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/lib/src/api/improve/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/lib/src/api/improve/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/lib/src/api/improve/result.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/lib/src/api/improve/stages.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/lib/src/api/improve/user_preferences.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/lib/src/api/improve/watermark.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/src/api/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/src/api/recall.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/src/api/remember.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/lib/src/background_tasks.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/src/config/keys.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/src/session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/tests/config_key_golden.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/tests/golden/env_overlay.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/tests/golden/generic_set.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/tests/improve_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/tests/improve_sync_only.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/lib/tests/recall_override.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/lib/tests/recall_routing.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/tests/remember_sync_only.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/tests/remember_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/tests/test_recall_scope.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/lib/tests/test_remember_entry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/llm/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/llm/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/llm/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/llm/src/llm_trait.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/llm/src/mock/recording.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/llm/src/mock/throttle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/llm/src/unconfigured.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/models/src/global_context_summary.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/models/src/internal_node.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/models/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/models/src/user_preference.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/graph_retrieval/brute_force_triplet_search.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/graph_retrieval/triplet_ranking.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/orchestration/hybrid_fallback.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/orchestration/search_execution_builder.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/orchestration/search_orchestrator.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/query_router.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/search/src/query_router_stats.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/recall_scope.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/retrievers/base_retriever.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/retrievers/completion_retriever.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/retrievers/graph_completion_retriever.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/retrievers/graph_core.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/retrievers/graph_report_retriever.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/retrievers/hybrid/context.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/retrievers/hybrid/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/retrievers/hybrid/ranking.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/retrievers/lucky_feedback_rules_retrievers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/types/search_params.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/search/src/user_preferences.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/search/src/utils/global_context.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/utils/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/src/utils/session_messages.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/search/tests/decomposition_graph_report_integration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/search/tests/session_integration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/session/src/agent_context_extraction.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/session/src/context_builder.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/session/src/context_entry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/src/disabled_store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/src/fs_store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/src/improve_lock.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/session/src/prompts/agent_context_extraction_system.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/src/redis_store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/src/relational_store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/src/session_manager.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/src/session_store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/src/types.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/session/src/watermark.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/session/tests/agent_context_extraction.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/tests/fs_store_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/tests/relational_store_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/session/tests/test_session_manager_trace.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/session/tests/test_state_row_watermark.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utils/src/tracing_keys.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -35,8 +35,15 @@ export function testBatches(
   files: readonly string[],
   isolateAnalysis = true,
 ): readonly TestBatch[] {
+  // The cache suite uses private fixtures and restores its process-local mutations.
+  // Queue it after the other audited suites only in the measured three-worker mode.
   const isolated = isolateAnalysis
-    ? ["test/research-git.test.ts", "test/workflow.test.ts", "test/analysis-sync.test.ts"]
+    ? [
+        "test/research-git.test.ts",
+        "test/workflow.test.ts",
+        "test/analysis-sync.test.ts",
+        "test/verification-cache.test.ts",
+      ]
     : ["test/research-git.test.ts", "test/workflow.test.ts"];
   return [
     { name: "remaining", files: files.filter((file) => !isolated.includes(file)) },

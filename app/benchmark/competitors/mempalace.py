@@ -24,7 +24,8 @@ TOKENIZER_SHA256 = "da0e79933b9ed51798a3ae27893d3c5fa4a201126cef75586296df9b4d2c
 
 def git(*args):
     return subprocess.check_output(["git", "-c", f"safe.directory={REFERENCE.as_posix()}",
-                                    "-C", str(REFERENCE), *args], text=True, timeout=30).strip()
+                                    "-C", str(REFERENCE), *args], text=True, timeout=30,
+                                   creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0).strip()
 
 
 def validate_input(data):

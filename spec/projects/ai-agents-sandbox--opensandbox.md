@@ -47,6 +47,18 @@ In [components/egress/fastsandbox_vault_persist.go](https://github.com/alibaba/O
 
 **Teamagent implication:** Versioned memory, credential and receipt stores need distinct absent, unreadable and unsupported states. Schema downgrade or cleanup must not erase state whose lineage cannot be interpreted. Test both sticky protection after known evidence and recoverable transient failure, including terminal cleanup writers.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `a6c0cfc509af6253f59a4d7b97b6ede21a5d797d` (commit date `2026-11-01T17:56:45+08:00`), compared with `51bf29ce4781f7a763f3ed7ee90dc68c30f6e7e6`. Earlier observations remain historical evidence.
+
+**Scope:** Changed credential-vault decision-snapshot validation and matching marker-exchange fixtures. Network interception, actual credential exchange and end-to-end policy enforcement were not audited.
+
+The [decision snapshot](https://github.com/alibaba/OpenSandbox/blob/a6c0cfc509af6253f59a4d7b97b6ede21a5d797d/components/egress/pkg/credentialvault/decision_snapshot.go) distinguishes marker exchange from rendered credentials: a marker requires a nonblank, unpadded credential reference and rejects attached rendered headers/substitutions. The marker path canonicalizes empty arrays without requiring concrete-secret redaction variants, while rendered credentials retain their separate checks. [Fixtures](https://github.com/alibaba/OpenSandbox/blob/a6c0cfc509af6253f59a4d7b97b6ede21a5d797d/components/egress/pkg/credentialvault/decision_snapshot_test.go) cover canonical round trips, vault/policy version fields, invalid marker shapes and omission of a rejected secret value from errors. These tests establish structural contracts, not proof that a deployed egress boundary uses the snapshot correctly.
+
+**Teamagent implication (inference):** Keep opaque credential references distinct from rendered secrets in typed worker messages. Bind decisions to vault revision and effective policy version; validate the exact representation before exchange and preserve secret-free diagnostics. Recheck deployment enforcement separately from successful serialization.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [opensandbox](https://github.com/alibaba/OpenSandbox); analyzed commit `51bf29ce4781f7a763f3ed7ee90dc68c30f6e7e6`; commit date 2026-10-28T14:54:32+08:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--opensandbox.md).
+Analysis metadata: source [opensandbox](https://github.com/alibaba/OpenSandbox); analyzed commit `a6c0cfc509af6253f59a4d7b97b6ede21a5d797d`; commit date 2026-11-01T17:56:45+08:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--opensandbox.md).
 <!-- teamagent-analysis:end -->

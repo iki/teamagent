@@ -2,11 +2,11 @@
 
 Source: [comfyui](https://github.com/comfy-org/comfyui) · [Analysis](../../projects/ai-agents--comfyui.md) · [import-generation](../../import-generation.md), [agents](../../agents.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `79cf64c21a1dba50749945ba9fe2e3a692f45438`; commit date: 2026-10-28T00:43:04-07:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `79cf64c21a1dba50749945ba9fe2e3a692f45438`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `6d352802d8f8b9133f664a1757d6c6d26390c335`; commit date: 2026-10-31T23:00:10-04:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `6d352802d8f8b9133f664a1757d6c6d26390c335`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/comfy-org/comfyui/compare/79cf64c21a1dba50749945ba9fe2e3a692f45438...79cf64c21a1dba50749945ba9fe2e3a692f45438). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/comfy-org/comfyui/compare/6d352802d8f8b9133f664a1757d6c6d26390c335...6d352802d8f8b9133f664a1757d6c6d26390c335). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

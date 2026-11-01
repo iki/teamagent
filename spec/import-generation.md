@@ -100,6 +100,18 @@ These catalog associations provide navigation to scoped source reviews. Each rep
 - [better-icons](analyses/unreviewed/ai-query--better-icons.md)
 - [dbx](analyses/unreviewed/ai-query--dbx.md)
 
+## Source refresh: 2026-11-01 — coverage before successful publication
+
+The following refinements are proposed architecture and acceptance requirements. Current implemented behavior is documented in [memory imports](memory-imports.md) and [media processing](media-processing.md); inspected upstream fixtures were not executed during this source refresh.
+
+Import results need independent acquisition, interpretation and publication states. [Docling](https://github.com/docling-project/docling) ([review](projects/ai-query--docling.md)) preserves unknown and incomplete generation stop reasons, but normal model termination cannot prove complete document extraction. [MinerU](https://github.com/opendatalab/MinerU) ([review](projects/ai-query--mineru.md)) exposes preview page coverage and validates image closure before returning a multiformat result. [OfficeParser](https://github.com/harshankur/officeParser) ([review](projects/ai-query--office-parser.md)) retains glyph fallbacks when richer structure is unavailable. Record missing pages, unknown glyph mappings, omitted assets and fallback transformations rather than reducing all of them to a successful Markdown file.
+
+Resource bounds must describe the actual protected stage. [Xberg](https://github.com/xberg-io/xberg) ([review](projects/ai-query--xberg.md)) checks actual stored image bytes before copying, while object loading remains outside that copy bound. [Kanban Code](https://github.com/langwatch/kanban-code) ([review](projects/ai-query--kanban-code.md)) demonstrates chunked attachment transport, but per-request limits and a preliminary file size do not establish total transfer bounds or final integrity. Apply cumulative input/expanded-byte, page/pixel, queue, memory and total-time limits; verify the final manifest and content hashes before admitting assets to model context.
+
+Completed generation and successful delivery remain different outcomes. [GFlow CLI](https://github.com/ffroliva/gflow-cli) ([review](projects/ai-query--gflow-cli.md)) supports cross-filesystem relocation through copy/delete fallback; that convenience is not exclusive atomic publication. Preserve the generated artifact reference, copy into a destination-local owned staging file, validate bytes and media properties, then publish without overwrite. Download, relocation or local format failure must resume the existing result rather than silently requesting generation again. The [PageIndex retry review](projects/ai-agents-mem--pageindex.md) ([source](https://github.com/VectifyAI/PageIndex)) reinforces why generic transport retries cannot determine whether a billable operation already ran.
+
+Keep research articles static after their first successful capture. Only an explicit per-URL refresh declaration enables remote revalidation, including image validators; an updated parser can derive a new representation from retained evidence without fetching another article version. Retain creation/publication assertions, precision and source field separately from acquisition/validation dates. See the exact [text-source policy](research-sync.md) and [pipeline requirements](import-pipeline.md).
+
 <!-- coverage:start -->
 ## Project coverage
 
@@ -202,3 +214,12 @@ Use the same validated operation contract across surfaces. [OfficeCLI](https://g
 [Stagehand](https://github.com/browserbase/stagehand) ([review](projects/ai-query--stagehand.md#follow-up-change-review--2026-10-28)) changes generated schema metadata and removes some examples; preserve version-specific supported integrations. [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) ([review](projects/ai-query--mcp-sdk-typescript.md#follow-up-change-review--2026-10-28)) updates a URI dependency with upstream release claims that require local boundary fixtures; [MCP Go SDK](https://github.com/modelcontextprotocol/go-sdk) ([review](projects/ai-query--mcp-sdk-go.md#follow-up-change-review--2026-10-28)) changes contributor/security guidance only in this interval. [get-md](https://github.com/Nano-Collective/get-md) ([review](projects/ai-query--get-md.md#follow-up-change-review--2026-10-28)) changes a download badge only. None of those changes justifies a new extraction-accuracy or authentication claim.
 
 Recovery after generation must reuse evidence, not repeat a costly action. [gflow-cli](https://github.com/ffroliva/gflow-cli) ([review](projects/ai-query--gflow-cli.md#follow-up-change-review--2026-10-28)) reconciles lost image replies against a pre-submit grid and refuses ambiguous counts; the inspected settle check does not compare tile-ID sets, so stronger request identity is required for concurrent writers. Preserve the unknown outcome when attribution cannot be proved. Source reviews here did not run providers, browsers, OCR or converters; the officeParser aggregate diff was capped and the selected asset implementation was expanded separately.
+
+### Additional scoped reviews from November 1
+
+These newly reviewed sources complement the themes above. Each report states its selected source scope and limitations; listing it does not imply runtime integration or comparative quality.
+
+- [midbrain-memory-mcp](https://github.com/midbrainai/midbrain-memory-mcp) ([scoped report](analyses/unreviewed/ai-agents-mem--midbrain-memory-mcp.md)).
+- [diffmap](https://github.com/tanishqkancharla/diffmap) ([scoped report](analyses/unreviewed/ai-gen--diffmap.md)).
+- [yue2-studio](https://github.com/timoncool/yue2-studio) ([scoped report](analyses/unreviewed/ai-gen--yue2-studio.md)).
+- [minipcm-ocr](https://github.com/openbmb/minicpm-ocr) ([scoped report](analyses/unreviewed/ai-query--minipcm-ocr.md)).

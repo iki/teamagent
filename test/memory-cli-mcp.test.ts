@@ -33,6 +33,7 @@ async function removeFixture(directory: string) {
 }
 async function command(args: readonly string[]) {
   const child = Bun.spawn([process.execPath, cliPath, ...args], {
+    windowsHide: true,
     cwd: repository,
     stdin: "ignore",
     stdout: "pipe",

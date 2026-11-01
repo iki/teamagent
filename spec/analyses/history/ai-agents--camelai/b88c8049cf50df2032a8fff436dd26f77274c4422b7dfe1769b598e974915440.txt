@@ -1,0 +1,63 @@
+# camelai
+
+Source: [camelai](https://github.com/qaml-ai/camelAI) · Category: [ai-agents](../categories/ai-agents.md)
+
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `3825a9a671b2260cc6138929535de30e435c1f93`; commit timestamp `2026-10-03T09:38:47-05:00`; 1,829 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/qaml-ai/camelAI/blob/3825a9a671b2260cc6138929535de30e435c1f93/README.md)):
+
+> An AI coding assistant for persistent workspaces, connected data, and deployable applications. camelAI gives teams persistent AI coding workspaces backed by Cloudflare. Each
+
+Build/package evidence: [package.json](https://github.com/qaml-ai/camelAI/blob/3825a9a671b2260cc6138929535de30e435c1f93/package.json); [sandbox/create-worker/templates/starter/package.json](https://github.com/qaml-ai/camelAI/blob/3825a9a671b2260cc6138929535de30e435c1f93/sandbox/create-worker/templates/starter/package.json); [workers/eval-reports/package.json](https://github.com/qaml-ai/camelAI/blob/3825a9a671b2260cc6138929535de30e435c1f93/workers/eval-reports/package.json); [workers/main/db-query-sandbox-assets/runner/package.json](https://github.com/qaml-ai/camelAI/blob/3825a9a671b2260cc6138929535de30e435c1f93/workers/main/db-query-sandbox-assets/runner/package.json); [workers/main/project-build-sandbox-warmup/crud/package.json](https://github.com/qaml-ai/camelAI/blob/3825a9a671b2260cc6138929535de30e435c1f93/workers/main/project-build-sandbox-warmup/crud/package.json)
+
+License evidence: [LICENSE](https://github.com/qaml-ai/camelAI/blob/3825a9a671b2260cc6138929535de30e435c1f93/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped update review
+
+Reviewed commit `f4108141d856edef72cc282ac5c4646c27caf621` (commit date `2026-10-26T16:52:12-05:00`). The original snapshot above remains historical evidence.
+
+**Scope:** OAuth configuration/transport helpers and auth-route loaders at the pinned revision; callback state issuance, token/session storage, redirect helper internals and production OAuth were not audited.
+
+The [OAuth helper](https://github.com/qaml-ai/camelAI/blob/f4108141d856edef72cc282ac5c4646c27caf621/src/lib/oauth-config.ts#L81-L114) sets a fifteen-second abort timer and refuses redirect responses for provider fetches. The timer is cleared when `fetch` resolves, before subsequent JSON body consumption; it therefore does not bound a stalled response body. Token/user responses are cast into expected shapes instead of comprehensively decoded from unknown data. A Teamagent adapter needs a whole-operation deadline, response-size bounds and schema/semantic validation through body parsing, with caller cancellation composed into that deadline.
+
+The [user-info path](https://github.com/qaml-ai/camelAI/blob/f4108141d856edef72cc282ac5c4646c27caf621/src/lib/oauth-config.ts#L214-L292) requires Google's verified-email flag and obtains a verified GitHub email from the authenticated email endpoint rather than trusting the public profile email. That is a useful identity-evidence distinction, but truthiness checks and a string conversion are not complete validation of provider IDs and email fields. The helper supports an optional PKCE challenge; this scope did not inspect issuance/consumption of state, verifier storage or callback/session binding and makes no end-to-end OAuth certification.
+
+The [public auth layout](https://github.com/qaml-ai/camelAI/blob/f4108141d856edef72cc282ac5c4646c27caf621/src/routes/_auth.tsx) distinguishes a session from construction of the full auth context and clears a stale cookie to break a redirect loop. [Login error mapping](https://github.com/qaml-ai/camelAI/blob/f4108141d856edef72cc282ac5c4646c27caf621/src/routes/_auth.login.tsx#L13-L32) keeps a bounded set of user-facing outcomes. Preserve this separation between configuration, session presence, valid principal and account eligibility; neither frontend availability nor a static sandbox egress address establishes provider or network authorization.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `c1bcd2d81a6d8a06e0ddcedd3fb14bb12915aa35` (commit date `2026-10-27T18:31:12-05:00`), compared with `f4108141d856edef72cc282ac5c4646c27caf621`. Earlier findings remain historical evidence.
+
+**Scope:** Stored-model replacement and Pi model-ID normalization. The complete changed-path inventory contains 5 paths; the assessment below is limited to the cited branches.
+
+Raw legacy Claude IDs are recognized by a regex and family substring, then mapped to a current picker entry; OpenRouter-style IDs are deliberately left to that route. The Pi mapping now uses this same helper. See [src/lib/llm-provider-config.ts](https://github.com/qaml-ai/camelAI/blob/c1bcd2d81a6d8a06e0ddcedd3fb14bb12915aa35/src/lib/llm-provider-config.ts#L43-L75) and [workers/main/src/pi-model-resolution.ts](https://github.com/qaml-ai/camelAI/blob/c1bcd2d81a6d8a06e0ddcedd3fb14bb12915aa35/workers/main/src/pi-model-resolution.ts#L137-L146). This avoids one class of unintended default-provider substitution but still changes the effective model.
+
+For Teamagent, preserve requested and resolved model IDs and the migration reason, then re-evaluate account access, cost and data policy before execution. A family-name replacement or source comment about compatible keys is not authenticated entitlement evidence. No named model availability or quality was independently verified.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `9674ef7ec441ed576c8ca09ec97910413284365d` (commit date `2026-10-30T06:03:41-05:00`), compared with `c1bcd2d81a6d8a06e0ddcedd3fb14bb12915aa35`. Earlier observations remain historical evidence.
+
+**Scope:** Complete usage-row policy diff and relevant billing fixtures; 14 changed paths inventoried. Fallback request execution and entitlement validation not audited.
+
+The [usage mapper](https://github.com/qaml-ai/camelAI/blob/9674ef7ec441ed576c8ca09ec97910413284365d/workers/main/src/agent-runtime/usage.ts) retains usage for a superseded response while making it non-chargeable, and recognizes both current and previous free-route model identifiers. [Fixtures](https://github.com/qaml-ai/camelAI/blob/9674ef7ec441ed576c8ca09ec97910413284365d/workers/main/tests/agent-runtime-usage.test.ts) separately check the superseded event and ordinary answer event. This is a platform credit policy; it does not prove the provider incurred no cost, that an arbitrary fallback is permitted, or that all incoming superseded markers are authenticated.
+
+**Teamagent implication (inference):** Keep provider expenditure, customer chargeability and the delivered result as separate ledger facts. Bind supersession to trusted attempt/result identity; enforce the user's requested model, cost and training policy before any fallback request, regardless of later credit accounting.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.

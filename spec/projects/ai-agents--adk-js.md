@@ -50,6 +50,18 @@ For Teamagent, define the missing-context policy and test it on every discovery 
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `22a244e60dc3c6243fc4e49e50abff0f3140ccff` (commit date `2026-10-29T14:41:59-07:00`), compared with `567b9a8f62d139081bc9c64428c292db13026285`. Earlier observations remain historical evidence.
+
+**Scope:** Complete OAuth2 exchanger branch diff and both changed refresh-token fixtures; 46 changed paths inventoried, wider workflow/OpenAPI changes not audited.
+
+The [OAuth2 exchanger](https://github.com/google/adk-js/blob/22a244e60dc3c6243fc4e49e50abff0f3140ccff/core/src/tools/openapi_tool/auth/credential_exchangers/oauth2_exchanger.ts) now produces request authentication only when an access token exists; a refresh-token-only credential returns null. Both the [reference fixture](https://github.com/google/adk-js/blob/22a244e60dc3c6243fc4e49e50abff0f3140ccff/core/test/tools/openapi_tool/auth/credential_exchangers/oauth2_exchanger_test.ts) and [extra fixture](https://github.com/google/adk-js/blob/22a244e60dc3c6243fc4e49e50abff0f3140ccff/core/test/tools/openapi_tool/auth/credential_exchangers/oauth2_exchanger_extra_test.ts) assert that distinction. This branch does not itself refresh credentials or prove access-token validity.
+
+**Teamagent implication (inference):** Keep credential presence, refresh eligibility and authenticated route readiness as separate states. Only a completed refresh may produce access material; passive discovery must not treat a stored refresh token as a usable request credential.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [adk-js](https://github.com/google/adk-js); analyzed commit `567b9a8f62d139081bc9c64428c292db13026285`; commit date 2026-10-28T01:51:58-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-js.md).
+Analysis metadata: source [adk-js](https://github.com/google/adk-js); analyzed commit `22a244e60dc3c6243fc4e49e50abff0f3140ccff`; commit date 2026-10-29T14:41:59-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-js.md).
 <!-- teamagent-analysis:end -->

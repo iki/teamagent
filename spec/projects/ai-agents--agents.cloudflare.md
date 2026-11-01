@@ -56,6 +56,18 @@ Retain the preceding runtime findings without claiming these dependency changes 
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `be1749221ab3efc8be4e976d8e7d8344d1446032` (commit date `2026-10-29T18:49:01Z`), compared with `743cfa5a193a98b766d396c0fde79124fba4c501`. Earlier observations remain historical evidence.
+
+**Scope:** New skill-catalog listing/merge/fallback, activation, resource-resolution and fingerprint branches plus selected catalog fixtures; 214 changed paths inventoried. Registry execution, R2 and script runners not audited.
+
+The [catalog](https://github.com/cloudflare/agents/blob/be1749221ab3efc8be4e976d8e7d8344d1446032/packages/agents/src/skills/catalog.ts) merges ordered sources with first-name precedence, reports failed/duplicate/invalid entries, optionally retains a failed source's prior listing by source-object identity, and permits resource reads only for listed skill-relative paths. It renders compact descriptions before activation. Its fingerprint hashes that prompt text using two FNV passes; it is not a cryptographic digest of skill bodies, resources or execution policy. Source listings run through unbounded Promise.all in this function. [Fixtures](https://github.com/cloudflare/agents/blob/be1749221ab3efc8be4e976d8e7d8344d1446032/packages/agents/src/tests/skills.test.ts) include catalog/duplicate cases, not executed here.
+
+**Teamagent implication (inference):** Adopt staged discovery and explicit partial/stale diagnostics, while binding executable use to cryptographic payload versions, authority generations and resource limits. A failed refresh must not resurrect a revoked skill, and a stable prompt fingerprint must not authorize reuse after body/policy changes.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agents.cloudflare](https://github.com/cloudflare/agents); analyzed commit `743cfa5a193a98b766d396c0fde79124fba4c501`; commit date 2026-10-28T00:40:18Z; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--agents.cloudflare.md).
+Analysis metadata: source [agents.cloudflare](https://github.com/cloudflare/agents); analyzed commit `be1749221ab3efc8be4e976d8e7d8344d1446032`; commit date 2026-10-29T18:49:01Z; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--agents.cloudflare.md).
 <!-- teamagent-analysis:end -->

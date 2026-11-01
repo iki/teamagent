@@ -34,6 +34,18 @@ Before reuse, exercise provider discovery, cancellation, resume, duplicate launc
 
 Related directions: [agents](../../agents.md) · [models](../../models.md) · [channels](../../channels.md) · [decisions](../../decisions.md) · [evolution](../../evolution.md) · [security](../../security.md).
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `ab766e8fbb436584dcf0f299740e79d559b8ed31` (commit date `2026-10-30T12:22:18+01:00`), compared with `85dfa910ac92e69b09ed5df70ea60ee625a83f07`. Earlier observations remain historical evidence.
+
+**Scope:** Complete file-content registry diff; 16 changed paths inventoried. Git executor cancellation and runtime fixtures not audited.
+
+The [file-content registry](https://github.com/generalaction/emdash/blob/ab766e8fbb436584dcf0f299740e79d559b8ed31/packages/core/src/runtimes/git/node/checkout/file-content-registry.ts) passes abort signals to reads, tracks in-flight read ownership, and disposes queued/running entries when their last lease is released. Eviction checks entry identity so an old completion cannot remove a replacement entry. Errors from already disposed scopes are suppressed. Disposing a scope requests cancellation; this slice does not prove an underlying process has stopped.
+
+**Teamagent implication (inference):** Use leases and generation identities for shared repository reads, fencing late completions against replacement work. Retain scratch and process ownership until descendant shutdown is actually confirmed, even when the requesting UI no longer needs the result.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [emdash](https://github.com/generalaction/emdash); analyzed commit `85dfa910ac92e69b09ed5df70ea60ee625a83f07`; commit date 2026-10-26T16:41:19+01:00; review date 2026-10-27T18:19:07.717Z; depth reviewed. [Maintenance record](../repos/ai-agents--emdash.md).
+Analysis metadata: source [emdash](https://github.com/generalaction/emdash); analyzed commit `ab766e8fbb436584dcf0f299740e79d559b8ed31`; commit date 2026-10-30T12:22:18+01:00; review date 2026-11-01T11:33:30.893Z; depth reviewed. [Maintenance record](../repos/ai-agents--emdash.md).
 <!-- teamagent-analysis:end -->

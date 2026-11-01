@@ -96,9 +96,9 @@ function runExtractorProcess(
       env: options.env,
       windowsHide: true,
       shell: false,
-      // A separate group also prevents Windows extractors' console control events
-      // from reaching the caller. Keep the hidden process referenced until close.
-      detached: true,
+      // POSIX cleanup owns a process group. Windows hidden launches must not detach:
+      // Bun's detached mode can create a visible console despite windowsHide.
+      detached: process.platform !== "win32",
       stdio: ["ignore", "pipe", "pipe"],
     });
     const chunks: Buffer[] = [];

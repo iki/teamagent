@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--cezar",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/open-mercato/cezar",
+  "report": "spec/projects/ai-agents--cezar.md",
+  "analyzedSha": "4040b404b3e7ab8a34f6383c8d0a4f995861e977",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T19:02:52Z",
+  "observedSha": "aa35a4f1fe7e5525ffcc2eb9c773773cbe56ce9e",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "aa35a4f1fe7e5525ffcc2eb9c773773cbe56ce9e",
+      "date": "2026-11-01T10:00:26+01:00",
+      "subject": "fix(web): give nested task titles their indent back in the Task column (#979) (#1849)"
+    },
+    {
+      "sha": "766d307846d6c8ab5bc1604191f0085f5a72ad97",
+      "date": "2026-11-01T02:01:14+01:00",
+      "subject": "test(web): let the Mermaid previews test survive a loaded runner (#1874)"
+    },
+    {
+      "sha": "12fccd51cbde6946c4f5b32ef4389e948823b30e",
+      "date": "2026-11-01T02:01:05+01:00",
+      "subject": "fix(dispatch): refuse an explicit --model its runner cannot run (#1578) (#1815)"
+    },
+    {
+      "sha": "fa46190ae2d754f078ed372d654c049a447e8381",
+      "date": "2026-11-01T01:15:58+01:00",
+      "subject": "feat(runs): Run First — let a queued task take the first free slot (#1065)"
+    },
+    {
+      "sha": "09dc303de02484ebdf190f804fd64068ed6276a8",
+      "date": "2026-11-01T01:05:43+01:00",
+      "subject": "desktop-release: Windows code signing through SignPath Foundation (#1141)"
+    },
+    {
+      "sha": "ff3939fe9f13cf01d3e724840aaf6a4d98a1e4bb",
+      "date": "2026-11-01T01:05:04+01:00",
+      "subject": "feat(cli): `cez handoff log|resume` so agents stop hand-typing python to edit the handoff file (#1251)"
+    },
+    {
+      "sha": "30ca1750debe46af65eb309c90b7b9e8a0e3ed3f",
+      "date": "2026-11-01T00:56:54+01:00",
+      "subject": "feat(sidebar): fold and unfold the desktop sidebar (#1626)"
+    },
+    {
+      "sha": "439c36b9e955fd8c73882ddf1cc86bd9928d60fb",
+      "date": "2026-11-01T00:55:12+01:00",
+      "subject": "feat(cli): add safe singleton cockpit handoff (#1739)"
+    },
+    {
+      "sha": "9e70f7890cd09f21e6a7dd79e07a5baf16f6606d",
+      "date": "2026-11-01T00:45:36+01:00",
+      "subject": "feat: keyboard task switching — ⌥-arrows in the cockpit, ⌃⌥-arrows from any app (desktop) (#1591)"
+    },
+    {
+      "sha": "496a6ceecdb57ad64d2d93dab3443a024f629c15",
+      "date": "2026-11-01T00:44:07+01:00",
+      "subject": "feat(agents): add opt-in fallback on usage exhaustion (#1603)"
+    },
+    {
+      "sha": "8342e8e19f34e5ce928d09e43e61cf167477bfda",
+      "date": "2026-11-01T00:39:39+01:00",
+      "subject": "docs(specs): add spec for kiro-cli-agent (#1724)"
+    },
+    {
+      "sha": "430cda5667502430534d3c084ffb7166c9fb33b4",
+      "date": "2026-11-01T00:35:47+01:00",
+      "subject": "feat(desktop): Cmd/Ctrl+Alt+N opens New task from any app (#1250)"
+    },
+    {
+      "sha": "360219bc39ec0ac0aabb6d90ad928ce68df1c764",
+      "date": "2026-11-01T00:34:03+01:00",
+      "subject": "feat(tracker): scope agent access to task capabilities (#1721)"
+    },
+    {
+      "sha": "4070cb8685515e6bafbe3469d1c5b9772cd50aa9",
+      "date": "2026-11-01T00:31:03+01:00",
+      "subject": "feat(onboarding): install and sign in to an agent inside cezar (#1890)"
+    },
+    {
+      "sha": "b5e849a03c88f8918dffd77a7691cba870935209",
+      "date": "2026-11-01T00:20:54+01:00",
+      "subject": "fix(tracker): encrypt and migrate project connection records (#1720)"
+    },
+    {
+      "sha": "1afc2644b18d1f42038d95f7730f250a771f5c92",
+      "date": "2026-11-01T00:18:38+01:00",
+      "subject": "docs(specs): add spec for task-preview-apps (FR #1877) (#1878)"
+    },
+    {
+      "sha": "40993842f4685ee4f9079469908de276ef97c9b6",
+      "date": "2026-11-01T00:10:21+01:00",
+      "subject": "Group sidebar projects into folders (#1685)"
+    },
+    {
+      "sha": "f1cf72088f686dcd5240d2305aee19ff5518d33f",
+      "date": "2026-11-01T00:10:17+01:00",
+      "subject": "docs(specs): safe singleton cockpit handoff (#1738)"
+    },
+    {
+      "sha": "cd0007fa72da55016fd9d62768884725125d4a86",
+      "date": "2026-11-01T00:03:46+01:00",
+      "subject": "docs(adr): add ADR 0002 for first-turn task ingestion sanitization and outbound PII guardFeat/outbound pii guard (#1160)"
+    },
+    {
+      "sha": "12f87f6a59bff03d935f69b43ff9b13258efd44a",
+      "date": "2026-11-01T00:03:41+01:00",
+      "subject": "feat: Antigravity CLI (agy) runner at full provider parity (#1506)"
+    },
+    {
+      "sha": "07ade721b64ab83e8023b9765cdeca6b3eae698b",
+      "date": "2026-11-01T00:03:37+01:00",
+      "subject": "docs(specs): repository Systems — group related repos with upstream/downstream links (#1476)"
+    },
+    {
+      "sha": "b6e6f97a0a68750f1d5b85db8e70f39011286204",
+      "date": "2026-10-31T23:01:46+01:00",
+      "subject": "fix(web): up nav keys on <body> release the thread's stick-to-bottom (#1800) (#1810)"
+    },
+    {
+      "sha": "b991213fe1b2211c62ee281e9f58ac964c2ced6f",
+      "date": "2026-10-31T22:31:35+01:00",
+      "subject": "feat(automations): multiple schedules sharing one task (#1864)"
+    },
+    {
+      "sha": "f11a8b1e493cbc87f801d698e41f205cf66fa201",
+      "date": "2026-10-31T22:24:04+01:00",
+      "subject": "feat(automations): show recent tasks on automation details (#1623) (#1834)"
+    },
+    {
+      "sha": "c843d3cfb541a0f5452accb8997bce98110f1af9",
+      "date": "2026-10-31T22:24:00+01:00",
+      "subject": "feat(web): remove a completed task worktree safely (#1600) (#1857)"
+    },
+    {
+      "sha": "79d54d957ac730ba36b50d88c223c30a4b564792",
+      "date": "2026-10-31T22:19:03+01:00",
+      "subject": "chore(release): open 0.19.0 on main (#1872)"
+    },
+    {
+      "sha": "4b1a445f34a286f66354518d85eb48218714f472",
+      "date": "2026-10-31T22:16:59+01:00",
+      "subject": "fix(web): use the type scale in the browse-root hint and issue ownership row (#1873)"
+    },
+    {
+      "sha": "f25b6b9ad94b23aa2accf5febdcea9c8123e4352",
+      "date": "2026-10-31T13:22:35+01:00",
+      "subject": "docs(specs): add completed task worktree removal design (#1600) (#1854)"
+    },
+    {
+      "sha": "bfe94e057c1d9dac50704278f8895f75771c82c0",
+      "date": "2026-10-31T13:22:28+01:00",
+      "subject": "feat(github): show issue assignees and linked PRs (#1620) (#1845)"
+    },
+    {
+      "sha": "796c77eaf6139738453af35ac74a9e8ab0dbc97f",
+      "date": "2026-10-31T13:22:22+01:00",
+      "subject": "docs(specs): GitHub issue ownership (#1620) (#1844)"
+    },
+    {
+      "sha": "b607fa4874b41db9e8b3be917765b7ff659c05c1",
+      "date": "2026-10-31T13:22:16+01:00",
+      "subject": "feat(tasks): add quick and selected-row history actions (#1843)"
+    },
+    {
+      "sha": "8a509bb0d385d00cf18d78b5988f1ea9ee2eaeb9",
+      "date": "2026-10-31T13:22:10+01:00",
+      "subject": "docs(specs): define per-project Tasks quick and bulk actions (#1842)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".ai/qa/2026-10-30-issue-1818.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/qa/issue-894-pi-agent-config.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-09-23-queued-task-run-next.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-02-bound-repeated-autonomous-questions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/runs/2026-10-04-issue-resolver-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-04-skills-update-coordinator-root-dedupe.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-06-issue-701-lifecycle-races.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-06-issue-894-pi-agent-config.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-09-provider-auth-runtime-dedupe.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-09-ranked-bounded-planner-catalog.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-10-github-search-comment-counts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-11-bound-listing-concurrency.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-11-fix-issue-1359.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-12-issue-540-reference-candidates.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-12-issue-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-12-queued-screenshot-route-926.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-28-automation-review-child-dispatch-off.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-28-safe-singleton-cockpit-handoff.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-29-remove-project-dialog-overflow.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-30-issue-1599-tasks-actions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-30-issue-1600-task-worktree-removal.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-30-issue-1620-issue-ownership.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-30-issue-1623-recent-automation-runs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-30-issue-1688-browse-root.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-30-issue-1818-multiple-schedules.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-30-issue-1819-automation-order.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-31-agent-setup-onboarding.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/skills/l0-preflight-guard/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-07-20-multi-project-workspace.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-08-03-auto-resume-after-usage-limit.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-09-14-automations-redesign.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-09-18-jira-linear-tracker-browsing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-09-25-desktop-distribution.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-10-09-design-mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-10-10-project-secrets-vault-options.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-13-repository-systems.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-10-17-task-palette.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-20-agent-usage-limit-fallback.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-26-first-run-onboarding.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-27-kiro-cli-agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-28-safe-singleton-cockpit-handoff.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-30-issue-1599-tasks-actions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-30-issue-1600-task-worktree-removal.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-30-issue-1620-issue-ownership.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-30-issue-1623-recent-automation-runs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-30-issue-1688-browse-root.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-30-issue-1819-automation-order.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-30-typography-scale.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-31-task-preview-apps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-13-repository-systems/mockup-01-systems-empty-dark.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-13-repository-systems/mockup-01-systems-empty-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-13-repository-systems/mockup-01-systems-empty.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-13-repository-systems/mockup-02-system-editor-dark.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-13-repository-systems/mockup-02-system-editor-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-13-repository-systems/mockup-02-system-editor.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-13-repository-systems/mockup-03-start-system-task-dark.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-13-repository-systems/mockup-03-start-system-task-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-13-repository-systems/mockup-03-start-system-task.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-13-repository-systems/mockup-04-lead-run-dark.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-13-repository-systems/mockup-04-lead-run-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-13-repository-systems/mockup-04-lead-run.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-13-repository-systems/tokens.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/01-sign-in-to-an-agent-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/01-sign-in-to-an-agent-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/01-sign-in-to-an-agent.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/02-pick-a-project-nothing-found-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/02-pick-a-project-nothing-found-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/02-pick-a-project-nothing-found.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/03-pick-a-project-repos-found-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/03-pick-a-project-repos-found-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/03-pick-a-project-repos-found.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/04-pick-a-project-github-not-connected-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/04-pick-a-project-github-not-connected.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/05-welcome-fresh-repo-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/05-welcome-fresh-repo-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/05-welcome-fresh-repo.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/06-welcome-github-issues-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/06-welcome-github-issues-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/06-welcome-github-issues.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/07-welcome-recent-work-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/07-welcome-recent-work-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/07-welcome-recent-work.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/08-after-first-task-setup-pill-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/08-after-first-task-setup-pill.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/12-welcome-with-activity-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/12-welcome-with-activity-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/12-welcome-with-activity.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/14-connect-github-code-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/14-connect-github-code-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/14-connect-github-code.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/14b-connect-github-no-cli-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/14b-connect-github-no-cli.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/14c-connect-github-denied-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/14c-connect-github-denied.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/14d-after-github-connected-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/14d-after-github-connected.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/15-initialize-git-dialog-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/15-initialize-git-dialog-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/15-initialize-git-dialog.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/16-publish-sign-in-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/16-publish-sign-in.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/17-publish-after-sign-in-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/17-publish-after-sign-in.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/18-new-project-dialog-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/18-new-project-dialog.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/19-clone-from-github-dialog-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/19-clone-from-github-dialog.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/20-welcome-back-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/20-welcome-back-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/20-welcome-back.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/21-whats-new-1-tabs-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/21-whats-new-1-tabs.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/21-whats-new-2-palette-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/21-whats-new-2-palette.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/21-whats-new-3-design-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/21-whats-new-3-design.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/21-whats-new-4-scripts-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/21-whats-new-4-scripts.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/21-whats-new-5-workflow-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/21-whats-new-5-workflow.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/21-whats-new-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/22-new-task-tip-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/22-new-task-tip.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/22b-new-task-tip-pill.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/23-automations-explainer-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/23-automations-explainer.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/24-automations-guide.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/25-automation-editor-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/25-automation-editor-templates.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/25b-automation-editor-schedule.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/25c-automation-editor-github.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/25d-automation-editor-go-live.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/2026-10-26-first-run-onboarding/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/issue-1599-tasks-actions/proposed.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/issue-1620-issue-ownership/current.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/issue-1620-issue-ownership/mockup.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/issue-1620-issue-ownership/proposed.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/briefs/2026-09-23-queued-task-run-next.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/desktop-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENT_PROTOCOL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BACKWARD_COMPATIBILITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "alias-cezar-run/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "alias-cezar/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adding-issue-tracker.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/adr/0002-outbound-pii-and-prompt-sanitization.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/code-signing-policy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/issue-trackers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/content/docs/01-getting-started/01-installation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/content/docs/01-getting-started/02-first-task.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/content/docs/03-features/setup-and-integrations/tracker-automations.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/content/docs/03-features/tasks-and-sessions/design-mode.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/content/docs/03-features/workflows-and-skills/automation-dispatch.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/content/docs/03-features/workflows-and-skills/workflow-wait-ci.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/telemetry.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -6,7 +6,7 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://github.com/tanstack/tanstack.com/raw/refs/heads/main/src/blog/tanstack-ai-code-mode.md>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-10-28T14:56:36.677Z. Import: **pinned**. Content validation: **partial**.
+Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-11-01T08:51:16.093Z. Import: **pinned**. Content validation: **partial**.
 
 First captured: 2026-10-24T05:51:07.579Z. Source creation/publication date: unknown. Date evidence: unknown. Filename dates and Last-Modified are not treated as creation dates.
 

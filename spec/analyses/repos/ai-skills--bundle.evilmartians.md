@@ -2,11 +2,11 @@
 
 Source: [bundle.evilmartians](https://github.com/evilmartians/agent-skills) · [Analysis](../../projects/ai-skills--bundle.evilmartians.md) · [skills](../../skills.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `b35b6cdbb21ef34a6e15fe9da125f428690c6d98`; commit date: 2026-10-15T01:49:54+03:00; review date: 2026-10-28T08:26:04.502Z; observed SHA: `b35b6cdbb21ef34a6e15fe9da125f428690c6d98`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `d21debca29304d458eacb2a781d98ef05df8d08e`; commit date: 2026-10-30T19:33:11+03:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `d21debca29304d458eacb2a781d98ef05df8d08e`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/evilmartians/agent-skills/compare/b35b6cdbb21ef34a6e15fe9da125f428690c6d98...b35b6cdbb21ef34a6e15fe9da125f428690c6d98). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/evilmartians/agent-skills/compare/d21debca29304d458eacb2a781d98ef05df8d08e...d21debca29304d458eacb2a781d98ef05df8d08e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -2,11 +2,11 @@
 
 Source: [codeql](https://github.com/github/codeql) · [Analysis](../../projects/ai-security--codeql.md) · [security](../../security.md), [agents](../../agents.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `fd2bfc8a3da9c73a0c8be05d110efaf14a856445`; commit date: 2026-10-27T17:43:02+01:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `fd2bfc8a3da9c73a0c8be05d110efaf14a856445`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `950734fc80d48083479843e2284039832eaf54c7`; commit date: 2026-10-31T00:10:03+01:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `950734fc80d48083479843e2284039832eaf54c7`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/github/codeql/compare/fd2bfc8a3da9c73a0c8be05d110efaf14a856445...fd2bfc8a3da9c73a0c8be05d110efaf14a856445). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/github/codeql/compare/950734fc80d48083479843e2284039832eaf54c7...950734fc80d48083479843e2284039832eaf54c7). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

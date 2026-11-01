@@ -1,0 +1,105 @@
+{
+  "id": "ai-security--osv.dev",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/google/osv.dev",
+  "report": "spec/projects/ai-security--osv.dev.md",
+  "analyzedSha": "2550f6d61565de3a813e19f64a24b04b8af0ce39",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T05:44:09Z",
+  "observedSha": "c4dbe744f53244c634bceba56435a77f5c5d8a60",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c4dbe744f53244c634bceba56435a77f5c5d8a60",
+      "date": "2026-10-29T23:57:32Z",
+      "subject": "fix: prevent `\\x00` bytes from hitting postgres (#6274)"
+    },
+    {
+      "sha": "ec466da33070c174bc961185368b926be62214f0",
+      "date": "2026-10-29T23:51:03Z",
+      "subject": "test: update apitester snapshots (#6275)"
+    },
+    {
+      "sha": "4fa6e2902fc46ea862b7f33d48efa34442a431cd",
+      "date": "2026-10-29T14:00:52+11:00",
+      "subject": "chore: set postgres shadow rate to 1 on prod (#6271)"
+    },
+    {
+      "sha": "8cd67d7479f51ff464a979f126fbe078c23b4b53",
+      "date": "2026-10-28T23:49:52Z",
+      "subject": "chore: bump api dual read to 50%; allow more concurrent shadows (#6270)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "deployment/clouddeploy/osv-api/run-prod.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/terraform/environments/temp/main.tf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/dualread/vulnerability.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/postgres/vulnerability.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/postgres/vulnerability_matching.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/postgres/vulnerability_matching_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/importer/importer.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/importer/importer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/osvutil/schema/schema.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/osvutil/schema/schema_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/recoverer/recoverer.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/apitester/__snapshots__/cassette_single_query.snap",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

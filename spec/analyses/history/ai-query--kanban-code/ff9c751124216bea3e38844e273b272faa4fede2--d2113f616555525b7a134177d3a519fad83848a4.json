@@ -1,0 +1,335 @@
+{
+  "id": "ai-query--kanban-code",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/langwatch/kanban-code",
+  "report": "spec/projects/ai-query--kanban-code.md",
+  "analyzedSha": "ff9c751124216bea3e38844e273b272faa4fede2",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-27T22:34:49+01:00",
+  "observedSha": "d2113f616555525b7a134177d3a519fad83848a4",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d2113f616555525b7a134177d3a519fad83848a4",
+      "date": "2026-10-30T13:13:43+01:00",
+      "subject": "fix(ios): owner/repo#123 in agent messages is a tappable GitHub link, as on the Mac"
+    },
+    {
+      "sha": "c581724a9cd00225c831632d231fdc64e91b26cc",
+      "date": "2026-10-28T15:46:40+01:00",
+      "subject": "fix(cli): send --file keeps a space or plus in the file name"
+    },
+    {
+      "sha": "f921ec50345abd7f09c1a451b5079f230f3d2317",
+      "date": "2026-10-28T15:35:59+01:00",
+      "subject": "feat(ios): choose any file in the composer, uploaded to the card's machine and named in the prompt"
+    },
+    {
+      "sha": "8e8fc29723a44538b28e11d83c87c50b411aaeb3",
+      "date": "2026-10-28T15:35:59+01:00",
+      "subject": "feat(chat): attach any file to a message, not only images"
+    },
+    {
+      "sha": "26ebbd71035718ce48ad8462ab83766e1f22802d",
+      "date": "2026-10-28T14:48:10+01:00",
+      "subject": "chore(worktree): log each worktree Kanban removes, so a vanished worktree can be traced"
+    },
+    {
+      "sha": "c5479f9f72b269d29bcf2042888b6ca418e2f365",
+      "date": "2026-10-28T14:46:20+01:00",
+      "subject": "fix(rush): a session whose worktree was deleted gets it back from its branch before a start or send, else continues in the project root or names the missing directory"
+    },
+    {
+      "sha": "50a2616d8e2dffee7e654d7730ffc74689c4eb33",
+      "date": "2026-10-27T23:10:18+01:00",
+      "subject": "feat(scrub): save and replace passwords typed into a chat, found by their label or under an email address"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "Apps/iOS/KanbanCodeMobile/Model/ComposerDraft.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Apps/iOS/KanbanCodeMobile/Views/ChatPane.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Apps/iOS/KanbanCodeMobile/Views/PromptComposer.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Apps/iOS/KanbanCodeMobile/Views/SelectableText.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Apps/iOS/KanbanCodeMobileTests/ComposerDraftFileTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Apps/iOS/project.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/ChatContentCards.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/ChatMessageView.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/ChatView.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/ContentView.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/ConversationViews.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/FolderDropZone.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/PromptEditor.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Sources/KanbanCode/PromptFileAttachments.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/TerminalRepresentable.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/MasterRemoteControlHost.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteControlHost.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteControlServer.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteOpenAPI.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteScopePolicy.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Adapters/Rush/RushCliAdapter.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Sources/KanbanCodeCore/Adapters/Rush/SessionDirectory.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/UseCases/BoxdMachineSupervisor.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Sources/KanbanCodeCore/UseCases/Master/MasterEngine+Files.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/UseCases/Master/MasterEngine+Worktree.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/UseCases/Master/MasterEngine.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Sources/KanbanCodeCore/UseCases/PromptFileStore.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/UseCases/Scrub/ScrubIndex.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/UseCases/Scrub/ScrubScanner.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/UseCases/Scrub/SecretScrubber.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Sources/KanbanCodeRemoteKit/IssueRefLinks.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Sources/KanbanCodeRemoteKit/PromptFiles.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeRemoteKit/RemoteModels.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeRemoteKit/SecretDetector.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Tests/KanbanCodeCoreTests/MasterHandoverTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Tests/KanbanCodeCoreTests/PromptFileStoreTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Tests/KanbanCodeCoreTests/RushTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Tests/KanbanCodeCoreTests/Scrub/SecretScrubberTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Tests/KanbanCodeCoreTests/SessionDirectoryTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Tests/KanbanCodeRemoteKitTests/IssueRefLinksTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Tests/KanbanCodeRemoteKitTests/PromptFilesTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Tests/KanbanCodeRemoteKitTests/SecretDetectorTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/agents/rush-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/data.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/git.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/remote-client.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/remote-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/session-dir.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/remote-control.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/vault.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/rush/kanban-vault/secrets/find.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/rush/kanban-vault/secrets/find_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/rush/kanban-vault/secrets/rules.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "specs/chat/file-attachments.feature",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "specs/system/scrubber.feature",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

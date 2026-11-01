@@ -2,11 +2,11 @@
 
 Source: [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) · [Analysis](../../projects/ai-agents--oh-my-openagent.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `4c87d16a7393927afa3fbd22277e60f17ca2db81`; commit date: 2026-10-28T18:55:35+09:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `4c87d16a7393927afa3fbd22277e60f17ca2db81`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `ebaf17c7fa891322900dcc48ea5b013dcb077e34`; commit date: 2026-11-01T18:43:11+09:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `ebaf17c7fa891322900dcc48ea5b013dcb077e34`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/code-yeongyu/oh-my-openagent/compare/4c87d16a7393927afa3fbd22277e60f17ca2db81...4c87d16a7393927afa3fbd22277e60f17ca2db81). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/code-yeongyu/oh-my-openagent/compare/ebaf17c7fa891322900dcc48ea5b013dcb077e34...ebaf17c7fa891322900dcc48ea5b013dcb077e34). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

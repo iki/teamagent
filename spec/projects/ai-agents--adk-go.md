@@ -50,6 +50,18 @@ For Teamagent, preserve phase-specific failure causes and explicit ownership of 
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `beea418caa2b5cc9417251a37e7ee527ae7f99df` (commit date `2026-10-30T15:41:14+01:00`), compared with `4bd9638d01cfe49df79c196d3322b2b451e34ed8`. Earlier observations remain historical evidence.
+
+**Scope:** Selected new Jev adapter implementation and malformed-response/timeout fixtures in exp/classifier/typesafe/typesafe.go and typesafe_test.go; 52 changed paths inventoried, not exhaustively reviewed.
+
+The new [Jev adapter](https://github.com/google/adk-go/blob/beea418caa2b5cc9417251a37e7ee527ae7f99df/exp/classifier/typesafe/typesafe.go) accepts binary, choice and score questions, validates returned answer types and declared labels, rejects trailing JSON, bounds responses to 16 MiB and retains the returned model version. Probability values are individually range-checked; the inspected parser does not establish probability calibration or require their sum to equal one. It defaults to three attempts and 30 seconds per attempt, while caller cancellation supplies the overall bound. Transient transport failures and selected HTTP errors are retried. The built-in HTTP client refuses redirects, but caller-supplied clients retain caller-owned behavior; configurable HTTP origins are accepted. [Fixtures](https://github.com/google/adk-go/blob/beea418caa2b5cc9417251a37e7ee527ae7f99df/exp/classifier/typesafe/typesafe_test.go) cover malformed structures, out-of-range numbers and timeout configuration; inspected cases were not run.
+
+**Teamagent implication (inference):** Use typed Jev decisions as proposals inside deterministic authorization. Pin and record the resolved model, calibrate thresholds on held-out tasks, impose a total budget and explicit egress/credential binding, and keep decision-request retries separate from retries of the actions they select.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [adk-go](https://github.com/google/adk-go); analyzed commit `4bd9638d01cfe49df79c196d3322b2b451e34ed8`; commit date 2026-10-28T10:19:21+01:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-go.md).
+Analysis metadata: source [adk-go](https://github.com/google/adk-go); analyzed commit `beea418caa2b5cc9417251a37e7ee527ae7f99df`; commit date 2026-10-30T15:41:14+01:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-go.md).
 <!-- teamagent-analysis:end -->

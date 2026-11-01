@@ -51,6 +51,14 @@ Evidence: [src/gflow_cli/api/transports/migrated_composer.py:791-865](https://gi
 
 **Scope and limits:** Reviewed image lost-body recovery and selected fixture behavior; video recovery, private service protocol stability and live billing were not verified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `4ee2c60af9ca2230c9b38cb8d29b3eb18648a69f` against `31d6226a169fca96c4ed497285111e6f5484477a` (98 changed paths). The [worker](https://github.com/ffroliva/gflow-cli/blob/4ee2c60af9ca2230c9b38cb8d29b3eb18648a69f/src/gflow_cli/worker/daemon.py) switches completed-media relocation from rename-only to `shutil.move`, allowing copy/delete fallback across filesystems. Its [fixture](https://github.com/ffroliva/gflow-cli/blob/4ee2c60af9ca2230c9b38cb8d29b3eb18648a69f/tests/worker/test_daemon.py) injects EXDEV for media renames and checks destination bytes, completed status and source removal. This is simulated cross-device behavior, not a real two-filesystem test. Selected [client](https://github.com/ffroliva/gflow-cli/blob/4ee2c60af9ca2230c9b38cb8d29b3eb18648a69f/src/gflow_cli/api/client.py) and [selector](https://github.com/ffroliva/gflow-cli/blob/4ee2c60af9ca2230c9b38cb8d29b3eb18648a69f/src/gflow_cli/api/transports/ui_automation_video.py) changes make existing waits injectable for hermetic fixtures.
+
+**Harness consequence:** Separate successful generation from delivery. Cross-filesystem copying needs a destination-local exclusive staging file, integrity verification and atomic publication before source disposal; generic move fallback is not that guarantee. Recovery should reuse a completed artifact, never incur a second generation merely because relocation failed.
+
+**Scope and limits:** Selected relocation/test and timeout-constant deltas only; provider submit/reconciliation and all MCP changes were not re-audited. No provider, browser or upstream fixture was run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gflow-cli](https://github.com/ffroliva/gflow-cli); analyzed commit `31d6226a169fca96c4ed497285111e6f5484477a`; commit date 2026-10-28T07:46:30Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--gflow-cli.md).
+Analysis metadata: source [gflow-cli](https://github.com/ffroliva/gflow-cli); analyzed commit `4ee2c60af9ca2230c9b38cb8d29b3eb18648a69f`; commit date 2026-11-01T07:40:41Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-query--gflow-cli.md).
 <!-- teamagent-analysis:end -->

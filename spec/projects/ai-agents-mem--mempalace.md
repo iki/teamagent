@@ -39,6 +39,14 @@ Evidence: [mempalace/hub_client.py:80-174](https://github.com/milla-jovovich/mem
 
 **Scope and limits:** Static scoped review of hub forwarding, new media search and mocked hub fixtures within the 445-path comparison. Server-side authentication ordering, stored-text codec, embedding fallback/identity enforcement, real media inference and storage backends were not exhaustively audited or executed.
 
+## Change review - 2026-11-01
+
+Reviewed `4f7745afbd9d0197c6475b4c7ac846d4932eaeda` against `84582fb055a6429261f9c779da86c0561ec80adc` (89 changed paths). The selected [ranking hunk](https://github.com/milla-jovovich/mempalace/blob/4f7745afbd9d0197c6475b4c7ac846d4932eaeda/mempalace/searcher/ranking.py) replaces raw authored-date string comparison in the hybrid tie-break with `recency_key`, using top-level authored time or metadata fallback after relevance and vector distance. This delegates temporal interpretation to the existing helper; its complete parsing/error policy was not part of this scoped delta read.
+
+**Harness consequence:** Rank by interpreted authored instants rather than lexicographic timezone strings, and preserve authoring time independently of acquisition or refresh time. A temporal ranking change does not authorize refreshing static articles or establish the truth of newer statements. Retain provenance and deterministic handling of unknown dates.
+
+**Scope and limits:** Full changed-path inventory and the ranking hunk only. No claim is made about all backend changes, timestamp-helper correctness or benchmark quality; upstream tests and retrieval measurements were not run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mempalace](https://github.com/milla-jovovich/mempalace); analyzed commit `84582fb055a6429261f9c779da86c0561ec80adc`; commit date 2026-10-25T01:41:28-03:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--mempalace.md).
+Analysis metadata: source [mempalace](https://github.com/milla-jovovich/mempalace); analyzed commit `4f7745afbd9d0197c6475b4c7ac846d4932eaeda`; commit date 2026-10-31T02:41:26-03:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--mempalace.md).
 <!-- teamagent-analysis:end -->

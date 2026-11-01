@@ -32,6 +32,16 @@ The [local connector](https://github.com/NationalSecurityAgency/ghidra/blob/1b9e
 
 A URL classified as local can still name a network share. Treat that label as a storage protocol distinction, not an offline or trusted-path guarantee. connect checks existence and records requested read-only access; actual opening later maps ownership, read-only and lock failures into distinct statuses. Adapt round-trip path fixtures and the separation of parsing from authorized opening. This narrow review establishes neither traversal containment nor native access enforcement; no project, share, binary or tests were opened or executed.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `4718f50d9941b9d7b7ebd1febc2982f055560a73` against prior analyzed commit `1b9e58a915cf867e106495eaa2a4b18eb4971c9d`. Historical reviews above remain separate evidence.
+
+The [string representation parser](https://github.com/NationalSecurityAgency/ghidra/blob/4718f50d9941b9d7b7ebd1febc2982f055560a73/Ghidra/Framework/SoftwareModeling/src/main/java/ghidra/program/model/data/StringRenderParser.java) now retains a pending UTF-16 high surrogate until its low surrogate arrives, rejects incomplete/invalid pairing at character or finish boundaries, resets that state and clears the escaped-code accumulator after decoding. The [round-trip fixtures](https://github.com/NationalSecurityAgency/ghidra/blob/4718f50d9941b9d7b7ebd1febc2982f055560a73/Ghidra/Framework/SoftwareModeling/src/test/java/ghidra/program/model/data/StringDataTypeTest.java) check original bytes through mixed binary/text, UTF-8/UTF-16 supplementary characters and escaped/byte representations.
+
+Related charset changes replace named UTF-32 lookups with platform constants. Preserve byte-versus-text representation distinctions in binary/code importers and test supplementary characters across incremental parser boundaries. The added fixtures are positive round trips; they do not establish all malformed-surrogate or truncated-input rejection behavior. No binary analysis, decompiler or Java runtime compatibility test was executed, and these changes do not imply new agent capability.
+
+**Coverage:** Read the complete 219-line parser/charset/data-type fixture selection plus the 42-line renderer-test and 86-line dialog-test charset deltas. Other decompiler/debugger changes were outside scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ghidra](https://github.com/NationalSecurityAgency/ghidra); analyzed commit `1b9e58a915cf867e106495eaa2a4b18eb4971c9d`; commit date 2026-10-27T05:11:25-04:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-security--ghidra.md).
+Analysis metadata: source [ghidra](https://github.com/NationalSecurityAgency/ghidra); analyzed commit `4718f50d9941b9d7b7ebd1febc2982f055560a73`; commit date 2026-10-30T11:27:06-04:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-security--ghidra.md).
 <!-- teamagent-analysis:end -->

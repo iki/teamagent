@@ -50,6 +50,18 @@ For Teamagent, model-produced code remains executable untrusted input even when 
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `ce44c64170617ff7b412ee266620d3005cb8d13c` (commit date `2026-11-01T01:27:51-08:00`), compared with `687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded selected action-classification, policy-ordering and Windows process-risk fixture branches of Codewhale's new auto-review module; whole-repository diff was oversized. Remaining classifier, queued enforcement and publication receipts not audited.
+
+The [Codewhale policy](https://github.com/codewhale-hq/codewhale/blob/ce44c64170617ff7b412ee266620d3005cb8d13c/crates/engine/src/core/authority/auto_review.rs) checks configured blocks before deterministic fallback and emits structured decision context. Outside Bypass mode, selected built-in gates precede configured allows, including credential uploads and publish-like actions. Classification inspects tool names, parameters and some workspace evidence; fixtures include broad Windows image kills versus specific PID forms. Bypass explicitly skips those built-in holds, so they are not universally non-bypassable and static classification is not proof of process ownership.
+
+**Teamagent implication (inference):** Record approval mode, rule and exact operation context with each decision. Preserve hard Teamagent invariants independently of model or configurable ranking, and validate actual process/destination ownership at execution; do not import lexical permission heuristics as complete authorization or weaken existing standing grants through redundant prompts.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codewhale](https://github.com/codewhale-hq/codewhale); analyzed commit `687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1`; commit date 2026-10-28T03:14:12-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepseek-tui.md).
+Analysis metadata: source [codewhale](https://github.com/codewhale-hq/codewhale); analyzed commit `ce44c64170617ff7b412ee266620d3005cb8d13c`; commit date 2026-11-01T01:27:51-08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepseek-tui.md).
 <!-- teamagent-analysis:end -->

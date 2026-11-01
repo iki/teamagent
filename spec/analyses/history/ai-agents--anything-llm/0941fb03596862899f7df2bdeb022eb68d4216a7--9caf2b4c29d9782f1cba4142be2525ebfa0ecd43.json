@@ -1,0 +1,335 @@
+{
+  "id": "ai-agents--anything-llm",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/Mintplex-Labs/anything-llm",
+  "report": "spec/projects/ai-agents--anything-llm.md",
+  "analyzedSha": "0941fb03596862899f7df2bdeb022eb68d4216a7",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T16:04:07-07:00",
+  "observedSha": "9caf2b4c29d9782f1cba4142be2525ebfa0ecd43",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "9caf2b4c29d9782f1cba4142be2525ebfa0ecd43",
+      "date": "2026-10-30T13:49:57-07:00",
+      "subject": "fix: filter ineligible Lance candidates before reranking (#6908)"
+    },
+    {
+      "sha": "c09740cab8da536de6f6184e4de92a08b2475d7c",
+      "date": "2026-10-30T13:43:09-07:00",
+      "subject": "feat: add DISABLE_METRICS_ENDPOINT opt-out for /api/utils/metrics (#6912)"
+    },
+    {
+      "sha": "575ffbb49f453461a9768b992b673b4f0c44cb03",
+      "date": "2026-10-30T13:30:58-07:00",
+      "subject": "fix: honor max response tokens in native KoboldCPP agent requests (#6902)"
+    },
+    {
+      "sha": "fd4de400c791d36909667ff0cca240952bd13e96",
+      "date": "2026-10-30T13:28:03-07:00",
+      "subject": "fix: encode file paths when re-syncing GitHub documents (#6901)"
+    },
+    {
+      "sha": "e4bc9c329370857b5bb2242eb2a135eceb21cfbf",
+      "date": "2026-10-30T13:21:29-07:00",
+      "subject": "fix: pptx section sub-agent provider instance and call arguments (#6904)"
+    },
+    {
+      "sha": "6dfb5452d0a4b6c0722e3d4dd4a39f15fa849f28",
+      "date": "2026-10-30T13:08:55-07:00",
+      "subject": "Add DeepSeek as an agent web search provider (#6911)"
+    },
+    {
+      "sha": "74575f63f942f5f47ac14be8468d5f0d12d0332f",
+      "date": "2026-10-30T13:06:29-07:00",
+      "subject": "Add vision support to DeepSeek provider (#6910)"
+    },
+    {
+      "sha": "db8121994a3de808a9d974c6c60411ea8a79b145",
+      "date": "2026-10-30T12:37:44-07:00",
+      "subject": "Hide Sent By column in workspace chats outside multi user mode (#6886)"
+    },
+    {
+      "sha": "b985cac4e17fe4f86ab45e28424ffaa167fdfc75",
+      "date": "2026-10-30T12:15:59-07:00",
+      "subject": "docs: point Qdrant setup reference at the quickstart page (#6896)"
+    },
+    {
+      "sha": "3661da4cfffbd0d65bc1a2fb23787489d249dfd2",
+      "date": "2026-10-29T12:23:23-07:00",
+      "subject": "fix: treat empty tool call arguments as {} in tooledComplete (#6879)"
+    },
+    {
+      "sha": "c67eafed8c39992a27fb804726c3055a548c9c49",
+      "date": "2026-10-29T12:04:43-07:00",
+      "subject": "fix: preserve chat action IDs after saving replies (#6875)"
+    },
+    {
+      "sha": "a3fe5e499021dff506463b50f59941798091a1fc",
+      "date": "2026-10-29T12:01:20-07:00",
+      "subject": "fix: list Microsoft Foundry Local in the onboarding LLM provider picker (#6884)"
+    },
+    {
+      "sha": "6d90102710ecf7ba91bdbbe1c6d7eb2594fb711f",
+      "date": "2026-10-29T11:59:49-07:00",
+      "subject": "fix: report chunk progress while embedding with Voyage AI (#6882)"
+    },
+    {
+      "sha": "41df29888e786b6b491f0c2e76e4732b6922f969",
+      "date": "2026-10-29T11:52:25-07:00",
+      "subject": "fix: responsive widths on Workspace Settings forms (#6891)"
+    },
+    {
+      "sha": "e4a5ae93e6e2f12315ed838ca038eca2602032bc",
+      "date": "2026-10-29T11:48:22-07:00",
+      "subject": "Chore/Maint: Bump Node from 18 to 24 LTS (#6893)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".devcontainer/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/devcontainer.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/check-package-versions.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/check-translations.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/lint.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/run-tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".nvmrc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud-deployments/openshift/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "collector/__tests__/utils/extensions/RepoLoader/GithubRepo.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "collector/utils/extensions/RepoLoader/GithubRepo/RepoLoader/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/components/PrivateRoute/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/components/SettingsSidebar/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/hooks/useMultiUserMode.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/pages/Admin/Agents/WebSearchSelection/SearchProviderOptions/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/pages/Admin/Agents/WebSearchSelection/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/pages/Admin/Logging/LogRow/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/pages/Admin/Logging/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/pages/GeneralSettings/Chats/ChatRow/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/pages/GeneralSettings/Chats/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/pages/OnboardingFlow/Steps/LLMPreference/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/pages/WorkspaceSettings/AgentConfig/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/pages/WorkspaceSettings/ChatSettings/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/pages/WorkspaceSettings/GeneralAppearance/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/pages/WorkspaceSettings/VectorDatabase/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/pages/WorkspaceSettings/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/__tests__/utils/agents/aibitat/providers/helpers/tooled.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/endpoints/utils.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/models/eventLogs.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/models/systemSettings.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/models/workspaceChats.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/AiProviders/deepseek/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/EmbeddingEngines/voyageAi/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/aibitat/plugins/create-files/pptx/create-presentation.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/aibitat/plugins/create-files/pptx/section-agent.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/aibitat/plugins/web-browsing.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/aibitat/providers/deepseek.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/aibitat/providers/helpers/tooled.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/aibitat/providers/koboldcpp.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/helpers/chat/convertTo.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/helpers/customModels.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/helpers/updateENV.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/vectorDbProviders/lance/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/vectorDbProviders/qdrant/QDRANT_SETUP.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

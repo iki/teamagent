@@ -44,6 +44,14 @@ Evidence: [models/components/imagegenerationproviderpreferences.go:285-310](http
 
 **Scope and limits:** Reviewed complete target-revision preference fields/getter and fallback context in the generated SDK; no network call or full generated release audit was performed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`1dbaecd6b7100018916591cbebb701443f7c50cf`](https://github.com/OpenRouterTeam/go-sdk/commit/1dbaecd6b7100018916591cbebb701443f7c50cf), compared with `3b873ba1a1286a8c604b36ec0e409e4e7e257b57`.
+
+The complete generated [Jev router component](https://github.com/OpenRouterTeam/go-sdk/blob/1dbaecd6b7100018916591cbebb701443f7c50cf/models/components/jevrouterplugin.go) exposes model/allowed-model lists, exclusion patterns and cost tiers. Its comments describe a material distinction: an include list matching catalog models but no current pool members can fall back to the whole pool, while exclusions remain applicable. The generated type serializes these fields; it does not implement the hosted selection algorithm or enforce the documented count/length caps.
+
+The inspected beginning of [provider preferences](https://github.com/OpenRouterTeam/go-sdk/blob/1dbaecd6b7100018916591cbebb701443f7c50cf/models/components/providerpreferences.go#L1-L180) declares data-collection allow/deny values and validates a provider union, with errors that interpolate rejected JSON. Teamagent must keep hard model, non-training and operation eligibility outside learned ranking and optional generated preferences, and redact imported SDK errors. This is source-shape evidence, not an authenticated route-policy check or a claim about server enforcement. The 1,728-path inventory required targeted expansion; unrelated generated endpoints and the remaining preference implementation were not exhaustively audited. No SDK, provider or test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openrouter-go-sdk](https://github.com/OpenRouterTeam/go-sdk); analyzed commit `3b873ba1a1286a8c604b36ec0e409e4e7e257b57`; commit date 2026-10-28T08:58:35Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-go-sdk.md).
+Analysis metadata: source [openrouter-go-sdk](https://github.com/OpenRouterTeam/go-sdk); analyzed commit `1dbaecd6b7100018916591cbebb701443f7c50cf`; commit date 2026-10-31T04:53:04Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-go-sdk.md).
 <!-- teamagent-analysis:end -->

@@ -2,11 +2,11 @@
 
 Source: [hermes-desktop](https://github.com/fathah/hermes-desktop) · [Analysis](../../projects/ai-agents--hermes-desktop.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `171024862c849475634d217a5635fedff796360c`; commit date: 2026-10-13T20:23:54+05:30; review date: 2026-10-28T09:27:32.685Z; observed SHA: `171024862c849475634d217a5635fedff796360c`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `171024862c849475634d217a5635fedff796360c`; commit date: 2026-10-13T20:23:54+05:30; review date: 2026-10-28T09:27:32.685Z; observed SHA: `171024862c849475634d217a5635fedff796360c`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/fathah/hermes-desktop/compare/171024862c849475634d217a5635fedff796360c...171024862c849475634d217a5635fedff796360c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -1,0 +1,985 @@
+{
+  "id": "ai-query--dbx",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/t8y2/dbx",
+  "report": "spec/analyses/unreviewed/ai-query--dbx.md",
+  "analyzedSha": "a382bd25a4a8eb9371d1330cd251810743e9a1e9",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T17:46:30+08:00",
+  "observedSha": "e6b1a478b7618def254e8a45b23a8ce2e0b61aa9",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "e6b1a478b7618def254e8a45b23a8ce2e0b61aa9",
+      "date": "2026-11-01T16:44:46+08:00",
+      "subject": "perf(grid): stop re-rendering every column header when a header is merely pressed"
+    },
+    {
+      "sha": "d5788656b84a95d909921418f81df1319a9f0fc8",
+      "date": "2026-11-01T16:01:53+08:00",
+      "subject": "feat(editor): keep block folding and table-name colouring in documents over 2 MB by parsing one statement at a time"
+    },
+    {
+      "sha": "87d7436c1d569bb160a7eaf9958891c3c17d8930",
+      "date": "2026-11-01T14:38:18+08:00",
+      "subject": "perf(editor): skip the worker fold parse past the grammar budget and keep string/comment checks on the scanner"
+    },
+    {
+      "sha": "6296679df539e7671dcb07ffa8066cbd18871e3f",
+      "date": "2026-11-01T14:16:29+08:00",
+      "subject": "perf(editor): highlight documents over 2 MB with a stream tokenizer instead of the Lezer grammar"
+    },
+    {
+      "sha": "f3ba2d05a95923f59ad7f36ca2628ff90f741422",
+      "date": "2026-11-01T09:47:23+08:00",
+      "subject": "fix(release): match CRLF Cargo.lock when setting the release version"
+    },
+    {
+      "sha": "4d67b2587d6bbcd286ceb38bbbcbfaa4f3ce0d97",
+      "date": "2026-11-01T09:33:20+08:00",
+      "subject": "feat(update): add beta and stable release channels"
+    },
+    {
+      "sha": "a3add88da1c44fc97d233f90977f67dc8c277fc1",
+      "date": "2026-11-01T00:05:05+08:00",
+      "subject": "feat(sidebar): add optional exact object-name matching"
+    },
+    {
+      "sha": "cf382213fb44e1a08a7b241e69ff66fc30afbbb9",
+      "date": "2026-10-31T23:14:40+08:00",
+      "subject": "Codex/issue 13888 mysql comment (#13961)"
+    },
+    {
+      "sha": "708a2d3fd00e9cd8b43d13fd303199aadb0bc666",
+      "date": "2026-10-31T21:54:39+08:00",
+      "subject": "fix: refresh sidebar columns after saving table structure (#13850)"
+    },
+    {
+      "sha": "4013855f23557731b12ca7699cb3f2fec9cb5601",
+      "date": "2026-10-31T17:56:32+08:00",
+      "subject": "Revert \"perf(window): lower the WebView2 memory target while the main window is hidden\""
+    },
+    {
+      "sha": "0b11c05ee161415104d0d913bfd015aba7e827a2",
+      "date": "2026-10-31T17:56:32+08:00",
+      "subject": "Revert \"docs(window): correct the WebView2 memory target version note\""
+    },
+    {
+      "sha": "10fe0dc0a2cd1ae8f1293336224ea6e3619b82c3",
+      "date": "2026-10-31T17:55:14+08:00",
+      "subject": "docs(window): correct the WebView2 memory target version note"
+    },
+    {
+      "sha": "118f86ca3e74a370a88414a925140b58f20058c9",
+      "date": "2026-10-31T17:42:45+08:00",
+      "subject": "perf(window): lower the WebView2 memory target while the main window is hidden"
+    },
+    {
+      "sha": "29cfd7c93615a2c63df270dc44e5646f78b5bd56",
+      "date": "2026-10-31T17:38:33+08:00",
+      "subject": "fix(ai): wrap composer context controls without squeezing icons"
+    },
+    {
+      "sha": "e9e6ce62693a311a5f094d7b0a66577cf64308d2",
+      "date": "2026-10-31T17:17:07+08:00",
+      "subject": "perf(grid): resolve column header labels and formatter keys once per render"
+    },
+    {
+      "sha": "de500cfe7c40b9abddfa3c0e2fa0efdf473ba050",
+      "date": "2026-10-31T17:17:07+08:00",
+      "subject": "perf(startup): keep CodeMirror, shiki and heavy dialogs out of the startup bundle"
+    },
+    {
+      "sha": "009517232b0fec2625161a805bac9eb4e7233049",
+      "date": "2026-10-31T17:17:07+08:00",
+      "subject": "perf(editor): cut per-keystroke allocations and shell re-renders while typing"
+    },
+    {
+      "sha": "bf5a9585619409ff69ae0bbc80ac9f6177a7712a",
+      "date": "2026-10-31T16:49:24+08:00",
+      "subject": "docs(import): 记录表数据导入的「失败继续」选项"
+    },
+    {
+      "sha": "3cdf8de94657d21816810f8bd2e52ef6a0427228",
+      "date": "2026-10-31T15:43:35+08:00",
+      "subject": "feat(import): offer the SQL file executor when a SQL file is not a single-table script"
+    },
+    {
+      "sha": "df4aa4d8a0c7f300960ec020a2b7726ff8864c0c",
+      "date": "2026-10-31T15:43:25+08:00",
+      "subject": "fix(transfer): make data transfer cancel responsive before the first table"
+    },
+    {
+      "sha": "53c4d244ff643834e3b244dcb5c2bd8f0e7ae46c",
+      "date": "2026-10-31T14:18:46+08:00",
+      "subject": "fix(connection): keep literal # in pasted connection URLs"
+    },
+    {
+      "sha": "70e2e073ed609c220e4f33a4b19bebdc295e120d",
+      "date": "2026-10-31T13:58:15+08:00",
+      "subject": "fix(editor): make SQL compress and JSON format linear on large inputs"
+    },
+    {
+      "sha": "35ba98b1e4378a18743f1509c6cac124c90c911f",
+      "date": "2026-10-31T12:38:15+08:00",
+      "subject": "fix(sidebar): cut sidebar search matching and filtering cost on large table lists"
+    },
+    {
+      "sha": "69a887b4e46b12bb6bcd88db9e7a33bd352e548c",
+      "date": "2026-10-31T11:50:28+08:00",
+      "subject": "fix(editor): reuse the statement frame measurement across measure cycles"
+    },
+    {
+      "sha": "277e66ddbc5c406895bfef13afc06ecfc990c2ab",
+      "date": "2026-10-31T11:01:11+08:00",
+      "subject": "fix(tabs): keep six hot tab surfaces alive per editor group"
+    },
+    {
+      "sha": "56a991098d58be0ec36d80e35305ed0ac98ad559",
+      "date": "2026-10-31T10:02:26+08:00",
+      "subject": "fix(sidebar): avoid whole-list rebuilds when loading more tables"
+    },
+    {
+      "sha": "34c07642fb2671648dbda63396295320e6a08ff1",
+      "date": "2026-10-31T09:24:26+08:00",
+      "subject": "fix(sidebar): cut pinned lookup and saved-SQL decorate cost on large table lists"
+    },
+    {
+      "sha": "c5e7e0430653aaef198800a48f9dec46a7cfed5e",
+      "date": "2026-10-31T03:08:40+08:00",
+      "subject": "fix(editor): cut per-keystroke and typing-pause cost on huge SQL documents"
+    },
+    {
+      "sha": "446f5b74b8164998473f3853d126337216d52b8c",
+      "date": "2026-10-31T00:03:48+08:00",
+      "subject": "fix(updates): load changelog versions lazily instead of the full feed"
+    },
+    {
+      "sha": "a47b2feb4a6dba3bbf5613d741cecce699ba9df0",
+      "date": "2026-10-30T23:42:43+08:00",
+      "subject": "fix(docs): cap starfield redraw rate to cut landing page GPU load"
+    },
+    {
+      "sha": "9e2485531c91c7304ca17b8e77482f72bd192f64",
+      "date": "2026-10-30T08:06:40Z",
+      "subject": "chore(packages): release 0.4.136 [skip node-packages-release]"
+    },
+    {
+      "sha": "e8d8018686934fa4b3cb90d4abd9f016e3e1434d",
+      "date": "2026-10-30T07:56:16Z",
+      "subject": "chore(jdbc): bump plugin version [skip ci]"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".cargo/config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/assert-win7-pe-compat.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/assert-windows-stack-reserve.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/assert-windows-stack-reserve.test.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/ci-install-system-deps.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/ci-install-system-deps.test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/ci-plan.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/ci-plan.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/ci-workflow.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/daily-beta-release.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/prepare-channel-manifest.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/prepare-channel-manifest.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/prepare-msi-config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/prepare-msi-config.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/prune-r2-releases.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/set-release-version.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/set-release-version.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/test-windows-stack-reserve.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/validate-release-ci.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/validate-release-ci.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/agents-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/daily-beta-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mcp-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-packages.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/rollback-update-channel.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sync-changelog.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ui-preview.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/common/src/main/java/com/dbx/agent/AbstractJdbcAgent.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/common/src/main/java/com/dbx/agent/AgentProtocol.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/common/src/main/java/com/dbx/agent/DatabaseAgent.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/common/src/main/java/com/dbx/agent/DdlBuilder.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agents/common/src/main/java/com/dbx/agent/JdbcConnectionParameters.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/common/src/main/java/com/dbx/agent/JsonRpcServer.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/common/src/main/java/com/dbx/agent/StandardJdbcMetadata.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/common/src/test/java/com/dbx/agent/CommonJavaCompatibilityTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/common/src/test/java/com/dbx/agent/DdlBuilderDefaultTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agents/common/src/test/java/com/dbx/agent/JdbcConnectionParametersTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/common/src/test/java/com/dbx/agent/StandardJdbcMetadataTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/dameng/src/main/java/com/dbx/agent/dameng/DamengAgent.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/duckdb/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/etcd-go/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/etcd-go/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/h2/src/main/java/com/dbx/agent/h2/H2Agent.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/oracle-go/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/oracle-go/connection_info.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/oracle-go/connection_info_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agents/drivers/oracle-go/legacy_charset.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agents/drivers/oracle-go/legacy_charset_live_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agents/drivers/oracle-go/legacy_charset_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/oracle-go/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/oracle-go/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/oracle-go/oci_dsn.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/oracle-go/pldebug_connection.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agents/drivers/oracle-go/spatial_fallback_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/rocketmq/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/rocketmq/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/spanner/build.gradle",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/spanner/src/main/java/com/dbx/agent/spanner/SpannerAgent.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/spanner/src/test/java/com/dbx/agent/spanner/SpannerAgentTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/tdengine/src/driver.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/versions.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/public/connection-dialog-legacy.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/public/icons/database/kafka.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/App.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/backup/DatabaseBackupConfigFields.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/backup/ScheduledDatabaseBackupSettings.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/backup/__tests__/ScheduledDatabaseBackupSettings.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/common/TextContentSearchBar.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/config/DriverStoreDialog.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/connection/ConnectionDialog.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/connection/ConnectionParametersDialog.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/connection/ReadOnlySessionControl.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/connection/__tests__/ConnectionDialog.deepLinkEdit.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/connection/__tests__/ConnectionDialog.redisTabSwitch.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/connection/__tests__/ConnectionParametersDialog.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/AiAssistant.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/AiToolApprovalCard.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/CloudSyncSelectionDialog.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/EditorGotoLinePanel.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/EditorSearchPanel.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/EditorSettingsDialog.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/QueryEditor.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/__tests__/AiAssistant.mount.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/__tests__/AiToolApprovalCard.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/editor/__tests__/EditorSearchPanel.replaceSequential.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/__tests__/EditorSettingsDialog.historyRetention.integration.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/__tests__/QueryEditor.componentSplit.integration.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/__tests__/QueryEditor.largeDocument.integration.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/editor/__tests__/QueryEditor.zoom.integration.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/editor/__tests__/QueryEditorStatementExecution.integration.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/queryEditorCodeMirrorRuntime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/queryEditorSqlExtensions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/useQueryEditorStatementBoundaries.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/export/DatabaseExportDialog.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/export/ExportProgressPopover.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/export/__tests__/DatabaseExportDialog.queue.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/export/__tests__/ExportProgressPopover.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/generate/DataGenerateDialog.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/generate/params/ForeignKeyParams.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/generate/params/__tests__/ForeignKeyParams.schemaFallback.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/grid/DataGrid.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/grid/DataGridColumnLayoutPopover.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/grid/DataGridExportMenu.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/grid/DataGridExportOptionsControl.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/grid/DataGridPagination.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/grid/DataGridSearchBar.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/grid/__tests__/DataGridExportMenu.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/grid/__tests__/DataGridPaginationShortcuts.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/grid/__tests__/DataGridSurfaces.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/grid/dataGridColumnLayoutPopover.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/import/TableImportDialog.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/import/__tests__/TableImportDialog.continueOnError.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/import/__tests__/TableImportDialog.sqlScriptFallback.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/AppDialogs.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/AppSidebar.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/ContentArea.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/EditorGroup.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/EditorGroupTabBar.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/EditorToolbar.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/QueryEditorSurface.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/QueryResultSurface.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/QueryResultToolbarActions.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/SqlEditorWorkspace.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/SqlFilePanel.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/SqlLibraryPanel.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/UpdateDialog.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/UpdateDialog.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/WelcomeScreen.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/__tests__/AppTabBar.portal.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/__tests__/EditorGroup.mount.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/__tests__/EditorGroupTabBar.behavior.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/__tests__/EditorGroupTabBar.groups.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/__tests__/EditorToolbar.mount.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/__tests__/EditorToolbar.transactionMode.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/__tests__/EditorToolbar.userClosedConnection.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/layout/__tests__/SqlFilePanel.expandedPersistence.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/layout/__tests__/SqlLibraryPanel.expandedPersistence.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/appTabBar.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/querySurfaces.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/mcp/McpSqlApprovalDialog.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/mcp/__tests__/McpSqlApprovalDialog.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/objects/DatabaseBrowser.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/objects/ObjectBrowser.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/objects/TableCopyProgressDialog.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/objects/__tests__/DatabaseBrowser.schemaMode.component.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/objects/__tests__/ObjectBrowser.constraints.component.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/objects/__tests__/ObjectBrowser.eventCreate.component.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/objects/__tests__/ObjectBrowser.exportQueue.component.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/objects/__tests__/ObjectBrowser.locateSidebar.component.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/objects/__tests__/ObjectBrowser.nameFilter.component.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/objects/__tests__/ObjectBrowser.oceanbaseCommentSearch.component.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/objects/__tests__/ObjectBrowser.oceanbasePagination.component.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/objects/__tests__/ObjectBrowser.routineSourceTab.component.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/objects/__tests__/ObjectBrowser.schemaIndexes.component.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/objects/__tests__/ObjectBrowser.singleKindObjectCount.component.spec.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

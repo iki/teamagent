@@ -2,11 +2,11 @@
 
 Source: [multica](https://github.com/multica-ai/multica) · [Analysis](../../projects/ai-agents--multica.md) · [channels](../../channels.md), [agents](../../agents.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `9af15b1446f9d91f90ea97b65c504a7aa49da714`; commit date: 2026-10-28T17:21:45+08:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `9af15b1446f9d91f90ea97b65c504a7aa49da714`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `5a2cc891ac338eed1919aa11a1eef5957cd82cec`; commit date: 2026-11-01T04:01:38+08:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `5a2cc891ac338eed1919aa11a1eef5957cd82cec`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/multica-ai/multica/compare/9af15b1446f9d91f90ea97b65c504a7aa49da714...9af15b1446f9d91f90ea97b65c504a7aa49da714). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/multica-ai/multica/compare/5a2cc891ac338eed1919aa11a1eef5957cd82cec...5a2cc891ac338eed1919aa11a1eef5957cd82cec). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

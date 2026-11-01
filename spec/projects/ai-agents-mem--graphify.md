@@ -51,6 +51,14 @@ Evidence: [graphify/wiki.py:450-480](https://github.com/safishamsi/graphify/blob
 
 **Scope and limits:** Reviewed wiki orphan/case reconciliation and its five fixtures; parser changes and other export surfaces were not audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `f5155badddaa3286c78a51653791131e9e2e4d29` against `0a8cd4e1e342235fe53e881fb5d591bf0460071f` (155 changed paths). The [declaration ID registry](https://github.com/safishamsi/graphify/blob/f5155badddaa3286c78a51653791131e9e2e4d29/graphify/ids.py) tracks ownership, salts collisions and returns no lookup when a normalized name remains ambiguous. Same-kind ownership can reuse an ID; cross-kind reuse requires matching spelling, preserving type `Foo` versus function `foo` while allowing a same-spelling merged declaration. The [case-only fixtures](https://github.com/safishamsi/graphify/blob/f5155badddaa3286c78a51653791131e9e2e4d29/tests/test_case_only_decl_ids_4904.py) cover multiple languages and self-edge avoidance. The [cache schema](https://github.com/safishamsi/graphify/blob/f5155badddaa3286c78a51653791131e9e2e4d29/graphify/cache.py) advances with extraction changes.
+
+**Harness consequence:** Separate filesystem normalization from language declaration identity; preserve unresolved ambiguity instead of inventing a graph edge. Include extractor/schema identity in cached graph compatibility. Short non-security collision salts are implementation IDs, not content authenticity proofs.
+
+**Scope and limits:** Complete selected ID-registry, cache-version and case fixture deltas; not every language extractor. Fixtures were read, not executed, and retrieval effects were not measured.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [graphify](https://github.com/safishamsi/graphify); analyzed commit `0a8cd4e1e342235fe53e881fb5d591bf0460071f`; commit date 2026-10-27T18:08:07Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--graphify.md).
+Analysis metadata: source [graphify](https://github.com/safishamsi/graphify); analyzed commit `f5155badddaa3286c78a51653791131e9e2e4d29`; commit date 2026-11-01T00:43:59Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--graphify.md).
 <!-- teamagent-analysis:end -->

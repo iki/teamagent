@@ -50,6 +50,18 @@ For Teamagent, avoid silently changing a reverse proxy's intended upstream and d
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `aa35a4f1fe7e5525ffcc2eb9c773773cbe56ce9e` (commit date `2026-11-01T10:00:26+01:00`), compared with `4040b404b3e7ab8a34f6383c8d0a4f995861e977`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete provider-auth and fixture diff. Whole-repository diff was oversized; subprocess runner, actual installed CLIs and provider accounts not exercised.
+
+The [auth catalog](https://github.com/open-mercato/cezar/blob/aa35a4f1fe7e5525ffcc2eb9c773773cbe56ce9e/packages/cezar/src/core/provider-auth.ts) adds an Antigravity models probe and distinguishes recognizable signed-out output from unrelated failure. Its parser treats any zero exit as connected, while Copilot fallback version inspection detects some foreign/obsolete binaries. [Fixtures](https://github.com/open-mercato/cezar/blob/aa35a4f1fe7e5525ffcc2eb9c773773cbe56ce9e/packages/cezar/src/core/provider-auth.test.ts) cover signed-out, network-error and malformed CLI responses. Comments about live behavior are upstream assertions; this review executed no authenticated probe.
+
+**Teamagent implication (inference):** Separate passive executable discovery from explicitly authenticated diagnostics, retaining exact executable/version and bounded redacted outcomes. Exit success is weaker than parsed account/model access, and neither proves entitlement, commercial rights or non-training policy; do not run remote status probes implicitly during a passive plan.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cezar](https://github.com/open-mercato/cezar); analyzed commit `4040b404b3e7ab8a34f6383c8d0a4f995861e977`; commit date 2026-10-27T19:02:52Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--cezar.md).
+Analysis metadata: source [cezar](https://github.com/open-mercato/cezar); analyzed commit `aa35a4f1fe7e5525ffcc2eb9c773773cbe56ce9e`; commit date 2026-11-01T10:00:26+01:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--cezar.md).
 <!-- teamagent-analysis:end -->

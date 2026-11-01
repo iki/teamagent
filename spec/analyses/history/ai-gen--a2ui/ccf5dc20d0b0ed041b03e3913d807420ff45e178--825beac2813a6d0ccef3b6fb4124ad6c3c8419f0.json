@@ -1,0 +1,985 @@
+{
+  "id": "ai-gen--a2ui",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/google/A2UI",
+  "report": "spec/projects/ai-gen--a2ui.md",
+  "analyzedSha": "ccf5dc20d0b0ed041b03e3913d807420ff45e178",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-27T17:04:19-07:00",
+  "observedSha": "825beac2813a6d0ccef3b6fb4124ad6c3c8419f0",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "825beac2813a6d0ccef3b6fb4124ad6c3c8419f0",
+      "date": "2026-10-30T15:58:10-07:00",
+      "subject": "docs(spec): allow agent calls to getScreenResolution in custom functions guide (#3673)"
+    },
+    {
+      "sha": "bb27bbf69e80cb7db4459926790196dedcad0cc8",
+      "date": "2026-10-30T17:53:13-04:00",
+      "subject": "fix(swift): keep the written wall-clock time in formatDate and accept timestamps without an offset (#3380)"
+    },
+    {
+      "sha": "bee75db662701cc02d5f802228b81f99b4190b5c",
+      "date": "2026-10-30T14:41:13-07:00",
+      "subject": "feat(catalog-mcp): add updateDataModel (#3573)"
+    },
+    {
+      "sha": "d0c256efa0e91e3491557710700709c4735d6e75",
+      "date": "2026-10-30T17:26:27-04:00",
+      "subject": "perf(swift/core): check each updateComponents against what it changes, and run message_processor_scaling.yaml (#3376)"
+    },
+    {
+      "sha": "9055207b827a471bc64cd6e247ee22c5d675cbfb",
+      "date": "2026-10-30T19:33:50Z",
+      "subject": "feat(metadata): implement v1.0 extension metadata APIs across SDKs (#3757)"
+    },
+    {
+      "sha": "d4a55e238f781b72687a2cb34623a249097dc18d",
+      "date": "2026-10-30T14:25:25-04:00",
+      "subject": "fix(web_core): seed nested Signal-returning function results before the forwarding effect (#3781)"
+    },
+    {
+      "sha": "9f159ec91ff1bd7e346a54c331e60b960ce17bd6",
+      "date": "2026-10-30T11:24:16-07:00",
+      "subject": "fix(python): refuse agentOnly functions in DataContext, and add a conformance case (#3773)"
+    },
+    {
+      "sha": "ceae1ce390388d4a8b09d29209b7dea77b2e19d4",
+      "date": "2026-10-30T10:57:52-07:00",
+      "subject": "fix(samples): reject non-public addresses in the file upload FileResolver (#3571)"
+    },
+    {
+      "sha": "0bb7daa94766b005f6c72d2f911528f56376100f",
+      "date": "2026-10-30T10:11:00-07:00",
+      "subject": "feat(conformance): add error_responses and adapter suites and run adapter and accessibility conformance in all renderers (#3583)"
+    },
+    {
+      "sha": "5e442ee31228c2fa72dec5b0372dd6242eb0995b",
+      "date": "2026-10-30T09:53:11-04:00",
+      "subject": "feat(swift): add v1.0 basic catalog examples to gallery and test all examples (#3764)"
+    },
+    {
+      "sha": "23789301a69a10538508587725aacf43d7e4d227",
+      "date": "2026-10-29T23:46:19-07:00",
+      "subject": "fix(eval): stabilize CI evals by eliminating phantom target criteria and syncing v0.9.1 dataset (#3660)"
+    },
+    {
+      "sha": "b8bee8fbd16f37afae8a6ba3f1ad16a76d305130",
+      "date": "2026-10-29T19:43:45-07:00",
+      "subject": "chore(cli): release a2ui_cli v0.1.0 (#3771)"
+    },
+    {
+      "sha": "c7ff1957c92a9e9f5a340b59acb765a83c5b9049",
+      "date": "2026-10-29T18:57:41-07:00",
+      "subject": "fix(web_core): refuse agentOnly functions in the catalog invoker (#3557)"
+    },
+    {
+      "sha": "b9497c464b82739ae2f7d340f73c65b348dfe9cc",
+      "date": "2026-10-29T18:47:08-07:00",
+      "subject": "refactor(ts/agent): remove remaining Python-idiom duplicates from the public API (#3758)"
+    },
+    {
+      "sha": "02ee109f9d25f9bfd01632fb4816a6b30de9c0ff",
+      "date": "2026-10-30T01:21:12Z",
+      "subject": "fix(ci): fix smoke test codegen output assertion in release workflow (#3770)"
+    },
+    {
+      "sha": "4e5c6b244dbe7d8b6554a286be64aade7bb25ee5",
+      "date": "2026-10-30T00:33:39Z",
+      "subject": "fix(python/adk): add `A2uiInstruction` so the A2UI prompt survives ADK state templates (#3763)"
+    },
+    {
+      "sha": "ac16e17d4456b734341b8d706878b7874503edfd",
+      "date": "2026-10-30T10:28:43+10:30",
+      "subject": "feat(cli): add multi-platform binary compilation and release workflow (#3697) (#3700)"
+    },
+    {
+      "sha": "f290f54b09d85509b5fa8e09b722b7282c776a65",
+      "date": "2026-10-29T16:15:28-07:00",
+      "subject": "feat(express): stream Express DSL blocks incrementally across SDKs (#3712)"
+    },
+    {
+      "sha": "00a432dfdd7a1bffb7cfdc7e58ef9c42b07166c8",
+      "date": "2026-10-29T16:04:41-07:00",
+      "subject": "fix(web_core): skip light DOM style adoption for shadow DOM elements (#3666)"
+    },
+    {
+      "sha": "9d31de5538f53e98941b4c70d4fba823830fb4f9",
+      "date": "2026-10-29T18:41:35-04:00",
+      "subject": "a11y(swiftui): mark Text and Markdown headings as accessibility headings (#3761)"
+    },
+    {
+      "sha": "e539cd146779a35d95a34d10fe3542583a49f34c",
+      "date": "2026-10-29T15:02:07-07:00",
+      "subject": "docs(conformance): add conformance harness implementation guide (#3749)"
+    },
+    {
+      "sha": "7d887cb60ff3608ed3be6d3541f68945a370dd36",
+      "date": "2026-10-29T17:42:34-04:00",
+      "subject": "fix(swiftui): stop DateTimeInput reading date-times as midnight (#3378)"
+    },
+    {
+      "sha": "4364bb1fe98798f3c05d743e85b5527d9a5e146b",
+      "date": "2026-10-29T17:08:15-04:00",
+      "subject": "fix(swift): ignore a function call's catalogId before v1.0 (#3556)"
+    },
+    {
+      "sha": "cf92be7b94b82cddbfa52f482024f56edb6575a2",
+      "date": "2026-10-29T13:58:19-07:00",
+      "subject": "feat(web_core): add MessageErrorMapper, JSON Pointer error paths, and conformance parity (#3579)"
+    },
+    {
+      "sha": "dd306fc8251d4a98d6bc630cfeb87be2f8fc64ca",
+      "date": "2026-10-29T20:34:34Z",
+      "subject": "fix(agent): lex /* */ block comments in the Express block scanner (#3709)"
+    },
+    {
+      "sha": "8093134183b5f733320a9405083a30ba790a7b88",
+      "date": "2026-10-29T20:20:13Z",
+      "subject": "fix(agent): stop treating apostrophes as Express string delimiters (#3670)"
+    },
+    {
+      "sha": "f03fe134e1a4a2f26b5ed405088464fbef91c76f",
+      "date": "2026-10-29T16:18:29-04:00",
+      "subject": "docs(swift): fix stale README snippets and list the SwiftUI renderer (#3552)"
+    },
+    {
+      "sha": "c7bfcddf51dd9600b436a7fe972a4aeb09e06317",
+      "date": "2026-10-29T20:08:46Z",
+      "subject": "feat(a2ui_flutter): add the v0.9 chat example and its e2e test (#3618)"
+    },
+    {
+      "sha": "d1ff504d90ebcab34506b56fa58a3059ecbfe1e6",
+      "date": "2026-10-29T16:05:42-04:00",
+      "subject": "fix(swift): count a missing or null value as length 0 in length() (#3549)"
+    },
+    {
+      "sha": "6ab4d5b5932763e64408ea1681dacffc9c56d08b",
+      "date": "2026-10-29T15:37:38-04:00",
+      "subject": "fix(swift): treat explicit null error in function responses as absent (#3563)"
+    },
+    {
+      "sha": "025d27375cece3c14f9cb2287afc899d77508a40",
+      "date": "2026-10-29T19:30:20Z",
+      "subject": "feat(a2ui_flutter): add the gallery app (#3094)"
+    },
+    {
+      "sha": "ff4293bc2192a91cd43c44eb755a5bf5233111a8",
+      "date": "2026-10-29T12:19:17-07:00",
+      "subject": "feat(a2ui_flutter): add a v1.0 chat example and a live end-to-end test (#3621)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-generate-pydantic-models/scripts/catalog_generators.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-generate-pydantic-models/scripts/codegen_pydantic.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-generate-pydantic-models/scripts/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-generate-pydantic-models/scripts/schema_generators.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-issue-triage/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-issue-triage/assets/triage_dashboard.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-issue-triage/references/triage_criteria.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-issue-triage/scripts/apply_triage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-issue-triage/scripts/launch_dashboard.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-issue-triage/scripts/suggest_triage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-issue-triage/scripts/test_apply_triage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-issue-triage/scripts/test_launch_dashboard.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-release-python/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/coding-principles/subskills/dart/versioning-and-releases.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/coding-principles/subskills/python/architecture-and-facades.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e_test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/flutter_packages_test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python_ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/release-cli-binaries.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-pypi.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/run_evals.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/swift_build_and_test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/validate_blueprints.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".prettierignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".vscode/launch.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Package.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "blueprints/codebases/dart/a2ui_agent/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/dart/a2ui_core/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/dart/a2ui_flutter/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/python/a2ui_agent/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/python/a2ui_core/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/swift/core/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/swift/swiftui/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/typescript/agents/a2ui_agent/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/typescript/core/web_core/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/typescript/renderers/angular/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/typescript/renderers/lit/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/typescript/renderers/react/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "blueprints/devtools/triage_flagging.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "blueprints/features/agent_renderer_app.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/features/node_resolution.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/features/typesafe_builder_api.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/modules/a2ui_agent.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/modules/a2ui_core.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/modules/a2ui_framework_adapter.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/skills/a2ui-blueprint-compliance/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/skills/a2ui-blueprint-compliance/scripts/check_compliance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/skills/a2ui-blueprint-compliance/scripts/test_check_compliance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/skills/a2ui-blueprint-maintenance/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/skills/a2ui-implement-feature-from-blueprint/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/validate_blueprints.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/00_complex-layout.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/00_formatted-text.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/00_incremental.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/00_interactive-button.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/00_row-layout.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/00_simple-login-form.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/00_simple-text.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/01_flight-status.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/02_email-compose.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/03_calendar-day.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/04_weather-current.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/05_product-card.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/06_music-player.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/07_task-card.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/08_user-profile.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/09_login-form.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/10_notification-permission.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/11_purchase-complete.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/12_chat-message.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/13_coffee-order.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/14_sports-player.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/15_account-balance.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/16_workout-summary.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/17_event-detail.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/18_track-list.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/19_software-purchase.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/20_restaurant-card.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/21_shipping-status.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/22_credit-card.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/23_step-counter.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/24_recipe-card.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/25_contact-card.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/26_podcast-episode.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/27_stats-card.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/28_countdown-timer.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/29_movie-card.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/30_live-invitation-builder.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/31_incremental-dashboard.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/32_advanced-form-validator.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/33_financial-data-grid.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/34_child-list-template.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/35_markdown-text.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/36_modal.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/mcp/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/mcp/v1/catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/mcp/v1/examples/mcp-app-3d-geometry.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/catalog_provider.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/catalog_resolution.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/catalog_transformer.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/direct_json/compiler.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/direct_json/decompiler.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/direct_json/response_parser.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/direct_json/response_streaming.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/direct_json/scaling.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/express/compiler.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/express/decompiler.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/express/response_parser.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/agent/express/response_streaming.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/legacy/inference_format.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/legacy/streaming_parser.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/multi_catalog_formats.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/request_processor.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/agent/streamed_answer.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/conformance_harness_implementation_guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/conformance_schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/accessibility.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/actions.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/core/adapter_conformance.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/agent_to_renderer.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/catalog.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/common_types.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/composition_constraints.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/data_deletion.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/data_model_pointers.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/core/error_responses.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/expressions.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/functions.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/index_function.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/message_processor_scaling.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/message_processor_v0_9.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/message_processor_v1_0.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/multi_catalog.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/node_resolution.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/node_resolution.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/reserved_keys.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/rpc_functions.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/validation_result.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/validator_v0_9.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/validator_v1_0.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/extensions/adk/adk_extensions.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/allowed_callers_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/component_metadata_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/component_metadata_invalid_key_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/derive_source_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/list_item_action_catalog_v09.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/list_item_action_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/test_data/examples/chart_series.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/test_data/examples/greeting_surface.json",
+      "previousPath": null
+    },
+    {
+      "status": "R057",
+      "path": "conformance/test_data/node/metadata.yaml",
+      "previousPath": "python/a2ui_agent/tests/extensions/__init__.py"
+    },
+    {
+      "status": "M",
+      "path": "conformance/test_data/prompts/direct_json/allowed_messages.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/test_data/prompts/direct_json/multi_catalog_examples.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/test_data/prompts/direct_json/pruned_components.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/test_data/prompts/direct_json/pruned_functions.txt",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -2,11 +2,11 @@
 
 Source: [world-model-optimizer](https://github.com/experientiallabs/world-model-optimizer) · [Analysis](../../projects/ai-agents--world-model-optimizer.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `5e53609b1a67accb8f01487488e02da6ee451a28`; commit date: 2026-10-27T15:17:31-07:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `5e53609b1a67accb8f01487488e02da6ee451a28`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `712954f68c01423d274242b2b85d6c6361ad6c09`; commit date: 2026-10-31T22:50:30-07:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `712954f68c01423d274242b2b85d6c6361ad6c09`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/experientiallabs/world-model-optimizer/compare/5e53609b1a67accb8f01487488e02da6ee451a28...5e53609b1a67accb8f01487488e02da6ee451a28). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/experientiallabs/world-model-optimizer/compare/712954f68c01423d274242b2b85d6c6361ad6c09...712954f68c01423d274242b2b85d6c6361ad6c09). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

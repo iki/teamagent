@@ -50,6 +50,18 @@ For Teamagent, bind approval presentation to an exact target snapshot and revali
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `7eaa315511bfa86a3c348d9d75594ff0e4be4f5c` (commit date `2026-11-01T01:23:07+02:00`), compared with `6a2827bc37ee7a427e7feb34dc6b9da69d2ce239`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded full saved-conversation implementation and all associated fixtures. Whole-repository diff was oversized; other agent adapters and process containment not audited.
+
+[Saved-conversation discovery](https://github.com/YoanWai/agent-manager/blob/7eaa315511bfa86a3c348d9d75594ff0e4be4f5c/internal/agentsession/saved.go) resolves stores from the actual launch environment, working directory and profile, and resolves executables only through absolute entries in the launch PATH when overrides exist. Unsupported stores return a distinct error; malformed Grok summaries remain errors rather than absence. [Fixtures](https://github.com/YoanWai/agent-manager/blob/7eaa315511bfa86a3c348d9d75594ff0e4be4f5c/internal/agentsession/saved_test.go) cover cross-directory/profile isolation and missing stores. The executable-selection fixture is POSIX-only, so it does not establish Windows behavior.
+
+**Teamagent implication (inference):** Bind installed-agent discovery and resume evidence to the exact executable, environment, profile and workspace. Expose unsupported, missing and unreadable states separately; an existing transcript is not proof of successful task completion, and borrowed agent credentials should remain isolated to that launch.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-manager](https://github.com/YoanWai/agent-manager); analyzed commit `6a2827bc37ee7a427e7feb34dc6b9da69d2ce239`; commit date 2026-10-28T00:24:10+02:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agent-manager.md).
+Analysis metadata: source [agent-manager](https://github.com/YoanWai/agent-manager); analyzed commit `7eaa315511bfa86a3c348d9d75594ff0e4be4f5c`; commit date 2026-11-01T01:23:07+02:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agent-manager.md).
 <!-- teamagent-analysis:end -->

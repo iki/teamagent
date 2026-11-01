@@ -1,0 +1,985 @@
+{
+  "id": "ai-security--fengarde",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/supermhel/fengarde",
+  "report": "spec/projects/ai-security--fengarde.md",
+  "analyzedSha": "33e340ffb237b173ba85d0294248bc72ae3a03e6",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-23T21:04:50+02:00",
+  "observedSha": "921d75ba5e5d2f8aba94883588ece16854fac4cd",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "921d75ba5e5d2f8aba94883588ece16854fac4cd",
+      "date": "2026-10-30T00:23:48+01:00",
+      "subject": "Merge pull request #137 from supermhel/dependabot/pip/dot-github/ci-requirements/hypothesis-6.170.12"
+    },
+    {
+      "sha": "2e90b45b958774e934a0b9eecc3d52cae4fdaaec",
+      "date": "2026-10-29T23:16:09Z",
+      "subject": "chore(deps): bump hypothesis in /.github/ci-requirements"
+    },
+    {
+      "sha": "b4d129402651905f923042ac0f8666168d075b69",
+      "date": "2026-10-30T00:14:11+01:00",
+      "subject": "Merge pull request #136 from supermhel/dependabot/pip/dot-github/ci-requirements/coverage-7.17.0"
+    },
+    {
+      "sha": "961149577088cb9a4bdfaa44a31ee1c508d99e1b",
+      "date": "2026-10-30T00:13:18+01:00",
+      "subject": "Merge pull request #135 from supermhel/dependabot/pip/dot-github/ci-requirements/ruff-0.17.2"
+    },
+    {
+      "sha": "7d256683665bf1e6f98193449182196c5a702f07",
+      "date": "2026-10-30T00:13:10+01:00",
+      "subject": "Merge pull request #138 from supermhel/dependabot/github_actions/codeql-action-52fc152648"
+    },
+    {
+      "sha": "8e7a55629462590de47e79d8c9da33b4727b71a2",
+      "date": "2026-10-30T00:13:01+01:00",
+      "subject": "Merge pull request #139 from supermhel/dependabot/github_actions/docker/login-action-4.7.0"
+    },
+    {
+      "sha": "15d745a8519dae2548bcfbb4c55f390d4cfece25",
+      "date": "2026-10-30T00:12:51+01:00",
+      "subject": "Merge pull request #140 from supermhel/dependabot/github_actions/actions/setup-python-7.1.0"
+    },
+    {
+      "sha": "cbabc3ba0f8bc5fd1836415c118a74a8d845f875",
+      "date": "2026-10-30T00:12:36+01:00",
+      "subject": "Merge pull request #134 from supermhel/claude/ws4-window-pipeline"
+    },
+    {
+      "sha": "75b48b87dedb2cb483ec6bc71e07829e4384b30a",
+      "date": "2026-10-30T00:12:17+01:00",
+      "subject": "Merge pull request #132 from supermhel/claude/ws4-window-counter-lua"
+    },
+    {
+      "sha": "dde2a83189114ed75131904d423ce8649bca6fa7",
+      "date": "2026-10-30T00:07:33+01:00",
+      "subject": "fix(deps): regenerate ci-requirements for Python 3.12 with coverage 7.17.0"
+    },
+    {
+      "sha": "b65d8b3ad8628a9008ffb1972158b744f1d34b57",
+      "date": "2026-10-29T17:58:29Z",
+      "subject": "chore(deps): bump actions/setup-python from 7.0.0 to 7.1.0"
+    },
+    {
+      "sha": "b17d030b4d66c2466930c284e2e5f8e4b72aa0e9",
+      "date": "2026-10-29T17:58:08Z",
+      "subject": "chore(deps): bump docker/login-action from 4.6.0 to 4.7.0"
+    },
+    {
+      "sha": "a72f902c61250e5c52e0f8a35299d1aebba14b85",
+      "date": "2026-10-29T17:57:45Z",
+      "subject": "chore(deps): bump the codeql-action group with 3 updates"
+    },
+    {
+      "sha": "0783befe8c7103d7227d6b58627945c4c444f954",
+      "date": "2026-10-29T17:56:32Z",
+      "subject": "chore(deps): bump coverage in /.github/ci-requirements"
+    },
+    {
+      "sha": "14d20db2200537b47d78f0b6b7dd4e9fbf3b07dd",
+      "date": "2026-10-29T17:55:42Z",
+      "subject": "chore(deps): bump ruff from 0.17.1 to 0.17.2 in /.github/ci-requirements"
+    },
+    {
+      "sha": "0d55acd4e85643823e157990d34a8709e576351e",
+      "date": "2026-10-29T17:09:58+01:00",
+      "subject": "docs(bench): 300-800 events/s run and 500 events/s soak (contended host)"
+    },
+    {
+      "sha": "343469a6e9bdb31ef00347af7aaf8711de17cbf1",
+      "date": "2026-10-29T15:59:32+01:00",
+      "subject": "Merge pull request #128 from supermhel/claude/load-test-siem-volume-0e1302"
+    },
+    {
+      "sha": "a3f2b762d350d4593321c43d689ad1a9b0468459",
+      "date": "2026-10-29T15:52:03+01:00",
+      "subject": "perf(ws4): one pipelined Redis call per event for all window ops; WS-2 vs Redis isolation"
+    },
+    {
+      "sha": "e7a29b773162e18b3f15ef05eb16461fb197c6fb",
+      "date": "2026-10-29T15:51:37+01:00",
+      "subject": "docs(ssot): keep a single load-test row after the merge"
+    },
+    {
+      "sha": "813d27a2c1869b207cb6dfef00cd202da429ce68",
+      "date": "2026-10-29T15:43:32+01:00",
+      "subject": "Merge #128 branch (with origin/main) into claude/ws4-window-counter-lua"
+    },
+    {
+      "sha": "bdd02db96cda78895b49c55112009e7a8c0ef3c5",
+      "date": "2026-10-29T15:34:48+01:00",
+      "subject": "Merge origin/main into claude/load-test-siem-volume-0e1302"
+    },
+    {
+      "sha": "2a0133a5797dd0513ae97d78a9c88564274e0b53",
+      "date": "2026-10-29T15:32:42+01:00",
+      "subject": "Merge pull request #129 from supermhel/claude/ws5-llm-verdict-eval-27c1ef"
+    },
+    {
+      "sha": "3d50ad4e60e334d62f64b64ebe0a9fb0315ea0c1",
+      "date": "2026-10-29T15:32:08+01:00",
+      "subject": "Merge pull request #131 from supermhel/claude/demo-ai-to-ot-scenario-1ac19a"
+    },
+    {
+      "sha": "14653851ef56c6568f87f172bbe163db2a1149bd",
+      "date": "2026-10-29T14:53:47+01:00",
+      "subject": "Merge #128 branch (with origin/main) into claude/ws4-window-counter-lua"
+    },
+    {
+      "sha": "e0540dd9761aa033564c2ac2f4c52967c05efe4a",
+      "date": "2026-10-29T14:18:18+01:00",
+      "subject": "Merge branch 'main' of https://github.com/supermhel/fengarde into claude/ws5-llm-verdict-eval-27c1ef"
+    },
+    {
+      "sha": "ba31e31c985e9d6d0a9b7fc7ead1ae19032cc839",
+      "date": "2026-10-29T14:09:11+01:00",
+      "subject": "Merge origin/main into claude/load-test-siem-volume-0e1302"
+    },
+    {
+      "sha": "437b1627fe2c9f6538610b0ce418e4f97283d409",
+      "date": "2026-10-29T13:47:57+01:00",
+      "subject": "Merge branch 'main' of https://github.com/supermhel/fengarde into claude/demo-ai-to-ot-scenario-1ac19a"
+    },
+    {
+      "sha": "8b887aa046b308cc27668ed0e6e210715ad8f78a",
+      "date": "2026-10-29T13:44:32+01:00",
+      "subject": "Merge pull request #127 from supermhel/claude/ws8-redis-correlator-state-086bdd"
+    },
+    {
+      "sha": "168684fc7086f06cff2d40b1aefd6bbb783c49bc",
+      "date": "2026-10-29T13:44:07+01:00",
+      "subject": "Merge pull request #130 from supermhel/claude/storylines-8-uncovered-rules-744f93"
+    },
+    {
+      "sha": "b6f2ef702af8768ce8c92908d109d2e2d8ffe32e",
+      "date": "2026-10-29T13:43:44+01:00",
+      "subject": "Merge pull request #133 from supermhel/claude/fix-ws6-auth-test-timeout"
+    },
+    {
+      "sha": "b8012723e64add1d9bfd123087feb84029c05385",
+      "date": "2026-10-29T13:43:27+01:00",
+      "subject": "chore: drop AGENTS.md added by mistake in the previous commit"
+    },
+    {
+      "sha": "8c0b052e8f0876a943966e6636e92bfa4f8b3d0b",
+      "date": "2026-10-29T13:43:27+01:00",
+      "subject": "fix(runner,docs): flush gathered batch on bus error; correct alert numbers"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/ci-requirements/mutmut.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ci-requirements/quality.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ci-requirements/yaml-hypothesis-redis.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/fuzz.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly-adversary.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly-eval.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scorecard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitleaksignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SSOT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/loadtest.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/hostcpu-idle-run-2026-10-29.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-bulk-counters-alerts-final.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-bulk-counters-final.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-bulk-counters-idle-final.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-bulk-counters-lua-final.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-2026-10-28.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-2026-10-28.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-alerts-r1-2026-10-28.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-alerts-r1-2026-10-28.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-alerts-ws4x3-2026-10-28.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-alerts-ws4x3-2026-10-28.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-bulk-2026-10-28.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-bulk-2026-10-28.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-idle-ws4x1-2026-10-29.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-idle-ws4x1-2026-10-29.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-idle-ws4x3-2026-10-29.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-idle-ws4x3-2026-10-29.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-lua-cap-r1-2026-10-29.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-lua-cap-r1-2026-10-29.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-lua-cap-ws4x3-2026-10-29.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-lua-cap-ws4x3-2026-10-29.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-lua-r1-2026-10-29.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-lua-r1-2026-10-29.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-pipeline-ws2x1-2026-10-29.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-pipeline-ws2x1-2026-10-29.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-pipeline-ws2x2-2026-10-29.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-ramp-pipeline-ws2x2-2026-10-29.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-soak-2026-10-28.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-soak-2026-10-28.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-soak-alerts-ws4x3-2026-10-28.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-soak-alerts-ws4x3-2026-10-28.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-soak-bulk-2026-10-28.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-soak-bulk-2026-10-28.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-soak-idle-500-2026-10-29.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-soak-idle-500-2026-10-29.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-soak-lua-cap-r1-2026-10-29.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/live-soak-lua-cap-r1-2026-10-29.samples.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/neighbours-idle-a.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/neighbours-idle-b.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/neighbours-idle-soak.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/neighbours-lua-a.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/neighbours-lua-b.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/neighbours-lua-c.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/neighbours-lua-soak.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/neighbours-r1.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/neighbours-r3.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/neighbours-ramp-ws2x1.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/neighbours-ramp-ws2x2.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/neighbours-soak.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/neighbours-ws2-isolate.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/os-conflict-probe-2026-10-28.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/os-probe-2026-10-28.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/redis-commandstats-2026-10-29.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/redis-rtt-2026-10-28.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/redis-rtt-2026-10-29.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/window-lua-parity-2026-10-29.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/window-pipeline-parity-2026-10-29.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/ws2-isolate-2026-10-29.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/ws4-profile-2026-10-28.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/ws4-profile-lua-2026-10-29.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/ws4-profile-lua-cap-2026-10-29.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/ws4-profile-matrix-2026-10-29.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/ws4-profile-pipeline-2026-10-29.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/ws4-profile-pipeline-ab-2026-10-29.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/raw/zero-infra-2026-10-28.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/rule-evidence.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/console-demo.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/demo/assets/DemoBar-CBaH_Eej.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/demo/assets/DemoBar-CiLruwyP.js",
+      "previousPath": null
+    },
+    {
+      "status": "R062",
+      "path": "docs/demo/assets/adapter-CbgHlOQP.js",
+      "previousPath": "docs/demo/assets/adapter-CwtyNRCY.js"
+    },
+    {
+      "status": "D",
+      "path": "docs/demo/assets/index-BVlWOtxG.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/demo/assets/index-BufRNlhm.js",
+      "previousPath": null
+    },
+    {
+      "status": "R098",
+      "path": "docs/demo/assets/index-D1gUO6DL.css",
+      "previousPath": "docs/demo/assets/index-GS4hR2Qa.css"
+    },
+    {
+      "status": "M",
+      "path": "docs/demo/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ws8-shared-correlator-state-design.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/SCORECARD.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/adversarial/technique_waivers.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/adversarial/test_order_controls.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/adversarial/test_scenario_harness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/attack/fire_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/attack/test_fire_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/llm_triage/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/llm_triage/RESULTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/llm_triage/build_labelled_set.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/llm_triage/labelled_cases.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/llm_triage/render_results.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/llm_triage/results/2026-10-28.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/llm_triage/results/2026-10-28_qwen2.5-7b.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/llm_triage/results/variants.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/llm_triage/results/variants_qwen2.5-7b.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/llm_triage/run_eval.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/llm_triage/stats.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/llm_triage/test_llm_triage_eval.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/llm_triage/variants.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/scorecard_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/twin/baseline_scenarios.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/twin/oracle_mutate.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/twin/oracle_network_credential_abuse.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/twin/oracle_strength.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/twin/oracle_win_credential_theft.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/twin/ratchet_history.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/twin/storyline_network_credential_abuse.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/twin/storyline_win_credential_theft.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/twin/test_causal_order.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "infra/docker-compose.ha.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "infra/docker-compose.loadtest.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "infra/docker-compose.ws8-ha-proof.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "infra/docker-compose.ws8-proof.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "infra/docker-compose.ws8-sentinel-proof.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "infra/redis-sentinel-entrypoint.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "run_all_tests.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/shared/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/shared/window.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/ws3-indexer/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/ws3-indexer/storage/opensearch.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/ws3-indexer/test_bulk_handler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/ws4-detection/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/ws4-detection/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/ws4-detection/test_window_lua.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/ws4-detection/test_window_lua_live.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/ws4-detection/test_window_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/ws6-inventory/test_auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/ws7-dashboard/app/src/demo/DemoBar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/ws7-dashboard/app/src/demo/adapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/ws7-dashboard/app/src/demo/fixtures-ai-ot.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/ws7-dashboard/app/src/styles.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/ws8-correlation/INTERFACE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/ws8-correlation/correlator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/ws8-correlation/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/ws8-correlation/test_shared_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/ws8-correlation/track_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tools/build_ai_ot_fixtures.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tools/check_ha_min_replicas.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/check_test_wiring.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/console_e2e/demo.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/console_e2e/pages.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tools/fengarde_loadtest.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tools/fengarde_loadtest_live.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tools/fengarde_os_conflict_probe.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tools/fengarde_os_probe.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tools/fengarde_redis_rtt.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tools/fengarde_ws2_isolate.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

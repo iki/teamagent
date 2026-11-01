@@ -1,0 +1,985 @@
+{
+  "id": "ai-model-run--colibri",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/JustVugg/colibri",
+  "report": "spec/projects/ai-model-run--colibri.md",
+  "analyzedSha": "e0db083cdc9e563e0766cc6fc661ef23c32298e0",
+  "analyzedAt": "2026-10-28T08:26:04.502Z",
+  "analyzedCommitDate": "2026-10-17T16:47:26+02:00",
+  "observedSha": "0a5504a1dc64f86fcd0fe7db298b0448c730e7e6",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "0a5504a1dc64f86fcd0fe7db298b0448c730e7e6",
+      "date": "2026-10-31T22:29:12+01:00",
+      "subject": "Merge pull request #2530 from JustVugg/dev"
+    },
+    {
+      "sha": "312e52838091ff54fd3b09da386557b7a02a9932",
+      "date": "2026-10-31T18:37:04+01:00",
+      "subject": "Merge pull request #2528 from JustVugg/fix/readme-q36-mtp-default"
+    },
+    {
+      "sha": "ac4358632cd16eddf78e13207d6e39a8d8545e5b",
+      "date": "2026-10-31T16:27:01+01:00",
+      "subject": "site: the version line and the project's model names"
+    },
+    {
+      "sha": "46b665bb1cad478e12c482b62aefaf4e42302bd3",
+      "date": "2026-10-31T16:03:20+01:00",
+      "subject": "ui: System One opens with a generic example, in the page's language"
+    },
+    {
+      "sha": "55f928eab6ffcf0f3ae6ae6c1bada48a4d8795e7",
+      "date": "2026-10-31T14:16:58+01:00",
+      "subject": "site: the new site, with every model of 2.1.0"
+    },
+    {
+      "sha": "042491d52aedc761c19a430f1d8d9a017b9bdcb9",
+      "date": "2026-10-31T13:35:07+01:00",
+      "subject": "README: Qwen3.6's MTP head drafts with Q36_MTP=1, not by default"
+    },
+    {
+      "sha": "704a3f68184b78367a04cb5526e428dc2f90f05b",
+      "date": "2026-10-31T13:29:23+01:00",
+      "subject": "Merge pull request #2526 from JustVugg/dev"
+    },
+    {
+      "sha": "7dd91ae363d2e1d3f030d804cebe12dd207cde4f",
+      "date": "2026-10-31T10:40:32+01:00",
+      "subject": "Merge pull request #2527 from JustVugg/fix/vk-pool-import-windows"
+    },
+    {
+      "sha": "563647ccf78d9569bacce849bbc5d728a1486ba7",
+      "date": "2026-10-31T08:46:29+01:00",
+      "subject": "README: every model, the GGUF table, the GPU sections and our benchmark tables"
+    },
+    {
+      "sha": "2c2947bc5848d5d772a50d559f1ee436bd50e881",
+      "date": "2026-10-31T07:08:21+01:00",
+      "subject": "vulkan: the exit report's resident set without glibc's freed blocks"
+    },
+    {
+      "sha": "b19fb369ed94a5910c1e9cc1dcc2df7882087efb",
+      "date": "2026-10-31T06:30:41+01:00",
+      "subject": "vulkan: the host pool's imported pages on Windows (no posix_memalign in MinGW)"
+    },
+    {
+      "sha": "563fbf903d2bb841a931c374978327ec32497576",
+      "date": "2026-10-31T05:52:30+01:00",
+      "subject": "Merge pull request #2525 from JustVugg/batch/2026-10-31"
+    },
+    {
+      "sha": "7331ab51287635101809169c16e6e509aa40c0de",
+      "date": "2026-10-31T03:07:03+01:00",
+      "subject": "README: the new chat UI's pictures; the System One card in every language"
+    },
+    {
+      "sha": "53658b470670f9e848b43e0fe9e423024c2bd650",
+      "date": "2026-10-31T03:07:02+01:00",
+      "subject": "release 2.1.0: the version in its nine places and the changelog"
+    },
+    {
+      "sha": "bfca299b379bb85e25bf9a8c326da6616e158f2d",
+      "date": "2026-10-31T03:05:49+01:00",
+      "subject": "Merge fix/systemone-glm-header into the batch"
+    },
+    {
+      "sha": "e0008f9aa5ac19b089eb89d0a79282bc5bec6a26",
+      "date": "2026-10-31T03:05:48+01:00",
+      "subject": "Merge fix/agent-turns-engines into the batch"
+    },
+    {
+      "sha": "e3c626adde7399eecff956e2a38e94e47213f36e",
+      "date": "2026-10-31T03:05:32+01:00",
+      "subject": "Merge fix/systemone-glm-header into the batch"
+    },
+    {
+      "sha": "8d34ca7873d848d3d4037fb68ceed958ea40f36d",
+      "date": "2026-10-31T03:05:30+01:00",
+      "subject": "Merge fix/cuda-tier-upload-hold into the batch"
+    },
+    {
+      "sha": "0b3bd432cd6d0b3c8b33ccf59966fc3d92cf13ec",
+      "date": "2026-10-31T03:05:28+01:00",
+      "subject": "Merge fix/grammar-work-budget into the batch"
+    },
+    {
+      "sha": "37acda63821adb1f65ce32e5ca9d09765491e2a4",
+      "date": "2026-10-31T03:05:26+01:00",
+      "subject": "Merge #2453 into the batch"
+    },
+    {
+      "sha": "f793c60ab2de3663f1844092955e4af6ca2fae7c",
+      "date": "2026-10-31T03:05:08+01:00",
+      "subject": "Merge #2508 into the batch"
+    },
+    {
+      "sha": "d9247f49f83d39f4b9e56a01665412b4c412c6f4",
+      "date": "2026-10-31T03:05:06+01:00",
+      "subject": "Merge #2507 into the batch"
+    },
+    {
+      "sha": "549fae741968acf2ff2952f1924647fb9f78d288",
+      "date": "2026-10-31T03:05:04+01:00",
+      "subject": "Merge #2490 into the batch"
+    },
+    {
+      "sha": "099e4b795f88ab6a85e7c8ceac30f8ca56289cc1",
+      "date": "2026-10-31T03:05:02+01:00",
+      "subject": "Merge #2494 into the batch"
+    },
+    {
+      "sha": "06ffc2352bfbf566885a0b0859abef444b16aed1",
+      "date": "2026-10-31T03:05:00+01:00",
+      "subject": "Merge #2519 into the batch"
+    },
+    {
+      "sha": "6879b3e4391102e46a08a4654d6882f7dbca904c",
+      "date": "2026-10-31T03:04:58+01:00",
+      "subject": "Merge #2512 into the batch"
+    },
+    {
+      "sha": "d632d424165969661f72beb934a45457b4a4512b",
+      "date": "2026-10-31T03:04:56+01:00",
+      "subject": "Merge #2511 into the batch"
+    },
+    {
+      "sha": "51592e786c4eeac81f4f0a4e438483c6698f12a7",
+      "date": "2026-10-31T03:04:54+01:00",
+      "subject": "Merge #2509 into the batch"
+    },
+    {
+      "sha": "5c5b30124a9ff723f886e3cd4831410e2a2db8a1",
+      "date": "2026-10-31T02:39:11+01:00",
+      "subject": "tests: System One's fake engine takes the header's grammar field, and the read-outs ask for it by family"
+    },
+    {
+      "sha": "fa79640500ebc0dd342b9489ed5968c3bde6aee6",
+      "date": "2026-10-31T02:25:19+01:00",
+      "subject": "tests: the Kimi K3 park harness out of the test_*.py glob (tests/test_python_discovery.py)"
+    },
+    {
+      "sha": "d5dde145b31afb747b199ca66faba2075f433fba",
+      "date": "2026-10-31T02:25:19+01:00",
+      "subject": "docs: COLI_PARK on every engine that serves one conversation"
+    },
+    {
+      "sha": "a57868c9b989a5363f7920ac40282531b8ed9d61",
+      "date": "2026-10-31T02:25:18+01:00",
+      "subject": "DeepSeek V4 and V4.1, Kimi K3, MiMo and Inkling: a short request keeps the conversation too"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/scripts/apt-install.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.id.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.it.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.ja.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "README.pt-BR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-TW.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/Makefile.deepseek-v4",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/argmax_first.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/autotune.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/backend_cuda.cu",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/backend_cuda.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/backend_cuda_dsv4.cu",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/backend_cuda_dsv4.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/backend_gpu_compat.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/backend_loader.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/backend_loader_dsv4.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/backend_metal.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/backend_metal.mm",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/backend_vulkan.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/backend_vulkan.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/blockdec_host.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/coli",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/colibri.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/compat.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/cpu_check.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/cu_dense.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/cu_tier.c",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/cu_tier.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/cu_tier_ops.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/cu_xb.cu",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/cuda_bd.cuh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/cuda_chain.cu",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/cuda_chain.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/data/m8_eval/capital.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/data/m8_eval/heldout.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/data/m8_eval/who.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/data/m8_persona.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/decide_cuda.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/deepseek_v4.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/deepseek_v41.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/deepseek_v41_chain.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/deepseek_v4_bank_pair.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/deepseek_v4_chain.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/deepseek_v4_internal.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/doctor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/download_fp8.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/draft_vocab.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/dsv4.def",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/experiment_manifest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/expert_ffn.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/family_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/fused_simd.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/ggml_grids.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/ggml_quants.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/ggml_view.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/gguf.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/gliner_decide.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/glm53.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/glm53_chain.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/glm_chain.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/grammar.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/idot.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/image_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/inkling.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/inkling_chain.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/int2_g32.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/json.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/kimi_k3.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/kimi_k3_chain.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/kv16.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/kv_persist.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/kv_prefix.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/laya.c",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/lfm3_vision.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/lora.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/lowbit_g16.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/matmul_f16.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/mcp_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/mimo.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/mimo_chain.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/mistral_vision.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/native_quant.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/native_quant_batch.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/olmoe.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/olmoe_chain.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/olmoe_cuda_chain.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/omp_tune.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/openai_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/own_file.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/park.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/prompt_break.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/qpack.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/qwen36.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/qwen36_chain.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/qwen36_cuda_chain.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/qwen36_dense_file.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/qwen36_embedding.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/qwen36_mtp.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/qwen36_mtp_cuda.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/qwen36_sample.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/qwen36_tier.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/qwen36_tier.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/qwen38.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/qwen38_chain.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/qwen38_core.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/qwen38_cuda_chain.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/qwenimage.c",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/qwenimage_encoder.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/qwenimage_vae.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/resource_plan.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/route_trace.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/sample.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/schema_gbnf.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/scripts/m7_smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/scripts/m8_overfit.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/scripts/quickstart_tiny.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/setup_catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/setup_download.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/setup_flow.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/setup_hw.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/shaders/bdstep.glsl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/shaders/bdstep_i8.glsl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/shaders/blockdec.glsl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/shaders/blockdec_table.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_attn.comp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_attn.spv",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/shaders/chain_attn_dec.comp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/shaders/chain_attn_dec.spv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_attn_flash.comp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_attn_flash.spv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_attn_full.comp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_attn_full.spv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_attnb.comp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_attnb.spv",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/shaders/chain_copy2d.comp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/shaders/chain_copy2d.spv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_dnconv.comp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_dnconv.spv",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/shaders/chain_dnconv_rows.comp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_dnrec.comp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_dnrec.spv",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/shaders/chain_dnrec_rows.comp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/shaders/chain_dnrec_rows.spv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_dsa.comp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_dsa.spv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_dsv4.comp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_dsv4.spv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_ew.comp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "c/shaders/chain_ew.spv",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/shaders/chain_fetch.comp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "c/shaders/chain_fetch.spv",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

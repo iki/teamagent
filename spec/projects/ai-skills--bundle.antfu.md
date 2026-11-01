@@ -30,6 +30,18 @@ Reviewed commit `8886fe2d385d3644cbb47e46ae9cb1cf09307d3b` (commit date `2026-10
 
 The [triage skill](https://github.com/antfu/skills/blob/8886fe2d385d3644cbb47e46ae9cb1cf09307d3b/skills/antfu-issue-triage/SKILL.md) separates evidence-backed proposals from approved writes and treats partially fixed/linked work conservatively. Visual evidence guidance adds reproducible revision/viewport manifests; Vitest guidance records a source revision and limitations of mtime-based incremental tests. Adapt those procedures while retaining Teamagent's Bun/Aube choices and full gates. Do not adopt the new [attachment fallback](https://github.com/antfu/skills/blob/8886fe2d385d3644cbb47e46ae9cb1cf09307d3b/skills/antfu-create-pr/scripts/upload-github-attachment.sh): it sends the bearer credential in curl arguments, lacks explicit request/response/time bounds and extracts an undocumented JSON response with sed. Not printing a token does not remove process-argument exposure. The suggested package installer, undocumented upload endpoint, external CLI/version assertions and Vitest beta behavior were not executed or independently verified.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `7de210b51c8d48cc405a4eac3e17cbb1396c653b` (commit date `2026-10-31T06:17:52+09:00`), compared with `8886fe2d385d3644cbb47e46ae9cb1cf09307d3b`. Earlier observations remain historical evidence.
+
+**Scope:** Complete new antfu-query skill and visual-evidence reference diff; seven changed paths inventoried. Other skill revisions not audited.
+
+The [query skill](https://github.com/antfu/skills/blob/7de210b51c8d48cc405a4eac3e17cbb1396c653b/skills/antfu-query/SKILL.md) models clarification as a dependency tree, asks currently unblocked questions together, and separates environmental facts from user decisions. It also prescribes an exhaustive interview and final confirmation before acting. Those are portable workflow suggestions only where compatible with the user's task and host tools. The [visual-evidence reference](https://github.com/antfu/skills/blob/7de210b51c8d48cc405a4eac3e17cbb1396c653b/skills/antfu-create-pr/references/visual-evidence.md) adds an external attachment-documentation link; availability was not externally checked.
+
+**Teamagent implication (inference):** Use dependency-aware question batching when clarification is genuinely needed, but preserve standing authorization and avoid importing mandatory interview/approval behavior into ordinary tasks. Select and adapt the skill's scope explicitly; an external feature link remains unverified until needed and checked.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle.antfu](https://github.com/antfu/skills); analyzed commit `8886fe2d385d3644cbb47e46ae9cb1cf09307d3b`; commit date 2026-10-23T11:36:45+09:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.antfu.md).
+Analysis metadata: source [bundle.antfu](https://github.com/antfu/skills); analyzed commit `7de210b51c8d48cc405a4eac3e17cbb1396c653b`; commit date 2026-10-31T06:17:52+09:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.antfu.md).
 <!-- teamagent-analysis:end -->

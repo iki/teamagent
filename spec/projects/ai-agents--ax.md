@@ -50,6 +50,18 @@ For Teamagent, disclose requested versus effective transport protection and requ
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `f0228f13cd1c8ef14c9d871a0691141f9fd6bd7b` (commit date `2026-10-30T16:25:04-07:00`), compared with `4b7bf6f84cac7eb12f21b87a76c8dc85155dce38`. Earlier observations remain historical evidence.
+
+**Scope:** Complete reconciler implementation diff and selected suspend/resume fixtures; 36 changed paths inventoried. Server persistence/status projection not audited.
+
+The [controller](https://github.com/google/ax/blob/f0228f13cd1c8ef14c9d871a0691141f9fd6bd7b/internal/controller/reconciler.go) replaces status-driven Reconcile with explicit Suspend and Resume operations, sharing resource provisioning while leaving actor phase/IP projection to the server. A failed suspend returns an error without declaring suspension. [Fixtures](https://github.com/google/ax/blob/f0228f13cd1c8ef14c9d871a0691141f9fd6bd7b/internal/controller/reconciler_test.go) assert preserved status on suspend failure and that resume does not manufacture phase/IP. Resume readiness remains a bounded polling observation; an accepted resume is not proof the workspace is ready.
+
+**Teamagent implication (inference):** Separate requested lifecycle actions from observed execution state and preserve uncertainty on failures. Status refresh should read authority-owned state, while side-effecting resume/suspend calls require their own receipt and reconciliation rules.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ax](https://github.com/google/ax); analyzed commit `4b7bf6f84cac7eb12f21b87a76c8dc85155dce38`; commit date 2026-10-27T21:23:10-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--ax.md).
+Analysis metadata: source [ax](https://github.com/google/ax); analyzed commit `f0228f13cd1c8ef14c9d871a0691141f9fd6bd7b`; commit date 2026-10-30T16:25:04-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--ax.md).
 <!-- teamagent-analysis:end -->

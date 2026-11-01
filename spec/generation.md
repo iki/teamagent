@@ -8,6 +8,35 @@ This direction complements [import and generation](import-generation.md), [model
 
 ## Reviewed tool roles
 
+### November 1 source refinements
+
+Keep rendering acceptance separate from descriptive metadata and validators.
+[A2UI](https://github.com/google/A2UI) ([review](projects/ai-gen--a2ui.md)) supplies
+scheme filtering, not Teamagent's exact download-origin/path, MIME or byte limits.
+[HyperFrames](https://github.com/heygen-com/hyperframes)
+([review](projects/ai-gen--hyperframes.md)) exempts font shorthand in the selected
+check, so its name cannot establish cross-machine rendering equivalence.
+[JSON Render](https://github.com/vercel-labs/json-render)
+([review](projects/ai-gen--json-render.md)) changes template discovery in this
+interval, not independently verified renderer capabilities.
+
+[YuE2 Studio](https://github.com/timoncool/yue2-studio)
+([initial review](analyses/unreviewed/ai-gen--yue2-studio.md)) separates measured
+tempo from model captions and reports GPU/CPU selection; its Windows job helper
+also exposes failure to establish process ownership. Retain those distinctions
+in media jobs, including updater exceptions and descendant cleanup.
+[OpenDesign](https://github.com/nexu-io/open-design)
+([review](projects/ai-gen--open-design.md)) shows why external-agent edit bases
+must be resolved before constructing permissions. An enumerated system temp
+directory is not an owned workspace or permission to expose unrelated files.
+
+[Diffmap](https://github.com/tanishqkancharla/diffmap)
+([initial review](analyses/unreviewed/ai-gen--diffmap.md)) offers a commit-pinned
+specification/diff viewer pattern. Preserve truncation, cache limits and exact
+source identity when connecting generated artifacts to code evidence. These
+are candidate design refinements, not newly integrated generation backends or
+measured visual/audio quality improvements.
+
 | Tool | Observed role and useful idea | Decision |
 |---|---|---|
 | [A2UI report](projects/ai-gen--a2ui.md) · [GitHub](https://github.com/google/A2UI) | Client-owned component catalogs and catalog-scoped payload validation | Cross-client generated artifact UI; configure strict validation explicitly |

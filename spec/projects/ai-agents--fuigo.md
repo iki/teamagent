@@ -36,6 +36,18 @@ The [permission value types](https://github.com/FerroxLabs/fuigo/blob/0da71d3fc9
 
 The [agent object](https://github.com/FerroxLabs/fuigo/blob/0da71d3fc96e4fdb8332bbc448b61d88bc497924/crates/codegen/fuigo-agent/src/agent.rs) preserves unresolved tool-allowlist names for diagnostics and stores hosted-tool capability information separately. Its comments describe an earlier allowlist expansion failure, but the filtering builder was not inspected here. More directly, update_policies_from_definition is a no-op with a TODO, and prompt rendering uses unwrap_or_default. Teamagent should expose policy-update support as a capability, reject unsupported changes explicitly, preserve a validated prior prompt on rendering failure, and treat hosted capabilities as eligibility signals rather than grants.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `58f976406ab751cc9b954bb84b4d2838ccfd8a21` (commit date `2026-10-30T21:27:33+08:00`), compared with `0da71d3fc96e4fdb8332bbc448b61d88bc497924`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded selected launch-time environment/trust/shell checks and their fixture branches; whole-repository diff was oversized. Every spawn site, installed classifiers and actual Windows containment not audited.
+
+The [launch checks](https://github.com/FerroxLabs/fuigo/blob/58f976406ab751cc9b954bb84b4d2838ccfd8a21/crates/codegen/fuigo-tools/src/sandbox_launch.rs) re-evaluate calls previously allowed without a grant using the effective child environment and both judged/execution directories. Missing judges in strict mode and shells whose syntax the classifier does not model are refused; explicit grants bypass this additional check. [Fixtures](https://github.com/FerroxLabs/fuigo/blob/58f976406ab751cc9b954bb84b4d2838ccfd8a21/crates/codegen/fuigo-tools/src/sandbox_launch_tests.rs) distinguish inherited steering variables, trusted directories and PowerShell/cmd versus Bash. Those fixture branches model shell families; they are not an OS isolation test.
+
+**Teamagent implication (inference):** Bind automated permission decisions to executable resolution, shell grammar, cwd and effective environment, then revalidate changed conditions immediately before launch. Preserve explicit scoped grants and use platform-aware parsing; a command considered read-only under one environment may execute different code under another.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [fuigo](https://github.com/FerroxLabs/fuigo); analyzed commit `0da71d3fc96e4fdb8332bbc448b61d88bc497924`; commit date 2026-10-26T13:24:25+07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--fuigo.md).
+Analysis metadata: source [fuigo](https://github.com/FerroxLabs/fuigo); analyzed commit `58f976406ab751cc9b954bb84b4d2838ccfd8a21`; commit date 2026-10-30T21:27:33+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--fuigo.md).
 <!-- teamagent-analysis:end -->

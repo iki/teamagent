@@ -1,0 +1,865 @@
+{
+  "id": "ai-agents--dspy",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/stanfordnlp/dspy",
+  "report": "spec/projects/ai-agents--dspy.md",
+  "analyzedSha": "39dd3e5df9ede98578e6d9d7f53d3c7ee388c6c0",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T18:33:52-04:00",
+  "observedSha": "25162c4fc05c2d2d019b0ffb5b6b2a9f315ec007",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "25162c4fc05c2d2d019b0ffb5b6b2a9f315ec007",
+      "date": "2026-10-29T09:15:19-04:00",
+      "subject": "Refresh LiteLLM metadata to 1.106.6 with fixture-based metadata tests (#10744)"
+    },
+    {
+      "sha": "c22527a5ee848b5447e1e199160060e656922044",
+      "date": "2026-10-29T09:07:26-04:00",
+      "subject": "docs: fix custom type image example imports (#10743)"
+    },
+    {
+      "sha": "341682f8508ee31dd6b779ae32ba997182a970ba",
+      "date": "2026-10-28T14:33:22-04:00",
+      "subject": "[6/6] Make LiteLLM optional; retain compatibility fallback (#10719)"
+    },
+    {
+      "sha": "29fc2c1164ded70e3dd8f3d2e483ecae946280fc",
+      "date": "2026-10-28T14:33:21-04:00",
+      "subject": "Document the DSPy 3.5 LM, adapter and type migration (#10708)"
+    },
+    {
+      "sha": "707cbd20bdd5ad60ae910c9b868b4d2a1ff1f054",
+      "date": "2026-10-28T14:33:21-04:00",
+      "subject": "Remove deprecated LM entry points and unify engine execution (#10652)"
+    },
+    {
+      "sha": "1e5c9feb1a1dc780e39e5fac87ef752e8312a76d",
+      "date": "2026-10-28T14:33:20-04:00",
+      "subject": "Migrate adapters and candidates to canonical requests and responses (#10713)"
+    },
+    {
+      "sha": "bf5f62de074291fb3c3fb160dd7ab4691facd200",
+      "date": "2026-10-28T14:33:20-04:00",
+      "subject": "Build canonical requests from generation options (#10712)"
+    },
+    {
+      "sha": "9e2069ea7cc7cf2dc9960d020e6410dcdad6e0e5",
+      "date": "2026-10-28T14:33:20-04:00",
+      "subject": "refactor(lm): define minimal engine protocols (#10709)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/run_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/vendored_lm15.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/api/models/BaseLM.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/api/models/Embedder.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/api/models/LM.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/api/primitives/Tool.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/api/utils/Errors.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/api/utils/disable_litellm_logging.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/api/utils/enable_litellm_logging.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/community/normalized-lm-api-migration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/diving-deeper/adapters.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/diving-deeper/react.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/diving-deeper/tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/getting-started/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/js/hero-interactive.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/learn/programming/adapters.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/learn/programming/language_models.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/learn/programming/modules.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/learn/programming/tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/roadmap.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/tutorials/cache/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/tutorials/custom_lm_engines/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/tutorials/deployment/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/tutorials/entity_extraction/index.ipynb",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/tutorials/gepa_trusted_monitor/index.ipynb",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/tutorials/rag/index.ipynb",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mkdocs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scripts/generate_api_docs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/_vendor/lm15-provenance.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/_vendor/lm15/errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/_vendor/lm15/providers/common.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/_vendor/lm15/providers/openai.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/_vendor/lm15/providers/openai_chat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/adapters/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "dspy/adapters/_legacy_type_markers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/adapters/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/adapters/chat_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/adapters/decision.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/adapters/two_step_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/adapters/types/audio.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/adapters/types/base_type.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/adapters/types/citation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/adapters/types/document.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/adapters/types/file.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/adapters/types/image.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/adapters/types/reasoning.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/adapters/types/tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/adapters/utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "dspy/clients/_deprecation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/backend_selection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/base_lm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/call_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/call_result.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/capabilities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/costs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/disk_serialization.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/embedding.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/engines/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/engines/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/engines/dummy_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "dspy/clients/engines/legacy_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/engines/litellm_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/engines/lm15_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "dspy/clients/legacy_outputs.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "dspy/clients/legacy_requests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/lm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/lm15_boundary.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/model_metadata/provenance.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/model_metadata/snapshot.json.gz",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/clients/openai.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dspy/clients/requests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/core/types.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/lm15.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/primitives/facade.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/streaming/streamify.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/streaming/streaming_listener.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/teleprompt/gepa/gepa_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/teleprompt/grpo.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/utils/dummies.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/utils/inspect_history.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/utils/lazy_import.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dspy/utils/usage_tracker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/adapters/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/adapters/test_baml_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/adapters/test_base_type.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/adapters/test_bounding_box.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/adapters/test_chat_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/adapters/test_citation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/adapters/test_decision_types.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/adapters/test_document.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/adapters/test_json_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/adapters/test_reasoning.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/adapters/test_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/adapters/test_two_step_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/adapters/test_xml_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/callback/test_callback.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/clients/fixtures/lm_3_3_0/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/clients/fixtures/lm_3_3_0/generate.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/clients/fixtures/lm_3_3_0/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/clients/fixtures/lm_3_3_0/reasoning_key_async.zip",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/clients/fixtures/lm_3_3_0/reasoning_key_sync.zip",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/clients/fixtures/lm_3_3_0/rich_n_async.zip",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/clients/fixtures/lm_3_3_0/rich_n_sync.zip",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/clients/fixtures/lm_3_3_0/text_async.zip",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/clients/fixtures/lm_3_3_0/text_sync.zip",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_backend_capabilities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_custom_engine_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_disk_serialization.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_embedding.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_engine_errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_engine_failure_lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_gauntlet_followups.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/clients/test_lazy_litellm_import.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/clients/test_legacy_lm_deprecation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_lm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_lm15_adaptations_and_timeouts.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/clients/test_lm15_boundary.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_lm15_rc3_integration.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/clients/test_lm_call_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_lm_direct_live.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/clients/test_lm_engine_compatibility_fixes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_lm_engine_execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/clients/test_lm_message_deprecation.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/clients/test_lm_migration_compatibility.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_lm_schema_conversion.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_native_metadata.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/clients/test_native_only.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/clients/test_optional_litellm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_prompt_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/clients/test_registered_providers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/clients/test_tool_argument_repair.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/evaluate/test_evaluate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/flex/test_flex_gepa.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/flex/test_flex_interpreter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/predict/test_chain_of_thought.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/predict/test_decision_prompts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/predict/test_predict.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/predict/test_react.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/predict/test_react_v2.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/predict/test_rlm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/primitives/test_base_module.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/primitives/test_facade.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reliability/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reliability/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reliability/reliability_conf.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reliability/utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/signatures/test_adapter_file.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/signatures/test_adapter_image.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/streaming/test_streaming.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/teleprompt/test_bootstrap_trace.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/teleprompt/test_gepa.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/teleprompt/test_gepa_builtin_instruction_proposer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/teleprompt/test_gepa_instruction_proposer.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

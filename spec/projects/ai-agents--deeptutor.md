@@ -38,6 +38,18 @@ The [session adapter](https://github.com/HKUDS/DeepTutor/blob/a31d82624c27d75f4e
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `f7aed0744c36c5afef16a4261c31ebee1208cac2` (commit date `2026-11-01T00:50:27+08:00`), compared with `a31d82624c27d75f4e771d4fcb78dce16470b383`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete Markdown projection and grounding fixture diff; whole-repository diff was oversized. Calling grounding function and browser selection transport not audited.
+
+The [projection](https://github.com/HKUDS/DeepTutor/blob/f7aed0744c36c5afef16a4261c31ebee1208cac2/deeptutor/services/session/selection_grounding.py) strips structural Markdown while retaining inline/code-block text and literal math, then normalizes whitespace. [Grounding fixtures](https://github.com/HKUDS/DeepTutor/blob/f7aed0744c36c5afef16a4261c31ebee1208cac2/tests/services/session/test_selection_grounding.py) reject changed numbers, operators and identifiers while accepting rendered table/list/link text. This tests wording correspondence rather than source truth, and the projection alone does not retain original text offsets or full cue/layout fidelity.
+
+**Teamagent implication (inference):** Keep original source, rendered selection and explicit mapping as separate evidence. Match approved wording without normalization that erases semantic differences, and preserve exact subtitle line breaks/cue mapping where that stronger contract applies; grounded quotation does not make an external claim verified.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deeptutor](https://github.com/HKUDS/DeepTutor); analyzed commit `a31d82624c27d75f4e771d4fcb78dce16470b383`; commit date 2026-10-19T04:12:56+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deeptutor.md).
+Analysis metadata: source [deeptutor](https://github.com/HKUDS/DeepTutor); analyzed commit `f7aed0744c36c5afef16a4261c31ebee1208cac2`; commit date 2026-11-01T00:50:27+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deeptutor.md).
 <!-- teamagent-analysis:end -->

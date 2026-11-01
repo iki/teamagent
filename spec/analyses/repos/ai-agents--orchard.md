@@ -2,11 +2,11 @@
 
 Source: [orchard](https://github.com/microsoft/Orchard) · [Analysis](../../projects/ai-agents--orchard.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `bd8da32b3a075128700caab75bbc491fb6fdc16e`; commit date: 2026-10-08T22:14:11-07:00; review date: 2026-10-28T08:26:04.502Z; observed SHA: `bd8da32b3a075128700caab75bbc491fb6fdc16e`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `e048eed09c3ffe1841750de883f084e46d7cb98c`; commit date: 2026-11-01T01:29:28-07:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `e048eed09c3ffe1841750de883f084e46d7cb98c`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/microsoft/Orchard/compare/bd8da32b3a075128700caab75bbc491fb6fdc16e...bd8da32b3a075128700caab75bbc491fb6fdc16e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/microsoft/Orchard/compare/e048eed09c3ffe1841750de883f084e46d7cb98c...e048eed09c3ffe1841750de883f084e46d7cb98c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

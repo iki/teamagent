@@ -1,0 +1,46 @@
+# bs_cortex
+
+Source: [bs_cortex](https://github.com/novotapeter-bs/bs_cortex) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `1e0d020d77c56269df38445c9a921673eba39874`; commit timestamp `2026-09-27T22:52:02+02:00`; 5 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/novotapeter-bs/bs_cortex/blob/1e0d020d77c56269df38445c9a921673eba39874/README.md)):
+
+> Long-term, drift-free cognitive memory engine for AI Agents, Cursor IDE, and Claude Desktop via Model Context Protocol (MCP). Deep Dive:** Want to understand our tri-stream model, autonomous rest cycles, and dynamic invariant guards?
+
+Build/package evidence: No common build manifest identified.
+
+License evidence: [LICENSE.md](https://github.com/novotapeter-bs/bs_cortex/blob/1e0d020d77c56269df38445c9a921673eba39874/LICENSE.md) Classification hint: not classified; inspect source. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review — 2026-10-27
+
+**Client-side ingestion instructions do not establish delivery guarantees.** Reviewed commit `e2df973fa3fc9281c3ea296dbf24c24877dd2234` (commit date `2026-10-05T13:01:04+02:00`) against `1e0d020d77c56269df38445c9a921673eba39874`. The complete Git comparison contains 1 changed paths.
+
+The complete one-path comparison changes only README guidance. It now asks clients to ingest the user's prompt and a planned answer before showing that answer, and to strengthen biography ingestion through client instructions. Those are documentation requests and unsupported adherence claims, not a delivery or persistence mechanism. No implementation is present in the reviewed delta to substantiate the advertised UI or ingestion guarantees.
+
+Evidence: [README.md:78-104](https://github.com/novotapeter-bs/bs_cortex/blob/e2df973fa3fc9281c3ea296dbf24c24877dd2234/README.md#L78-L104) · [README.md:184-205](https://github.com/novotapeter-bs/bs_cortex/blob/e2df973fa3fc9281c3ea296dbf24c24877dd2234/README.md#L184-L205).
+
+**Harness consequence:** Use a deterministic, consent-scoped event sink for accepted conversational evidence. Store planned, delivered and acknowledged output as distinct states; never turn an upstream MCP instruction into authority to upload all dialogue. Prompt wording cannot replace durable ingestion receipts or recovery.
+
+**Scope and limits:** README/change screening only; no remote service, client UI, ingestion guarantee or latency claim was tested.
+
+## Change review — 2026-11-01
+
+**Expanded governance documentation remains distinct from demonstrated server behavior.** Reviewed `c893ebd7ccb9368f3d57048b7a9e8273855c52c5` (commit date `2026-10-28T14:43:15+01:00`) against `e2df973fa3fc9281c3ea296dbf24c24877dd2234`. Both changed paths are documentation. The advertised recall threshold changes from 65 ms to 120 ms; Swagger/OpenAPI links are hidden with a comment saying production activation is pending. The tool table adds canonical project discovery, explicit consolidation, task status and staging cleanup. Status documentation distinguishes `PENDING`, `RUNNING`, `COMPLETED` and `FAILED`, but this delta includes neither those implementations nor their tests. Evidence: [README.md:105-169](https://github.com/novotapeter-bs/bs_cortex/blob/c893ebd7ccb9368f3d57048b7a9e8273855c52c5/README.md#L105-L169) and [ARCHITECTURE.md:44-51](https://github.com/novotapeter-bs/bs_cortex/blob/c893ebd7ccb9368f3d57048b7a9e8273855c52c5/ARCHITECTURE.md#L44-L51).
+
+**Harness consequence:** Separate declared tools, authenticated availability, accepted background work and observed completion. Resolve canonical project identity before writes and require explicit cleanup scope, but do not inherit prose guarantees of isolation, losslessness or latency without implementation and workload evidence.
+
+**Scope and limits:** Complete two-file documentation comparison. No hosted endpoint, client integration, consolidation task or latency measurement was tested. Earlier concerns about claimed ingestion and actual delivery remain unresolved by this documentation-only update.

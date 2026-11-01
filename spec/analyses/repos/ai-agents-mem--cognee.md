@@ -2,11 +2,11 @@
 
 Source: [cognee](https://github.com/topoteretes/cognee) · [Analysis](../../projects/ai-agents-mem--cognee.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `37f788bd287750e10d7610173e5332b3843f6ebd`; commit date: 2026-10-16T22:07:34+02:00; review date: 2026-10-24T06:36:54.441Z; observed SHA: `37f788bd287750e10d7610173e5332b3843f6ebd`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `525b1d1179c550cd5b5661bcbf8f00f57a676928`; commit date: 2026-10-29T23:02:39+01:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `525b1d1179c550cd5b5661bcbf8f00f57a676928`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/topoteretes/cognee/compare/37f788bd287750e10d7610173e5332b3843f6ebd...37f788bd287750e10d7610173e5332b3843f6ebd). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/topoteretes/cognee/compare/525b1d1179c550cd5b5661bcbf8f00f57a676928...525b1d1179c550cd5b5661bcbf8f00f57a676928). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

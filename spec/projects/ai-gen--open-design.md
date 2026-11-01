@@ -54,6 +54,14 @@ Evidence: [apps/web/src/runtime/chat/pending-disconnect.ts:1-79](https://github.
 
 **Scope and limits:** Reviewed the complete new projection helper and tests; process supervision and server reconciliation were not independently verified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`12d970eacc8971150e3c76470d2a9afe16dc2ed1`](https://github.com/nexu-io/open-design/commit/12d970eacc8971150e3c76470d2a9afe16dc2ed1), compared with `d297055b83b6226c2c5e40800bbb4287156c4025`.
+
+The selected [OpenCode permissions helper](https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/apps/daemon/src/runtimes/opencode-permissions.ts) gathers lexical/physical volume roots, nearest Git ancestors and a successful Git top-level result. An absent or timed-out Git command retains filesystem candidates, while an ancestor that cannot be inspected still throws. The [fixtures](https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/apps/daemon/tests/runtimes/od-next-profile-permissions.test.ts) cover missing/timed-out Git and a permission-denied ancestor; the latter is platform/privilege conditional.
+
+The helper also enumerates system temporary directories for the upstream permission builder. Teamagent should instead retain explicit ownership and narrowly scoped scratch admission; knowing a temp root is not permission to delete or expose every entry. The inspected candidate expansion is intended to add deny coverage, but the complete downstream grant builder was not audited. No actual OpenCode or packaged application test was run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [open-design](https://github.com/nexu-io/open-design); analyzed commit `d297055b83b6226c2c5e40800bbb4287156c4025`; commit date 2026-10-28T09:35:01Z; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--open-design.md).
+Analysis metadata: source [open-design](https://github.com/nexu-io/open-design); analyzed commit `12d970eacc8971150e3c76470d2a9afe16dc2ed1`; commit date 2026-10-30T12:05:01+08:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--open-design.md).
 <!-- teamagent-analysis:end -->

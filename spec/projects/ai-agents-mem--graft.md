@@ -49,6 +49,12 @@ Evidence: [src/graph/depth-parser.ts:106-170](https://github.com/NanoNets/Graft/
 
 **Scope and limits:** Reviewed depth parser/runtime and grammar-provisioning fixtures; no WASM/native parity or installation experiment was run. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review — 2026-11-01
+
+Reviewed `a44da3dfb5894c8e316e320526041ef8e5ddbb8c` (2026-10-30T13:17:01+05:30); 45 paths changed from `19865ff4274dc77d977b5519c920dc71e1b54aa3`. The inspected trace-wall catalog adds separate observed-failure wording (`seen`) and proposed future behavior (`does`) to optional guardrails; the catalog fixture asserts the new fields. This makes a proposed learned rule more reviewable than a bare instruction. [Catalog](https://github.com/NanoNets/Graft/blob/a44da3dfb5894c8e316e320526041ef8e5ddbb8c/src/trace/walls.ts), [fixture](https://github.com/NanoNets/Graft/blob/a44da3dfb5894c8e316e320526041ef8e5ddbb8c/test/trace-walls.test.ts).
+
+Observed command failures do not authorize changing remotes, credentials or execution privileges: retain scope, evidence and explicit promotion separately from suggested remediation. Scope: these two diffs only; renamed CLI/init/cloud changes and efficacy of generated rules were not independently validated. No hooks, learned rule or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [graft](https://github.com/NanoNets/Graft); analyzed commit `19865ff4274dc77d977b5519c920dc71e1b54aa3`; commit date 2026-10-28T03:27:32+05:30; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--graft.md).
+Analysis metadata: source [graft](https://github.com/NanoNets/Graft); analyzed commit `a44da3dfb5894c8e316e320526041ef8e5ddbb8c`; commit date 2026-10-30T13:17:01+05:30; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--graft.md).
 <!-- teamagent-analysis:end -->

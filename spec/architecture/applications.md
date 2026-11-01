@@ -76,6 +76,15 @@ These are repository-specific choices, not framework benchmark claims.
 
 ## Interface design and accessibility
 
+For the optional experiment prompted by the
+[Delta article](https://delta.dev/blog/fine-grained-version-control-for-agents)
+([review](../analyses/delta-fine-grained-version-control-2026-11-01.md)), our UI
+requirement is to distinguish visible, locally durable and remotely acknowledged
+edits. Bound reconstruction work outside rendering and reject stale completions.
+Measure interaction latency separately from persistence and reconnect time on
+the adopted React/Tauri surfaces before selecting a new history backend. These
+are proposed acceptance conditions, not measured behavior.
+
 Before a new visual surface, define a compact palette, type scale, layout and
 content hierarchy grounded in the task workspace and the user's brief. Use real
 task, connection and failure states in design fixtures. Review screenshots at

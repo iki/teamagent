@@ -1,0 +1,985 @@
+{
+  "id": "ai-security--codeql",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/github/codeql",
+  "report": "spec/projects/ai-security--codeql.md",
+  "analyzedSha": "fd2bfc8a3da9c73a0c8be05d110efaf14a856445",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-27T17:43:02+01:00",
+  "observedSha": "950734fc80d48083479843e2284039832eaf54c7",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "950734fc80d48083479843e2284039832eaf54c7",
+      "date": "2026-10-31T00:10:03+01:00",
+      "subject": "Merge pull request #22961 from github/copilot/unused-static-empty-pack-22931"
+    },
+    {
+      "sha": "a5e0a2dad3c474943b615855a6465ab2e83dbe7b",
+      "date": "2026-10-30T14:51:33Z",
+      "subject": "Ignore compiler-generated unused static variables"
+    },
+    {
+      "sha": "b43b7c383bc1b4d549f410c59164b75c765bb345",
+      "date": "2026-10-30T14:49:27Z",
+      "subject": "Add empty parameter pack regression test"
+    },
+    {
+      "sha": "1a8dbb2db53ec0ec595e60542e7c8566d766c2fb",
+      "date": "2026-10-30T15:34:24+01:00",
+      "subject": "Merge pull request #22947 from github/copilot/dream-curate-memories-20261030051207"
+    },
+    {
+      "sha": "0a5ba1a536915499deaf44cc9cbc360f52d6e875",
+      "date": "2026-10-30T15:28:57+01:00",
+      "subject": "Merge pull request #22938 from github/copilot/unused-static-side-effect-test"
+    },
+    {
+      "sha": "1de0ff0fa4596c3d03809a8aabdc189d73a9fff9",
+      "date": "2026-10-30T15:24:06+01:00",
+      "subject": "Merge pull request #22913 from hvitved/rust/try-in-closure-test"
+    },
+    {
+      "sha": "c4d0804e61a763fa96bec40a1b014a6f35ef63ab",
+      "date": "2026-10-30T14:20:22Z",
+      "subject": "Merge pull request #22958 from github/post-release-prep/codeql-cli-2.27.4"
+    },
+    {
+      "sha": "350cd9b583aca813b81ecd5202e14a08bdefc805",
+      "date": "2026-10-30T14:51:21+01:00",
+      "subject": "Merge pull request #22956 from asgerf/unified/fix-atomic-token-check"
+    },
+    {
+      "sha": "e68cb84c0d6dbfd75d7d1f48775de648298b8961",
+      "date": "2026-10-30T14:41:14+01:00",
+      "subject": "Merge pull request #22914 from aschackmull/ssa/postupdate"
+    },
+    {
+      "sha": "540f85b68f1d6958e273685b70a5f85aff63da23",
+      "date": "2026-10-30T14:08:44+01:00",
+      "subject": "Rust: Add data flow test for `?` in a closure"
+    },
+    {
+      "sha": "fdf5c8481ffef04e04c7376167fb5ce25aae8453",
+      "date": "2026-10-30T13:59:19+01:00",
+      "subject": "Merge pull request #22917 from hvitved/rust/captured-flow-fixes"
+    },
+    {
+      "sha": "ef440586918a1e1fa5350cfd3d8f66448aee3c59",
+      "date": "2026-10-30T12:50:26Z",
+      "subject": "Post-release preparation for codeql-cli-2.27.4"
+    },
+    {
+      "sha": "d088e546ccf61f7227b5287402b29bb79634fd92",
+      "date": "2026-10-30T12:46:13Z",
+      "subject": "Merge pull request #22324 from lcmangalagiri/rust-cwe-502-unsafe-deserialization"
+    },
+    {
+      "sha": "269db3b4afb65668914f7bc76a3849db8bac281a",
+      "date": "2026-10-30T12:23:14Z",
+      "subject": "Merge pull request #22946 from github/workflow/coverage/update"
+    },
+    {
+      "sha": "cd2382559e1700752c609bc1d00796bbeb4cfe26",
+      "date": "2026-10-30T12:19:21Z",
+      "subject": "Merge pull request #22955 from owen-mc/shared/docs/variable-capture"
+    },
+    {
+      "sha": "75373ee829aaa75953321e8eaf2fddc294dacbfd",
+      "date": "2026-10-30T13:15:49+01:00",
+      "subject": "unified: Use proper accessor when accessing operand of token"
+    },
+    {
+      "sha": "3bf191f80eea3882795fac564dc8461f0fdf22c7",
+      "date": "2026-10-30T13:15:48+01:00",
+      "subject": "unified: Add test"
+    },
+    {
+      "sha": "181431e02c24ed548449fa173b581427cb3b04e7",
+      "date": "2026-10-30T13:04:26+01:00",
+      "subject": "Merge pull request #22847 from github/rust/inconsistent-feature"
+    },
+    {
+      "sha": "2ba13679cc4298c9f197bca1612c3215fe33a39f",
+      "date": "2026-10-30T11:39:21Z",
+      "subject": "Add missing QLDoc in library"
+    },
+    {
+      "sha": "f8a5772b0d9fad9db314c009a3aeaa497c0b5c2e",
+      "date": "2026-10-30T11:18:54+01:00",
+      "subject": "Merge pull request #22889 from michaelnebel/csharp/moredepmanlogging"
+    },
+    {
+      "sha": "61ef133faae529527946852f08f13865a0460b09",
+      "date": "2026-10-30T10:52:56+01:00",
+      "subject": "Merge pull request #22952 from hvitved/unified/type-inference-variance-test"
+    },
+    {
+      "sha": "f6d51da40d61624a273dcac0c98adab61c414104",
+      "date": "2026-10-30T10:21:05+01:00",
+      "subject": "C/C++: Fix faulty iterator flow relying on SSA use-use bug."
+    },
+    {
+      "sha": "c65f1867b73ba7bcd0410a1f1c84894796aae41f",
+      "date": "2026-10-30T10:08:16+01:00",
+      "subject": "Unified: Add type inference test for missing variance handling"
+    },
+    {
+      "sha": "328923ad69d7dc99b5fcd79febfc74be75b3743a",
+      "date": "2026-10-30T09:42:28+01:00",
+      "subject": "Merge pull request #22949 from github/dependabot/bazel/nlohmann_json-3.12.0.bcr.2"
+    },
+    {
+      "sha": "272ae45dbc08d69b2915f695a34aed60abda4108",
+      "date": "2026-10-30T08:03:13Z",
+      "subject": "build(deps): bump nlohmann_json from 3.12.0.bcr.1 to 3.12.0.bcr.2"
+    },
+    {
+      "sha": "a61f57798502e166f18a048b1ee6a1cea7dbc199",
+      "date": "2026-10-30T08:58:24+01:00",
+      "subject": "Merge pull request #22927 from github/dependabot/bazel/googletest-1.18.0.bcr.1"
+    },
+    {
+      "sha": "72b36579b7916dfd217e5f1847eb4e1dd14fa151",
+      "date": "2026-10-30T07:26:29Z",
+      "subject": "build(deps): bump googletest from 1.17.0.bcr.2 to 1.18.0.bcr.1"
+    },
+    {
+      "sha": "cb00a92fed4b4843e7d22777fad5268d14317ed9",
+      "date": "2026-10-30T08:19:35+01:00",
+      "subject": "Merge pull request #22944 from github/jketema/bump-bazel-9.1.0-20261029"
+    },
+    {
+      "sha": "2399460aa2e1373331e7fa18f9f9a606eee7fc4a",
+      "date": "2026-10-29T23:58:21-07:00",
+      "subject": "Merge CI fixes for Rust unsafe deserialization"
+    },
+    {
+      "sha": "c93737e91390bf1fb06af81f2a07f3aa606d5dd4",
+      "date": "2026-10-29T23:48:23-07:00",
+      "subject": "Update rust/ql/src/queries/security/CWE-502/UnsafeDeserialization.qhelp"
+    },
+    {
+      "sha": "795c4880e8d84d8e73728a9ab63c77c2f015a303",
+      "date": "2026-10-29T23:48:04-07:00",
+      "subject": "Update rust/ql/src/queries/security/CWE-502/UnsafeDeserialization.qhelp"
+    },
+    {
+      "sha": "325475d7f190ff56842cc26faa3be2fe80b8be3c",
+      "date": "2026-10-29T23:47:36-07:00",
+      "subject": "Update rust/ql/src/queries/security/CWE-502/UnsafeDeserialization.ql"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".bazelversion",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/skills/bazel/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pre-commit-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MODULE.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "actions/ql/lib/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "actions/ql/lib/change-notes/released/0.7.1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "actions/ql/lib/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "actions/ql/lib/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "actions/ql/src/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "actions/ql/src/change-notes/released/0.6.39.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "actions/ql/src/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "actions/ql/src/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cpp/ql/lib/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cpp/ql/lib/change-notes/2026-10-15-bitwidth.md",
+      "previousPath": null
+    },
+    {
+      "status": "R070",
+      "path": "cpp/ql/lib/change-notes/released/12.4.0.md",
+      "previousPath": "cpp/ql/lib/change-notes/2026-10-16-builtins.md"
+    },
+    {
+      "status": "M",
+      "path": "cpp/ql/lib/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cpp/ql/lib/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cpp/ql/lib/semmle/code/cpp/ir/dataflow/internal/SsaImplCommon.qll",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cpp/ql/src/Best Practices/Unused Entities/UnusedLocals.ql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cpp/ql/src/Best Practices/Unused Entities/UnusedStaticVariables.ql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cpp/ql/src/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cpp/ql/src/Security/CWE/CWE-468/IncorrectPointerScaling.ql",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cpp/ql/src/change-notes/2026-10-12-cpp-code-quality-suite.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cpp/ql/src/change-notes/2026-10-29-unused-variable-initializers.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cpp/ql/src/change-notes/2026-10-30-unused-static-compiler-generated.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cpp/ql/src/change-notes/released/1.10.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cpp/ql/src/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cpp/ql/src/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cpp/ql/test/query-tests/Best Practices/Unused Entities/UnusedLocals/UnusedLocals.expected",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cpp/ql/test/query-tests/Best Practices/Unused Entities/UnusedLocals/code2.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cpp/ql/test/query-tests/Best Practices/Unused Entities/UnusedStaticVariables/test.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cpp/ql/test/query-tests/Security/CWE/CWE-468/semmle/IncorrectPointerScaling/test.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/extractor/Semmle.Extraction.CSharp.DependencyFetching/DependencyManager.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/extractor/Semmle.Extraction.CSharp.DependencyFetching/FileContent.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/extractor/Semmle.Extraction.CSharp.DependencyFetching/NugetPackageRestorer.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/extractor/Semmle.Extraction.CSharp.DependencyFetching/SourceGenerators/DotnetSourceGeneratorBase.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/extractor/Semmle.Extraction.Tests/FileContent.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/ql/campaigns/Solorigate/lib/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "csharp/ql/campaigns/Solorigate/lib/change-notes/released/1.7.78.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/ql/campaigns/Solorigate/lib/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/ql/campaigns/Solorigate/lib/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/ql/campaigns/Solorigate/src/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "csharp/ql/campaigns/Solorigate/src/change-notes/released/1.7.78.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/ql/campaigns/Solorigate/src/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/ql/campaigns/Solorigate/src/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/ql/integration-tests/all-platforms/dotnet_11/global.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/ql/lib/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "R083",
+      "path": "csharp/ql/lib/change-notes/released/7.4.2.md",
+      "previousPath": "csharp/ql/lib/change-notes/2026-10-26-nugetcli-proxy-config-rollback.md"
+    },
+    {
+      "status": "M",
+      "path": "csharp/ql/lib/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/ql/lib/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/ql/src/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "R084",
+      "path": "csharp/ql/src/change-notes/released/1.11.0.md",
+      "previousPath": "csharp/ql/src/change-notes/2026-10-21-remove-cwe-730.md"
+    },
+    {
+      "status": "M",
+      "path": "csharp/ql/src/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "csharp/ql/src/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/ql/consistency-queries/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/ql/consistency-queries/change-notes/released/1.0.61.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/ql/consistency-queries/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/ql/consistency-queries/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/ql/lib/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "go/ql/lib/change-notes/2026-08-17-deprecate-condition-guard-node.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "go/ql/lib/change-notes/2026-08-17-shared-guards.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "go/ql/lib/change-notes/2026-10-26-registry-proxy-certificate.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/ql/lib/change-notes/released/8.1.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/ql/lib/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/ql/lib/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/ql/src/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/ql/src/change-notes/released/1.6.14.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/ql/src/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/ql/src/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/documentation/library-coverage/coverage.csv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/documentation/library-coverage/coverage.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/lib/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/ql/lib/change-notes/released/9.3.4.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/lib/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/lib/ext/com.google.common.base.model.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/lib/ext/org.apache.commons.lang3.model.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/lib/ext/org.apache.commons.text.model.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/ql/lib/ext/org.owasp.encoder.model.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/lib/ext/org.springframework.util.model.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/lib/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/lib/semmle/code/java/Concepts.qll",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/lib/semmle/code/java/Expr.qll",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/lib/semmle/code/java/JDK.qll",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/lib/semmle/code/java/frameworks/apache/Lang.qll",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/lib/semmle/code/java/frameworks/guava/Guava.qll",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/lib/semmle/code/java/security/LogInjection.qll",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/lib/semmle/code/java/security/PathSanitizer.qll",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/src/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "R085",
+      "path": "java/ql/src/change-notes/released/1.12.0.md",
+      "previousPath": "java/ql/src/change-notes/2026-10-21-remove-cwe-730.md"
+    },
+    {
+      "status": "M",
+      "path": "java/ql/src/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/src/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/test/library-tests/pathsanitizer/Test.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/test/library-tests/pathsanitizer/options",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/ql/test/query-tests/security/CWE-117/LibrarySanitizers.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/test/query-tests/security/CWE-117/LogInjectionTest.expected",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/test/query-tests/security/CWE-117/LogInjectionTest.ext.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/test/query-tests/security/CWE-117/LogInjectionTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/ql/test/query-tests/security/CWE-117/options",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/ql/test/stubs/apache-commons-text-1.9/org/apache/commons/text/StringEscapeUtils.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/ql/test/stubs/owasp-java-encoder/org/owasp/encoder/Encode.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "javascript/extractor/src/com/semmle/jcorn/Parser.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "javascript/extractor/tests/es2015/input/property_pattern_with_default.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "javascript/extractor/tests/es2015/output/trap/property_pattern_with_default.js.trap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "javascript/ql/lib/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "javascript/ql/lib/change-notes/2026-10-19-array-flatmap-thisarg.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "javascript/ql/lib/change-notes/2026-10-20-string-trim-normalize.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "javascript/ql/lib/change-notes/2026-10-22-remove-typescript-home.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "javascript/ql/lib/change-notes/released/3.0.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "javascript/ql/lib/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "javascript/ql/lib/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "javascript/ql/src/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "javascript/ql/src/change-notes/2026-10-15-invalid-prototype-computed-property.md",
+      "previousPath": null
+    },
+    {
+      "status": "R062",
+      "path": "javascript/ql/src/change-notes/released/2.5.0.md",
+      "previousPath": "javascript/ql/src/change-notes/2026-10-21-remove-cwe-730.md"
+    },
+    {
+      "status": "M",
+      "path": "javascript/ql/src/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "javascript/ql/src/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "R098",
+      "path": "misc/bazel/registry/modules/rules_swift/4.0.0-rc5-codeql.3/MODULE.bazel",
+      "previousPath": "misc/bazel/registry/modules/rules_swift/4.0.0-rc5-codeql.2/MODULE.bazel"
+    },
+    {
+      "status": "R093",
+      "path": "misc/bazel/registry/modules/rules_swift/4.0.0-rc5-codeql.3/patches/external_static_runtime.patch",
+      "previousPath": "misc/bazel/registry/modules/rules_swift/4.0.0-rc5-codeql.2/patches/external_static_runtime.patch"
+    },
+    {
+      "status": "R062",
+      "path": "misc/bazel/registry/modules/rules_swift/4.0.0-rc5-codeql.3/patches/register_downloaded_macos_toolchain.patch",
+      "previousPath": "misc/bazel/registry/modules/rules_swift/4.0.0-rc5-codeql.2/patches/register_downloaded_macos_toolchain.patch"
+    },
+    {
+      "status": "R053",
+      "path": "misc/bazel/registry/modules/rules_swift/4.0.0-rc5-codeql.3/source.json",
+      "previousPath": "misc/bazel/registry/modules/rules_swift/4.0.0-rc5-codeql.2/source.json"
+    },
+    {
+      "status": "M",
+      "path": "misc/bazel/registry/modules/rules_swift/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "misc/suite-helpers/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "misc/suite-helpers/change-notes/released/1.0.61.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "misc/suite-helpers/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "misc/suite-helpers/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/ql/lib/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "python/ql/lib/change-notes/released/7.2.9.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/ql/lib/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/ql/lib/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/ql/src/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "R085",
+      "path": "python/ql/src/change-notes/released/1.9.0.md",
+      "previousPath": "python/ql/src/change-notes/2026-10-21-remove-cwe-730.md"
+    },
+    {
+      "status": "M",
+      "path": "python/ql/src/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/ql/src/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ruby/ql/lib/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ruby/ql/lib/change-notes/released/7.1.1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ruby/ql/lib/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ruby/ql/lib/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ruby/ql/src/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "R085",
+      "path": "ruby/ql/src/change-notes/released/1.7.0.md",
+      "previousPath": "ruby/ql/src/change-notes/2026-10-21-remove-cwe-730.md"
+    },
+    {
+      "status": "M",
+      "path": "ruby/ql/src/codeql-pack.release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ruby/ql/src/qlpack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/extractor/src/configuration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/extractor/src/diagnostics.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/extractor/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/extractor/src/rust_analyzer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/extractor/src/util.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/.cargo/config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/dependencies/alpha/.cargo-checksum.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/dependencies/alpha/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/dependencies/alpha/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/dependencies/alpha/src/only_a.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/dependencies/beta/.cargo-checksum.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/dependencies/beta/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/dependencies/beta/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/functions.ql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/functions.rich.expected",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/functions.rich.reversed.expected",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/functions.tie.expected",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/functions.tie.reversed.expected",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/inactive-module.ql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/ql/integration-tests/dependency-features/inactive-module.rich.expected",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -47,6 +47,18 @@ In [packages/cli/src/commands/template/list.ts](https://github.com/e2b-dev/e2b/b
 
 **Teamagent implication:** Teamagent should preserve pagination completeness in structured discovery results, enforce page/byte/time limits and repeated-cursor detection, and test those properties with deterministic multi-page fixtures. A partial listing must not establish that a resource is absent.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `8cc9ed1e30a57d89cefaec112680567d62f21112` (commit date `2026-10-30T23:03:45+01:00`), compared with `a91e33a3014a7644a2d39e03501d25b21ad727c0`. Earlier observations remain historical evidence.
+
+**Scope:** Complete changed JavaScript command-handle retention implementation and its new retention/error fixtures. Remote infrastructure retention, Python SDK parity and actual process lifecycle were not exercised.
+
+The [command handle](https://github.com/e2b-dev/e2b/blob/8cc9ed1e30a57d89cefaec112680567d62f21112/packages/js-sdk/src/sandbox/commands/commandHandle.ts) adds an explicit retainOutput option, defaulting to retention. Disabling it leaves returned stdout/stderr undefined while streaming callbacks continue; the generic result type reflects the selected mode. [Fixtures](https://github.com/e2b-dev/e2b/blob/8cc9ed1e30a57d89cefaec112680567d62f21112/packages/js-sdk/tests/sandbox/commands/commandHandle.test.ts) check callback delivery, omitted accumulated output and nonzero-exit errors without retained output. This reduces one client accumulation path; it does not bound callback consumers or prove server-side erasure.
+
+**Teamagent implication (inference):** Separate streaming delivery, bounded diagnostic tails and durable artifact retention in the worker contract. Carry retention mode into successful and failed result schemas, and apply independent limits to downstream subscribers, logs and remote storage. A no-retention client option does not substitute for a provider data policy.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [e2b](https://github.com/e2b-dev/e2b); analyzed commit `a91e33a3014a7644a2d39e03501d25b21ad727c0`; commit date 2026-10-28T07:56:45Z; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--e2b.md).
+Analysis metadata: source [e2b](https://github.com/e2b-dev/e2b); analyzed commit `8cc9ed1e30a57d89cefaec112680567d62f21112`; commit date 2026-10-30T23:03:45+01:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--e2b.md).
 <!-- teamagent-analysis:end -->

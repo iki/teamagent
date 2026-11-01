@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--odysseus",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/pewdiepie-archdaemon/odysseus",
+  "report": "spec/projects/ai-agents--odysseus.md",
+  "analyzedSha": "57a1859f081f5877373e4aaf96435eb3ed513793",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T22:50:35-06:00",
+  "observedSha": "8450793fe68a0cc37ed9dc523620ba49bc234e2f",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "8450793fe68a0cc37ed9dc523620ba49bc234e2f",
+      "date": "2026-11-01T08:45:11Z",
+      "subject": "feat(admin): rename model endpoints inline (#6970)"
+    },
+    {
+      "sha": "c4fdd7ad5b79ab6e49e6163d2f6118c1b4e7f36e",
+      "date": "2026-11-01T08:33:08Z",
+      "subject": "tests: skip the searxng settings migration tests on Windows (#6882)"
+    },
+    {
+      "sha": "6fced412209b2d94577521378e643ffdb7949fc9",
+      "date": "2026-11-01T03:19:59Z",
+      "subject": "feat(mcp): let a deployment declare local MCP tools (#6330)"
+    },
+    {
+      "sha": "6f2b58c8963b03d4e6c298023409f6de26ff76a6",
+      "date": "2026-11-01T03:06:13Z",
+      "subject": "fix(cookbook): preserve endpoints across model launches (#6969)"
+    },
+    {
+      "sha": "39303f19cd33e6e86c08fa858873e2d53cea3a1a",
+      "date": "2026-11-01T02:56:46Z",
+      "subject": "fix(editor): stabilize image generation, layer editing and controls (#6992)"
+    },
+    {
+      "sha": "5353241743d7bb410c1e5a41912b781f1e2b9c63",
+      "date": "2026-11-01T02:47:32Z",
+      "subject": "fix(chat): warn before regenerate, resend or edit deletes later messages; offer fork (#6225)"
+    },
+    {
+      "sha": "285d05e72ee6f3b842e46e850f3b96991229844d",
+      "date": "2026-11-01T02:28:58Z",
+      "subject": "fix(docker): forward ODYSSEUS_FIRST_TOKEN_TIMEOUT through compose (#6778)"
+    },
+    {
+      "sha": "dc0fbbf7aaceadf531fe5c31e9ab1f3aa6fd452c",
+      "date": "2026-11-01T02:03:06Z",
+      "subject": "fix(compose): default ODYSSEUS_TTS_CACHE_MAX_BYTES so compose stops warning (#6619) (#6645)"
+    },
+    {
+      "sha": "12b9c5f2ada95fb2b92291a57257f5978010ef64",
+      "date": "2026-11-01T01:55:36Z",
+      "subject": "chore(compose): parameterize searxng host port via SEARXNG_HOST_PORT (#6598)"
+    },
+    {
+      "sha": "cb26ccd9a7a06cb3611d75c84864c3ec4386d14f",
+      "date": "2026-11-01T01:47:57Z",
+      "subject": "test: skip native bash tool tests on Windows (2 modules) (#6872)"
+    },
+    {
+      "sha": "23a480571a903f67eb81be703ac6e208ed0f181b",
+      "date": "2026-11-01T01:39:56Z",
+      "subject": "tests: skip the 0o600 file-mode assert on Windows in the effect log fsync test (#6892)"
+    },
+    {
+      "sha": "6a43cf23ea887c2a67f274b4cdb4ab26cb281e2b",
+      "date": "2026-11-01T01:33:28Z",
+      "subject": "tests: make hardcoded /tmp assertions OS-neutral (#6864)"
+    },
+    {
+      "sha": "64b457dc0a344d889ed00de01a0680b5156e897e",
+      "date": "2026-11-01T01:26:11Z",
+      "subject": "fix(tests): read static sources as UTF-8 in the static assertion tests (#6850)"
+    },
+    {
+      "sha": "ef3467e8d47f3a7291acd264dec2d2f576f9295d",
+      "date": "2026-10-31T13:54:14Z",
+      "subject": "fix(tasks): render daily brief calendars in local time (#6926)"
+    },
+    {
+      "sha": "72e8520fa3bf1392d6f4a8810fed3ed3427b0fc5",
+      "date": "2026-10-31T13:51:59Z",
+      "subject": "fix(models): honor visible pinned IDs in route selection (#6922)"
+    },
+    {
+      "sha": "9276db9c11802357fe4af27401034c2422d451cd",
+      "date": "2026-10-31T13:49:26Z",
+      "subject": "fix(models): skip non-chat models when resolving chat defaults (#6907)"
+    },
+    {
+      "sha": "a797cee0b301e9e867877fd7520309a15fa1d080",
+      "date": "2026-10-31T13:47:30Z",
+      "subject": "fix(cookbook): diagnose vLLM serves on an NVIDIA driver that is too old (#6727) (#6728)"
+    },
+    {
+      "sha": "76061498c86a2d841de982fec4b2f0bdd37ba2be",
+      "date": "2026-10-31T13:45:02Z",
+      "subject": "fix(gallery): validate album rename and image_ids input (#6822) (#6823)"
+    },
+    {
+      "sha": "04f8546d9d0b28f16ac486cf535e8b7df1d01cf2",
+      "date": "2026-10-31T13:43:20Z",
+      "subject": "fix(search): gallery library per-word search with LIKE escaping (#6584)"
+    },
+    {
+      "sha": "9835c1a7f98266a4df941b2bc0853a5ab0a0fbc3",
+      "date": "2026-10-31T13:34:05Z",
+      "subject": "fix(skills): refuse renaming a skill onto a name the owner already uses (#6941)"
+    },
+    {
+      "sha": "239f09cbc4ea2fd3c85e75f95bca1242279a9fb8",
+      "date": "2026-10-31T13:32:28Z",
+      "subject": "fix(docker): retry PyPI fetches in realesrgan wheel builder (#6407)"
+    },
+    {
+      "sha": "a1a7f8fc9add565b4fe28ce7f56b53bd1f187ce1",
+      "date": "2026-10-31T13:30:29Z",
+      "subject": "fix(agent): don't clamp an unknown context window to the small-server budget (#6678) (#6706)"
+    },
+    {
+      "sha": "87193d23f5f6d68345161c2be72448c819c5e6cb",
+      "date": "2026-10-31T13:26:43Z",
+      "subject": "fix(agent-loop): release buffered prose when '<' is not a tool tag (#6757) (#6758)"
+    },
+    {
+      "sha": "516f046fef04599d9cf808f307927a4e293e8f6e",
+      "date": "2026-10-31T13:24:32Z",
+      "subject": "fix(chat): label the vision description injected for text-only models (#6223)"
+    },
+    {
+      "sha": "48c3a7fc36531c3ccfcc5addea0281767f9a5bbb",
+      "date": "2026-10-31T13:22:55Z",
+      "subject": "fix(pdf): convert CMYK images before vision analysis (#6917)"
+    },
+    {
+      "sha": "70fc58225c9d525c94bf07977d104a8dc755e9ae",
+      "date": "2026-10-31T13:21:10Z",
+      "subject": "fix(documents): treat library search punctuation literally (#6944)"
+    },
+    {
+      "sha": "9efedc8b0796819b925b2c70bfe1eb23db2017e1",
+      "date": "2026-10-31T13:18:58Z",
+      "subject": "fix(documents): retain language extensions in ZIP exports (#6848)"
+    },
+    {
+      "sha": "1d251ef8675d90324c264793d4703307c8d0848d",
+      "date": "2026-10-31T13:05:35Z",
+      "subject": "Fix transcript search snippet positioning (#6206)"
+    },
+    {
+      "sha": "bf5bf57bc1838c5336b4fce1f3ad2d632a63a2d8",
+      "date": "2026-10-31T13:04:18Z",
+      "subject": "fix(diagnostics): report a failed config source instead of \"disabled\" (#6154) (#6169)"
+    },
+    {
+      "sha": "2019a973392acb631ac959ed0ecb99d557dd25f5",
+      "date": "2026-10-31T13:02:02Z",
+      "subject": "fix(skills): preserve escaped quotes in frontmatter lists (#6265)"
+    },
+    {
+      "sha": "9a1fdb192eff0ac9156aff1bd25abb9aee9021f9",
+      "date": "2026-10-31T12:59:17Z",
+      "subject": "fix(cookbook): resolve NameError in hf-gguf-files exception handler (#6341) (#6369)"
+    },
+    {
+      "sha": "bebf53be3c0b24016334fdebc6f64729cc2da610",
+      "date": "2026-10-30T22:46:19-07:00",
+      "subject": "fix(agent): make preview and browser output parsers linear (#7003)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitleaks.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "THREAT_MODEL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/database.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.gpu-amd.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.gpu-nvidia.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/build-realesrgan-wheels.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/QUICKEDIT_COVERAGE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/evidence/editor/editor-01-desktop-canvas.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/evidence/editor/editor-02-desktop-save-menu.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/evidence/editor/editor-03-desktop-ai-settings.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/evidence/editor/editor-04-desktop-shadow-controls.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/evidence/editor/editor-05-mobile-layout.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/features/notes/ui/cardInteractions.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/features/notes/ui/editor.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/features/notes/ui/text.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp_servers/image_gen_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "requirements-dev.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/auth_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/calendar_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/chat_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/cookbook_helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/cookbook_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/cookbook_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/document/document_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/editor_agent_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/font_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/gallery/gallery_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/history/history_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/model_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/note/note_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/prefs_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/research/research_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/session_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/skills_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/task/task_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/upload_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check_brotli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/generate_env_reference.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/odysseus-gallery",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/odysseus-mail",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/sanitize_trace_artifacts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify_notes_browser_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/hwfit/hf_discovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/memory/skill_format.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/memory/skills.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent_loop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent_runtime/authority.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent_tools/editor_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/ai_interaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser_observation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/builtin_actions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/chat_handler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/clean_agent_preview.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cookbook_serve_lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/document_processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/editor_agent_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/editor_image_settings.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/image_model_ids.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/llm_core.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/mcp_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/model_discovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/pdf_form_doc.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/service_health.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/session_actions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/session_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/settings.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/task_scheduler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tool_capabilities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tool_execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tool_schemas.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/turn_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/css/00-tokens.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/css/01-agent-chat.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/css/03-agent-chat.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/css/04-memory.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/css/06-admin-settings.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/css/13-image-editor.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/css/17-research.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/css/documents-gallery-editor.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/BebasNeue-Regular.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/Bungee-Regular.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/Fraunces-Bold.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/Fraunces-Regular.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/InstrumentSerif-Regular.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/Lobster-Regular.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/PlayfairDisplay-Bold.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/PlayfairDisplay-Regular.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/Roboto-Bold.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/Roboto-Regular.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/RobotoMono-Bold.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/RobotoMono-Regular.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/SpaceGrotesk-Bold.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/SpaceGrotesk-Regular.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/Syne-Bold.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/fonts/Syne-Regular.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/a11y.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/admin.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/calendar.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/chat.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/chatRenderer.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/chatStream.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/codeRunner.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/colorPicker.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/compare/sse.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/compare/stream.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/cookbook.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/cookbookServe.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/document.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/dragSort.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/actions-panel.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/adjustment-layer.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/ai-inpaint.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/ai-models.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/ai-rembg.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/ai-settings.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/ai-tool-runner.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/ai-tools-misc.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/aspect-fit.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/batch-runner.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/blend-modes.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/brush-engine.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/brush-presets.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/build/command-palette.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/build/controls.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/build/dock.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/build/options-bar.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/build/popups.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/build/right-panel.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/build/toolbar.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/build/topbar.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/build/transform-popup.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/canvas-context-menu.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/canvas-coords.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/canvas-events.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/canvas-transforms.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/clipboard-and-drop.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/color-mode.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/control-kit.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/document-codec.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/document-geometry.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/draggable-dialog.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/editor-agent.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/editor-bridge.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/editor-control.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/effects-worker.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/effects.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/export-dialog.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/filters/dehaze.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/filters/effects.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/fx/adj-popup.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/fx/cube-lut.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "static/js/editor/fx/develop.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/editor/fx/pixel-pass.js",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

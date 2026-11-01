@@ -125,6 +125,11 @@ workflow locks or prunes receipts or conversation history. Git subprocesses
 inherit the current pinned physical Bun on PATH; Git hooks require the locally
 configured pinned executable and propagate the adapter's actual exit status.
 
+Known finished task scratch can be disposed immediately after descendant
+shutdown. Explicit recovery after its creator exits requires its saved exact
+ownership proof and the checks in [the resource contract](resources.md);
+the 24-hour wait applies to broader stale-folder pruning, not routine disposal.
+
 Keep `.env.local`, signing configuration, runtime paths and account credentials local. Never copy source-repository configuration, task state, successful verification receipts or historical authorizations. A cache receipt reports input equivalence and successful local checks; it does not grant publication authority.
 
 ## Archives and hooks

@@ -2,11 +2,11 @@
 
 Source: [berd](https://github.com/block/berd) · [Analysis](../../projects/ai-agents--berd.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `5b500297447917c978dda517641ed8370db4c33b`; commit date: 2026-10-27T06:42:20-04:00; review date: 2026-10-28T08:47:42.123Z; observed SHA: `5b500297447917c978dda517641ed8370db4c33b`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `2d2754640abbb5a7f26fe190551a7173f5c87788`; commit date: 2026-10-29T22:59:51-04:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `2d2754640abbb5a7f26fe190551a7173f5c87788`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/block/berd/compare/5b500297447917c978dda517641ed8370db4c33b...5b500297447917c978dda517641ed8370db4c33b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/block/berd/compare/2d2754640abbb5a7f26fe190551a7173f5c87788...2d2754640abbb5a7f26fe190551a7173f5c87788). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

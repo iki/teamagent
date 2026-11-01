@@ -34,6 +34,18 @@ The [hook-session resolver](https://github.com/affaan-m/everything-claude-code/b
 
 The [context skill](https://github.com/affaan-m/everything-claude-code/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/.agents/skills/context-and-decisions/SKILL.md) separates stable terminology from durable decisions and avoids duplicate document systems. The [impact skill](https://github.com/affaan-m/everything-claude-code/blob/25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b/.agents/skills/change-impact/SKILL.md) requires call/schema evidence and compares the actual diff with the planned scope, explicitly refusing to infer dependencies from directory names. Adapt those evidence rules while retaining Teamagent's existing documentation and authorization workflow; source-specific confirmation and tracker preferences do not replace it. No hooks, installer, scorer or tests were executed.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `b38be6a7f6350964d59328b52f0624e1d1d552d1` (commit date `2026-10-29T20:06:32-07:00`), compared with `25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b`. Earlier observations remain historical evidence.
+
+**Scope:** Complete verification-loop skill guidance diff; 266 changed paths inventoried. Executable enforcement and other bundled skills not audited.
+
+The [verification skill](https://github.com/affaan-m/everything-claude-code/blob/b38be6a7f6350964d59328b52f0624e1d1d552d1/.agents/skills/verification-loop/SKILL.md) distinguishes local checks from target acceptance, calls for environment/version and evidence records, and reserves verified/failed labels for executed checks while retaining not-performed/not-applicable states. It asks for authorization before external actions. This is authored workflow guidance, not evidence of runtime enforcement or a completed deployment test.
+
+**Teamagent implication (inference):** Preserve target, inputs, command, observed result and limitations in portable verification receipts. Reuse the user's existing scoped authorization rather than adding redundant approval prompts, while keeping unexecuted native/provider acceptance visibly separate from local success.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle-claude.ecc.affaan-m](https://github.com/affaan-m/everything-claude-code); analyzed commit `25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b`; commit date 2026-10-26T00:03:57-04:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-skills--bundle-claude.ecc.affaan-m.md).
+Analysis metadata: source [bundle-claude.ecc.affaan-m](https://github.com/affaan-m/everything-claude-code); analyzed commit `b38be6a7f6350964d59328b52f0624e1d1d552d1`; commit date 2026-10-29T20:06:32-07:00; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-skills--bundle-claude.ecc.affaan-m.md).
 <!-- teamagent-analysis:end -->

@@ -34,6 +34,14 @@ export const temporaryLimits = {
   files: 50_000,
   markerBytes: 4096,
 };
+const RecoveryProof = Schema.Struct({
+  path: Schema.NonEmptyString.check(Schema.isMaxLength(8192)),
+  originalMarker: Schema.NonEmptyString.check(Schema.isMaxLength(temporaryLimits.markerBytes)),
+});
+const RecoveryRequest = Schema.Struct({
+  ...RecoveryProof.fields,
+  descendantsStopped: Schema.Literal(true),
+});
 const samePath = (left: string, right: string): boolean =>
   process.platform === "win32" ? left.toLowerCase() === right.toLowerCase() : left === right;
 
@@ -62,23 +70,29 @@ async function workspaceParent(
   return { root: project, path };
 }
 
-async function readOwner(parent: string, name: string): Promise<Owner> {
+async function readOwnership(
+  parent: string,
+  name: string,
+): Promise<{ owner: Owner; marker: string }> {
   if (!namePattern.test(name)) throw new Error("Invalid temporary workspace name");
   const path = await physicalDirectory(join(parent, name));
   const marker = join(path, ".owner.json");
   const info = await lstat(marker);
   if (!info.isFile() || info.isSymbolicLink() || info.nlink !== 1)
     throw new Error("Temporary workspace ownership must be a regular private file");
+  const text = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(
+    await boundedRead(path, ".owner.json", temporaryLimits.markerBytes),
+  );
   const owner = Schema.decodeUnknownSync(Schema.fromJsonString(Owner), {
     onExcessProperty: "error",
-  })(
-    new TextDecoder("utf-8", { fatal: true }).decode(
-      await boundedRead(path, ".owner.json", temporaryLimits.markerBytes),
-    ),
-  );
+  })(text);
   if (!name.endsWith(`-${owner.token}`))
     throw new Error("Temporary ownership does not match its directory");
-  return owner;
+  return { owner, marker: text };
+}
+
+async function readOwner(parent: string, name: string): Promise<Owner> {
+  return (await readOwnership(parent, name)).owner;
 }
 
 function sameOwner(left: Owner, right: Owner): boolean {
@@ -111,7 +125,12 @@ export async function inspectTemporaryRemoval(path: string): Promise<void> {
   await visit(path, 0);
 }
 
-async function removeOwned(parent: string, name: string, expected: Owner): Promise<void> {
+async function removeOwned(
+  parent: string,
+  name: string,
+  expected: Owner,
+  verifyAuthority?: () => Promise<void>,
+): Promise<void> {
   await physicalDirectory(parent);
   const path = join(parent, name);
   const child = relative(parent, resolve(path));
@@ -119,10 +138,12 @@ async function removeOwned(parent: string, name: string, expected: Owner): Promi
     throw new Error("Temporary cleanup escaped its owner");
   if (!sameOwner(await readOwner(parent, name), expected))
     throw new Error("Temporary workspace owner changed");
+  await verifyAuthority?.();
   await inspectTemporaryRemoval(path);
   await physicalDirectory(parent);
   if (!sameOwner(await readOwner(parent, name), expected))
     throw new Error("Temporary workspace owner changed before removal");
+  await verifyAuthority?.();
   await rm(path, { recursive: true, force: false, maxRetries: 3, retryDelay: 50 });
 }
 
@@ -132,6 +153,8 @@ export type TemporaryWorkspaceParent = {
   readonly token: string;
 };
 export type TemporaryWorkspace = TemporaryWorkspaceParent & {
+  /** Save at creation; borrowing never supplies recovery authority. */
+  readonly recovery: typeof RecoveryProof.Type;
   readonly environment: (base?: NodeJS.ProcessEnv) => NodeJS.ProcessEnv;
   readonly dispose: () => Promise<void>;
 };
@@ -254,7 +277,8 @@ export async function createTemporaryWorkspace(
     createdAt: Date.now(),
   };
   // A failure leaves an unmarked fresh directory for explicit inspection, never broad cleanup.
-  await writeFile(join(path, ".owner.json"), `${JSON.stringify(owner)}\n`, {
+  const originalMarker = `${JSON.stringify(owner)}\n`;
+  await writeFile(join(path, ".owner.json"), originalMarker, {
     flag: "wx",
     mode: 0o600,
   });
@@ -262,6 +286,7 @@ export async function createTemporaryWorkspace(
   const owned = { root: project, path, token };
   return {
     ...owned,
+    recovery: Object.freeze({ path, originalMarker }),
     environment: (base) => environment(path, enclosing ?? owned, base),
     dispose() {
       disposal ??= (async () => {
@@ -290,6 +315,55 @@ function processAlive(pid: number): boolean | undefined {
   } catch (error) {
     return hasCode(error, "ESRCH") ? false : undefined;
   }
+}
+
+/**
+ * Recover one exact creator-owned lease after its owner has exited.
+ * descendantsStopped is a trusted caller assertion after joining/verifying the
+ * descendants, not OS-authenticated proof. Missing original authority is never
+ * reconstructed by scanning. Ordinary bulk recovery retains its age guard.
+ */
+export async function recoverTemporaryWorkspace(
+  root: string,
+  input: unknown,
+  options: {
+    /** Additional conservative probe for a host/test; never waives native liveness. */
+    readonly isAlive?: (pid: number) => boolean | undefined;
+  } = {},
+): Promise<void> {
+  const request = Schema.decodeUnknownSync(RecoveryRequest, { onExcessProperty: "error" })(input);
+  if (
+    Buffer.byteLength(request.originalMarker) > temporaryLimits.markerBytes ||
+    request.originalMarker.includes("\r") ||
+    !request.originalMarker.endsWith("\n")
+  )
+    throw new Error("Original temporary ownership must be bounded LF text");
+  const expected = Schema.decodeUnknownSync(Schema.fromJsonString(Owner), {
+    onExcessProperty: "error",
+  })(request.originalMarker);
+  const parent = await workspaceParent(root, false);
+  if (
+    !isAbsolute(request.path) ||
+    !samePath(resolve(request.path), request.path) ||
+    !samePath(dirname(request.path), parent.path)
+  )
+    throw new Error("Explicit temporary recovery must target one direct owned child");
+  if (expected.host !== hostname())
+    throw new Error("Explicit temporary recovery requires the original host");
+  const name = basename(request.path);
+  const verifyAuthority = async (): Promise<void> => {
+    if (options.isAlive && options.isAlive(expected.pid) !== false)
+      throw new Error("Original temporary owner is not definitively absent");
+    const currentParent = await workspaceParent(root, false);
+    if (!samePath(currentParent.path, parent.path))
+      throw new Error("Explicit temporary recovery parent changed");
+    const current = await readOwnership(parent.path, name);
+    if (current.marker !== request.originalMarker || !sameOwner(current.owner, expected))
+      throw new Error("Original temporary ownership marker changed");
+    if (processAlive(expected.pid) !== false)
+      throw new Error("Original temporary owner is not definitively absent");
+  };
+  await removeOwned(parent.path, name, expected, verifyAuthority);
 }
 
 /** Explicit recovery of old marked scratch only. Unknown state and all evidence are preserved. */

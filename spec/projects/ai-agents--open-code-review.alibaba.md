@@ -38,6 +38,16 @@ The [intent tool](https://github.com/alibaba/open-code-review/blob/375f64cd6f67a
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `216dcf513593055a70165f793e96b52589d71b1b` against prior analyzed commit `375f64cd6f67a48a135da83cfcf59c52669a09cb`. Historical reviews above remain separate evidence.
+
+The [session JSON command](https://github.com/alibaba/open-code-review/blob/216dcf513593055a70165f793e96b52589d71b1b/cmd/opencodereview/session_cmd.go) now emits an empty items array when a review session has no recorded items, instead of serializing a nil Go slice as null. The [fixture](https://github.com/alibaba/open-code-review/blob/216dcf513593055a70165f793e96b52589d71b1b/cmd/opencodereview/session_cmd_test.go) finalizes a session before any file is reviewed and asserts the raw JSON field equals `[]`; decoding to a slice alone would accept both null and empty and miss the wire regression.
+
+Teamagent adapters should test the serialized protocol shape, not only language-level round trips. Empty items is a stable collection representation, not proof that a review completed successfully or covered every requested file; retain terminal outcome and coverage as separate fields.
+
+**Coverage:** Read the complete session-command and matching fixture delta. Other workflow, packaging and documentation changes in the 43-path inventory were outside scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [open-code-review.alibaba](https://github.com/alibaba/open-code-review); analyzed commit `375f64cd6f67a48a135da83cfcf59c52669a09cb`; commit date 2026-10-20T17:50:03+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--open-code-review.alibaba.md).
+Analysis metadata: source [open-code-review.alibaba](https://github.com/alibaba/open-code-review); analyzed commit `216dcf513593055a70165f793e96b52589d71b1b`; commit date 2026-10-30T14:18:11+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--open-code-review.alibaba.md).
 <!-- teamagent-analysis:end -->

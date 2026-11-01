@@ -1,0 +1,44 @@
+# wigolo
+
+Source: [wigolo](https://github.com/KnockOutEZ/wigolo) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `da59eee72ee5e6c6a79a290e9c0f6d3720588711`; commit timestamp `2026-09-27T11:50:05+06:00`; 1,717 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/KnockOutEZ/wigolo/blob/da59eee72ee5e6c6a79a290e9c0f6d3720588711/README.md)):
+
+> Local-first web intelligence for AI agents — **no keys, no cloud, no metered bill. works with&nbsp;&nbsp;**Claude Code · Cursor · Codex · Gemini CLI · OpenCode · VS Code · Windsurf · Zed · Antigravity
+
+Build/package evidence: [examples/plugin-search-engine/package.json](https://github.com/KnockOutEZ/wigolo/blob/da59eee72ee5e6c6a79a290e9c0f6d3720588711/examples/plugin-search-engine/package.json); [examples/sdk-typescript-research/package.json](https://github.com/KnockOutEZ/wigolo/blob/da59eee72ee5e6c6a79a290e9c0f6d3720588711/examples/sdk-typescript-research/package.json); [examples/vercel-ai-sdk-tools/package.json](https://github.com/KnockOutEZ/wigolo/blob/da59eee72ee5e6c6a79a290e9c0f6d3720588711/examples/vercel-ai-sdk-tools/package.json); [package.json](https://github.com/KnockOutEZ/wigolo/blob/da59eee72ee5e6c6a79a290e9c0f6d3720588711/package.json); [packages/wigolo-crewai/pyproject.toml](https://github.com/KnockOutEZ/wigolo/blob/da59eee72ee5e6c6a79a290e9c0f6d3720588711/packages/wigolo-crewai/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/KnockOutEZ/wigolo/blob/da59eee72ee5e6c6a79a290e9c0f6d3720588711/LICENSE) Classification hint: AGPL; inspect version. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Search cache identity includes engine policy while citation confidence remains heuristic.** Reviewed commit `9180e934442255fac68377c5537dc9b4fbc75469` (commit date `2026-10-25T01:55:22+06:00`). Compared with `da59eee72ee5e6c6a79a290e9c0f6d3720588711`; the complete Git comparison contains 152 changed paths.
+
+The search-cache fingerprint now includes normalized requested search engines alongside domain/date/language/depth/reranker constraints, with fixtures for case/order/duplicate equivalence and differing sets. The normalization helper is shared by import with dispatch, but its implementation was not part of this slice. MCP responses now emit one JSON text block and retain both an existing notice and synthesis warning, so a cache-miss notice is not overwritten. Citation sentence splitting now avoids decimal points, while abbreviations remain a stated limitation. The complete inspected citation function labels any in-range model-supplied citation marker 'high' without checking entailment; otherwise ASCII token Jaccard overlap supplies at most three sources per claim and fifty entries. Those labels measure linkage heuristics, not factual support. The rerank factory can select a remote provider, which creates a new data-placement boundary even though the interface is unchanged.
+
+Evidence: [src/cache/store.ts:345-419](https://github.com/KnockOutEZ/wigolo/blob/9180e934442255fac68377c5537dc9b4fbc75469/src/cache/store.ts#L345-L419) · [src/server/search-response.ts:1-30](https://github.com/KnockOutEZ/wigolo/blob/9180e934442255fac68377c5537dc9b4fbc75469/src/server/search-response.ts#L1-L30) · [src/research/citation-graph.ts:1-117](https://github.com/KnockOutEZ/wigolo/blob/9180e934442255fac68377c5537dc9b4fbc75469/src/research/citation-graph.ts#L1-L117) · [src/providers/rerank-provider.ts:76-109](https://github.com/KnockOutEZ/wigolo/blob/9180e934442255fac68377c5537dc9b4fbc75469/src/providers/rerank-provider.ts#L76-L109) · [tests/unit/cache/store-search-key.test.ts:59-91](https://github.com/KnockOutEZ/wigolo/blob/9180e934442255fac68377c5537dc9b4fbc75469/tests/unit/cache/store-search-key.test.ts#L59-L91) · [tests/integration/search-rerank-pipeline.test.ts:76-100](https://github.com/KnockOutEZ/wigolo/blob/9180e934442255fac68377c5537dc9b4fbc75469/tests/integration/search-rerank-pipeline.test.ts#L76-L100).
+
+**Harness consequence:** Include backend selection and retrieval policy in cache keys, preserve degraded/missing outcomes structurally, and keep attribution validation separate from citation syntax. Store exact supporting spans and calibrated evidence status rather than translating a marker or lexical overlap into high factual confidence. Remote reranking needs explicit source-text egress policy and provider evidence before activation.
+
+**Scope and limits:** Scoped static review of cache identity, result envelopes, citation mapping and reranker selection within a 152-path comparison. No search engine, remote reranker, source fetch, upstream test or relevance/entailment benchmark ran. The shared normalization implementation and remote transport/authentication were not audited.
+
+## Change review — 2026-11-01
+
+Reviewed `0b38aebe471952c4412a07d7a08e615824ff36e1` (2026-10-31T19:08:30+06:00); 12 paths changed from `9180e934442255fac68377c5537dc9b4fbc75469`. The new idle-unload helper counts in-flight calls, rearms after completion and unrefs timers. Its proxy calls the target before wrapping in `Promise.resolve`; a synchronous throw therefore bypasses the attached `finally` and can retain an in-flight count. Positive but non-finite or host-overflow timeout values also need explicit validation. [Helper](https://github.com/KnockOutEZ/wigolo/blob/0b38aebe471952c4412a07d7a08e615824ff36e1/src/providers/idle-unload.ts).
+
+Read fixtures cover overlapping calls, disabled timers, rejected unloads, retained-handle ownership and initialization/disposal races. They use mocked asynchronous providers and do not prove actual native-memory release or synchronous-throw safety. Teamagent should scope load/use/disposal ownership, join cleanup, and test synchronous and asynchronous failures separately. Scope: helper and two fixture files; factories/native provider implementations not fully audited or executed. [Timer fixtures](https://github.com/KnockOutEZ/wigolo/blob/0b38aebe471952c4412a07d7a08e615824ff36e1/tests/unit/providers/idle-unload.test.ts), [provider fixtures](https://github.com/KnockOutEZ/wigolo/blob/0b38aebe471952c4412a07d7a08e615824ff36e1/tests/unit/providers/provider-idle-unload.test.ts).

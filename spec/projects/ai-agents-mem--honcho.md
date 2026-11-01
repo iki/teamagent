@@ -39,6 +39,14 @@ Evidence: [mcp/src/index.ts:74-162](https://github.com/plastic-labs/honcho/blob/
 
 **Scope and limits:** Static scoped review of the MCP wrapper, cache helpers, deletion-schema additions and OAuth URL call sites within the 447-path comparison. Underlying tool handlers, Sentry/attribution configuration, deletion workers/migrations and real authorization/Redis behavior were not exhaustively audited or executed.
 
+## Change review - 2026-11-01
+
+Reviewed `6f91136b4e8d4b41de75f05d0cea822a1520b3a4` against `bcaf722a9f9077593e0c89a0bb644061c43481b3` (163 changed paths). The [conclusion tool contract](https://github.com/plastic-labs/honcho/blob/6f91136b4e8d4b41de75f05d0cea822a1520b3a4/mcp/src/tools/conclusions.ts) distinguishes explicit source messages from a derived conclusion without message citation. The [citation migration](https://github.com/plastic-labs/honcho/blob/6f91136b4e8d4b41de75f05d0cea822a1520b3a4/migrations/versions/c4d8e2f6a1b3_add_conclusion_source_messages_table.py) creates ordered message/conclusion edges but deliberately does not infer citations from legacy batch metadata. Message deletion cascades to its edge, not to the conclusion itself. The inspected [migration fixture](https://github.com/plastic-labs/honcho/blob/6f91136b4e8d4b41de75f05d0cea822a1520b3a4/tests/alembic/revisions/test_c4d8e2f6a1b3_add_conclusion_source_messages_table.py) checks preserved metadata and absent invented backfill.
+
+**Harness consequence:** Preserve unknown attribution, explicit no-citation and claimed citation separately. A model-supplied citation still requires evidence validation. Source deletion must trigger a separate derived-memory invalidation policy; edge cascade alone does not withdraw a conclusion.
+
+**Scope and limits:** Tool-description delta, complete migration and initial migration fixture; full CRUD, tenancy enforcement and inference behavior were not audited. No database migration or upstream test was run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [honcho](https://github.com/plastic-labs/honcho); analyzed commit `bcaf722a9f9077593e0c89a0bb644061c43481b3`; commit date 2026-10-27T12:38:39-04:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--honcho.md).
+Analysis metadata: source [honcho](https://github.com/plastic-labs/honcho); analyzed commit `6f91136b4e8d4b41de75f05d0cea822a1520b3a4`; commit date 2026-10-30T15:08:02-04:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--honcho.md).
 <!-- teamagent-analysis:end -->

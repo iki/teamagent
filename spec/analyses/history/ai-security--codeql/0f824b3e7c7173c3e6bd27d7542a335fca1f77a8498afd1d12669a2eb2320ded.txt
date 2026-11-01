@@ -1,0 +1,47 @@
+# CodeQL: source-level dataflow evidence
+
+Source: [codeql](https://github.com/github/codeql) · Category: `ai-security`
+
+Review depth: **source-reviewed**. Snapshot `f7617abe602d4763cd08c6a57b6a6bc347e7e325`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+The inspected Python SQL-injection query imports a language security dataflow library, asks whether a flow path connects a source and sink, and emits a path-problem result. Its metadata identifies a query ID, severity, precision label, and CWE category. This is structurally different from asking an LLM whether a file looks dangerous: the result is grounded in a modeled flow through an extracted code database.
+
+Only a representative query was read; this report does not claim full coverage of CodeQL languages, extractors, libraries, or licensing conditions. Precision labels in query metadata describe upstream classification, not measured precision on the user's repositories.
+
+## Harness adoption
+
+Integrate CodeQL as an optional source-analysis job on supported projects. Preserve database/extractor version, query-pack revision, build configuration, source commit, query identity, path evidence, and suppression decisions. Let the agent explain and propose a repair, then rerun the relevant query and functional checks against the change.
+
+Use results to evaluate coding agents: compare introduced/resolved findings alongside task success, tests, and review quality. Track baseline findings separately so an agent is not penalized for unrelated inherited debt, while ensuring baseline suppression cannot hide new paths.
+
+## Limitations and decision
+
+Adopt where supported language extraction and distribution terms fit the deployment. Query findings are evidence of modeled behaviors, not proof that every reported path is exploitable or that an unreported application is secure. Incomplete builds, unsupported frameworks, dynamic behavior, and missing models can reduce coverage. Keep it separate from dependency scans, secret scans, skill checks, and runtime enforcement. Use [OSV Scanner](ai-security--osv-scanner.md) and [Trivy](ai-security--trivy.md) for complementary supply-chain and artifact views, with one normalized finding ledger across tools.
+
+## Evidence read
+
+- [Python SQL-injection path query](https://github.com/github/codeql/blob/f7617abe602d4763cd08c6a57b6a6bc347e7e325/python/ql/src/Security/CWE-089/SqlInjection.ql#L1-L21)
+
+## Related directions
+
+[Security](../security.md) · [Agents](../agents.md) · [Evolution](../evolution.md)
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`fd2bfc8a3da9c73a0c8be05d110efaf14a856445`](https://github.com/github/codeql/commit/fd2bfc8a3da9c73a0c8be05d110efaf14a856445). Scope: Full Go registry-proxy implementation and tests read. C# rollback, Rust toolchain selection, query changes and scanner execution were not audited.
+
+The [Go registry adapter](https://github.com/github/codeql/blob/fd2bfc8a3da9c73a0c8be05d110efaf14a856445/go/extractor/registries/registryproxy.go) passes a temporary CA file through SSL_CERT_FILE and GIT_SSL_CAINFO so both Go and spawned Git processes receive the configured trust material. The [test](https://github.com/github/codeql/blob/fd2bfc8a3da9c73a0c8be05d110efaf14a856445/go/extractor/registries/registryproxy_test.go) checks those environment entries, without contacting a registry or verifying certificate semantics. Trust configuration belongs to the controlled subprocess environment, not an incidental global certificate install.
+
+The reviewed helper logs temporary-file creation errors but continues to dereference the file, and a write error can still be followed by publication if Close succeeds. Its globals cache environment inspection without synchronization or refresh, while ApplyProxyEnvVars rebuilds from the process environment rather than preserving an existing command-specific environment. Debug output includes full command arguments and proxy variables; registry URLs can carry sensitive values. Adapt scoped certificate plumbing only with typed failures, resource cleanup, redaction and explicit policy for the public/direct registry fallback. No extractor, dependency fetch or tests were run.
+
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `950734fc80d48083479843e2284039832eaf54c7` against prior analyzed commit `fd2bfc8a3da9c73a0c8be05d110efaf14a856445`. Historical reviews above remain separate evidence.
+
+The new [dependency configuration planner](https://github.com/github/codeql/blob/950734fc80d48083479843e2284039832eaf54c7/rust/extractor/src/configuration.rs) groups candidate Rust dependency files by distinct cfg sets, deduplicates equivalent configurations deterministically, prefers more enabled features with sorted tie-breaks, and retains lower-priority alternatives. It uses source-root metadata only when all associated crates agree; ambiguous roots require semantic lookup. More features are not a monotonic coverage guarantee, so an alternate configuration can remain necessary when the preferred one disables a module.
+
+Embedded fixtures check metadata-only selection and insertion-order-independent preference. The [integration fixture](https://github.com/github/codeql/blob/950734fc80d48083479843e2284039832eaf54c7/rust/ql/integration-tests/dependency-features/test_dependency_features.py) creates two workspaces with crossed feature selections, reverses enumeration order, and includes a module disabled by a richer feature configuration. The [workspace-discovery delta](https://github.com/github/codeql/blob/950734fc80d48083479843e2284039832eaf54c7/rust/extractor/src/rust_analyzer.rs) treats an already-workspace manifest separately while honoring member/exclude patterns for enclosing workspaces. Teamagent code knowledge should record build configuration and extraction coverage with each symbol/evidence version; a single preferred build is not every reachable program variant.
+
+**Coverage:** Read complete targeted configuration planner including embedded tests, workspace-discovery delta and integration fixture. Extractor orchestration and expected query results were not inspected or executed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.

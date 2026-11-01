@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { verificationLocaleEnvironment } from "./verification-policy.ts";
 import { spawnOwned } from "./owned-process.ts";
 import { createTemporaryWorkspace, temporaryParent } from "./temporary-workspace.ts";
+import { resolveNativeTypeScript } from "./native-typescript.ts";
 
 export const root = fileURLToPath(new URL("../../", import.meta.url));
 
@@ -54,7 +55,7 @@ export function isTool(value: string | undefined): value is Tool {
   return value !== undefined && Object.hasOwn(entries, value);
 }
 
-/** Run installed JavaScript tool entries through the current Bun executable. */
+/** Own installed tool execution; native TypeScript skips its unhidden JS child launch. */
 export async function runTool(tool: Tool, args: readonly string[]): Promise<number> {
   if (!process.versions.bun) throw new Error("Repository tools require Bun");
 
@@ -68,6 +69,12 @@ export async function runTool(tool: Tool, args: readonly string[]): Promise<numb
   }
 
   const paths = tool === "format" ? formatPaths : tool === "lint" ? sourcePaths : [];
+  const executable = tool === "typecheck" ? await resolveNativeTypeScript(root) : process.execPath;
+  const arguments_ = [
+    ...(tool === "typecheck" ? [] : [resolve(root, "node_modules", entries[tool])]),
+    ...args,
+    ...paths.filter((path) => existsSync(resolve(root, path))),
+  ];
   const parent = await temporaryParent(env, root);
   const controller = new AbortController();
   const interrupt = (): void => controller.abort();
@@ -77,21 +84,13 @@ export async function runTool(tool: Tool, args: readonly string[]): Promise<numb
   let safeToDispose = true;
   try {
     workspace = await createTemporaryWorkspace(parent?.root ?? root, `tool-${tool}`, parent);
-    const owned = await spawnOwned(
-      process.execPath,
-      [
-        resolve(root, "node_modules", entries[tool]),
-        ...args,
-        ...paths.filter((path) => existsSync(resolve(root, path))),
-      ],
-      {
-        cwd: root,
-        stdio: "inherit",
-        env: workspace.environment(env),
-        timeoutMs: 120_000,
-        signal: controller.signal,
-      },
-    );
+    const owned = await spawnOwned(executable, arguments_, {
+      cwd: root,
+      stdio: "inherit",
+      env: workspace.environment(env),
+      timeoutMs: 120_000,
+      signal: controller.signal,
+    });
     safeToDispose = false;
     const result = await owned.closed;
     safeToDispose = result.termination === "closed";

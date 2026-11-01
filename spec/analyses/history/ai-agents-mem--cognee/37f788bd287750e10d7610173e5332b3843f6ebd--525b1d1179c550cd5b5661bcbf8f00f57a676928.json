@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-mem--cognee",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/topoteretes/cognee",
+  "report": "spec/projects/ai-agents-mem--cognee.md",
+  "analyzedSha": "37f788bd287750e10d7610173e5332b3843f6ebd",
+  "analyzedAt": "2026-10-24T06:36:54.441Z",
+  "analyzedCommitDate": "2026-10-16T22:07:34+02:00",
+  "observedSha": "525b1d1179c550cd5b5661bcbf8f00f57a676928",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "525b1d1179c550cd5b5661bcbf8f00f57a676928",
+      "date": "2026-10-29T23:02:39+01:00",
+      "subject": "chore: Sync cognee-mcp lock to cognee 1.6.6 [release] (#6448)"
+    },
+    {
+      "sha": "5e8b1e4da66387a992e7740a19fcc5471e20468c",
+      "date": "2026-10-29T21:41:34Z",
+      "subject": "chore: Sync cognee-mcp lock to cognee 1.6.6 [release]"
+    },
+    {
+      "sha": "df2b4facd7c1d73b59376fd251fb93674a9d60a3",
+      "date": "2026-10-29T22:29:40+01:00",
+      "subject": "chore: Release v1.6.6 (#6444)"
+    },
+    {
+      "sha": "7ac0e973e30599afa89f94831b9191929b09d4dd",
+      "date": "2026-10-29T21:59:44+01:00",
+      "subject": "chore(mcp): Pin cognee-mcp lock to cognee 1.6.5"
+    },
+    {
+      "sha": "602443e332bab96df326e77149a4e7ec22606044",
+      "date": "2026-10-29T21:56:18+01:00",
+      "subject": "Merge branch 'main' into release-v1.6.6"
+    },
+    {
+      "sha": "428aa7485e5a0894d21393d273a34f33ef77784a",
+      "date": "2026-10-29T21:55:04+01:00",
+      "subject": "chore: Release v1.6.6"
+    },
+    {
+      "sha": "94ca27397c81943ddcf8e36f0625d843995c8ff5",
+      "date": "2026-10-29T21:50:53+01:00",
+      "subject": "feat: add API for durable fact conflict resolution (SDK-1328) (#6401)"
+    },
+    {
+      "sha": "15b6510610e2580dc6e242738cbf9abf70f1ccf2",
+      "date": "2026-10-29T21:35:11+01:00",
+      "subject": "Merge origin/dev into feat/resolve-fact-conflicts"
+    },
+    {
+      "sha": "a8a45a6de8c10d91a8068f03749cd6b93ae6e62a",
+      "date": "2026-10-29T21:24:52+01:00",
+      "subject": "feat: Make every DLT column a value node by default (SDK-1344) (#6441)"
+    },
+    {
+      "sha": "95ff9cfd07d6bf7a154eedca29f30a8f26d6ec70",
+      "date": "2026-10-29T21:17:09+01:00",
+      "subject": "fix(conflicts): Retire choices a chunk edit loses (SDK-1328) (#6437)"
+    },
+    {
+      "sha": "f236e1715c81de6eab4f584ab7957286a4f0f63c",
+      "date": "2026-10-29T21:16:29+01:00",
+      "subject": "test(conflicts): Keep only tests for the new code"
+    },
+    {
+      "sha": "79fb5998b64c8365c7be39431c39ac45d1007fce",
+      "date": "2026-10-29T21:15:00+01:00",
+      "subject": "fix(conflicts): Fail the edit when invalidation fails"
+    },
+    {
+      "sha": "fd3e208bdaa233e4e185de7271f54306e58083c1",
+      "date": "2026-10-29T21:12:24+01:00",
+      "subject": "fix(conflicts): Retire choices only on chunk edits"
+    },
+    {
+      "sha": "84bd4008c4811809da98e4ad573743cb5d5f37a4",
+      "date": "2026-10-29T21:02:30+01:00",
+      "subject": "fix(conflicts): Retire choices in update, not cognify"
+    },
+    {
+      "sha": "c90c176941edfcc889ee91f3cf80eadb6477b5d0",
+      "date": "2026-10-29T20:58:57+01:00",
+      "subject": "fix: Represent a dated cell once, as its Timestamp (SDK-1344)"
+    },
+    {
+      "sha": "8ae7192cffe206fcd4ca2ebf7221816bd7de2004",
+      "date": "2026-10-29T20:36:39+01:00",
+      "subject": "Merge remote-tracking branch 'origin/dev' into feat/dlt-column-values-by-default"
+    },
+    {
+      "sha": "f67e817e6215962eeaaf300e2cdfe0f04d5c97fe",
+      "date": "2026-10-29T20:36:07+01:00",
+      "subject": "fix: Resolve DLT FKs to the right rows (COG-7007) (#6126)"
+    },
+    {
+      "sha": "c21e39c946393a449266aeec6d3604e92ca863ea",
+      "date": "2026-10-29T20:35:56+01:00",
+      "subject": "Merge remote-tracking branch 'origin/fix/cog-7007-dlt-fk-hint-hardening' into feat/dlt-column-values-by-default"
+    },
+    {
+      "sha": "d0cef2068b9cacd7eea6b5b405fc4addd9ab268e",
+      "date": "2026-10-29T20:24:18+01:00",
+      "subject": "feat: Make every DLT column a value node by default (SDK-1344)"
+    },
+    {
+      "sha": "895b733e9bca29c89640ba8203b64b82757e5d34",
+      "date": "2026-10-29T20:20:37+01:00",
+      "subject": "Merge branch 'dev' into fix/cog-7007-dlt-fk-hint-hardening"
+    },
+    {
+      "sha": "d6c30efc12b87b79a0ec209052dd91608335bf5c",
+      "date": "2026-10-29T20:20:11+01:00",
+      "subject": "fix: Turn SQL source foreign keys into row edges (COG-7007) (#6050)"
+    },
+    {
+      "sha": "7b914bcb13acee2cfb990ebc8ff788b22fce9c5e",
+      "date": "2026-10-29T20:19:22+01:00",
+      "subject": "feat: Name DLT rows and fill their table nodes (SDK-692) (#6067)"
+    },
+    {
+      "sha": "135c830c45e2d94f89da563dbf21f09a834803d0",
+      "date": "2026-10-29T20:07:49+01:00",
+      "subject": "fix(conflicts): Retire choices a rebuild loses"
+    },
+    {
+      "sha": "5d220e80e03b7b289784050a0c54ea44e024e229",
+      "date": "2026-10-29T19:57:27+01:00",
+      "subject": "Merge branch 'feat/dlt-row-names-and-table-nodes' into cog7007"
+    },
+    {
+      "sha": "6084f959ddce2029178f7608214c2a8778de23a9",
+      "date": "2026-10-29T19:57:27+01:00",
+      "subject": "fix: Read a row's key columns directly"
+    },
+    {
+      "sha": "962e4c130346bd34144a35017da7682b7a77f1a0",
+      "date": "2026-10-29T19:56:05+01:00",
+      "subject": "fix: Fail on malformed DLT key hints instead of skipping them (COG-7007)"
+    },
+    {
+      "sha": "eef46cafcd408f95bd236861f5b603e4d0b5ecad",
+      "date": "2026-10-29T19:47:50+01:00",
+      "subject": "fix: Raise on unreadable DLT table keys in BROAD (COG-7007)"
+    },
+    {
+      "sha": "b9e9b77700751bb4d6a5d4267e9ea1515d69ef7d",
+      "date": "2026-10-29T19:45:06+01:00",
+      "subject": "fix(conflicts): Retire user choices on forget (SDK-1328) (#6434)"
+    },
+    {
+      "sha": "95857f265720c58b161412ec9db7c7a0fa221b37",
+      "date": "2026-10-29T19:37:02+01:00",
+      "subject": "fix(conflicts): Retire choices on connector deletes"
+    },
+    {
+      "sha": "a959a481edc538f7867b4778642144bd5797924c",
+      "date": "2026-10-29T19:31:35+01:00",
+      "subject": "feat(improve): Stamp every session on runs of a multi-session improve (CLO-1105) (#6191)"
+    },
+    {
+      "sha": "a97b9ca0799efdff603e343f4a79f0a55312da1a",
+      "date": "2026-10-29T19:11:29+01:00",
+      "subject": "Merge branch 'feature/clo-1105-improve-session-id' into feature/clo-1105-multi-session-stamp"
+    },
+    {
+      "sha": "311f1a335a5fb9765df6988c80397ca817c48ca6",
+      "date": "2026-10-29T19:11:03+01:00",
+      "subject": "Merge branch 'dev' into feature/clo-1105-improve-session-id"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-cli/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-forget/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-improve-sessions/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-integrations/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-migrations/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-recall/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-server/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/google-workspace-memory/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/multiagent-memory-setup/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.template",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/cognee_setup/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/fetch_keyless_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/keyless_ci_env.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/linear_review_tickets.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/adapter_caching_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cli_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/community_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dev_previous_day_commits.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker_compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/examples_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/graph_db_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/integration_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/linear_review_tickets.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pre_test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release_test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/slow_e2e_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test_different_operating_systems.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test_mcp.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test_s3_file_storage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test_suites.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/vector_db_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile.ci",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README_ko.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/community/README.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/next.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/postcss.config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/postcss/mantineLeavesControlFontsToTailwind.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/public/videos/full-demo-poster.jpg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/public/videos/full-demo.mp4",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/claude-code-statusline.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/logos/datasources/bitbucket.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/logos/datasources/excel.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/logos/datasources/google_calendar.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/logos/datasources/loom.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/logos/datasources/obsidian.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/logos/datasources/onedrive.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/logos/datasources/onenote.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/logos/datasources/outlook.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/logos/datasources/powerpoint.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/logos/datasources/salesforce.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/logos/datasources/sharepoint.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/logos/datasources/teams.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/logos/datasources/trello.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/public/visuals/logos/datasources/word.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/__tests__/thirdPartyTouchpoints.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/api-keys/ApiKeysPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/api-keys/__tests__/ApiKeysPage.createError.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/business/BusinessView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/business/business.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/connections/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/DashboardSkeleton.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/OverviewPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/__tests__/OverviewPage.coverageBound.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/__tests__/agentNodes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/__tests__/coverageView.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/agentNodes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/agentSummary.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/coverageView.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/hooks/__tests__/useChecklistCompletionTracking.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/hooks/__tests__/useConnectedIntegrations.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/hooks/__tests__/useCreditsBanner.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/hooks/__tests__/useDataSourceStatuses.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cognee-frontend/src/app/(app)/dashboard/hooks/__tests__/useOnboardingRedirect.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/hooks/useAwaitingDataset.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/hooks/useChecklistCompletionTracking.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/hooks/useConnectedIntegrations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/hooks/useCreditsBanner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/hooks/useDashboardTelemetry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/hooks/useDataSourceStatuses.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/hooks/useDatasetUpload.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cognee-frontend/src/app/(app)/dashboard/hooks/useOnboardingRedirect.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/AciCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/AciStepRow.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/AgentConnectionSection.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/CreditBanners.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/DatasetPickerModal.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/GettingStartedChecklist.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/UseCaseSlider.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/__tests__/AciCard.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/__tests__/AgentConnectionSection.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/agentConnectionSteps.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/redesign/ActivityPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/redesign/AgentHoverCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/redesign/AsciiFrame.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/redesign/CostPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/redesign/GetStartedBar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/redesign/MemoryFlowDiagram.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/redesign/PerformancePanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/redesign/RangeToggle.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/redesign/__tests__/AsciiFrame.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/redesign/__tests__/GetStartedBar.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/dashboard/partials/redesign/mono.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/DatasetsPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/[id]/DatasetDetailPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/[id]/__tests__/DatasetDetailPage.wiring.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/[id]/__tests__/saveAssignment.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/[id]/__tests__/useAssignmentChoice.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/[id]/partials/CreateModelModal.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/[id]/partials/FilesTable.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/[id]/partials/__tests__/FilesTable.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/[id]/saveAssignment.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/[id]/useAssignmentChoice.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/__tests__/DatasetsPage.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/__tests__/RenderedRows.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/__tests__/brainUploadAnalytics.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/__tests__/createBrainTemplates.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/__tests__/datasetMerge.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/__tests__/mapProcessingStatus.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/__tests__/processingErrorMessage.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R067",
+      "path": "cognee-frontend/src/app/(app)/datasets/__tests__/useBrainsData.documents.test.tsx",
+      "previousPath": "cognee-frontend/src/app/(app)/datasets/__tests__/useBrainsData.test.tsx"
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/__tests__/useBrainsData.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/brainUploadAnalytics.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/brainsTypes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/createBrainTemplates.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/loading.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/BrainList.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/CreateBrainModal.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/DatasetListFilters.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/DocumentList.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/DocumentsPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/GroupRail.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/PasteTextModal.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/ProcessingSummary.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/ScrollLoader.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/ShareAccessModal.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/__tests__/BrainList.pending.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/__tests__/DatasetListFilters.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/__tests__/DocumentList.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/__tests__/GroupRail.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/__tests__/ShareAccessModal.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/__tests__/datasetFacets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/__tests__/datasetListFilter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/__tests__/useDatasetFacets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/__tests__/useDatasetFinderFilters.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/datasetFacets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/datasetListFilter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/useDatasetFacets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/useDatasetFinderFilters.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-frontend/src/app/(app)/datasets/partials/useShareCandidates.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/app/(app)/datasets/processingErrorMessage.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

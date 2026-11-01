@@ -1,0 +1,210 @@
+{
+  "id": "ai-query--mcp-sdk-rust",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/modelcontextprotocol/rust-sdk",
+  "report": "spec/projects/ai-query--mcp-sdk-rust.md",
+  "analyzedSha": "cd88056ffdc97756fbd98e5a12bbeb41758f0ce8",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-26T14:57:21-07:00",
+  "observedSha": "c742b5536724ec376b14b7ddcbbd024b7d6ae163",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c742b5536724ec376b14b7ddcbbd024b7d6ae163",
+      "date": "2026-10-30T16:54:49-07:00",
+      "subject": "feat(transport): log followed same-origin redirects at debug level (#1417)"
+    },
+    {
+      "sha": "9f8c73b2ea2ecbbdfbd58fba4a6893711a2a80e4",
+      "date": "2026-10-30T18:52:31-04:00",
+      "subject": "fix(server): reject server-to-client requests on discover sessions (#1397)"
+    },
+    {
+      "sha": "c1646887c52d7329861b2637e1b28ad4eb983f70",
+      "date": "2026-10-30T14:23:18-04:00",
+      "subject": "fix(auth): accept ID-JAGs without a resource claim (#1406)"
+    },
+    {
+      "sha": "0413771a963599ef6cfcece8e9ba55e069e39005",
+      "date": "2026-10-30T09:50:37-07:00",
+      "subject": "fix(rmcp): reject Mcp-Param headers with invalid characters (#1414)"
+    },
+    {
+      "sha": "27ebfab05a3002fb7bc6e6a65aa012d6f0a1b985",
+      "date": "2026-10-30T09:45:51-04:00",
+      "subject": "docs(client): point on_*_list_changed callbacks to Peer::listen (#1402)"
+    },
+    {
+      "sha": "c60e824dadb49dde6dc0993132e6b9a0f1dec71a",
+      "date": "2026-10-30T09:43:01-04:00",
+      "subject": "fix(transport): match explicit HTTP media types and Accept quality values (#1382)"
+    },
+    {
+      "sha": "e5698cbb7750fc240a36eae15924e52758a3aeed",
+      "date": "2026-10-29T16:54:29-04:00",
+      "subject": "feat: support the Skills extension (SEP-2640) (#1392)"
+    },
+    {
+      "sha": "7262963702b41056f4e47c9bf7426b710040cb16",
+      "date": "2026-10-29T14:06:30-04:00",
+      "subject": "docs: add Voltip to built with rmcp list (#1401)"
+    },
+    {
+      "sha": "38fe565f3c54dff31b75f0f412fcd005d0573f3e",
+      "date": "2026-10-29T13:20:20-04:00",
+      "subject": "fix(model): accept URL elicitation requests without elicitationId (#1383)"
+    },
+    {
+      "sha": "9e0783d00e9f51f70fab2e7507dfecc55cb974fe",
+      "date": "2026-10-28T08:04:01-07:00",
+      "subject": "fix(transport): preserve protocol error replies across cancellation (#1370)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/conformance.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/src/bin/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/handler/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/handler/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/model/capabilities.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/model/meta.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rmcp/src/model/skill.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/service.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/service/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/service/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/async_rw.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/auth/enterprise.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/auth/enterprise_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/common/mcp_headers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/common/reqwest/streamable_http_client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/streamable_http_server/tower.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_message_schema/client_json_rpc_message_schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_message_schema/client_json_rpc_message_schema_current.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_message_schema/server_json_rpc_message_schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_message_schema/server_json_rpc_message_schema_current.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_sep_2260_request_association.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rmcp/tests/test_skills.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_streamable_http_standard_headers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/OAUTH_SUPPORT.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

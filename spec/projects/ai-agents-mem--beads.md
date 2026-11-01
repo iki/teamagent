@@ -51,6 +51,14 @@ Evidence: [internal/storage/issueops/id_retention.go:13-85](https://github.com/g
 
 **Scope and limits:** Reviewed the new retention helper and occupancy fixtures; the other storage backends, migrations and broader 278-path change were not exhaustively audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `062fe1e0d555dddeef8266ca912ec01d9013b8d6` against `93531223bb96262627c864cdbab4a6bc8be7c53d` (173 changed paths). The [maintenance fix](https://github.com/gastownhall/beads/blob/062fe1e0d555dddeef8266ca912ec01d9013b8d6/cmd/bd/doctor/fix/maintenance.go) reads issues and retention configuration through one workspace database snapshot, skips pinned/retained types and rejects a configuration-read failure. It warns when a YAML setting is not the authoritative database setting. Individual deletion errors can still be reported and followed by a successful function return: a completed cleanup is not necessarily complete deletion. Retained IDs also preserve idempotency identity when cleanup does not write tombstones. Selected [mutation-gate fixtures](https://github.com/gastownhall/beads/blob/062fe1e0d555dddeef8266ca912ec01d9013b8d6/cmd/bd/doctor_mutation_gate_test.go) distinguish a mutating SQL function under read-only mode from a history query.
+
+**Harness consequence:** Bind retention policy to the same data version used for selection, keep destructive authorization independent of a model's SQL spelling, and return per-item partial failure receipts. An initial consistent snapshot alone does not prove a transaction protects the later deletion loop against concurrent edits.
+
+**Scope and limits:** Selected maintenance implementation and SQL guard fixtures only; no database, cleanup or upstream tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [beads](https://github.com/gastownhall/beads); analyzed commit `93531223bb96262627c864cdbab4a6bc8be7c53d`; commit date 2026-10-28T10:00:15Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--beads.md).
+Analysis metadata: source [beads](https://github.com/gastownhall/beads); analyzed commit `062fe1e0d555dddeef8266ca912ec01d9013b8d6`; commit date 2026-11-01T09:20:07Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--beads.md).
 <!-- teamagent-analysis:end -->

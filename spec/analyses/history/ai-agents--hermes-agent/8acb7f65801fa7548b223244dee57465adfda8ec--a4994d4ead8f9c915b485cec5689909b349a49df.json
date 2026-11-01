@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--hermes-agent",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/NousResearch/hermes-agent",
+  "report": "spec/projects/ai-agents--hermes-agent.md",
+  "analyzedSha": "8acb7f65801fa7548b223244dee57465adfda8ec",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T15:28:40+05:30",
+  "observedSha": "a4994d4ead8f9c915b485cec5689909b349a49df",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "a4994d4ead8f9c915b485cec5689909b349a49df",
+      "date": "2026-10-31T23:05:03-07:00",
+      "subject": "fix(clarify): choices that display alike stay distinct so a pick maps back to its own raw"
+    },
+    {
+      "sha": "7c8dd94f1f1f9ffed4ab6bee9370690b72197b61",
+      "date": "2026-10-31T23:05:03-07:00",
+      "subject": "fix(clarify): show questions and choices with a prose-safe display pass"
+    },
+    {
+      "sha": "6513a4f591fdf5f8f8ad9111b10f2c5eabcf441f",
+      "date": "2026-10-31T23:05:03-07:00",
+      "subject": "fix(tui): page long approval commands so every line is reviewable before a choice"
+    },
+    {
+      "sha": "33bce7b26dd4c1018a1e6e7e65c406c5c062e970",
+      "date": "2026-10-31T23:05:03-07:00",
+      "subject": "fix(approval): show hidden characters on the remaining first-render prompt surfaces"
+    },
+    {
+      "sha": "f62f42e4cf6ef88fb03024bb55bbd8456ece694a",
+      "date": "2026-10-31T23:05:03-07:00",
+      "subject": "fix(approval): escape blank-rendering code points by category, collapse separator and blank-line padding, sanitize consent descriptions"
+    },
+    {
+      "sha": "3f5612cde62556d0b73558230f4acb0e98279d83",
+      "date": "2026-10-31T23:05:03-07:00",
+      "subject": "feat(approval): show hidden characters and padding in approval prompts"
+    },
+    {
+      "sha": "40618183853d47d96d65331bf86241b518837017",
+      "date": "2026-10-31T22:59:20-07:00",
+      "subject": "fix(hooks): /retry and /undo after a block use the typed text, not the placeholder"
+    },
+    {
+      "sha": "c0bcfe2bb28bf97ba960f1dce03f840e656ce5e6",
+      "date": "2026-10-31T22:59:20-07:00",
+      "subject": "fix(hooks): a blocked turn runs no post-turn compaction"
+    },
+    {
+      "sha": "9ed1a7371b52c466ae09e71a244a53029c1c2fdf",
+      "date": "2026-10-31T22:59:20-07:00",
+      "subject": "docs(hooks): what a pre_llm_call block stores, and that only a returned block blocks"
+    },
+    {
+      "sha": "792330dc918b9db3975b9fbe0a315e6125b084b0",
+      "date": "2026-10-31T22:59:20-07:00",
+      "subject": "fix(hooks): a blocked prompt is stored only as the withheld placeholder"
+    },
+    {
+      "sha": "ad9229c8431f1a3c7473f37ef9adead95f9f320b",
+      "date": "2026-10-31T22:59:20-07:00",
+      "subject": "feat(hooks): pre_llm_call can block a turn before any inference request"
+    },
+    {
+      "sha": "9bba78efa5afc667842f462dce0d4fc9f5bf0d26",
+      "date": "2026-10-31T22:46:51-07:00",
+      "subject": "chore(desktop): regenerate i18n key catalog after dropping continuationOrigin"
+    },
+    {
+      "sha": "426f9ad1fb601ddd7d4c98fcea62d98ccf667e3c",
+      "date": "2026-10-31T22:46:51-07:00",
+      "subject": "fix(desktop): drop the \"automatic continuation\" layers badge from session rows"
+    },
+    {
+      "sha": "18d60418908426ef117bf138e5debe5480b7bd96",
+      "date": "2026-10-31T22:44:47-07:00",
+      "subject": "fix(streaming): count only kills of an attempt the worker is still inside"
+    },
+    {
+      "sha": "c552db90bc9fc36c1c25bbf2842713ebf528ff1b",
+      "date": "2026-10-31T22:44:47-07:00",
+      "subject": "fix(streaming): give up on a worker that stream_max_lifetime kills cannot unwind"
+    },
+    {
+      "sha": "53cbb383894097708bfbfd938f6b91b3242cd3f4",
+      "date": "2026-10-31T22:44:47-07:00",
+      "subject": "fix(agent): name stream_max_lifetime in the exhausted-retries headline"
+    },
+    {
+      "sha": "b484be561039941b01be74317f69c6bfa6e98318",
+      "date": "2026-10-31T22:44:47-07:00",
+      "subject": "fix(agent): configure stream_max_lifetime through config.yaml only"
+    },
+    {
+      "sha": "97f895faf3a42259d0965b23608f4b7ab485470f",
+      "date": "2026-10-31T22:44:47-07:00",
+      "subject": "fix(streaming): log the stream watchdog's arming and an abnormal monitor exit"
+    },
+    {
+      "sha": "eee418e089d9c6cd39bec503853e68853da7cb02",
+      "date": "2026-10-31T22:44:47-07:00",
+      "subject": "fix(streaming): cap kills name agent.stream_max_lifetime and skip the stale breaker"
+    },
+    {
+      "sha": "ac8037c05bae06f5bfcc85ef17b5c0d6a1a2b456",
+      "date": "2026-10-31T22:44:47-07:00",
+      "subject": "feat(streaming): opt-in cap on a streaming response's total lifetime"
+    },
+    {
+      "sha": "9de348d8248e60877b2ec4665641a7097260cb10",
+      "date": "2026-10-31T22:25:09-07:00",
+      "subject": "test(update): zip-update backfill expects the placeholder, not a copied .env"
+    },
+    {
+      "sha": "61ba1f684e63da8643f52f6d1157a752508105b3",
+      "date": "2026-10-31T22:25:09-07:00",
+      "subject": "fix(gateway): a profile rescan drops status verdicts about removed credentials"
+    },
+    {
+      "sha": "f92db3b007bec1e86547b62d40a2df8143ee6b52",
+      "date": "2026-10-31T22:25:09-07:00",
+      "subject": "fix(profiles): hermes update never copies the default .env into a profile"
+    },
+    {
+      "sha": "890ddad6178e22f7e1777c80c78bd8a60a056433",
+      "date": "2026-10-31T22:25:09-07:00",
+      "subject": "fix(profiles): hermes update's .env backfill leaves messaging channels behind"
+    },
+    {
+      "sha": "ab8bd7ba4fabab1238695019dec117b6411f3921",
+      "date": "2026-10-31T22:19:18-07:00",
+      "subject": "docs(teams): correct which cards carry the command in their button data"
+    },
+    {
+      "sha": "ce0602e8a97b90c8fe9f46cfd563417a5f19fa4c",
+      "date": "2026-10-31T22:19:18-07:00",
+      "subject": "fix(telegram): catch NetworkError, not TelegramError, after a kept-prompt edit fails"
+    },
+    {
+      "sha": "44678e5647325a645cc2c5daf73b05f64933c3f9",
+      "date": "2026-10-31T22:19:18-07:00",
+      "subject": "fix(telegram): network error on a resolved-prompt edit keeps the prompt"
+    },
+    {
+      "sha": "631b00c3f6c5c4826a8c35f91af76b18b65f3e27",
+      "date": "2026-10-31T22:19:18-07:00",
+      "subject": "refactor(feishu): shared card sender no longer parses approval text"
+    },
+    {
+      "sha": "288c0c1cae37312015f445d5f78cb7d10c8a1296",
+      "date": "2026-10-31T22:19:18-07:00",
+      "subject": "fix(teams): approval card stays under the size cap for long non-ASCII commands"
+    },
+    {
+      "sha": "02a790293dc0955779396d906b510db81a7034ab",
+      "date": "2026-10-31T22:19:18-07:00",
+      "subject": "fix(gateway): timed-out and resolved approval cards keep the full request"
+    },
+    {
+      "sha": "92c86afb1ff1705e78fbff82d9381503eabc6eed",
+      "date": "2026-10-31T22:19:18-07:00",
+      "subject": "fix(gateway): resolved approval cards keep the request on Telegram, Feishu and Teams"
+    },
+    {
+      "sha": "95d0629df4167a2ad8f09e5d7f96d8b5c790c90b",
+      "date": "2026-10-31T22:09:38-07:00",
+      "subject": "fix(photon): a misshapen lines payload keeps the iMessage line lookup best-effort"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/deploy-site.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/js-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/lint.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/edit_approval.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/anthropic_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/anthropic_message_convert.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/api_error_summary.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/auxiliary_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_error_shapes.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_rate_limit_backoff.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/background_review.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/bedrock_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/browser_page_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/browser_page_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/chat_completion_helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/chat_completion_stream_monitor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/client_lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/context_compressor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/context_compressor_retry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/context_compressor_tail.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/context_compressor_window.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/conversation_loop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/display.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/error_classifier.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/error_surface.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/file_safety.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/lsp/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/lsp/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/memory_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/message_metadata.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/model_metadata_http.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/models_dev.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/monitoring/cron_health.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/onboarding_first_tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/prompt_refresh.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/proxy_sources/iron_proxy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/redact.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/runtime_session_lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/secret_sources/_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/secret_sources/bitwarden.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/secret_sources/command.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/secret_sources/onepassword.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/shell_hooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/stream_diag.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/stream_max_lifetime.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/timeout_error_summary.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/tool_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/turn_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/turn_empty_response.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/turn_failure_copy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/turn_final_response.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/turn_finalizer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/turn_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/vault_login_classifier.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/verify/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/e2e/core/webapp-gateway-attach.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/desktop-plugin-install.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/desktop-plugin-install.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/desktop-plugin-remove.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/desktop-plugin-remove.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/desktop-plugins-root.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/desktop-plugins-root.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/fs-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/notification-ipc.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/notification-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/notification-linux.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/plugin-files-guards.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/preload.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/api/canonical-clarify-batch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/api/canonical-protocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/api/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/api/cron.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/capabilities/plugins/plugins-tab.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/chat/compact-tab-menu.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/composer/hooks/use-composer-submit.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/composer/hooks/use-composer-submit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/composer/hooks/use-status-drawer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/composer/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/composer/touch-text-entry.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/composer/touch-text-entry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/pane-mirror.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/right-rail/preview-reader.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/right-rail/preview-reader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/session-tile.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/chat-sidebar.integration.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/gateway-group-model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/chat/sidebar/gateway-groups-refresh.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/chat/sidebar/gateway-groups-webapp.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/gateway-groups.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/section-states.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/session-actions-menu.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/session-row.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/session-row.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/sessions-section.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/command-center/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/contrib/controller.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/contrib/hooks/use-session-tile-delegate.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/contrib/hooks/use-session-tile-delegate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/cron/catch-up-field.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/cron/cron-actions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/cron/cron-job-model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/cron/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/cron/run-control.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/cron/run-control.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/cron/run-stop-action.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/cron/run-stop.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/cron/use-cron-run-stop.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/gateway/hooks/use-gateway-boot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/reconnect-resume-barrier.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/agent-init-error.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/message-stream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/server-requests.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/server-requests.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/settled-during-resume.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/status.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/status.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-prompt-actions/owner-forward.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-prompt-actions/utils.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-session-actions/resume-reconcile.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-session-actions/settled-turns.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-session-actions/webapp-listed-row-resume.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-session-list-actions.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-session-list-actions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/settings/notifications-settings.browser-permission.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/notifications-settings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/plugin-install-details.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/plugin-install-modal.browser.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/plugin-install-modal.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/plugin-install-modal.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/settings/plugin-install-review-guards.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/plugin-install-run.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/settings/plugin-install-source-moved.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/settings-manifest.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/web-access-settings.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/web-access-settings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/shell/hooks/use-status-snapshot.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/shell/hooks/use-status-snapshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/assistant-ui/clarify/clarify-set-form.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/assistant-ui/clarify/core/use-clarify-keys.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/assistant-ui/thread/assistant-message.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/assistant-ui/thread/assistant-message.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/assistant-ui/tool/fallback-error-summary.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/assistant-ui/tool/fallback.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/billing-banner.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/onboarding/index.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/onboarding/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/pane-shell/tree/renderer/compact-tab-picker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/pane-shell/tree/renderer/track-model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/pane-shell/tree/renderer/tree-group.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/pane-shell/tree/renderer/tree-group.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/ui/guest-shell.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/ui/sandboxed-frame.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/ui/sandboxed-frame.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/contrib/runtime-loader.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

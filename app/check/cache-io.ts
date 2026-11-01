@@ -96,10 +96,11 @@ export function gitBytes(
       cwd: root,
       env: { ...env, ...(options.indexFile ? { GIT_INDEX_FILE: resolve(options.indexFile) } : {}) },
       shell: false,
-      windowsHide: true,
       timeout: 30_000,
       maxBuffer: 16 * 1024 ** 2,
       ...(options.input ? { input: options.input } : {}),
+      // Fixed background policy wins over optional settings.
+      windowsHide: true,
     },
   );
   if (result.error || result.status !== 0)

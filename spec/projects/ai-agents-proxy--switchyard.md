@@ -44,6 +44,14 @@ Evidence: [crates/libsy-llm-client/src/responses_reasoning.rs:1-62](https://gith
 
 **Scope and limits:** Reviewed the complete new reasoning-normalization helper; provider integration and request execution were not tested. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`bdd7647b5d55be46b19764136128646edb08692e`](https://github.com/NVIDIA-NeMo/Switchyard/commit/bdd7647b5d55be46b19764136128646edb08692e), compared with `b0fa4fb201e5bb984ba7cc101bbe3252846a2ede`.
+
+The [decision classifier](https://github.com/NVIDIA-NeMo/Switchyard/blob/bdd7647b5d55be46b19764136128646edb08692e/crates/libsy/src/algorithms/llm_class/decision.rs) adds optional custom criteria requiring custom instructions and exactly two candidate keys. It selects the capable candidate only when that candidate's choice score exceeds the configured cutoff; the default relative-advantage question remains a different semantic event. It also supplies a default ten-turn recent context window. The [mocked integration change](https://github.com/NVIDIA-NeMo/Switchyard/blob/bdd7647b5d55be46b19764136128646edb08692e/crates/switchyard-runner/tests/openai_decisions.rs) provides a capable-first answer with score0.91 and confidence0.99 against cutoff0.92, explicitly separating model choice/confidence from application policy.
+
+Teamagent should version the question, candidate mapping, context window and cutoff together, calibrate each policy against representative tasks, and keep authorization outside routing scores. Neither a choice score nor its confidence establishes a calibrated probability of task success. The selected 232-line comparison was read completely; other files in the 208-path update and live decision behavior were not audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [switchyard](https://github.com/NVIDIA-NeMo/Switchyard); analyzed commit `b0fa4fb201e5bb984ba7cc101bbe3252846a2ede`; commit date 2026-10-27T17:17:56-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--switchyard.md).
+Analysis metadata: source [switchyard](https://github.com/NVIDIA-NeMo/Switchyard); analyzed commit `bdd7647b5d55be46b19764136128646edb08692e`; commit date 2026-10-31T00:56:42Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--switchyard.md).
 <!-- teamagent-analysis:end -->

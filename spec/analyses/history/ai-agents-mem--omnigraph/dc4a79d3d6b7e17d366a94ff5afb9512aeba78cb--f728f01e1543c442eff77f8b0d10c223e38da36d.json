@@ -1,0 +1,965 @@
+{
+  "id": "ai-agents-mem--omnigraph",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/ModernRelay/omnigraph",
+  "report": "spec/projects/ai-agents-mem--omnigraph.md",
+  "analyzedSha": "dc4a79d3d6b7e17d366a94ff5afb9512aeba78cb",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T02:58:11+01:00",
+  "observedSha": "f728f01e1543c442eff77f8b0d10c223e38da36d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f728f01e1543c442eff77f8b0d10c223e38da36d",
+      "date": "2026-11-01T01:58:20+01:00",
+      "subject": "build: cargo dev aliases, mold on Linux, and warm worktree targets (#1211)"
+    },
+    {
+      "sha": "d88f9773aaf31a828241f589663dc1e75466ed30",
+      "date": "2026-10-31T22:58:36Z",
+      "subject": "fix(validate,schema)!: enforce @card minimums for every written source node (#1212)"
+    },
+    {
+      "sha": "4e7bb585d145635a2487ffe1fd03c0bfdd0e8f14",
+      "date": "2026-10-31T23:43:07+01:00",
+      "subject": "docs(skill): reconcile the agent skill with the current CLI and server (#1215)"
+    },
+    {
+      "sha": "7b3a1c9190730d31391c225a63c7b6171146bc74",
+      "date": "2026-10-31T20:28:55Z",
+      "subject": "Revert \"rfc: remote optimize through the serving owner (#1190)\" (#1203)"
+    },
+    {
+      "sha": "7f32f83d9ce47ff3c5efc46b3470a6096091eb5f",
+      "date": "2026-10-31T04:09:23Z",
+      "subject": "fix(compiler): carry a U64 parameter above i64::MAX (#1102)"
+    },
+    {
+      "sha": "269299b757f9dcce1a9a45449ebbaefa054b4be3",
+      "date": "2026-10-31T03:21:21+01:00",
+      "subject": "perf(cleanup): take --keep's __manifest versions from the listing (#1188)"
+    },
+    {
+      "sha": "1a3e7ed090710ce070b8dd06e385c4575f56c75b",
+      "date": "2026-10-30T18:39:52Z",
+      "subject": "feat(mcp)!: one query tool, and every tool listed under policy (#1207)"
+    },
+    {
+      "sha": "899ee30e67a8c72075e17cc4f5c550c5ac7747d3",
+      "date": "2026-10-30T19:06:47+01:00",
+      "subject": "fix(cli): let managed plan and apply requests wait for the --timeout deadline (#1208)"
+    },
+    {
+      "sha": "0e91b00e669f60f744b4952b54b3676d7744fe65",
+      "date": "2026-10-30T10:04:54Z",
+      "subject": "fix(cli): wait for accepted managed previews (#1209)"
+    },
+    {
+      "sha": "17557824d2788953d4049fd9c19b1430bff46f60",
+      "date": "2026-10-29T18:50:53Z",
+      "subject": "perf(changes): discover a multi-commit window's changes by row identity (#1201)"
+    },
+    {
+      "sha": "e7d95ae74dc1bf8d42aacef35dc0395c804fe6a4",
+      "date": "2026-10-29T18:21:53Z",
+      "subject": "feat(server,cli,mcp): report each branch's head, start and times in the branch listing (#1012)"
+    },
+    {
+      "sha": "14815c6ed39d04b11a78cbe5b1595eadf9b8d001",
+      "date": "2026-10-29T17:28:37+01:00",
+      "subject": "feat(cli): accept an inline s3:// cluster root for deployment, recovery and maintenance (#1189)"
+    },
+    {
+      "sha": "118161ddac19387971e17856bd5185522972f027",
+      "date": "2026-10-29T13:42:01+02:00",
+      "subject": "feat(cli)!: select explicit organization role sets (#1200)"
+    },
+    {
+      "sha": "984951eaf017308d54e18c10525c9cf38a1bbabe",
+      "date": "2026-10-29T13:13:58+02:00",
+      "subject": "feat(auth): keep human CLI sign-in renewable for 30 days (#1199)"
+    },
+    {
+      "sha": "a9b8bcc2ce39b2cf0adfb9ec71af256061e80f85",
+      "date": "2026-10-29T05:43:43Z",
+      "subject": "rfc: remote optimize through the serving owner (#1190)"
+    },
+    {
+      "sha": "71c6edced5034ca3bc1a9ae3d484383067e9bb7f",
+      "date": "2026-10-29T03:17:27Z",
+      "subject": "feat(cli): add TOON output format (#1198)"
+    },
+    {
+      "sha": "71219d16acbd3a908034e9e0510b549d757c21db",
+      "date": "2026-10-29T01:16:51Z",
+      "subject": "feat(query): a ranked read reports its ranking (#1130)"
+    },
+    {
+      "sha": "ea89506611277c4e6b83df591c93c24aec5ae415",
+      "date": "2026-10-29T02:17:37+02:00",
+      "subject": "feat(cli): add oauth client-credentials profiles (#1154)"
+    },
+    {
+      "sha": "c1a6c83a6d32d46ea5ad6c8b7b0cc35ee74cf5a7",
+      "date": "2026-10-28T22:04:07Z",
+      "subject": "feat(server): keep an OIDC token's client_id beside the person's actor (#1196)"
+    },
+    {
+      "sha": "b9035d5aeb37c4b8315776469c630c1324cd0048",
+      "date": "2026-10-28T20:49:01Z",
+      "subject": "docs(readme): bring the Slack community line back to the top (#1195)"
+    },
+    {
+      "sha": "9d6accc8650139e4171074600ce013466a003837",
+      "date": "2026-10-28T20:40:56Z",
+      "subject": "docs(readme): shorten the Cloud line (#1192)"
+    },
+    {
+      "sha": "2ca84a79243610259b149ebd2b31de661f499f0f",
+      "date": "2026-10-28T20:28:27Z",
+      "subject": "docs(changelog): keep the notes added since v0.14.0 within the character cap (#1193)"
+    },
+    {
+      "sha": "f76d6011f0479055e1e2c7dffe253ac3ee556d3b",
+      "date": "2026-10-28T21:04:21+01:00",
+      "subject": "fix(gqt): watch the git files a worktree actually has in the build script (#1180)"
+    },
+    {
+      "sha": "37b05ab4325c458ecad7533cb59f16f3472c4823",
+      "date": "2026-10-28T20:04:13+01:00",
+      "subject": "build(nix): build the release binaries with a Nix flake (#1153)"
+    },
+    {
+      "sha": "be90423adf3b26dfda4369f868408989c318204e",
+      "date": "2026-10-28T20:03:30+01:00",
+      "subject": "feat(cli): build a branch's declared indexes with omnigraph index build (#1150)"
+    },
+    {
+      "sha": "dac660fb8d0229e1308fed7ab20cfc86365bb265",
+      "date": "2026-10-28T20:01:22+02:00",
+      "subject": "feat(server)!: log an unknown publication's graph commit as its own field (#1124)"
+    },
+    {
+      "sha": "4f47b9765967561256dd7e915b0001e476164923",
+      "date": "2026-10-28T19:02:26+02:00",
+      "subject": "feat(server): add optional OTLP traces and correlated JSON logs (#1001)"
+    },
+    {
+      "sha": "99b2d165169263bb9ce768506f1b92b37b669439",
+      "date": "2026-10-28T19:02:15+02:00",
+      "subject": "fix(cli)!: align organization commands with provider authority (#1179)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".cargo/config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/settings.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dst-nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dst.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gq-logic-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gqt-slow-nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/nix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests-slow-nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/branch-list-details.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/card-minimum-counts-written-sources.breaking.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/cleanup-keep-lists-manifest-versions.performance.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/cleanup-keep-skips-dropped-manifests.changed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/cli-inline-s3-cluster-root.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/ensure-indices-refreshes-coverage.changed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/full-text-remedies-parse.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/graph-diff-row-identity.changed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/index-build-command.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/index-rebuild-command.deprecated.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/longer-human-sessions.changed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/managed-plan-apply-wait-for-timeout.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/managed-preview-polling.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/managed-provider-service-authority.breaking.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/managed-target-introspection-mcp.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/mcp-tools-listed-by-policy.breaking.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/nix-flake.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/oauth-client-credentials.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/oidc-client-id-on-access.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "changelog.d/oidc-not-admitted.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/organization-member-selectors.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/organization-role-selection.breaking.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/publication-error-commit.breaking.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/read-ranking.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/server-otel-traces.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/skill-current-capabilities.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/skill-on-root-help.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/toon-read-output.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/u64-param-above-i64-max.breaking.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/u64-param-above-i64-max.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/unknown-publication-log-names-its-commit.changed.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-api-types/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-api-types/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-api-types/src/operations.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-catalog/src/branch_detail.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-catalog/src/commit_graph.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-catalog/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-catalog/src/publisher.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-catalog/src/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-catalog/src/unattached.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-catalog/src/unpublished.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/app.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/app_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/command_outcome.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/commands/cluster/args.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/commands/control/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/commands/history/args.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/commands/history/branch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/commands/maintenance/args.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/commands/maintenance/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/commands/mcp/args.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/commands/mcp/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/commands/mcp/upstream.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/commands/targets/access.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/commands/targets/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/credential_sources.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/src/credential_sources/oauth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/src/credential_sources/oauth/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/credential_sources/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/graph_http.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/helpers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/invocation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed/args.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed/auth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed/auth/provider.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed/auth/renewal.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed/auth/renewal/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed/auth/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/src/managed/custody.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed/data.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed/data/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed/deployment.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/src/managed/deployment/preview.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed/lifecycle/pending.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed/lifecycle/source.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed/members.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed/organization.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/src/managed/organization/custody.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/managed/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/operator_routing.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/operator_schema.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/operator_schema/schema_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/operator_schema/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/operator_schema/validation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/output.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/planes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/presentation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/read_format.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/scope.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/target_identity.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/targets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/targets_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/src/toon.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/tests/fixtures/toon/encode/arrays-nested.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/tests/fixtures/toon/encode/arrays-objects.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/tests/fixtures/toon/encode/arrays-primitive.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/tests/fixtures/toon/encode/arrays-tabular.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/tests/fixtures/toon/encode/delimiters.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/tests/fixtures/toon/encode/objects-keyed.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/tests/fixtures/toon/encode/objects.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/tests/fixtures/toon/encode/primitives.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-cli/tests/fixtures/toon/encode/whitespace.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/tests/integration/cli_cluster.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/tests/integration/cli_cluster_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/tests/integration/cli_data.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/tests/integration/cli_mcp.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/tests/integration/cli_queries.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/tests/integration/cli_schema_config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/tests/integration/crossversion_upgrade.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/tests/integration/parity_matrix.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/tests/support/managed_http.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/tests/support/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-compiler/src/catalog/schema_plan.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-compiler/src/ir/coerce.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-compiler/src/ir/erase.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-compiler/src/ir/load.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-compiler/src/ir/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-compiler/src/lint/codes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-compiler/src/query/ast.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-compiler/src/query/parser.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-compiler/src/query/parser_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-compiler/src/query_input.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-compiler/src/result.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-compiler/src/settings.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-core/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-core/src/instrumentation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-dst/cost_table.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-dst/src/fixtures.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-dst/src/harness.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-dst/tests/scenarios.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-gqt-core/src/load_plan.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-gqt/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-gqt/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-gqt/cases/card_minimum_counts_every_written_source.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-gqt/cases/catalogue/settings_engine_counts_and_filters.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-gqt/cases/issue_918_u64_param_above_i64_max.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-gqt/cases/issue_969_branch_review_after_a_merge_from_target.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-gqt/cases/issue_969_graph_diff_wider_windows.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-gqt/cases/load_csv_card_minimum_counts_written_and_vacated_sources.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-gqt/cases/range_constraint_compares_integers_exactly.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-gqt/cases/settings_show_set_reset.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-mcp/src/arguments.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-mcp/src/catalog.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

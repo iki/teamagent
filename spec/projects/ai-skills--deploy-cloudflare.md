@@ -44,6 +44,18 @@ The performance guide explicitly distinguishes local timer behavior and deployed
 
 **Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `d09c8238fd7278400b29c5b0ee4c8d1d9d8be3a6` (commit date `2026-10-31T20:24:42Z`), compared with `998668d7590142a7db2737b48a0432e33cda9067`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded dynamic-worker authentication guide and complete route-policy example; whole-repository diff was oversized. This is vendor-authored guidance, not inspected platform internals or executed workerd acceptance.
+
+The [guide](https://github.com/cloudflare/cloudflare-docs/blob/d09c8238fd7278400b29c5b0ee4c8d1d9d8be3a6/src/content/docs/dynamic-workers/usage/authentication.mdx) places route checks before customer code and record authorization inside platform-owned capabilities, versions code/policy together and warns that cached worker memory can retain prior-user data. Its [example](https://github.com/cloudflare/cloudflare-docs/blob/d09c8238fd7278400b29c5b0ee4c8d1d9d8be3a6/src/content/partials/workers/platform-auth-route-policy.mdx) matches exact method/path, denies undeclared routes and checks tenant/permission for private routes. Authentication and deployment-manifest validation are integrations the platform must supply.
+
+**Teamagent implication (inference):** Keep untrusted app/agent code behind host-owned capability enforcement and authorize egress before injecting credentials. Bind code, route policy and cache identity to tenant/user isolation needs, with real workerd tests for changed behavior; do not infer isolation from a successful bundle or documentation example.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deploy-cloudflare](https://github.com/cloudflare/cloudflare-docs); analyzed commit `998668d7590142a7db2737b48a0432e33cda9067`; commit date 2026-10-28T09:58:21Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--deploy-cloudflare.md).
+Analysis metadata: source [deploy-cloudflare](https://github.com/cloudflare/cloudflare-docs); analyzed commit `d09c8238fd7278400b29c5b0ee4c8d1d9d8be3a6`; commit date 2026-10-31T20:24:42Z; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--deploy-cloudflare.md).
 <!-- teamagent-analysis:end -->

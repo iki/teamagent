@@ -2,11 +2,11 @@
 
 Source: [xerj](https://github.com/xerj-org/xerj) · [Analysis](../unreviewed/ai-agents-mem--xerj.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `5b46a1427d5b69cff0e67749bf37495a63a4d933`; commit date: 2026-10-28T06:30:07Z; review date: 2026-10-28T14:52:35.205Z; observed SHA: `5b46a1427d5b69cff0e67749bf37495a63a4d933`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `720b9990a2f85c17d53434950578f9a37fb3dc0c`; commit date: 2026-11-01T06:24:43Z; review date: 2026-11-01T11:35:43.470Z; observed SHA: `720b9990a2f85c17d53434950578f9a37fb3dc0c`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/xerj-org/xerj/compare/5b46a1427d5b69cff0e67749bf37495a63a4d933...5b46a1427d5b69cff0e67749bf37495a63a4d933). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/xerj-org/xerj/compare/720b9990a2f85c17d53434950578f9a37fb3dc0c...720b9990a2f85c17d53434950578f9a37fb3dc0c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

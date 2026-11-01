@@ -2,7 +2,7 @@
 
 Source: [hanzo-sdk](https://github.com/hanzoai/sdk) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md).
 
-Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-agents--hanzo-sdk.md).
+Historical discovery: 2026-10-24T06:36:54.441Z, initially unreviewed. Dated scoped reviews below supersede that discovery-only status; they do not establish runtime validation. [Change evidence](../repos/ai-agents--hanzo-sdk.md).
 
 ## 2026-10-28 scoped source review
 
@@ -14,6 +14,18 @@ The [README](https://github.com/hanzoai/sdk/blob/833140e79c6b80427200c4ae7dd6d5f
 
 There is a concrete licensing discrepancy: the [README labels the project MIT](https://github.com/hanzoai/sdk/blob/833140e79c6b80427200c4ae7dd6d5ff1aea7ebe/README.md#L57-L59), while the checked-in [LICENSE begins with Apache License 2.0](https://github.com/hanzoai/sdk/blob/833140e79c6b80427200c4ae7dd6d5ff1aea7ebe/LICENSE#L1-L4). Preserve both observations and resolve the applicable rights before reuse; do not propagate the README label as established licensing. Treat gateway/model examples and the remote shell installer as unverified documentation. Keep this entry a navigation/index review, inspect a separately pinned language SDK before adoption, and never substitute an unread linked repository for this source. No packages, shell scripts, gateway or credentials were used.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `3dbc8b85419edaceb19ef744d9796ba6b5bbebb9` (commit date `2026-10-28T15:30:03-07:00`), compared with `833140e79c6b80427200c4ae7dd6d5ff1aea7ebe`. Earlier observations remain historical evidence.
+
+**Scope:** Complete new conformance/runner.py implementation, including all mock test branches; 28 changed paths inventoried. Language SDKs, examples and full OpenAPI schema not audited.
+
+The [runner](https://github.com/hanzoai/sdk/blob/3dbc8b85419edaceb19ef744d9796ba6b5bbebb9/conformance/runner.py) adds deterministic mock routes for chat, streaming, embeddings, models and decisions. Its fixture check validates JSON syntax/nonemptiness and an SSE terminator; its spec check asserts selected path/schema presence. Mock self-tests call this same server and check selected response fields. They do not exercise each language SDK or validate the whole OpenAPI contract. Request Content-Length and response reads lack explicit size bounds, and urlopen calls omit explicit timeouts. Authentication is a fixture switch rather than an account check.
+
+**Teamagent implication (inference):** Reuse the idea of a shared credential-free protocol corpus, while running each adapter against independent malformed/cancellation fixtures. Publish mock coverage separately from live entitlement, actual policy decisions and cross-language compatibility; bound host I/O and retain per-case evidence.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hanzo-sdk](https://github.com/hanzoai/sdk); analyzed commit `833140e79c6b80427200c4ae7dd6d5ff1aea7ebe`; commit date 2026-10-21T05:39:18-04:00; review date 2026-10-28T09:27:32.685Z; depth reviewed. [Maintenance record](../repos/ai-agents--hanzo-sdk.md).
+Analysis metadata: source [hanzo-sdk](https://github.com/hanzoai/sdk); analyzed commit `3dbc8b85419edaceb19ef744d9796ba6b5bbebb9`; commit date 2026-10-28T15:30:03-07:00; review date 2026-11-01T11:33:30.893Z; depth reviewed. [Maintenance record](../repos/ai-agents--hanzo-sdk.md).
 <!-- teamagent-analysis:end -->

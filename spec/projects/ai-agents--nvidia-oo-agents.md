@@ -38,6 +38,16 @@ The [race path](https://github.com/nvidia-nemo/labs-OO-Agents/blob/bff0ef449f9bd
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `7d73107d5801dce1594202c7c4a1f68a41d14be9` against prior analyzed commit `bff0ef449f9bd74ddbb19486489f95c0edc73831`. Historical reviews above remain separate evidence.
+
+The [persistent Bash session](https://github.com/nvidia-nemo/labs-OO-Agents/blob/7d73107d5801dce1594202c7c4a1f68a41d14be9/src/nooa/tools/_bash_session.py) now sends initialization through the same script-framing helper as ordinary commands, adds a POSIX capability check before launch, and warns on an observed nonzero initialization status. The [new fixtures](https://github.com/nvidia-nemo/labs-OO-Agents/blob/7d73107d5801dce1594202c7c4a1f68a41d14be9/tests/tools/test_bash_session_framing.py) give startup a ten-second test deadline for malformed quotes and stdin-reading initialization, verify subsequent commands still work, and check environment/cwd persistence and a failed-init warning.
+
+Treat initialization as another untrusted protocol payload instead of concatenating it beside control records. The common framing helper itself was unchanged and not reread here, so this review establishes the call-path correction and fixture contract rather than every framing guarantee. The warning includes the configured initialization command, which may contain sensitive material; Teamagent should log a bounded identifier/status instead. POSIX capability refusal is more truthful than claiming native Windows shell support.
+
+**Coverage:** Read the complete 104-line Bash initialization and framing-test delta. Platform helper, existing framing implementation and sandbox execution were not audited or run. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [nvidia-oo-agents](https://github.com/nvidia-nemo/labs-OO-Agents); analyzed commit `bff0ef449f9bd74ddbb19486489f95c0edc73831`; commit date 2026-10-22T16:06:28+02:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--nvidia-oo-agents.md).
+Analysis metadata: source [nvidia-oo-agents](https://github.com/nvidia-nemo/labs-OO-Agents); analyzed commit `7d73107d5801dce1594202c7c4a1f68a41d14be9`; commit date 2026-10-30T17:00:59+01:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--nvidia-oo-agents.md).
 <!-- teamagent-analysis:end -->

@@ -2,11 +2,11 @@
 
 Source: [cline](https://github.com/cline/cline) · [Analysis](../../projects/ai-agents--cline.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `f817e59f698f01487920c00ede2dbecad5c0fa50`; commit date: 2026-10-27T17:34:58-07:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `f817e59f698f01487920c00ede2dbecad5c0fa50`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `a6507a62a147db4a35e27f4294589742ccac5060`; commit date: 2026-10-30T14:21:13-07:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `a6507a62a147db4a35e27f4294589742ccac5060`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/cline/cline/compare/f817e59f698f01487920c00ede2dbecad5c0fa50...f817e59f698f01487920c00ede2dbecad5c0fa50). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/cline/cline/compare/a6507a62a147db4a35e27f4294589742ccac5060...a6507a62a147db4a35e27f4294589742ccac5060). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

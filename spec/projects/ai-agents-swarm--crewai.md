@@ -48,6 +48,14 @@ In [lib/cli/src/crewai_cli/skills/main.py](https://github.com/crewaiinc/crewai/b
 
 **Teamagent implication:** Treat registry discovery as untrusted metadata. Preserve complete identifiers and provider ownership separately, validate each response and page budget, and bound/redact provider errors. A scan label or visible public entry does not authorize installation or prove provenance.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`f04cce923973df6ea87386ec7355878c9b655dd3`](https://github.com/crewaiinc/crewai/commit/f04cce923973df6ea87386ec7355878c9b655dd3), compared with `b95aa8bbdea6bc02b465a35fa8da54fecf82f528`.
+
+The [deferred result reader](https://github.com/crewaiinc/crewai/blob/f04cce923973df6ea87386ec7355878c9b655dd3/lib/crewai/src/crewai/tools/agent_tools/deferred_tool_result_reader.py) now lists exact readable aliases when an unknown alias is supplied and explains that artifacts expire with their creating run. The [regressions](https://github.com/crewaiinc/crewai/blob/f04cce923973df6ea87386ec7355878c9b655dd3/lib/crewai/tests/tools/agent_tools/test_deferred_tool_result_reader.py) exercise a leading-`./` mismatch and a revoked alias. This65-line selected delta improves recovery guidance without broadening accepted paths.
+
+Teamagent should expose bounded, run-scoped artifact handles and explicit unavailable/expired states. An error message describing deletion does not itself prove descendant shutdown or safe cleanup; those require ownership and lifecycle evidence. The unchanged filesystem reader and the rest of the 871-path update were not exhaustively audited. No agents, cleanup routines or upstream tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [crewai](https://github.com/crewaiinc/crewai); analyzed commit `b95aa8bbdea6bc02b465a35fa8da54fecf82f528`; commit date 2026-10-28T08:21:48Z; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-swarm--crewai.md).
+Analysis metadata: source [crewai](https://github.com/crewaiinc/crewai); analyzed commit `f04cce923973df6ea87386ec7355878c9b655dd3`; commit date 2026-11-01T05:07:47-03:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-swarm--crewai.md).
 <!-- teamagent-analysis:end -->

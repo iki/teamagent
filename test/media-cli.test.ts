@@ -12,6 +12,7 @@ import { validateMediaBackends } from "@/media";
 const root = dirname(fileURLToPath(new URL("../package.json", import.meta.url)));
 async function command(args: readonly string[], cwd: string) {
   const child = Bun.spawn([process.execPath, join(root, "app/cli/index.ts"), ...args], {
+    windowsHide: true,
     cwd,
     stdin: "ignore",
     stdout: "pipe",

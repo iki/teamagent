@@ -1,0 +1,815 @@
+{
+  "id": "ai-agents--cline",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/cline/cline",
+  "report": "spec/projects/ai-agents--cline.md",
+  "analyzedSha": "f817e59f698f01487920c00ede2dbecad5c0fa50",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T17:34:58-07:00",
+  "observedSha": "a6507a62a147db4a35e27f4294589742ccac5060",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "a6507a62a147db4a35e27f4294589742ccac5060",
+      "date": "2026-10-30T14:21:13-07:00",
+      "subject": "Render UX verification reports with existing Desktop artifact access (#15453)"
+    },
+    {
+      "sha": "fc467c0e14351433cbf8763d1ab778fa61297308",
+      "date": "2026-10-30T14:05:52-07:00",
+      "subject": "Add a reusable UX verification report carousel (#15438)"
+    },
+    {
+      "sha": "53383d541363f4fc55bc2b054af3181035a8f26a",
+      "date": "2026-10-30T12:21:04-07:00",
+      "subject": "feat(desktop): display published cloud images (#15393)"
+    },
+    {
+      "sha": "46996c9992d91e57c268091c971cfda52b0da399",
+      "date": "2026-10-30T11:42:39-07:00",
+      "subject": "feat(sdk): resolve cloud artifact download URLs (#15445)"
+    },
+    {
+      "sha": "204a825f6174a1fd96c18e0d2231861c7cd23341",
+      "date": "2026-10-30T17:50:08+01:00",
+      "subject": "Update the chat completions docs with X-Response-Format (#15395)"
+    },
+    {
+      "sha": "a47448718ad77e6316b12d81927fc1373ade1243",
+      "date": "2026-10-29T14:23:51-07:00",
+      "subject": "feat(core): flag-gated computer-use section in the cloud session prompt (#15402)"
+    },
+    {
+      "sha": "07ce8b83248ea38dd53a94fbbf167b8ea8b8e8eb",
+      "date": "2026-10-29T13:07:16-07:00",
+      "subject": "feat(sdk): add artifact publishing and cloud retrieval (#15421)"
+    },
+    {
+      "sha": "b194fe9faf15cf1d73e1506b2c9c783aa307d9c6",
+      "date": "2026-10-29T12:29:06-07:00",
+      "subject": "Docs/update clinepass docs (#15273)"
+    },
+    {
+      "sha": "d67fe374a437cde36cd33ef01e9be31713d64638",
+      "date": "2026-10-29T12:28:25-07:00",
+      "subject": "feat(vscode): add API key field to LM Studio provider (#12878)"
+    },
+    {
+      "sha": "1facdca6e7f4efe37abd557d854a5cf69ab98403",
+      "date": "2026-10-29T11:28:47-07:00",
+      "subject": "fix(hub): validate caller accounts and configure daemon environment (#15415)"
+    },
+    {
+      "sha": "9188238f16f386d853584e0eeec6d5f30ae9ad51",
+      "date": "2026-10-29T11:27:36-07:00",
+      "subject": "feat(desktop): continue local conversations with /cloud (#15217)"
+    },
+    {
+      "sha": "178c774eca75a548debc7137f94ae42e7617cb68",
+      "date": "2026-10-29T10:05:52-07:00",
+      "subject": "fix(cloud): restore saved tasks without transferring history (#15305)"
+    },
+    {
+      "sha": "51f63e4fd63aeeb74d708b9c3d1f8b800aff9b3e",
+      "date": "2026-10-28T10:20:57-07:00",
+      "subject": "feat(cli): start Cline Cloud sessions from the interactive TUI (#15317)"
+    },
+    {
+      "sha": "cb25195f88c5e0a9da7500e31ed3af80907b9128",
+      "date": "2026-10-28T10:06:36-07:00",
+      "subject": "feat(llms): rank AI/ML API first after Cline, with destination-gated attribution (#15145)"
+    },
+    {
+      "sha": "938736c5ec1732c837320f690f28780299564470",
+      "date": "2026-10-28T09:19:48-07:00",
+      "subject": "feat: link to web app privacy settings from account views (#15401)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "apps/cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/runtime/interactive/cloud-sessions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/runtime/run-interactive.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/cline-account.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/cline-account.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/components/dialogs/account-dialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/tui/components/dialogs/cloud-dialogs.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/components/status-bar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/tui/hooks/use-cloud-sessions.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/hooks/use-root-keyboard.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/hooks/use-root-keyboard.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/root.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/views/chat-view.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/views/home-view.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/utils/generated-media.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/utils/generated-media.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/utils/repo-status.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/utils/repo-status.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/chat-session.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/chat-session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/cloud-handoff.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/cloud-handoff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/cloud-session-test-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/cloud-sessions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/cloud-sessions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/commands-account.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/commands-settings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/commands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/context.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/session-config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/session-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/session-test-helpers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/app/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/components/views/chat/chat-input-bar.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/components/views/chat/chat-input-bar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/components/views/chat/cloud-handoff.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/components/views/chat/cloud-handoff.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/components/views/chat/messages/artifact-image.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/components/views/chat/messages/artifact-image.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/components/views/chat/messages/message-bubble.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/components/views/chat/messages/published-artifacts.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/components/views/chat/messages/published-artifacts.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/components/views/chat/messages/tool-message-block.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/components/views/chat/messages/ux-verification-message.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/components/views/chat/messages/ux-verification-message.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/components/views/settings/account-view.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/components/views/settings/account-view.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/hooks/use-artifact-resource.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/hooks/use-artifact-resource.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/hooks/use-chat-session.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/examples/desktop-app/webview/hooks/use-pending-attachments.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/hooks/use-prompt-draft.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/hooks/use-prompt-draft.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/lib/cloud-handoff-lifecycle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/lib/cloud-handoff-lifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/lib/cloud-handoff-ui-state.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/lib/cloud-handoff-ui-state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/lib/cloud-handoff.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/webview/lib/cloud-handoff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/lib/cloud-session-error.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/lib/cloud-session-error.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/lib/desktop-app-state.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/lib/desktop-app-state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/lib/image-attachments.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/webview/lib/provider-model-catalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vscode/proto/cline/account.proto",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/vscode/src/core/controller/models/__tests__/getLmStudioModels.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vscode/src/core/controller/models/getLmStudioModels.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vscode/src/sdk/auth-service.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vscode/src/sdk/auth-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vscode/src/sdk/cline-session-factory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vscode/src/sdk/cline-session-factory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vscode/vitest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vscode/webview-ui/src/components/account/AccountView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/vscode/webview-ui/src/components/settings/providers/LMStudioProvider.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vscode/webview-ui/src/components/settings/providers/LMStudioProvider.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vscode/webview-ui/src/context/ClineAuthContext.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vscode/webview-ui/src/context/ClineAuthContext.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/chat-completions.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/getting-started.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/sdk-examples.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started/clinepass.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/DOC.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/account/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/core/src/artifacts/cloud/download-url.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/core/src/artifacts/cloud/fetch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/core/src/artifacts/cloud/fetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/core/src/artifacts/cloud/publish.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/core/src/artifacts/cloud/publish.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/core/src/artifacts/publish.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/core/src/artifacts/publish.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/cloud/api.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/cloud/api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/core/src/cloud/computer-use-prompt.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/cloud/controller.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/cloud/controller.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/cloud/hub-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/cloud/hub-protocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/cloud/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/hub/daemon/index.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/hub/daemon/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/hub/server/cloud-session-service.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/hub/server/cloud-session-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/runtime/orchestration/session-runtime-result-cache.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/services/cloud-handoff/git-preparation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/services/cloud-handoff/git-preparation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/services/global-settings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/core/src/services/global-settings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/llms/src/providers/ai-sdk.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/llms/src/providers/aimlapi/attribution.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/llms/src/providers/builtins.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/llms/src/providers/gateway.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/llms/src/providers/ids.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/shared/src/feature-flags.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/shared/src/index.browser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/shared/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/shared/src/llms/media.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/shared/src/llms/media.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/shared/src/runtime/cline-environment.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/shared/src/runtime/cline-environment.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/shared/src/ux-verifier.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/shared/src/ux-verifier.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/ui/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/ui/components.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/ui/components/agent-ux-verification.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/ui/components/agent-ux-verification.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/ui/components/carousel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/ui/components/generated-media.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/ui/components/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/ui/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/ui/scripts/smoke-package.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/ui/stories/agent-ux-verification.stories.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/ui/stories/assets/ux-verifier/home.jpg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/ui/stories/assets/ux-verifier/sidebar.jpg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/packages/ui/tests/agent-ux-verification.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/packages/ui/tests/generated-media.test.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

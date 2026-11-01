@@ -53,6 +53,14 @@ In [src/update.ts](https://github.com/vercel-labs/skills/blob/699d35b21bd3c97dbc
 
 **Teamagent implication:** Separate inspect, plan and apply in Teamagent skill evolution. Check commands must preserve installed files and locks across Git, hosted and deletion paths, disclose any network/telemetry work, and distinguish 'updates available' from failed verification in structured status.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`92a9a34ac3bf88e695e468b90c7bf32f163d32c8`](https://github.com/vercel-labs/skills/commit/92a9a34ac3bf88e695e468b90c7bf32f163d32c8), compared with `699d35b21bd3c97dbc0edeae062b2698898bb2e5`.
+
+The [local lock entry](https://github.com/vercel-labs/skills/blob/92a9a34ac3bf88e695e468b90c7bf32f163d32c8/src/local-lock.ts) gains an explicit copy mode, and [update placement](https://github.com/vercel-labs/skills/blob/92a9a34ac3bf88e695e468b90c7bf32f163d32c8/src/update.ts) uses the stored choice for both project and global updates while retaining recorded subagent targets. The complete [fixture](https://github.com/vercel-labs/skills/blob/92a9a34ac3bf88e695e468b90c7bf32f163d32c8/tests/update-install-mode.test.ts) installs from a synthetic Git source, updates it, checks that a copy remains a physical copy and checks omission when default mode is used.
+
+Skill-library maintenance should preserve the user's installation topology alongside source identity and content digest. Discovery on a different machine must not silently turn an explicitly copied skill into a symlink. This is source and fixture evidence; initial writer paths, all other changes in the 16-path comparison and runtime behavior across installed agents were not fully audited. No skills were installed or executed and no upstream tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [search.vercel](https://github.com/vercel-labs/skills); analyzed commit `699d35b21bd3c97dbc0edeae062b2698898bb2e5`; commit date 2026-10-28T13:18:51+09:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-skills--search.vercel.md).
+Analysis metadata: source [search.vercel](https://github.com/vercel-labs/skills); analyzed commit `92a9a34ac3bf88e695e468b90c7bf32f163d32c8`; commit date 2026-10-29T09:49:36+09:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-skills--search.vercel.md).
 <!-- teamagent-analysis:end -->

@@ -2,11 +2,11 @@
 
 Source: [awesome-jev-live](https://github.com/wh000wh000/awesome-jev-live) · [Analysis](../unreviewed/ai-info--awesome-jev-live.md) · [decisions](../../decisions.md), [evolution](../../evolution.md), [memory](../../memory.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `c17bba461c343b6e8473153bb33e6c196860129c`; commit date: 2026-10-28T17:22:17+08:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `c17bba461c343b6e8473153bb33e6c196860129c`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `966fb9c06c9a972d5f62c0eeb5b4060bceab90c5`; commit date: 2026-11-01T17:27:04+08:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `966fb9c06c9a972d5f62c0eeb5b4060bceab90c5`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/wh000wh000/awesome-jev-live/compare/c17bba461c343b6e8473153bb33e6c196860129c...c17bba461c343b6e8473153bb33e6c196860129c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/wh000wh000/awesome-jev-live/compare/966fb9c06c9a972d5f62c0eeb5b4060bceab90c5...966fb9c06c9a972d5f62c0eeb5b4060bceab90c5). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -30,6 +30,18 @@ Reviewed commit `b35b6cdbb21ef34a6e15fe9da125f428690c6d98` (commit date `2026-10
 
 The [skill](https://github.com/evilmartians/agent-skills/blob/b35b6cdbb21ef34a6e15fe9da125f428690c6d98/skills/web-video/SKILL.md) and [script](https://github.com/evilmartians/agent-skills/blob/b35b6cdbb21ef34a6e15fe9da125f428690c6d98/skills/web-video/scripts/web-video.sh) distinguish alpha-capable formats from transparent pixels, handle Apple layered HEVC explicitly and check encoders before output encoding. Output codec tags/source order are derived from media. Direct reuse conflicts with Teamagent: final ffmpeg uses -y, avconvert uses --replace, numeric options enter filters without typed validation, and no process/byte/time budget is enforced. Alpha scanning already decodes before encoder preflight. Speed changes drop audio and must appear in an explicit plan. Shell-word-split project defaults are not C12 configuration. Retain preflight ideas only; supply bounded trusted adapters and exclusive publication. No encoding, visual quality or performance claim was reproduced.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `d21debca29304d458eacb2a781d98ef05df8d08e` (commit date `2026-10-30T19:33:11+03:00`), compared with `b35b6cdbb21ef34a6e15fe9da125f428690c6d98`. Earlier observations remain historical evidence.
+
+**Scope:** Selected changed guidance for content policy, traffic measurement and delivery checks in llms-visibility; complete two-path inventory. Linked studies and provider crawler behavior not verified.
+
+The revised [visibility skill](https://github.com/evilmartians/agent-skills/blob/d21debca29304d458eacb2a781d98ef05df8d08e/skills/llms-visibility/SKILL.md) separates desired search/input access from the owner's training preference and recommends server-side measurement that distinguishes crawler and on-demand traffic. It recognizes spoofed user agents and asks for site-specific observations. Its proposed classification by exclusion and raw header/path logging do not authenticate a client or demonstrate that content was used in an answer; surrounding effectiveness claims rely on external studies outside this review.
+
+**Teamagent implication (inference):** Keep training consent separate from discoverability and preserve the owner's policy. Treat traffic classification as uncertain telemetry, minimize/redact query and header data, and validate format negotiation independently from citation or answer quality. Do not import external empirical claims as Teamagent measurements.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle.evilmartians](https://github.com/evilmartians/agent-skills); analyzed commit `b35b6cdbb21ef34a6e15fe9da125f428690c6d98`; commit date 2026-10-15T01:49:54+03:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.evilmartians.md).
+Analysis metadata: source [bundle.evilmartians](https://github.com/evilmartians/agent-skills); analyzed commit `d21debca29304d458eacb2a781d98ef05df8d08e`; commit date 2026-10-30T19:33:11+03:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.evilmartians.md).
 <!-- teamagent-analysis:end -->

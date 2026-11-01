@@ -1,0 +1,63 @@
+# deepcode
+
+Source: [deepcode](https://github.com/HKUDS/DeepCode) · Category: [ai-agents](../categories/ai-agents.md)
+
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `84c37f79c726bd12e74e39541adceb8b5e47b0d5`; commit timestamp `2026-09-28T15:47:21+08:00`; 1,035 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/HKUDS/DeepCode/blob/84c37f79c726bd12e74e39541adceb8b5e47b0d5/README.md)):
+
+> Work with DeepCode in a visual workspace for Sessions, goals, tool activity, code changes, and verification. DeepCode provides TUI, Desktop, and Web clients over one shared local service.
+
+Build/package evidence: [core/skills/builtin/mcp-builder/scripts/requirements.txt](https://github.com/HKUDS/DeepCode/blob/84c37f79c726bd12e74e39541adceb8b5e47b0d5/core/skills/builtin/mcp-builder/scripts/requirements.txt); [desktop/package.json](https://github.com/HKUDS/DeepCode/blob/84c37f79c726bd12e74e39541adceb8b5e47b0d5/desktop/package.json); [desktop/src-tauri/Cargo.toml](https://github.com/HKUDS/DeepCode/blob/84c37f79c726bd12e74e39541adceb8b5e47b0d5/desktop/src-tauri/Cargo.toml); [pyproject.toml](https://github.com/HKUDS/DeepCode/blob/84c37f79c726bd12e74e39541adceb8b5e47b0d5/pyproject.toml); [requirements.txt](https://github.com/HKUDS/DeepCode/blob/84c37f79c726bd12e74e39541adceb8b5e47b0d5/requirements.txt)
+
+License evidence: [LICENSE](https://github.com/HKUDS/DeepCode/blob/84c37f79c726bd12e74e39541adceb8b5e47b0d5/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped update review
+
+Reviewed commit `cd7ab47d09cf059cca391f84b900234baff6b3d3` (commit date `2026-10-27T02:07:15+08:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete headless goal adapter and its completed-goal outcome fixture; goal service decisions, execution security enforcement, RPC transport validation and live execution were not audited.
+
+The [headless adapter](https://github.com/HKUDS/DeepCode/blob/cd7ab47d09cf059cca391f84b900234baff6b3d3/cli/goal_runner.py#L84-L188) retains session and goal identity, rejects replacement of the attached goal during polling, and requires an explicit `executionSettled` field rather than treating a status change as settled execution. A completed goal is returned with its associated outcome; the inspected [fixture](https://github.com/HKUDS/DeepCode/blob/cd7ab47d09cf059cca391f84b900234baff6b3d3/tests/test_goal_runner.py) checks that this paired outcome is not replaced by a later reopened state. The fixture was not executed.
+
+[Resume-budget handling](https://github.com/HKUDS/DeepCode/blob/cd7ab47d09cf059cca391f84b900234baff6b3d3/cli/goal_runner.py#L191-L215) refuses an exhausted budget without an explicit increase and requires a new budget above usage already recorded. Client cancellation sets a detach flag; the worker's exit message explicitly states that the goal continues in the service. Teamagent should retain the operation reference and separate stopping observation from stopping remote work, with a durable policy/identity check on resumption.
+
+The [completion-evidence option](https://github.com/HKUDS/DeepCode/blob/cd7ab47d09cf059cca391f84b900234baff6b3d3/cli/goal_runner.py#L218-L229) appends a requested command to objective text. This adapter does not independently execute or verify that command. Neither an agent-authored COMPLETE outcome nor an instruction to run a check establishes that the check passed; the service's enforcement path would need separate inspection. The polling loop also has no overall timeout here. Preserve explicit bounded execution, evidence receipts and typed transport semantics before applying this pattern.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `b017ea3e097fdb8375574ccd39d6cdb7caf4c986` (commit date `2026-10-28T13:01:03+08:00`), compared with `cd7ab47d09cf059cca391f84b900234baff6b3d3`. Earlier findings remain historical evidence.
+
+**Scope:** Agent-preset deny-list parsing, composition and runtime identity. The complete changed-path inventory contains 15 paths; the assessment below is limited to the cited branches.
+
+Preset deny lists are subtracted from an optional allowlist and included in the snapshot fingerprint. All supported deny-key spellings are merged; unsupported wildcard or argument-pattern restrictions make the preset broken rather than disappearing. Denying a file-writing tool also denies apply_patch. See [core/agent_presets/__init__.py](https://github.com/HKUDS/DeepCode/blob/b017ea3e097fdb8375574ccd39d6cdb7caf4c986/core/agent_presets/__init__.py#L160-L188), [core/agent_presets/__init__.py](https://github.com/HKUDS/DeepCode/blob/b017ea3e097fdb8375574ccd39d6cdb7caf4c986/core/agent_presets/__init__.py#L197-L216) and [core/agent_presets/__init__.py](https://github.com/HKUDS/DeepCode/blob/b017ea3e097fdb8375574ccd39d6cdb7caf4c986/core/agent_presets/__init__.py#L390-L427).
+
+For Teamagent, imported skills must state which restrictions the host can enforce, reject unsupported constraints and invalidate cached execution context when those restrictions change. Name-level filtering is not complete authorization of effects reachable through other tools, and metadata deserialization still coerces list entries to strings. Provider cache-marker changes and the runtime effect gate were not fully audited.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `4ff321ecfc921909948f7c7e42b703697f23733c` (commit date `2026-10-31T19:03:51+08:00`), compared with `b017ea3e097fdb8375574ccd39d6cdb7caf4c986`. Earlier observations remain historical evidence.
+
+**Scope:** Complete permissions.py diff; 285 changed paths inventoried. Advisor implementation, runtime call sites and fixtures not audited.
+
+The [permission layer](https://github.com/HKUDS/DeepCode/blob/4ff321ecfc921909948f7c7e42b703697f23733c/core/harness/permissions.py) adds an optional risk evaluator only on mode-default allow decisions, after sensitive-path, read-only and explicit-rule handling. Its opinion can request approval, and exceptions or malformed opinions also request approval; it cannot turn an existing denial into permission. Explicit rules bypass this advisor. Tool classifications still depend on declared names/suffixes rather than independently observed effects.
+
+**Teamagent implication (inference):** Keep deterministic authorization authoritative and use model risk opinions only to restrict an otherwise allowed operation. Bind opinions to exact content and context; trustworthy effect declarations and explicit-rule governance remain necessary even when an advisor fails closed.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.

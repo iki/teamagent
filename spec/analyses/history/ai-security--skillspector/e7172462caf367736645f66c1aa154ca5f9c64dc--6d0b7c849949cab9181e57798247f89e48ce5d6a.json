@@ -1,0 +1,745 @@
+{
+  "id": "ai-security--skillspector",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/NVIDIA/SkillSpector",
+  "report": "spec/projects/ai-security--skillspector.md",
+  "analyzedSha": "e7172462caf367736645f66c1aa154ca5f9c64dc",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T10:50:17-07:00",
+  "observedSha": "6d0b7c849949cab9181e57798247f89e48ce5d6a",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "6d0b7c849949cab9181e57798247f89e48ce5d6a",
+      "date": "2026-10-31T09:12:46-07:00",
+      "subject": "chore: ignore mypy cache directory (#961)"
+    },
+    {
+      "sha": "1c94efd41a2759a3a37cab49bbdc37acdc281b80",
+      "date": "2026-10-31T09:12:31-07:00",
+      "subject": "fix(cli): reject non-regular report outputs before scanning (#955)"
+    },
+    {
+      "sha": "988effaa3b1088b0c59f6a3cdc628f5060c14265",
+      "date": "2026-10-31T09:12:15-07:00",
+      "subject": "fix(yara): require a browser cookie-store path in info_stealer (#752)"
+    },
+    {
+      "sha": "7d5bc93ee7575e727a56e89d3983e9e428a8636c",
+      "date": "2026-10-31T09:11:59-07:00",
+      "subject": "fix(analyzer): recognize JavaScript template literals (#801)"
+    },
+    {
+      "sha": "bd6edeae76ec1ca1136229a5b62d5fe8bf80fb24",
+      "date": "2026-10-31T09:11:44-07:00",
+      "subject": "feat(supply-chain): inspect locked npm dependency contents (#952)"
+    },
+    {
+      "sha": "0d3d74632c59145dabc17a21595d5660a612a52e",
+      "date": "2026-10-31T09:11:29-07:00",
+      "subject": "fix(static): stop backticks/apostrophes in comments and prose from tripping static_parse_limit (#902)"
+    },
+    {
+      "sha": "3f03a96b2a2663e6d6f6412f94150f007c3499aa",
+      "date": "2026-10-31T09:11:14-07:00",
+      "subject": "fix(scanner): tighten bounded parser ownership (#947)"
+    },
+    {
+      "sha": "0eca2368cfee5e9c033de8b324edccc56487c8be",
+      "date": "2026-10-31T09:10:58-07:00",
+      "subject": "fix(ra1): keep double negatives from exempting the action (#957)"
+    },
+    {
+      "sha": "9adb1a607ab0749e4377e0aba1c834b72f948107",
+      "date": "2026-10-30T11:47:35-07:00",
+      "subject": "fix(artifact-integrity): contain matcher-local timeouts (#949)"
+    },
+    {
+      "sha": "efb4e8c19a20eb468f797ecb0d685ecb5c887960",
+      "date": "2026-10-30T09:12:22-07:00",
+      "subject": "fix(ra1): honor prohibitions on recommending a self-update (#929)"
+    },
+    {
+      "sha": "4ef6a65a30ac99f1fa4ae50f251f9e9ee8f62902",
+      "date": "2026-10-30T09:12:03-07:00",
+      "subject": "fix(mp2): ignore repetition inside proven Markdown tables (#872)"
+    },
+    {
+      "sha": "54921c8c7c23008c8af2328d5ab492a904b6ece4",
+      "date": "2026-10-29T09:16:43-07:00",
+      "subject": "fix(pe3): ignore exact Python glab setting literals (#943)"
+    },
+    {
+      "sha": "caa1caa898c1e1325329df4878ae5ded083b98b9",
+      "date": "2026-10-29T09:16:27-07:00",
+      "subject": "fix(p2): keep reference destinations out of the benign-header exemption (#934)"
+    },
+    {
+      "sha": "e35b16c637db3de2880c8710d3f2f00be039c6bd",
+      "date": "2026-10-29T09:15:28-07:00",
+      "subject": "fix(security-discovery): fan batches out through the shared LLM limiter (#856)"
+    },
+    {
+      "sha": "2d4398792e0232512820ca37a5a6e72039080128",
+      "date": "2026-10-29T09:15:10-07:00",
+      "subject": "fix(llm): keep CLI prompts under MAX_INPUT_BYTES when batching large files (#855)"
+    },
+    {
+      "sha": "fdce443b0953cda823a8111c1d7ec0444a524d2b",
+      "date": "2026-10-29T09:14:43-07:00",
+      "subject": "fix(batch): score gap-fill findings (#772)"
+    },
+    {
+      "sha": "6498f0ea7da1616448c129f10d8c48e5260abc44",
+      "date": "2026-10-29T09:14:26-07:00",
+      "subject": "fix(cli): preserve recursive child inputs when writing reports (#938)"
+    },
+    {
+      "sha": "13ebdd250442ea27eebf523f5f3a48630ef420dc",
+      "date": "2026-10-29T09:13:11-07:00",
+      "subject": "fix(coverage): account for inspected linked ZIP containers (#939)"
+    },
+    {
+      "sha": "a59a3bd2d77c66b09d1d3c766a4516b3d8069cf1",
+      "date": "2026-10-29T09:11:38-07:00",
+      "subject": "fix(tm1): abstain on uppercase HTTP DELETE verbs in REST route tables (#903)"
+    },
+    {
+      "sha": "2de9b3874c626d8cb8e0e1855da2b9676d3204d8",
+      "date": "2026-10-29T09:09:49-07:00",
+      "subject": "Score writes to agent-memory files as MP3 memory manipulation (#893)"
+    },
+    {
+      "sha": "b5987a332c9a118ec4714a5c79eb76641b546251",
+      "date": "2026-10-29T14:44:36+05:30",
+      "subject": "Merge pull request #945 from NVIDIA/yashraj/configurable-scan-limits"
+    },
+    {
+      "sha": "4e5777d05c897540a02c8e9fbbef04c75bdb83db",
+      "date": "2026-10-29T12:02:34+05:30",
+      "subject": "feat: configure TP4 capacity and extend the workflow deadline"
+    },
+    {
+      "sha": "d501c0d5035c2ed6385740a384d942bb05651fda",
+      "date": "2026-10-28T09:07:30-07:00",
+      "subject": "fix(analyzers): carve out structurally benign P2 header comments (#622)"
+    },
+    {
+      "sha": "0e4b1bab56d931ce576a4c208ca575e410431f29",
+      "date": "2026-10-28T09:07:17-07:00",
+      "subject": "feat(providers): accept OpenCode 1.18.31-1.19.4 through an explicit verified set (#713)"
+    },
+    {
+      "sha": "d3859dcaf2a9bd5682bf74e52c2a05bf82aa39be",
+      "date": "2026-10-28T09:07:04-07:00",
+      "subject": "test(batch): cover pooled model cancellation and slot recovery (#763)"
+    },
+    {
+      "sha": "6b0ebe1200962db5cc8eb7408368439c20a12424",
+      "date": "2026-10-28T09:06:51-07:00",
+      "subject": "fix(llm): retry structured calls that return no result (#845)"
+    },
+    {
+      "sha": "8a77a4ee51b2ca52490dc055a2f89239b85b3ba8",
+      "date": "2026-10-28T09:06:37-07:00",
+      "subject": "feat(cli): configure the recursive skill count limit (#847)"
+    },
+    {
+      "sha": "75ed27bccf5f4bc42f0b5db176ada74b1c821db3",
+      "date": "2026-10-28T09:06:23-07:00",
+      "subject": "fix(report): preserve each compacted occurrence's finding text (#851)"
+    },
+    {
+      "sha": "7c04f8b49df8c2162aa6a161e6974f5695e4ad08",
+      "date": "2026-10-28T09:06:10-07:00",
+      "subject": "perf(cli): defer scan imports for version output (#876)"
+    },
+    {
+      "sha": "f1778f55d6d8381c3955358379eff46b0a9aef0a",
+      "date": "2026-10-28T09:05:57-07:00",
+      "subject": "fix(cli): render error text literally instead of as Rich markup (#899)"
+    },
+    {
+      "sha": "e5b7b3aa9bc96073d76f9bba1fe8ef2234bbdcd7",
+      "date": "2026-10-28T09:05:44-07:00",
+      "subject": "perf(providers): defer chat client imports from metadata path (#904)"
+    },
+    {
+      "sha": "e6d52ca858bc050ff03131c9cf4524414cb52a4b",
+      "date": "2026-10-28T09:05:31-07:00",
+      "subject": "feat(providers): support custom OpenAI-compatible HTTP headers (#914)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ANALYSIS_RESOURCE_BOUNDS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/DEPENDENCY_CONTENT_INSPECTION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/DEVELOPMENT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/NESTED_ARTIFACT_INSPECTION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/OPENCODE_EXTENSION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/PI_EXTENSION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/release/skillspector-2.12.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scan-completeness.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/artifacts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/cli_entry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/dependency_downloader.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/dependency_inspection.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/dependency_sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/dependency_worker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/graph.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/input_handler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/inspection_ledger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/javascript_tokens.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/llm_analyzer_base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/llm_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/mcp_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/multi_skill.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nested_artifacts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/artifact_integrity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/behavioral_taint_tracking.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/mcp_rug_pull.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/mcp_tool_poisoning.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/pattern_defaults.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/semantic_security_discovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_supply_chain.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_yara.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/build_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/deduplicate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/finalize_inspection_ledger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/meta_analyzer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/report.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/resolve_input.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/_agent_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/nv_build/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/openai_compatible/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/python_ast.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/references.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/security_reconstruction.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/state.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/yara_rules/hacktools.yar",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/yara_rules/malware.yar.b64",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/integration/test_linked_zip_coverage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_behavioral_taint_tracking.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_bounded_parser_regressions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_host_language_shell_ownership.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_javascript_template_ownership.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_mcp_rug_pull.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_mp2_markdown_tables.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_mp3_memory_file_write.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_multiline_prompt_spacing.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_p2_structural_benign.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_pe3_python_setting_literal.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_powershell_generic_coverage.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_rogue_agent_negated_recommendation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_security_character_folding.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_security_reconstruction.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_semantic_security_discovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_shell_quote_ownership.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_static_parse_limit_issue_901.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_static_patterns.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_static_patterns_supply_chain_pipenv.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_static_yara.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/test_build_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/test_finalize_inspection_ledger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/test_llm_analyzer_base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/test_meta_analyzer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/test_python_execution_surface_end_to_end.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/test_report.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/test_report_occurrence_columns.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/test_resolve_input.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/test_security_remediation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/provider/test_opencode_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_batch_scan_pool_cleanup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_batch_scan_security.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_mcp_tool_poisoning.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_multi_skill.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_python_ast.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_reference_destination_kinds.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_reference_destinations.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_agent_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/test_cli_entry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_cli_subprocess.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/test_dependency_inspection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_new_providers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_patterns_new.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/test_provider_imports.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/test_yara_nmap_token.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "uv.lock",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

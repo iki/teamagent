@@ -34,6 +34,18 @@ Progress tracking has a deliberately different contract. `apply.tracks` is a rel
 
 **Updated Teamagent decision:** reject unresolved gate and permission references before task admission. Keep progress-display paths separate from prerequisite identity, and expose uncertain progress explicitly. Bound artifact counts and path traversal before graph scheduling. These checks complement content hashes and invalidation edges; they still cannot establish that a present artifact is semantically correct or that a completed agent task passed independent acceptance tests. Carry these cases into [evolution](../evolution.md), [skills](../skills.md) and [evaluation](../evaluation.md). Adoption remains a workflow adapter and graph-pattern reference, with durable execution and authorization in Teamagent's task engine.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `27c0515724decc633818c735ee596481eec78a8b` (commit date `2026-10-30T23:30:00Z`), compared with `6d04a1b58dedc95729d34e4f223d9d483aae210a`. Earlier observations remain historical evidence.
+
+**Scope:** Complete Markdown code-fence parser diff and new parser/archive-consumer fixture file. Other validation changes, specification semantics, generated commands and runtime behavior were not audited.
+
+The [code-fence parser](https://github.com/Fission-AI/OpenSpec/blob/27c0515724decc633818c735ee596481eec78a8b/src/core/parsers/code-fence.ts) stops treating a backtick line with backticks in its info string as an opening fence, preventing subsequent requirements from being masked by an inline-code example. [Fixtures](https://github.com/Fission-AI/OpenSpec/blob/27c0515724decc633818c735ee596481eec78a8b/test/core/parsers/code-fence.test.ts) distinguish backtick and tilde cases, retain real fenced examples and check that downstream requirement parsing still sees later requirements. They include CRLF-bearing input lines; accepting that input does not enforce LF output. This is a structural extraction repair, not proof that the extracted requirements are complete or implemented.
+
+**Teamagent implication (inference):** Treat specification parsing as an evidence boundary: preserve source positions and test that illustrative code cannot hide later normative text. Keep extraction success, requirement coverage and behavioral verification separate, and normalize maintained text through Teamagent's explicit LF policy rather than relying on parser tolerance.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openspec](https://github.com/Fission-AI/OpenSpec); analyzed commit `6d04a1b58dedc95729d34e4f223d9d483aae210a`; commit date 2026-10-24T03:51:03Z; review date 2026-10-24T06:36:54.441Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-spec--openspec.md).
+Analysis metadata: source [openspec](https://github.com/Fission-AI/OpenSpec); analyzed commit `27c0515724decc633818c735ee596481eec78a8b`; commit date 2026-10-30T23:30:00Z; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-spec--openspec.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--pi",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/earendil-works/pi",
+  "report": "spec/projects/ai-agents--pi.md",
+  "analyzedSha": "9628c84809ab657ff47237bc63e3052cac4587fa",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T12:12:19+02:00",
+  "observedSha": "2c8d1feb147f6b3d97e855da803bfe7b19f3c403",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "2c8d1feb147f6b3d97e855da803bfe7b19f3c403",
+      "date": "2026-11-01T00:36:33Z",
+      "subject": "docs(chord): the schema switch decisions"
+    },
+    {
+      "sha": "8ffea8a1bfdc32523ab056549b26141018c1e700",
+      "date": "2026-10-31T21:59:21Z",
+      "subject": "feat(schema): faster object checks and compile, less memory"
+    },
+    {
+      "sha": "6d4b7443637356fe928118df3f1f6d922fcc191e",
+      "date": "2026-10-31T21:47:22Z",
+      "subject": "docs(chord): the schema package is built"
+    },
+    {
+      "sha": "fab2c5353ea4adcbb0d35701897892941f185235",
+      "date": "2026-10-31T21:39:34Z",
+      "subject": "feat(schema): add pi-schema, JSON Schema builders and validation without eval"
+    },
+    {
+      "sha": "7ef8680abd32a4804f080a7228f47373b426cc79",
+      "date": "2026-10-31T22:25:03+01:00",
+      "subject": "fix: sync esbuild platform package dev flags in lockfile"
+    },
+    {
+      "sha": "6af92c7950e8e8aaf79248159132f827c7a8b1a6",
+      "date": "2026-10-31T21:02:36Z",
+      "subject": "docs(chord): the plugin model, a primer"
+    },
+    {
+      "sha": "20362c155eb92d64b128f7091d237fc6e923086c",
+      "date": "2026-10-31T20:52:13Z",
+      "subject": "fix(chord): widen the origin-record heap bound for CI noise"
+    },
+    {
+      "sha": "cc08278a620e1d3a466932cc6e2b5dce894c0b9f",
+      "date": "2026-10-31T20:46:26Z",
+      "subject": "fix(chord): slice 10 http builds without DOM types"
+    },
+    {
+      "sha": "b22c5f6941b3472cc071461f933b6b7bd072823f",
+      "date": "2026-10-31T20:43:29Z",
+      "subject": "docs(chord): slice 10 as built (design 23, spec, explainer)"
+    },
+    {
+      "sha": "8959ad6e6845933dd01dbaa96929243d68bc4d48",
+      "date": "2026-10-31T20:40:36Z",
+      "subject": "feat(chord): Chord v2 slice 10, HTTP and workers"
+    },
+    {
+      "sha": "81f3cd412758ebdd92324c7d63b669a189408d0a",
+      "date": "2026-10-31T20:06:14Z",
+      "subject": "docs(chord): a schema package beneath pi-ai and Chord"
+    },
+    {
+      "sha": "0baf611f04a35618727ee15bbf8bd7f49f16175d",
+      "date": "2026-10-31T19:07:10Z",
+      "subject": "docs(chord): API versions in import paths; the plugin model proposal"
+    },
+    {
+      "sha": "2b06c437cec65bf0b729a25c0e50972d7b4ae6e2",
+      "date": "2026-10-31T18:52:54Z",
+      "subject": "docs(chord): settings are arguments, extensions are registries"
+    },
+    {
+      "sha": "83740ffa7a91d294cbc08569699ab6718631629a",
+      "date": "2026-10-31T18:33:24Z",
+      "subject": "docs(chord): CSP nonce per response"
+    },
+    {
+      "sha": "d52e953fa846ce91426dcf41525a9d08ab5b29fc",
+      "date": "2026-10-31T17:47:31Z",
+      "subject": "docs(chord): slice 10 route overhead accepted"
+    },
+    {
+      "sha": "e3da248ea9100a3b5d53f9c701b6a47ef7f58d6e",
+      "date": "2026-10-31T18:19:44+01:00",
+      "subject": "fix(coding-agent): keep updating git packages when git clean fails (#11648)"
+    },
+    {
+      "sha": "70ca8e8960b4f05faf1affd752e6231ba6087605",
+      "date": "2026-10-31T17:55:58+01:00",
+      "subject": "docs(coding-agent): list external limitations as known issues with remedies (#11647)"
+    },
+    {
+      "sha": "b4c2e92acbecdab7a1ff1cc36bde92f3206f5ddd",
+      "date": "2026-10-31T17:54:29+01:00",
+      "subject": "fix: remove vulnerable dependency chains"
+    },
+    {
+      "sha": "6de14ec09862856efa3edd5a8b734b14ab1afd09",
+      "date": "2026-10-31T17:29:36+01:00",
+      "subject": "docs(coding-agent): note tmux 3.6 color reply leak in tmux guide (#11645)"
+    },
+    {
+      "sha": "f0646a00fb4c43bf941deb9d934280e5a92361c2",
+      "date": "2026-10-31T15:57:13Z",
+      "subject": "docs(chord): slice 10 fix round small points"
+    },
+    {
+      "sha": "25426f72ae04a306f1e08de09583b4e89503b9e7",
+      "date": "2026-10-31T16:15:42+01:00",
+      "subject": "docs(coding-agent): document Windows terminal and conhost limitations (#11644)"
+    },
+    {
+      "sha": "705d047cb5635be5d430c34917be714979cc7709",
+      "date": "2026-10-31T16:11:43+01:00",
+      "subject": "fix(coding-agent): tighten system prompt"
+    },
+    {
+      "sha": "ed2bdde64b0e62c5083ac2bc694baf541f5cd670",
+      "date": "2026-10-31T15:04:43Z",
+      "subject": "docs(chord): HTTP core as a fetch handler, Node listener as the easy path"
+    },
+    {
+      "sha": "56cae782341c339d3bb820081f0f9425d8c5b1ec",
+      "date": "2026-10-31T14:46:28Z",
+      "subject": "docs(chord): plugins import each other by name"
+    },
+    {
+      "sha": "112a8b46f35944b57b9c5192a7408ed1290b48cd",
+      "date": "2026-10-31T14:43:24Z",
+      "subject": "docs(chord): tutorial: base code vs plugins, shipped plugins, subpaths"
+    },
+    {
+      "sha": "bb36171aac46adee2b43030fb1e4d8fd55675121",
+      "date": "2026-10-31T14:28:28Z",
+      "subject": "docs(chord): tutorial: only the server builds"
+    },
+    {
+      "sha": "86338abbd8ee1ebbb2fd10bfa277a35b940682c0",
+      "date": "2026-10-31T14:26:12Z",
+      "subject": "docs(chord): tutorial: loading explained (build vs evaluate, host packages, why plugins.load)"
+    },
+    {
+      "sha": "fe6211607be8fe1c648a352ef5d143595fa7bc01",
+      "date": "2026-10-31T14:09:23Z",
+      "subject": "docs(chord): tutorial: persisted documents and tables"
+    },
+    {
+      "sha": "dae7bd8fcb4cfe8193bce2fd0a2289aa611f0746",
+      "date": "2026-10-31T14:07:01Z",
+      "subject": "docs(chord): tutorial: an object's parts before they are used"
+    },
+    {
+      "sha": "436d99e04b02d5ed784e09dba8601383e7fc8e76",
+      "date": "2026-10-31T14:01:40Z",
+      "subject": "docs(chord): tutorial: one schema for contract and document"
+    },
+    {
+      "sha": "a34444d6bd768ecee494ad17261daaa75a6ed808",
+      "date": "2026-10-31T13:56:14Z",
+      "subject": "docs(chord): tutorial: overview figure, client hosts"
+    },
+    {
+      "sha": "081f28bad7c40d1ca42370529a77a404dca0bdd7",
+      "date": "2026-10-31T13:50:20Z",
+      "subject": "docs(chord): tutorial on hosts and plugins"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils/retry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/benchmarks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/decisions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/dependencies/book.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/dependencies/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/dependencies/model.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/design.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/durable-observers/book.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/durable-observers/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/flow-control/book.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/flow-control/fold/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/flow-control/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/flow-control/window/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/guide-plugins-hosts/book.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/guide-plugins-hosts/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/http-workers/book.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/http-workers/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/layer-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/layer-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/plugin-model/book.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/plugin-model/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/plugin-primer/book.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/plugin-primer/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-10.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-11.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-3a.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-3b.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-4.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-4a.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-4b.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-5.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-6a.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-6b.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-7a.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-7b.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-7b/book.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-7b/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-7c.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slice-8.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/slices.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/store/book.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/store/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/docs/next/store/walkthrough.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/compression.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/http/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/http/admission.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/http/authenticate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/http/cookies.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/http/file.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/http/headers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/http/http.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/http/incoming.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/http/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/http/node.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/http/request.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/http/response.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/http/router.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/http/upgrades.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/plugins/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/plugins/build.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/plugins/discover.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/plugins/evaluate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/plugins/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/plugins/install.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/plugins/plugins.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/plugins/runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/plugins/stack.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/plugins/watcher.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/workers/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/workers/control.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/workers/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/workers/lock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/workers/main.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/workers/process.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next-node/workers/workers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/contracts/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/contracts/accepts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/contracts/contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/contracts/declare.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/contracts/evolve.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/contracts/fingerprint.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/contracts/history.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/contracts/host-kind.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/contracts/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/contracts/internal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/contracts/names.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/contracts/params.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/contracts/schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/contracts/snapshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/data/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/data/args.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/data/errors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/data/failure.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/data/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/data/internal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/data/params.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/data/principal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/data/validator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/documents/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/documents/address-source.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/documents/definition.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/documents/documents.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/documents/fence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/documents/handles.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/documents/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/documents/internal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/documents/keyed-slot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/documents/line.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/documents/persistence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/documents/residency.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/documents/slot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/documents/transaction.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/activity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/adapted.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/attempt.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/backoff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/ctx.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/deadline.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/dependencies.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/destination.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/facet.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/follow.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/internal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/members.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/native.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/object.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/parked.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/presence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/ref-state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/reference-keys.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/reference-source.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/reference.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/retry-on.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/revocation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/root.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/routines.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/sleep.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/staging.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/unbound.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/host/uuid.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/jobs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/jobs/definition.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/jobs/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/jobs/internal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/jobs/job.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/src/next/jobs/persisted.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

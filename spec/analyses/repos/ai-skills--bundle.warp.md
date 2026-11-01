@@ -2,11 +2,11 @@
 
 Source: [bundle.warp](https://github.com/warpdotdev/common-skills) · [Analysis](../../projects/ai-skills--bundle.warp.md) · [skills](../../skills.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `8792394ff1b655e0af451b8fabb68ef0cfcbd208`; commit date: 2026-10-20T17:07:08-04:00; review date: 2026-10-28T08:26:04.502Z; observed SHA: `8792394ff1b655e0af451b8fabb68ef0cfcbd208`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `8792394ff1b655e0af451b8fabb68ef0cfcbd208`; commit date: 2026-10-20T17:07:08-04:00; review date: 2026-10-28T08:26:04.502Z; observed SHA: `8792394ff1b655e0af451b8fabb68ef0cfcbd208`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/warpdotdev/common-skills/compare/8792394ff1b655e0af451b8fabb68ef0cfcbd208...8792394ff1b655e0af451b8fabb68ef0cfcbd208). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

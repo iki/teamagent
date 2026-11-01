@@ -1,0 +1,43 @@
+# fengarde
+
+Source: [fengarde](https://github.com/supermhel/fengarde) · Category: [ai-security](../categories/ai-security.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `285ca7244032aed3e3402da437a07d97b9792ade`; commit timestamp `2026-09-10T02:35:39+02:00`; 527 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/supermhel/fengarde/blob/285ca7244032aed3e3402da437a07d97b9792ade/README.md)):
+
+> [](https://github.com/supermhel/fengarde/actions/workflows/ci.yml) [](https://github.com/supermhel/fengarde/actions/workflows/codeql.yml)
+
+Build/package evidence: [pyproject.toml](https://github.com/supermhel/fengarde/blob/285ca7244032aed3e3402da437a07d97b9792ade/pyproject.toml); [services/devkit-feeder/requirements.txt](https://github.com/supermhel/fengarde/blob/285ca7244032aed3e3402da437a07d97b9792ade/services/devkit-feeder/requirements.txt); [services/ws1-collectors/requirements.txt](https://github.com/supermhel/fengarde/blob/285ca7244032aed3e3402da437a07d97b9792ade/services/ws1-collectors/requirements.txt); [services/ws2-normalization/requirements.txt](https://github.com/supermhel/fengarde/blob/285ca7244032aed3e3402da437a07d97b9792ade/services/ws2-normalization/requirements.txt); [services/ws3-indexer/requirements.txt](https://github.com/supermhel/fengarde/blob/285ca7244032aed3e3402da437a07d97b9792ade/services/ws3-indexer/requirements.txt)
+
+License evidence: [LICENSE](https://github.com/supermhel/fengarde/blob/285ca7244032aed3e3402da437a07d97b9792ade/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-security**. Its category places it in the candidate set for agents, skills, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [skills](../skills.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`33e340ffb237b173ba85d0294248bc72ae3a03e6`](https://github.com/supermhel/fengarde/commit/33e340ffb237b173ba85d0294248bc72ae3a03e6). Scope: Full test-wiring gate, evaluation-change filter and two browser MFA helpers read. Detection rules, production authentication and evaluation fingerprints were not audited.
+
+The [test-wiring gate](https://github.com/supermhel/fengarde/blob/33e340ffb237b173ba85d0294248bc72ae3a03e6/tools/check_test_wiring.py) inventories test files and requires a gate reference or documented live-only exception; its regex/basename matching is a useful drift check, not proof each discovered suite executes. The [evaluation filter](https://github.com/supermhel/fengarde/blob/33e340ffb237b173ba85d0294248bc72ae3a03e6/tools/ci_eval_filter.py) reuses fingerprint globs and adds evaluation consumers, supporting deleted and renamed-away paths through a NUL-delimited change list. Adapt shared measurement inputs and explicit live-test separation, but verify the imported fingerprint and CI invocation before relying on coverage.
+
+The [MFA exercise](https://github.com/supermhel/fengarde/blob/33e340ffb237b173ba85d0294248bc72ae3a03e6/tools/console_e2e/mfa.mjs) provisions a temporary user, enrolls through API calls and checks sign-in through the UI, waiting for the next TOTP window rather than reusing enrollment's code. It disables the user only on the normal completion path: errors before cleanup can leave the account active and browser open. The [helper](https://github.com/supermhel/fengarde/blob/33e340ffb237b173ba85d0294248bc72ae3a03e6/tools/console_e2e/lib.mjs) reads credentials in-process, while an environment-controlled base URL determines their destination; an authorized test-host allowlist is still needed. Do not import these scripts as a default credential-free gate. No browser, authentication flow or tests were run.
+
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `921d75ba5e5d2f8aba94883588ece16854fac4cd` against prior analyzed commit `33e340ffb237b173ba85d0294248bc72ae3a03e6`. Historical reviews above remain separate evidence.
+
+The [window counter](https://github.com/supermhel/fengarde/blob/921d75ba5e5d2f8aba94883588ece16854fac4cd/services/shared/window.py) combines sorted-set add/trim/count/expiry into per-key Lua scripts, lazily registers them, and batches independent script calls in a non-transactional pipeline. It also adds capped member queries with an omitted count. Each script can be atomic while the batch as a whole is not; concurrent writers may interleave between keys.
+
+The [dispatch fixtures](https://github.com/supermhel/fengarde/blob/921d75ba5e5d2f8aba94883588ece16854fac4cd/services/ws4-detection/test_window_lua.py) verify script selection, arguments, lazy registration, legacy paths and capped reads using fakes. The [detector fixtures](https://github.com/supermhel/fengarde/blob/921d75ba5e5d2f8aba94883588ece16854fac4cd/services/ws4-detection/test_window_pipeline.py) compare batched and sequential verdicts and final deque state on a stream that actually triggers rules. Neither executes Redis; the separately named live parity suite was not inspected or run. Embedded timing comments remain upstream measurements, not independently reproduced speedups. Teamagent should benchmark the actual deployment and preserve outcome parity before optimizing round trips. Validate positive cap values: the visible Redis path reads at least one member for cap zero, unlike the deque slice.
+
+**Coverage:** Read the complete targeted window implementation and both newly added local fixture files (529 presented lines). Live Redis tests, detector implementation and remaining updates were outside scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.

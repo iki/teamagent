@@ -2,7 +2,7 @@
 
 Source: [dbx](https://github.com/t8y2/dbx) · [memory](../../memory.md), [import-generation](../../import-generation.md).
 
-Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-query--dbx.md).
+Historical discovery: 2026-10-24T06:36:54.441Z, initially unreviewed. Dated scoped reviews below supersede that discovery-only status; they do not establish runtime validation. [Change evidence](../repos/ai-query--dbx.md).
 
 
 ## Initial source review - 2026-10-28
@@ -31,6 +31,14 @@ Evidence: [crates/dbx-core/src/data/data_compare.rs:29-42](https://github.com/t8
 
 **Scope and limits:** Reviewed the helper and its complete timeout fixture; database drivers, synchronization writes and large-table behavior were not executed or certified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `e6b1a478b7618def254e8a45b23a8ce2e0b61aa9` against `a382bd25a4a8eb9371d1330cd251810743e9a1e9`. The new [approval dock](https://github.com/t8y2/dbx/blob/e6b1a478b7618def254e8a45b23a8ce2e0b61aa9/apps/desktop/src/composables/useAiToolApprovalDock.ts) keeps live pending/submitting approvals visible independently of streamed prose, removes expired entries using a deadline-driven timer and cleans that timer when its watcher is disposed. The [card](https://github.com/t8y2/dbx/blob/e6b1a478b7618def254e8a45b23a8ce2e0b61aa9/apps/desktop/src/components/editor/AiToolApprovalCard.vue) treats a command as a preview while retaining complete arguments. [Fixtures](https://github.com/t8y2/dbx/blob/e6b1a478b7618def254e8a45b23a8ce2e0b61aa9/apps/desktop/src/composables/__tests__/useAiToolApprovalDock.spec.ts) cover streamed text, multiple approvals, expiry, conversation changes and cleanup.
+
+**Harness consequence:** Approval UI must expose exact action identity and survive unrelated rendering updates. Display expiry is not the security gate: the executor must independently reject stale, changed or already-resolved approvals and bind them to the operation/session. Historical cards must never revive authority.
+
+**Scope and limits:** Complete three selected UI/fixture diffs, not executor authorization or IPC validation. No browser/native acceptance run or upstream tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [dbx](https://github.com/t8y2/dbx); analyzed commit `a382bd25a4a8eb9371d1330cd251810743e9a1e9`; commit date 2026-10-28T17:46:30+08:00; review date 2026-10-28T14:52:35.205Z; depth reviewed. [Maintenance record](../repos/ai-query--dbx.md).
+Analysis metadata: source [dbx](https://github.com/t8y2/dbx); analyzed commit `e6b1a478b7618def254e8a45b23a8ce2e0b61aa9`; commit date 2026-11-01T16:44:46+08:00; review date 2026-11-01T11:35:43.470Z; depth reviewed. [Maintenance record](../repos/ai-query--dbx.md).
 <!-- teamagent-analysis:end -->

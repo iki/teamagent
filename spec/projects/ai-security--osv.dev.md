@@ -44,6 +44,18 @@ The Git synchronization branch now fetches/prunes/forces tags explicitly. Mutabl
 
 **Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
 
+## 2026-11-01 scoped source refresh
+
+Reviewed `2550f6d61565de3a813e19f64a24b04b8af0ce39` → `c4dbe744f53244c634bceba56435a77f5c5d8a60`: all nine changed Go implementation/test deltas in the 12-path inventory. Deployment configuration and the API cassette were not revalidated. Earlier findings remain historical evidence.
+
+[PostgreSQL lookup validation](https://github.com/google/osv.dev/blob/c4dbe744f53244c634bceba56435a77f5c5d8a60/go/internal/database/postgres/vulnerability.go) rejects invalid UTF-8 and NUL-containing text before batching. [Package/cursor matching](https://github.com/google/osv.dev/blob/c4dbe744f53244c634bceba56435a77f5c5d8a60/go/internal/database/postgres/vulnerability_matching.go) repeats the text check after URL normalization; encoded invalid bytes therefore cannot bypass the original check. Invalid IDs become not-found, malformed package names yield no matches, and invalid cursors remain errors. Those result semantics must remain visible to a security consumer: an invalid query is not evidence that a valid package has no vulnerabilities.
+
+The [matching fixtures](https://github.com/google/osv.dev/blob/c4dbe744f53244c634bceba56435a77f5c5d8a60/go/internal/database/postgres/vulnerability_matching_test.go) teach the fake database to reject invalid text, cover a valid sibling beside an invalid batch query and retain binary commit bytes as valid `BYTEA`. This is more representative than unrestricted string equality, although the fake shares the production predicate and no real PostgreSQL behavior was executed here.
+
+The [importer](https://github.com/google/osv.dev/blob/c4dbe744f53244c634bceba56435a77f5c5d8a60/go/internal/importer/importer.go#L615-L657) hashes source data before normalization. The [new JSON escape transformer and tests](https://github.com/google/osv.dev/blob/c4dbe744f53244c634bceba56435a77f5c5d8a60/go/internal/osvutil/schema/schema.go#L75-L114) distinguish a NUL escape from an escaped literal backslash, clone only when rewriting and preserve the caller's slice. Teamagent should retain original and normalized identities plus the transformation version; normalization is not byte-preserving ingestion.
+
+The [shadow-read limit](https://github.com/google/osv.dev/blob/c4dbe744f53244c634bceba56435a77f5c5d8a60/go/internal/database/dualread/vulnerability.go#L36-L44) rises from 64 to 4,096. This is a changed admission budget, not a measured peak-memory guarantee; workload-level limits and dropped-shadow coverage still matter. No database, importer, upstream test or deployment was run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [osv.dev](https://github.com/google/osv.dev); analyzed commit `2550f6d61565de3a813e19f64a24b04b8af0ce39`; commit date 2026-10-28T05:44:09Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-security--osv.dev.md).
+Analysis metadata: source [osv.dev](https://github.com/google/osv.dev); analyzed commit `c4dbe744f53244c634bceba56435a77f5c5d8a60`; commit date 2026-10-29T23:57:32Z; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-security--osv.dev.md).
 <!-- teamagent-analysis:end -->

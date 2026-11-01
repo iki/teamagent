@@ -56,6 +56,18 @@ For Teamagent, persist uncertain edits beyond a component lifetime and reconcile
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `7690e4e7ea0535757aa80441159d860309677860` (commit date `2026-11-01T14:48:59+05:30`), compared with `c8be3cbd452eccabdc7001536b917e0572cf5b89`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete telemetry-authority reader and fixtures. Whole-repository diff was oversized; desktop writer, queue invalidation and Windows ACL enforcement not audited.
+
+The [reader](https://github.com/ComposioHQ/agent-orchestrator/blob/7690e4e7ea0535757aa80441159d860309677860/backend/internal/adapters/telemetry/policyauthority/reader.go) validates a versioned consent record, generation UUID and UTC timestamp, rejects unsafe file types and non-private POSIX permissions, and bounds decoding to 4,097 bytes. Read errors veto events. With explicit enabling environment flags, an absent policy permits events; legacy production flags do not override the recorded choice. [Fixtures](https://github.com/ComposioHQ/agent-orchestrator/blob/7690e4e7ea0535757aa80441159d860309677860/backend/internal/adapters/telemetry/policyauthority/reader_test.go) pin those defaults. The pre-open path check is not an atomic no-follow open, and Windows permissions are outside this reader.
+
+**Teamagent implication (inference):** Keep policy authority, generation and evidence level explicit across desktop/daemon boundaries. Teamagent's unknown-training default remains blocked rather than inheriting this telemetry default; revalidate live consent before egress and use platform-appropriate file ownership checks.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator); analyzed commit `c8be3cbd452eccabdc7001536b917e0572cf5b89`; commit date 2026-10-28T13:18:15+05:30; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--agent-orchestrator.md).
+Analysis metadata: source [agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator); analyzed commit `7690e4e7ea0535757aa80441159d860309677860`; commit date 2026-11-01T14:48:59+05:30; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--agent-orchestrator.md).
 <!-- teamagent-analysis:end -->

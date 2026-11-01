@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-mem--tracedecay",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/ScriptedAlchemy/tracedecay",
+  "report": "spec/projects/ai-agents-mem--tracedecay.md",
+  "analyzedSha": "1003abc0590394675941d1060b8e3027a3ad61ff",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T01:38:17-07:00",
+  "observedSha": "3c31db796f44ebe41c1a74b204531d936232598f",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3c31db796f44ebe41c1a74b204531d936232598f",
+      "date": "2026-11-01T01:58:07-08:00",
+      "subject": "docs(agent-hosts): clarify native cache fixture byte fidelity (#4679)"
+    },
+    {
+      "sha": "f288a9ccb49a579cb188e84381c87833bb828cfc",
+      "date": "2026-10-31T23:53:56-07:00",
+      "subject": "test(session-runtime): synchronize rekey route join on worker idle (#4676)"
+    },
+    {
+      "sha": "c8dfb5a6afbd8c8b7777c0418fe0358966908ae2",
+      "date": "2026-10-31T22:27:39-07:00",
+      "subject": "refactor(daemon-protocol): share restart retry with resolver (#4667)"
+    },
+    {
+      "sha": "b6bbc3932933f47f811abc52ad471244ffaedc96",
+      "date": "2026-10-31T19:31:16-07:00",
+      "subject": "refactor(test): move session-temporal harness into project (#4661)"
+    },
+    {
+      "sha": "3f40302c8b3ce275a3554c777355fff20f8d35f8",
+      "date": "2026-10-31T18:46:03-07:00",
+      "subject": "refactor(daemon): replace the daemon.rs facade with explicit imports (#4671)"
+    },
+    {
+      "sha": "756b0b2046be359eaeb2ca0156bc504af4b729d7",
+      "date": "2026-10-31T18:27:44-07:00",
+      "subject": "fix(sessions): preserve terminal historical admission blockers (#4674)"
+    },
+    {
+      "sha": "9f0508f9aee5ca2c4c9c98c5df76fd67ceea64d6",
+      "date": "2026-10-31T18:12:54-07:00",
+      "subject": "refactor(mcp): delete the unused background-refresh token-map payload (#4675)"
+    },
+    {
+      "sha": "fd827f3983f9a3dfe1bc5513ea4a342c69334041",
+      "date": "2026-10-31T17:09:04-07:00",
+      "subject": "test(dashboard): bound retries for timed-out state reads (#4664)"
+    },
+    {
+      "sha": "9f8a56521e8c50d5b8fe8cdaef511a28872dd1d3",
+      "date": "2026-10-31T16:40:01-07:00",
+      "subject": "test(hosts): copy the Codex native cache without fs::copy (#4673)"
+    },
+    {
+      "sha": "6df437e60e440fd793340b1b8ff754432487d8f2",
+      "date": "2026-10-31T15:26:20-07:00",
+      "subject": "test(observation): move benchmark and cursor identity suites to project (#4658)"
+    },
+    {
+      "sha": "5c29ae66e0c6d570748960f739d5b77be8f48986",
+      "date": "2026-10-31T15:10:43-07:00",
+      "subject": "fix(sessions): admit history on a retrying refresh worker (#4668)"
+    },
+    {
+      "sha": "9f378896e95a04217d693d42889efe3e56744b4f",
+      "date": "2026-10-31T22:04:31Z",
+      "subject": "fix(automation): take a shared lock for run-ledger reads (#4669)"
+    },
+    {
+      "sha": "816d8747c14c5b6b6be867c5475c743153ff5fb7",
+      "date": "2026-10-31T21:56:35Z",
+      "subject": "fix(code-index): isolate fixture schedulers from the process plan (#4672)"
+    },
+    {
+      "sha": "c35da539ab278e625766f96b0ad915f9dc5c04b6",
+      "date": "2026-10-31T20:25:25Z",
+      "subject": "build(bazel): regenerate daemon-service BUILD after #4660 and #4662 (#4670)"
+    },
+    {
+      "sha": "b989d1f6e58d82aa02945865b1a9d0f21d074700",
+      "date": "2026-10-31T16:43:51Z",
+      "subject": "refactor(mcp): replace McpServer::cg with cg_snapshot (#4665)"
+    },
+    {
+      "sha": "e2488c528ec9a18a8303f06901a34ea27dfe7ed3",
+      "date": "2026-10-31T16:26:24Z",
+      "subject": "fix(daemon): settle Work delivery before reusing connections (#4663)"
+    },
+    {
+      "sha": "eac09e6d4d581a5d37d4120f99369f06bd351beb",
+      "date": "2026-10-31T09:15:04-07:00",
+      "subject": "test(daemon-service): move graph activation journeys out of the root (#4662)"
+    },
+    {
+      "sha": "f9c02daadebabdf00b872c65c901e373d18f3931",
+      "date": "2026-10-31T15:39:38Z",
+      "subject": "test(daemon): move ignored-dependency and workflow handoff suites (#4659)"
+    },
+    {
+      "sha": "e3a5e298febccdf5bb7cdf5f8d4a6344c8c99b44",
+      "date": "2026-10-31T14:58:12Z",
+      "subject": "test(daemon-service): move invocation suites out of the root (#4660)"
+    },
+    {
+      "sha": "8e9dd68356331c8fa572d916e6d47f8eaa5b1af2",
+      "date": "2026-10-31T14:58:10Z",
+      "subject": "test(graph): move graph_suite into owner crates (#4656)"
+    },
+    {
+      "sha": "ffd719928aa623d5062c6b5ac579ba686b035b87",
+      "date": "2026-10-31T06:01:47-07:00",
+      "subject": "test(tracedecay): relocate LSP gateway and tool-surface tests (#4657)"
+    },
+    {
+      "sha": "d70a8e743b1f30b716fea2e135843254e2af5210",
+      "date": "2026-10-31T12:50:26Z",
+      "subject": "chore(deps): update dependency lucide-react to v1.66.0 (#4653)"
+    },
+    {
+      "sha": "641a42c16478b23e4613ef559e973d7edc0d69de",
+      "date": "2026-10-31T12:01:25Z",
+      "subject": "chore(release): release 1.0.0-beta.94 (#4621)"
+    },
+    {
+      "sha": "ceb851128a37e9a913488521eb1f1c7f8a74e07a",
+      "date": "2026-10-31T03:30:31-07:00",
+      "subject": "fix(code-index): refresh dirty snapshot commit attribution (#4655)"
+    },
+    {
+      "sha": "73dd10e30a297605247573b8cbda5d78fb891adc",
+      "date": "2026-10-31T03:29:48-07:00",
+      "subject": "refactor(daemon): make work delivery imports explicit (#4654)"
+    },
+    {
+      "sha": "fac97485ad2a405b34d138395827d048384dec90",
+      "date": "2026-10-31T03:21:48-07:00",
+      "subject": "fix(lcm): settle temporal refresh before summary publication (#4650)"
+    },
+    {
+      "sha": "d244ba7fa5196f076d424d665344ab160a032452",
+      "date": "2026-10-31T09:38:48Z",
+      "subject": "fix(automation): retain admitted job schedules per project (#4634)"
+    },
+    {
+      "sha": "4caf5c52324b797424b9337dc9c845a7341ff1c5",
+      "date": "2026-10-31T08:27:51Z",
+      "subject": "refactor(tracedecay): gate fixture-only APIs and trim test-only deps (#4646)"
+    },
+    {
+      "sha": "0d6c60eb0ec88e7d3108ed7504542d9775c04812",
+      "date": "2026-10-31T07:18:49Z",
+      "subject": "refactor(root): move receipts, credential lifecycle, remote fixture (#4647)"
+    },
+    {
+      "sha": "2e338af7d19154e005702e3ff18273dea8296a8c",
+      "date": "2026-10-31T06:24:59Z",
+      "subject": "refactor(root): move four root-owned surfaces down to their owning crates (#4642)"
+    },
+    {
+      "sha": "fd53a98b47139e090ff3d578f098efead9c4c5b5",
+      "date": "2026-10-31T06:17:44Z",
+      "subject": "test(maintenance): wait for bounded retention pages"
+    },
+    {
+      "sha": "966bf840bde9ca904889aaad2b35f76ab4d78ff4",
+      "date": "2026-10-31T06:12:08Z",
+      "subject": "test(dashboard): wait for explorer query by its admission deadline (#4652)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".bazelrc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cargo/config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor/skills/zack-mode/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-bazel/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-bazel/configure_fleet.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-bazel/tune_windows.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/actions/tune-windows-runner/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/hawk.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".release-please-manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MODULE.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/claude-observation/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/claude-observation/evidence-index.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "benchmark_data/claude-observation/result-2026-07-15-0c289212.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "benchmark_data/claude-observation/result-2026-07-15-b05b4cd5.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "benchmark_data/claude-observation/result-2026-07-16-00d3d73a.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "benchmark_data/claude-observation/result-2026-07-16-8d53b4a9.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "benchmark_data/claude-observation/result-2026-07-26-dc17dd73.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/session-temporal/workload-v1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/claude/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/codex.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/codex/mcp_registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/codex/plugin_registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/tracedecay-agent-hosts/src/agents/codex/retired_bundle_files.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/codex/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout/intent_pass.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout/model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout/owner.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout/store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout/store_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/copilot/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/cursor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/cursor_diagnostics.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/droid.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/gemini/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/hermes/templates/plugin_init.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/hermes/templates/skill.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/capability_admission.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/component_set.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/control.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/doctor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/planner.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/writer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle_registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_component_registration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/kimi.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/kimi/web_refresh.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/tracedecay-agent-hosts/src/agents/native_cache_fixture.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/opencode.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/vibe.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/hooks/analytics.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/hooks/analytics/readiness.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/hooks/codex.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/hooks/dispatch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/hooks/dispatch/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/hooks/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/advisory/github_runtime/credential_lifecycle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/dashboard_diagnostics.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/graph_health_delta.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/lsp_runtime/path_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/lsp_runtime/projection_identity.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/lsp_runtime/projection_identity_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/observability/producer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/pr_tracking.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/pr_tracking/worktrees.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/primitives/production.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/primitives/production/affected_tests_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/primitives/production/extended_primitive.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/primitives/production/managed_test_scope.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/primitives/production/managed_test_scope_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/primitives/production/source_lines_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/src/primitives/production/unavailable_evidence_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-application/tests/pr_tracking.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/artifact_payloads.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/artifact_payloads/combined_privacy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/artifacts.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/backend.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/backend_identity.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/effect_runtime.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/effect_runtime/journal.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/effect_runtime/problem.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/effect_runtime/recovery_index.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/effect_runtime/settlement.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/effect_runtime/settlement/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/effect_runtime/terminal.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/jobs.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/tracedecay-automation-runtime/src/automation/jobs/definitions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/tracedecay-automation-runtime/src/automation/jobs/definitions/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/jobs/persistence_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/jobs/scheduler_config_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/jobs/scheduler_gate.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/lifecycle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/lifecycle/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/managed_skills.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/managed_skills/routing_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/memory_curator.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/memory_curator/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/observation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/outcomes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/outcomes_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/run_ledger.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/run_ledger/cursor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/run_ledger/exact_lookup.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/run_ledger/exact_publication.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/run_ledger/lifecycle_index.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/run_ledger/scheduler_diagnostic.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/runner.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/runner/curation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/runner/evidence.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/runner/session_reflector.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/runner/skill_writer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/runner/tests/early_gate.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/scheduler.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/skill_materialization.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/skill_materialization_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/skill_targets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/skill_usage.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/skill_usage/recommendations.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/skill_usage/store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation-runtime/src/automation/skill_writer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation/src/backend.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-automation/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-capture/src/claude/canonical.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-capture/src/codex.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-capture/tests/capture_suite/provider_usage_capture.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-capture/tests/capture_suite/session_import_counts.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/agent_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/agent_cmd/automation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/tracedecay-cli/src/agent_cmd/mcp_identity_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/automation_cli/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/automation_cli/runs.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/cli/help.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/commands/branch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/commands/index.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/commands/profile_storage.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/commands/stale_store_reset.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/commands/storage.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/global.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/hook_capture_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/hook_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/lsp_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/macos_codesign.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/startup_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/status_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-cli/src/update_cmd.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

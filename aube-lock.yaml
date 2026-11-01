@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  tinypool@2.2.0: de8f773eec7e3e36c669f0a21df874afe37d23f88efc1b61498602a9701253be
+
 importers:
 
   .:
@@ -2207,7 +2210,7 @@ snapshots:
 
   oxfmt@0.74.0:
     dependencies:
-      tinypool: 2.2.0
+      tinypool: 2.2.0(patch_hash=de8f773eec7e3e36c669f0a21df874afe37d23f88efc1b61498602a9701253be)
     optionalDependencies:
       '@oxfmt/binding-android-arm-eabi': 0.74.0
       '@oxfmt/binding-android-arm64': 0.74.0
@@ -2372,7 +2375,7 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.7)
       picomatch: 4.0.7
 
-  tinypool@2.2.0: {}
+  tinypool@2.2.0(patch_hash=de8f773eec7e3e36c669f0a21df874afe37d23f88efc1b61498602a9701253be): {}
 
   ts-algebra@2.0.0: {}
 

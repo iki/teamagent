@@ -41,10 +41,18 @@ supply Rust, Android SDK, Xcode, browser binaries or external compression tools.
 
 ## Native tools and Windows
 
-Invoke each pinned formatter/type/lint JavaScript entry with the current Bun
-executable and a structured argument list, without a shell. This avoids a Node
-shebang or `.cmd` wrapper becoming an undeclared runtime dependency and avoids
-shell quoting/PATH truncation issues. Preserve the user's PATH.
+Invoke pinned formatter/lint JavaScript entries with the current Bun executable
+and a structured argument list, without a shell. For TypeScript, resolve the
+installed native-preview package's matching platform executable and launch it
+directly through the owned process supervisor. Validate exact package versions
+and physical executable identity; retain both launcher and native-package inputs
+in verification fingerprints. This repository launcher selection does not modify
+the dependency. The upstream JavaScript wrapper starts another process without
+Windows hiding, so hiding only that wrapper does not cover its native child.
+These paths avoid Node shebangs and `.cmd` wrappers as undeclared runtime
+dependencies and avoid shell quoting/PATH truncation issues. Preserve the user's
+PATH. Background launch checks must include descendants and actual tool worker
+paths, not only the first process.
 
 Resolve the platform-specific native `tsgolint` executable from the installed
 `oxlint-tsgolint` package and pass its path through `OXLINT_TSGOLINT_PATH`.

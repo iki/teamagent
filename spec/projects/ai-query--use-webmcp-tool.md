@@ -24,6 +24,12 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 
+## Change reconciliation — 2026-11-01
+
+Reviewed `30895940941a2dc02b44c1519b96a37da9da788a` (2026-10-30T14:25:54+01:00) against `9f0dc6eddf88cff65ebe877f199d4547e74ab31e`. The sole changed path is [package-lock.json](https://github.com/GoogleChromeLabs/use-webmcp-tool/blob/30895940941a2dc02b44c1519b96a37da9da788a/package-lock.json): root lock metadata changes 0.2.0 to 0.3.0 and development tooling resolutions change, including Rolldown/Vite/Vitest and source-map-js. No hook implementation or test file changed. Dependency-name/version hunks were inspected; transitive package source and artifact integrity were not independently audited.
+
+Keep the prior screening depth: this reconciliation supplies no new browser capability, security or performance evidence. An updated toolchain lock does not prove experimental WebMCP support in a user's browser. No install, browser action or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [use-webmcp-tool](https://github.com/GoogleChromeLabs/use-webmcp-tool); analyzed commit `9f0dc6eddf88cff65ebe877f199d4547e74ab31e`; commit date 2026-09-10T20:57:02-06:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--use-webmcp-tool.md).
+Analysis metadata: source [use-webmcp-tool](https://github.com/GoogleChromeLabs/use-webmcp-tool); analyzed commit `30895940941a2dc02b44c1519b96a37da9da788a`; commit date 2026-10-30T14:25:54+01:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--use-webmcp-tool.md).
 <!-- teamagent-analysis:end -->

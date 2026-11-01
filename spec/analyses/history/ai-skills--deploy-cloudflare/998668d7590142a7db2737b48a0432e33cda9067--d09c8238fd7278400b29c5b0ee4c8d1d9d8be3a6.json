@@ -1,0 +1,985 @@
+{
+  "id": "ai-skills--deploy-cloudflare",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/cloudflare/cloudflare-docs",
+  "report": "spec/projects/ai-skills--deploy-cloudflare.md",
+  "analyzedSha": "998668d7590142a7db2737b48a0432e33cda9067",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T09:58:21Z",
+  "observedSha": "d09c8238fd7278400b29c5b0ee4c8d1d9d8be3a6",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d09c8238fd7278400b29c5b0ee4c8d1d9d8be3a6",
+      "date": "2026-10-31T20:24:42Z",
+      "subject": "[Workers for Platforms, Dynamic Workers] Document auth for customer apps (#34740)"
+    },
+    {
+      "sha": "6ccb2d1ec7714a74f90287880297d8da4c78ca9a",
+      "date": "2026-10-31T16:28:52Z",
+      "subject": "[ZT] GitHub IdP: match GitHub's OAuth app form labels (#34813)"
+    },
+    {
+      "sha": "9bf9be5d174c8824ea1e259bd84b03867f7b29fc",
+      "date": "2026-10-31T12:34:12Z",
+      "subject": "[D1] Find expensive queries: default to cf, add cf for every step (#34782)"
+    },
+    {
+      "sha": "3a8808ee6f0863c707ef4cfdef1e0874a7a7f9fa",
+      "date": "2026-10-31T00:28:42Z",
+      "subject": "fix: update deprecated puppeteer isConnected() to new connected value (#34796)"
+    },
+    {
+      "sha": "597c42c79fa93632e50a91c3999ede06e68c9447",
+      "date": "2026-10-30T22:12:19Z",
+      "subject": "[WAF] Emergency release - October 30, 2026 - Nuxt Image / IPX partial coverage (#34803)"
+    },
+    {
+      "sha": "a9ecb79d461859abe065bdb63774be01a5cf72c1",
+      "date": "2026-10-30T22:01:29Z",
+      "subject": "[Workers Builds] Rewrite Builds API reference around Worker build configuration (#34786)"
+    },
+    {
+      "sha": "6d7e2d3a31480f53c5477f41d29c36c4cd24e074",
+      "date": "2026-10-30T21:32:47Z",
+      "subject": "WAF Changelog Oct 28 & Oct 30 (#34800)"
+    },
+    {
+      "sha": "c3d6c96bf97aa6d0f97edf9edb4e523b0dbd1e92",
+      "date": "2026-10-30T21:09:09Z",
+      "subject": "[Workers] Document cache bypass for Worker-to-Worker requests (#34793)"
+    },
+    {
+      "sha": "89fbab8c911ea0f0ded000b0885a1f2eec0a67fc",
+      "date": "2026-10-30T20:25:43Z",
+      "subject": "[Realtime] Clarify session recovery and diagnostics (#34789)"
+    },
+    {
+      "sha": "4f48179f3c72cef870073055877b57aebec6d6b2",
+      "date": "2026-10-30T20:20:39Z",
+      "subject": "[AI Gateway] Revert resource pricing changes from #34548 (#34795)"
+    },
+    {
+      "sha": "6ee6d6a3b6df56bdfdb64ce88dcb8afcac82dcbb",
+      "date": "2026-10-30T19:38:11Z",
+      "subject": "changelog for CF WAN supports regional processing with Gateway (#34791)"
+    },
+    {
+      "sha": "504ae688074aa45436d3a36fd9d5e7a7c9fd45aa",
+      "date": "2026-10-30T19:31:51Z",
+      "subject": "Document per-resource pricing (#34548)"
+    },
+    {
+      "sha": "c8beeef18de02a51429087baf17cd69bd5894a7d",
+      "date": "2026-10-30T19:11:15Z",
+      "subject": "[Logpush] Update job limits (#34784)"
+    },
+    {
+      "sha": "c881fe639ec9e7fa38af073fbb9b4ae4a674d61c",
+      "date": "2026-10-30T19:03:06Z",
+      "subject": "[SSL] Keyless SSL supports TLS 1.3 with ECDSA certificates (#34770)"
+    },
+    {
+      "sha": "7b1390e0ba5bfaa9833cc6e1c71519f72179a0a4",
+      "date": "2026-10-30T18:58:54Z",
+      "subject": "[Browser Run] Changelog: Chrome 152 and Quick Actions improvements (#34785)"
+    },
+    {
+      "sha": "2d99229ad5a1e075b3dbdc3cf027450a2ff428f5",
+      "date": "2026-10-30T18:53:03Z",
+      "subject": "[Data Localization Suite] Add Schengen Area, ISMAP, C5:2020, and ENS managed regions (#34780)"
+    },
+    {
+      "sha": "3a18964c913c40d8a9d8c319275031fed0c4767d",
+      "date": "2026-10-30T18:50:56Z",
+      "subject": "Clarify that hardware backed registration is only supported on apple silicon (#34769)"
+    },
+    {
+      "sha": "c99d77b4c75a05e09e32eee4eebfc26fca22cf83",
+      "date": "2026-10-30T18:42:14Z",
+      "subject": "Document Google Workspace SCIM user provisioning through generic SAML (#34589)"
+    },
+    {
+      "sha": "3f0d6e179026d336ef43525b2da1d74195b5ad37",
+      "date": "2026-10-30T18:36:55Z",
+      "subject": "[AI Gateway] Refresh model catalog (#34787)"
+    },
+    {
+      "sha": "7242f6ce424cf37c2398b94453f8e8f81cbfa6d6",
+      "date": "2026-10-30T18:30:22Z",
+      "subject": "Add new D1 query result size enforcement changelog and limit (#34777)"
+    },
+    {
+      "sha": "47d28a5ce343be2e05f0042b2b4f93557ac42e40",
+      "date": "2026-10-30T18:22:18Z",
+      "subject": "[One] Document the SCIM population viewer (#34699)"
+    },
+    {
+      "sha": "14298971f8275eaedf5e18a29ba4b3dc35df7ae2",
+      "date": "2026-10-30T13:12:22-05:00",
+      "subject": "[DO] Document delayed code updates (#32222)"
+    },
+    {
+      "sha": "f7664b3e00528b9df0404184de097e1020519c1c",
+      "date": "2026-10-30T17:42:45Z",
+      "subject": " [Data Localization Suite] Update Cloudflare One localization guidance (#34346)"
+    },
+    {
+      "sha": "8aab5dcdce985a8a8a6163eeb16205342ec1187b",
+      "date": "2026-10-30T17:28:36Z",
+      "subject": "[Data Localization] Changelog for DLS dashboard Overview (#34714)"
+    },
+    {
+      "sha": "87ae6b045c9bfda70d9f248156ed50be7acb6221",
+      "date": "2026-10-30T17:02:36Z",
+      "subject": "[AI Gateway] Update Auto Router models and add Guardrails S14 category (#34743)"
+    },
+    {
+      "sha": "8552002481d3bbb50a9c73fa09763246517808f0",
+      "date": "2026-10-30T16:54:36Z",
+      "subject": "[DNS] Document modern Nameserver Sets UI (#34679)"
+    },
+    {
+      "sha": "37241bca374c912d99de66c489e424349322b05b",
+      "date": "2026-10-30T16:21:17Z",
+      "subject": "[Email Service] Update outbound message size limit to 25 MiB (#34680)"
+    },
+    {
+      "sha": "8f8df0423f10be9143368252bc1b36e8df4ebfe3",
+      "date": "2026-10-30T15:46:20Z",
+      "subject": "Remove TODO note from fetching-bulk-analytics.mdx (#34735)"
+    },
+    {
+      "sha": "474f5434ddb651225c397b2f00335247fbf9e380",
+      "date": "2026-10-30T15:45:59Z",
+      "subject": "Clarify chunk size requirements for resumable uploads (#34639)"
+    },
+    {
+      "sha": "b0de4b4c140d491df49edbb6c2477125d446f730",
+      "date": "2026-10-30T15:40:41Z",
+      "subject": "docs: add minimax-h3-lite model (#34774)"
+    },
+    {
+      "sha": "ac7140a88db8b3d9dd4d85f12a25dfcd1251ee2f",
+      "date": "2026-10-30T15:40:15Z",
+      "subject": "docs: add minimax-h3-highspeed model (#34773)"
+    },
+    {
+      "sha": "99de569e0c123daa9165e9733dcc0623a445e202",
+      "date": "2026-10-30T15:30:55Z",
+      "subject": "[Audit Logs] Add account analytics changelog (#34747)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "public/__redirects",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/icons/agents/pi/dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/icons/agents/pi/light.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/agents/browser-internal-hostnames.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/changelog/audit-logs/audit-logs-v2-account-analytics.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/cloudflare-one/identity/scim-population-viewer.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/assets/images/workers/builds/redeploy-flow.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/assets/images/workers/builds/setup-from-scratch.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/assets/images/workers/builds/workflow-overview.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/agent-setup/agents.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/cf/AgentsPlatformDiagram.astro",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/cf/WorkersVPCOverviewDiagram.astro",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/react/container/Transport.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/components/react/mesh/MeshHighAvailability.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/components/react/mesh/MeshParticipants.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/components/react/mesh/MeshRoutes.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/components/react/mesh/PacketPulse.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/agent-setup/prompt.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/agent-setup/tracing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/alibaba-qwen-image-3.0-pro.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/alibaba-qwen3-max.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/alibaba-qwen3.5-397b-a17b.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/alibaba-qwen3.7-max.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/alibaba-qwen3.7-plus.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/alibaba-qwen3.8-max.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/anthropic-claude-fable-5.1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/anthropic-claude-fable-5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/anthropic-claude-haiku-4.5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/anthropic-claude-haiku-5.5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/anthropic-claude-opus-4.5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/anthropic-claude-opus-4.6.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/anthropic-claude-opus-4.7.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/anthropic-claude-opus-4.8.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/anthropic-claude-opus-5.5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/anthropic-claude-opus-5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/anthropic-claude-sonnet-4.5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/anthropic-claude-sonnet-4.6.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/anthropic-claude-sonnet-5.5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/anthropic-claude-sonnet-5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/black-forest-labs-flux-3-video.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/bytedance-seedance-2.0-fast.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/bytedance-seedance-2.0-mini.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/bytedance-seedance-2.0.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/bytedance-seedance-2.5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/bytedance-seedream-5-pro.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/elevenlabs-eleven-flash-v2-5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/elevenlabs-eleven-multilingual-v2.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/elevenlabs-eleven-turbo-v2-5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/elevenlabs-eleven-v3.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/elevenlabs-music-v2.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/fireworks-ember-1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/google-gemini-2.5-flash-lite.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/google-gemini-2.5-flash.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/google-gemini-2.5-pro.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/google-gemini-3.8-flash-lite-tts.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/google-gemini-3.8-flash-tts.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/google-gemini-3.8-flash.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/google-gemini-4-argon.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/google-gemini-omni-1.1-flash.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/google-gemini-omni-flash.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/catalog-models/klingai-kling-v3-image.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/krea-krea-2-large.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/krea-krea-2-medium-turbo.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/krea-krea-2-medium.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/krea-krea-3.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/meta-muse-spark-1.1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/meta-muse-spark-1.2.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/meta-muse-spark-1.3.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/meta-muse-spark-open.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/meta-muse-wonder-1.0.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/catalog-models/minimax-h3-highspeed.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/catalog-models/minimax-h3-lite.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/minimax-m2.7.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/minimax-m3.1-flash.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/minimax-m3.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/moonshotai-kimi-k3.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-decisions.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-4.1-mini.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-4.1-nano.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-4.1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-4o-mini.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-4o.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-5-mini.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-5-nano.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-5.1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-5.4-mini.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-5.4-nano.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-5.4-pro.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-5.4.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-5.5-pro.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-5.5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-5.6-luna.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-5.6-sol.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-5.6-terra.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-6-astra.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-6-luna.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-6-sol.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-6.1-sol.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/catalog-models/openai-gpt-6.1-terra.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-image-1.5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-gpt-image-2.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-o3-mini.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-o3.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/openai-o4-mini.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/catalog-models/particle-particle-1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/recraft-recraftv4-1-pro.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/recraft-recraftv4-1-utility-pro.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/recraft-recraftv4-1-utility.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/recraft-recraftv4-1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/reflection-ai-beam-1.0-501b-a23b.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/thinkingmachines-inkling-256k.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/thinkingmachines-inkling.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/catalog-models/topaz-gigapixel-high-fidelity-3.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/catalog-models/topaz-gigapixel-standard-2.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/typesafe-jev-1.14.0.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/typesafe-jev.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/unbiased-pareto.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/xai-grok-4.20-0309-non-reasoning.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/xai-grok-4.20-0309-reasoning.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/xai-grok-4.20-multi-agent-0309.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/xai-grok-4.3.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/xai-grok-4.5.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/xai-grok-4.6.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/xai-grok-4.7.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/catalog-models/xai-grok-imagine-video-1.5-preview.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/access/2026-10-28-google-workspace-scim.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/access/2026-10-28-mcp-analytics-response-status.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/access/2026-10-30-scim-population-viewer.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/changelog/agents/2026-03-02-agents-sdk-v0.7.0.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/changelog/agents/2026-08-04-agent-tracing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/changelog/agents/2026-10-20-think-computer-workspace.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/agents/2026-10-28-browser-internal-hostnames.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/agents/2026-10-29-agent-skills-from-files.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/audit-logs/2026-10-30-audit-logs-v2-account-analytics.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/browser-run/2026-10-30-chrome-152.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/changelog/cache/2025-11-07-cache-keys-for-cloudflare-trace.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/casb/2026-10-07-casb-terraform-integrations.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/cloudflare-challenges/2026-10-28-china-native-challenge-pages.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/d1/2026-10-30-query-result-size-limit.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/data-localization/2026-10-29-dls-dashboard-overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/data-localization/2026-10-30-cloudflare-wan-regional-processing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/dns/2026-10-30-classic-dns-records-page-retired.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/durable-objects/2026-10-30-durable-objects-deferred-code-updates.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/flagship/2026-11-02-local-flag-store.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/changelog/mesh/2026-09-23-mesh-participant-onboarding.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/changelog/rules/2025-01-09-rules-overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/changelog/rules/2025-04-09-snippets-ga.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/ssl/2026-10-30-keyless-ssl-tls13-ecdsa.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/waf/2026-10-28-waf-release.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/waf/2026-10-30-emergency-waf-release.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/waf/2026-10-30-waf-release.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/workers-vpc/2026-10-28-virtual-network-bindings.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/workers/2026-10-28-static-assets-base-path.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/workers/2026-10-28-workers-builds-90-day-retention.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/content/changelog/workers/2026-10-30-byoip-workers-subrequest-context.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/dash-routes/core-manually-defined.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/content/directory/trace-request.yaml",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

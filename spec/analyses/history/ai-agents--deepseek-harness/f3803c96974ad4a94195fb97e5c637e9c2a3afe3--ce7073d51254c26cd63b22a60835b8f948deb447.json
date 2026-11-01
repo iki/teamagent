@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--deepseek-harness",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/deepseek-ai/deepseek-harness",
+  "report": "spec/projects/ai-agents--deepseek-harness.md",
+  "analyzedSha": "f3803c96974ad4a94195fb97e5c637e9c2a3afe3",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T02:17:58+08:00",
+  "observedSha": "ce7073d51254c26cd63b22a60835b8f948deb447",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "ce7073d51254c26cd63b22a60835b8f948deb447",
+      "date": "2026-10-30T00:13:15+08:00",
+      "subject": "Merge pull request #7552 from deepseek-harness/fix/webworker-live-import-bindings"
+    },
+    {
+      "sha": "6397b4e59c8dcf74c165119369d65574d70ff5ba",
+      "date": "2026-10-29T23:54:15+08:00",
+      "subject": "Merge pull request #7556 from deepseek-harness/fix/mobile-sidebar-title"
+    },
+    {
+      "sha": "c5365304562a8b9be219f9c1da8fff85a81c8ef5",
+      "date": "2026-10-29T23:41:20+08:00",
+      "subject": "Merge pull request #7578 from deepseek-harness/worktree/sync-dsh-0.2.1-rc.5-to-master"
+    },
+    {
+      "sha": "babf1f66123d4ef400105f008fda332af8d1a094",
+      "date": "2026-10-29T21:14:24+08:00",
+      "subject": "Merge master into worktree/sync-dsh-0.2.1-rc.5-to-master"
+    },
+    {
+      "sha": "b830ec950faba0a46dda564be3e2d854afed94f1",
+      "date": "2026-10-29T21:01:28+08:00",
+      "subject": "Merge pull request #7572 from deepseek-harness/worktree/release-dsh-0.2.1-rc.5"
+    },
+    {
+      "sha": "31cfe2aafead959a4dbd9d8cfaae258eb28a19fd",
+      "date": "2026-10-29T20:42:48+08:00",
+      "subject": "release(dsh): 0.2.1-rc.5"
+    },
+    {
+      "sha": "820336fa4dfcdcb5afee1462ad1365d793f3f095",
+      "date": "2026-10-29T19:19:56+08:00",
+      "subject": "fix(ui): reuse mobile device detection for sidebar opener"
+    },
+    {
+      "sha": "92e8a6f60455d0a0f551dc4568bb1f9ab8161c19",
+      "date": "2026-10-29T19:19:12+08:00",
+      "subject": "Merge pull request #6747 from deepseek-harness/feat/apply-patch"
+    },
+    {
+      "sha": "b74851c0a68321d7b6e2cc859f7d54d221b86f9c",
+      "date": "2026-10-29T19:06:36+08:00",
+      "subject": "test(ui): provide frame width in sidebar consumer fixtures"
+    },
+    {
+      "sha": "c36b7ef620414661f88c14535c6652a6168f2f97",
+      "date": "2026-10-29T04:04:29-07:00",
+      "subject": "Merge pull request #7545 from deepseek-harness/docs/automation-event-trigger-rfc"
+    },
+    {
+      "sha": "50157d058664b931daa0540d7872a36a3fb936ea",
+      "date": "2026-10-29T18:58:26+08:00",
+      "subject": "Merge pull request #7069 from deepseek-harness/xtr/trajectory-code-highlight"
+    },
+    {
+      "sha": "6d8c7c810489d5a0b01c4e1dde580fb17e93ec39",
+      "date": "2026-10-29T03:52:17-07:00",
+      "subject": "docs(automation): deliver candidates and drop the end tool"
+    },
+    {
+      "sha": "5e1f146ebaf372d655c83d2b153e16a2f24891ef",
+      "date": "2026-10-29T18:49:24+08:00",
+      "subject": "Merge branch 'master' into feat/apply-patch"
+    },
+    {
+      "sha": "426c231f73680ba8c95b5b442f27287cde2c1368",
+      "date": "2026-10-29T18:45:30+08:00",
+      "subject": "Merge pull request #7399 from deepseek-harness/xtr/trajectory-failure-output"
+    },
+    {
+      "sha": "1209f095e4c1d57041945c30959ee7f389a566e4",
+      "date": "2026-10-29T03:39:07-07:00",
+      "subject": "docs(automation): specify event-turn tools, notify cards, unread marks, and storage"
+    },
+    {
+      "sha": "154263c2f129f636ba6e05d4869a36f2f1503005",
+      "date": "2026-10-29T18:37:06+08:00",
+      "subject": "Merge latest master into xtr/trajectory-code-highlight"
+    },
+    {
+      "sha": "ea4837abb14f2f9dc8ce4a83554abe7d7d892c04",
+      "date": "2026-10-29T18:36:31+08:00",
+      "subject": "feat(fs): keep apply_patch opt-in and the observation policy mounted"
+    },
+    {
+      "sha": "d04f1d31658ea9ed69f6609617f6c84d3299c3d0",
+      "date": "2026-10-29T18:31:19+08:00",
+      "subject": "fix(ui): share frame width for sidebar presentation"
+    },
+    {
+      "sha": "fe81bef43ea4a01466205ce9cd4ed34accece6f1",
+      "date": "2026-10-29T18:30:02+08:00",
+      "subject": "test(web): count apply_patch in the collapse-timing tool-update goldens"
+    },
+    {
+      "sha": "bcaa3480386123df1f5b3620c06091a3a6e78c11",
+      "date": "2026-10-29T18:29:58+08:00",
+      "subject": "Merge pull request #7490 from deepseek-harness/xtr/trajectory-subcall-folding"
+    },
+    {
+      "sha": "341ea6eea414c61fbe4c99cd1c3d6fc60bf0a57f",
+      "date": "2026-10-29T18:11:48+08:00",
+      "subject": "feat(schedule): integrate standalone tasks with the existing WebUI (#6189)"
+    },
+    {
+      "sha": "fdd9f9f6d88a74a551253465a078e9a236e1dc75",
+      "date": "2026-10-29T17:55:00+08:00",
+      "subject": "Merge pull request #7527 from deepseek-harness/turtle/load-earlier-broken-ca4d9cb21ffc"
+    },
+    {
+      "sha": "b0c374d550b7bd4797b5b9963ee60bcecf1b3915",
+      "date": "2026-10-29T02:53:22-07:00",
+      "subject": "docs(automation): judge event tasks in their own Session"
+    },
+    {
+      "sha": "4436420f47f590be5a1708e205f4c4143b3141d2",
+      "date": "2026-10-29T17:50:32+08:00",
+      "subject": "fix(web): stabilize mobile sidebar header layout"
+    },
+    {
+      "sha": "d8243a3f527090d8ce3c72a637ec5e25c9961be2",
+      "date": "2026-10-29T17:34:25+08:00",
+      "subject": "feat(base): enable apply_patch on the dsh-base tool-fs row"
+    },
+    {
+      "sha": "e6f54cecbbfcfe39103cc0d62a81a66717e9a593",
+      "date": "2026-10-29T17:00:06+08:00",
+      "subject": "Merge branch 'master' into feat/apply-patch"
+    },
+    {
+      "sha": "3366284d6e156eeaad542f80e07bcbfdd66576bc",
+      "date": "2026-10-29T01:46:26-07:00",
+      "subject": "docs(automation): propose event-triggered automation tasks"
+    },
+    {
+      "sha": "fe5450b152e81b9ca51170d30845d668b3ad4db3",
+      "date": "2026-10-29T16:38:42+08:00",
+      "subject": "feat(fs): ship without the observation policy and enable apply_patch in the Web standard preset"
+    },
+    {
+      "sha": "5444d2220c28c6098a5a33dbf222e414fdd723ba",
+      "date": "2026-10-29T16:31:42+08:00",
+      "subject": "fix(web): 修复手机端插件发现页工具栏溢出 (#7542)"
+    },
+    {
+      "sha": "b45eee4fca81bc1aa6738953ecf21d520ccf8dd8",
+      "date": "2026-10-29T16:13:02+08:00",
+      "subject": "docs(ui-chat): describe the hidden prompt node, not a card"
+    },
+    {
+      "sha": "548fa6b8436eddb5d1b59f2c58ed6aecc6133b7e",
+      "date": "2026-10-29T16:03:19+08:00",
+      "subject": "Merge pull request #7531 from deepseek-harness/worktree/hfai-session-request-header"
+    },
+    {
+      "sha": "d54475a6813981ea7c9642011b023ca05e91c96c",
+      "date": "2026-10-29T15:52:41+08:00",
+      "subject": "fix(llm): preserve header overrides and safe failure diagnostics"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-15-guided-plugin-installation.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-15-guided-plugin-installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-15-guided-plugin-installation.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-16-host-schedule-storage.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-16-host-schedule-storage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-16-host-schedule-storage.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-09-17-standalone-schedules.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-09-17-standalone-schedules.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-09-17-standalone-schedules.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-22-schedule-hard-delete-and-bounded-history.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-22-schedule-hard-delete-and-bounded-history.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-22-schedule-hard-delete-and-bounded-history.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-24-preset-scoped-schedule-tools.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-24-preset-scoped-schedule-tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-24-preset-scoped-schedule-tools.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-24-scheduled-message-framing.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-24-scheduled-message-framing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-24-scheduled-message-framing.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-24-shared-time-vocabulary.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-24-shared-time-vocabulary.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-24-shared-time-vocabulary.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-10-09-cua-shared-native-helper.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-10-09-cua-shared-native-helper.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-10-09-cua-shared-native-helper.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-20-workspace-tree-state-per-pane.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-20-workspace-tree-state-per-pane.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-20-workspace-tree-state-per-pane.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-21-context-menu-contributions.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-21-context-menu-contributions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-21-context-menu-contributions.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-21-schedule-rule-storage.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-21-schedule-rule-storage.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-21-schedule-rule-storage.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-10-28-forge-git-session-permissions.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-10-28-forge-git-session-permissions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-10-28-forge-git-session-permissions.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-10-28-plugin-install-failure-diagnostics.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-10-28-plugin-install-failure-diagnostics.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-10-28-plugin-install-failure-diagnostics.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-08-28-auto-review.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-08-28-auto-review.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-08-28-auto-review.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-09-17-sidebar-file-and-directory-auto-refresh.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-09-17-sidebar-file-and-directory-auto-refresh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-09-17-sidebar-file-and-directory-auto-refresh.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-09-22-archive-admission-reads-stored-tasks.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-09-22-archive-admission-reads-stored-tasks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-09-22-archive-admission-reads-stored-tasks.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-09-28-apply-patch-file-editing.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-09-28-apply-patch-file-editing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-09-28-apply-patch-file-editing.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-10-09-forge-panel.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-10-09-forge-panel.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-10-09-forge-panel.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/testing/2026-09-06-frontend-performance-budgets.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/testing/2026-09-06-frontend-performance-budgets.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/testing/2026-09-06-frontend-performance-budgets.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/testing/2026-09-28-session-corpus-performance.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/testing/2026-09-28-session-corpus-performance.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/testing/2026-09-28-session-corpus-performance.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/proposed/feature/2026-10-29-event-triggered-automation-tasks.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/proposed/feature/2026-10-29-event-triggered-automation-tasks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/proposed/feature/2026-10-29-event-triggered-automation-tasks.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/record-browser-gif/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-exe-for-python-sdk.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-master.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/cua-helper-package.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-package.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "THIRD_PARTY_NOTICES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/tests/profiles/sdk/desktop-tools.expected.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/tests/profiles/sdk/fixtures/parity-probe.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/tests/profiles/sdk/fixtures/profile-environment.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/tests/profiles/sdk/fixtures/tool-parity.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/tests/profiles/sdk/keyless-smoke.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/tests/profiles/sdk/plugin-manager.expected.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/tests/profiles/sdk/schedule-resume.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/tests/profiles/sdk/tool-parity.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/tests/profiles/sdk/tool-parity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/tests/profiles/web/tests/schedule-timing.expected.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/tests/web-agent-presets.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/README.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/README.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/config/publishing/macos/production.json.example",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/config/publishing/macos/test.json.example",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/config/publishing/windows/production.json.example",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/config/publishing/windows/test.json.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/packaging/README.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/packaging/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/packaging/README.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/publishing/ci/README.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/publishing/ci/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/publishing/ci/README.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/desktop-publish-tag.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/desktop/scripts/windows-build-workspace.d.mts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/desktop/scripts/windows-build-workspace.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/file-actions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/locale.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/preload-app.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/tests/cua-optional-package.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/tests/desktop-publish-tag.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/tests/desktop-publish-templates.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/tests/expected/application-menu-en-US.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/tests/expected/application-menu-zh-CN.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/tests/file-actions.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/tests/main-startup.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/tests/preload-app.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/tests/welcome-startup.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/tsconfig.client.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/tsconfig.host.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/assembled-remote.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/auto-review-denial.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/caption-overlays.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/chat-scroll-contract.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/client-plugin-live.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/code-language.snapshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/context-menus.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/cua-optin.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/cua-permissions.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/default-model.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/details-session-lifecycle.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/document-preview.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/excel-opc.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/expected/client-plugin-live/session-actions.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/expected/client-plugin-live/session-trailing.expected.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/context-menus/image.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/context-menus/session.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/context-menus/workspace.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/expected/cua-permissions/missing.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/expected/deepseek-messages-settings/cards.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/forge-panel/branch-details.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/expected/forge-panel/changes-view.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/forge-panel/file-tree-toggle.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/forge-panel/filter-config-failed.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/forge-panel/full-access.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/forge-panel/local-card.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/expected/forge-panel/panel.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/expected/forge-panel/reference.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/forge-panel/review-composer.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/forge-panel/review-guide.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/forge-panel/review-message.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/forge-panel/review-quotes.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/forge-panel/review-record.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/forge-panel/review-summary-required.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/forge-panel/submit-review.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/forge-panel/worktree-option.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/expected/layout-bottom/geometry.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/markdown-colon-file-links.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/expected/menu-material/materials.expected.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/expected/menu-material/session-menu.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/expected/models-settings/catalog-inputs.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/expected/models-settings/declared-edit.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/expected/models-settings/image-only.expected.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/expected/models-settings/mobile-collapsed.expected.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

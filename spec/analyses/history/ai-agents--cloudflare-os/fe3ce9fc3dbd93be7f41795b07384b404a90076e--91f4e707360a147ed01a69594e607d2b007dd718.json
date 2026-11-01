@@ -1,0 +1,625 @@
+{
+  "id": "ai-agents--cloudflare-os",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/cloudflare/cloudflare-os",
+  "report": "spec/projects/ai-agents--cloudflare-os.md",
+  "analyzedSha": "fe3ce9fc3dbd93be7f41795b07384b404a90076e",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T20:40:38-05:00",
+  "observedSha": "91f4e707360a147ed01a69594e607d2b007dd718",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "91f4e707360a147ed01a69594e607d2b007dd718",
+      "date": "2026-10-30T16:48:08-05:00",
+      "subject": "Expose Google Chat app card content on messages (#951)"
+    },
+    {
+      "sha": "c12807488dc80af3327c3b7039c6e79eb56e62d8",
+      "date": "2026-10-30T22:19:36+05:30",
+      "subject": "Let restricted workspaces fetch from hosts an admin trusts (#929)"
+    },
+    {
+      "sha": "5c64313256e4362abdfc5b3e8913a3d1bc75a507",
+      "date": "2026-10-30T08:11:48-07:00",
+      "subject": "Compare the DOCX parts an edit keeps with Buffer.compare, not toEqual (#943)"
+    },
+    {
+      "sha": "0483e888f828cf65675fa827e5be367fb276dffc",
+      "date": "2026-10-29T13:58:55-07:00",
+      "subject": "Authorize native push registration through Cloudflare OS (#875)"
+    },
+    {
+      "sha": "bc55d685002663107307461f0d19f426f0ef0064",
+      "date": "2026-10-29T14:01:15-04:00",
+      "subject": "Let Google Chat hooks opt in to their user's own messages (#939)"
+    },
+    {
+      "sha": "83d35185cb3920f916a8b7b91d15156c3cda2246",
+      "date": "2026-10-29T13:05:13-04:00",
+      "subject": "Explain when no connected account can serve a blueprint connection (#938)"
+    },
+    {
+      "sha": "79f87d199c34f0d0e40250d1071c963664dd88ad",
+      "date": "2026-10-28T20:55:11-07:00",
+      "subject": "Added support for Auto model using AI Gateway Auto Router (#935)"
+    },
+    {
+      "sha": "7a1f449e3025a20f2ea7da1a6da38277e1d54968",
+      "date": "2026-10-28T21:26:44-05:00",
+      "subject": "Group Confluence's resource types into one card with a browsable site… (#917)"
+    },
+    {
+      "sha": "024caa73b98c91eb3267f5af092ec5abbda9e842",
+      "date": "2026-10-28T16:13:38-07:00",
+      "subject": "Add distinct key listing for non-unique indexes (#932)"
+    },
+    {
+      "sha": "d18bcb6f5e98fedc108d33dc1d519828cc2bb3aa",
+      "date": "2026-10-28T17:08:31-05:00",
+      "subject": "Show Drive file sizes and connect listed native files without a check (#931)"
+    },
+    {
+      "sha": "6bc98ddbf1af27e531b91ec6732ce95ea963d8a7",
+      "date": "2026-10-28T16:21:37-05:00",
+      "subject": "Give the hierarchy picker tabs and richer rows (#918)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/write-gatekeeper/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/google-chat-capabilities.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/notifications.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/observers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/public-server.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/configurator-ui/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/configurator-ui/src/runtime/ConfiguratorRoot.browser.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/HierarchyBreadcrumb.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/configurator-ui/src/runtime/HierarchyPicker.browser.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/configurator-ui/src/runtime/HierarchyPicker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/HierarchyRow.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/configurator-ui/src/runtime/RadioCards.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/hierarchyNodes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/hierarchyNodes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/radioMark.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/configurator-ui/src/runtime/session.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/configurator-ui/src/runtime/session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-confluence/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-confluence/__tests__/configurator-frame.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-confluence/__tests__/configurator-patterns.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-confluence/__tests__/configurator.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-confluence/__tests__/fixtures.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-confluence/__tests__/frame-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-confluence/__tests__/stubs/cloudflare-workers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-confluence/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-confluence/src/configurator/confluence-configurator-types.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-confluence/src/configurator/confluence-configurator-ui.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/gatekeeper-confluence/src/configurator/confluence-page-configurator-types.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/gatekeeper-confluence/src/configurator/confluence-page-configurator-ui.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/gatekeeper-confluence/src/configurator/confluence-site-configurator-types.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/gatekeeper-confluence/src/configurator/confluence-site-configurator-ui.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/gatekeeper-confluence/src/configurator/confluence-space-configurator-types.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/gatekeeper-confluence/src/configurator/confluence-space-configurator-ui.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-confluence/src/confluence-api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-confluence/src/confluence-configurator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/gatekeeper-confluence/src/confluence-configurators.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-confluence/src/confluence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-confluence/vite.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-confluence/vitest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/__tests__/chat-api.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/__tests__/chat-state.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/__tests__/drive-configurator-office.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/__tests__/drive-configurator.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/__tests__/workerd/chat-actions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/__tests__/workerd/chat-hooks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/__tests__/workerd/configurators.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/__tests__/workerd/worker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/src/chat-api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-google/src/chat-cards.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/src/chat-hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/src/chat-state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/src/chat-types.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/src/chat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/src/configurator/drive-configurator-types.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/src/configurator/drive-configurator-ui.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/src/google-configurators.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-google/src/resources.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-microsoft/__tests__/content/docx-edit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integration-tests/__tests__/ai-gateway-cost.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integration-tests/__tests__/sensitive-observations.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integration-tests/__tests__/workshop-restricted-web-fetch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/typed-storage/__tests__/index.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/typed-storage/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/__tests__/admin-config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/__tests__/admin-settings-models.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/__tests__/ai-gateway.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/__tests__/ai-models.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/__tests__/notifications.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/__tests__/user-models.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/__tests__/web-fetch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/src/admin-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/src/admin-settings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/src/agent-tracing.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/src/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/src/ai-gateway.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/src/ai-models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/src/notification-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/src/overseer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/src/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/src/storage-schema/admin-settings-storage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/src/storage-schema/overseer-storage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/src/user.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-backend/src/web-fetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/AddModelModal.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/AddModelModal.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/AdminPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/BlueprintLandingPage.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/BlueprintLandingPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/OnboardingWizard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/features/ai-models/AdminModelsPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/workshop-frontend/src/features/ai-models/AllowedModelsField.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/features/ai-models/GatewayModelRow.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/features/ai-models/GatewayModelRow.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/features/ai-models/GatewayTest.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/features/ai-models/modelForm.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/features/ai-models/modelsDev.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/features/chat/composer/ComposerModelSelector.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/features/native-app/nativeApp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/features/notifications/NotificationBridge.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/features/notifications/NotificationBridge.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/workshop-frontend/src/features/notifications/nativeNotificationEnrollment.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/workshop-frontend/src/features/web-fetch/RestrictedWebFetchHostsCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/useAuth.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-frontend/src/useAuth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-shared/src/api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workshop-shared/src/gatekeeper.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-lock.yaml",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

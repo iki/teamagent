@@ -42,6 +42,16 @@ In [crates/pa-core/src/session_engine/refine.rs](https://github.com/PrimeIntelle
 
 **Harness implication and limits:** Treat summarization/refinement as real model traffic with the same account, tenant, privacy and budget routing as the main task. Auxiliary calls must not silently drop organization/team scope. The resolver, endpoint restrictions, redaction, billing and promotion policy were not inspected; header propagation alone does not establish safe evolution or credential confinement. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `c6d4da9421e6087e3fc1a763e947cf37153cd76f` against prior analyzed commit `ea9d9602ec0938d9e454e8963107cd85af1565c6`. Historical reviews above remain separate evidence.
+
+The [worker queue](https://github.com/PrimeIntellect-ai/prime-agent/blob/c6d4da9421e6087e3fc1a763e947cf37153cd76f/crates/pa-daemon/src/worker/queue.rs) and [journal](https://github.com/PrimeIntellect-ai/prime-agent/blob/c6d4da9421e6087e3fc1a763e947cf37153cd76f/crates/pa-daemon/src/journal.rs) now persist suspended input, forced-batch flags and queued images, so a restored queue can remain parked instead of implicitly resuming. A real nonempty pickup resets prior delivery cancellation/completion facts; an empty lookup does not. Legacy records default the added fields.
+
+The inspected journal and [queue fixtures](https://github.com/PrimeIntellect-ai/prime-agent/blob/c6d4da9421e6087e3fc1a763e947cf37153cd76f/crates/pa-daemon/src/worker/tests/queue_tests.rs) update reopen/compaction/checkpoint contracts and retain append-failure state checks. Their changed examples mostly pass false/empty new fields, so they do not themselves demonstrate a true suspended queue with images across a crash. The visible parser also defaults a missing or nonboolean suspension field to false. Teamagent should persist scheduling decisions and multimodal references with explicit versioned validation, distinguish legacy absence from malformed current records and keep restored suspension separate from authorization to resume.
+
+**Coverage:** Read the complete 186-line queue/fixture delta and complete 364-line journal delta with embedded fixtures. Recovery-verdict and spawn-reservation test changes were inspected as compatibility leads only. Full runtime restore/dispatch and new-field crash behavior were not exercised. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [prime-agent](https://github.com/PrimeIntellect-ai/prime-agent); analyzed commit `ea9d9602ec0938d9e454e8963107cd85af1565c6`; commit date 2026-10-28T00:30:39-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--prime-agent.md).
+Analysis metadata: source [prime-agent](https://github.com/PrimeIntellect-ai/prime-agent); analyzed commit `c6d4da9421e6087e3fc1a763e947cf37153cd76f`; commit date 2026-10-30T16:41:56+01:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--prime-agent.md).
 <!-- teamagent-analysis:end -->

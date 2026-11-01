@@ -32,6 +32,16 @@ The [test-wiring gate](https://github.com/supermhel/fengarde/blob/33e340ffb237b1
 
 The [MFA exercise](https://github.com/supermhel/fengarde/blob/33e340ffb237b173ba85d0294248bc72ae3a03e6/tools/console_e2e/mfa.mjs) provisions a temporary user, enrolls through API calls and checks sign-in through the UI, waiting for the next TOTP window rather than reusing enrollment's code. It disables the user only on the normal completion path: errors before cleanup can leave the account active and browser open. The [helper](https://github.com/supermhel/fengarde/blob/33e340ffb237b173ba85d0294248bc72ae3a03e6/tools/console_e2e/lib.mjs) reads credentials in-process, while an environment-controlled base URL determines their destination; an authorized test-host allowlist is still needed. Do not import these scripts as a default credential-free gate. No browser, authentication flow or tests were run.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `921d75ba5e5d2f8aba94883588ece16854fac4cd` against prior analyzed commit `33e340ffb237b173ba85d0294248bc72ae3a03e6`. Historical reviews above remain separate evidence.
+
+The [window counter](https://github.com/supermhel/fengarde/blob/921d75ba5e5d2f8aba94883588ece16854fac4cd/services/shared/window.py) combines sorted-set add/trim/count/expiry into per-key Lua scripts, lazily registers them, and batches independent script calls in a non-transactional pipeline. It also adds capped member queries with an omitted count. Each script can be atomic while the batch as a whole is not; concurrent writers may interleave between keys.
+
+The [dispatch fixtures](https://github.com/supermhel/fengarde/blob/921d75ba5e5d2f8aba94883588ece16854fac4cd/services/ws4-detection/test_window_lua.py) verify script selection, arguments, lazy registration, legacy paths and capped reads using fakes. The [detector fixtures](https://github.com/supermhel/fengarde/blob/921d75ba5e5d2f8aba94883588ece16854fac4cd/services/ws4-detection/test_window_pipeline.py) compare batched and sequential verdicts and final deque state on a stream that actually triggers rules. Neither executes Redis; the separately named live parity suite was not inspected or run. Embedded timing comments remain upstream measurements, not independently reproduced speedups. Teamagent should benchmark the actual deployment and preserve outcome parity before optimizing round trips. Validate positive cap values: the visible Redis path reads at least one member for cap zero, unlike the deque slice.
+
+**Coverage:** Read the complete targeted window implementation and both newly added local fixture files (529 presented lines). Live Redis tests, detector implementation and remaining updates were outside scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [fengarde](https://github.com/supermhel/fengarde); analyzed commit `33e340ffb237b173ba85d0294248bc72ae3a03e6`; commit date 2026-10-23T21:04:50+02:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-security--fengarde.md).
+Analysis metadata: source [fengarde](https://github.com/supermhel/fengarde); analyzed commit `921d75ba5e5d2f8aba94883588ece16854fac4cd`; commit date 2026-10-30T00:23:48+01:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-security--fengarde.md).
 <!-- teamagent-analysis:end -->

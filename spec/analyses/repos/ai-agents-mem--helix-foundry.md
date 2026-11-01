@@ -2,11 +2,11 @@
 
 Source: [helix-foundry](https://github.com/helixdb/helix-foundry) · [Analysis](../unreviewed/ai-agents-mem--helix-foundry.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `ed93e1580adb5f938647f58b8a15d3714a74ac27`; commit date: 2026-10-27T20:44:25Z; review date: 2026-10-28T14:52:35.205Z; observed SHA: `ed93e1580adb5f938647f58b8a15d3714a74ac27`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `ca9c9b7066852a74b37014599595605facca7172`; commit date: 2026-10-30T11:55:27Z; review date: 2026-11-01T11:35:43.470Z; observed SHA: `ca9c9b7066852a74b37014599595605facca7172`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/helixdb/helix-foundry/compare/ed93e1580adb5f938647f58b8a15d3714a74ac27...ed93e1580adb5f938647f58b8a15d3714a74ac27). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/helixdb/helix-foundry/compare/ca9c9b7066852a74b37014599595605facca7172...ca9c9b7066852a74b37014599595605facca7172). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

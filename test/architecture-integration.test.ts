@@ -109,11 +109,11 @@ await test("parsed library paths and child-process aliases keep their boundaries
       [
         'import { spawnSync as launch } from "node:child_process";',
         'import * as child from "node:child_process";',
-        'export const results = [launch(process.execPath, []), launch("git", []), launch("ditto", [])];',
+        'export const results = [launch(process.execPath, [], { windowsHide: true }), launch("git", [], { windowsHide: true }), launch("ditto", [], { windowsHide: true })];',
         'export function spawn(name: string) { return name; } export const local = spawn("node");',
         'export function scoped(launch: (name: string) => string) { return launch("node"); }',
         'export function scopedNamespace(child: { spawnSync(name: string): string }) { return child.spawnSync("node"); }',
-        'export const native = child.spawnSync("git", []);',
+        'export const native = child.spawnSync("git", [], { windowsHide: true });',
       ].join("\n"),
     );
     const valid = run();

@@ -50,6 +50,12 @@ Evidence: [src/core/packager.ts:68-120](https://github.com/yamadashy/repomix/blo
 
 **Scope and limits:** Static scoped review of pack cancellation, server lifecycle and ignore fixes within the 122-path comparison. SDK limit enforcement, worker-pool cancellation, sandbox containment and all changed tests were not fully audited or executed; no packing, file deletion or external repository fetch performed.
 
+## Change review — 2026-11-01
+
+Reviewed `915945cc18c71064d9074fb176b665eeeca63f59` (2026-11-01T16:32:03+09:00); 40 paths changed from `a835271f41701245ee24b3c8ba162c5abb3d6f12`. Scoped remote-parser diffs replace a backtracking SCP host matcher with a linear scan and next-closing-bracket table. The fixture compares short-string behavior to the old matcher and exercises a 150,000-character adversarial input; no timing assertion was executed here. Linear work still allocates proportionally to input, requiring an outer size limit. [Matcher](https://github.com/yamadashy/repomix/blob/915945cc18c71064d9074fb176b665eeeca63f59/src/core/git/gitMetadataEndpoint.ts), [fixtures](https://github.com/yamadashy/repomix/blob/915945cc18c71064d9074fb176b665eeeca63f59/tests/core/git/gitMetadataEndpoint.test.ts).
+
+Parsed web repository URLs now retain a requested subpath/kind for warning, while the documented packing scope remains the whole repository. Warning metadata excludes query/fragment and attempts decoding; malformed encoding is retained. Treat that path as display intent, not a trusted filesystem path or proof of restricted import coverage. Metadata-host checks remain separate from DNS/redirect/network policy. [Remote parse](https://github.com/yamadashy/repomix/blob/915945cc18c71064d9074fb176b665eeeca63f59/src/core/git/gitRemoteParse.ts). Three paths reviewed; no clone, packing benchmark or upstream execution.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [repomix](https://github.com/yamadashy/repomix); analyzed commit `a835271f41701245ee24b3c8ba162c5abb3d6f12`; commit date 2026-10-26T00:46:24+09:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--repomix.md).
+Analysis metadata: source [repomix](https://github.com/yamadashy/repomix); analyzed commit `915945cc18c71064d9074fb176b665eeeca63f59`; commit date 2026-11-01T16:32:03+09:00; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--repomix.md).
 <!-- teamagent-analysis:end -->

@@ -73,6 +73,14 @@ Durable transcript replay and process checkpointing are separate guarantees. An 
 
 ## Data planes
 
+The [Delta article](https://delta.dev/blog/fine-grained-version-control-for-agents)
+([review](analyses/delta-fine-grained-version-control-2026-11-01.md)) motivates an
+optional artifact-history experiment. Our inference is to keep that history
+separate from authorization, external-effect receipts and signed publication.
+Historical reconstruction must identify its exact version and persistence status;
+it cannot certify task correctness. This is a proposed evaluation, not an adopted
+storage replacement or an implemented synchronization guarantee.
+
 - **Control:** tasks, grants, subscriptions, capability catalog, event cursors and leases.
 - **Evidence:** source blobs, extracted blocks, code symbols, traces and signed/hash-addressed artifacts.
 - **Retrieval:** lexical/vector/graph indexes, rerank caches and context manifests; rebuildable from evidence.
@@ -100,6 +108,29 @@ The personal profile, project knowledge, team memory and private channel convers
 No common benchmark was run across the 507 projects. Their feature lists and task-specific demos cannot establish a global ordering. The decision should be a Pareto comparison of task success, latency, cost, intervention rate, privacy and recovery reliability on the intended workload. Use the [evaluation plan](evaluation.md), publish per-slice results and pin configurations. A more complicated system earns adoption only when the improvement survives held-out tasks and failure injection.
 
 ## Research evidence and update boundary
+
+The November 1 review strengthens three cross-cutting boundaries. First,
+eligibility and user authority precede learned routing or preference scores;
+see [models](models.md) and [decisions](decisions.md). Second, acquired source
+bytes, diagnostic presentation, reviewed claims and reusable executable resources
+carry distinct provenance; see [the refresh evidence](analyses/research-refresh-evidence-2026-11-01.md),
+[memory](memory.md) and [imports](import-generation.md). Third, finished output,
+delivery acknowledgement, external-effect certainty and verified task success
+are independent states, even when they share one user-facing task.
+
+The [Delta article review](analyses/delta-fine-grained-version-control-2026-11-01.md)
+is now complemented by the [Delta Claude client review](analyses/unreviewed/ai-skills--repo.delta-claude.md)
+([source](https://github.com/zed-industries/delta-claude)). Its outbox and acknowledgement
+helpers provide scoped client evidence, not proof of server durability or
+authorization to replay the original action. No collaborative-history backend
+was adopted by this research refresh.
+
+The implemented maintenance changes keep generated parent source lists separate
+from repository-owned configuration, hide background Windows subprocesses and
+allow immediate disposal of known finished owned scratch after confirmed
+descendant shutdown. Broad stale cleanup retains its age and ownership checks;
+neither path authorizes deletion of research evidence. Review and measured
+verification outcomes remain in [incremental analyses](analyses/latest-run.md).
 
 The follow-up October 28 revisions add a preservation rule for every writer, including cleanup: absence, unreadable state and an unsupported schema are different outcomes. [OpenSandbox](https://github.com/alibaba/OpenSandbox) ([review](projects/ai-agents-sandbox--opensandbox.md)) protects unknown and newer vault formats while retaining a narrower legacy cleanup exception. Teamagent should carry the version/lineage decision into deletion and terminal cleanup; a safe read path alone does not establish safe lifecycle behavior.
 

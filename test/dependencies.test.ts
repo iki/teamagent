@@ -10,6 +10,7 @@ import { Effect, Schema } from "effect";
 import { createDependencyRuntime as createRuntime } from "../app/dependencies/runtime.ts";
 import {
   buildDependencyPlan,
+  decodeManifest,
   decodeRegistry,
   dependencyCommands,
 } from "../app/dependencies/plan.ts";
@@ -35,6 +36,9 @@ const result = (stdout = "", status = 0, stderr = ""): CommandResult => ({
 });
 const registryBytes = await readFile(join(repository, "patches/trigon/registry.json"));
 const registry = await Effect.runPromise(decodeRegistry(json(registryBytes)));
+const projectManifest = await Effect.runPromise(
+  decodeManifest(json(await readFile(join(repository, "package.json")))),
+);
 const manifest = {
   name: "dependency-fixture",
   version: "0.1.0",
@@ -42,6 +46,8 @@ const manifest = {
   scripts: { unchanged: "retained" },
   dependencies: { effect: "4.0.0-rc.118" },
   devDependencies: { "@tauri-apps/cli": "2.12.1" },
+  // Mirror active supplied package patches without inventing direct fixture dependencies.
+  aube: { patchedDependencies: projectManifest.aube?.patchedDependencies ?? {} },
 };
 const report = {
   effect: {
@@ -147,13 +153,104 @@ await test("dependency plans validate exact pins, preserve groups and block abse
       buildDependencyPlan({
         manifest: {
           ...manifest,
-          aube: { patchedDependencies: { "effect@4.0.0-rc.118": "patches/unprovided.patch" } },
+          aube: {
+            patchedDependencies: {
+              ...manifest.aube.patchedDependencies,
+              "effect@4.0.0-rc.118": "patches/unprovided.patch",
+            },
+          },
         },
         registry,
         report,
         status: 1,
         baseline,
       }),
+    ),
+    /ASK/,
+  );
+});
+
+await test("transitive package patches require their own active exact supplied selector", async () => {
+  const path = "patches/trigon/fixture-transitive.patch";
+  const fix = {
+    id: "fixture-transitive",
+    kind: "package-patch",
+    packages: [{ name: "fixture-transitive", versions: ["2.2.0"] }],
+    files: [
+      {
+        sourcePath: "patches/fixture-transitive.patch",
+        artifactPath: path,
+        sha256: "a".repeat(64),
+      },
+    ],
+    evidence: "Fixture supplied source; this policy test does not establish installed patch bytes.",
+  };
+  const selectedRegistry = { ...registry, fixes: [fix] };
+  const selectedManifest = {
+    ...manifest,
+    aube: { patchedDependencies: { "fixture-transitive@2.2.0": path } },
+  };
+  const plan = (candidateManifest: unknown, candidateRegistry: unknown = selectedRegistry) =>
+    Effect.runPromise(
+      buildDependencyPlan({
+        manifest: candidateManifest,
+        registry: candidateRegistry,
+        report: {},
+        status: 0,
+        baseline,
+      }),
+    );
+  assert.equal(Object.hasOwn(selectedManifest.dependencies, "fixture-transitive"), false);
+  assert.equal(Object.hasOwn(selectedManifest.devDependencies, "fixture-transitive"), false);
+  assert.deepEqual((await plan(selectedManifest)).upgrades, []);
+  for (const patchedDependencies of [
+    {},
+    { "fixture-transitive@2.3.0": path },
+    { "fixture-transitive@2.2.0": "patches/trigon/wrong-artifact.patch" },
+    { "fixture-transitive@2.2.0": path, "unknown-patch@1.0.0": path },
+  ])
+    await assert.rejects(plan({ ...selectedManifest, aube: { patchedDependencies } }), /ASK/);
+  await assert.rejects(
+    plan(selectedManifest, { ...selectedRegistry, fixes: [{ ...fix, kind: "host-adapter" }] }),
+    /ASK/,
+  );
+  await assert.rejects(
+    plan({
+      ...selectedManifest,
+      devDependencies: { ...selectedManifest.devDependencies, "fixture-transitive": "2.3.0" },
+    }),
+    /ASK/,
+  );
+  const otherPath = "patches/trigon/other-transitive.patch";
+  await assert.rejects(
+    plan(
+      {
+        ...selectedManifest,
+        aube: {
+          patchedDependencies: {
+            "fixture-transitive@2.2.0": otherPath,
+            "other-transitive@1.0.0": otherPath,
+          },
+        },
+      },
+      {
+        ...selectedRegistry,
+        fixes: [
+          fix,
+          {
+            ...fix,
+            id: "other-transitive",
+            packages: [{ name: "other-transitive", versions: ["1.0.0"] }],
+            files: [
+              {
+                sourcePath: "patches/other.patch",
+                artifactPath: otherPath,
+                sha256: "b".repeat(64),
+              },
+            ],
+          },
+        ],
+      },
     ),
     /ASK/,
   );

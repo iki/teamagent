@@ -9,9 +9,11 @@ import {
 } from "./modularity.ts";
 import { noExecutableInput, noUnsafeCasts, runtimeLaunchers } from "./reliability.ts";
 import { temporaryFixtures } from "./temporary-fixtures.ts";
+import { backgroundProcesses } from "./background-processes.ts";
 
 export { boundaries, noExecutableInput, noUnsafeCasts, runtimeLaunchers };
 export { temporaryFixtures };
+export { backgroundProcesses };
 export { cli } from "./cli.ts";
 export { adapterAuthority, clientState, moduleContract, moduleDependencies, safeRendering };
 export { inspectModuleLayout, moduleDefinitions, validateModuleGraph } from "./modules.ts";
@@ -26,6 +28,7 @@ export default Plugin.define({
     "no-executable-input": noExecutableInput,
     "runtime-launchers": runtimeLaunchers,
     "temporary-fixtures": temporaryFixtures,
+    "background-processes": backgroundProcesses,
     "module-contract": moduleContract,
     "module-dependencies": moduleDependencies,
     "safe-rendering": safeRendering,

@@ -51,6 +51,14 @@ Evidence: [src/browser/webapi/selector/List.zig:303-343](https://github.com/ligh
 
 **Scope and limits:** Reviewed the complete changed selector hunks against the target blob; no browser, conformance suite or performance benchmark was run. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `c3b9247c4f979a75b61947925b8584b79bd25c1f` against `c1869f404889bd8f1037f25f533e010cba69d96c`. The new [consent tool](https://github.com/lightpanda-io/browser/blob/c3b9247c4f979a75b61947925b8584b79bd25c1f/src/browser/tools/consent.zig) jointly asks a Jev-style classifier whether a consent wall exists and which control matches the preference, clicks, then rereads the resulting page. The model-driven path allows two clicks and distinguishes attempted dismissal from verified disappearance. It emits replay selectors only after verification, but explicit selector replay bypasses the model, remains unverified and does not use the same two-click bound. Embedded mocked-model tests and [confirmation](https://github.com/lightpanda-io/browser/blob/c3b9247c4f979a75b61947925b8584b79bd25c1f/src/browser/tests/consent_banner_confirm.html)/[navigation](https://github.com/lightpanda-io/browser/blob/c3b9247c4f979a75b61947925b8584b79bd25c1f/src/browser/tests/consent_banner_navigates.html) fixtures inspect changed controls after each action.
+
+**Harness consequence:** Reobserve after actions, distinguish action outcome from semantic verification and bound replay separately. The upstream preference defaults to accept; Teamagent must derive consent choices from user policy, never from classifier confidence alone. Reusable selectors need current page identity and authorization checks, not merely a prior successful observation.
+
+**Scope and limits:** Complete selected consent implementation and three HTML fixtures; shared choice/network authorization code was not re-audited. No real website, model or upstream browser test was run; probabilities were not calibrated here.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [lightpanda-browser](https://github.com/lightpanda-io/browser); analyzed commit `c1869f404889bd8f1037f25f533e010cba69d96c`; commit date 2026-10-28T16:47:36+08:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--lightpanda-browser.md).
+Analysis metadata: source [lightpanda-browser](https://github.com/lightpanda-io/browser); analyzed commit `c3b9247c4f979a75b61947925b8584b79bd25c1f`; commit date 2026-11-01T16:37:05+08:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--lightpanda-browser.md).
 <!-- teamagent-analysis:end -->

@@ -51,6 +51,14 @@ Evidence: [packages/playwright/src/mcp/test/generatorTools.ts:25-40](https://git
 
 **Scope and limits:** Reviewed the complete two changed hunks against their target blobs; no browser/test generation or full trace pipeline was executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `deb7e86201e26cb4a8e25191fce5ef2f7a28aa87` against `f9a841f968dd9a4e315df2ec2930da1952971667` (169 changed paths). The [event emitter](https://github.com/microsoft/playwright/blob/deb7e86201e26cb4a8e25191fce5ef2f7a28aa87/packages/playwright-core/src/client/eventEmitter.ts) now captures synchronous listener throws and foreign/custom thenables, reads `then` once and routes errors through an explicit error listener when present. Pending handlers participate in cleanup; uncaught errors are not silently converted to successful events. The [listener fixtures](https://github.com/microsoft/playwright/blob/deb7e86201e26cb4a8e25191fce5ef2f7a28aa87/tests/library/events/listener-errors.spec.ts) exercise throwing getters, cross-realm promises, continuation and fatal unhandled/error-listener failures. Selected [drain fixtures](https://github.com/microsoft/playwright/blob/deb7e86201e26cb4a8e25191fce5ef2f7a28aa87/tests/library/events/remove-all-listeners-wait.spec.ts) retain separate wait versus ignore-errors behavior.
+
+**Harness consequence:** Own asynchronous event work across synchronous throws and thenable boundaries; explicitly choose whether cleanup drains or suppresses already-observed failures. Event dispatch completion is not completion of all listeners. Add cancellation/deadline ownership above a library that tracks pending work without proving it must settle.
+
+**Scope and limits:** Emitter and selected error/drain fixture deltas only, not browser-engine or MCP changes. No upstream process, browser test or acceptance suite was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [playwright](https://github.com/microsoft/playwright); analyzed commit `f9a841f968dd9a4e315df2ec2930da1952971667`; commit date 2026-10-27T16:11:56-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--playwright.md).
+Analysis metadata: source [playwright](https://github.com/microsoft/playwright); analyzed commit `deb7e86201e26cb4a8e25191fce5ef2f7a28aa87`; commit date 2026-10-31T07:56:17-07:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--playwright.md).
 <!-- teamagent-analysis:end -->

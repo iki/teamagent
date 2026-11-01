@@ -1,0 +1,780 @@
+{
+  "id": "ai-agents--openclaude",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/Gitlawb/openclaude",
+  "report": "spec/projects/ai-agents--openclaude.md",
+  "analyzedSha": "ffa79d9cbb7f3ca9589601f1657803bae6847722",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T15:36:29-07:00",
+  "observedSha": "cd6655470ac45a099d9fd33604178caa4016b1ae",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "cd6655470ac45a099d9fd33604178caa4016b1ae",
+      "date": "2026-10-31T08:24:47-07:00",
+      "subject": "fix(openai-shim): recover <tool_call> text tool calls on Ollama streams (#2476)"
+    },
+    {
+      "sha": "beecf58f86c39c7af4ac63ede54b0afcb43274f2",
+      "date": "2026-10-30T20:20:27-07:00",
+      "subject": "feat(ctx): add --save to /set-context-window to persist overrides (#2475)"
+    },
+    {
+      "sha": "3a8e12b804ffd9cea0662534c554aa0f38c9f642",
+      "date": "2026-10-30T13:45:06-07:00",
+      "subject": "feat(integrations): add Runcrate as an OpenAI-compatible gateway (#2434)"
+    },
+    {
+      "sha": "4533f036f534a55c3399d30315fb44c255f79c24",
+      "date": "2026-10-30T11:56:37-07:00",
+      "subject": "fix(sdk): surface the authenticate tool for a needs-auth MCP server (#2295)"
+    },
+    {
+      "sha": "d0b464eb5f7385df9c238b8ad3808f84722443ab",
+      "date": "2026-10-29T22:35:12-07:00",
+      "subject": "feat(ctx): show why the last compaction happened (#2474)"
+    },
+    {
+      "sha": "972cb0b6967f8aef13e28f94a20e4acb4d7f82fe",
+      "date": "2026-10-29T21:55:24-07:00",
+      "subject": "fix(cli): keep standalone --model over saved provider profile model (#2471)"
+    },
+    {
+      "sha": "e0d2bd9f228a681d385f5f071c55a0be05b1480b",
+      "date": "2026-10-29T21:46:12-07:00",
+      "subject": "fix: address AI code-quality findings in mcp remove, updater, Windows paths, and SDK packaging test (#2472)"
+    },
+    {
+      "sha": "354ce5fd8e993687c886c26eee20153a73fc127d",
+      "date": "2026-10-29T21:27:43-07:00",
+      "subject": "feat(ctx): show context-window source and active compaction triggers (#2473)"
+    },
+    {
+      "sha": "5e00ea456ca80727f8ade7cc9e3a4d19deb340f6",
+      "date": "2026-10-29T20:37:37-07:00",
+      "subject": "fix(windows): validate Git Bash paths without a shell probe (#2470)"
+    },
+    {
+      "sha": "42b108d19df54a7ae0960012010e2928fbd7248d",
+      "date": "2026-10-29T19:44:57-07:00",
+      "subject": "feat(aimlapi): add opt-in MCP plugin with safe credential refresh (#2469)"
+    },
+    {
+      "sha": "f235c835d14e1fa9ba200f5b1df3e50a2da7f3c4",
+      "date": "2026-10-29T16:54:40-07:00",
+      "subject": "feat(web-fetch): add opt-in AI/ML API Toolbox scraping with restored test state (#2468)"
+    },
+    {
+      "sha": "438d4ca616ebc46bd86562b769ba8f587ac184b0",
+      "date": "2026-10-29T16:54:03-07:00",
+      "subject": "fix(update): restore getLatestVersion in published build (#2430)"
+    },
+    {
+      "sha": "7ac848c8c1c4a8886235de7e2d014800a9d40d9f",
+      "date": "2026-10-28T21:49:13-07:00",
+      "subject": "feat(sdk): let a v2 session carry its own environment (#2268)"
+    },
+    {
+      "sha": "649c224f3ca0bd4278aa30e46a20a52827003499",
+      "date": "2026-10-28T21:35:43-07:00",
+      "subject": "feat(web-search): add AI/ML API Toolbox with safe error reporting (#2465)"
+    },
+    {
+      "sha": "072a921dba12fa3ac0cea07376c234a6970bb61f",
+      "date": "2026-10-28T20:49:11-07:00",
+      "subject": "fix: clear resumed chat state and escape tool file paths (#2466)"
+    },
+    {
+      "sha": "4d003ba0c3c0ce43a7e6b92a056f2b587086f6ba",
+      "date": "2026-10-28T17:00:28-07:00",
+      "subject": "fix(session): preserve startup metadata while following SDK session switches (#2464)"
+    },
+    {
+      "sha": "977cb53282c618e057c910be38c7e01295d312d7",
+      "date": "2026-10-28T15:10:11-07:00",
+      "subject": "fix: resolve eight reported AI quality findings (#2463)"
+    },
+    {
+      "sha": "70fdbaf36ed2a822568b83d633113be287baa1b5",
+      "date": "2026-10-28T12:59:37-07:00",
+      "subject": "fix(mcp): use secure randomness for OAuth callback ports (#2462)"
+    },
+    {
+      "sha": "eeff78af08a71bc563b5a1a8fc065c7c8575abfd",
+      "date": "2026-10-28T08:19:53-07:00",
+      "subject": "fix: address remaining code-scanning alert sites (#2461)"
+    },
+    {
+      "sha": "e61e913b034b00dd62bec83874f2191a4c5720a5",
+      "date": "2026-10-28T06:57:01-07:00",
+      "subject": "feat: add Keenable as an explicit web search backend (#2435)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/aimlapi-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/images/ai-findings-tool-path.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/quick-start-windows.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/fixtures/auto-updater-disabled.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/fixtures/auto-updater-install.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/fixtures/update-recovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/fixtures/updater-preload.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/fixtures/updater-process.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/no-telemetry-plugin.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/updater.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/Tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cli/handlers/mcp.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/handlers/mcp.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/update.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/commands/compact/compact.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/compact/compact.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/ctx_viz/ctx-noninteractive.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/ctx_viz/ctx_viz.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/search/search.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/search/search.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/search/searchSettings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/search/searchSettings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/set-context-window/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/set-context-window/set-context-window.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/set-context-window/set-context-window.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/update/update.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/update/update.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/AutoUpdater.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/AutoUpdater.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/ProviderManager.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/context/repoMap/symbolExtractor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/entrypoints/cli.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/entrypoints/cli.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/entrypoints/sdk.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/entrypoints/sdk/mcpNeedsAuth.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/entrypoints/sdk/permissions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/entrypoints/sdk/query.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/entrypoints/sdk/v2.sessionEnv.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/entrypoints/sdk/v2.sessionEnvTurn.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/entrypoints/sdk/v2.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/integrations/aimlapi/config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/integrations/aimlapi/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/integrations/aimlapi/topup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/integrations/aimlapi/topup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/integrations/compatibility.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/integrations/gateways/runcrate.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/integrations/gateways/runcrate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/integrations/generated/integrationArtifacts.generated.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/integrations/generated/integrationManifest.generated.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/integrations/index.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/integrations/runtimeMetadata.modelLimits.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/integrations/runtimeMetadata.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/main.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/memdir/vectorIndex.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/plugins/bundled/aimlapiMcp.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/plugins/bundled/aimlapiMcp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/plugins/bundled/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/query.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/api/agentRouting.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/api/openaiShim.ollamaTextToolCalls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/api/openaiShim/streamConversion.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/api/openaiShim/xmlToolCallParsing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/api/openaiShim/xmlToolCallParsing.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/api/providerConfig.local.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/api/providerConfig.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/compact/autoCompact.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/compact/autoCompact.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/mcp/auth.refreshLock.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/mcp/auth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/services/mcp/credentialScope.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/services/mcp/headersHelper.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/mcp/headersHelper.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/services/mcp/oauthPort.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/mcp/oauthPort.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/mcp/xaa.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/mcp/xaaIdpLogin.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/tools/StreamingToolExecutor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/tools/toolExecution.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/test/fixtures/orcarouterCredentials.fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tools/McpAuthTool/McpAuthTool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/tools/WebFetchTool/WebFetchTool.backend.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/tools/WebFetchTool/WebFetchTool.backendIsolation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tools/WebFetchTool/WebFetchTool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/tools/WebFetchTool/aimlapiScrape.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/tools/WebFetchTool/aimlapiScrape.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tools/WebSearchTool/README_SEARCH_PROVIDERS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/tools/WebSearchTool/providers/aimlapi.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/tools/WebSearchTool/providers/aimlapi.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tools/WebSearchTool/providers/index.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tools/WebSearchTool/providers/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/tools/WebSearchTool/providers/keenable.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/tools/WebSearchTool/providers/keenable.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/types/message.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/types/utils.types.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/agenticSessionSearch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/agenticSessionSearch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/autoUpdater.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/context.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/diagnostics/issueReport.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/diagnostics/issueReport.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/envFile.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/envFile.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/managedEnv.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/managedEnv.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/managedEnvConstants.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/maxActiveMessages.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/maxActiveMessages.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/permissions/planFilePath.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/plugins/mcpPluginIntegration.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/providerFlag.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/providerFlag.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/providerProfile.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/providerProfiles.orcarouter.process.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/providerProfiles.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/providerProfiles.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/utils/sessionStorage.sessionSwitch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/sessionStorage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/swarm/spawnUtils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/utils/windowsPaths.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/windowsPaths.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sdk/package-consumer-types.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vscode-extension/openclaude-vscode/src/chat/chatProvider.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vscode-extension/openclaude-vscode/src/chat/chatRenderer.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vscode-extension/openclaude-vscode/src/chat/chatRenderer.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vscode-extension/openclaude-vscode/src/chat/resume.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/data/commands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/data/providers.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

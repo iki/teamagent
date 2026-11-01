@@ -1,0 +1,955 @@
+{
+  "id": "ai-agents-mem--tolaria",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/refactoringhq/tolaria",
+  "report": "spec/projects/ai-agents-mem--tolaria.md",
+  "analyzedSha": "f0b9b04927e870a5beaaf3a56028de68ed5c12d9",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T02:22:18Z",
+  "observedSha": "29b7845b14de68c31d9378212334bd01970cc619",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "29b7845b14de68c31d9378212334bd01970cc619",
+      "date": "2026-11-01T02:20:43+01:00",
+      "subject": "refactor(TOL-295): share mobile git status walk"
+    },
+    {
+      "sha": "780a721cd306c15e0bb0d1ec627d4fc8c2a58d1b",
+      "date": "2026-11-01T01:01:59+01:00",
+      "subject": "feat(mobile): handle incoming Tolaria note links (TOL-292)"
+    },
+    {
+      "sha": "e9c5d5ead7ad0a1b02a35000134ac8da91a96857",
+      "date": "2026-10-31T22:53:40Z",
+      "subject": "fix: detect empty semantic date properties (TOL-294)"
+    },
+    {
+      "sha": "da8dad88d00412a88eb9525cfb7524777f6e999b",
+      "date": "2026-10-31T21:04:38+01:00",
+      "subject": "test: resolve simulated macOS Unicode paths portably (TOL-291)"
+    },
+    {
+      "sha": "c181cab090b9b005da05c8acadf2a76c0155f0d4",
+      "date": "2026-10-31T20:54:51+01:00",
+      "subject": "test: simulate decomposed Unicode enumeration (TOL-291)"
+    },
+    {
+      "sha": "b14397ac40ad97c3c5c133edb2220014b2b8f676",
+      "date": "2026-10-31T20:20:54+01:00",
+      "subject": "fix(TOL-291): preserve Unicode filename spelling"
+    },
+    {
+      "sha": "42dd2dac5af0a4ac7cdf9b7309761a4bf1b00d48",
+      "date": "2026-10-31T12:57:40+01:00",
+      "subject": "fix: tolerate non-UTF8 files in mobile folder linking (TOL-290)"
+    },
+    {
+      "sha": "d609ecb62d4264ec4ca7a8ac83029a8c43d4770b",
+      "date": "2026-10-31T12:11:39+01:00",
+      "subject": "revert: move TOL-277/TOL-278 native quick wins to mobile-native-ui"
+    },
+    {
+      "sha": "02ee721461b81017d8b9331c790dcb783c2641bb",
+      "date": "2026-10-31T12:11:38+01:00",
+      "subject": "chore: allow the mobile-native-ui branch for native UI work (TOL-274)"
+    },
+    {
+      "sha": "a7a6df688971ba34131f2b69b5138bde7baef52a",
+      "date": "2026-10-31T11:43:00+01:00",
+      "subject": "refactor: keep mobile row helpers small (TOL-278)"
+    },
+    {
+      "sha": "70031b9e7a0f6e196b6ed6378f1526ffc5caf7c7",
+      "date": "2026-10-31T10:27:59+01:00",
+      "subject": "feat: tune phone chrome row metrics (TOL-278)"
+    },
+    {
+      "sha": "ae4df7aa4c5aa5d9717b9f83e3efd5102f27b108",
+      "date": "2026-10-31T07:17:28+01:00",
+      "subject": "feat(TOL-277): use native mobile action dialogs"
+    },
+    {
+      "sha": "c168002803763822750e63ff787827885f42862c",
+      "date": "2026-10-31T01:51:12Z",
+      "subject": "perf: batch AI response stream updates (TOL-289)"
+    },
+    {
+      "sha": "f953290250bc99e1d06979f5be19e31e984ec616",
+      "date": "2026-10-30T23:54:47Z",
+      "subject": "fix: import remaining Playwright page type at top level (TOL-273)"
+    },
+    {
+      "sha": "1806eea9a05e4d9b132ffe24c67b6b569ccbca36",
+      "date": "2026-10-31T00:05:23+01:00",
+      "subject": "docs: define native mobile chrome direction (TOL-274)"
+    },
+    {
+      "sha": "256ae4842b62285ac600ba026446d04c83ca4f9e",
+      "date": "2026-10-30T22:48:00Z",
+      "subject": "fix: use top-level Playwright type imports (TOL-273)"
+    },
+    {
+      "sha": "341c3e6c729601bd2413e95c4e4580d7fba91d7a",
+      "date": "2026-10-30T22:54:01+01:00",
+      "subject": "fix: initialize cold-start editor preview cache (TOL-271)"
+    },
+    {
+      "sha": "be2133f33870b45fed3105aa9ff97ae2d8723a24",
+      "date": "2026-10-30T21:32:45Z",
+      "subject": "fix: stabilize multibyte smoke fixture (TOL-272)"
+    },
+    {
+      "sha": "de30bea034f35f5447f7c02c3c1afeb93fd6fcfd",
+      "date": "2026-10-30T20:31:45Z",
+      "subject": "fix: restore browser AI mock fallback (TOL-272)"
+    },
+    {
+      "sha": "b8af1f456395e5bc7388612b92db5247c8efca96",
+      "date": "2026-10-30T18:03:20+01:00",
+      "subject": "refactor: isolate native editor wrappers (TOL-247)"
+    },
+    {
+      "sha": "5b34022843bf699e1530005e5af15d7aa6c3597b",
+      "date": "2026-10-30T15:53:33Z",
+      "subject": "videos: pin real-UI messaging to explicit origins; render brand mark as <img>"
+    },
+    {
+      "sha": "1b9975c48a6f7620f392b752d91b1dd36bd3ae4c",
+      "date": "2026-10-30T15:53:33Z",
+      "subject": "videos: drive the real Tolaria UI from Remotion; add Quick Open clip"
+    },
+    {
+      "sha": "5f60475876a305274a297c1775964e78ed9f10f4",
+      "date": "2026-10-30T15:31:21Z",
+      "subject": "fix: avoid dynamic stream array access (TOL-269)"
+    },
+    {
+      "sha": "58f57eddcbfb4cf6264ed1d9681d6cd050aacf9e",
+      "date": "2026-10-30T15:31:21Z",
+      "subject": "feat: add scripted AI stream hook (TOL-269)"
+    },
+    {
+      "sha": "1a5a405d077106b4f2b156299e5faff56ab1cce1",
+      "date": "2026-10-30T16:16:46+01:00",
+      "subject": "refactor: split mobile editor surface actions (TOL-247)"
+    },
+    {
+      "sha": "8bbb6bd7ec72c9fe580bc5ad726e770a7a1edd0a",
+      "date": "2026-10-30T15:55:40+01:00",
+      "subject": "fix: prevent editor flash on mobile note reopen (TOL-247)"
+    },
+    {
+      "sha": "d2ed391d6b814fd4e61ed7367148b4a5ef1dc56b",
+      "date": "2026-10-30T12:25:31Z",
+      "subject": "fix: return dev vault timestamps in seconds (TOL-268)"
+    },
+    {
+      "sha": "4471f87f892aacd1340dab704d9abd5e8005b46f",
+      "date": "2026-10-30T12:10:29+01:00",
+      "subject": "refactor: simplify mobile icon button styling"
+    },
+    {
+      "sha": "efe6467e43d911e7777f9ca5cab399524e170fa5",
+      "date": "2026-10-30T11:55:50+01:00",
+      "subject": "fix: align mobile sidebar toggle with note rows (TOL-266)"
+    },
+    {
+      "sha": "6e4a5119499aec42582b59960feefeacbe9f5ed1",
+      "date": "2026-10-30T11:21:27+01:00",
+      "subject": "fix: open mobile editor links on tap (TOL-265)"
+    },
+    {
+      "sha": "e639634e1628500210442a9050af55a0ce14c5d5",
+      "date": "2026-10-30T10:12:59+01:00",
+      "subject": "docs: add release notes for v2026-10-30"
+    },
+    {
+      "sha": "1099d0bff83ebbaf3248e52d08184cb7ab4a1d7c",
+      "date": "2026-10-30T07:58:20Z",
+      "subject": "fix: position slash callout submenu (TOL-267)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/HOOKS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".husky/pre-commit",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".husky/pre-push",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/scripts/mobile-editor-bundle.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/analytics/mobileAnalytics.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/analytics/mobileAnalytics.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/components/vaults/MobileDeepLinkNotice.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/vaults/MobileVaultManager.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/MobileNativeEditor.types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygDocumentReads.native.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygDocumentSerialization.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygDocumentSerialization.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygHorizontalRule.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygHorizontalRuleBridge.native.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygHorizontalRuleBridge.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygLinkBridge.web.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygLinkBridge.web.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygLinkRouting.native.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygLinkTap.web.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygMarkdownEditor.native.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygMarkdownEditor.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygPersistence.native.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygSlashBridge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/MobileWysiwygTentapEditorHtml.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/mobileEditorFileSource.native.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/mobileEditorFileSource.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/components/workspace/mobileNativeEditorWebViewProps.native.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/components/workspace/mobileWysiwygLinkRouting.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/components/workspace/mobileWysiwygLinkRouting.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/components/workspace/native/NativeEditorSession.native.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/useMobileNativeEditorRuntime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/components/workspace/useNativeEditorAppearance.native.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/components/workspace/useRegisteredNativeSurfaceActions.native.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/i18n/mobileText.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/screens/MobileUiLab.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/screens/MobileUiLab.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/screens/PhoneWorkspaceEditorScreen.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/screens/PhoneWorkspaceScreens.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/screens/PhoneWorkspaceScreens.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/screens/TabletEditorPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/screens/mobileUiLabSelectedNote.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/screens/tabletEditorToolbarLifetime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/ui/MobileIconButton.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/ui/MobilePanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/workspace/expoWorkspaceFileSystem.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/workspace/expoWorkspaceFileSystem.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/workspace/git/expoGitFileSystem.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/workspace/git/gitRemote.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/workspace/git/gitSelectiveStaging.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/workspace/git/gitSelectiveStagingScan.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/workspace/git/gitStatusWalk.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/workspace/git/gitUnicodePathEntries.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/workspace/git/gitWorkingTreeChanges.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/workspace/git/gitWorkingTreeChanges.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/workspace/git/useMobileVaults.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/workspace/mobileAttachmentOpen.native.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/workspace/mobileDeepLinks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/workspace/mobileDeepLinks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/workspace/mobileWikilinks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/workspace/mobileWikilinks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/workspace/useMobileIncomingDeepLink.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/workspace/useMobileIncomingDeepLink.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/server/test/security.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ABSTRACTIONS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/MOBILE-UI-PARITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adr/0248-expo-react-native-mobile-ui-foundation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/adr/0299-mobile-native-platform-chrome.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adr/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/sidebar-collapse.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lara.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp-server/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "release-notes/v2026-10-30.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "release-record.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/vault-api-data.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/vault-api-plugin.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/components/AiMockStreamPanel.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/DynamicPropertiesPanel.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/Editor.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/TolariaSlashMenu.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/TolariaSlashMenu.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/components/editorLocalization.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/components/editorLocalization.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/components/tolariaSlashMenuPosition.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/useEditorSetup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/lib/aiAgentStreamCallbacks.performance.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/aiAgentStreamCallbacks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/lib/aiWorkspaceSessionPersistence.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/aiWorkspaceSessionStore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/crossWindowPersistedStore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/be-BY.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/be-Latn.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/de-DE.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/en.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/es-419.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/es-ES.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/fr-FR.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/id-ID.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/it-IT.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/ja-JP.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/ko-KR.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/pl-PL.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/pt-BR.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/pt-PT.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/ru-RU.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/sk-SK.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/sv-SE.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/uk-UA.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/vi.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/zh-CN.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib/locales/zh-TW.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/mock-tauri/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/mock-tauri/mock-ai-stream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/types/laputaTestBridge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/utils/mockAiStream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/propertyTypes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/propertyTypes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/streamAiAgent.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/streamAiAgent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/streamAiModel.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/streamAiModel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/integration/vault-workflows.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/smoke/changing-type-data-corruption.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/smoke/collision-create-flows.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/smoke/create-open-relationship-note.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/smoke/exact-match-search.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/smoke/fix-archived-trashed-detection-v2.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/smoke/flip-canonical-type-field.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/smoke/frontmatter-parsing-fix.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/smoke/linkify-init-warnings.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/smoke/multibyte-search-snippet.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/smoke/note-list-search-visible-content.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/smoke/quick-open-create-note.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/smoke/release-channel-settings.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/smoke/remove-relationship-keys.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/smoke/show-deleted-notes-in-changes-view.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "videos/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "videos/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "videos/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "videos/real-ui/director.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "videos/real-ui/scenes/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "videos/real-ui/scenes/quickOpen.timeline.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "videos/real-ui/scenes/quickOpen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "videos/real-ui/scenes/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "videos/real-ui/vite.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "videos/src/Root.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "videos/src/clips/QuickOpen.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "videos/src/components/BrandMark.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "videos/src/components/Caption.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "videos/src/components/TolariaApp.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "videos/src/lib/brandLocal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "videos/src/lib/house.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "videos/tsconfig.json",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

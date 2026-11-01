@@ -32,6 +32,12 @@ The [parity tests](https://github.com/aaronjmars/miroshark/blob/a72ef7bc5fd6265b
 
 The adapter emits a response preview even when full prompt logging is disabled and includes raw errors, so private content needs a stricter telemetry boundary. [Broadcast tests](https://github.com/aaronjmars/miroshark/blob/a72ef7bc5fd6265b8ff27234d491a703e216fabc/backend/tests/test_unit_broadcast_trace.py) pin field shape, preserve agent ID zero and avoid mutating the caller dictionary, but do not prove an external service retains those fields. Adapt credential-free parity fixtures and explicit semantic differences. No CLI, model, broadcast or tests were executed.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`4f9289ba129ea8dd3e39339daf3ffada2a14fff7`](https://github.com/aaronjmars/miroshark/commit/4f9289ba129ea8dd3e39339daf3ffada2a14fff7), compared with `a72ef7bc5fd6265b8ff27234d491a703e216fabc`.
+
+The complete two-file delta adds 15-minute deadlines to unit, frontend, agent smoke and lint jobs in [tests.yml](https://github.com/aaronjmars/miroshark/blob/4f9289ba129ea8dd3e39339daf3ffada2a14fff7/.github/workflows/tests.yml), plus workflow/ref concurrency with cancellation restricted to pull-request events. The [image job](https://github.com/aaronjmars/miroshark/blob/4f9289ba129ea8dd3e39339daf3ffada2a14fff7/.github/workflows/docker-image.yml) gets a 30-minute deadline. This is verification scheduling, not a changed swarm algorithm. Teamagent should retain bounded jobs, distinguish supersession from success, and verify descendant cleanup separately from a CI cancellation request. No workflow, build or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [miroshark](https://github.com/aaronjmars/miroshark); analyzed commit `a72ef7bc5fd6265b8ff27234d491a703e216fabc`; commit date 2026-10-26T07:42:10-04:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--miroshark.md).
+Analysis metadata: source [miroshark](https://github.com/aaronjmars/miroshark); analyzed commit `4f9289ba129ea8dd3e39339daf3ffada2a14fff7`; commit date 2026-10-31T13:13:11-04:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--miroshark.md).
 <!-- teamagent-analysis:end -->

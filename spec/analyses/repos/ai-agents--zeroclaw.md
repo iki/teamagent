@@ -2,11 +2,11 @@
 
 Source: [zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) · [Analysis](../../projects/ai-agents--zeroclaw.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `99bd353c756f4e64f381cfe9c3002ebff32f3055`; commit date: 2026-10-27T14:28:05Z; review date: 2026-10-28T09:27:32.685Z; observed SHA: `99bd353c756f4e64f381cfe9c3002ebff32f3055`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `0bb1d4a801ac7dbecc9e9a91128c0a96ace98ab3`; commit date: 2026-11-01T01:58:43Z; review date: 2026-11-01T11:35:43.470Z; observed SHA: `0bb1d4a801ac7dbecc9e9a91128c0a96ace98ab3`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/zeroclaw-labs/zeroclaw/compare/99bd353c756f4e64f381cfe9c3002ebff32f3055...99bd353c756f4e64f381cfe9c3002ebff32f3055). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/zeroclaw-labs/zeroclaw/compare/0bb1d4a801ac7dbecc9e9a91128c0a96ace98ab3...0bb1d4a801ac7dbecc9e9a91128c0a96ace98ab3). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

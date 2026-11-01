@@ -32,6 +32,14 @@ The [output aggregator](https://github.com/getagentseal/codeburn/blob/07c0ee601f
 
 The [optional title index](https://github.com/getagentseal/codeburn/blob/07c0ee601fd8e104afb814154d879a80aeed432b/src/codex-session-index.ts) bounds reads, compares timestamps, sanitizes titles and overlays them on copied public results without rekeying usage caches. Malformed/unreadable records are silently ignored because the feature is optional; this is acceptable presentation fallback only if not reused for authoritative accounting. [Runtime selection](https://github.com/getagentseal/codeburn/blob/07c0ee601fd8e104afb814154d879a80aeed432b/vscode/src/runtime.ts) and [tests](https://github.com/getagentseal/codeburn/blob/07c0ee601fd8e104afb814154d879a80aeed432b/vscode/test/runtime.test.ts) expose a degraded mode when required SQLite support is unavailable. Adapt explicit capability degradation and separate title identity from accounting; the Node probing/launcher choices do not replace Teamagent's pinned Bun toolchain. No session files, runtime probe, provider or tests were executed.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`49064483674aecf5f57f598f64bcfb8fb1728fc0`](https://github.com/getagentseal/codeburn/commit/49064483674aecf5f57f598f64bcfb8fb1728fc0), compared with `07c0ee601fd8e104afb814154d879a80aeed432b`.
+
+The complete inventory contains 39 changed paths. The [classifier](https://github.com/getagentseal/codeburn/blob/49064483674aecf5f57f598f64bcfb8fb1728fc0/src/classifier.ts) adds the literal `PowerShell` tool name alongside the existing shell aliases. The complete new [parser fixture](https://github.com/getagentseal/codeburn/blob/49064483674aecf5f57f598f64bcfb8fb1728fc0/tests/parser-powershell-tool.test.ts) checks command retention through compaction, command extraction and parity with Bash for testing, Git and build classifications.
+
+Normalize observed tool aliases at the import boundary and retain parser/version provenance for inferred activity. Classification is telemetry, not permission to execute the classified command. The selected source/test delta was read completely; credential, quota and UI changes elsewhere in this comparison were not audited. No upstream test, transcript import or command execution was performed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codeburn](https://github.com/getagentseal/codeburn); analyzed commit `07c0ee601fd8e104afb814154d879a80aeed432b`; commit date 2026-10-27T17:52:18+01:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-tokens--codeburn.md).
+Analysis metadata: source [codeburn](https://github.com/getagentseal/codeburn); analyzed commit `49064483674aecf5f57f598f64bcfb8fb1728fc0`; commit date 2026-10-31T07:52:41+01:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-tokens--codeburn.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,58 @@
+# ragflow
+
+Source: [ragflow](https://github.com/infiniflow/ragflow) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `2400ca8eb51432b1d304266d0de9ca232d9b53fa`; commit timestamp `2026-10-03T23:52:13+08:00`; 5,100 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/infiniflow/ragflow/blob/2400ca8eb51432b1d304266d0de9ca232d9b53fa/README.md)):
+
+> RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs. It offers a streamlined RAG workflow adaptable to enterprises of any scale. Powered by a converged context engine and pre-built agent templates, RAGFlow enables developers to transform complex data into high-fidelity, production-ready AI systems with exceptional efficiency and precision. - 2026-08-19 Introduced Knowledge Compilation to generate Wikis, Graphs, Trees, PageInd
+
+Build/package evidence: [go.mod](https://github.com/infiniflow/ragflow/blob/2400ca8eb51432b1d304266d0de9ca232d9b53fa/go.mod); [internal/channels/whatsapp-gateway/package.json](https://github.com/infiniflow/ragflow/blob/2400ca8eb51432b1d304266d0de9ca232d9b53fa/internal/channels/whatsapp-gateway/package.json); [pyproject.toml](https://github.com/infiniflow/ragflow/blob/2400ca8eb51432b1d304266d0de9ca232d9b53fa/pyproject.toml); [sdk/python/pyproject.toml](https://github.com/infiniflow/ragflow/blob/2400ca8eb51432b1d304266d0de9ca232d9b53fa/sdk/python/pyproject.toml); [tools/chatgpt-on-wechat/plugins/requirements.txt](https://github.com/infiniflow/ragflow/blob/2400ca8eb51432b1d304266d0de9ca232d9b53fa/tools/chatgpt-on-wechat/plugins/requirements.txt)
+
+License evidence: [LICENSE](https://github.com/infiniflow/ragflow/blob/2400ca8eb51432b1d304266d0de9ca232d9b53fa/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Ingestion pins task identity and bounds worker configuration while embedding recovery can alter source coverage.** Reviewed commit `5966db46ab4abc849a2ad668795ee9cb2e5417ef` (commit date `2026-10-27T19:49:36+08:00`). Compared with `2400ca8eb51432b1d304266d0de9ca232d9b53fa`; the complete Git comparison contains 2476 changed paths.
+
+TaskContext captures one unexported task ID for admission, execution and settlement, separates ingestion from memory tasks and passes the relational handle explicitly when loading document/KB/tenant inputs. A missing pipeline version still means latest-at-runtime, so immutable task identity alone is not a reproducible pipeline snapshot. Server wiring validates resolved worker counts/dependencies and starts the ingestor before reporting readiness; its shutdown caller prints completion after Stop without an independently checked result in this module.
+
+Embedding Encode shrinks prefixes only after over-limit errors, then isolates inputs if a whole-batch ladder fails. Transient attempts honor cancellation and share cooldown by model quota identity; waitOutCooldown reads the deadline once, so a later extension by another worker is not rechecked before dispatch. Response cardinality is not checked here: token distribution sizes output from returned vectors, and the isolated path indexes result zero directly. Usage totals are apportioned from locally counted sent prefixes, not per-input provider measurements; truncated source coverage is not represented in the returned Vector/TokenCount pair.
+
+Evidence: [internal/ingestion/task/task_context.go:31-171](https://github.com/infiniflow/ragflow/blob/5966db46ab4abc849a2ad668795ee9cb2e5417ef/internal/ingestion/task/task_context.go#L31-L171) · [internal/server/ingestor/server.go:54-73](https://github.com/infiniflow/ragflow/blob/5966db46ab4abc849a2ad668795ee9cb2e5417ef/internal/server/ingestor/server.go#L54-L73) · [internal/server/ingestor/server.go:147-209](https://github.com/infiniflow/ragflow/blob/5966db46ab4abc849a2ad668795ee9cb2e5417ef/internal/server/ingestor/server.go#L147-L209) · [internal/server/ingestor/server.go:238-256](https://github.com/infiniflow/ragflow/blob/5966db46ab4abc849a2ad668795ee9cb2e5417ef/internal/server/ingestor/server.go#L238-L256) · [internal/ingestion/task/embedder.go:128-178](https://github.com/infiniflow/ragflow/blob/5966db46ab4abc849a2ad668795ee9cb2e5417ef/internal/ingestion/task/embedder.go#L128-L178) · [internal/ingestion/task/embedder.go:232-313](https://github.com/infiniflow/ragflow/blob/5966db46ab4abc849a2ad668795ee9cb2e5417ef/internal/ingestion/task/embedder.go#L232-L313) · [internal/ingestion/task/embedder.go:336-369](https://github.com/infiniflow/ragflow/blob/5966db46ab4abc849a2ad668795ee9cb2e5417ef/internal/ingestion/task/embedder.go#L336-L369) · [internal/ingestion/task/embedder.go:421-474](https://github.com/infiniflow/ragflow/blob/5966db46ab4abc849a2ad668795ee9cb2e5417ef/internal/ingestion/task/embedder.go#L421-L474).
+
+**Harness consequence:** Bind every task to explicit pipeline/source/model versions and distinguish durable completion from a shutdown log. Preserve exact sent-prefix/truncation receipts, validate vector cardinality/dimensions/finiteness before indexing and label apportioned token counts as estimates. Bound total retries/cost across shrink and isolation attempts, and recheck shared cooldown/admission immediately before provider dispatch.
+
+**Scope and limits:** Static scoped task identity, ingestor assembly and embedding recovery/accounting review within the 2,476-path comparison. Queue settlement implementation, tokenizer/calibration helpers, provider driver validation and actual shutdown behavior were not audited or executed.
+
+## Follow-up change review — 2026-10-28
+
+**Parser configuration changes are explicitly separate from re-ingestion.** Reviewed commit `d4d130187af838cb81655cfd5bfd72258b277610` (commit date `2026-10-28T18:08:51+08:00`), compared with `5966db46ab4abc849a2ad668795ee9cb2e5417ef`. The complete no-rename Git path inventory contains 335 changed paths.
+
+The new apply-parser-config service locks the dataset, verifies update/dependency permissions, validates the selected pipeline version and walks documents in batches of 200. It locks document tasks in a defined order and refuses a nonterminal ingestion task. The transaction changes parser/config/version fields while preserving parsed content; the HTTP response explicitly requests a manual reparse. The first service fixture spans 205 documents and checks that content hashes, counts, thumbnail and progress remain unchanged. A bounded page size does not bound the total transaction duration or lock footprint.
+
+Evidence: [internal/handler/document_apply_parser_config.go:11-29](https://github.com/infiniflow/ragflow/blob/d4d130187af838cb81655cfd5bfd72258b277610/internal/handler/document_apply_parser_config.go#L11-L29) · [internal/service/document/document_apply_parser_config.go:30-109](https://github.com/infiniflow/ragflow/blob/d4d130187af838cb81655cfd5bfd72258b277610/internal/service/document/document_apply_parser_config.go#L30-L109) · [internal/service/document/document_apply_parser_config.go:133-175](https://github.com/infiniflow/ragflow/blob/d4d130187af838cb81655cfd5bfd72258b277610/internal/service/document/document_apply_parser_config.go#L133-L175) · [internal/service/document/document_apply_parser_config_test.go:15-65](https://github.com/infiniflow/ragflow/blob/d4d130187af838cb81655cfd5bfd72258b277610/internal/service/document/document_apply_parser_config_test.go#L15-L65).
+
+**Harness consequence:** Version intended parser settings separately from the parser version that produced existing evidence. Make reprocessing explicit, fence concurrent import work and preserve the last valid artifacts until a new extraction succeeds.
+
+**Scope and limits:** Reviewed the new handler/service and the content-preservation fixture; broader document deletion, agent and UI changes were not exhaustively audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
+## Change review — 2026-11-01
+
+Reviewed `12d9a38e24bf3fb8573b83bc41a2fe75dcd2c281` (2026-10-31T14:09:55+08:00) against `d4d130187af838cb81655cfd5bfd72258b277610`; 780 changed paths. Scoped media-budget/cache implementation adds count, per-image and aggregate byte admission with explicit omission diagnostics. Stable-source reservation rejects known excessive bytes before consuming count; occurrence reservation consumes count first. Actual-size commit is idempotent after admission. Unknown-size reservation still requires a bounded streaming reader/decoder, and the budget object itself is unsynchronized. [Budget](https://github.com/infiniflow/ragflow/blob/12d9a38e24bf3fb8573b83bc41a2fe75dcd2c281/internal/parser/media/budget.go), [boundary fixtures](https://github.com/infiniflow/ragflow/blob/12d9a38e24bf3fb8573b83bc41a2fe75dcd2c281/internal/parser/media/budget_test.go).
+
+The run-scoped cache validates reference scope, hash and size, differentiates miss/corruption/backend failure, and delegates quota/value/manifest atomicity to `MediaPut`. Its one-day media TTL and separate cleanup manifest distinguish temporary handoff from durable evidence; scope-derived keys use a 64-bit noncryptographic hash and therefore are not an authorization boundary. Reads fetch a complete backend value before payload validation. Teamagent needs transport byte bounds and a verified atomic backend in addition to this interface. [Cache](https://github.com/infiniflow/ragflow/blob/12d9a38e24bf3fb8573b83bc41a2fe75dcd2c281/internal/ingestion/mediacache/store.go). Scope: complete two implementation files and budget tests plus cache-test inventory; backend implementation and parser call sites not audited, no tests/media processing executed.

@@ -38,6 +38,18 @@ The [runtime-config wrapper](https://github.com/block/berd/blob/5b500297447917c9
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `2d2754640abbb5a7f26fe190551a7173f5c87788` (commit date `2026-10-29T22:59:51-04:00`), compared with `5b500297447917c978dda517641ed8370db4c33b`. Earlier observations remain historical evidence.
+
+**Scope:** Complete new Goose binary provenance helper and all four fixtures; 187 changed paths inventoried. Build producer, release workflows and backend implementation not audited.
+
+The [test preflight](https://github.com/block/berd/blob/2d2754640abbb5a7f26fe190551a7173f5c87788/scripts/goose-test-provenance.mjs) requires an absolute executable, recorded SHA-256 and expected source commit, then compares checkout HEAD and binary bytes. [Fixtures](https://github.com/block/berd/blob/2d2754640abbb5a7f26fe190551a7173f5c87788/scripts/goose-test-provenance.test.mjs) exercise matching evidence, altered executable, missing digest and changed source. These comparisons prevent accidentally testing an unrelated binary, but do not prove that the binary was built from the named source; source dirtiness, build inputs and the independent provenance producer remain outside this helper. The binary is read fully into memory.
+
+**Teamagent implication (inference):** Bind acceptance results to both executable digest and exact source/build recipe, preserving who produced that linkage. Use streaming hashes and complete environment/dependency inputs for large native artifacts; a matching HEAD alone is insufficient verification-cache evidence.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [berd](https://github.com/block/berd); analyzed commit `5b500297447917c978dda517641ed8370db4c33b`; commit date 2026-10-27T06:42:20-04:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--berd.md).
+Analysis metadata: source [berd](https://github.com/block/berd); analyzed commit `2d2754640abbb5a7f26fe190551a7173f5c87788`; commit date 2026-10-29T22:59:51-04:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--berd.md).
 <!-- teamagent-analysis:end -->

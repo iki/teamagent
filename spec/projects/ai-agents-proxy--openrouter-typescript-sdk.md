@@ -44,6 +44,14 @@ Evidence: [src/models/configurationupdate.ts:1-42](https://github.com/OpenRouter
 
 **Scope and limits:** Reviewed the new configuration-update source and image-provider option delta; actual cache behavior and service support were not measured. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`4055056abb67d1e2ca8e487cfe2ec02ddc1c563b`](https://github.com/OpenRouterTeam/typescript-sdk/commit/4055056abb67d1e2ca8e487cfe2ec02ddc1c563b), compared with `85fb336750bdf75cece817ee5facc282bae2ea8d`.
+
+The full [Jev outbound schema](https://github.com/OpenRouterTeam/typescript-sdk/blob/4055056abb67d1e2ca8e487cfe2ec02ddc1c563b/src/models/jevrouterplugin.ts) checks the plugin literal and optional string arrays, then remaps camelCase keys. The documented pattern counts/length limits and pool-selection behavior are not encoded in those array checks. Its comments permit an inclusion list that matches catalog models but no current pool member to broaden to the pool; exclusion patterns are documented separately.
+
+The inspected [provider preferences](https://github.com/OpenRouterTeam/typescript-sdk/blob/4055056abb67d1e2ca8e487cfe2ec02ddc1c563b/src/models/providerpreferences.ts#L1-L180) expose optional data-collection, fallback, parameter-support and ZDR controls, with soft latency/throughput preferences described separately. Teamagent's hard eligibility must precede learned ranking, reject unknown effective policy and remain intact under overrides/fallback. Retention, training reuse and commercial entitlement are separate evidence dimensions. This 358-path update was reviewed through selected generated contracts; no hosted enforcement, account settings, SDK runtime or tests were verified.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openrouter-typescript-sdk](https://github.com/OpenRouterTeam/typescript-sdk); analyzed commit `85fb336750bdf75cece817ee5facc282bae2ea8d`; commit date 2026-10-28T08:52:57Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-typescript-sdk.md).
+Analysis metadata: source [openrouter-typescript-sdk](https://github.com/OpenRouterTeam/typescript-sdk); analyzed commit `4055056abb67d1e2ca8e487cfe2ec02ddc1c563b`; commit date 2026-10-31T04:48:56Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-typescript-sdk.md).
 <!-- teamagent-analysis:end -->

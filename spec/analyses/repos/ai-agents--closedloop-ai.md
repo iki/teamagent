@@ -2,11 +2,11 @@
 
 Source: [closedloop-ai](https://github.com/closedloop-ai/closedloop-ai) · [Analysis](../../projects/ai-agents--closedloop-ai.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `e812713cd7332d455e315079ee3b362a5051b92e`; commit date: 2026-10-23T21:07:48-05:00; review date: 2026-10-28T08:26:04.502Z; observed SHA: `e812713cd7332d455e315079ee3b362a5051b92e`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `835c12105aca440ed40945540b117be2a20bb207`; commit date: 2026-10-28T15:04:26-05:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `835c12105aca440ed40945540b117be2a20bb207`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/closedloop-ai/closedloop-ai/compare/e812713cd7332d455e315079ee3b362a5051b92e...e812713cd7332d455e315079ee3b362a5051b92e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/closedloop-ai/closedloop-ai/compare/835c12105aca440ed40945540b117be2a20bb207...835c12105aca440ed40945540b117be2a20bb207). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

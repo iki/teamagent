@@ -50,6 +50,18 @@ For Teamagent, retain distinct stop-requested, terminal and cleanup outcomes; do
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `262158cfdbe590951adceffe264eef225381346b` (commit date `2026-11-01T09:27:39Z`), compared with `1f500e52cc30409959b08e19700b8521aaa80c63`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete new skills-enabled requirement and selected authorization matrix/fixture changes; whole-repository diff was oversized. Route implementations, archive validation and actual permission enforcement wiring not comprehensively audited.
+
+The [auth requirement](https://github.com/langgenius/dify/blob/262158cfdbe590951adceffe264eef225381346b/api/controllers/openapi/auth/requirements.py) adds an early server-level Skills feature veto. The [fixture matrix](https://github.com/langgenius/dify/blob/262158cfdbe590951adceffe264eef225381346b/api/tests/unit_tests/controllers/openapi/auth/test_requirements.py) declares separate read/export and import/publish operations with account, scope, membership, RBAC and role checks; a direct fixture toggles the feature flag. A declared matrix is useful coverage scaffolding but does not alone demonstrate every route's wiring or safe imported skill contents.
+
+**Teamagent implication (inference):** Separate feature availability from authenticated operation permission and artifact trust. Model skill listing, import, installation and publication as distinct capabilities with executable-content preflight; derive route coverage checks from the implemented catalog so a newly exposed operation cannot omit its gate.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [dify](https://github.com/langgenius/dify); analyzed commit `1f500e52cc30409959b08e19700b8521aaa80c63`; commit date 2026-10-28T03:26:06Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--dify.md).
+Analysis metadata: source [dify](https://github.com/langgenius/dify); analyzed commit `262158cfdbe590951adceffe264eef225381346b`; commit date 2026-11-01T09:27:39Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--dify.md).
 <!-- teamagent-analysis:end -->

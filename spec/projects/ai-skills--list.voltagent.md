@@ -40,6 +40,18 @@ The list adds discovery entries for cached local transcription, coverage generat
 
 **Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `464dd87e30278a6f4ad0da21f0bd2ee1c2122f5d` (commit date `2026-10-30T16:28:09+03:00`), compared with `47c4880c4a24611a6982b93a0d4b27c4928591ae`. Earlier observations remain historical evidence.
+
+**Scope:** Selected changed README catalog entries and ecosystem links; the sole changed path inventoried. Linked projects and the remainder of the catalog were not independently re-reviewed.
+
+The [catalog](https://github.com/VoltAgent/awesome-agent-skills/blob/464dd87e30278a6f4ad0da21f0bd2ee1c2122f5d/README.md) adds external skill links including composition, deployment and UI guidance alongside ecosystem promotion. These are discovery pointers authored by the list maintainer; the changed repository contains no corresponding implementation or validation evidence for those additions.
+
+**Teamagent implication (inference):** Import catalog entries as candidates with provenance, then review each canonical project's pinned content, executable payloads, compatibility and license before installation. Popularity or promotional placement must not become capability evidence or an automatic adoption decision.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [list.voltagent](https://github.com/VoltAgent/awesome-agent-skills); analyzed commit `47c4880c4a24611a6982b93a0d4b27c4928591ae`; commit date 2026-10-27T22:15:14+03:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--list.voltagent.md).
+Analysis metadata: source [list.voltagent](https://github.com/VoltAgent/awesome-agent-skills); analyzed commit `464dd87e30278a6f4ad0da21f0bd2ee1c2122f5d`; commit date 2026-10-30T16:28:09+03:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--list.voltagent.md).
 <!-- teamagent-analysis:end -->

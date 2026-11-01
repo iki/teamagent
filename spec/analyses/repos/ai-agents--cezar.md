@@ -2,11 +2,11 @@
 
 Source: [cezar](https://github.com/open-mercato/cezar) · [Analysis](../../projects/ai-agents--cezar.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `4040b404b3e7ab8a34f6383c8d0a4f995861e977`; commit date: 2026-10-27T19:02:52Z; review date: 2026-10-28T14:29:27.414Z; observed SHA: `4040b404b3e7ab8a34f6383c8d0a4f995861e977`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `aa35a4f1fe7e5525ffcc2eb9c773773cbe56ce9e`; commit date: 2026-11-01T10:00:26+01:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `aa35a4f1fe7e5525ffcc2eb9c773773cbe56ce9e`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/open-mercato/cezar/compare/4040b404b3e7ab8a34f6383c8d0a4f995861e977...4040b404b3e7ab8a34f6383c8d0a4f995861e977). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/open-mercato/cezar/compare/aa35a4f1fe7e5525ffcc2eb9c773773cbe56ce9e...aa35a4f1fe7e5525ffcc2eb9c773773cbe56ce9e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -44,6 +44,18 @@ Teamagent should label these as static structural checks, retain the exact grade
 
 **Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `7f01aec02769d9ff20014600720a7d4f56cb41f2` (commit date `2026-10-31T19:10:43-04:00`), compared with `a6cdb9f811492f1784ac5b3248520839a5e04614`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete new sanitizer grader and selected Trusted Types detector helpers; whole-repository diff was oversized. Remaining graders, fixture framework and real browser behavior not audited.
+
+The [sanitizer grader](https://github.com/GoogleChrome/modern-web-guidance-src/blob/7f01aec02769d9ff20014600720a7d4f56cb41f2/guides/security/sanitize-untrusted-html/targets/daily-grind/grader.ts) labels tests as rendered-security outcomes but checks source AST/property names, string literals and static HTML structure. The inspected [Trusted Types helpers](https://github.com/GoogleChrome/modern-web-guidance-src/blob/7f01aec02769d9ff20014600720a7d4f56cb41f2/guides/security/trusted-types/targets/daily-grind/grader.ts) likewise recognize syntax patterns without proving binding identity or dataflow. These checks can find structural hints; they do not demonstrate that malicious input was rendered without execution.
+
+**Teamagent implication (inference):** Label static checks truthfully and add adversarial browser acceptance for actual sinks, fallback paths and policy enforcement. A skill's passing score must record what was observed, and a model-generated implementation should not receive verified-security status from names or comments that mirror the grader.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [design.modern-web-guidance.google](https://github.com/GoogleChrome/modern-web-guidance-src); analyzed commit `a6cdb9f811492f1784ac5b3248520839a5e04614`; commit date 2026-10-27T17:14:09-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.modern-web-guidance.google.md).
+Analysis metadata: source [design.modern-web-guidance.google](https://github.com/GoogleChrome/modern-web-guidance-src); analyzed commit `7f01aec02769d9ff20014600720a7d4f56cb41f2`; commit date 2026-10-31T19:10:43-04:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.modern-web-guidance.google.md).
 <!-- teamagent-analysis:end -->

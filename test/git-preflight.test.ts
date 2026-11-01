@@ -131,7 +131,6 @@ test("real Git import rejects 257 eligible files before attempting to read their
       ],
       {
         encoding: "utf8",
-        windowsHide: true,
         timeout: 10_000,
         maxBuffer: 1_048_576,
         env: {
@@ -141,6 +140,8 @@ test("real Git import rejects 257 eligible files before attempting to read their
         },
         stdio: ["pipe", "pipe", "pipe"],
         ...(input === undefined ? {} : { input }),
+        // Fixed background policy wins over optional settings.
+        windowsHide: true,
       },
     ).trim();
   try {

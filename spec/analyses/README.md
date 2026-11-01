@@ -8,6 +8,11 @@ The [focused speech/media review ledger](media-reviews.md) records the eight exa
 
 ## External citation pins
 
+The [November 1 run](run-2026-11-01.md) records 272 explicit scoped reviews after
+the 548-source sync. Its [portable evidence](research-refresh-evidence-2026-11-01.md)
+keeps incomplete Git updates, partial text imports, capture transformations and
+local verification separate from review promotion and publication.
+
 The repository-owned [external source registry](../data/external-source-pins.json) records immutable public GitHub revisions used by reports outside the managed census. It does not mark those projects as whole-repository reviews or let regenerated parent exports overwrite review status. Local bare Git caches live under `.cache/research/citation-git`; paths are derived from the source identity, not accepted from the registry.
 
 The internal Python maintenance helpers provide explicit acquisition and offline validation:
@@ -76,6 +81,21 @@ The default still rejects a checkout that differs from discovery. For a complete
 Only the inspected SHA becomes the analyzed baseline. The newer checkout remains `observation-stale` in pending work until fresh discovery and its additional changes are reviewed. The review event records the acknowledged full checkout SHA. This permits asynchronous source review while preserving the distinction between completed snapshot review and current-source coverage; it does not fetch, switch branches, reset a checkout or silently accept whatever HEAD happens to be present.
 
 ## Renames and ambiguous identities
+
+### Parent category aliases
+
+The reviewed parent-export alias `ai-get` maps to the existing `ai-query`
+category. Source import preserves canonical `ai-query--<name>` report IDs and
+portable inventory entries. Discovery can locate the checkout under either
+category directory, including its lifecycle prefix, without moving it across
+parents. Duplicate declarations after canonicalization and multiple matching
+checkouts remain explicit collisions. Origin, containment and reparse-point
+checks are unchanged. See the [maintenance contract](../research-sync.md).
+
+This mapping concerns source organization, not a new topic, upstream rename or
+completed source review. Existing report links, analyzed SHAs and review history
+remain authoritative; any changed revision still requires the ordinary evidence
+review and promotion below.
 
 ### Explicit divergent-history reconciliation
 

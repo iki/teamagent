@@ -42,6 +42,14 @@ In [src/init.ts](https://github.com/Tencent/teamai-cli/blob/56320abf2ee27144f78b
 
 **Teamagent implication:** Skill configuration repair should preserve valid user choices and queued work, bind carried settings to the same source identity, and record each rejected field without exposing its raw value. Partial salvage is a recovery input, not authorization to relax the final schema or inherit another repository's trust.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`82026b3a10ddc0fa5181732ad72b58ffc28e7253`](https://github.com/Tencent/teamai-cli/commit/82026b3a10ddc0fa5181732ad72b58ffc28e7253), compared with `56320abf2ee27144f78b9a70c9b8c77c1389a65d`.
+
+The full new [skill-evidence scorer input](https://github.com/Tencent/teamai-cli/blob/82026b3a10ddc0fa5181732ad72b58ffc28e7253/src/scorers/skill-evidence.ts) derives available skills from session captures rather than the current checkout. Missing descriptions produce a `skills_unknown` gap; a captured empty inventory remains a known empty list. Captures are unioned by name with the latest description winning, descriptions pass through a supplied masking function, and loaded names are copied separately. The complete [fixture suite](https://github.com/Tencent/teamai-cli/blob/82026b3a10ddc0fa5181732ad72b58ffc28e7253/src/__tests__/skill-evidence.test.ts) covers those distinctions and unknown namespace provenance.
+
+For skill evolution, retain what was delivered and loaded at the time of each decision, plus content digest and model/harness version. Latest-description-by-name is insufficient to identify every historical skill revision, and a supplied masking callback is not proof of redaction efficacy. The remaining580-path update was inventoried for scope rather than exhaustively audited. No scorer, host agent or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [admin.teamai-cli.tencent](https://github.com/Tencent/teamai-cli); analyzed commit `56320abf2ee27144f78b9a70c9b8c77c1389a65d`; commit date 2026-10-28T11:00:27+01:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--admin.teamai-cli.tencent.md).
+Analysis metadata: source [admin.teamai-cli.tencent](https://github.com/Tencent/teamai-cli); analyzed commit `82026b3a10ddc0fa5181732ad72b58ffc28e7253`; commit date 2026-11-01T16:09:58+08:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--admin.teamai-cli.tencent.md).
 <!-- teamagent-analysis:end -->

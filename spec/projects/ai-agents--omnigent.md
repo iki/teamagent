@@ -44,6 +44,16 @@ In [web/src/lib/toolValue.ts](https://github.com/omnigent-ai/omnigent/blob/6f917
 
 **Harness implication and limits:** Render command, patch and output evidence literally instead of accidentally treating it as Markdown. This classifier is a display heuristic, not validation, sanitization or an authorization boundary; a benign field name cannot make arbitrary HTML safe. The rendering component, sanitizer and tool payload redaction were not reviewed, and no browser acceptance test was run. No upstream runtime or live provider behavior was verified.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `194defcad8f5e6b63d31b0d05a65b80574266c3f` against prior analyzed commit `6f917a3e63d25dfe923da26cf208cb14e812f163`. Historical reviews above remain separate evidence.
+
+The [copy-on-write shutdown path](https://github.com/omnigent-ai/omnigent/blob/194defcad8f5e6b63d31b0d05a65b80574266c3f/omnigent/sandbox/copy_on_write.py) moves the process-tree killer import into the timeout branch, retaining the sequence stdin close, five-second wait, tree kill after timeout, final wait, stdout close. The [mocked timeout fixture](https://github.com/omnigent-ai/omnigent/blob/194defcad8f5e6b63d31b0d05a65b80574266c3f/tests/inner/test_copy_on_write.py) follows that import boundary and expects the same process to be passed to kill_tree. A [runner fixture adjustment](https://github.com/omnigent-ai/omnigent/blob/194defcad8f5e6b63d31b0d05a65b80574266c3f/tests/runner/test_copy_on_write.py) supplies the client-surface environment on the registry mock.
+
+This scoped change is dependency/lifecycle refactoring rather than demonstrated stronger isolation. The final process.wait has no timeout in the visible code, and the fixture models successful post-kill exit; it does not prove descendant shutdown or bounded cleanup if killing fails. Teamagent should retain native owned-process shutdown receipts and deadlines around every cleanup phase, with copy-on-write filesystem isolation tested independently.
+
+**Coverage:** Read the complete targeted copy-on-write implementation and two test deltas. Native process-tree killer, namespace setup and remaining oversized changes were not reviewed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [omnigent](https://github.com/omnigent-ai/omnigent); analyzed commit `6f917a3e63d25dfe923da26cf208cb14e812f163`; commit date 2026-10-28T10:07:29Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--omnigent.md).
+Analysis metadata: source [omnigent](https://github.com/omnigent-ai/omnigent); analyzed commit `194defcad8f5e6b63d31b0d05a65b80574266c3f`; commit date 2026-11-01T05:47:41Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--omnigent.md).
 <!-- teamagent-analysis:end -->

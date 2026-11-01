@@ -32,6 +32,14 @@ The [admin-session route](https://github.com/bigbodycobain/shadowbroker/blob/8a1
 
 The [terminal lifecycle](https://github.com/bigbodycobain/shadowbroker/blob/8a1915851f379fddd51b1ef3e6e8d9b598068a45/frontend/src/lib/infonetTerminalSession.ts) shares an in-flight end promise and attempts to restore prior node state, but begin is not serialized with end, shared booleans can race across calls and most failures are swallowed. It can notify session end without confirmed service teardown. Adapt authenticated session minting and adversarial locality fixtures; use scoped lifecycle state and explicit cleanup outcomes for Teamagent. No admin session, network, mesh service or tests were run.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`8e7d967de5e7f4d8448594096e1921624b133501`](https://github.com/bigbodycobain/shadowbroker/commit/8e7d967de5e7f4d8448594096e1921624b133501), compared with `8a1915851f379fddd51b1ef3e6e8d9b598068a45`.
+
+The nine-path delta pins matching React/React DOM versions, groups their dependency updates and adds an installed-version equality assertion in [CI](https://github.com/bigbodycobain/shadowbroker/blob/8e7d967de5e7f4d8448594096e1921624b133501/.github/workflows/ci.yml). The [layout](https://github.com/bigbodycobain/shadowbroker/blob/8e7d967de5e7f4d8448594096e1921624b133501/frontend/src/app/layout.tsx) switches from Google font acquisition to local regular/bold files with accompanying source/license documentation. All textual changes were read; the two font binaries were inventoried, not independently authenticated or rendered.
+
+Adapt installed compatibility checks for coupled packages and local asset provenance where offline builds matter. A local font alone does not establish that the whole build or application is offline. This update does not independently change or validate the swarm design; no upstream install, CI, browser or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [shadowbroker](https://github.com/bigbodycobain/shadowbroker); analyzed commit `8a1915851f379fddd51b1ef3e6e8d9b598068a45`; commit date 2026-10-27T02:13:28-06:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--shadowbroker.md).
+Analysis metadata: source [shadowbroker](https://github.com/bigbodycobain/shadowbroker); analyzed commit `8e7d967de5e7f4d8448594096e1921624b133501`; commit date 2026-10-30T12:07:09-06:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--shadowbroker.md).
 <!-- teamagent-analysis:end -->

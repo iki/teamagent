@@ -50,6 +50,18 @@ For Teamagent channels, preserve language-sensitive source wording and machine n
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `0d1a68160e532ba65dc34b48ea205de6de4028fc` (commit date `2026-10-31T23:07:08-07:00`), compared with `a4d3701c3cd62b46c90383973f38cfdbedf91889`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete weather-display parser and selected presentation fixtures; whole-repository diff was oversized. Rendering integration, other imported data and browser execution not fully audited.
+
+The [display parser](https://github.com/bilawalsidhu/gods-eye-view/blob/0d1a68160e532ba65dc34b48ea205de6de4028fc/src/layers/weather/display.js) bounds source text/legend entries, rejects control/format characters and lossy numeric labels, keeps units and legend only as a valid pair, and provides HTML escaping for credits. [Fixtures](https://github.com/bilawalsidhu/gods-eye-view/blob/0d1a68160e532ba65dc34b48ea205de6de4028fc/src/layers/weather/display.test.mjs) cover built-in fallbacks and source-supplied labels. Results are cached by manifest object identity; invalid fields fall back independently, which can mix source and built-in descriptions unless provenance is shown.
+
+**Teamagent implication (inference):** Treat imported labels, units and attribution as untrusted data with explicit source/version and omission status. Cache immutable snapshots, preserve coupled semantic fields together, and keep display sanitization separate from factual verification or permission to follow a source link.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view); analyzed commit `a4d3701c3cd62b46c90383973f38cfdbedf91889`; commit date 2026-10-28T12:14:29+04:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gods-eye-view.md).
+Analysis metadata: source [gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view); analyzed commit `0d1a68160e532ba65dc34b48ea205de6de4028fc`; commit date 2026-10-31T23:07:08-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gods-eye-view.md).
 <!-- teamagent-analysis:end -->

@@ -53,6 +53,16 @@ In [server/pkg/agent/opencode.go](https://github.com/multica-ai/multica/blob/9af
 
 **Harness implication and limits:** Negotiate capabilities per runtime version and transport, not per product name alone. Tool-start visibility matters to hang detection, while an output-only transport has a different observability contract. The ACP implementation and selector were not captured here; comments about MCP support are not proof that it works. Preserve native IDs and avoid treating transport fallback as equivalent permission or cancellation enforcement. This review is static and does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `5a2cc891ac338eed1919aa11a1eef5957cd82cec` against prior analyzed commit `9af15b1446f9d91f90ea97b65c504a7aa49da714`. Historical reviews above remain separate evidence.
+
+The [Hermes session storage change](https://github.com/multica-ai/multica/blob/5a2cc891ac338eed1919aa11a1eef5957cd82cec/server/internal/daemon/execenv/hermes_sessions.go) makes the durable conversation directory the effective Hermes home, instead of symlinking a task-local state.db to it. It prepares/migrates the prior task-local state before removing that task's database family, stamps the durable directory for the overlay initializer, and returns `Home`, `Mounted` and `HistoryPresent` separately. A mounted empty store must not be advertised as resumable history.
+
+The [updated fixtures](https://github.com/multica-ai/multica/blob/5a2cc891ac338eed1919aa11a1eef5957cd82cec/server/internal/daemon/execenv/hermes_sessions_test.go) read a regular file from the durable home across tasks, isolate two conversation directories, and delete the scratch home while verifying both transcript and WAL bytes survive. These tests use ordinary text files to model the database family; this review did not establish live SQLite quiescence, concurrent-writer serialization, migration atomicity internals or native gateway behavior. Teamagent should keep persistent conversation ownership outside task cleanup and test actual database journals, rollback and interruption separately.
+
+**Coverage:** Read the complete targeted session-home implementation/test delta. Unchanged migration helpers, gateway initialization and the rest of the large update were outside this scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [multica](https://github.com/multica-ai/multica); analyzed commit `9af15b1446f9d91f90ea97b65c504a7aa49da714`; commit date 2026-10-28T17:21:45+08:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--multica.md).
+Analysis metadata: source [multica](https://github.com/multica-ai/multica); analyzed commit `5a2cc891ac338eed1919aa11a1eef5957cd82cec`; commit date 2026-11-01T04:01:38+08:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--multica.md).
 <!-- teamagent-analysis:end -->

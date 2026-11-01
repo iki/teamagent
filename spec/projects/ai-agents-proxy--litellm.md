@@ -53,6 +53,14 @@ Evidence: [litellm/responses/mcp/mcp_streaming_iterator.py:438-512](https://gith
 
 **Scope and limits:** Reviewed selected complete iterator/test blobs after the aggregate diff cap. This establishes event composition and accounting call sites, not correctness of the full billing or concurrency subsystem. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`60fc121ce8ab995cb2997e0bbd0a980ee93c627d`](https://github.com/BerriAI/litellm/commit/60fc121ce8ab995cb2997e0bbd0a980ee93c627d), compared with `d84a2d4452d37420876573234e810bf4588882b0`.
+
+The complete new [reload module](https://github.com/BerriAI/litellm/blob/60fc121ce8ab995cb2997e0bbd0a980ee93c627d/litellm/proxy/dev_reload.py) separates a reloader from its worker pool, shares the listening socket, closes that socket in a finally block, and installs parent-exit watchers for pool and worker lifetimes. It explicitly excludes Windows from multi-worker reload and checks for the required Uvicorn startup-failure capability. Import strings load executable application code; these are trusted host configuration, not safe untrusted data.
+
+The full [unit suite](https://github.com/BerriAI/litellm/blob/60fc121ce8ab995cb2997e0bbd0a980ee93c627d/tests/unit/proxy/test_dev_reload.py) specifies broken-import/factory outcomes, option forwarding, worker overrides and Windows rejection. Those fixtures were read, not run; watcher declarations do not establish process-tree cleanup under every interruption. Teamagent should retain platform-aware capability reporting and independently observed descendant shutdown. This is a selected 401-line review within a 2,631-path update, not a re-audit of routing, training policies or provider compatibility.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [litellm](https://github.com/BerriAI/litellm); analyzed commit `d84a2d4452d37420876573234e810bf4588882b0`; commit date 2026-10-28T03:04:11-07:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--litellm.md).
+Analysis metadata: source [litellm](https://github.com/BerriAI/litellm); analyzed commit `60fc121ce8ab995cb2997e0bbd0a980ee93c627d`; commit date 2026-10-31T18:59:04-07:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--litellm.md).
 <!-- teamagent-analysis:end -->

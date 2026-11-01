@@ -48,6 +48,18 @@ For Teamagent, retain the durable original conversation separately from each pro
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `9caf2b4c29d9782f1cba4142be2525ebfa0ecd43` (commit date `2026-10-30T13:49:57-07:00`), compared with `0941fb03596862899f7df2bdeb022eb68d4216a7`. Earlier observations remain historical evidence.
+
+**Scope:** Complete Lance reranking eligibility diff; 47 changed paths inventoried. No matching changed Lance fixture appeared in this inventory, and broader retrieval behavior was not executed.
+
+The [Lance adapter](https://github.com/Mintplex-Labs/anything-llm/blob/9caf2b4c29d9782f1cba4142be2525ebfa0ecd43/server/utils/vectorDbProviders/lance/index.js) now removes below-threshold and pinned-source candidates before the reranker's topK selection, returns early for an empty eligible set, and creates the reranker only after eligibility is known. Previously ineligible candidates could consume topK slots before removal. The inspected score expression still uses a truthy fallback, so a numeric zero rerank score falls back to vector similarity rather than remaining explicitly zero.
+
+**Teamagent implication (inference):** Apply authorization/eligibility before ranking and paid reranking, preserving empty results honestly. Keep each score's meaning and presence explicit; do not use truthiness to merge zero scores with missing evidence. Measure recall and ranking quality separately from this structural correction.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [anything-llm](https://github.com/Mintplex-Labs/anything-llm); analyzed commit `0941fb03596862899f7df2bdeb022eb68d4216a7`; commit date 2026-10-27T16:04:07-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--anything-llm.md).
+Analysis metadata: source [anything-llm](https://github.com/Mintplex-Labs/anything-llm); analyzed commit `9caf2b4c29d9782f1cba4142be2525ebfa0ecd43`; commit date 2026-10-30T13:49:57-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--anything-llm.md).
 <!-- teamagent-analysis:end -->

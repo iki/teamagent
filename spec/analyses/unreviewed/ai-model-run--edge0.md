@@ -1,0 +1,17 @@
+# edge0
+
+Source: [edge0](https://github.com/edge0-ai/edge0) · [models](../../models.md), [agents](../../agents.md).
+
+Initially discovered 2026-11-01T10:08:32.081Z as unreviewed. The scoped initial source review below supersedes that discovery-only status; it does not establish runtime validation. [Change evidence](../repos/ai-model-run--edge0.md).
+
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`d4a2fa02fcf06c08961248a2da1d8fc861d842ef`](https://github.com/edge0-ai/edge0/commit/d4a2fa02fcf06c08961248a2da1d8fc861d842ef).
+
+Initial review of the complete [prerouter specification](https://github.com/edge0-ai/edge0/blob/d4a2fa02fcf06c08961248a2da1d8fc861d842ef/python/src/edge0/prerouter/spec.py) and [step-boundary stager](https://github.com/edge0-ai/edge0/blob/d4a2fa02fcf06c08961248a2da1d8fc861d842ef/python/src/edge0/prerouter/stager.py). Heads owned by one layer predict the next layer's next-token routing. The implementation distinguishes executed versus teacher top-k features, softmax versus group-limited selection, raw-logit versus selected-index caches and short-prefill fallback features. Uniform heads can be batched; host synchronization is skipped when no streaming consumer needs expert identifiers.
+
+The upstream zero-drop statement concerns consistency between the chosen routing and staged experts; it does not establish equivalence to the original model's expert choices or preserved answer quality. Teamagent should pin weights, feature semantics, model family, precision and runtime when evaluating this candidate. This is internal MoE routing, separate from account-policy admission and Jev-style provider selection. Other modules and the 1,165-path inventory were not exhaustively reviewed; no model or performance test was executed.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [edge0](https://github.com/edge0-ai/edge0); analyzed commit `d4a2fa02fcf06c08961248a2da1d8fc861d842ef`; commit date 2026-10-29T12:42:23+08:00; review date 2026-11-01T11:35:43.470Z; depth reviewed. [Maintenance record](../repos/ai-model-run--edge0.md).
+<!-- teamagent-analysis:end -->

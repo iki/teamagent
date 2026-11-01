@@ -44,6 +44,18 @@ This is an undo contract for the staged buffer. It does not demonstrate that a D
 
 **Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `4f956490f0056ae1ff5ea80372cf56e83c001d3c` (commit date `2026-11-01T02:13:22+08:00`), compared with `8409a564d1baee90b2dde4f7a8f06288838e3921`. Earlier observations remain historical evidence.
+
+**Scope:** Complete transformer changes and first 144 lines of the new Hermes plugin; 259 changed paths inventoried. Stop-hook remainder, host trust implementation and subprocess execution not audited.
+
+The [transformer](https://github.com/pbakaus/impeccable/blob/4f956490f0056ae1ff5ea80372cf56e83c001d3c/scripts/lib/transformers/factory.js) copies executable plugin payloads into a host-specific destination and adds disclosure when a requested review falls back inline. The [Hermes adapter](https://github.com/pbakaus/impeccable/blob/4f956490f0056ae1ff5ea80372cf56e83c001d3c/skill/hermes-plugin/__init__.py) searches trusted project launchers then the configured home, sends translated edit events to a subprocess with timeouts, and fails open on hook errors. Its inspected subprocess captures output without a byte limit. An inline review or optional hook is not independent verification.
+
+**Teamagent implication (inference):** Include executable payloads, host variant and trust configuration in skill review/content identity. Make degraded review visible, bound process output and enforce hidden background launch behavior; keep optional design feedback separate from mandatory authorization and verification gates.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [design.impeccable](https://github.com/pbakaus/impeccable); analyzed commit `8409a564d1baee90b2dde4f7a8f06288838e3921`; commit date 2026-10-28T16:49:23+08:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.impeccable.md).
+Analysis metadata: source [design.impeccable](https://github.com/pbakaus/impeccable); analyzed commit `4f956490f0056ae1ff5ea80372cf56e83c001d3c`; commit date 2026-11-01T02:13:22+08:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.impeccable.md).
 <!-- teamagent-analysis:end -->

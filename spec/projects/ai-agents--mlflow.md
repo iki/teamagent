@@ -46,6 +46,16 @@ In [mlflow/gateway/providers/mistral.py](https://github.com/mlflow/mlflow/blob/9
 
 **Harness implication and limits:** Expose representation loss explicitly when translating provider responses; absence of visible text is not necessarily absence of provider work or usage. Validate chunk shapes before projection and retain usage/error semantics separately. The helper assumes mapping-shaped list entries, and this source review does not establish malformed-response behavior or streaming integration. Oversized authentication files and tests were not inspected. No upstream tests, agent execution or provider requests were run.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `e8d8c09e79e5e0f69cc022409019fc0fb6ad2c30` against prior analyzed commit `9f9c78b94b56f7593ad9de257e487c7dd0f04641`. Historical reviews above remain separate evidence.
+
+The [authorization store](https://github.com/mlflow/mlflow/blob/e8d8c09e79e5e0f69cc022409019fc0fb6ad2c30/mlflow/server/auth/sqlalchemy_store.py) narrows workspace-wide inheritance to MANAGE for non-workspace resource queries; ordinary USE membership must not imply read access to every experiment. It also normalizes non-wildcard experiment identifiers before storing grants and adds exact-name grant listing restricted to the active workspace and non-synthetic roles.
+
+The [search-scope fixture](https://github.com/mlflow/mlflow/blob/e8d8c09e79e5e0f69cc022409019fc0fb6ad2c30/tests/server/auth/test_auth_search_scope.py) includes a SQL/file, API/AJAX, GET/POST and paginated matrix: USE returns no experiments, MANAGE returns all in scope, named grants select their resources and deny precedence remains explicit. Earlier fixture sections also ensure normalized authorized filters reach storage, preserving caller pagination and rejecting malformed request messages before rewriting. The request-scoping implementation itself was not inspected here, so those tests are evidence of intended integration coverage rather than a certified endpoint boundary. Teamagent retrieval must enforce resource permissions before ranking/pagination and never substitute tenant membership for document/trace authorization.
+
+**Coverage:** Read complete auth-store delta, first 290 presented lines and the complete search-scopes-before-storage case in the 2,581-line new fixture. Remaining search/job tests and route enforcement were not reviewed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mlflow](https://github.com/mlflow/mlflow); analyzed commit `9f9c78b94b56f7593ad9de257e487c7dd0f04641`; commit date 2026-10-28T09:19:35Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mlflow.md).
+Analysis metadata: source [mlflow](https://github.com/mlflow/mlflow); analyzed commit `e8d8c09e79e5e0f69cc022409019fc0fb6ad2c30`; commit date 2026-11-01T06:30:29Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mlflow.md).
 <!-- teamagent-analysis:end -->

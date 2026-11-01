@@ -1,0 +1,53 @@
+# llm-wiki-compiler
+
+Incremental source-to-wiki compilation with contract-bound extraction snapshots and separate write authority.
+
+Source: [llm-wiki-compiler](https://github.com/atomicmemory/llm-wiki-compiler) · Snapshot: `605461febe8206e6f78e987bb57f75fa1c5817c5` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [src/compiler/extraction-snapshot.ts:1-75](https://github.com/atomicmemory/llm-wiki-compiler/blob/605461febe8206e6f78e987bb57f75fa1c5817c5/src/compiler/extraction-snapshot.ts#L1-L75)
+- [src/trust/trusted-write.ts:1-51](https://github.com/atomicmemory/llm-wiki-compiler/blob/605461febe8206e6f78e987bb57f75fa1c5817c5/src/trust/trusted-write.ts#L1-L51)
+
+Extraction snapshots are validated with strict schemas and bind source content to a SHA-256 hash. Their fingerprint includes prompt version, active provider, model, extraction prompt and tool schema. Reuse checks the fingerprint, current content hash and concept ownership; malformed or incompatible snapshots return to fresh extraction. Snapshots are only added when all extracted concept assignments have been published. A separate trusted-write helper requires an out-of-workspace environment grant for a project to auto-apply trust-gated writes; otherwise they stage for review.
+
+## Harness implications
+
+Treat a generated wiki as a versioned materialized view over sources. Compile only affected topics, preserve source-to-page dependencies and retain evidence for every generated assertion. Reuse must be keyed by the transformation contract, not only filename or model nickname. Authority to change durable organizational memory belongs to the harness policy and user scope, never to text imported into the wiki. A reviewed change can be published automatically when the user has already authorized that class of change; the mechanism should support policy rather than force repeated approvals.
+
+## Limitations and tradeoffs
+
+Hash and schema validity establish identity and structure, not factual entailment. A link can resolve while failing to support the sentence citing it. Changing an extraction model may invalidate reusable outputs and create substantial reprocessing work. This review inspected snapshot and grant mechanics, not every workflow, publication transaction or user interface. The large compiler/workflow surface also increases integration complexity compared with plain Markdown plus a small dependency database.
+
+## Adoption and validation
+
+Adopt the compiler model and snapshot rules for curated team knowledge; evaluate direct reuse only after a bounded pilot. Start with topic summaries, decisions and source reports under version control. Test partial publication, changed source bytes, model/prompt migration, concept rename, deleted inputs, stale review approval and untrusted content attempting to grant itself write authority.
+
+Related directions: [memory](../memory.md) · [evolution](../evolution.md) · [skills](../skills.md) · [import-generation](../import-generation.md).
+
+
+## Change review - 2026-10-28
+
+**Extraction reuse binds supplied content and published ownership while citation-cache parsing stays permissive.** Reviewed commit `c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f` (commit date `2026-10-19T12:40:59-07:00`). Compared with `605461febe8206e6f78e987bb57f75fa1c5817c5`; the complete Git comparison contains 804 changed paths.
+
+Extraction snapshots hash the content actually passed to extraction and fingerprint prompt version, provider/model, rendered prompt and tool contract. Reuse validates a strict schema, source hash and exact live concept-slug set, rejects legacy title markup and resets is_new. Snapshots are only attached when every concept slug was written; review/frozen/deleted-source cases disable the reuse set. Index growth intentionally does not invalidate prior assignments, a stability tradeoff rather than evidence the assignments remain optimal under a larger corpus.
+
+Context retrieval preserves qualified page IDs, content hashes and independent stale-entry flags; provider/profile failures become bounded warning codes. Store-load rejection deliberately propagates, whereas zero hits from a usable store are labelled embedding-store-missing, conflating absence of matches with absence of storage. The public citation-cache reader reads all text, casts any parsable JSON as a judgment, retains duplicates and silently skips malformed lines; the summary buckets every non-1/non-2 score as unsupported. This is not a validated acceptance ledger.
+
+Evidence: [src/compiler/extraction-snapshot.ts:1-80](https://github.com/atomicmemory/llm-wiki-compiler/blob/c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f/src/compiler/extraction-snapshot.ts#L1-L80) · [src/context/retrieval.ts:148-202](https://github.com/atomicmemory/llm-wiki-compiler/blob/c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f/src/context/retrieval.ts#L148-L202) · [src/eval/cache.ts:49-108](https://github.com/atomicmemory/llm-wiki-compiler/blob/c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f/src/eval/cache.ts#L49-L108).
+
+**Harness consequence:** Adopt supplied-byte hashing, extraction-contract identity and ownership reconciliation while documenting deliberate reuse stability. Preserve no-match, unavailable, stale and failed channels distinctly. Citation judgments need bounded schema/semantic validation, exact claim/span/model identity, duplicate policy and explicit malformed/missing counts before contributing to evaluation.
+
+**Scope and limits:** Static scoped extraction-snapshot, semantic-outcome and public citation-cache review within the 804-path comparison. Atomic compile publication, underlying embedding loaders, judge keyed-cache implementation and complete evaluation were not audited or executed.
+
+## Change review — 2026-11-01
+
+**Configurable source retention keeps truncation visible but is not a hard resource budget.** Reviewed `0f8ff86ef0a28f4c15627a2ea5e94a96cadd834e` (commit date `2026-10-30T16:58:21-07:00`) against `c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f`. The five-path comparison adds `LLMWIKI_MAX_SOURCE_CHARS`: blank/unset values retain 100,000; configured values must be safe integers of at least the minimum source length. Truncation now reports the omitted amount while preserving `truncated` and `originalChars`. Tests cover raising the limit, the default, below-minimum/fractional values and an explicitly supplied limit.
+
+The environment resolver has no practical upper cap below JavaScript's safe-integer bound, and the callable truncator accepts its explicit numeric argument without revalidating it. The function receives an already materialized string and uses JavaScript length/slicing, so its count is UTF-16 code units, not UTF-8 bytes, model tokens or guaranteed whole Unicode characters. Evidence: [src/utils/constants.ts:5-31](https://github.com/atomicmemory/llm-wiki-compiler/blob/0f8ff86ef0a28f4c15627a2ea5e94a96cadd834e/src/utils/constants.ts#L5-L31), [src/commands/ingest.ts:147-184](https://github.com/atomicmemory/llm-wiki-compiler/blob/0f8ff86ef0a28f4c15627a2ea5e94a96cadd834e/src/commands/ingest.ts#L147-L184) and [test/ingest-truncation.test.ts:64-104](https://github.com/atomicmemory/llm-wiki-compiler/blob/0f8ff86ef0a28f4c15627a2ea5e94a96cadd834e/test/ingest-truncation.test.ts#L64-L104).
+
+**Harness consequence:** Preserve explicit omission metadata, but enforce independent pre-read byte limits, bounded validated overrides and downstream token budgets. Distinguish Unicode-safe excerpt boundaries from character-count labels and test both environment and direct library entry points.
+
+**Scope and limits:** Read all five changed-file diffs, including added fixtures and documentation. No parser, PDF import, model call or upstream test was executed. Existing parser allocation behavior and full conversion fidelity were not audited by this small change review.

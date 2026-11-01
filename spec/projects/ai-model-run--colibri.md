@@ -43,6 +43,14 @@ Evidence: [c/mcp_server.py:32-133](https://github.com/JustVugg/colibri/blob/e0db
 
 **Scope and limits:** Scoped static review of the new model-management MCP wrapper and its fixtures within a 512-path comparison. No code, setup command, download, model server, GPU workload or upstream test was executed. Underlying setup_flow locking, process identity validation, inference kernels and the other changed converters are outside this review.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`0a5504a1dc64f86fcd0fe7db298b0448c730e7e6`](https://github.com/JustVugg/colibri/commit/0a5504a1dc64f86fcd0fe7db298b0448c730e7e6), compared with `e0db083cdc9e563e0766cc6fc661ef23c32298e0`.
+
+The selected [download helper](https://github.com/JustVugg/colibri/blob/0a5504a1dc64f86fcd0fe7db298b0448c730e7e6/c/setup_download.py) now revalidates existing same-size files when a digest is supplied and verification is enabled. Split-drive safetensors are located separately from metadata; a mismatched supplied digest stops completion rather than silently replacing the external shard. The [fixtures](https://github.com/JustVugg/colibri/blob/0a5504a1dc64f86fcd0fe7db298b0448c730e7e6/c/tests/test_setup_download.py) cover changed same-length revisions, split-drive mismatches, zero-byte files and HTTP failures in Windows throughput probes.
+
+The inspected fixtures also deliberately accept existing bytes when verification is disabled or the digest is absent. The completeness helper uses recorded status and sizes, so it is not an integrity attestation. Teamagent should preserve explicit unknown-integrity states and require trusted pinned hashes for provisioned model resources. This is a complete reading of the selected diff only; no model, network transfer, performance benchmark or upstream tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [colibri](https://github.com/JustVugg/colibri); analyzed commit `e0db083cdc9e563e0766cc6fc661ef23c32298e0`; commit date 2026-10-17T16:47:26+02:00; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-run--colibri.md).
+Analysis metadata: source [colibri](https://github.com/JustVugg/colibri); analyzed commit `0a5504a1dc64f86fcd0fe7db298b0448c730e7e6`; commit date 2026-10-31T22:29:12+01:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-run--colibri.md).
 <!-- teamagent-analysis:end -->

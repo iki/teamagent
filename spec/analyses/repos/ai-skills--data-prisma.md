@@ -2,11 +2,11 @@
 
 Source: [data-prisma](https://github.com/prisma/skills) · [Analysis](../../projects/ai-skills--data-prisma.md) · [skills](../../skills.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `c71e8ea254dbc5dba27af773b735679163395cf9`; commit date: 2026-10-27T10:10:40+01:00; review date: 2026-10-28T08:26:04.502Z; observed SHA: `c71e8ea254dbc5dba27af773b735679163395cf9`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `8ea289b730c2e89f7ff1f518af128b113d842a92`; commit date: 2026-10-29T20:38:08+05:30; review date: 2026-11-01T11:37:37.120Z; observed SHA: `8ea289b730c2e89f7ff1f518af128b113d842a92`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/prisma/skills/compare/c71e8ea254dbc5dba27af773b735679163395cf9...c71e8ea254dbc5dba27af773b735679163395cf9). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/prisma/skills/compare/8ea289b730c2e89f7ff1f518af128b113d842a92...8ea289b730c2e89f7ff1f518af128b113d842a92). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

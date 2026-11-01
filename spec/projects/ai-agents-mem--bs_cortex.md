@@ -37,6 +37,14 @@ Evidence: [README.md:78-104](https://github.com/novotapeter-bs/bs_cortex/blob/e2
 
 **Scope and limits:** README/change screening only; no remote service, client UI, ingestion guarantee or latency claim was tested.
 
+## Change review — 2026-11-01
+
+**Expanded governance documentation remains distinct from demonstrated server behavior.** Reviewed `c893ebd7ccb9368f3d57048b7a9e8273855c52c5` (commit date `2026-10-28T14:43:15+01:00`) against `e2df973fa3fc9281c3ea296dbf24c24877dd2234`. Both changed paths are documentation. The advertised recall threshold changes from 65 ms to 120 ms; Swagger/OpenAPI links are hidden with a comment saying production activation is pending. The tool table adds canonical project discovery, explicit consolidation, task status and staging cleanup. Status documentation distinguishes `PENDING`, `RUNNING`, `COMPLETED` and `FAILED`, but this delta includes neither those implementations nor their tests. Evidence: [README.md:105-169](https://github.com/novotapeter-bs/bs_cortex/blob/c893ebd7ccb9368f3d57048b7a9e8273855c52c5/README.md#L105-L169) and [ARCHITECTURE.md:44-51](https://github.com/novotapeter-bs/bs_cortex/blob/c893ebd7ccb9368f3d57048b7a9e8273855c52c5/ARCHITECTURE.md#L44-L51).
+
+**Harness consequence:** Separate declared tools, authenticated availability, accepted background work and observed completion. Resolve canonical project identity before writes and require explicit cleanup scope, but do not inherit prose guarantees of isolation, losslessness or latency without implementation and workload evidence.
+
+**Scope and limits:** Complete two-file documentation comparison. No hosted endpoint, client integration, consolidation task or latency measurement was tested. Earlier concerns about claimed ingestion and actual delivery remain unresolved by this documentation-only update.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bs_cortex](https://github.com/novotapeter-bs/bs_cortex); analyzed commit `e2df973fa3fc9281c3ea296dbf24c24877dd2234`; commit date 2026-10-05T13:01:04+02:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--bs_cortex.md).
+Analysis metadata: source [bs_cortex](https://github.com/novotapeter-bs/bs_cortex); analyzed commit `c893ebd7ccb9368f3d57048b7a9e8273855c52c5`; commit date 2026-10-28T14:43:15+01:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--bs_cortex.md).
 <!-- teamagent-analysis:end -->

@@ -2,11 +2,11 @@
 
 Source: [frontier-harness-eval](https://github.com/frontier-harness-eval/eval) · [Analysis](../../projects/ai-eval--frontier-harness-eval.md) · [evolution](../../evolution.md), [agents](../../agents.md), [models](../../models.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63`; commit date: 2026-09-08T10:09:22-07:00; review date: 2026-10-04; observed SHA: `e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63`; commit date: 2026-09-08T10:09:22-07:00; review date: 2026-10-04; observed SHA: `e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/frontier-harness-eval/eval/compare/e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63...e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

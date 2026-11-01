@@ -46,6 +46,16 @@ In [src/server/events/run-executor.ts](https://github.com/khoj-ai/pipali/blob/14
 
 **Harness implication and limits:** Separate visible run ownership from physical cleanup: a replacement run may begin while the stopped attempt unwinds. Fence old callbacks and terminal events by attempt identity. This in-memory predicate does not fence external side effects or cross-process writers, and draining still depends on iterator cooperation. No concurrency or cancellation fixture was executed. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `a200d8fdcaebb42d3175d0a7d5ead10aae79c75f` against prior analyzed commit `140a91509eb1aeb5f67ef09f8292e86f6eb3c122`. Historical reviews above remain separate evidence.
+
+The [permission-change handler](https://github.com/khoj-ai/pipali/blob/a200d8fdcaebb42d3175d0a7d5ead10aae79c75f/src/server/sandbox/permission-change.ts) describes absolute/home-relative rules through their resolved target and labels wildcard domains explicitly. After the user answers, it compares the current configuration with the snapshot that was approved and returns `outdated` when another settings edit intervened. The [request fixture](https://github.com/khoj-ai/pipali/blob/a200d8fdcaebb42d3175d0a7d5ead10aae79c75f/tests/server/sandbox/permission-change.test.ts) preserves a newly protected folder and expects HTTP 409 instead of applying the stale whole-list request. This is a useful approval-version boundary; JSON equality and the subsequent caller write are not a cross-process transaction.
+
+The [sandbox delta](https://github.com/khoj-ai/pipali/blob/a200d8fdcaebb42d3175d0a7d5ead10aae79c75f/src/server/sandbox/index.ts) snapshots resolved rule targets when configuration is applied, preventing a later link replacement from carrying the original grant to a different directory. The [tool protection fixtures](https://github.com/khoj-ai/pipali/blob/a200d8fdcaebb42d3175d0a7d5ead10aae79c75f/tests/server/security/tool-protection.test.ts) exercise linked grants, swapped links, fresh-directory write races and separate confirmation for a protected link's actual target. These are concrete adversarial fixture designs for Teamagent; the file-opening implementation and native confinement were outside this scope, so the tests do not establish a universal race-free filesystem boundary. The same runtime delta distinguishes failed startup from a transient queued restart before suggesting Windows setup.
+
+**Coverage:** Read permission-change implementation/test deltas, sandbox lifecycle/rule-resolution changes and tool-protection fixture changes. Other changes in the 38-path inventory were not reviewed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [pipali](https://github.com/khoj-ai/pipali); analyzed commit `140a91509eb1aeb5f67ef09f8292e86f6eb3c122`; commit date 2026-10-27T18:03:58-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--pipali.md).
+Analysis metadata: source [pipali](https://github.com/khoj-ai/pipali); analyzed commit `a200d8fdcaebb42d3175d0a7d5ead10aae79c75f`; commit date 2026-10-29T21:12:30-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--pipali.md).
 <!-- teamagent-analysis:end -->

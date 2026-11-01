@@ -42,6 +42,16 @@ In [crates/openhuman-embed/src/agent/compact.rs](https://github.com/tinyhumansai
 
 **Harness implication and limits:** Expose idle compaction as an explicit lifecycle operation with source-generation provenance and independent usage accounting. Treat the documented locking and byte preservation as requirements to verify in the core storage implementation, not guarantees established by this wrapper. Compaction may invoke a summarizer despite having no user-facing model turn; no provider call or transcript mutation was executed here. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `36ba3fde823d3c9eade965b440c72bfdba20810d` against prior analyzed commit `d12bab15be83c1d6a051c6f21cca9b3346ec3d89`. Historical reviews above remain separate evidence.
+
+The [host-only session builder](https://github.com/tinyhumansai/openhuman/blob/36ba3fde823d3c9eade965b440c72bfdba20810d/crates/openhuman-core/src/agent/session_host/builder/host_policy.rs) becomes asynchronous and awaits the shared configured builder before marking the session host-only. The [host-only fixtures](https://github.com/tinyhumansai/openhuman/blob/36ba3fde823d3c9eade965b440c72bfdba20810d/crates/openhuman-core/src/agent/session_host/builder/builder_tests_host_only_tests.rs) and [explicit-definition fixtures](https://github.com/tinyhumansai/openhuman/blob/36ba3fde823d3c9eade965b440c72bfdba20810d/crates/openhuman-core/src/agent/session_host/builder/builder_tests_explicit_definition_tests.rs) are updated to await configuration/session construction and asynchronously supplied host tools. Their visible assertions retain no-tools behavior without a belt, explicit definition identity, and the distinction between ordinary and host-only untrusted-input admission.
+
+This targeted delta is an initialization-contract migration, not evidence of a newly stronger sandbox. Teamagent adapters should publish a ready session only after asynchronous policy/tool construction succeeds, preserve per-session definition identity instead of silently substituting a same-name global definition, and rerun denial fixtures after lifecycle refactors. The underlying policy gate and all construction internals were not re-audited here.
+
+**Coverage:** Read the complete targeted host policy and two builder-test deltas. Most changes are async-call migration; unchanged policy implementation and broader runtime refactor are outside scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openhuman](https://github.com/tinyhumansai/openhuman); analyzed commit `d12bab15be83c1d6a051c6f21cca9b3346ec3d89`; commit date 2026-10-28T15:19:15+05:30; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openhuman.md).
+Analysis metadata: source [openhuman](https://github.com/tinyhumansai/openhuman); analyzed commit `36ba3fde823d3c9eade965b440c72bfdba20810d`; commit date 2026-10-31T22:34:05+05:30; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openhuman.md).
 <!-- teamagent-analysis:end -->

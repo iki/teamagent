@@ -2,11 +2,11 @@
 
 Source: [deepcode](https://github.com/HKUDS/DeepCode) · [Analysis](../../projects/ai-agents--deepcode.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `b017ea3e097fdb8375574ccd39d6cdb7caf4c986`; commit date: 2026-10-28T13:01:03+08:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `b017ea3e097fdb8375574ccd39d6cdb7caf4c986`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `4ff321ecfc921909948f7c7e42b703697f23733c`; commit date: 2026-10-31T19:03:51+08:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `4ff321ecfc921909948f7c7e42b703697f23733c`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/HKUDS/DeepCode/compare/b017ea3e097fdb8375574ccd39d6cdb7caf4c986...b017ea3e097fdb8375574ccd39d6cdb7caf4c986). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/HKUDS/DeepCode/compare/4ff321ecfc921909948f7c7e42b703697f23733c...4ff321ecfc921909948f7c7e42b703697f23733c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

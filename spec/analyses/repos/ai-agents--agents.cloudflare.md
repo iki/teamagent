@@ -2,11 +2,11 @@
 
 Source: [agents.cloudflare](https://github.com/cloudflare/agents) · [Analysis](../../projects/ai-agents--agents.cloudflare.md) · [agents](../../agents.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `743cfa5a193a98b766d396c0fde79124fba4c501`; commit date: 2026-10-28T00:40:18Z; review date: 2026-10-28T14:29:27.414Z; observed SHA: `743cfa5a193a98b766d396c0fde79124fba4c501`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `be1749221ab3efc8be4e976d8e7d8344d1446032`; commit date: 2026-10-29T18:49:01Z; review date: 2026-11-01T11:33:30.893Z; observed SHA: `be1749221ab3efc8be4e976d8e7d8344d1446032`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/cloudflare/agents/compare/743cfa5a193a98b766d396c0fde79124fba4c501...743cfa5a193a98b766d396c0fde79124fba4c501). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/cloudflare/agents/compare/be1749221ab3efc8be4e976d8e7d8344d1446032...be1749221ab3efc8be4e976d8e7d8344d1446032). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -46,6 +46,16 @@ In [packages/opencode/src/kilocode/session-hosting/native-routes.ts](https://git
 
 **Harness implication and limits:** Bind a remote attachment to its provider/session identity and classify routes before forwarding. Keep environment-preparation events distinct from agent transcript events. This helper is not the whole authorization boundary: collection routes still forward non-selector query fields, and transport authentication, remote identifier validation, origin restrictions and server-side ownership need independent checks. No upstream tests, agent execution or provider requests were run.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `dd35e09db9c74c62c84423df485fb3603a02dba1` against prior analyzed commit `8bade462c6f39d790cb6699631314c2ba08671a8`. Historical reviews above remain separate evidence.
+
+The [indexing ignore helper](https://github.com/Kilo-Org/kilocode/blob/dd35e09db9c74c62c84423df485fb3603a02dba1/packages/kilo-indexing/src/file/ignore.ts) expands bare names into root/nested directory and descendant patterns, deduplicating them while leaving multi-segment or already-globbed patterns unexpanded. The [focused fixtures](https://github.com/Kilo-Org/kilocode/blob/dd35e09db9c74c62c84423df485fb3603a02dba1/packages/kilo-indexing/test/kilocode/indexing/file/ignore.test.ts) verify nested dependency-path matching and preservation of existing globs.
+
+This is a useful distinction between excluding a returned file and pruning traversal before work occurs. The selected tests check generated patterns with minimatch; they do not establish actual scanner/watcher pruning, throughput or every glob engine's semantics. For Teamagent imports, verify the concrete traversal adapter, bound visited entries and retain coverage/exclusion receipts rather than claim speed from pattern changes alone. Ignore rules are scope selection, not a security boundary against a changing tree.
+
+**Coverage:** Read the complete 74-line ignore helper/fixture delta. Scanner/watcher consumers and performance were not audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [kilocode](https://github.com/Kilo-Org/kilocode); analyzed commit `8bade462c6f39d790cb6699631314c2ba08671a8`; commit date 2026-10-28T09:54:57Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--kilocode.md).
+Analysis metadata: source [kilocode](https://github.com/Kilo-Org/kilocode); analyzed commit `dd35e09db9c74c62c84423df485fb3603a02dba1`; commit date 2026-10-31T15:22:06+01:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--kilocode.md).
 <!-- teamagent-analysis:end -->

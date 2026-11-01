@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--deepseek-tui",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/codewhale-hq/codewhale",
+  "report": "spec/projects/ai-agents--deepseek-tui.md",
+  "analyzedSha": "687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T03:14:12-07:00",
+  "observedSha": "ce44c64170617ff7b412ee266620d3005cb8d13c",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "ce44c64170617ff7b412ee266620d3005cb8d13c",
+      "date": "2026-11-01T01:27:51-08:00",
+      "subject": "docs(changelog): describe verified restart and Auto-window behavior [skip ci]"
+    },
+    {
+      "sha": "5fd52e87c8daacf8e36aa7a12a07e959d0b2bb19",
+      "date": "2026-11-01T01:27:11-08:00",
+      "subject": "fix(tui): checkpoint the visible partial reply during a running turn [skip ci]"
+    },
+    {
+      "sha": "de99f0530a835584417a8b4802ad12f83b2a5734",
+      "date": "2026-11-01T01:26:48-08:00",
+      "subject": "fix(tui): retain historical context windows for resolved Auto turns [skip ci]"
+    },
+    {
+      "sha": "42532e3395645713699206808d2f30af4ab08b89",
+      "date": "2026-11-01T01:25:49-08:00",
+      "subject": "fix(release): refuse malformed facts before writing the release records [skip ci]"
+    },
+    {
+      "sha": "31723e5b80a9267e54c488b1f2b16cb3ad5eb6a4",
+      "date": "2026-11-01T01:00:57-08:00",
+      "subject": "fix(release): check all three published release records [skip ci]"
+    },
+    {
+      "sha": "847ea56ec073b327464f9571b9730b1f2b7daddc",
+      "date": "2026-11-01T01:49:54-07:00",
+      "subject": "fix(tui): recover interrupted replies across shutdown and resume [skip ci]"
+    },
+    {
+      "sha": "f5d12d6a908cace4621b6c815dc9ae3c25a50baf",
+      "date": "2026-11-01T01:25:04-07:00",
+      "subject": "fix(update): bound release discovery and sanitize remote errors [skip ci]"
+    },
+    {
+      "sha": "12632ee7ceb5115ead5afad802bdc0a8fa09d48e",
+      "date": "2026-11-01T01:01:45-07:00",
+      "subject": "fix(tui): keep fanout worker identities stable across reordered events [skip ci]"
+    },
+    {
+      "sha": "af3e9e36326a67c2c720c56b252c5f85495274f9",
+      "date": "2026-11-01T01:00:00-07:00",
+      "subject": "fix(tui): persist conversation rewind after restoring request files [skip ci]"
+    },
+    {
+      "sha": "9897aa812fbbff8a960db5858b04a57b4cae97ae",
+      "date": "2026-11-01T00:52:58-07:00",
+      "subject": "fix(lighthouse): install each bridge with its matching shared runtime [skip ci]"
+    },
+    {
+      "sha": "43628e43af05ae3653c6f407e13e5a293144df1a",
+      "date": "2026-11-01T00:44:02-07:00",
+      "subject": "fix(bridges): bound Runtime events and preserve interrupted turns [skip ci]"
+    },
+    {
+      "sha": "f70f7bbc8353fc8c31d28d102d4f15fb93a8a52b",
+      "date": "2026-11-01T00:35:18-07:00",
+      "subject": "fix(web): bound weekly digest archive reads and rendering [skip ci]"
+    },
+    {
+      "sha": "c4a31ba85007ae00795ee3722be6cee35e38ff54",
+      "date": "2026-11-01T00:31:56-07:00",
+      "subject": "fix(web): serialize draft generation with maintainer review [skip ci]"
+    },
+    {
+      "sha": "ca75613cb6e11586e243fcae5159ba5d01b36b9c",
+      "date": "2026-11-01T00:20:00-07:00",
+      "subject": "fix(web): bound DeepSeek response bodies for both community clients [skip ci]"
+    },
+    {
+      "sha": "e7bee48a3ce97c1b28c9bf4b3e1d0d3052a66598",
+      "date": "2026-11-01T00:19:58-07:00",
+      "subject": "fix(web): serialize scheduled and manual facts refreshes [skip ci]"
+    },
+    {
+      "sha": "24b83e49b3a1f6dc0c14ee2d7200b5267d9a46e5",
+      "date": "2026-11-01T14:55:24+08:00",
+      "subject": "fix(tui): render markup in wrapped table cells (#7181) [skip ci]"
+    },
+    {
+      "sha": "b6210ebac8dfd0021a1f8f37686915b4946cf7ed",
+      "date": "2026-10-31T23:55:14-07:00",
+      "subject": "Integrate wrapped table links with current main (original #7181) [skip ci]"
+    },
+    {
+      "sha": "0bbfbb2dd812de98b6ce50d00e92b623fc630629",
+      "date": "2026-10-31T23:54:00-07:00",
+      "subject": "fix(providers): refresh the Runcrate public roster without a key [skip ci]"
+    },
+    {
+      "sha": "a595ca40c88179d519626c17856a56b517ba0351",
+      "date": "2026-10-31T23:53:31-07:00",
+      "subject": "fix(tui): resolve an unavailable Ollama default when the daemon appears [skip ci]"
+    },
+    {
+      "sha": "2fad14825ebb88d0a73a32814b50dc5949fe0336",
+      "date": "2026-10-31T23:53:07-07:00",
+      "subject": "fix(engine): send the goal objective once per live context window [skip ci]"
+    },
+    {
+      "sha": "ffa9b23fc18774bf9b3fa7074cf3da08b10cec23",
+      "date": "2026-11-01T14:46:56+08:00",
+      "subject": "chore(deps): bump toml from 1.1.4+spec-1.1.0 to 1.1.6+spec-1.1.0 (#7166) [skip ci]"
+    },
+    {
+      "sha": "84a05f31d0eb242e3af4462b67021d3333a5f533",
+      "date": "2026-10-31T23:46:50-07:00",
+      "subject": "Merge verified main into the original dependency update (#7166) [skip ci]"
+    },
+    {
+      "sha": "f27ad2e04032bdeb0107d7f0bbfe36340295650e",
+      "date": "2026-11-01T14:46:46+08:00",
+      "subject": "chore(deps): bump htmd from 0.5.5 to 0.5.6 (#7165) [skip ci]"
+    },
+    {
+      "sha": "56e4994b79d9add2355acaa6d5d1676a36e137f2",
+      "date": "2026-10-31T23:46:40-07:00",
+      "subject": "Merge verified main into the original dependency update (#7165) [skip ci]"
+    },
+    {
+      "sha": "28bb88c9ffbaecc5fe57dc0cba9b97e15d8c8b86",
+      "date": "2026-11-01T14:46:36+08:00",
+      "subject": "chore(deps): bump liblzma from 0.4.8 to 0.4.9 (#7163) [skip ci]"
+    },
+    {
+      "sha": "35980d957a61d82ee85a197f9e5eaf61307b5bfc",
+      "date": "2026-10-31T23:46:31-07:00",
+      "subject": "Merge verified main into the original dependency update (#7163) [skip ci]"
+    },
+    {
+      "sha": "1ce833117d6dfd572bc80cc95ea2844249a9f751",
+      "date": "2026-10-31T23:19:22-07:00",
+      "subject": "fix(engine): restore moved feature and Windows checks [skip ci]"
+    },
+    {
+      "sha": "00226bbfbb8e421e93dfcf9730f48413aeb10385",
+      "date": "2026-11-01T14:14:13+08:00",
+      "subject": "Merge pull request #7180 from SparkofSpike/codex/session-rebranch-turn-meta"
+    },
+    {
+      "sha": "0079c86058849dfba17105948a28e3084cb432ba",
+      "date": "2026-10-31T23:11:26-07:00",
+      "subject": "Merge current main into the original session journal repair (#7180) [skip ci]"
+    },
+    {
+      "sha": "3070c00562a97bb458e1adbdac6833e5ac728611",
+      "date": "2026-10-31T23:09:55-07:00",
+      "subject": "fix(bridges): reconcile interrupted Feishu and Weixin deliveries [skip ci]"
+    },
+    {
+      "sha": "c722e4a8aefe4bf8106a87996085fee39c58372b",
+      "date": "2026-11-01T13:52:22+08:00",
+      "subject": "chore(deps): bump jsonwebtoken from 10.4.0 to 11.1.0 (#7160) [skip ci]"
+    },
+    {
+      "sha": "1d750e5098b650f8fddffa4b3611b36221c3f4b6",
+      "date": "2026-10-31T22:49:05-07:00",
+      "subject": "fix(routes): honor the serving limits of named custom endpoints [skip ci]"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".config/nextest.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/AUTHOR_MAP",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/release-workflows.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codewhale-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/main-landing.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-artifacts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-republish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/security-audit.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "DEPENDENCY_SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "THIRD_PARTY_NOTICES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config.example.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/src/bridge.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/src/daemon_client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/src/daemon_socket.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/src/daemon_windows.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/tests/daemon_socket.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/build-support/tests/build_script_relocation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/config_bundles.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/metrics.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/update.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/update/compiled_host.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/update/uninstall.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/tests/telemetry_kill_switch_dispatch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/facets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/facets/debug_operations.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/navigation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/outcome.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/commands/src/debug/operations_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/commands/src/debug/undo.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/assets/catalog_corrections.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/assets/models_dev.bundled.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/assets/provider_descriptors.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/config_document.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/config_store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/config_toml.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/descriptors.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/config/src/local_reasoning.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/config/src/local_reasoning.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/permissions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/persistence.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/private_directory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/provider_chain.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/route/providers-export.golden.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/runtime_options.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/setup_state.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/telemetry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/xai_credentials.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/core/tests/single_turn_loop.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/engine/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/engine/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/.gitignore",
+      "previousPath": "crates/tui/extension-host/.gitignore"
+    },
+    {
+      "status": "R087",
+      "path": "crates/engine/extension-host/build.mjs",
+      "previousPath": "crates/tui/extension-host/build.mjs"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/compile-host.mjs",
+      "previousPath": "crates/tui/extension-host/compile-host.mjs"
+    },
+    {
+      "status": "R095",
+      "path": "crates/engine/extension-host/dist/LICENSES.txt",
+      "previousPath": "crates/tui/extension-host/dist/LICENSES.txt"
+    },
+    {
+      "status": "R094",
+      "path": "crates/engine/extension-host/dist/agent-presets.mjs",
+      "previousPath": "crates/tui/extension-host/dist/agent-presets.mjs"
+    },
+    {
+      "status": "R099",
+      "path": "crates/engine/extension-host/dist/avatars.mjs",
+      "previousPath": "crates/tui/extension-host/dist/avatars.mjs"
+    },
+    {
+      "status": "A",
+      "path": "crates/engine/extension-host/dist/builtin-modules.json",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "crates/engine/extension-host/dist/builtin/harness.mjs",
+      "previousPath": "crates/tui/extension-host/dist/builtin/harness.mjs"
+    },
+    {
+      "status": "R099",
+      "path": "crates/engine/extension-host/dist/builtin/mcp.mjs",
+      "previousPath": "crates/tui/extension-host/dist/builtin/mcp.mjs"
+    },
+    {
+      "status": "R094",
+      "path": "crates/engine/extension-host/dist/codewhale-extension-host.mjs",
+      "previousPath": "crates/tui/extension-host/dist/codewhale-extension-host.mjs"
+    },
+    {
+      "status": "R094",
+      "path": "crates/engine/extension-host/dist/dsh-composition-review.mjs",
+      "previousPath": "crates/tui/extension-host/dist/dsh-composition-review.mjs"
+    },
+    {
+      "status": "R099",
+      "path": "crates/engine/extension-host/dist/protocol.mjs",
+      "previousPath": "crates/tui/extension-host/dist/protocol.mjs"
+    },
+    {
+      "status": "R099",
+      "path": "crates/engine/extension-host/dist/rpc.mjs",
+      "previousPath": "crates/tui/extension-host/dist/rpc.mjs"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/dist/shell-hooks.mjs",
+      "previousPath": "crates/tui/extension-host/dist/shell-hooks.mjs"
+    },
+    {
+      "status": "R099",
+      "path": "crates/engine/extension-host/dist/skills.mjs",
+      "previousPath": "crates/tui/extension-host/dist/skills.mjs"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/dist/stock-adapters.mjs",
+      "previousPath": "crates/tui/extension-host/dist/stock-adapters.mjs"
+    },
+    {
+      "status": "R095",
+      "path": "crates/engine/extension-host/package-lock.json",
+      "previousPath": "crates/tui/extension-host/package-lock.json"
+    },
+    {
+      "status": "R082",
+      "path": "crates/engine/extension-host/package.json",
+      "previousPath": "crates/tui/extension-host/package.json"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/scripts/redact-mcp-oauth-logs.mjs",
+      "previousPath": "crates/tui/extension-host/scripts/redact-mcp-oauth-logs.mjs"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/builtin/harness.ts",
+      "previousPath": "crates/tui/extension-host/src/builtin/harness.ts"
+    },
+    {
+      "status": "R099",
+      "path": "crates/engine/extension-host/src/builtin/mcp.ts",
+      "previousPath": "crates/tui/extension-host/src/builtin/mcp.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/builtin/shared/github-adapter.ts",
+      "previousPath": "crates/tui/extension-host/src/builtin/shared/github-adapter.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/builtin/shared/review-adapter.ts",
+      "previousPath": "crates/tui/extension-host/src/builtin/shared/review-adapter.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/builtin/shared/stock-adapters.ts",
+      "previousPath": "crates/tui/extension-host/src/builtin/shared/stock-adapters.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/builtin/shared/web-adapters.ts",
+      "previousPath": "crates/tui/extension-host/src/builtin/shared/web-adapters.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/compiled.mjs",
+      "previousPath": "crates/tui/extension-host/src/compiled.mjs"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/agent-presets.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/agent-presets.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/bun-closure.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/bun-closure.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/canonical-path.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/canonical-path.ts"
+    },
+    {
+      "status": "R076",
+      "path": "crates/engine/extension-host/src/dsh/compatibility.json",
+      "previousPath": "crates/tui/extension-host/src/dsh/compatibility.json"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/composition.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/composition.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/dsh-message-compat.js",
+      "previousPath": "crates/tui/extension-host/src/dsh/dsh-message-compat.js"
+    },
+    {
+      "status": "R099",
+      "path": "crates/engine/extension-host/src/dsh/dsh-tools-compat.js",
+      "previousPath": "crates/tui/extension-host/src/dsh/dsh-tools-compat.js"
+    },
+    {
+      "status": "R086",
+      "path": "crates/engine/extension-host/src/dsh/fiber-state.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/fiber-state.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/mcp.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/mcp.ts"
+    },
+    {
+      "status": "R062",
+      "path": "crates/engine/extension-host/src/dsh/persona.UPSTREAM.json",
+      "previousPath": "crates/tui/extension-host/src/dsh/persona.UPSTREAM.json"
+    },
+    {
+      "status": "R096",
+      "path": "crates/engine/extension-host/src/dsh/persona.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/persona.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/resolve-hooks.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/resolve-hooks.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/review-main.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/review-main.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/shell-hooks.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/shell-hooks.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/skill-filesystem.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/skill-filesystem.ts"
+    },
+    {
+      "status": "R059",
+      "path": "crates/engine/extension-host/src/dsh/upstream/README.md",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/README.md"
+    },
+    {
+      "status": "R075",
+      "path": "crates/engine/extension-host/src/dsh/upstream/UPSTREAM.json",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/UPSTREAM.json"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/agent-presets/LICENSE",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/agent-presets/LICENSE"
+    },
+    {
+      "status": "R068",
+      "path": "crates/engine/extension-host/src/dsh/upstream/agent-presets/UPSTREAM.md",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/agent-presets/UPSTREAM.md"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/agent-presets/composition-inventory.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/agent-presets/composition-inventory.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/agent-presets/discovery.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/agent-presets/discovery.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/agent-presets/metadata.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/agent-presets/metadata.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/agent-presets/preset.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/agent-presets/preset.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/agent-presets/specifier.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/agent-presets/specifier.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/group/LICENSE",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/group/LICENSE"
+    },
+    {
+      "status": "R086",
+      "path": "crates/engine/extension-host/src/dsh/upstream/group/package.json",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/group/package.json"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/group/src/index.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/group/src/index.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/hooks/LICENSE",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/hooks/LICENSE"
+    },
+    {
+      "status": "R078",
+      "path": "crates/engine/extension-host/src/dsh/upstream/hooks/README.md",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/hooks/README.md"
+    },
+    {
+      "status": "R065",
+      "path": "crates/engine/extension-host/src/dsh/upstream/hooks/UPSTREAM.json",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/hooks/UPSTREAM.json"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/hooks/hook-protocol/src/codec.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/hooks/hook-protocol/src/codec.ts"
+    },
+    {
+      "status": "R078",
+      "path": "crates/engine/extension-host/src/dsh/upstream/hooks/hook-protocol/src/matcher.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/hooks/hook-protocol/src/matcher.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/hooks/hook-protocol/src/merge.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/hooks/hook-protocol/src/merge.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/hooks/hook-protocol/src/types.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/hooks/hook-protocol/src/types.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/hooks/hooks-claude-code/src/config.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/hooks/hooks-claude-code/src/config.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/hooks/hooks-codex/src/config.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/hooks/hooks-codex/src/config.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/include/LICENSE",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/include/LICENSE"
+    },
+    {
+      "status": "R083",
+      "path": "crates/engine/extension-host/src/dsh/upstream/include/package.json",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/include/package.json"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/include/src/index.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/include/src/index.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/include/tsconfig.json",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/include/tsconfig.json"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/loader/LICENSE",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/loader/LICENSE"
+    },
+    {
+      "status": "R081",
+      "path": "crates/engine/extension-host/src/dsh/upstream/loader/package.json",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/loader/package.json"
+    },
+    {
+      "status": "A",
+      "path": "crates/engine/extension-host/src/dsh/upstream/loader/src/config/diff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R062",
+      "path": "crates/engine/extension-host/src/dsh/upstream/loader/src/config/entry.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/loader/src/config/entry.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/loader/src/config/group.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/loader/src/config/group.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/loader/src/config/isolate.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/loader/src/config/isolate.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/loader/src/config/tree.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/loader/src/config/tree.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/loader/src/config/utils.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/loader/src/config/utils.ts"
+    },
+    {
+      "status": "R091",
+      "path": "crates/engine/extension-host/src/dsh/upstream/loader/src/index.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/loader/src/index.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/loader/src/internal.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/loader/src/internal.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/loader/tsconfig.json",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/loader/tsconfig.json"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/dsh/upstream/loader/tsdown.config.ts",
+      "previousPath": "crates/tui/extension-host/src/dsh/upstream/loader/tsdown.config.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/json.ts",
+      "previousPath": "crates/tui/extension-host/src/json.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/main.ts",
+      "previousPath": "crates/tui/extension-host/src/main.ts"
+    },
+    {
+      "status": "R099",
+      "path": "crates/engine/extension-host/src/protocol.generated.ts",
+      "previousPath": "crates/tui/extension-host/src/protocol.generated.ts"
+    },
+    {
+      "status": "R098",
+      "path": "crates/engine/extension-host/src/protocol.ts",
+      "previousPath": "crates/tui/extension-host/src/protocol.ts"
+    },
+    {
+      "status": "R098",
+      "path": "crates/engine/extension-host/src/root.ts",
+      "previousPath": "crates/tui/extension-host/src/root.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/rpc.ts",
+      "previousPath": "crates/tui/extension-host/src/rpc.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/runtime.ts",
+      "previousPath": "crates/tui/extension-host/src/runtime.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/shims/avatars.ts",
+      "previousPath": "crates/tui/extension-host/src/shims/avatars.ts"
+    },
+    {
+      "status": "R098",
+      "path": "crates/engine/extension-host/src/shims/commands.ts",
+      "previousPath": "crates/tui/extension-host/src/shims/commands.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/shims/core.ts",
+      "previousPath": "crates/tui/extension-host/src/shims/core.ts"
+    },
+    {
+      "status": "A",
+      "path": "crates/engine/extension-host/src/shims/git.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/shims/hooks.ts",
+      "previousPath": "crates/tui/extension-host/src/shims/hooks.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/shims/mcp.ts",
+      "previousPath": "crates/tui/extension-host/src/shims/mcp.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/shims/owned.ts",
+      "previousPath": "crates/tui/extension-host/src/shims/owned.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/shims/prompt.ts",
+      "previousPath": "crates/tui/extension-host/src/shims/prompt.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/shims/shell-hooks.ts",
+      "previousPath": "crates/tui/extension-host/src/shims/shell-hooks.ts"
+    },
+    {
+      "status": "R100",
+      "path": "crates/engine/extension-host/src/shims/skills.ts",
+      "previousPath": "crates/tui/extension-host/src/shims/skills.ts"
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

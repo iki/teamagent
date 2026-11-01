@@ -2,7 +2,7 @@
 
 Source: [rea](https://github.com/morluto/rea) · [security](../../security.md), [agents](../../agents.md), [skills](../../skills.md).
 
-Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-security--rea.md).
+Historical discovery: 2026-10-24T06:36:54.441Z, initially unreviewed. Dated scoped reviews below supersede that discovery-only status; they do not establish runtime validation. [Change evidence](../repos/ai-security--rea.md).
 
 ## Source update reviewed 2026-10-28
 
@@ -25,6 +25,16 @@ This is a useful separation between passive guidance discovery and execution. Re
 
 **Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `60c0cf977a34c99afa7942466625aeba74969bdf` against prior analyzed commit `df7119aeede60f9f81a74f29d6606c49adb79d8e`. Historical reviews above remain separate evidence.
+
+The [JSON authentication estimator](https://github.com/morluto/rea/blob/60c0cf977a34c99afa7942466625aeba74969bdf/src/application/JsonAuthenticationHeadroom.ts) adds a maximum-value-byte budget and optional serialized-size work. Its iterator stack exits once the estimated parsed representation exceeds the budget and skips expensive string escaping once that threshold is crossed. The returned value is explicitly a lower bound after early termination, not an exact complete measurement. The [new adversarial fixture](https://github.com/morluto/rea/blob/60c0cf977a34c99afa7942466625aeba74969bdf/src/application/JsonAuthenticationHeadroom.test.ts) places an oversized first value before a throwing getter and checks the later property is never visited.
+
+Teamagent should reject over-budget representations before cloning/canonicalizing them, with a bounded traversal as well as bounded input bytes. This estimate is conservative arithmetic, not measured heap allocation; the selected code still accesses object properties and does not establish safety for arbitrary executable objects, cycles or proxies. Restrict the boundary to validated parsed JSON and keep a separate deadline/depth policy.
+
+**Coverage:** Read the complete targeted estimator and new test delta. Wider authentication callers and existing traversal tests were not re-audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [rea](https://github.com/morluto/rea); analyzed commit `df7119aeede60f9f81a74f29d6606c49adb79d8e`; commit date 2026-10-28T18:17:45+08:00; review date 2026-10-28T14:52:35.205Z; depth reviewed. [Maintenance record](../repos/ai-security--rea.md).
+Analysis metadata: source [rea](https://github.com/morluto/rea); analyzed commit `60c0cf977a34c99afa7942466625aeba74969bdf`; commit date 2026-11-01T17:53:37+08:00; review date 2026-11-01T11:37:37.120Z; depth reviewed. [Maintenance record](../repos/ai-security--rea.md).
 <!-- teamagent-analysis:end -->

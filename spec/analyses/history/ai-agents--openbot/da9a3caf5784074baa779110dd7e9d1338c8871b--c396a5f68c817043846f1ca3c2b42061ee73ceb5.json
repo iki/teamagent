@@ -1,0 +1,950 @@
+{
+  "id": "ai-agents--openbot",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/CopilotKit/openbot",
+  "report": "spec/projects/ai-agents--openbot.md",
+  "analyzedSha": "da9a3caf5784074baa779110dd7e9d1338c8871b",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T19:15:10-07:00",
+  "observedSha": "c396a5f68c817043846f1ca3c2b42061ee73ceb5",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c396a5f68c817043846f1ca3c2b42061ee73ceb5",
+      "date": "2026-10-31T10:17:48-07:00",
+      "subject": "agent-computer: COMPUTER_BIND chooses the address a managed computer listens on (#910)"
+    },
+    {
+      "sha": "df53210a53df9e2d26458c69bb535ee77ec37e89",
+      "date": "2026-10-31T10:17:25-07:00",
+      "subject": "Record unreconciled authorization outcomes and audit events atomically (#895)"
+    },
+    {
+      "sha": "361b48c91fddfa3e254cb9b32eeaaf4c9dcf993d",
+      "date": "2026-10-31T10:17:03-07:00",
+      "subject": "Wrap a connector answer that only looks like an untrusted-data envelope (#834)"
+    },
+    {
+      "sha": "c0fa0f78ba7bcb51123283f3d59f9c4f53efe6ed",
+      "date": "2026-10-31T09:52:52-07:00",
+      "subject": "fix(approvals): treat refunds as money-moving in the safety policy (#904)"
+    },
+    {
+      "sha": "38acc94d2ad243417c2ea173fc84efc0dc5f5165",
+      "date": "2026-10-31T09:37:06-07:00",
+      "subject": "docs: bring the database, knowledge, identity and Activity docs in line with the code (#928)"
+    },
+    {
+      "sha": "743649efc3f21d7bf0badbe6af2bcd5daedd97ce",
+      "date": "2026-10-30T09:17:16-07:00",
+      "subject": "docs(readme): add GitHub Trending #5 badge (#896)"
+    },
+    {
+      "sha": "9ff961895603b563f21ad691ab4c41c0179cd65d",
+      "date": "2026-10-30T08:33:00-03:00",
+      "subject": "Give Bots the whole standard catalog but four (#875)"
+    },
+    {
+      "sha": "ab9855c19848378c90a806426130d86699cc798c",
+      "date": "2026-10-29T17:07:48-03:00",
+      "subject": "Open a conversation at the bottom, keep it still while a Bot writes, and add a rail of turns (#882)"
+    },
+    {
+      "sha": "9d80da0295144fd289880b3f453717cc7868d94c",
+      "date": "2026-10-29T11:22:09-07:00",
+      "subject": "One computer per person, with Isolated Bots on request (#871)"
+    },
+    {
+      "sha": "6e2892199052630d2c2ac8317a75ac5a9868a9f2",
+      "date": "2026-10-29T10:47:54-07:00",
+      "subject": "Record a task in a Bot's own browser: browser controls and the Recorder built in (#868)"
+    },
+    {
+      "sha": "f4083dd2b1cdce3552953c3c55e8f0682e5dfc9e",
+      "date": "2026-10-29T10:26:26-07:00",
+      "subject": "Close a computer's browsers before its memory runs out, and a Bot's idle tabs (#879)"
+    },
+    {
+      "sha": "4766e4247675eb73ff80d525ff645dd8a9da815f",
+      "date": "2026-10-28T22:41:19-07:00",
+      "subject": "fix(desktop): open Docker Desktop only when it has run before; keep each installation on its engine (#831)"
+    },
+    {
+      "sha": "9c369e943358b6cc8ad95da4cfebc7bcc3171369",
+      "date": "2026-10-28T21:38:10-07:00",
+      "subject": "fix(desktop): answer the setup page's probes off the event loop (#860)"
+    },
+    {
+      "sha": "aafe043c7bac95b838351e5006c0ecd868efb634",
+      "date": "2026-10-28T20:58:01-07:00",
+      "subject": "fix(desktop): never reattach a previous installation's volumes on a fresh install (#821)"
+    },
+    {
+      "sha": "65901b6f4f00c4832fe9cb65ff73d4440353652f",
+      "date": "2026-10-28T20:57:53-07:00",
+      "subject": "fix(desktop): install a release from before the toolkit, which has no shared or toolkit manifest (#823)"
+    },
+    {
+      "sha": "72a0b1f5594104fa8ec468391f338dde17197612",
+      "date": "2026-10-28T15:08:25-07:00",
+      "subject": "test: remove ineffective coverage and strengthen regression guards (#872)"
+    },
+    {
+      "sha": "dc3cab2332f6892ae96e9f6c5a08c11364be24dd",
+      "date": "2026-10-28T14:58:34-07:00",
+      "subject": "fix(setup): select newest available local CLI across installations (#878)"
+    },
+    {
+      "sha": "f678b3301b6c81ede4f05573ff3e016e397906e6",
+      "date": "2026-10-28T14:41:17-07:00",
+      "subject": "The OpenBot Recorder and the OpenBot Browser: teach a Bot by doing it in your own browser (#858)"
+    },
+    {
+      "sha": "33406427f99a994329fe78e617eed095b8ef9b75",
+      "date": "2026-10-28T14:30:36-07:00",
+      "subject": "fix(setup): use the local Intelligence dashboard for browser login (#811)"
+    },
+    {
+      "sha": "e76c6863ede1bd198dca78de3fadead3af98b642",
+      "date": "2026-10-28T21:24:40Z",
+      "subject": "fix(telemetry): keep mysql's -P port and redact the real -p password (fixes #815) (#819)"
+    },
+    {
+      "sha": "830116374bd6aef62140ba0ce9057439e9bda696",
+      "date": "2026-10-28T14:02:05-07:00",
+      "subject": "Let each person pick a skin: OpenDuet, OpenDots or OpenMuse (#856)"
+    },
+    {
+      "sha": "b3dab0a41a379b79359458f0b0dc59cb3430e6ed",
+      "date": "2026-10-28T17:24:02-03:00",
+      "subject": "Upgrade to CopilotKit 1.83 and A2UI 1.0 (#874)"
+    },
+    {
+      "sha": "4bb0c0b42ee95ef052225357ba5291ddaa94e5c2",
+      "date": "2026-10-28T11:01:30-07:00",
+      "subject": "feat(ux): simplify bot creation and personalize first-run experience (#861)"
+    },
+    {
+      "sha": "c19d06534589d485e0dcd679c22bc2739c216c00",
+      "date": "2026-10-28T09:14:02-07:00",
+      "subject": "fix(config): accept the Intelligence runtime key written by the CLI (#810)"
+    },
+    {
+      "sha": "cd161d048dd01d1e3d84ec847587639eceaa9715",
+      "date": "2026-10-28T08:11:01-03:00",
+      "subject": "Show the audit log as a full-width, filterable table (#853)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/skills/openbot-copy/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/desktop.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-adk/tests/test_model_spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-ag2/tests/test_model_spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-agno/tests/test_model_spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-antigravity/tests/test_model_spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/src/bot-browser-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/bot-id.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/browser-eviction.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/src/browser-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/browser-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/src/browser-tabs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/src/carry-over.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/challenge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/src/container-memory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/control-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/control.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "agent-computer/src/demonstration.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/egress.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/src/native-browser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/navigation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/page-network.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/src/person-access.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/src/person-browser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/src/person-launch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/profile-listing.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/profiles.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/src/real-browser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/src/recorder-in-browser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/src/recorder-launcher.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/src/recorder.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/request-validation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/screencast.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/secret-masking.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/sessions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/src/workspaces.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/aria-snapshot.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/bot-browser-computer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/bot-browser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/bot-id.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/browser-eviction.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/browser-memory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/browser-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/container-memory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/control-store.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/control.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "agent-computer/tests/demonstration-live.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "agent-computer/tests/demonstration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/egress-browsers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/egress-policy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/enter-text.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v1-no-limit/memory/memory.limit_in_bytes",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v1-no-limit/memory/memory.stat",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v1-no-limit/memory/memory.usage_in_bytes",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v2-limit-512m/memory.current",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v2-limit-512m/memory.max",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v2-limit-512m/memory.stat",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v2-no-limit/memory.current",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v2-no-limit/memory.max",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v2-no-limit/memory.stat",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v2-page-cache/memory.current",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v2-page-cache/memory.max",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v2-page-cache/memory.stat",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v2-shm-near-limit/memory.current",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v2-shm-near-limit/memory.max",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/cgroup/v2-shm-near-limit/memory.stat",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/recorder-stall.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/recorder/connect.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/recorder/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/recorder/options.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/recorder/service-worker.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/fixtures/recorder/setup.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/follows-popup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/headed-browser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/local-chrome-startup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/person-browser-computer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/person-browser-rules.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/person-browser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/person-filled.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/profile-launch-options.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/profile-listing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/real-browser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/recorder-unanswered.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/reset-run.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-computer/tests/screencast-keys-browser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/screencast.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/session-cookies.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/sessions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/viewer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/virtual-display.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/workspaces.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-crewai/tests/test_model_spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "agent-crewai/tests/test_token_restoration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-langgraph-agui/tests/test_model_spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-langgraph-agui/tests/test_provider_boundaries.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-langroid/tests/test_model_spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-llamaindex/tests/test_model_spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-microsoft/tests/test_model_spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-pydantic-ai/tests/test_model_spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-strands/tests/test_model_spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/scripts/serve-or-build.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/agents/agent-profile.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/agents/handoff-panel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/agents/new-bot-sheet.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/app-sidebar/app-sidebar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/app-sidebar/use-sign-out.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/audit/audit-cells.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/audit/audit-table.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/bot-profile/access.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/bot-profile/profile.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/bot-profile/settings-rows.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/bot-profile/setup.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/browser/browser-bar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/browser/browser-nav-item.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/browser/browser-page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/browser/browser-screen.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/browser/narration-choice.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/browser/narration.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/browser/recorder-here-popover.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/browser/recording.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/browser/use-narration.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/channels/channel-chat.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/channels/chat-messages.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/channels/chat-transcript.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/channels/composer/composer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/channels/composer/dictation-controls.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/channels/composer/draft.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/channels/composer/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/channels/composer/queue.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/channels/conversation-view.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/channels/follow-intent.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/channels/group-chat.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/channels/late-renderers.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/channels/paced-reveal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/channels/tool-activity.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/channels/tool-boundary.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/channels/transcript-pages.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/channels/transcript-rail.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/channels/transcript-turns.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/channels/voice-chat-card.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/computer/bot-browser.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/computer/computer-controls.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/computer/computer-view.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/src/components/computer/demonstration-recorder.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/computer/handoff-resume-notice.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/computer/help-request-card.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/computer/live-screen.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/gallery/cards.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "id": "ai-agents--mateclaw",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/mateaix/mateclaw",
+  "report": "spec/projects/ai-agents--mateclaw.md",
+  "analyzedSha": "ffd35950dbda00b987bf154e43402d1e4b2c629a",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T05:10:24-04:00",
+  "observedSha": "e46f176697a9ebca89bb584ac8096bb0864adcad",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "e46f176697a9ebca89bb584ac8096bb0864adcad",
+      "date": "2026-10-30T07:45:50-04:00",
+      "subject": "fix(agent): unify context assembly and preserve compacted history"
+    },
+    {
+      "sha": "2d045b252eba40695cf07ea33e752cee00049bd0",
+      "date": "2026-10-29T20:29:54+08:00",
+      "subject": "feat(wiki): per-document entity extraction action (#673)"
+    },
+    {
+      "sha": "9aa4619ec69e588dc5cd89caefc5e2034a47e445",
+      "date": "2026-10-29T20:00:18+08:00",
+      "subject": "fix(agent): recover plan summaries and expose finalization failures (#672)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": "mateclaw-server/src/main/java/vip/mate/agent/context/ModelContextAssembler.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/guard/TaskFinalizationCoordinator.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/node/ReasoningNode.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/plan/node/PlanSummaryNode.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/tool/builtin/DatasourceTool.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/tool/builtin/SqlQueryTool.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/wiki/controller/WikiEntityController.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/wiki/service/WikiEntityExtractionService.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mateclaw-server/src/test/java/vip/mate/agent/context/ModelContextAssemblerTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/test/java/vip/mate/agent/graph/guard/TaskFinalizationCoordinatorTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/test/java/vip/mate/agent/graph/node/ReasoningNodeFinalizationTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/test/java/vip/mate/agent/graph/node/ReasoningNodeRetryUsageTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/test/java/vip/mate/agent/graph/plan/node/PlanSummaryFinalizationTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/test/java/vip/mate/tool/builtin/DatasourceToolIdPrecisionTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/test/java/vip/mate/tool/builtin/DatasourceToolPostgresqlViewDiscoveryTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mateclaw-server/src/test/java/vip/mate/tool/builtin/SqlToolFailureReportingTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/test/java/vip/mate/wiki/controller/WikiEntityControllerIdorTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mateclaw-server/src/test/java/vip/mate/wiki/controller/WikiEntityControllerRawExtractionTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/test/java/vip/mate/wiki/service/WikiEntityExtractionServiceTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-ui/src/api/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-ui/src/i18n/locales/en-US.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-ui/src/i18n/locales/zh-CN.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-ui/src/views/Wiki/components/RawMaterialPanel.vue",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

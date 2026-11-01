@@ -39,6 +39,16 @@ Evidence: [clients/mcpdo/src/connection/stored-auth.ts:1-148](https://github.com
 
 **Scope and limits:** Static scoped review of stored-auth administration and web-server wiring within the 579-path comparison. Secret-store persistence, host-allow-list/health helpers, certificate parsing and real browser/server tests were not fully audited or executed; no credentials read or cleared.
 
+## Change review - 2026-11-01
+
+Reviewed `e3217388c8590bcf6796fd8d0528a875ade1ac1f` against `0cac110a809e93753fa353810b9b4c91e89810fc` (194 changed paths). The new [OAuth fetch guard](https://github.com/modelcontextprotocol/inspector/blob/e3217388c8590bcf6796fd8d0528a875ade1ac1f/core/mcp/node/fetchGuard.ts) validates direct DNS results inside the connection lookup, rejects link-local/metadata destinations, checks each of at most five redirects, removes credential headers across origins and rejects cross-origin body forwarding. Loopback/private-network access remains deliberate. Proxied DNS remains a stated proxy trust boundary: local resolution is best effort and unresolved names can proceed through the proxy. The function relies on caller cancellation and returns a response stream without its own byte cap; request-body materialization likewise has no local size limit.
+
+The [socket fixtures](https://github.com/modelcontextprotocol/inspector/blob/e3217388c8590bcf6796fd8d0528a875ade1ac1f/clients/web/src/test/integration/mcp/node/fetchGuard.test.ts) describe direct pinning, metadata rejection, proxy routing and rebinding on the proxy-bypass path. Their displayed URLs are redacted review presentation; no exact-literal defect is inferred from them.
+
+**Harness consequence:** Bind validated destinations to actual connections and enforce credential boundaries at every hop, while documenting proxy trust explicitly. Retain total time/body/queue bounds and caller-selected network policy; a metadata blocklist is not a complete egress allowlist. OAuth discovery must not silently inherit authority to arbitrary internal services.
+
+**Scope and limits:** Complete guard and socket fixture files; all routing call sites, transport-library behavior and web authorization were not independently re-audited. No sockets, OAuth or upstream tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mcp-inspector](https://github.com/modelcontextprotocol/inspector); analyzed commit `0cac110a809e93753fa353810b9b4c91e89810fc`; commit date 2026-10-21T14:10:36-04:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-inspector.md).
+Analysis metadata: source [mcp-inspector](https://github.com/modelcontextprotocol/inspector); analyzed commit `e3217388c8590bcf6796fd8d0528a875ade1ac1f`; commit date 2026-10-28T14:29:12-04:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-inspector.md).
 <!-- teamagent-analysis:end -->

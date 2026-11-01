@@ -39,6 +39,12 @@ Evidence: [crates/rmcp/src/service/client.rs:158-271](https://github.com/modelco
 
 **Scope and limits:** Static scoped review of lifecycle, request abandonment and server policy changes within the 55-path comparison, plus the two new ping fixture bodies. The wider service loop, serialization model, cache implementation, task manager and real transports were not exhaustively reviewed; no compilation, fixture execution or external protocol conformance verification.
 
+## Change review — 2026-11-01
+
+Reviewed `c742b5536724ec376b14b7ddcbbd024b7d6ae163` (2026-10-30T16:54:49-07:00); 27 paths changed from `cd88056ffdc97756fbd98e5a12bbeb41758f0ce8`. The inspected HTTP transport delta adds debug records for followed same-origin 307/308 redirects, logging old/new paths and status while omitting query strings. Existing bounded redirect policy and unchanged configured URI remain visible in context. Paths can themselves contain private identifiers, so query omission alone is not a complete privacy policy. [Transport](https://github.com/modelcontextprotocol/rust-sdk/blob/c742b5536724ec376b14b7ddcbbd024b7d6ae163/crates/rmcp/src/transport/common/reqwest/streamable_http_client.rs).
+
+Keep redirect decisions explicit and log minimal approved summaries. A custom supplied client can choose a different policy, which needs its own adapter review. Scope is this transport delta only, not new skills/request association/enterprise features; no Rust build, network action or test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mcp-sdk-rust](https://github.com/modelcontextprotocol/rust-sdk); analyzed commit `cd88056ffdc97756fbd98e5a12bbeb41758f0ce8`; commit date 2026-10-26T14:57:21-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-sdk-rust.md).
+Analysis metadata: source [mcp-sdk-rust](https://github.com/modelcontextprotocol/rust-sdk); analyzed commit `c742b5536724ec376b14b7ddcbbd024b7d6ae163`; commit date 2026-10-30T16:54:49-07:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-sdk-rust.md).
 <!-- teamagent-analysis:end -->

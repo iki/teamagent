@@ -1271,6 +1271,7 @@ test("audited groups cover every file once, preserve unknown order and fall back
     "test/new.test.ts",
     "test/analysis-sync.test.ts",
     "test/workflow.test.ts",
+    "test/verification-cache.test.ts",
   ];
   expect(
     testBatches(files)
@@ -1282,8 +1283,19 @@ test("audited groups cover every file once, preserve unknown order and fall back
     "test/first.test.ts",
     "test/new.test.ts",
     "test/analysis-sync.test.ts",
+    "test/verification-cache.test.ts",
   ]);
   expect(testBatches(files, false)).toHaveLength(3);
+  expect(testBatches(files).map((batch) => batch.name)).toEqual([
+    "remaining",
+    "test/research-git.test.ts",
+    "test/workflow.test.ts",
+    "test/analysis-sync.test.ts",
+    "test/verification-cache.test.ts",
+  ]);
+  expect(testBatches(["test/unknown.test.ts"])).toEqual([
+    { name: "remaining", files: ["test/unknown.test.ts"] },
+  ]);
   expect(testConcurrency({ cpus: 16, memoryBytes: 1.5 * 1024 ** 3 })).toBe(1);
   expect(testConcurrency({ cpus: 4, memoryBytes: 4 * 1024 ** 3 })).toBe(3);
   expect(testConcurrency({ cpus: Number.NaN, memoryBytes: 16 * 1024 ** 3 })).toBe(1);
@@ -1300,6 +1312,56 @@ test("audited groups cover every file once, preserve unknown order and fall back
     }),
     /failed/u,
   );
-  expect(finished).toHaveLength(4);
+  expect(finished).toHaveLength(5);
   expect(finished.at(0)).toBe("remaining");
+});
+
+test("audited cache batch waits for a slot without exceeding the three-worker cap", async () => {
+  const files = [
+    "test/unknown.test.ts",
+    "test/research-git.test.ts",
+    "test/workflow.test.ts",
+    "test/analysis-sync.test.ts",
+    "test/verification-cache.test.ts",
+  ];
+  const gates = new Map(
+    testBatches(files).map((batch) => [batch.name, Promise.withResolvers<void>()] as const),
+  );
+  const analysisStarted = Promise.withResolvers<void>();
+  const cacheStarted = Promise.withResolvers<void>();
+  const started: string[] = [];
+  const completed: string[] = [];
+  let active = 0;
+  let maximum = 0;
+  const finish = (name: string): void => {
+    const gate = gates.get(name);
+    if (!gate) throw new Error("Missing audited fixture batch");
+    gate.resolve();
+  };
+  const scheduled = scheduleTestBatches(files, 3, async (batch) => {
+    const gate = gates.get(batch.name);
+    if (!gate) throw new Error("Unexpected audited fixture batch");
+    maximum = Math.max(maximum, ++active);
+    started.push(batch.name);
+    if (batch.name === "test/analysis-sync.test.ts") analysisStarted.resolve();
+    if (batch.name === "test/verification-cache.test.ts") cacheStarted.resolve();
+    await gate.promise;
+    completed.push(...batch.files);
+    active--;
+  });
+  try {
+    expect(started).toEqual(["remaining", "test/research-git.test.ts", "test/workflow.test.ts"]);
+    finish("test/research-git.test.ts");
+    await analysisStarted.promise;
+    expect(started).not.toContain("test/verification-cache.test.ts");
+    finish("test/analysis-sync.test.ts");
+    await cacheStarted.promise;
+    expect(active).toBe(3);
+    expect(maximum).toBe(3);
+  } finally {
+    for (const gate of gates.values()) gate.resolve();
+    await scheduled;
+  }
+  expect(completed.sort()).toEqual([...files].sort());
+  expect(active).toBe(0);
 });

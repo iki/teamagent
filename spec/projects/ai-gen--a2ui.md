@@ -56,6 +56,14 @@ Evidence: [typescript/agents/a2ui_agent/src/inference-formats/express/compiler.t
 
 **Scope and limits:** Reviewed assignment/path handling and its focused fixtures; other schema/version and rendering changes were not exhaustively audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`825beac2813a6d0ccef3b6fb4124ad6c3c8419f0`](https://github.com/google/A2UI/commit/825beac2813a6d0ccef3b6fb4124ad6c3c8419f0), compared with `ccf5dc20d0b0ed041b03e3913d807420ff45e178`.
+
+The complete selected [media URL sanitizer](https://github.com/google/A2UI/blob/825beac2813a6d0ccef3b6fb4124ad6c3c8419f0/typescript/core/web_core/src/common/sanitize_media_url.ts) and its fixtures distinguish HTTP/HTTPS/data and relative references from disallowed schemes, protocol-relative references and separator/control-character bypasses. This is useful renderer input filtering, not a network destination allowlist, SSRF defense, data MIME validator or byte budget. Teamagent's reviewed exact origin/path checks remain separate requirements.
+
+The source packet's diagnostic redactor canonicalizes URLs, including root trailing slashes. A separate read of the original Git object confirmed the sentinel origin literal has no trailing slash; no sanitizer defect is inferred from that altered presentation. This review read the complete selected 126-line diff, not the entire repository update, and ran no browser or upstream tests.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [a2ui](https://github.com/google/A2UI); analyzed commit `ccf5dc20d0b0ed041b03e3913d807420ff45e178`; commit date 2026-10-27T17:04:19-07:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--a2ui.md).
+Analysis metadata: source [a2ui](https://github.com/google/A2UI); analyzed commit `825beac2813a6d0ccef3b6fb4124ad6c3c8419f0`; commit date 2026-10-30T15:58:10-07:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--a2ui.md).
 <!-- teamagent-analysis:end -->

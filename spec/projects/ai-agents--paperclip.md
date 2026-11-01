@@ -50,6 +50,16 @@ In [server/src/services/budgets.ts](https://github.com/paperclipai/paperclip/blo
 
 **Harness implication and limits:** Budget and approval transitions must wake all affected workers through transaction-aware delivery rather than relying on polling alone. The call order does not prove durable notification or commit ordering: the notification helpers, enclosing transaction and consumers were not audited. Verify rollback, duplicate wakeups and workers observing only committed state before adopting this pattern. No database workload or upstream test was run. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `d941ed3879d9f9b49573bc138e1f6c465271fca4` against prior analyzed commit `cff331f6ca0a652b5e41641c68dfa5fa584c22ae`. Historical reviews above remain separate evidence.
+
+The [managed sandbox runtime](https://github.com/paperclipai/paperclip/blob/d941ed3879d9f9b49573bc138e1f6c465271fca4/packages/adapter-utils/src/sandbox-managed-runtime.ts) preserves completed workspace work when a delta Git bundle lacks prerequisites: the full export now carries shallow metadata, with producer-error classification and transfer/post-transfer byte checks. The [fixtures](https://github.com/paperclipai/paperclip/blob/d941ed3879d9f9b49573bc138e1f6c465271fca4/packages/adapter-utils/src/sandbox-managed-runtime.test.ts) construct local Git repositories with independent shallow boundaries, concurrent host files/commits and missing prerequisites. They expect retained host history, connectivity, merged parent identity, and refusal of oversized metadata before changing the host head.
+
+The same delta adds company-scoped seed reuse with per-checkout Git HEAD/ref rebinding, private lookup copies and an optional awaited index refresh inside the inbound barrier. The underlying seed identity/hash-validation and Git integration helpers were not inspected here, so this is not a certification of shared-cache isolation. Teamagent should separate transport recovery of already completed work from rerunning an agent, preserve local concurrency, and require complete history/metadata bounds and scope-aware cache keys before reuse. No published speed claim is derived from these fixtures.
+
+**Coverage:** Read the complete targeted managed-runtime implementation/test delta (469 presented lines). Imported Git/seed helpers, other cache tests and the remaining oversized update were not reviewed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [paperclip](https://github.com/paperclipai/paperclip); analyzed commit `cff331f6ca0a652b5e41641c68dfa5fa584c22ae`; commit date 2026-10-28T02:05:36-05:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paperclip.md).
+Analysis metadata: source [paperclip](https://github.com/paperclipai/paperclip); analyzed commit `d941ed3879d9f9b49573bc138e1f6c465271fca4`; commit date 2026-11-01T03:56:44-06:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paperclip.md).
 <!-- teamagent-analysis:end -->

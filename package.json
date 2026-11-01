@@ -82,5 +82,10 @@
   "engines": {
     "bun": "1.4.2"
   },
-  "packageManager": "aube@2.5.1"
+  "packageManager": "aube@2.5.1",
+  "aube": {
+    "patchedDependencies": {
+      "tinypool@2.2.0": "patches/trigon/tinypool@2.2.0.patch"
+    }
+  }
 }

@@ -52,6 +52,14 @@ Evidence: [stats.json:1-8](https://github.com/mksglu/context-mode/blob/b77ba447f
 
 **Scope and limits:** Reviewed the complete single-file counter delta. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review — 2026-11-01
+
+**The refresh changes installation counters only.** Reviewed `baf6a5510790cba7e9d5c2f5399354f54a962bb1` (commit date `2026-10-31T12:03:24Z`) against `b77ba447f51ff193962d6f0fb78c061c76ae871c`. The complete comparison contains one path, [stats.json:1-8](https://github.com/mksglu/context-mode/blob/baf6a5510790cba7e9d5c2f5399354f54a962bb1/stats.json#L1-L8): its display total and npm/marketplace counters change. No implementation or test path changed in this interval.
+
+**Harness consequence:** Installation counters are adoption metadata, not retrieval-quality, isolation or performance evidence. The previously inspected context-buffer behavior remains the relevant design evidence; this update supplies no reason to change its adapter contract or ranking.
+
+**Scope and limits:** Read the complete one-file diff and its full changed-path inventory. Counter provenance was not independently verified. No upstream code, provider call, installation or benchmark was executed; historical findings retain their original scope.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [context-mode](https://github.com/mksglu/context-mode); analyzed commit `b77ba447f51ff193962d6f0fb78c061c76ae871c`; commit date 2026-10-27T18:04:03Z; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--context-mode.md).
+Analysis metadata: source [context-mode](https://github.com/mksglu/context-mode); analyzed commit `baf6a5510790cba7e9d5c2f5399354f54a962bb1`; commit date 2026-10-31T12:03:24Z; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--context-mode.md).
 <!-- teamagent-analysis:end -->

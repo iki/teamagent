@@ -2,11 +2,11 @@
 
 Source: [cli-proxy-api](https://github.com/router-for-me/CLIProxyAPI) · [Analysis](../../projects/ai-agents-proxy--cli-proxy-api.md) · [models](../../models.md), [agents](../../agents.md), [security](../../security.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `ad8bdd3f20bef44f0684b8a6096a216b2c76040d`; commit date: 2026-10-27T23:23:26+08:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `ad8bdd3f20bef44f0684b8a6096a216b2c76040d`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `250d598175db61a4e99ac38b9164ed04745754e5`; commit date: 2026-10-31T21:09:56+08:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `250d598175db61a4e99ac38b9164ed04745754e5`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/router-for-me/CLIProxyAPI/compare/ad8bdd3f20bef44f0684b8a6096a216b2c76040d...ad8bdd3f20bef44f0684b8a6096a216b2c76040d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/router-for-me/CLIProxyAPI/compare/250d598175db61a4e99ac38b9164ed04745754e5...250d598175db61a4e99ac38b9164ed04745754e5). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

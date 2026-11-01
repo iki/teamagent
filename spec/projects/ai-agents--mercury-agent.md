@@ -46,6 +46,16 @@ In [.github/badges/downloads-breakdown.json](https://github.com/cosmicstack-labs
 
 **Harness implication and limits:** Keep the prior runtime/channel findings and their limitations unchanged. Repository popularity counters are neither quality evaluations nor evidence that previous delivery, authorization or replay concerns were fixed. This is a complete changed-path reconciliation for this two-file delta, not a new runtime audit. No upstream tests, agent execution or provider requests were run.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `bd80329cef9abfe05a0f8d2a843f226eaccf4e36` against prior analyzed commit `7c92d37304262d9182dda940b9f8a06ef9cecd02`. Historical reviews above remain separate evidence.
+
+The [session repository](https://github.com/cosmicstack-labs/mercury-agent/blob/bd80329cef9abfe05a0f8d2a843f226eaccf4e36/src/sessions/repository.ts) separates metadata revision from user activity: title repair with `touch:false` and bookmark changes increment revision and update the index without advancing updatedAt. Its [new title fixture](https://github.com/cosmicstack-labs/mercury-agent/blob/bd80329cef9abfe05a0f8d2a843f226eaccf4e36/src/sessions/repository.test.ts) preserves the older session's timestamp and ordering after a generated rename. The new removeFrom operation truncates session messages from a selected message onward, then writes the session and index. That local history edit is not demonstrated deletion from embeddings, provider traces or backups, despite the source comment's broader forgetting language.
+
+The [permissions path](https://github.com/cosmicstack-labs/mercury-agent/blob/bd80329cef9abfe05a0f8d2a843f226eaccf4e36/src/capabilities/permissions.ts) is resolved from the current Mercury home at each load/save rather than once during module import. Teamagent should bind the loaded policy, profile identity and destination together for a whole operation: this delta alone does not prove a live PermissionManager reloads its in-memory manifest on profile switch. Separate chronological activity, presentation metadata and durable revision in every channel.
+
+**Coverage:** Read the complete targeted permissions/session implementation delta and added title-order fixture. No removal, bookmark or profile-switch fixture was present in these selected changes; other paths were not reviewed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mercury-agent](https://github.com/cosmicstack-labs/mercury-agent); analyzed commit `7c92d37304262d9182dda940b9f8a06ef9cecd02`; commit date 2026-10-28T05:51:52Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mercury-agent.md).
+Analysis metadata: source [mercury-agent](https://github.com/cosmicstack-labs/mercury-agent); analyzed commit `bd80329cef9abfe05a0f8d2a843f226eaccf4e36`; commit date 2026-11-01T12:43:32+05:30; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mercury-agent.md).
 <!-- teamagent-analysis:end -->

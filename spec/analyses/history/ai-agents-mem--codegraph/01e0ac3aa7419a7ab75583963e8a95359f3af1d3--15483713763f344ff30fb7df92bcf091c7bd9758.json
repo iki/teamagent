@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-mem--codegraph",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/colbymchenry/codegraph",
+  "report": "spec/projects/ai-agents-mem--codegraph.md",
+  "analyzedSha": "01e0ac3aa7419a7ab75583963e8a95359f3af1d3",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T02:14:52Z",
+  "observedSha": "15483713763f344ff30fb7df92bcf091c7bd9758",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "15483713763f344ff30fb7df92bcf091c7bd9758",
+      "date": "2026-11-01T03:39:32-06:00",
+      "subject": "perf(resolution): run the resolver workers the main thread can keep busy (#3183)"
+    },
+    {
+      "sha": "afa1e1476bb21bb21290628ed2852f700856350d",
+      "date": "2026-11-01T03:39:11-06:00",
+      "subject": "perf(resolution): resolver workers take the main thread's C++ project scans (#3182)"
+    },
+    {
+      "sha": "59bfe6d7fd170707cff93cf4cc2bc17fed103261",
+      "date": "2026-11-01T03:35:45-06:00",
+      "subject": "fix(kotlin): a Multiplatform import reaches what the caller compiles against (#3191)"
+    },
+    {
+      "sha": "41587d38ddc387a8dafdfb2054b17e106c42aa7a",
+      "date": "2026-11-01T03:35:27-06:00",
+      "subject": "fix(kotlin): a chain reads through a holder of its type argument (#3190)"
+    },
+    {
+      "sha": "c344366153c24d842aff094044bb49f8c0839e2b",
+      "date": "2026-11-01T03:35:15-06:00",
+      "subject": "fix(java): reading another class's constant doesn't read the file's own (#3189)"
+    },
+    {
+      "sha": "fab65e9dd6ea925fe7c69289f15f41cc60255536",
+      "date": "2026-11-01T03:34:57-06:00",
+      "subject": "fix(java): what a class inherits doesn't depend on resolve order, or on a namesake (#3188)"
+    },
+    {
+      "sha": "be06c5e21406df1da1d1c6ab8e908be41755c846",
+      "date": "2026-11-01T03:34:39-06:00",
+      "subject": "fix(java): a call's arguments pick its overload, and a lambda's parameter is typed (#3187)"
+    },
+    {
+      "sha": "45ea680175ca846f5181c81166e04e81a9cb80e6",
+      "date": "2026-11-01T03:34:21-06:00",
+      "subject": "fix(swift): a closure reaches the overload that takes a function, a value the other (#3186)"
+    },
+    {
+      "sha": "608487e210312990b479cd5cf262c644c27460e9",
+      "date": "2026-11-01T03:34:03-06:00",
+      "subject": "fix(go): an implementer's methods must take and return the interface's types (#3185)"
+    },
+    {
+      "sha": "221d80c719b409e0d9e6cf7aa1c7de3630d0c2cc",
+      "date": "2026-11-01T03:33:46-06:00",
+      "subject": "fix(rust): a use through a module with a file per cfg reaches the item one file holds (#3184)"
+    },
+    {
+      "sha": "1f188da1f237851a5785a07984bc95c305edcb9f",
+      "date": "2026-11-01T02:49:45-06:00",
+      "subject": "perf(cpp): read C and C++ text by char codes, and ask each question once (#3181)"
+    },
+    {
+      "sha": "3ee59947c0aec6cf3c771adf8244cc0e7c438485",
+      "date": "2026-11-01T02:49:27-06:00",
+      "subject": "perf(db): read node rows as arrays, and a source file through one open (#3180)"
+    },
+    {
+      "sha": "3b37fb014b4bbb2d53db0e1de7489ca249328839",
+      "date": "2026-11-01T02:49:09-06:00",
+      "subject": "perf(index): start the parse workers a project needs, and let them pass a slow file (#3179)"
+    },
+    {
+      "sha": "4b5cb19d37fd92810f979a405c0ffed137cf14cb",
+      "date": "2026-11-01T02:48:51-06:00",
+      "subject": "perf(cli): V8's new space stays at 16 MB a side, so a sync peaks where 1.6.2 did (#3178)"
+    },
+    {
+      "sha": "d2e0389b519be398f9bc616b6f7bea8a7edfbc6a",
+      "date": "2026-11-01T01:13:30-06:00",
+      "subject": "fix(status): a widened or narrowed sparse checkout shows in status (#3177)"
+    },
+    {
+      "sha": "5cd8a9a83a203f16b5260b7a0425e6498f5afe1a",
+      "date": "2026-11-01T01:10:53-05:00",
+      "subject": "fix(js): a file that gives an object a method itself takes no lone guess from elsewhere (#3171)"
+    },
+    {
+      "sha": "092e6cf8a57c8a95ea52b1b43dee9cc63c197a3e",
+      "date": "2026-11-01T01:10:31-05:00",
+      "subject": "fix(csharp): type arguments and keyword types decide what a name means (#3170)"
+    },
+    {
+      "sha": "e651b87238a4c3714d50335b3bf7345466ed8701",
+      "date": "2026-11-01T00:56:34-05:00",
+      "subject": "fix(index): a sparse checkout no longer reads the files it leaves out (#3176)"
+    },
+    {
+      "sha": "9191ab6644cf9679b88080357d70cd07833502f5",
+      "date": "2026-11-01T05:11:22Z",
+      "subject": "fix(python): a call on an element of a collection links to the project's one method (#3175)"
+    },
+    {
+      "sha": "79c25b76972f999ad84c7f986968442fb80c0087",
+      "date": "2026-11-01T05:11:02Z",
+      "subject": "fix(objc): a struct links the types its members are declared with (#3174)"
+    },
+    {
+      "sha": "cb1e13d8d247567f6219b52d14ffe8c913c69fd5",
+      "date": "2026-11-01T05:10:41Z",
+      "subject": "fix(c,cpp): a member whose type a macro renames links what the macro names (#3173)"
+    },
+    {
+      "sha": "b23c88057019b35c5bf77bec9a4f9cc96b065c9d",
+      "date": "2026-11-01T05:10:09Z",
+      "subject": "fix(c): a function that writes a macro before a block still uses the macro (#3172)"
+    },
+    {
+      "sha": "087de4ca34b72bd64b59b49fd6edda2636c526c6",
+      "date": "2026-11-01T05:01:29Z",
+      "subject": "fix(ruby): a call follows a class's real ancestors, in Ruby's order (#3169)"
+    },
+    {
+      "sha": "14c25e37a165805a365f29b7591b788481817c41",
+      "date": "2026-11-01T04:59:52Z",
+      "subject": "fix(php): a receiver reaches the class PHP means, through its real parents and traits (#3168)"
+    },
+    {
+      "sha": "3bd99495caddd975bbb3f9ad6558249a014fbe85",
+      "date": "2026-11-01T04:11:56Z",
+      "subject": "fix(js,ts): a package import follows the page, and stops at a monorepo's own edge (#3166)"
+    },
+    {
+      "sha": "6473f6098f6b8e0dde121c836c207ebe7876beea",
+      "date": "2026-11-01T04:11:38Z",
+      "subject": "fix(flow): a Flow library's declarations are globals of the files Flow reads (#3165)"
+    },
+    {
+      "sha": "2393ea2f0ba00f070a8a992f905438b25c0cf10a",
+      "date": "2026-11-01T04:11:20Z",
+      "subject": "fix(ts): a receiver typed by a type alias calls the class the alias names (#3164)"
+    },
+    {
+      "sha": "206449b228d70ea21ff5c5559c54fd37a2e57963",
+      "date": "2026-11-01T04:11:02Z",
+      "subject": "fix(python): a dotted chain through an imported class links its last link (#3163)"
+    },
+    {
+      "sha": "39fc08395d22a925aa6bc476dc2d3353bfad0c9f",
+      "date": "2026-11-01T04:10:43Z",
+      "subject": "fix(js,ts): a member of a required or default-imported module is that module's export (#3162)"
+    },
+    {
+      "sha": "9c5cf97e546947b7413eef97e5ea2fa541785db1",
+      "date": "2026-11-01T04:10:22Z",
+      "subject": "fix(js,ts): a function inside an object literal's method is a local, not a member (#3161)"
+    },
+    {
+      "sha": "3ea6d235be15cb36e65b15c2eb6c1abe5a825926",
+      "date": "2026-11-01T04:02:00Z",
+      "subject": "fix(mcp): a quiet pool keeps one trimmed worker, so the next call stays warm (#3167)"
+    },
+    {
+      "sha": "4499d00758ca56075ef35678caa71f7b26aba7e2",
+      "date": "2026-10-31T15:38:13-05:00",
+      "subject": "fix(js,ts): a declare module answers its own package, behind a real module (#3157)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/skills/add-lang/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor/rules/codegraph.mdc",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/deploy-site.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "TELEMETRY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/add-lang-verify-extraction.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/ambient-module-imports.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/browser-host-globals.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/bundle-launcher.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/c-cpp-member-type-refs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/c-macro-renames.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/c-statement-macro-names.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/callers-call-sites.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cjk-query-tokens.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cli-affected-filter-globs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cli-cycles.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/cli-definition-grouping.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cli-files-test-classification.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cli-implementations.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cli-sync-stale-index.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/codeigniter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/commonjs-exports.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/compile-cache-missing-drive.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/component-same-folder.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/const-alias-flow.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-lookup-memos.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-overload-argument-reentry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/cpp-raw-string-preparse-1505.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-raw-strings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/cross-file-visibility.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/csharp-declared-receivers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/default-export-declaration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/dominant-file-cache.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dotdot-folder-names.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/drupal-services.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/explore-blast-radius.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/explore-exact-target.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/extraction.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/file-cycles.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/filelock-stale-takeover.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/filelock-contender.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/kernel-parity/Torture.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/kernel-parity/torture.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/kernel-parity/torture.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/kernel-parity/torture.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/flow-library-globals.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/flow-named-longer-route.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/framework-hint-resolver-only.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/frameworks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/git-index-currency.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/gitignore-pattern-parity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/global-setup-home-sandbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/go-implements-types.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/go-package-value-exported.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/go-promoted-dispatch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/graph.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/import-object-member-namesake.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/index-recovery-off-thread.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/installer-targets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/integration/lru-cache.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/java-overload-arguments.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/java-static-field-receivers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/java-supertype-reach.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/java-value-reads.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/js-default-binding-members.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/js-object-literal-members.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/js-prototype-member-guess.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/jvm-cross-language-imports.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/jvm-dotted-supertypes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/kernel-ruby-parity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/kotlin-expect-actual-callers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/kotlin-extension-on-imported-type.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/kotlin-value-holder-chains.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/lazy-engine-eager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/lazy-engine.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/lazy-frameworks-eager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/lazy-frameworks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/local-only-gitignore.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/mcp-daemon.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/mcp-index-version-warning.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/mcp-initialize.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/mcp-nested-repo-projectpath.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/mcp-projectpath-file.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/mcp-stdout-failure.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/mcp-tool-call-arguments.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/mediatr-dispatch-synthesizer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/migration-concurrent-opens.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/name-match-language-family.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/nextjs-proxy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/nextjs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/node-overload-spread.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/node-rows.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/objc-member-type-refs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/owning-package.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/parse-pool.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/pascal-chained-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/pascal-for-in-var.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/pascal-reference-boundaries.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/php-receiver-class-ancestry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/python-dotted-chain-target.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/python-generic-bases.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/python-module-resolution.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/python-multiline-bases.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/python-outside-bases.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/python-pep695-bases.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/python-receiver-rebinding.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/python-subscript-receivers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/python-supertype-type-arguments.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/qualified-lookup-boundary.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/query-pool.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/razor-script.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/read-commands-during-rebuild.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/resolution-file-read.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/resolution.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/resolver-pool-pipeline.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/resolver-pool-sizing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/resolver-project-scans.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/resolver-shared-frameworks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/ruby-constructed-receivers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/ruby-ivar-receivers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/ruby-receiver-class-ancestry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/rust-crate-roots.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/rust-cross-crate.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/rust-manifest-paths.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/rust-module-path-call.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/rust-path-attribute-modules.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/rust-path-super-glob.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/rust-type-member-paths.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/rust-use-call.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/rust-use-scopes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/search-field-filters.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/search-special-characters.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/security.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/segment-vocab.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/serve-no-telemetry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/setup-home-sandbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/sparse-checkout.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/spring-route-handlers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/status-during-rebuild.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/status-language-coverage.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/status-sparse-checkout.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/stdout-teardown.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/strip-comments.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/svelte-self-closing-script.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/swift-overload-closure.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/sync-barrel-retarget.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/sync-module-config-change.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/sync-removed-competitor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/sync-size-cap-shrink.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/sync-synthesis-interval.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/tauri-ipc.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/test-home-sandbox.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/ts-alias-typed-receivers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/ui-highlight.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/upgrade.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/vitest-worker-flags.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

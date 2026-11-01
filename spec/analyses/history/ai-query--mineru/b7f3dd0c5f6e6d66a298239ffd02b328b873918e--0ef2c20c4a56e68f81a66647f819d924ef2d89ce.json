@@ -1,0 +1,985 @@
+{
+  "id": "ai-query--mineru",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/opendatalab/MinerU",
+  "report": "spec/projects/ai-query--mineru.md",
+  "analyzedSha": "b7f3dd0c5f6e6d66a298239ffd02b328b873918e",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-11T10:21:25+08:00",
+  "observedSha": "0ef2c20c4a56e68f81a66647f819d924ef2d89ce",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "0ef2c20c4a56e68f81a66647f819d924ef2d89ce",
+      "date": "2026-10-30T10:44:06Z",
+      "subject": "chore: sync recent releases in issue templates"
+    },
+    {
+      "sha": "950679bd55585194723797a9613ccc85d8ede6bb",
+      "date": "2026-10-30T10:26:47Z",
+      "subject": "chore: bump version to 4.1.3"
+    },
+    {
+      "sha": "7d402bb02b01fe9e6126519271012d70edbcba80",
+      "date": "2026-10-30T16:59:34+08:00",
+      "subject": "Merge pull request #5700 from opendatalab/dev"
+    },
+    {
+      "sha": "83be2bb757734a2f02f64900324f363153f144dc",
+      "date": "2026-10-30T16:43:27+08:00",
+      "subject": "fix(api): drain duplicate upload bodies before responding"
+    },
+    {
+      "sha": "bde8b672c40fef01c6b05e8d93f2004d5b19a210",
+      "date": "2026-10-30T16:33:30+08:00",
+      "subject": "fix(ci): restore router lifecycle tests and admin key translation"
+    },
+    {
+      "sha": "47304a0348d228780421565ee3a0ca54a54a6acd",
+      "date": "2026-10-30T15:30:44+08:00",
+      "subject": "docs: fix router management links for multilingual builds"
+    },
+    {
+      "sha": "9319b54f8b799559e37039f373dec47fc0ec34d7",
+      "date": "2026-10-30T15:23:25+08:00",
+      "subject": "Merge pull request #5699 from myhloli/dev"
+    },
+    {
+      "sha": "31bea79b7d4e756b5adbca9f195cd6c1964f9953",
+      "date": "2026-10-30T15:21:56+08:00",
+      "subject": "feat(router): add dynamic upstream management"
+    },
+    {
+      "sha": "d9400ea5b35389e3d2f29f38a2754a218a343066",
+      "date": "2026-10-30T12:53:36+08:00",
+      "subject": "Merge pull request #5697 from myhloli/dev"
+    },
+    {
+      "sha": "f9ab614aa5db9445e16bf1546eb683d90d4a642e",
+      "date": "2026-10-30T11:32:48+08:00",
+      "subject": "feat(tests): enhance async parsing with background sleep and improve SDK isolation"
+    },
+    {
+      "sha": "0090767138ca05a44d482c94f55a990eada4be08",
+      "date": "2026-10-30T10:54:11+08:00",
+      "subject": "fix(api): update expiration handling to support subsecond precision"
+    },
+    {
+      "sha": "292dfda3a131a6f88361df44a12c28b81da2f9d4",
+      "date": "2026-10-30T10:35:54+08:00",
+      "subject": "Merge pull request #5695 from opendatalab/dev"
+    },
+    {
+      "sha": "a708ea5eee7d6f0d3c66a2016d273691da8dfe55",
+      "date": "2026-10-30T10:34:13+08:00",
+      "subject": "Merge pull request #5694 from myhloli/dev"
+    },
+    {
+      "sha": "a81c0224e9fbc9dcca7eaf922263cc7a672f3f78",
+      "date": "2026-10-30T04:13:30+08:00",
+      "subject": "docs: update documentation references and improve clarity in various files"
+    },
+    {
+      "sha": "14db546c732e9829c949dbaefd9f1459c3da55a7",
+      "date": "2026-10-30T01:14:50+08:00",
+      "subject": "docs: correct recent release count in 4.1.2 notes"
+    },
+    {
+      "sha": "303e119ff26987d20407e41d81c966d0f7e2598c",
+      "date": "2026-10-29T17:12:31Z",
+      "subject": "chore: sync recent releases in issue templates"
+    },
+    {
+      "sha": "ccc8ed951989c153b0872ed37e57abce58cce1d3",
+      "date": "2026-10-30T01:11:17+08:00",
+      "subject": "Merge pull request #5692 from opendatalab/master"
+    },
+    {
+      "sha": "88db50f08035e6803335079cee05e7a362ef2a47",
+      "date": "2026-10-30T00:53:50+08:00",
+      "subject": "chore(release): prepare MinerU 4.1.2"
+    },
+    {
+      "sha": "6d9ca4130060b6156e3f71da9843bc24614b45db",
+      "date": "2026-10-30T00:50:42+08:00",
+      "subject": "Merge pull request #5691 from opendatalab/dev"
+    },
+    {
+      "sha": "bced28d8bbdda3b6e81883c4942d02a8784785ea",
+      "date": "2026-10-30T00:50:20+08:00",
+      "subject": "Merge pull request #5690 from myhloli/dev"
+    },
+    {
+      "sha": "8718ab949cb1a64b0f43f6737aad89cccd14c8a9",
+      "date": "2026-10-30T00:47:03+08:00",
+      "subject": "feat(hardware): improve runtime probe summaries and device reporting"
+    },
+    {
+      "sha": "8d82a777f17fa66e88d9e72421f163aba705c5db",
+      "date": "2026-10-30T00:41:17+08:00",
+      "subject": "Merge pull request #5689 from opendatalab/dev"
+    },
+    {
+      "sha": "bc0a0fae3c6b00a7484465608fac2f75bf8dff7d",
+      "date": "2026-10-30T00:34:15+08:00",
+      "subject": "Merge pull request #5688 from myhloli/codex/issue-tier-default"
+    },
+    {
+      "sha": "a3e585186d788d131d226c0547e59e40fa429c02",
+      "date": "2026-10-30T00:31:04+08:00",
+      "subject": "fix(issue-forms): default parsing tier to unknown"
+    },
+    {
+      "sha": "16116684b5b0efa1e960b13c592d4968a658b207",
+      "date": "2026-10-30T00:30:11+08:00",
+      "subject": "fix(ci): allow safe replay of published release workflows"
+    },
+    {
+      "sha": "c008dc35edb41983d8b3369937fd7f046cbacba3",
+      "date": "2026-10-30T00:26:26+08:00",
+      "subject": "Merge pull request #5687 from opendatalab/dev"
+    },
+    {
+      "sha": "6264b9c1d6db41373799140208f12436fd1afa3b",
+      "date": "2026-10-30T00:25:14+08:00",
+      "subject": "Merge pull request #5685 from myhloli/codex/issue-forms-ci"
+    },
+    {
+      "sha": "5217c1f73c266a6eb028cafc7f149805303c5ccb",
+      "date": "2026-10-30T00:23:40+08:00",
+      "subject": "Merge pull request #5686 from myhloli/dev"
+    },
+    {
+      "sha": "c9cec90c681c0d4ecc221149e5934efc1750f4c4",
+      "date": "2026-10-30T00:22:28+08:00",
+      "subject": "feat(hardware): enhance hardware info collection with parallel probes and structured output"
+    },
+    {
+      "sha": "b00fbd4b0acb6c33fad14d67724c6322d2fb03c0",
+      "date": "2026-10-30T00:17:24+08:00",
+      "subject": "ci: streamline issue forms and release version choices"
+    },
+    {
+      "sha": "505fcb09dba26baeb914871ab131c4698ac6067e",
+      "date": "2026-10-29T15:32:21Z",
+      "subject": "chore: sync latest stable release in issue template"
+    },
+    {
+      "sha": "88afd8a234c6cbd0c950ff7640618532b54a364a",
+      "date": "2026-10-29T23:15:46+08:00",
+      "subject": "chore(release): prepare MinerU 4.1.1"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ISSUE_TEMPLATE/bug_report_zh.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cli.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/docvortex-boundary.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mkdocs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-package.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/rerun.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README_zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/_hooks/check_site.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/_hooks/redirects.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/_redirects.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "docs/archive/attachments/introduction.pdf",
+      "previousPath": "docs/chemical_knowledge_introduction/introduction.pdf"
+    },
+    {
+      "status": "R100",
+      "path": "docs/archive/attachments/introduction.xmind",
+      "previousPath": "docs/chemical_knowledge_introduction/introduction.xmind"
+    },
+    {
+      "status": "R098",
+      "path": "docs/archive/design/doclib-error-handling-gap-review.md",
+      "previousPath": "docs/next/doclib-error-handling-gap-review.md"
+    },
+    {
+      "status": "R094",
+      "path": "docs/archive/design/everydoc-doclib-gap-review.md",
+      "previousPath": "docs/next/everydoc-doclib-gap-review.md"
+    },
+    {
+      "status": "R091",
+      "path": "docs/archive/design/implementation-plan.md",
+      "previousPath": "docs/next/implementation-plan.md"
+    },
+    {
+      "status": "R088",
+      "path": "docs/archive/design/open-questions.md",
+      "previousPath": "docs/next/open-questions.md"
+    },
+    {
+      "status": "R092",
+      "path": "docs/archive/design/roadmap.md",
+      "previousPath": "docs/next/roadmap.md"
+    },
+    {
+      "status": "R097",
+      "path": "docs/archive/design/telemetry-implementation-plan.md",
+      "previousPath": "docs/next/telemetry-implementation-plan.md"
+    },
+    {
+      "status": "R099",
+      "path": "docs/archive/design/telemetry.md",
+      "previousPath": "docs/next/telemetry.md"
+    },
+    {
+      "status": "R057",
+      "path": "docs/archive/integrations/BISHENG.md",
+      "previousPath": "docs/zh/usage/plugin/BISHENG.md"
+    },
+    {
+      "status": "R090",
+      "path": "docs/archive/integrations/Cherry_Studio.md",
+      "previousPath": "docs/zh/usage/plugin/Cherry_Studio.md"
+    },
+    {
+      "status": "R056",
+      "path": "docs/archive/integrations/Coze.md",
+      "previousPath": "docs/zh/usage/plugin/Coze.md"
+    },
+    {
+      "status": "R059",
+      "path": "docs/archive/integrations/DataFlow.md",
+      "previousPath": "docs/zh/usage/plugin/DataFlow.md"
+    },
+    {
+      "status": "R078",
+      "path": "docs/archive/integrations/Dify.md",
+      "previousPath": "docs/zh/usage/plugin/Dify.md"
+    },
+    {
+      "status": "R069",
+      "path": "docs/archive/integrations/DingTalk.md",
+      "previousPath": "docs/zh/usage/plugin/DingTalk.md"
+    },
+    {
+      "status": "R052",
+      "path": "docs/archive/integrations/FastGPT.md",
+      "previousPath": "docs/zh/usage/plugin/FastGPT.md"
+    },
+    {
+      "status": "R065",
+      "path": "docs/archive/integrations/ModelWhale.md",
+      "previousPath": "docs/zh/usage/plugin/ModelWhale.md"
+    },
+    {
+      "status": "R087",
+      "path": "docs/archive/integrations/RagFlow.md",
+      "previousPath": "docs/zh/usage/plugin/RagFlow.md"
+    },
+    {
+      "status": "R063",
+      "path": "docs/archive/integrations/Sider.md",
+      "previousPath": "docs/zh/usage/plugin/Sider.md"
+    },
+    {
+      "status": "R066",
+      "path": "docs/archive/middle-json/migration.md",
+      "previousPath": "docs/next/middle-json/migration.md"
+    },
+    {
+      "status": "R097",
+      "path": "docs/archive/middle-json/structured-content-current.md",
+      "previousPath": "docs/next/middle-json/structured-content-current.md"
+    },
+    {
+      "status": "R086",
+      "path": "docs/archive/migrations/docgale-demo-migration.md",
+      "previousPath": "docs/next/docgale-demo-migration.md"
+    },
+    {
+      "status": "R082",
+      "path": "docs/archive/migrations/docvortex-0.4-migration.md",
+      "previousPath": "docs/docvortex-0.4-migration.md"
+    },
+    {
+      "status": "R095",
+      "path": "docs/archive/migrations/transformers5-migration.md",
+      "previousPath": "docs/next/transformers5-migration.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/llama-3060ti-serialize-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/llama-demo1-page1-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/llama-demo1-page1-uhd770-unlimited-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/llama-device-policy-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/llama-uhd770-vs-onnx-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/llama-uhd770-vulkan-diagnosis-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/llama-ultra225h-advanced-cpu4-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/llama-ultra225h-advanced-off-repeat-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/llama-ultra225h-page1-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/llama-ultra225h-standard-serialize-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/llama-ultra225h-standard-threads-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/llama-ultra225h-vulkan-diagnosis-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/llama-xe-lpg-auto-serialize-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/onnx-adaptive-calibration-uhd770-linux-20261021.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/onnx-compact-rec-linux-20261021.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/onnx-dependency-20261018.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/onnx-i7-12700-linux-20261021.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/onnx-i7-12700-median-diagnosis-linux-20261021.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/onnx-i7-12700-nhwc-no-prepack-linux-20261021.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/onnx-intel-225h-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/onnx-intel-architecture-policy-linux-20261021.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/onnx-intel-det-rust-linux-20261022.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/onnx-selection-uhd770-threshold08-windows-20261018.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/onnx-selection-windows-20261018.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/benchmarks/onnx-webgpu-linux-20261021.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/llama-xe-lpg-serialization-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/onnx-adaptive-calibration-uhd770-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/onnx-compact-rec-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/onnx-dependency-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/onnx-i7-12700-calibration-median-diagnosis.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/onnx-i7-12700-nhwc-no-prepack-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/onnx-i7-12700-webgpu-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/onnx-intel-225h-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/onnx-intel-architecture-policy-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/onnx-intel-det-rust-diagnosis.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/onnx-selection-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/performance/onnx-webgpu-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "R095",
+      "path": "docs/archive/plans/2026-05-20-pdf-document-design.md",
+      "previousPath": "docs/plans/2026-05-20-pdf-document-design.md"
+    },
+    {
+      "status": "R095",
+      "path": "docs/archive/plans/2026-05-30-my-pdf-migration-design.md",
+      "previousPath": "docs/plans/2026-05-30-my-pdf-migration-design.md"
+    },
+    {
+      "status": "R098",
+      "path": "docs/archive/plans/2026-06-15-cli-next-command-design.md",
+      "previousPath": "docs/plans/2026-06-15-cli-next-command-design.md"
+    },
+    {
+      "status": "R096",
+      "path": "docs/archive/plans/2026-06-16-page-number-variable-rename-plan.md",
+      "previousPath": "docs/plans/2026-06-16-page-number-variable-rename-plan.md"
+    },
+    {
+      "status": "R095",
+      "path": "docs/archive/plans/2026-06-16-page-range-rename-plan.md",
+      "previousPath": "docs/plans/2026-06-16-page-range-rename-plan.md"
+    },
+    {
+      "status": "R094",
+      "path": "docs/archive/plans/2026-06-17-cli-json-error-consistency-plan.md",
+      "previousPath": "docs/plans/2026-06-17-cli-json-error-consistency-plan.md"
+    },
+    {
+      "status": "R096",
+      "path": "docs/archive/plans/2026-06-17-mineru-kit-implementation-plan.md",
+      "previousPath": "docs/plans/2026-06-17-mineru-kit-implementation-plan.md"
+    },
+    {
+      "status": "R092",
+      "path": "docs/archive/plans/2026-07-10-mineru-alpha-release-design.md",
+      "previousPath": "docs/plans/2026-07-10-mineru-alpha-release-design.md"
+    },
+    {
+      "status": "R079",
+      "path": "docs/archive/plans/2026-07-10-mineru-skill-bootstrap-design.md",
+      "previousPath": "docs/plans/2026-07-10-mineru-skill-bootstrap-design.md"
+    },
+    {
+      "status": "R079",
+      "path": "docs/archive/plans/2026-07-10-mineru-skill-prerelease-install-design.md",
+      "previousPath": "docs/plans/2026-07-10-mineru-skill-prerelease-install-design.md"
+    },
+    {
+      "status": "R085",
+      "path": "docs/archive/plans/2026-07-10-readme-skill-layout-design.md",
+      "previousPath": "docs/plans/2026-07-10-readme-skill-layout-design.md"
+    },
+    {
+      "status": "R083",
+      "path": "docs/archive/plans/2026-07-10-remote-transport-retry-design.md",
+      "previousPath": "docs/plans/2026-07-10-remote-transport-retry-design.md"
+    },
+    {
+      "status": "R089",
+      "path": "docs/archive/plans/2026-07-10-search-file-aliases-design.md",
+      "previousPath": "docs/plans/2026-07-10-search-file-aliases-design.md"
+    },
+    {
+      "status": "R079",
+      "path": "docs/archive/plans/2026-07-17-null-tier-text-search-design.md",
+      "previousPath": "docs/plans/2026-07-17-null-tier-text-search-design.md"
+    },
+    {
+      "status": "R079",
+      "path": "docs/archive/plans/2026-07-17-text-invalidate-not-required-design.md",
+      "previousPath": "docs/plans/2026-07-17-text-invalidate-not-required-design.md"
+    },
+    {
+      "status": "R084",
+      "path": "docs/archive/plans/2026-07-17-text-parse-not-required-design.md",
+      "previousPath": "docs/plans/2026-07-17-text-parse-not-required-design.md"
+    },
+    {
+      "status": "R078",
+      "path": "docs/archive/plans/2026-07-17-text-read-not-required-design.md",
+      "previousPath": "docs/plans/2026-07-17-text-read-not-required-design.md"
+    },
+    {
+      "status": "R096",
+      "path": "docs/archive/plans/2026-07-21-api-server-startup-tier-design.md",
+      "previousPath": "docs/plans/2026-07-21-api-server-startup-tier-design.md"
+    },
+    {
+      "status": "R091",
+      "path": "docs/archive/plans/2026-07-21-central-tier-types-design.md",
+      "previousPath": "docs/plans/2026-07-21-central-tier-types-design.md"
+    },
+    {
+      "status": "R088",
+      "path": "docs/archive/plans/2026-07-21-default-tier-selection-design.md",
+      "previousPath": "docs/plans/2026-07-21-default-tier-selection-design.md"
+    },
+    {
+      "status": "R088",
+      "path": "docs/archive/plans/2026-07-21-doclib-legacy-server-shutdown-design.md",
+      "previousPath": "docs/plans/2026-07-21-doclib-legacy-server-shutdown-design.md"
+    },
+    {
+      "status": "R088",
+      "path": "docs/archive/plans/2026-07-21-endpoint-only-discovery-design.md",
+      "previousPath": "docs/plans/2026-07-21-endpoint-only-discovery-design.md"
+    },
+    {
+      "status": "R084",
+      "path": "docs/archive/plans/2026-07-21-hf-xet-dependency-design.md",
+      "previousPath": "docs/plans/2026-07-21-hf-xet-dependency-design.md"
+    },
+    {
+      "status": "R093",
+      "path": "docs/archive/plans/2026-07-21-mineru-kit-command-registration-design.md",
+      "previousPath": "docs/plans/2026-07-21-mineru-kit-command-registration-design.md"
+    },
+    {
+      "status": "R091",
+      "path": "docs/archive/plans/2026-07-21-model-tier-scope-design.md",
+      "previousPath": "docs/plans/2026-07-21-model-tier-scope-design.md"
+    },
+    {
+      "status": "R091",
+      "path": "docs/archive/plans/2026-07-21-shared-cli-version-command-design.md",
+      "previousPath": "docs/plans/2026-07-21-shared-cli-version-command-design.md"
+    },
+    {
+      "status": "R096",
+      "path": "docs/archive/plans/2026-07-21-tier-naming-design.md",
+      "previousPath": "docs/plans/2026-07-21-tier-naming-design.md"
+    },
+    {
+      "status": "R080",
+      "path": "docs/archive/plans/2026-07-22-cli-disable-implicit-markup-design.md",
+      "previousPath": "docs/plans/2026-07-22-cli-disable-implicit-markup-design.md"
+    },
+    {
+      "status": "R095",
+      "path": "docs/archive/plans/2026-07-22-doclib-home-ownership-lock-design.md",
+      "previousPath": "docs/plans/2026-07-22-doclib-home-ownership-lock-design.md"
+    },
+    {
+      "status": "R092",
+      "path": "docs/archive/plans/2026-07-22-managed-parse-server-stop-budget-design.md",
+      "previousPath": "docs/plans/2026-07-22-managed-parse-server-stop-budget-design.md"
+    },
+    {
+      "status": "R088",
+      "path": "docs/archive/plans/2026-07-22-parse-server-model-preload-design.md",
+      "previousPath": "docs/plans/2026-07-22-parse-server-model-preload-design.md"
+    },
+    {
+      "status": "R079",
+      "path": "docs/archive/plans/2026-07-22-pdf-render-parent-exit-design.md",
+      "previousPath": "docs/plans/2026-07-22-pdf-render-parent-exit-design.md"
+    },
+    {
+      "status": "R088",
+      "path": "docs/archive/plans/2026-07-22-pdf-render-pool-diagnostics-design.md",
+      "previousPath": "docs/plans/2026-07-22-pdf-render-pool-diagnostics-design.md"
+    },
+    {
+      "status": "R079",
+      "path": "docs/archive/plans/2026-07-22-server-status-log-markup-design.md",
+      "previousPath": "docs/plans/2026-07-22-server-status-log-markup-design.md"
+    },
+    {
+      "status": "R092",
+      "path": "docs/archive/plans/2026-08-14-e2e-model-stack-alignment-design.md",
+      "previousPath": "docs/plans/2026-08-14-e2e-model-stack-alignment-design.md"
+    },
+    {
+      "status": "R094",
+      "path": "docs/archive/plans/2026-09-17-remote-3x-middle-json-compat-design.md",
+      "previousPath": "docs/plans/2026-09-17-remote-3x-middle-json-compat-design.md"
+    },
+    {
+      "status": "R094",
+      "path": "docs/archive/platforms/Ascend.md",
+      "previousPath": "docs/zh/usage/acceleration_cards/Ascend.md"
+    },
+    {
+      "status": "R091",
+      "path": "docs/archive/platforms/Biren.md",
+      "previousPath": "docs/zh/usage/acceleration_cards/Biren.md"
+    },
+    {
+      "status": "R094",
+      "path": "docs/archive/platforms/Cambricon.md",
+      "previousPath": "docs/zh/usage/acceleration_cards/Cambricon.md"
+    },
+    {
+      "status": "R090",
+      "path": "docs/archive/platforms/Enflame.md",
+      "previousPath": "docs/zh/usage/acceleration_cards/Enflame.md"
+    },
+    {
+      "status": "R090",
+      "path": "docs/archive/platforms/Hygon.md",
+      "previousPath": "docs/zh/usage/acceleration_cards/Hygon.md"
+    },
+    {
+      "status": "R091",
+      "path": "docs/archive/platforms/IluvatarCorex.md",
+      "previousPath": "docs/zh/usage/acceleration_cards/IluvatarCorex.md"
+    },
+    {
+      "status": "R091",
+      "path": "docs/archive/platforms/Kunlunxin.md",
+      "previousPath": "docs/zh/usage/acceleration_cards/Kunlunxin.md"
+    },
+    {
+      "status": "R093",
+      "path": "docs/archive/platforms/METAX.md",
+      "previousPath": "docs/zh/usage/acceleration_cards/METAX.md"
+    },
+    {
+      "status": "R091",
+      "path": "docs/archive/platforms/MooreThreads.md",
+      "previousPath": "docs/zh/usage/acceleration_cards/MooreThreads.md"
+    },
+    {
+      "status": "R092",
+      "path": "docs/archive/platforms/THead.md",
+      "previousPath": "docs/zh/usage/acceleration_cards/THead.md"
+    },
+    {
+      "status": "R092",
+      "path": "docs/archive/platforms/Tecorigin.md",
+      "previousPath": "docs/zh/usage/acceleration_cards/Tecorigin.md"
+    },
+    {
+      "status": "R096",
+      "path": "docs/archive/platforms/VastAI.md",
+      "previousPath": "docs/zh/usage/acceleration_cards/VastAI.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/archive/reviews/architecture-optimization-status.md",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "docs/archive/reviews/pr-review-20261010-closures.json",
+      "previousPath": "docs/next/pr-review-20261010-closures.json"
+    },
+    {
+      "status": "R100",
+      "path": "docs/archive/reviews/pr-review-20261010-fix-closures.json",
+      "previousPath": "docs/next/pr-review-20261010-fix-closures.json"
+    },
+    {
+      "status": "R098",
+      "path": "docs/archive/reviews/pr-review-20261010.md",
+      "previousPath": "docs/next/pr-review-20261010.md"
+    },
+    {
+      "status": "R098",
+      "path": "docs/archive/superpowers/plans/2026-09-17-remote-3x-legacy-compat.md",
+      "previousPath": "docs/superpowers/plans/2026-09-17-remote-3x-legacy-compat.md"
+    },
+    {
+      "status": "R097",
+      "path": "docs/archive/superpowers/specs/2026-08-05-models-stack-param-design.md",
+      "previousPath": "docs/superpowers/specs/2026-08-05-models-stack-param-design.md"
+    },
+    {
+      "status": "R099",
+      "path": "docs/archive/testing/mineru-e2e-test-cases.md",
+      "previousPath": "docs/next/cli/mineru-e2e-test-cases.md"
+    },
+    {
+      "status": "R087",
+      "path": "docs/archive/validation/content-list-ownership-validation.md",
+      "previousPath": "docs/content-list-ownership-validation.md"
+    },
+    {
+      "status": "R084",
+      "path": "docs/archive/validation/docgale-dependency-validation.md",
+      "previousPath": "docs/docgale-dependency-validation.md"
+    },
+    {
+      "status": "R079",
+      "path": "docs/archive/validation/docgale-droid-validation.md",
+      "previousPath": "docs/docgale-droid-validation.md"
+    },
+    {
+      "status": "R086",
+      "path": "docs/archive/validation/docgale-html-namespace-validation.md",
+      "previousPath": "docs/docgale-html-namespace-validation.md"
+    },
+    {
+      "status": "R090",
+      "path": "docs/archive/validation/doclib-middle-json-compat-validation.md",
+      "previousPath": "docs/doclib-middle-json-compat-validation.md"
+    },
+    {
+      "status": "R086",
+      "path": "docs/archive/validation/docvortex-upgrade-validation.md",
+      "previousPath": "docs/docvortex-upgrade-validation.md"
+    },
+    {
+      "status": "R085",
+      "path": "docs/archive/validation/pdf-script-local-font-validation.md",
+      "previousPath": "docs/pdf-script-local-font-validation.md"
+    },
+    {
+      "status": "R086",
+      "path": "docs/archive/validation/pdf-text-normalization-validation.md",
+      "previousPath": "docs/pdf-text-normalization-validation.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/examples/tasks-curl.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/workflows/n8n-result-zip.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/en/demo/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/faq/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/quick_start/docker_deployment.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/quick_start/extension_modules.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/quick_start/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/reference/changelog.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/en/reference/development.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/reference/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/reference/migration_4.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/en/reference/migration_4_1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/reference/output_files.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/usage/advanced_cli_parameters.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/usage/cli_tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/usage/compatibility.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/en/usage/file_parse.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/usage/http_api.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/usage/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/en/usage/integrations.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/usage/model_source.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--ai-sdk.vercel",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/vercel/ai",
+  "report": "spec/projects/ai-agents--ai-sdk.vercel.md",
+  "analyzedSha": "3216f06d0d892b03ad607b4716bbf04056cbfe3d",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T21:52:49-07:00",
+  "observedSha": "dffe4053c15709577329518044b1ec1d4c6bb0fe",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "dffe4053c15709577329518044b1ec1d4c6bb0fe",
+      "date": "2026-10-30T20:27:03-07:00",
+      "subject": "fix(tool-web-fetch): return network_error for invalid redirect Location (#24297)"
+    },
+    {
+      "sha": "17b6923a77d14e25749215ca3b46a02158f60736",
+      "date": "2026-10-30T20:26:51-07:00",
+      "subject": "fix(ai): validate streamed data parts against dataPartSchemas (#24298)"
+    },
+    {
+      "sha": "5d20d90a6f41b889bdc950a763a5f88569079d5a",
+      "date": "2026-10-30T15:25:42-07:00",
+      "subject": "fix(harness-acp): recover missing tool approval input from observed updates (#24292)"
+    },
+    {
+      "sha": "028a025398782f4938303f48fbeee45c79af544b",
+      "date": "2026-10-30T15:13:47-07:00",
+      "subject": "Version Packages (#24280)"
+    },
+    {
+      "sha": "03dac28304872d6247266509aa01c1c22b848960",
+      "date": "2026-10-30T16:58:14-05:00",
+      "subject": "feat(harness-acp): require new `resolveHostToolCall()` callback and `isMcpToolCall()` callback for harness-owned control of these non-ACP details (#24288)"
+    },
+    {
+      "sha": "b0d51fecc096dbe0fa35d7a4f8b177d77d5ae701",
+      "date": "2026-10-30T14:57:03-07:00",
+      "subject": "fix(anthropic): keep the JSON response tool for schemas native structured outputs cannot represent (#24286)"
+    },
+    {
+      "sha": "a9e9f0f9784efbb4950be6c5e803e448bcf953da",
+      "date": "2026-10-30T21:35:14Z",
+      "subject": "docs: consume the stream in the token-usage callback cookbook (#24198)"
+    },
+    {
+      "sha": "73988de6749cdcb17dd9590a36771488f6bc3a1d",
+      "date": "2026-10-30T16:24:55-04:00",
+      "subject": "docs(google): clarify Interactions API output token defaults (#24285)"
+    },
+    {
+      "sha": "e10aebbad661c641a5463c645272168d03a5c2f2",
+      "date": "2026-10-30T19:46:32Z",
+      "subject": "fix(anthropic): return the final text when the JSON response tool is never called (#24279)"
+    },
+    {
+      "sha": "f4c5f1e95944684da4fc040efa051676e78b5bd2",
+      "date": "2026-10-30T19:31:55Z",
+      "subject": "fix(anthropic): use native structured outputs for forced-tool-rejecting models on Bedrock and Vertex (#24275)"
+    },
+    {
+      "sha": "f3e2cc24f51fe88a22fceaa5beb77141f8c6fb73",
+      "date": "2026-10-30T12:24:30-07:00",
+      "subject": "Version Packages (#24264)"
+    },
+    {
+      "sha": "504536a2212278f25369601d72eb41cdbe77c515",
+      "date": "2026-10-30T12:23:03-07:00",
+      "subject": "fix(harness-opencode): send a tool call before its approval request (#23515)"
+    },
+    {
+      "sha": "ae5b13ee576e9176b1aaef2348f4d75b0812974a",
+      "date": "2026-10-30T11:13:09-07:00",
+      "subject": "feat(tests): ensure `propertyOrdering` is passed through schemas (#24272)"
+    },
+    {
+      "sha": "89b76ce2a89a674c29794b20e4ae8f93e86e68a4",
+      "date": "2026-10-30T14:12:18-04:00",
+      "subject": "refactor(xai): centralize model capabilities in a shared catalog (#24270)"
+    },
+    {
+      "sha": "19cb2521dc1acf0902e26205e72ac1d69654863f",
+      "date": "2026-10-30T14:12:17-04:00",
+      "subject": "refactor(mistral): centralize model capabilities in a shared catalog (#24265)"
+    },
+    {
+      "sha": "cbc9ac0295a9e943ed763788942876f210bbeda6",
+      "date": "2026-10-30T16:34:38Z",
+      "subject": "chore(provider/gateway): update gateway model settings files (#24268)"
+    },
+    {
+      "sha": "31d83e2bd9bec50bedb70bd8dca763c819a45583",
+      "date": "2026-10-30T10:47:18-05:00",
+      "subject": "feat(harness-claude-code): support `skillOverrides` adapter setting for selective skill overrides (#22369)"
+    },
+    {
+      "sha": "9b603d36186b75e58d5479445a96c76f6e2d2700",
+      "date": "2026-10-30T15:32:39Z",
+      "subject": "Version Packages (#24224)"
+    },
+    {
+      "sha": "edd4d4f17af573a1604239b7ebc7240faebc74c1",
+      "date": "2026-10-30T09:54:36-05:00",
+      "subject": "fix(harness-claude-code): correctly map dotted AI Gateway model IDs to the ID shapes Claude Code expects (#24247)"
+    },
+    {
+      "sha": "5107fa3c98857df791317c88089a850665eb6304",
+      "date": "2026-10-30T09:45:39-04:00",
+      "subject": "docs(agents): lead the when-to-choose list with eve (#24262)"
+    },
+    {
+      "sha": "dfed8e8234b684c3e2a0571ad1a1078c8364b44c",
+      "date": "2026-10-29T22:14:37Z",
+      "subject": "refactor(google): adopt model capabilities and catalog (#24249)"
+    },
+    {
+      "sha": "c3af430640fefd13256561011cb9b0bd714eee83",
+      "date": "2026-10-29T17:19:49-04:00",
+      "subject": "feat(mcp): support multi-round trip requests (#24208)"
+    },
+    {
+      "sha": "5a944a4f3d922b16b2e3396811728997d89d70cd",
+      "date": "2026-10-29T17:07:23-04:00",
+      "subject": "refactor: make model capability docs generation provider-driven (#24184)"
+    },
+    {
+      "sha": "dcd2f8d844131ebae19f7f6ad4216e30934d3741",
+      "date": "2026-10-29T17:07:22-04:00",
+      "subject": "feat(openai): centralize model capabilities in a unified catalog (#24174)"
+    },
+    {
+      "sha": "1416e3c4484a7411d6ac63b0704ec7e7aaf82084",
+      "date": "2026-10-29T16:55:30-04:00",
+      "subject": "docs(agents): cross-promote eve as a production agent framework (#24238)"
+    },
+    {
+      "sha": "7716e189ee4d50b24661b2fe4cfe25130643529b",
+      "date": "2026-10-29T16:40:28-04:00",
+      "subject": "feat(providers): support async credential resolution (#24145)"
+    },
+    {
+      "sha": "6f41ccc1f8ef8ab6ae283c7d0eda6de5d95d4bcb",
+      "date": "2026-10-29T15:28:35-04:00",
+      "subject": "fix(heygen): defer video duration limits to the provider (#24235)"
+    },
+    {
+      "sha": "1afa510dcdb5eed5d4670c825d490627e1c8809e",
+      "date": "2026-10-29T18:36:39Z",
+      "subject": "feat(mcp): graduate experimental mcp apis (#24226)"
+    },
+    {
+      "sha": "8ba3a5c254d1d3d0e756545ce04070f2d863a243",
+      "date": "2026-10-29T18:12:06Z",
+      "subject": "fix(ai): repair partial JSON ending with a minus at the start of an array (#24157)"
+    },
+    {
+      "sha": "f8507823abe78471d6b3cfa2da91a63118edbff4",
+      "date": "2026-10-29T17:21:31Z",
+      "subject": "chore(provider/gateway): update gateway model settings files (#24213)"
+    },
+    {
+      "sha": "5c247e9b854acfedd83e027304a9c4c31915c67e",
+      "date": "2026-10-29T10:15:19-07:00",
+      "subject": "feat(sandbox): add stat, listDirectory, and deleteFile to SandboxSession (#24128)"
+    },
+    {
+      "sha": "d1067fd3f9e6d6011cb18cbc046d967accc16605",
+      "date": "2026-10-29T17:05:18Z",
+      "subject": "Version Packages (#24173)"
+    }
+  ],
+  "files": [
+    {
+      "status": "D",
+      "path": ".changeset/fix-anthropic-workflow-serialization.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/hot-crabs-collect.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/quiet-redirects-recover.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/strict-weather-check.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "architecture/model-capabilities.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "architecture/provider-abstraction.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/cookbook/01-next/73-mcp-tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/cookbook/05-node/45-stream-object-record-token-usage.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/cookbook/05-node/54-mcp-tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/02-foundations/02-providers-and-models.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-agents/01-overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/docs/03-agents/10-eve.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-agents/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/16-mcp-tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/17-mcp-apps.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/26-reasoning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-harnesses/03-tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/06-advanced/10-vercel-deployment-guide.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/23-create-mcp-client.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/24-mcp-stdio-transport.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/29-filter-active-tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/34-sandbox.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/02-ai-sdk-ui/48-mcp-app-renderer.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/02-ai-sdk-ui/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/00-ai-gateway.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/01-xai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/03-openai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/04-azure.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/05-anthropic.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/06-open-responses.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/07-anthropic-aws.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/08-amazon-bedrock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/09-groq.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/10-fal.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/100-assemblyai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/100-gmicloud.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/105-typesafe-ai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/11-deepinfra.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/110-deepgram.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/12-black-forest-labs.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/120-gladia.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/15-google.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/150-hume.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/16-google-vertex.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/160-revai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/170-baseten.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/170-huggingface.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/180-quiverai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/190-fish-audio.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/20-mistral.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/200-zai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/210-topaz.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/220-heygen.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/24-togetherai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/25-cohere.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/26-fireworks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/27-voyage.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/30-deepseek.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/31-moonshotai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/32-alibaba.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/33-minimax.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/40-cerebras.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/60-replicate.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/65-prodia.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/70-perplexity.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/80-luma.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/85-bytedance.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/85-klingai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/90-elevenlabs.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/95-cartesia.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/02-ai-sdk-harnesses/01-claude-code.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/02-ai-sdk-harnesses/03-pi.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/02-ai-sdk-harnesses/06-acp.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/03-observability/laminar.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/providers/04-openai-compatible-providers/60-synthorai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/04-openai-compatible-providers/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-e2e-next/app/api/mcp-input-required/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ai-e2e-next/app/chat/data-ui-parts/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ai-e2e-next/app/chat/mcp-apps/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-e2e-next/app/mcp-input-required/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/generate-speech/elevenlabs/music-timestamps.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/generate-speech/elevenlabs/timestamps.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/generate-text/anthropic/portable-xhigh-reasoning-fallback.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/generate-text/google/output-object-property-ordering.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/generate-text/google/video-metadata.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/generate-text/openai/portable-none-reasoning-fallback.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/generate-video/heygen/long-clip.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/harness-agent/claude-code/builtin-tool-approval-with-host-tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/harness-agent/cline/builtin-tool-approval-with-host-tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/harness-agent/codex-acp/builtin-tool-approval-with-host-tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/harness-agent/codex/builtin-tool-approval-with-host-tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/harness-agent/cursor-acp/builtin-tool-approval-with-host-tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/harness-agent/cursor/builtin-tool-approval-with-host-tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/harness-agent/deepagents/builtin-tool-approval-with-host-tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/harness-agent/fx/builtin-tool-approval-with-host-tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/harness-agent/github-copilot/builtin-tool-approval-with-host-tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/harness-agent/grok-build/builtin-tool-approval-with-host-tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/harness-agent/opencode/builtin-tool-approval-with-host-tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/harness-agent/pi/builtin-tool-approval-with-host-tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ai-functions/src/lib/codex-acp-harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ai-functions/src/lib/cursor-acp-harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ai-functions/src/realtime/openai/live-relay.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ai-functions/src/sandbox/local-sandbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ai-functions/src/stream-text-custom-loop/openai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/stream-text/google/video-metadata.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ai-functions/src/stream-transcribe/elevenlabs/basic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/transcribe/elevenlabs/timestamps.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/harness-e2e-next/agent/harness/acp-codex/harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/harness-e2e-next/agent/harness/acp-grok-build/harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/mcp/src/mcp-prompts/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/mcp/src/stdio/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next-workflow/workflow/sandbox-agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/generate-text/generate-text.test-d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/generate-text/generate-text.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/generate-text/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/generate-text/stream-language-model-call.test-d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/generate-text/stream-text.test-d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/test/mock-sandbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/ui/process-ui-message-stream.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/ui/process-ui-message-stream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/util/fix-json.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/util/fix-json.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/util/is-node-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/util/is-node-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/alibaba/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/alibaba/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/alibaba/src/alibaba-chat-language-model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/alibaba/src/alibaba-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/alibaba/src/alibaba-embedding-model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/alibaba/src/alibaba-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/amazon-bedrock/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/amazon-bedrock/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/amazon-bedrock/src/amazon-bedrock-chat-language-model.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/amazon-bedrock/src/amazon-bedrock-chat-language-model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/amazon-bedrock/src/amazon-bedrock-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/amazon-bedrock/src/amazon-bedrock-sigv4-fetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/amazon-bedrock/src/anthropic/amazon-bedrock-anthropic-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/amazon-bedrock/src/anthropic/amazon-bedrock-anthropic-structured-output.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/amazon-bedrock/src/mantle/bedrock-mantle-provider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/amazon-bedrock/src/mantle/bedrock-mantle-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/angular/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/angular/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/anthropic-aws/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/anthropic-aws/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/anthropic-aws/src/anthropic-aws-fetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/anthropic-aws/src/anthropic-aws-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/anthropic/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/anthropic/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/anthropic/src/anthropic-forced-tool-structured-output.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/anthropic/src/anthropic-json-response-tool-fallback.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/anthropic/src/anthropic-language-model.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/anthropic/src/anthropic-language-model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/anthropic/src/anthropic-model-catalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/anthropic/src/has-circular-schema-reference.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

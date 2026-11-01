@@ -37,6 +37,14 @@ Evidence: [README.md:32-43](https://github.com/datalab-to/marker/blob/6d40b01930
 
 **Scope and limits:** Documentary policy-change review only. No authenticated account, contractual eligibility, hosted service, licence entitlement or conversion benchmark was verified.
 
+## Change review - 2026-11-01
+
+Reviewed `71dd5fd7e51ab24f8624b6ba2fcb6014b4e40ed4` against `6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81`. The complete inventory contains manifest, lock and contributor-agreement changes. The selected [manifest](https://github.com/datalab-to/marker/blob/71dd5fd7e51ab24f8624b6ba2fcb6014b4e40ed4/pyproject.toml) advances Marker 2.0.0 to 2.1.0 and changes the Surya OCR range from 0.22 to 0.23. No Marker extraction source file is changed in this comparison.
+
+**Harness consequence:** Treat OCR dependency/model closure as part of extraction provenance and cache compatibility. A package version bump is not measured accuracy, runtime speed or license compatibility; benchmark the actual provisioned closure before changing a default.
+
+**Scope and limits:** Complete path inventory and manifest diff only; lock closure, contributor agreement and Surya implementation were not substantively reviewed. No install, OCR conversion or upstream tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [marker](https://github.com/datalab-to/marker); analyzed commit `6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81`; commit date 2026-10-22T06:45:42-04:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-query--marker.md).
+Analysis metadata: source [marker](https://github.com/datalab-to/marker); analyzed commit `71dd5fd7e51ab24f8624b6ba2fcb6014b4e40ed4`; commit date 2026-10-29T14:08:53-04:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--marker.md).
 <!-- teamagent-analysis:end -->

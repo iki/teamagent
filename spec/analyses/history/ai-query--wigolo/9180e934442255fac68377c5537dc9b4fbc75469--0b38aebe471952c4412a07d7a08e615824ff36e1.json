@@ -1,0 +1,150 @@
+{
+  "id": "ai-query--wigolo",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/KnockOutEZ/wigolo",
+  "report": "spec/projects/ai-query--wigolo.md",
+  "analyzedSha": "9180e934442255fac68377c5537dc9b4fbc75469",
+  "analyzedAt": "2026-10-28T08:26:04.502Z",
+  "analyzedCommitDate": "2026-10-25T01:55:22+06:00",
+  "observedSha": "0b38aebe471952c4412a07d7a08e615824ff36e1",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "0b38aebe471952c4412a07d7a08e615824ff36e1",
+      "date": "2026-10-31T19:08:30+06:00",
+      "subject": "Merge pull request #669 from KnockOutEZ/ci/commit-author-guard"
+    },
+    {
+      "sha": "102e1730a457ce811c7f30b1bb4db60a8df7dc3d",
+      "date": "2026-10-31T18:55:13+06:00",
+      "subject": "ci: re-run the author guard on base changes and refuse PRs over 250 commits"
+    },
+    {
+      "sha": "57594bc40d390ce70a955a32282c32fa62927b7e",
+      "date": "2026-10-31T18:54:52+06:00",
+      "subject": "Merge pull request #670 from fuleinist/fix/668-embedder-release-and-rerank-dispose"
+    },
+    {
+      "sha": "180c9d34a077edf3ef6611b24f2166b750b1057e",
+      "date": "2026-10-30T05:18:02+11:00",
+      "subject": "test(embedding): cover the deferred-release drain interleaving"
+    },
+    {
+      "sha": "2c3d77fed45d564e6d9321abe93f4ff95dd2f4ac",
+      "date": "2026-10-30T05:07:24+11:00",
+      "subject": "fix(providers): keep the drain guard and cover a resident-model dispose"
+    },
+    {
+      "sha": "1010079c9aa0b8d5e64d71c2f46bf08d0c8cfa74",
+      "date": "2026-10-30T04:53:23+11:00",
+      "subject": "fix(providers): release the embedder session and await rerank loads on shutdown"
+    },
+    {
+      "sha": "138613f59d3fc1cd742cc97f4ba6f1fa15e7a299",
+      "date": "2026-10-29T22:39:10+06:00",
+      "subject": "Merge pull request #668 from fuleinist/fix/647-idle-unload"
+    },
+    {
+      "sha": "0b23e2cd66a456d851fdb442cd0a0ef0d1836a43",
+      "date": "2026-10-29T22:36:38+06:00",
+      "subject": "ci: fail PRs whose commits are authored by a coding-agent identity"
+    },
+    {
+      "sha": "004011f3db326438934db2d00e32838b9307f9a3",
+      "date": "2026-10-29T02:51:16+11:00",
+      "subject": "fix(providers): drop a pending provider when its factory is disposed"
+    },
+    {
+      "sha": "ad9ee74217d66dd7accec57a76642cda4e311468",
+      "date": "2026-10-29T00:53:32+11:00",
+      "subject": "fix(providers): release a stale provider when its old clock fires"
+    },
+    {
+      "sha": "801748b7e113ef5c05317ac5e4563394816b0438",
+      "date": "2026-10-29T00:37:07+11:00",
+      "subject": "fix(providers): start the rerank clock at load and reacquire each backfill batch"
+    },
+    {
+      "sha": "b0ff946aad42da0d65cf53fe7459928b5a30dc72",
+      "date": "2026-10-29T00:18:16+11:00",
+      "subject": "fix(providers): route the embed service through the idle-tracked factory"
+    },
+    {
+      "sha": "759aa0b6b37120ce8576f31f747ab2a73bb3e9fa",
+      "date": "2026-10-28T11:30:21+11:00",
+      "subject": "fix(providers): unload the reranker and embedder after idle"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/workflows/author-guard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cache/backfill-embeddings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/embedding/embed.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/embedding/fastembed-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/providers/embed-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/providers/idle-unload.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/providers/rerank-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/cache/backfill-embeddings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/embedding/embed-provider-resolution.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/embedding/fastembed-provider-dispose.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/providers/idle-unload.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/providers/provider-idle-unload.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

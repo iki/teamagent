@@ -1,0 +1,53 @@
+# orca
+
+Source: [orca](https://github.com/stablyai/orca) · Category: [ai-agents-swarm](../categories/ai-agents-swarm.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `08c7152ab6e576951b33c2991ed2dedca4333096`; commit timestamp `2026-09-02T21:48:17-07:00`; 22,903 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/stablyai/orca/blob/08c7152ab6e576951b33c2991ed2dedca4333096/README.md)):
+
+> Run Codex, ClaudeCode, OpenCode or Pi side-by-side — each in its own worktree, tracked in one place. Monitor and steer your agents from your phone — get notified when an agent finishes and send follow-ups from anywhere.
+
+Build/package evidence: [docs/site/package.json](https://github.com/stablyai/orca/blob/08c7152ab6e576951b33c2991ed2dedca4333096/docs/site/package.json); [mobile/package.json](https://github.com/stablyai/orca/blob/08c7152ab6e576951b33c2991ed2dedca4333096/mobile/package.json); [mobile/packages/expo-two-way-audio/android/build.gradle](https://github.com/stablyai/orca/blob/08c7152ab6e576951b33c2991ed2dedca4333096/mobile/packages/expo-two-way-audio/android/build.gradle); [mobile/packages/expo-two-way-audio/package.json](https://github.com/stablyai/orca/blob/08c7152ab6e576951b33c2991ed2dedca4333096/mobile/packages/expo-two-way-audio/package.json); [package.json](https://github.com/stablyai/orca/blob/08c7152ab6e576951b33c2991ed2dedca4333096/package.json)
+
+License evidence: [LICENSE](https://github.com/stablyai/orca/blob/08c7152ab6e576951b33c2991ed2dedca4333096/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-swarm**. Its category places it in the candidate set for agents, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 reconciliation and scoped source review
+
+Reviewed source: [ai-agents-swarm--orca](https://github.com/stablyai/orca) at `ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c`.
+
+**Scope:** Complete 40,161-path committed change inventory; scoped reads of ACP permission implementation (1–144), its tests (1–170), and authority-fence implementation (1–246). This is not an audit of all changed subsystems. No upstream tests executed.
+
+The full analyzed commit 08c7152ab6e576951b33c2991ed2dedca4333096 is an ancestor of the observed revision in the newly categorized checkout. Its complete no-renames inventory is 2,462,658 UTF-8 bytes. The previous rename block came from the comparison output limit, not missing history. Retain the original report ID and category provenance while recording the current checkout identity ai-agents--orca as an alias.
+
+[ACP permission handling](https://github.com/stablyai/orca/blob/ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c/src/main/acp/acp-permission-requests.ts#L43-L144) requires usable routing IDs/options, diagnoses dropped malformed optional fields, cancels without a handler or on invalid/unoffered replies, and settles once on its request-context abort. A handler exception is interpolated into a diagnostic; Teamagent must sanitize it. Compatibility repair must not remove authority-critical information or turn an unfamiliar option into an implicit grant.
+
+The [tests](https://github.com/stablyai/orca/blob/ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c/src/main/acp/acp-permission-requests.test.ts#L101-L169) distinguish prompt cancellation from the owner of an autonomous permission: session/cancel alone intentionally leaves that handler signal active. Do not advertise universal cancellation enforcement from a session cancel method. [Authority retirement/restoration](https://github.com/stablyai/orca/blob/ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c/src/main/agent-hooks/server/server-authority-fences.ts#L11-L126) removes aliases, cached observations and hydrated grants, then restores only matching fences that have not been superseded or closed. Persistence is scheduled rather than established as an atomic durable transaction in this slice. Adopt explicit ownership/epoch checks and negotiate cancellation capability; no distributed fencing or complete isolation guarantee was verified.
+
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c` to `478743dbbaba368b9795463f6770966bc0baf341`. Earlier findings above remain historical evidence; this review is limited to the cited source, selected fixtures and delta.
+
+In [src/main/skills/skill-install-discovery-verification.ts](https://github.com/stablyai/orca/blob/478743dbbaba368b9795463f6770966bc0baf341/src/main/skills/skill-install-discovery-verification.ts#L128-L194), Install verification performs a fresh discovery and downgrades missing placements to failed, requires a discovered canonical copy, and preserves partial status when placements fail or skip. The helper excludes roots marked unavailable from proving a placement and targets the requested skill name for WSL discovery, while checking distro/path normalization.
+
+**Harness implication and limits:** Installed bytes and discoverable provider placement are separate acceptance checks. Retained pre-install scans must not certify new writes, and a partial multi-agent installation must stay partial. This is discoverability evidence rather than content-hash verification or proof the agent can execute the skill. The broad repository diff was truncated; only this captured module and focused test contract were reviewed. No upstream code or live service was executed for this review.
+
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`f29cc1aa82043ef8056ce641251eb4bf4bae5dcd`](https://github.com/stablyai/orca/commit/f29cc1aa82043ef8056ce641251eb4bf4bae5dcd), compared with `478743dbbaba368b9795463f6770966bc0baf341`.
+
+The [session-result validator](https://github.com/stablyai/orca/blob/f29cc1aa82043ef8056ce641251eb4bf4bae5dcd/src/main/ai-vault/session-list-result-validation.ts) adds an imported account-home schema and optional WSL identity, plus structured localization hints for scan issues. Malformed optional hints fall back to the base English issue, and invalid session entries generate an explicit skipped-count issue. The [fixture](https://github.com/stablyai/orca/blob/f29cc1aa82043ef8056ce641251eb4bf4bae5dcd/src/main/ai-vault/session-list-result-validation.test.ts) verifies preservation of a valid code/parameter pair and dropping malformed optional fields while keeping the issue itself.
+
+This is a useful boundary for heterogeneous installed-agent histories: bind records to execution/account scope and preserve incomplete-scan evidence independently of presentation. The imported account-home schema and remote scanner were not inspected here, so containment and authorization are not established. The15,261-path update required targeted review; no remote host, scanner or upstream tests were executed.

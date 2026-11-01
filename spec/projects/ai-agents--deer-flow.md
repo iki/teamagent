@@ -48,6 +48,18 @@ For Teamagent, keep authentication acquisition under the host's asynchronous res
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `38e6be638bc79daa1a16ac314aa14d5460f88c6c` (commit date `2026-11-01T15:04:16+08:00`), compared with `f79debed59ca6b1a31628e6b5ce55c8507793a4c`. Earlier observations remain historical evidence.
+
+**Scope:** Complete relevance-confidence and legacy-import normalization diffs; 258 changed paths inventoried. Retrieval evaluation and migration fixtures not audited.
+
+[Relevance normalization](https://github.com/bytedance/deer-flow/blob/38e6be638bc79daa1a16ac314aa14d5460f88c6c/backend/packages/harness/deerflow/agents/memory/backends/deermem/deermem/core/relevance.py) now catches numeric overflow as well as malformed confidence, assigning invalid/non-finite values zero and clamping finite values. [Legacy import](https://github.com/bytedance/deer-flow/blob/38e6be638bc79daa1a16ac314aa14d5460f88c6c/backend/packages/harness/deerflow/agents/memory/backends/deermem/deermem/core/storage.py) instead defaults malformed/non-finite confidence to 0.5. This improves parser robustness but creates different meanings for invalid inputs; neither default establishes factual confidence or calibration.
+
+**Teamagent implication (inference):** Represent missing, invalid and measured confidence separately. Preserve original evidence and migration provenance instead of silently treating a parser fallback as a learned probability; evaluate retrieval changes against grounded queries before promoting memory policy.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deer-flow](https://github.com/bytedance/deer-flow); analyzed commit `f79debed59ca6b1a31628e6b5ce55c8507793a4c`; commit date 2026-10-28T14:00:34+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deer-flow.md).
+Analysis metadata: source [deer-flow](https://github.com/bytedance/deer-flow); analyzed commit `38e6be638bc79daa1a16ac314aa14d5460f88c6c`; commit date 2026-11-01T15:04:16+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deer-flow.md).
 <!-- teamagent-analysis:end -->

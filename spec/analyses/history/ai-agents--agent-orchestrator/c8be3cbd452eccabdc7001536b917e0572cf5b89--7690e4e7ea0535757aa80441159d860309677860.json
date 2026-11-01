@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--agent-orchestrator",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/ComposioHQ/agent-orchestrator",
+  "report": "spec/projects/ai-agents--agent-orchestrator.md",
+  "analyzedSha": "c8be3cbd452eccabdc7001536b917e0572cf5b89",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T13:18:15+05:30",
+  "observedSha": "7690e4e7ea0535757aa80441159d860309677860",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "7690e4e7ea0535757aa80441159d860309677860",
+      "date": "2026-11-01T14:48:59+05:30",
+      "subject": "feat(chat): let users steer or cancel their queued Browser annotations (#7458)"
+    },
+    {
+      "sha": "a7d8bcfcaaf6898a232ebfeaab2c208923e20e37",
+      "date": "2026-11-01T14:03:55+05:30",
+      "subject": "fix(updater): show one sentence instead of raw updater errors (#7427)"
+    },
+    {
+      "sha": "829bc6cf7e73013173c7d749752830ce8ca42754",
+      "date": "2026-11-01T13:53:38+05:30",
+      "subject": "fix(chat): show only the question and answer on answered question cards (#7535)"
+    },
+    {
+      "sha": "254ec57baf39a770780d66e7f854435c5bda0afb",
+      "date": "2026-11-01T03:14:26-05:00",
+      "subject": "feat(artifacts): preview cloud PDF artifacts (#7466)"
+    },
+    {
+      "sha": "479bfd788f849c65982c25b60929c9dc68254086",
+      "date": "2026-11-01T03:14:10-05:00",
+      "subject": "feat(artifacts): delete cloud artifacts from session cards and preview more cloud text files (#7465)"
+    },
+    {
+      "sha": "c16fef64904e17c8b2b95c769b9504802b802487",
+      "date": "2026-11-01T13:06:48+05:30",
+      "subject": "feat(files): search the branch menu from two branches and show cut-off names in full (#7497)"
+    },
+    {
+      "sha": "10393e25aad345c54308104b415f82f8e44ffdea",
+      "date": "2026-11-01T12:49:44+05:30",
+      "subject": "feat(chat): open the session when its link hover card is clicked (#7508)"
+    },
+    {
+      "sha": "609c4c7278eefec234a4486f4010af5214b082f1",
+      "date": "2026-11-01T12:41:36+05:30",
+      "subject": "fix: clarify the linked CLI description (#7099)"
+    },
+    {
+      "sha": "b691ffc74b6a1f03e16b5395bac4e3661190903d",
+      "date": "2026-11-01T11:20:23+05:30",
+      "subject": "feat(telemetry): extend #7304's usage counts and add session outcomes (telemetry v2) (#7420)"
+    },
+    {
+      "sha": "ecf8a4cd1cb42870efc7ce612ef0ff83afb7119a",
+      "date": "2026-11-01T10:21:35+05:30",
+      "subject": "fix: restore Cline sessions with resumable IDs (#2904)"
+    },
+    {
+      "sha": "aa432f3d4cebecbdd9c05de7c2da93adaefc251f",
+      "date": "2026-11-01T08:48:47+05:30",
+      "subject": "fix(mobile): Android sign-in Unmatched Route and production WorkOS client (#7542)"
+    },
+    {
+      "sha": "9041e10a6c1dd0acb3e254063265d03ee95268d1",
+      "date": "2026-11-01T02:40:23+05:30",
+      "subject": "fix: preserve newer files when removing cancelled downloads (#6377)"
+    },
+    {
+      "sha": "4255167840b8c9024abb1b51f97ecb7619598fc6",
+      "date": "2026-11-01T02:31:24+05:30",
+      "subject": "fix(workspace): move orphaned worktree folders aside before add (#7483)"
+    },
+    {
+      "sha": "818a2ba863ec9e7796debb1caa63da7c28f9f32d",
+      "date": "2026-11-01T02:29:34+05:30",
+      "subject": "fix(billing): say Free connects from anywhere via Tailscale or the tunnel (#6964)"
+    },
+    {
+      "sha": "0b85db444487af419d603945109d62d10c1f3c2d",
+      "date": "2026-11-01T02:28:53+05:30",
+      "subject": "fix(billing): say Free includes every supported agent locally (#6963)"
+    },
+    {
+      "sha": "7fb506e6adcc95b688e9ec553abbc60143401498",
+      "date": "2026-11-01T02:02:13+05:30",
+      "subject": "fix(cli): send PR URL and reviewed head when merging (#7243)"
+    },
+    {
+      "sha": "26ea26f84ae730b7a5896501668623d0e2151f02",
+      "date": "2026-11-01T01:17:29+05:30",
+      "subject": "fix: exclude unvisited bookmarks from Firefox history import (#6380)"
+    },
+    {
+      "sha": "962baa39df4a49dc41cc86f7de3388225f749d97",
+      "date": "2026-11-01T01:16:45+05:30",
+      "subject": "fix: preserve literal tabs in command cues (#6353)"
+    },
+    {
+      "sha": "b097c11b1ac5fdd0377d2cac304c145223972e62",
+      "date": "2026-11-01T01:14:55+05:30",
+      "subject": "perf(cloud): usable Chat sooner when a paused session wakes (#7525)"
+    },
+    {
+      "sha": "b66bb3ecbaa777350981bb53e11b5235a5e16845",
+      "date": "2026-11-01T00:48:15+05:30",
+      "subject": "feat(mobile): browse, comment on and restore a session's artifacts (#7355)"
+    },
+    {
+      "sha": "b7091d814990db04ac6cb7f2a5c2f050d751b97e",
+      "date": "2026-10-31T23:17:12+05:30",
+      "subject": "feat(remote): link a headless machine to an AO account by signing in from another device (#7532)"
+    },
+    {
+      "sha": "3f514ac26f1942e4b6af0e5a21dd9b5583742128",
+      "date": "2026-10-31T22:36:30+05:30",
+      "subject": "fix(remote): stop a reset remote tunnel from crashing the main process (#7515)"
+    },
+    {
+      "sha": "96276e7d0ccdf954c07ed28c3f1d144a8d0ca0bd",
+      "date": "2026-10-31T22:14:52+05:30",
+      "subject": "fix(i18n): add missing Russian mobile strings (#7527)"
+    },
+    {
+      "sha": "3671d4f7f83a2c48262cf62a408d643e5e96aa86",
+      "date": "2026-10-31T21:47:04+05:30",
+      "subject": "fix(workspace): preserve quoted Windows project script commands (#7246)"
+    },
+    {
+      "sha": "e060567a86cf2b067c67a427139fc3859c370229",
+      "date": "2026-10-31T20:47:07+05:30",
+      "subject": "fix(session): return CHAT_CONTROLLER_NOT_READY from send without a live controller (#7476)"
+    },
+    {
+      "sha": "17eb96011b3e4099a8098f49dea28e8b7a717d4a",
+      "date": "2026-10-31T20:08:34+05:30",
+      "subject": "fix(report): never press Ctrl-C in terminal orchestrators for stuck reports (#7435)"
+    },
+    {
+      "sha": "1ead72090666b982a3d587f32643a4f0cb92ec88",
+      "date": "2026-10-31T18:50:54+05:30",
+      "subject": "fix(desktop): respawn the daemon after an unexpected exit (#6171) (#6197)"
+    },
+    {
+      "sha": "ea9182a9939f3604c1a763202d577e594f2a9fac",
+      "date": "2026-10-31T16:50:59+05:30",
+      "subject": "fix(chat): dedupe spawn activity and show worker state (#7475)"
+    },
+    {
+      "sha": "79ea8bde0cc97d1d744f41603b2c02a3b3d48073",
+      "date": "2026-10-31T16:17:43+05:30",
+      "subject": "feat(i18n): add Russian as a UI language (#7484)"
+    },
+    {
+      "sha": "62a2de7f92c1ee8cf988b556dc128594341e3ed1",
+      "date": "2026-10-31T11:32:15+05:30",
+      "subject": "Turn on Electron Sentry and telemetry for consented users (#7437)"
+    },
+    {
+      "sha": "c0b351a31eccaf1ac55f8e5015fd21ab414545ca",
+      "date": "2026-10-31T07:07:57+05:30",
+      "subject": "feat(remote): sign the machine's own AO Cloud requests with a host key (#7496)"
+    },
+    {
+      "sha": "02d9c356fdb7e10c2140ec36223f82589d44bf5a",
+      "date": "2026-10-31T07:07:33+05:30",
+      "subject": "feat(mobile): start Connect Mobile from the sidebar, a switch to turn it off, and no note while remote access starts (#7507)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/cloud-contract-severity-levels.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/contributor-project/data/path-areas.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/cloud-contract-compat.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/frontend.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/go.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/public-boundary.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/activitydispatch/dispatch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/claudecode/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/claudecode/local_credential.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/claudecode/local_credential_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/cline/cline.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/cline/cline_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/cline/hook_payload.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/cline/hooks.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/gemini/gemini.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/gemini/gemini_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/registry/version_refresh_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agentaccount/agentaccount_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agentaccount/claude.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/acp/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/acp/legacy.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/chatdriver/acp/qwen_questions.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/chatdriver/acp/qwen_questions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/codexappserver/driver.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/codexappserver/driver_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/persistenthost/child_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/persistenthost/child_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/persistenthost/child_windows_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/chatdriver/persistenthost/descriptor_error_other.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/chatdriver/persistenthost/descriptor_error_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/persistenthost/host.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/cuadriver/cuadriver.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/cuadriver/start_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/cuadriver/start_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/scm/github/observer_provider.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/scm/github/provider_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/scm/gitlab/observer_provider.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/scm/gitlab/provider_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/scm/multi/provider.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/scm/multi/provider_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/systemexec/managed_binary.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/systemexec/managed_binary_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/systemexec/remote_script.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/systemexec/systemexec.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/systemexec/systemexec_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/telemetry/cohort.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/telemetry/cohort_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/telemetry/denylist_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/telemetry/environment.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/telemetry/environment_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/telemetry/identity.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/telemetry/localsqlite.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/telemetry/localsqlite_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/telemetry/milestones.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/telemetry/osversion_darwin.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/telemetry/osversion_other.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/telemetry/osversion_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/telemetry/policyauthority/reader.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/telemetry/policyauthority/reader_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/telemetry/posthog.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/telemetry/posthog_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/telemetry/ratelimit.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/telemetry/ratelimit_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/telemetry/shutdown_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/workspace/gitworktree/workspace.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/workspace/gitworktree/workspace_orphan_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/claude_login.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/claude_login_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/hooks.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/hooks_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/mcp.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/cli/mcp_cua.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/cli/mcp_cua_render.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/cli/mcp_cua_render_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/cli/mcp_cua_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/pr.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/pr_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/project.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/project_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/remote_host.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/cli/remote_host_link.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/cli/remote_host_link_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/remote_host_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/config/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/config/config_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/daemon/awake_wiring.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/daemon/browser_chrome.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/daemon/daemon.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/daemon/harness_update_warmup.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/daemon/lifecycle_wiring.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/daemon/remote_host_directory.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/daemon/remote_host_directory_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/daemon/review_pr_refresher_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/daemon/settings_wiring.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/daemon/supervisor/supervisor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/daemon/telemetry_wiring.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/daemon/telemetry_wiring_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/daemon/usage_telemetry.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/daemon/usage_telemetry_details_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/daemon/usage_telemetry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/daemon/wiring_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/deliverytelemetry/recorder.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/deliverytelemetry/recorder_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/domain/attribution.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/domain/conversation.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/domain/projectconfig.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/domain/projectconfig_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/domain/script_steps.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/api.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/api_timeout_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/apispec/openapi.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/apispec/specgen/build.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/agent_browser.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/httpd/controllers/computeruse.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/conversation_steer.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/conversations.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/dto.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/link_preview.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/mobile.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/mobile_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/sessions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/settings.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/settings_hibernation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/httpd/controllers/user_messages.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/httpd/controllers/user_messages_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/cors.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/cors_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/envelope/envelope.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/lan_listener.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/lan_listener_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/log.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/log_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/recover.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/router.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/httpd/surface_middleware.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/httpd/surface_middleware_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/httpd/usage_flush_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/lifecycle/delivery_telemetry.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/lifecycle/delivery_telemetry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/lifecycle/manager.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/lifecycle/manager_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/lifecycle/reactions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/mobilebridge/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/mobilebridge/host_key.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/mobilebridge/host_key_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/mobilebridge/managed_tunnel.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/mobilebridge/managed_tunnel_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/mobilebridge/named_tunnel.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/mobilebridge/named_tunnel_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/mobilebridge/tunnel.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/mobilebridge/tunnel_runner.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/mobilebridge/tunnel_runner_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/mobilebridge/tunnel_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/mobilebridge/tunnel_windows_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/observe/scm/observer.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

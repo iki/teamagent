@@ -2,11 +2,11 @@
 
 Source: [regulated-ai-governance](https://github.com/ashutoshrana/regulated-ai-governance) · [Analysis](../../projects/ai-query--regulated-ai-governance.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `664a753aa46062d5e07b0e3a35f8fbf2367a4638`; commit date: 2026-09-11T15:36:55-05:00; review date: unknown; observed SHA: `664a753aa46062d5e07b0e3a35f8fbf2367a4638`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `664a753aa46062d5e07b0e3a35f8fbf2367a4638`; commit date: 2026-09-11T15:36:55-05:00; review date: unknown; observed SHA: `664a753aa46062d5e07b0e3a35f8fbf2367a4638`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ashutoshrana/regulated-ai-governance/compare/664a753aa46062d5e07b0e3a35f8fbf2367a4638...664a753aa46062d5e07b0e3a35f8fbf2367a4638). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

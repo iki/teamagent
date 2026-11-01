@@ -31,6 +31,18 @@ Reviewed commit: [`c71e8ea254dbc5dba27af773b735679163395cf9`](https://github.com
 The [Compute skill](https://github.com/prisma/skills/blob/c71e8ea254dbc5dba27af773b735679163395cf9/prisma-compute/SKILL.md) explicitly versions a Composer/Prisma-8 migration, distinguishes previews from implicit production targets, separates build/deploy/link operations, and warns that scaffolding can deploy by default. The [runtime reference](https://github.com/prisma/skills/blob/c71e8ea254dbc5dba27af773b735679163395cf9/prisma-compute/references/runtime-requirements.md) distinguishes a keep-awake deadline from cancellation/durability, flags streaming-buffer ambiguity and calls for stage testing. These are upstream instructions, not verified platform limits. Adapt explicit environment/target selection and durable-job requirements; do not copy its catch-all unhandled-error logging, raw unvalidated webhook JSON or best-effort background work as a durable acceptance path. Package installation/sync examples do not authorize changing Teamagent's adopted stack or vendored skills. No Prisma CLI, deploy, database, provider or runtime limit was tested.
 
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `8ea289b730c2e89f7ff1f518af128b113d842a92` (commit date `2026-10-29T20:38:08+05:30`), compared with `c71e8ea254dbc5dba27af773b735679163395cf9`. Earlier observations remain historical evidence.
+
+**Scope:** Complete two-file committed diff: setup skill version and provisioning instructions; no runtime implementation changed in this comparison.
+
+[Provisioning guidance](https://github.com/prisma/skills/blob/8ea289b730c2e89f7ff1f518af128b113d842a92/prisma-postgres-setup/references/provisioning.md) now explicitly tells the agent to deliver the returned database claim URL and expiry to the user, while keeping the connection string and claim material out of source code and shared logs. It continues to distinguish an expiring database from completed claiming. This is an authored operational instruction, not an implemented lifecycle checker or a tested provisioning result.
+
+**Teamagent implication (inference):** Separate private user delivery from public evidence: a required claim action should be discoverable in an authorized channel without copying bearer-sensitive URLs into conversation archives. Preserve pending ownership and expiry until an authoritative claim check succeeds; do not infer durable provisioning from successful creation.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [data-prisma](https://github.com/prisma/skills); analyzed commit `c71e8ea254dbc5dba27af773b735679163395cf9`; commit date 2026-10-27T10:10:40+01:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--data-prisma.md).
+Analysis metadata: source [data-prisma](https://github.com/prisma/skills); analyzed commit `8ea289b730c2e89f7ff1f518af128b113d842a92`; commit date 2026-10-29T20:38:08+05:30; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--data-prisma.md).
 <!-- teamagent-analysis:end -->

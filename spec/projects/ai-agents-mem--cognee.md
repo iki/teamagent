@@ -27,6 +27,12 @@ This is an optional enrichment reference, not a requirement for the basic source
 
 Related directions: [memory](../memory.md) · [import-generation](../import-generation.md) · [evolution](../evolution.md).
 
+## Change review — 2026-11-01
+
+Reviewed `525b1d1179c550cd5b5661bcbf8f00f57a676928` (2026-10-29T23:02:39+01:00) against `37f788bd287750e10d7610173e5332b3843f6ebd`; 1,409 changed paths. The reviewed conflict acceptance module replaces the earlier validation module. It binds model labels to the exact sent prompt, rejects unknown/repeated/unrelated facts and duplicate conflict identities, leaves omitted subjects unreviewed, and drops a conflict only when all surviving support was shown. Supplied dates that contradict proposed ordering force unresolved status; date nodes mixed with ordinary values are filtered by a heuristic, not semantic proof. [Acceptance](https://github.com/topoteretes/cognee/blob/525b1d1179c550cd5b5661bcbf8f00f57a676928/cognee/tasks/memify/review_conflicts/accept_review.py).
+
+Orphaned user decisions retire when their selected fact disappears, limited to reviewed subjects. Tests cover snapshot binding, partial answers, unsupported drops, pending writes and forgotten selected facts. This is a useful deterministic acceptance boundary around model proposals, but concurrent source deletion, atomic writes and correctness of model/date judgments need separate verification. The former trimming/review files are deleted; this scoped inspection does not assert their replacement budget/retry behavior. [Acceptance fixtures](https://github.com/topoteretes/cognee/blob/525b1d1179c550cd5b5661bcbf8f00f57a676928/cognee/tests/unit/tasks/memify/review_conflicts/test_accept_review.py). No graph, model or tests were executed; the broad release was not exhaustively audited.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cognee](https://github.com/topoteretes/cognee); analyzed commit `37f788bd287750e10d7610173e5332b3843f6ebd`; commit date 2026-10-16T22:07:34+02:00; review date 2026-10-24T06:36:54.441Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--cognee.md).
+Analysis metadata: source [cognee](https://github.com/topoteretes/cognee); analyzed commit `525b1d1179c550cd5b5661bcbf8f00f57a676928`; commit date 2026-10-29T23:02:39+01:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--cognee.md).
 <!-- teamagent-analysis:end -->

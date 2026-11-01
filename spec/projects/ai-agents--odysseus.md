@@ -44,6 +44,16 @@ In [src/tools/system.py](https://github.com/pewdiepie-archdaemon/odysseus/blob/5
 
 **Harness implication and limits:** An agent may narrow its available tools without acquiring the right to re-enable them. Enforce this at every effect entry point, including generic HTTP/app bridges, rather than only in a tool description. A prefix denylist is not a complete authorization model; endpoint aliases, method variants, direct calls and the actual settings handler were not audited. The oversized core loop was not captured. This review is static and does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `8450793fe68a0cc37ed9dc523620ba49bc234e2f` against prior analyzed commit `57a1859f081f5877373e4aaf96435eb3ed513793`. Historical reviews above remain separate evidence.
+
+The [session cleanup delta](https://github.com/pewdiepie-archdaemon/odysseus/blob/8450793fe68a0cc37ed9dc523620ba49bc234e2f/src/session_actions.py) removes title, short-message and small-conversation heuristics that previously deleted ordinary saved chats. Nonempty ordinary sessions are preserved regardless of the legacy delete_throwaway option. The [regression fixture](https://github.com/pewdiepie-archdaemon/odysseus/blob/8450793fe68a0cc37ed9dc523620ba49bc234e2f/tests/test_session_actions_cleanup.py) now retains an old one-message session with a throwaway-looking title and expects zero deletions. Teamagent retention should depend on explicit lifecycle/retention policy, not a model or heuristic's assessment of a conversation's value.
+
+The [request-authority delta](https://github.com/pewdiepie-archdaemon/odysseus/blob/8450793fe68a0cc37ed9dc523620ba49bc234e2f/src/agent_runtime/authority.py) admits configured local MCP operations only after checking stdio connection/resource identity, declared effect classification and destructive hints, then matches trusted user request text. Discovery is explicitly not a grant. However this is regex-based intent admission: exact qualified operation names bypass the local-notes negation check, and tool annotations are not independently trusted execution enforcement. The associated authority tests were not in this selected packet. Teamagent should require typed operation/resource authorization and robust negative-request cases rather than copying this heuristic as a security boundary.
+
+**Coverage:** Read the complete targeted cleanup/authority implementation and cleanup fixture delta. MCP authority tests, full cleanup lifecycle and remaining oversized changes were outside scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [odysseus](https://github.com/pewdiepie-archdaemon/odysseus); analyzed commit `57a1859f081f5877373e4aaf96435eb3ed513793`; commit date 2026-10-27T22:50:35-06:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--odysseus.md).
+Analysis metadata: source [odysseus](https://github.com/pewdiepie-archdaemon/odysseus); analyzed commit `8450793fe68a0cc37ed9dc523620ba49bc234e2f`; commit date 2026-11-01T08:45:11Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--odysseus.md).
 <!-- teamagent-analysis:end -->

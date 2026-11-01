@@ -1,0 +1,455 @@
+{
+  "id": "ai-agents--harnessrouter",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/HarnessRouter/harnessrouter",
+  "report": "spec/projects/ai-agents--harnessrouter.md",
+  "analyzedSha": "b2091142cdca2f1d0cbaffc3e0e42c983dc88b24",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T13:12:25-07:00",
+  "observedSha": "e94398d9c91a21ae7e01c630e2eeffa4defe1cfb",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "e94398d9c91a21ae7e01c630e2eeffa4defe1cfb",
+      "date": "2026-10-31T11:27:24-07:00",
+      "subject": "ci: prepare opt-in open-source security scans (#617)"
+    },
+    {
+      "sha": "558a8bbbd548c57e6b5afb21541993a164a94203",
+      "date": "2026-10-30T21:20:37-07:00",
+      "subject": "kits: a renamed kit keeps what was launched under its old name (My Workplace is now Harness Bot) (#616)"
+    },
+    {
+      "sha": "5520b956ffc15373a89ddfe00d944c271661f21a",
+      "date": "2026-10-29T11:33:12-07:00",
+      "subject": "runner: a turn the provider refused says why, when the CLI could not read the refusal (#614)"
+    },
+    {
+      "sha": "8d5c031c320afd0c7e6fd527fbbcf3705e7b0687",
+      "date": "2026-10-29T10:00:35-07:00",
+      "subject": "Harness create honours an Idempotency-Key, so a retried create returns the first harness (#613)"
+    },
+    {
+      "sha": "3fa39ad1947f9a3d1526e7d1814399498f7b1be0",
+      "date": "2026-10-28T17:18:37-07:00",
+      "subject": "console: one setup bar on every setup screen, Tasks · Settings at its right end (from the hosted console) (#611)"
+    },
+    {
+      "sha": "15a72533104c1f854d5b90817896ca55c0e817a2",
+      "date": "2026-10-28T17:13:05-07:00",
+      "subject": "runner: the DeepSeek Harness's model calls ride the runner's relay, and the driver's own relay is gone (#597)"
+    },
+    {
+      "sha": "164fe1262d4bdbf27656341f93d19351ad56b51f",
+      "date": "2026-10-28T16:28:32-07:00",
+      "subject": "MiniMax Code offers minimax-m3.1-flash, through OpenRouter, Vercel and TokenRouter (#610)"
+    },
+    {
+      "sha": "e1ccd15e585a8090cf0413abdbf463cdc4333de8",
+      "date": "2026-10-28T16:24:09-07:00",
+      "subject": "fix(console): refresh produced files after turn settles (#608)"
+    },
+    {
+      "sha": "dc96024b3fe9fbc42b5f9612d0bb991ef5a74089",
+      "date": "2026-10-28T16:19:18-07:00",
+      "subject": "runner: Qwen Code's own max_tokens never reaches the provider, so a self-hosted model with a small window answers (#609)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/workflows/oss-scanner.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".oss-scanner/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".oss-scanner/Dockerfile.dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".oss-scanner/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".oss-scanner/check-offline.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".oss-scanner/enrollment/project.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".oss-scanner/threat_model.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/images/kit-harness-bot.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/images/kit-workplace.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/support-matrix-notes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/support-matrix-results.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/support-matrix.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gateway/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gateway/tests/test_catalog_minimax_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gateway/tests/test_cloud_upload.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gateway/tests/test_gemini_schema_parity.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "gateway/tests/test_harness_idempotency.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "gateway/tests/test_kit_aliases.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gateway/tests/test_media_attack.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "protocol/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "protocol/conformance/uhp_conformance/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "protocol/conformance/uhp_conformance/checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "protocol/conformance/uhp_conformance/uhp-2026-10-19.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "protocol/schema/uhp-2026-10-19.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "protocol/versions/2026-10-19/errors.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "protocol/versions/2026-10-19/harnesses.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "protocol/versions/2026-10-19/lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "runner/dsh_driver.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "runner/reasoning.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "runner/server.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "runner/tests/test_dsh_driver_gemini_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "runner/tests/test_dsh_driver_google_unknown.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "runner/tests/test_dsh_driver_stream_liveness.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "runner/tests/test_dsh_driver_thought_signature.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "runner/tests/test_dsh_normalize.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "runner/tests/test_qwen_build.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "runner/tests/test_relay_dsh_route.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "runner/tests/test_relay_dsh_route_repairs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "runner/tests/test_relay_refusal_reason.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "runner/tests/test_relay_tool_call_index.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "runner/tests/test_uhp_plugins.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ui/public/kit-covers/harness-bot.jpg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "ui/public/kit-covers/workplace.jpg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/app/(app)/studio/[id]/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ui/src/app/kits/[kit]/[[...path]]/route.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/app/kits/[kit]/[[...path]]/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/HarnessLogo.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ui/src/components/hrui/NewSetup.demorace.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/NewSetup.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/SetUpApp.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/hrui-console.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/hrui.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/setup/AgentHead.tabfocus.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/setup/DeployCloud.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/setup/Playground.nextBar.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/setup/SetupSettings.parts.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/setup/SetupSettings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ui/src/components/hrui/setup/oneBar.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/setup/parts.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/setup/settingsModel.brickNav.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/setup/settingsModel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/setups.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/shop/KitTry.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/shop/parts.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/start/BuildPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/start/NextBar.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/start/NextBar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/start/prompts.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/start/prompts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/components/hrui/start/sheets.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/lib/chat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/lib/conversation.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/lib/conversation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ui/src/lib/harness-base-alias.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/src/lib/harness.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

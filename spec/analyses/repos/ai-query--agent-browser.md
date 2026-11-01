@@ -2,11 +2,11 @@
 
 Source: [agent-browser](https://github.com/vercel-labs/agent-browser) · [Analysis](../../projects/ai-query--agent-browser.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `5801a50d262a4d3e1a2381996a962b22000d8289`; commit date: 2026-10-27T20:33:32-03:00; review date: 2026-10-28T14:52:35.205Z; observed SHA: `5801a50d262a4d3e1a2381996a962b22000d8289`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `5868f7c05020e047c00e68e4abf9253cce864f41`; commit date: 2026-10-30T21:24:05-07:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `5868f7c05020e047c00e68e4abf9253cce864f41`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/vercel-labs/agent-browser/compare/5801a50d262a4d3e1a2381996a962b22000d8289...5801a50d262a4d3e1a2381996a962b22000d8289). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/vercel-labs/agent-browser/compare/5868f7c05020e047c00e68e4abf9253cce864f41...5868f7c05020e047c00e68e4abf9253cce864f41). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

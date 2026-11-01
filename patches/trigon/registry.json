@@ -1,7 +1,7 @@
 {
   "format": "teamagent-trigon-patches-v1",
   "sourceRepository": "https://github.com/iki/trigon",
-  "sourceRevision": "454e372cbc6bb75eafbbc4795391c492bc4fbf96",
+  "sourceRevision": "9ef18967b46fe01571933c3ba6216823ad961c16",
   "license": {
     "sourcePath": "LICENSE.md",
     "artifactPath": "patches/trigon/LICENSE.md",
@@ -11,7 +11,12 @@
     {
       "id": "tauri-native-lifetime",
       "kind": "host-adapter",
-      "packages": [{ "name": "@tauri-apps/cli", "versions": ["2.12.1", "2.12.4"] }],
+      "packages": [
+        {
+          "name": "@tauri-apps/cli",
+          "versions": ["2.12.1", "2.12.4"]
+        }
+      ],
       "files": [
         {
           "sourcePath": "app/trigon-check/native-lifetime.ts",
@@ -25,6 +30,24 @@
         }
       ],
       "evidence": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/spec/runtime.md: historical CLI 2.12.1 early exit; supplied conservative guard retained at 2.12.4, where the unguarded issue was not reproduced. Remove only after upstream lifecycle guarantees and deterministic success/rejection/cleanup regression justify removal."
+    },
+    {
+      "id": "tinypool-windows-hide",
+      "kind": "package-patch",
+      "packages": [
+        {
+          "name": "tinypool",
+          "versions": ["2.2.0"]
+        }
+      ],
+      "files": [
+        {
+          "sourcePath": "patches/tinypool@2.2.0.patch",
+          "artifactPath": "patches/trigon/tinypool@2.2.0.patch",
+          "sha256": "de8f773eec7e3e36c669f0a21df874afe37d23f88efc1b61498602a9701253be"
+        }
+      ],
+      "evidence": "https://github.com/iki/trigon/blob/9ef18967b46fe01571933c3ba6216823ad961c16/test/tinypool-windows-hide.test.ts: Oxfmt 0.74.0 uses Tinypool 2.2.0 process workers. The supplied fix explicitly sets windowsHide after spread options; isolated fork interception and real task/teardown regression retain environment and pipes. Source branch remains unmerged. Remove only after upstream exact-version behavior and the same regression demonstrate the fix is unnecessary."
     }
   ]
 }

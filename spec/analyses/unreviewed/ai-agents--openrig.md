@@ -2,7 +2,7 @@
 
 Source: [openrig](https://github.com/mvschwarz/openrig) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md).
 
-Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-agents--openrig.md).
+Historical discovery: 2026-10-24T06:36:54.441Z, initially unreviewed. Dated scoped reviews below supersede that discovery-only status; they do not establish runtime validation. [Change evidence](../repos/ai-agents--openrig.md).
 
 ## 2026-10-28 scoped source review
 
@@ -22,6 +22,16 @@ In [packages/daemon/src/domain/terminal/terminal-provider.ts](https://github.com
 
 **Harness implication and limits:** Negotiate live-follow support independently of ordinary view rendering, and recheck view generation before applying asynchronous updates. Optional interface members and a callback signature do not prove that a provider invokes the check or fences stale writes. Implementation, reconnection, cancellation and real terminal behavior were not audited; no provider was launched. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `b25dd19a5a818e8cba7bfe2b0267093c0305cb4e` against prior analyzed commit `6957751f5e39af15a3ccf04a579a8477d2744d88`. Historical reviews above remain separate evidence.
+
+The [Codex permission observer](https://github.com/mvschwarz/openrig/blob/b25dd19a5a818e8cba7bfe2b0267093c0305cb4e/packages/daemon/src/domain/codex-rebuild-permissions.ts) now requires exact native argv rather than splitting a display command. Missing/malformed arguments leave policy unverified before transcript lookup; the observer retains its process-start, occupant-generation and thread-identity checks. The [fixtures](https://github.com/mvschwarz/openrig/blob/b25dd19a5a818e8cba7bfe2b0267093c0305cb4e/packages/daemon/test/codex-rebuild-permissions.test.ts) cover a spaced profile, absent/empty/NUL/wrong-executable argv, a thread-like option value and valid native-log joining. These are mocked process observations, not evidence that every host can obtain authenticated argv.
+
+The [seat lifecycle](https://github.com/mvschwarz/openrig/blob/b25dd19a5a818e8cba7bfe2b0267093c0305cb4e/packages/daemon/src/domain/seat-lifecycle-service.ts) also reports unknown effort when exact arguments cannot be read and labels managed community stops `paneOnly`. Its [stop fixture](https://github.com/mvschwarz/openrig/blob/b25dd19a5a818e8cba7bfe2b0267093c0305cb4e/packages/daemon/test/seat-lifecycle-service.test.ts) retains the audit event while asserting the selected pane is killed. Teamagent should distinguish configured, emitted and observed policy, and distinguish closing a viewer from verified termination of the underlying agent/provider work.
+
+**Coverage:** Read all four targeted permission/lifecycle implementation and fixture deltas. Native argv collection and other lifecycle paths were not re-audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openrig](https://github.com/mvschwarz/openrig); analyzed commit `6957751f5e39af15a3ccf04a579a8477d2744d88`; commit date 2026-10-27T14:13:32-07:00; review date 2026-10-28T14:29:27.414Z; depth reviewed. [Maintenance record](../repos/ai-agents--openrig.md).
+Analysis metadata: source [openrig](https://github.com/mvschwarz/openrig); analyzed commit `b25dd19a5a818e8cba7bfe2b0267093c0305cb4e`; commit date 2026-10-30T07:49:24-07:00; review date 2026-11-01T11:33:30.893Z; depth reviewed. [Maintenance record](../repos/ai-agents--openrig.md).
 <!-- teamagent-analysis:end -->

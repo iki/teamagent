@@ -40,6 +40,14 @@ In [apps/cli/src/local/program-status.ts](https://github.com/jonwiggins/optio/bl
 
 **Harness implication and limits:** Structured terminal status is stronger display evidence than silence or text matching, but it remains untrusted process output. A reported done or permission-blocked state cannot establish task correctness or authorize a tool. Runtime identity, protocol-version compatibility and attention precedence need separate tests; no terminal integration was exercised. No upstream code or live service was executed for this review.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`3dd2edff9813c76fdf9f9cee44ab20ff50d71437`](https://github.com/jonwiggins/optio/commit/3dd2edff9813c76fdf9f9cee44ab20ff50d71437), compared with `ec97d4e00326f61efbc01712ea4ae6df8038c4a4`.
+
+The [session service](https://github.com/jonwiggins/optio/blob/3dd2edff9813c76fdf9f9cee44ab20ff50d71437/apps/api/src/services/session-service.ts) introduces linked provider identities and opt-in email matching. It requires a single matching account with verified email and checks the incoming provider-verification field, falling back to the older verification flag when absent. The source of those flags and concurrent database constraints were not inspected, so this is not proof that every provider route safely links accounts.
+
+The separate [session-delete fixture](https://github.com/jonwiggins/optio/blob/3dd2edff9813c76fdf9f9cee44ab20ff50d71437/apps/web/e2e/session-delete.spec.ts) distinguishes ending a live process from deleting a stopped record, exercises cancellation of the confirmation, and isolates its rows from unrelated sessions. This is intended acceptance coverage, not an executed browser result. Teamagent should retain provider-scoped identity, explicit linking authority, and separate stop/delete lifecycle receipts. The selected 210-line comparison was read; the broader576-path update and live account/session behavior were not audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [optio](https://github.com/jonwiggins/optio); analyzed commit `ec97d4e00326f61efbc01712ea4ae6df8038c4a4`; commit date 2026-10-27T16:32:23-06:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--optio.md).
+Analysis metadata: source [optio](https://github.com/jonwiggins/optio); analyzed commit `3dd2edff9813c76fdf9f9cee44ab20ff50d71437`; commit date 2026-10-31T20:07:49-06:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--optio.md).
 <!-- teamagent-analysis:end -->

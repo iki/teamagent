@@ -52,6 +52,16 @@ In [mastracode/sdk/src/agents/memory.ts](https://github.com/mastra-ai/mastra/blo
 
 **Harness implication and limits:** Derive memory cache identity from effective scope and configuration, and enforce scope-specific migration invariants on old saved settings. Thread-scoped observations still coexist with resource-wide recall; this is not an ACL guarantee. Storage authorization, the observation engine, threshold constants and concurrent retirement behavior remain unverified. The oversized main agent implementation was outside the bounded capture. No upstream tests, agent execution or provider requests were run.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `e219e6d94d3ec7ddb1d8b4d5af311ee6f6075e58` against prior analyzed commit `e84d8ed3d4d1d16c37d5684446d01269b4efe503`. Historical reviews above remain separate evidence.
+
+The [timeout helper](https://github.com/mastra-ai/mastra/blob/e219e6d94d3ec7ddb1d8b4d5af311ee6f6075e58/packages/core/src/loop/timeout.ts) introduces a one-second deadline-save allowance and `settledOrElapsed`, which resolves when a save settles or the wait expires, swallowing the save's rejection and clearing the timer. The [fixtures](https://github.com/mastra-ai/mastra/blob/e219e6d94d3ec7ddb1d8b4d5af311ee6f6075e58/packages/core/src/loop/timeout.test.ts) check early settlement with no timer left, a never-settling promise reaching its deadline, and rejection being absorbed.
+
+This distinguishes the caller's response deadline from durable persistence completion. Teamagent should retain an explicit pending/failed save receipt and ownership of background work; returning from a bounded wait neither cancels the save nor proves that memory was stored. The helper has no outcome-bearing return value, and this review did not inspect its call sites or independently verify the advertised one-second integration behavior.
+
+**Coverage:** Read the complete targeted timeout.ts and timeout.test.ts delta from the oversized repository change. Other runtime/storage changes and call sites remain outside this review. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mastra](https://github.com/mastra-ai/mastra); analyzed commit `e84d8ed3d4d1d16c37d5684446d01269b4efe503`; commit date 2026-10-28T11:03:37+01:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--mastra.md).
+Analysis metadata: source [mastra](https://github.com/mastra-ai/mastra); analyzed commit `e219e6d94d3ec7ddb1d8b4d5af311ee6f6075e58`; commit date 2026-11-01T06:20:38Z; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--mastra.md).
 <!-- teamagent-analysis:end -->

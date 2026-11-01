@@ -1,0 +1,63 @@
+# adk-js
+
+Source: [adk-js](https://github.com/google/adk-js) · Category: [ai-agents](../categories/ai-agents.md)
+
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `4395fad8da70a4123cb0b49da98c89883541b0ea`; commit timestamp `2026-10-02T14:22:32-07:00`; 1,067 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/google/adk-js/blob/4395fad8da70a4123cb0b49da98c89883541b0ea/README.md)):
+
+> An open-source, code-first TypeScript toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.
+
+Build/package evidence: [core/package.json](https://github.com/google/adk-js/blob/4395fad8da70a4123cb0b49da98c89883541b0ea/core/package.json); [dev/package.json](https://github.com/google/adk-js/blob/4395fad8da70a4123cb0b49da98c89883541b0ea/dev/package.json); [integrations/package.json](https://github.com/google/adk-js/blob/4395fad8da70a4123cb0b49da98c89883541b0ea/integrations/package.json); [package.json](https://github.com/google/adk-js/blob/4395fad8da70a4123cb0b49da98c89883541b0ea/package.json); [tests/cross_language/a2a/go_ts/go_client/go.mod](https://github.com/google/adk-js/blob/4395fad8da70a4123cb0b49da98c89883541b0ea/tests/cross_language/a2a/go_ts/go_client/go.mod)
+
+License evidence: [LICENSE](https://github.com/google/adk-js/blob/4395fad8da70a4123cb0b49da98c89883541b0ea/LICENSE); [LICENSE_SUMMARY.md](https://github.com/google/adk-js/blob/4395fad8da70a4123cb0b49da98c89883541b0ea/LICENSE_SUMMARY.md) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped update review
+
+Reviewed commit `eed31475067c2392fcafeabf196d0fb3ca17718e` (commit date `2026-10-26T09:54:20-07:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete session State mapping implementation; schema helper, write-order implementation, backing session services and parallel runner behavior were not audited.
+
+The [State mapping](https://github.com/google/adk-js/blob/eed31475067c2392fcafeabf196d0fb3ca17718e/core/src/sessions/state.ts#L24-L90) keeps current values and a pending delta, validates an entire update before applying it, and exposes a specific schema error. Validation is optional and intentionally skips every colon-containing key, not only the declared app/user/temp prefixes. An unrecognized schema shape also returns without checks. This is a scoped convenience contract; Teamagent still needs explicit schemas and principal authorization for every shared-state namespace at the external boundary.
+
+[Reads and writes](https://github.com/google/adk-js/blob/eed31475067c2392fcafeabf196d0fb3ca17718e/core/src/sessions/state.ts#L92-L166) use own-property checks so inherited names do not appear present. Values returned by `get` and spread into `toRecord` remain shallow references, so nested object mutation is not automatically observed as a new validated delta. `safeParse` success is checked but its transformed value is not stored; consumers must not assume parsing normalized the state. The generic getter is a type assertion, not runtime decoding.
+
+Writes call a separate ordering helper to mark pending changes, but that helper and the eventual session commit were not inspected. This review therefore makes no claim of atomic persistence, concurrent-write conflict resolution or cross-process consistency. Use typed immutable snapshots/deltas, validated namespace policies and host-owned revision checks for Teamagent; no SDK or backing-service integration was executed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `567b9a8f62d139081bc9c64428c292db13026285` (commit date `2026-10-28T01:51:58-07:00`), compared with `eed31475067c2392fcafeabf196d0fb3ca17718e`. Earlier findings remain historical evidence.
+
+**Scope:** MCP tool selection with missing context and loaded-tool shape handling. The complete changed-path inventory contains 86 paths; the assessment below is limited to the cited branches.
+
+MCP discovery now always passes each tool through the common selector, including when no context is supplied; a predicate receives that optional context instead of a previous warning-and-return-all branch. Empty filters still expose all tools. See [core/src/tools/base_toolset.ts](https://github.com/google/adk-js/blob/567b9a8f62d139081bc9c64428c292db13026285/core/src/tools/base_toolset.ts#L70-L95) and [core/src/tools/mcp/mcp_toolset.ts](https://github.com/google/adk-js/blob/567b9a8f62d139081bc9c64428c292db13026285/core/src/tools/mcp/mcp_toolset.ts#L85-L108). The inspected toolbox delta explicitly rejects unsupported loaded shapes instead of passing them through a LangChain wrapper, but its shallow checks and function assertions do not establish complete input-schema validation. See [core/src/tools/toolbox_toolset.ts](https://github.com/google/adk-js/blob/567b9a8f62d139081bc9c64428c292db13026285/core/src/tools/toolbox_toolset.ts#L204-L248).
+
+For Teamagent, define the missing-context policy and test it on every discovery path. Tool visibility remains separate from host-owned authorization and validation at dispatch. This review does not audit MCP transport, dynamic module loading or downstream effects.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `22a244e60dc3c6243fc4e49e50abff0f3140ccff` (commit date `2026-10-29T14:41:59-07:00`), compared with `567b9a8f62d139081bc9c64428c292db13026285`. Earlier observations remain historical evidence.
+
+**Scope:** Complete OAuth2 exchanger branch diff and both changed refresh-token fixtures; 46 changed paths inventoried, wider workflow/OpenAPI changes not audited.
+
+The [OAuth2 exchanger](https://github.com/google/adk-js/blob/22a244e60dc3c6243fc4e49e50abff0f3140ccff/core/src/tools/openapi_tool/auth/credential_exchangers/oauth2_exchanger.ts) now produces request authentication only when an access token exists; a refresh-token-only credential returns null. Both the [reference fixture](https://github.com/google/adk-js/blob/22a244e60dc3c6243fc4e49e50abff0f3140ccff/core/test/tools/openapi_tool/auth/credential_exchangers/oauth2_exchanger_test.ts) and [extra fixture](https://github.com/google/adk-js/blob/22a244e60dc3c6243fc4e49e50abff0f3140ccff/core/test/tools/openapi_tool/auth/credential_exchangers/oauth2_exchanger_extra_test.ts) assert that distinction. This branch does not itself refresh credentials or prove access-token validity.
+
+**Teamagent implication (inference):** Keep credential presence, refresh eligibility and authenticated route readiness as separate states. Only a completed refresh may produce access material; passive discovery must not treat a stored refresh token as a usable request credential.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.

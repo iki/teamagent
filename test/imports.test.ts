@@ -489,6 +489,7 @@ sys.stdout.buffer.write(b"isolated-bytecode-read-only\\n")
       async fetch(req): Promise<Response> {
         const url = new URL(req.url);
         const child = Bun.spawn(["git", "http-backend"], {
+          windowsHide: true,
           env: {
             ...processEnvironment(),
             GIT_CONFIG_NOSYSTEM: "1",

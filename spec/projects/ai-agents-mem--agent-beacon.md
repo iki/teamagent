@@ -39,6 +39,14 @@ Evidence: [pkg/asymptoteobserve/rulestore/rulestore.go:103-161](https://github.c
 
 **Scope and limits:** Static scoped rule-store and forwarding-probe review within the 1,417-path comparison. Rule decoder/checker semantics, threat-detection efficacy, sandbox isolation and the complete runner were not audited; no rule fixture, guest, command or network probe was executed.
 
+## Change review - 2026-11-01
+
+Reviewed `efbfef4e143a812c7daabaf65bfedba6c48c101c` against `90b19ae0626fd6fd060c62ddbc70827a23242f4e` (352 changed paths). The selected [policy gate](https://github.com/Asymptote-Labs/agent-beacon/blob/efbfef4e143a812c7daabaf65bfedba6c48c101c/cli/beacon-hooks/cmd/policy.go) now skips policy evaluation for a duplicate Cursor compatibility invocation, assigning that responsibility to the native hook. The inspected initial [compatibility fixtures](https://github.com/Asymptote-Labs/agent-beacon/blob/efbfef4e143a812c7daabaf65bfedba6c48c101c/cli/beacon-hooks/cmd/cursor_compat_test.go) distinguish native recording, duplicated Claude-hook invocation, missing native hooks and unrelated user hooks.
+
+**Harness consequence:** Deduplicate observations using a proven canonical event owner, while separately establishing which invocation enforces authorization. Suppressed telemetry is not proof that another gate ran. Discovery must distinguish a configured command from an installed and functioning enforcement path.
+
+**Scope and limits:** Static review of the policy hunk and initial compatibility fixtures, not all 352 paths, duplicate detection internals or the native gate's complete lifecycle. No hooks or upstream tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-beacon](https://github.com/Asymptote-Labs/agent-beacon); analyzed commit `90b19ae0626fd6fd060c62ddbc70827a23242f4e`; commit date 2026-10-27T04:47:59+01:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--agent-beacon.md).
+Analysis metadata: source [agent-beacon](https://github.com/Asymptote-Labs/agent-beacon); analyzed commit `efbfef4e143a812c7daabaf65bfedba6c48c101c`; commit date 2026-11-01T01:41:19-05:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--agent-beacon.md).
 <!-- teamagent-analysis:end -->

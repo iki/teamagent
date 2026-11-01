@@ -43,6 +43,14 @@ Evidence: [all_techniques/21_cross_session_memory/cross_session_memory.ipynb:184
 
 **Scope and limits:** Static selected implementation cells from four notebooks (21, 22, 28 and 30) within the 33-path comparison, with original notebook JSON line ranges retained. Other techniques and notebook execution order were not fully audited. No notebook, dependency installer, model call or embedded output was executed or treated as fresh validation.
 
+## Change review - 2026-11-01
+
+Reviewed `f0b663472899e58568bf3e71b51ac4f2672dd669` against `6e8fb023235e3f3ecd2d2d122b94fa86a4bf9118` (40 changed paths). The selected [compaction notebook](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/f0b663472899e58568bf3e71b51ac4f2672dd669/all_techniques/15_memory_compaction/memory_compaction.ipynb) repairs separated method cells by assigning functions to classes, centralizes the default model, and retains sequential raw-text, key-point, summary and tag stages. Retrieval can fall back to the current level when the requested level is absent. Character totals are storage estimates, not tokenizer measurements; JSON tag parsing is not a validated domain schema. The inspected cells have empty outputs and no execution count.
+
+**Harness consequence:** Store compaction lineage and the actual delivered level, keep source recovery possible, and validate model-produced structure before admitting memory. Compare query quality and token cost across levels; a notebook's model-name change does not establish availability, price or improved retrieval. The [validation workflow](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/f0b663472899e58568bf3e71b51ac4f2672dd669/.github/workflows/validate.yml) adds a smoke-test dependency, not evidence that these model calls succeeded.
+
+**Scope and limits:** Selected notebook repair and workflow delta only; other notebooks were not audited or executed. This remains research guidance rather than a production memory implementation.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-memory-techniques](https://github.com/NirDiamant/Agent_Memory_Techniques); analyzed commit `6e8fb023235e3f3ecd2d2d122b94fa86a4bf9118`; commit date 2026-10-27T16:12:51+02:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--agent-memory-techniques.md).
+Analysis metadata: source [agent-memory-techniques](https://github.com/NirDiamant/Agent_Memory_Techniques); analyzed commit `f0b663472899e58568bf3e71b51ac4f2672dd669`; commit date 2026-10-31T03:12:04+02:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--agent-memory-techniques.md).
 <!-- teamagent-analysis:end -->

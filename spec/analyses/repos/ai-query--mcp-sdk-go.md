@@ -2,11 +2,11 @@
 
 Source: [mcp-sdk-go](https://github.com/modelcontextprotocol/go-sdk) · [Analysis](../../projects/ai-query--mcp-sdk-go.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `2b2c53b02ec2b73f6a0605d68c4ea87fa9eb37aa`; commit date: 2026-10-28T10:00:57+01:00; review date: 2026-10-28T14:52:35.205Z; observed SHA: `2b2c53b02ec2b73f6a0605d68c4ea87fa9eb37aa`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `eafb671c47d45f3c8a001495f7dd6d605ea4a374`; commit date: 2026-10-30T16:20:23+01:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `eafb671c47d45f3c8a001495f7dd6d605ea4a374`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/modelcontextprotocol/go-sdk/compare/2b2c53b02ec2b73f6a0605d68c4ea87fa9eb37aa...2b2c53b02ec2b73f6a0605d68c4ea87fa9eb37aa). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/modelcontextprotocol/go-sdk/compare/eafb671c47d45f3c8a001495f7dd6d605ea4a374...eafb671c47d45f3c8a001495f7dd6d605ea4a374). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

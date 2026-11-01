@@ -37,6 +37,18 @@ Evidence: [quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/pipeline/Pipe
 
 **Scope and limits:** Scoped static review of package-resolver wiring, version policy, preview error handling and selected rendering changes in the 218-path comparison. Package download/cache implementation, Ktor default binding and complete HTML post-renderer were not verified. Fixtures were read, not executed; no preview server, package installation, browser or PDF render was run.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `e4351a53391210a1fbb4c91f9542ddf578d5d0da` (commit date `2026-11-01T01:35:28-07:00`), compared with `0bacdef6bd32c6dba1b6ef34c45a83c864a716c7`. Earlier observations remain historical evidence.
+
+**Scope:** Complete virtual-filesystem normalization diff and the added filesystem-contract cases. Real filesystem containment, symbolic links, typesetting execution and generated media were not tested.
+
+The [virtual filesystem](https://github.com/iamgio/quarkdown/blob/e4351a53391210a1fbb4c91f9542ddf578d5d0da/quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/filesystem/VirtualFileSystem.kt) wraps the in-memory filesystem with lexical path normalization and rebases listed children to the caller's requested path. [Contract fixtures](https://github.com/iamgio/quarkdown/blob/e4351a53391210a1fbb4c91f9542ddf578d5d0da/quarkdown-core/src/jvmTest/kotlin/com/quarkdown/core/filesystem/FileSystemContractTest.kt) read a parent-segment path without requiring callers to normalize it and check listed-child parent/relative paths. The implementation explicitly relies on the virtual filesystem having no symbolic links; this is not a physical filesystem containment guarantee.
+
+**Teamagent implication (inference):** Give portable document pipelines stable virtual path semantics, but enforce resolved-root containment, link policy and exclusive publication in host adapters separately. Record source and artifact identities before rendering so normalized navigation does not erase provenance or authorize writes outside the output root.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [quarkdown](https://github.com/iamgio/quarkdown); analyzed commit `0bacdef6bd32c6dba1b6ef34c45a83c864a716c7`; commit date 2026-10-25T20:14:41-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-gen--quarkdown.md).
+Analysis metadata: source [quarkdown](https://github.com/iamgio/quarkdown); analyzed commit `e4351a53391210a1fbb4c91f9542ddf578d5d0da`; commit date 2026-11-01T01:35:28-07:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-gen--quarkdown.md).
 <!-- teamagent-analysis:end -->

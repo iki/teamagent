@@ -1,0 +1,63 @@
+# future-agi
+
+Source: [future-agi](https://github.com/future-agi/future-agi) · Category: [ai-agents](../categories/ai-agents.md)
+
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `d794a49b0310e226815f503c7bf3f8426bb56d3f`; commit timestamp `2026-10-01T18:26:33+05:30`; 11,774 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/future-agi/future-agi/blob/d794a49b0310e226815f503c7bf3f8426bb56d3f/README.md)):
+
+> tag as HTML comments. Total asset budget   for any image that contains a UI screenshot    ║ ║  (GitHub dark-mode users will see the dark file).                           ║
+
+Build/package evidence: [agentcc-gateway/go.mod](https://github.com/future-agi/future-agi/blob/d794a49b0310e226815f503c7bf3f8426bb56d3f/agentcc-gateway/go.mod); [e2e/package.json](https://github.com/future-agi/future-agi/blob/d794a49b0310e226815f503c7bf3f8426bb56d3f/e2e/package.json); [fi-collector/go.mod](https://github.com/future-agi/future-agi/blob/d794a49b0310e226815f503c7bf3f8426bb56d3f/fi-collector/go.mod); [frontend/package.json](https://github.com/future-agi/future-agi/blob/d794a49b0310e226815f503c7bf3f8426bb56d3f/frontend/package.json); [futureagi/ee/agenthub/eval_orchestrator/test_mcp_server/package.json](https://github.com/future-agi/future-agi/blob/d794a49b0310e226815f503c7bf3f8426bb56d3f/futureagi/ee/agenthub/eval_orchestrator/test_mcp_server/package.json)
+
+License evidence: [LICENSE](https://github.com/future-agi/future-agi/blob/d794a49b0310e226815f503c7bf3f8426bb56d3f/LICENSE); [LICENSE-EE](https://github.com/future-agi/future-agi/blob/d794a49b0310e226815f503c7bf3f8426bb56d3f/LICENSE-EE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped update review
+
+Reviewed commit `14ba8a4474e9901b3f917d1d6e89cf6808aec58f` (commit date `2026-10-27T15:53:26+05:30`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete AI-tool base class, collector authentication facade and SAML login-state purge activity; transport authentication, database/cache internals, middleware, SAML verification and tests were not reviewed.
+
+The [tool entry point](https://github.com/future-agi/future-agi/blob/14ba8a4474e9901b3f917d1d6e89cf6808aec58f/futureagi/ai_tools/base.py#L136-L201) parses JSON-looking parameter strings, validates the resulting model and executes under a request-local workspace/organization/user context. This separates host context from model parameters, but the class accepts supplied context objects and cannot prove their authentication or database isolation. Validation failures return the raw submitted parameters and exception text to the caller, while execution failures log exception details. Teamagent should preserve structured error codes and scoped context while avoiding unrestricted payload/error reflection and enforcing budgets before parsing.
+
+The [collector facade](https://github.com/future-agi/future-agi/blob/14ba8a4474e9901b3f917d1d6e89cf6808aec58f/fi-collector/pkg/auth/auth.go#L137-L257) requires organization/workspace scope when resolving project names and checks that scope again when adding cache mappings. Reserved simulation names are not created as visible projects. Fresh/warm cached credentials can be returned without a current database check; warm hits start background refresh, and a separate Redis watcher evicts revoked entries. Singleflight coalesces database queries, but a goroutine is launched for each warm hit before singleflight, so the comment's implication of bounded goroutine creation is not established. Cache misses use a ten-second detached shared lookup; the waiting caller does not select its own cancellation in this facade. Cache invalidation races and cache capacity require inspecting the unreviewed cache implementation.
+
+The [SAML purge activity](https://github.com/future-agi/future-agi/blob/14ba8a4474e9901b3f917d1d6e89cf6808aec58f/futureagi/saml2_auth/tasks.py#L12-L35) limits each model pass to 50 batches of at most 1,000 selected IDs and distinguishes expired candidate material from retained attempts. This is bounded cleanup work per invocation, not proof that all expired data has gone or that a scheduled activity always runs within its declared time limit. The collector's disabled-auth branch returns a nil authenticator, and deployment/middleware handling was not audited. No database, Redis service, SAML exchange or upstream suite ran.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `b544357d026d428d90ec73be6dd8990934edab33` (commit date `2026-10-28T01:12:07+05:30`), compared with `14ba8a4474e9901b3f917d1d6e89cf6808aec58f`. Earlier findings remain historical evidence.
+
+**Scope:** Collector project-type resolution, scoped cache insertion and resource stamping. The complete changed-path inventory contains 232 paths; the assessment below is limited to the cited branches.
+
+Resolvers that support typed projects now preserve trace type alongside project identity; older resolvers leave it unknown. Cache insertion checks organization/workspace scope. The resource stamp fills project_type=observe only when the incoming value is absent/empty and the resolved project is known to be Observe; it does not overwrite a sender-provided value. See [fi-collector/pkg/auth/auth.go](https://github.com/future-agi/future-agi/blob/b544357d026d428d90ec73be6dd8990934edab33/fi-collector/pkg/auth/auth.go#L276-L311), [fi-collector/pkg/auth/cache.go](https://github.com/future-agi/future-agi/blob/b544357d026d428d90ec73be6dd8990934edab33/fi-collector/pkg/auth/cache.go#L102-L120) and [fi-collector/pkg/auth/stamp.go](https://github.com/future-agi/future-agi/blob/b544357d026d428d90ec73be6dd8990934edab33/fi-collector/pkg/auth/stamp.go#L89-L110).
+
+For Teamagent, distinguish authenticated resource identity from a compatibility hint and retain unknown metadata rather than inferring it from a project name. Preserving sender metadata also means it cannot become trusted authorization evidence downstream. Failure to retain this hint does not fail a request; credential admission, revocation timing and the converter's final identity behavior were outside this review.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `6840e44914cf7c85cd0ae65d98761f7728b8afcc` (commit date `2026-10-28T19:07:57+05:30`), compared with `b544357d026d428d90ec73be6dd8990934edab33`. Earlier observations remain historical evidence.
+
+**Scope:** Complete cache post-priority and pipeline engine changes, plus selected post-priority fixtures; 84 changed paths inventoried. Streaming handler behavior and all plugin implementations not comprehensively audited.
+
+The [pipeline](https://github.com/future-agi/future-agi/blob/6840e44914cf7c85cd0ae65d98761f7728b8afcc/agentcc-gateway/internal/pipeline/engine.go) sorts post-processing by optional post priority, retains the first blocking API error while continuing later bookkeeping, and propagates that error for non-streamed responses. The [cache plugin](https://github.com/future-agi/future-agi/blob/6840e44914cf7c85cd0ae65d98761f7728b8afcc/agentcc-gateway/internal/plugins/cache/plugin.go) moves its post priority after guardrails. [Fixtures](https://github.com/future-agi/future-agi/blob/6840e44914cf7c85cd0ae65d98761f7728b8afcc/agentcc-gateway/internal/pipeline/post_priority_test.go) assert ordering and non-streaming rejection. A post-response check cannot retract streamed bytes already emitted.
+
+**Teamagent implication (inference):** Cache only outputs that passed the applicable policy stage, including policy version and live authorization in reuse eligibility. Place any no-egress requirement before streaming emission; late auditing is evidence collection, not a substitute for prevention.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.

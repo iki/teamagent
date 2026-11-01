@@ -2,11 +2,11 @@
 
 Source: [openbot](https://github.com/CopilotKit/openbot) · [Analysis](../../projects/ai-agents--openbot.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `da9a3caf5784074baa779110dd7e9d1338c8871b`; commit date: 2026-10-27T19:15:10-07:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `da9a3caf5784074baa779110dd7e9d1338c8871b`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `c396a5f68c817043846f1ca3c2b42061ee73ceb5`; commit date: 2026-10-31T10:17:48-07:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `c396a5f68c817043846f1ca3c2b42061ee73ceb5`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/CopilotKit/openbot/compare/da9a3caf5784074baa779110dd7e9d1338c8871b...da9a3caf5784074baa779110dd7e9d1338c8871b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/CopilotKit/openbot/compare/c396a5f68c817043846f1ca3c2b42061ee73ceb5...c396a5f68c817043846f1ca3c2b42061ee73ceb5). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

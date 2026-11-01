@@ -50,6 +50,18 @@ Use them as adapter test cases: domain approval must not authorize unrelated sen
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `841f45db2226ce15f5d1f52c580e35181e74ff68` (commit date `2026-10-30T21:46:01Z`), compared with `a6b3429ebabafd6efd129c6d2f6161b02f061f22`. Earlier observations remain historical evidence.
+
+**Scope:** Complete single-file CHANGELOG.md diff covering 1.4.10–1.4.12; no underlying runtime implementation supplied by this delta.
+
+The [release notes](https://github.com/google-antigravity/antigravity-cli/blob/841f45db2226ce15f5d1f52c580e35181e74ff68/CHANGELOG.md) describe a pre-invocation termination hook, explicit partial-output finish reasons, subscription versus usage billing selection, and optional plugin API credentials. They also claim compaction preserves recent parent messages and image preparation handles size/type mismatches. These are upstream release assertions; this snapshot provides neither implementation nor independently measured memory/terminal improvements.
+
+**Teamagent implication (inference):** Use these as adapter acceptance-test candidates: distinguish partial completion from successful task verification, keep billing route explicit, and preserve parent task identity through compaction. Optional credentials must not silently select an unauthorized route or weaken content-sharing policy.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [antigravity-cli](https://github.com/google-antigravity/antigravity-cli); analyzed commit `a6b3429ebabafd6efd129c6d2f6161b02f061f22`; commit date 2026-10-28T05:59:44Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--antigravity-cli.md).
+Analysis metadata: source [antigravity-cli](https://github.com/google-antigravity/antigravity-cli); analyzed commit `841f45db2226ce15f5d1f52c580e35181e74ff68`; commit date 2026-10-30T21:46:01Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--antigravity-cli.md).
 <!-- teamagent-analysis:end -->

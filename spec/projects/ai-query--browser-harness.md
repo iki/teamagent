@@ -39,6 +39,12 @@ Evidence: [README.md:1-123](https://github.com/browser-use/browser-harness/blob/
 
 **Scope and limits:** Documentation-only delta review with full changed-path inventory and three selected domain recipes plus README. No runtime/helper implementation review in this pass, no live website validation and no benchmark reproduction. Remaining domain recipes were enumerated, not individually evaluated.
 
+## Change review — 2026-11-01
+
+Reviewed `0727ae724122e3f70e103f55d07c6528f60e7241` (2026-10-31T12:01:42-07:00). The six changed paths are domain scraping guides for Bluesky, ESPN, Finviz, TCGplayer, Vinted and Yahoo Finance. Scoped inspection of the Bluesky guide's opening helper shows credential-omitting public GET requests, bounded attempt/backoff counts and distinct error versus empty-result handling. The helper buffers the entire response before parsing and has no shown per-request deadline or response-byte ceiling; regex redaction is partial. [Bluesky guide](https://github.com/browser-use/browser-harness/blob/0727ae724122e3f70e103f55d07c6528f60e7241/agent-workspace/domain-skills/bluesky/scraping.md).
+
+Treat these as versioned skill proposals with upstream-reported observations, not verified live site contracts or authority to bypass access restrictions. Enforce host/network/size/time/privacy policy in tools outside skill prose. Scope: all changed path names and the initial Bluesky request helper, not all six guides or later snippets. No site access, skill execution or service claims were independently tested.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [browser-harness](https://github.com/browser-use/browser-harness); analyzed commit `4ced8e0087d2d45ea2d08c00cb62449b2d94a90e`; commit date 2026-10-24T20:12:38-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--browser-harness.md).
+Analysis metadata: source [browser-harness](https://github.com/browser-use/browser-harness); analyzed commit `0727ae724122e3f70e103f55d07c6528f60e7241`; commit date 2026-10-31T12:01:42-07:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-query--browser-harness.md).
 <!-- teamagent-analysis:end -->

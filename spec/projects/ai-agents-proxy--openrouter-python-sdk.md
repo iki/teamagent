@@ -44,6 +44,14 @@ Evidence: [src/openrouter/components/imagegenerationproviderpreferences.py:140-1
 
 **Scope and limits:** Reviewed the provider-option delta within the broader generated SDK update; no account, model, response schema or live request was tested. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`4e0fe9b982aa86c17134e2791e99096ba1749fab`](https://github.com/OpenRouterTeam/python-sdk/commit/4e0fe9b982aa86c17134e2791e99096ba1749fab), compared with `0305e470a6aa7a082d478386b0f0303493501264`.
+
+The full [Jev router model](https://github.com/OpenRouterTeam/python-sdk/blob/4e0fe9b982aa86c17134e2791e99096ba1749fab/src/openrouter/components/jevrouterplugin.py) defines optional inclusion, exclusion and cost-tier fields, omitting unset/optional-null values in serialization. Comments describe cost tiers replacing shared routing policy and include-list fallback to the current pool when catalog matches are outside that pool. These declarations must not be interpreted as hard local admission checks.
+
+The reviewed [provider-preference declarations](https://github.com/OpenRouterTeam/python-sdk/blob/4e0fe9b982aa86c17134e2791e99096ba1749fab/src/openrouter/components/providerpreferences.py#L1-L160) keep data collection and provider fallback optional, with permissive defaults described in comments and an open enum allowing unknown values. Teamagent should explicitly serialize its approved policy, distinguish omitted/null/explicit settings, and block unknown account/operation policies rather than treating type acceptance as evidence. The 1,468-path comparison was expanded selectively; later preference serialization, transport and other generated APIs were not fully audited. No account, provider, SDK or upstream tests were exercised.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openrouter-python-sdk](https://github.com/OpenRouterTeam/python-sdk); analyzed commit `0305e470a6aa7a082d478386b0f0303493501264`; commit date 2026-10-28T08:52:46Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-python-sdk.md).
+Analysis metadata: source [openrouter-python-sdk](https://github.com/OpenRouterTeam/python-sdk); analyzed commit `4e0fe9b982aa86c17134e2791e99096ba1749fab`; commit date 2026-10-31T04:50:15Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-python-sdk.md).
 <!-- teamagent-analysis:end -->

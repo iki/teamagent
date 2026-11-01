@@ -43,6 +43,18 @@ Evidence: [README.md:70-82](https://github.com/multimodal-art-projection/YuE/blo
 
 **Scope and limits:** Source-code continuity and README changes reviewed. The changed PDF/QR content, models, weights and benchmark claims were not reproduced or independently assessed; the paper remains separate research evidence.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `1116bea76032bee5668e5f097294d082fa0b84f0` (commit date `2026-11-01T13:46:34+08:00`), compared with `1647252d68b70cbead046ffd3f7caf036dde47ee`. Earlier observations remain historical evidence.
+
+**Scope:** Complete graph-attention implementation diff and selected attention-portability/graph fixture changes. No GPU/XPU, model weights, music generation, timing benchmark or perceptual quality test was run.
+
+The [graph adapter](https://github.com/multimodal-art-projection/YuE/blob/1116bea76032bee5668e5f097294d082fa0b84f0/src/yue2/cuda_graph.py) checks actual device, dtype, head shape and compiled attention availability before choosing Flash, cuDNN or SDPA; explicit unavailable choices raise an error. It selects CUDA or XPU graph APIs for capture and expands grouped KV heads for the cuDNN path. [Portability fixtures](https://github.com/multimodal-art-projection/YuE/blob/1116bea76032bee5668e5f097294d082fa0b84f0/tests/test_attention_portability.py) distinguish unavailable/stub kernels from supported paths, compare grouped attention numerics and contain hardware-gated cases. The inspected [CUDA graph fixtures](https://github.com/multimodal-art-projection/YuE/blob/1116bea76032bee5668e5f097294d082fa0b84f0/tests/test_cuda_graph.py) extend fallback parity cases. Presence of an XPU code path and hardware-gated tests is not evidence that this host, every accelerator or the full music pipeline was validated.
+
+**Teamagent implication (inference):** Describe media backend eligibility by effective device, implementation and workload, rejecting unsupported explicit overrides. Separate passive model discovery from allocation-bearing capability probes. Record numerical parity, throughput, memory and perceptual evaluation independently before changing default local generation routes.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [yue](https://github.com/multimodal-art-projection/YuE); analyzed commit `1647252d68b70cbead046ffd3f7caf036dde47ee`; commit date 2026-10-06T15:30:39+08:00; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-media--yue.md).
+Analysis metadata: source [yue](https://github.com/multimodal-art-projection/YuE); analyzed commit `1116bea76032bee5668e5f097294d082fa0b84f0`; commit date 2026-11-01T13:46:34+08:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-media--yue.md).
 <!-- teamagent-analysis:end -->

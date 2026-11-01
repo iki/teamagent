@@ -1,0 +1,63 @@
+# deepseek-tui
+
+Source: [deepseek-tui](https://github.com/Hmbown/DeepSeek-TUI) · Category: [ai-agents](../categories/ai-agents.md)
+
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `9e19f03e68bf0ffaf4ea3d609def6b582db49f33`; commit timestamp `2026-10-03T08:13:51-07:00`; 2,992 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/Hmbown/DeepSeek-TUI/blob/9e19f03e68bf0ffaf4ea3d609def6b582db49f33/README.md)):
+
+> Codewhale is an open-source agent that reads your project, edits files, runs commands, and checks its work using a hosted or local model you choose. Start
+
+Build/package evidence: [Cargo.toml](https://github.com/Hmbown/DeepSeek-TUI/blob/9e19f03e68bf0ffaf4ea3d609def6b582db49f33/Cargo.toml); [crates/agent/Cargo.toml](https://github.com/Hmbown/DeepSeek-TUI/blob/9e19f03e68bf0ffaf4ea3d609def6b582db49f33/crates/agent/Cargo.toml); [crates/app-server/Cargo.toml](https://github.com/Hmbown/DeepSeek-TUI/blob/9e19f03e68bf0ffaf4ea3d609def6b582db49f33/crates/app-server/Cargo.toml); [crates/build-support/Cargo.toml](https://github.com/Hmbown/DeepSeek-TUI/blob/9e19f03e68bf0ffaf4ea3d609def6b582db49f33/crates/build-support/Cargo.toml); [crates/cli/Cargo.toml](https://github.com/Hmbown/DeepSeek-TUI/blob/9e19f03e68bf0ffaf4ea3d609def6b582db49f33/crates/cli/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/Hmbown/DeepSeek-TUI/blob/9e19f03e68bf0ffaf4ea3d609def6b582db49f33/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped update review
+
+Reviewed commit `eaff21a8b8e62e4693c69e71faa03db866820b9c` (commit date `2026-10-27T09:08:28-07:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete headless-runtime module facade; tool registry/dispatch, selected value/action validators, provider-scoped model resolution and three embedded routing fixtures. Concrete tools, TUI/runtime policy wiring, prepared calls and execution cleanup were not audited.
+
+This source is now the Codewhale repository under the historical deepseek-tui entry. The [tool registry](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e62e4693c69e71faa03db866820b9c/crates/tools/src/lib.rs#L638-L708) validates handler kind and a mutation flag before dispatch, but registration overwrites names and is explicitly infallible. Input/output schemas are stored without enforcement in this dispatcher, and handlers default is_mutating to false. A tool invocation described as validated therefore still depends on concrete handler validation and an outer authority boundary. The [required-action helper](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e62e4693c69e71faa03db866820b9c/crates/tools/src/lib.rs#L293-L320) rejects missing/non-string discriminators rather than silently selecting another operation, but accepts any string and leaves membership checks to dispatchers.
+
+The [execution lock](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e62e4693c69e71faa03db866820b9c/crates/tools/src/lib.rs#L581-L617) gives parallel calls a read lock and serial calls a write lock. Its re-entrancy marker bypasses acquisition entirely, without carrying the lock identity or held mode; nested serial work therefore requires an explicit caller contract rather than assuming exclusive access. [Timeouts](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e62e4693c69e71faa03db866820b9c/crates/tools/src/lib.rs#L698-L730) start only after lock acquisition and drop the handler future on expiry. There is no default timeout or local queue/concurrency bound, and dropping the future does not demonstrate subprocess/remote cleanup. Value-preview diagnostics serialize the complete value before clipping and can expose input excerpts, so confidentiality and input bounds must precede error formatting.
+
+The [model resolver](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e62e4693c69e71faa03db866820b9c/crates/agent/src/lib.rs#L183-L395) requires an explicit provider, resolves aliases within it and refuses to infer credential/route authority from model text. The [fixtures](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e62e4693c69e71faa03db866820b9c/crates/agent/src/lib.rs#L574-L634) specify provider-less refusal and no borrowing another provider's default. Pass-through/default rows still supply assumed capability fields, including supports_tools true, rather than measured provider support. The [runtime facade](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e62e4693c69e71faa03db866820b9c/crates/runtime/src/lib.rs#L1-L67) documents a headless/TUI split but does not establish the exported modules' behavior or boundary-check execution. Preserve provider-scoped identity and capability provenance; no Rust build, native runtime, provider or test ran.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1` (commit date `2026-10-28T03:14:12-07:00`), compared with `eaff21a8b8e62e4693c69e71faa03db866820b9c`. Earlier findings remain historical evidence.
+
+**Scope:** Codewhale's new REPL fence parser and selected Python-runtime startup/round-settlement branches; historical source ID retained. The complete changed-path inventory contains 720 paths; the assessment below is limited to the cited branches.
+
+The REPL parser requires an opening fence on its own line with at most three spaces and no extra info string, avoiding incidental prose and repl-output blocks. See [crates/repl/src/sandbox.rs](https://github.com/codewhale-hq/codewhale/blob/687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1/crates/repl/src/sandbox.rs#L10-L67). The runtime uses a session-specific readiness sentinel, a bounded startup wait and kill-on-drop; failed rounds mark the interpreter broken and request termination before reuse. Inline rounds have a timeout, while context/RLM rounds intentionally have none. See [crates/repl/src/runtime.rs](https://github.com/codewhale-hq/codewhale/blob/687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1/crates/repl/src/runtime.rs#L185-L289) and [crates/repl/src/runtime.rs](https://github.com/codewhale-hq/codewhale/blob/687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1/crates/repl/src/runtime.rs#L546-L573).
+
+For Teamagent, model-produced code remains executable untrusted input even when fence syntax is precise. These spawn branches launch Python without demonstrating OS sandbox attachment; environment filtering and process termination are separate controls. A requested kill is not a cleanup receipt, and timeout-free RLM rounds require a caller-owned total budget. No Python code or native confinement tests were run.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `ce44c64170617ff7b412ee266620d3005cb8d13c` (commit date `2026-11-01T01:27:51-08:00`), compared with `687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded selected action-classification, policy-ordering and Windows process-risk fixture branches of Codewhale's new auto-review module; whole-repository diff was oversized. Remaining classifier, queued enforcement and publication receipts not audited.
+
+The [Codewhale policy](https://github.com/codewhale-hq/codewhale/blob/ce44c64170617ff7b412ee266620d3005cb8d13c/crates/engine/src/core/authority/auto_review.rs) checks configured blocks before deterministic fallback and emits structured decision context. Outside Bypass mode, selected built-in gates precede configured allows, including credential uploads and publish-like actions. Classification inspects tool names, parameters and some workspace evidence; fixtures include broad Windows image kills versus specific PID forms. Bypass explicitly skips those built-in holds, so they are not universally non-bypassable and static classification is not proof of process ownership.
+
+**Teamagent implication (inference):** Record approval mode, rule and exact operation context with each decision. Preserve hard Teamagent invariants independently of model or configurable ranking, and validate actual process/destination ownership at execution; do not import lexical permission heuristics as complete authorization or weaken existing standing grants through redundant prompts.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.

@@ -1,6 +1,6 @@
 """Read-only repository census. Run from the project root; never executes project code."""
 from pathlib import Path
-import json, re, subprocess, collections, concurrent.futures, argparse
+import json, os, re, subprocess, collections, concurrent.futures, argparse
 from build_catalog import description
 from text_output import configure_output, write_utf8_lf
 
@@ -19,7 +19,8 @@ TOPICS = {
 }
 
 def git(p,*args):
-    r=subprocess.run(['git','-c','safe.directory='+p.as_posix(),'-C',str(p),*args],capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=30)
+    r=subprocess.run(['git','-c','safe.directory='+p.as_posix(),'-C',str(p),*args],capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=30,
+                     creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0)
     return r.stdout.strip() if r.returncode==0 else ''
 
 def inspect(p):

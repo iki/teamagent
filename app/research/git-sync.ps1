@@ -149,11 +149,14 @@ function Find-ResearchRepository {
         [void]$candidates.Add((Get-ResearchSafePath $Settings.GitCache ([IO.Path]::GetRelativePath($Settings.GitCache,$old))))
     }
     foreach ($relative in @($Entry.sourcePath,($Entry.category+'/'+$Entry.name))) { [void]$candidates.Add((Get-ResearchSafePath $Settings.GitCache $relative)) }
-    $categoryPath=Get-ResearchSafePath $Settings.GitCache $Entry.category
-    if (Test-Path -LiteralPath $categoryPath) {
-        foreach ($child in Get-ChildItem -LiteralPath $categoryPath -Directory -Force) {
-            if ($child.Name -match '^\.clone-') { continue }
-            if ((Get-ResearchBaseName $child.Name $Settings) -eq $Entry.name) { [void]$candidates.Add((Get-ResearchSafePath $Settings.GitCache ($Entry.category+'/'+$child.Name))) }
+    $categories=@($Entry.category)+@($script:ResearchCategoryAliases.Keys | Where-Object { $script:ResearchCategoryAliases[$_] -ceq $Entry.category })
+    foreach ($category in $categories) {
+        $categoryPath=Get-ResearchSafePath $Settings.GitCache $category
+        if (Test-Path -LiteralPath $categoryPath) {
+            foreach ($child in Get-ChildItem -LiteralPath $categoryPath -Directory -Force) {
+                if ($child.Name -match '^\.clone-') { continue }
+                if ((Get-ResearchBaseName $child.Name $Settings) -eq $Entry.name) { [void]$candidates.Add((Get-ResearchSafePath $Settings.GitCache ($category+'/'+$child.Name))) }
+            }
         }
     }
     $existing=@($candidates | Select-Object -Unique | Where-Object { Test-Path -LiteralPath $_ })
@@ -365,7 +368,9 @@ function Invoke-ResearchRepository {
                 $prefix=''
                 if ($row.lifecycle -eq 'outdated') { $prefix=$Settings.Values.TEAMAGENT_GIT_OUTDATED_PREFIX.Replace('<YYMM>',([DateTimeOffset]::Parse($row.lastCommitAt)).ToString('yyMM')) }
                 if ($row.lifecycle -eq 'removed') { $prefix=$Settings.Values.TEAMAGENT_GIT_REMOVED_PREFIX.Replace('<YYMM>',$Now.ToString('yyMM')) }
-                $target=Get-ResearchSafePath $Settings.GitCache ($Entry.category+'/'+$prefix+$Entry.name)
+                # Category aliases locate existing checkouts; lifecycle prefixes never move them across parents.
+                $targetParent=[IO.Path]::GetDirectoryName($path)
+                $target=Get-ResearchSafePath $Settings.GitCache ([IO.Path]::GetRelativePath($Settings.GitCache,(Join-Path $targetParent ($prefix+$Entry.name))))
                 if ($target -ne $path) {
                     if (Test-Path -LiteralPath $target) { $row.errors+=@('rename_destination_exists') }
                     else {

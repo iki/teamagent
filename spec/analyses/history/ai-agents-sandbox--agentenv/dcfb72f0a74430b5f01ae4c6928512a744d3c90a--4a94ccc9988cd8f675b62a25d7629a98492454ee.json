@@ -1,0 +1,350 @@
+{
+  "id": "ai-agents-sandbox--agentenv",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/kvcache-ai/AgentEnv",
+  "report": "spec/projects/ai-agents-sandbox--agentenv.md",
+  "analyzedSha": "dcfb72f0a74430b5f01ae4c6928512a744d3c90a",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T13:50:32+08:00",
+  "observedSha": "4a94ccc9988cd8f675b62a25d7629a98492454ee",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "4a94ccc9988cd8f675b62a25d7629a98492454ee",
+      "date": "2026-10-30T21:15:11+08:00",
+      "subject": "refactor(test-support): trim the AWS SDK used by the MinIO fixture"
+    },
+    {
+      "sha": "44eb6c3169851ebbbb5e08962c65272cbea19182",
+      "date": "2026-10-30T21:15:11+08:00",
+      "subject": "fix(deps): upgrade zip, hickory-resolver, aws-sdk and testcontainers"
+    },
+    {
+      "sha": "23e46a34aee51e74ea67b7572723015ddbf6a0c8",
+      "date": "2026-10-30T13:06:08+08:00",
+      "subject": "feat(compose): add the guest Compose runtime image"
+    },
+    {
+      "sha": "a828ee40a1a54e66a7d9fd6fd6a65d80f6e2e7de",
+      "date": "2026-10-30T10:30:54+08:00",
+      "subject": "feat(scheduler): add HA via Kubernetes Lease leader election"
+    },
+    {
+      "sha": "dc4df4b08ae554f1e29bdffc7cb3715549c5646a",
+      "date": "2026-10-29T16:41:55+08:00",
+      "subject": "feat(kernel): default KVM to prebuilt Linux 6.18"
+    },
+    {
+      "sha": "3129201d9d6c3d2105472df7912a91e7430350a0",
+      "date": "2026-10-29T16:41:55+08:00",
+      "subject": "fix: enable legacy v9 snapshot recovery with the v1000 runtime"
+    },
+    {
+      "sha": "8d08bb6af2e9af8d2f88654bfd415c1d6403dadd",
+      "date": "2026-10-29T16:41:55+08:00",
+      "subject": "feat: integrate nested KVM runtime and end-to-end tests"
+    },
+    {
+      "sha": "00627594cc01546d6d0c3434b5bd477bb2ca1e8d",
+      "date": "2026-10-28T23:41:29+08:00",
+      "subject": "feat: benchmark fresh sandbox startup throughput"
+    },
+    {
+      "sha": "f4a4d4bd1152d27ae9e875819c5f5f6c26c97eec",
+      "date": "2026-10-28T23:40:00+08:00",
+      "subject": "feat: add scheduler throughput benchmarks"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/integration-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/scheduler-ha-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "adev/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "compose-image/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "compose-image/Dockerfile.dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "compose-image/containerd.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "compose-image/daemon.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "compose-image/init",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/deps_manifest.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/benchmarks/benches/snapshot_benchmark.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/test-support/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/test-support/src/minio.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/k8s/base/role.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deploy/k8s/overlays/ha/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deploy/k8s/overlays/ha/config/scheduler.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deploy/k8s/overlays/ha/kustomization.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/internals/sandbox-testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/tests/nestedvirt-guest.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/tests/nestedvirt-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/cmd/leadership_loss.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/cmd/leadership_loss_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/scheduler/cmd/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/e2e/Dockerfile.stubnode",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/e2e/harness_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/e2e/k8s/redis.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/e2e/k8s/scheduler.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/e2e/k8s/stubnodes.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/e2e/stubnode/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/internal/discovery_ready_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/scheduler/internal/kubernetes_discovery.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/internal/leadership.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/internal/leadership_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/scheduler/internal/node_registry.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/scheduler/internal/node_registry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/internal/node_snapshot.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/internal/node_snapshot_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/internal/recovery_window_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/scheduler/internal/service.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/internal/service_benchmark_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/scheduler/internal/stale_pull_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/shared/config/binding_ttl_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/shared/config/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/shared/config/scheduler_leader_election_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/api/generated/src/models.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/api/impls/admin.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/api/openapi.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/bin/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/observability/model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/observability/service.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/firecracker/sandbox.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/integration/orchestrator.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -2,11 +2,11 @@
 
 Source: [codexbar-win](https://github.com/nesszer/Win-CodexBar) · [Analysis](../../projects/ai-agents-tokens--codexbar-win.md) · [models](../../models.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `86ed0ae1b9ee97306b80daebd75666d29fe8c5f9`; commit date: 2026-10-28T14:48:46+07:00; review date: 2026-10-28T14:52:35.205Z; observed SHA: `86ed0ae1b9ee97306b80daebd75666d29fe8c5f9`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `1d3c1305bfb643b6ea643d176bdc31c381ba27b1`; commit date: 2026-10-29T14:28:51+07:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `1d3c1305bfb643b6ea643d176bdc31c381ba27b1`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/nesszer/Win-CodexBar/compare/86ed0ae1b9ee97306b80daebd75666d29fe8c5f9...86ed0ae1b9ee97306b80daebd75666d29fe8c5f9). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/nesszer/Win-CodexBar/compare/1d3c1305bfb643b6ea643d176bdc31c381ba27b1...1d3c1305bfb643b6ea643d176bdc31c381ba27b1). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

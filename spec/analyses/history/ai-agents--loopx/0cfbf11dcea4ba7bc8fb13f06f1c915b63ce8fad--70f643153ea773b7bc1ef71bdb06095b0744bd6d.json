@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--loopx",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/huangruiteng/loopx",
+  "report": "spec/projects/ai-agents--loopx.md",
+  "analyzedSha": "0cfbf11dcea4ba7bc8fb13f06f1c915b63ce8fad",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T18:01:55+08:00",
+  "observedSha": "70f643153ea773b7bc1ef71bdb06095b0744bd6d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "70f643153ea773b7bc1ef71bdb06095b0744bd6d",
+      "date": "2026-11-01T17:24:27+08:00",
+      "subject": "Merge pull request #7801 from loopx-project/codex/update-worker-default-owner-20261101"
+    },
+    {
+      "sha": "938efb1efd4515ff3f54b008eebb5c820c05dbb3",
+      "date": "2026-11-01T17:19:08+08:00",
+      "subject": "Merge pull request #7802 from loopx-project/codex/release220-host-request-20261101"
+    },
+    {
+      "sha": "43dda7511db1800c0d573633a8dd65cbfde69d3c",
+      "date": "2026-11-01T14:21:23+05:30",
+      "subject": "refactor(host): separate request encoding from process lifecycle"
+    },
+    {
+      "sha": "a95d991575f72e6f42d6424748e15d9ecb445143",
+      "date": "2026-11-01T14:18:30+05:30",
+      "subject": "fix(update): pin detached worker to its owning installation"
+    },
+    {
+      "sha": "d41e71b0bee225b9cd69c48fae56e5fd23fa45b8",
+      "date": "2026-11-01T16:34:06+08:00",
+      "subject": "Merge pull request #7797 from loopx-project/codex/release220-final-repair-20261101T080018"
+    },
+    {
+      "sha": "ae5b1e8c3ff2baef7d601351eb3d7ec36c2872f6",
+      "date": "2026-11-01T16:18:46+08:00",
+      "subject": "docs(release): complete 2.2 context delivery and usage guidance"
+    },
+    {
+      "sha": "ec91c4dbbb9aecf0abd0395455fc52466506f2b2",
+      "date": "2026-11-01T16:10:07+08:00",
+      "subject": "feat(chat): support independent multi-recipient handoffs (#7787)"
+    },
+    {
+      "sha": "b0768d953a6d9cc9a0786255f3969594535dabda",
+      "date": "2026-11-01T16:00:04+08:00",
+      "subject": "fix(todo): retire old next steps after explicit guidance (#7766)"
+    },
+    {
+      "sha": "682080047f4548d0266111f5e924512f550df9d9",
+      "date": "2026-11-01T15:32:31+08:00",
+      "subject": "Merge pull request #7782 from loopx-project/codex/deferred-recovery-20261101"
+    },
+    {
+      "sha": "da4510af61277c0d0786fa5aa040ccb01538b1cb",
+      "date": "2026-11-01T14:38:15+08:00",
+      "subject": "fix(benchmark): bind provider admission to each native invocation (#7777)"
+    },
+    {
+      "sha": "85b0975bb1f81c6ef41abb958c55071a80b2b451",
+      "date": "2026-11-01T14:29:56+08:00",
+      "subject": "Merge pull request #7786 from Jim-jimu/fix/lease-directory-glob-overlap"
+    },
+    {
+      "sha": "403e7491471317e3ca81344f25bb0133ae55d502",
+      "date": "2026-11-01T14:27:26+08:00",
+      "subject": "fix(chat): keep active work and accepted queued input alive (#7790)"
+    },
+    {
+      "sha": "0ce0eae183c40adfb994b18cda77abe993faed1a",
+      "date": "2026-11-01T14:16:01+08:00",
+      "subject": "Merge pull request #7784 from loopx-project/codex/context-failed-tool-read-20261101"
+    },
+    {
+      "sha": "0e78a19c277f4ca3d44313787162bc0444065172",
+      "date": "2026-11-01T13:41:06+08:00",
+      "subject": "Merge pull request #7778 from songoow/codex/explore-reconcile-eligible-history-20261101"
+    },
+    {
+      "sha": "43d4dea0c7025c72586022474bfafdf000928efd",
+      "date": "2026-11-01T13:40:43+08:00",
+      "subject": "Merge branch 'main' into codex/explore-reconcile-eligible-history-20261101"
+    },
+    {
+      "sha": "9fdef99d69654a969097719e04163b3c9a2ceaa0",
+      "date": "2026-11-01T13:40:35+08:00",
+      "subject": "Merge pull request #7764 from shangzh0/codex/explore-measurement-corrections-20261101"
+    },
+    {
+      "sha": "98391821a4b8c40c43c42ca940f97afaed874fc1",
+      "date": "2026-11-01T13:19:41+08:00",
+      "subject": "fix(context): reject reader pages from failed MCP results"
+    },
+    {
+      "sha": "6e33f2c67e78f0548e9a3755a2f066fcf02bff5f",
+      "date": "2026-11-01T13:15:26+08:00",
+      "subject": "Merge pull request #7781 from loopx-project/codex/calendar-task-process-restart-20261101"
+    },
+    {
+      "sha": "834c4d7e8280f391d34289273161d1b4c00f31b4",
+      "date": "2026-11-01T12:59:27+08:00",
+      "subject": "Merge pull request #7780 from loopx-project/codex/release220-checkpoint-fixture-20261101"
+    },
+    {
+      "sha": "1212ccc10c57e365826e0c9f378f203ec67005ea",
+      "date": "2026-11-01T12:58:12+08:00",
+      "subject": "fix(todo): offer lawful recovery for deferred wait edits"
+    },
+    {
+      "sha": "bd531b9fecc68647004404289e265f2b13309343",
+      "date": "2026-11-01T12:55:24+08:00",
+      "subject": "test(calendar): retain managed tasks across process restarts"
+    },
+    {
+      "sha": "37527360c4b21e62efb2ba6e250e2ba38f933bea",
+      "date": "2026-11-01T12:54:59+08:00",
+      "subject": "Merge commit '7c4bf290663a364fbb9e428cf37d10583bbb1881' into codex/explore-combined-history-preflight-20261101"
+    },
+    {
+      "sha": "7c4bf290663a364fbb9e428cf37d10583bbb1881",
+      "date": "2026-11-01T12:54:42+08:00",
+      "subject": "fix(explore): preserve measurement quarantine in saved finding reader"
+    },
+    {
+      "sha": "b4f9e7f1dcd327397705881a54c615404598a70d",
+      "date": "2026-11-01T12:46:34+08:00",
+      "subject": "Merge commit 'c0ce5eaa3749c5d28c9766db8c715b76316a2952' into codex/explore-combined-history-preflight-20261101"
+    },
+    {
+      "sha": "c7d901bc5b98ea3e62a850ad6d2e86722b429761",
+      "date": "2026-11-01T12:46:34+08:00",
+      "subject": "Merge commit '90d7d460b010777b583bec0ab8327a843cfa0202' into codex/explore-combined-history-preflight-20261101"
+    },
+    {
+      "sha": "c0ce5eaa3749c5d28c9766db8c715b76316a2952",
+      "date": "2026-11-01T12:46:13+08:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into codex/explore-committed-cli-replay-20261101"
+    },
+    {
+      "sha": "109b10c460b4db2ff6a909094442816315dbb046",
+      "date": "2026-11-01T12:41:36+08:00",
+      "subject": "Merge commit 'ce9459985c07e7d61508ed759064c3996064df13' into codex/explore-committed-cli-replay-20261101"
+    },
+    {
+      "sha": "bc8658523968d2ff5c59d56afeb920fbe95f71ef",
+      "date": "2026-11-01T12:35:00+08:00",
+      "subject": "Merge pull request #7776 from songoow/codex/provider-gateway-incremental-stream"
+    },
+    {
+      "sha": "ac63991c47c200de3daef3bd876591841e435245",
+      "date": "2026-11-01T12:34:39+08:00",
+      "subject": "test(benchmark): isolate capture admission and native startup fixtures"
+    },
+    {
+      "sha": "ce9459985c07e7d61508ed759064c3996064df13",
+      "date": "2026-11-01T12:33:27+08:00",
+      "subject": "Merge pull request #7759 from shangzh0/codex/stride-followthrough-20261101"
+    },
+    {
+      "sha": "8de782e7444c167a26e134da0f21bd2b59867691",
+      "date": "2026-11-01T12:32:08+08:00",
+      "subject": "Merge pull request #7691 from loopx-project/codex/benchmark-docker-host-bridge"
+    },
+    {
+      "sha": "4f912651e639107d1c1383130135daddb524dc9c",
+      "date": "2026-11-01T12:31:28+08:00",
+      "subject": "Merge pull request #7602 from loopx-project/codex/pr5677-windows-host"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/GOVERNANCE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/frontstage-pages.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-artifacts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/runtime-snapshots.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/loopx-control-plane/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/loopx-control-plane/docs/assets/native-chat-wait-after.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/loopx-control-plane/docs/assets/native-chat-wait-before.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/loopx-control-plane/src-tauri/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/loopx-control-plane/src-tauri/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/loopx-control-plane/src-tauri/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/loopx-control-plane/src-tauri/src/maintenance.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/loopx-control-plane/src-tauri/src/services.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/loopx-control-plane/src-tauri/src/services_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/loopx-control-plane/static/boot.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/answer-report-smoke.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/smoke/assets/delegation-request/after-basis-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/smoke/assets/delegation-request/after-basis-narrow.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/smoke/assets/delegation-request/after-missing-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/smoke/assets/delegation-request/after-missing-narrow.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/smoke/assets/delegation-request/after-team-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/smoke/assets/delegation-request/before-basis-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/smoke/assets/delegation-request/before-basis-narrow.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/conversation-history-smoke.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/conversation-return-browser-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/delegation-media-browser-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/delegation-preflight-smoke.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/delegation-search-browser-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/smoke/explore-finding-diagnostics-smoke.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/goal-workspace-craft-browser-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/smoke/multi-recipient-browser-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/owner-attention-source-fixture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/task-inspector-route-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/team-evidence-return-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/team-feedback-http-fixture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/team-feedback-recovery-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/team-report-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/data/chat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/data/conversation-requests.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/data/conversation-returns.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/data/conversation-returns.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/data/delegation-preflight.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/answer-report-page.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/answer-report-page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/attention-actions.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/channel-timeline.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/collaboration-card.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/completed-task-lane.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/context-drawer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/conversation-requests.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/conversation-requests.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/delegation-preflight-status.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/desktop-update.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/document-attachment.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/explore-finding-copy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-capability-settings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-create-request.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-draft-card.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-explore-results.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-explore-results.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-managed-results.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-overview.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-research-history.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-research-history.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-research-progress.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-research-results.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-research-timeline.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-tasks-view.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-tasks-view.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-team-evidence.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-team-results.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-team-work.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-tool-context.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-work-browse.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-work-browse.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-workspace-work.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-workspace-work.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/i18n.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/machine-configuration-settings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/manager-brief.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/markdown-blocks.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/markdown-blocks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/markdown.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/markdown.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/message-reading.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/message-reading.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/personal-workspace-contract.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/personal-workspace-model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/personal-workspace-page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/personal-workspace.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/private-conversation-panel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/research-record-comparison.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/result-catalog.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/result-catalog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/steward-report.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/task-request.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/update-progress.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/workspace-action-form.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/workspace-theme.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/router.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/views/dashboard-page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/visual-evidence/collaboration-source-runtime/after-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/visual-evidence/collaboration-source-runtime/after-narrow.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/visual-evidence/collaboration-source-runtime/before-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/site/public/blog/edgebench-feedback-and-memory/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/site/public/blog/typescript-control-plane-refactor/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/site/public/blog/zh/edgebench-feedback-and-memory/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/site/public/blog/zh/typescript-control-plane-refactor/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/checkpoint_judge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/checkpoint_supervisor.py",
+      "previousPath": null
+    },
+    {
+      "status": "R097",
+      "path": "benchmark/edgebench/compatibility/nonfinite-checkpoint-v2.patch",
+      "previousPath": "benchmark/edgebench/compatibility/nonfinite-checkpoint-v1.patch"
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/export_report.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/offline_scoring.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/edgebench/result_publication.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/source-default.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/RUNTIME.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/checkpoint.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/checkpoint_wake.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/codex.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/context_delivery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/harbor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/provider_failure.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/runtime/provider_request_admission.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/runtime/session_observation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/sforge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/sforge_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/sforge_checkpoint.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/runtime/sforge_json.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/sforge_warm_start.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/worker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/qualify_checkpoint_joint.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/tests/test_checkpoint_diagnostics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_checkpoint_judge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_checkpoint_model_transition.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_checkpoint_qualification.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/tests/test_context_delivery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_edgebench_feedback_docker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_edgebench_online.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_edgebench_report.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/tests/test_edgebench_result_publication.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_edgebench_source.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_native_checkpoint.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_native_goal_outcomes.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/tests/test_native_process_evidence.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/tests/test_provider_request_admission.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/tests/test_session_tail_observation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/tests/test_sforge_host_bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/tests/test_sforge_json.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_sforge_runtime.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

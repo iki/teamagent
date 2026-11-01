@@ -1,0 +1,925 @@
+{
+  "id": "ai-agents--codeaf",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/Agent-Field/CodeAF",
+  "report": "spec/projects/ai-agents--codeaf.md",
+  "analyzedSha": "3bf6072fdd8a64f6497634191fa20f23730fe8cb",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-27T11:49:16-04:00",
+  "observedSha": "20eb6952de6482ea8f8709784ff447b9d9ed3fc3",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "20eb6952de6482ea8f8709784ff447b9d9ed3fc3",
+      "date": "2026-10-31T07:41:20-04:00",
+      "subject": "Pairing, devices and sync connection: say the true thing, and ask before removing (#2087)"
+    },
+    {
+      "sha": "778ee15d3501d11371e9232c75d0b748c4c8c497",
+      "date": "2026-10-31T07:28:24-04:00",
+      "subject": "test: remote-task session fixtures pass on macOS temporary folders (#2092)"
+    },
+    {
+      "sha": "23f7edd19ac39093125602c6978fbcfaa1671e1f",
+      "date": "2026-10-31T06:14:52-04:00",
+      "subject": "Run a task on another paired computer while the chat stays here (#2085)"
+    },
+    {
+      "sha": "4e428003af8a78e45c1de49e663990ac962507f6",
+      "date": "2026-10-31T05:27:48-04:00",
+      "subject": "Continue the chat a person picks; keep the retry card; honest waits on a slow relay; trust-proxy for every relay limit (#2089)"
+    },
+    {
+      "sha": "b42fdf1b52143e3bbf76b94c90aa92ef3bd7e395",
+      "date": "2026-10-31T03:18:45-04:00",
+      "subject": "teams: opt-in team sharing between paired computers (#2080)"
+    },
+    {
+      "sha": "9be6706b38caabe1723f63b7395f71694a621f96",
+      "date": "2026-10-31T02:11:05-04:00",
+      "subject": "A displaced window keeps its unsent turns, and a taken chat can be taken again (#2091)"
+    },
+    {
+      "sha": "96381125ede5037f60a5112e46f664579f70b74f",
+      "date": "2026-10-31T01:23:17-04:00",
+      "subject": "Fix what the Mac tester found: a deleted home is never rewritten, macOS test reds, provenance on private apply (#2086)"
+    },
+    {
+      "sha": "152134cdd5301362031f9ee6083cb51249dbc660",
+      "date": "2026-10-30T22:07:19-04:00",
+      "subject": "codeaf devbox: an always-on computer on your own Railway account (#2081)"
+    },
+    {
+      "sha": "70c5c62464d712ceffeb0bd0c39ba78ca2474741",
+      "date": "2026-10-30T22:06:50-04:00",
+      "subject": "Sync off keeps every chat, and a copied older chat can no longer be wiped (#2082)"
+    },
+    {
+      "sha": "72a2792e638e743a963a8695be0d4e98d5041e2b",
+      "date": "2026-10-30T18:58:18-04:00",
+      "subject": "One relay per release channel, deployed by CI when relay code changes (#2079)"
+    },
+    {
+      "sha": "f3e4f6f7bd503c161d9dd3482b32c1ee6557140a",
+      "date": "2026-10-30T18:13:12-04:00",
+      "subject": "Continue a chat from another computer every time, and let doctor repair sync (#2078)"
+    },
+    {
+      "sha": "f128ec3688722b4b4251880d033c8411111c4e93",
+      "date": "2026-10-30T15:04:48-04:00",
+      "subject": "fix: make dev's Full check green (promotion tests, archived relay client, run-row ordering) (#2077)"
+    },
+    {
+      "sha": "6206dbcdc58fac63345e710a148a188fc2f2e839",
+      "date": "2026-10-30T15:04:23-04:00",
+      "subject": "fix(relay): harden the machine doors #2073 put on the hosted relay (#2076)"
+    },
+    {
+      "sha": "9a03226414116722e52378e00ee388e46eb2e6be",
+      "date": "2026-10-30T12:47:27-04:00",
+      "subject": "Never lock a person out of their own chat on an older sync service (#2075)"
+    },
+    {
+      "sha": "34ced44cf4fe1c1c3755ce1928d4916bb3037955",
+      "date": "2026-10-30T11:31:49-04:00",
+      "subject": "Reach a paired computer through the relay sync uses (#2073)"
+    },
+    {
+      "sha": "ce06d290b3a1186cf6194d33e36c1e267ab2c324",
+      "date": "2026-10-30T11:12:27-04:00",
+      "subject": "feat(settings): a Devices tab — add, rename and remove computers from /settings (#2074)"
+    },
+    {
+      "sha": "9508f1e834263e7b0054f977db62003972e2ff82",
+      "date": "2026-10-30T09:11:36-04:00",
+      "subject": "fix: --host over ssh no longer evicts a session host started with CODEAF_SYNC_URL (#2067)"
+    },
+    {
+      "sha": "b8f62f622010baba7fc8cf93d6f52d30ee6035dc",
+      "date": "2026-10-29T13:45:46-04:00",
+      "subject": "cellstore: background seal notices go to the log, not through the chat frame (#2030)"
+    },
+    {
+      "sha": "66fa77eab09f317b328d8ee0bd7ea3d32df917e1",
+      "date": "2026-10-29T07:55:36-04:00",
+      "subject": "fix: reject malformed write payloads before changing files (#2028)"
+    },
+    {
+      "sha": "af030384b610e3593f65066392f50cf6f992dd9b",
+      "date": "2026-10-28T18:47:13-04:00",
+      "subject": "fix: honor explicit fallbacks and preserve finished shell calls (#2020)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "PERF.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf-release/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf-release/service.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf-release/service_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/approvals.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/approvals_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/c10_selfhost_pair_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/c10_sync_unnamed_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/cell_list_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_at.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_at_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_beside.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_host.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_host_teams.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_lanes.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_layout.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_orchestrate.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_pair.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_surface.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_taskcomputers.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_taskcomputers_default_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_taskcomputers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/cluster.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/cluster_deadline_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/cluster_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/cluster_unreachable_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/devbox.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/devbox_remove_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/devbox_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/devices.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/devices_outage_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/devices_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/displaced_watch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/do.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/do_reasoning_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/do_task_launch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/do_task_store.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/do_task_store_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/doctor.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/doctor_repair.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/doctor_repair_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/engine.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/engine_environment_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/final_save.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/helpwidth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/hosted_takeback_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4_cluster_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4_devices_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4_final_save_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4_help_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4_machine_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4_pair_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4_progress_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4_syncdrive_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4b2_cluster_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4b2_devices_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4b2_pair_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4fix2_devices_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4fix2_service_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4fix2_solo_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4fix3_cluster_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4fix3_devices_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4fix4_preidentity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4fix_at_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4fix_compat_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4fix_devices_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/l4fix_unpaired_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/olderchats.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/olderchats_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/pair.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/pair_status.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/pair_terminal.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/pair_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/pairlink.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/pairlink_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/pairroute.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/privacy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/quit_handoff_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/quit_save_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/quit_tail_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/quit_wait_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/serve_presence.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/serve_presence_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/serve_state.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/serve_state_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/serve_tasks.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/serve_tasks_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/sync_off_home_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/sync_progress.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/syncdrive.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/syncdrive_live.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/synctake.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/task_stability_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/team_launch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/team_resume.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/usage.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2020-explicit-fallbacks-and-finished-calls.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2028-validate-write-content.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2030-guard-notices-to-the-log.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2067-host-relay-engine-pingpong.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2073-reach-machines-through-sync-relay.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2074-settings-devices-tab.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2075-never-locked-out.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2076-relay-machine-door-hardening.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2077-full-check-reds.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2078-continue-every-time.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2079-relay-per-channel.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2080-teams-on-relay.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2081-devbox.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2082-sync-off-keeps-chats.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2085-task-on-another-computer.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2086-deleted-home-and-once-chats.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2087-pairing-connection-words.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2089-relay-l3-findings.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2091-displaced-window-keeps-turns.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/changes/unreleased/2092-remote-task-fixtures-macos.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/relay.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/remote-access-testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/rules/ci.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/rules/promotion.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/atlas/pairing.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/catalog/catalog.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/catalog/l4fix2_names_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/catalog/l4fix4_picker_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cell/copy.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cell/copy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cellstats/home_removed_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellstats/recorder.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cellstore/chat_warmth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellstore/daemon.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellstore/daemon_stuck.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellstore/guard.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellstore/guard_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellstore/homecapture_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cellstore/l4_outage_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellstore/localwork.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellstore/published.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellstore/restate.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellstore/sealwatch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellstore/seat.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cellstore/store_busy.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cellstore/store_busy_budget_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cellstore/store_busy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cellstore/store_busy_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cellstore/store_busy_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellstore/syncops.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellstore/transport.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellsync/batch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellsync/branch.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cellsync/chat_priming_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellsync/engine.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellsync/fetch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellsync/held.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cellsync/l4fix_close_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cellsync/publish.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/chatlist/collapse_copies_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

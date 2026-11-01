@@ -1,0 +1,690 @@
+{
+  "id": "ai-agents--gemini-cli",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/google-gemini/gemini-cli",
+  "report": "spec/projects/ai-agents--gemini-cli.md",
+  "analyzedSha": "b8fa817155731c783d47dc6eaeee63163c0ec723",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T01:27:48Z",
+  "observedSha": "6814e00d6b148c3a1d57244d5d7040f7c541009d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "6814e00d6b148c3a1d57244d5d7040f7c541009d",
+      "date": "2026-10-30T21:38:47Z",
+      "subject": "fix(core,cli): preserve selected model across transient fallback, cancel, and rewind (#30059)"
+    },
+    {
+      "sha": "4c2d6f2355ef4257c6b7c1a0ca1f923e13e45bb9",
+      "date": "2026-10-30T20:53:41Z",
+      "subject": "fix(cli): add missing active and focus keys to custom theme ui schema (#30032)"
+    },
+    {
+      "sha": "a60946692b11e2f144a8fe4db46bbc4e514daa7a",
+      "date": "2026-10-30T17:57:39Z",
+      "subject": "fix(core): resolve symlinked paths canonically in GlobTool (#30042)"
+    },
+    {
+      "sha": "b04bbf25e566c014bd5b29212d978c9f74b55ddd",
+      "date": "2026-10-30T17:33:34Z",
+      "subject": "fix(cli): serialize concurrent extension installs with per-extension lock (#29036) (#30039)"
+    },
+    {
+      "sha": "40fefe0ae0fc00b371c88828997859d68576ffe9",
+      "date": "2026-10-30T16:38:09Z",
+      "subject": "fix(core): handle Windows libuv zero-device stat reporting in readSecureFileBuffer (#30044)"
+    },
+    {
+      "sha": "c9d511e0ef7c9115d5b5ac133497740cc7184b6d",
+      "date": "2026-10-30T16:31:17Z",
+      "subject": "fix(core): flush pending SSE event buffer at stream EOF in CodeAssistServer (#30050)"
+    },
+    {
+      "sha": "0df3daa9f90785e2eac7eaef4c997d5b44b7ac6e",
+      "date": "2026-10-30T16:28:04Z",
+      "subject": "fix(core): honor .git/info/exclude and core.excludesFile in shadow repo (#30034)"
+    },
+    {
+      "sha": "b633c0703417eff3f6db8b684515e2b26a824e82",
+      "date": "2026-10-29T20:33:53Z",
+      "subject": "    fix(core): gate background log stream initialization on execution lifecycle transition (#30031)"
+    },
+    {
+      "sha": "2ac0d6caaa3d6b691fdacdc9671830464194273d",
+      "date": "2026-10-29T20:33:04Z",
+      "subject": "refactor(cli): decouple ToolGroupMessage from internal type guards and payload structures (#30041)"
+    },
+    {
+      "sha": "16ba20c92d397cc094615794a09086f4e09f9e46",
+      "date": "2026-10-29T20:28:22Z",
+      "subject": "fix(cli): Fixes unexpected truncation and toggle behavior in Expandab… (#29965)"
+    },
+    {
+      "sha": "4a8383b9db43aed3f1a1acef0b5114d810722195",
+      "date": "2026-10-29T18:47:31Z",
+      "subject": "fix(core): prevent $-pattern corruption in LLM prompt templates (#30035)"
+    },
+    {
+      "sha": "4ad5fc3ead9e10f4ed55d22ad4f81c63f0b04dae",
+      "date": "2026-10-29T18:45:57Z",
+      "subject": "fix(ci,sdk): run SDK tests in PR CI and fix AgentLoopContext mock in session.test.ts (#30023)"
+    },
+    {
+      "sha": "59e9c2f782df8b90df7a95bc8f3c001fc5441299",
+      "date": "2026-10-29T18:34:44Z",
+      "subject": "fix(cli): anchor .git suffix removal to end of repo URL (#30013)"
+    },
+    {
+      "sha": "2245ebd24531fb045f1ba0da89c39e8172db7327",
+      "date": "2026-10-29T17:53:03Z",
+      "subject": "fix(cli): surface 429 rate limit cool-down and countdown in loading indicator (#30012)"
+    },
+    {
+      "sha": "3d9d13ab4fe82a6f0dbb7138b5397b584d7f141b",
+      "date": "2026-10-29T17:33:57Z",
+      "subject": "fix(core): use PowerShell CIM fallback for Windows IDE process lookup (#30006)"
+    },
+    {
+      "sha": "942ffd482dfd39184c2ca90fc4929923f06556f3",
+      "date": "2026-10-29T17:21:04Z",
+      "subject": "fix(core,cli): fix instances of incorrect \\n escape behavior (#29989)"
+    },
+    {
+      "sha": "718e97c2448e0384cb582409cf4e479437bf50fe",
+      "date": "2026-10-28T19:16:40Z",
+      "subject": "fix(core): list Auto in /model when dynamicModelConfiguration is enabled and preview access is disabled (#29998)"
+    },
+    {
+      "sha": "0293a080aa4d4dc7c2c001a3d0a2f195d26a9dc5",
+      "date": "2026-10-28T18:45:25Z",
+      "subject": "fix(vscode-ide-companion): register all extension disposables in context.subscriptions (#29994)"
+    },
+    {
+      "sha": "525f5ace533a80b64914d4aef258f0bf03d0cbb0",
+      "date": "2026-10-28T18:41:37Z",
+      "subject": "fix(core): normalize leading slashes in file search query for @ autocomplete (#29987)"
+    },
+    {
+      "sha": "ffe742a6d3f5d24210857a086b734d78d42768dd",
+      "date": "2026-10-28T17:52:29Z",
+      "subject": "feat(cli): add extension validation command and evaluation tests (#29980)"
+    },
+    {
+      "sha": "bde3f8b48fd51fdc59935dc581fe171602ed9a3f",
+      "date": "2026-10-28T17:26:29Z",
+      "subject": "fix(core): recognize dotted Gemini 3 models in supportsMultimodalFunctionResponse (#29982)"
+    },
+    {
+      "sha": "7fe11fd52eb110b9426974d740a03a4df3e36491",
+      "date": "2026-10-28T16:34:18Z",
+      "subject": "fix(ui): handle surrogate pairs when truncating in sanitizeForDisplay (#29993)"
+    },
+    {
+      "sha": "a835f98832be075866e38d4706b11accf8e2a455",
+      "date": "2026-10-28T16:30:44Z",
+      "subject": "fix(core): make isWithinRoot case-insensitive on Windows (#29999)"
+    },
+    {
+      "sha": "96f771f410de9c0c017d927ec12adff9bc60c678",
+      "date": "2026-10-28T16:05:27Z",
+      "subject": "fix(cli): bound inline history re-render after terminal width changes (#29904)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/cli/themes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/extensions/releasing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eslint.config.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integration-tests/checkpointing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/acp/acpFileSystemService.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/extensions/validate.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/extensions/validate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/config/extension-manager.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/config/extension-manager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/config/extensions/extensionUpdates.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/config/extensions/github.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/config/extensions/github.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/config/settings-validation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/config/settingsSchema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/AppContainer.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/AppContainer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/commands/rewindCommand.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/commands/rewindCommand.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/components/Banner.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/components/MainContent.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/components/MainContent.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/components/ModelDialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/components/messages/DenseToolMessage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/components/messages/ToolGroupMessage.compact.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/components/messages/ToolGroupMessage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/components/shared/ExpandableText.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/components/shared/ExpandableText.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/hooks/toolMapping.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/hooks/toolMapping.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/hooks/useAtCompletion.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/hooks/useBanner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/hooks/useCommandCompletion.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/hooks/useLoadingIndicator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/ui/hooks/useLoadingIndicator_429.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/ui/hooks/useStaticHistoryStartIndex.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/ui/hooks/useStaticHistoryStartIndex.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/layouts/DefaultAppLayout.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/layouts/DefaultAppLayout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/themes/theme.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/themes/theme.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/utils/textUtils.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/utils/textUtils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/availability/autoRoutingFallback.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core/src/availability/errorClassification.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/availability/errorClassification.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/code_assist/oauth2.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/code_assist/server.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/code_assist/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/config/config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/config/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/config/defaultModelConfigs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/config/models.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/config/models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/core/baseLlmClient.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/core/baseLlmClient.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/core/client.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/core/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/core/geminiChat.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/core/geminiChat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/fallback/handler.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/fallback/handler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core/src/ide/process-utils.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/ide/process-utils.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/ide/process-utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/routing/strategies/defaultStrategy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/routing/strategies/defaultStrategy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/routing/strategies/fallbackStrategy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/routing/strategies/fallbackStrategy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/routing/strategies/overrideStrategy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/routing/strategies/overrideStrategy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/services/executionLifecycleService.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/services/executionLifecycleService.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/services/gitService.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/services/gitService.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/services/modelConfigService.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/services/sessionSummaryService.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/services/sessionSummaryService.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/services/shellExecutionService.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/services/shellExecutionService.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/tools/ask-user.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/tools/ask-user.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/tools/glob.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/tools/glob.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/tools/shellBackgroundTools.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/tools/write-file.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/tools/write-file.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/editCorrector.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/editCorrector.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/events.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/fileUtils.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/fileUtils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/filesearch/fileSearch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/filesearch/fileSearch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/ignorePathUtils.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/ignorePathUtils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/llm-edit-fixer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/llm-edit-fixer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/summarizer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/summarizer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/textUtils.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/utils/textUtils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk/src/session.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/vscode-ide-companion/src/extension.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/vscode-ide-companion/src/extension.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/vscode-ide-companion/src/utils/vscode-mock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "schemas/settings.schema.json",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

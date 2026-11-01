@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--eve",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/vercel/eve",
+  "report": "spec/projects/ai-agents--eve.md",
+  "analyzedSha": "3205c7ba382799e63dc5dae6b518282c7720870b",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T04:27:43Z",
+  "observedSha": "db7850007a424b2f0d62f1909145acd2ff2d124f",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "db7850007a424b2f0d62f1909145acd2ff2d124f",
+      "date": "2026-10-31T01:22:21Z",
+      "subject": "Version Packages (rc) (#5724)"
+    },
+    {
+      "sha": "76e8e4ce865ed007bee0ffda86341affc110d34e",
+      "date": "2026-10-30T21:11:08-04:00",
+      "subject": "fix(eve): default @vercel/connect to 2.7.0 (#5733)"
+    },
+    {
+      "sha": "7dfd9e55666106bc32368016cf6084bca7deb5a3",
+      "date": "2026-10-30T22:54:39Z",
+      "subject": "chore(docs): update Geistdocs to 2.14.2 (#5723)"
+    },
+    {
+      "sha": "b973f91c661d293d977c7a47319b0a8bee245b36",
+      "date": "2026-10-30T15:51:51-07:00",
+      "subject": "docs(feature): remove the Build an Agent tutorial (#5717)"
+    },
+    {
+      "sha": "e11fbe16d2cc3e621d4f7cdba3e0731fd393e981",
+      "date": "2026-10-30T21:31:41Z",
+      "subject": "docs: fold reference pages into one sidebar folder (#5707)"
+    },
+    {
+      "sha": "987f34a4cc1684b6abe8ca91925c04d0d23c1c60",
+      "date": "2026-10-30T21:31:41Z",
+      "subject": "docs: move overview pages to section headers (#5684)"
+    },
+    {
+      "sha": "aa31be1c88ef5348ab511d27599c6af6533529a0",
+      "date": "2026-10-30T14:15:25-07:00",
+      "subject": "fix(docs): open the sidebar section that contains the current page (#5677)"
+    },
+    {
+      "sha": "007e7f439be8bae7a8d62fba8cd4d6b84b88fe8c",
+      "date": "2026-10-30T14:15:25-07:00",
+      "subject": "docs: split channel pages into overview and reference (#5584)"
+    },
+    {
+      "sha": "d44dbae254e505fae949aad9acdd4961fcc55dae",
+      "date": "2026-10-30T16:53:24-04:00",
+      "subject": "Version Packages (rc) (#5686)"
+    },
+    {
+      "sha": "6c0cc71d23b892c068acd2e493d3d52d250f3d7a",
+      "date": "2026-10-30T16:37:07-04:00",
+      "subject": "chore(release): publish release candidates to npm latest (#5704)"
+    },
+    {
+      "sha": "7462ab39f7fa9cc2c052456c82718df9071a1834",
+      "date": "2026-10-30T16:30:27-04:00",
+      "subject": "feat!: move eve to 1.0 release candidates (#5620)"
+    },
+    {
+      "sha": "68652995a1ecd70f25286da1d908638348a9b531",
+      "date": "2026-10-30T16:21:22-04:00",
+      "subject": "[2/2] fix(eve): keep channel background work and eve's build data intact on Nitro (#5698)"
+    },
+    {
+      "sha": "89dcadc221a3bff5479dc79d8161c163dbf9f417",
+      "date": "2026-10-30T15:55:47-04:00",
+      "subject": "chore(eve): match workflow step targets by resolved path on Windows (#5697)"
+    },
+    {
+      "sha": "a10b3f0c97f10317e65c4217195c2cbadbb58663",
+      "date": "2026-10-30T15:46:09-04:00",
+      "subject": "[1/2] fix(eve): configure eve's Nitro host from one spec and route table (#5692)"
+    },
+    {
+      "sha": "e1932e2624aaecc059fd3b48ab6091e15540c499",
+      "date": "2026-10-30T18:50:44Z",
+      "subject": "docs: tighten Slack code channel docs (#5676)"
+    },
+    {
+      "sha": "9cdbc274be4bca28d4c61ac12ca6a784b0a18a32",
+      "date": "2026-10-30T18:48:31Z",
+      "subject": "docs: merge the 1.0 and v27 upgrade guides into one Upgrade to 1.0 guide (#5678)"
+    },
+    {
+      "sha": "ff23f91a9c487647460c8e7e4eed6524d12b3d17",
+      "date": "2026-10-30T14:30:29-04:00",
+      "subject": "fix(docs): redirect migrated templates to their Vercel listings (#5679)"
+    },
+    {
+      "sha": "0fb7269e1999d190a0820e1d8ae89c6063dc27d3",
+      "date": "2026-10-30T10:54:28-07:00",
+      "subject": "fix(git): label gh activity with its description (#5668)"
+    },
+    {
+      "sha": "523b5d779a68f5cce98d930565c0998bb2af2c63",
+      "date": "2026-10-30T12:43:28-04:00",
+      "subject": "Version Packages (#5625)"
+    },
+    {
+      "sha": "02113a303bd0c2dd73db8fddded2c7d03eaa7ad9",
+      "date": "2026-10-30T12:22:11-04:00",
+      "subject": "fix(eve): keep requests ending on local results while an Anthropic server tool result is deferred (#4891)"
+    },
+    {
+      "sha": "32cef207c11ecf9a4ed09d24e766f0d56af256a0",
+      "date": "2026-10-30T12:11:37-04:00",
+      "subject": "fix(eve): propagate turn cancellation raised during model resolution (#4274)"
+    },
+    {
+      "sha": "c986b694908f1127e3fc7897dc988fd9734ab9b0",
+      "date": "2026-10-30T11:59:22-04:00",
+      "subject": "fix(eve): diff session projection tables row by row (#5635) (#5642)"
+    },
+    {
+      "sha": "86b68fb3a02d6c01820a2d62a95418cbec0fbeda",
+      "date": "2026-10-30T11:59:08-04:00",
+      "subject": "fix(eve): keep only the tail of bash output while a command runs (#5653)"
+    },
+    {
+      "sha": "bc5d06c59b66690dc52435853a7ab15c94259f3e",
+      "date": "2026-10-30T15:54:36Z",
+      "subject": "docs(eve): document decision model ambient Slack replies (#3656)"
+    },
+    {
+      "sha": "423b91c0d115f95a6d9f55c3b155fa5fb3d22e76",
+      "date": "2026-10-30T11:39:17-04:00",
+      "subject": "test(eve): pin session state deltas carrying whole projection tables (#5635) (#5637)"
+    },
+    {
+      "sha": "56e6a7d66ed710c7b7b639157cfaf9662b6c3905",
+      "date": "2026-10-30T11:38:50-04:00",
+      "subject": "test(eve): pin bash buffering whole command output before truncation (#5651) (#5652)"
+    },
+    {
+      "sha": "833f4a8ee21d08330f0fdfa2e36fc2df2b9daccd",
+      "date": "2026-10-30T11:31:35-04:00",
+      "subject": "docs: describe current behavior only and tighten every page (#5460)"
+    },
+    {
+      "sha": "6c620dfdaaca9b41c59021f408cfb90c9e817198",
+      "date": "2026-10-30T15:14:16Z",
+      "subject": "fix(eve): settle a provider result that arrives a step late (#5645) (#5648)"
+    },
+    {
+      "sha": "d8368c0bdd0cb1806104d2ca779a1a090b6ff903",
+      "date": "2026-10-30T11:04:55-04:00",
+      "subject": "test(eve): pin a late provider result introduced twice (#5645) (#5647)"
+    },
+    {
+      "sha": "131d3b73b146fba7ae687458d47256fe464b5f09",
+      "date": "2026-10-30T10:51:37-04:00",
+      "subject": "docs: hero demos play on channel pick, action labels, and small-screen homepage tweaks (#5636)"
+    },
+    {
+      "sha": "e44b89c7fbb60b301523850e354e1ea3476aed7e",
+      "date": "2026-10-30T10:47:46-04:00",
+      "subject": "fix(discord): refuse select option ids Discord would truncate (#5533)"
+    },
+    {
+      "sha": "13fe2efb8447212baa5bdb18d163a6a98e130ed9",
+      "date": "2026-10-30T10:47:40-04:00",
+      "subject": "fix(eve): reject non-positive web_fetch timeouts (#5532)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/technical-writing/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/technical-writing/references/content-types.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/technical-writing/references/editing-workflow.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/technical-writing/references/review-framework.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/technical-writing/references/style-rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/changelog.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".changeset/config.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/pre.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/pre/agent-runs-1-0.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/pre/connect-2-7-0.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/pre/eve-1-0.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/pre/nitro-host-foundation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/pre/nitro-runtime-output-dev.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/pre/prerelease-agent-prompts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/pre/quiet-github-activity.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/pre/registry-prerelease-requirements.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/pre/remove-build-an-agent-tutorial.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/pre/windows-step-targets.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/tool-result-media-sandbox-resume.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/typed-answer-caller-auth.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/discover-e2e-fixtures.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/discover-e2e-fixtures.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/bundle-analysis.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/changeset-title.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-local.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-postgres.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-vercel.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/eval-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-009-company-brain/EVAL.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-012-invoice-assistant/EVAL.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-013-crm-extension/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-013-crm-extension/EVAL.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-014-helpdesk-extension/EVAL.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/lib/native-authoring-setup.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/lib/native-authoring-setup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/app/[lang]/(home)/components/agent-types.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/(home)/components/architecture.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/app/[lang]/(home)/components/chat.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/app/[lang]/(home)/components/control-visual.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/(home)/components/cta.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/(home)/components/feature-grid.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/(home)/components/file-tree-view.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/(home)/components/file-tree.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/app/[lang]/(home)/components/get-started.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/(home)/components/hero-audience.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/app/[lang]/(home)/components/hero.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/(home)/components/home-content.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/(home)/components/install-switcher.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/(home)/components/nextjs-interop.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/app/[lang]/(home)/components/production.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/app/[lang]/(home)/components/section.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/app/[lang]/(home)/components/session-timeline.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/app/[lang]/(home)/components/why-eve.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/agents.md/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/docs/[[...slug]]/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/resources/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/sitemap.md/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/templates/[slug]/file-viewer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/templates/[slug]/opengraph-image.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/templates/[slug]/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/templates/[slug]/template-actions.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/templates/[slug]/template-readme.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/templates/[slug]/twitter-image.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/templates/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/app/[lang]/templates/template-gallery.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/sitemap.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/styles/geistdocs.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/components/geistdocs/mdx-components.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/components/geistdocs/synced-tabs.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "R061",
+      "path": "apps/docs/components/geistdocs/template-integration-icons.tsx",
+      "previousPath": "apps/docs/app/[lang]/templates/integration-icons.tsx"
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/components/geistdocs/use-cases.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/geistdocs.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/analytics/events.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/analytics/events.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/agents-transform.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/agents-transform.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/canonical.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/canonical.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/discovery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/fonts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/llms-index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/page-title.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/page-title.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/redirects.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/redirects.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/remark-component-markdown.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/remark-component-markdown.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/sitemap-transform.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/sitemap-transform.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/sitemap.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/sitemap.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/integrations/data.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/integrations/logos.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/lib/templates/compose.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/lib/templates/compose.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/lib/templates/data.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/templates/links.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/templates/manifest.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/lib/templates/og-image.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/lib/templates/readme-links.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/lib/templates/readme-links.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/lib/templates/sync-core.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/lib/templates/sync-core.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channel/web-tanstack/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channel/web/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/scripts/sync-templates.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/fixtures/weather-agent/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/fixtures/weather-agent/turbo.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/frameworks/next/app/_chat/App.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/package-artifacts/lib/package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/package-artifacts/lib/package.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/templates/eve-coding-agent-template/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/templates/eve-coding-agent-template/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/templates/eve-coding-agent-template/agent/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/templates/eve-coding-agent-template/agent/channels/slack.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/templates/eve-coding-agent-template/agent/extensions/git.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/templates/eve-coding-agent-template/agent/instructions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/templates/eve-coding-agent-template/agent/instructions/code-channels.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/templates/eve-coding-agent-template/agent/lib/code-channel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/templates/eve-coding-agent-template/agent/tools/open_code_channel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/templates/eve-coding-agent-template/agent/tools/update_code_channel_status.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/templates/eve-coding-agent-template/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/templates/eve-coding-agent-template/pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/templates/eve-discord-agent-template/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-config.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/channels/chat-sdk.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/chat-sdk/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/chat-sdk/meta.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/chat-sdk/reference.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/channels/custom.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/channels/discord.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/discord/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/discord/meta.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/discord/reference.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/channels/eve.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/channels/github.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/github/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/github/meta.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/github/reference.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/channels/linear.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/linear/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/linear/meta.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/linear/reference.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/channels/linq.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/linq/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/linq/meta.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/channels/linq/reference.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/channels/mcp.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/channels/meta.json",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

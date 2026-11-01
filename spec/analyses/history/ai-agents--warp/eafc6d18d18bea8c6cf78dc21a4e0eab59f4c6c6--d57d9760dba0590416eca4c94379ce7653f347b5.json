@@ -1,0 +1,365 @@
+{
+  "id": "ai-agents--warp",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/warpdotdev/warp",
+  "report": "spec/projects/ai-agents--warp.md",
+  "analyzedSha": "eafc6d18d18bea8c6cf78dc21a4e0eab59f4c6c6",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T14:31:32-04:00",
+  "observedSha": "d57d9760dba0590416eca4c94379ce7653f347b5",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d57d9760dba0590416eca4c94379ce7653f347b5",
+      "date": "2026-10-30T15:27:58-07:00",
+      "subject": "Reset reconnects with no progress if there are no new events to send (#16696)"
+    },
+    {
+      "sha": "5acc8e7e46ed704c095ce801bf3e9a9c15ad19f0",
+      "date": "2026-10-30T14:36:48-07:00",
+      "subject": "Fix premature MCP protocol-version header during initialize (#16698)"
+    },
+    {
+      "sha": "89de3f5c9945eeee277e713f111d707d39857dff",
+      "date": "2026-10-30T11:23:35-07:00",
+      "subject": "feat: preview url idle retention (#16649)"
+    },
+    {
+      "sha": "b17a2ed0207a4aaf5e2481e1da1d4460e0852e42",
+      "date": "2026-10-30T11:41:49-04:00",
+      "subject": "Support managed LLM provider API keys in the harness driver (#16470)"
+    },
+    {
+      "sha": "01614bfac16db8a4dcac448751603b9b38eceae6",
+      "date": "2026-10-29T16:57:30-07:00",
+      "subject": "Prefer WARP_WORKSPACE_ROOT in factory-deferred-repositories skill (#16693)"
+    },
+    {
+      "sha": "5a55a2aca77339ad75637bed650352369ee7fcb9",
+      "date": "2026-10-28T18:00:09-07:00",
+      "subject": "Fix environment checkout hanging during shell bootstrap (#16661)"
+    },
+    {
+      "sha": "e7bb41fc4ea45588f55cd5f37e5607e649c7fcaf",
+      "date": "2026-10-28T17:57:55-04:00",
+      "subject": "Release workflow: federate to GCP and Octo STS instead of stored keys (#16674)"
+    },
+    {
+      "sha": "811b70b8b2f666c5f5786c9f007184543bf6fd98",
+      "date": "2026-10-28T21:50:18Z",
+      "subject": "Align agent dev image Go linter with server CI (#16672)"
+    },
+    {
+      "sha": "5d26d9bb6ecbe509b4b976e0ffdebeb78385c803",
+      "date": "2026-10-28T21:37:57Z",
+      "subject": "fix: bump warpdotdev/oz-agent-action from 1.0.32 to 1.0.36 (#16518)"
+    },
+    {
+      "sha": "3c511541817bc825a0e6ecac9e2a32d4fb1631c3",
+      "date": "2026-10-28T17:24:55-04:00",
+      "subject": "Fix Tab key behavior always detected as user defined (#16529)"
+    },
+    {
+      "sha": "f7f136ed8f4665c21d066ec4a727da7ab59d1dae",
+      "date": "2026-10-28T17:07:27-04:00",
+      "subject": "fix: bump taiki-e/install-action from 2.87.0 to 2.87.26 (#16575)"
+    },
+    {
+      "sha": "513a94bc0d7a5850b11c05615fd5950fda359928",
+      "date": "2026-10-28T17:06:23-04:00",
+      "subject": "fix: bump trunk-io/analytics-uploader from 2.1.5 to 2.1.6 (#16562)"
+    },
+    {
+      "sha": "6aeacb6ad746011d1939cb6215728e40230078e0",
+      "date": "2026-10-28T19:32:33Z",
+      "subject": "Exclude warp acp-bridge from TUI detection (#16675)"
+    },
+    {
+      "sha": "365e3c8b72c89a5bb4ff1f1eb6d3c474ae52ebb5",
+      "date": "2026-10-28T15:08:59-04:00",
+      "subject": "ci: mint GitHub App tokens instead of warpmachineuser PATs (#16655)"
+    },
+    {
+      "sha": "23adf48cf4e4c57416dcb078b25bcb04472e575c",
+      "date": "2026-10-28T16:53:23Z",
+      "subject": "Update factory authoring skill to recommend automation scope filters (#16670)"
+    },
+    {
+      "sha": "f883a848f3b0e7f68c6238305fee1018beae0894",
+      "date": "2026-10-28T10:23:30-04:00",
+      "subject": "Preserve Linux runtime commands after shell profiles reset PATH (#16650)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/actions/prepare_environment/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/chainguard/release-changelog.sts.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/changelog_draft.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/create_release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cut_new_release_candidate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cut_new_releases.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/notify-docs-settings-changed.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/assets/bundled/bootstrap/bash_body.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/assets/bundled/bootstrap/fish.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/assets/bundled/bootstrap/zsh_body.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/ai/agent_sdk/driver.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/ai/agent_sdk/driver/environment.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/ai/agent_sdk/driver/environment_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/ai/agent_sdk/driver/harness/codex.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/ai/agent_sdk/driver/harness/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/ai/agent_sdk/driver/harness/mod_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/ai/agent_sdk/driver/harness/pi.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/ai/agent_sdk/driver/harness/pi_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/ai/agent_sdk/driver/preview_retention.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/ai/agent_sdk/driver/preview_retention_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/ai/agent_sdk/driver_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/ai/agent_sdk/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/ai/agent_sdk/mod_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/ai/agent_sdk/secret.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/ai/auth_secret_types.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/pane_group/pane/local_harness_launch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/server/server_api/ai.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/server/server_api/ai_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/settings_view/features_page.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/terminal/cli_agent.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/terminal/cli_agent_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/terminal/input.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/terminal/input_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/terminal/shared_session/sharer/network.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/terminal/shared_session/sharer/network_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/graphql/src/api/queries/task_secrets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/graphql/src/managed_secrets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/integration/src/bin/integration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/integration/src/test/bootstrapping.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/integration/tests/integration/shell_integration_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/managed_secrets/src/envelope_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/managed_secrets/src/manager.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/managed_secrets/src/secret_value.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/managed_secrets/src/secret_value_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/managed_secrets_wasm/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/mcp/src/runtime.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/mcp/src/runtime_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/warp_graphql_schema/api/schema.graphql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/agent-dev/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "resources/bundled/skills/factory-deferred-repositories/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "resources/bundled/skills/factory-files/SKILL.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

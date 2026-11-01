@@ -57,6 +57,18 @@ For Teamagent's research memory, retain exact version/commit citations even when
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `25162c4fc05c2d2d019b0ffb5b6b2a9f315ec007` (commit date `2026-10-29T09:15:19-04:00`), compared with `39dd3e5df9ede98578e6d9d7f53d3c7ee388c6c0`. Earlier observations remain historical evidence.
+
+**Scope:** Complete backend-selection diff and small cache/context changes; 170 changed paths inventoried. Native and compatibility inference paths not executed or comprehensively reviewed.
+
+[Backend selection](https://github.com/stanfordnlp/dspy/blob/25162c4fc05c2d2d019b0ffb5b6b2a9f315ec007/dspy/clients/backend_selection.py) rejects unsupported request options for an explicit native engine, while automatic selection can choose the compatibility engine. Explicit client base URLs take precedence over ambient provider endpoint variables, and unsupported non-null client settings prevent native selection. The decision itself performs no inference. This preserves more request semantics but does not establish account policy, endpoint trust or model entitlement.
+
+**Teamagent implication (inference):** Expose engine selection and rejected capabilities in a passive plan. Bind effective endpoint, model and account evidence before execution; changing a compatibility implementation must never silently change the authorized route or its training/cost policy.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [dspy](https://github.com/stanfordnlp/dspy); analyzed commit `39dd3e5df9ede98578e6d9d7f53d3c7ee388c6c0`; commit date 2026-10-27T18:33:52-04:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--dspy.md).
+Analysis metadata: source [dspy](https://github.com/stanfordnlp/dspy); analyzed commit `25162c4fc05c2d2d019b0ffb5b6b2a9f315ec007`; commit date 2026-10-29T09:15:19-04:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--dspy.md).
 <!-- teamagent-analysis:end -->

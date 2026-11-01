@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-mem--reef",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/Human-Agent-Society/reef",
+  "report": "spec/projects/ai-agents-mem--reef.md",
+  "analyzedSha": "95a84466936f1cdffcb2a9264aadbeb91c5aa34a",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T09:59:36Z",
+  "observedSha": "bac62a353d72cfc5af2ade296432445b192e4d7b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "bac62a353d72cfc5af2ade296432445b192e4d7b",
+      "date": "2026-11-01T17:02:34+08:00",
+      "subject": "feat(service): a data query gives each item's content with content=1 (#1067)"
+    },
+    {
+      "sha": "2a4a0c9c0b11aea4b1750913dc1409bf21ce4132",
+      "date": "2026-11-01T06:01:38Z",
+      "subject": "fix(train): Slime's SFT trains a demonstration that records no reward (#1063)"
+    },
+    {
+      "sha": "572d05adcf74bc130ca5beb3cc3b632c3b5dab04",
+      "date": "2026-11-01T05:55:25Z",
+      "subject": "feat(service)!: a scenario starts from an artifact item of its owner, and has no model setting (RFC #1062) (#1064)"
+    },
+    {
+      "sha": "e69def2952c08ecdd9c879f411eb16cfc95e3505",
+      "date": "2026-11-01T04:54:43Z",
+      "subject": "feat(train): the importance_sampling loss family on Slime, so GRPO task jobs train with score centering (#1060)"
+    },
+    {
+      "sha": "7bcfd1d7b686efac13f67c886723412cd8da87af",
+      "date": "2026-11-01T10:22:34+08:00",
+      "subject": "feat(storage): DataStore.record_links, each record item's place in its trajectory (#1059)"
+    },
+    {
+      "sha": "8376c15d98b0a35c59940c11ce2e86f91d5c39c8",
+      "date": "2026-11-01T02:06:41Z",
+      "subject": "refactor(harness)!: a harness step's size is the sample-to-job stage's job_samples (#1057)"
+    },
+    {
+      "sha": "32a87270cadc20d0997786bf9325914597522f12",
+      "date": "2026-11-01T09:09:27+08:00",
+      "subject": "feat!: store calls as ATIF trajectories, merge the record stages, and train without serving tensors (RFC #1054) (#1055)"
+    },
+    {
+      "sha": "e88821e36529c4e45d610a6118b2cb8b1d52337b",
+      "date": "2026-11-01T00:02:19Z",
+      "subject": "chore(deps): bump pyasn1 from 0.6.4 to 0.6.5 (#1056)"
+    },
+    {
+      "sha": "0bec230777b42d7260eacef4683c112a268418f1",
+      "date": "2026-11-01T03:40:17+08:00",
+      "subject": "refactor(harness)!: evolve a harness as one tree, and sync it with the person's own agent (#994)"
+    },
+    {
+      "sha": "eb789db2d95915fa9ec80477927324b1e2a34f7f",
+      "date": "2026-10-31T22:09:25+08:00",
+      "subject": "feat(train): the job listing carries each job's parameters, times and experiment run (#1053)"
+    },
+    {
+      "sha": "50bb7158cf16c43e1479af5a75f4182319164076",
+      "date": "2026-10-31T11:51:09Z",
+      "subject": "refactor: Reef as five services that coordinate through one shared store (#1045)"
+    },
+    {
+      "sha": "06c07815d72fa6ebfcbd7e7ab11d708b3cd25897",
+      "date": "2026-10-30T23:45:25+08:00",
+      "subject": "feat(slime): dataset jobs that Slime rolls out, rewards and trains on its own (RFC #1041) (#1042)"
+    },
+    {
+      "sha": "c36ea106f98aedc5d507be5ed1ba131cbb0ca4fd",
+      "date": "2026-10-30T14:24:17Z",
+      "subject": "chore(slime)!: sync Slime to 540ea919, and keep task jobs' engines in Slime's serving session (#1040)"
+    },
+    {
+      "sha": "704d3f562d30d40fc80923a7436151a6f038a73d",
+      "date": "2026-10-30T08:24:48Z",
+      "subject": "feat(train): score centering for Spindle full-parameter policy-gradient jobs (#1039)"
+    },
+    {
+      "sha": "9e4c425b918a39183e57785bcbb2f84168196efd",
+      "date": "2026-10-30T15:29:06+08:00",
+      "subject": "feat(autoenvscaling): run Claude Code as the task author, signed in with an OAuth token (#975)"
+    },
+    {
+      "sha": "3fe833c9374be71e2b5ba1251a19601edf9e8353",
+      "date": "2026-10-30T06:47:17Z",
+      "subject": "feat(slime)!: run each Slime job in its own driver, with task jobs on Slime's own engines (RFC #1033) (#1034)"
+    },
+    {
+      "sha": "2c7c7ca937328294ad81991e7e86a8d318b4e501",
+      "date": "2026-10-30T04:38:35Z",
+      "subject": "feat!: data store for a deployment; scenarios use the data items of their owner, records become items (RFC #1028) (#1029)"
+    },
+    {
+      "sha": "77b46675c9adcac8f475c750a4e953a5dcc43f84",
+      "date": "2026-10-30T12:07:39+08:00",
+      "subject": "fix(train): the Spindle full-parameter base reference follows the configured base (#1032)"
+    },
+    {
+      "sha": "f5005d465fa24be2435ae85b5d962a943a0aebaa",
+      "date": "2026-10-30T11:23:39+08:00",
+      "subject": "fix(train): a Spindle checkpoint export carries the base's generation config (#1030)"
+    },
+    {
+      "sha": "437a60081d186a976fc09ac401d03dc343c04a96",
+      "date": "2026-10-30T10:03:48+08:00",
+      "subject": "feat(autoenvscaling): calibrate, check for contamination and vary candidates from solver feedback (#936)"
+    },
+    {
+      "sha": "6a4000054b6e48ad5e427d6e9bdab73c6fe32cea",
+      "date": "2026-10-30T09:44:31+08:00",
+      "subject": "test(sao): collect the Gloo group before a context parallel rank exits (#1011)"
+    },
+    {
+      "sha": "818d3699a302e0e489d4e09e2c4a41a6316b90de",
+      "date": "2026-10-29T19:07:35Z",
+      "subject": "feat(train): a training instruction sets its job's parameters, and uploaded train tasks train (RFC #1023) (#1024)"
+    },
+    {
+      "sha": "19103a20895877ec992153c52a181e1de57e8674",
+      "date": "2026-10-29T18:54:54Z",
+      "subject": "refactor: remove what the sample-store refactor left behind (RFC #1009) (#1022)"
+    },
+    {
+      "sha": "36876a24e74ccea1e7f21f9cd862bee89bccdd2f",
+      "date": "2026-10-30T01:57:49+08:00",
+      "subject": "refactor(train): generated tasks train from the sample store; remove the own-job-data hooks (RFC #1009) (#1020)"
+    },
+    {
+      "sha": "fa493978bc9b3159a5dbc2c52fc08c7ba03b82a8",
+      "date": "2026-10-29T17:43:14Z",
+      "subject": "feat(train): a manual buffer that a client fills, and routes to list samples and edit it (RFC #1009) (#1018)"
+    },
+    {
+      "sha": "e0b7e93b21942465f78a5245a070c4cceaf70265",
+      "date": "2026-10-30T01:22:45+08:00",
+      "subject": "refactor(recipe): remove the SFT-then-RL recipe (#1017)"
+    },
+    {
+      "sha": "b1b7461a9e37abdc6730a9b751793a512bc02d74",
+      "date": "2026-10-29T17:16:30Z",
+      "subject": "refactor(record2record): remove the unit pool's reservation and selection (RFC #1009) (#1016)"
+    },
+    {
+      "sha": "37abed4c482c354c20933b191b72fe65e1e200ca",
+      "date": "2026-10-29T17:07:34Z",
+      "subject": "refactor(train): store the samples of each ready unit and compute the buffer from the store (RFC #1009) (#1015)"
+    },
+    {
+      "sha": "a4d594a29eb58e8f59cd57f59eb2760c9d205545",
+      "date": "2026-10-30T00:49:03+08:00",
+      "subject": "refactor(train): the sample-to-job stage gives each job its parameters (RFC #1009) (#1014)"
+    },
+    {
+      "sha": "f2e4c1fcaa09abe1219c0631c7dd8bef4757885f",
+      "date": "2026-10-29T23:34:47+08:00",
+      "subject": "feat(storage): keep imported tasks in the sample store (RFC #1009) (#1013)"
+    },
+    {
+      "sha": "29a657a81a00679db62379165b4a45d3e768581a",
+      "date": "2026-10-29T15:09:46Z",
+      "subject": "feat(storage): keep uploaded trajectories in a sample store that counts their training (RFC #1009) (#1012)"
+    },
+    {
+      "sha": "d02288ed8011acf313ffa90f499489a060f3d375",
+      "date": "2026-10-29T14:32:48Z",
+      "subject": "fix(train): hold a stage's own job data for an instruction in manual mode (#1010)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/rfc.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/MAINTAINER.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/labeler.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/python-design-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/check_python_design.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/check_test_layout.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/harness-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitmodules",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pre-commit-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/Dockerfile.reef",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docker/patch/mcore_parse_hybrid_pattern.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docker/patch/sglang_qwen3_5_mrope_rope.patch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/patch/slime_qwen3_5_vl_vision_numerics.patch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced_topics/state-model.rst",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/harness-adapter-modes-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/harness-adapter-modes-light.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/harness-architecture-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/harness-architecture-light.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/harness-method-step-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/harness-method-step-light.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/assets/readme-arch-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/assets/readme-arch-light.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/assets/readme-hero-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/assets/readme-hero-light.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/assets/readme-loop-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/assets/readme-loop-light.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/render_harness_architecture.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/render_harness_guides.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contributing/adding-components.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contributing/codebase-structure.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contributing/testing.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/executors.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/harness-adapters.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/loss-families.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/processors.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/sandboxes.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/surface.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/write-a-harness-method.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/write-a-recipe.rst",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/getting-started/harness-tutorial.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started/quickstart.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/cli.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/configuration.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/glossary.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/http-api.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/python-api.rst",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/rfcs/README.rst",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/rfcs/continual-opd.rst",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/rfcs/evolution-scope.rst",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/rfcs/method-integration.rst",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/rfcs/reef-router.rst",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/rfcs/stale-sample-training.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/app/globals.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/app/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/components/markdown.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/lib/docs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/lib/github.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/lib/news.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/public/slides/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/scripts/check-doc-contracts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/scripts/check-doc-links.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/vercel.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/evolve-your-harness.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/evolve-your-model.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/operate.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/gepa.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/guidance-ttt.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/opd.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/openclawrl.rst",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/user-guide/recipes/reefine.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/sao.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/sdft.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/sdpo.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/sft.rst",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/user-guide/recipes/skillclaw.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/tttd.rst",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/user-guide/scenario-models.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/tinker.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/troubleshooting.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/ace/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/ace/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/ace/examples/seed/rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/ace/examples/serve.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/ace/method.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/ace/prompts/curator.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/ace/prompts/reflector.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/basic/harness/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/autoenvscaling/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/autoenvscaling/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/autoenvscaling/author.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/autoenvscaling/author_credentials.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/autoenvscaling/author_tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/autoenvscaling/check_gateway.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/autoenvscaling/checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/autoenvscaling/claude_author.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/autoenvscaling/examples/tinker/serve.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/autoenvscaling/generator.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/autoenvscaling/task_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/coral/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/coral/examples/coral_demo/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/coral/examples/coral_demo/serve.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/coral/examples/coral_demo/smoke/echo_reef_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/coral/journal.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/coral/middleware.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/coral/processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/coral/recipe.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/agent_gateway.py",
+      "previousPath": null
+    },
+    {
+      "status": "R081",
+      "path": "recipes/beta/reefine/agent_rules.md",
+      "previousPath": "reef/recipe/reefine/agent_rules.md"
+    },
+    {
+      "status": "R082",
+      "path": "recipes/beta/reefine/agent_tools.ts",
+      "previousPath": "reef/recipe/reefine/agent_tools.ts"
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/answer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/examples/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/examples/configs/deployment.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/examples/configs/serve.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/examples/demos/bugfix.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/examples/demos/research.md",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "recipes/beta/reefine/examples/demos/workspace/adder.py",
+      "previousPath": "tutorials/reefine/demos/workspace/adder.py"
+    },
+    {
+      "status": "R100",
+      "path": "recipes/beta/reefine/examples/demos/workspace/test_adder.py",
+      "previousPath": "tutorials/reefine/demos/workspace/test_adder.py"
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/examples/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "R051",
+      "path": "recipes/beta/reefine/examples/run.py",
+      "previousPath": "tutorials/reefine/run.py"
+    },
+    {
+      "status": "R080",
+      "path": "recipes/beta/reefine/examples/run.sh",
+      "previousPath": "tutorials/reefine/run.sh"
+    },
+    {
+      "status": "R057",
+      "path": "recipes/beta/reefine/harness_facts/__init__.py",
+      "previousPath": "reef/harness/adapters/harness_facts.py"
+    },
+    {
+      "status": "R050",
+      "path": "recipes/beta/reefine/harness_facts/claude.yaml",
+      "previousPath": "reef/harness/adapters/claude/harness_facts.yaml"
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/harness_facts/codex.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/harness_facts/conversation_mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "R071",
+      "path": "recipes/beta/reefine/harness_facts/dsh.yaml",
+      "previousPath": "reef/harness/adapters/dsh/harness_facts.yaml"
+    },
+    {
+      "status": "R079",
+      "path": "recipes/beta/reefine/harness_facts/hermes.yaml",
+      "previousPath": "reef/harness/adapters/hermes/harness_facts.yaml"
+    },
+    {
+      "status": "R068",
+      "path": "recipes/beta/reefine/harness_facts/opencode.yaml",
+      "previousPath": "reef/harness/adapters/opencode/harness_facts.yaml"
+    },
+    {
+      "status": "R084",
+      "path": "recipes/beta/reefine/harness_facts/terminus.yaml",
+      "previousPath": "reef/harness/adapters/terminus/harness_facts.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "recipes/beta/reefine/health/environment/Dockerfile",
+      "previousPath": "reef/recipe/reefine/health/environment/Dockerfile"
+    },
+    {
+      "status": "R100",
+      "path": "recipes/beta/reefine/health/instruction.md",
+      "previousPath": "reef/recipe/reefine/health/instruction.md"
+    },
+    {
+      "status": "R100",
+      "path": "recipes/beta/reefine/health/task.toml",
+      "previousPath": "reef/recipe/reefine/health/task.toml"
+    },
+    {
+      "status": "R100",
+      "path": "recipes/beta/reefine/health/tests/test.sh",
+      "previousPath": "reef/recipe/reefine/health/tests/test.sh"
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/method.py",
+      "previousPath": null
+    },
+    {
+      "status": "R065",
+      "path": "recipes/beta/reefine/multimodal.py",
+      "previousPath": "reef/recipe/reefine/multimodal.py"
+    },
+    {
+      "status": "R090",
+      "path": "recipes/beta/reefine/pi_extension_api.md",
+      "previousPath": "reef/harness/adapters/pi/pi_extension_api.md"
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/prompts/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/prompts/agent_request.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/prompts/api_reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/prompts/env_words.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/prompts/extensions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/prompts/failing_requests.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/prompts/failures.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/prompts/harness.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/prompts/no_extensions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/prompts/plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/reefine/prompts/plan_no_tool.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

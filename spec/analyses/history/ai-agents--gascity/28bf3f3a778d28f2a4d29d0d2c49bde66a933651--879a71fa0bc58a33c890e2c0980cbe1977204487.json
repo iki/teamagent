@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--gascity",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/gastownhall/gascity",
+  "report": "spec/projects/ai-agents--gascity.md",
+  "analyzedSha": "28bf3f3a778d28f2a4d29d0d2c49bde66a933651",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T09:59:03Z",
+  "observedSha": "879a71fa0bc58a33c890e2c0980cbe1977204487",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "879a71fa0bc58a33c890e2c0980cbe1977204487",
+      "date": "2026-11-01T09:16:28Z",
+      "subject": "fix(trace): roll back a failed batch write and read past a torn batch (#7954) (#8438)"
+    },
+    {
+      "sha": "d1037acf8f3e089b095a570bb345da1dce5e6a0e",
+      "date": "2026-11-01T09:11:26Z",
+      "subject": "fix(dolt): prefer the recorded server pid when a lower pid shares its listener (#8330)"
+    },
+    {
+      "sha": "36d95e880bb4fe48f1da70c56798cf0217a331e7",
+      "date": "2026-11-01T07:56:23Z",
+      "subject": "fix(k8s): pin kubectl v1.36.6, drop three cleared Go-stdlib waivers (#8658)"
+    },
+    {
+      "sha": "5c9738f84c2860a92831e7a23cac6dce809df2f4",
+      "date": "2026-11-01T07:43:44Z",
+      "subject": "fix(supervisor): accept a running supervisor under a HOME override (#8657)"
+    },
+    {
+      "sha": "b63b0820cd0aea4abf29ab454ee10a378c935287",
+      "date": "2026-11-01T07:03:57Z",
+      "subject": "fix(sessionlog): resolve symlinked work directories in OpenCode lookup (#8649)"
+    },
+    {
+      "sha": "aff9be93b11cdc4fee7cd1c7e31108863840b6b9",
+      "date": "2026-11-01T06:53:43Z",
+      "subject": "fix(reconciler): retain creates deferred by start gates (#8298)"
+    },
+    {
+      "sha": "ecb4e377924bbe493d2aa247c1412a95ae3ecf40",
+      "date": "2026-11-01T06:37:05Z",
+      "subject": "ci: let the contract radar fetch the Go toolchain needed by bd (#8647)"
+    },
+    {
+      "sha": "6b90a9fb22ff9540ab3016994cdcab6757677a41",
+      "date": "2026-11-01T05:42:10Z",
+      "subject": "feat(runtime): OSC 7501 shadow recorder — session.program_status_shadow at 16 decision points, no behavior change (#8627)"
+    },
+    {
+      "sha": "0f4e1b316662bc3c0c0c423cbe99c66df1538c0d",
+      "date": "2026-11-01T04:05:28Z",
+      "subject": "fix(beads): a close echo no longer wipes every cached ready verdict (#8643)"
+    },
+    {
+      "sha": "3fbe727190376169376ee2b57deee01dcd5e7c35",
+      "date": "2026-11-01T04:01:42Z",
+      "subject": "feat(api): expose OSC 7501 program status read-only — worker State.Program, API fields, SSE frame, CLI STATUS (#8625)"
+    },
+    {
+      "sha": "3155e308fed649c3b47dae7d98f35392b50436c4",
+      "date": "2026-11-01T03:33:11Z",
+      "subject": "fix(herdr): honor Stop and WaitForIdle runtime contracts; add conformance cases (#8590)"
+    },
+    {
+      "sha": "ce6b62131de1a021a63242cbf7741f972ded6f1e",
+      "date": "2026-11-01T02:21:47Z",
+      "subject": "feat(storage): controller lock first, work-store identity, remote stage (S5-A) (#8509)"
+    },
+    {
+      "sha": "b0a51d2abfe87f5f344d23e80e3419552d2c674c",
+      "date": "2026-11-01T02:20:29Z",
+      "subject": "fix(runtime): keep OSC 7501 taps out of scan roots; read the inventory switch once (#8621)"
+    },
+    {
+      "sha": "1e2224a99aa9ffcb5354cec3bf6862441ac05145",
+      "date": "2026-11-01T02:09:19Z",
+      "subject": "feat(worker): declare OSC 7501 program status for pi, omp and grok (WC-PSTAT-001) (#8614)"
+    },
+    {
+      "sha": "f3c4ca5bbe3cf5e130aad564aab80f5a7d81acbe",
+      "date": "2026-11-01T01:37:54Z",
+      "subject": "fix: preserve bead routes for cleared holds (#8641)"
+    },
+    {
+      "sha": "de597d876c2606ab4372c94e5466a7e0ede084a2",
+      "date": "2026-11-01T01:35:45Z",
+      "subject": "feat(tmux): OSC 7501 read path and capture heal on the inventory lane, gc doctor program-status checks (#8623)"
+    },
+    {
+      "sha": "688b5c4e0acd10258674fcfedb3f777d9c221e39",
+      "date": "2026-11-01T01:17:46Z",
+      "subject": "feat(work-ladder): restart a rate-limited seat fresh once per episode; work.rate_limited for provider policy (#8132 split C3) (#8624)"
+    },
+    {
+      "sha": "7472f2967c2f80481146693c2a69fc61451d52e6",
+      "date": "2026-11-01T00:38:14Z",
+      "subject": "fix(storage): judge gc bd create --graph plans node by node on split cities (#8608)"
+    },
+    {
+      "sha": "cb0cc685d4e41c204458242f803fbfab5debfbf8",
+      "date": "2026-11-01T00:16:14Z",
+      "subject": "feat(tmux): arm OSC 7501 capture on create and respawn, relay wrap, capability gate (#8618)"
+    },
+    {
+      "sha": "a5a48145c3b0e6294320fde820ffa1309b5d57e3",
+      "date": "2026-10-31T23:31:43Z",
+      "subject": "fix(lanes): a conversation lane never types into a running Claude turn (ga-8n8fja) (#8597)"
+    },
+    {
+      "sha": "6f5e14c2f09e45282fb69315a20bd1e441d425d5",
+      "date": "2026-10-31T22:47:12Z",
+      "subject": "feat(storage): recover-stranded --purge-type message (S5-P) (#8498)"
+    },
+    {
+      "sha": "e4782ddff498b35f1ed55df1076d397d26303121",
+      "date": "2026-10-31T22:31:51Z",
+      "subject": "fix(stop): kill the session and order processes that outlive a city stop (#8637)"
+    },
+    {
+      "sha": "d8c763a50e1808da31cffd6cad637f7f18817518",
+      "date": "2026-10-31T22:30:42Z",
+      "subject": "fix(hook): worktree affinity for pool-seat claims, listing and demand order (#8594)"
+    },
+    {
+      "sha": "2916de01f3c6a8662d45805d2a5173e9d8293a70",
+      "date": "2026-10-31T21:57:14Z",
+      "subject": "feat(runtime): gc-osc7501 relay — probe-answering pty relay (Claude shim) (#8612)"
+    },
+    {
+      "sha": "1a3ee58cf608a5c94cbc0f8accf9a19445da3041",
+      "date": "2026-10-31T21:56:39Z",
+      "subject": "fix(ssh): report transport failures as ErrRuntimeUnavailable, bound every verb (#8589)"
+    },
+    {
+      "sha": "779d9cdefabdd192805ca341703e95e9c5b21d41",
+      "date": "2026-10-31T21:54:16Z",
+      "subject": "fix(config): carry upstream_env when folding a resolved provider chain (#5985)"
+    },
+    {
+      "sha": "e5035dc15a171228795ee5f01c2364e07e78d408",
+      "date": "2026-10-31T21:51:20Z",
+      "subject": "fix(cli): gc formula list honours --rig (#7120)"
+    },
+    {
+      "sha": "cdfa7791c731cbd2283628ace9866afc2075bcfa",
+      "date": "2026-10-31T21:48:37Z",
+      "subject": "refactor(runtime): move busy-trust policy into the leaf; queue busy wait-idle nudges at once (#8591)"
+    },
+    {
+      "sha": "295aa110b3378e3a69988d105e396cf84737f8f1",
+      "date": "2026-10-31T21:32:17Z",
+      "subject": "fix(storage): record a rig with nothing to import clean on split cities (#8629)"
+    },
+    {
+      "sha": "bbde0ed1cc15aa75026a953fc09a821e0c8879e5",
+      "date": "2026-10-31T21:27:39Z",
+      "subject": "feat(worker): declare OSC 7501 program status for builtin codex (tap) and claude (relay) (#8613)"
+    },
+    {
+      "sha": "1fc110700edd1150cf1ed7fa2b86ce1285ef0fdd",
+      "date": "2026-10-31T21:22:35Z",
+      "subject": "fix(runtime): stop spawned sessions inheriting a native store open's transient env (#8635)"
+    },
+    {
+      "sha": "54d9a6c6bdf2cb33a8f0b495c817d71d8dc8c8ae",
+      "date": "2026-10-31T21:17:53Z",
+      "subject": "feat(workladder): a seat's rate-limit episode (pure core, unwired) (#8620)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".bazelversion",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-bazel/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/requirements/mcp-agent-mail.in",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/requirements/mcp-agent-mail.overrides.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/requirements/mcp-agent-mail.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/advisory-probes.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/bazel-nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/bazel.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/homebrew-tap-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/rc-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/review-formulas.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/storeclass-baseline.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".goreleaser.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".trivyignore.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MODULE.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "TESTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc-osc7501/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc-osc7501/e2e_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc-osc7501/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc-osc7501/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc-osc7501/relay_e2e_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc-osc7501/testenv_import_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_backstop_lane.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_backstop_lane_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_decide_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_demand_reads.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/api_state.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/api_state_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/autoclose_fence_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/autoclose_parent_split_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/autoclose_sweep.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/bd_inventory_trust.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/bd_relocated_classes.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/bd_split_allowlist.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/bd_split_allowlist_realbd_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_split_graph_judge.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_split_graph_judge_realbd_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_split_graph_judge_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_split_judged_files.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_split_judged_files_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/bd_split_judges.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/bead_event_relic_residence_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/bead_policy_store.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/bead_policy_store_capability_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/beads_provider_lifecycle_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/beads_provider_script_fsync_stall_linux_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/beads_provider_script_scope_lifecycle_linux_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/build_desired_state.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/by_id_relic_proof.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cache_notification_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/city_runtime.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/city_runtime_config_publication.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/city_runtime_start_deferral_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/city_runtime_v2_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cityinit_impl.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/claim_class_route.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/claim_class_route_wire_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/class_flip_guard.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/class_flip_guard_review_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/class_flip_guard_round3_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/class_flip_guard_round4_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/class_flip_guard_verbs_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/class_store.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/class_store_cache.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/class_store_cache_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/class_store_emit.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/class_store_emit_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/cli_session_name_split_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cli_session_store.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/closed_named_index_split_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_converge.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_convoy.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_convoy_dispatch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_convoy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_doctor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_dolt_state.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/cmd_dolt_state_fsync_probe_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_dolt_state_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_formula.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_formula_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_hook.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_hook_claim.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_hook_claim_continuation_nudge_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_hook_claim_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_hook_claim_workflow_stop_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/cmd_hook_claim_worktree_affinity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_init.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_internal_materialize_skills.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_nudge.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_nudge_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_order.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_prime.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/cmd_prime_hook_sole_carrier_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/cmd_program_status_shadow_report.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_ready.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_rig.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_rig_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_session.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/cmd_session_program_status_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_session_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_session_wake_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_sling.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_sling_routevars_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_sling_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_storage.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_supervisor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_supervisor_city.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_supervisor_lifecycle.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_supervisor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_wait.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_wait_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/control_dispatch_graph_store_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/control_rig_graph_federation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/controller.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/controller_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/converge_scope_store_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/convergence_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/convergence_store.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/convergence_tick.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/conversation_lane_api.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/conversation_lane_api_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/conversation_lane_busy_turn_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/conversation_lane_cli.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/conversation_lane_cli_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/conversation_lane_exec.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/conversation_lane_host.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/conversation_lane_produce.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/conversation_lane_produce_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/conversation_lane_respond.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/conversation_lane_submit.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/conversation_lane_submit_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/cross_store_gate_close_paths_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/cross_store_gate_lane.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/cross_store_gate_lane_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/demand_cross_store_gate.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/demand_cross_store_gate_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/demand_pool_scale_check_leg_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/demand_serve_cross_store_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/demand_snapshot_budget_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/detached_orphan_lane.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/dispatch_control_ready.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/dispatch_execution_emit.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/doctor_cross_store.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/doctor_cross_store_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/doctor_executor_identity_residue_check.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/doctor_hold_label_routed_to.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/doctor_hold_label_routed_to_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/doctor_ops_recording.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/doctor_ops_recording_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/doctor_program_capture.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/doctor_run_target_backfill.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/doctor_storage_rigs.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

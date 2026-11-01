@@ -44,6 +44,18 @@ Evidence: [rust/src/tray/render.rs:375-466](https://github.com/nesszer/Win-Codex
 
 **Scope and limits:** Reviewed the complete one-file renderer delta and its pixel fixtures; no native tray session was run. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `1d3c1305bfb643b6ea643d176bdc31c381ba27b1` (commit date `2026-10-29T14:28:51+07:00`), compared with `86ed0ae1b9ee97306b80daebd75666d29fe8c5f9`. Earlier observations remain historical evidence.
+
+**Scope:** Codex pace-capability change and complete related duration-selection fixtures. Live provider responses, account entitlement, credential access, pricing and native packaging were not checked.
+
+The [Codex provider declaration](https://github.com/nesszer/Win-CodexBar/blob/1d3c1305bfb643b6ea643d176bdc31c381ba27b1/rust/src/providers/codex/mod.rs) selects a fixed-duration reset-window capability. [Pace fixtures](https://github.com/nesszer/Win-CodexBar/blob/1d3c1305bfb643b6ea643d176bdc31c381ba27b1/rust/src/core/pace_capability.rs) use a reported 43,200-minute window rather than inferring a calendar month, test the resulting elapsed-window fraction and reject selection of session, weekly or calendar-derived alternatives. Source comments attribute the duration to observed provider responses; this review did not independently authenticate an account or establish current plan coverage.
+
+**Teamagent implication (inference):** Preserve provider-reported window duration, reset instant and observation date separately from human labels and derived pace. Treat pace as a forecast with an explicit denominator, not an entitlement or cost guarantee. Unknown or incompatible windows should remain unavailable instead of borrowing another quota's period.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codexbar-win](https://github.com/nesszer/Win-CodexBar); analyzed commit `86ed0ae1b9ee97306b80daebd75666d29fe8c5f9`; commit date 2026-10-28T14:48:46+07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--codexbar-win.md).
+Analysis metadata: source [codexbar-win](https://github.com/nesszer/Win-CodexBar); analyzed commit `1d3c1305bfb643b6ea643d176bdc31c381ba27b1`; commit date 2026-10-29T14:28:51+07:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--codexbar-win.md).
 <!-- teamagent-analysis:end -->

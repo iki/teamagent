@@ -39,6 +39,12 @@ Evidence: [trafilatura/feeds.py:98-176](https://github.com/adbar/trafilatura/blo
 
 **Scope and limits:** Scoped static review of feed detection, normalization/decode helpers and CLI control-flow changes in the 37-path comparison. Core article extraction, XML serialization and URL-filename implementation were not fully audited. Fixtures were read, not run, and no crawl, malformed-input timing or extraction-quality measurement was performed.
 
+## Change review — 2026-11-01
+
+Reviewed `43ca3d4d656d7a5495708f1fca159cdbd5715b5d` (2026-10-30T18:05:47+01:00); 30 paths changed from `e14c0334488f208c313c349e6a2cc6761fa31ef9`. The selected downloader delta resolves the final response location against the last redirecting hop from retry history, preserving final source identity after cross-host relative redirects or a retried last hop. Its local-server regression covers absolute-path, relative-path and transient-failure cases. [Downloader](https://github.com/adbar/trafilatura/blob/43ca3d4d656d7a5495708f1fca159cdbd5715b5d/trafilatura/downloads.py), [fixtures](https://github.com/adbar/trafilatura/blob/43ca3d4d656d7a5495708f1fca159cdbd5715b5d/tests/downloads_tests.py).
+
+Keep requested URL, redirect provenance and final artifact origin distinct. Correct final-URL attribution does not authorize intermediate targets; the fixture explicitly disables SSRF protection for loopback tests. Preserve Teamagent's static-article default and refresh eligibility independently of URL identity. Scope: downloader/focused fixtures, not extraction algorithm changes; no network import or upstream tests executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [trafilatura](https://github.com/adbar/trafilatura); analyzed commit `e14c0334488f208c313c349e6a2cc6761fa31ef9`; commit date 2026-10-27T18:14:09+01:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--trafilatura.md).
+Analysis metadata: source [trafilatura](https://github.com/adbar/trafilatura); analyzed commit `43ca3d4d656d7a5495708f1fca159cdbd5715b5d`; commit date 2026-10-30T18:05:47+01:00; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--trafilatura.md).
 <!-- teamagent-analysis:end -->

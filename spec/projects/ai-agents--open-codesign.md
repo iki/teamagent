@@ -38,6 +38,16 @@ The [done tool](https://github.com/OpenCoworkAI/open-codesign/blob/4cf33932edc5f
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `5daa34e6c07103f45a40201a4ffefb5c3855562b` against prior analyzed commit `4cf33932edc5f687e3cf7190261ebbb02c898d08`. Historical reviews above remain separate evidence.
+
+The [context-budget estimator](https://github.com/OpenCoworkAI/open-codesign/blob/5daa34e6c07103f45a40201a4ffefb5c3855562b/packages/core/src/context-budget.ts) now includes serialized native-search replay output, using the maximum of the existing Pi estimate and a characters-divided-by-four estimate for that opaque payload. The [new fixture](https://github.com/OpenCoworkAI/open-codesign/blob/5daa34e6c07103f45a40201a4ffefb5c3855562b/packages/core/src/context-budget.test.ts) gives a short visible assistant message a large hidden replay payload and expects its paired history to be dropped under a small context window.
+
+Account for provider replay artifacts even when the UI shows little text. The maximum avoids counting both estimates as independent totals, but it is a heuristic rather than a tokenizer measurement or conservative sum of all distinct serialized fields. JSON serialization itself materializes the payload and has no new byte/depth guard here. Teamagent should budget actual provider envelopes under bounded serialization, record estimate provenance and preserve coherent tool/message groups during pruning; this delta does not demonstrate those broader guarantees.
+
+**Coverage:** Read the complete 53-line context-budget implementation/fixture delta. Pruning, provider envelope construction and other new context behavior were not audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [open-codesign](https://github.com/OpenCoworkAI/open-codesign); analyzed commit `4cf33932edc5f687e3cf7190261ebbb02c898d08`; commit date 2026-10-24T17:23:46+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--open-codesign.md).
+Analysis metadata: source [open-codesign](https://github.com/OpenCoworkAI/open-codesign); analyzed commit `5daa34e6c07103f45a40201a4ffefb5c3855562b`; commit date 2026-10-31T16:01:59+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--open-codesign.md).
 <!-- teamagent-analysis:end -->

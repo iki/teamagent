@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-proxy--switchyard",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/NVIDIA-NeMo/Switchyard",
+  "report": "spec/projects/ai-agents-proxy--switchyard.md",
+  "analyzedSha": "b0fa4fb201e5bb984ba7cc101bbe3252846a2ede",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-27T17:17:56-07:00",
+  "observedSha": "bdd7647b5d55be46b19764136128646edb08692e",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "bdd7647b5d55be46b19764136128646edb08692e",
+      "date": "2026-10-31T00:56:42Z",
+      "subject": "fix(libsy): preserve routing across Codex environment updates (#1191)"
+    },
+    {
+      "sha": "1faddb44ef3881db5bb56ea07df07e72a919b47a",
+      "date": "2026-10-30T22:50:46Z",
+      "subject": "feat(observability): expose one-hour cache writes (#1189)"
+    },
+    {
+      "sha": "c5dccc2e85c3f824b585f38dd5e6cdd1b92a37d2",
+      "date": "2026-10-30T15:28:07-07:00",
+      "subject": "feat(go): add pooled wazero routing backend (#1130)"
+    },
+    {
+      "sha": "f7d010dbd4f28eb3f2ce3fa43f7cab08b79006de",
+      "date": "2026-10-30T17:02:50-05:00",
+      "subject": "feat(router): allow custom decision criteria (#1187)"
+    },
+    {
+      "sha": "ae8cf7ed50f695ba3560ff0849506ad39cf40771",
+      "date": "2026-10-30T21:57:42Z",
+      "subject": "feat(plan-execute): support judged handoffs (#1188)"
+    },
+    {
+      "sha": "cfe43a4860dbcc427797de925eb7328b9123a04a",
+      "date": "2026-10-30T14:14:03-07:00",
+      "subject": "feat(python): reintroduce translation bindings (#1180)"
+    },
+    {
+      "sha": "7fb42b793938eddde452980acc2d236c433a8491",
+      "date": "2026-10-30T12:49:00-07:00",
+      "subject": "chore(desktop): move the desktop app to experimental/switchyard-desktop (#1184)"
+    },
+    {
+      "sha": "2d925b89c78db9b3746777c211aaeda13e639669",
+      "date": "2026-10-30T14:41:22-05:00",
+      "subject": "fix(translation): normalize Responses built-in tool roles (#1186)"
+    },
+    {
+      "sha": "19da537ee660602291007021f2cbd7525ac7d347",
+      "date": "2026-10-30T19:21:59Z",
+      "subject": "fix(composite): reset stage routing on user turns (#1185)"
+    },
+    {
+      "sha": "3a2a50e815af6e75ef61bf6d1217a62f6cd54356",
+      "date": "2026-10-30T12:15:09-07:00",
+      "subject": "refactor(go): separate native backend and WASM runtime (#1129)"
+    },
+    {
+      "sha": "aec5e2c2ed9e2fc25cc1781a9f4ce399a5070157",
+      "date": "2026-10-30T18:15:05Z",
+      "subject": "feat(desktop): add the tray usage popup (#1115)"
+    },
+    {
+      "sha": "c99d7d9a43f7b1761de42ee8fa8de6b6b21b7305",
+      "date": "2026-10-30T10:58:41-07:00",
+      "subject": "feat(desktop): share usage overview rows and add appearance assets (#1113)"
+    },
+    {
+      "sha": "65c02c4452858cc3d18f1d6d38e611c24e0b22d9",
+      "date": "2026-10-30T12:41:44-05:00",
+      "subject": "feat(composite): support independent stage profiles (#1176)"
+    },
+    {
+      "sha": "1d6f64981ae2a3395285f641cce7748820e99cc5",
+      "date": "2026-10-30T10:28:11-07:00",
+      "subject": "feat(desktop): open and clean up worktree sessions in the terminal app (#1111)"
+    },
+    {
+      "sha": "78f44c2f3679eb7e8f02425a1fbca1fef9a7bb20",
+      "date": "2026-10-30T10:18:51-07:00",
+      "subject": "test(desktop): cover named accounts and the Windows terminal launcher (#1108)"
+    },
+    {
+      "sha": "c18beb178f6825b457bd6449ca11ace629d9c1b0",
+      "date": "2026-10-30T10:00:33-07:00",
+      "subject": "test(desktop): verify harness preview, install, and restore edge cases (#1107)"
+    },
+    {
+      "sha": "3fbfdff83389f0df0d9e6216d437702ff6ce791c",
+      "date": "2026-10-30T16:58:47Z",
+      "subject": "feat(libsy): make the unmatched verdict threshold step configurable (#846)"
+    },
+    {
+      "sha": "fb89e12ba70b96b29fd23f14890bec80a9fcee71",
+      "date": "2026-10-30T09:55:31-07:00",
+      "subject": "feat(server): return outcome metadata from /v1/decision (#1122)"
+    },
+    {
+      "sha": "409d18189b6a9f36c0392a69b2e748badbe661cb",
+      "date": "2026-10-30T08:51:28-07:00",
+      "subject": "feat(ffi): support host-driven WASI routing (#1128)"
+    },
+    {
+      "sha": "3204554a1d997170804f02529a83fa15b1448558",
+      "date": "2026-10-30T02:57:08Z",
+      "subject": "feat(desktop): add named harness accounts to the Harnesses page (#1106)"
+    },
+    {
+      "sha": "d0dc8010848f62424fcb2716cc0d25eae1cd8826",
+      "date": "2026-10-29T19:50:51-07:00",
+      "subject": "feat(desktop): install and restore reviewed harness settings (#1105)"
+    },
+    {
+      "sha": "a64bacc9501d85b58b5436ed6d0a05298dca9787",
+      "date": "2026-10-29T22:42:37Z",
+      "subject": "feat(desktop): preview harness settings for Codex, Claude Code, and Pi (#1104)"
+    },
+    {
+      "sha": "eb193a5e5057023d83b14f988a48c6aa5d4a06c3",
+      "date": "2026-10-29T15:37:20-07:00",
+      "subject": "feat(desktop): inspect harness settings and add the Harnesses page (#1103)"
+    },
+    {
+      "sha": "58996e6f2c33cc60f590ef1bc1bd33aacfb25421",
+      "date": "2026-10-29T15:35:26-07:00",
+      "subject": "feat(python): expose the configured algorithm factory (#1178)"
+    },
+    {
+      "sha": "33cc0b864b5de8c76e9d203898273718155e4b2f",
+      "date": "2026-10-29T22:00:30Z",
+      "subject": "chore(release): prepare Python 0.4.0a1 (#1179)"
+    },
+    {
+      "sha": "00aa79898faa9164c06d2d9a08e181260b713d2d",
+      "date": "2026-10-29T13:51:19-07:00",
+      "subject": "feat(desktop): create, rename, duplicate, and delete routes in the terminal app (#1100)"
+    },
+    {
+      "sha": "d7641f65d377a4d886269dab66bff09d0c849302",
+      "date": "2026-10-29T20:33:45Z",
+      "subject": "feat(desktop): edit route algorithms and models in the terminal app (#1099)"
+    },
+    {
+      "sha": "eabeac0883bc1dd8565793b3bd586a05391cf431",
+      "date": "2026-10-29T20:18:35Z",
+      "subject": "feat(vgr): add optional execution limits and Hermes auxiliary example (#1171)"
+    },
+    {
+      "sha": "b7e6127f5461d252853f46c2fbb460ac2c6b55d5",
+      "date": "2026-10-29T13:17:40-07:00",
+      "subject": "feat(desktop): preview route target and algorithm edits in server configs (#1098)"
+    },
+    {
+      "sha": "dfba1ea054ffc06aa1cff87ba9e332df0c4a693a",
+      "date": "2026-10-29T13:02:22-07:00",
+      "subject": "feat(runner): build configured algorithms from deployment TOML (#1080)"
+    },
+    {
+      "sha": "e1ed2b5ea3cf53862e6ebb3828db26fae3e95dcd",
+      "date": "2026-10-29T19:31:48Z",
+      "subject": "feat(libsy): report served answers for VGR recovery (#1166)"
+    },
+    {
+      "sha": "e9084e37d90fb36d5a2438b5d2aea4b31d7d3e41",
+      "date": "2026-10-29T12:26:03-07:00",
+      "subject": "feat(desktop): fetch and cache upstream model lists from the terminal app (#1096)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".cargo/config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/go-bindings.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "INSTALLATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/backend_native.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/backend_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/backend_wazero.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/callbacks.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/switchyard.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/switchyard_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/testdata/cshared.c",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/testdata/cshared/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/translation.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/translation_native.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/translation_wazero.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/wasm_runtime.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bindings/go/wasm_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bindings/typescript/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy-llm-client/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy-llm-client/src/backend.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy-llm-client/src/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy-llm-client/src/observability.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy-llm-client/src/run.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy-llm-client/tests/observability.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/composite.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/fall_through.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/llm_class.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/llm_class/decision.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/plan_execute.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/stage.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/util/affinity.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/util/stage.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/util/tool_signals.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr/decide.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr/runtime.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr/runtime/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr/text.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/core/algorithm.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/core/classifier.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/core/outcome_metadata.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/core/state.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/libsy/src/prompts/plan-execute/handoff-decision.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/prompts/plan-execute/planning-system-prompt.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/switchyard-desktop/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/switchyard-desktop/src/controller.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/switchyard-desktop/src/gui.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/switchyard-desktop/src/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/switchyard-desktop/src/summary.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/switchyard-desktop/src/windows.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/switchyard-desktop/ui/basic.css",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/switchyard-desktop/ui/basic.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/switchyard-desktop/ui/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-ffi/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-ffi/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-ffi/include/switchyard.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-ffi/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-ffi/src/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-nemo-relay-plugin/src/span_capture.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-node/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-py/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-py/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-py/src/libsy_bindings.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/switchyard-py/src/translation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-runner/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-runner/src/algorithm.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/switchyard-runner/src/algorithm_factory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-runner/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-runner/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-runner/src/runner.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/switchyard-runner/tests/algorithm_factory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/switchyard-runner/tests/composite_profiles.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-runner/tests/openai_decisions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-server/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-server/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-server/tests/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-translation/src/codecs/openai_chat/buffered.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-translation/src/codecs/responses/buffered.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-translation/src/util.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-translation/tests/request_translation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/toml_schema.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/routing_algorithms/composite_routing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/routing_algorithms/llm_classifier_routing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/routing_algorithms/plan_execute_routing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/routing_algorithms/stage_router_routing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/routing_algorithms/vgr_routing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/litellm/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/vgr-local-servers.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/.cargo/config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/.gitignore",
+      "previousPath": "crates/switchyard-desktop/.gitignore"
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "R077",
+      "path": "experimental/switchyard-desktop/Cargo.toml",
+      "previousPath": "crates/switchyard-desktop/Cargo.toml"
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/INSTALLATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/SETUP.md",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/build.rs",
+      "previousPath": "crates/switchyard-desktop/build.rs"
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/capabilities/main-chrome.json",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/examples/desktop-icons/export.rs",
+      "previousPath": "crates/switchyard-desktop/examples/desktop-icons/export.rs"
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/examples/desktop-icons/main.rs",
+      "previousPath": "crates/switchyard-desktop/examples/desktop-icons/main.rs"
+    },
+    {
+      "status": "R096",
+      "path": "experimental/switchyard-desktop/icons/README.md",
+      "previousPath": "crates/switchyard-desktop/icons/README.md"
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/icons/icon.icns",
+      "previousPath": "crates/switchyard-desktop/icons/icon.icns"
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/icons/icon.ico",
+      "previousPath": "crates/switchyard-desktop/icons/icon.ico"
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/icons/icon.png",
+      "previousPath": "crates/switchyard-desktop/icons/icon.png"
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/icons/tray-source.png",
+      "previousPath": "crates/switchyard-desktop/icons/tray-source.png"
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/icons/tray.png",
+      "previousPath": "crates/switchyard-desktop/icons/tray.png"
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/icons/tray.rgba",
+      "previousPath": "crates/switchyard-desktop/icons/tray.rgba"
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/rust-toolchain.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/src/accounts.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R093",
+      "path": "experimental/switchyard-desktop/src/bin/switchyard-desktop-install.rs",
+      "previousPath": "crates/switchyard-desktop/src/bin/switchyard-desktop-install.rs"
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/src/controller.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/src/gui.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/src/gui/panel.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/src/harness.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/src/health.rs",
+      "previousPath": "crates/switchyard-desktop/src/health.rs"
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/src/history.rs",
+      "previousPath": "crates/switchyard-desktop/src/history.rs"
+    },
+    {
+      "status": "R086",
+      "path": "experimental/switchyard-desktop/src/install.rs",
+      "previousPath": "crates/switchyard-desktop/src/install.rs"
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/src/install/credentials.rs",
+      "previousPath": "crates/switchyard-desktop/src/install/credentials.rs"
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/src/install/linux.rs",
+      "previousPath": "crates/switchyard-desktop/src/install/linux.rs"
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/src/install/macos.rs",
+      "previousPath": "crates/switchyard-desktop/src/install/macos.rs"
+    },
+    {
+      "status": "R096",
+      "path": "experimental/switchyard-desktop/src/install/windows.rs",
+      "previousPath": "crates/switchyard-desktop/src/install/windows.rs"
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/src/lib.rs",
+      "previousPath": "crates/switchyard-desktop/src/lib.rs"
+    },
+    {
+      "status": "R083",
+      "path": "experimental/switchyard-desktop/src/main.rs",
+      "previousPath": "crates/switchyard-desktop/src/main.rs"
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/src/models.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/src/pricing.rs",
+      "previousPath": "crates/switchyard-desktop/src/pricing.rs"
+    },
+    {
+      "status": "R100",
+      "path": "experimental/switchyard-desktop/src/rollup.rs",
+      "previousPath": "crates/switchyard-desktop/src/rollup.rs"
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/src/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/src/server_config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/src/sessions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/src/summary.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R053",
+      "path": "experimental/switchyard-desktop/src/tui.rs",
+      "previousPath": "crates/switchyard-desktop/src/tui.rs"
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/src/windows.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R073",
+      "path": "experimental/switchyard-desktop/tauri.conf.json",
+      "previousPath": "crates/switchyard-desktop/tauri.conf.json"
+    },
+    {
+      "status": "R080",
+      "path": "experimental/switchyard-desktop/tests/desktop.rs",
+      "previousPath": "crates/switchyard-desktop/tests/desktop.rs"
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/tests/frontend.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/tests/setup.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/tests/windows_terminal.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/ui/analytics.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/ui/app.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/ui/app.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/ui/appearance.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/ui/appearance.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/ui/combobox.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/ui/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/ui/tray.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "experimental/switchyard-desktop/ui/tray.html",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

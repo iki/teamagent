@@ -48,6 +48,18 @@ For Teamagent, apply confidentiality at diagnostic boundaries as well as ordinar
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `cd6655470ac45a099d9fd33604178caa4016b1ae` (commit date `2026-10-31T08:24:47-07:00`), compared with `ffa79d9cbb7f3ca9589601f1657803bae6847722`. Earlier observations remain historical evidence.
+
+**Scope:** Selected changed MCP OAuth cancellation/storage branches and first held-response regression cases; 131 changed paths inventoried. Complete credential-scope implementation and other provider changes not audited.
+
+The [OAuth flow](https://github.com/Gitlawb/openclaude/blob/cd6655470ac45a099d9fd33604178caa4016b1ae/src/services/mcp/auth.ts) propagates cancellation through discovery/exchange, covers response-body reading, and checks cancellation again before credential storage or invalid-client cleanup. It re-enters the originating credential scope after browser interaction rather than assuming the current scope is unchanged. [Fixtures](https://github.com/Gitlawb/openclaude/blob/cd6655470ac45a099d9fd33604178caa4016b1ae/src/services/mcp/auth.refreshLock.test.ts) model cancellation while a token response is held, including a request that ignores abort, and expect no credential replacement. Their presence does not establish every concurrent refresh race is resolved.
+
+**Teamagent implication (inference):** Fence credential publication after every asynchronous boundary and bind completion to the originating account generation. Transport abort is a cleanup request; late responses must remain unable to overwrite newer identity even if the request completed remotely.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [claude.fork.openclaude](https://github.com/Gitlawb/openclaude); analyzed commit `ffa79d9cbb7f3ca9589601f1657803bae6847722`; commit date 2026-10-27T15:36:29-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--claude.fork.openclaude.md).
+Analysis metadata: source [claude.fork.openclaude](https://github.com/Gitlawb/openclaude); analyzed commit `cd6655470ac45a099d9fd33604178caa4016b1ae`; commit date 2026-10-31T08:24:47-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--claude.fork.openclaude.md).
 <!-- teamagent-analysis:end -->

@@ -38,6 +38,16 @@ The [tool timeout](https://github.com/openai/openai-agents-js/blob/be4f1f9aa4ad4
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `9b33d73a3ad696f0c43689d1428e901bfdc37fa0` against prior analyzed commit `be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570`. Historical reviews above remain separate evidence.
+
+The [mount credential validator](https://github.com/openai/openai-agents-js/blob/9b33d73a3ad696f0c43689d1428e901bfdc37fa0/packages/agents-core/src/sandbox/mountSecurity.ts) now models unresolved environment references explicitly during a pre-resolution pass. When requested, it preserves their presence with a sentinel and defers pair-completeness checks involving unresolved names instead of treating missing resolved values as empty credentials. Already resolved pairs retain their validation path.
+
+The selected [sandbox-runner fixture](https://github.com/openai/openai-agents-js/blob/9b33d73a3ad696f0c43689d1428e901bfdc37fa0/packages/agents-core/test/sandboxRunner.test.ts) asserts that direct-client normalization permits a deferred reference resolving to an empty value; adjacent inspected fixtures restore trusted path grants before client-owned resume. These are different phases, not evidence that pending credentials or persisted grants are trusted execution authority. Teamagent should keep unresolved, absent and resolved states distinct and bind the final validation to the actual resolved environment and current owner before mount execution. The complete resolver/resume lifecycle was outside this scope.
+
+**Coverage:** Read the complete 151-line mountSecurity delta and targeted runner-test slice around deferred normalization and trusted-grant resume. Other runtime/serialization/materialization changes were not fully audited; no Docker or cloud mount was used. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openai-agents-js](https://github.com/openai/openai-agents-js); analyzed commit `be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570`; commit date 2026-10-21T13:19:06-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openai-agents-js.md).
+Analysis metadata: source [openai-agents-js](https://github.com/openai/openai-agents-js); analyzed commit `9b33d73a3ad696f0c43689d1428e901bfdc37fa0`; commit date 2026-10-30T16:05:12-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openai-agents-js.md).
 <!-- teamagent-analysis:end -->

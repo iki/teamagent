@@ -48,6 +48,18 @@ For Teamagent, keep asserted identity, verified principal, denial reason and una
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `acf56fff6fbfece9f143de3f096cb1d258fb9a9f` (commit date `2026-10-31T11:55:47-07:00`), compared with `24a370606044c0c7be787cc2fd98ec0bfe1d606b`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete verifier/test diff and first 210 lines of the current verifier. Whole-repository diff was oversized; the profile parser, remaining verifier and live issuer integration not audited.
+
+The [verifier change](https://github.com/block/buzz/blob/acf56fff6fbfece9f143de3f096cb1d258fb9a9f/crates/buzz-auth/src/nip_fi/verifier.rs) attaches optional public-profile evidence after the existing admission path, restricts eligible subject classes and excludes agent-owned profiles. The [new fixture](https://github.com/block/buzz/blob/acf56fff6fbfece9f143de3f096cb1d258fb9a9f/crates/buzz-auth/src/nip_fi/verifier/tests.rs) expects malformed profile claims to leave admission/capabilities unchanged, and excludes profile names from debug output. The inspected key-snapshot constructor also binds issuer, positive generation and deadline with a bounded key count; this slice does not prove complete cryptographic or key-refresh correctness.
+
+**Teamagent implication (inference):** Separate display metadata from authenticated identity and capabilities, and keep optional enrichment from granting authority. Bind reusable identity evidence to issuer and freshness generation, redact personal profile data in diagnostics, and preserve unavailable authority separately from rejected credentials.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [buzz](https://github.com/block/buzz); analyzed commit `24a370606044c0c7be787cc2fd98ec0bfe1d606b`; commit date 2026-10-28T00:22:45Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--buzz.md).
+Analysis metadata: source [buzz](https://github.com/block/buzz); analyzed commit `acf56fff6fbfece9f143de3f096cb1d258fb9a9f`; commit date 2026-10-31T11:55:47-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--buzz.md).
 <!-- teamagent-analysis:end -->

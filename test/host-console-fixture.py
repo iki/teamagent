@@ -55,6 +55,14 @@ def main():
         if not kernel.AttachConsole(process.pid):
             raise ctypes.WinError(ctypes.get_last_error())
         attached = True
+        kernel.GetConsoleWindow.argtypes = []
+        kernel.GetConsoleWindow.restype = wintypes.HWND
+        user = ctypes.WinDLL("user32", use_last_error=True)
+        user.IsWindowVisible.argtypes = [wintypes.HWND]
+        user.IsWindowVisible.restype = wintypes.BOOL
+        console = kernel.GetConsoleWindow()
+        if console and user.IsWindowVisible(console):
+            raise RuntimeError("The test-owned console must remain hidden")
         if not kernel.SetConsoleCtrlHandler(handler, True):
             raise ctypes.WinError(ctypes.get_last_error())
         event = specification["event"]
@@ -79,4 +87,6 @@ def main():
 
 
 if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8", newline="\n")
+    sys.stderr.reconfigure(encoding="utf-8", newline="\n")
     main()

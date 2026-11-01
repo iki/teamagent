@@ -1,34 +1,47 @@
-import { mkdtemp } from "./temporary.ts";
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { describe, expect, test } from "bun:test";
 import { rejects } from "node:assert/strict";
-import { rm, writeFile } from "node:fs/promises";
+import { mkdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { loadResearchSettings, parseResearchEnv } from "../app/research/settings.ts";
 
 describe("research settings", () => {
   test("uses project-relative defaults and local overrides without changing process.env", async () => {
-    const root = await mkdtemp(join(tmpdir(), "teamagent-settings-"));
-    const before = process.env.TEAMAGENT_GIT_CACHE;
+    const fixture = await mkdtemp(join(tmpdir(), "teamagent-settings-"));
+    // An explicit project parent makes path expectations independent of temporary routing.
+    const root = join(fixture, "project");
+    const before = { ...process.env };
     try {
+      await mkdir(root);
       const defaults = await loadResearchSettings(root);
       expect(defaults.gitCache).toBe(join(root, ".cache", "git"));
       expect(defaults.sourcesDirectory).toBeUndefined();
       expect(defaults.autoStash).toBe(true);
       expect(defaults.backupAccount).toBeUndefined();
       await writeFile(join(root, ".env"), "TEAMAGENT_GIT_CACHE=cache\n");
+      const shared = await loadResearchSettings(root);
+      expect(shared.gitCache).toBe(join(root, "cache"));
       await writeFile(
         join(root, ".env.local"),
         "TEAMAGENT_GIT_CACHE='..'\nTEAMAGENT_GIT_SOURCES_DIR=..\nTEAMAGENT_GIT_OUTDATED_THRESHOLD=4m\nTEAMAGENT_GIT_AUTO_STASH=false\n",
       );
       const local = await loadResearchSettings(root);
-      expect(local.gitCache).toBe(tmpdir());
-      expect(local.sourcesDirectory).toBe(tmpdir());
+      expect(local.root).toBe(root);
+      expect(local.gitCache).toBe(fixture);
+      expect(local.sourcesDirectory).toBe(fixture);
       expect(local.autoStash).toBe(false);
       expect(local.textCache).toBe(join(root, ".cache", "text"));
-      expect(process.env.TEAMAGENT_GIT_CACHE).toBe(before);
+      const after = { ...process.env };
+      const environmentUnchanged =
+        Object.keys(after).length === Object.keys(before).length &&
+        Object.entries(before).every(
+          ([key, value]) => Object.hasOwn(after, key) && after[key] === value,
+        );
+      expect(environmentUnchanged).toBe(true);
     } finally {
-      await rm(root, { recursive: true, force: true });
+      await assertTemporaryFixture(fixture);
+      await rm(fixture, { recursive: true, force: true });
     }
   });
 

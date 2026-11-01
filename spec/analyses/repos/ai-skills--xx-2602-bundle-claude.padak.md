@@ -2,11 +2,11 @@
 
 Source: [bundle-claude.padak](https://github.com/padak/claude-code-kit) · [Analysis](../../projects/ai-skills--xx-2602-bundle-claude.padak.md) · [skills](../../skills.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `f65682f50054843fb87adaaa9cbea2f5d277baef`; commit date: 2026-10-28T10:15:14Z; review date: 2026-10-28T14:52:35.205Z; observed SHA: `f65682f50054843fb87adaaa9cbea2f5d277baef`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `5298da70804e765239e02a864307d8d75c133408`; commit date: 2026-10-28T23:09:36Z; review date: 2026-11-01T11:37:37.120Z; observed SHA: `5298da70804e765239e02a864307d8d75c133408`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/padak/claude-code-kit/compare/f65682f50054843fb87adaaa9cbea2f5d277baef...f65682f50054843fb87adaaa9cbea2f5d277baef). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/padak/claude-code-kit/compare/5298da70804e765239e02a864307d8d75c133408...5298da70804e765239e02a864307d8d75c133408). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

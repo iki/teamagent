@@ -41,6 +41,14 @@ Evidence: [pageindex/client.py:1485-1502](https://github.com/VectifyAI/PageIndex
 
 **Scope and limits:** Static scoped review of client completion/routing/schema wrappers and selected font/bookmark changes in the 62-path comparison. Streaming internals, cut-short reason definitions, Claude Code integration, cloud implementation and all flash extraction stages were not audited or run; mock tests were read, not executed.
 
+## Change review - 2026-11-01
+
+Reviewed `2e0f4dd35aa6a24c2dedfcf54678b0b0ad323ce8` against `b81465d9ad3d80ee1df344508a85d1f2cdfb8a26` (26 changed paths). The new [retry module](https://github.com/VectifyAI/PageIndex/blob/2e0f4dd35aa6a24c2dedfcf54678b0b0ad323ce8/pageindex/retry.py) classifies transport chains, selected HTTP statuses and streaming errors, parses bounded Retry-After values and adds exponential jitter. Its cloud POST status retry is restricted to 429 because no idempotency key is supplied; other methods delegate to the HTTP retry implementation. The separate model retry classifier can accept transport or midstream failures, which can be ambiguous after provider execution. A server Retry-After up to 60 seconds can exceed the nominal exponential-backoff cap; this module does not impose one overall operation deadline.
+
+**Harness consequence:** Retry policy must be operation-specific and distinguish confirmed rejection from unknown execution. Do not copy a generic model retry into billable synthesis, enrollment or publication. Retain attempt IDs and partial results, apply one total time budget and reconcile ambiguous operations before resubmission.
+
+**Scope and limits:** Complete retry helper and path inventory; call-site retry composition, imported SDK semantics and regression fixtures were not fully audited. No cloud/model call or upstream test was run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [pageindex](https://github.com/VectifyAI/PageIndex); analyzed commit `b81465d9ad3d80ee1df344508a85d1f2cdfb8a26`; commit date 2026-10-27T22:07:20+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--pageindex.md).
+Analysis metadata: source [pageindex](https://github.com/VectifyAI/PageIndex); analyzed commit `2e0f4dd35aa6a24c2dedfcf54678b0b0ad323ce8`; commit date 2026-10-30T06:22:48+08:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--pageindex.md).
 <!-- teamagent-analysis:end -->

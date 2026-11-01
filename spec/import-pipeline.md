@@ -21,6 +21,8 @@ ImportResult {
 
 The public action is “add resource.” Internally, acquisition is separate from interpretation. A URL adapter fetches bytes and headers; a repository adapter resolves a revision and file tree; a folder adapter enumerates approved paths; a document connector exports a version with permission metadata. The same source can later be interpreted by a new parser without reacquiring or mutating the original evidence.
 
+Articles and posts default to a static captured version. Record source creation/publication time with its precision, assertion type and original metadata field; keep first acquisition and later local validation dates separate. Only explicit per-source refresh authority enables network revalidation. The implemented research-list spelling is `refresh=true` on the individual URL; optional `published=` is a labeled user assertion, not authenticated evidence. Missing/corrupt retained bytes require restoration or an explicit refresh decision, never a silent fetch. See [text maintenance](research-sync.md) for the current implementation and [memory imports](memory-imports.md) for the separate explicit runtime sync operation.
+
 | Input | Required retained identity | First useful representation | Optional enrichment |
 | --- | --- | --- | --- |
 | URL | Requested/final URL, fetch time, response metadata, byte hash | Main text and links | Rendered DOM, screenshot, extracted entities |
@@ -42,11 +44,15 @@ discover -> authorize -> acquire -> fingerprint -> detect type -> parse
 
 Each transition stores an input hash, tool/version/options fingerprint, output references, status, retryability and diagnostics. Acquisition is idempotent for a source version. Parse and enrichment jobs are independently repeatable. A crash after writing assets but before index completion must leave a recoverable job, not an unexplained empty resource.
 
+A continuation additionally binds the source generation, consumed complete boundary and admitted representation. [Utopia](https://github.com/deeplethe/utopia) ([review](projects/ai-agents-mem--utopia.md)) separates a consumed checkpoint from the time a sync ran; [Omnigraph](https://github.com/ModernRelay/omnigraph) ([review](projects/ai-agents-mem--omnigraph.md)) retains publication identity when an acknowledgment is uncertain. Never advance past a partially consumed timestamp group or recreate an ambiguous publication under a fresh identity. These upstream patterns define acceptance cases, not implementation claims for this proposed pipeline.
+
 The canonical representation should contain a document tree and evidence spans. Preserve headings, lists, table cells, code blocks, page regions and media timestamps when available. Markdown is an accessible export, not a sufficient substitute for native structure. Chunk IDs should include source version and structural range; deduplicated text can share storage while retaining every origin.
 
 Cache by content plus transformation contract. [RAG-Anything](https://github.com/HKUDS/RAG-Anything) ([report](projects/ai-query--rag-anything.md)) fingerprints content and parser configuration; its path/mtime-inclusive identity is conservative but reduces reuse after a move. [llm-wiki-compiler](https://github.com/atomicmemory/llm-wiki-compiler) ([report](projects/ai-agents-mem--llm-wiki-compiler.md)) additionally binds semantic extraction reuse to provider, model, prompt and schema. Use separate fingerprints for deterministic parsing, OCR, captioning, embeddings and concept extraction.
 
 A generated caption, source summary, wiki page or graph relation must point to its source asset/spans and derivation run. Source deletion or permission revocation creates tombstones and schedules removal/recomputation of dependent views. Deleting the raw file while leaving its generated summary searchable is an incomplete deletion.
+
+After parsing, validate coverage and asset closure independently of process success. [MinerU](https://github.com/opendatalab/MinerU) ([review](projects/ai-query--mineru.md)) distinguishes page previews and verifies referenced images; [Docling](https://github.com/docling-project/docling) ([review](projects/ai-query--docling.md)) retains unspecified/incomplete model endings; [OfficeParser](https://github.com/harshankur/officeParser) ([review](projects/ai-query--office-parser.md)) illustrates fallback when richer PDF structure cannot be recovered. Preserve unsupported spans and exact text-to-source mappings. [DeepTutor](https://github.com/HKUDS/DeepTutor) ([review](projects/ai-agents--deeptutor.md)) demonstrates that rendered quotation matching alone does not retain original offsets or exact subtitle cues. Published status requires validated output references, exclusive atomic storage and a manifest identifying any partial representation.
 
 ## 3. Manage import tools through a capability registry
 
@@ -101,6 +107,8 @@ Folder refresh is a declared policy: manual refresh, periodic reconciliation or 
 ## 6. Network, permissions and untrusted content
 
 Acquisition adapters must preserve provider authorization and content scope. Follow redirects under the same destination policy, constrain local/private network access for remote URL imports, limit response size/time, and keep credentials in references rather than in job payloads or derived documents. Connector revocation must disable refresh and new reads even if local metadata remains.
+
+Validate the actual connection destination, not only a preflight DNS answer. [MCP Inspector](https://github.com/modelcontextprotocol/inspector) ([review](projects/ai-query--mcp-inspector.md)) pins direct lookup results and checks redirects while explicitly acknowledging proxy-controlled DNS as a separate boundary. Do not inherit its intentionally broad local-network policy into arbitrary URL import. Final-URL provenance from [Trafilatura](https://github.com/adbar/trafilatura) ([review](projects/ai-query--trafilatura.md)) records what was fetched; it does not authorize that destination or turn a static article into a refreshable source.
 
 Imported text, embedded document prompts and repository instructions are source material. They cannot change the harness system policy, authorize a new destination or request tool execution. Tag prompt-like content as data and keep it out of skill/system instruction channels. Parsing workers need bounded filesystem/network access, resource limits and cancellation; parser extensibility expands the worker's attack surface.
 

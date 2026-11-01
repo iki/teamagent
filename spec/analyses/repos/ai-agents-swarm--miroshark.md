@@ -2,11 +2,11 @@
 
 Source: [miroshark](https://github.com/aaronjmars/miroshark) · [Analysis](../../projects/ai-agents-swarm--miroshark.md) · [agents](../../agents.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `a72ef7bc5fd6265b8ff27234d491a703e216fabc`; commit date: 2026-10-26T07:42:10-04:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `a72ef7bc5fd6265b8ff27234d491a703e216fabc`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `4f9289ba129ea8dd3e39339daf3ffada2a14fff7`; commit date: 2026-10-31T13:13:11-04:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `4f9289ba129ea8dd3e39339daf3ffada2a14fff7`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/aaronjmars/miroshark/compare/a72ef7bc5fd6265b8ff27234d491a703e216fabc...a72ef7bc5fd6265b8ff27234d491a703e216fabc). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/aaronjmars/miroshark/compare/4f9289ba129ea8dd3e39339daf3ffada2a14fff7...4f9289ba129ea8dd3e39339daf3ffada2a14fff7). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -2,6 +2,18 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 $script:ResearchCategories = @('ai-agents','ai-agents-mem','ai-agents-proxy','ai-agents-sandbox','ai-agents-skills','ai-agents-swarm','ai-agents-tokens','ai-eval','ai-gen','ai-info','ai-media','ai-model-edit','ai-model-run','ai-operate','ai-prompts','ai-query','ai-security','ai-skills','ai-spec')
+# Reviewed parent-export folder names map to stable repository-owned report categories.
+$script:ResearchCategoryAliases = @{'ai-get'='ai-query'}
+function Get-ResearchCanonicalCategory {
+    param([string]$Category)
+    foreach ($alias in $script:ResearchCategoryAliases.Keys) {
+        if ($Category -ieq $alias) {
+            if ($Category -cne $alias) { throw 'category_invalid' }
+            return $script:ResearchCategoryAliases[$alias]
+        }
+    }
+    return $Category
+}
 function ConvertTo-ResearchLfText {
     param([string]$Text)
     return $Text.Replace("`r`n","`n").Replace("`r","`n")
@@ -148,7 +160,8 @@ function Read-ResearchSourceConfiguration {
             if ($keys.Count -ne 3) { throw 'source_config_invalid' }
             $category=$repository.GetProperty('category').GetString();$name=$repository.GetProperty('name').GetString();$url=Get-ResearchCanonicalUrl $repository.GetProperty('url').GetString()
             if ($category -cnotin $script:ResearchCategories -or (Get-ResearchBaseName $name $Settings) -cne $name) { throw 'source_config_invalid' }
-            $id=$category+'--'+$name
+            # IDs match the portable analysis grammar; display names and cache paths retain case.
+            $id=($category+'--'+$name).ToLowerInvariant()
             if (-not $ids.Add($id)) { throw 'repository_path_collision' }
             [void]$rows.Add(@{id=$id;category=$category;name=$name;sourcePath=$category+'/'+$name;url=$url})
         }
@@ -189,13 +202,15 @@ function Read-ResearchSourceList {
         if ($line -notmatch '^clone\s+''([^'']+)''\s+''([^'']+)''\s*$') { throw 'clone_declaration_invalid' }
         $relative=$Matches[1].Replace('\','/'); $url=Get-ResearchCanonicalUrl $Matches[2]
         $parts=$relative.Split('/')
-        if ($parts[0] -notin $script:ResearchCategories) { continue }
-        if ($parts[0] -cnotin $script:ResearchCategories) { throw 'category_invalid' }
+        $category=Get-ResearchCanonicalCategory $parts[0]
+        if ($category -notin $script:ResearchCategories) { continue }
+        if ($category -cnotin $script:ResearchCategories) { throw 'category_invalid' }
         if ($parts.Length -ne 2) { throw 'repository_path_invalid' }
-        $name=Get-ResearchBaseName $parts[1] $Settings; $id=$parts[0]+'--'+$name
+        $name=Get-ResearchBaseName $parts[1] $Settings; $id=($category+'--'+$name).ToLowerInvariant()
         if ($known.Count -gt 0 -and -not $known.Contains($url)) { throw 'source_lists_disagree' }
         if (-not $paths.Add($id)) { throw 'repository_path_collision' }
-        [void]$rows.Add(@{id=$id;category=$parts[0];name=$name;sourcePath=$relative;url=$url})
+        if ($category -cne $parts[0]) { $Settings.SourceWarnings=@($Settings.SourceWarnings+('source_category_alias_'+$parts[0]+'_to_'+$category) | Select-Object -Unique) }
+        [void]$rows.Add(@{id=$id;category=$category;name=$name;sourcePath=$relative;url=$url})
         if ($rows.Count -gt 10000) { throw 'source_list_limit' }
     }
     if ($rows.Count -eq 0) { throw 'source_list_empty' }

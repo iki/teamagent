@@ -55,6 +55,18 @@ This supports a general configuration ownership rule: validate the full format, 
 
 **Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `7370e592f3cd9c06e5b698983957e227c75b30e2` (commit date `2026-10-30T11:10:26-05:00`), compared with `222a973f8b8794366680c043fb935a31f71902af`. Earlier observations remain historical evidence.
+
+**Scope:** Complete integration-state adapter diff and selected added fixtures through symlink rejection and observer ordering. The unchanged FileHelper implementation, concurrent path substitution and platform-specific filesystem behavior were not fully audited.
+
+The [integration-state adapter](https://github.com/github/spec-kit/blob/7370e592f3cd9c06e5b698983957e227c75b30e2/src/specify_cli/integration_state.py) routes reads and writes through FileHelper, reports linked state as an error independently of the general symlink opt-in, and checks the destination before invoking the mutation observer. It continues to distinguish absent state from unreadable or invalid state. [Fixtures](https://github.com/github/spec-kit/blob/7370e592f3cd9c06e5b698983957e227c75b30e2/tests/integrations/test_integration_state.py) cover external, contained, dangling and cyclic links, unchanged targets on rejection, and general symlink permission not overriding the protected state rule. Those fixtures may skip when links cannot be created; this review does not establish race resistance or cross-platform execution.
+
+**Teamagent implication (inference):** Protect policy-bearing integration state more strictly than ordinary project files, and reject uncertain access before snapshotting or mutation. Preserve absent/error distinctions and record actual platform coverage. Review the filesystem helper's race behavior separately before treating a preflight path check as an enduring containment guarantee.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [spec-kit](https://github.com/github/spec-kit); analyzed commit `222a973f8b8794366680c043fb935a31f71902af`; commit date 2026-10-27T15:01:21-05:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-spec--spec-kit.md).
+Analysis metadata: source [spec-kit](https://github.com/github/spec-kit); analyzed commit `7370e592f3cd9c06e5b698983957e227c75b30e2`; commit date 2026-10-30T11:10:26-05:00; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-spec--spec-kit.md).
 <!-- teamagent-analysis:end -->

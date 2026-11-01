@@ -51,6 +51,14 @@ Evidence: [src/commonplace/lib/quote_verification.py:44-58](https://github.com/z
 
 **Scope and limits:** Reviewed the changed quotation regex and two regression cases; Windows installation behavior was not reproduced. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `6c27bb663c927dd1a12772c44582746d1a039893` against `ba51536f8e143d0ed200662302c5f5e7eb2347bb` (188 changed paths). The selected [worktree status implementation](https://github.com/zby/commonplace/blob/6c27bb663c927dd1a12772c44582746d1a039893/src/commonplace/lib/agentic_analysis/worktree.py) replaces its direct `fcntl` lock probe with `workjig.busy`. The [status fixtures](https://github.com/zby/commonplace/blob/6c27bb663c927dd1a12772c44582746d1a039893/tests/commonplace/agentic_analysis/test_worktree.py) distinguish a new start lacking an end from an earlier stopped run, while retaining a prior publication receipt through a subsequent interrupted start.
+
+**Harness consequence:** Keep controller liveness, task completion and publication outcome as separate facts. Durable publication evidence should survive a later interrupted attempt; a lock helper's portability must be established at its actual OS boundary before relying on it for cleanup or ownership.
+
+**Scope and limits:** Selected worktree diff and status fixtures only. The replacement dependency's lock implementation was not inspected, so this is not a claim of native Windows correctness; no upstream processes or tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [commonplace](https://github.com/zby/commonplace); analyzed commit `ba51536f8e143d0ed200662302c5f5e7eb2347bb`; commit date 2026-10-28T09:13:58+01:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--commonplace.md).
+Analysis metadata: source [commonplace](https://github.com/zby/commonplace); analyzed commit `6c27bb663c927dd1a12772c44582746d1a039893`; commit date 2026-11-01T09:29:59+01:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--commonplace.md).
 <!-- teamagent-analysis:end -->

@@ -56,6 +56,14 @@ Evidence: [packages/producer/src/services/render/deliveryEncoder.ts:30-87](https
 
 **Scope and limits:** Reviewed delivery-encoder configuration and fixtures; no FFmpeg/render run, timing measurement or visual-quality benchmark was performed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`8c22ddba0fda22c3ec6faa83f4686249804d299d`](https://github.com/heygen-com/hyperframes/commit/8c22ddba0fda22c3ec6faa83f4686249804d299d), compared with `0e32ee9b56bd0815c0dc23a1c3fbb81aa8c43a87`.
+
+The selected [render-plan validator](https://github.com/heygen-com/hyperframes/blob/8c22ddba0fda22c3ec6faa83f4686249804d299d/packages/producer/src/services/render/planValidation.ts) now skips declarations whose surface is CSS `font`. Its [fixture](https://github.com/heygen-com/hyperframes/blob/8c22ddba0fda22c3ec6faa83f4686249804d299d/packages/producer/src/services/render/planValidation.test.ts) explicitly accepts shorthand using generic/system primary families. This preserves an upstream compatibility choice while narrowing the scope implied by the validator name.
+
+Teamagent should record which font declarations and assets are actually controlled when claiming reproducible media; shorthand acceptance cannot establish cross-machine font identity or pixel equivalence. The selected 33-line comparison was fully read within a 1,202-path update. Other rendering, audio and GPU changes were not exhaustively audited; no render or upstream tests were executed. The local dirty checkout was preserved during sync; this review reads committed objects only.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hyperframes](https://github.com/heygen-com/hyperframes); analyzed commit `0e32ee9b56bd0815c0dc23a1c3fbb81aa8c43a87`; commit date 2026-10-28T09:52:07Z; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--hyperframes.md).
+Analysis metadata: source [hyperframes](https://github.com/heygen-com/hyperframes); analyzed commit `8c22ddba0fda22c3ec6faa83f4686249804d299d`; commit date 2026-11-01T06:16:39Z; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--hyperframes.md).
 <!-- teamagent-analysis:end -->

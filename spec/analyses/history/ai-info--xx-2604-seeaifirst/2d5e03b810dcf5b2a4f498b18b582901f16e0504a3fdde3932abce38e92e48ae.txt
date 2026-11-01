@@ -1,0 +1,45 @@
+# xx-2604-seeaifirst
+
+Source: [xx-2604-seeaifirst](https://github.com/BARONFANTHE/seeaifirst) · Category: [ai-info](../categories/ai-info.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `97b2f703bd72942223ea1c8b55f9fe807d94396e`; commit timestamp `2026-04-04T17:42:51+07:00`; 190 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/BARONFANTHE/seeaifirst/blob/97b2f703bd72942223ea1c8b55f9fe807d94396e/README.md)):
+
+> Curated directory of 66 AI developer tools across 13 categories, with evidence-first sourcing. There are hundreds of "awesome AI" lists. Most are link dumps with no opinion.
+
+Build/package evidence: [package.json](https://github.com/BARONFANTHE/seeaifirst/blob/97b2f703bd72942223ea1c8b55f9fe807d94396e/package.json)
+
+License evidence: [LICENSE](https://github.com/BARONFANTHE/seeaifirst/blob/97b2f703bd72942223ea1c8b55f9fe807d94396e/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-info**. Its category places it in the candidate set for agents, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`1c19caea72b019769852ce3be6aca8660ed73a9d`](https://github.com/baronfanthe/seeaifirst/commit/1c19caea72b019769852ce3be6aca8660ed73a9d). Scope: Complete deltas for artifact-integrity workflow, contribution policy, retired-tool records, repository overrides and deployment routes read. Catalog/pricing data and page generators were not audited.
+
+The [CI delta](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/.github/workflows/cip-0-artifacts-integrity.yml) removes a path filter from a required check and reads tracked names with NUL separators for a denylist guard. It explicitly admits this cannot prevent disclosure on a pushed branch and does not inspect contents. Adapt robust filename handling and required-check scheduling; this is not secret scanning or a reason to prohibit Teamagent's own required documentation.
+
+The [contribution policy](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/CONTRIBUTING.md) separates corrections from new-tool submissions and requests affiliation disclosure. [Retirement records](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/scripts/retired-tools.json) distinguish removal from a curated list from a project's lifecycle, although one lifecycle claim remains an unverified catalog assertion in this review. [Routes](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/vercel.json) preserve old identities via redirects and explicit retired pages. Adapt provenance-preserving catalog changes; deployment routing behavior, current tool status, prices and ranking quality were not tested or independently verified.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `1b550ff8e3be5f84ed75492a8ed0edb8b160dfab` (commit date `2026-10-31T13:38:36+07:00`), compared with `1c19caea72b019769852ce3be6aca8660ed73a9d`. Earlier observations remain historical evidence.
+
+**Scope:** Changed repository-override file and selected dated catalog entries from data.json; the captured path inventory shows catalog/generated-page changes. Primary external product claims, ingestion runtime and catalog-wide correctness were not independently verified.
+
+The [override registry](https://github.com/baronfanthe/seeaifirst/blob/1b550ff8e3be5f84ed75492a8ed0edb8b160dfab/scripts/cip-1-repo-overrides.json) removes several manual repository exceptions while retaining exceptions for multi-repository or non-repository products. Selected [catalog entries](https://github.com/baronfanthe/seeaifirst/blob/1b550ff8e3be5f84ed75492a8ed0edb8b160dfab/data.json) revise descriptions, source references, popularity metadata and verification-date fields. Those dates are upstream editorial assertions, not evidence that Teamagent checked the referenced services or that the claims remain current. This review concerns source attribution and catalog maintenance, not a newly implemented agent capability.
+
+**Teamagent implication (inference):** Use secondary directories for discovery, then resolve canonical repository identity and obtain primary evidence before adopting a capability. Keep editorial review dates distinct from retrieval dates and authenticated checks; popularity and removed overrides must not automatically promote a source's trust, freshness or architectural ranking.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.

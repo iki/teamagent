@@ -1,0 +1,135 @@
+{
+  "id": "ai-agents-skills--search.vercel",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/vercel-labs/skills",
+  "report": "spec/projects/ai-agents-skills--search.vercel.md",
+  "analyzedSha": "699d35b21bd3c97dbc0edeae062b2698898bb2e5",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T13:18:51+09:00",
+  "observedSha": "92a9a34ac3bf88e695e468b90c7bf32f163d32c8",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "92a9a34ac3bf88e695e468b90c7bf32f163d32c8",
+      "date": "2026-10-29T09:49:36+09:00",
+      "subject": "fix(install): skip skills that are already installed when restoring from the lock (#2603)"
+    },
+    {
+      "sha": "662721e4acc4aebca799e5be231ae602735f1764",
+      "date": "2026-10-29T09:49:16+09:00",
+      "subject": "fix(install): print the restore plan with --dry-run instead of installing (#2608)"
+    },
+    {
+      "sha": "34a28bfa74325cdaa382db2c416e127a32875ecf",
+      "date": "2026-10-29T09:48:58+09:00",
+      "subject": "fix(update): keep copied skills as copies by recording installMode in the lock (#2607)"
+    },
+    {
+      "sha": "bd0b9e97ea295e0b49727e071777fa31f067b995",
+      "date": "2026-10-28T16:38:51-07:00",
+      "subject": "Merge pull request #2547 from bercedev/fix/global-skip-agents-without-global-dir"
+    },
+    {
+      "sha": "37585b362dfa15d9f05e96beedb154f2c67c0647",
+      "date": "2026-10-28T16:33:32-07:00",
+      "subject": "fix(add): skip agents without a global skills dir on global installs"
+    },
+    {
+      "sha": "4d786c1d14aeb04b5facc75337888896e2997b9f",
+      "date": "2026-10-28T12:31:58-07:00",
+      "subject": "Merge pull request #2583 from paoloricciuti/skills-sh-path-option"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "docs/commands.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/creating-skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/add.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/blob.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/install.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/local-lock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skill-lock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skills-sh-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skills.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/update.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/global-agent-skip.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/install-from-lock.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/skills-sh-paths.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/update-install-mode.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/update.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

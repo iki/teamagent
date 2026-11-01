@@ -40,6 +40,14 @@ In [services/compose/plan.go](https://github.com/kvcache-ai/AgentEnv/blob/dcfb72
 
 **Harness implication and limits:** Validate dangerous source directives before a convenience loader can read host files or environment, and budget post-expansion values separately from source bytes. This review covers planner composition and selected validation branches, not YAML parser internals, image trust, VM enforcement or the orchestrator. No Compose project or sandbox was launched. No upstream code or live service was executed for this review.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`4a94ccc9988cd8f675b62a25d7629a98492454ee`](https://github.com/kvcache-ai/AgentEnv/commit/4a94ccc9988cd8f675b62a25d7629a98492454ee), compared with `dcfb72f0a74430b5f01ae4c6928512a744d3c90a`.
+
+The [scheduler entry](https://github.com/kvcache-ai/AgentEnv/blob/4a94ccc9988cd8f675b62a25d7629a98492454ee/services/scheduler/cmd/main.go) adds leader gating, waits up to30 seconds for initial Kubernetes discovery before election and separates immediate stop after unexpected leadership loss from ordinary graceful drain. The full [callback](https://github.com/kvcache-ai/AgentEnv/blob/4a94ccc9988cd8f675b62a25d7629a98492454ee/services/scheduler/cmd/leadership_loss.go) and [tests](https://github.com/kvcache-ai/AgentEnv/blob/4a94ccc9988cd8f675b62a25d7629a98492454ee/services/scheduler/cmd/leadership_loss_test.go) avoid classifying an already-cancelled signal context as unexpected loss.
+
+The implementation explicitly documents a residual: closing transports does not fence a handler that already passed the gate from committing a Redis write after leadership changes. TTL-bound/idempotent bindings and later reconciliation mitigate that window, but are not store-enforced single-writer ownership. Teamagent should require epoch/lease checks at authoritative writes when that guarantee matters, and distinguish graceful completion from lost authority. The selected files were read fully; the rest of the 56-path update, Kubernetes/Redis behavior and upstream tests were not executed or exhaustively audited.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agentenv](https://github.com/kvcache-ai/AgentEnv); analyzed commit `dcfb72f0a74430b5f01ae4c6928512a744d3c90a`; commit date 2026-10-28T13:50:32+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--agentenv.md).
+Analysis metadata: source [agentenv](https://github.com/kvcache-ai/AgentEnv); analyzed commit `4a94ccc9988cd8f675b62a25d7629a98492454ee`; commit date 2026-10-30T21:15:11+08:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--agentenv.md).
 <!-- teamagent-analysis:end -->

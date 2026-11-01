@@ -1,0 +1,960 @@
+{
+  "id": "ai-query--agent-browser",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/vercel-labs/agent-browser",
+  "report": "spec/projects/ai-query--agent-browser.md",
+  "analyzedSha": "5801a50d262a4d3e1a2381996a962b22000d8289",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-27T20:33:32-03:00",
+  "observedSha": "5868f7c05020e047c00e68e4abf9253cce864f41",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "5868f7c05020e047c00e68e4abf9253cce864f41",
+      "date": "2026-10-30T21:24:05-07:00",
+      "subject": "fix: validate session names before use (#2272)"
+    },
+    {
+      "sha": "0b123cb2b2c92039f9b6f91db0610a1379b4d256",
+      "date": "2026-10-30T21:21:23-07:00",
+      "subject": "fix(install): check macOS before Chrome download (#2270)"
+    },
+    {
+      "sha": "5c2b128e9fb2e23746cd05fb7d825f6031d5be6a",
+      "date": "2026-10-30T21:20:26-07:00",
+      "subject": "fix(wait): parse selector state flags (#2274)"
+    },
+    {
+      "sha": "e1eefa1bf88b9add0394eae3bc7768955bea2463",
+      "date": "2026-10-30T21:17:35-07:00",
+      "subject": "fix(stream): reuse safe Content-Length parsing (#2268)"
+    },
+    {
+      "sha": "252713b7d33c2489acfd8be1a6b572f13bbabaa3",
+      "date": "2026-10-30T21:16:26-07:00",
+      "subject": "docs: fix the pre-navigation batch example to use argument mode (#2109)"
+    },
+    {
+      "sha": "a2205948cf8f85dab1eccbf01409157837bf2c03",
+      "date": "2026-10-30T21:15:52-07:00",
+      "subject": "fix(proxy): accept proxy URLs with trailing slashes (#2259)"
+    },
+    {
+      "sha": "b482ba65f61d01894a7bfeb0793e26a33e124419",
+      "date": "2026-10-30T21:15:24-07:00",
+      "subject": "fix: reject extra operands in storage commands (#2252)"
+    },
+    {
+      "sha": "426100c21010b82c3ac8641c5950c76f782f7bbd",
+      "date": "2026-10-30T21:02:17-07:00",
+      "subject": "fix(skills): find home skills in standalone installations (#2277)"
+    },
+    {
+      "sha": "b612020e288f2b3babe38d3b463941e317686f8f",
+      "date": "2026-10-30T21:02:08-07:00",
+      "subject": "fix(tab): reject labels reserved for tab IDs (#2276)"
+    },
+    {
+      "sha": "82172010cc68ad15c43e0536d7023e1e46fdfde4",
+      "date": "2026-10-30T21:01:59-07:00",
+      "subject": "fix(cli): scroll at the current pointer (#2275)"
+    },
+    {
+      "sha": "17d83c714ebace9f1cd33fb4d4c86b4ef076273d",
+      "date": "2026-10-30T21:01:48-07:00",
+      "subject": "fix(eval): preserve unserializable JavaScript values (#2273)"
+    },
+    {
+      "sha": "cf67322ea84db67b20c7d2cbf730488a75c4c103",
+      "date": "2026-10-30T21:01:38-07:00",
+      "subject": "fix(network): retry failed HAR exports (#2271)"
+    },
+    {
+      "sha": "2b833b69c4c4cab4d335cb6656e7c62dabb20de4",
+      "date": "2026-10-30T21:01:24-07:00",
+      "subject": "fix(dashboard): ignore Enter during IME composition (#2269)"
+    },
+    {
+      "sha": "6442b2886a1c7460f2aea2f4f7e2d348bd38869f",
+      "date": "2026-10-30T21:01:13-07:00",
+      "subject": "fix(snapshot): give empty table cells reusable refs (#2267)"
+    },
+    {
+      "sha": "0f9ddf3bef4062ed2428b53c92cd9bc6983cbe38",
+      "date": "2026-10-30T21:01:05-07:00",
+      "subject": "fix(cli): print React tree in plain output (#2266)"
+    },
+    {
+      "sha": "c7b772691868331118f0d311d3a6e903d8ae6a6d",
+      "date": "2026-10-30T21:00:56-07:00",
+      "subject": "fix(snapshot): retain visible text in compact snapshots (#2265)"
+    },
+    {
+      "sha": "9d6b6fa02318e7bd34ce7a9b87cefe534b2cf120",
+      "date": "2026-10-30T21:00:48-07:00",
+      "subject": "fix(install): allow root dependency installs (#2264)"
+    },
+    {
+      "sha": "24b1ee236a1fb89faf8779a888cfb86c747283f5",
+      "date": "2026-10-30T21:00:39-07:00",
+      "subject": "fix(dashboard): send punctuation with Windows virtual-key codes (#2263)"
+    },
+    {
+      "sha": "46bff140467d83d8d438073a62f4c07f0e68e448",
+      "date": "2026-10-30T21:00:30-07:00",
+      "subject": "fix(snapshot): include presentational iframe controls (#2262)"
+    },
+    {
+      "sha": "41d21fd80cbe5e14b39c84e1c1b34bd2eca53884",
+      "date": "2026-10-30T21:00:22-07:00",
+      "subject": "fix(dashboard): serve query URLs with the correct MIME type (#2261)"
+    },
+    {
+      "sha": "71ee8cedc342d3ad9868f76c425f35698250aa2b",
+      "date": "2026-10-30T21:00:13-07:00",
+      "subject": "fix(cdp): query live browser URLs without launching Chrome (#2260)"
+    },
+    {
+      "sha": "77274a72c695d8b668a5291324acd0a4d1c7edad",
+      "date": "2026-10-30T21:00:01-07:00",
+      "subject": "fix(set): reject non-finite viewport and geolocation values (#2257)"
+    },
+    {
+      "sha": "573de3c837bcb2018b8f6f32ff29d4dd230e69ce",
+      "date": "2026-10-30T20:59:24-07:00",
+      "subject": "fix: report failed load-state waits (#2251)"
+    },
+    {
+      "sha": "f84d753c4e8291ab95cff7ee023279e8c95a7ee3",
+      "date": "2026-10-31T00:55:57-03:00",
+      "subject": "fix(build): build the dashboard in source builds (#2286)"
+    },
+    {
+      "sha": "28898e4cc2d3ee47c7080ab653b4ad29340cef57",
+      "date": "2026-10-30T15:49:37-07:00",
+      "subject": "fix: require trust for advanced project settings (#2283)"
+    },
+    {
+      "sha": "f7a4cdea3155eac5321f7e8b5de14e19068b3e68",
+      "date": "2026-10-30T18:21:12-03:00",
+      "subject": "fix: keydown flood on macOS after press (#2112)"
+    },
+    {
+      "sha": "89390358f904c691dfea84fc66bac048fc613ad1",
+      "date": "2026-10-30T18:16:35-03:00",
+      "subject": "feat: send CDP WebSocket headers for generic --cdp URLs (#2005)"
+    },
+    {
+      "sha": "7ed6afd8b0a8515eaab4a78b56dc6dddb157bf91",
+      "date": "2026-10-30T12:42:47-05:00",
+      "subject": "Prepare v0.41.1 release (#2282)"
+    },
+    {
+      "sha": "768853dc6a23a42fbe0e939b6a02b706614723aa",
+      "date": "2026-10-30T06:58:47-05:00",
+      "subject": "feat(docs): enable microfrontends for /desktop (agent-desktop) (#2278)"
+    },
+    {
+      "sha": "099e84ea23ee995422dc94d02c9c2309e34d3e02",
+      "date": "2026-10-29T19:39:42-07:00",
+      "subject": "fix(flags): warn when output limits are invalid (#2258)"
+    },
+    {
+      "sha": "81f17a42ecfe33c5cfccb33fafbad168387dc12d",
+      "date": "2026-10-29T19:39:33-07:00",
+      "subject": "fix(cookies): honor kebab-case attributes (#2256)"
+    },
+    {
+      "sha": "9fb80655fa51a97fbb2948de56de65b4ec04b622",
+      "date": "2026-10-29T19:39:22-07:00",
+      "subject": "fix(plugins): redact protocol values on sensitive paths (#2255)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".agents/skills/technical-writer/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/technical-writer/references/content-patterns.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/technical-writer/references/editorial-standards.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/technical-writer/references/technical-verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-browser.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/connection.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/doctor/launch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/doctor/webgpu.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/flags.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/install.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/mcp.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/actions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/browser.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/cdp/chrome.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/cdp/discovery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/cdp/types.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/daemon.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/e2e_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/element.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/interaction.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/network.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/snapshot.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/stream/dashboard.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/stream/http.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/native/test_fixtures/wheel_probe.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/output.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/plugins.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/skills.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/validation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tests/batch_cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/max_output_cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/mcp_call_cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tests/pin_tab_cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/session_validation_cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/skills_cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/cdp-mode.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/changelog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/commands.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/configuration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/engines/lightpanda.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/engines/obscura.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/eve.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/init-scripts.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/installation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/network.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/next.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/plugins.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/proxy.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/react.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/security.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/sessions.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/skills.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/snapshots.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/webgpu.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/microfrontends.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/next.config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/public/schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/app/robots.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tests/fixtures/docs-edits.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/eve/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/eve/agent/extensions/browser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/eve/agent/instructions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/eve/agent/tools/web_search.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/eve/app/_components/browser-activity.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/extension.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/instructions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/lib/browser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/lib/catalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/lib/screenshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/back.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/check.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/tools/click.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/tools/close.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/tools/console.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/dblclick.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/tools/drag.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/errors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/eval.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/@agent-browser/eve/extension/tools/evaluate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/tools/fill.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/tools/find.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/forward.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/@agent-browser/eve/extension/tools/get.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/get_attr.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/get_box.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/get_count.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/get_html.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/get_styles.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/get_text.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/get_title.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/get_url.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/get_value.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/tools/hover.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/@agent-browser/eve/extension/tools/navigate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/tools/network_requests.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/open.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/press.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/@agent-browser/eve/extension/tools/press_key.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/tools/read.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/reload.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/tools/screenshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/tools/scroll.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/select.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/@agent-browser/eve/extension/tools/select_option.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/@agent-browser/eve/extension/tools/set_checked.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/tools/snapshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/tab_close.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/tab_list.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/tab_new.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/tab_switch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/@agent-browser/eve/extension/tools/tabs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/type.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/uncheck.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/extension/tools/upload.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/@agent-browser/eve/extension/tools/wait_for.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/wait_for_load.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/wait_for_selector.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/wait_for_text.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/eve/extension/tools/wait_ms.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/test/extension.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/eve/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/sandbox/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/@agent-browser/sandbox/mcp-tools.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/sandbox/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/@agent-browser/sandbox/src/version.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/components/chat-panel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/components/console-panel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/components/network-panel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/components/session-tree.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/components/viewport.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/authentication.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/commands.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/proxy-support.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/session-management.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/snapshot-refs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/trust-boundaries.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/webgpu.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/vercel-sandbox/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/agent-browser/SKILL.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

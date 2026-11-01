@@ -1,0 +1,985 @@
+{
+  "id": "ai-security--rea",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/morluto/rea",
+  "report": "spec/analyses/unreviewed/ai-security--rea.md",
+  "analyzedSha": "df7119aeede60f9f81a74f29d6606c49adb79d8e",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T18:17:45+08:00",
+  "observedSha": "60c0cf977a34c99afa7942466625aeba74969bdf",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "60c0cf977a34c99afa7942466625aeba74969bdf",
+      "date": "2026-11-01T17:53:37+08:00",
+      "subject": "docs: clarify recovery for valid lookup failures"
+    },
+    {
+      "sha": "7c755f2147528151d8186278d1c739fbf455f238",
+      "date": "2026-11-01T17:24:01+08:00",
+      "subject": "fix: retain address context cleanup failures (#8417)"
+    },
+    {
+      "sha": "1c1c8f628608d5aa6d4ea5378b560d8263542cdc",
+      "date": "2026-11-01T17:23:11+08:00",
+      "subject": "fix(snapshot): report binding mismatches (#8432)"
+    },
+    {
+      "sha": "a6caa79bf4f393c02601fbf2f6df246eae0b1558",
+      "date": "2026-11-01T15:24:29+08:00",
+      "subject": "ci(codeql): separate production scans from test fixtures (#8450)"
+    },
+    {
+      "sha": "e18594b24754ab95ebd119311cc32a1d1ad6fa13",
+      "date": "2026-11-01T13:30:21+08:00",
+      "subject": "refactor(composition): unify capability bindings and cleanup ownership (#8441)"
+    },
+    {
+      "sha": "6e9ee97a69cb16c7150d8b550e705cba055ee4f0",
+      "date": "2026-11-01T05:38:40+08:00",
+      "subject": "fix!: preserve feature traces when owner lookup is unavailable (#8368)"
+    },
+    {
+      "sha": "f72638f6b1f1a41851bf321472569c3265556961",
+      "date": "2026-10-31T21:34:45Z",
+      "subject": "feat(investigation)!: retain records across engine cleanup (#8361)"
+    },
+    {
+      "sha": "d54a4661da20382ad8456564a08569fdd24131c5",
+      "date": "2026-10-31T11:13:04-07:00",
+      "subject": "fix(ghidra): compare the DOS verifier's CLI window before its own rename (#8339)"
+    },
+    {
+      "sha": "d2518a19f88509d691ea78f9265680bbf690ff18",
+      "date": "2026-10-31T11:12:52-07:00",
+      "subject": "feat(native): label binary overview counts with their inventory scope (#8338)"
+    },
+    {
+      "sha": "a36c9dd9c8d2ff1a1a3d1d16ad30753b84b7946d",
+      "date": "2026-10-31T11:12:41-07:00",
+      "subject": "fix(kuna): omit Mach-O data symbols from the procedure inventory (#8335)"
+    },
+    {
+      "sha": "8a6ddec83ae5a5a538d1ffcff5d00173fa116611",
+      "date": "2026-10-31T11:12:30-07:00",
+      "subject": "fix(mcp): name the close_binary retry for retained cleanup (#8329)"
+    },
+    {
+      "sha": "c534e249d1838fdb6328e133fa109cc6684cc6da",
+      "date": "2026-10-31T11:12:02-07:00",
+      "subject": "perf(process): reuse a verified Darwin ownership helper across processes (#8318)"
+    },
+    {
+      "sha": "41e7333cb5e0a755b7fd07d6dd6e7148a38a5658",
+      "date": "2026-10-31T11:11:05-07:00",
+      "subject": "feat(guidance): distinguish focused matches from broad parent sections (#8305)"
+    },
+    {
+      "sha": "60149282fcfc05ac32fbc94434c107710120da6f",
+      "date": "2026-11-01T00:15:28+08:00",
+      "subject": "test: strengthen integration oracles and verification (#8295)"
+    },
+    {
+      "sha": "2d5dec26c31662764c9adfe3ff996174901b8d49",
+      "date": "2026-10-31T09:01:06-07:00",
+      "subject": "fix(ghidra): assemble the Swift verifier's unresolved-jump fixture before linking (#8325)"
+    },
+    {
+      "sha": "da0e9669a8c27a0298bccbe1914af96c83849ead",
+      "date": "2026-10-31T09:00:48-07:00",
+      "subject": "fix(decompile): keep provider no-pseudocode facts on batch items (#8323)"
+    },
+    {
+      "sha": "73ff6ca0c8634aca1371f33219b94161d5bcf70c",
+      "date": "2026-10-31T08:59:58-07:00",
+      "subject": "fix(native): separate value-trace page omission from traversal truncation (#8309)"
+    },
+    {
+      "sha": "c287a73276a7f751ca65a8cc2219a29d5914bc2c",
+      "date": "2026-10-31T08:59:00-07:00",
+      "subject": "fix(ghidra): report unbacked file-offset addresses without schema repair (#8308)"
+    },
+    {
+      "sha": "7c9ed94259fef560fdbec0c9b640348c5d54c391",
+      "date": "2026-10-31T08:53:11-07:00",
+      "subject": "fix(ghidra): decide batch names independently of request order (#8306)"
+    },
+    {
+      "sha": "a989c0e458c91af177e097abd7be0fd021b0401d",
+      "date": "2026-10-31T14:45:21Z",
+      "subject": "refactor(evidence): unify retained inputs across domains (#8299)"
+    },
+    {
+      "sha": "23de10bb2849cdce8ddbe70504aa7cc57de75a98",
+      "date": "2026-10-31T16:43:04+08:00",
+      "subject": "fix: streamline tests and preserve Darwin process ownership (#8275)"
+    },
+    {
+      "sha": "b43c329df779708e43ae297f498a844e45d9c923",
+      "date": "2026-10-31T16:27:00+08:00",
+      "subject": "feat(artifacts): inventory and extract UF2 and DfuSe firmware containers (#8230)"
+    },
+    {
+      "sha": "22e5aa97af8d726400f3f932cae10e0083412038",
+      "date": "2026-10-31T15:49:16+08:00",
+      "subject": "feat(artifacts): inspect classic iNES container regions (#2816)"
+    },
+    {
+      "sha": "e669365c3b57cf49b4158334fa0a42efb117c320",
+      "date": "2026-10-31T15:48:46+08:00",
+      "subject": "feat(ghidra): admit RISC-V ilp32 ELF with a derived calling convention (#8229)"
+    },
+    {
+      "sha": "e6d0618979f0df3f1d5db218b0fc7b5e6a9cf3f9",
+      "date": "2026-10-31T15:24:32+08:00",
+      "subject": "feat(artifacts): inventory and extract ESP flash layouts (#8228)"
+    },
+    {
+      "sha": "091892dfedd9f50cc68c7bbb63e44d5ca1754fcb",
+      "date": "2026-10-31T15:24:17+08:00",
+      "subject": "test(ghidra): expect carved MIPS copies to be refused at target opening (#8227)"
+    },
+    {
+      "sha": "1dc97d8cece2eb68c0e72feb56c7a2821f23237c",
+      "date": "2026-10-31T15:24:00+08:00",
+      "subject": "fix(ghidra): report a missing existing-project program as a configuration error (#8222)"
+    },
+    {
+      "sha": "7ba3f558d436abcb6c70b2c0f9057732cdc3fa0e",
+      "date": "2026-10-31T15:23:13+08:00",
+      "subject": "fix(windows): keep polling owned process output after a failed poll (#8163)"
+    },
+    {
+      "sha": "245a581818ab13694fa438a06e39898ce03ab206",
+      "date": "2026-10-31T14:58:56+08:00",
+      "subject": "feat(kuna): verify release 1.986 and guide version selection (#8187)"
+    },
+    {
+      "sha": "ec107022fac43708dd6b74c25e3d450653a50963",
+      "date": "2026-10-31T14:38:13+08:00",
+      "subject": "docs: guide audits of existing investigation tools (#8272)"
+    },
+    {
+      "sha": "b349e3c708383d3c06dd18c036f9de681a207b70",
+      "date": "2026-10-31T14:30:30+08:00",
+      "subject": "fix(evidence): give missing retained closures actionable recovery (#8270)"
+    },
+    {
+      "sha": "d9e01e5af2dda46f9c7adb6cfde82805845651e9",
+      "date": "2026-10-31T13:59:13+08:00",
+      "subject": "feat(evidence): aggregate exact retained comparison references (#8267)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/rea-tool-design/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/reverse-engineer-anything/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/reverse-engineer-anything/references/connection-and-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/reverse-engineer-anything/references/environments.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/reverse-engineer-anything/references/evidence-workflows.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/reverse-engineer-anything/references/javascript-applications.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/reverse-engineer-anything/references/native-and-artifacts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/codeql/production.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/codeql.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ghidra-bridge-sources.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/real-android-metadata.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/real-browser.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/real-packet-capture.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/real-signal-recording.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "THIRD_PARTY_NOTICES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bridge/android/ReaJadxBridge.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bridge/ghidra/ReaGhidraBridge.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bridge/ghidra/ReaGhidraRiscvCallingConvention.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bridge/hopper_bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bridge/process/ProcessRunTokenReader.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/.vitepress/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adb-device-analysis.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-environments-quickstart.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-environments.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/android-analysis.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/apk-signature.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/apktool-resource-analysis.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/apple-application-analysis.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture.mermaid",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/browser-observation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/browser-scenario-contract.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/bun-standalone.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/capability-composition.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/client-configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/design/limits-and-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/desktop-applications.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dotnet-bundles.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/electron-observation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/error-contract.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/esp-flash-image.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/esp-image.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/evm-bytecode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/firmware-analysis.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/fit-images.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ghidra-dol.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ghidra-mips.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ghidra-provider.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ghidra-psp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ghidra-riscv.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/godot-pck.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ida-provider.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/il2cpp-metadata.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ines-containers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/javascript-application-workflows.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/javascript-artifact-reconstruction.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/javascript-runtime-reconciliation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/kuna-provider.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/managed-code-analysis.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp-contracts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp-prompts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/native-investigation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/pcap-analysis.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/pe-certificates.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/process-capture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/raw-binary.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_ar.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_de.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_el.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_es.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_fa.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_fr.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_id.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_it.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_ja.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_ko.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_ml.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_pl.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_pt-BR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_ro.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_ru.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_th.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_tr.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_uk.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_ur-Latn.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_vi.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_zh-TW.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/agent-environments/state-view/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-sorts-references-toggles/plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-sorts-references-toggles/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-sorts-references-toggles/tasks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-sorts-references-toggles/verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-varied-calls/plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-varied-calls/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-varied-calls/tasks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-varied-calls/verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tool-design.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/uf2-dfuse.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/uimage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-visible-errors.csv",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/verification/capability-composition-2026-11-01.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/verification/evidence-input-composition-2026-10-31.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/verification/evidence-input-composition-2026-10-31.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/verification/investigation-lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/wasm-artifacts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/web-network-captures.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/web-source-location.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/windows-ghidra-p0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "licenses/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "licenses/microsoft-uf2-MIT.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "licenses/upstream-sources.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci/plan.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/ci/require-provider-tests.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci/required.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci/scopes.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/fixtures/browser-request-site.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/fixtures/dotnet-bundle/BundleFixture.csproj",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/fixtures/dotnet-bundle/NuGet.Config",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/fixtures/dotnet-bundle/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/fixtures/generate-mitmproxy-capture.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/fixtures/hopper-tail-call.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/fixtures/managed/pe.d.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/fixtures/managed/pe.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/hopper-demo-x11.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/artifact-e2e.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/browser-popup-e2e.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/browser-request-e2e.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/browser-runtime-fixture-lifecycle.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/lib/catalog-builders.d.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/catalog-builders.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/catalog-cli.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/catalog-core.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/development-tests.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/lib/import-specifiers.d.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/lib/import-specifiers.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/kuna-reference-verifier.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/lib/mcp-verification-environment.d.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/lib/mcp-verification-environment.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/module-boundaries.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/real-ghidra-boundaries.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/real-ghidra-namespace-annotations.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/real-hopper-inventory.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/real-hopper-selection.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/test-projects.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/verifier-source-loader.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/lib/verify-package-runner-fixture.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/verify-wabt-cleanup.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/rea.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/run-development-tests.mjs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -2,11 +2,11 @@
 
 Source: [mentisdb](https://github.com/CloudLLM-ai/mentisdb) · [Analysis](../../projects/ai-agents-mem--mentisdb.md) · [memory](../../memory.md), [evolution](../../evolution.md), [agents](../../agents.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `a3f32e5d4514beea1b3f96a585c5cc5844606326`; commit date: 2026-10-22T10:54:01-06:00; review date: 2026-10-28T08:47:42.123Z; observed SHA: `a3f32e5d4514beea1b3f96a585c5cc5844606326`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `67cb559d3b004951232387ea694df4c490d12ba1`; commit date: 2026-10-31T10:56:46-06:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `67cb559d3b004951232387ea694df4c490d12ba1`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/CloudLLM-ai/mentisdb/compare/a3f32e5d4514beea1b3f96a585c5cc5844606326...a3f32e5d4514beea1b3f96a585c5cc5844606326). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/CloudLLM-ai/mentisdb/compare/67cb559d3b004951232387ea694df4c490d12ba1...67cb559d3b004951232387ea694df4c490d12ba1). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: diverged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

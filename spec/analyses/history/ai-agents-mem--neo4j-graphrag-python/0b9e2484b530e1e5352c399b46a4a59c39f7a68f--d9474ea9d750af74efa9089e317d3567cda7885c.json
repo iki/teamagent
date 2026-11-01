@@ -1,0 +1,235 @@
+{
+  "id": "ai-agents-mem--neo4j-graphrag-python",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/neo4j/neo4j-graphrag-python",
+  "report": "spec/projects/ai-agents-mem--neo4j-graphrag-python.md",
+  "analyzedSha": "0b9e2484b530e1e5352c399b46a4a59c39f7a68f",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T17:12:06+01:00",
+  "observedSha": "d9474ea9d750af74efa9089e317d3567cda7885c",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d9474ea9d750af74efa9089e317d3567cda7885c",
+      "date": "2026-10-31T04:32:53Z",
+      "subject": "Update dependency pypdf to v6.21.4 [SECURITY] (#708)"
+    },
+    {
+      "sha": "995e4efec992b546db683ce303422ec478737227",
+      "date": "2026-10-30T15:08:35+01:00",
+      "subject": "Save embedding_model_name in all chunks (#722)"
+    },
+    {
+      "sha": "719b2bd23967ae4c4e0427744e0079d09b8869c0",
+      "date": "2026-10-30T10:10:22+01:00",
+      "subject": "Fix path to LexicalGraphBuilder component in doc (#721)"
+    },
+    {
+      "sha": "b7803c6f16e48d4e4843a0890dffdd7dad3b35aa",
+      "date": "2026-10-29T16:13:24+01:00",
+      "subject": "Update uv.lock in release workflows when bumping the version (#720)"
+    },
+    {
+      "sha": "d7da256d202f85056c8b6e595f58e997e1a6c21b",
+      "date": "2026-10-29T16:01:08+01:00",
+      "subject": "Sync uv.lock with version 1.23.0 (#719)"
+    },
+    {
+      "sha": "46461a2e43387dd7ecd44149ec3ce4cd295b3045",
+      "date": "2026-10-28T10:36:09Z",
+      "subject": "Add tests for mixed list types in parquet formatter (#714)"
+    },
+    {
+      "sha": "359b89d16f7f2bb406ec833ebf3c381af33b10ad",
+      "date": "2026-10-28T10:35:23Z",
+      "subject": "Bump version to 1.23.0"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/major-release.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/minor-release.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/patch-release.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pre-release.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/premajor-release.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/source/user_guide_kg_builder.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/customize/embeddings/custom_embeddings.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/customize/retrievers/hybrid_retrievers/hybrid_cypher_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/customize/retrievers/hybrid_retrievers/hybrid_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/neo4j_graphrag/components/embedder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/neo4j_graphrag/embeddings/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/neo4j_graphrag/embeddings/bedrock.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/neo4j_graphrag/embeddings/cohere.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/neo4j_graphrag/embeddings/google_genai.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/neo4j_graphrag/embeddings/mistral.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/neo4j_graphrag/embeddings/ollama.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/neo4j_graphrag/embeddings/openai.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/neo4j_graphrag/embeddings/sentence_transformers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/neo4j_graphrag/embeddings/vertexai.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/experimental/pipeline/config/test_pipeline_runner_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/experimental/test_kg_builder_pipeline_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/experimental/test_simplekgpipeline_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/components/test_embedder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/components/test_kg_writer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/embeddings/test_bedrock_embedder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/embeddings/test_cohere_embedder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/embeddings/test_google_genai_embedder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/embeddings/test_mistralai_embedder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/embeddings/test_ollama_embedder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/embeddings/test_openai_embedder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/embeddings/test_sentence_transformers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/embeddings/test_vertexai_embedder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "uv.lock",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

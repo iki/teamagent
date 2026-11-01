@@ -160,7 +160,7 @@ async function interruptCommand(
         join(repository, "test/host-console-fixture.py"),
         specification,
       ],
-      { stdout: "pipe", stderr: "pipe", stdin: "ignore" },
+      { stdout: "pipe", stderr: "pipe", stdin: "ignore", windowsHide: true },
     );
     const timer = setTimeout(() => child.kill(), 50000);
     try {
@@ -177,6 +177,7 @@ async function interruptCommand(
     }
   }
   const child = Bun.spawn(command, {
+    windowsHide: true,
     cwd: f.root,
     stdin: "ignore",
     stdout: "pipe",

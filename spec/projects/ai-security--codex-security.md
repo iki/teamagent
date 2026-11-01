@@ -45,6 +45,16 @@ The CLI rejects a template supplied to the wrong format and checks whether exist
 
 **Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `f615be2e708a4f83f10e924af1ee23b511076fe1` against prior analyzed commit `6625739ef81b44e070d9f61f35ded8609d0658b7`. Historical reviews above remain separate evidence.
+
+The [deep-scan worker runner](https://github.com/openai/codex-security/blob/f615be2e708a4f83f10e924af1ee23b511076fe1/plugins/codex-security/mcp-app/src/deep-scan/worker-runner.ts) stops retaining a parsed discovery result in every accepted worker record and retains its artifact path plus validation flag/sequence instead. Validation still gates acceptance, while failed unvalidated artifacts are removed. This reduces retained object duplication, but no memory benchmark is supplied here; downstream rereads must revalidate identity/integrity rather than assuming a path still holds the previously validated bytes.
+
+The [parent-sandbox fixture delta](https://github.com/openai/codex-security/blob/f615be2e708a4f83f10e924af1ee23b511076fe1/plugins/codex-security/mcp-app/tests/test_deep_scan_parent_sandbox.ts) rejects missing trusted metadata and restrictions that cannot be faithfully represented, including relative denies and unsupported glob writes. The [stdio lifecycle fixture delta](https://github.com/openai/codex-security/blob/f615be2e708a4f83f10e924af1ee23b511076fe1/plugins/codex-security/mcp-app/tests/test_deep_scan_stdio_lifecycle.ts) preserves preexisting directory modes across resume/launch. Their enforcement implementations were outside this selected scope, and POSIX modes are not Windows ACL evidence. Teamagent should fail closed when delegating restrictions cannot be preserved, bind artifact receipts to hashes, and distinguish owned output creation from adopting a preexisting directory.
+
+**Coverage:** Read complete worker-runner and two targeted fixture deltas. Parent-sandbox parser, artifact reread integrity and directory ownership implementation were not re-audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codex-security](https://github.com/openai/codex-security); analyzed commit `6625739ef81b44e070d9f61f35ded8609d0658b7`; commit date 2026-10-27T23:35:27-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-security--codex-security.md).
+Analysis metadata: source [codex-security](https://github.com/openai/codex-security); analyzed commit `f615be2e708a4f83f10e924af1ee23b511076fe1`; commit date 2026-11-01T01:38:05-07:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-security--codex-security.md).
 <!-- teamagent-analysis:end -->

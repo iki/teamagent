@@ -1,0 +1,440 @@
+{
+  "id": "ai-agents-mem--mentisdb",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/CloudLLM-ai/mentisdb",
+  "report": "spec/projects/ai-agents-mem--mentisdb.md",
+  "analyzedSha": "a3f32e5d4514beea1b3f96a585c5cc5844606326",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-22T10:54:01-06:00",
+  "observedSha": "67cb559d3b004951232387ea694df4c490d12ba1",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "67cb559d3b004951232387ea694df4c490d12ba1",
+      "date": "2026-10-31T10:56:46-06:00",
+      "subject": "test(interop): mentischat's pinned signatures verify with MentisDB's strict verifier"
+    },
+    {
+      "sha": "e77fa5681a66e5cb2e318a73917b921a18b8d281",
+      "date": "2026-10-31T10:54:11-06:00",
+      "subject": "docs(changelog): AccessPolicy records are unreadable by older versions"
+    },
+    {
+      "sha": "b66f257c53010d6d720f974358dfabf05449ff78",
+      "date": "2026-10-31T10:53:43-06:00",
+      "subject": "test: cross-project Ed25519 interop vectors (seed 0x01..0x20)"
+    },
+    {
+      "sha": "1d1456a8af25beabc667b64814557a88f0fbb90d",
+      "date": "2026-10-31T10:53:43-06:00",
+      "subject": "docs(cli): every local command documents usage, examples and each flag it parses"
+    },
+    {
+      "sha": "57471d9f8d274aa5deb8a1078bf14efec42e0d86",
+      "date": "2026-10-31T10:53:43-06:00",
+      "subject": "test(fuzz): cli_args takes NUL-separated argv and keeps the --url crash as a corpus seed; changelog line for the --url fix"
+    },
+    {
+      "sha": "2671f3bbf63450a24a780df7352eb3cff494cca4",
+      "date": "2026-10-31T10:47:59-06:00",
+      "subject": "test(fuzz,bench): fuzz targets for policy records, signature envelopes and v2 payloads; verify-on-append benchmark"
+    },
+    {
+      "sha": "e3c2d225efbabaf262cef2dd89086c43fe4a3514",
+      "date": "2026-10-31T10:35:09-06:00",
+      "subject": "feat(cli): chain access show/set/allow/deny/verify and local signing of thoughts"
+    },
+    {
+      "sha": "3abd1a501b5ecae515d76e44bdf3be61c3f757bc",
+      "date": "2026-10-31T10:30:03-06:00",
+      "subject": "feat(dashboard): show the chain's write-access policy; writes report access refusals as 403"
+    },
+    {
+      "sha": "8ac013a4c7ca412097336fd858f69b1050d6334b",
+      "date": "2026-10-31T10:25:29-06:00",
+      "subject": "feat(server): access-policy MCP tools and REST routes, signature checks on append"
+    },
+    {
+      "sha": "fbb0849c1bfa5334a45fd8f0389b48006bb8e07f",
+      "date": "2026-10-31T10:21:07-06:00",
+      "subject": "feat(access): verify signatures on append and enforce per-chain write policies"
+    },
+    {
+      "sha": "719c5ed0865181673021d9bcfcdb332c1b1ea7b6",
+      "date": "2026-10-31T10:13:32-06:00",
+      "subject": "feat(cli): sign key registrations locally and generate keys"
+    },
+    {
+      "sha": "0300f0af0475beff1edc900ef8808b6103ecf5a6",
+      "date": "2026-10-31T10:13:32-06:00",
+      "subject": "feat(security): agent keys must be valid curve points and prove possession"
+    },
+    {
+      "sha": "d0db71fd0b11dab6886552295bc6855156e60adb",
+      "date": "2026-10-31T10:03:34-06:00",
+      "subject": "feat(signing): one documented home for Ed25519 verification, key validation and canonical payloads"
+    },
+    {
+      "sha": "eea77ec07b60fed6ba34fad61aa66fcba4a38e70",
+      "date": "2026-10-31T09:59:03-06:00",
+      "subject": "docs: design for per-chain Ed25519 write access control"
+    },
+    {
+      "sha": "b542d666d1535dcb38deeaca571aabc2d5a62178",
+      "date": "2026-10-31T09:56:42-06:00",
+      "subject": "test(fuzz): seed corpus for the cli_args target"
+    },
+    {
+      "sha": "f5107cf64ca49d52c5531f96628ff5cfe76c94ca",
+      "date": "2026-10-31T09:55:25-06:00",
+      "subject": "test(fuzz): cargo-fuzz target for CLI argument parsing"
+    },
+    {
+      "sha": "6da3c31b608659966236a677bad666cbe7717596",
+      "date": "2026-10-31T09:53:33-06:00",
+      "subject": "fix(cli): reject --url / --dashboard-url values that are not absolute http(s) URLs"
+    },
+    {
+      "sha": "5c30d9d86aa5638ccd670469d7c0c185f6f3ecd1",
+      "date": "2026-10-31T09:47:37-06:00",
+      "subject": "docs(cli): runnable examples and error docs on the command engine's public API"
+    },
+    {
+      "sha": "9165c9ce85aea1f2db33666ae61bb7352d7ba1f1",
+      "date": "2026-10-31T09:44:32-06:00",
+      "subject": "docs(changelog): the CLI parity entries go under UNRELEASED, not the tagged 0.10.10.55"
+    },
+    {
+      "sha": "695d018caf6b3597af52cef6e0d2e2129d98a71c",
+      "date": "2026-10-31T09:43:13-06:00",
+      "subject": "docs(changelog): CLI parity and the rest_router route fix"
+    },
+    {
+      "sha": "4af75c3499f635f4e489635ee6b581b5d5a7a5aa",
+      "date": "2026-10-31T09:42:54-06:00",
+      "subject": "docs: CLI section in the README and parity map matched to the commands"
+    },
+    {
+      "sha": "484e73904637c77f74ac2005919da51361525936",
+      "date": "2026-10-31T09:42:54-06:00",
+      "subject": "feat(cli): daemon commands for every MCP tool, REST route and dashboard action"
+    },
+    {
+      "sha": "2aee991d8e4fc1875504aa78606c228d5a8481f7",
+      "date": "2026-10-31T09:40:15-06:00",
+      "subject": "fix(rest): rest_router serves the same routes as the daemon"
+    },
+    {
+      "sha": "025f8a9c11704d9617e630450fa191928b3b3091",
+      "date": "2026-10-31T09:27:24-06:00",
+      "subject": "docs: CLI parity map of MCP tools, REST routes and dashboard actions"
+    },
+    {
+      "sha": "2c142654ca8ecc7d9fb5b5e3ff5aa496c5da54af",
+      "date": "2026-10-30T12:49:39-06:00",
+      "subject": "make build: sweep stale build artifacts after building (cargo-sweep)"
+    },
+    {
+      "sha": "5dcd77b4480d3a16ee8271e70c50306ebdc1b65f",
+      "date": "2026-10-30T12:48:33-06:00",
+      "subject": "docs(skills): rust-fuzzing, a shared cargo-fuzz skill, linked from rust-engineer"
+    },
+    {
+      "sha": "afabd5614b71ea22044b6d354cd31bd833d47520",
+      "date": "2026-10-29T10:43:46-06:00",
+      "subject": "Makefile: build, test, check, clippy, run and doc in release mode only"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benches/access_policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "changelog.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/CHAIN_ACCESS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/CLI_PARITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/cli_args/regress-url-without-scheme",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/cli_args/seed-chain-access",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/cli_args/seed-search-url",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/cli_args/seed-thought-append",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/policy_record/seed-garbage",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/policy_record/seed-open-genesis",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/signature_envelope/seed-short",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/thought_payload_v2/seed-zeros",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/fuzz_targets/cli_args.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/fuzz_targets/policy_record.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/fuzz_targets/signature_envelope.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/fuzz_targets/thought_payload_v2.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/rust-engineer.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/rust-fuzzing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/access.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/bin/mentisdb.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/args.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cli/catalog.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cli/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cli/key.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cli/remote.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/dashboard.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/dashboard_static/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/signing.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/access_dashboard_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/access_policy_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/access_rest_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/cli_key_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/cli_local_help_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/cli_payload_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/cli_remote_behavior_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/cli_remote_parse_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/dashboard_security_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/dashboard_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/interop_vectors.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/key_registration_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sec_dashboard_hardening_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sec_dashboard_host_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/server_rest_router_routes_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/server_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/signing_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/thought_type_tests.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: diverged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

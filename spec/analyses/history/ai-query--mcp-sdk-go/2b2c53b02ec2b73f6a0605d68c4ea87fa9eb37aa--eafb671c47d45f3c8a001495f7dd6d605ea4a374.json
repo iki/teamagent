@@ -1,0 +1,280 @@
+{
+  "id": "ai-query--mcp-sdk-go",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/modelcontextprotocol/go-sdk",
+  "report": "spec/projects/ai-query--mcp-sdk-go.md",
+  "analyzedSha": "2b2c53b02ec2b73f6a0605d68c4ea87fa9eb37aa",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T10:00:57+01:00",
+  "observedSha": "eafb671c47d45f3c8a001495f7dd6d605ea4a374",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "eafb671c47d45f3c8a001495f7dd6d605ea4a374",
+      "date": "2026-10-30T16:20:23+01:00",
+      "subject": "mcp: route multi round-trip input requests through client receiving middleware (#1479)"
+    },
+    {
+      "sha": "2a97ec78ef050d39105fccbc1d448961b7b0c4c7",
+      "date": "2026-10-30T11:20:59+01:00",
+      "subject": "oauthex: accept token68 challenges in WWW-Authenticate (#1357)"
+    },
+    {
+      "sha": "468d072ce92ab891769c041dc927e256f43580a5",
+      "date": "2026-10-30T09:15:33+01:00",
+      "subject": "mcp: enable stream keep-alive for general POST requests (#1477)"
+    },
+    {
+      "sha": "46a62b37a4c329a80f865d7938846031ee60eb4d",
+      "date": "2026-10-29T19:07:24+01:00",
+      "subject": "mcp: cancel pending keepalive ping when the session closes (#1478)"
+    },
+    {
+      "sha": "51e4f980893eec4d3da912f5767821ae00721acb",
+      "date": "2026-10-29T13:39:42+01:00",
+      "subject": "mcp: avoid mutating client request parameters (#1473)"
+    },
+    {
+      "sha": "c15e86b5ab7e59f06d6412a944a97dfe79695326",
+      "date": "2026-10-28T17:29:45+01:00",
+      "subject": "refactor: simplify errors on connection closed (#1468)"
+    },
+    {
+      "sha": "913fdcb38bb23b73763a26c3266e194c0163cfab",
+      "date": "2026-10-28T16:22:37Z",
+      "subject": "internal/json: decode in place instead of through a streaming Decoder (#1454)"
+    },
+    {
+      "sha": "b1203054954566a982020ca422f12465267bc8e0",
+      "date": "2026-10-28T17:18:40+01:00",
+      "subject": "mcp: log warnings when writing responses to disconnected clients fails (#1469)"
+    },
+    {
+      "sha": "8c1dbca6e5c08a176fd98d0debbfc8fbfa8d3efa",
+      "date": "2026-10-28T16:40:23+01:00",
+      "subject": "auth: require PKCE only in the authorization code flows (#1465)"
+    },
+    {
+      "sha": "985722d51aec00aa799847a869c1b5db1aa401bf",
+      "date": "2026-10-28T15:22:01+01:00",
+      "subject": "mcp: expose the JSON-RPC request id to receiving middleware (#1464)"
+    },
+    {
+      "sha": "5395600ff4f0cf6e7ae38f5d7e886ae544b762cd",
+      "date": "2026-10-28T15:07:31+01:00",
+      "subject": "mcp: gate session lifecycle log demotion behind MCPGODEBUG (#1208)"
+    },
+    {
+      "sha": "21085c85330b988f3ad68c18735c0f664c5c381e",
+      "date": "2026-10-28T15:01:03+01:00",
+      "subject": "docs: update docs-check workflow triggers (#1466)"
+    },
+    {
+      "sha": "12955fe3c17982d355706f23965520108331bff2",
+      "date": "2026-10-28T14:36:25+01:00",
+      "subject": "auth/extauth: send resource in client credentials token requests (#1451)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/docs-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/authorization_code.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/authorization_code_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/extauth/client_credentials.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/extauth/client_credentials_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/extauth/enterprise_handler_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/extauth/oidc_login.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/extauth/oidc_login_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcpgodebug.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/authutil/pkce.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/authutil/pkce_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/docs/mcpgodebug.src.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/json/json.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/json/json_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/jsonrpc2/conn.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/jsonrpc2/conn_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/jsonrpc2/wire.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/oauthtest/fake_authorization_server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/oauthtest/fake_idp_server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/readme/contributing.src.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/client_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/cmd_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/mcp_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/mrtr.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/mrtr_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/server.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mcp/server_lifecycle_log_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/shared.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/shared_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/streamable.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/streamable_keepalive_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/transport.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/transport_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "oauthex/auth_meta.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "oauthex/auth_meta_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "oauthex/resource_meta.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "oauthex/resource_meta_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

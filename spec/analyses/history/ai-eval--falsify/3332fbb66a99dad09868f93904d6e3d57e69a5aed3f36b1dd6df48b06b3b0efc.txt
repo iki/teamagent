@@ -1,0 +1,42 @@
+# falsify
+
+Source: [falsify](https://github.com/studio-11-co/falsify) · Category: [ai-eval](../categories/ai-eval.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `0e2eda33aeffecd252eaeab4d098d4550b1434bd`; commit timestamp `2026-10-02T17:27:09Z`; 456 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/studio-11-co/falsify/blob/0e2eda33aeffecd252eaeab4d098d4550b1434bd/README.md)):
+
+> ML evaluation claims should be locked before the experiment runs, not reported after. PRML commits a claim — metric, threshold, dataset hash, seed — as a SHA-256 manifest. Run the eval. The hash either matches or it doesn't.
+
+Build/package evidence: [examples/deepeval/requirements.txt](https://github.com/studio-11-co/falsify/blob/0e2eda33aeffecd252eaeab4d098d4550b1434bd/examples/deepeval/requirements.txt); [examples/lm-eval-harness/requirements.txt](https://github.com/studio-11-co/falsify/blob/0e2eda33aeffecd252eaeab4d098d4550b1434bd/examples/lm-eval-harness/requirements.txt); [impl/go/go.mod](https://github.com/studio-11-co/falsify/blob/0e2eda33aeffecd252eaeab4d098d4550b1434bd/impl/go/go.mod); [impl/rust/Cargo.toml](https://github.com/studio-11-co/falsify/blob/0e2eda33aeffecd252eaeab4d098d4550b1434bd/impl/rust/Cargo.toml); [pyproject.toml](https://github.com/studio-11-co/falsify/blob/0e2eda33aeffecd252eaeab4d098d4550b1434bd/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/studio-11-co/falsify/blob/0e2eda33aeffecd252eaeab4d098d4550b1434bd/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-eval**. Its category places it in the candidate set for evolution, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [evolution](../evolution.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`1b3950487b4fe730aaef005800d9b2f47bf77ff9`](https://github.com/studio-11-co/falsify/commit/1b3950487b4fe730aaef005800d9b2f47bf77ff9). Scope: Focused source/content review of receipt-gate workflow, acceptance-record description, PREP-Eval final report and paper erratum; remaining specification/docs delta not fully reread.
+
+The [erratum](https://github.com/studio-11-co/falsify/blob/1b3950487b4fe730aaef005800d9b2f47bf77ff9/spec/paper/ERRATA.md) narrows timestamp evidence to matching a disclosed copy with an anchored version, explicitly excluding intervening versions, execution order and compliance. The [acceptance example](https://github.com/studio-11-co/falsify/blob/1b3950487b4fe730aaef005800d9b2f47bf77ff9/examples/acceptance-record/README.md) discloses demo signers, a known result and a missing model-artifact hash; the PREP-Eval report labels its score illustrative. Adopt these evidence qualifications and immutable deviations. The [receipt gate](https://github.com/studio-11-co/falsify/blob/1b3950487b4fe730aaef005800d9b2f47bf77ff9/examples/require-receipt/gate.yml) selects only the first matching manifest and accepts an HTTP-success lookup; it does not itself verify every submission or the described signature/timestamp/transparency proofs. Treat it as an incomplete workflow example, not a cryptographic acceptance boundary. No signature, public registry, test runner, legal/compliance mapping or model outcome was independently verified.
+
+
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `4b6aece648f9db1b8cd586b2e982942982389344` against prior analyzed commit `1b3950487b4fe730aaef005800d9b2f47bf77ff9`. Historical reviews above remain separate evidence.
+
+The [PRML verifier](https://github.com/studio-11-co/falsify/blob/4b6aece648f9db1b8cd586b2e982942982389344/falsify_prml.py) rejects non-finite observed values before predicate evaluation, preventing infinity from satisfying an ordinary threshold. It adds structured JSON outcomes for lock/hash/verify, distinguishing hash-only OK with observed null from metric PASS, and separating missing lock from dataset mismatch even when exit codes coincide. Dataset verification hashes supplied bytes in chunks; without the optional dataset argument, the declared dataset commitment is not independently checked.
+
+The complete [observed-value fixtures](https://github.com/studio-11-co/falsify/blob/4b6aece648f9db1b8cd586b2e982942982389344/tests/test_prml_verify_observed.py) cover finite pass/fail, infinity/NaN and malformed numbers. [JSON fixtures](https://github.com/studio-11-co/falsify/blob/4b6aece648f9db1b8cd586b2e982942982389344/tests/test_prml_json.py) pin tampering, missing locks, dataset mismatch and error schemas. These are useful evolution-gate contracts: a matching manifest hash proves commitment consistency, not correctness of a caller-supplied measurement, and predicate PASS does not establish independently reproduced performance. Receipt anchoring, timestamp trust and attestation implementations were outside this review.
+
+**Coverage:** Read verifier/hash/lock and initial manifest-generation deltas plus both complete new observed-value/JSON fixtures. New receipt/anchor/attestation paths and other changes were not audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.

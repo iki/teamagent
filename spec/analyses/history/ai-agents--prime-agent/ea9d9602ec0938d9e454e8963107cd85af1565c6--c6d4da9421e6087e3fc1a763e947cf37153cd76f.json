@@ -1,0 +1,955 @@
+{
+  "id": "ai-agents--prime-agent",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/PrimeIntellect-ai/prime-agent",
+  "report": "spec/projects/ai-agents--prime-agent.md",
+  "analyzedSha": "ea9d9602ec0938d9e454e8963107cd85af1565c6",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T00:30:39-07:00",
+  "observedSha": "c6d4da9421e6087e3fc1a763e947cf37153cd76f",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c6d4da9421e6087e3fc1a763e947cf37153cd76f",
+      "date": "2026-10-30T16:41:56+01:00",
+      "subject": "rlm.spawn: start a child in a given cwd (#3849)"
+    },
+    {
+      "sha": "10f646da5e689c6ddc03394760a8a119dd5bf3e7",
+      "date": "2026-10-30T16:41:46+01:00",
+      "subject": "Render ipython edit diffs in the TUI (#3744)"
+    },
+    {
+      "sha": "6852cb0cdbc1fa49060a54608e4342e0722e4b7a",
+      "date": "2026-10-30T16:41:35+01:00",
+      "subject": "pa-tui: → opens the selected row in the bash panel (#3795)"
+    },
+    {
+      "sha": "4057f07d5ef0bb503382ab7d37518ffea6dc8189",
+      "date": "2026-10-30T16:41:24+01:00",
+      "subject": "fix(mcp): log in to Google Workspace MCP servers with a user OAuth client (#3676)"
+    },
+    {
+      "sha": "8a912aff4091dfd69291c458065d011a55180c54",
+      "date": "2026-10-30T09:25:08-04:00",
+      "subject": "rlm: keep factory children from waking the parent (#3820)"
+    },
+    {
+      "sha": "e375911c127595698555bec56dfe7c12de4022a3",
+      "date": "2026-10-30T13:27:27+01:00",
+      "subject": "pa-tui: pass the missing level argument in ipython render tests (#3858)"
+    },
+    {
+      "sha": "98bf740b001b04e26c15540066bd633f785a07e8",
+      "date": "2026-10-30T12:53:00+01:00",
+      "subject": "bash: await always yields after 1 s; remove yield_after (#3828)"
+    },
+    {
+      "sha": "9cf0d47e2f1775379af9b105ef1f9d5e9f7dd25d",
+      "date": "2026-10-29T22:28:41-07:00",
+      "subject": "keep mcp configuration in user settings (#3855)"
+    },
+    {
+      "sha": "407aa2b2d22c4aa9478be2fe358fbf88ff450282",
+      "date": "2026-10-29T23:21:36-04:00",
+      "subject": "[factory] pa-tui: factory view arrows walk the states that ran; Enter/→ opens the session (#3798)"
+    },
+    {
+      "sha": "fc52926a6e390b0266de4dae38e1d7b3da1105ea",
+      "date": "2026-10-29T23:21:28-04:00",
+      "subject": "[factory] Pure-Python factory nodes (#3797)"
+    },
+    {
+      "sha": "ec3feb6e3798fb28e758984445cedd5af53768fd",
+      "date": "2026-10-29T23:20:55-04:00",
+      "subject": "[factory] group factory run costs in /context and keep deleted agents' spend (#3799)"
+    },
+    {
+      "sha": "d8c60343799d239b14d85afbb4cab6d9b03d5268",
+      "date": "2026-10-29T23:08:22-04:00",
+      "subject": "continue turns that a graceful daemon shutdown aborted (#3407)"
+    },
+    {
+      "sha": "69a826f982f9141bd0ee629767b36458cc69867f",
+      "date": "2026-10-29T21:16:13-04:00",
+      "subject": "pa-tui: count persistent shells in the agents view and the activity dock (#3641)"
+    },
+    {
+      "sha": "6b5896cdd7d9800cb45f1e2a2b8f8ecd0f18113a",
+      "date": "2026-10-29T21:15:20-04:00",
+      "subject": "ci: restore changelog-fragment check (#3790)"
+    },
+    {
+      "sha": "95688b459e5df78c139d94e1ab877b4e35218d0f",
+      "date": "2026-10-29T21:15:14-04:00",
+      "subject": "bugbot: flag unwired scripts and tests, committed artifacts, and test bloat (#3817)"
+    },
+    {
+      "sha": "405d16cac1abcb745ba10f841875320ba3774871",
+      "date": "2026-10-29T21:15:09-04:00",
+      "subject": "pa-tui tests: drop unneeded lint allows, give the rest reasons (#3844)"
+    },
+    {
+      "sha": "46e823d775d77b549095a4d76b2d8a99a7c04765",
+      "date": "2026-10-29T21:15:04-04:00",
+      "subject": "pa-tui: a click on a python card no longer opens its sent agent messages (#3788)"
+    },
+    {
+      "sha": "680c7475be643b9e19d1d4450c798a8f7356a5e3",
+      "date": "2026-10-29T21:15:00-04:00",
+      "subject": "fix(rlm): agent_observe.recent_messages reads members no worker holds (#3778)"
+    },
+    {
+      "sha": "c0325bd6314c3104756de4eb33895d52304d9dea",
+      "date": "2026-10-29T21:14:55-04:00",
+      "subject": "side calls: report the real error instead of \"did not return a JSON object\" (#3814)"
+    },
+    {
+      "sha": "840c2b9428aca2d7a3eb0062565d71649f28fa06",
+      "date": "2026-10-29T21:14:50-04:00",
+      "subject": "fix: honor send --steer and --follow-up (#3848)"
+    },
+    {
+      "sha": "b8591c5a1a30d81e4f7671790883b46a0a79e7fb",
+      "date": "2026-10-29T11:14:42+01:00",
+      "subject": "show a live timer while a tool call runs (#3329)"
+    },
+    {
+      "sha": "84b4aaf9d95ddd3fa95c2e617484cdc4590f3cdb",
+      "date": "2026-10-29T11:14:36+01:00",
+      "subject": "keep a windows multi-line paste one paste instead of one message per line (#3755)"
+    },
+    {
+      "sha": "a414c1fc4088528d89bfe01fb2170975cb0de803",
+      "date": "2026-10-29T11:14:29+01:00",
+      "subject": "decode ! and gate pipe output across 8 KiB read boundaries (#3765)"
+    },
+    {
+      "sha": "5504a55c0dcc7874abaed5d229d0c097c71875b4",
+      "date": "2026-10-29T11:14:22+01:00",
+      "subject": "keep auth refresh flight through credential commit (#3417)"
+    },
+    {
+      "sha": "1a4dde57b19814c66aa70db79a84ba93cefb182f",
+      "date": "2026-10-29T11:14:16+01:00",
+      "subject": "simplify daily stats Slack formatting (#3503)"
+    },
+    {
+      "sha": "b8c886f782505f17aa06efee83b5e5080a195061",
+      "date": "2026-10-29T11:14:09+01:00",
+      "subject": "clean up installer shellcheck warnings (#3301)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".changes/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/bash-yield-1s.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/costs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/edit-diff-render.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/fac-quiet-children.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/fix-auth-refresh-flight-commit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/fix-graceful-shutdown-continuation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/fix-ipython-render-test-args.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/google-workspace-mcp-login.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/incremental-utf8-pipe-decode.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/python-nodes.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/right-arrow-opens-list-rows.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/send-delivery-mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/side-call-errors.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/spawn-cwd.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changes/view-nav.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor/BUGBOT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/changelog-fragment.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/src/daemon_command.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/src/interactive_mode.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/src/interactive_mode/telemetry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/src/mcp_login.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/src/print_boundary/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/src/print_goal.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/src/print_rlm.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/src/print_runtime.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/src/print_runtime/faux.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/src/print_session_command.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/src/prompt_command.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/tests/agents_view_flash_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pa-cli/tests/agents_view_inactive_shells_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/tests/dock_scope_exit_focus_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/tests/installer_platform_map.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/tests/subagent_panel_nav_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/tests/subagent_panel_nested_count_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/auth/manager.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/auth/manager/lookup.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/auth/manager/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/autonomous/gates.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/kernel/bootstrap/runtime_code.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/kernel/bootstrap/venv/probe.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/kernel/manager/execution.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/mcp/catalog_plugin_views.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/mcp/login.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/mcp/manager_catalog.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/mcp/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/mcp/oauth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/prompts/layers/core.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/prompts/system_prompt.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/refinement/executor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/session/window.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/session/window_cache.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/session_engine/agent_messaging/observe.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/session_engine/agent_messaging/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/session_engine/engine.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/session_engine/engine/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/session_engine/rlm_host.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/session_engine/runtime_wiring.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/settings/types.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/tools/golden_replay.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/tools/ipython.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pa-core/src/tools/ipython/diff/lines.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pa-core/src/tools/ipython/diff/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/tests/abort_kernel_cell.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pa-core/tests/fixtures/mcp/global-services.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pa-core/tests/fixtures/mcp/global-settings.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pa-core/tests/fixtures/mcp/project-services.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pa-core/tests/fixtures/mcp/project-settings.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/tests/prompt_guards.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/tests/turn_boundary_kernel.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/agent_engine.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/agent_engine/lifecycle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/agent_engine/session_engine_impl.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/agent_engine/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pa-daemon/src/agent_engine/tests/mcp_settings.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/agent_messaging.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/agent_messaging/controller_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/agent_messaging/observe.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/branch_navigation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/compaction.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/context_tree_cache.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/context_tree_children.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/engine/wire.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/journal.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/mcp_login.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/messaging.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/prompt_admission.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/protocol.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/queue_commands.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_child_model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_children.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_children/host.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_children/lifecycle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_children/registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_children/spawn_name_reservation_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_children/usage_emit_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_children/watch_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_ledger.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_ledger/replay.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_ledger/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_roster.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/saved_session_commands.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/session_store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/session_store/view.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/session_usage.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/state_getters.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/state_getters/state_getters_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/state_getters/usage.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/stop_cleanup.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pa-daemon/src/streaming_utf8.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor/adoption.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor/dead_child_delete_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor/routing.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor/signals_shutdown.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor/worker_lifecycle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor_roster_seed.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/update_roster.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/user_bash.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/agent_message_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/commands.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/create.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/lifecycle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/queue.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/recovery_verdict_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/session_core.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/summary.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/tests/queue_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/tests/windowed_attach_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/turn.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/turn_stream_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/turn_stream_tests/broadcast.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/turn_stream_tests/feed.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/turn_stream_tests/queue.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/update_snapshot_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/tests/agent_family_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/tests/agents_view_roster_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/tests/autobg_headless_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/tests/command_breadth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/tests/idle_passivation_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/tests/launch_env_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/tests/rlm_children_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/tests/rlm_children_replacement_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/tests/rlm_roster_walk_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/tests/rlm_spawn_replacement_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/tests/supervisor_restart_e2e/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pa-daemon/tests/supervisor_restart_e2e/shutdown_continue.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-perf/src/corpus/artifacts.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-telemetry/src/catalog.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-tui/src/agents_view.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-tui/src/agents_view/delete.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-tui/src/agents_view/open_incident.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

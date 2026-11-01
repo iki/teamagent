@@ -51,6 +51,14 @@ Evidence: [cli/src/native/actions.rs:12152-12233](https://github.com/vercel-labs
 
 **Scope and limits:** Reviewed the new mock-response helper and selected in-file fixtures; browser execution and the entire native action surface were not tested. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `5868f7c05020e047c00e68e4abf9253cce864f41` against `5801a50d262a4d3e1a2381996a962b22000d8289` (155 changed paths). The selected [snapshot implementation](https://github.com/vercel-labs/agent-browser/blob/5868f7c05020e047c00e68e4abf9253cce864f41/cli/src/native/snapshot.rs) retains references for empty table cells, normalizes accessibility roles and fixes compact output to keep only the direct ancestor chain of retained content. Noninteractive compact snapshots retain visible static text such as save status. Embedded fixtures distinguish interactive filtering from content-preserving compaction. Selected [CDP metadata fixtures](https://github.com/vercel-labs/agent-browser/blob/5868f7c05020e047c00e68e4abf9253cce864f41/cli/tests/pin_tab_cli.rs) expect inspection to avoid relaunch/provider selection; those end-to-end tests are explicitly ignored by default.
+
+**Harness consequence:** Context compression must preserve the evidence needed to verify actions, including status text and empty positional cells. Document the selected snapshot mode and omitted coverage; a smaller accessibility view is not a complete page. Keep passive metadata inspection separate from launch/action authority.
+
+**Scope and limits:** Snapshot delta/embedded tests and initial CDP fixture additions; metadata execution internals and full browser changes were not audited. No browser or upstream tests were run, and ignored tests are not passing evidence.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-browser](https://github.com/vercel-labs/agent-browser); analyzed commit `5801a50d262a4d3e1a2381996a962b22000d8289`; commit date 2026-10-27T20:33:32-03:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--agent-browser.md).
+Analysis metadata: source [agent-browser](https://github.com/vercel-labs/agent-browser); analyzed commit `5868f7c05020e047c00e68e4abf9253cce864f41`; commit date 2026-10-30T21:24:05-07:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-query--agent-browser.md).
 <!-- teamagent-analysis:end -->

@@ -51,6 +51,14 @@ Evidence: [README.md:25-33](https://github.com/santifer/career-ops/blob/ecca12b7
 
 **Scope and limits:** Reviewed the complete path inventory and English README delta; localized wording and contributor identities were not individually verified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`6210e4414ad052f83baa560b5ab8e5bdcd2def6a`](https://github.com/santifer/career-ops/commit/6210e4414ad052f83baa560b5ab8e5bdcd2def6a), compared with `ecca12b7bb78b74e87caae412a690bac8608a0e2`.
+
+The new [privacy guard](https://github.com/santifer/career-ops/blob/6210e4414ad052f83baa560b5ab8e5bdcd2def6a/lib/privacy-guard.mjs) separates configured values from opt-in pattern detection and exposes distinct configuration/inspection failures. Selected code decodes byte views, refuses known opaque body types, and returns category/key labels rather than matched values. The reviewed [fixtures](https://github.com/santifer/career-ops/blob/6210e4414ad052f83baa560b5ab8e5bdcd2def6a/tests/privacy-guard.test.mjs) cover opaque bodies, nested buffers, cyclic data, pre-network refusal and explicit bypass flags.
+
+Absent configuration means no protected values and automatic detection disabled; a successful check in that state is not proof that personal data was removed. The environment bypass requires two variables, but the second is merely nonempty and is not authenticated approval. These distinctions must remain visible if Teamagent adopts similar checks. Pattern matching cannot establish anonymity, provider non-training policy, retention or voice consent. This review read selected implementation and fixture ranges from the 1,816-line delta, not every helper or outbound caller; no upstream tests or external requests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [career-ops](https://github.com/santifer/career-ops); analyzed commit `ecca12b7bb78b74e87caae412a690bac8608a0e2`; commit date 2026-10-28T05:23:06+01:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-media--career-ops.md).
+Analysis metadata: source [career-ops](https://github.com/santifer/career-ops); analyzed commit `6210e4414ad052f83baa560b5ab8e5bdcd2def6a`; commit date 2026-10-31T23:55:09Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-media--career-ops.md).
 <!-- teamagent-analysis:end -->

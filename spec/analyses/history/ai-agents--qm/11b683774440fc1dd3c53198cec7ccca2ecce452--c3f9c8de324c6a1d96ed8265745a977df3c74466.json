@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--qm",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/yc-software/qm",
+  "report": "spec/projects/ai-agents--qm.md",
+  "analyzedSha": "11b683774440fc1dd3c53198cec7ccca2ecce452",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T23:57:03-07:00",
+  "observedSha": "c3f9c8de324c6a1d96ed8265745a977df3c74466",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c3f9c8de324c6a1d96ed8265745a977df3c74466",
+      "date": "2026-10-31T18:57:15-07:00",
+      "subject": "Save refreshed logins whenever their owner runs the command (#2788)"
+    },
+    {
+      "sha": "d84105bbcd3b16ce0b92903be40076927c17e2f8",
+      "date": "2026-10-31T16:17:34-07:00",
+      "subject": "Fold the admin dashboard into web UI settings (#2766)"
+    },
+    {
+      "sha": "619f8c46bd2ceac2639e74c2fc018c3c37261429",
+      "date": "2026-10-31T13:06:31-07:00",
+      "subject": "Remove hover tooltip on conversation pane (#2841)"
+    },
+    {
+      "sha": "35831c47b7bf2739022b4a449660f7bf292a0ddf",
+      "date": "2026-10-31T11:48:31-07:00",
+      "subject": "web-ui: Slack avatars on messages and in the chat header (#2828)"
+    },
+    {
+      "sha": "f357718980410ae72147f48529154da3a73a38cf",
+      "date": "2026-10-31T08:56:21Z",
+      "subject": "Make provider memory recall safe: quoted recall, attested actor, recorded outcomes (#2837)"
+    },
+    {
+      "sha": "1d6fc46177e0bc74e80230728717de7b698a982c",
+      "date": "2026-10-30T19:37:09-07:00",
+      "subject": "Clear new glob, minimatch and follow-redirects advisories (#2827)"
+    },
+    {
+      "sha": "867ef47a6f6ac99b43fed6ef36a0c734db238357",
+      "date": "2026-10-30T16:42:30-07:00",
+      "subject": "Make Postgres the only store: delete in-memory store twins (#2769)"
+    },
+    {
+      "sha": "23da3ed3cd9cc7a82efd843ce50ea44189f58dea",
+      "date": "2026-10-30T16:26:15-07:00",
+      "subject": "Make connector token refresh atomic across processes (#2804)"
+    },
+    {
+      "sha": "7aa77dada99dab1e097f4f0466caa74fb1faa478",
+      "date": "2026-10-30T16:23:01-07:00",
+      "subject": "Remove the surface read_file action and refuse agent-supplied follow-up attachments (#2812)"
+    },
+    {
+      "sha": "2aedf4ba52b768835e66c604995a4ad7bf12a982",
+      "date": "2026-10-30T16:11:30-07:00",
+      "subject": "Drop the connector dry-run that validated another scope's client (#2813)"
+    },
+    {
+      "sha": "aed01d7f56e5eaf578d0cff6e53f196a52ea462a",
+      "date": "2026-10-30T16:11:24-07:00",
+      "subject": "Require scope membership for source-authenticated SOUL reads (#2811)"
+    },
+    {
+      "sha": "7b5d8e3a194c8d505f36cf58ef254eafef026f7f",
+      "date": "2026-10-30T16:11:17-07:00",
+      "subject": "Pin cross-user run and swarm isolation through the web proxy (#2803)"
+    },
+    {
+      "sha": "99311eb19a69c8fe7ada9a1451a58f3a7044fcc8",
+      "date": "2026-10-30T16:11:11-07:00",
+      "subject": "Refuse private network addresses for MCP and OAuth endpoints (#2801)"
+    },
+    {
+      "sha": "ec712c520827547b771a9995a910db43992d1d35",
+      "date": "2026-10-30T16:11:04-07:00",
+      "subject": "Bind ChatGPT device logins to the principal that started them (#2800)"
+    },
+    {
+      "sha": "c3556b466db1e6722f7ca74d4f009426453abf36",
+      "date": "2026-10-30T15:58:49-07:00",
+      "subject": "Squash session and run store migrations into one base schema (#2809)"
+    },
+    {
+      "sha": "d95d5237f5aac5ac9f5ee9edda938bd04258cfcb",
+      "date": "2026-10-30T15:55:48-07:00",
+      "subject": "One handle pool and one release routine for a turn's sandboxes (#2791)"
+    },
+    {
+      "sha": "b0e9923b111ff7328de878cf9497d2f02147243a",
+      "date": "2026-10-30T15:53:27-07:00",
+      "subject": "Orchestrator: one approval issuer, one screening helper, shared inbound ingest; per-turn-path moves (#2794)"
+    },
+    {
+      "sha": "87afa321de2a7868b6d2dc07465b9d1b594a715c",
+      "date": "2026-10-30T15:35:32-07:00",
+      "subject": "Split agent tools into one module per tool family (#2795)"
+    },
+    {
+      "sha": "aa4d20d10a550703dc2ec9063dbffdd6a0972b45",
+      "date": "2026-10-30T15:32:19-07:00",
+      "subject": "Simplify ring-0 persistence, util and ACL helpers (#2799)"
+    },
+    {
+      "sha": "52765b5604d5a02252c2346fd007f0251a1cde77",
+      "date": "2026-10-30T15:31:15-07:00",
+      "subject": "Split the model registry, collapse scope-membership and credential duplicates, one bounded body reader (#2798)"
+    },
+    {
+      "sha": "f854b9fdd105523a453a093c9b375c2e0935749a",
+      "date": "2026-10-30T15:26:37-07:00",
+      "subject": "Make multiview drop previews cheap to draw (#2790)"
+    },
+    {
+      "sha": "1acc3625be4f26101f8c7818768476bc817a4b02",
+      "date": "2026-10-30T15:20:00-07:00",
+      "subject": "Merge send_message and followup_task into one send_message that wakes by default (#2789)"
+    },
+    {
+      "sha": "9e738bc67dd2d0d00fb2c026cf420d5058f8a3ad",
+      "date": "2026-10-30T14:53:13-07:00",
+      "subject": "Agent loop: one re-prompt, one recovery path, one payload shape walker; model transport into src/model (#2793)"
+    },
+    {
+      "sha": "0175c5c73d0ddcf3d5feb3e6f6258fb4b069047a",
+      "date": "2026-10-30T14:38:05-07:00",
+      "subject": "Move provider settings and trigger, loop and surface-context types out of ring 0 (#2792)"
+    },
+    {
+      "sha": "b6786d675f83d9a818c5d5335cc017ffea9ec7a7",
+      "date": "2026-10-30T14:29:34-07:00",
+      "subject": "Migrate saved model selections after harness removal (#2796)"
+    },
+    {
+      "sha": "fae755802f2a4bfc4ce3a7a67b08c0bcff8d02af",
+      "date": "2026-10-30T14:25:52-07:00",
+      "subject": "Delete dead ring-0 code and collapse no-behaviour duplicates (#2787)"
+    },
+    {
+      "sha": "3b11cec04b13cdf437d84852ff5d1704956b6d92",
+      "date": "2026-10-30T13:07:26-07:00",
+      "subject": "One agent: remove the Claude harness and the harness concept; serve Claude subscriptions through Pi (#2768)"
+    },
+    {
+      "sha": "9228411a7967d1d83d034391a6146c0b6c1dc363",
+      "date": "2026-10-30T11:35:06-07:00",
+      "subject": "Make side chats responsive and carry exchanges into parent context (#2784)"
+    },
+    {
+      "sha": "2e5a12f3ff0e313771669f04b0370fd2fcc7c8ee",
+      "date": "2026-10-30T01:44:13-07:00",
+      "subject": "Store the session roster under its own key so older releases can still read history (#2783)"
+    },
+    {
+      "sha": "ad3cab48b6846fde84ad7e4305feaecb3d142cec",
+      "date": "2026-10-30T01:18:43-07:00",
+      "subject": "Fail Slack posts the recipient can never accept instead of retrying forever (#2781)"
+    },
+    {
+      "sha": "f4e53d12d996a4d7f1c0e11631f9eeece87e4a53",
+      "date": "2026-10-30T00:42:45-07:00",
+      "subject": "Load saved custom providers when the admin onboarding page opens (#2775)"
+    },
+    {
+      "sha": "84f1222c4c635799773c351856b69d1517e921a1",
+      "date": "2026-10-30T00:31:59-07:00",
+      "subject": "Tell agents which computers sit behind the egress proxy (#2779)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".codex/skills/dev-instance/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cicd.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-cli.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-package.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/aws.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/dev-ci.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/docker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/fly.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/render.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/admin-login.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/init.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/outputs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/setup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/provider-scaffold.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/render-services.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/secrets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/services.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/target-env-defaults.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/templates/deployment/deployment.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cli/templates/fly/admin.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/templates/fly/core.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/templates/fly/portal.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/templates/fly/web-ui.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/admin-login.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/auth-broker.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/aws.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/check.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/combined-services.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/dev-ci-routing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/docker-secrets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/doctor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/e2e/docker-lifecycle.e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/e2e/harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/e2e/identity.e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/egress-proxy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/fixtures/imagefrom-stack.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/fly-deploy-phases.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/fly-derive.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/fly-sandbox.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/init.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/layer-wiring.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/outputs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/package.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/render-services.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/render.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/secrets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/setup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/admin/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/helm/Chart.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/helm/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/helm/templates/deployment.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/helm/templates/ingress.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/helm/templates/service.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/helm/values.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/stacks/acme/qm.config.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/stacks/broker/qm.config.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/stacks/demo.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/web-ui/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/test/workspace.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/workspace-preload.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/admin-model-verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/combined-services.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/deploy-directory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/document-inputs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/error-reporting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp-connectors.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/memory-providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/memory-records.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/model-gateway.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/persistent-subagent-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/porter.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/principal-links.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/skill-registry.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/superserve.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/swarms.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/upgrading-runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eslint.config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/public/admin-components.css",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/public/brand-mark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/public/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/src/governance-bundle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/src/instrument.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/admin-source.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/artifacts-lit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/auto-flagger.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/branding.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/crons.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/default-view.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/delivery-labels.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/design-lit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/design-source.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/environments.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/errors-view.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/files-download.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/governance-lit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/grants.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/gzip.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/history-urls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/integrations-lit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/lit-fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/memory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/scopes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/services-confirm-binding.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/settings-lit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/settings-load.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/settings-provider-races.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/skill-packs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/slack-activity-lit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/slack-install-origin.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/slack-installation-view.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/slack-rendering.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/spend-download.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/spend-lit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/transcript-lit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/user-admin-actions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/user-admin-confirmation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/user-detail.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/user-invite-placement.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/users-state.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/test/whoami.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/activity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/admin.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/artifacts-skills.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/artifacts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/design.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/history.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/keychain.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/setting-controls.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/settings-branding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/settings-credentials.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/shared.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/slack-activity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/spend-chart.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/spend.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/transcript.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/user-detail.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugins/admin/ui/users.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/chassis/src/core-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/chassis/src/error-reporting.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/portal/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/portal/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/portal/test/api-cors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/portal/test/app-only.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/portal/test/apps-domain-defaults.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

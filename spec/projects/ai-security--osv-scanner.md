@@ -49,6 +49,16 @@ The inspected resolution branch chooses the first matching override and then rej
 
 **Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `f3b468c563c14c825321f7282b6a955be3623edd` against prior analyzed commit `666f85749ac142b9ddad8bd17e4c46d39d697465`. Historical reviews above remain separate evidence.
+
+The [ignore configuration](https://github.com/google/osv-scanner/blob/f3b468c563c14c825321f7282b6a955be3623edd/internal/config/ignores.go) introduces `effectiveUntil` while retaining deprecated `ignoreUntil`. The [lookup](https://github.com/google/osv-scanner/blob/f3b468c563c14c825321f7282b6a955be3623edd/internal/config/config.go) prefers the new value unless zero, then falls back to the old one, and adds a deprecation warning. The complete selected [fixtures](https://github.com/google/osv-scanner/blob/f3b468c563c14c825321f7282b6a955be3623edd/internal/config/config_internal_test.go) check past/future effectiveness, precedence, compatibility and first-match behavior, including an expired first match followed by a valid duplicate.
+
+This is suppression lifetime semantics, not evidence that a vulnerability is fixed. Teamagent should retain the original finding plus rule identity, rationale, effective period and current suppression decision. A repeated rule must not silently revive a prior expired exception; make ordering and duplicate diagnostics reviewable. Actual scanner reporting, clock-boundary behavior and every configuration merge path remain outside this inspection.
+
+**Coverage:** Read the complete 247-line ignore representation/test delta and 40-line lookup/warning delta. Scanner execution, config manager integration and exact expiry-equality behavior were not independently tested. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [osv-scanner](https://github.com/google/osv-scanner); analyzed commit `666f85749ac142b9ddad8bd17e4c46d39d697465`; commit date 2026-10-28T15:01:14+11:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--osv-scanner.md).
+Analysis metadata: source [osv-scanner](https://github.com/google/osv-scanner); analyzed commit `f3b468c563c14c825321f7282b6a955be3623edd`; commit date 2026-10-30T13:55:08+11:00; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--osv-scanner.md).
 <!-- teamagent-analysis:end -->

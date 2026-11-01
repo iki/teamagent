@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--deeptutor",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/HKUDS/DeepTutor",
+  "report": "spec/projects/ai-agents--deeptutor.md",
+  "analyzedSha": "a31d82624c27d75f4e771d4fcb78dce16470b383",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-19T04:12:56+08:00",
+  "observedSha": "f7aed0744c36c5afef16a4261c31ebee1208cac2",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f7aed0744c36c5afef16a4261c31ebee1208cac2",
+      "date": "2026-11-01T00:50:27+08:00",
+      "subject": "release: v1.7.1"
+    },
+    {
+      "sha": "5246fc867678d7f1fda101ee89ff1a1615dbee91",
+      "date": "2026-10-31T23:18:42+08:00",
+      "subject": "docs: simplify key features and document chat navigation"
+    },
+    {
+      "sha": "33e831507d100ea8d7dc9bf0397cace1cf8191d4",
+      "date": "2026-10-31T22:59:45+08:00",
+      "subject": "docs: collapse README setup and explore sections"
+    },
+    {
+      "sha": "daaa97c9fe4cfd5f2631e0bea848c44b2181b5b0",
+      "date": "2026-10-31T22:45:14+08:00",
+      "subject": "docs: reorganize README structure"
+    },
+    {
+      "sha": "88d46c211f1a5a318c39b979ebee64b8d081ce01",
+      "date": "2026-10-31T19:28:18+08:00",
+      "subject": "Merge pull request #2243 from HKUDS/codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "21d013ccad1c9ac16fec79b4ed7da717a9cb037c",
+      "date": "2026-10-31T19:03:41+08:00",
+      "subject": "Merge pull request #2194 from amartinawi/feat/video-lesson-tts-provider"
+    },
+    {
+      "sha": "d625bd6c11f134e5c89f9deb89f7bfa4cdc73139",
+      "date": "2026-10-31T19:03:09+08:00",
+      "subject": "Merge pull request #2220 from x-labb/fix-2036-dedupe-inline-generated-images"
+    },
+    {
+      "sha": "5f5f189c36e0ffa048cc7d33822caf10ab614150",
+      "date": "2026-10-31T18:59:28+08:00",
+      "subject": "Merge pull request #2137 from nandanadileep/oss-harness/issue-2073"
+    },
+    {
+      "sha": "53baf4ea7770c500331f24ff1bf0092bbfa46d34",
+      "date": "2026-10-31T18:53:44+08:00",
+      "subject": "Merge commit 'cffd06bc5f0d28959d3057bebe40c09b42020627' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "49e4225b55124f05c19cf6e75e74244b3bf19e76",
+      "date": "2026-10-31T18:53:30+08:00",
+      "subject": "Merge commit '3b750ec003b8c8e3da011ae18aede591b9d84457' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "c0903fe2d8d449b14774dd3e3e3ed588db70c69a",
+      "date": "2026-10-31T18:53:30+08:00",
+      "subject": "Merge commit '083a9c9b7202f0ee58b6f1c2a1df1b6d91f8b173' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "84de213aa2ab4c5c14b00190114476fe3cec8eac",
+      "date": "2026-10-31T18:53:28+08:00",
+      "subject": "Merge commit '81ab035e0370bd125592ecfaf7f867240081ddad' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "32e992b13912fa0d3db2ddeb3de1709561e3d572",
+      "date": "2026-10-31T18:53:15+08:00",
+      "subject": "Merge commit '92f0b68db074f013d3aab4482c1ed5bd8dec8a83' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "64ad8598de5927b5574034af7b26618b8dc41f09",
+      "date": "2026-10-31T18:53:15+08:00",
+      "subject": "Merge commit 'cc9a60237bcc7e4213f574081824c49c92569ed8' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "9724cb551b0dd96b23aca9b5770980e8b943696f",
+      "date": "2026-10-31T18:53:15+08:00",
+      "subject": "Merge commit '3f027d9437f56b6cccbf0cf61265b0c7cd7467cd' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "ce4c39d6a33547d16251340c557059782d85257b",
+      "date": "2026-10-31T18:53:14+08:00",
+      "subject": "Merge commit '0095956fb4639757e632c1b6187a3065c6dd33a4' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "4a3dbff59c0d5daeee835f46db89779d380b95ee",
+      "date": "2026-10-31T18:52:55+08:00",
+      "subject": "Merge commit '732064f43dfab590ab538268a955ca40e5b4a5a1' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "8a981afb0f2ea1cc0d337ad104720371a3741f16",
+      "date": "2026-10-31T18:52:54+08:00",
+      "subject": "Merge commit '1d21aebfbc47453592fa78fb3b787bc414ebb0b1' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "e2a2b5f27a9d8e73784099665b203c2a11d47383",
+      "date": "2026-10-31T18:52:54+08:00",
+      "subject": "Merge commit '561c7ddb6ae466ac9bc9c9a3cf75daf0b532805e' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "862fa3cb97b54ef81149670516f3a91fbf369387",
+      "date": "2026-10-31T18:52:54+08:00",
+      "subject": "Merge commit '0fb3d74495eb4063177df3286bd4de0aab2e76bf' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "bc75a93a5e8e016c4fcd0b08580c12beb913076f",
+      "date": "2026-10-31T18:52:54+08:00",
+      "subject": "Merge commit '0cfbaf738093ab1aa2a3f1b5499acc925baa2b0c' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "6c4218eb8918d9bb2f48f4d0e34c2a8110bb9973",
+      "date": "2026-10-31T18:52:47+08:00",
+      "subject": "Merge commit '584472fb427ac84d739d315885da1525832f913c' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "983b97148d0fe4cc9269d481f3ef6a9aa05d53cd",
+      "date": "2026-10-31T18:52:31+08:00",
+      "subject": "Merge commit 'a7900033f202ddd942aa203e799656d340b669bb' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "def8bdc8c6b46d76f6ae32a1a0d417ce78dbb0b6",
+      "date": "2026-10-31T18:52:30+08:00",
+      "subject": "Merge commit '1876207b5c248eb4ee4375e34779ed332a11d284' into codex/validate-reviewed-integration"
+    },
+    {
+      "sha": "1876207b5c248eb4ee4375e34779ed332a11d284",
+      "date": "2026-10-31T18:49:26+08:00",
+      "subject": "perf(mastery): import session activity data without loading its panel"
+    },
+    {
+      "sha": "34e316388cfeada01dd1bbe1e7c9164cdac481df",
+      "date": "2026-10-31T18:49:18+08:00",
+      "subject": "Merge pull request #2208 from fanjiahe/fix/llamaindex-version-retention"
+    },
+    {
+      "sha": "e35a528cca3c0abf300904d192a3bcdffa383a85",
+      "date": "2026-10-31T18:39:18+08:00",
+      "subject": "Merge pull request #2145 from meconopscsh/fix/cjk-emphasis-ja"
+    },
+    {
+      "sha": "f9488dfc0f82e87ce5d66669ff2cbdb250b34093",
+      "date": "2026-10-31T18:38:58+08:00",
+      "subject": "test(partners): await archived export messages before asserting"
+    },
+    {
+      "sha": "f4a8ebe0ea7bba422837cdf4109b5aeb1d57433f",
+      "date": "2026-10-31T18:38:48+08:00",
+      "subject": "Merge pull request #2146 from iriseye395/fix/pin-node-security-release"
+    },
+    {
+      "sha": "81ab035e0370bd125592ecfaf7f867240081ddad",
+      "date": "2026-10-31T18:36:30+08:00",
+      "subject": "Merge dev preserving CloudGPU and LLMTR provider integrations"
+    },
+    {
+      "sha": "3b750ec003b8c8e3da011ae18aede591b9d84457",
+      "date": "2026-10-31T18:36:27+08:00",
+      "subject": "test(partners): await archived export messages before asserting"
+    },
+    {
+      "sha": "4b695016d4e749cf73f08cd848c5b4c3d333c349",
+      "date": "2026-10-31T18:34:55+08:00",
+      "subject": "Merge pull request #2192 from amartinawi/feat/task-model-repairs"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/tdd/mastery-group-delivery-resume.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/tdd/mastery-memory-route.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/tdd/mastery-teaching-delivery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/desktop-notarization-diagnostics.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/desktop-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/memory-evaluation.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/modules.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pypi-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/repository-hygiene.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pre-commit-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "CONTRIBUTORS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MANIFEST.in",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/assets/entitlements.mac.plist",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/assets/entitlements.runtime.mac.plist",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/assets/icon.icns",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/assets/icon.ico",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/assets/mark.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/assets/runtime-public.pem",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/assets/wordmark.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/platforms/macos-arm64/package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/platforms/macos-arm64/target.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/platforms/macos-x64/package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/platforms/macos-x64/target.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/platforms/windows-x64/installer.nsi",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/platforms/windows-x64/package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/platforms/windows-x64/smoke-installer.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/platforms/windows-x64/target.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/build-runtime.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/check.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/lib/macos-runtime-signing.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/lib/macos.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/lib/signing.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/lib/stage.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/lib/target.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/make-ico.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/make-icon.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/notarize.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/seal-runtime.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/bundles.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/i18n.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/main.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/platform.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/preload.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/processes.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/renderer.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/runtime.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/shell.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/supervisor.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/i18n.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/macos-runtime-signing.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/notarize.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/platform.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/runtime.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/signing.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/README/README_AR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/README/README_CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/README/README_ES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/README/README_FR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/README/README_HI.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/README/README_JA.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/README/README_PL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/README/README_PT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/README/README_RU.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/README/README_TH.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/README/README_TW.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/figs/logo/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/logo/banner.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/figs/logo/black-full.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/figs/logo/black-logo.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/figs/logo/black-word.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/figs/logo/color-full.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/figs/logo/color-logo.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/figs/logo/color-word.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/logo/logo.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/logo/logo_black.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/figs/system/chat-agent-loop.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/figs/system/generate_diagrams.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/figs/system/system-architecture.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/OVERVIEW.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/book/00-book_overview.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/book/01-book-demo-quiz card.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/book/02-book-demo-manim video.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/book/03-book-demo interactive module.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/book/04-book-demo side chat & mermaid.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/book/05-book- add customize block for chapter.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/book/06-book-switch the block type.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/co-writer/00-overview.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/co-writer/01-edit panel.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/extensions/00-mcp-store.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/extensions/02-cli-apps.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/home/00-overview.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/home/01-capabilities.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/home/02-add contexts.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/home/03-another use subagent.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/home/03-use subagent.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/home/04-attatch knowledge base.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/home/05-customize persona.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/home/06-switch model.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/home/07-side bar for various activities.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/home/08-another subagent demo with partners.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/home/08-subagent demo with claude code.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/home/09-demo with configured image-gen model(as a tool).png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/home/10-configure models.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/home/11-configure and explore tools.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/knowledge/00-overview.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/knowledge/01-create knowledge base.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/knowledge/02-panel for each knowledge base.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/knowledge/03-config document parsing engine in settings.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/learning-space/00-overview.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/learning-space/01-chat history.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/learning-space/02-notebooks.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/learning-space/03-question bank.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/learning-space/04-mastery path.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/learning-space/05-personas.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/learning-space/06-skills.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/learning-space/07- download skills from eduhub.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/memory/00-overview.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/memory/01-3 layer memory graph.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/memory/02-config memory params in settings.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/myagents/00-overview.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/myagents/01-sync selective chat history from claude code or codex.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/notebook/00-console.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/partners/00-partners overview.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/partners/01-chat with partners.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/partners/02-IM config for each partner.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/reading/00-overview.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/reading/01-open-a-document.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/reading/02-cited-answer.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/settings/00-setting overview.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/settings/01-appearance settings.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.4.6+/settings/03-starting-points.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.6.12/settings/00-general-overview.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.6.12/settings/01-runtime-status-readiness.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.6.12/settings/02-workspace-create.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.6.12/settings/03-provider-connection-api-format.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.6.12/settings/04-model-list-picker.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.6.12/settings/05-model-capabilities.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.6.5/OVERVIEW.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.6.5/settings/00-settings-overview.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.6.5/settings/01-settings-readiness.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.6.5/settings/02-settings-workspace.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.6.5/settings/03-model-api-format-capability.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/figs/web-1.6.5/settings/04-model-list-picker.png",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-proxy--litellm",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/BerriAI/litellm",
+  "report": "spec/projects/ai-agents-proxy--litellm.md",
+  "analyzedSha": "d84a2d4452d37420876573234e810bf4588882b0",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T03:04:11-07:00",
+  "observedSha": "60fc121ce8ab995cb2997e0bbd0a980ee93c627d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "60fc121ce8ab995cb2997e0bbd0a980ee93c627d",
+      "date": "2026-10-31T18:59:04-07:00",
+      "subject": "test(a2a): replace the third-party agent e2e test with an integration test (#49541)"
+    },
+    {
+      "sha": "1b3da637037b94d92d47895b97f772e117742a54",
+      "date": "2026-10-31T18:31:01-07:00",
+      "subject": "test: move Sail, Weave and Presidio e2e tests to integration tests (#49533)"
+    },
+    {
+      "sha": "187f936cb3457cb8cdfbf541593588929d502bf4",
+      "date": "2026-11-01T00:57:32Z",
+      "subject": "fix(proxy)!: support reload with multiple workers (#45909)"
+    },
+    {
+      "sha": "a1c5829f6b7664135974e902bdee2419c53ef825",
+      "date": "2026-11-01T00:30:38Z",
+      "subject": "fix(bedrock): raise GovCloud West Llama 3 max output to the model card 8K (#49543)"
+    },
+    {
+      "sha": "f4f5e2c80f0cf3e47666372435e4cfeffb4e89e2",
+      "date": "2026-11-01T00:28:59Z",
+      "subject": "fix(cost-map): add 2026-11-04 deprecation_date to together_ai Qwen3.8-2.4T-A95B (#49542)"
+    },
+    {
+      "sha": "68dbf54b09cf2b98f8c1970e8690f68585d681aa",
+      "date": "2026-10-31T17:21:06-07:00",
+      "subject": "chore(e2e): remove the unused arize_phoenix callback from the stage mirror config (#49538)"
+    },
+    {
+      "sha": "0f4d5c6ad04669846e761dba4dac934c262c1fa7",
+      "date": "2026-10-31T17:01:12-07:00",
+      "subject": "feat(ovalix)!: scan files, tool calls and tool results (#49309)"
+    },
+    {
+      "sha": "901b7f762fa064608c7f21899907f508758b5546",
+      "date": "2026-10-31T16:41:49-07:00",
+      "subject": "test(mcp): cancel disconnected HTTP tool handlers (#49436)"
+    },
+    {
+      "sha": "28679bb9c366a900fb801f6d971116d4665dc3f7",
+      "date": "2026-10-31T16:39:33-07:00",
+      "subject": "fix(chat): describe general chat and deep research on the chat home (#49531)"
+    },
+    {
+      "sha": "8c46b2c0d6dd0c77d2fa3cecec6131a1f27f68bf",
+      "date": "2026-10-31T16:38:53-07:00",
+      "subject": "test(router): trace the deployment index lock in the file that owns it (#49520)"
+    },
+    {
+      "sha": "137fd7cd667a144ca3e91d21386fec17ce4b0541",
+      "date": "2026-10-31T16:38:37-07:00",
+      "subject": "fix(docs): replace stale docs/proxy/enterprise links with the current docs pages (#49491)"
+    },
+    {
+      "sha": "6105aaa63e66f52c591b9baf74e4290cb6978f19",
+      "date": "2026-10-31T23:37:45Z",
+      "subject": "Configure full Bedrock guardrail assessments (#49217) (#49470)"
+    },
+    {
+      "sha": "2751cfcad39545afacd52577c27edd610d2f5ac2",
+      "date": "2026-10-31T23:37:45Z",
+      "subject": "Add guardrails.apply SDK helper (#49217) (#49469)"
+    },
+    {
+      "sha": "8d26b8bba369c57a1c77c84eed3f4aef0112692a",
+      "date": "2026-10-31T23:37:45Z",
+      "subject": "Return configured guardrail native findings (#49217) (#49460)"
+    },
+    {
+      "sha": "87e32e7c6d32006a9bf8c4312688ae4da0afcbea",
+      "date": "2026-10-31T16:17:11-07:00",
+      "subject": "fix(agents): show non-admin callers the proxy URL in agent cards (#49483)"
+    },
+    {
+      "sha": "9312a25f18123e5264ce71c1f9e9146340387a03",
+      "date": "2026-10-31T16:13:45-07:00",
+      "subject": "feat(chat): add deep research with persistent citations (#49508)"
+    },
+    {
+      "sha": "36dbb228d94a3e180fee68862f1b20be7bc45ebd",
+      "date": "2026-10-31T16:12:51-07:00",
+      "subject": "fix(streaming): preserve served models in OpenRouter streams (#49498)"
+    },
+    {
+      "sha": "ae8666b9d1a568db03f6aecfcd48de337381487e",
+      "date": "2026-10-31T16:12:30-07:00",
+      "subject": "fix(http): diagnose aiohttp connection pool saturation (#49499)"
+    },
+    {
+      "sha": "bba63c1934ff8190d45eb8e2936563dbc54c0086",
+      "date": "2026-10-31T16:11:51-07:00",
+      "subject": "fix(proxy): serve /a2a/{agent_id}/message/stream routes (#49471)"
+    },
+    {
+      "sha": "ddab201d68a851467784663650bf46130f72ab5c",
+      "date": "2026-10-31T16:04:04-07:00",
+      "subject": "test(translation): expect the EOF error frame when an Anthropic json_schema stream is cut (#49521)"
+    },
+    {
+      "sha": "22d0b1e44315cda2a4b2bb549180a6d7c16acaf2",
+      "date": "2026-10-31T22:58:34Z",
+      "subject": "fix(router): restore four base behaviors the RoutingContext refactor changed (#49395)"
+    },
+    {
+      "sha": "a7425101bbe5a89a8ff8879b80f3a4540030121b",
+      "date": "2026-10-31T15:53:01-07:00",
+      "subject": "fix(a2a): log authenticated pre-dispatch agent rejections (#49492)"
+    },
+    {
+      "sha": "ead8aa82ef19a82b0554d7e93ca920790a227132",
+      "date": "2026-10-31T15:49:59-07:00",
+      "subject": "fix(passthrough): fit the Deepgram listen unpriced refusal in a WebSocket close frame (#49502)"
+    },
+    {
+      "sha": "3bd75f1258c92971b9ac30daef7c826bd3477604",
+      "date": "2026-10-31T15:32:26-07:00",
+      "subject": "fix(proxy): treat empty agent and skill search embedding model as not configured (#49485)"
+    },
+    {
+      "sha": "e708343309981ec61d4d51b7e8b0c1f1d0156ffb",
+      "date": "2026-10-31T15:14:33-07:00",
+      "subject": "test: deflake the json accumulator drain test and the armed routing prefetch test (#49505)"
+    },
+    {
+      "sha": "da5ea5966797499dc6aa22ad1d89df1a012c27ae",
+      "date": "2026-10-31T22:09:15Z",
+      "subject": "refactor(ui): remove dead API calls from networking.tsx (#49507)"
+    },
+    {
+      "sha": "6aa546303e09326372f42488ddc01c0883344aae",
+      "date": "2026-10-31T21:48:56Z",
+      "subject": "docs(pr-template): wrap the agent-drafted summary in make-me-human-readable tags (#49494)"
+    },
+    {
+      "sha": "580b9266a11d8db9646a6151c6f04e4f6e2f5d13",
+      "date": "2026-10-31T14:43:24-07:00",
+      "subject": "feat(chat): resume replies after browser disconnects (#49461)"
+    },
+    {
+      "sha": "d2321581ecf8f4353d2cdf6bc3bdf730767bf906",
+      "date": "2026-10-31T21:14:53Z",
+      "subject": "fix(cohere): emit streamed tool calls from v2 tool-call-start and tool-call-delta chunks (#47794)"
+    },
+    {
+      "sha": "f7b2cd0000945fe2e5f2d494fb0e1026b82bba31",
+      "date": "2026-10-31T21:13:24Z",
+      "subject": "fix(anthropic): answer 400 naming a non-string role or tool call id instead of 500 (#49237)"
+    },
+    {
+      "sha": "c43a1addf252a343d2aa5eafc07f9cef985eef55",
+      "date": "2026-10-31T12:54:23-07:00",
+      "subject": "refactor(router): extract PythonCore behind RouterCore and pass the router its config (#49119)"
+    },
+    {
+      "sha": "a5f980600c6d66bdb645707f16bddd6dc690c5ac",
+      "date": "2026-10-31T12:54:10-07:00",
+      "subject": "fix(a2a): answer proxy refusals on /a2a POST routes as JSON-RPC errors (#49476)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/database-access/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/database-access/references/python-fastapi.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/database-access/references/python-repository.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/database-access/references/rust-axum.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".circleci/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".circleci/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".circleci/scripts/run_integration.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE/general.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/assert_secret_absent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/smoke_test_native_wheel.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cost-map-guard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/cost-map-pins-recheck.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/create-rc-branch.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/image-scan.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/interactions-spec-canary.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/lens-install-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/spend-logs-guard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/test-integration.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-linting.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-merge-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-rust-db.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-rust.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-terraform-provider.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-unit.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/zizmor.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".grype.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/routes/allowlist.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ci_cd/cost_map_guard.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ci_cd/cost_map_pins.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ci_cd/spend_logs_guard.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "codecov.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cookbook/ai_coding_tool_guides/chatgpt_subscription_passthrough.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/adrs/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/adrs/adr_001_provider_usage_fields_ride_as_usage_extras.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "enterprise/enterprise_hooks/google_text_moderation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "enterprise/litellm_enterprise/enterprise_callbacks/callback_controls.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "enterprise/litellm_enterprise/enterprise_callbacks/secret_detection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "enterprise/litellm_enterprise/proxy/common_utils/check_batch_cost.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "enterprise/litellm_enterprise/proxy/common_utils/check_responses_cost.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "enterprise/litellm_enterprise/proxy/hooks/managed_files.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "enterprise/litellm_enterprise/proxy/management_endpoints/project_endpoints.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "enterprise/litellm_enterprise/proxy/management_endpoints/project_model_quota.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "enterprise/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/bigmodel.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gateway/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gateway/launch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gateway/routes/allowlist.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm-helm/Chart.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm-helm/Chart.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm-helm/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm-helm/charts/lens-0.1.0-dev.0.tgz",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm-helm/templates/_helpers.tpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm-helm/templates/ingress.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm-helm/templates/lens/clickhouse.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm-helm/templates/lens/deployment.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm-helm/templates/lens/ingress.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm-helm/templates/lens/secrets.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm-helm/templates/lens/service.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "helm/litellm-helm/tests/lens_connection_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm-helm/tests/lens_endpoint_defaults_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm-helm/tests/lens_modes_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm-helm/tests/lens_modes_validation_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm-helm/tests/lens_saved_secrets_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm-helm/tests/lens_service_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm-helm/tests/lens_setup_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm-helm/values.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm/Chart.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm/Chart.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm/charts/lens-0.1.0-dev.0.tgz",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm/templates/_helpers.tpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm/templates/ingress.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm/templates/lens/clickhouse.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm/templates/lens/deployment.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm/templates/lens/ingress.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm/templates/lens/secrets.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm/templates/lens/service.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm/tests/component_hosts_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "helm/litellm/tests/lens_connection_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm/tests/lens_endpoint_defaults_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm/tests/lens_modes_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm/tests/lens_modes_validation_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm/tests/lens_saved_secrets_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm/tests/lens_service_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm/tests/lens_setup_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "helm/litellm/tests/lens_worker_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm/values.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "license_cache.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-proxy-extras/litellm_proxy_extras/migration_data_checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-proxy-extras/litellm_proxy_extras/migration_dry_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-proxy-extras/litellm_proxy_extras/migration_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-proxy-extras/litellm_proxy_extras/migrations/20261021000000_managed_file_created_by_created_at_index/migration.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-proxy-extras/litellm_proxy_extras/migrations/20261027000000_add_accounting_ledger_tables/migration.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-proxy-extras/litellm_proxy_extras/migrations/20261028000000_subscription_accounts/migration.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-proxy-extras/litellm_proxy_extras/schema.prisma",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-proxy-extras/litellm_proxy_extras/utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-proxy-extras/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-error/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-error/references/boundaries.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-error/references/classification.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-error/references/conversions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-error/references/gateway.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-error/references/messages-and-causes.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-error/references/pyo3.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-error/references/recipes.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-error/references/shape.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-error/references/testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-gateway/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-gateway/references/requests.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-gateway/references/surfaces.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-gateway/references/testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-rust/.agents/skills/rust-redaction/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/.agents/skills/rust-string-enums/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/.agents/skills/rust-tracing/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/clippy.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-aws/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-aws/src/aws.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-aws/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-aws/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-aws/src/signer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-azure/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-azure/src/native.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-azure/src/resolve.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-azure/src/types.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-gcp/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-gcp/src/auth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-gcp/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-gcp/src/sdk.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-types/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-types/src/credential.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-types/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-types/src/http.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-types/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-types/src/params/aws.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-types/src/params/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-types/src/params/vertex.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-types/src/policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-types/src/token.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm-rust/crates/auth-types/tests/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-types/tests/params.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth-types/tests/token.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/auth/tests/facade.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/cache-azure-blob/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/cache-azure-blob/src/cache.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/cache-azure-blob/src/credential.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/cache-azure-blob/src/transport.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/cache-azure-blob/tests/cache.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/cache-azure-blob/tests/transport.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-rust/crates/cache-disk/Cargo.toml",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

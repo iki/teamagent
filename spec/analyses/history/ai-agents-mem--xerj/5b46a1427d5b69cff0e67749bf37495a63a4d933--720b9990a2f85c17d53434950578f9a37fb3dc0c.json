@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-mem--xerj",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/xerj-org/xerj",
+  "report": "spec/analyses/unreviewed/ai-agents-mem--xerj.md",
+  "analyzedSha": "5b46a1427d5b69cff0e67749bf37495a63a4d933",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T06:30:07Z",
+  "observedSha": "720b9990a2f85c17d53434950578f9a37fb3dc0c",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "720b9990a2f85c17d53434950578f9a37fb3dc0c",
+      "date": "2026-11-01T06:24:43Z",
+      "subject": "chore(metrics): release downloads 2026-11-01 — 51424 assets, 42708 binaries [skip ci]"
+    },
+    {
+      "sha": "08f85cf338c24ab7a09899af5668786fdf4b0388",
+      "date": "2026-11-01T00:15:21-05:00",
+      "subject": "search: poll the request deadline inside per-segment loops (#2431) (#2834)"
+    },
+    {
+      "sha": "9a0b9efe4443a363d9719b84e39feed8a8452b38",
+      "date": "2026-11-01T00:02:48-05:00",
+      "subject": "vector: store HNSW graph vectors as scaled binary16 to halve resident vector_graph memory (#2427) (#2827)"
+    },
+    {
+      "sha": "63b6aef5e66e14df12a18929caf704e550e2c4f5",
+      "date": "2026-10-31T23:00:21-05:00",
+      "subject": "docs: add a Simplified Chinese translation of ROADMAP (#2837)"
+    },
+    {
+      "sha": "b90d72848467148ccb62ebe8b36d7552a97deb78",
+      "date": "2026-10-31T22:58:32-05:00",
+      "subject": "ci(fuzz): pin nightly-2026-10-30 (rustc 2026-10-31 E0391 regression breaks every PR's fuzz job) (#2832)"
+    },
+    {
+      "sha": "b736b533701d11352c70e84c61f8d83ad63fdb42",
+      "date": "2026-10-31T22:13:53-05:00",
+      "subject": "xerj def / xerj_def: carry the index_stale hint like search (Refs #2426) (#2829)"
+    },
+    {
+      "sha": "da474292400f46dac2f5a48e5b07c7e84dd69221",
+      "date": "2026-10-31T21:35:27-05:00",
+      "subject": "Stop the memtable scan at the search deadline (Refs #2431) (#2830)"
+    },
+    {
+      "sha": "38f4d5c0f84c7ea0057a8ab34a95b1a427230c57",
+      "date": "2026-10-31T20:36:44-05:00",
+      "subject": "engine: reserve the memtable flush build working set against the memory watermark, and purge freed pages after a build (#2427) (#2826)"
+    },
+    {
+      "sha": "13c1edf629ae6da46f5adb27d3d5f895030b7423",
+      "date": "2026-10-31T20:31:02-05:00",
+      "subject": "autoindex: name the flags when symlinks are skipped (#2823) (#2824)"
+    },
+    {
+      "sha": "80a1796f6e5de598e67878bbd749e24a0bf5a68a",
+      "date": "2026-10-31T20:23:54-05:00",
+      "subject": "autoindex: calibrate the neural pre-run estimate to steady-state ingest (#2822) (#2825)"
+    },
+    {
+      "sha": "60836db1e8f2727ef99ba44193e62c9db15e1cbf",
+      "date": "2026-10-31T20:00:15-05:00",
+      "subject": "xc: an exact compound identifier ranks its definition first, or warns (#2426) (#2821)"
+    },
+    {
+      "sha": "e5d994b74d78c0b8e8fa1d98d5218511b899d158",
+      "date": "2026-10-31T19:36:18-05:00",
+      "subject": "node.lock: record the holder pid in an unlocked note (#2431) (#2820)"
+    },
+    {
+      "sha": "c9c4b420f257bf848db53ef605f98109ea6f10a6",
+      "date": "2026-10-31T18:34:31-05:00",
+      "subject": "plugins: add xerj-knowledge document-search plugin for Claude Cowork and Code (#2817)"
+    },
+    {
+      "sha": "daede2ac055d90da06041542a59c97a09da74b8a",
+      "date": "2026-10-31T17:59:22-05:00",
+      "subject": "docs: say plainly that git remotes are not tracked, and give the pull + incremental re-run recipe (#2416) (#2818)"
+    },
+    {
+      "sha": "f30ece8acfea71dc634d80f2ba83983e715ef2ea",
+      "date": "2026-10-31T17:30:38-05:00",
+      "subject": "fix(autoindex): never journal a file past a record the server refused (#2807) (#2816)"
+    },
+    {
+      "sha": "2f34e919411d620356acd7ba496cce7f5de33c05",
+      "date": "2026-10-31T15:30:21-05:00",
+      "subject": "Hold the turbo analyze reservation only while parsing and analyzing (Refs #2427) (#2813)"
+    },
+    {
+      "sha": "3e66e01041ce662e0c562f50e2b3894ce000738e",
+      "date": "2026-10-31T14:32:22-05:00",
+      "subject": "Stream the HNSW graph file on load instead of reading it whole (#2812)"
+    },
+    {
+      "sha": "0b9df255492c5c3cf48622c22b54839049a900ef",
+      "date": "2026-10-31T13:04:53-05:00",
+      "subject": "Stream HNSW graph and ids.json snapshots to disk instead of buffering them (#2809)"
+    },
+    {
+      "sha": "5023f8350552c409f94bcb9532622fd43ad60351",
+      "date": "2026-10-31T12:30:51-05:00",
+      "subject": "fix(aggs): execute weighted_avg and fail loud on unsupported shapes (#2805)"
+    },
+    {
+      "sha": "d7cd0957e52075aef41b349cf989cf2143ae93a7",
+      "date": "2026-10-31T12:02:51-05:00",
+      "subject": "seo: add contextual internal links to 14 unindexed pages (#2804)"
+    },
+    {
+      "sha": "78bb2afd1548161a5564ef79f7f55e8c34cead9e",
+      "date": "2026-10-31T11:28:11-05:00",
+      "subject": "CLA: add jiajia-jun to .contributors (#2806)"
+    },
+    {
+      "sha": "ab1951a8ea65fb78f47f9d30580335f9c15d137d",
+      "date": "2026-10-31T10:56:59-05:00",
+      "subject": "feat(autoindex): --skills finds and indexes skill folders (#2644) (#2802)"
+    },
+    {
+      "sha": "08b5a42c3d6fd62909faac58c2f47d16c5a34721",
+      "date": "2026-10-31T09:04:30-05:00",
+      "subject": "fix(vector): compact the HNSW graph when overwrites leave it mostly dead (#2799)"
+    },
+    {
+      "sha": "b6a07c36400bdc793d5d457af91e81af48863ddd",
+      "date": "2026-10-31T07:47:33-05:00",
+      "subject": "fix(vector): share HNSW doc ids between the id maps and ledger them (#2777)"
+    },
+    {
+      "sha": "6809514c97d749006f80e940a883b0115dd90584",
+      "date": "2026-10-31T07:36:20-05:00",
+      "subject": "docs: add Persian translation of README (#2794)"
+    },
+    {
+      "sha": "c7abfced269cf2c4638023867b16cab9a62205d2",
+      "date": "2026-10-31T06:34:23-05:00",
+      "subject": "fix(autoindex): report exact code size-limit skips (#2789)"
+    },
+    {
+      "sha": "d3e2eddcb39fa72eee6a9d6d59a1e79efe8516ce",
+      "date": "2026-10-31T06:33:40-05:00",
+      "subject": "fix(autoindex): finalize-count reads time bounds by sort, not min/max aggs (#2750)"
+    },
+    {
+      "sha": "3889796d836ceeae8dbe0fd9f7df0a30669caf5f",
+      "date": "2026-10-31T06:33:25-05:00",
+      "subject": "CLA: add xobotyi to .contributors (#2797)"
+    },
+    {
+      "sha": "5ed9cb09ce1ec77337e5ff916b60e62783c70464",
+      "date": "2026-10-31T05:03:40-05:00",
+      "subject": "test(autoindex): fix flaky corpus-lock tests in xc::tests (#2739)"
+    },
+    {
+      "sha": "8f3bd80aab27f7d9f6a6442b60751916c82c8a68",
+      "date": "2026-10-31T05:03:25-05:00",
+      "subject": "docs: sign contributor license agreement (#2795)"
+    },
+    {
+      "sha": "bde519cae9ac56bffa2205aff4ebc8f0f8618d71",
+      "date": "2026-10-31T04:31:59-05:00",
+      "subject": "docs(feedback): report source-code size-boundary experience (#2790)"
+    },
+    {
+      "sha": "d4a53fa2ed6cd01fc97cbf24b45a9ea1cfac7574",
+      "date": "2026-10-31T04:31:54-05:00",
+      "subject": "fix(api): delete a one-page _delete_by_query match set without a flush (#2782)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/marketplace.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".contributors",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/autoindex-fd-smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/functions-lead-test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/fuzz-smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/batch-retrieval.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cla-field-report-exempt.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/deploy-pages.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/seo.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "README.fa.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ROADMAP.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ROADMAP.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/decide-model/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/skills-intent/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/skills-intent/install_fixture.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/skills-intent/queries.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/skills-intent/results/2026-10-31.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/skills-intent/score.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/agent-memory-without-postgres-qdrant.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/answers/agentic-memory-vs-rag.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/answers/agentic-rag-vs-rag.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/ask-questions-about-a-github-repo-without-cloning.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/autoindex-exit-codes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/autoindex-server-back-pressure-429.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/batch-lookup-cve-ghsa-ids-offline.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/answers/bm25-vs-vector-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/classify-text-from-labelled-history-without-llm.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/answers/claude-code-memory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/code-search-mcp-for-claude-code.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/coding-agent-memory-across-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/do-search-embeddings-help.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/full-text-search-over-jsonl-files-cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/give-chatgpt-claude-local-file-access.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/how-xerj-autoindexes-a-folder.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/how-xerj-combines-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/hybrid-search-quality-measured-ndcg.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/improve-basic-faiss-rag-pipeline.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/index-multiple-csv-files.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/local-code-search-mcp-fewer-tokens-than-grep.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/local-embeddings-without-openai-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/local-search-mcp-for-codex-and-cursor.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/mcp-api-search-or-vector-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/notion-export-duplicate-search-results.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/rag-without-vector-database.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/read-indexed-email-and-pdf-folder.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/reciprocal-rank-fusion-when-to-use.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/reduce-embedding-api-cost.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/reindex-taking-forever.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/rerank-search-results-calibrated-judge.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/resume-interrupted-autoindex-run.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/search-bvh-motion-capture-files.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/search-engine-without-docker.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/search-github-issues-and-prs-locally.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/search-gzip-logs-without-zgrep.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/search-gzipped-csv-or-json.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/search-jupyter-notebook-cells.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/search-kubernetes-pod-logs-on-disk.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/search-obsidian-pdf-docx-attachments.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/search-openapi-spec-for-agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/search-unity-project-assets.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/search-word-documents-in-a-folder.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/set-mcp-memory-storage-path.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/share-folder-read-only-search-without-uploading.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/store-agent-memory-without-llm-call.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/syntax-aware-code-search-refactoring.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/vector-database-vs-full-text-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/answers/what-is-agentic-memory.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/answers/what-is-an-mcp-memory-server.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/answers/what-is-hybrid-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/answers/what-is-xerj.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/best-grep-alternative-for-ai-coding-agents-2026.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/best-lightweight-elasticsearch-compatible-server-2026.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/best-mcp-server-local-code-search-2026.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/compare/xerj-vs-agent-memory-tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-ast-grep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/compare/xerj-vs-claude-mem-and-mempalace.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-docfetcher.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-elasticsearch-local.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-houdahspot.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-khoj.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-localsynapse.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-meilisearch.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/compare/xerj-vs-mem0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-obsidian-omnisearch.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-pagefind.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-recoll.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-ripgrep-all.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-spotlight.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-typesense.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-vector-database.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/compare/xerj-vs-web-agent-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/agentic-rag-loop.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/agentic-rag-steps.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/bm25-vs-vector-lab.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/bm25-vs-vector-map.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/claude-code-memory-layers.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/claude-code-memory-steps.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/claude-memory-designs.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/code-caps.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/code-symbol-lines.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/code-two-queries.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/email-guest-access.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/email-reader-flow.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/email-reader-shapes.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/gzip-csv-flow.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/gzip-plain-vs-gzip.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/hybrid-beir-bars.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/hybrid-rrf-lab.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/hybrid-search-flow.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/memory-recall-lab.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/memory-tool-picker.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/memory-write-paths.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/notion-export-docs.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/notion-group-hits.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/obsidian-vault-run.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/visuals/obsidian-yaml-check.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/LIVE_REINDEXING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/RERANK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/examples/rust-ast-audit/QUERY_COOKBOOK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/perf-release-gate.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/recipes/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/recipes/batch-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/recipes/find-a-skill.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/recipes/production-deployment.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-api/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-api/src/es_compat.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-api/src/extract.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-api/tests/autoindex_changed_file_drops_stale_symbols.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-api/tests/autoindex_html_inline_script.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "engine/crates/xerj-api/tests/delete_while_stats_stalled.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-api/tests/index_false_is_honoured.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-api/tests/judge_stage_http.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-api/tests/knn_beside_query_with_aggs_stays_200.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-api/tests/memtable_budget_autoindex.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-api/tests/proxy_semantic_autoindex_resumes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "engine/crates/xerj-api/tests/reindex_alias_semantics.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "engine/crates/xerj-api/tests/reindex_request_controls.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "engine/crates/xerj-api/tests/reindex_source_filtering.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "engine/crates/xerj-api/tests/semantic_text_width_follows_backend.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "engine/crates/xerj-api/tests/slice_spec_is_validated.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-autoindex/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-autoindex/src/catalog.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-autoindex/src/cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-autoindex/src/content.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-autoindex/src/def.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-autoindex/src/detect/e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-autoindex/src/detect/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-autoindex/src/esclient.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-autoindex/src/extract/code.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-autoindex/src/extract/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-autoindex/src/extract/sqlsrc.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/crates/xerj-autoindex/src/extract/txt.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

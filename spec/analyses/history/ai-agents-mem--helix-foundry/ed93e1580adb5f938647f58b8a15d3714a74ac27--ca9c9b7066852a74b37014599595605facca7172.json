@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-mem--helix-foundry",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/helixdb/helix-foundry",
+  "report": "spec/analyses/unreviewed/ai-agents-mem--helix-foundry.md",
+  "analyzedSha": "ed93e1580adb5f938647f58b8a15d3714a74ac27",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-27T20:44:25Z",
+  "observedSha": "ca9c9b7066852a74b37014599595605facca7172",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "ca9c9b7066852a74b37014599595605facca7172",
+      "date": "2026-10-30T11:55:27Z",
+      "subject": "Merge pull request #182 from HelixDB/dev"
+    },
+    {
+      "sha": "0c7ee8058493983e8ca703dd1f72766a80ac4522",
+      "date": "2026-10-30T11:41:07Z",
+      "subject": "Merge pull request #183 from HelixDB/ask-no-spend-lines"
+    },
+    {
+      "sha": "6e1c3c17859d3b56c3e9b8b55b92f12d37940fff",
+      "date": "2026-10-30T11:40:52Z",
+      "subject": "Drop what a question spent from the Analyst's replies"
+    },
+    {
+      "sha": "9af12746c361865b2994969d56d79708fbb2e36f",
+      "date": "2026-10-30T11:26:50Z",
+      "subject": "Merge pull request #181 from HelixDB/ask-trace-collapsed"
+    },
+    {
+      "sha": "b3db8899c0c0fba5f0c931a58c162a255048138b",
+      "date": "2026-10-30T11:26:33Z",
+      "subject": "Close the Analyst's trace to one line: the step it is on, then how long it worked"
+    },
+    {
+      "sha": "d5bb353a905d99d036b72618208f5369ceff7455",
+      "date": "2026-10-30T11:06:47Z",
+      "subject": "Merge pull request #180 from HelixDB/ask-steps-one-list"
+    },
+    {
+      "sha": "e5fdff988f757f4c34b78ce83dd6cbec74f11e0a",
+      "date": "2026-10-30T11:06:30Z",
+      "subject": "Show the Analyst's steps as one list, not a box each"
+    },
+    {
+      "sha": "38cd342c36910dc2c378ebdf4cf8d1ad7fe9d667",
+      "date": "2026-10-30T11:03:15Z",
+      "subject": "Merge pull request #178 from HelixDB/pdf-read-ended-context"
+    },
+    {
+      "sha": "77771829e5b28eed21d8147f69c3c20361a798ce",
+      "date": "2026-10-30T10:39:35Z",
+      "subject": "Merge pull request #179 from HelixDB/ask-steps-as-tool-calls"
+    },
+    {
+      "sha": "334d37620f4031d4cf29747ca6cc16ccf0cb51b2",
+      "date": "2026-10-30T10:39:18Z",
+      "subject": "Show the Analyst's steps as tool calls that open on their input and output"
+    },
+    {
+      "sha": "3ae80a4cc659a22c5fa153325aac47da2a8aa599",
+      "date": "2026-10-30T10:33:33Z",
+      "subject": "Merge pull request #176 from HelixDB/ci-incremental-caches"
+    },
+    {
+      "sha": "662e37a36c37f59ace21ace7490cfa7f7148d9d0",
+      "date": "2026-10-30T10:15:38Z",
+      "subject": "Start no PDFium for a PDF read whose context has ended"
+    },
+    {
+      "sha": "8b53015dff1dbf7fd3c001d1bb5804a60f79ebbb",
+      "date": "2026-10-30T09:26:04Z",
+      "subject": "Merge pull request #177 from HelixDB/slack-notion-google-connectors"
+    },
+    {
+      "sha": "408c76deaed09c99419421bc9c72e63d6fa8924a",
+      "date": "2026-10-30T08:54:24Z",
+      "subject": "Decode a Notion property's id before putting it in a path, so a relation's ids aren't read through an id escaped twice"
+    },
+    {
+      "sha": "b9ac0f1eab8f8ea40c349f86b8ac0fcc4f80d420",
+      "date": "2026-10-30T08:03:44Z",
+      "subject": "Keep tsc, ESLint and Prettier state between CI runs, and run Vitest on every vCPU"
+    },
+    {
+      "sha": "f237eeed81a511e6ce2a122479e20734f3834b6a",
+      "date": "2026-10-29T22:53:02Z",
+      "subject": "Reach the sources through Use my own data in the connector documents' onboarding test"
+    },
+    {
+      "sha": "4c98deed32556be76acb2c2a9ee95c1a9de2db0a",
+      "date": "2026-10-29T22:20:58Z",
+      "subject": "Keep only a hash of a Notion secret beside the data sources a sync listed"
+    },
+    {
+      "sha": "2e349430af8108961e5b2e7406d9d6f542059e08",
+      "date": "2026-10-29T22:20:17Z",
+      "subject": "Merge branch 'google-change-reads' into slack-notion-google-connectors"
+    },
+    {
+      "sha": "8a3a4cc3b3706b4ccbacd6b64a8841353194e9de",
+      "date": "2026-10-29T22:20:17Z",
+      "subject": "Merge branch 'notion-change-reads' into slack-notion-google-connectors"
+    },
+    {
+      "sha": "1ba04b19524151dc799b9e28f8d134d01e258bcc",
+      "date": "2026-10-29T22:18:06Z",
+      "subject": "Test through the syncer that Notion's reconcile after change reads writes nothing"
+    },
+    {
+      "sha": "ae9c6e9c5d1c40e1244b73d3decd3067bc80d963",
+      "date": "2026-10-29T22:17:45Z",
+      "subject": "Search a Notion sync's data sources once, at its Discover, and probe its pages only when none is shared"
+    },
+    {
+      "sha": "f031c02d48e85b78dab9cb770852e212506af0bd",
+      "date": "2026-10-29T22:17:16Z",
+      "subject": "Keep a Notion change cursor's last full read and the pages it took out for the trash, to offer documents to pages made since or restored"
+    },
+    {
+      "sha": "8deaf7d765ffc27d260f2c91fe233e1ab24bb7ab",
+      "date": "2026-10-29T22:16:45Z",
+      "subject": "Read by id a data source a Notion change read's search leaves out, and keep its rows while Notion still shares it"
+    },
+    {
+      "sha": "3ee2f2aa72a10aab2fc8f33d3997aed3b7ebd2c3",
+      "date": "2026-10-29T22:16:28Z",
+      "subject": "Test Slack's change reads through the syncer: a quiet hour reads no snapshot, a channel joined or left, a new history_days, and a late document carried to the next sync"
+    },
+    {
+      "sha": "cef481e414f28e1c182012c09ba0656c2f62819b",
+      "date": "2026-10-29T22:16:28Z",
+      "subject": "Follow Slack's channel members in change reads beside history, write only the days and members whose digests changed, and re-read a late day for its channel alone"
+    },
+    {
+      "sha": "a4d693416fc8e64cf6a47e741f577f87e196a9cb",
+      "date": "2026-10-29T22:16:11Z",
+      "subject": "Search Notion's trash and pages 30 minutes before a change cursor, and leave out what a list shows outside the trash it asked for"
+    },
+    {
+      "sha": "80dd4a52069e7dcbb52fdc42eda0067b8297db6e",
+      "date": "2026-10-29T22:15:32Z",
+      "subject": "Version a Notion page's document read before its last edit settles as provisional, so the next read reads it again"
+    },
+    {
+      "sha": "50b8f02758e6ba8976eeeb3611b2251ec8639b94",
+      "date": "2026-10-29T22:13:14Z",
+      "subject": "Say what a refused drive's new token and an event's earlier attendees mean in Google's change read"
+    },
+    {
+      "sha": "b6013566448a71568e80f595d624e2fea5e96233",
+      "date": "2026-10-29T21:47:58Z",
+      "subject": "Test Google's change reads through the syncer across shared drives, retried part way, and with an event shown twice in one list"
+    },
+    {
+      "sha": "eb8032da91c0989388dab7aed4d5c63333812290",
+      "date": "2026-10-29T21:41:30Z",
+      "subject": "Keep a Google file Drive removed while the user can still read it, offer Docs once every feed is read, and start every feed again on a reset"
+    },
+    {
+      "sha": "9f99450d284b57ca58684788b076c703c1b2fb5d",
+      "date": "2026-10-29T21:41:21Z",
+      "subject": "Keep a Google change cursor's user and days of events, and read in full when the settings no longer match them"
+    },
+    {
+      "sha": "10217cad1a0f638fcbaf52a7130535edeaee85a5",
+      "date": "2026-10-29T21:40:52Z",
+      "subject": "Take back the attendees an earlier copy of a Google event wrote in the same change read"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/assets/analyst.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/assets/explorer.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/assets/logo-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/assets/logo-light.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".prettierignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/connectors.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/connectors_s3_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/connectors_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/loads.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/ontologies_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/ontology_generations.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/ontology_generations_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/cmd/foundry/foundry.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/config/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/config/config_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/connector/connector.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/connector/documents.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/connector/documents_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/connector/events_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/connector/github.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/connector/google.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/connector/google_changes.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/connector/google_changes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/connector/google_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/connector/granola_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/connector/notion.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/connector/notion_changes.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/connector/notion_changes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/connector/notion_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/connector/posthog.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/connector/slack.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/connector/slack_changes.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/connector/slack_changes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/connector/slack_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/document/read/pdf.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/ontologyagent/changes.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/ontologyagent/changes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ontologyagent/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/ontologyagent/compare.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ontologyagent/contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ontologyagent/graph.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/gen/go/helix/foundry/v1/foundry.pb.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/gen/go/helix/foundry/v1/types.pb.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/gen/go/ontology_agent/v1/agent.pb.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/gen/go/ontology_agent/v1/agent_grpc.pb.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/gen/openapiv2/helix/foundry/v1/foundry.swagger.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/proto/helix/foundry/v1/foundry.proto",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/proto/helix/foundry/v1/types.proto",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/proto/ontology_agent/v1/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/proto/ontology_agent/v1/agent.proto",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/proto/ontology_agent/v1/schema/VERSION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/proto/ontology_agent/v1/schema/clues_request.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/pb/proto/ontology_agent/v1/schema/compare_request.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/pb/proto/ontology_agent/v1/schema/compare_result.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/proto/ontology_agent/v1/schema/extract_event.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/proto/ontology_agent/v1/schema/extract_request.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/proto/ontology_agent/v1/schema/ingest_event.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/proto/ontology_agent/v1/schema/ingest_request.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/proto/ontology_agent/v1/schema/ingest_result.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/proto/ontology_agent/v1/schema/turn_request.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ports/ports.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/sample/acme.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/sample/sample.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/sample/sample_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/snapshot/changes.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/snapshot/changes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/connector_documents.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/connector_documents_sync_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/connector_documents_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/connector_syncs.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/connectors.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/connectors_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/store/foundry_apply_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/store/foundry_document_removals.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/store/foundry_document_removals_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/foundry_documents.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/foundry_graph_jobs.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/foundry_loads.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/store/foundry_notifications.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/store/foundry_notifications_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/foundry_ontologies.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/foundry_sync_engine_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/store/migrations/20261108000000_foundry_graph_apply.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/store/migrations/20261109000000_foundry_notifications.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/model/foundry.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/store/model/foundry_notifications.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/model/ontology_generation.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/ontology_generations.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/ontology_generations_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/store.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/store/unimplemented.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/syncer/documents.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/syncer/documents_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/syncer/google_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/syncer/notion_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/syncer/slack_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/syncer/syncer.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/syncer/syncer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/workers/foundry-graph-worker/apply_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/workers/foundry-graph-worker/changes.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/workers/foundry-graph-worker/changes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/workers/foundry-graph-worker/compare_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/workers/foundry-graph-worker/metrics.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/workers/foundry-graph-worker/removals_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/workers/foundry-graph-worker/run.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/workers/foundry-graph-worker/task.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/workers/foundry-graph-worker/task_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/workers/foundry-notify-worker/email.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/workers/foundry-notify-worker/metrics.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/workers/foundry-notify-worker/task.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/workers/foundry-notify-worker/task_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/workers/foundry-ontology-worker/task.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/workers/foundry-ontology-worker/task_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/workers/foundry-sync-worker/task.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/workers/foundry-sync-worker/task_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contract/foundry.swagger.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "local/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "local/acme/acme.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "local/compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mock/graph/rules.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mock/routes/data-sources.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mock/routes/data.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mock/routes/loads.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mock/routes/ontology.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "next.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "public/connectors/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/connectors/google.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/connectors/notion-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/connectors/notion.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/connectors/slack-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/connectors/slack.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/landing/connectors/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/landing/connectors/mysql.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/landing/connectors/neo4j.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/landing/connectors/planetscale-white.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/landing/connectors/posthog.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/landing/favicon.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/landing/logo-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/landing/providers/LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/landing/providers/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/landing/providers/azure.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/landing/providers/bedrock.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/landing/providers/gemini.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/landing/providers/openai-white.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/samples/acme/Acme Corp plans and pricing 2026.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/samples/acme/Brightmoor Facilities order form.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/samples/acme/Brightmoor renewal call 2026-10-21.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/samples/acme/Halvorsen Freight master agreement.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/samples/acme/Halvorsen expansion call 2026-10-06.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "public/samples/acme/Incident report 2026-10-07 dispatch sync.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

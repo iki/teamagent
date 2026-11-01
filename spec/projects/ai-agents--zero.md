@@ -36,6 +36,12 @@ The [shell entry point](https://github.com/Gitlawb/zero/blob/4247a07aba0f89c3c25
 
 [Model-output formatting](https://github.com/Gitlawb/zero/blob/4247a07aba0f89c3c2597314a33edaede56be70c/internal/tools/bash.go#L396-L420) redacts likely secrets. Direct-call spilling occurs earlier through a separate helper whose own redaction/storage rules were not read, so this file alone cannot establish artifact privacy. Teamagent can borrow explicit enforcement receipts and truthful truncation markers, but should require a non-optional admitted execution context, bounded capture at ingress, and redaction across both display and stored artifacts. No shell, sandbox, upstream test or provider was executed.
 
+## 2026-11-01 test-only refresh
+
+Reviewed the complete one-file delta from `4247a07aba0f89c3c2597314a33edaede56be70c` to `2e10a4b60b5ef8ebbf18bde8aea6dbfc65c7b43b`: [the concurrency-cap fixture](https://github.com/Gitlawb/zero/blob/2e10a4b60b5ef8ebbf18bde8aea6dbfc65c7b43b/internal/swarm/lifecycle_test.go#L147-L162). Production source is unchanged in this delta.
+
+The fixture now waits for all five task records to be done **and** for both running-member and queued-task counts to reach zero, instead of checking those counts immediately after task completion. It retains the expected launch count. This encodes the distinction between a logical terminal result and settled supervisor capacity; it does not itself establish process-tree termination or external-effect completion. Teamagent acceptance should observe owned-resource settlement in addition to task status. The supervisor implementation and wait helper were not re-audited, and the fixture was not executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [zero](https://github.com/Gitlawb/zero); analyzed commit `4247a07aba0f89c3c2597314a33edaede56be70c`; commit date 2026-10-27T06:25:41-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--zero.md).
+Analysis metadata: source [zero](https://github.com/Gitlawb/zero); analyzed commit `2e10a4b60b5ef8ebbf18bde8aea6dbfc65c7b43b`; commit date 2026-10-29T06:30:41-07:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--zero.md).
 <!-- teamagent-analysis:end -->

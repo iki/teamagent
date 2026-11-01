@@ -32,6 +32,18 @@ The sampled [prompt audit](https://github.com/anthropics/skills/blob/dbd4588f9e1
 
 The [live-source index](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/claude-api/shared/live-sources.md#L1) directs changing API facts toward primary documentation. Named models, prices, parameters and behavior claims in these cached documents were not checked against those destinations in this update and must not become adopted Teamagent requirements. A source-specific consent step also does not override authorization already established by the user. No prompt migration, API call, SDK installation or comparative evaluation was performed.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `ca45fc496a3436251f191354091d557da31c15b5` (commit date `2026-10-28T12:20:38-07:00`), compared with `dbd4588f9e1033efb41dad4bef2f7947c8993d44`. Earlier observations remain historical evidence.
+
+**Scope:** Complete mcp-builder/SKILL.md diff and opening v2 guide examples/translation table; three changed paths inventoried. SDK source and later guide examples not verified here.
+
+The [skill](https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/SKILL.md) now selects its MCP guide by the installed major package and preserves an existing v1 project unless migration is requested. The [v2 guide](https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/node_mcp_server_v2.md) separates package/import/schema/transport patterns and uses a server factory. Its stable-version claims and code examples remain authored guidance, not compatibility evidence against Teamagent's pinned packages.
+
+**Teamagent implication (inference):** Select skill variants by actual package version and host contract, load only the required reference, and validate examples against installed source. Imported npm/tsx/Zod examples do not replace Teamagent's Aube/Bun/Effect Schema choices or authorize a dependency migration.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-claude](https://github.com/anthropics/skills); analyzed commit `dbd4588f9e1033efb41dad4bef2f7947c8993d44`; commit date 2026-10-09T18:45:49Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--agent-claude.md).
+Analysis metadata: source [agent-claude](https://github.com/anthropics/skills); analyzed commit `ca45fc496a3436251f191354091d557da31c15b5`; commit date 2026-10-28T12:20:38-07:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--agent-claude.md).
 <!-- teamagent-analysis:end -->

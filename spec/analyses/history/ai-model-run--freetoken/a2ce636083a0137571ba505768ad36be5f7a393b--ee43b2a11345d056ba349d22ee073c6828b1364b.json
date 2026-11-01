@@ -1,0 +1,340 @@
+{
+  "id": "ai-model-run--freetoken",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/FlashML-org/FreeToken",
+  "report": "spec/projects/ai-model-run--freetoken.md",
+  "analyzedSha": "a2ce636083a0137571ba505768ad36be5f7a393b",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-27T23:56:59-07:00",
+  "observedSha": "ee43b2a11345d056ba349d22ee073c6828b1364b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "ee43b2a11345d056ba349d22ee073c6828b1364b",
+      "date": "2026-10-29T17:15:32-07:00",
+      "subject": "fix(server): refuse n != 1 on /v1/completions instead of ignoring it (#842)"
+    },
+    {
+      "sha": "ecbbce457769a75810df83517250cd3ce3263ea5",
+      "date": "2026-10-28T22:28:13-07:00",
+      "subject": "fix(moe): skip inactive gguf routes in hybrid decode (#823)"
+    },
+    {
+      "sha": "c2c3e828e8859bb8ad677acb8fc9c7464e9e7e67",
+      "date": "2026-10-28T21:18:02-07:00",
+      "subject": "feat(spec): verify draft tokens on the target side (#836)"
+    },
+    {
+      "sha": "d2977fbc13c92d982860d271bbace9d409876048",
+      "date": "2026-10-28T20:48:55-07:00",
+      "subject": "feat(kernel): add an iq1_m mmq kernel for moe steps above 8 tokens (#835)"
+    },
+    {
+      "sha": "c94535c9096fcd7d7657c1829888e1c45e08f049",
+      "date": "2026-10-28T20:05:27-07:00",
+      "subject": "fix(attention): size the decode KV tile to the shared-memory budget (#840)"
+    },
+    {
+      "sha": "d043fb61f8d97bd5a95bc9d3147a543b92bf0a90",
+      "date": "2026-10-28T17:22:50-07:00",
+      "subject": "refactor(layers): share one GatedDeltaNet op in layers/linear_attn (#841)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/linear.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/engine/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/engine/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/engine/sample.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "python/freetoken/engine/spec_protocol.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/causal_conv1d.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/csrc/ggml/VERSION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/csrc/ggml/freetoken.patch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/csrc/ggml/freetoken/ggml_ops.cu",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/csrc/ggml/ggml-cuda/mmid.cu",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/csrc/ggml/ggml-cuda/mmq-load-tiles.cuh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/csrc/ggml/ggml-cuda/mmq.cu",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/csrc/ggml/ggml-cuda/mmq.cuh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/csrc/ggml/ggml-cuda/mmvq.cu",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/csrc/ggml/ggml-cuda/quantize.cu",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "python/freetoken/kernel/csrc/ggml/ggml-cuda/template-instances/mmq-instance-iq1_m.cu",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/fla/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/fla/fused_sigmoid_gating_recurrent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/ggml.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/triton/attention.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kernel/triton/causal_conv1d_triton.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kvcache/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kvcache/cache_status.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/kvcache/linear_state_pool.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "python/freetoken/layers/linear_attn/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "R077",
+      "path": "python/freetoken/layers/linear_attn/gdn.py",
+      "previousPath": "python/freetoken/models/qwen4_exp/gdn.py"
+    },
+    {
+      "status": "R082",
+      "path": "python/freetoken/layers/linear_attn/gdn_reference.py",
+      "previousPath": "python/freetoken/models/qwen3_5_moe/gdn_reference.py"
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/layers/quantization/moe/gguf.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/models/glm5_next/kda.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "python/freetoken/models/qwen3_5_moe/gdn.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "python/freetoken/models/qwen3_5_moe/gdn_kernels.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/models/qwen3_5_moe/model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/models/qwen3_5_moe/weight.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "python/freetoken/models/qwen4_exp/gdn_reference.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/models/qwen4_exp/model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/models/qwen4_exp/weight.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/scheduler/cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/scheduler/scheduler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/scheduler/status.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/server/args.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/server/openai_api.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "python/freetoken/spec/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "python/freetoken/spec/proposer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "python/freetoken/spec/rejection.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "python/freetoken/spec/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/kernels/test_ggml.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/kvcache/test_cache_unit_bytes.py",
+      "previousPath": null
+    },
+    {
+      "status": "R053",
+      "path": "tests/layers/test_gdn.py",
+      "previousPath": "tests/models/qwen4_exp/test_gdn.py"
+    },
+    {
+      "status": "M",
+      "path": "tests/models/qwen4_exp/test_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/models/qwen4_exp/test_ple.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scheduler/test_abort_inflight_prefill.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/scheduler/test_spec_drain.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/server/test_openai_api.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/spec/test_gdn_verify.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/spec/test_rejection.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/spec/test_verify_contract.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

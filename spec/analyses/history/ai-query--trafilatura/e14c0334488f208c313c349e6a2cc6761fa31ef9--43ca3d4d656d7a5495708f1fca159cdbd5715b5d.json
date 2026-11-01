@@ -1,0 +1,285 @@
+{
+  "id": "ai-query--trafilatura",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/adbar/trafilatura",
+  "report": "spec/projects/ai-query--trafilatura.md",
+  "analyzedSha": "e14c0334488f208c313c349e6a2cc6761fa31ef9",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T18:14:09+01:00",
+  "observedSha": "43ca3d4d656d7a5495708f1fca159cdbd5715b5d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "43ca3d4d656d7a5495708f1fca159cdbd5715b5d",
+      "date": "2026-10-30T18:05:47+01:00",
+      "subject": "fix(downloads): resolve a urllib3 redirect against the hop that sent it (#1071)"
+    },
+    {
+      "sha": "cd348e20baf3fda447cdbb51c9b9234e002e14de",
+      "date": "2026-10-30T17:25:52+01:00",
+      "subject": "fix: write one TEI term per category and tag (#1069)"
+    },
+    {
+      "sha": "6782f9edaf9a3b88460c3da382acb67dc616e45f",
+      "date": "2026-10-30T17:25:28+01:00",
+      "subject": "fix: read SLEEP_TIME from the config in sitemap_search() and find_feed_urls() (#1063)"
+    },
+    {
+      "sha": "b7e131c618146857f0c98a158f55b30d4ffa0541",
+      "date": "2026-10-30T15:40:40+01:00",
+      "subject": "fix: skip WordPress /wp-json/ links when looking for feeds (#1044)"
+    },
+    {
+      "sha": "d0241128cdbf01baa7460261d51fd6e163acafea",
+      "date": "2026-10-30T15:39:43+01:00",
+      "subject": "fix(cli): apply the blacklist to discovered URLs and crawled links (#1043)"
+    },
+    {
+      "sha": "bf01e14ea2d90ecefed4c625e176f85b518b77ed",
+      "date": "2026-10-30T15:30:16+01:00",
+      "subject": "feat: use a light justext port for extraction (#1064)"
+    },
+    {
+      "sha": "3909e79e319b83fe3c7386a92d657afc8843fcff",
+      "date": "2026-10-30T15:29:46+01:00",
+      "subject": "fix(cli): write --html output files with an .html extension (#1038)"
+    },
+    {
+      "sha": "138e99a9238ea4e3bbc1fd2603996511771b0b06",
+      "date": "2026-10-30T15:28:49+01:00",
+      "subject": "fix: keep only alternate and related links in Atom feeds (#1037)"
+    },
+    {
+      "sha": "c37e77be052ca41f496321fe95512abf42bb4bc9",
+      "date": "2026-10-30T15:28:13+01:00",
+      "subject": "fix: unwrap prefixed tags such as <o:p> instead of losing the document (#1012)"
+    },
+    {
+      "sha": "e5fc5c7cfd686ea888e19633011058389d762a59",
+      "date": "2026-10-30T09:09:27+01:00",
+      "subject": "fix(sitemaps): read robots.txt files longer than 10000 characters (#1036)"
+    },
+    {
+      "sha": "c1f33e3945b8a2a75d6ad1fb1a31affe7ce84fbc",
+      "date": "2026-10-30T09:06:46+01:00",
+      "subject": "fix(sitemaps): accept leading whitespace before a downloaded sitemap (#1048)"
+    },
+    {
+      "sha": "07c05bbcb9908c9ec655b275f019bf9709fad903",
+      "date": "2026-10-30T09:06:05+01:00",
+      "subject": "fix(spider): deduplicate crawler URLs with fragment identifiers (#1046)"
+    },
+    {
+      "sha": "292da5924b47fdb81b4772accdf8cf55a754afdf",
+      "date": "2026-10-30T09:04:51+01:00",
+      "subject": "fix(spider): follow a homepage redirect between the bare domain and www (#1042)"
+    },
+    {
+      "sha": "ee595a7afb4688a40a0308dd89e25baa106a41cf",
+      "date": "2026-10-30T09:03:20+01:00",
+      "subject": "fix(spider): ignore non-200 responses in the spider (#1041)"
+    },
+    {
+      "sha": "be160c5284872276be656fc9e5d5a742be22bede",
+      "date": "2026-10-30T08:59:26+01:00",
+      "subject": "fix: accept www.schema.org and list or object @context in JSON-LD (#1035)"
+    },
+    {
+      "sha": "e0ceee630760bf9d95c4d21e5079d72c26dc45da",
+      "date": "2026-10-30T08:58:44+01:00",
+      "subject": "fix: match the sitemap subpage filter regardless of scheme and www (#1015)"
+    },
+    {
+      "sha": "d7012ad7ad49449b4a3744fb63944a92ae03e904",
+      "date": "2026-10-30T08:58:20+01:00",
+      "subject": "fix: keep text after an empty permalink anchor (#1025)"
+    },
+    {
+      "sha": "5e5292fffe3009f218021575b05c2d2dcf6afc64",
+      "date": "2026-10-29T09:14:43+01:00",
+      "subject": "fix(cli): isolate random filename generation from global state (#1003)"
+    },
+    {
+      "sha": "64a1fb03bc71a1e27c423e3eb1290fe54fd47838",
+      "date": "2026-10-28T20:57:16+01:00",
+      "subject": "fix(cli): drop a UTF-8 BOM from the -i and --blacklist files (#1026)"
+    },
+    {
+      "sha": "f2edb672282736971070061a82c9592b8d1f0cbd",
+      "date": "2026-10-28T17:37:39+01:00",
+      "subject": "fix: recognize feed links whose rel is not exactly \"alternate\" (#1013)"
+    },
+    {
+      "sha": "3b6adcc5152f371fe2e3ecc3d17ba2b4b9fac1b6",
+      "date": "2026-10-28T17:34:35+01:00",
+      "subject": "fix: treat the <td> cells of a table head as header cells (#1008)"
+    },
+    {
+      "sha": "9570ef9095e66967331113d7f11c9acd7ebbcc55",
+      "date": "2026-10-28T17:33:55+01:00",
+      "subject": "fix: recognize Python-Markdown codehilite blocks as code (#1006)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "HISTORY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/deduplication.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/extraction-overview.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/troubleshooting.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/cli_tests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/downloads_tests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/eval_baseline.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/evaluate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/feeds_tests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/json_metadata_tests.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/jt_unit_tests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sitemaps_tests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/spider_tests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit_tests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/xml_tei_tests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "trafilatura/cli_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "trafilatura/core.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "trafilatura/downloads.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "trafilatura/external.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "trafilatura/feeds.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "trafilatura/htmlprocessing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "trafilatura/json_metadata.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "trafilatura/justext_lite.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "trafilatura/main_extractor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "trafilatura/meta.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "trafilatura/settings.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "trafilatura/sitemaps.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "trafilatura/spider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "trafilatura/xml.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

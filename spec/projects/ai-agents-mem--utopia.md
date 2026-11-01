@@ -37,6 +37,14 @@ Evidence: [crates/utopia-server/src/retrieval.rs:1-15](https://github.com/deeple
 
 **Scope and limits:** Scoped static review of retrieval orchestration, historical fixture and token extractor/helpers within the 395-path comparison. Underlying document SQL/index transactions, all token-enabled route checks, graph migrations and ingest parsing were not audited. No database fixture, native search, authentication or model operation was executed.
 
+## Change review - 2026-11-01
+
+Reviewed `fbe13bd07e336be9df84ccf45eeddc660205c69e` against `1142792979b61272d92cf322cbfd2f86615f6cb3` (47 changed paths). The [source models](https://github.com/deeplethe/utopia/blob/fbe13bd07e336be9df84ccf45eeddc660205c69e/crates/utopia-core/src/models.rs) expose an optional consumed checkpoint independently of last-sync time/status. The contract describes a completed timestamp group rather than the wall-clock time of an attempt. The [API fixtures](https://github.com/deeplethe/utopia/blob/fbe13bd07e336be9df84ccf45eeddc660205c69e/crates/utopia-server/src/api/sources_checkpoint_tests.rs) check list/update responses and null for sources without a checkpoint, but return without assertions when the database environment is absent. A selected [Jira dispatch hunk](https://github.com/deeplethe/utopia/blob/fbe13bd07e336be9df84ccf45eeddc660205c69e/crates/utopia-server/src/ingest_sources.rs) passes cloud classification into its window fetcher.
+
+**Harness consequence:** Report consumed coverage, attempt time and success separately. Unknown cursor is not epoch zero, and finishing one request does not establish complete source ingestion. Advance a continuation only after its whole boundary group is durably admitted; this review establishes the visible contract, not the uninspected fetcher's guarantee. Static article acquisition remains separate from refreshable feed/ticket continuation.
+
+**Scope and limits:** Source model, API checkpoint fixture/registration and Jira dispatch delta only. No database-backed fixture, network sync or checkpoint algorithm was executed or fully audited.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [utopia](https://github.com/deeplethe/utopia); analyzed commit `1142792979b61272d92cf322cbfd2f86615f6cb3`; commit date 2026-10-27T15:37:10+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--utopia.md).
+Analysis metadata: source [utopia](https://github.com/deeplethe/utopia); analyzed commit `fbe13bd07e336be9df84ccf45eeddc660205c69e`; commit date 2026-10-31T03:15:23+08:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--utopia.md).
 <!-- teamagent-analysis:end -->

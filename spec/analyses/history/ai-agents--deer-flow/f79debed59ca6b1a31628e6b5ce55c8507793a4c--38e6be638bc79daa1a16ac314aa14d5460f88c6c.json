@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--deer-flow",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/bytedance/deer-flow",
+  "report": "spec/projects/ai-agents--deer-flow.md",
+  "analyzedSha": "f79debed59ca6b1a31628e6b5ce55c8507793a4c",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T14:00:34+08:00",
+  "observedSha": "38e6be638bc79daa1a16ac314aa14d5460f88c6c",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "38e6be638bc79daa1a16ac314aa14d5460f88c6c",
+      "date": "2026-11-01T15:04:16+08:00",
+      "subject": "fix(memory): tolerate unbounded stored fact confidence (#7764)"
+    },
+    {
+      "sha": "31e7b4ae4f02f18b72ed9c6b6357baa69d28bdec",
+      "date": "2026-11-01T12:45:14+08:00",
+      "subject": "fix(mcp): keep a tool argument named runtime out of LangGraph's runtime injection (#7677)"
+    },
+    {
+      "sha": "9a49fb2bb37f2c6f7396800d53058a32676b8479",
+      "date": "2026-11-01T12:41:34+08:00",
+      "subject": "fix(clarification): keep each question when a provider reuses a call ID (#7762)"
+    },
+    {
+      "sha": "35656d6a9fe2ac76ddcf40335ede7361504ddf5b",
+      "date": "2026-11-01T08:08:08+08:00",
+      "subject": "fix(agents): ignore malformed entries in a serialized MCP routing index (#7751)"
+    },
+    {
+      "sha": "a9bd03ef572a4898ea1ba977e906408dc2f28d7d",
+      "date": "2026-10-31T23:00:39+08:00",
+      "subject": "fix(citations): keep copied markdown references valid (#7743)"
+    },
+    {
+      "sha": "c6a39936954d103f24293bfc165cb40e68d44464",
+      "date": "2026-10-31T21:40:59+08:00",
+      "subject": "fix(runtime): keep each parallel task's gate across a steer (#7755)"
+    },
+    {
+      "sha": "e0f5483fdf4466c3c9b3d19d01f6c7e6f4ed641f",
+      "date": "2026-10-31T19:19:42+08:00",
+      "subject": "fix(goal): fall back gracefully for an unsupported reply locale (#7745)"
+    },
+    {
+      "sha": "eb5d1e1880f221051957f797d8119b075348fcb3",
+      "date": "2026-10-31T19:16:50+08:00",
+      "subject": "fix(projects): keep referenced originals when the trash sweep walks a symlinked tree (#7732)"
+    },
+    {
+      "sha": "12b2a9429c98927de0fddcd9b9a19eee4902deaf",
+      "date": "2026-10-31T19:16:29+08:00",
+      "subject": "fix(channels): surface Feishu upload log_id and missing keys (#7731)"
+    },
+    {
+      "sha": "6910c13e1e0524516989746f23e7d6c95d22824a",
+      "date": "2026-10-31T18:26:29+08:00",
+      "subject": "chore(deps): bump opentelemetry-api from 1.42.1 to 1.45.1 in /backend (#7752)"
+    },
+    {
+      "sha": "762b7188ab6de207d683d1fb181ea59a18c118d8",
+      "date": "2026-10-31T18:25:31+08:00",
+      "subject": "fix(conversation): tolerate malformed event metadata (#7721)"
+    },
+    {
+      "sha": "3027ab67142d14a320b9a9e34fdc091d3b833946",
+      "date": "2026-10-31T18:12:32+08:00",
+      "subject": "fix(persistence): normalize non-finite floats before every JSON column write (#7733)"
+    },
+    {
+      "sha": "bee97022b1194ad156d7c0211e7b068269a9ed87",
+      "date": "2026-10-31T18:08:11+08:00",
+      "subject": "fix(projects): defer trash cleanup when retention config is unavailable (#7683)"
+    },
+    {
+      "sha": "0f2f199b3de89dea0641f18f6451de963799c3f3",
+      "date": "2026-10-31T18:05:16+08:00",
+      "subject": "fix(console): tolerate malformed usage counters and pricing (#7736)"
+    },
+    {
+      "sha": "793d1edabce0fa1551572d4ba2ebc2d5c02dcc31",
+      "date": "2026-10-31T17:34:49+08:00",
+      "subject": "fix(projects): drain summary shutdown across caller cancellation (#7684)"
+    },
+    {
+      "sha": "44e372dd7f8a511e6223f548f55f7b4c939ca226",
+      "date": "2026-10-31T11:35:36+08:00",
+      "subject": "feat(runtime): support Queue and Steer during active Web runs (#7729)"
+    },
+    {
+      "sha": "51f0e2de1cf7d402adb32ccefb99210f9857ba64",
+      "date": "2026-10-31T08:46:16+08:00",
+      "subject": "feat(extensions): scope configured middlewares to lead or subagent (#7661)"
+    },
+    {
+      "sha": "178a9ab45833f240574e58b3f7b6ead516cc9408",
+      "date": "2026-10-31T08:41:07+08:00",
+      "subject": "fix(web): preserve tool-result identity when provider call IDs repeat (#7672)"
+    },
+    {
+      "sha": "5d2749b05be0f6ea3df9444eaf3fb39665cdaa0b",
+      "date": "2026-10-31T08:28:01+08:00",
+      "subject": "fix(gateway): read the live config off the loop for thread token usage (#7727)"
+    },
+    {
+      "sha": "cdc3e92d6b0c461e4713fc00dc9ac6538d9fbeac",
+      "date": "2026-10-31T08:15:24+08:00",
+      "subject": "fix(streaming): isolate in-memory replay payloads (#7644)"
+    },
+    {
+      "sha": "ac21b69cbfa0fefa475efc76f7b282f9bcf5b9fb",
+      "date": "2026-10-31T07:21:57+08:00",
+      "subject": "docs(auth): describe IM channel user buckets accurately (#7730)"
+    },
+    {
+      "sha": "d50cbf8dc5b18fc716686710dd5a1222d7d00c3b",
+      "date": "2026-10-30T22:18:54+08:00",
+      "subject": "fix(browser): isolate egress DNS workers (#6301)"
+    },
+    {
+      "sha": "882433ae503d2d64ac6469136bc505a4ae4672dc",
+      "date": "2026-10-30T21:50:39+08:00",
+      "subject": "fix(subagents): recover expired attempts in paused batches (#7686)"
+    },
+    {
+      "sha": "8062d4ba12c514b80d809fd5a1596ccb3bdcc911",
+      "date": "2026-10-30T21:48:31+08:00",
+      "subject": "fix(scripts): include nginx logs in dev_multi_instance.sh logs all (#7723)"
+    },
+    {
+      "sha": "d8d0830e16f26eee44df3c1bb5e232d1e8448e8c",
+      "date": "2026-10-30T21:27:36+08:00",
+      "subject": "fix(skills): support direct invocation of the skill packager (#6938)"
+    },
+    {
+      "sha": "2488ba7c278ae9dd872157bf1e72e3ccb9c8bbfb",
+      "date": "2026-10-30T20:29:15+08:00",
+      "subject": "fix(agents): tolerate deeply nested JSON tool results (#7679)"
+    },
+    {
+      "sha": "3f1438d4a0037f4518b7f0f31ab103b7f253dd19",
+      "date": "2026-10-30T14:54:41+08:00",
+      "subject": "fix(channels): publish Discord and WeChat JSON state atomically (#7595)"
+    },
+    {
+      "sha": "b4b2a68ee5a57e6aba228a65d3db008c06bec59b",
+      "date": "2026-10-30T14:53:33+08:00",
+      "subject": "fix(memory): mask backend secrets in the memory config responses (#7665)"
+    },
+    {
+      "sha": "c50cdc5161779c8b32cda6a0cb575303195f5e65",
+      "date": "2026-10-30T08:50:37+08:00",
+      "subject": "fix(uploads): resolve conversion settings in the parser worker (#7642)"
+    },
+    {
+      "sha": "9e6ce2f98e86ce586dfe007bffe43d000e43d933",
+      "date": "2026-10-30T08:49:30+08:00",
+      "subject": "fix(runtime): normalize non-finite floats in canonical serializer (#7670)"
+    },
+    {
+      "sha": "9e7448cabd732c81120344b17787d03d43eab3d6",
+      "date": "2026-10-30T08:40:00+08:00",
+      "subject": "fix(changelog): define the missing [#7022] reference link (#7710)"
+    },
+    {
+      "sha": "b86be89f091f092e029d5e30dbaac668f5b3d2b4",
+      "date": "2026-10-30T08:39:03+08:00",
+      "subject": "fix(threads): preserve concurrent create idempotency in memory mode (#7691)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG_zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README_ko.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "RELEASING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/README_zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/discord.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/feishu.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/goal_status.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/telegram.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/wechat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/context_usage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/conversation_access.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/conversation_reader.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/extension_agent_runs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/console.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/features.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/mcp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/subagents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/thread_runs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/threads.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/trash.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/run_inputs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/secret_masking.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/services.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/mcp_tasks/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/AUTH_TEST_PLAN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/AUTH_UPGRADE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/CONFIGURATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/STREAMING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/TUI.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/runtime-guidance-details.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/extension-api/deerflow_extension_api/agent_runs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/lead_agent/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/memory/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/memory/backends/deermem/deermem/core/prompt.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/memory/backends/deermem/deermem/core/relevance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/memory/backends/deermem/deermem/core/storage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/memory/backends/deermem/deermem/core/updater.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/memory/backends/honcho/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/memory/backends/honcho/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/memory/backends/honcho/honcho_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/middlewares/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/middlewares/clarification_middleware.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/middlewares/configured_extensions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/middlewares/mcp_routing_middleware.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/packages/harness/deerflow/agents/middlewares/run_input_middleware.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/middlewares/tool_error_handling_middleware.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/middlewares/tool_result_meta.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/thread_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/packages/harness/deerflow/community/browser_automation/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/community/browser_automation/egress.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/community/browser_automation/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/config/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/config/extensions_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/config/subagents_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/mcp/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/mcp/tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/mcp/user_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/persistence/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/persistence/agents/sql.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/persistence/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/persistence/json_compat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/persistence/managed_subagents/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/packages/harness/deerflow/persistence/migrations/versions/0049_run_inputs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/persistence/run/model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/persistence/run/sql.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/persistence/subagent_batches/sql.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/projects/documents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/projects/summaries.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/projects/trash.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/events/message_identity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/events/store/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/events/store/memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/journal.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/packages/harness/deerflow/runtime/runs/input_control.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/packages/harness/deerflow/runtime/runs/inputs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/runs/manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/runs/schemas.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/runs/store/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/runs/store/memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/runs/worker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/secret_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/serialization.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/stream_bridge/memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/skills/mutations/assets.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/skills/mutations/topology.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/subagents/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/subagents/capacity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/subagents/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/subagents/executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/subagents/registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/tools/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/tools/builtins/task_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/tools/builtins/tool_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/tui/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/tui/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/utils/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/utils/file_conversion.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/scripts/benchmark/sandbox/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/scripts/benchmark/sandbox/bench_provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/blocking_io/test_context_usage_config_read.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/blocking_io/test_file_conversion_offloop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/blocking_io/test_honcho_memory_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/blocking_io/test_summarization_memory_flush.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/blocking_io/test_trash_router_config_read.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_agent_guidance_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_agent_teams_plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_app_config_reload.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_batch_lease_lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_bench_opensandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_browser_automation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_browser_egress.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_bump_version_lockfile_sync.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_changelog_reference_links.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_channel_state_atomic_publish.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_channel_state_encoding.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_clarification_middleware.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_clarification_reused_call_id_graph_integration.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_compose_nginx_image_pin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_configured_extensions.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_configured_middleware_scope.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_console_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_conversation_access.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_conversation_access_edge_cases.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_conversation_message_continuation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_conversation_reader.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_dev_multi_instance_script.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_features_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_feishu_upload_key_checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_gateway_secret_masking.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_goal_status.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_goal_worker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_history_batch_queries.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_honcho_incremental_capture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_honcho_memory_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_managed_subagent_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_mcp_cwd.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_mcp_routing_index_normalization.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_mcp_session_pool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_mcp_sync_wrapper.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_mcp_task_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_mcp_task_tool_wrapping.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_memory_confidence_overflow.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_memory_fact_dedup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_memory_prompt_injection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_memory_router.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

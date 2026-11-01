@@ -51,6 +51,14 @@ Evidence: [crates/tracedecay-sessions/src/runtime/source/jsonl/resume_digest.rs:
 
 **Scope and limits:** Reviewed the complete new digest helper and its in-file fixtures; surrounding JSONL admission, daemon, privacy and automation changes were not exhaustively audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `3c31db796f44ebe41c1a74b204531d936232598f` against `1003abc0590394675941d1060b8e3027a3ad61ff`. The selected [capability admission table](https://github.com/ScriptedAlchemy/tracedecay/blob/3c31db796f44ebe41c1a74b204531d936232598f/crates/tracedecay-agent-hosts/src/agents/host_bundle/capability_admission.rs) removes OperatorMcp from the component matches while retaining distinct hook, MCP, CLI and native-diagnostic requirements. This delta does not establish a replacement operator surface. The [unavailable-evidence fixture](https://github.com/ScriptedAlchemy/tracedecay/blob/3c31db796f44ebe41c1a74b204531d936232598f/crates/tracedecay-application/src/primitives/production/unavailable_evidence_tests.rs) retains a definition-mismatch refusal code and an explicit restart-without-cursor recovery action; the formerly combined unrecorded-definition case is removed from this test.
+
+**Harness consequence:** Version component capabilities and invalidate stale cached declarations when a surface disappears. Preserve typed refusal and lawful recovery rather than silently continuing a cursor against changed semantics. Removed test coverage is not proof that the underlying case is impossible or safe elsewhere.
+
+**Scope and limits:** Admission-table and refusal-fixture deltas only; the large host test deletion and broader implementation were not fully re-audited. No host deployment or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [tracedecay](https://github.com/ScriptedAlchemy/tracedecay); analyzed commit `1003abc0590394675941d1060b8e3027a3ad61ff`; commit date 2026-10-28T01:38:17-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tracedecay.md).
+Analysis metadata: source [tracedecay](https://github.com/ScriptedAlchemy/tracedecay); analyzed commit `3c31db796f44ebe41c1a74b204531d936232598f`; commit date 2026-11-01T01:58:07-08:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tracedecay.md).
 <!-- teamagent-analysis:end -->

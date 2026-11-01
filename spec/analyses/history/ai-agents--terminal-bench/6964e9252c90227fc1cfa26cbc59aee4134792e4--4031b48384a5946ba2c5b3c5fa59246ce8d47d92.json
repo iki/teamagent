@@ -1,0 +1,185 @@
+{
+  "id": "ai-agents--terminal-bench",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/harbor-framework/terminal-bench",
+  "report": "spec/projects/ai-agents--terminal-bench.md",
+  "analyzedSha": "6964e9252c90227fc1cfa26cbc59aee4134792e4",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-26T17:05:41-07:00",
+  "observedSha": "4031b48384a5946ba2c5b3c5fa59246ce8d47d92",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "4031b48384a5946ba2c5b3c5fa59246ce8d47d92",
+      "date": "2026-10-30T11:12:12-07:00",
+      "subject": "Select direct credentials for oracle and nop validation (#2481)"
+    },
+    {
+      "sha": "06a92e790027045921482f2acd23f3fa598ffe38",
+      "date": "2026-10-29T17:16:36-07:00",
+      "subject": "Preserve verifier integrity checks during RewardKit conversion (#2471)"
+    },
+    {
+      "sha": "2c22157c0e5359334adc48d845cc60a08bc14480",
+      "date": "2026-10-28T17:32:28-07:00",
+      "subject": "Add cheat-only verifier tampering analysis (#2463)"
+    },
+    {
+      "sha": "7b1f5307d9cb2eb9e12df107644a0187ebd69110",
+      "date": "2026-10-28T16:27:38-07:00",
+      "subject": "Record embedding drift measurements in Reward Kit details (#2322)"
+    },
+    {
+      "sha": "157cec9ec86941a728331f55ea5b7f8470fdfe2a",
+      "date": "2026-10-28T16:27:33-07:00",
+      "subject": "Record lake temperature RMSE provenance in Reward Kit details (#2321)"
+    },
+    {
+      "sha": "953fa542d0c449be3d7dcd982150f3a6f13c04fb",
+      "date": "2026-10-28T16:26:57-07:00",
+      "subject": "Record successful waveguide score provenance (#2320)"
+    },
+    {
+      "sha": "b9264fd8edf46aed39fe1a54578f1100075df61d",
+      "date": "2026-10-28T16:21:53-07:00",
+      "subject": "Check task dependency lockfiles in static CI (#2107)"
+    },
+    {
+      "sha": "02a6a833ef2a706a98de77dd7135665c44564406",
+      "date": "2026-10-28T13:41:46-07:00",
+      "subject": "Allow Claude Code installation during review setup (#2454)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/static-checks.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/TASK_REVIEW_AUTOMATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/prompts/hack-trial-prompt.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/prompts/trial-analysis.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/checks/check-lockfiles.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/checks/check-lockfiles.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci/hosted_job_report.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci/hosted_task_launcher.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci/poll_hosted_jobs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci/stage_hosted_analysis.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/review/stage_task.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tasks/embedding-drift-monitor/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tasks/embedding-drift-monitor/task.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tasks/embedding-drift-monitor/tests/checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tasks/embedding-drift-monitor/tests/probe",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tasks/embedding-drift-monitor/tests/report.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tasks/html-js-filter/tests/checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tasks/lake-temp-glm/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tasks/lake-temp-glm/task.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tasks/lake-temp-glm/tests/checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tasks/lake-temp-glm/tests/report.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tasks/photonic-waveguide-routing/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tasks/photonic-waveguide-routing/task.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tasks/photonic-waveguide-routing/tests/checks.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

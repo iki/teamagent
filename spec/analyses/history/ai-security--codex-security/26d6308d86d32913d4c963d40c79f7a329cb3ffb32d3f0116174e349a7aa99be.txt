@@ -1,0 +1,56 @@
+# codex-security
+
+Source: [codex-security](https://github.com/openai/codex-security) · Category: [ai-security](../categories/ai-security.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `775e48ffbf682075e60303eb019131aa2390c3b2`; commit timestamp `2026-10-03T13:30:46-07:00`; 800 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/openai/codex-security/blob/775e48ffbf682075e60303eb019131aa2390c3b2/README.md)):
+
+> `@openai/codex-security` is a CLI and TypeScript SDK for defining security policy and finding, validating, and fixing security vulnerabilities in your code. Some cybersecurity requests and protected findings require approval through
+
+Build/package evidence: [evals/triage-finding/fixtures/repo/package.json](https://github.com/openai/codex-security/blob/775e48ffbf682075e60303eb019131aa2390c3b2/evals/triage-finding/fixtures/repo/package.json); [evals/triage-finding/package.json](https://github.com/openai/codex-security/blob/775e48ffbf682075e60303eb019131aa2390c3b2/evals/triage-finding/package.json); [examples/invoice-desk/app/package.json](https://github.com/openai/codex-security/blob/775e48ffbf682075e60303eb019131aa2390c3b2/examples/invoice-desk/app/package.json); [package.json](https://github.com/openai/codex-security/blob/775e48ffbf682075e60303eb019131aa2390c3b2/package.json); [plugins/codex-security/mcp-app/package.json](https://github.com/openai/codex-security/blob/775e48ffbf682075e60303eb019131aa2390c3b2/plugins/codex-security/mcp-app/package.json)
+
+License evidence: [LICENSE](https://github.com/openai/codex-security/blob/775e48ffbf682075e60303eb019131aa2390c3b2/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-security**. Its category places it in the candidate set for agents, skills, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [skills](../skills.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`fd01ea565cb23c834f99a815043ab1c4f3b76f02`](https://github.com/openai/codex-security/commit/fd01ea565cb23c834f99a815043ab1c4f3b76f02). Scope: Read complete scan skill-path/session helpers, retry helper and two security workflow documents. Policy/authentication/runtime implementations and referenced rubric/schema files remain outside scope.
+
+The [patch-risk workflow](https://github.com/openai/codex-security/blob/fd01ea565cb23c834f99a815043ab1c4f3b76f02/plugins/codex-security/skills/assess-patch-risk/SKILL.md) binds an immutable patch hash and base/head, distinguishes impact, likelihood, protection, recovery and confidence, and labels recommendations advisory rather than merge authority. The [attack-path workflow](https://github.com/openai/codex-security/blob/fd01ea565cb23c834f99a815043ab1c4f3b76f02/plugins/codex-security/skills/attack-path-analysis/SKILL.md) retains candidate identities and explicit suppressed/deferred decisions. These are useful review contracts; their prose and named validators are not evidence that every execution enforces them, and the referenced schemas/rubrics were not read here.
+
+The [skill-config helper](https://github.com/openai/codex-security/blob/fd01ea565cb23c834f99a815043ab1c4f3b76f02/sdk/typescript/src/scan-skill-paths.ts) disables native injection from an installed plugin under the denied credential home while preserving malformed settings for native diagnostics. Its containment helper was not inspected. [Session filtering](https://github.com/openai/codex-security/blob/fd01ea565cb23c834f99a815043ab1c4f3b76f02/sdk/typescript/src/scan-sessions.ts) uses UUIDv7 ordering with a timestamp fallback and a narrowly shaped artifact directory; ordering alone is not an authorization or ancestry proof. The [retry helper](https://github.com/openai/codex-security/blob/fd01ea565cb23c834f99a815043ab1c4f3b76f02/sdk/typescript/src/deduplication/retry.ts) preserves abortability and splits waits above the platform timer maximum, but neither caps retry count nor total elapsed time and does not validate finite delays itself. Adapt provenance and explicit closure; retain independent path, ownership and finite-budget validation. No scans, helper execution or tests were run.
+
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `6625739ef81b44e070d9f61f35ded8609d0658b7` (commit date `2026-10-27T23:35:27-07:00`), compared with `fd01ea565cb23c834f99a815043ab1c4f3b76f02`. Earlier findings remain historical evidence.
+
+**Scope:** New ServiceNow AVIT template/CSV adapter and selected exporter validation branches; the SDK and other export/import additions were not comprehensively reviewed. The complete changed-path inventory contains 85 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+The AVIT adapter requires exactly a header and one application row, rejects case-insensitive duplicate columns, requires application/finding fields and bounds mandatory application values. Export fields preserve the finding identifier and source location while clipping narrative fields to 1,000 characters. The emitted warning correctly asks for reproduction-step review: recorded attack paths are not demonstrated reproductions. [plugins/codex-security/scripts/servicenow_avit.py](https://github.com/openai/codex-security/blob/6625739ef81b44e070d9f61f35ded8609d0658b7/plugins/codex-security/scripts/servicenow_avit.py#L34-L57); [plugins/codex-security/scripts/servicenow_avit.py](https://github.com/openai/codex-security/blob/6625739ef81b44e070d9f61f35ded8609d0658b7/plugins/codex-security/scripts/servicenow_avit.py#L60-L107).
+
+The CLI rejects a template supplied to the wrong format and checks whether existing output and template resolve to the same file. That preflight is useful but is not an exclusive atomic-publication guarantee. The CSV writer uses its default record terminator, so adopting this output path in Teamagent would require explicit LF configuration plus provenance for any clipped narratives. These observations do not establish remote ServiceNow acceptance or spreadsheet-cell safety for every template field. [plugins/codex-security/scripts/finalize_scan_contract.py](https://github.com/openai/codex-security/blob/6625739ef81b44e070d9f61f35ded8609d0658b7/plugins/codex-security/scripts/finalize_scan_contract.py#L3437-L3448).
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `f615be2e708a4f83f10e924af1ee23b511076fe1` against prior analyzed commit `6625739ef81b44e070d9f61f35ded8609d0658b7`. Historical reviews above remain separate evidence.
+
+The [deep-scan worker runner](https://github.com/openai/codex-security/blob/f615be2e708a4f83f10e924af1ee23b511076fe1/plugins/codex-security/mcp-app/src/deep-scan/worker-runner.ts) stops retaining a parsed discovery result in every accepted worker record and retains its artifact path plus validation flag/sequence instead. Validation still gates acceptance, while failed unvalidated artifacts are removed. This reduces retained object duplication, but no memory benchmark is supplied here; downstream rereads must revalidate identity/integrity rather than assuming a path still holds the previously validated bytes.
+
+The [parent-sandbox fixture delta](https://github.com/openai/codex-security/blob/f615be2e708a4f83f10e924af1ee23b511076fe1/plugins/codex-security/mcp-app/tests/test_deep_scan_parent_sandbox.ts) rejects missing trusted metadata and restrictions that cannot be faithfully represented, including relative denies and unsupported glob writes. The [stdio lifecycle fixture delta](https://github.com/openai/codex-security/blob/f615be2e708a4f83f10e924af1ee23b511076fe1/plugins/codex-security/mcp-app/tests/test_deep_scan_stdio_lifecycle.ts) preserves preexisting directory modes across resume/launch. Their enforcement implementations were outside this selected scope, and POSIX modes are not Windows ACL evidence. Teamagent should fail closed when delegating restrictions cannot be preserved, bind artifact receipts to hashes, and distinguish owned output creation from adopting a preexisting directory.
+
+**Coverage:** Read complete worker-runner and two targeted fixture deltas. Parent-sandbox parser, artifact reread integrity and directory ownership implementation were not re-audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.

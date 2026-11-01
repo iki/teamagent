@@ -51,6 +51,14 @@ Evidence: [reef/core/activation.py:19-60](https://github.com/Human-Agent-Society
 
 **Scope and limits:** Reviewed the new activation contract and its rule/configuration fixtures; the full training committer, serving rollout and plugin loader were not audited or executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `bac62a353d72cfc5af2ade296432445b192e4d7b` against `95a84466936f1cdffcb2a9264aadbeb91c5aa34a`. The new [evolution policies](https://github.com/Human-Agent-Society/reef/blob/bac62a353d72cfc5af2ade296432445b192e4d7b/reef/evaluation/harness/policy.py) separate paired comparison, per-task floor and no-evaluation selection. Comparison reports dropped failed pairings; means average surviving runs independently, so asymmetric failure can alter the comparison population. Floor policy can tolerate failed repeats when successful repeats meet its floor. The no-evaluation policy accepts every validated candidate without performance evidence. Keeping an artifact is explicitly separate from activating it. The selected [memory backend](https://github.com/Human-Agent-Society/reef/blob/bac62a353d72cfc5af2ade296432445b192e4d7b/reef/artifact/memory.py) preserves a resolvable base alongside advancing head; [capability fixture changes](https://github.com/Human-Agent-Society/reef/blob/bac62a353d72cfc5af2ade296432445b192e4d7b/tests/artifact/test_repository_backend_capabilities.py) explicitly provide coordination storage.
+
+**Harness consequence:** Version evaluation policy, failure treatment and population coverage with every promotion decision. A selected artifact is neither an authorized activation nor independently verified improvement. Preserve a stable baseline and test failure-rate regressions separately from score means.
+
+**Scope and limits:** Complete three selected diffs from an oversized aggregate comparison; not all repository changes or evaluator internals. Fixtures were read, not executed; no evolution run or quality benchmark was performed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [reef](https://github.com/Human-Agent-Society/reef); analyzed commit `95a84466936f1cdffcb2a9264aadbeb91c5aa34a`; commit date 2026-10-28T09:59:36Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--reef.md).
+Analysis metadata: source [reef](https://github.com/Human-Agent-Society/reef); analyzed commit `bac62a353d72cfc5af2ade296432445b192e4d7b`; commit date 2026-11-01T17:02:34+08:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--reef.md).
 <!-- teamagent-analysis:end -->

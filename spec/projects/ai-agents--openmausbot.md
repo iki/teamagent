@@ -46,6 +46,16 @@ In [server/browser/tools.ts](https://github.com/milind-soni/OpenMausBot/blob/ae1
 
 **Harness implication and limits:** Carry screenshot dimensions, coordinate transform and navigation/viewport generation in action evidence; reject stale coordinate actions after resize or navigation. A numeric range and prompt guidance do not enforce freshness. The request-auth delta also adds a helper-followup route with a comment about owner checks; its handler and browser runtime enforcement were not audited or executed. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `9230dc9b71a22375a9d3b296172b5664c2ae3201` against prior analyzed commit `ae1aada6b67b68d03921f910f4b4b97a66cea1a7`. Historical reviews above remain separate evidence.
+
+The [permission proxy](https://github.com/milind-soni/OpenMausBot/blob/9230dc9b71a22375a9d3b296172b5664c2ae3201/server/permission-proxy.ts) binds each pending answer to its originating socket. A dropped connection settles only that socket's requests as unavailable; later requests can reconnect with short connection retries. Permission unavailability returns deny, while a question returns an MCP error and directs the assistant to ask visibly rather than manufacturing a user answer. The [socket fixtures](https://github.com/milind-soni/OpenMausBot/blob/9230dc9b71a22375a9d3b296172b5664c2ae3201/server/permission-proxy.test.ts) cover broker disappearance, pending questions, no approval during outage and successful later reconnection.
+
+The visible receiver still buffers without a line/byte cap and parses broker JSON through dynamic values. Reconnection alone also does not prove the new broker belongs to the same session, despite a startup comment implying it: Teamagent needs an authenticated session epoch, schema/size limits and explicit connect/answer deadlines. The [Claude recovery delta](https://github.com/milind-soni/OpenMausBot/blob/9230dc9b71a22375a9d3b296172b5664c2ae3201/server/drivers/claude-auth-recovery.ts) and [fixture](https://github.com/milind-soni/OpenMausBot/blob/9230dc9b71a22375a9d3b296172b5664c2ae3201/server/drivers/claude-auth-recovery.test.ts) carry engine/model/credits scope with quota refusal after process stop, avoiding a model-specific limit being treated as a provider-wide outage. Neither connection recovery nor quota classification authorizes replay of an ambiguous action.
+
+**Coverage:** Read the complete four-file targeted permission-proxy and refusal-recovery delta. Broker authentication and full driver retry policy remain outside scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openmausbot](https://github.com/milind-soni/OpenMausBot); analyzed commit `ae1aada6b67b68d03921f910f4b4b97a66cea1a7`; commit date 2026-10-28T15:18:44+05:30; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openmausbot.md).
+Analysis metadata: source [openmausbot](https://github.com/milind-soni/OpenMausBot); analyzed commit `9230dc9b71a22375a9d3b296172b5664c2ae3201`; commit date 2026-11-01T15:12:08+05:30; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openmausbot.md).
 <!-- teamagent-analysis:end -->

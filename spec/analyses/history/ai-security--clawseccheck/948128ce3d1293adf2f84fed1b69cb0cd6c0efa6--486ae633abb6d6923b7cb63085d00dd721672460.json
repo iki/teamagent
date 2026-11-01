@@ -1,0 +1,655 @@
+{
+  "id": "ai-security--clawseccheck",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/gl0di/clawseccheck",
+  "report": "spec/projects/ai-security--clawseccheck.md",
+  "analyzedSha": "948128ce3d1293adf2f84fed1b69cb0cd6c0efa6",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-24T15:28:49+03:00",
+  "observedSha": "486ae633abb6d6923b7cb63085d00dd721672460",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "486ae633abb6d6923b7cb63085d00dd721672460",
+      "date": "2026-11-01T11:40:32+02:00",
+      "subject": "Merge pull request #53 from gl0di/dev"
+    },
+    {
+      "sha": "ca29ec19a54446d264197aa4c0a5681903506d74",
+      "date": "2026-11-01T09:32:13+02:00",
+      "subject": "docs: restate the test count as 39,923 after the 4.4.5 merges"
+    },
+    {
+      "sha": "4f8425e058211d179a2d01d806f7f2443e0a76dd",
+      "date": "2026-10-31T22:09:26+02:00",
+      "subject": "docs: regenerate CHECKS.md after B398 dropped its remediation commands"
+    },
+    {
+      "sha": "675895ced2222ed50878840012231b5450f5252d",
+      "date": "2026-10-31T21:58:07+02:00",
+      "subject": "security: a package.json existence probe that raises reads as unreadable, not as a crash or as absent"
+    },
+    {
+      "sha": "d96d9c36cad82f82f700365cb18e64bf4e505896",
+      "date": "2026-10-31T21:55:11+02:00",
+      "subject": "security: an archive package.json is read shallow, and an unreadable manifest is not reported as absent"
+    },
+    {
+      "sha": "ab7905e529d3945d132a5ed8a3ce7a69a7f25365",
+      "date": "2026-10-31T21:51:23+02:00",
+      "subject": "fix: B398 publishes no destructive command, is in the coverage matrix, and the JS import split is linear"
+    },
+    {
+      "sha": "dfc3d52c1a84bf4b515822d404f3bd65f6970f56",
+      "date": "2026-10-31T21:51:23+02:00",
+      "subject": "fix: the gyp build-step reader skips a root that is not on disk, reads package.json bounded, and keeps its source ASCII"
+    },
+    {
+      "sha": "cf7949a379ff06f728629da4277c3dd209cf9a44",
+      "date": "2026-10-31T21:11:33+02:00",
+      "subject": "test: register the gyp_build_code finding channel in the channel registry"
+    },
+    {
+      "sha": "84b7c3f4ac69b419dbfb9f4b77958d2180b531a8",
+      "date": "2026-10-31T21:02:39+02:00",
+      "subject": "test: regenerate the finding fingerprint manifest after merging the 4.4.5 branches"
+    },
+    {
+      "sha": "ddddbce8e1c6959d6726310ac72c7d81f6a6c658",
+      "date": "2026-10-31T21:01:55+02:00",
+      "subject": "merge: task/c-758-fixture-dependabot-pins into dev"
+    },
+    {
+      "sha": "54415bdd371424550d6445e4103a163b7c71fca0",
+      "date": "2026-10-31T21:01:55+02:00",
+      "subject": "merge: task/c-756-monitor-launchd-note into dev"
+    },
+    {
+      "sha": "a36f401832eb37f1ac326b6f13156b3bf2af265c",
+      "date": "2026-10-31T21:01:55+02:00",
+      "subject": "merge: task/c-743-linear-time-test into dev"
+    },
+    {
+      "sha": "e2c8ca9d218801a116799800c9044ec670fd1bd4",
+      "date": "2026-10-31T21:01:55+02:00",
+      "subject": "merge: task/c-738-vet-footer into dev"
+    },
+    {
+      "sha": "42cb3141658da29f485e0bd92eb2682c390e6815",
+      "date": "2026-10-31T21:01:55+02:00",
+      "subject": "merge: task/c-755-agent-persistence into dev"
+    },
+    {
+      "sha": "95d2244c8febf2298fefdc1076b791dd7e80b82b",
+      "date": "2026-10-31T21:01:55+02:00",
+      "subject": "merge: task/b-1005-js-environ-exfil into dev"
+    },
+    {
+      "sha": "d9ed3abb4dacb1002a638bb34a961e4775b8fae3",
+      "date": "2026-10-31T21:01:50+02:00",
+      "subject": "merge: task/b-1004-gyp-actions into dev"
+    },
+    {
+      "sha": "6a1bb60f9c00374d537a9cfbe216269083cc4c87",
+      "date": "2026-10-31T21:01:42+02:00",
+      "subject": "merge: task/b-1006-default-account-inherit into dev"
+    },
+    {
+      "sha": "0d9cf8797cdb1b130c1a7dbcdd81210e33fee284",
+      "date": "2026-10-31T21:01:42+02:00",
+      "subject": "merge: task/b-1001-vet-pyc into dev"
+    },
+    {
+      "sha": "09dfd9b1f73934c8be8c28d7798b34ac78e34f5d",
+      "date": "2026-10-31T21:01:27+02:00",
+      "subject": "merge: task/c-760-openclaw-10-9 into dev"
+    },
+    {
+      "sha": "8bd042df7e442a5e5f4803d65d79ffdbaebad959",
+      "date": "2026-10-31T20:55:35+02:00",
+      "subject": "test: raise scanner linearity limit to 12x"
+    },
+    {
+      "sha": "851c1669cb751e0b88f82b87cb5436493ba9773b",
+      "date": "2026-10-31T20:53:49+02:00",
+      "subject": "fix: swap zod for ms in the B157 registry-deps fixture (open advisory on the old pin)"
+    },
+    {
+      "sha": "6989ff07dad81d195e095e0c64b2fe3dbf52b4d3",
+      "date": "2026-10-31T09:26:01+02:00",
+      "subject": "test: de-flake linear-time scanner check under CPU load"
+    },
+    {
+      "sha": "eb7465c959eaf8f83999615a2eca50d4f47ad59f",
+      "date": "2026-10-31T09:20:40+02:00",
+      "subject": "fix: disclose unread macOS launchd in the --monitor host-persistence dimension"
+    },
+    {
+      "sha": "f9ab8f5f43bff08c348a1768da49ee65897b6a62",
+      "date": "2026-10-31T09:19:07+02:00",
+      "subject": "test: pin the manifest shapes two fixtures rely on after Dependabot-driven edits"
+    },
+    {
+      "sha": "b24310b7571933c1b3d79b9a1a5de8c32404f840",
+      "date": "2026-10-30T22:45:36+02:00",
+      "subject": "docs: state the head-of-path rule, scope, option values and new limits for the persistence rule"
+    },
+    {
+      "sha": "ea021268161706be53d35694ff305f2a1aa4a36b",
+      "date": "2026-10-30T22:45:36+02:00",
+      "subject": "fix: a variable is a write destination only as the path itself or its head"
+    },
+    {
+      "sha": "0747a61b95e89a28d07484d0324a46555832d7e5",
+      "date": "2026-10-30T22:11:37+02:00",
+      "subject": "docs: widen the JS credential-flow disclosure to derived fields"
+    },
+    {
+      "sha": "473fec539926e0df793ed64b2c4a1a3d29c0dd2a",
+      "date": "2026-10-30T22:11:37+02:00",
+      "subject": "security: bound the JS credential-flow pass and close its gaps"
+    },
+    {
+      "sha": "d78b3d610125c11393b3903ab941e960f9e06b3a",
+      "date": "2026-10-30T22:11:37+02:00",
+      "subject": "fix: degrade, not abort, when the JS pass hits its work caps"
+    },
+    {
+      "sha": "7bffde174157ae37c19207fcecd1faac069b1a47",
+      "date": "2026-10-30T21:11:28+02:00",
+      "subject": "docs: note that a JS signing client reads as credential theft"
+    },
+    {
+      "sha": "3c82f6044ce896425bab11c7a3da3cc70b51b521",
+      "date": "2026-10-30T21:11:28+02:00",
+      "subject": "security: retract crypto reducers from the JS credential-flow rule"
+    },
+    {
+      "sha": "448320786bc6e6436bc04d11b1b7c7b2b203a0f1",
+      "date": "2026-10-30T18:02:07+02:00",
+      "subject": "fix: unclosed shell quotes stay linear; only true prose is skipped for folderOpen"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/tools/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/tools/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_agents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_content.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_mcp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_shared.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_vet.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/collector.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/deptree.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/dossier.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clawseccheck/gypbuild.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/harnessruntime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/integrity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/monitordims/_hostpersist.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/openclawdist.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/report.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/retiredformats.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/risk.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/safeio.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/skillast.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clawseccheck/writedest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/CHECKS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/OUTPUT_SCHEMA.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/THREAT_COVERAGE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/THREAT_INTAKE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/USAGE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/assets/stats-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/assets/stats-light.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/bad_b42_gyp_inline_action/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/bad_b42_gyp_inline_action/binding.gyp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/bad_b42_gyp_inline_action/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/clean_b42_gyp_native_action/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/clean_b42_gyp_native_action/binding.gyp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/clean_b42_gyp_native_action/extract.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/clean_b42_gyp_native_action/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/clean_b42_gyp_native_action/src/addon.cc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "fixtures/clean_f117_registry/skills/deppy/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/deptree_gyp_actions_pkg/node_modules/gyp-action-pkg/binding.gyp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/deptree_gyp_actions_pkg/node_modules/gyp-action-pkg/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/deptree_gyp_actions_pkg/node_modules/gyp-action-pkg/setup.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/deptree_gyp_actions_pkg/node_modules/gyp-nonliteral-pkg/binding.gyp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/deptree_gyp_actions_pkg/node_modules/gyp-nonliteral-pkg/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/deptree_gyp_actions_pkg/node_modules/native-action-pkg/binding.gyp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/deptree_gyp_actions_pkg/node_modules/native-action-pkg/extract.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/deptree_gyp_actions_pkg/node_modules/native-action-pkg/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/deptree_gyp_actions_pkg/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/warn_b42_gyp_nonliteral/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/warn_b42_gyp_nonliteral/binding.gyp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/warn_b42_gyp_nonliteral/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/_harnessoracle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/_retiredformatsoracle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/checks_public_api.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/harnessruntime_battery.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/retiredformats_battery.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/dist_citation_baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/dist_verified_paths.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/dm_policy_shape_manifest.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/finding_fingerprint_manifest.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/state_schema_snapshot.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_b1001_vet_unchecked_pyc.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_b1002_implicit_default_account_channels.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_b1004_gyp_build_steps.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_b1005_js_cred_exfil_flow.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_b1006_default_account_entry_inherited_by_siblings.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_b344_plugin_coverage_gaps.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_b391_nodehost_workerruns_isolation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_b42.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_b743_js_warn_remediation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_c452_channel_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_c633_plugin_loose_code_disclosure.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_c651_example_context_scales.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_c655_allow_bots_reachability.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_c664_no_raw_json_decode.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_c686_doctor_advice_by_build.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_c689_b382_vendor_finder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_c715_vet_exit_codes_follow_the_verdict.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_c730_regex_equivalence.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_c738_vet_footer_counts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_c746_empty_plugins_installs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_c748_agent_config_persistence_measured.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_c755_agent_ide_persistence.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_c756_monitor_launchd_disclosure.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_c758_fixture_manifest_vectors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_f117_remote_dep.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_module_layout.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_retiredformats_battery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/vendor_state_tables.txt",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

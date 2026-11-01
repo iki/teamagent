@@ -32,6 +32,14 @@ The [research wrapper](https://github.com/mvanhorn/last30days-skill/blob/e06af25
 
 The [preflight wrapper](https://github.com/mvanhorn/last30days-skill/blob/e06af25a9a78487b75e8509e0e1687fec137176e/mcp/internal/tools/preflight.go) advertises read-only/no-file-saving behavior but first ensures an extracted user cache and invokes the engine twice for destination resolution and reporting. The [tests](https://github.com/mvanhorn/last30days-skill/blob/e06af25a9a78487b75e8509e0e1687fec137176e/mcp/internal/tools/preflight_test.go) verify safe argument construction, not absence of those side effects. Raw engine stderr is forwarded by the error formatter, and no wrapper-level topic/output bound is present. Adapt explicit opt-ins and argument boundaries after auditing cache mutation, subprocess cancellation and redaction. No research, cookies, engine process or tests were run.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`7efc0ef764765ed9ceff5ce1204462b35b89d680`](https://github.com/mvanhorn/last30days-skill/commit/7efc0ef764765ed9ceff5ce1204462b35b89d680), compared with `e06af25a9a78487b75e8509e0e1687fec137176e`.
+
+The complete six-path delta expands planner guidance for collision-prone organization names and filters the per-source view after enrichment in [pipeline.py](https://github.com/mvanhorn/last30days-skill/blob/7efc0ef764765ed9ceff5ce1204462b35b89d680/skills/last30days/scripts/lib/pipeline.py). This complements fusion filtering so report counts and top voices do not retain a namesake that the ranked answer excluded. The [fixture](https://github.com/mvanhorn/last30days-skill/blob/7efc0ef764765ed9ceff5ce1204462b35b89d680/tests/test_person_identity.py) checks organization anchoring and the resulting footer/counts using mocked retrieval.
+
+For Teamagent, identity gates must apply consistently to both evidence and derived summaries. Preserve excluded-item provenance and uncertainty in internal receipts even when irrelevant namesakes are omitted from the user-facing answer; the changed synthesis prompt's instruction to drop them silently is not an evidence-retention policy. The unchanged matcher was not re-audited; fixtures were read, not run, and no live source or retrieval-quality benchmark was used.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [query-last30days](https://github.com/mvanhorn/last30days-skill); analyzed commit `e06af25a9a78487b75e8509e0e1687fec137176e`; commit date 2026-10-27T02:23:07-07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--query-last30days.md).
+Analysis metadata: source [query-last30days](https://github.com/mvanhorn/last30days-skill); analyzed commit `7efc0ef764765ed9ceff5ce1204462b35b89d680`; commit date 2026-10-28T09:30:56-07:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--query-last30days.md).
 <!-- teamagent-analysis:end -->

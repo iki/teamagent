@@ -2,7 +2,7 @@
 
 Source: [xerj](https://github.com/xerj-org/xerj) · [memory](../../memory.md), [import-generation](../../import-generation.md), [evolution](../../evolution.md).
 
-Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-agents-mem--xerj.md).
+Historical discovery: 2026-10-24T06:36:54.441Z, initially unreviewed. Dated scoped reviews below supersede that discovery-only status; they do not establish runtime validation. [Change evidence](../repos/ai-agents-mem--xerj.md).
 
 
 ## Change review — 2026-10-27
@@ -29,6 +29,16 @@ Evidence: [metrics/release-downloads.jsonl:77-81](https://github.com/xerj-org/xe
 
 **Scope and limits:** Reviewed the complete changed-path inventory, JSONL append shape and row keys; no telemetry service was contacted. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `720b9990a2f85c17d53434950578f9a37fb3dc0c` against `5b46a1427d5b69cff0e67749bf37495a63a4d933`. The [lexical judge](https://github.com/xerj-org/xerj/blob/720b9990a2f85c17d53434950578f9a37fb3dc0c/engine/crates/xerj-rerank/src/judge.rs) adds CJK character unigrams and adjacent bigrams while preserving lowercase non-CJK runs. It counts document length once and retains frequencies only for query terms, avoiding repeated full token scans. This is bounded lexical evidence, not semantic inference or a calibrated relevance probability. Embedded tests cover separators, supplementary Unicode characters, cross-field boundaries, finite scores and a legacy score receipt.
+
+The [HTTP fixture](https://github.com/xerj-org/xerj/blob/720b9990a2f85c17d53434950578f9a37fb3dc0c/engine/crates/xerj-api/tests/judge_stage_http.rs) deliberately fixes candidates with match-all to isolate reranking, tests before/after flush, preserves original engine scores and reports kept/dropped counts. It therefore does not prove first-stage CJK recall improved.
+
+**Harness consequence:** Version tokenization with reranker caches, evaluate candidate recall independently from reranking and label lexical normalized scores truthfully. A Jev-compatible result shape does not establish model equivalence or calibration.
+
+**Scope and limits:** Complete judge and HTTP-test deltas; the separately captured read-budget file and other changes were not substantively reviewed. No search server, upstream test or quality benchmark was run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [xerj](https://github.com/xerj-org/xerj); analyzed commit `5b46a1427d5b69cff0e67749bf37495a63a4d933`; commit date 2026-10-28T06:30:07Z; review date 2026-10-28T14:52:35.205Z; depth reviewed. [Maintenance record](../repos/ai-agents-mem--xerj.md).
+Analysis metadata: source [xerj](https://github.com/xerj-org/xerj); analyzed commit `720b9990a2f85c17d53434950578f9a37fb3dc0c`; commit date 2026-11-01T06:24:43Z; review date 2026-11-01T11:35:43.470Z; depth reviewed. [Maintenance record](../repos/ai-agents-mem--xerj.md).
 <!-- teamagent-analysis:end -->

@@ -50,6 +50,18 @@ For Teamagent, preserve requested and resolved model IDs and the migration reaso
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `9674ef7ec441ed576c8ca09ec97910413284365d` (commit date `2026-10-30T06:03:41-05:00`), compared with `c1bcd2d81a6d8a06e0ddcedd3fb14bb12915aa35`. Earlier observations remain historical evidence.
+
+**Scope:** Complete usage-row policy diff and relevant billing fixtures; 14 changed paths inventoried. Fallback request execution and entitlement validation not audited.
+
+The [usage mapper](https://github.com/qaml-ai/camelAI/blob/9674ef7ec441ed576c8ca09ec97910413284365d/workers/main/src/agent-runtime/usage.ts) retains usage for a superseded response while making it non-chargeable, and recognizes both current and previous free-route model identifiers. [Fixtures](https://github.com/qaml-ai/camelAI/blob/9674ef7ec441ed576c8ca09ec97910413284365d/workers/main/tests/agent-runtime-usage.test.ts) separately check the superseded event and ordinary answer event. This is a platform credit policy; it does not prove the provider incurred no cost, that an arbitrary fallback is permitted, or that all incoming superseded markers are authenticated.
+
+**Teamagent implication (inference):** Keep provider expenditure, customer chargeability and the delivered result as separate ledger facts. Bind supersession to trusted attempt/result identity; enforce the user's requested model, cost and training policy before any fallback request, regardless of later credit accounting.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [camelai](https://github.com/qaml-ai/camelAI); analyzed commit `c1bcd2d81a6d8a06e0ddcedd3fb14bb12915aa35`; commit date 2026-10-27T18:31:12-05:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--camelai.md).
+Analysis metadata: source [camelai](https://github.com/qaml-ai/camelAI); analyzed commit `9674ef7ec441ed576c8ca09ec97910413284365d`; commit date 2026-10-30T06:03:41-05:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--camelai.md).
 <!-- teamagent-analysis:end -->

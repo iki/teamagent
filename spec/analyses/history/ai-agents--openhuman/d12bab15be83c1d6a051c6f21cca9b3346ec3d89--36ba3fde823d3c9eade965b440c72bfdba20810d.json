@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--openhuman",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/tinyhumansai/openhuman",
+  "report": "spec/projects/ai-agents--openhuman.md",
+  "analyzedSha": "d12bab15be83c1d6a051c6f21cca9b3346ec3d89",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T15:19:15+05:30",
+  "observedSha": "36ba3fde823d3c9eade965b440c72bfdba20810d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "36ba3fde823d3c9eade965b440c72bfdba20810d",
+      "date": "2026-10-31T22:34:05+05:30",
+      "subject": "Merge pull request #8513 from sanil-23/fix/8499-tinyconnectors-dll-loader"
+    },
+    {
+      "sha": "5a55955679a9e22dd80cd2c8ee36733f8989a8f7",
+      "date": "2026-10-31T22:33:53+05:30",
+      "subject": "Merge pull request #8514 from sanil-23/fix/8500-tinyconnectors-installer-bundle"
+    },
+    {
+      "sha": "ef55ee10aa62cbeb8f95f3ee2b83f062fc650745",
+      "date": "2026-10-30T22:08:35+05:30",
+      "subject": "fix(modules): host installer-bundle test mod inside ops_tests to dodge security-native path filter"
+    },
+    {
+      "sha": "8f49950689e807769e5602ea6db1a7779b7bb960",
+      "date": "2026-10-30T21:51:43+05:30",
+      "subject": "fix(modules): feature-gate the installer-bundle test mod on `modules` (CodeRabbit on #8514)"
+    },
+    {
+      "sha": "72faac47942e0adccb2632b8b84a6a7e66d5062b",
+      "date": "2026-10-30T21:41:16+05:30",
+      "subject": "fix(modules): split installer-bundle regression test to pass the Rust layout gate"
+    },
+    {
+      "sha": "268bcf5b7f484e9425c74e95a22e182c26871dea",
+      "date": "2026-10-30T21:18:45+05:30",
+      "subject": "docs(stage-modules): fix stale CN= reference in assertMicrosoftSigned doc"
+    },
+    {
+      "sha": "0eade354ffb1d3c515e6b643c5bf052f271a58d3",
+      "date": "2026-10-30T21:07:50+05:30",
+      "subject": "ci(module-bundle): drop Windows ARM64 matrix entry pending provisioning"
+    },
+    {
+      "sha": "d29e766c3d7b83b1fd9b048087dc9f16039a7324",
+      "date": "2026-10-30T21:03:56+05:30",
+      "subject": "ci(module-bundle): mark Windows ARM64 lane experimental (continue-on-error)"
+    },
+    {
+      "sha": "401aa76e3f0cec0af258bea08dd379cb40af4f0c",
+      "date": "2026-10-30T20:58:22+05:30",
+      "subject": "fix(module-bundle): detect ARM64 vc_redist MSIs by signature + msiexec /a"
+    },
+    {
+      "sha": "9243386ec0a193be380676ab43917023ba9bc1ea",
+      "date": "2026-10-30T20:53:29+05:30",
+      "subject": "fix(module-bundle): extract ARM64 VC runtime via 7-Zip (Burn bundle)"
+    },
+    {
+      "sha": "622f1946ebebc56625c573bbfa5b54a5431cafb4",
+      "date": "2026-10-30T20:50:19+05:30",
+      "subject": "fix(stage-modules): match O=Microsoft Corporation; diagnose vs_installer exit 87"
+    },
+    {
+      "sha": "49ab10c0bd1384592cb235c054dd416ac9fd707e",
+      "date": "2026-10-30T20:46:28+05:30",
+      "subject": "fix(stage-modules): anchor Microsoft signer regex; wait on vs_installer GUI exit"
+    },
+    {
+      "sha": "e866bceaf08a463f7b1fd360e6781ffed112f7c2",
+      "date": "2026-10-30T20:31:08+05:30",
+      "subject": "fix(stage-modules): prefer pwsh for Authenticode; use vs_installer for ARM64 CRT"
+    },
+    {
+      "sha": "dd6a3597c1a95c92d7673435a3c27f023c4538a4",
+      "date": "2026-10-30T20:27:12+05:30",
+      "subject": "fix(verify): reject wrong-type staged entries before the pin check (CodeRabbit on #8514)"
+    },
+    {
+      "sha": "8bdd829bdebd0f64625cb1443ccb02d487891d78",
+      "date": "2026-10-30T20:26:56+05:30",
+      "subject": "chore(stage-modules): log which VC runtime directory the lookup selected"
+    },
+    {
+      "sha": "0a6897b03f081e8079f273af2c1c03d62769a03f",
+      "date": "2026-10-30T20:25:05+05:30",
+      "subject": "test(stage-modules): write real CRC-32 in the hand-rolled test ZIP"
+    },
+    {
+      "sha": "616665f0a42e823c5366167ac6849bf0cc4ea61d",
+      "date": "2026-10-30T20:23:08+05:30",
+      "subject": "fix(installer): validate + arch-match the staged VC runtime; place beside the library"
+    },
+    {
+      "sha": "8245ef476f13ca1b0eac2184b5c566cd18ed7aa5",
+      "date": "2026-10-30T20:16:03+05:30",
+      "subject": "fix(installer): address Codex review on #8514 — target-aware stage check, post-build re-verify, host-scoped Rust test"
+    },
+    {
+      "sha": "5541b41e3a1932102c2754bb25033c10d8624857",
+      "date": "2026-10-30T20:15:03+05:30",
+      "subject": "test(stage-modules): cover Windows VC runtime staging + arm64 CI prerequisite"
+    },
+    {
+      "sha": "1d70abee729ec8f7865de974a3ba6e6bd0663f19",
+      "date": "2026-10-30T20:10:08+05:30",
+      "subject": "test(release): cover verify-bundled-modules.mjs on all four pin paths"
+    },
+    {
+      "sha": "f8aa79d3d637b9f1bcf30d9061c24d21ea12ee8a",
+      "date": "2026-10-30T19:51:28+05:30",
+      "subject": "fix(installer): catch bundled-module pin drift before sealing the installer"
+    },
+    {
+      "sha": "2641c9fbb37666be55ec1da0f6ac9cdeaa734c44",
+      "date": "2026-10-30T19:51:10+05:30",
+      "subject": "fix(installer): ship vcruntime140.dll beside each Windows module"
+    },
+    {
+      "sha": "218d35f4b96b1e9d4568c7aa700c0b66abfb4e54",
+      "date": "2026-10-30T14:11:05+03:00",
+      "subject": "Merge pull request #8487 from senamakel/epic/8369-security-migration"
+    },
+    {
+      "sha": "6be43d99282db36fd7999e7473da84eb3f532920",
+      "date": "2026-10-30T11:09:05Z",
+      "subject": "test(settings): update tool policy diagnostics tests for security policy rpc"
+    },
+    {
+      "sha": "de9d24742c5e8020ce41f5ec7ec415740a3397bf",
+      "date": "2026-10-30T11:09:01Z",
+      "subject": "Merge upstream/main into epic/8369-security-migration"
+    },
+    {
+      "sha": "019f5a468b70b8dbf11b7ff89d4394e358a21f8b",
+      "date": "2026-10-30T07:39:56+05:30",
+      "subject": "Merge pull request #8491 from oxoxDev/chore/tinymcp-0.20.5"
+    },
+    {
+      "sha": "a1c66808d50d5fc19160ea100f5b3995170fefda",
+      "date": "2026-10-30T07:39:51+05:30",
+      "subject": "Merge pull request #8488 from oxoxDev/fix/budget-after-media-render"
+    },
+    {
+      "sha": "d15531b603ccb01e2233cd785f67f18435083d01",
+      "date": "2026-10-29T18:34:05+05:30",
+      "subject": "Merge remote-tracking branch 'upstream/main' into fix/budget-after-media-render"
+    },
+    {
+      "sha": "57b8d457fd5aa83e6d35a49eff8f1972b958a131",
+      "date": "2026-10-29T11:45:51+03:00",
+      "subject": "Merge pull request #8496 from senamakel/cron-tool-pack"
+    },
+    {
+      "sha": "2ccb55a6a5c966eb16ddb32b53d3c501a45dcf40",
+      "date": "2026-10-29T12:50:44+05:30",
+      "subject": "merge: sync main into fix/budget-after-media-render"
+    },
+    {
+      "sha": "aa3a4d1e9e74e779e5226a57426a830cbfcb7caf",
+      "date": "2026-10-28T18:40:29Z",
+      "subject": "feat(cron): widen named scopes naming cron and keep cron deferred"
+    },
+    {
+      "sha": "6a9e0a26c1a7e2a772756ed9143c4eaeee3bee81",
+      "date": "2026-10-28T18:27:49Z",
+      "subject": "feat(cron): advertise per-operation scheduler tools as the scheduling pack"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".cargo/config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ci-paths-filter.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-desktop.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-full.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/module-bundle.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/security-browser-egress.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/security-native.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitmodules",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/scripts/e2e-run-all-flows.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/App.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/markdown-text.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/keyring/KeyringOperationApprovalOverlay.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/keyring/KeyringOperationApprovalOverlay.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/settings/panels/ApprovalHistoryPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/settings/panels/SecurityPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/settings/panels/ToolPolicyDiagnosticsPanel.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/settings/panels/ToolPolicyDiagnosticsPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/settings/panels/__tests__/ApprovalHistoryPanel.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/settings/panels/__tests__/SecurityPanel.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/settings/panels/__tests__/ToolPolicyDiagnosticsPanel.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/features/conversations/aui/SubagentTaskCard.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/features/conversations/aui/SubagentTaskCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/hooks/useKeyringOperationApprovals.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/hooks/useKeyringOperationApprovals.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/ar.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/bn.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/de.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/en.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/es.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/fr.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/hi.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/id.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/it.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/ja.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/ko.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/pl.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/pt.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/ru.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/tr.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/i18n/zh-CN.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/pages/__tests__/Conversations.unroutedApproval.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/services/__tests__/keyringApi.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/services/__tests__/rpcMethods.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/services/api/approvalApi.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/services/api/approvalApi.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/services/keyringApi.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/services/transport/TunnelTransport.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/services/transport/TunnelTransport.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/test/e2e/specs/security-approval-history.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/test/playwright/specs/auth-access-control.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-app/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-app/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-app/src/session/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-cli/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/bus.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/harness/artifact_offload/artifact_offload_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/harness/artifact_offload/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/harness/artifact_offload/policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/harness/artifact_offload/policy_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/host_agents.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/orchestration/background_delivery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/orchestration/tools/spawn_subagent_completion.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/builder_build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/builder_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/builder_tests_explicit_definition_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/builder_tests_host_only_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/builder_tests_host_tools_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/builder_tests_model_source_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/builder_tests_session_definition_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/builder_tests_tool_exposure_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/builder_tests_tool_spec_views_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/factory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/factory/build_session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/factory_resolution.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/factory_tool_registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/host_policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/host_tools.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/profile_factory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/driver/execute.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/driver/grounded_close.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/orphaned_head_resume_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime/accessors/tool_visibility.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime/run_loop.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_adapter_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_adapter_trace_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_session/prelude.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_session/tool_rules_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_session_flow_prompt_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_session_goal_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_session_juice_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_session_mcp_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_session_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_session_turn.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/test_support.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/transcript_compat_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/subagent_host/ops/graph/dispatch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/subagent_host/ops/provider.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/subagent_host/ops/runner.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/subagent_host/ops_tests_model_resolution_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/budget.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/budget_stop_turn_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/host/operation_context.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/host/run_context.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/host/security_gate.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/host/security_gate/authorize.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/host/security_gate_impl.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/host/security_gate_screen_and_policy_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/openhuman-core/src/agent/tinyagents/host/security_gate_shell_analysis.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/host/security_gate_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/middleware/approval.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/agent/tinyagents/middleware/approval_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/middleware/credential_scrub.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/middleware/credential_scrub_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/agent/tinyagents/middleware/skill_disclosure.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/middleware/tool_policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/middleware/turn_context_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/agent/tinyagents/middleware_approval_unavailable_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/middleware_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/nested_calls_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/payload_summarizer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/steering_forwarder.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/tinyagents_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/tool_registration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/tool_registration_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/turn_exec/drive.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/turn_exec_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/turn_plan_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/turn_policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/turn_policy_budget_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent_registry/agents/fleet_prompt_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent_registry/agents/loader_tests_specialist_agents_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent_registry/ops.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent_runs/agent_chat/guards.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent_runs/agent_chat/guards_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent_runs/agent_chat/session_turn.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent_runs/schemas.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/artifacts/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/artifacts/files.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/artifacts/ops.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/artifacts/publisher_slot.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/artifacts/publisher_slot_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/artifacts/tiny_store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/artifacts/tiny_store_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/attachments/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/attachments/legacy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/attachments/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/attachments/mod_access_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/attachments/provider.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/attachments/provider_cache.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/attachments/provider_context_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/attachments/provider_fallback.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/attachments/provider_history_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/attachments/provider_injected_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/attachments/provider_owner.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/attachments/provider_routing_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/attachments/provider_tests.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

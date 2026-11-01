@@ -1,0 +1,840 @@
+{
+  "id": "ai-agents--murage",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/ferroxlabs/murage",
+  "report": "spec/analyses/unreviewed/ai-agents--murage.md",
+  "analyzedSha": "24ab901bc8bdd90685398df00be35a7627937992",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T03:30:19+07:00",
+  "observedSha": "f23d9fbff36a1ae3d841006f35e39a39ade12089",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f23d9fbff36a1ae3d841006f35e39a39ade12089",
+      "date": "2026-10-31T16:10:13+08:00",
+      "subject": "CI try b3a4731d05a5"
+    },
+    {
+      "sha": "3aeb516bc0f452028299c9c57f3912fe73f41222",
+      "date": "2026-10-30T17:10:59+08:00",
+      "subject": "CI try 49a54e2fae60"
+    },
+    {
+      "sha": "f99293562ef7c22b57f5b1452a05b63c22b4fe4b",
+      "date": "2026-10-29T05:32:26+08:00",
+      "subject": "CI try ed8af4fd531b"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/package-win.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/changelog/meta.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/content/docs/changelog/v1-0-10.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/content/docs/changelog/v1-0-11.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/content/docs/changelog/v1-0-9.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/computers/local-computer.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/devices/phone-app.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/features/approvals-and-inspector.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/features/automation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/features/inbox.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/features/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/features/mcp-servers.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/features/memory-and-learning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/features/messaging-apps.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/providers/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/security/permissions-and-secrets.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/build.gradle",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/AndroidManifest.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/ApprovalKeys.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/AskTileService.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/AssistActivity.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/CallAnswerRoute.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/MainActivity.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/MurageMessagingService.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/NativePhoneJobExecutors.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneAlarmsExecutor.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneAskSetup.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneAskSigner.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneAskTokenStore.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneCalendarExecutor.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneCalendarProvider.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneCallsExecutor.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneConsentStore.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneContactsExecutor.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneContactsProvider.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneDataSharingSheet.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneDataSharingText.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneExecutorSupport.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneForBotsModel.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneForBotsScreen.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneIntentLauncher.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneJobCardDialog.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneJobCardModel.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneJobHTTP.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneJobRunner.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneJobServices.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneJobsCleanup.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneJobsMintClient.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneJobsMintHTTP.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneJobsSigner.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneJobsTokenStore.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneLocationExecutor.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneLocationProvider.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneMessagesExecutor.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneOperationLedger.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhonePermissions.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneRegistrationHTTP.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneRemindersExecutor.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneShareHTTP.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneShareServices.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PhoneSystemIntents.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PushActionReceiver.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PushChannels.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PushIntents.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/PushOpenActivity.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/SecureStore.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/ShareActivity.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/ShareContent.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/ShareOutboxActivity.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/SharePicker.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/Shell.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/WorkspaceActivity.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/AssistRoute.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/AssistantSettings.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/ChannelGate.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/ChannelScript.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/ComposeHash.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/NotificationPlan.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/OpenHash.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/PhoneAskContract.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/PhoneForBotsEntry.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/PhoneJobsContract.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/ProbeVerdict.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/PushContract.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/PushLedger.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/PushOutcome.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/ShareAccess.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/ShareBody.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/ShareFiles.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/ShareMultipartWriter.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/ShareOutbox.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/ShareOutcome.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/java/com/murage/mobile/shell/ShareTargets.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/drawable/ic_tile_ask.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/raw/murage_call.wav",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-de/calls.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-de/strings.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-en/strings.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-es/calls.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-es/strings.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-fr/calls.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-fr/strings.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-hi/calls.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-hi/strings.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-ja/calls.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-ja/strings.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-pt-rBR/calls.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-pt-rBR/strings.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-zh/calls.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values-zh/strings.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/main/res/values/calls.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/res/values/strings.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/res/values/styles.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/main/res/xml/shortcuts.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/CallPushDeliveryTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/MurageMessagingServiceTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/PhoneAskMintTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/PhoneDataSharingTextTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/PhoneForBotsTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/PhoneJobCardTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/PhoneJobRunnerTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/PhoneJobsCleanupTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/PhoneJobsMintTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/PhoneNativeExecutorsTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/PhoneShareHTTPTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/PhoneToolsLocalizationTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/PushActionReceiverTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/ScaffoldTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/ShareResourcesTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/shell/AssistRoutingTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/shell/AssistantSettingsTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/shell/ComposeHashTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/shell/NotificationPlanTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/shell/PhoneAskContractTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/shell/PhoneJobsContractTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/shell/PushContractTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/shell/ShareContentPolicyTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/android/app/src/test/java/com/murage/mobile/shell/ShareFlowTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/contract/channel.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/contract/compose-hash.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/contract/phone-ask.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/contract/phone-jobs.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/contract/push.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/contract/share-types.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/ios/App/App.xcodeproj/project.pbxproj",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/ios/App/App/App.entitlements",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/ios/App/App/AppDelegate.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/ios/App/App/AskIntents.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/ios/App/App/Info.plist",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/ios/App/App/OpenAskControlIntent.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/ios/App/App/PrivacyInfo.xcprivacy",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/ios/App/App/SceneDelegate.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/ios/App/App/de.lproj/AppShortcuts.strings",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/ios/App/App/de.lproj/InfoPlist.strings",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/ios/App/App/de.lproj/Localizable.strings",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/ios/App/App/en.lproj/AppShortcuts.strings",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/ios/App/App/en.lproj/InfoPlist.strings",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/ios/App/App/en.lproj/Localizable.strings",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

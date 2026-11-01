@@ -32,6 +32,18 @@ The [update skill](https://github.com/expo/skills/blob/8a0dc4fa57ae345923c357e14
 
 The [Observe entry](https://github.com/expo/skills/blob/8a0dc4fa57ae345923c357e1451cbcd8b6f2a7db/plugins/expo/skills/eas-observe/SKILL.md) explicitly routes version-sensitive API details to canonical documentation and distinguishes native builds from Expo Go. Its metrics, pricing and SDK mappings are upstream descriptions here, not refreshed service facts. Feedback commands would disclose task context externally and require separate authorization. Mobile implementation remains deferred in Teamagent; this review does not adopt Expo or its package commands. No install, app, telemetry, feedback or update was executed.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `05754e71d02abe0d2d7a2fb5259ccac41f5ea59c` (commit date `2026-10-28T21:07:35+01:00`), compared with `8a0dc4fa57ae345923c357e1451cbcd8b6f2a7db`. Earlier observations remain historical evidence.
+
+**Scope:** Changed plugin metadata, overview/evaluation skill headers and animation-sync renderer. Native platform behavior, unchanged evaluation tooling, remote upstream retrieval and all skill bodies were not exercised.
+
+The [plugin manifest](https://github.com/expo/skills/blob/05754e71d02abe0d2d7a2fb5259ccac41f5ea59c/plugins/expo/plugin.json) advances the package version while the [overview skill](https://github.com/expo/skills/blob/05754e71d02abe0d2d7a2fb5259ccac41f5ea59c/plugins/expo/skills/expo-overview/SKILL.md) drops its independent frontmatter version. The [animation sync script](https://github.com/expo/skills/blob/05754e71d02abe0d2d7a2fb5259ccac41f5ea59c/scripts/sync-animate-expo.ts) likewise stops extracting and reproducing a local per-skill version. The [evaluation skill header](https://github.com/expo/skills/blob/05754e71d02abe0d2d7a2fb5259ccac41f5ea59c/.claude/skills/expo-skill-eval/SKILL.md) continues to describe separate trigger, generated-code and native screenshot evaluation. Those declarations are guidance, not a report of device tests performed in this review.
+
+**Teamagent implication (inference):** Pin imported skill bundles by source commit and content digest even when optional frontmatter version fields disappear. Record package version and harness/model compatibility separately, and evaluate trigger quality independently from native runtime acceptance. This research does not change Teamagent's deferred mobile implementation decision.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mobile-expo](https://github.com/expo/skills); analyzed commit `8a0dc4fa57ae345923c357e1451cbcd8b6f2a7db`; commit date 2026-10-26T12:58:59-07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--mobile-expo.md).
+Analysis metadata: source [mobile-expo](https://github.com/expo/skills); analyzed commit `05754e71d02abe0d2d7a2fb5259ccac41f5ea59c`; commit date 2026-10-28T21:07:35+01:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--mobile-expo.md).
 <!-- teamagent-analysis:end -->

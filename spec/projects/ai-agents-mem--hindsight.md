@@ -54,6 +54,12 @@ Evidence: [hindsight-api-slim/hindsight_api/engine/memory_engine.py:1866-1877](h
 
 **Scope and limits:** Reviewed delta-gate execution and failure/concurrency fixtures; model accuracy and provider-rate behavior were not measured. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review — 2026-11-01
+
+Reviewed `bc5ea195a0fed1346ff171a5780bbb72a38c89c8` (2026-10-31T00:40:41+01:00) against `14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2`; 404 changed paths. Scoped decision-reranker diffs move prune/dedup settings into per-recall context rather than shared reranker instance state. Ranking is followed by a dependent repeat-classification request; scores remain rank positions, not confidence. Optional stored embeddings restrict pair questions by cosine similarity; absent vectors can exclude individual candidates from dedup, while entirely unavailable embeddings permit all pairs. Matrix construction is quadratic in surviving candidates, and inspected code relies on upstream vector shape/finite validation and candidate limits. [Reranker](https://github.com/vectorize-io/hindsight/blob/bc5ea195a0fed1346ff171a5780bbb72a38c89c8/hindsight-api-slim/hindsight_api/engine/search/decision_reranker.py).
+
+Keep request-local decisions, two-stage latency/cost attribution and explicit dedup coverage. Similarity prefilters are an approximation and must not erase evidence or become authorization. Selected pipeline fixtures change wrapper signatures only; the actual prune/dedup interface and broader new regression suites were outside this scope. [Concurrent recall fixture](https://github.com/vectorize-io/hindsight/blob/bc5ea195a0fed1346ff171a5780bbb72a38c89c8/hindsight-api-slim/tests/test_recall_boost_pipeline.py). No model calls, accuracy benchmark or tests executed; upstream quality numbers in comments remain unverified claims.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hindsight](https://github.com/vectorize-io/hindsight); analyzed commit `14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2`; commit date 2026-10-28T10:59:34+01:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--hindsight.md).
+Analysis metadata: source [hindsight](https://github.com/vectorize-io/hindsight); analyzed commit `bc5ea195a0fed1346ff171a5780bbb72a38c89c8`; commit date 2026-10-31T00:40:41+01:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--hindsight.md).
 <!-- teamagent-analysis:end -->

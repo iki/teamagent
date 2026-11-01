@@ -52,6 +52,16 @@ In [nanobot/process_runtime.py](https://github.com/HKUDS/nanobot/blob/8f7a7d1759
 
 **Harness implication and limits:** Cache stable native bindings rather than live process identity. Pair a PID with fresh birth identity before lifecycle operations to reduce PID-reuse mistakes, and treat unavailable identity as unknown. The shown function does not itself authorize termination or eliminate the race between inspection and a later action. No Windows native process test or memory benchmark was run. This review is static and does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `8b37976d36c2812c62b464321e729a88872b60f9` against prior analyzed commit `8f7a7d17590de7ab187650381894dba2b9e060ab`. Historical reviews above remain separate evidence.
+
+The selected [mid-turn goal fixture](https://github.com/HKUDS/nanobot/blob/8b37976d36c2812c62b464321e729a88872b60f9/tests/agent/test_mid_turn_goal.py) replaces its inline stop/wait cleanup with the existing shared `stop_loop` helper while retaining the five-second deadline. The complete [helper](https://github.com/HKUDS/nanobot/blob/8b37976d36c2812c62b464321e729a88872b60f9/tests/agent/session_helpers.py) calls stop, awaits the owned worker with `asyncio.wait_for`, and on timeout prints the pending session close stack plus native Python tracebacks before rethrowing. Its own delta only removes a module docstring; this is test cleanup consolidation, not a newly implemented production shutdown guarantee.
+
+Preserve the distinction between a requested stop, a completed worker and proof that all descendants released resources. Timeout diagnostics make a stuck close inspectable, but raw stack diagnostics need a bounded, redacted host sink before reuse. The helper reaches private session state and does not independently verify native descendant termination. Existing mid-turn permission/history assertions remain fixture intent; no agent, goal command or process shutdown was executed in this review.
+
+**Coverage:** Read the selected four-path expansion (principally documentation/fixture changes), complete 29-line mid-turn fixture delta and complete current 68-line cleanup helper. Production loop/state/native-process implementation was not reassessed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [nanobot](https://github.com/HKUDS/nanobot); analyzed commit `8f7a7d17590de7ab187650381894dba2b9e060ab`; commit date 2026-10-28T17:28:59+08:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--nanobot.md).
+Analysis metadata: source [nanobot](https://github.com/HKUDS/nanobot); analyzed commit `8b37976d36c2812c62b464321e729a88872b60f9`; commit date 2026-10-31T11:55:13+08:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--nanobot.md).
 <!-- teamagent-analysis:end -->

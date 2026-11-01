@@ -2,11 +2,11 @@
 
 Source: [leann](https://github.com/yichuan-w/LEANN) · [Analysis](../../projects/ai-query--leann.md) · [memory](../../memory.md), [models](../../models.md), [import-generation](../../import-generation.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `c443fc418417f7f2f84d6e1a30115f5e13376ed3`; commit date: 2026-10-27T23:34:38+08:00; review date: 2026-10-28T08:26:04.502Z; observed SHA: `c443fc418417f7f2f84d6e1a30115f5e13376ed3`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `07796bd7e40f2d5f3a4be9e45adf1f62a68481fd`; commit date: 2026-10-29T05:26:06+08:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `07796bd7e40f2d5f3a4be9e45adf1f62a68481fd`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/yichuan-w/LEANN/compare/c443fc418417f7f2f84d6e1a30115f5e13376ed3...c443fc418417f7f2f84d6e1a30115f5e13376ed3). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/yichuan-w/LEANN/compare/07796bd7e40f2d5f3a4be9e45adf1f62a68481fd...07796bd7e40f2d5f3a4be9e45adf1f62a68481fd). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -49,6 +49,14 @@ Evidence: [src/types.ts:270-282](https://github.com/rohitg00/agentmemory/blob/76
 
 **Scope and limits:** Reviewed the health type change, worker-rendering functions and new viewer fixtures in the eight-path delta. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `c6c476d2905926727fa5848a134d7a3b38a7fa98` against `76db6ac6c090efe9c1fa07bcde1618e816717c10` (81 changed paths). The [Cline connector](https://github.com/rohitg00/agentmemory/blob/c6c476d2905926727fa5848a134d7a3b38a7fa98/src/cli/connect/cline.ts) uses the Cline data/settings location and an explicit environment override. Its detection accepts a nonempty override or the default directory; that is a configuration/discovery signal, not proof of agent installation or readiness. The [connector fixtures](https://github.com/rohitg00/agentmemory/blob/c6c476d2905926727fa5848a134d7a3b38a7fa98/test/connect-new-agents.test.ts) cover default/custom paths, empty fallback, preserved servers/settings, backup bytes, already-wired operation and dry-run behavior.
+
+**Harness consequence:** Keep discovery, configuration changes and authenticated/runtime readiness as separate states. Validate an override's intended location before writing and preserve existing user configuration with explicit backup provenance.
+
+**Scope and limits:** Complete selected connector and fixture diffs; shared JSON writing internals and the remaining changed areas were not re-audited. No Cline launch or upstream tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agentmemory](https://github.com/rohitg00/agentmemory); analyzed commit `76db6ac6c090efe9c1fa07bcde1618e816717c10`; commit date 2026-10-28T12:22:15+05:30; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--agentmemory.md).
+Analysis metadata: source [agentmemory](https://github.com/rohitg00/agentmemory); analyzed commit `c6c476d2905926727fa5848a134d7a3b38a7fa98`; commit date 2026-10-29T16:32:06+05:30; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--agentmemory.md).
 <!-- teamagent-analysis:end -->

@@ -46,6 +46,16 @@ In [src-tauri/src/core/agent/memory.rs](https://github.com/janhq/jan/blob/b8d582
 
 **Harness implication and limits:** Deduplicate retrieved conversation memory against current context before spending its token budget, and retain role/provenance distinctions when old stores contain user rows. Formatting and a reference-only label reduce prompt-shape confusion but do not establish resistance to semantic prompt injection. The neutralizer implementation, database search/ranking and indexing call sites were not audited or executed; large loop/subagent files exceeded the capture bound. No upstream tests, agent execution or provider requests were run.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `b8071a116d626875df346616ddb547b27ab3ef5c` against prior analyzed commit `b8d58255baf6d9e870025d3f0c60a5b80a63143b`. Historical reviews above remain separate evidence.
+
+The new [AMD Vulkan memory adapter](https://github.com/janhq/jan/blob/b8071a116d626875df346616ddb547b27ab3ef5c/extensions/llamacpp-extension/src/deviceMemory.ts) avoids joining hardware and inference-device lists by index because filtering/reordering changes those positions. It joins uniquely named AMD Vulkan devices to UUID-keyed usage; ambiguous identical GPUs, unmatched names and missing usage retain the original figures. The complete [fixtures](https://github.com/janhq/jan/blob/b8071a116d626875df346616ddb547b27ab3ef5c/extensions/llamacpp-extension/src/deviceMemory.test.ts) cover hidden devices, shifted/reordered indices, identical cards, unmatched/non-AMD devices and absent usage.
+
+This is identity reconciliation for telemetry, not proof of allocatable memory or model-fit admission. Numeric inputs are checked by type, then floored/clamped; this helper does not reject nonfinite values or cap free memory at total for negative usage. Teamagent should validate finite measurements and provenance, retain ambiguity explicitly, and obtain live headroom at admission rather than infer capacity from device ordering or a stale sample.
+
+**Coverage:** Read the complete 249-line implementation/fixture addition. Hardware plugin collection, llama.cpp allocation and real GPU behavior were not reviewed or exercised. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [jan](https://github.com/janhq/jan); analyzed commit `b8d58255baf6d9e870025d3f0c60a5b80a63143b`; commit date 2026-10-28T15:17:12+05:30; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--jan.md).
+Analysis metadata: source [jan](https://github.com/janhq/jan); analyzed commit `b8071a116d626875df346616ddb547b27ab3ef5c`; commit date 2026-10-30T16:08:43+07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--jan.md).
 <!-- teamagent-analysis:end -->

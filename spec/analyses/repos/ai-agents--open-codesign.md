@@ -2,11 +2,11 @@
 
 Source: [open-codesign](https://github.com/OpenCoworkAI/open-codesign) · [Analysis](../../projects/ai-agents--open-codesign.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `4cf33932edc5f687e3cf7190261ebbb02c898d08`; commit date: 2026-10-24T17:23:46+08:00; review date: 2026-10-28T08:47:42.123Z; observed SHA: `4cf33932edc5f687e3cf7190261ebbb02c898d08`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `5daa34e6c07103f45a40201a4ffefb5c3855562b`; commit date: 2026-10-31T16:01:59+08:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `5daa34e6c07103f45a40201a4ffefb5c3855562b`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/OpenCoworkAI/open-codesign/compare/4cf33932edc5f687e3cf7190261ebbb02c898d08...4cf33932edc5f687e3cf7190261ebbb02c898d08). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/OpenCoworkAI/open-codesign/compare/5daa34e6c07103f45a40201a4ffefb5c3855562b...5daa34e6c07103f45a40201a4ffefb5c3855562b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

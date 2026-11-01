@@ -48,6 +48,14 @@ Evidence: [core/mcp/toolslistchanged.go:81-177](https://github.com/maximhq/bifro
 
 **Scope and limits:** Reviewed the complete new listener and selected stale-connection fixtures; other gateway/provider changes were not exhaustively audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`496693af8465c3e5c5ff504deaf28c43563227d4`](https://github.com/maximhq/bifrost/commit/496693af8465c3e5c5ff504deaf28c43563227d4), compared with `a7eba970798df6c1f90923109d83cd9fd578964d`.
+
+The complete selected [OAuth issuance comparison](https://github.com/maximhq/bifrost/blob/496693af8465c3e5c5ff504deaf28c43563227d4/transports/bifrost-http/handlers/mcpoauth2issuance.go) adds refresh-family revocation when an already-issued authorization code is replayed, rejects refresh for clients lacking the registered grant type, checks virtual-key expiry and refuses grants bound to an old MCP resource after an issuer change. Revocation errors return failure rather than silently continuing. The [fixtures](https://github.com/maximhq/bifrost/blob/496693af8465c3e5c5ff504deaf28c43563227d4/transports/bifrost-http/handlers/mcpoauth2issuance_test.go) cover those paths and parallel code exchange.
+
+For Teamagent, cached grants need live scope/identity checks at refresh as well as at initial consent, with explicit reconciliation and revocation outcomes. Do not infer that rejecting a replay invalidates every previously issued access token; the inspected change specifically revokes refresh tokens. The selected 348-line delta was fully read within a 1,209-path update. Other OAuth handlers, store concurrency and full protocol correctness were not audited; no credentials, provider or upstream tests were used.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bifrost](https://github.com/maximhq/bifrost); analyzed commit `a7eba970798df6c1f90923109d83cd9fd578964d`; commit date 2026-10-28T15:36:10+05:30; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--bifrost.md).
+Analysis metadata: source [bifrost](https://github.com/maximhq/bifrost); analyzed commit `496693af8465c3e5c5ff504deaf28c43563227d4`; commit date 2026-11-01T14:10:26+05:30; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--bifrost.md).
 <!-- teamagent-analysis:end -->

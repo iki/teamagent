@@ -1,0 +1,985 @@
+{
+  "id": "ai-query--lightpanda-browser",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/lightpanda-io/browser",
+  "report": "spec/projects/ai-query--lightpanda-browser.md",
+  "analyzedSha": "c1869f404889bd8f1037f25f533e010cba69d96c",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T16:47:36+08:00",
+  "observedSha": "c3b9247c4f979a75b61947925b8584b79bd25c1f",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c3b9247c4f979a75b61947925b8584b79bd25c1f",
+      "date": "2026-11-01T16:37:05+08:00",
+      "subject": "Merge pull request #4342 from staylor/layout-blocks-stack"
+    },
+    {
+      "sha": "5a54c4964f054eb55df6313651c2b63e299e85ad",
+      "date": "2026-11-01T16:35:58+08:00",
+      "subject": "Merge pull request #4341 from staylor/layout-out-of-flow-content"
+    },
+    {
+      "sha": "fe8e17a4152f8ecfe7711e0a96ef0ecd684ad437",
+      "date": "2026-11-01T15:37:13+08:00",
+      "subject": "Merge pull request #4339 from staylor/script-empty-src-error"
+    },
+    {
+      "sha": "94ce6c48e98e85fd0de00338f9f8d4f0f55ca8da",
+      "date": "2026-11-01T15:08:10+08:00",
+      "subject": "Add Script.asHtml() to encapsulate prototype"
+    },
+    {
+      "sha": "8ac02166f83d025dc417bd6e3947f16135cb4c86",
+      "date": "2026-11-01T00:53:01-04:00",
+      "subject": "layout: don't size a parent by its out-of-flow children"
+    },
+    {
+      "sha": "fa88a9bbdca288387513f78a73e2e8c79323797a",
+      "date": "2026-11-01T00:48:45-04:00",
+      "subject": "element: start a block-level box at its parent's left edge"
+    },
+    {
+      "sha": "7cff0b8cdb8d9185a7a079c03e970a2fda28dfc5",
+      "date": "2026-10-31T23:01:01-04:00",
+      "subject": "script: fire error for an empty src instead of fetching the page"
+    },
+    {
+      "sha": "cebb8d51e60a68815591a5c7874823b988530aa8",
+      "date": "2026-11-01T09:05:41+08:00",
+      "subject": "Merge pull request #4337 from lightpanda-io/orderfile-regen"
+    },
+    {
+      "sha": "3452388b5af92d7a6462fa1d809fed0dd6691ef2",
+      "date": "2026-11-01T00:52:13Z",
+      "subject": "orderfile: regenerate the hot-code profile"
+    },
+    {
+      "sha": "813e0fb32f453c73141bcab58c9d16a500dd78c0",
+      "date": "2026-11-01T07:42:24+08:00",
+      "subject": "Merge pull request #4314 from lightpanda-io/mcp-run-path"
+    },
+    {
+      "sha": "2c8e6ac9124e7894e4a8e4ab9e73457f9ff1193f",
+      "date": "2026-11-01T07:24:22+08:00",
+      "subject": "Merge pull request #4329 from lightpanda-io/orderfile-regen"
+    },
+    {
+      "sha": "e1b84ad319087a6a066a46d322e48dd8f317fd97",
+      "date": "2026-11-01T07:23:44+08:00",
+      "subject": "Merge pull request #4330 from lightpanda-io/mcp-run-timeout-await-null"
+    },
+    {
+      "sha": "381cf62dbdc368deda75ccba929ed8c943c12b7b",
+      "date": "2026-11-01T07:20:19+08:00",
+      "subject": "Merge pull request #4327 from lightpanda-io/width-position"
+    },
+    {
+      "sha": "23485ffaeca36fc2e2208ca18410968049c7e246",
+      "date": "2026-11-01T07:18:14+08:00",
+      "subject": "Merge pull request #4325 from lightpanda-io/zig-test-chrome"
+    },
+    {
+      "sha": "2fa320805b9775317648f78f997f614768d5b8ed",
+      "date": "2026-11-01T07:16:30+08:00",
+      "subject": "Merge pull request #4322 from lightpanda-io/lazy-wavetable-build"
+    },
+    {
+      "sha": "754d18817ccb947d422fb74de5f8c999305ff6f6",
+      "date": "2026-11-01T07:16:10+08:00",
+      "subject": "Merge pull request #4320 from lightpanda-io/cdp-protocol-data"
+    },
+    {
+      "sha": "b4472ebbd578eaaf0404f9d7b7ca114a59fc8f18",
+      "date": "2026-11-01T07:15:47+08:00",
+      "subject": "Merge pull request #4319 from lightpanda-io/update-v8-dep"
+    },
+    {
+      "sha": "49d717daba2c694ef1f02889ea49ca02fbb881a6",
+      "date": "2026-10-31T19:10:40+01:00",
+      "subject": "Merge pull request #4333 from ether-btc/docs/arm64-base-image-glibc-floor"
+    },
+    {
+      "sha": "b01a1fff7065d7c9913ddc40edebba3f345f54cc",
+      "date": "2026-10-31T16:41:41+01:00",
+      "subject": "docs: state the per-arch glibc floors in the musl base-image note"
+    },
+    {
+      "sha": "beb09ac83f3b7d32b09b89d090d4263b45a5a591",
+      "date": "2026-10-31T13:45:00+01:00",
+      "subject": "mcp: drop a comment that restates the run test's script"
+    },
+    {
+      "sha": "496267aebd496251be08031d95dd2599da2ea56b",
+      "date": "2026-10-31T13:44:39+01:00",
+      "subject": "mcp: test the run timeout after an await without a goto"
+    },
+    {
+      "sha": "97c67d4ba672a9d96acfcd04d6b10a7bc6a43139",
+      "date": "2026-10-31T19:44:59+08:00",
+      "subject": "Merge pull request #4317 from staylor/parser-checkpoint-before-script"
+    },
+    {
+      "sha": "0068fed44f4e0d4b01a5553fa066005d00949ac7",
+      "date": "2026-10-31T19:11:31+08:00",
+      "subject": "micro-optimize skip 2nd task run when from_parser"
+    },
+    {
+      "sha": "a07c6163de1d4e382366bc86991411ba9980d2a7",
+      "date": "2026-10-31T19:11:31+08:00",
+      "subject": "parser: run microtasks before preparing a parser-inserted script"
+    },
+    {
+      "sha": "11b7b0815b7f7e9d7be4e46e454e000a7f01a4c5",
+      "date": "2026-10-31T10:53:17Z",
+      "subject": "orderfile: regenerate the hot-code profile"
+    },
+    {
+      "sha": "cbe19c655df41391386418386a4ede7e3f9aae74",
+      "date": "2026-10-31T11:36:23+01:00",
+      "subject": "Merge pull request #4328 from lightpanda-io/ci-orderfile-fix"
+    },
+    {
+      "sha": "bc2faa0f4ac91bec9f385b6be779b31754ac4c37",
+      "date": "2026-10-31T11:13:32+01:00",
+      "subject": "ci: fix orederfile failure with persist-credentials:false"
+    },
+    {
+      "sha": "3361192adc4eda98539b5bf74ce935315f2c6934",
+      "date": "2026-10-31T16:07:00+08:00",
+      "subject": "css: position partial awareness"
+    },
+    {
+      "sha": "315df53123a3bf02d5f17b24386bbb73b59945c4",
+      "date": "2026-10-31T14:33:58+08:00",
+      "subject": "Merge pull request #4309 from lucoffe/fix/navigator-mimetypes"
+    },
+    {
+      "sha": "c4202250fe69e6b69cf94e102c4e566b72a81694",
+      "date": "2026-10-31T14:05:20+08:00",
+      "subject": "lock test with a fixed chrome"
+    },
+    {
+      "sha": "cbc9822215f5526eb0fb1bda72d96d4fef920aef",
+      "date": "2026-10-31T12:54:00+08:00",
+      "subject": "install chrome directly from its .deb"
+    },
+    {
+      "sha": "f6a8db8db43185b32112ea699681e6537e39f494",
+      "date": "2026-10-31T12:40:30+08:00",
+      "subject": "ci: verify zig unit tests in chrome"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/actions/install/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/orderfile/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/v8-snapshot/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/agent-regression.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-integration-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nix-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nix-deps.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/orderfile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/package-debian.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/plumber.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/wpt.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/zig-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".plumber.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "build.zig.zon",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "orderfile/lightpanda.ld",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "orderfile/v8.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/App.zig",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "src/ClockCache.zig",
+      "previousPath": "src/network/ClockCache.zig"
+    },
+    {
+      "status": "M",
+      "path": "src/Config.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/NodeRegistry.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/SemanticTree.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/Agent.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/SlashCommand.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/save.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/settings.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Download.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/EventManagerBase.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Frame.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Page.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/ScriptManager.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/ScriptManagerBase.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/StyleManager.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/css/MediaQuery.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/dump.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/frame/exec_command.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/node_factory.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/parse.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/preload.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/resource_load.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/user_input.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/interactive.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Context.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Env.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Local.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Module.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Snapshot.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/bridge.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/js.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/layout.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/parser/Parser.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/ax_relatives.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/consent_banner.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/consent_banner_confirm.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/consent_banner_navigates.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/crypto.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/css/media_at_rule_cascade.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/css/media_query_list.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/css/scope_pseudo.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/custom_elements/attribute_changed.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/all_collection.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/document/design_mode.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/dir_lang.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/document_head_body.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/exec_command.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/get_elements_by_tag_name.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/named_properties.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/open_load_events.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/query_selector_all.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/query_selector_attributes.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/set_body.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/set_body/complex.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/set_body/empty.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/set_body/frameset.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/set_body/no_body.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/document/set_body/simple.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/domparser.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/bounding_rect.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/check_visibility.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/dataset.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/html/fieldset.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/html/form.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/generic.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/html/htmlelement-props.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/html/image.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/html/image_fetch.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/html/image_frameless_load.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/html/image_srcset.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/html/input-validity.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/html/marquee.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/html/ol.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/dynamic_order.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/dynamic_order1.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/dynamic_order2.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/dynamic_order3.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/dynamic_order_attribute1.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/dynamic_order_attribute2.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/dynamic_order_defer1.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/dynamic_order_defer2.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/dynamic_order_mixed_async.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/dynamic_order_mixed_ordered.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/dynamic_order_module1.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/dynamic_order_module2.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/dynamic_order_module_async1.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/dynamic_order_module_async2.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/empty_src.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/observer_before_defer.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/observer_before_defer.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/observer_before_prepare.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/element/html/script/observer_before_prepare.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/html/script/supports.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/html/textarea-validity.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/inner.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/position.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/pseudo_classes.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/query_selector_scope.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/rel_list.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/element/svg/text.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/encoding/text_decoder.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/event/security_policy_violation.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/fixtures/images/1000x750.jpg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/fixtures/images/1000x750.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/fixtures/images/320x240.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/late_redirect.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/login_field_swap.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/login_form.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/login_plaintext.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/login_two_step.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/login_two_step_cleartext.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/navigator/navigator.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/net/request.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/net/response.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/net/xhr.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/page/meta.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/sanitizer.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/shadowroot/innerHTML_spec.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/testing.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/ticking.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/webaudio/audio_context.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/webaudio/audio_graph.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/webcodecs/audio_data.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/webcodecs/encoded_chunk.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/webcodecs/video_frame.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/webmcp/page_tools.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/window/global_prototype.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/window/location_external_scheme.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/worker/global-prototype-worker.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/worker/worker.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/text_measure.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tools.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tools/choose.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tools/classify.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tools/consent.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tools/definitions.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tools/jev.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tools/login.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tools/marshal.zig",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

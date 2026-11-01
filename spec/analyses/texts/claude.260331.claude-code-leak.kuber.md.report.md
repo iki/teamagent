@@ -6,7 +6,7 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://kuber.studio/blog/AI/Claude-Code%27s-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm%2C-Let%27s-Talk-About-it>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-10-28T14:56:36.677Z. Import: **pinned**. Content validation: **usable-text**.
+Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-11-01T08:51:16.093Z. Import: **pinned**. Content validation: **usable-text**.
 
 First captured: 2026-10-24T05:50:42.770Z. Source creation/publication date: 2026-03-31T00:00:00.000Z. Date evidence: publisher-html-meta (article:published_time). Filename dates and Last-Modified are not treated as creation dates.
 

@@ -42,6 +42,16 @@ In [server/src/approvals/types.ts](https://github.com/CopilotKit/openbot/blob/da
 
 **Harness implication and limits:** Expose missing approval context as a recoverable pre-execution state rather than a generic refusal; a route may request the same unexecuted action through an authenticated conversation. Preserve the action digest and do not assume that a new conversation creates approval. This helper does not verify ownership or execute effects, and its preview redaction is heuristic; approval persistence, resume deduplication and transport authorization were not audited. No upstream runtime or live provider behavior was verified.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `c396a5f68c817043846f1ca3c2b42061ee73ceb5` against prior analyzed commit `da9a3caf5784074baa779110dd7e9d1338c8871b`. Historical reviews above remain separate evidence.
+
+The [browser-session registry](https://github.com/CopilotKit/openbot/blob/c396a5f68c817043846f1ca3c2b42061ee73ceb5/agent-computer/src/sessions.ts) centralizes whether a human holds control or a handoff is waiting, preserves those sessions during idle trimming, and exposes a passive query that does not create a session. Renewing a browser run always retires prior references; explicit `keepWheel` preserves human control while incrementing snapshot generation. A callback reports the control transition. The [new fixture](https://github.com/CopilotKit/openbot/blob/c396a5f68c817043846f1ca3c2b42061ee73ceb5/agent-computer/tests/sessions.test.ts) checks absent-session lookup, waiting, takeover and release.
+
+Adopt a distinct human-control lease in desktop/browser resource retention, separate from agent liveness. A changed run/snapshot identity must invalidate old automation references even when the human keeps control. The inspected code calls the control object's expiration logic but does not establish its expiry implementation, browser-close callers or real browser safety.
+
+**Coverage:** Read the complete 159-line selected sessions/cookie-test/session-test expansion. Cookie changes in this selection are import ordering only; control implementation and browser eviction callers were not audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openbot](https://github.com/CopilotKit/openbot); analyzed commit `da9a3caf5784074baa779110dd7e9d1338c8871b`; commit date 2026-10-27T19:15:10-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openbot.md).
+Analysis metadata: source [openbot](https://github.com/CopilotKit/openbot); analyzed commit `c396a5f68c817043846f1ca3c2b42061ee73ceb5`; commit date 2026-10-31T10:17:48-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openbot.md).
 <!-- teamagent-analysis:end -->

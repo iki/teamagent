@@ -1,0 +1,19 @@
+# game.awesome-gamedev
+
+Source: [game.awesome-gamedev](https://github.com/gamedev-skills/awesome-gamedev-agent-skills) · [skills](../../skills.md), [evolution](../../evolution.md), [agents](../../agents.md).
+
+A game-development skill collection with a task/engine router and reusable discipline guidance. The reviewed material is authored skill content and illustrative code, not a running Teamagent decision engine or a measured skill-selection system.
+
+Historical discovery: 2026-11-01T10:08:32.081Z. This initial source review supersedes the discovery-only assessment; managed metadata is preserved for explicit promotion.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9` (commit date `2026-10-28T08:55:14+05:45`), initial scoped review, with no prior analyzed commit. Ledger promotion remains a separate maintenance action.
+
+**Scope:** Complete router skill and first 160 lines of behavior-tree/utility-AI skill, including embedded selector/scoring examples. Initial tree review only; linked runtime references, game-engine integrations and collection-wide fixtures not audited.
+
+The [router](https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9/router/SKILL.md) uses project/version evidence to choose an engine, loads a minimal set of skill bodies/references, composes engine APIs with portable concepts and preserves unsupported custom engines. The [decision skill](https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9/skills/disciplines/ai-behavior-trees-utility-ai/SKILL.md) combines running/success/failure behavior-tree state with normalized utility scores and hysteresis. It warns that a memory sequence can stop rechecking a guard while an action runs. These are teaching patterns; normalized utility is neither calibrated probability nor a Jev expected-value implementation.
+
+**Teamagent implication (inference):** Route skills from actual task and pinned environment evidence, loading references on demand and recording compatibility gaps. Use durable state machines for execution and optional utility ranking only after hard policy eligibility; recheck live authorization while long-running work continues, and evaluate decision quality before evolving the ranking.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.

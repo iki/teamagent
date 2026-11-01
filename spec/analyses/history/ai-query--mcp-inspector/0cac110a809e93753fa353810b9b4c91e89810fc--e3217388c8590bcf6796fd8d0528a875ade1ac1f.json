@@ -1,0 +1,985 @@
+{
+  "id": "ai-query--mcp-inspector",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/modelcontextprotocol/inspector",
+  "report": "spec/projects/ai-query--mcp-inspector.md",
+  "analyzedSha": "0cac110a809e93753fa353810b9b4c91e89810fc",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-21T14:10:36-04:00",
+  "observedSha": "e3217388c8590bcf6796fd8d0528a875ade1ac1f",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "e3217388c8590bcf6796fd8d0528a875ade1ac1f",
+      "date": "2026-10-28T14:29:12-04:00",
+      "subject": "Merge pull request #2818 from modelcontextprotocol/v2/chore/milestone-merge-v2.13.0"
+    },
+    {
+      "sha": "d40b026b955f7e6e17718a149fb76232406171e1",
+      "date": "2026-10-28T13:59:16-04:00",
+      "subject": "chore: merge v2/main into the v2.13.0 milestone merge (#2820)"
+    },
+    {
+      "sha": "d7f6cee409d0377b647deefd88a243f105c96641",
+      "date": "2026-10-28T13:58:48-04:00",
+      "subject": "Merge pull request #2821 from modelcontextprotocol/v2/chore/2820-fast-uri-3-1-9"
+    },
+    {
+      "sha": "3be6b501dcfb25c5f09124ca305783f0033f83df",
+      "date": "2026-10-28T13:30:46-04:00",
+      "subject": "fix(deps): update fast-uri to 3.1.9 past four moderate advisories (#2820)"
+    },
+    {
+      "sha": "4f694c342b7f40ee7ec7466dd5398967eb086553",
+      "date": "2026-10-28T13:11:08-04:00",
+      "subject": "chore: merge v2/main into the v2.13.0 milestone merge (#2817)"
+    },
+    {
+      "sha": "d8b4cb1651806c4966ea5d4b7395bc357fe28248",
+      "date": "2026-10-28T13:10:48-04:00",
+      "subject": "Merge pull request #2819 from modelcontextprotocol/v2/fix/2817-tui-disconnect-abort-error"
+    },
+    {
+      "sha": "aff34a4c72ddfeb72e96ea3e446a18b5477d60d9",
+      "date": "2026-10-28T12:59:40-04:00",
+      "subject": "fix(core): a deliberate disconnect no longer ends in \"error\" (#2817)"
+    },
+    {
+      "sha": "111782208a597fbdd5390c29791c73dff7336fe3",
+      "date": "2026-10-28T12:18:53-04:00",
+      "subject": "chore: merge v2/main into main for the v2.13.0 release (#2816)"
+    },
+    {
+      "sha": "e1fc933787b8b484964d2966421d5182180df14d",
+      "date": "2026-10-28T12:17:38-04:00",
+      "subject": "Merge pull request #2815 from modelcontextprotocol/v2/chore/2812-bump-2-13-0"
+    },
+    {
+      "sha": "539c462131af365ba358ba012c2af152e5bb2809",
+      "date": "2026-10-28T11:01:40-04:00",
+      "subject": "chore: bump version to 2.13.0 (#2812)"
+    },
+    {
+      "sha": "5c03fb6d279eee0407d31fd9c5e6ef35d383b36a",
+      "date": "2026-10-28T11:00:25-04:00",
+      "subject": "fix(deps): update body-parser to 2.4.0 in range past GHSA-27r3-jxmh-p828 (#2812)"
+    },
+    {
+      "sha": "aeec26d797c5cb6de8c18ca6a2dd90b8e7ef6990",
+      "date": "2026-10-28T11:00:11-04:00",
+      "subject": "fix(deps): raise undici to ^8.12.3 past eight advisories (#2812)"
+    },
+    {
+      "sha": "4bb5ee7be0571a7055de35c7628471b747a96f24",
+      "date": "2026-10-25T01:56:27-04:00",
+      "subject": "Merge pull request #2809 from modelcontextprotocol/v2/feat/2805-scope-on-refresh"
+    },
+    {
+      "sha": "272bdad3ded87f861f63e7c0aa5b01b0f70814f1",
+      "date": "2026-10-25T01:19:35-04:00",
+      "subject": "Merge pull request #2808 from modelcontextprotocol/v2/chore/2804-sdk-skills-client"
+    },
+    {
+      "sha": "0d620e3f8436e8c49e66175d09e6c8fb5d256d4c",
+      "date": "2026-10-25T01:17:52-04:00",
+      "subject": "fix(auth): keep the refresh-scope fallback within the recorded grant (#2805)"
+    },
+    {
+      "sha": "aa6c03fc6eb4cd600b5fb82770db721c77dd808c",
+      "date": "2026-10-25T01:09:07-04:00",
+      "subject": "Merge pull request #2806 from modelcontextprotocol/v2/feat/2800-mcpdo-load-connections-thresholds"
+    },
+    {
+      "sha": "e4f2c06d0c07417b50c7126176cf1ffd7dc59882",
+      "date": "2026-10-25T01:01:14-04:00",
+      "subject": "feat(auth): opt-in scope on OAuth token refresh via scopeForRefresh (#2805)"
+    },
+    {
+      "sha": "c212b92f1b175e4b726fb3f95a092044c5223771",
+      "date": "2026-10-25T00:59:57-04:00",
+      "subject": "chore(skills): take SEP-2640 constants and schemas from the SDK, move the rest to core/extension/skills (#2804)"
+    },
+    {
+      "sha": "72126af4a1fc12e6b892ffe36778a8b5db635dbc",
+      "date": "2026-10-25T00:45:36-04:00",
+      "subject": "Merge pull request #2807 from modelcontextprotocol/v2/chore/2797-tsdown-remaining-clients"
+    },
+    {
+      "sha": "b49e8a4ab27771e3704370395c972225bbf97f42",
+      "date": "2026-10-25T00:44:58-04:00",
+      "subject": "fix(mcpdo): share the primary's OAuth storage with load extras (#2800)"
+    },
+    {
+      "sha": "2866d0b06d06c07bcd5e5a984331bcf74d7ecfc4",
+      "date": "2026-10-25T00:36:59-04:00",
+      "subject": "Merge pull request #2799 from modelcontextprotocol/v2/chore/2784-sdk-2.4.0"
+    },
+    {
+      "sha": "adcd3aefd34d5302e2f8a37a488c917d2ae3dc65",
+      "date": "2026-10-25T00:31:39-04:00",
+      "subject": "fix(mcpdo): bind load extras to the primary's server and cancel their dials (#2800)"
+    },
+    {
+      "sha": "fae1aa26c76577f510408d325839e95a80204450",
+      "date": "2026-10-25T00:27:31-04:00",
+      "subject": "Merge pull request #2796 from modelcontextprotocol/v2/fix/2749-fetch-destination-guard"
+    },
+    {
+      "sha": "1a335e7036bc59ac4bacd7c4880240132bc383d9",
+      "date": "2026-10-25T00:22:04-04:00",
+      "subject": "chore(build): migrate the web runner, mcpdo and TUI bundles from tsup to tsdown (#2797)"
+    },
+    {
+      "sha": "0e9138c3269500a067a8f574f1ba0b98a8004e62",
+      "date": "2026-10-25T00:15:48-04:00",
+      "subject": "feat(mcpdo): bring --load-connections and the --load-max-* thresholds to tools/call --load (#2800)"
+    },
+    {
+      "sha": "903c04c03bbf3baae54a5a20dcf2d42bec9c1756",
+      "date": "2026-10-25T00:13:52-04:00",
+      "subject": "fix: identify MCP traffic by request shape, not origin alone (#2749, #2802)"
+    },
+    {
+      "sha": "c621b99b18d19cf5ca5a3b85a7c5b6a9c929f2de",
+      "date": "2026-10-25T00:13:05-04:00",
+      "subject": "Merge pull request #2803 from modelcontextprotocol/v2/chore/1492-tsdown-cli"
+    },
+    {
+      "sha": "9558d0d7c54d376bedc4864a9b06512b0046cc0f",
+      "date": "2026-10-25T00:09:28-04:00",
+      "subject": "Merge pull request #2801 from modelcontextprotocol/v2/fix/2783-sse-connection-failed"
+    },
+    {
+      "sha": "26c69f60a75389fa63e87be737e1723c88713aef",
+      "date": "2026-10-25T00:00:25-04:00",
+      "subject": "fix(core): reject x-mcp-header on number params, matching SDK 2.4.0 (#2784)"
+    },
+    {
+      "sha": "55f084e60cef510f67ffa81700e5a5efecb3a594",
+      "date": "2026-10-24T23:56:48-04:00",
+      "subject": "Merge pull request #2786 from modelcontextprotocol/v2/feat/2744-mcpdo-load"
+    },
+    {
+      "sha": "621ca307e6b576898d24b8a948f8c956596dbe28",
+      "date": "2026-10-24T23:51:57-04:00",
+      "subject": "Merge pull request #2798 from modelcontextprotocol/v2/feat/2782-sort-tools-list"
+    },
+    {
+      "sha": "c08a719946bca77d1b21b37a19d1f4fd4f930ae4",
+      "date": "2026-10-24T23:50:44-04:00",
+      "subject": "fix: route well-known URIs to the OAuth guard under legacy SSE (#2749)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/skills/local-dev/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/project-structure/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/release/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/security-advisory/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/cli/__tests__/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/cli/__tests__/clear-stored-auth-for-relogin.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/cli/__tests__/error-handler.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/cli/__tests__/helpers/home-isolation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/cli/__tests__/helpers/throttling-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/cli/__tests__/load-test.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/cli/__tests__/load-thresholds.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/cli/__tests__/rate-limit-envelope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/cli/__tests__/relogin-revocation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/cli/__tests__/run-method-skills.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/cli/__tests__/skills-verify-cli.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/cli/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/cli/src/clear-stored-auth-for-relogin.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/cli/src/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/cli/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/cli/tsdown.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "clients/cli/tsup.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/cli/vitest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/__tests__/authorize.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/mcpdo/__tests__/daemon-load.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/__tests__/ema.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/mcpdo/__tests__/load.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/mcpdo/__tests__/rate-limit-envelope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/__tests__/skills-budget-hint.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/src/connection/authorize.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/src/connection/dispatch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/src/connection/ema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/src/connection/format-connection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/src/connection/format-human.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/mcpdo/src/connection/load-flags.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/src/connection/mcp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/src/daemon/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/src/daemon/connections.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/src/daemon/ensure.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/src/daemon/protocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/src/daemon/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/src/daemon/stream-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/mcpdo/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/mcpdo/tsdown.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "clients/mcpdo/tsup.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/tui/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/tui/__tests__/App.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/tui/__tests__/SkillsTab.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "R079",
+      "path": "clients/tui/__tests__/tsdownConfig.test.ts",
+      "previousPath": "clients/tui/__tests__/tsupConfig.test.ts"
+    },
+    {
+      "status": "M",
+      "path": "clients/tui/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/tui/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/tui/src/App.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/tui/src/components/SkillsTab.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/tui/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/tui/tsdown.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "clients/tui/tsup.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/eslint.config.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/server/start-vite-dev-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/server/vite-base-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/server/web-server-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/App.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/groups/ConnectionInfoContent/ConnectionInfoContent.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/groups/ServerCard/ServerCard.stories.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/groups/ServerCard/ServerCard.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/groups/ServerCard/ServerCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/groups/ServerSettingsForm/ServerSettingsForm.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/groups/ServerSettingsForm/ServerSettingsForm.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/groups/ServerSettingsModal/ServerSettingsModal.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/groups/ServerSettingsModal/ServerSettingsModal.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/groups/ToolControls/ToolControls.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/groups/ToolControls/ToolControls.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/screens/ServerListScreen/ServerListScreen.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/screens/ServerListScreen/ServerListScreen.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/screens/SkillsScreen/SkillsScreen.stories.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/screens/SkillsScreen/SkillsScreen.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/screens/SkillsScreen/SkillsScreen.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/views/InspectorView/InspectorView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/components/views/InspectorView/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/hooks/useConnectionLifecycle.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/hooks/useConnectionLifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/hooks/useInspectorStores.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/hooks/useServerCommands.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/core/auth/ema/transportProvider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/core/auth/oauth-secrets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/core/auth/providers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/web/src/test/core/auth/routeOAuthRequests.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/core/client/runner.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "clients/web/src/test/core/extension/skills/conformance.test.ts",
+      "previousPath": "clients/web/src/test/core/mcp/skills.test.ts"
+    },
+    {
+      "status": "R095",
+      "path": "clients/web/src/test/core/extension/skills/schemas.test.ts",
+      "previousPath": "clients/web/src/test/core/mcp/skillsSchemas.test.ts"
+    },
+    {
+      "status": "R095",
+      "path": "clients/web/src/test/core/extension/skills/sha256.test.ts",
+      "previousPath": "clients/web/src/test/core/mcp/sha256.test.ts"
+    },
+    {
+      "status": "R099",
+      "path": "clients/web/src/test/core/extension/skills/skillFile.test.ts",
+      "previousPath": "clients/web/src/test/core/mcp/skillFile.test.ts"
+    },
+    {
+      "status": "R093",
+      "path": "clients/web/src/test/core/extension/skills/skillFileBytes.test.ts",
+      "previousPath": "clients/web/src/test/core/mcp/skillFileBytes.test.ts"
+    },
+    {
+      "status": "R099",
+      "path": "clients/web/src/test/core/extension/skills/verification.test.ts",
+      "previousPath": "clients/web/src/test/core/mcp/skillsVerification.test.ts"
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/core/mcp/extensions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/core/mcp/inspectorClient-peer-handler-timing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/core/mcp/inspectorClient-skills.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/web/src/test/core/mcp/node/fetchGuard.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/core/mcp/oauthManager.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/core/mcp/serverList.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/core/mcp/state/managedSkillsState.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/core/react/useManagedSkills.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/core/xMcpHeader.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/integration/auth/node/oauth-secrets-namespace.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/integration/mcp/inspectorClient-ambient-signal.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/integration/mcp/inspectorClient-oauth-e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/integration/mcp/inspectorClient-oauth-fetchFn.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/integration/mcp/inspectorClient-skills.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/web/src/test/integration/mcp/node/fetchGuard.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/integration/mcp/node/transport.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/integration/mcp/remote/server-extra-coverage.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/integration/server/vite-base-config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/test/integration/server/web-server-config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/theme/Text.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/utils/toolUtils.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/src/utils/toolUtils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/tsconfig.node.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clients/web/tsdown.runner.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "clients/web/tsup.runner.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/web/vite.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/auth/ema/transportProvider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/auth/node/file-lock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/auth/node/oauth-secrets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/auth/oauth-storage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/auth/providers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/auth/requestTimeout.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/auth/routeOAuthRequests.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/auth/storage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/cli/error-handler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/cli/handlers/load-test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/cli/handlers/load-thresholds.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/cli/handlers/output-file.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/cli/handlers/run-method.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/cli/handlers/skills-verify.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/client/runner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R096",
+      "path": "core/extension/skills/conformance.ts",
+      "previousPath": "core/mcp/skills.ts"
+    },
+    {
+      "status": "R055",
+      "path": "core/extension/skills/schemas.ts",
+      "previousPath": "core/mcp/skillsSchemas.ts"
+    },
+    {
+      "status": "R100",
+      "path": "core/extension/skills/sha256.ts",
+      "previousPath": "core/mcp/sha256.ts"
+    },
+    {
+      "status": "R100",
+      "path": "core/extension/skills/skillFile.ts",
+      "previousPath": "core/mcp/skillFile.ts"
+    },
+    {
+      "status": "R095",
+      "path": "core/extension/skills/verification.ts",
+      "previousPath": "core/mcp/skillsVerification.ts"
+    },
+    {
+      "status": "M",
+      "path": "core/json/xMcpHeader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/__tests__/fakeInspectorClient.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/extensions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/inspectorClient.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/inspectorClientProtocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/node/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/mcp/node/fetchGuard.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/node/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/node/proxyFetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/node/transport.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/oauthManager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/remote/node/server.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

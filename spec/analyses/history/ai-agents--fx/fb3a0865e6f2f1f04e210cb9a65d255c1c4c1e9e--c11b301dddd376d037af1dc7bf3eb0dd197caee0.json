@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--fx",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/vercel-labs/fx",
+  "report": "spec/projects/ai-agents--fx.md",
+  "analyzedSha": "fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T23:35:02-04:00",
+  "observedSha": "c11b301dddd376d037af1dc7bf3eb0dd197caee0",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c11b301dddd376d037af1dc7bf3eb0dd197caee0",
+      "date": "2026-11-01T03:49:27-05:00",
+      "subject": "Merge pull request #1575 from vercel-labs/fazxes/warm-prompt-cache"
+    },
+    {
+      "sha": "6d6dfb2e0a0b7502f067895782c5a478ebb7e78f",
+      "date": "2026-11-01T02:24:16-05:00",
+      "subject": "Merge pull request #1546 from vercel-labs/fazxes/pgso-linux-x86_64"
+    },
+    {
+      "sha": "5b2a2ea45845aa1328d0c833315da7dd8c7d3fc9",
+      "date": "2026-11-01T02:12:26-05:00",
+      "subject": "Run the cache warmer as a std.Io task"
+    },
+    {
+      "sha": "6a012698c698c3c473fb153417420d1024cddd32",
+      "date": "2026-11-01T01:17:24-05:00",
+      "subject": "Merge pull request #1574 from vercel-labs/fazxes/leaner-model-requests"
+    },
+    {
+      "sha": "fc493cba9803b221461a9e1189c1003fad8c53a4",
+      "date": "2026-11-01T01:08:17-05:00",
+      "subject": "Merge pull request #1565 from vercel-labs/Submit-empty-answer"
+    },
+    {
+      "sha": "8ff07607f31eae4529568de98b979377de5f5edc",
+      "date": "2026-11-01T01:01:23-05:00",
+      "subject": "Merge pull request #1557 from vercel-labs/fazxes/share-frame-helpers"
+    },
+    {
+      "sha": "047a971c187cfad082e3dc0a72d69cb446af6bf9",
+      "date": "2026-11-01T01:01:07-05:00",
+      "subject": "Merge pull request #1555 from vercel-labs/fazxes/share-tool-argument-decoding"
+    },
+    {
+      "sha": "02d7e8fd031d13577e10a96667dec92572f2cd7b",
+      "date": "2026-11-01T01:56:10-04:00",
+      "subject": "Merge pull request #1573 from vercel-labs/fazxes/sign-in-on-mcp-add"
+    },
+    {
+      "sha": "e12e2d176cfbebc109e548aeab472137bd2b73b2",
+      "date": "2026-11-01T01:55:31-04:00",
+      "subject": "Merge pull request #1571 from vercel-labs/fazxes/reload-mcp-config-on-use"
+    },
+    {
+      "sha": "98608d2ab3e8499cdf8f6d65d02578997be1c5d7",
+      "date": "2026-11-01T01:29:55-04:00",
+      "subject": "Return an error from the cache warming lab when its files are missing"
+    },
+    {
+      "sha": "5911ede952326908f17d069aff78f57293688c83",
+      "date": "2026-11-01T01:27:07-04:00",
+      "subject": "Trim shell results, group independent tool calls, and withhold images in blocks"
+    },
+    {
+      "sha": "72f8628a05dd3fc42c0153cdb0bf2f206144f5c3",
+      "date": "2026-11-01T00:37:36-04:00",
+      "subject": "Raise the Linux x86_64 PGSO size ceiling to 8.250 MiB"
+    },
+    {
+      "sha": "6e2bde9b79d4ef2f0e9f9640e9502720a2a3b18d",
+      "date": "2026-10-31T22:04:55-04:00",
+      "subject": "Merge main into fazxes/pgso-linux-x86_64"
+    },
+    {
+      "sha": "34927c848244c0a722744260607bb623597715ae",
+      "date": "2026-10-31T22:04:29-04:00",
+      "subject": "Merge pull request #1572 from vercel-labs/fazxes/pgso-speed-retry"
+    },
+    {
+      "sha": "67967822e3c5ce32e45e66b271be402eb1e718b0",
+      "date": "2026-10-31T21:06:50-04:00",
+      "subject": "Merge branch 'fazxes/reload-mcp-config-on-use' into fazxes/sign-in-on-mcp-add"
+    },
+    {
+      "sha": "2c2366a537c056cb2c9f667ae4ab1fe7f5848102",
+      "date": "2026-10-31T21:06:36-04:00",
+      "subject": "Test that a prompt sent during a turn keeps the MCP servers"
+    },
+    {
+      "sha": "5a83b7ea58ce2e2b29c7833f5404a0d5bec4d68c",
+      "date": "2026-10-31T21:06:36-04:00",
+      "subject": "Say why a changed MCP config can't load"
+    },
+    {
+      "sha": "d9953c0de5ead0a436a002638cc56eacbacafca7",
+      "date": "2026-10-31T20:39:43-04:00",
+      "subject": "Merge branch 'fazxes/reload-mcp-config-on-use' into fazxes/sign-in-on-mcp-add"
+    },
+    {
+      "sha": "999399e56cad754cef3880e6215bf86b6a38e12f",
+      "date": "2026-10-31T20:39:30-04:00",
+      "subject": "Read the project .mcp.json the same way when checking for changes"
+    },
+    {
+      "sha": "2a6e34a1ea4a9f7e8ae6970a6e954a8628692c0c",
+      "date": "2026-10-31T20:35:19-04:00",
+      "subject": "List cache_warming as a profile setting and rename its test hook"
+    },
+    {
+      "sha": "4637a38d3c4b3e195e31a6f1bc57ec27e3c39e91",
+      "date": "2026-10-31T20:22:41-04:00",
+      "subject": "Keep Claude's prompt cache warm while a session waits"
+    },
+    {
+      "sha": "f245948a314f6577db5ace927a360a1aa107ae3d",
+      "date": "2026-10-31T20:01:01-04:00",
+      "subject": "Merge branch 'fazxes/reload-mcp-config-on-use' into fazxes/sign-in-on-mcp-add"
+    },
+    {
+      "sha": "e9f130286811811d89d15d4dfbb6a61d1d95b3c9",
+      "date": "2026-10-31T19:54:16-04:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into fazxes/reload-mcp-config-on-use"
+    },
+    {
+      "sha": "5b7fe15d3bb97ffe629252becc2c67693b78daad",
+      "date": "2026-10-31T19:50:53-04:00",
+      "subject": "Sign in to an MCP server when it is added"
+    },
+    {
+      "sha": "54dc6d8f774061f4151ec16b19f29bca1241c7b9",
+      "date": "2026-10-31T19:39:44-04:00",
+      "subject": "Merge pull request #1325 from vercel-labs/fazxes/cli-shape"
+    },
+    {
+      "sha": "58c14686510a938674f7753660b56aaf705bb271",
+      "date": "2026-10-31T19:38:14-04:00",
+      "subject": "Keep the signed macOS comparison to one startup measurement"
+    },
+    {
+      "sha": "aaf245034ad979d08a8a273b5bfc8fbadd7fb221",
+      "date": "2026-10-31T19:26:15-04:00",
+      "subject": "Measure a PGSO speed comparison again before failing it"
+    },
+    {
+      "sha": "b90ff2e3bbfd63eba104da9f984d0c34356eb571",
+      "date": "2026-10-31T19:15:30-04:00",
+      "subject": "Load MCP config changes made outside the session"
+    },
+    {
+      "sha": "c135209f3053bbc2cbb15f686ee92ef184646677",
+      "date": "2026-10-31T17:06:34-04:00",
+      "subject": "Require an explicit PGSO size ceiling and test the Linux setup branches"
+    },
+    {
+      "sha": "c52377b45ea56c66492a45b01c81089e0e6a795c",
+      "date": "2026-10-31T13:22:04-07:00",
+      "subject": "Reject blank custom answers to multiple-choice questions"
+    },
+    {
+      "sha": "b86bdb5fd8cc081f39def7b33d802490fd8b7b6c",
+      "date": "2026-10-31T15:56:50-04:00",
+      "subject": "Merge pull request #1544 from vercel-labs/fazxes/pgso-linux-release"
+    },
+    {
+      "sha": "35f1b265a83082f4c6194ee46f11481828ecdfd6",
+      "date": "2026-10-31T05:09:37-04:00",
+      "subject": "Give Linux x86_64 PGSO an 8.000 MiB size ceiling"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".fx/skills/fx-cli-shape/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".fx/skills/fx-cli-shape/references/decided-names.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".fx/skills/fx-cli-shape/references/rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".fx/skills/fx-cli-shape/scripts/surface_diff.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-pgso/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/binary-size.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/fuzz.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pgso-linux-arm64.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pgso-linux-x86_64.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-libfx.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tsan.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/approval_review_tty.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/long_turn_memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/pgso_artifacts.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/shell_command_overhead.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/signed_macos_memory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "build.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/check-compactor-boundary.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check-recovery-boundary.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check_cli_shape.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/cli_shape_registry.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/compare_signed_macos.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/detect-ci-need.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/__main__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/corpus.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/corpus.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/distributed.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/ir_size.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/pgso/linux.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/pgso/macos.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/pgso/platforms.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/qualify.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_corpus.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_distributed.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_ir_size.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/pgso/tests/test_linux.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_qualify.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_toolchain.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/toolchain.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/tests/test_check_cli_shape.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/tests/test_detect_ci_need.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/tests/test_macos_signing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/tests/test_signed_macos.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/NAPI.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/browser-agent.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/browser-terminal.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/bundled-asset.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/durable.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/engine.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/fx-harness.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/fx-sdk.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/node-wasm.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/node.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/node.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/node/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/node/test-term-agents-md.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/node/test-term-compaction.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/node/test-term-features.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/node/test-term-usage.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "sdk/scripts/build-node-cjs.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/scripts/bundle-durable.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/scripts/optimize-wasm.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/scripts/package-libfx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/scripts/package-term-demo.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/native-package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/next-preload.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/next/app/agent/agent-client.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/next/app/agent/page.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/package-size-budgets.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/record-loads.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-backend-info.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-browser-bundles.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-browser-import.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-durable-core.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-journal.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-next-package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-node-load-graph.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-node-napi.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-node-package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-node-tracing.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-node-wasm.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-package-resilience.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-package-size.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-packed-example.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-term-demo-package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-types.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-vercel-package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/tools/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/tools/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tools/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tools/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/types/node.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/wasm-runtime.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/wasm-terminal.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/xterm.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/acp/prompt.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/acp/prompt_test_controls.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/acp/server.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/acp/sessions.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/acp/tool_call_presentation.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/acp/types.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/builtins/commands.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/builtins/context.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/builtins/gateway.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/builtins/gateway/permission_reviewer.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/builtins/system_prompt.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/builtins/tools.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/agent_runtime.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/assistant_presentation.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/execution_memory.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/presentation/block_render.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/question_prompt.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/agent.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/assistant_stream.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/core/agent/runtime/cache_warmer.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/core/agent/runtime/cache_warming.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/checkpoint.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/config.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/deps.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/execution_memory.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/finalization.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/gateway_step.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/interruption.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/journal.zig",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/core/agent/runtime/model_response_recovery.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/orchestrator.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/prompt_context.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/request_image_budget.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/core/agent/runtime/request_recovery.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/core/agent/runtime/resend_strategy.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/core/agent/runtime/runtime_context.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/tests/finalization_flow.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/tests/gateway_flow.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/tests/support.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/tests/tool_flow.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/tool_batch.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/vision_contracts.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/stream_provider.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/tool_preparation.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/worker_runtime.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/app/app_agent_runtime.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/app/app_auth_runtime.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/app/app_bootstrap_runtime.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/app/app_callbacks.zig",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -51,6 +51,14 @@ Evidence: [src/components/richEditorBlockSelectionExtension.ts:287-363](https://
 
 **Scope and limits:** Reviewed block-selection formatting and its new fixtures; site build changes and the rewritten lint gate were not certified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `29b7845b14de68c31d9378212334bd01970cc619` against `f0b9b04927e870a5beaaf3a56028de68ed5c12d9`. The selected [stream callbacks](https://github.com/refactoringhq/tolaria/blob/29b7845b14de68c31d9378212334bd01970cc619/src/lib/aiAgentStreamCallbacks.ts) accumulate text independently of rendering, schedule one animation-frame state update, flush before tool activity, and cancel the scheduled update before terminal error/completion handling. The new [batching fixture](https://github.com/refactoringhq/tolaria/blob/29b7845b14de68c31d9378212334bd01970cc619/src/lib/aiAgentStreamCallbacks.performance.test.ts) feeds 2,000 chunks and asserts exact final text with at most two commits under mocked animation frames.
+
+**Harness consequence:** Batch UI commits without discarding authoritative stream content; terminal and tool transitions need explicit flushing semantics. Frame-count assertions are useful structural evidence, not measured browser latency or memory. Independently test cancellation/unmount and background-tab behavior; the selected fixture only exercises normal completion.
+
+**Scope and limits:** Callback and batching-test deltas from a larger captured expansion; persistence changes were not substantively reviewed here. No browser, native app, performance benchmark or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [tolaria](https://github.com/refactoringhq/tolaria); analyzed commit `f0b9b04927e870a5beaaf3a56028de68ed5c12d9`; commit date 2026-10-28T02:22:18Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tolaria.md).
+Analysis metadata: source [tolaria](https://github.com/refactoringhq/tolaria); analyzed commit `29b7845b14de68c31d9378212334bd01970cc619`; commit date 2026-11-01T02:20:43+01:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tolaria.md).
 <!-- teamagent-analysis:end -->

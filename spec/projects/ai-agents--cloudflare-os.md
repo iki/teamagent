@@ -50,6 +50,18 @@ For Teamagent, retain proposed versus applied content and distinguish observatio
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `91f4e707360a147ed01a69594e607d2b007dd718` (commit date `2026-10-30T16:48:08-05:00`), compared with `fe3ce9fc3dbd93be7f41795b07384b404a90076e`. Earlier observations remain historical evidence.
+
+**Scope:** Complete new Google Chat card extraction source; 109 changed paths inventoried. API fetch, rendering and surrounding fixture bodies not audited.
+
+The [card reader](https://github.com/cloudflare/cloudflare-os/blob/91f4e707360a147ed01a69594e607d2b007dd718/packages/gatekeeper-google/src/chat-cards.ts) extracts typed text and HTTP(S) links from current/legacy card shapes without executing callbacks or following links. Column/carousel traversal is limited to one nested level, and non-readable widgets are omitted. Type checks constrain shape but not total array/text size. HTTP(S) filtering does not reject URL credentials or establish destination trust; omitted widgets mean the output is a reading projection, not a lossless transcript.
+
+**Teamagent implication (inference):** Preserve original channel envelopes alongside explicit readable projections and omitted-content metadata. Bound extraction, classify card text as untrusted source content, and separately validate any later link navigation or action against the authenticated task grant.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cloudflare-os](https://github.com/cloudflare/cloudflare-os); analyzed commit `fe3ce9fc3dbd93be7f41795b07384b404a90076e`; commit date 2026-10-27T20:40:38-05:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--cloudflare-os.md).
+Analysis metadata: source [cloudflare-os](https://github.com/cloudflare/cloudflare-os); analyzed commit `91f4e707360a147ed01a69594e607d2b007dd718`; commit date 2026-10-30T16:48:08-05:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--cloudflare-os.md).
 <!-- teamagent-analysis:end -->

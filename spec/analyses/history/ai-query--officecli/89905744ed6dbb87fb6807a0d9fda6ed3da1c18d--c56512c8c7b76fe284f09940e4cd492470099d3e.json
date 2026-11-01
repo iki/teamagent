@@ -1,0 +1,290 @@
+{
+  "id": "ai-query--officecli",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/iOfficeAI/OfficeCLI",
+  "report": "spec/projects/ai-query--officecli.md",
+  "analyzedSha": "89905744ed6dbb87fb6807a0d9fda6ed3da1c18d",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T13:49:46+08:00",
+  "observedSha": "c56512c8c7b76fe284f09940e4cd492470099d3e",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c56512c8c7b76fe284f09940e4cd492470099d3e",
+      "date": "2026-10-30T14:48:43+08:00",
+      "subject": "chore(release): bump version to 1.0.160"
+    },
+    {
+      "sha": "e93aace5dd6b054aae26e72fba7369f67c505b74",
+      "date": "2026-10-30T14:42:22+08:00",
+      "subject": "fix(plugins): idle-timeout errors point at the env var that exists, not a missing --timeout flag"
+    },
+    {
+      "sha": "69265ae0a81f46c2bfb63c1bf43d7999d070f228",
+      "date": "2026-10-30T14:42:22+08:00",
+      "subject": "fix(xlsx): a format-only Text number format no longer retypes the stored value"
+    },
+    {
+      "sha": "d45e0d75385e91ed1c73d8fb78024ea9ca5fdb1f",
+      "date": "2026-10-30T14:16:57+08:00",
+      "subject": "fix(xlsx): view text --json reports truncation and row totals"
+    },
+    {
+      "sha": "c534e790524d853d65866ee134f4e5e595f1a783",
+      "date": "2026-10-30T14:16:57+08:00",
+      "subject": "fix(mcp): the agent CLI is resolved through PATH before launching"
+    },
+    {
+      "sha": "844b81cf88538875a8944ccd7d0467a684e4bab0",
+      "date": "2026-10-30T14:15:42+08:00",
+      "subject": "fix(view): docx html --page past the last page is rejected as out_of_range"
+    },
+    {
+      "sha": "2d99f8b3b052d7f224871ca091f5dfa3dc1fe076",
+      "date": "2026-10-30T14:15:42+08:00",
+      "subject": "fix(pptx): text overflow estimate uses the size inherited from layout and master"
+    },
+    {
+      "sha": "7a0690bf8fc2e57d23bfe6371843a57009f557ec",
+      "date": "2026-10-30T14:15:41+08:00",
+      "subject": "feat(docx): view issues reports inline pictures clipped by exact line spacing"
+    },
+    {
+      "sha": "c3adb7915b36778e8433a25db5b0b6332da8574b",
+      "date": "2026-10-30T14:15:41+08:00",
+      "subject": "fix(chart): doughnut firstSliceAngle is inserted before holeSize"
+    },
+    {
+      "sha": "92ce7d796960538914bd654d3ab1a2c6ccffc959",
+      "date": "2026-10-30T14:15:19+08:00",
+      "subject": "fix(chart): invertIfNegative and trendline are written only to series types that define them"
+    },
+    {
+      "sha": "f846262ead121fc87f7bcf5028e59c72ffa1f928",
+      "date": "2026-10-29T15:35:04+08:00",
+      "subject": "fix(docx,pptx): a set that applied nothing leaves the file byte-identical"
+    },
+    {
+      "sha": "2bca29816d9ee6a970ece8b2350ef403ee3e696a",
+      "date": "2026-10-29T15:35:03+08:00",
+      "subject": "fix(set): a content-filter selector reports how many elements it touched"
+    },
+    {
+      "sha": "da67a35679fef48beca7cd0b0dcd881d4a1710b7",
+      "date": "2026-10-29T15:35:03+08:00",
+      "subject": "fix(query): --fields that match nothing, or given without --compact, are warned about"
+    },
+    {
+      "sha": "b3b97cb0fdfd43266a17cb3588b1ee5749f9b45a",
+      "date": "2026-10-29T15:35:03+08:00",
+      "subject": "fix(get): --depth 0 returns the node without its children; negative depth is rejected"
+    },
+    {
+      "sha": "3ca70dc59ad4fdd6f463418ec1a96d8edd68d9ba",
+      "date": "2026-10-29T15:35:03+08:00",
+      "subject": "fix(pptx): text overflow is estimated per paragraph, with each paragraph's own size"
+    },
+    {
+      "sha": "59614af1839a93d2edc5f7b15c6bb3d7ec44340e",
+      "date": "2026-10-29T15:35:02+08:00",
+      "subject": "fix(docx): an unclosed LaTeX brace is reported instead of silently accepted"
+    },
+    {
+      "sha": "8586e677c3921bfe8b24b9e310904ac5c991a023",
+      "date": "2026-10-29T15:35:02+08:00",
+      "subject": "fix(docx): view text shows a soft line break as a space"
+    },
+    {
+      "sha": "718929d5097c19fa7ea4a087d8942cf366122daa",
+      "date": "2026-10-29T15:35:02+08:00",
+      "subject": "fix(get): internal underscore-prefixed Format keys are not printed"
+    },
+    {
+      "sha": "3e0574f66c431eb143b58ebcc8ec99534d793066",
+      "date": "2026-10-29T15:35:02+08:00",
+      "subject": "fix(pptx): the textbox selector matches text boxes only"
+    },
+    {
+      "sha": "09a0801a9b6cf68684d3f640215f9031315dae60",
+      "date": "2026-10-29T15:35:02+08:00",
+      "subject": "fix(set): replace without find, and find/replace on xlsx cells, are refused up front"
+    },
+    {
+      "sha": "79fb95ee4086b7a8ea669c3d0bd4497017146083",
+      "date": "2026-10-28T19:01:13+08:00",
+      "subject": "fix(resident): plain-text commands keep their --json warnings; batch warnings do not change the exit code"
+    },
+    {
+      "sha": "094857b1ef7a03aacf8ccbfa6b02350877360ed9",
+      "date": "2026-10-28T15:52:53+08:00",
+      "subject": "fix(resident): per-request verdict state, warning plumbing and error shapes match the direct path"
+    },
+    {
+      "sha": "d9c36ee19f7345e7840981082e0131b73b1a91b5",
+      "date": "2026-10-28T14:54:29+08:00",
+      "subject": "refactor(query): result printing is shared by the CLI front-end and the resident"
+    },
+    {
+      "sha": "b825fc5e6e58ed574f6893ead939c79530d2025a",
+      "date": "2026-10-28T14:43:37+08:00",
+      "subject": "refactor(batch): results, warnings and exit code come from one finisher on both paths"
+    },
+    {
+      "sha": "fa09a9d26029f08e89ba9014c398f22c495f4ccd",
+      "date": "2026-10-28T14:19:20+08:00",
+      "subject": "refactor(set): one implementation behind the CLI front-end and the resident"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "plugins/plugin-protocol.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/CommandBuilder.Batch.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/CommandBuilder.GetQuery.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/CommandBuilder.Set.cs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/officecli/CommandBuilder.SetCore.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/CommandBuilder.ViewCore.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/CommandBuilder.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Core/Chart/ChartHelper.Setter.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Core/Formula/FormulaParser.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Core/IssueSubtypes.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Core/OutputFormatter.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Core/Plugins/DumpReaderInvoker.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Core/Plugins/ExporterInvoker.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Core/Plugins/FormatHandlerSession.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Handlers/Excel/ExcelHandler.Add.Cells.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Handlers/Excel/ExcelHandler.Set.Cells.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Handlers/Excel/ExcelHandler.Set.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Handlers/Excel/ExcelHandler.View.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Handlers/PowerPointHandler.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Handlers/Pptx/PowerPointHandler.Selector.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Handlers/Pptx/PowerPointHandler.Set.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Handlers/Pptx/PowerPointHandler.ShapeProperties.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Handlers/Word/WordHandler.Set.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Handlers/Word/WordHandler.View.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/Handlers/WordHandler.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/McpInstaller.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/ResidentServer.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/officecli/officecli.csproj",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

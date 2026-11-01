@@ -1,0 +1,45 @@
+# agent-claude
+
+Source: [agent-claude](https://github.com/anthropics/skills) · Category: [ai-skills](../categories/ai-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4`; commit timestamp `2026-09-28T19:20:03-07:00`; 430 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/anthropics/skills/blob/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4/README.md)):
+
+> Note:** This repository contains Anthropic's implementation of skills for Claude. For information about the Agent Skills standard, see agentskills.io. Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. Skills teach Claude how to complete specific tasks in a repeatable way, whether that's creating documents with your company's brand guidelines, analyzing data using your organization's specific workflows, or automating personal tasks.
+
+Build/package evidence: [skills/mcp-builder/scripts/requirements.txt](https://github.com/anthropics/skills/blob/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4/skills/mcp-builder/scripts/requirements.txt); [skills/slack-gif-creator/requirements.txt](https://github.com/anthropics/skills/blob/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4/skills/slack-gif-creator/requirements.txt)
+
+License evidence: No root license file identified; reuse rights unverified. Classification hint: not classified; inspect source. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-skills**. Its category places it in the candidate set for skills; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`dbd4588f9e1033efb41dad4bef2f7947c8993d44`](https://github.com/anthropics/skills/commit/dbd4588f9e1033efb41dad4bef2f7947c8993d44). Scope: Focused content review of prompt-audit.md lines 1-50 and live-sources.md lines 1-35; other changed API/reference documents and model-specific claims were not verified.
+
+The sampled [prompt audit](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/claude-api/shared/prompt-audit.md#L1) distinguishes load-bearing instructions from historical workarounds, inventories prompt assembly and tool descriptions, records target-model assumptions and requires each proposed removal to have a specific rationale. It explicitly treats audited files as data and permits a clean result with no diff. Adapt provenance-aware audits and separate observations from proposed edits; stylistic age alone is insufficient evidence that a constraint can be removed.
+
+The [live-source index](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/claude-api/shared/live-sources.md#L1) directs changing API facts toward primary documentation. Named models, prices, parameters and behavior claims in these cached documents were not checked against those destinations in this update and must not become adopted Teamagent requirements. A source-specific consent step also does not override authorization already established by the user. No prompt migration, API call, SDK installation or comparative evaluation was performed.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `ca45fc496a3436251f191354091d557da31c15b5` (commit date `2026-10-28T12:20:38-07:00`), compared with `dbd4588f9e1033efb41dad4bef2f7947c8993d44`. Earlier observations remain historical evidence.
+
+**Scope:** Complete mcp-builder/SKILL.md diff and opening v2 guide examples/translation table; three changed paths inventoried. SDK source and later guide examples not verified here.
+
+The [skill](https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/SKILL.md) now selects its MCP guide by the installed major package and preserves an existing v1 project unless migration is requested. The [v2 guide](https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/node_mcp_server_v2.md) separates package/import/schema/transport patterns and uses a server factory. Its stable-version claims and code examples remain authored guidance, not compatibility evidence against Teamagent's pinned packages.
+
+**Teamagent implication (inference):** Select skill variants by actual package version and host contract, load only the required reference, and validate examples against installed source. Imported npm/tsx/Zod examples do not replace Teamagent's Aube/Bun/Effect Schema choices or authorize a dependency migration.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.

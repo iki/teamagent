@@ -234,11 +234,29 @@ before each batch. If memory falls below the floor, running children are joined;
 queued files remain explicitly unrun and verification fails without a receipt.
 With multiple workers it starts the remaining suites first and isolates the
 audited research-Git and workflow suites; three-worker mode also isolates
-analysis-sync. Unknown suites stay together in their original order. The
-one-worker path retains the original complete file order. All groups share the
-unchanged 240-second unit deadline and 120-second per-test setting. The one-GiB
+analysis-sync and verification-cache, queued in that order as slots become
+available. The cache suite uses private fixtures and restores its process-local
+mutations. Two-worker grouping is unchanged. Unknown suites stay together in
+their original order, every file belongs to exactly one batch, and the one-worker
+path retains the original complete file order. All groups share the unchanged
+240-second unit deadline and 120-second per-test setting; live admission still
+caps active workers at three. The one-GiB
 floor is a conservative admission policy, not a measured optimum. Historical
 samples below describe the policy in force when those samples were collected.
+
+On 2026-11-01, the regrouped Windows full step check completed in 317.896 seconds
+with exit zero and confirmed closed process scope. Bun 1.4.2 (`744846f84`)
+executed all 67 files through three workers: 516 tests passed, none failed, and
+the existing POSIX-only test was skipped. The remaining 63-file batch completed
+in 194.88 seconds, verification-cache in 64.36 seconds, and workflow in 204.95
+seconds; batch times overlap and are not the whole-check duration. Format,
+types, lint, tests and live LF/export checks all passed. The portable
+[measurement record](data/research-maintenance-2026-11-01.json) retains the
+receipt/log hashes, runtime evidence and preceding failed/interrupted attempts.
+A later step after creator-owned scratch recovery and repository case-ID fixes
+passed 519 tests across the same 67 files in 276.208 seconds, also retained in
+that record. These changed-source samples are not a controlled speedup comparison
+or machine-cold measurements.
 
 The first assembled process-transfer check timed out at that deadline after
 394 tests across 51 files had passed, before completing the workflow suite.

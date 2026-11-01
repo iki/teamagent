@@ -144,7 +144,7 @@ await test("hook timeout terminates its actual child tree and retains a failed o
   await writeFile(join(root, "child.ts"), "setInterval(() => {}, 1000);\n");
   await writeFile(
     join(root, "parent.ts"),
-    "import { spawn } from 'node:child_process';\nimport { writeFileSync } from 'node:fs';\nconst child = spawn(process.execPath, ['child.ts'], { stdio: 'inherit', windowsHide: true, detached: process.platform === 'win32' });\nwriteFileSync('child.pid', String(child.pid) + '\\n');\nprocess.stderr.write('fixture verification started\\n');\nsetInterval(() => {}, 1000);\n",
+    "import { spawn } from 'node:child_process';\nimport { writeFileSync } from 'node:fs';\nconst child = spawn(process.execPath, ['child.ts'], { stdio: 'inherit', windowsHide: true, detached: false });\nwriteFileSync('child.pid', String(child.pid) + '\\n');\nprocess.stderr.write('fixture verification started\\n');\nsetInterval(() => {}, 1000);\n",
   );
   const began = Date.now();
   const result = await runHookCommand(root, "review", undefined, {
@@ -305,7 +305,7 @@ await test(
     await writeFile(join(root, "restricted-child.ts"), "setInterval(() => {}, 1000);\n", "utf8");
     await writeFile(
       join(root, "restricted-parent.ts"),
-      "import { spawn } from 'node:child_process';\nimport { writeFileSync } from 'node:fs';\nconst child = spawn(process.execPath, ['restricted-child.ts'], { stdio: 'inherit', windowsHide: true, detached: true });\nwriteFileSync('restricted-child.pid', String(child.pid) + '\\n');\nsetInterval(() => {}, 1000);\n",
+      "import { spawn } from 'node:child_process';\nimport { writeFileSync } from 'node:fs';\nconst child = spawn(process.execPath, ['restricted-child.ts'], { stdio: 'inherit', windowsHide: true, detached: false });\nwriteFileSync('restricted-child.pid', String(child.pid) + '\\n');\nsetInterval(() => {}, 1000);\n",
       "utf8",
     );
     const source = new URL("../app/workflow/process.ts", import.meta.url).href;

@@ -51,6 +51,14 @@ Evidence: [crates/search/src/retrievers/decomposition_retriever.rs:95-177](https
 
 **Scope and limits:** Reviewed decomposition normalization/merge/completion and PDF formatting with their in-file fixtures; graph-report ranking and underlying graph/vector engines were not re-audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `7ab093f8d3d06dae85478dd1fb35a3d54f138ed4` against `d5de6d73317ca8def6920ecaa7c41b5d42d69d97` (202 changed paths). The selected [recall API](https://github.com/topoteretes/cognee-rs/blob/7ab093f8d3d06dae85478dd1fb35a3d54f138ed4/crates/lib/src/api/recall.rs) and [scope definitions](https://github.com/topoteretes/cognee-rs/blob/7ab093f8d3d06dae85478dd1fb35a3d54f138ed4/crates/search/src/recall_scope.rs) consolidate graph-context into graph while retaining a deprecated input alias, and keep graph/session/trace source distinctions. Missing or unknown scopes are explicit errors rather than silently broadened searches. Inspected [routing fixtures](https://github.com/topoteretes/cognee-rs/blob/7ab093f8d3d06dae85478dd1fb35a3d54f138ed4/crates/lib/tests/recall_routing.rs) state separate context-only behavior for fallback, pinned and lexical routes, including no-LLM cases.
+
+**Harness consequence:** Version scope aliases and record the resolved source and route, particularly whether a result is retrieved context or generated completion. Preserve authorization filters across route selection and fallback; a planner fixture does not establish model execution or downstream scope enforcement.
+
+**Scope and limits:** Scoped API/scope changes and initial routing tests, not the full graph execution path or all 202 paths. Fixtures were read, not run; routing performance and retrieval quality were not measured.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cognee-rs](https://github.com/topoteretes/cognee-rs); analyzed commit `d5de6d73317ca8def6920ecaa7c41b5d42d69d97`; commit date 2026-10-27T22:51:04+02:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--cognee-rs.md).
+Analysis metadata: source [cognee-rs](https://github.com/topoteretes/cognee-rs); analyzed commit `7ab093f8d3d06dae85478dd1fb35a3d54f138ed4`; commit date 2026-10-30T11:40:20+01:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--cognee-rs.md).
 <!-- teamagent-analysis:end -->

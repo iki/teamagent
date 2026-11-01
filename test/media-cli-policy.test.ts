@@ -299,7 +299,7 @@ describe("media CLI policy and recovery dispatch", () => {
 async function command(args: readonly string[], cwd: string) {
   const child = Bun.spawn(
     [process.execPath, fileURLToPath(new URL("../app/cli/index.ts", import.meta.url)), ...args],
-    { cwd, stdin: "ignore", stdout: "pipe", stderr: "pipe" },
+    { cwd, stdin: "ignore", stdout: "pipe", stderr: "pipe", windowsHide: true },
   );
   const timer = setTimeout(() => child.kill(), 20_000);
   try {

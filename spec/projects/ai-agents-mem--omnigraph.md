@@ -51,6 +51,14 @@ Evidence: [crates/omnigraph/src/engine/operators/load_budget.rs:19-97](https://g
 
 **Scope and limits:** Reviewed the load-budget helper, its arithmetic/concurrency tests and admission fixture; OIDC changes and the full execution pipeline remain outside this review. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `f728f01e1543c442eff77f8b0d10c223e38da36d` against `dc4a79d3d6b7e17d366a94ff5afb9512aeba78cb` (315 changed paths). The [publication error contract](https://github.com/ModernRelay/omnigraph/blob/f728f01e1543c442eff77f8b0d10c223e38da36d/crates/omnigraph-core/src/error.rs) replaces an uncertainty boolean with an optional graph commit identifier, exposes it through context/completion/DataFusion wrappers and retains uncertain completion semantics. An embedded fixture checks the identifier survives those wrappers and is absent for ordinary internal errors. The [publisher](https://github.com/ModernRelay/omnigraph/blob/f728f01e1543c442eff77f8b0d10c223e38da36d/crates/omnigraph-catalog/src/publisher.rs) supplies the candidate ID for ambiguous creation, failed readback and failed release/revalidation paths. Confirmed refusal and uncertain publication remain distinct.
+
+**Harness consequence:** Preserve a stable reconciliation identifier before side effects and carry it independently of diagnostic text. An absent readback immediately after timeout does not disprove a delayed publication; retain recovery evidence and reconcile before another non-idempotent operation. Safe identifier logging need not disclose storage paths or full errors, but the existing message strings still require privacy review.
+
+**Scope and limits:** Complete selected error/publisher diffs and embedded tests, not all storage, retention or remote reconciliation paths. No fault injection, database operation or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [omnigraph](https://github.com/ModernRelay/omnigraph); analyzed commit `dc4a79d3d6b7e17d366a94ff5afb9512aeba78cb`; commit date 2026-10-28T02:58:11+01:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--omnigraph.md).
+Analysis metadata: source [omnigraph](https://github.com/ModernRelay/omnigraph); analyzed commit `f728f01e1543c442eff77f8b0d10c223e38da36d`; commit date 2026-11-01T01:58:20+01:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--omnigraph.md).
 <!-- teamagent-analysis:end -->

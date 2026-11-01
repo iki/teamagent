@@ -1,0 +1,560 @@
+{
+  "id": "ai-agents--ai.tanstack",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/tanstack/ai",
+  "report": "spec/projects/ai-agents--ai.tanstack.md",
+  "analyzedSha": "669fd31d995a7134e9f39f386181edc5085039b2",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T11:25:47Z",
+  "observedSha": "3ce3085d674fc068e4d45b8699eccb17b886aa6c",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3ce3085d674fc068e4d45b8699eccb17b886aa6c",
+      "date": "2026-10-30T16:11:42+11:00",
+      "subject": "fix(ai-ollama): keep parallel same-name tool calls apart when ids are missing (#1932)"
+    },
+    {
+      "sha": "0c1a61b18c08dcc5dbe09ba29b7153c287185045",
+      "date": "2026-10-30T16:08:14+11:00",
+      "subject": "chore: bump pinned Node to 24.22.1 (#1914)"
+    },
+    {
+      "sha": "a4007b4a8b5457ce799d3545baa76b5c93e50594",
+      "date": "2026-10-30T12:48:36+11:00",
+      "subject": "fix(ai-gemini): allow native image generation with store: false (#1928)"
+    },
+    {
+      "sha": "a7eb58459ebd528bbcc4166cc68377b777989462",
+      "date": "2026-10-29T18:21:10+01:00",
+      "subject": "ci: Version Packages (#1906)"
+    },
+    {
+      "sha": "3061f4b22d44c21eb9b99fb7b1076808338caa74",
+      "date": "2026-10-29T18:02:37+01:00",
+      "subject": "fix(ai-harness): infer HarnessAgentsOf from properties to avoid a TS 7.1 circularity (#1913)"
+    },
+    {
+      "sha": "44f225fab82964f4d217c7f150b3a34185a90cbe",
+      "date": "2026-10-29T15:45:51+01:00",
+      "subject": "fix(ai-code-mode): reject tools that require approval (#1949)"
+    },
+    {
+      "sha": "caaa97b9524ff94058179d896092b2db6ba3dfab",
+      "date": "2026-10-29T10:47:22+01:00",
+      "subject": "test(ai-react, ai-harness): remove the two timing races behind the Coverage job flakes (#1940)"
+    },
+    {
+      "sha": "ab4408d165079ee9acefe1a34a6559041d904191",
+      "date": "2026-10-29T10:45:23+01:00",
+      "subject": "docs(sandbox): list the Cloudflare provider with the other providers (#1939)"
+    },
+    {
+      "sha": "83b9fa9b94af963ec05652c7d80f74f222b98f95",
+      "date": "2026-10-29T10:44:09+01:00",
+      "subject": "fix(maintainer): add .ts extensions so node can load the sweep (#1943)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".changeset/gemini-image-store-false.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/gemini-server-tool-invocations.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/npm-readme-badges.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/ollama-parallel-tool-call-ids.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/persistence-skill-checks.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/persistence-skills-four-tables.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/video-not-experimental.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".nvmrc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/mistral.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/per-model-type-safety.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/code-mode/code-mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/community-adapters/cloudflare.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/config.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/media/image-generation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sandbox/providers-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sandbox/providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ag-ui/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ag-ui/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ts-code-mode-web/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-angular/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-angular/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-angular/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-byteplus/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-byteplus/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-client/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-client/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-code-mode/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-code-mode/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-code-mode/src/bindings/tool-to-binding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-code-mode/src/create-code-mode-tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-code-mode/tests/create-code-mode-tool.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-code-mode/tests/create-code-mode.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-code-mode/tests/tool-to-binding.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-devtools/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-devtools/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-fal/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-fal/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gemini/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gemini/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gemini/src/adapters/image.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gemini/tests/image-adapter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-grok/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-grok/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-harness/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-harness/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-harness/src/define.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-harness/tests/types.test-d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-harness/tests/unified-diff.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-lovable/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-lovable/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-ollama/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-ollama/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-ollama/src/adapters/text.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-ollama/tests/text-adapter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-openai/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-openai/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-openrouter/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-openrouter/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-persistence/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-persistence/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-preact/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-preact/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-react/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-react/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-react/tests/use-chat.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-vue/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-vue/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/preact-ai-devtools/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/preact-ai-devtools/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/react-ai-devtools/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/react-ai-devtools/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/solid-ai-devtools/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/solid-ai-devtools/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/svelte-ai-devtools/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/svelte-ai-devtools/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/actions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/classify.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/classify.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/collect.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/comments.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/discord.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/fixtures.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/metrics.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/metrics.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/route.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/scorecard.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/sweep.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/maintainer/sweep.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "testing/e2e/fixtures/tool-calling/parallel-same-tool.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "testing/e2e/src/lib/feature-support.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "testing/e2e/tests/parallel-tool-calls.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tsconfig.json",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

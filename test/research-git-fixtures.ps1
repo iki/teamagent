@@ -182,6 +182,87 @@ Rejects { Write-ResearchLists $settings @($entries[0]) } 'permanent publication 
 Assert-That ($script:listMoveCalls -eq 4 -and (Read-ResearchText (Join-Path $root 'git-sources.json')) -eq $ownedBefore -and (Read-ResearchText (Join-Path $root '.git-clone')) -eq $before) 'publication denial stops after four attempts and preserves owned files'
 Set-Item function:Move-ResearchListFileOnce $originalListMoveOnce
 $now=[DateTimeOffset]::UtcNow
+# Canonical IDs are case-folded independently of display names and physical paths.
+$caseRoot=Join-Path $fixture 'case-id-project';$caseSource=Join-Path $fixture 'case-id-source'
+foreach ($directory in @($caseRoot,$caseSource)) { [void][IO.Directory]::CreateDirectory($directory) }
+Put (Join-Path $caseRoot '.env') "TEAMAGENT_GIT_SOURCES_DIR=../case-id-source`nTEAMAGENT_GIT_CACHE=cache`n"
+$caseDeclaration="clone 'ai-gen/YuE2-Studio' '$url'`n"
+Put (Join-Path $caseSource '.git-clone') $caseDeclaration
+Put (Join-Path $caseSource '.git-sources') ($url+"`n")
+$caseSettings=Get-ResearchSettings $caseRoot
+$caseImport=Invoke-ResearchGitSync -ProjectRoot $caseRoot -Action lists
+$caseConfig=Read-ResearchText (Join-Path $caseRoot 'git-sources.json')
+$caseOwned=Read-ResearchSourceList $caseSettings
+Assert-That ($caseImport.repositories.Count -eq 1 -and $caseImport.repositories[0].id -ceq 'ai-gen--yue2-studio' -and $caseImport.repositories[0].name -ceq 'YuE2-Studio' -and $caseImport.repositories[0].sourcePath -ceq 'ai-gen/YuE2-Studio') 'uppercase declaration has canonical lowercase ID while preserving display and cache spelling'
+Assert-That ($caseOwned.Count -eq 1 -and $caseOwned[0].id -ceq 'ai-gen--yue2-studio' -and $caseOwned[0].name -ceq 'YuE2-Studio' -and $caseOwned[0].sourcePath -ceq 'ai-gen/YuE2-Studio' -and $caseConfig.Contains('YuE2-Studio') -and (Read-ResearchText (Join-Path $caseSource '.git-clone')) -ceq $caseDeclaration) 'owned configuration round trip preserves name and source path case without rewriting the export'
+$caseRow=Invoke-ResearchRepository $caseOwned[0] $null $caseSettings $now '' '' 15
+Assert-That ($caseRow.status -eq 'cloned' -and $caseRow.id -ceq 'ai-gen--yue2-studio' -and $caseRow.path -ceq 'cache/ai-gen/YuE2-Studio' -and (Find-ResearchRepository $caseOwned[0] $caseRow $caseSettings) -ceq ([IO.Path]::GetFullPath($caseRow.path,$caseRoot))) 'sync and prior checkout matching retain canonical ID and actual uppercase directory'
+Put (Join-Path $caseSource '.git-clone') ($caseDeclaration+"clone 'ai-gen/yue2-studio' '$url'`n")
+Rejects { Invoke-ResearchGitSync -ProjectRoot $caseRoot -Action lists } 'case-folded declaration ID collision is rejected before publication'
+Assert-That ((Read-ResearchText (Join-Path $caseRoot 'git-sources.json')) -ceq $caseConfig) 'case-fold collision preserves previous portable configuration'
+Write-ResearchJson (Join-Path $caseRoot 'git-sources.json') @{schemaVersion=1;repositories=@(@{category='ai-gen';name='YuE2-Studio';url=$url},@{category='ai-gen';name='yue2-studio';url=$url})}
+Rejects { Read-ResearchSourceList $caseSettings } 'owned configuration rejects differing-case identities instead of choosing a copy'
+Put (Join-Path $caseRoot 'git-sources.json') $caseConfig
+Put (Join-Path $caseSource '.git-clone') $caseDeclaration
+# Parent export categories can change while repository-owned identities remain stable.
+$aliasRoot=Join-Path $fixture 'category-alias-project';$aliasSource=Join-Path $fixture 'category-alias-source'
+foreach ($directory in @($aliasRoot,$aliasSource)) { [void][IO.Directory]::CreateDirectory($directory) }
+Put (Join-Path $aliasRoot '.env') "TEAMAGENT_GIT_SOURCES_DIR=../category-alias-source`nTEAMAGENT_GIT_CACHE=cache`n"
+$aliasDeclarations="clone 'ai-get/xx-2401-docling' '$url'`nclone 'ai-get/minipcm-ocr' '$url'`n"
+Put (Join-Path $aliasSource '.git-clone') $aliasDeclarations
+Put (Join-Path $aliasSource '.git-sources') ($url+"`n")
+$aliasSettings=Get-ResearchSettings $aliasRoot
+$aliasImported=Read-ResearchSourceList $aliasSettings -Import
+Assert-That ($aliasImported.Count -eq 2 -and $aliasImported[0].id -ceq 'ai-query--docling' -and $aliasImported[1].id -ceq 'ai-query--minipcm-ocr' -and $aliasImported[0].sourcePath -ceq 'ai-get/xx-2401-docling' -and $aliasSettings.SourceWarnings.Count -eq 1 -and $aliasSettings.SourceWarnings[0] -eq 'source_category_alias_ai-get_to_ai-query') 'reviewed category alias preserves IDs and records original declarations once'
+$aliasImport=Invoke-ResearchGitSync -ProjectRoot $aliasRoot -Action lists
+$aliasConfig=Read-ResearchText (Join-Path $aliasRoot 'git-sources.json')
+$aliasOwned=Read-ResearchSourceList $aliasSettings
+Assert-That ($aliasImport.repositories.Count -eq 2 -and $aliasOwned[1].category -ceq 'ai-query' -and $aliasOwned[1].sourcePath -ceq 'ai-query/minipcm-ocr' -and -not $aliasConfig.Contains('ai-get') -and (Read-ResearchText (Join-Path $aliasSource '.git-clone')) -ceq $aliasDeclarations) 'portable configuration retains canonical categories without rewriting parent exports'
+foreach ($declaration in @("clone 'AI-GET/sample' '$url'", "clone 'ai-get/../escape' '$url'", "clone 'ai-get/sample' '$url'`nclone 'ai-query/sample' '$url'")) {
+    Put (Join-Path $aliasSource '.git-clone') ($declaration+"`n")
+    Rejects { Invoke-ResearchGitSync -ProjectRoot $aliasRoot -Action lists } 'category alias rejects casing traversal and duplicate canonical identity'
+    Assert-That ((Read-ResearchText (Join-Path $aliasRoot 'git-sources.json')) -ceq $aliasConfig) 'invalid category alias leaves canonical inventory intact'
+}
+Put (Join-Path $aliasSource '.git-clone') $aliasDeclarations
+$aliasFresh=Join-Path $fixture 'category-alias-fresh';[void][IO.Directory]::CreateDirectory($aliasFresh)
+Put (Join-Path $aliasFresh 'git-sources.json') $aliasConfig
+$aliasFreshSettings=Get-ResearchSettings $aliasFresh
+$aliasFreshEntries=Read-ResearchSourceList $aliasFreshSettings
+Assert-That ((Find-ResearchRepository $aliasFreshEntries[1] $null $aliasFreshSettings) -eq (Join-Path $aliasFresh '.cache/git/ai-query/minipcm-ocr')) 'fresh checkout needs no parent export or alias folder'
+$aliasParent=Get-ResearchSafePath $aliasSettings.GitCache 'ai-get'
+[void][IO.Directory]::CreateDirectory($aliasParent)
+$aliasPath=Get-ResearchSafePath $aliasSettings.GitCache 'ai-get/xx-2401-minipcm-ocr'
+[void](Git $fixture @('clone','--',$url,$aliasPath))
+$aliasEntry=$aliasOwned[1]
+$aliasPrior=@{path='cache/ai-query/minipcm-ocr';aliases=@();head=(Git $aliasPath @('rev-parse','HEAD'))}
+Assert-That ((Find-ResearchRepository $aliasEntry $aliasPrior $aliasSettings) -eq $aliasPath) 'canonical inventory discovers prefixed checkout in renamed category despite stale prior path'
+$aliasRow=Invoke-ResearchRepository $aliasEntry $aliasPrior $aliasSettings $now '' '' 15
+$aliasActivePath=Get-ResearchSafePath $aliasSettings.GitCache 'ai-get/minipcm-ocr'
+Assert-That ($aliasRow.status -eq 'unchanged' -and $aliasRow.id -ceq 'ai-query--minipcm-ocr' -and $aliasRow.path -ceq 'cache/ai-get/minipcm-ocr' -and $aliasRow.head -eq $aliasPrior.head -and $aliasRow.directoryMove.stage -eq 'lifecycle_rename' -and $aliasRow.directoryMove.result.success -and -not (Test-Path -LiteralPath (Join-Path $aliasSettings.GitCache 'ai-query'))) 'category alias reuses exact Git history and removes stale prefix within the discovered parent'
+$aliasOld=Invoke-ResearchRepository $aliasEntry $aliasRow $aliasSettings $now.AddMonths(5) '' '' 15
+Assert-That ($aliasOld.lifecycle -eq 'outdated' -and $aliasOld.path -match '^cache/ai-get/xx-[0-9]{4}-minipcm-ocr$' -and $aliasOld.directoryMove.result.success -and $aliasOld.head -eq $aliasPrior.head) 'outdated prefix remains in alias parent without category migration'
+$aliasActive=Invoke-ResearchRepository $aliasEntry $aliasOld $aliasSettings $now '' '' 15
+Assert-That ($aliasActive.path -ceq 'cache/ai-get/minipcm-ocr' -and $aliasActive.lifecycle -eq 'active' -and $aliasActive.head -eq $aliasPrior.head) 'active alias checkout recovers its unprefixed path without cloning'
+Put (Join-Path $aliasActivePath 'local-evidence.txt') 'preserved through category alias'
+$aliasDirty=Invoke-ResearchRepository $aliasEntry $aliasActive $aliasSettings $now '' '' 15
+Assert-That ($aliasDirty.status -eq 'unchanged_with_local_changes' -and $aliasDirty.dirty -and (Read-ResearchText (Join-Path $aliasActivePath 'local-evidence.txt')) -ceq 'preserved through category alias' -and $null -eq $aliasDirty.recovery) 'alias discovery preserves dirty local evidence without an unnecessary stash'
+$aliasCollision=Get-ResearchSafePath $aliasSettings.GitCache 'ai-query/minipcm-ocr'
+[void][IO.Directory]::CreateDirectory($aliasCollision)
+Put (Join-Path $aliasCollision 'retained-copy.txt') 'do not choose or overwrite either copy'
+$aliasRejected=Invoke-ResearchRepository $aliasEntry $aliasActive $aliasSettings $now '' '' 15
+Assert-That ($aliasRejected.status -eq 'error' -and $aliasRejected.errors -contains 'repository_alias_collision' -and (Read-ResearchText (Join-Path $aliasCollision 'retained-copy.txt')) -ceq 'do not choose or overwrite either copy' -and (Git $aliasActivePath @('rev-parse','HEAD')) -eq $aliasPrior.head) 'canonical and alias copies fail closed before either is changed'
+[IO.Directory]::Move($aliasCollision,(Get-ResearchSafePath $aliasSettings.GitCache 'ai-query/retained-conflicting-copy'))
+[void](Git $aliasActivePath @('remote','set-url','origin','https://example.invalid/wrong-source'))
+$aliasMismatch=Invoke-ResearchRepository $aliasEntry $aliasActive $aliasSettings $now '' '' 15
+Assert-That ($aliasMismatch.status -eq 'error' -and $aliasMismatch.errors -contains 'repository_origin_mismatch' -and (Git $aliasActivePath @('rev-parse','HEAD')) -eq $aliasPrior.head) 'renamed category does not bypass expected origin validation'
+[void](Git $aliasActivePath @('remote','set-url','origin',$url))
+$aliasLinkRoot=Join-Path $fixture 'category-alias-link';[void][IO.Directory]::CreateDirectory($aliasLinkRoot)
+Put (Join-Path $aliasLinkRoot '.env') "TEAMAGENT_GIT_CACHE=cache`n"
+$aliasLinkSettings=Get-ResearchSettings $aliasLinkRoot
+[void][IO.Directory]::CreateDirectory($aliasLinkSettings.GitCache)
+$aliasLink=Join-Path $aliasLinkSettings.GitCache 'ai-get'
+[void](New-Item -ItemType $(if ($IsWindows) { 'Junction' } else { 'SymbolicLink' }) -Path $aliasLink -Target $aliasParent)
+Rejects { Find-ResearchRepository $aliasEntry $null $aliasLinkSettings } 'category alias lookup rejects redirected roots'
 $row=Invoke-ResearchRepository $entries[0] $null $settings $now '' '' 15
 Assert-That ($row.status -eq 'cloned' -and $row.dirty -eq $false -and $row.directoryMove.stage -eq 'clone_publication' -and $row.directoryMove.result.success) ('clone repository: '+$row.status+' '+($row.errors -join ','))
 $checkout=[IO.Path]::GetFullPath($row.path,$root)
@@ -201,6 +282,40 @@ Assert-That ($optout.status -eq 'dirty') 'auto stash opt out preserves dirty che
 $settings.Values.TEAMAGENT_GIT_AUTO_STASH='true'
 [IO.File]::Delete((Join-Path $checkout 'untracked.txt'))
 Put (Join-Path $work 'readme.txt') 'upstream update';[void](Git $work @('commit','-am','upstream update'));[void](Git $work @('push','--',$remote,'main'))
+# A failed fast-forward command does not establish divergent history. Keep its
+# bounded diagnostic receipt while preserving the branch, existing stash and data.
+$failureHead=Git $checkout @('rev-parse','HEAD')
+$failureStash=Git $checkout @('rev-parse','refs/stash')
+$originalFailureGit=(Get-Item function:Invoke-ResearchGit).ScriptBlock
+function Invoke-ResearchGit([string]$Directory,[string[]]$Arguments,[string]$InputText='',[int]$TimeoutSeconds=120,[switch]$ReadOnly) {
+    if ($Arguments.Count -gt 0 -and $Arguments[0] -eq 'merge') {
+        $script:failureMergeCalls++
+        return $script:failureMergeResponse
+    }
+    return & $originalFailureGit $Directory $Arguments $InputText $TimeoutSeconds -ReadOnly:$ReadOnly
+}
+try {
+    foreach ($failure in @(
+        @{name='confirmed operational failure';code='fast_forward_operation_failed';outcome='exited';response=@{exitCode=128;stdout="TOKEN=fixture-private-token`n";stderr=("fatal: Unable to create 'private/index.lock': File exists`r`nAuthorization: Bearer fixture-private-header`r`nhttps://fixture-user:fixture-password@example.invalid/path?key=fixture-query-secret`r`nPRIVATE_DUMP=fixture-private-payload`n"+('private-filter-data '*400));error=''}},
+        @{name='timeout or launch uncertainty';code='fast_forward_outcome_uncertain';outcome='timeout-or-launch-failure';response=@{exitCode=-1;stdout='';stderr='';error='process_timeout_or_launch_failure'}},
+        @{name='capture limit uncertainty';code='fast_forward_outcome_uncertain';outcome='output-limit';response=@{exitCode=-1;stdout='';stderr='';error='process_output_limit'}}
+    )) {
+        $script:failureMergeCalls=0;$script:failureMergeResponse=$failure.response
+        $failedUpdate=Invoke-ResearchRepository $entries[0] $dirty $settings $now '' '' 15
+        $diagnostic=$failedUpdate.recovery.fastForward
+        $journal=Read-ResearchText ([IO.Path]::GetFullPath($failedUpdate.recovery.journal,$root))
+        Assert-That ($failedUpdate.status -eq 'error' -and $failedUpdate.errors -contains $failure.code -and $diagnostic.outcome -eq $failure.outcome -and $diagnostic.branchDistance.status -eq 'ready' -and $diagnostic.branchDistance.ahead -eq 0 -and $diagnostic.branchDistance.behind -gt 0 -and $script:failureMergeCalls -eq 1) ('fast-forward '+$failure.name+' remains operational and is never retried')
+        $expectedRecoveryStatus=if ($failure.response.exitCode -lt 0) {'fast_forward_uncertain'} else {'fast_forward_failed'}
+        Assert-That ((Git $checkout @('rev-parse','HEAD')) -eq $failureHead -and (Git $checkout @('rev-parse','refs/stash')) -eq $failureStash -and $failedUpdate.recovery.status -eq $expectedRecoveryStatus -and $failedUpdate.recovery.beforeHead -eq $failureHead) ('fast-forward '+$failure.name+' retains original HEAD stash and failure journal')
+        Assert-That ($journal.Length -lt 4096 -and -not $journal.Contains("`r") -and $journal -notmatch 'fixture-private|fixture-user|fixture-password|fixture-query-secret|private-filter-data|PRIVATE_DUMP|Authorization:') ('fast-forward '+$failure.name+' journal is bounded LF and contains no raw credentials or payload')
+        if ($failure.response.exitCode -ge 0) {
+            $expectedStderr=[Text.Encoding]::UTF8.GetBytes($failure.response.stderr)
+            Assert-That ($diagnostic.exitCode -eq 128 -and $diagnostic.captureComplete -and $diagnostic.stderrBytes -eq $expectedStderr.Length -and $diagnostic.stderrSha256 -ceq [Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($expectedStderr)).ToLowerInvariant() -and $diagnostic.signals.Count -eq 1 -and $diagnostic.signals[0].code -eq 'lock_unavailable') 'confirmed Git rejection retains exact bounded output identity and actionable lock classification'
+        } else {
+            Assert-That ($null -eq $diagnostic.exitCode -and -not $diagnostic.captureComplete) 'uncertain command does not invent native exit or complete capture'
+        }
+    }
+} finally { Set-Item function:Invoke-ResearchGit $originalFailureGit }
 $updated=Invoke-ResearchRepository $entries[0] $dirty $settings $now '' '' 15
 Assert-That ($updated.status -eq 'updated' -and (Read-ResearchText (Join-Path $checkout 'readme.txt')) -eq 'upstream update') 'fast forward update'
 [void](Git $checkout @('config','commit.gpgsign','false'));[void](Git $checkout @('config','user.name','Fixture'));[void](Git $checkout @('config','user.email','fixture@example.invalid'))
@@ -208,7 +323,7 @@ Put (Join-Path $checkout 'local.txt') 'local commit';[void](Git $checkout @('add
 $localHead=Git $checkout @('rev-parse','HEAD')
 Put (Join-Path $work 'readme.txt') 'divergent';[void](Git $work @('commit','-am','divergent'));[void](Git $work @('push','--',$remote,'main'))
 $diverged=Invoke-ResearchRepository $entries[0] $updated $settings $now '' '' 15
-Assert-That ($diverged.status -eq 'diverged' -and (Git $checkout @('rev-parse','HEAD')) -eq $localHead) 'divergence preserves local history'
+Assert-That ($diverged.status -eq 'diverged' -and $diverged.errors -contains 'local_commits_preserved' -and $diverged.errors -notcontains 'fast_forward_operation_failed' -and (Git $checkout @('rev-parse','HEAD')) -eq $localHead) 'proven divergence preserves local history without calling it an operational failure'
 $detachedEntry=@{id='ai-agents--detached';category='ai-agents';name='detached';sourcePath='ai-agents/detached';url=$url}
 $detachedRow=Invoke-ResearchRepository $detachedEntry $null $settings $now '' '' 15
 $detachedPath=[IO.Path]::GetFullPath($detachedRow.path,$root)

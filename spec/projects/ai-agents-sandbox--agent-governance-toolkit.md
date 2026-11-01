@@ -40,6 +40,14 @@ In [agent-governance-python/agent-sre/src/agent_sre/delivery/gitops.py](https://
 
 **Harness implication and limits:** Test policy serialization through its actual reader, using values that differ from defaults and opposite comparator directions. A structurally accepted manifest can otherwise silently weaken promotion gates. The fixture was inspected but not executed, and no Kubernetes deployment, controller timing or manual-approval enforcement was validated. No upstream code or live service was executed for this review.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`d1d0ccea5f1cfd7ae41dda05b0b791f95739c8c1`](https://github.com/microsoft/agent-governance-toolkit/commit/d1d0ccea5f1cfd7ae41dda05b0b791f95739c8c1), compared with `4eca1f5b44d30ebe5e9745ac36ca394f887e617b`.
+
+Within the 22-path inventory, the [RAG governor](https://github.com/microsoft/agent-governance-toolkit/blob/d1d0ccea5f1cfd7ae41dda05b0b791f95739c8c1/agent-governance-python/agent-rag-governance/src/agent_rag_governance/governor.py) now passes the actual query into the audit-entry builder when collection access is denied, instead of an empty string. The [regression fixture](https://github.com/microsoft/agent-governance-toolkit/blob/d1d0ccea5f1cfd7ae41dda05b0b791f95739c8c1/agent-governance-python/agent-rag-governance/tests/test_governor.py) removes the audit salt and compares the stored value with SHA-256 of the known query. This repairs correlation but does not establish confidentiality for low-entropy query text.
+
+Teamagent should correlate denied attempts without exposing raw query values or assuming an unsalted digest cannot be guessed. The audit builder's wider storage/retention policy, SRE/deployment updates and regulatory examples were outside this scoped comparison. No policy engine, deployment or upstream test was run; a policy example is not legal compliance evidence.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-governance-toolkit](https://github.com/microsoft/agent-governance-toolkit); analyzed commit `4eca1f5b44d30ebe5e9745ac36ca394f887e617b`; commit date 2026-10-28T01:30:29-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--agent-governance-toolkit.md).
+Analysis metadata: source [agent-governance-toolkit](https://github.com/microsoft/agent-governance-toolkit); analyzed commit `d1d0ccea5f1cfd7ae41dda05b0b791f95739c8c1`; commit date 2026-10-30T11:36:44-07:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--agent-governance-toolkit.md).
 <!-- teamagent-analysis:end -->

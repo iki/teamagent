@@ -46,6 +46,18 @@ The [Git process adapter](https://github.com/tanstack/ai/blob/669fd31d995a7134e9
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `3ce3085d674fc068e4d45b8699eccb17b886aa6c` (commit date `2026-10-30T16:11:42+11:00`), compared with `669fd31d995a7134e9f39f386181edc5085039b2`. Earlier observations remain historical evidence.
+
+**Scope:** Complete code-mode binding approval guard and its direct/list conversion fixtures; 98 changed paths inventoried.
+
+[toolToBinding](https://github.com/tanstack/ai/blob/3ce3085d674fc068e4d45b8699eccb17b886aa6c/packages/ai-code-mode/src/bindings/tool-to-binding.ts) rejects tools requiring approval because code-mode execution cannot raise their individual approval interrupt. The [fixtures](https://github.com/tanstack/ai/blob/3ce3085d674fc068e4d45b8699eccb17b886aa6c/packages/ai-code-mode/tests/tool-to-binding.test.ts) deliberately bypass the compile-time type to exercise the runtime guard, including a mixed safe/gated tool list. This is an explicit capability incompatibility check, not proof that every tool marked safe actually lacks side effects.
+
+**Teamagent implication (inference):** Do not let composition into a code-execution tool erase inner authorization requirements. Either preserve resumable per-action approval or reject the binding before execution; tool metadata must be reviewed against effective behavior and cannot become permission merely by clearing a boolean.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ai.tanstack](https://github.com/tanstack/ai); analyzed commit `669fd31d995a7134e9f39f386181edc5085039b2`; commit date 2026-10-27T11:25:47Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--ai.tanstack.md).
+Analysis metadata: source [ai.tanstack](https://github.com/tanstack/ai); analyzed commit `3ce3085d674fc068e4d45b8699eccb17b886aa6c`; commit date 2026-10-30T16:11:42+11:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--ai.tanstack.md).
 <!-- teamagent-analysis:end -->

@@ -46,6 +46,16 @@ This revision moves go-jose/v4 from 4.1.5 to 4.1.6 and updates its module conten
 
 **Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `e2c05f7ae66bedacd4a51594a71cbe95566cc838` against prior analyzed commit `8b5ad79cd35944ed96f825d0df23ffc84aa20ddd`. Historical reviews above remain separate evidence.
+
+The [VEX repository set](https://github.com/aquasecurity/trivy/blob/e2c05f7ae66bedacd4a51594a71cbe95566cc838/pkg/vex/repo.go) caches each opened document, including its error, using directory/location/format identity and sync.OnceValues for the set's lifetime. This removes repeated document opens for each vulnerability while maintaining a stable first-read snapshot. The [fixture](https://github.com/aquasecurity/trivy/blob/e2c05f7ae66bedacd4a51594a71cbe95566cc838/pkg/vex/repo_test.go) removes a previously opened file or restores an initially missing one and expects later checks to retain the first result.
+
+That behavior deliberately ignores mid-run repairs. Teamagent import/analysis caches need an explicit snapshot lifetime and a new version/generation for a later refresh; an error cache must never silently become a clean security result. The visible NotAffected path returns false when opening fails. No performance measurement or concurrent-cache stress run was made, and source-name provenance versus location-key aliasing was not independently established.
+
+**Coverage:** Read complete VEX cache implementation/test deltas. Crypto reporting, containerd and dependency changes in the 35-path inventory were not reviewed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [trivy](https://github.com/aquasecurity/trivy); analyzed commit `8b5ad79cd35944ed96f825d0df23ffc84aa20ddd`; commit date 2026-10-28T09:34:40Z; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--trivy.md).
+Analysis metadata: source [trivy](https://github.com/aquasecurity/trivy); analyzed commit `e2c05f7ae66bedacd4a51594a71cbe95566cc838`; commit date 2026-10-30T13:29:27Z; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--trivy.md).
 <!-- teamagent-analysis:end -->

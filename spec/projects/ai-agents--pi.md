@@ -68,6 +68,16 @@ In [packages/durable/src/session/transaction.ts](https://github.com/earendil-wor
 
 **Harness implication and limits:** Represent tombstones and updates as distinct event variants. Replaying a retirement as a null update can retain an invalid incarnation or fabricate operations; consumers and stored schema migrations need explicit exhaustive handling. This producer inspection does not establish all subscriber behavior, transaction durability or backward compatibility. No Pi runtime, persistence fixture or provider call was executed. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `2c8d1feb147f6b3d97e855da803bfe7b19f3c403` against prior analyzed commit `9628c84809ab657ff47237bc63e3052cac4587fa`. Historical reviews above remain separate evidence.
+
+The new [Chord worker adapter](https://github.com/earendil-works/pi/blob/2c8d1feb147f6b3d97e855da803bfe7b19f3c403/packages/chord/src/next-node/workers/process.ts) creates IPC at fork time to retain early frames, separates local link loss from remote closure, captures a short stderr tail, and attempts process-group termination when the leader exits. The [control bridge](https://github.com/earendil-works/pi/blob/2c8d1feb147f6b3d97e855da803bfe7b19f3c403/packages/chord/src/next-node/workers/control.ts) projects errors to message/code/reason without stack or cause. Its envelope decoder explicitly trusts the peer process and casts the enclosed message without validating its shape; error messages are not thereby redacted.
+
+The [process fixture](https://github.com/earendil-works/pi/blob/2c8d1feb147f6b3d97e855da803bfe7b19f3c403/packages/chord/test/next-node/workers/process.test.ts) checks early-frame retention, output, control messages and eventual grandchild death after group kill; the [control fixtures](https://github.com/earendil-works/pi/blob/2c8d1feb147f6b3d97e855da803bfe7b19f3c403/packages/chord/test/next-node/workers/control.test.ts) check round trips and envelope separation. This is a POSIX-shaped group strategy, not Windows Job Object containment, and the implementation resolves leader exit before proving descendant death. Teamagent should retain its owned supervisor, validate every IPC payload, isolate inherited credentials, bound/redact output and wait for descendant shutdown before releasing scratch.
+
+**Coverage:** Read the complete 397-line four-file worker/control expansion. Child support fixture, IPC-link implementation, native behavior and other Pi changes were not audited or executed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [pi](https://github.com/earendil-works/pi); analyzed commit `9628c84809ab657ff47237bc63e3052cac4587fa`; commit date 2026-10-28T12:12:19+02:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--pi.md).
+Analysis metadata: source [pi](https://github.com/earendil-works/pi); analyzed commit `2c8d1feb147f6b3d97e855da803bfe7b19f3c403`; commit date 2026-11-01T00:36:33Z; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--pi.md).
 <!-- teamagent-analysis:end -->

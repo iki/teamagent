@@ -53,6 +53,12 @@ Evidence: [.github/scripts/pr_intake_gate.js:142-164](https://github.com/modelco
 
 **Scope and limits:** Reviewed all three changed-path deltas; no PR automation or SDK endpoint was executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review — 2026-11-01
+
+Reviewed `eafb671c47d45f3c8a001495f7dd6d605ea4a374` (2026-10-30T16:20:23+01:00); 38 paths changed from `2b2c53b02ec2b73f6a0605d68c4ea87fa9eb37aa`. Scoped diffs preserve request IDs when rebuilding multi-round-trip requests and route synthetic input requests through the same receiving middleware instead of invoking elicitation/sampling/root handlers directly. A new PKCE helper refuses missing or non-S256 support; its fixture covers absent, plain-only and S256 cases. [Round trips](https://github.com/modelcontextprotocol/go-sdk/blob/eafb671c47d45f3c8a001495f7dd6d605ea4a374/mcp/mrtr.go), [PKCE helper](https://github.com/modelcontextprotocol/go-sdk/blob/eafb671c47d45f3c8a001495f7dd6d605ea4a374/internal/authutil/pkce.go), [fixture](https://github.com/modelcontextprotocol/go-sdk/blob/eafb671c47d45f3c8a001495f7dd6d605ea4a374/internal/authutil/pkce_test.go).
+
+Continuation paths must preserve correlation and the normal authorization/observability middleware boundary. Metadata advertisement is necessary capability evidence, not authenticated server compliance. Three paths reviewed; OAuth call sites, transport changes and new round-trip integration assertions were not audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mcp-sdk-go](https://github.com/modelcontextprotocol/go-sdk); analyzed commit `2b2c53b02ec2b73f6a0605d68c4ea87fa9eb37aa`; commit date 2026-10-28T10:00:57+01:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-sdk-go.md).
+Analysis metadata: source [mcp-sdk-go](https://github.com/modelcontextprotocol/go-sdk); analyzed commit `eafb671c47d45f3c8a001495f7dd6d605ea4a374`; commit date 2026-10-30T16:20:23+01:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-sdk-go.md).
 <!-- teamagent-analysis:end -->

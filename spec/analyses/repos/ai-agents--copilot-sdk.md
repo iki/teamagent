@@ -2,11 +2,11 @@
 
 Source: [copilot-sdk](https://github.com/github/copilot-sdk) · [Analysis](../../projects/ai-agents--copilot-sdk.md) · [agents](../../agents.md), [models](../../models.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `9bc718cb608c4cd3b63e0e71c637dcf1ebfd5409`; commit date: 2026-10-27T22:50:27Z; review date: 2026-10-28T14:29:27.414Z; observed SHA: `9bc718cb608c4cd3b63e0e71c637dcf1ebfd5409`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `68de1a7afe4bc9e7435d185825043bd9dc9c47cf`; commit date: 2026-11-01T02:19:22Z; review date: 2026-11-01T11:33:30.893Z; observed SHA: `68de1a7afe4bc9e7435d185825043bd9dc9c47cf`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/github/copilot-sdk/compare/9bc718cb608c4cd3b63e0e71c637dcf1ebfd5409...9bc718cb608c4cd3b63e0e71c637dcf1ebfd5409). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/github/copilot-sdk/compare/68de1a7afe4bc9e7435d185825043bd9dc9c47cf...68de1a7afe4bc9e7435d185825043bd9dc9c47cf). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

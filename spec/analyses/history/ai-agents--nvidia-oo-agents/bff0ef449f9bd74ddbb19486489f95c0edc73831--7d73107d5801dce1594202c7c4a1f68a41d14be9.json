@@ -1,0 +1,490 @@
+{
+  "id": "ai-agents--nvidia-oo-agents",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/nvidia-nemo/labs-OO-Agents",
+  "report": "spec/projects/ai-agents--nvidia-oo-agents.md",
+  "analyzedSha": "bff0ef449f9bd74ddbb19486489f95c0edc73831",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-22T16:06:28+02:00",
+  "observedSha": "7d73107d5801dce1594202c7c4a1f68a41d14be9",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "7d73107d5801dce1594202c7c4a1f68a41d14be9",
+      "date": "2026-10-30T17:00:59+01:00",
+      "subject": "Merge pull request #370 from cpakkamisaac-sae/fix/native-json-validation"
+    },
+    {
+      "sha": "0de110e8eba848b0fe99b964cfbe8032328384e7",
+      "date": "2026-10-30T15:34:21+01:00",
+      "subject": "Merge pull request #355 from orchestor/fix/267-syntax-error-cell-location"
+    },
+    {
+      "sha": "eaa26b61a93c77006013446be88ef2a948dd291e",
+      "date": "2026-10-30T16:32:29+02:00",
+      "subject": "Merge pull request #283 from Sampoornnagpal/fix/project-root-from-cwd"
+    },
+    {
+      "sha": "ed75892542cd2f6149bb8ca74d8b6e94fc40df9f",
+      "date": "2026-10-30T15:19:30+01:00",
+      "subject": "test(runtime): retain syntax error cell regression coverage on current main"
+    },
+    {
+      "sha": "51b6e05036467daa5e7833b4470b19d01499f3fb",
+      "date": "2026-10-30T08:00:37+01:00",
+      "subject": "Merge pull request #508 from NVIDIA-NeMo/feat/windows-wsl-only"
+    },
+    {
+      "sha": "e030031750e71aaf1a03270abe25c60d100d2195",
+      "date": "2026-10-30T06:26:47Z",
+      "subject": "Connect: keep registry line endings on Windows 🤖🤖🤖"
+    },
+    {
+      "sha": "2c02f1fe19cf51be32dc94a4bb2d87a5792b894e",
+      "date": "2026-10-29T21:39:50Z",
+      "subject": "Test: an unexpected import error fails the Windows import test 🤖🤖🤖"
+    },
+    {
+      "sha": "c074cdeae5ad3ce6d2250a513aedb0836b7797e2",
+      "date": "2026-10-29T21:38:39Z",
+      "subject": "WSL CI: job-level concurrency; clarify the Node.js comparison 🤖🤖🤖"
+    },
+    {
+      "sha": "e8a4a1d49d3a0ef26c5fdde2871b9bb26c63bc07",
+      "date": "2026-10-29T21:30:44Z",
+      "subject": "Apply the PR #508 review fixes 🤖🤖🤖"
+    },
+    {
+      "sha": "e0df9cf6d0664492dbda6799f154aa1305e91c37",
+      "date": "2026-10-29T19:16:15Z",
+      "subject": "WSL CI: install a pinned, SHA256-verified uv instead of curl | sh 🤖🤖🤖"
+    },
+    {
+      "sha": "6039ea5d664e2efb6434c8dad18cb92998501783",
+      "date": "2026-10-29T18:17:55Z",
+      "subject": "Docs: native Windows features beyond the tested core may work but are unsupported 🤖🤖🤖"
+    },
+    {
+      "sha": "164d74ee9969bddd05d1f712d6d4ea18a2ebee80",
+      "date": "2026-10-29T18:13:27Z",
+      "subject": "Docs: WSL 2 note for Windows in AGENTS, package READMEs and skills 🤖🤖🤖"
+    },
+    {
+      "sha": "5d124ec1c7d877218ea74108f86141fbf02cd5bf",
+      "date": "2026-10-29T17:24:41Z",
+      "subject": "WSL CI: install the WSL 2 kernel before importing Ubuntu 🤖🤖🤖"
+    },
+    {
+      "sha": "f9c940c2bad630c724fc3cf58c1d7968570966e9",
+      "date": "2026-10-29T17:22:58Z",
+      "subject": "WSL CI: download checksums to a file; report every setup failure 🤖🤖🤖"
+    },
+    {
+      "sha": "8fa80b2c10e03de3a1ae6c9ea78d4cb12fbbf6fa",
+      "date": "2026-10-29T17:20:57Z",
+      "subject": "WSL CI: run on windows-2022, never fail the status step 🤖🤖🤖"
+    },
+    {
+      "sha": "622885de5a373079be95fd97c0d806631766cb0b",
+      "date": "2026-10-29T17:06:05Z",
+      "subject": "WSL CI: report setup failures as annotations 🤖🤖🤖"
+    },
+    {
+      "sha": "439ab59a40963f65f7c7eb8c0a740a651d18f8ea",
+      "date": "2026-10-29T16:52:12Z",
+      "subject": "Run WSL CI without third-party actions 🤖🤖🤖"
+    },
+    {
+      "sha": "a0a543c24c8aa3c37078c937f3d070c20c49cb4b",
+      "date": "2026-10-29T16:47:12Z",
+      "subject": "Merge origin/main into feat/windows-wsl-only 🤖🤖🤖"
+    },
+    {
+      "sha": "18c4fa9e176cfa9caa259fd87365c9f6d83df582",
+      "date": "2026-10-29T16:31:14Z",
+      "subject": "Merge origin/main into feat/windows-wsl-only 🤖🤖🤖"
+    },
+    {
+      "sha": "8598d4085ba2124e014d56eb612736ace0309c7e",
+      "date": "2026-10-29T16:22:43+01:00",
+      "subject": "Merge pull request #507 from NVIDIA-NeMo/fix/codeact-consecutive-api-errors"
+    },
+    {
+      "sha": "2932cba27ccef76d28bf9c70d29bba7d4b7ef0c5",
+      "date": "2026-10-29T15:13:11Z",
+      "subject": "Test that an XML format error resets the PurePython API-error budget"
+    },
+    {
+      "sha": "aaa80cd036bbfb6218e1d6e1aafb1441ea0ddcc5",
+      "date": "2026-10-29T15:07:38Z",
+      "subject": "Apply consecutive API-error budget to PurePython; docs and logs"
+    },
+    {
+      "sha": "2c701c3851367631be2135dfff80cb819d5a8ce9",
+      "date": "2026-10-29T15:07:28Z",
+      "subject": "Count only consecutive LLM API errors against CodeAct max_retries"
+    },
+    {
+      "sha": "f7c4d0643b23856ceee8606d2529648a8c550484",
+      "date": "2026-10-29T15:43:02+01:00",
+      "subject": "Merge pull request #501 from furgalep/fix/render-lone-surrogates"
+    },
+    {
+      "sha": "b86ab594eac2a8559ecf97f2d93a6d18d4f56ce6",
+      "date": "2026-10-29T16:40:55+02:00",
+      "subject": "Merge pull request #201 from shoemoney/fix/init-command-framing"
+    },
+    {
+      "sha": "c7ef6cc8534b549eb37ec78e1a1a5aad78b8a92c",
+      "date": "2026-10-29T14:28:17Z",
+      "subject": "Refuse native Windows unless NOOA_SKIP_PLATFORM_CHECK=1; UTF-8 CLI output"
+    },
+    {
+      "sha": "b10fb866e6b9fa4684ae976516aeba8b1c4ff2cc",
+      "date": "2026-10-29T13:28:41Z",
+      "subject": "Save nooa connect models on native Windows with filelock"
+    },
+    {
+      "sha": "4481312b0c4100254335526e1cddd41b035e4d79",
+      "date": "2026-10-29T12:30:31Z",
+      "subject": "Stop nooa connect early on native Windows with the WSL 2 message"
+    },
+    {
+      "sha": "cd3ffa203617839a28f2ab003ce63339c19aac3a",
+      "date": "2026-10-29T05:48:40Z",
+      "subject": "Drop native replay payload checks; keep the fix in the renderer"
+    },
+    {
+      "sha": "6abec0eeeab0455ea09f84ca38d4ad22e18c8f80",
+      "date": "2026-10-29T06:39:56+01:00",
+      "subject": "Merge pull request #504 from callingmedic911/fix/cold-model-inspection"
+    },
+    {
+      "sha": "33dfc371debf1ff70d410b2fab61f667f62ec54e",
+      "date": "2026-10-29T05:32:17Z",
+      "subject": "Run the pure-Python core on native Windows; point POSIX-only features to WSL 2"
+    },
+    {
+      "sha": "bf179ff88ae5914faadb554fdef5ebd9f860616e",
+      "date": "2026-10-28T21:16:39+02:00",
+      "subject": "Merge pull request #502 from NVIDIA-NeMo/fix/dependency-security-upgrades"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/wsl.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/cybergym/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/cybergym/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/nooa-acp/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/nooa-bench/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/nooa-cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/nooa-cli/src/nooa_cli/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/nooa-cli/src/nooa_cli/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/nooa-cli/src/nooa_cli/commands/_connect_view.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/nooa-cli/src/nooa_cli/commands/_connect_wizard.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/nooa-cli/tests/test_cli_platform_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/nooa-cli/tests/test_cli_utf8_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/nooa-cli/tests/test_connect_windows.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/nooa-memory/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/windows_smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/winsim.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/wsl_ci.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/nooa-agent-authoring/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/nooa-codeact-advanced/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/nooa-model-configuration/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/_immutable_json.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/nooa/_platform.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/nooa/_platform_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/agentdoc/_structured.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/config/strategy_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/context_blocks/renderer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/paths.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/runtime/debug_handler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/runtime/producers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/runtime/sandbox/executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/storage/sqlite.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/strategies/codeact.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/strategies/pure_python.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/tools/_bash_session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/tools/library_writing_lib.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/unifiedllm/connect/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/nooa/viewer/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/agentdoc/test_discover_pydantic_forward_refs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/context_blocks/test_cached_renderer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/context_blocks/test_renderer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/integration/test_file_viewer_equivalence.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runtime/test_producers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/strategies/test_error_recovery_gl106.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_error_line_numbers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_immutable_json.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_paths.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_windows_platform.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/tools/test_bash_session_framing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/tools/test_library_writing_lib.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/tracing/test_journal_routes_match.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unifiedllm/connect/test_connect_final_review.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "util/eval_pipeline/src/eval_pipeline/headless_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "uv.lock",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

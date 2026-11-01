@@ -22,7 +22,7 @@ Memory source: `none`. Version: `none`. Content SHA-256: `none`.
 
 [Original source](<https://magnus919.com/2026/07/qm-is-trying-to-solve-the-company-agent-problem/>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-28T07:07:39.056Z. Local validation: 2026-10-28T14:56:36.677Z. Import: **pinned**. Content validation: **usable-text**.
+Mode: **static**. Last remote attempt: 2026-10-28T07:07:39.056Z. Local validation: 2026-11-01T08:51:16.093Z. Import: **pinned**. Content validation: **usable-text**.
 
 First captured: 2026-10-28T07:07:42.717Z. Source creation/publication date: 2026-07-31T19:58:42-04:00. Date evidence: publisher-html-meta (article:published_time). Filename dates and Last-Modified are not treated as creation dates.
 

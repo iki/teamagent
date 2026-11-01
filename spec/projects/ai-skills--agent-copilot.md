@@ -44,6 +44,18 @@ Redaction is heuristic, and the inspected maps are process-local. Request-body b
 
 **Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `5269f7ea2d6c3a9bfda5ed878b6726cf509121fd` (commit date `2026-10-30T11:35:13+11:00`), compared with `0fe6545b950671641b2b14b44eb56678fea6c6b4`. Earlier observations remain historical evidence.
+
+**Scope:** Selected schema-reading, metering, estimation and output branches of the new credit collector; 84 changed paths inventoried. Remaining collector logic, extension integration and live pricing not audited.
+
+The [collector](https://github.com/github/awesome-copilot/blob/5269f7ea2d6c3a9bfda5ed878b6726cf509121fd/extensions/ai-credits-breakdown/collector.mjs) opens local SQLite read-only, checks expected columns and reads usage/token fields rather than prompt bodies. It reports assumed model rates and cache-TTL assumptions separately, but also reads automation and repository names, which can be sensitive. Residual/credit estimates and unavailable fields remain distinct from authoritative billing; the inspected source does not verify current prices.
+
+**Teamagent implication (inference):** Expose measured usage, derived estimates, assumptions and missing evidence separately. Keep local account/project metadata outside public logs, and bind cost forecasts to dated route-specific rates without treating a local estimate as provider billing or spend authorization.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-copilot](https://github.com/github/awesome-copilot); analyzed commit `0fe6545b950671641b2b14b44eb56678fea6c6b4`; commit date 2026-10-28T16:23:53+11:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--agent-copilot.md).
+Analysis metadata: source [agent-copilot](https://github.com/github/awesome-copilot); analyzed commit `5269f7ea2d6c3a9bfda5ed878b6726cf509121fd`; commit date 2026-10-30T11:35:13+11:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--agent-copilot.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,935 @@
+{
+  "id": "ai-agents-swarm--crewai",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/crewaiinc/crewai",
+  "report": "spec/projects/ai-agents-swarm--crewai.md",
+  "analyzedSha": "b95aa8bbdea6bc02b465a35fa8da54fecf82f528",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T08:21:48Z",
+  "observedSha": "f04cce923973df6ea87386ec7355878c9b655dd3",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f04cce923973df6ea87386ec7355878c9b655dd3",
+      "date": "2026-11-01T05:07:47-03:00",
+      "subject": "fix(cli): stop offering shut-down gemini models in crewai create (#8894)"
+    },
+    {
+      "sha": "946ec7a942ded9c05a22fdf8eb76038aec394b93",
+      "date": "2026-11-01T04:48:37-03:00",
+      "subject": "fix(llm)!: raise MissingAPIKeyError for openai-compatible providers (#8898)"
+    },
+    {
+      "sha": "63b4c86561208b2c2235e23ef414382d6c0a9533",
+      "date": "2026-11-01T04:48:19-03:00",
+      "subject": "fix(telemetry): count repeated-tool-call stops in anonymous telemetry (#8897)"
+    },
+    {
+      "sha": "44bb4b5b37d99ce0c67adcd8e669a76d35f436ed",
+      "date": "2026-11-01T04:47:33-03:00",
+      "subject": "fix(cli): count a crewai run whose project script fails (#8895)"
+    },
+    {
+      "sha": "c7409510e7411b19e73cb02c3f0a641d6a3537c0",
+      "date": "2026-11-01T04:47:12-03:00",
+      "subject": "test: keep telemetry off for every test, not just the first one per worker (#8896)"
+    },
+    {
+      "sha": "1a3089fd15aa313f1adae1da598db1e9bea2afc9",
+      "date": "2026-10-31T18:31:42-07:00",
+      "subject": "fix(deps): let crewai[litellm] import on python 3.10; raise joserfc, pyasn1, pypdf floors (#8760)"
+    },
+    {
+      "sha": "97bbfb64811775a965304bda45c8ec0e8e4ef3a2",
+      "date": "2026-10-29T12:07:56-03:00",
+      "subject": "fix(llm): don't require newer litellm just for a type-hint import (#8777)"
+    },
+    {
+      "sha": "db264eca3cafa12332065c4c1bbbc0a05eff9408",
+      "date": "2026-10-29T12:06:03-03:00",
+      "subject": "fix(compat): restore removed import paths with deprecation warnings (#8778)"
+    },
+    {
+      "sha": "90266d5257055e05fabeced6d848eda8d0280cbf",
+      "date": "2026-10-29T02:22:28-03:00",
+      "subject": "fix(llm): retry an empty llm answer once and raise a typed error (#8729)"
+    },
+    {
+      "sha": "bcbf5172755d7aa36a05a866b9a0107a0a823695",
+      "date": "2026-10-29T02:16:51-03:00",
+      "subject": "fix(agent): ask for structured output when a tool-using agent finishes (#8703)"
+    },
+    {
+      "sha": "e6278e2d5674d54f0cf1a3b054d60c40b41771d2",
+      "date": "2026-10-29T02:16:12-03:00",
+      "subject": "fix(task): refit json that does not match the output model instead of failing (#8702)"
+    },
+    {
+      "sha": "c1493fc462af4c21c4d1fdfa082596538e0d60ff",
+      "date": "2026-10-29T02:15:39-03:00",
+      "subject": "fix(agent): warn on repeated tool calls and keep the work when stopping (#8706)"
+    },
+    {
+      "sha": "9ce759cef0955819c1e65ff152f49ba48d988b40",
+      "date": "2026-10-29T02:14:24-03:00",
+      "subject": "fix(llm): honor context_window_size and warn on the fallback window (#8704)"
+    },
+    {
+      "sha": "c7df08d78543679f417db59ce1e73990d05e3f37",
+      "date": "2026-10-29T02:13:49-03:00",
+      "subject": "fix(llm): raise MissingAPIKeyError for a missing or placeholder api key (#8731)"
+    },
+    {
+      "sha": "290fe5243477aa759bb125e41b27c73c83d5756c",
+      "date": "2026-10-29T02:13:15-03:00",
+      "subject": "feat(cli): record where crewai run stops before kickoff (#8730)"
+    },
+    {
+      "sha": "f2ff0c079519f242d82b82f5c570343762619273",
+      "date": "2026-10-29T02:12:56-03:00",
+      "subject": "docs: document the 1.15.29 agent executor removal as breaking, with migration notes (#8710)"
+    },
+    {
+      "sha": "699cedcddce69cb5a9997dfe4afae5c1c1c11789",
+      "date": "2026-10-28T19:01:47-03:00",
+      "subject": "fix(llm): keep the provider's exception on litellm streaming errors (#8732)"
+    },
+    {
+      "sha": "e764f5c2da8883d8f1e7ca882612c01335baac1e",
+      "date": "2026-10-28T19:00:31-03:00",
+      "subject": "fix(agents): tell the model how to recover from an unreadable deferred result (#8705)"
+    },
+    {
+      "sha": "89584d30aa774da69bd2eaaeb3428a138b2c8a6a",
+      "date": "2026-10-28T18:58:36-03:00",
+      "subject": "fix(cli): offer a login and retry once when amp rejects the saved login during eval (#8733)"
+    },
+    {
+      "sha": "9978795035942935e1ac9bd40df28d8235bd5d79",
+      "date": "2026-10-28T21:01:00Z",
+      "subject": "[docs-freeze] snapshot docs for v1.15.33 (#8748)"
+    },
+    {
+      "sha": "1551ceb5d4cf557c26da6c971fb845118ec0cb26",
+      "date": "2026-10-28T17:41:25-03:00",
+      "subject": "chore: bump versions to 1.15.33 (#8747)"
+    },
+    {
+      "sha": "04433432185a661e689d981dca50a03696d1eb61",
+      "date": "2026-10-29T01:33:20+05:30",
+      "subject": "fix: restore recent backwards-compatible imports and token (#8746)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".env.test",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ar/changelog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ar/concepts/agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ar/concepts/llms.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ar/concepts/tasks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ar/telemetry.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/changelog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/concepts/agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/concepts/crews.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/concepts/llms.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/concepts/tasks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/concepts/tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/telemetry.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/changelog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/concepts/agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/concepts/crews.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/concepts/llms.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/concepts/tasks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/telemetry.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/changelog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/concepts/agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/concepts/crews.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/concepts/llms.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/concepts/tasks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/telemetry.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/api-reference/inputs.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/api-reference/introduction.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/api-reference/kickoff.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/api-reference/resume.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/api-reference/status.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/changelog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/agent-capabilities.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/checkpointing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/cli.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/collaboration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/crews.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/event-listener.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/files.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/flows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/knowledge.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/llms.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/memory.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/planning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/processes.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/production-architecture.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/reasoning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/skills.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/tasks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/testing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/concepts/training.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/examples/cookbooks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/examples/example.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/advanced/customizing-prompts.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/advanced/fingerprinting.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/agents/crafting-effective-agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/coding-tools/agents-md.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/coding-tools/build-with-ai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/concepts/evaluating-use-cases.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/crews/first-crew.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/flows/conversational-flows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/flows/first-flow.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/flows/inputs-id-deprecation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/flows/mastering-flow-state.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/frontend/channels.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/frontend/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/migration/migrating-from-langgraph.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/migration/upgrading-crewai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/guides/tools/publish-custom-tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/installation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/introduction.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/a2a-agent-delegation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/before-and-after-kickoff-hooks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/bring-your-own-agent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/coding-agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/conditional-tasks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/create-custom-tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/custom-llm.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/custom-manager-agent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/customizing-agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/dalle-image-generation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/execution-boundary-hooks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/execution-hooks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/force-tool-output-as-result.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/hierarchical-process.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/human-feedback-in-flows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/human-in-the-loop.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/human-input-on-execution.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/kickoff-async.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/kickoff-for-each.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/litellm-removal-guide.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/llm-connections.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/llm-hooks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/llm-selection-guide.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/multimodal-agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/replay-tasks-from-latest-crew-kickoff.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/sequential-process.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/streaming-crew-execution.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/streaming-flow-execution.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/streaming-runtime-contract.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/tool-hooks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/learn/using-annotations.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/mcp/dsl-integration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/mcp/multiple-servers.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/mcp/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/mcp/security.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/mcp/sse.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/mcp/stdio.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/mcp/streamable-http.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/arize-phoenix.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/braintrust.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/datadog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/galileo.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/langdb.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/langfuse.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/langtrace.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/maxim.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/mlflow.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/neatlogs.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/openlit.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/opik.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/patronus-evaluation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/portkey.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/tracing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/truefoundry.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/observability/weave.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/quickstart.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/skills.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/snippets/snippet-intro.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/telemetry.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/ai-ml/aimindtool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/ai-ml/codeinterpretertool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/ai-ml/dalletool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/ai-ml/daytona.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/ai-ml/langchaintool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/ai-ml/llamaindextool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/ai-ml/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/ai-ml/ragtool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/ai-ml/visiontool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/automation/apifyactorstool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/automation/composiotool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/automation/multiontool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/automation/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/automation/zapieractionstool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/cloud-storage/bedrockkbretriever.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/cloud-storage/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/cloud-storage/s3readertool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/cloud-storage/s3writertool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/database-data/mongodbvectorsearchtool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/database-data/mysqltool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/database-data/nl2sqltool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/database-data/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/database-data/pgsearchtool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.33/ar/tools/database-data/qdrantvectorsearchtool.mdx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

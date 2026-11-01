@@ -69,6 +69,14 @@ Evidence: [backend/core/env_startup.py:8-39](https://github.com/debpalash/VoiceS
 
 **Scope and limits:** Reviewed the complete startup loader and its encoding/precedence fixtures; the broader voice stack and saved-settings implementation were not audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`e84105cf332fcb7a7b58012cb3c3618363b24759`](https://github.com/debpalash/VoiceStudio/commit/e84105cf332fcb7a7b58012cb3c3618363b24759), compared with `f7203feb76383c2afd29fde4bc826fea6e601c24`.
+
+The complete new [archive validator](https://github.com/debpalash/VoiceStudio/blob/e84105cf332fcb7a7b58012cb3c3618363b24759/mobile/ios/scripts/validate_privacy_manifests.py) checks the app plus directly enumerated extension/framework bundles for privacy manifests, false tracking declarations, empty tracking domains and syntactically valid nonduplicate required-reason categories. The [fixtures](https://github.com/debpalash/VoiceStudio/blob/e84105cf332fcb7a7b58012cb3c3618363b24759/tests/test_ios_privacy_manifests.py) cover generated app/framework declarations, a missing framework manifest and shared app-group identifiers; native compilation is mocked in the relevant packaging fixtures.
+
+This is packaging-contract evidence within a 361-path update. It does not prove actual runtime data flows, the correctness of every declared reason, provider non-training terms, voice consent or commercial rights. Teamagent must keep those dimensions separate, and require actual packaged-native acceptance for an implemented mobile route. No iOS archive, model, voice synthesis, provider or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [voicestudio](https://github.com/debpalash/VoiceStudio); analyzed commit `f7203feb76383c2afd29fde4bc826fea6e601c24`; commit date 2026-10-28T15:34:04+05:30; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-media--voicestudio.md).
+Analysis metadata: source [voicestudio](https://github.com/debpalash/VoiceStudio); analyzed commit `e84105cf332fcb7a7b58012cb3c3618363b24759`; commit date 2026-11-01T12:00:36+05:30; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-media--voicestudio.md).
 <!-- teamagent-analysis:end -->

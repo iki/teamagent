@@ -56,6 +56,18 @@ For Teamagent, bind cached capabilities to the complete effective launch configu
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `879a71fa0bc58a33c890e2c0980cbe1977204487` (commit date `2026-11-01T09:16:28Z`), compared with `28bf3f3a778d28f2a4d29d0d2c49bde66a933651`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded resume decision/write implementation and selected contention, hold-preservation and passive-preview fixtures; whole-repository diff was oversized. Storage CAS implementation and controller execution not audited.
+
+The [resume path](https://github.com/gastownhall/gascity/blob/879a71fa0bc58a33c890e2c0980cbe1977204487/internal/session/resume.go) uses a proposal-time cutoff so replay cannot consume a later suspend, preserves other holds, and combines suspend removal with a wake request in one fenced metadata patch. No-op decisions receive a live reread, with bounded contention attempts and explicit conflict errors. [Fixtures](https://github.com/gastownhall/gascity/blob/879a71fa0bc58a33c890e2c0980cbe1977204487/internal/session/resume_test.go) compare passive preview with writes and preserve waits/quarantine. Its timestamp granularity still treats a same-second suspend as preceding the proposal.
+
+**Teamagent implication (inference):** Use exact generations or operation identities to fence resumed work against newer user intent. Keep planning read-only and re-evaluate at execution, recording accepted wake separately from actual runtime readiness; uncertain storage/process outcomes must remain reconcilable.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gascity](https://github.com/gastownhall/gascity); analyzed commit `28bf3f3a778d28f2a4d29d0d2c49bde66a933651`; commit date 2026-10-28T09:59:03Z; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--gascity.md).
+Analysis metadata: source [gascity](https://github.com/gastownhall/gascity); analyzed commit `879a71fa0bc58a33c890e2c0980cbe1977204487`; commit date 2026-11-01T09:16:28Z; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--gascity.md).
 <!-- teamagent-analysis:end -->

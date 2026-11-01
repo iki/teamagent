@@ -38,6 +38,14 @@ The submit loop retries connection establishment failures and HTTP 503. The latt
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 documentation-only refresh
+
+Reviewed the complete one-file delta from `bd8da32b3a075128700caab75bbc491fb6fdc16e` to `e048eed09c3ffe1841750de883f084e46d7cb98c`. Only [README.md](https://github.com/microsoft/Orchard/blob/e048eed09c3ffe1841750de883f084e46d7cb98c/README.md) changes; the earlier inspected execution/recovery implementation is not modified by this delta.
+
+The catalogue now describes Self-HPO harness/policy co-evolution, AutoEnvScaling environment generation, security-focused training/evaluation, separate test/repair agents and turn-level credit assignment. These are upstream research claims and discovery leads. The linked repositories, papers, datasets and reported scores were not independently inspected or reproduced here, so this update does not validate their results or promote them into the implemented harness.
+
+For Teamagent evolution, keep the proposed environment generator, policy/harness optimizer and independent acceptance evaluator as separate roles with frozen held-out evidence. A README addition cannot authorize self-modification or replace measured regression checks. No code, tests, training job or external service was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [orchard](https://github.com/microsoft/Orchard); analyzed commit `bd8da32b3a075128700caab75bbc491fb6fdc16e`; commit date 2026-10-08T22:14:11-07:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--orchard.md).
+Analysis metadata: source [orchard](https://github.com/microsoft/Orchard); analyzed commit `e048eed09c3ffe1841750de883f084e46d7cb98c`; commit date 2026-11-01T01:29:28-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--orchard.md).
 <!-- teamagent-analysis:end -->

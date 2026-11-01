@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--paperclip",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/paperclipai/paperclip",
+  "report": "spec/projects/ai-agents--paperclip.md",
+  "analyzedSha": "cff331f6ca0a652b5e41641c68dfa5fa584c22ae",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T02:05:36-05:00",
+  "observedSha": "d941ed3879d9f9b49573bc138e1f6c465271fca4",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d941ed3879d9f9b49573bc138e1f6c465271fca4",
+      "date": "2026-11-01T03:56:44-06:00",
+      "subject": "feat(server): verify existing-volume ephemeral enrollment (#18529)"
+    },
+    {
+      "sha": "73cd8eb9a5480258e73e2dee42ca0894bf26f508",
+      "date": "2026-11-01T03:39:48-06:00",
+      "subject": "fix(server): deliver answers promptly during web handoff (#18530)"
+    },
+    {
+      "sha": "16787e4167fa94bd968419cf6e6e9e8ebb2748c4",
+      "date": "2026-11-01T02:53:27-06:00",
+      "subject": "Qualify rolling web deployments and preserve Stop through handoff (#18526)"
+    },
+    {
+      "sha": "2b2b5a43b74230f4023bb367a05c92c1676db4d3",
+      "date": "2026-11-01T02:47:30-06:00",
+      "subject": "fix(daytona): restore the recorded directory for file recovery (#18527)"
+    },
+    {
+      "sha": "7e595fd055bdbb44bc813e495aec44dd4fb99a0e",
+      "date": "2026-11-01T02:33:59-06:00",
+      "subject": "test(e2e): verify native hiring, delegation and teammate reuse (#18351)"
+    },
+    {
+      "sha": "006d5691a6245d5a710e25ba3df6d609754e163a",
+      "date": "2026-11-01T01:58:54-06:00",
+      "subject": "feat(server): support volume-free web server handoff (#18518)"
+    },
+    {
+      "sha": "050365e09d88411960fc3bacc1c08c46c0d9b6fa",
+      "date": "2026-11-01T00:17:46-05:00",
+      "subject": "Preserve native workspace files after lifecycle Stop (#18517)"
+    },
+    {
+      "sha": "1e8e32290c657227857aeda2620a73db52bab4f2",
+      "date": "2026-10-31T23:09:30-05:00",
+      "subject": "Give metadata project tasks private remote workspaces (#18514)"
+    },
+    {
+      "sha": "f0ff466aafab6b9635e9be2b4c5da3a07b6974c5",
+      "date": "2026-10-31T22:54:28-05:00",
+      "subject": "fix(testops): wait for complete attachment evidence (#18509)"
+    },
+    {
+      "sha": "9dbbfa4fb298448db83ace946b338bff321d8b2a",
+      "date": "2026-10-31T22:30:05-05:00",
+      "subject": "fix(qa): wait for task document controls after reload (#18503)"
+    },
+    {
+      "sha": "987e0932bf66e703750cd04698b3c7e8993580a7",
+      "date": "2026-10-31T22:16:20-05:00",
+      "subject": "test(testops): inspect a fixed retained chat result (#18477)"
+    },
+    {
+      "sha": "d38cdf261aa8ef7593b3582a6d68b53f5ba92796",
+      "date": "2026-10-31T22:12:41-05:00",
+      "subject": "perf(ui): speed up Tasks and Inbox startup (#18492)"
+    },
+    {
+      "sha": "34f8d25089d5573c8f372fbadc5befad88862756",
+      "date": "2026-10-31T22:06:32-05:00",
+      "subject": "fix(github): expose review finding categories (#18429)"
+    },
+    {
+      "sha": "e09f40888ae451213a529c3b9c8e85385a38d39d",
+      "date": "2026-10-31T22:06:08-05:00",
+      "subject": "fix(recovery): preserve native task access during resolution (#18489)"
+    },
+    {
+      "sha": "c38844eafafa7e602b2854e7ce457d948c5f187f",
+      "date": "2026-10-31T21:54:42-05:00",
+      "subject": "test: observe complete workspace retention cleanup (#18507)"
+    },
+    {
+      "sha": "b110271c9b2fd6dd5a1beb119e7f0663385df8b9",
+      "date": "2026-10-31T20:40:35-05:00",
+      "subject": "test: observe GitHub enrollment after worker settlement (#18506)"
+    },
+    {
+      "sha": "756599e4ea069c9338c320fe8846523d3dfb92a0",
+      "date": "2026-10-31T20:19:28-05:00",
+      "subject": "fix(workspaces): keep project references without source folders (#18504)"
+    },
+    {
+      "sha": "66e8fab9447aa21350f87ddec79fcd027f3e23ad",
+      "date": "2026-10-31T19:52:42-05:00",
+      "subject": "fix: complete native chat responses and improve API discovery (#18364)"
+    },
+    {
+      "sha": "b889ac39b7fbed558c5f4cfbbc2b73c4ca916810",
+      "date": "2026-10-31T18:07:41-05:00",
+      "subject": "fix: serialize native completion replies and bounded retries (#18502)"
+    },
+    {
+      "sha": "681f7b77262a9df6c1b4aad55291bf960061e491",
+      "date": "2026-10-31T17:22:31-05:00",
+      "subject": "perf(server): retire aggregate maintenance polling (#18425)"
+    },
+    {
+      "sha": "9ca9af544a5f10ca5fccb88df41e27258c74ca1b",
+      "date": "2026-10-31T16:00:35-05:00",
+      "subject": "Drive remaining live run and resource recovery from durable work (#18419)"
+    },
+    {
+      "sha": "eb12cfc96b18950d4b582ba38a47adddf3458b12",
+      "date": "2026-10-31T15:38:43-05:00",
+      "subject": "perf(github): activate connection work from events and deadlines (#18395)"
+    },
+    {
+      "sha": "5e4cc0107324f1af9432d3f1f40e9ecf2e742bd9",
+      "date": "2026-10-31T14:54:01-05:00",
+      "subject": "feat(workspaces): keep remote files off the webserver disk (#18403)"
+    },
+    {
+      "sha": "75fa37f30fc1e65d1e936fcc58ad507cb53f88bb",
+      "date": "2026-10-31T14:31:31-05:00",
+      "subject": "fix(server): expire native backups from retention deadlines (#18380)"
+    },
+    {
+      "sha": "453f5fbb78c48968c1d938df2ea83502c3b33364",
+      "date": "2026-10-31T14:09:24-05:00",
+      "subject": "perf(external-objects): schedule scoped refresh obligations (#18384)"
+    },
+    {
+      "sha": "5bc029bf6c1db6647e96acea323f3723fd1d3eba",
+      "date": "2026-10-31T13:49:02-05:00",
+      "subject": "test: wait for native work and accounting before Stop redirect (#18463)"
+    },
+    {
+      "sha": "c32ecf665705559f3e58acb175971ec5178a959a",
+      "date": "2026-10-31T13:44:46-05:00",
+      "subject": "fix(server): schedule only outstanding merge confirmations (#18382)"
+    },
+    {
+      "sha": "6484f96c28bfb11a793ce4be6cc5ac15643a5a02",
+      "date": "2026-10-31T11:43:18-07:00",
+      "subject": "fix(workspaces): inspect storage only when needed (#18410)"
+    },
+    {
+      "sha": "9a3f395737e7a92faf99971459979061d423531a",
+      "date": "2026-10-31T13:19:31-05:00",
+      "subject": "fix(server): settle routine history without idle scans (#18399)"
+    },
+    {
+      "sha": "3937215a058d18555e80a2bc87397ffeffe5d898",
+      "date": "2026-10-31T13:16:40-05:00",
+      "subject": "Qualify explicit native written references in the basic question journey (#18459)"
+    },
+    {
+      "sha": "91fdf02e956f80c29595c34c196735cf5ccc6dc8",
+      "date": "2026-10-31T12:56:06-05:00",
+      "subject": "perf(tasks): defer completed transcripts on compact opens (#18461)"
+    },
+    {
+      "sha": "dce383c733bb1ca31cd34d7dbb82bda597ad7418",
+      "date": "2026-10-31T12:28:40-05:00",
+      "subject": "perf(server): stop recurring attention retention scans (#18388)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/run-ci-task/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ci-duration-pr.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ci-task-matrix.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/docker-context-checks.Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/check-lockfile-release-age.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/ci-diff.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/ci-inputs.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/ci-plan.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/tests/check-lockfile-release-age.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/tests/ci-plan.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/tests/ci-routing.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/tests/docker-canary-promotion.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/tests/lockfile-refresh-merge.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/tests/runner-windows-workflow.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/chat-feature-testops-retained-verification.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/chat-feature-testops.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-incremental-qualification.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-routing.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-test-durations.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker-runner-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-trusted.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/refresh-lockfile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-verify.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/runner-full-stack-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/runner-windows.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".greptile/files.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/__tests__/company-import-export-e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/__tests__/runtime-setup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/__tests__/runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/AGENT-ARTIFACTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/DATABASE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/DEVELOPING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/PRODUCT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/RELEASE-AUTOMATION-SETUP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/RELEASING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/RUNNER-INTEGRATION-PLAYBOOK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/SPEC-implementation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/agent-configuration-yaml.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/agent-files.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/agent-observability.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/architecture/runner-copilot-capabilities.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/architecture/runner-cursor-capabilities.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/architecture/runner-pi-capabilities.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/architecture/runner-rich-acp-capabilities.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/ci-profiling.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/cloud-configuration-migration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/cloud-runtime-configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/connections/AI-CONNECTIONS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/connections/GITHUB-REVIEW-BOT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/connections/GOOGLE-WORKSPACE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/evals.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/execution-github-identity.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/execution-semantics.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/grok-native-runner.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-agent-timers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/idle-environment-cleanup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-issue-monitors.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-native-status-reassessment.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/idle-sleep-safety.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-teams-attempt-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-teams-consent-expiry.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-voice-call-reports.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-voice-inbound-cleanup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-voice-inbound-retention.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-voice-reply-delivery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-voice-session-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/manual-e2e-private-evidence.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/observability.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/plans/2026-10-08-instance-sleep-and-scheduler-inventory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/plans/2026-10-08-unified-google-workspace-connector.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/plans/2026-10-09-task-workspaces.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/plans/2026-10-24-recurring-server-sleep-stack.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-automatic-completion-review-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-cancelled-workspace-preservation-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-chat-receiver-discovery-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-chat-run-milestone-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/plans/2026-10-25-configuration-worker-drain-repair.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-directory-cleanup-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-failed-retry-notices-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-github-chat-maintenance-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-github-review-check-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-github-review-projection-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-github-terminal-response-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-github-webhook-recovery-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-inbound-wake-notices-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-instruction-recovery-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-interaction-continuation-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-native-chat-progress-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-native-pending-effects-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-native-response-presentation-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-obsolete-policy-review-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-scheduled-retry-cancellation-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-stopped-instruction-collection-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-teams-attempt-recovery-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-teams-consent-expiry-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-terminal-confirmation-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-unsafe-workspace-export-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-voice-call-report-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-voice-drain-repair.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-voice-inbound-cleanup-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-voice-inbound-retention-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-voice-maintenance-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-voice-reply-delivery-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-26-coordinator-experimental-workspace.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-26-database-backup-sleep-schedule.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-26-external-conversation-settlement-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-26-governed-review-response-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-26-import-spool-cleanup-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-26-muse-terminal-settlement-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-26-native-environment-settlement-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-26-native-recovery-notice-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-26-native-result-commit-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-26-native-run-projection-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-26-native-status-reassessment-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-26-native-workspace-finalization-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-26-retained-native-session-cleanup-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-27-inbound-queue-query-proof.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-27-issue-monitor-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-27-mine-unread-badge-query.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-27-routine-schedule-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-27-runner-evidence-retention-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-27-skill-version-retention-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-27-task-interruption-query-performance.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-28-antigravity-integration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-28-antigravity-native-evidence.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-28-cancellation-deadlock-acceptance.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-28-kimi-code-runner-integration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-28-queued-comment-consumption-query.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-28-skill-package-performance-results.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-28-skill-package-storage.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-28-stable-task-anchor-loading.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-28-task-privacy-query.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-29-antigravity-candidate-identity-refresh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-29-antigravity-journey-to-eval.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-29-cloud-qa-basic-journeys.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-29-incremental-ci.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-30-aggregate-maintenance-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-30-attention-retention-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-30-backup-expiration-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-30-chat-feature-testops-smoke.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-30-deferred-execution-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-30-ephemeral-web-skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-30-external-objects-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-30-external-run-logs-and-provider-traces.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-30-github-connection-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-30-issue-recovery-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-30-live-recovery-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-30-merged-pr-confirmations-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-30-native-controller-checkpoints.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-30-native-controller-claim.patch",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

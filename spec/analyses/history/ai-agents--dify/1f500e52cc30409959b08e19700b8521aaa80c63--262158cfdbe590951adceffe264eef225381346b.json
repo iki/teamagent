@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--dify",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/langgenius/dify",
+  "report": "spec/projects/ai-agents--dify.md",
+  "analyzedSha": "1f500e52cc30409959b08e19700b8521aaa80c63",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T03:26:06Z",
+  "observedSha": "262158cfdbe590951adceffe264eef225381346b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "262158cfdbe590951adceffe264eef225381346b",
+      "date": "2026-11-01T09:27:39Z",
+      "subject": "test(web): replace fabricated form, sidebar and access controls (#45248)"
+    },
+    {
+      "sha": "f5d755bbbb0c1b37d14195ab0e7d586f04548aca",
+      "date": "2026-11-01T09:14:31Z",
+      "subject": "chore(deps): bump pyasn1 from 0.6.4 to 0.6.5 in /dify-agent (#45214)"
+    },
+    {
+      "sha": "fb2c7a04b0fb335cf1f090c32df1b89b6966be10",
+      "date": "2026-11-01T09:14:04Z",
+      "subject": "chore(deps): bump pypdf from 6.21.2 to 6.21.4 in /dify-agent (#45215)"
+    },
+    {
+      "sha": "99a7cd2182f005cc6d6bf831289a32701d8b143a",
+      "date": "2026-11-01T09:11:22Z",
+      "subject": "feat(knowledge): select models before creating a knowledge base (#45245)"
+    },
+    {
+      "sha": "9dd087b8852f7043968991c9b75e73e4771249ac",
+      "date": "2026-11-01T07:48:22Z",
+      "subject": "feat(hitl): expose bound IM providers in contact options (#45233)"
+    },
+    {
+      "sha": "170dbaeb34789365131a7723f1f33063c4e58558",
+      "date": "2026-11-01T03:42:27Z",
+      "subject": "test(api): strictly type agent prompt and skill package tests (#45221)"
+    },
+    {
+      "sha": "b89f43a66a8673694f9c9f7ee3d784df794e7fef",
+      "date": "2026-11-01T03:23:39Z",
+      "subject": "test(web): replace fabricated form, model and feedback controls (#45220)"
+    },
+    {
+      "sha": "5336037aa91f07188baaf03957effd57a364f7df",
+      "date": "2026-10-31T17:04:53Z",
+      "subject": "test(api): strictly type service API fixtures and conversation tests (#45180)"
+    },
+    {
+      "sha": "4c521a3c0a1f60607c8a7bcf90792f34adcf18d0",
+      "date": "2026-10-31T14:07:12Z",
+      "subject": "feat(api): type billing error reasons per proto service (#45203)"
+    },
+    {
+      "sha": "64625b94e7cc31ed6e69ef00c71a20313e1fc982",
+      "date": "2026-10-31T12:57:55Z",
+      "subject": "feat(web): show billing error prompts by console error code (#45192)"
+    },
+    {
+      "sha": "5907db83b0d0faf8ede26bd698d23a587ee2f362",
+      "date": "2026-10-31T12:04:00Z",
+      "subject": "fix(oauth): serialize and persist provider credential refreshes (#32195)"
+    },
+    {
+      "sha": "dcb332693ef6c282baaab182a738ec9af56b90e8",
+      "date": "2026-10-31T09:39:05Z",
+      "subject": "test(web): replace AP1/AP3/AP11/AP30/AP32 test doubles (#45197)"
+    },
+    {
+      "sha": "8ba1adfbc414292c4b4e84a8514e0262cc3257b5",
+      "date": "2026-10-31T08:18:49Z",
+      "subject": "test(rag): exercise dataset retrieval allowlist and deadlock retry with SQLite (#45194)"
+    },
+    {
+      "sha": "3ae91474174b18c38ffdb52156e00c5bed2b119b",
+      "date": "2026-10-31T06:27:30Z",
+      "subject": "feat(api): map billing error reasons to typed console errors (#45170)"
+    },
+    {
+      "sha": "2050078a5fb55cdc90e6e2f043abbdd5baeff337",
+      "date": "2026-10-31T03:24:16Z",
+      "subject": "test(web): replace HITL owner fakes and editor shims (#45189)"
+    },
+    {
+      "sha": "dca4024e5777f44a8cc4937f898483c11ecbd62d",
+      "date": "2026-10-30T17:25:16Z",
+      "subject": "fix: reject 4xx/5xx responses in download_with_size_limit instead of returning the error page (#44333)"
+    },
+    {
+      "sha": "e3ef66b8b994542619b352e30cd09d2850a7f005",
+      "date": "2026-10-30T16:40:23Z",
+      "subject": "refactor(api): detach console statistics admission (#44411)"
+    },
+    {
+      "sha": "ae0ed2d2f15a567f7526e0f2ced95cabc558b70c",
+      "date": "2026-10-30T16:19:04Z",
+      "subject": "fix(api): keep stored QA answers on partial segment updates (#44997)"
+    },
+    {
+      "sha": "fe0c6471fb1e53429536279402587c414e6fc80b",
+      "date": "2026-10-30T16:15:45Z",
+      "subject": "test(knowledge): use unbound_session in segment adapter ownership test (#45173)"
+    },
+    {
+      "sha": "0c82953c625acd661188f74996f838f73217d1f1",
+      "date": "2026-10-30T16:07:37Z",
+      "subject": "fix(dify-agent): reject non-terminal event appends after the run stream is sealed (#45080)"
+    },
+    {
+      "sha": "ab3b0be88d8b636ef53e68a371ea668d2cbb3a5e",
+      "date": "2026-10-30T15:47:15Z",
+      "subject": "chore: mark billing client generated files and add code owners (#45174)"
+    },
+    {
+      "sha": "bd0367cdfec801b9ee341a9624797ae0a5d80f2d",
+      "date": "2026-10-30T15:32:20Z",
+      "subject": "fix(api): read the START node sys.timestamp from the UTC clock (#44847)"
+    },
+    {
+      "sha": "be31456aec4205b8887c1309bc815f418f7864da",
+      "date": "2026-10-30T15:13:46Z",
+      "subject": "fix(web): stabilize voice input focus restore and agent workspace test (#45169)"
+    },
+    {
+      "sha": "254b0df42ea195dc93756de463e8f0c30df349e8",
+      "date": "2026-10-30T15:13:32Z",
+      "subject": "fix(web): show document summaries using outline source identities (#45153)"
+    },
+    {
+      "sha": "749754fcd91172e68fa5b6034e48e4f6be1baa41",
+      "date": "2026-10-30T15:01:46Z",
+      "subject": "feat(api): return education verification as a status-discriminated result (#45165)"
+    },
+    {
+      "sha": "c3221f578a48594ef334c812804a07f17358e283",
+      "date": "2026-10-30T14:57:32Z",
+      "subject": "fix(web): keep error feedback at business boundaries (#45151)"
+    },
+    {
+      "sha": "6395e8b8bea033dec70b22ffef4ce574847259fa",
+      "date": "2026-10-30T14:53:50Z",
+      "subject": "test(web): replace HITL and installed app test doubles (#45167)"
+    },
+    {
+      "sha": "34c94386237a84c31c7551836913d1d88069d0e7",
+      "date": "2026-10-30T13:27:20Z",
+      "subject": "refactor(api): enforce that only the billing client reaches billing and saas (#45145)"
+    },
+    {
+      "sha": "d597152b2f274d91dbb23cab125a5c8f05c6ba94",
+      "date": "2026-10-30T12:57:49Z",
+      "subject": "refactor(api): call tenant UTM and network access group APIs through the generated client (#45144)"
+    },
+    {
+      "sha": "4612a807fe1772e0581249ce23a85c52650f3a07",
+      "date": "2026-10-30T12:19:34Z",
+      "subject": "refactor(api): call billing education, compliance, account and notification APIs through the generated client (#45136)"
+    },
+    {
+      "sha": "9fcff0a73e7ec83694e3b19c8597651d0d7574ad",
+      "date": "2026-10-30T12:06:04Z",
+      "subject": "test: replace Mock() with unbound_session in test_app_package_service (#45162)"
+    },
+    {
+      "sha": "e0cb66fef786ae64c5b7bebf97ab8d591082007e",
+      "date": "2026-10-30T12:01:48Z",
+      "subject": "chore(i18n): sync translations with en-US (#45163)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/backend-code-review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/backend-code-review/references/architecture-rule.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-web/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cli-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/knowledge-fs-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/main-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/style.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/web-bundle-size.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/web-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/.importlinter",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/.ruff.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/commands/retention.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/configs/deploy/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/configs/feature/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/constants/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/common/access_response.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/common/errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/common/human_input.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/common/human_input_v2_contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/common/human_input_v2_errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/common/human_input_v2_migration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/common/rbac/locators.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/common/schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/app/agent_config_inspector.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/app/conversation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/app/statistic.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/app/workflow.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/console/app/workflow_human_input_v2.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/app/workflow_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/app/workflow_statistic.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/billing/billing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/billing/compliance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/billing/error.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/datasets/data_source.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/datasets/rag_pipeline/rag_pipeline_workflow.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/error.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/explore/trial.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/console/human_input_v2/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/console/human_input_v2/_common.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/console/human_input_v2/_decorators.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/console/human_input_v2/channel.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/console/human_input_v2/config_version.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/console/human_input_v2/contact.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/console/human_input_v2/entities.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/console/human_input_v2/errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/console/human_input_v2/form.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/console/human_input_v2/provider_updates.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/console/human_input_v2/provider_views.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/console/human_input_v2/providers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/knowledge_fs/error.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/knowledge_fs/features.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/notification.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/workflow_run_archive.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/workspace/account.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/workspace/error.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/workspace/model_providers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/workspace/network_access_group.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/console/wraps.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/inner_api/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/inner_api/agent/llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/_errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/_multipart.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/app_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/app_workflow.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/auth/requirements.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/openapi/skills.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/workflow_events.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/service_api/app/completion.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/service_api/app/conversation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/service_api/app/human_input_form.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/service_api/app/workflow.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/service_api/dataset/document.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/service_api/knowledge_fs/resources.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/web/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/web/human_input_form.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/web/human_input_form_access_request.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/web/human_input_v2.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/web/human_input_v2_file_upload.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/controllers/web/human_input_v2_im_webhook.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/agent/output_parser/cot_output_parser.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/app/apps/advanced_chat/app_generator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/app/apps/base_app_generator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/app/apps/common/workflow_response_converter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/app/apps/message_based_app_queue_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/app/apps/pipeline/pipeline_generator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/app/apps/workflow/app_generator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/app/apps/workflow/app_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/app/apps/workflow_app_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/app/entities/app_invoke_entities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/app/entities/queue_entities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/app/entities/rag_pipeline_invoke_entities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/app/entities/task_entities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/app/features/rate_limiting/rate_limit.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/app/layers/pause_state_persist_layer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/entities/execution_extra_content.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/helper/download.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/helper/provider_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/helper/ssrf_proxy.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input/enums.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/entities.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/adapters/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/adapters/avatar.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/adapters/credentials.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/adapters/dingtalk.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/adapters/dingtalk_redis.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/adapters/entities.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/adapters/factory.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/adapters/feishu_lark.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/adapters/message_locator.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/adapters/ms_teams.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/adapters/protocols.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/adapters/slack.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/adapters/wecom.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/binding_commands.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/change_log.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/ports.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/records.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/sync_reconciliation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_integration/sync_records.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_message_inbox/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/im_message_inbox/contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/resolved_form.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/shared/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/core/human_input_v2/shared/values.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/llm_generator/output_parser/structured_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/llm_generator/prompts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/plugin/backwards_invocation/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/plugin/plugin_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/provider_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/rag/extractor/csv_extractor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/rag/extractor/extract_processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/rag/extractor/markdown_extractor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/rag/extractor/notion_extractor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/rag/extractor/pdf_extractor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/rag/extractor/unstructured/unstructured_eml_extractor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/rag/extractor/word_extractor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/rag/retrieval/dataset_retrieval.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/repositories/human_input_repository.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/tools/entities/tool_entities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/tools/tool_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/tools/utils/dataset_retriever/dataset_multi_retriever_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/tools/utils/parser.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/tools/workflow_as_tool/tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/core/workflow/file_reference.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

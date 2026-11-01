@@ -37,6 +37,18 @@ The [executor facade](https://github.com/router-for-me/CLIProxyAPI/blob/ad8bdd3f
 
 The [OAuth helper](https://github.com/router-for-me/CLIProxyAPI/blob/ad8bdd3f20bef44f0684b8a6096a216b2c76040d/internal/misc/oauth.go) generates cryptographically random state and permissively parses manually pasted callbacks, including fragments and bare query strings. Parsing does not validate the expected state, redirect origin or client identity; those checks belong to the owning flow. Buffered prompt-result channels prevent a blocked send if abandoned, but do not cancel the prompt itself. Adapt explicit capability/credential generation contracts with authenticated callback checks and scoped cancellation. No authentication, credentials, proxy request or tests were exercised.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `250d598175db61a4e99ac38b9164ed04745754e5` (commit date `2026-10-31T21:09:56+08:00`), compared with `ad8bdd3f20bef44f0684b8a6096a216b2c76040d`. Earlier observations remain historical evidence.
+
+**Scope:** Changed frontend-auth adapter body negotiation and complete associated body fixtures. Other proxy executors, authorization composition, upstream account eligibility and deployment were not audited.
+
+The [frontend-auth adapter](https://github.com/router-for-me/CLIProxyAPI/blob/250d598175db61a4e99ac38b9164ed04745754e5/internal/pluginhost/adapters_auth.go) negotiates body omission through both schema version and a provider capability. The omission branch skips body reading and decompression while retaining headers and query metadata. Legacy or non-opting providers retain the body path; in-process providers receive a copied body while the RPC path avoids an additional clone. [Fixtures](https://github.com/router-for-me/CLIProxyAPI/blob/250d598175db61a4e99ac38b9164ed04745754e5/internal/pluginhost/adapters_auth_body_test.go) check that opted-out authentication leaves compressed bytes untouched even with occupied decoding capacity or a failing reader, preserves metadata, and does not mutate the in-process source buffer. This is data minimization for a negotiated plugin contract, not proof that the plugin receives no secrets: authentication headers remain available.
+
+**Teamagent implication (inference):** Describe each plugin's required request fields explicitly, negotiate capability versions and retain bounded legacy handling. Keep payload minimization separate from credential grants, account entitlement and transport compatibility; a working authentication adapter cannot establish subscription or model-route eligibility.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cli-proxy-api](https://github.com/router-for-me/CLIProxyAPI); analyzed commit `ad8bdd3f20bef44f0684b8a6096a216b2c76040d`; commit date 2026-10-27T23:23:26+08:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--cli-proxy-api.md).
+Analysis metadata: source [cli-proxy-api](https://github.com/router-for-me/CLIProxyAPI); analyzed commit `250d598175db61a4e99ac38b9164ed04745754e5`; commit date 2026-10-31T21:09:56+08:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--cli-proxy-api.md).
 <!-- teamagent-analysis:end -->

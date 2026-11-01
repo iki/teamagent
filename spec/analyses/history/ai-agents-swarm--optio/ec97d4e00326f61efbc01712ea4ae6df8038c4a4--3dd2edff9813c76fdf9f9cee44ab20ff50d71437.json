@@ -1,0 +1,955 @@
+{
+  "id": "ai-agents-swarm--optio",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/jonwiggins/optio",
+  "report": "spec/projects/ai-agents-swarm--optio.md",
+  "analyzedSha": "ec97d4e00326f61efbc01712ea4ae6df8038c4a4",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T16:32:23-06:00",
+  "observedSha": "3dd2edff9813c76fdf9f9cee44ab20ff50d71437",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3dd2edff9813c76fdf9f9cee44ab20ff50d71437",
+      "date": "2026-10-31T20:07:49-06:00",
+      "subject": "fix(deps): patch minimatch and glob advisories; deflake local transcript nudge test"
+    },
+    {
+      "sha": "5fca5e6c8575a059ff46bad82d9e4f85409ef88a",
+      "date": "2026-10-30T23:17:04-06:00",
+      "subject": "feat(workspaces): add Coder, Codespaces, Daytona and E2B (#702)"
+    },
+    {
+      "sha": "4b114daed579e4774d4c417c697b16cca30912b1",
+      "date": "2026-10-30T23:09:02-06:00",
+      "subject": "feat(gitlab): report MR pipelines and rebase before merging (#698)"
+    },
+    {
+      "sha": "52a6f0b4e8dda980f4d96aaa06c7eff85284f076",
+      "date": "2026-10-30T21:18:02-06:00",
+      "subject": "feat(prompts): add platform defaults and optional starter prompts (#717)"
+    },
+    {
+      "sha": "12c3c317760f15a565bba0a0e1ee210b1c8c8207",
+      "date": "2026-10-30T21:17:31-06:00",
+      "subject": "feat(auth): add LDAP and Active Directory sign-in (#695)"
+    },
+    {
+      "sha": "21fc1f53155ab7aafbb01b046a8c5a9389bea50e",
+      "date": "2026-10-30T21:17:22-06:00",
+      "subject": "feat(web): optional getting-started checklist and in-app guide (#727)"
+    },
+    {
+      "sha": "a238e2091e0a118cdfc373f5614002621516ac1e",
+      "date": "2026-10-30T21:17:06-06:00",
+      "subject": "feat(gitlab): resume merge requests from reviewer feedback (#691)"
+    },
+    {
+      "sha": "211ca879ca566a8e0397a401f61826fbfade84b6",
+      "date": "2026-10-29T16:33:18-06:00",
+      "subject": "fix(web): an example clicked before the last settings load keeps its Then and Where (#720)"
+    },
+    {
+      "sha": "8522b3cacbec487e21ee146470c323162e7505dc",
+      "date": "2026-10-29T15:08:17-06:00",
+      "subject": "docs: changelog for v0.23.0"
+    },
+    {
+      "sha": "129a2fb12a6ce1b564b3641800b85b4cbc457e73",
+      "date": "2026-10-29T15:06:06-06:00",
+      "subject": "chore: clean up split residue from the self-hosting PRs (#714)"
+    },
+    {
+      "sha": "34deb5b448a728c5f489c2aca3d62380214696c7",
+      "date": "2026-10-29T14:53:05-06:00",
+      "subject": "feat(auth): add Gitea and Bitbucket sign-in (#697)"
+    },
+    {
+      "sha": "902b299ee2358435e7aa2bce7b6ce9221f2a1977",
+      "date": "2026-10-29T14:05:38-06:00",
+      "subject": "feat(auth): add SAML 2.0 sign-in (#696)"
+    },
+    {
+      "sha": "737351b06a829e7ac245c21bb46115d8872f68b0",
+      "date": "2026-10-29T13:55:42-06:00",
+      "subject": "feat(gitlab): persist repo platforms and browse group issues (#700)"
+    },
+    {
+      "sha": "e20d34a1e14b93fa5377b6650b5ec63c55f79220",
+      "date": "2026-10-30T08:33:24+13:00",
+      "subject": "feat(web): PR and ticket badges wear their state; End session asks nothing, Delete asks (#719)"
+    },
+    {
+      "sha": "a4338ba4e2b7ed00ef26d413ecefa331013a4db3",
+      "date": "2026-10-29T11:41:33-06:00",
+      "subject": "feat(gitlab): scope host tokens and agent git credentials (#699)"
+    },
+    {
+      "sha": "40b6768ec535cda6caef69669aac01dcc9fd4675",
+      "date": "2026-10-29T11:41:06-06:00",
+      "subject": "feat(ops): add Prometheus metrics and monitoring resources (#707)"
+    },
+    {
+      "sha": "ba27007fc65e5dabf763990d82cc5d44dfa32fe4",
+      "date": "2026-10-29T11:40:39-06:00",
+      "subject": "feat(deploy): add Zarf packaging and Rancher install options (#705)"
+    },
+    {
+      "sha": "b8773b018cbccf74f3039c0b7c4f7a426e2284fd",
+      "date": "2026-10-29T11:40:11-06:00",
+      "subject": "feat(auth): configure OpenID Connect sign-in in the app (#694)"
+    },
+    {
+      "sha": "3163761c3a0974bbb290afea8d09ddc1a8e8ac7c",
+      "date": "2026-10-28T23:03:56-06:00",
+      "subject": "chore: remove dead code, stale configs and outdated docs (#716)"
+    },
+    {
+      "sha": "e50a126373b6d4f014b7b48dee278209e815a795",
+      "date": "2026-10-28T19:56:05-06:00",
+      "subject": "feat(triggers): more GitHub event kinds and who / what filters (#715)"
+    },
+    {
+      "sha": "4b236a54b813d26eee6773f3f19d8245bf60526c",
+      "date": "2026-10-28T19:22:35-06:00",
+      "subject": "fix(work): a resumed session hands its row to the resume on every client"
+    },
+    {
+      "sha": "bf6cac2e66a5adeab585bd4321bbe50293d89c27",
+      "date": "2026-10-28T17:08:49-06:00",
+      "subject": "fix(local): Codex halts read as needs-you again; a resume keeps its session's origin"
+    },
+    {
+      "sha": "55532f3827f51e57bb881c3ad56043033b6b4f1e",
+      "date": "2026-10-28T16:54:24-06:00",
+      "subject": "feat(settings): configure deployment options and workspace creation (#689)"
+    },
+    {
+      "sha": "66b2fdd869bf4ff8def7a4a17ab023f9feb7b3d3",
+      "date": "2026-10-28T16:53:51-06:00",
+      "subject": "feat(build): opt-in offline image builds and dependency kits (#684)"
+    },
+    {
+      "sha": "194fef8835673c36901cbe437d264095733139f3",
+      "date": "2026-10-28T16:44:53-06:00",
+      "subject": "feat(ops): add database backup and restore tooling (#706)"
+    },
+    {
+      "sha": "8b901b031fbaf1e8ba3e4938a8a0295e70ffa028",
+      "date": "2026-10-28T16:30:56-06:00",
+      "subject": "feat(cli): add platform-aware output and repo selection (#704)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-images.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile.agent",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile.api",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile.web",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/android/core/model/src/main/kotlin/dev/optio/core/model/SharedTypes.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/triggers/TriggerEditor.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/triggers/TriggerModel.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/android/core/workfeed/src/main/kotlin/dev/optio/core/workfeed/WorkFeed.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/android/core/workfeed/src/test/kotlin/dev/optio/core/workfeed/WorkFeedTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/terminal/LocalTerminalViewModelTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/e2e/feature-lists.e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/e2e/hermetic-server.e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/e2e/scale-out-runs.e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/e2e/webhook-ingress-auth.e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/scripts/check-encryption-key.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/db/github-trigger-events-migration.int.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/db/migrations/1793059201_deployment_settings.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/db/migrations/1793227512_local_terminal_resume_lineage.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/db/migrations/1793230000_github_trigger_events_pinned.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/db/migrations/1793318400_oidc_sign_in_settings.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/db/migrations/1794702000_coder.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/db/migrations/1794702001_remote_workspaces.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/db/migrations/meta/_journal.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/db/schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/defaults-parity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/plugins/auth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/agent-options.extra.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/agent-options.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/auth.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/auth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/cli-downloads.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/cli-downloads.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/connections.extra.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/connections.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/deployment-settings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/event-ingress.extra.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/event-ingress.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/features.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/features.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/git-credential-helper.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/git-credential-isolation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/github-app.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/local.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/local.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/optio-settings.extra.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/optio-settings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/prompt-templates-seed.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/prompt-templates.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/prompt-templates.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/query-validation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/remote-workspaces.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/remote-workspaces.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/repos-browse.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/repos.extra.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/repos.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/repos.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/setup.extra.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/setup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/setup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/sign-in-ldap.int.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/sign-in-oauth-more.int.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/sign-in-saml.int.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/sign-in.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/tasks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/tasks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/tickets.extra.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/tickets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/work-links.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/work-links.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/routes/workspace-creation-failure.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/workspaces.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/routes/workspaces.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/schemas/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/schemas/local.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/schemas/sign-in.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/schemas/task.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/schemas/trigger.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/schemas/work.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/schemas/work.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/auth/ldap.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/auth/ldap.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/auto-merge-guard.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/auto-merge-guard.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/commit-trailers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/commit-trailers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/config/kinds/repo.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/config/kinds/repo.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/connection-service.extra.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/connection-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/controller-mcp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/database-restore-check.int.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/database-restore-check.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/database-restore-check.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/deployment-admin-gates.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/deployment-settings.int.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/deployment-settings.onboarding.int.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/deployment-settings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/envoy-sidecar.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/envoy-sidecar.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/event-trigger-service.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/event-trigger-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/event-trigger-sources.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/feature-guard.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/feature-guard.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/git-access-env.gitlab.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/git-access-env.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/git-access-env.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/git-platform/codecommit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/git-platform/codecommit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/git-platform/github.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/git-platform/github.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/git-platform/gitlab-ci-logs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/git-platform/gitlab-ci-logs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/git-platform/gitlab.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/git-platform/gitlab.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/git-platform/pr-search.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/git-token-host-precedence.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/git-token-service.int.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/git-token-service.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/git-token-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/gitlab-commit-identity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/gitlab-commit-identity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/local-host-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/local-run-service.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/local-run-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/local-terminal-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/local.int.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/oauth/bitbucket.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/oauth/gitea.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/oauth/gitea.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/oauth/idp-egress.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/oauth/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/oauth/more-providers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/oauth/oidc-settings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/oauth/oidc.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/oauth/oidc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/oauth/provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/oauth/saml.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/oauth/saml.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/api/src/services/optio-tool-executor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/api/src/services/optio-tool-executor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/pr-conversation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/pr-conversation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/services/pr-review-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/pr-review-state.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/pr-review-state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/api/src/services/prompt-template-service.platform.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

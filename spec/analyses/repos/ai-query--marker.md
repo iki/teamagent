@@ -2,11 +2,11 @@
 
 Source: [marker](https://github.com/datalab-to/marker) · [Analysis](../../projects/ai-query--marker.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81`; commit date: 2026-10-22T06:45:42-04:00; review date: 2026-10-28T08:26:04.502Z; observed SHA: `6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `71dd5fd7e51ab24f8624b6ba2fcb6014b4e40ed4`; commit date: 2026-10-29T14:08:53-04:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `71dd5fd7e51ab24f8624b6ba2fcb6014b4e40ed4`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/datalab-to/marker/compare/6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81...6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/datalab-to/marker/compare/71dd5fd7e51ab24f8624b6ba2fcb6014b4e40ed4...71dd5fd7e51ab24f8624b6ba2fcb6014b4e40ed4). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -51,6 +51,14 @@ Evidence: [packages/fokosdb/src/sharding/topology-cache.ts:27-39](https://github
 
 **Scope and limits:** Reviewed topology key construction and scope-separation fixtures; the separate materialization-target changes were not audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `4629dc71f52887bcd5702c1fcb3f5d8cdc9526fd` against `3ec80287b0b30251245c72212e0de2b23b9bf9d1` (41 changed paths). The [partition implementation](https://github.com/lambrospetrou/fokosdb/blob/4629dc71f52887bcd5702c1fcb3f5d8cdc9526fd/packages/fokosdb/src/server/do-partition.ts) retains initialization failure as state and rejects guarded work with a typed initialization error, while leaving diagnostic status and destruction available. Its alarm path schedules a later alarm while initialization remains failed; the shown path does not rerun migration or clear that error in the same instance. Scheduling is consequently not evidence of repair. Inspected initial [failure fixtures](https://github.com/lambrospetrou/fokosdb/blob/4629dc71f52887bcd5702c1fcb3f5d8cdc9526fd/packages/fokosdb/test/partition-do/init-failure.test.ts) poison schema state separately from an aborting call and exercise degraded operation.
+
+**Harness consequence:** Keep failed resources inspectable without admitting normal work; record retry scheduling separately from successful recovery. Destruction still needs independent authority and preserved evidence. Avoid exposing raw initialization exceptions in general diagnostics.
+
+**Scope and limits:** Selected partition diff and initial fixture portion only; no workerd/Durable Object execution or database repair was performed, and broader namespace changes were not audited.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [fokosdb](https://github.com/lambrospetrou/fokosdb); analyzed commit `3ec80287b0b30251245c72212e0de2b23b9bf9d1`; commit date 2026-10-27T23:06:49Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--fokosdb.md).
+Analysis metadata: source [fokosdb](https://github.com/lambrospetrou/fokosdb); analyzed commit `4629dc71f52887bcd5702c1fcb3f5d8cdc9526fd`; commit date 2026-11-01T02:02:07Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--fokosdb.md).
 <!-- teamagent-analysis:end -->

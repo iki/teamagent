@@ -33,6 +33,16 @@ The [layout validator](https://github.com/ifixai-ai/iFixAi/blob/28dca41227963536
 The [repair search](https://github.com/ifixai-ai/iFixAi/blob/28dca412279635361d626574810aae8d91ab6b45/ifixai/policy_lab/repair.py) bounds permission-removal cardinality, candidates and transitions, preserves coverage limits and limits minimality to the explored removal space. It does not modify deployed authorization, code or guards. The [discovery tests](https://github.com/ifixai-ai/iFixAi/blob/28dca412279635361d626574810aae8d91ab6b45/ifixai/tests/core/test_discovery_empty_permission_matrix.py) preserve an explicitly empty grant matrix as deny-all evidence, while unavailable capability retains inferred grants; those inferred permissions must remain visibly non-authoritative in Teamagent. Adapt explicit coverage, fixture completeness and separate modeled/observed results. No inspection, model search, repair, provider call or tests were executed.
 
 
+## 2026-11-01 scoped source refresh
+
+Reviewed `28dca412279635361d626574810aae8d91ab6b45` → `f668bbd3a4e70ae040f7aeecce03e2b9bd7cc518`: all provider/model-catalog code and both added test files in the 14-path delta. Download-count history was excluded from semantic review. Earlier findings remain historical evidence.
+
+The new [SDK error helper](https://github.com/ifixai-ai/iFixAi/blob/f668bbd3a4e70ae040f7aeecce03e2b9bd7cc518/ifixai/providers/base.py#L543-L571) appends an exception's response body when the displayed exception omitted it. Provider adapters and strict-schema fallback now use that fuller text, recovering quota/type/gateway fields needed by their classifiers. [Fixtures](https://github.com/ifixai-ai/iFixAi/blob/f668bbd3a4e70ae040f7aeecce03e2b9bd7cc518/ifixai/tests/providers/test_sdk_error_text.py) construct old/new SDK-style errors, assert no duplicated old body, preserve absent-body errors and classify exhausted quota as fatal. They do not exercise a real SDK response or provider.
+
+This helper serializes the entire body without an explicit size or redaction boundary. Teamagent should retain allowlisted status/code/request identifiers and bounded confidential diagnostics separately from user-facing errors; restoring useful evidence must not expose echoed credentials or customer content. A recognized optional-parameter rejection and an uncertain billable request still require different retry authority.
+
+The [catalogue defaults](https://github.com/ifixai-ai/iFixAi/blob/f668bbd3a4e70ae040f7aeecce03e2b9bd7cc518/ifixai/cli/model_catalog.py) and [new assertions](https://github.com/ifixai-ai/iFixAi/blob/f668bbd3a4e70ae040f7aeecce03e2b9bd7cc518/ifixai/tests/test_model_catalog_defaults.py) replace two named defaults and reject the listed prior identifiers. These static lists are not authenticated availability, entitlement, pricing or training-policy evidence. No upstream tests, SDK installation or provider request was run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ifixai](https://github.com/ifixai-ai/iFixAi); analyzed commit `28dca412279635361d626574810aae8d91ab6b45`; commit date 2026-10-24T23:10:50Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-eval--ifixai.md).
+Analysis metadata: source [ifixai](https://github.com/ifixai-ai/iFixAi); analyzed commit `f668bbd3a4e70ae040f7aeecce03e2b9bd7cc518`; commit date 2026-10-30T20:50:38+02:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-eval--ifixai.md).
 <!-- teamagent-analysis:end -->

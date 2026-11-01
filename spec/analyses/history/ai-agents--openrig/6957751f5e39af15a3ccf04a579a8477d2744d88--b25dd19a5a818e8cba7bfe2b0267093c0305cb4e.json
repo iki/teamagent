@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--openrig",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/mvschwarz/openrig",
+  "report": "spec/analyses/unreviewed/ai-agents--openrig.md",
+  "analyzedSha": "6957751f5e39af15a3ccf04a579a8477d2744d88",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T14:13:32-07:00",
+  "observedSha": "b25dd19a5a818e8cba7bfe2b0267093c0305cb4e",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "b25dd19a5a818e8cba7bfe2b0267093c0305cb4e",
+      "date": "2026-10-30T07:49:24-07:00",
+      "subject": "fix(daemon): end the control session with a hook, not destroy-unattached (#2317)"
+    },
+    {
+      "sha": "9a54284d47a3f3eaec2575d57be4fe7d4d763cf4",
+      "date": "2026-10-30T06:57:27-07:00",
+      "subject": "feat(hosts): add rig host edit and remove (#2310)"
+    },
+    {
+      "sha": "cf50c94b1d6338551f19ae7ef4c522dba66aa3e7",
+      "date": "2026-10-30T06:45:30-07:00",
+      "subject": "fix(usage): retain charge post retries during lookups (#2314)"
+    },
+    {
+      "sha": "5a3980e893d0796fa9f146355a7154870d68962d",
+      "date": "2026-10-30T05:07:36-07:00",
+      "subject": "docs(roadmap): 0.7.6 is released (#2312)"
+    },
+    {
+      "sha": "345410cdbbc8b2931688aa8787e80b34a3e4b7fa",
+      "date": "2026-10-30T05:06:01-07:00",
+      "subject": "fix(daemon): check expected native conversation on reads and sends (#2309)"
+    },
+    {
+      "sha": "ff604d943de9906a343fc44c260278f6a29c5dce",
+      "date": "2026-10-30T04:49:18-07:00",
+      "subject": "fix(daemon): read Claude's \"Update installed\" footer as a status line (#2311)"
+    },
+    {
+      "sha": "371a2f39161a18c3058b1e954bf725b3b5455363",
+      "date": "2026-10-30T03:39:28-07:00",
+      "subject": "feat(daemon): isolate managed tmux sessions per instance (#1260)"
+    },
+    {
+      "sha": "18e3446a06487098818329b3f3a13bd42842115f",
+      "date": "2026-10-30T03:04:04-07:00",
+      "subject": "docs(reference): the runner contract's 0.7.6 pieces are published (#2308)"
+    },
+    {
+      "sha": "0ccd0132903525de2ff9787f7d8898e235131a47",
+      "date": "2026-10-30T02:35:25-07:00",
+      "subject": "feat: add observed OpenShell lifecycle and exact native restore (#2300)"
+    },
+    {
+      "sha": "bc5505e9050c845b7e2ee597c76635ce288b2d36",
+      "date": "2026-10-30T02:24:58-07:00",
+      "subject": "chore(release): bind the packaged-plugin baseline to published 0.7.6 and advance openrig-core to 0.1.24 (#2307)"
+    },
+    {
+      "sha": "fbf61c76741d4b8b923f51166602a0a965d2c7a7",
+      "date": "2026-10-30T01:58:25-07:00",
+      "subject": "feat(docs): a runner conformance check runner authors point at their runner (#2303)"
+    },
+    {
+      "sha": "9751fd1c879a196b3640d6ce3fc886092539719d",
+      "date": "2026-10-30T01:31:06-07:00",
+      "subject": "fix(cli): say when doctor's port is held by another user's OpenRig daemon (#2302)"
+    },
+    {
+      "sha": "369557593e5fd3e4cdaf8dd65f26128f06b0cec0",
+      "date": "2026-10-29T22:56:35-07:00",
+      "subject": "Run OpenShell workers with verified context and artifact return (#2296)"
+    },
+    {
+      "sha": "42221ed4a5f43625da1471e1093d8d1b092cb9b1",
+      "date": "2026-10-29T22:17:18-07:00",
+      "subject": "feat(daemon): seat activity grant on the hook ingress (#2295)"
+    },
+    {
+      "sha": "243a41ec0366994f6ab9707c0fe2a3d2bf2264d9",
+      "date": "2026-10-29T22:00:17-07:00",
+      "subject": "fix(export): preserve authored pod startup actions (#2297)"
+    },
+    {
+      "sha": "ff39b773444d8d1c04afc53cf8b8ec3c451f6b13",
+      "date": "2026-10-29T18:26:35-07:00",
+      "subject": "fix(slack): record a typed reply as the answer to a decision parked on its person (#2293)"
+    },
+    {
+      "sha": "270f5dde4a816d73e54eaf4728a9c27de8dd242f",
+      "date": "2026-10-29T17:44:58-07:00",
+      "subject": "fix(daemon): trust OpenRig's own hooks on an install with no recorded choice (#2294)"
+    },
+    {
+      "sha": "5bc95cb6cd5a794d93202209d28182bd4a23142a",
+      "date": "2026-10-29T16:03:49-07:00",
+      "subject": "fix(queue): avoid false wake finding for local kernel human (#2286)"
+    },
+    {
+      "sha": "ea21ade40b3b2ea88236351a2532a4d0aaab8a53",
+      "date": "2026-10-29T15:45:16-07:00",
+      "subject": "fix: route kernel Codex hook review through prompt escalation (#2290)"
+    },
+    {
+      "sha": "b59593f1879327ad54f59587416d3aa1ccb1a5c4",
+      "date": "2026-10-29T15:27:54-07:00",
+      "subject": "fix(daemon): say claude wasn't found when a launch's pane is back at its shell (#2282)"
+    },
+    {
+      "sha": "e6cf5bf47cc06c4aac0899061b68ede6218c73e5",
+      "date": "2026-10-29T14:59:23-07:00",
+      "subject": "docs: qualify typed Slack answers for parked questions (#2292)"
+    },
+    {
+      "sha": "68865bc5e74f947e36b9b5bdd852da54f15c2317",
+      "date": "2026-10-29T14:43:21-07:00",
+      "subject": "fix(cli,daemon): handover's fork source is a seat, and the dry run checks it (#2287)"
+    },
+    {
+      "sha": "7ba456f97c2c3e4be6597d278e0d855f5860831c",
+      "date": "2026-10-29T14:34:29-07:00",
+      "subject": "test(daemon): preserve missing identity on reconcile (#2285)"
+    },
+    {
+      "sha": "ee41cf610cb7253e38dc56936b13f89c67727dcd",
+      "date": "2026-10-29T14:30:57-07:00",
+      "subject": "fix: preserve original viewer failures in follow notices (#2289)"
+    },
+    {
+      "sha": "957dd83bd1c56c515c52c8693d08cf03e355db42",
+      "date": "2026-10-29T14:10:18-07:00",
+      "subject": "docs: qualify slice-follow hold notice reasons (#2288)"
+    },
+    {
+      "sha": "f8ff3a9c7b2fbd1743099ede92ad72cfbe5c81f1",
+      "date": "2026-10-29T14:01:43-07:00",
+      "subject": "fix(daemon): say when Codex hook review is for OpenRig's own unapproved hooks (#2284)"
+    },
+    {
+      "sha": "8f4a5f4b3a973109c9d5d9d8d6fbafe24991f689",
+      "date": "2026-10-29T13:10:10-07:00",
+      "subject": "Bound quota-full parked reminders and exclude terminal-only recipients (#2281)"
+    },
+    {
+      "sha": "7a5d83c31cfb5e5af0f45c244d31350b7a2f40b4",
+      "date": "2026-10-29T12:23:03-07:00",
+      "subject": "docs: carry 0.7.6 release guidance onto main (#2283)"
+    },
+    {
+      "sha": "c083cfe9cae1ad61705f4c912ef37d9a28bb172f",
+      "date": "2026-10-29T12:01:29-07:00",
+      "subject": "fix(cli): say no row was created when the daemon refuses a new row's fields (#2280)"
+    },
+    {
+      "sha": "f9f13dafbec02554685885a682facd48afa62f49",
+      "date": "2026-10-29T11:12:25-07:00",
+      "subject": "Explain unverified shell delivery dependency (#2202)"
+    },
+    {
+      "sha": "9cba975cd00b01e9b4d979688e6608bdc30a8882",
+      "date": "2026-10-29T10:02:17-07:00",
+      "subject": "docs: name the kernel dashboard's session from rig ps in its recovery steps (#2275)"
+    },
+    {
+      "sha": "4ef3295ee7c5c062cd0231371319788f8c473970",
+      "date": "2026-10-29T09:39:16-07:00",
+      "subject": "perf(daemon): avoid rescanning long transcript tails (#2274)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ROADMAP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/as-built/architecture/adapters-and-runtimes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/as-built/architecture/agent-spec-and-startup.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/as-built/architecture/lifecycle-snapshot-restore.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/as-built/cli-reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/as-built/test-layers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/agent-state-taxonomy.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reference/author-contracts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/community-harness-examples/cursor/cursor.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/community-harness-examples/cursor/openrig-cursor-launch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/community-harness-examples/hermes/hermes.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/community-harness-examples/hermes/openrig-hermes-launch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reference/community-harness-examples/openshell/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/community-harness-presets.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reference/execution-platform-contract.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/getting-started.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reference/harness-runner-contract.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/quickstart.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/rig-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reference/runner-conformance/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reference/runner-conformance/check-runner.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reference/runner-conformance/fake-acp-agent.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/slack-app-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/terminal-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reference/tmux-servers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/releases/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/acp/connector.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/attach.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/chatroom.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/crash-cart.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/destroy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/doctor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/edge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/env.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/commands/environment.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/queue.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/seat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/send.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/setup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/slack.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/startup-proof.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/status.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/terminal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/tui.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/config-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/cross-host-target.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/daemon-lifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/destroy-helpers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/host-registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/lazy-program.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/lib/account-home-switch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/lib/scope/scope-fs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/mcp-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/openrig-compat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/shared-tui.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/terminal-window.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/tmux-attachment.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/acp-connector.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/attach.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/test/chatroom-watch-tmux-args.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/config-store-extended.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/cross-host-target.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/daemon-lifecycle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/daemon-start-identity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/destroy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/doctor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/env.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/test/environment-export-http.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/host-bindings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/test/host-edit-remove-command.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/test/host-registry-edit-remove.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/host.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/local-origin.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/test/local-tmux-attachment.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/mcp-queue-daemon.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/mcp-server.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/test/openrig-url-trailing-slash.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/provider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/queue-create-reconcile-by-id.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/queue-host-refusal-hint.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/scope-fs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/seat-set-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/seat.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/send.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/setup-output.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/shared-tui.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/status.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/sweep-c-config-boot-key-notice.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/terminal-open-budget.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/terminal-open-window-default.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/terminal-window-kernel-preview.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/terminal-window-reuse.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/terminal-window-tmux.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/terminal-window-tui-preview.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/terminal-window.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/terminal.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/test/tmux-attachment.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/test/tmux-server-record.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/assets/openshell/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/assets/openshell/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/assets/openshell/agents/coordinator/agent.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/assets/openshell/agents/coordinator/role.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/assets/openshell/agents/worker/agent.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/assets/openshell/agents/worker/role.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/assets/openshell/claude-code-provider.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/assets/openshell/driver-v1.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/assets/openshell/guest.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/assets/openshell/policy.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/assets/openshell/preset.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/assets/openshell/rig.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/assets/plugins/openrig-core/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/assets/plugins/openrig-core/.codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/assets/plugins/openrig-core/hooks/claude.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/assets/plugins/openrig-core/hooks/scripts/activity-relay.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/assets/plugins/openrig-core/skills/seat-continuity-and-handover/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/context-packs-src/onboarding-width/public-what-you-can-do.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/specs/agents/shared/skills/core/openrig-architect/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/specs/agents/shared/skills/core/openrig-upgrade/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/specs/agents/shared/skills/core/rig-lifecycle/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/specs/rigs/launch/kernel/agents/operator/agent/guidance/role.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/specs/rigs/launch/kernel/culture/CULTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/adapters/claude-code-adapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/adapters/claude-resume.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/adapters/codex-runtime-adapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/adapters/community-harness-runtime-adapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/adapters/openshell-driver.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/adapters/openshell-podman-observer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/adapters/pi-openrouter-charge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/adapters/pi-runner-protocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/adapters/tmux-control.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/adapters/tmux-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/adapters/tmux.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/db/all-migrations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/db/migrations/141_node_account_home.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/db/migrations/141_session_agent_runner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/db/migrations/142_node_claude_mcp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/db/migrations/143_activity_grants.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/db/migrations/144_environment_bindings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/active-occupant.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/domain/activity-grants.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/activity-taxonomy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/agent-activity-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/claim-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/claude-credential-precedence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/claude-managed-launch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/domain/claude-mcp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/claude-seat-token.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/codex-owned-plugin-trust.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/codex-rebuild-permissions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/community-harness-presets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/composer-prompts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/draft-aware-delivery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/domain/environment-artifacts.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

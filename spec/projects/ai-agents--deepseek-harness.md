@@ -50,6 +50,18 @@ For Teamagent, compare requested authority against the current effective policy 
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `ce7073d51254c26cd63b22a60835b8f948deb447` (commit date `2026-10-30T00:13:15+08:00`), compared with `f3803c96974ad4a94195fb97e5c637e9c2a3afe3`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded import-transform implementation branches and selected live-binding/shadowing fixtures; whole-repository diff exceeded the bound. Full compiler, worker isolation and browser execution not audited.
+
+The [experimental worker transform](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/experimental/webworker-runtime/src/compile/transform.ts) replaces captured import values with reads through module objects, preserves unbound-call receiver behavior and conditionally invokes scope analysis where names may be shadowed. [Fixtures](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/experimental/webworker-runtime/tests/compile/transform-imports.spec.ts) cover changing exports, local shadowing, call/statement syntax and rejected import writes. Some direct-eval forms are rejected for transform correctness, while others remain accepted; this is not an untrusted-code isolation guarantee.
+
+**Teamagent implication (inference):** Version compiler/lowering behavior in worker image and verification cache identities, and test semantic differences rather than bundle success alone. Keep executable loading inside a trusted adapter; a transform's syntax handling cannot replace capability enforcement or browser/native acceptance tests.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness); analyzed commit `f3803c96974ad4a94195fb97e5c637e9c2a3afe3`; commit date 2026-10-28T02:17:58+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepseek-harness.md).
+Analysis metadata: source [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness); analyzed commit `ce7073d51254c26cd63b22a60835b8f948deb447`; commit date 2026-10-30T00:13:15+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepseek-harness.md).
 <!-- teamagent-analysis:end -->

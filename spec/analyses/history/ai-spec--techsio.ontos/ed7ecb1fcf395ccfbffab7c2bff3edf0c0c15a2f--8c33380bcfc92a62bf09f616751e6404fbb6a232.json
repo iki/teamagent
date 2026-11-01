@@ -1,0 +1,985 @@
+{
+  "id": "ai-spec--techsio.ontos",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/TechsioCZ/ontos",
+  "report": "spec/projects/ai-spec--techsio.ontos.md",
+  "analyzedSha": "ed7ecb1fcf395ccfbffab7c2bff3edf0c0c15a2f",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-23T17:42:24Z",
+  "observedSha": "8c33380bcfc92a62bf09f616751e6404fbb6a232",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "8c33380bcfc92a62bf09f616751e6404fbb6a232",
+      "date": "2026-10-31T23:20:24Z",
+      "subject": "fix(quality): delete only recorded audit runs and keep retention best-effort"
+    },
+    {
+      "sha": "68e110fd8bd3c799452e5a600b41449638467315",
+      "date": "2026-10-31T23:20:24Z",
+      "subject": "fix(quality): prune superseded quality-audit runs"
+    },
+    {
+      "sha": "72149af1c4308a0b2d748f07a23e0180405f9415",
+      "date": "2026-10-31T14:33:34Z",
+      "subject": "perf(check): run pnpm check in parallel lanes"
+    },
+    {
+      "sha": "0a73a3d63f3587ebbe55ad72933d4b02587d4d8a",
+      "date": "2026-10-31T14:20:10Z",
+      "subject": "chore(deps): adopt UltraModern 3.9.3-ultramodern.17"
+    },
+    {
+      "sha": "3af5902fa7f176983ec097575ae312ac07ba397b",
+      "date": "2026-10-31T09:56:33Z",
+      "subject": "chore: update external runtimes and harden dependency pins"
+    },
+    {
+      "sha": "f978c84d0a7096b9e98798d9a1d006865cfa6238",
+      "date": "2026-10-31T01:05:17Z",
+      "subject": "test(frontend): check one shared browser policy without repeating its versions"
+    },
+    {
+      "sha": "fc03c066c91edce1cca31c12abdaae5e391914d0",
+      "date": "2026-10-31T01:05:17Z",
+      "subject": "chore(frontend): raise browser baseline to Chrome 144 and Safari 27"
+    },
+    {
+      "sha": "4a960764f783669cb28d14c4e97f2b9978cad207",
+      "date": "2026-10-31T00:10:24Z",
+      "subject": "docs: say which tests may block merges and how to run CI's tooling gate locally"
+    },
+    {
+      "sha": "eaccdf6afdc5cf627b6a160619bf8927e46400d8",
+      "date": "2026-10-31T00:10:24Z",
+      "subject": "ci: run CI's tooling gate locally and drop its duplicate entrypoint check"
+    },
+    {
+      "sha": "6b99718f6104dce9b6c8221f2e602462b0aac7c5",
+      "date": "2026-10-31T00:10:24Z",
+      "subject": "test: replace source-shape checks with dev contract middleware behavior"
+    },
+    {
+      "sha": "58d89e46324364f2dc3df78ded22f1d9fc20bb34",
+      "date": "2026-10-31T00:10:24Z",
+      "subject": "test(tooling): drop the app-versus-starter config equality test"
+    },
+    {
+      "sha": "ab3f7d9b2ca57a55452fc5be5ab4339a80ddf6a4",
+      "date": "2026-10-30T04:35:25Z",
+      "subject": "test(core-runtime): read live fixture evidence in a stable order"
+    },
+    {
+      "sha": "15fe7d85d61922c2f29365511041f1a069f8b501",
+      "date": "2026-10-30T04:35:25Z",
+      "subject": "test(shell): run the Shell's happy-dom tests on Redact"
+    },
+    {
+      "sha": "f652753351bbb28fe0f2674997a6cc756a617979",
+      "date": "2026-10-30T04:35:25Z",
+      "subject": "chore(deps): adopt UltraModern 3.9.3-ultramodern.16"
+    },
+    {
+      "sha": "cf3fe3b881c9a50848d1e4cda916dde05aa47ff1",
+      "date": "2026-10-30T04:35:25Z",
+      "subject": "chore(deps): bump happy-dom to 21.0.4 for the Shell and Party Registry"
+    },
+    {
+      "sha": "6013cbbca680d1b0e35ec86b73bbd29ee98932e9",
+      "date": "2026-10-30T01:37:45Z",
+      "subject": "fix: stabilize #1215 outcomes and repository validation (#1325)"
+    },
+    {
+      "sha": "8c9f10ec1cb20511940cda1499c5ed2b04e12450",
+      "date": "2026-10-30T00:10:19Z",
+      "subject": "test(shell): cover a controlled input through the renderer in a browser"
+    },
+    {
+      "sha": "5cce5381af4ef3fd3402cab1282f5714ea7b8ec6",
+      "date": "2026-10-30T00:10:19Z",
+      "subject": "test(shell): detect hydration without renderer internals"
+    },
+    {
+      "sha": "e86bfdd3fe44ebb3528c1c2ff1d93f860d7448dc",
+      "date": "2026-10-30T00:10:19Z",
+      "subject": "fix(runtime): run Redact across the federated Shell and verticals"
+    },
+    {
+      "sha": "78a9924ba10d7a7c57ab602ebf6c4751cc7ec5b4",
+      "date": "2026-10-30T00:10:19Z",
+      "subject": "chore(deps): adopt UltraModern 3.9.3-ultramodern.15"
+    },
+    {
+      "sha": "2f585d7bebdfe0af3d3a817051a163009f512379",
+      "date": "2026-10-29T17:04:01Z",
+      "subject": "fix(test): let UltraModern own the test base composition"
+    },
+    {
+      "sha": "03815dc64b819417453e5e04857eae20baaee72f",
+      "date": "2026-10-29T17:04:01Z",
+      "subject": "fix(runtime): preserve governed React federation on UltraModern 14"
+    },
+    {
+      "sha": "400d1ffd5dd4ccd90d19b84c51abd7c956003324",
+      "date": "2026-10-29T17:04:01Z",
+      "subject": "chore(deps): adopt UltraModern 3.9.3-ultramodern.14"
+    },
+    {
+      "sha": "5eae147764cba4e735cca462f84ebef2d8f90b7f",
+      "date": "2026-10-29T13:40:24Z",
+      "subject": "ci(deploy): stop deploying from main"
+    },
+    {
+      "sha": "e934cb32861877da450f0de2b14a0af84794daf9",
+      "date": "2026-10-29T11:38:21Z",
+      "subject": "test(core-runtime): prove recovery keeps the rollback failure"
+    },
+    {
+      "sha": "dca6be128ca184f60ed32ea2fb21aa57f3f8017c",
+      "date": "2026-10-29T11:38:21Z",
+      "subject": "fix(deps): pin vulnerable seroval resolutions to 1.6.9"
+    },
+    {
+      "sha": "6b9b7c61cd43bde9434a71b7b0268ffc8e8c597d",
+      "date": "2026-10-29T11:38:21Z",
+      "subject": "fix(pricing): derive fixture references from owned contracts"
+    },
+    {
+      "sha": "c81e4426df1fc6045c917eb929e967570e7e8f00",
+      "date": "2026-10-29T11:38:21Z",
+      "subject": "fix(core-runtime): recover mapped transaction settlement failures"
+    },
+    {
+      "sha": "06c2c7ece6a9bf345d7abf47a18d3e6e6d8e206a",
+      "date": "2026-10-29T11:38:21Z",
+      "subject": "fix(deps): preserve non-cohort lockfile resolutions"
+    },
+    {
+      "sha": "87de389ae8192798120e74d65f0e9b65eda19779",
+      "date": "2026-10-29T11:38:21Z",
+      "subject": "chore(deps): adopt the UltraModern .13 cohort"
+    },
+    {
+      "sha": "9ded03e1f815cb564f57244b4a7a15ad9724b61c",
+      "date": "2026-10-29T11:38:21Z",
+      "subject": "fix(runtime): isolate crypto imports across the complete remote inventory"
+    },
+    {
+      "sha": "05ac1cc16670bde66843c169ca942832bf0b2f78",
+      "date": "2026-10-29T11:38:21Z",
+      "subject": "fix(runtime): keep crypto-only remotes free of Node HTTP initialization"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/actions/install-app/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/zerops-vpn/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/renovate.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/active-application-composition-refresh.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/initial-composition-cutover.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/quality-audit.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/stage-edge-cost-guard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ultramodern-workspace-gates.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/.github/renovate.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/.mise.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/DEVELOPMENT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/apps/shell-super-app/api/auth/api-key-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/apps/shell-super-app/api/auth/external-identity/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/apps/shell-super-app/api/auth/legal-entity-selection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/apps/shell-super-app/api/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/apps/shell-super-app/modern.rstest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/apps/shell-super-app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/apps/shell-super-app/rstest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/apps/shell-super-app/src/routes/[lang]/login/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/apps/shell-super-app/src/routes/shell-frame.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/apps/shell-super-app/src/routes/use-hydrated.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/apps/shell-super-app/tests/e2e/login.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/apps/shell-super-app/tests/fixtures/api-key-gateway-native.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/apps/shell-super-app/tests/integration/auth-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/apps/shell-super-app/tests/integration/external-identity-http.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/apps/shell-super-app/tests/support/api-key-gateway-auth-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/apps/shell-super-app/tests/support/api-key-gateway-native-child.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/apps/shell-super-app/tests/support/preproposal-basis-identity.fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/apps/shell-super-app/tests/support/privacy-completion-response.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/apps/shell-super-app/tests/support/privacy-completion-shell.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/apps/shell-super-app/tests/support/tenant-party-shell-http.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/apps/shell-super-app/tests/unit/api-key-gateway-auth-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/apps/shell-super-app/tests/unit/api-key-gateway-native-fixture.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/apps/shell-super-app/tests/unit/auth-contract.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/apps/shell-super-app/tests/unit/legal-entity-selection.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/apps/shell-super-app/tests/unit/preproposal-identity-runtime-context.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/apps/shell-super-app/tests/unit/preproposal-identity-writer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/apps/shell-super-app/tests/unit/privacy-completion-response.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/docs/architecture/ACTIONS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/docs/architecture/DATABASE_TRUST_BOUNDARIES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/docs/architecture/DATA_ACCESS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/docs/architecture/DEPLOYMENT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/docs/architecture/MICROVERTICALS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/docs/architecture/OUTBOX_WORKERS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/docs/frontend/FRONTEND.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/docs/quality-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/oxlint.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/better-auth-effect-drizzle/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/catalog-selection-contracts/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/catalog-selection-contracts/src/domain/catalog-resource-reference.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/catalog-selection-contracts/src/domain/catalog-selection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/catalog-selection-contracts/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/catalog-selection-contracts/src/resources/product-unit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/catalog-selection-contracts/src/resources/product.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/catalog-selection-contracts/src/resources/variant.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/catalog-selection-contracts/tests/unit/catalog-selection.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/catalog-selection-contracts/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-cart-contracts/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-cart-contracts/src/api/action-gateway.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-cart-contracts/src/api/open-selection-population-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-cart-contracts/src/apis/open-selection-population.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-cart-contracts/src/resources/cart.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-cart-contracts/src/resources/final-cart-candidate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-cart-contracts/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-cart-finalization-contracts/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-cart-finalization-contracts/src/api/action-gateway.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-cart-finalization-contracts/src/api/final-cart-candidate-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-cart-finalization-contracts/src/apis/final-cart-candidate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-cart-finalization-contracts/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-order-contracts/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-order-contracts/src/api/committed-order-approval-evidence-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-order-contracts/src/api/prepared-order-approval-binding-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-order-contracts/src/api/prepared-order-pricing-binding-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-order-contracts/src/api/verify-order-commitment-binding-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-order-contracts/src/apis/committed-order-approval-evidence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-order-contracts/src/apis/prepared-order-approval-binding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-order-contracts/src/apis/prepared-order-pricing-binding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-order-contracts/src/apis/verify-order-commitment-binding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/commerce-order-contracts/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/drizzle/20261019161320_outbox-composition-completion/migration.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/drizzle/20261019161320_outbox-composition-completion/snapshot.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/drizzle/20261019193926_retained-owner-change-history/migration.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/drizzle/20261019193926_retained-owner-change-history/snapshot.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/drizzle/20261029194254_outbox-delivery-resolution/migration.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/drizzle/20261029194254_outbox-delivery-resolution/snapshot.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/scripts/verify-db-schema.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/actions/collector.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/actions/context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/actions/events.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/actions/repository.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/src/actions/retained-owner-history.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/actions/runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/db/schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/http/governed-read.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/modules/application-composition-authority.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/src/modules/legacy-completion-publication-error.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/src/modules/legacy-completion-publication-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/src/modules/legacy-completion-publication.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/modules/module-state-gate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/src/outbox/dead-delivery-resolution.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/outbox/process.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/outbox/runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/outbox/worker-entrypoint.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/reads/definition.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/reads/runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/testing/actions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/src/testing/isolated-native-database.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/testing/live-operations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/testing/module-contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/src/testing/native-reads.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/src/testing/scripted-pg-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/tests/integration/context-access.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/tests/integration/isolated-native-database.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/tests/integration/module-state-gate.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/tests/integration/outbox-composition-admission-rollback.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/tests/integration/outbox-composition-completion.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/tests/integration/outbox-dead-delivery-resolution.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/tests/integration/outbox-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/tests/integration/retained-owner-history.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/tests/support/preproposal-basis-config.fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/tests/support/preproposal-scope-grant.fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/tests/support/sql-connection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/tests/unit/action-collector.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/tests/unit/action-permission.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/tests/unit/action-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/tests/unit/application-composition-fixture.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/tests/unit/governed-read-http.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/tests/unit/isolated-native-database-path.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/tests/unit/live-operation-fixture.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/tests/unit/native-read-test-context.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/tests/unit/native-transaction.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/tests/unit/outbox-poller.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/tests/unit/outbox-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/tests/unit/read-definition.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/core-runtime/tests/unit/read-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/core-runtime/tests/unit/retained-owner-history.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/customer-market-retirement-contracts/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/customer-payment-term-contracts/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/email-delivery/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/gateway-principal-verifier/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/payment-term-catalog-contracts/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/price-group-catalog-contracts/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/pricing-contracts/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/pricing-contracts/src/actions/manage-commitment-confirmation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/pricing-contracts/src/actions/manage-quotation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/pricing-contracts/src/api/commitment-confirmation-verification-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/pricing-contracts/src/api/manage-commitment-confirmation-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/pricing-contracts/src/api/manage-quotation-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/pricing-contracts/src/api/quotation-verification-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/pricing-contracts/src/apis/commitment-confirmation-verification.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/packages/pricing-contracts/src/apis/current-pricing-decision.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/pricing-contracts/src/apis/manage-commitment-confirmation-action.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/pricing-contracts/src/apis/manage-quotation-action.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/packages/pricing-contracts/src/apis/quotation-verification.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

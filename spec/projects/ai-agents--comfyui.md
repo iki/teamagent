@@ -56,6 +56,18 @@ For Teamagent, preserve exact artifact identity and failure classes, but do not 
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `6d352802d8f8b9133f664a1757d6c6d26390c335` (commit date `2026-10-31T23:00:10-04:00`), compared with `79cf64c21a1dba50749945ba9fe2e3a692f45438`. Earlier observations remain historical evidence.
+
+**Scope:** Codec/container enum changes, selected encoder-format/chroma/alpha branches, and relevant new bit-depth fixtures; 37 changed paths inventoried. Encoders and provider media adapters not executed.
+
+The [video implementation](https://github.com/comfy-org/comfyui/blob/6d352802d8f8b9133f664a1757d6c6d26390c335/comfy_api/latest/_input_impl/video_types.py) adds ProRes/MOV support, rejects ProRes in incompatible containers and inspects encoder-supported pixel formats. Unsupported requested chroma/bit depth falls back with warnings, and incompatible alpha output warns before discarding alpha. [Fixtures](https://github.com/comfy-org/comfyui/blob/6d352802d8f8b9133f664a1757d6c6d26390c335/tests-unit/comfy_api_test/video_bit_depth_test.py) cover codec/container rejection, alpha round trips, re-encoding and 12-to-10-bit fallback expectations. These are source-level cases, not measured local encode results.
+
+**Teamagent implication (inference):** Expose a conversion plan with requested and effective codec/chroma/bit depth/alpha before processing; Teamagent should not silently adopt lossy fallbacks. Measure and report the produced artifact properties, preserving provider claims separately and retaining exclusive output publication.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [comfyui](https://github.com/comfy-org/comfyui); analyzed commit `79cf64c21a1dba50749945ba9fe2e3a692f45438`; commit date 2026-10-28T00:43:04-07:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--comfyui.md).
+Analysis metadata: source [comfyui](https://github.com/comfy-org/comfyui); analyzed commit `6d352802d8f8b9133f664a1757d6c6d26390c335`; commit date 2026-10-31T23:00:10-04:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--comfyui.md).
 <!-- teamagent-analysis:end -->

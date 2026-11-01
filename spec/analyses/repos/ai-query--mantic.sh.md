@@ -2,11 +2,11 @@
 
 Source: [mantic.sh](https://github.com/marcoaapfortes/Mantic.sh) · [Analysis](../../projects/ai-query--mantic.sh.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `59065a25fea706657af05fcdfce9c848469706b3`; commit date: 2026-07-13T23:55:44+01:00; review date: unknown; observed SHA: `59065a25fea706657af05fcdfce9c848469706b3`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `59065a25fea706657af05fcdfce9c848469706b3`; commit date: 2026-07-13T23:55:44+01:00; review date: unknown; observed SHA: `59065a25fea706657af05fcdfce9c848469706b3`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/marcoaapfortes/Mantic.sh/compare/59065a25fea706657af05fcdfce9c848469706b3...59065a25fea706657af05fcdfce9c848469706b3). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

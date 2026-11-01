@@ -21,6 +21,14 @@ The evidence-first design is informed by [MentisDB](https://github.com/CloudLLM-
 
 ## 2. Canonical data contracts
 
+The [Delta article](https://delta.dev/blog/fine-grained-version-control-for-agents)
+([review](analyses/delta-fine-grained-version-control-2026-11-01.md)) suggests an
+optional finer-grained evidence experiment. Our design inference is to link exact
+artifact versions to permitted public actions and conclusions, with independent
+retention and current access checks. Historical fidelity does not justify storing
+hidden model reasoning or retaining deleted private content. Existing source and
+derived-view contracts remain authoritative; no replicated history is claimed.
+
 Keep these records portable across local and cloud storage:
 
 ```text
@@ -177,6 +185,20 @@ These catalog associations provide navigation to scoped source reviews. Each rep
 - [better-icons](analyses/unreviewed/ai-query--better-icons.md)
 - [dbx](analyses/unreviewed/ai-query--dbx.md)
 - [yt-dlp](analyses/unreviewed/ai-query--yt-dlp.md)
+
+## Source refresh: 2026-11-01 — durable lineage and admitted context
+
+These are architecture requirements inferred from scoped source reviews, not newly implemented memory features or measured improvements. The [runtime contract](memory-imports.md) remains the authority for current CLI behavior.
+
+**Track continuation, publication and deletion independently.** [Utopia](https://github.com/deeplethe/utopia) ([review](projects/ai-agents-mem--utopia.md)) exposes the consumed source checkpoint separately from sync time; [Omnigraph](https://github.com/ModernRelay/omnigraph) ([review](projects/ai-agents-mem--omnigraph.md)) carries the identity of an uncertain publication through error wrappers. A continuation must bind source generation, complete accepted boundary and durable publication. Retain uncertain attempt identity before replay and reconcile the existing result. [OpenViking](https://github.com/volcengine/OpenViking) ([review](projects/ai-agents-mem--open-viking.md)) supplies a durable replacement-before-acknowledgment example. Acknowledgment of scheduling or cleanup initiation must never stand in for durable admission or joined resource shutdown.
+
+**Keep evidence supports after deduplication, and invalidate their conclusions deliberately.** [Honcho](https://github.com/plastic-labs/honcho) ([review](projects/ai-agents-mem--honcho.md)) preserves unknown legacy citation attribution instead of inventing a backfill, but deleting a citation edge does not delete its conclusion. [Mem0](https://github.com/mem0ai/mem0) ([review](projects/ai-agents-mem--mem0.md)) adds explicit missing-update outcomes to prevent publishing successful history after a concurrent deletion; compatibility with older unknown-return backends remains relevant. The memory reducer must distinguish missing, changed and unknown effects and propagate revocation/deletion through derived claims, indexes and cached packets. [Beads](https://github.com/gastownhall/beads) ([review](projects/ai-agents-mem--beads.md)) additionally motivates binding retention selection to its authoritative configuration and reporting partial cleanup item by item.
+
+**Admit before ranking and preserve the delivered projection.** [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) ([review](projects/ai-agents--anything-llm.md)) filters candidate eligibility before paid reranking/top-k; [Lean Context](https://github.com/yvgude/lean-ctx) ([review](projects/ai-agents-mem--lean-ctx.md)) distinguishes original, admitted and delivered context. Keep zero scores distinct from missing scores, record the source/ACL/transformation versions of the actual packet and recheck access before opening retained evidence. Compaction should disclose which level and spans were delivered, not silently replace originals. [DeepTutor](https://github.com/HKUDS/DeepTutor) ([review](projects/ai-agents--deeptutor.md)) illustrates that rendered-text correspondence is weaker than exact original offset, line-break or subtitle-cue preservation.
+
+**Version graph identity and evaluate coverage honestly.** [Graphify](https://github.com/safishamsi/graphify) ([review](projects/ai-agents-mem--graphify.md)) distinguishes ambiguous language declarations and advances extractor cache identity; [CodeGraph](https://github.com/colbymchenry/codegraph) ([review](projects/ai-agents-mem--codegraph.md)) discloses stale extraction versions. Preserve ambiguity rather than narrowing an edit/search to an invented edge. [GitNexus](https://github.com/abhigyanpatwari/GitNexus) ([review](projects/ai-agents-mem--gitnexus.md)) separates unobserved cases from empty retrieval and limits what partial relevance labels can measure. Evaluate source recall, reranking, packet fidelity and final answer correctness separately. A pinned digest authenticates captured bytes, not their truth or benchmark success.
+
+Static articles retain publication/creation evidence and their captured version under [text maintenance](research-sync.md). Source authoring time, acquisition time, refresh validation time and derived-index time are separate clocks. None of these source reviews authorizes refreshing an article that lacks an explicit refresh policy.
 
 <!-- coverage:start -->
 ## Project coverage
@@ -340,3 +362,11 @@ Budgets must cover hidden work. [Cognee-rs](https://github.com/topoteretes/cogne
 Keep configuration, derived content and activation distinct. [RAGFlow](https://github.com/infiniflow/ragflow) ([review](projects/ai-agents-mem--ragflow.md#follow-up-change-review--2026-10-28)) updates parser settings while explicitly preserving old extraction and requesting a reparse. [PAI](https://github.com/danielmiessler/Personal_AI_Infrastructure) ([review](projects/ai-agents-mem--pai-personal-ai-infrastructure.md#follow-up-change-review--2026-10-28)) supplies source hashes and deferred-memory instructions, but displayed caps and prompts do not enforce a budget. [Reef](https://github.com/Human-Agent-Society/reef) ([review](projects/ai-agents-mem--reef.md#follow-up-change-review--2026-10-28)) separates produced candidates from activation; Teamagent must apply its own review/regression rule instead of inheriting an always-activate default. [Tolaria](https://github.com/refactoringhq/tolaria) ([review](projects/ai-agents-mem--tolaria.md#follow-up-change-review--2026-10-28)) checks structured selection, text serialization and undo when formatting knowledge. [AgentMemory](https://github.com/rohitg00/agentmemory) ([review](projects/ai-agents-mem--agentmemory.md#follow-up-change-review--2026-10-28)) distinguishes registered from enabled and unknown health from success; that distinction belongs in passive catalogs. Counter-only changes in [Context Mode](https://github.com/mksglu/context-mode) ([review](projects/ai-agents-mem--context-mode.md#follow-up-change-review--2026-10-28)) and [Xerj](https://github.com/xerj-org/xerj) ([review](analyses/unreviewed/ai-agents-mem--xerj.md#follow-up-change-review--2026-10-28)) supply no new retrieval-quality evidence.
 
 These are scoped static source/fixture reviews at the full commits linked in each report. No upstream runtime, inference, provider or benchmark was executed. The PAI aggregate diff was capped and selected files were expanded; the report preserves that scope.
+
+### Additional scoped reviews from November 1
+
+These newly reviewed sources complement the themes above. Each report states its selected source scope and limitations; listing it does not imply runtime integration or comparative quality.
+
+- [midbrain-memory-mcp](https://github.com/midbrainai/midbrain-memory-mcp) ([scoped report](analyses/unreviewed/ai-agents-mem--midbrain-memory-mcp.md)).
+- [building-a-coding-agent-from-scratch-course](https://github.com/decodingai-magazine/building-a-coding-agent-from-scratch-course) ([scoped report](analyses/unreviewed/ai-info--building-a-coding-agent-from-scratch-course.md)).
+- [minipcm-ocr](https://github.com/openbmb/minicpm-ocr) ([scoped report](analyses/unreviewed/ai-query--minipcm-ocr.md)).

@@ -54,6 +54,18 @@ Evidence: [python/freetoken/scheduler/cache.py:637-649](https://github.com/Flash
 
 **Scope and limits:** Reviewed the new rollback method and complete focused fixture; GPU execution, sliding-window behavior and broader attention changes were not benchmarked. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `ee43b2a11345d056ba349d22ee073c6828b1364b` (commit date `2026-10-29T17:15:32-07:00`), compared with `a2ce636083a0137571ba505768ad36be5f7a393b`. Earlier observations remain historical evidence.
+
+**Scope:** Complete completion-endpoint parameter-rejection diff and associated new server fixtures. Scheduler, speculative decoding, kernel changes and live inference were not audited in this update.
+
+The [completion endpoint](https://github.com/FlashML-org/FreeToken/blob/ee43b2a11345d056ba349d22ee073c6828b1364b/python/freetoken/server/openai_api.py) now rejects n other than 1 before dispatch rather than silently producing one result. [Fixtures](https://github.com/FlashML-org/FreeToken/blob/ee43b2a11345d056ba349d22ee073c6828b1364b/tests/server/test_openai_api.py) exercise n=0 and n=2 in streaming and non-streaming modes, expecting HTTP 400, an error identifying n and no sent worker request. This establishes a narrowly specified compatibility boundary in source; it does not certify the full OpenAI-compatible surface or model throughput.
+
+**Teamagent implication (inference):** Publish route-specific supported parameters and fail before model allocation or remote content submission when a requested behavior is unsupported. Keep explicit overrides truthful: do not silently discard options or emulate them through extra billable calls. Test both streaming and non-streaming rejection paths.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [freetoken](https://github.com/FlashML-org/FreeToken); analyzed commit `a2ce636083a0137571ba505768ad36be5f7a393b`; commit date 2026-10-27T23:56:59-07:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-run--freetoken.md).
+Analysis metadata: source [freetoken](https://github.com/FlashML-org/FreeToken); analyzed commit `ee43b2a11345d056ba349d22ee073c6828b1364b`; commit date 2026-10-29T17:15:32-07:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-run--freetoken.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--claude.ruflo",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/ruvnet/ruflo",
+  "report": "spec/projects/ai-agents--claude.ruflo.md",
+  "analyzedSha": "5ae2d6527b24f1ae6d907a29b91d320cdc447d2d",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T06:08:24-04:00",
+  "observedSha": "e580bbc8204874f762d132fe441b18192979211b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "e580bbc8204874f762d132fe441b18192979211b",
+      "date": "2026-11-01T06:29:40Z",
+      "subject": "chore(data): clone snapshot #18 — 0 clones (14d)"
+    },
+    {
+      "sha": "2b1a392747d71117305c14321e7cdade92a0ce3e",
+      "date": "2026-11-01T00:33:07-04:00",
+      "subject": "feat(memory): session episodes through agentdb 3.2 hybrid retrieval; release 3.68.0 (ADR-519) (#4632)"
+    },
+    {
+      "sha": "fcdc42dbd7b323a8936090a89cd27230cc66cccb",
+      "date": "2026-10-31T22:57:58-04:00",
+      "subject": "chore(marketplace): agentdb plugin to plugin-v3.2.0 (hybrid retrieval, agentdb ADR-016) (#4631)"
+    },
+    {
+      "sha": "66df9b95e1ab79d7263e491d23b20464f2906eec",
+      "date": "2026-10-31T20:45:43-04:00",
+      "subject": "feat(marketplace): agentdb and agentic-flow external plugins (ADR-518) (#4629)"
+    },
+    {
+      "sha": "56fe4dc60412a7cfdeda024ad2f822fc9685bb92",
+      "date": "2026-10-31T17:59:28-04:00",
+      "subject": "feat: ecosystem convergence — agentdb 3.0.0, agentic-flow 3.0.0, AIMDS packs; release 3.67.0 (#4628)"
+    },
+    {
+      "sha": "bd77bced5f203a88f7d63e74beaa017708128eef",
+      "date": "2026-10-31T14:11:42-04:00",
+      "subject": "fix(security): bearer parsing, verification-code bias, protocol stripping; release 3.66.2 (#4624)"
+    },
+    {
+      "sha": "509aa0f503c25c6627b6ddbc553f87198263d365",
+      "date": "2026-10-31T13:20:30-04:00",
+      "subject": "dream(performance): #4597 AttentionCoordinator embedding-cache never memoized (evaluated, ACCEPT-scoped) (#4598)"
+    },
+    {
+      "sha": "ba1308daeb193bdcb4b23b2165358f8892b95408",
+      "date": "2026-10-31T12:55:45-04:00",
+      "subject": "fix(integration): make the attention cache key cover the full tensors (#4600)"
+    },
+    {
+      "sha": "49adc540a051916f6b8fad2c3dc30f8fba8c1bc3",
+      "date": "2026-10-31T11:17:37-04:00",
+      "subject": "fix(memory): report the original AgentDB open failure; memory_list reports failed queries (#4622); release 3.66.1 (#4623)"
+    },
+    {
+      "sha": "7208f28c0aa2228d4f2216e2558974398e18a887",
+      "date": "2026-10-31T10:54:25-04:00",
+      "subject": "dream(security): enforce SecurityPolicy trust thresholds in PolicyEngine (evaluated) (#4619)"
+    },
+    {
+      "sha": "0d94037eb149967cba66daad2898563892c53a02",
+      "date": "2026-10-31T01:51:22-04:00",
+      "subject": "release: 3.66.0 (learning loop on classic hooks ADR-512, lessons name files ADR-511, CI=1 update-check fix) (#4617)"
+    },
+    {
+      "sha": "189aceca1d0ef43491877c4a919583c851b5fa84",
+      "date": "2026-10-30T16:59:46-04:00",
+      "subject": "feat(learning): the verified-outcome learning loop on classic hooks, for every ruflo project (ADR-512) (#4604)"
+    },
+    {
+      "sha": "45753638dcedc4f580caa7d6034168bb8ce03f60",
+      "date": "2026-10-30T16:59:42-04:00",
+      "subject": "fix(update): skip the startup update check for CI=1, not only CI=true (#4608)"
+    },
+    {
+      "sha": "4114d92514cda75fae110837d968e9061d97af5a",
+      "date": "2026-10-30T15:55:26-04:00",
+      "subject": "release: 3.65.1 (security: http_fetch SSRF via DNS, #4605) (#4606)"
+    },
+    {
+      "sha": "9b3e26d200ae1b0cb8fa7a8a49bea4da8660e26b",
+      "date": "2026-10-30T15:15:22-04:00",
+      "subject": "fix(security): pin http_fetch connections to DNS-checked addresses (SSRF via DNS) (#4605)"
+    },
+    {
+      "sha": "243bc57f0bf24aad06b84f4140cce0009618ddf6",
+      "date": "2026-10-30T12:12:42-04:00",
+      "subject": "feat(learning): lessons say where the fix goes; reworded tasks learn together (ADR-511) (#4603)"
+    },
+    {
+      "sha": "41e49663b5dd7feac14a267e40c7f080be8cf2b5",
+      "date": "2026-10-30T10:19:39-04:00",
+      "subject": "feat(eval): judge the learning-loop eval with the flywheel sequential-evidence gate (#4602)"
+    },
+    {
+      "sha": "d000e27e82c783a5a188abb01d89b8ccbc12b271",
+      "date": "2026-10-29T22:51:04-04:00",
+      "subject": "release: 3.65.0 (#4595)"
+    },
+    {
+      "sha": "e9248a170e0dd8c4e054cfdb48d66bb7f3869430",
+      "date": "2026-10-29T22:32:06-04:00",
+      "subject": "feat(security): plugin signing, scan before install, refuse risky project auto-approve keys (ADR-509) (#4593)"
+    },
+    {
+      "sha": "5d2be9374a3824e7d4496437c18d25d4a0cc9171",
+      "date": "2026-10-29T20:33:25-04:00",
+      "subject": "feat(cost): budget file, LiteLLM gateway export, per-agent/tool attribution (ADR-508) (#4592)"
+    },
+    {
+      "sha": "828a8d78d97f6c3983d83828e3c74c7d89636e4e",
+      "date": "2026-10-29T19:50:34-04:00",
+      "subject": "feat(plugins): cut per-turn footprint — user-invoked operational skills, description ceiling, footprint report (ADR-507) (#4588)"
+    },
+    {
+      "sha": "49fe0b362bf300432dd330777d1f4ff77015265b",
+      "date": "2026-10-29T19:41:08-04:00",
+      "subject": "feat(mods): compactSnapshot — pre-compaction snapshot + post-compaction reload (ADR-505) (#4591)"
+    },
+    {
+      "sha": "658f0e33bf484ea8ca5573e9a4287ed7403c1cee",
+      "date": "2026-10-29T19:21:05-04:00",
+      "subject": "feat(plugins): sensitive userConfig secrets + readSecret + secrets audit (ADR-506) (#4587)"
+    },
+    {
+      "sha": "76845f22d32005e080f606243bbf70ce1846ee83",
+      "date": "2026-10-29T19:07:05-04:00",
+      "subject": "feat(cli): load ruflo plugins in headless claude -p workers (ADR-510) (#4586)"
+    },
+    {
+      "sha": "38112e00426995695cba9d11242ef78e25e5504e",
+      "date": "2026-10-29T18:57:12-04:00",
+      "subject": "feat(mods): learning-loop gaming defences — taints, re-verify, anomaly gate (ADR-503) (#4590)"
+    },
+    {
+      "sha": "5a008a150a1a6af39f89da84a62f706254229436",
+      "date": "2026-10-29T18:43:03-04:00",
+      "subject": "feat(test): real-binary test tier for ruflo mods (ADR-504) (#4589)"
+    },
+    {
+      "sha": "9ec771996a2686b28d86515359a8254ecade9bd8",
+      "date": "2026-10-29T17:26:56-04:00",
+      "subject": "docs(adr): ADR-503..510 — mods integration follow-ups (#4581) (#4585)"
+    },
+    {
+      "sha": "00c0f743f884050dbb4add9b8e7c9c769bf97654",
+      "date": "2026-10-29T16:56:28-04:00",
+      "subject": "release: 3.64.0 (#4584)"
+    },
+    {
+      "sha": "375e846c6691ee80ff87c7148c33807174100f30",
+      "date": "2026-10-29T16:38:56-04:00",
+      "subject": "feat(mods): verified-outcome learning loop, on by default (learningLoop, #4581, ADR-502) (#4583)"
+    },
+    {
+      "sha": "7f6fb3345b7f4ea1d7acc4905ea88bad29136066",
+      "date": "2026-10-29T10:18:38-04:00",
+      "subject": "release: 3.63.9 (#4578)"
+    },
+    {
+      "sha": "27b48e6ba4d0dd7d198357c8df36bdaccd65fd1e",
+      "date": "2026-10-29T09:41:56-04:00",
+      "subject": "fix(github): redact credentials from github_repo_analyze remoteUrl (#4577)"
+    },
+    {
+      "sha": "8c0ad74e508e971b042c07874970901533bfb638",
+      "date": "2026-10-29T09:12:33-04:00",
+      "subject": "chore(marketplace): pin agentic-qe-fleet to v3.15.17 (#4574)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/agent-code-goal-planner/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/agent-github-modes/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/agent-issue-tracker/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/agent-pr-manager/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/agent-release-manager/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/agent-repo-architect/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/agent-swarm-issue/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/agent-swarm-pr/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/agent-sync-coordinator/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/agent-workflow-automation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/github-code-review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/github-project-management/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/github-release-management/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/github-workflow-automation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/hooks-automation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/swarm-advanced/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude-plugin/marketplace.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/agents/github/github-modes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/agents/github/issue-tracker.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/agents/github/pr-manager.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/agents/github/release-manager.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/agents/github/repo-architect.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/agents/github/swarm-issue.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/agents/github/swarm-pr.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/agents/github/sync-coordinator.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/agents/github/workflow-automation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/agents/goal/code-goal-planner.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/commands/agents/agent-spawning.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/commands/github/github-modes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/commands/github/issue-tracker.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/commands/github/pr-manager.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/commands/github/release-manager.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/commands/github/repo-architect.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/commands/github/sync-coordinator.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/commands/sparc/orchestrator.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/commands/sparc/sparc-modes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/helpers/hook-handler.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/helpers/learning-loop.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/github-code-review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/github-project-management/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/github-release-management/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/github-workflow-automation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/sparc-methodology/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/swarm-advanced/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mod-guidance.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/v3-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "data/clone-data.ledger.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "data/clone-data.proof.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dream-cycle/LEDGER.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-28.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-30.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-31.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/.gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-agntcy/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-agntcy/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-agntcy/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-agntcy/scripts/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-agntcy/skills/agntcy-status/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-bbs-federation/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-bbs-federation/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-bbs-federation/scripts/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-bbs-federation/skills/cross-host-federation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-business-pods/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-business-pods/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-business-pods/scripts/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-business-pods/skills/pod-sales/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-chatgpt-federation/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-chatgpt-federation/scripts/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-chatgpt-federation/src/server.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/hooks/plugin-map.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/hooks/version.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/scripts/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-core/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-core/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-core/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-core/scripts/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-core/skills/init-project/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-core/skills/ruflo-status/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-core/skills/witness/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/agents/cost-analyst.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/commands/ruflo-cost.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/hooks/hooks.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-cost-tracker/scripts/_secret-env.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-cost-tracker/scripts/_secret.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/scripts/openrouter.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/scripts/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-anomaly/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-benchmark/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-burn/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-conversation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-counterfactual/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-diff/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-export/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-federation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-health/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-openrouter/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-projection/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-report/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-session/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-summary/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-cost-tracker/skills/cost-trend/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-deepseek-harness/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-deepseek-harness/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-deepseek-harness/scripts/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-deepseek-harness/skills/deepseek-chat/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-deepseek-harness/skills/deepseek-reason/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-federation/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-federation/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-federation/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-federation/scripts/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-federation/skills/federation-init/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/agents/metaharness-architect.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/hooks/hooks.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/scripts/_redblue.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-metaharness/scripts/_secret-env.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-metaharness/scripts/_secret.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/scripts/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/skills/harness-bench/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/skills/harness-drift-from-history/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/skills/harness-evolve/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/skills/harness-gepa/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/skills/harness-learn/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/skills/harness-mint/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/skills/harness-oia-audit/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/skills/harness-score/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/skills/harness-security-bench/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-metaharness/skills/harness-similarity/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-mods/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-mods/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-mods/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-mods/hooks/compact-snapshot/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-mods/hooks/compact-snapshot/reload.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-mods/hooks/compact-snapshot/snapshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-mods/hooks/compact/block.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-mods/hooks/cost/attribution.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-mods/hooks/cost/file.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-mods/hooks/cost/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-mods/hooks/loop/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-mods/hooks/loop/lessons.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-mods/hooks/loop/record.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-mods/hooks/loop/status.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-mods/hooks/loop/taint.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-mods/hooks/loop/transcript.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-mods/hooks/loop/verifier.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-mods/hooks/options.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-mods/hooks/probe/index.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

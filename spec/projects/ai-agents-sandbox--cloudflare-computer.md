@@ -40,6 +40,14 @@ In [packages/computer/src/backends/worker-javascript/module-graph.ts](https://gi
 
 **Harness implication and limits:** Keep trusted host capability functions separate from source facades even when they share a namespace; an object-exporting facade must not gain ambient host authority. The fixtures establish transformation intent, not real workerd isolation or filesystem race resistance. No worker or upstream test was executed, and host-module effect authorization remains outside this review. No upstream code or live service was executed for this review.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`071b2b2f24dbc885b911fe7f57dff7d703eb859a`](https://github.com/cloudflare/computer/commit/071b2b2f24dbc885b911fe7f57dff7d703eb859a), compared with `b681446f0eaed8ad010bcd2f5e61b3680a6c02c4`.
+
+The 16-path inventory concerns Gardener automation and package metadata. The inspected [fix task](https://github.com/cloudflare/computer/blob/071b2b2f24dbc885b911fe7f57dff7d703eb859a/.gardener/tasks/fix/TASK.md) adds triage/manual dispatch, per-author run limits, follow-up task dispatch and an existing-branch stop condition. It treats issue content as untrusted and specifies commit-bound PR references. The corresponding [workflow](https://github.com/cloudflare/computer/blob/071b2b2f24dbc885b911fe7f57dff7d703eb859a/.github/workflows/gardener-fix.yml) updates its pinned reusable workflow/bundle and adds actions write permission.
+
+These are task contracts and workflow wiring, not independent evidence that all declared restrictions are enforced. Network default remains allow in the inspected task. Teamagent should retain host-enforced effect scopes, bounded task spawning and exact commit receipts, and distinguish a pushed commit from a CI run. Other automation files were inventoried rather than fully audited; no Gardener runtime, cloud sandbox or workflow was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cloudflare-computer](https://github.com/cloudflare/computer); analyzed commit `b681446f0eaed8ad010bcd2f5e61b3680a6c02c4`; commit date 2026-10-27T21:08:45Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--cloudflare-computer.md).
+Analysis metadata: source [cloudflare-computer](https://github.com/cloudflare/computer); analyzed commit `071b2b2f24dbc885b911fe7f57dff7d703eb859a`; commit date 2026-10-28T17:15:19Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--cloudflare-computer.md).
 <!-- teamagent-analysis:end -->

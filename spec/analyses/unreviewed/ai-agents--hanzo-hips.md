@@ -2,7 +2,7 @@
 
 Source: [hanzo-hips](https://github.com/hanzoai/hips) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md).
 
-Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-agents--hanzo-hips.md).
+Historical discovery: 2026-10-24T06:36:54.441Z, initially unreviewed. Dated scoped reviews below supersede that discovery-only status; they do not establish runtime validation. [Change evidence](../repos/ai-agents--hanzo-hips.md).
 
 ## 2026-10-28 scoped source review
 
@@ -16,6 +16,18 @@ The [index generator](https://github.com/hanzoai/hips/blob/50c74ff5c99851f317423
 
 The [tests](https://github.com/hanzoai/hips/blob/50c74ff5c99851f3174239f9289f45df1c956e2b/scripts/test-index.py#L141-L230) define fourteen scratch-corpus refusal cases with unchanged-output assertions and a stable projection control. Their final regex check only establishes that at least one `raise Refused(` exists; it does not prove every guard is exercised. The [status helper](https://github.com/hanzoai/hips/blob/50c74ff5c99851f3174239f9289f45df1c956e2b/docs/lib/status.ts#L13-L40) centralizes badge vocabulary and renders unknown values neutrally. Teamagent can borrow explicit unassessed states and pre-publication coverage/refusal tests, while preserving immutable version evidence and transactional publication. No generator, test, dependency or claimed implementation was executed.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `afe61b0ed001ee6912cda2125e83354d713e4c6d` (commit date `2026-10-30T06:18:06-07:00`), compared with `50c74ff5c99851f3174239f9289f45df1c956e2b`. Earlier observations remain historical evidence.
+
+**Scope:** Complete new scripts/sync-from-cloud.py source; five changed paths inventoried. Three proposal documents and README not re-audited.
+
+The new [audit script](https://github.com/hanzoai/hips/blob/afe61b0ed001ee6912cda2125e83354d713e4c6d/scripts/sync-from-cloud.py) claims synchronization and a bijection in its description, but main only runs audit: it regex-parses a local Cloud manifest and checks whether each application name appears in HIP capability metadata. Duplicate capability names overwrite in a dictionary, reverse coverage is not checked, and OpenAPI loading/table formatting helpers are unused by this path. A missing or empty parsed manifest fails explicitly. No source-version binding or semantic API conformance is established.
+
+**Teamagent implication (inference):** Describe evidence checks by their actual direction and coverage. Require exact source revisions, duplicate detection, reverse coverage and executable contract fixtures before calling a catalog audit synchronization or conformance; keep proposals separate from shipped behavior.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hanzo-hips](https://github.com/hanzoai/hips); analyzed commit `50c74ff5c99851f3174239f9289f45df1c956e2b`; commit date 2026-10-22T12:57:00-07:00; review date 2026-10-28T09:27:32.685Z; depth reviewed. [Maintenance record](../repos/ai-agents--hanzo-hips.md).
+Analysis metadata: source [hanzo-hips](https://github.com/hanzoai/hips); analyzed commit `afe61b0ed001ee6912cda2125e83354d713e4c6d`; commit date 2026-10-30T06:18:06-07:00; review date 2026-11-01T11:33:30.893Z; depth reviewed. [Maintenance record](../repos/ai-agents--hanzo-hips.md).
 <!-- teamagent-analysis:end -->

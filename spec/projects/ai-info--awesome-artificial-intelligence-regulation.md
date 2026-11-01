@@ -38,6 +38,12 @@ In [README.md](https://github.com/EthicalML/awesome-artificial-intelligence-regu
 
 **Harness implication and limits:** Use the entry as a discovery pointer, not as legal advice, compliance certification or evidence of any provider's effective training policy. Verify dated primary terms and operation/account coverage before changing a runtime policy gate. No external service, rating, legal claim or vendor condition was authenticated in this reconciliation. No upstream code or live service was executed for this review.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`aabf20b086994cbe73b01b40c69a5fb72dcfb2f4`](https://github.com/EthicalML/awesome-artificial-intelligence-regulation/commit/aabf20b086994cbe73b01b40c69a5fb72dcfb2f4), compared with `dc6061b6285bbfafb8de1549d40a369edf6ccaf6`.
+
+The complete [README](https://github.com/EthicalML/awesome-artificial-intelligence-regulation/blob/aabf20b086994cbe73b01b40c69a5fb72dcfb2f4/README.md) delta adds four directory entries: secondary legal explainers/trackers and governance/framework references. This records discovery additions only. Their linked contents, currency, licensing claims and legal interpretations were not verified in this review, and no legal conclusion is derived from them. Teamagent's policy evidence must retain jurisdiction, operation scope, primary authority, date and verification level; a directory entry cannot satisfy an execution policy gate. No implementation or tests changed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [awesome-artificial-intelligence-regulation](https://github.com/EthicalML/awesome-artificial-intelligence-regulation); analyzed commit `dc6061b6285bbfafb8de1549d40a369edf6ccaf6`; commit date 2026-10-28T16:12:36+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-info--awesome-artificial-intelligence-regulation.md).
+Analysis metadata: source [awesome-artificial-intelligence-regulation](https://github.com/EthicalML/awesome-artificial-intelligence-regulation); analyzed commit `aabf20b086994cbe73b01b40c69a5fb72dcfb2f4`; commit date 2026-11-01T12:37:58+08:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-info--awesome-artificial-intelligence-regulation.md).
 <!-- teamagent-analysis:end -->

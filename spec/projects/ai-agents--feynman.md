@@ -38,6 +38,18 @@ The research telemetry extension centralizes a shared client and primary-session
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `3d01f4aa6e414485656c3f65297f63251d5f248f` (commit date `2026-10-31T07:05:21-07:00`), compared with `87a45677eeba3f63954e1783df4223423fd761cf`. Earlier observations remain historical evidence.
+
+**Scope:** Complete changed model preference, catalog fixture and web-access provider declaration slices; 21 changed paths inventoried. Provider implementations and access checks not audited.
+
+The [catalog](https://github.com/getcompanion-ai/feynman/blob/3d01f4aa6e414485656c3f65297f63251d5f248f/src/model/catalog.ts) adds a MiniMax Flash fallback after the existing preferred MiniMax model, and the [fixture](https://github.com/getcompanion-ai/feynman/blob/3d01f4aa6e414485656c3f65297f63251d5f248f/tests/catalog-snapshot.test.ts) pins that ordering. [Web-access declarations](https://github.com/getcompanion-ai/feynman/blob/3d01f4aa6e414485656c3f65297f63251d5f248f/src/pi/web-access.ts) add provider identifiers. These are explicit preference/discovery changes, not comparative benchmark results, authenticated entitlement checks or evidence that every declared route works.
+
+**Teamagent implication (inference):** Keep curated preferences separate from measured task quality, authenticated readiness and effective data policy. Show the ranking rationale and eligibility exclusions; a newly listed model or search provider must pass its own route preflight before receiving content.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [feynman](https://github.com/getcompanion-ai/feynman); analyzed commit `87a45677eeba3f63954e1783df4223423fd761cf`; commit date 2026-10-26T06:59:35-07:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--feynman.md).
+Analysis metadata: source [feynman](https://github.com/getcompanion-ai/feynman); analyzed commit `3d01f4aa6e414485656c3f65297f63251d5f248f`; commit date 2026-10-31T07:05:21-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--feynman.md).
 <!-- teamagent-analysis:end -->

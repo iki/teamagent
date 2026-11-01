@@ -42,6 +42,18 @@ The notice records inspiration sources, the kinds of ideas borrowed and stated l
 
 **Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `4f6a46c6dc325d40ab268c93e25c7b96676ebccd` (commit date `2026-10-29T17:50:04+01:00`), compared with `65b5e4090ed95ee3dc2ff7db55b69aef8c5ff7b5`. Earlier observations remain historical evidence.
+
+**Scope:** Complete six-file diff, including collection implementation and symlink/line-ending fixture additions.
+
+The [file collector](https://github.com/nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/scripts/sloplint.mjs) now records real paths before recursion, terminating directory-symlink cycles and avoiding duplicate physical files. The [fixture](https://github.com/nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/scripts/refcheck.mjs) builds duplicate links plus a parent cycle and expects one file. This remains a traversal policy, not containment: links can lead outside the starting directory and nested unreadable paths are skipped with a diagnostic. The [theme parser](https://github.com/nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/scripts/theme.mjs) accepts CRLF headers, with [LF/CRLF fixture cases](https://github.com/nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/scripts/theme.test.mjs). NOTICE.md is removed and README now lists inspiration links without the former per-source attribution table.
+
+**Teamagent implication (inference):** Use physical identity for cycle detection while separately enforcing authorized roots and explicit partial-read reporting. Permissive import parsing does not relax Teamagent's LF output policy. Retain historical attribution evidence; a simplified upstream notice does not establish that attribution obligations disappeared.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [design.hallmark](https://github.com/nutlope/hallmark); analyzed commit `65b5e4090ed95ee3dc2ff7db55b69aef8c5ff7b5`; commit date 2026-10-28T08:48:29Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.hallmark.md).
+Analysis metadata: source [design.hallmark](https://github.com/nutlope/hallmark); analyzed commit `4f6a46c6dc325d40ab268c93e25c7b96676ebccd`; commit date 2026-10-29T17:50:04+01:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.hallmark.md).
 <!-- teamagent-analysis:end -->

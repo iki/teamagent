@@ -38,6 +38,18 @@ The [tool runner](https://github.com/google-antigravity/antigravity-sdk-python/b
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `75ba22bd00afae2f46393ff31f30c3f0df52982f` (commit date `2026-10-27T21:14:15-07:00`), compared with `91dc5f84565bb505577ac9524f107f453a6e8d1f`. Earlier observations remain historical evidence.
+
+**Scope:** Complete changed path-normalization helper and hook-router call-site diff; 35 changed paths inventoried. Underlying URI normalizer and workspace enforcement not audited.
+
+The [local configuration helper](https://github.com/google-antigravity/antigravity-sdk-python/blob/75ba22bd00afae2f46393ff31f30c3f0df52982f/google/antigravity/connections/local/local_connection_config.py) changes path-key enumeration from a set to an ordered tuple and centralizes in-place argument normalization, returning the first populated known path. The [hook router](https://github.com/google-antigravity/antigravity-sdk-python/blob/75ba22bd00afae2f46393ff31f30c3f0df52982f/google/antigravity/connections/local/hook_router.py) now uses that result. Priority is therefore deterministic, but a single representative path does not prove that all read/write destinations or symlink targets are authorized.
+
+**Teamagent implication (inference):** Use deterministic canonicalization shared by planning and execution, while validating every effect-bearing path against physical containment and the actual operation grant. Preserve the original request separately from its normalized execution representation.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [antigravity-sdk-python](https://github.com/google-antigravity/antigravity-sdk-python); analyzed commit `91dc5f84565bb505577ac9524f107f453a6e8d1f`; commit date 2026-10-13T10:47:42-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--antigravity-sdk-python.md).
+Analysis metadata: source [antigravity-sdk-python](https://github.com/google-antigravity/antigravity-sdk-python); analyzed commit `75ba22bd00afae2f46393ff31f30c3f0df52982f`; commit date 2026-10-27T21:14:15-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--antigravity-sdk-python.md).
 <!-- teamagent-analysis:end -->

@@ -51,6 +51,14 @@ Evidence: [src/officecli/CommandBuilder.ViewCore.cs:8-34](https://github.com/iOf
 
 **Scope and limits:** Reviewed shared view entry/preflight and declared native-lock boundary; the large moved implementation and resident execution were not exhaustively tested. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `c56512c8c7b76fe284f09940e4cd492470099d3e` against `89905744ed6dbb87fb6807a0d9fda6ed3da1c18d` (28 changed paths). Selected [dump reader](https://github.com/iOfficeAI/OfficeCLI/blob/c56512c8c7b76fe284f09940e4cd492470099d3e/src/officecli/Core/Plugins/DumpReaderInvoker.cs), [exporter](https://github.com/iOfficeAI/OfficeCLI/blob/c56512c8c7b76fe284f09940e4cd492470099d3e/src/officecli/Core/Plugins/ExporterInvoker.cs) and [format handler](https://github.com/iOfficeAI/OfficeCLI/blob/c56512c8c7b76fe284f09940e4cd492470099d3e/src/officecli/Core/Plugins/FormatHandlerSession.cs) deltas correct timeout remedies to name the actual idle-watchdog environment option instead of a command timeout flag. The exporter/handler guidance retains periodic heartbeat output. These hunks change diagnosis, not watchdog implementation.
+
+**Harness consequence:** Distinguish idle progress timeout, total deadline and cancellation. Heartbeats can establish liveness without proving forward progress; disabling an idle watchdog should not remove the harness's total resource budget or process ownership. Remedies need executable contract checks, not only accurate prose.
+
+**Scope and limits:** Three complete diagnostic-string deltas only; other document-editing changes, watchdog internals and fixtures were not audited. No plugin, Office file or upstream tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [officecli](https://github.com/iOfficeAI/OfficeCLI); analyzed commit `89905744ed6dbb87fb6807a0d9fda6ed3da1c18d`; commit date 2026-10-28T13:49:46+08:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--officecli.md).
+Analysis metadata: source [officecli](https://github.com/iOfficeAI/OfficeCLI); analyzed commit `c56512c8c7b76fe284f09940e4cd492470099d3e`; commit date 2026-10-30T14:48:43+08:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--officecli.md).
 <!-- teamagent-analysis:end -->

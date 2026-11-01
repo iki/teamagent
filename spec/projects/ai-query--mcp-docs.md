@@ -37,6 +37,14 @@ Evidence: [seps/2127-mcp-server-cards.md:1-186](https://github.com/modelcontextp
 
 **Scope and limits:** Documentary review of the Server Card charter at an exact source revision; no protocol implementation, external normative schema, linked pull request, network discovery or conformance test was run. Other changed documentation remains outside the scoped review.
 
+## Change review - 2026-11-01
+
+Reviewed `d0e246ea3c69eafaa2806bc4cd28025703ba2c2b` against `ccaf9102ec5eb656eab50ca8333ef49dcd259c26` (54 changed paths). [SEP-3392](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/d0e246ea3c69eafaa2806bc4cd28025703ba2c2b/seps/3392-extension-lifecycle.md), marked Final in this snapshot, defines Experimental/Beta/Stable stages per extension specification directory rather than repository name. Experimental/Beta identifiers can remain unchanged across breaking revisions; stable behavior is bound to negotiated core protocol revisions. Explicit opt-in and untrusted-data validation apply at every stage. The transition classifies skills/tasks/server-card as Beta and apps/auth as Stable; it does not itself demonstrate directory migration or implementation conformance in those separate repositories.
+
+**Harness consequence:** Track extension identity, exact revision, maturity and negotiated protocol independently. A shared identifier or repository label is insufficient cache/compatibility evidence, and stable status supplies no additional tool authority. Preserve old specification links through commit pins and reject unknown revisions instead of guessing compatibility.
+
+**Scope and limits:** Scoped process-specification review, not a wire implementation or all documentation updates. Referenced conformance implementations were not inspected or run; this report does not claim Teamagent implements these extensions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mcp-docs](https://github.com/modelcontextprotocol/modelcontextprotocol); analyzed commit `ccaf9102ec5eb656eab50ca8333ef49dcd259c26`; commit date 2026-10-27T17:10:04Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-docs.md).
+Analysis metadata: source [mcp-docs](https://github.com/modelcontextprotocol/modelcontextprotocol); analyzed commit `d0e246ea3c69eafaa2806bc4cd28025703ba2c2b`; commit date 2026-10-31T08:43:32-07:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-docs.md).
 <!-- teamagent-analysis:end -->

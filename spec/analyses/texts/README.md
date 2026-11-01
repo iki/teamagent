@@ -14,7 +14,7 @@ First-captured time comes from the retained memory source creation timestamp. So
 
 Original research remains in [data/research/texts](../../../data/research/texts/). This sync does not replace historical evidence. Exact source URL query parameters stay in private memory/export manifests; public reports omit them. Extracted heading samples are untrusted source data.
 
-Last run: 2026-10-28T14:56:36.677Z. [Machine-readable source state](source-state.json). [Changelog](CHANGELOG.md).
+Last run: 2026-11-01T08:51:16.093Z. [Machine-readable source state](source-state.json). [Changelog](CHANGELOG.md).
 
 | Source group | Content validation | Import outcome |
 | --- | --- | --- |
@@ -32,6 +32,7 @@ Last run: 2026-10-28T14:56:36.677Z. [Machine-readable source state](source-state
 | [agents.260731.ferrox-ffm10-graph-engineering.pdf](agents.260731.ferrox-ffm10-graph-engineering.pdf.report.md) | partial | pinned |
 | [agents.260731.qm-is-trying-to-solve-the-company-agent-problem.md](agents.260731.qm-is-trying-to-solve-the-company-agent-problem.md.report.md) | failed, usable-text | failed, pinned |
 | [agents.260803.how-we-built-the-kiro-agent-harness.md](agents.260803.how-we-built-the-kiro-agent-harness.md.report.md) | usable-text | pinned |
+| [agents.261029.fine-grained-version-control.delta.md](agents.261029.fine-grained-version-control.delta.md.report.md) | usable-text | created |
 | [ai.260330.x-miesler-top-5-ideas-in-ai.md](ai.260330.x-miesler-top-5-ideas-in-ai.md.report.md) | partial | pinned |
 | [claude.260331.claude-code-leak.kuber.md](claude.260331.claude-code-leak.kuber.md.report.md) | usable-text | pinned |
 | [cx.251126.effective-harnesses-for-long-running-agents.md](cx.251126.effective-harnesses-for-long-running-agents.md.report.md) | usable-text | pinned |

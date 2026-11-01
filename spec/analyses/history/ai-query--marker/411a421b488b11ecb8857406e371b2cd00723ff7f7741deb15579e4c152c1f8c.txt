@@ -1,0 +1,46 @@
+# marker
+
+Source: [marker](https://github.com/datalab-to/marker) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `e7c67f1d239ea6a805cbf4ed6c6b2056d435e22d`; commit timestamp `2026-10-02T09:53:01Z`; 265 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/datalab-to/marker/blob/e7c67f1d239ea6a805cbf4ed6c6b2056d435e22d/README.md)):
+
+> Marker converts documents to markdown, JSON, chunks, and HTML quickly and accurately. - Converts PDF, image, PPTX, DOCX, XLSX, HTML, EPUB files in all languages
+
+Build/package evidence: [pyproject.toml](https://github.com/datalab-to/marker/blob/e7c67f1d239ea6a805cbf4ed6c6b2056d435e22d/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/datalab-to/marker/blob/e7c67f1d239ea6a805cbf4ed6c6b2056d435e22d/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review — 2026-10-27
+
+**Hosted retention wording is conditional while local converter code is unchanged.** Reviewed commit `6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81` (commit date `2026-10-22T06:45:42-04:00`) against `e7c67f1d239ea6a805cbf4ed6c6b2056d435e22d`. The complete Git comparison contains 2 changed paths.
+
+The complete comparison is limited to README.md and contributor-agreement metadata. The README changes its hosted-platform wording from default zero retention to opt-in zero retention, describes a multi-model hosted service, and updates examples/promotional links. These are pinned upstream documentary claims, not verified account settings or a contract review. The local converter implementation did not change in this delta.
+
+Evidence: [README.md:32-43](https://github.com/datalab-to/marker/blob/6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81/README.md#L32-L43) · [README.md:428-450](https://github.com/datalab-to/marker/blob/6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81/README.md#L428-L450) · [README.md:564-577](https://github.com/datalab-to/marker/blob/6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81/README.md#L564-L577).
+
+**Harness consequence:** Treat hosted Datalab conversion as a distinct route from local Marker. Before document egress, resolve account/operation-specific retention and training conditions independently; a local model licence, hosted free allowance or README claim does not grant account coverage. Preserve local benchmark evidence rather than attributing hosted performance claims to the local adapter.
+
+**Scope and limits:** Documentary policy-change review only. No authenticated account, contractual eligibility, hosted service, licence entitlement or conversion benchmark was verified.
+
+## Change review - 2026-11-01
+
+Reviewed `71dd5fd7e51ab24f8624b6ba2fcb6014b4e40ed4` against `6d40b01930dd45f4fc3b014f2ede8fb0d8cb6b81`. The complete inventory contains manifest, lock and contributor-agreement changes. The selected [manifest](https://github.com/datalab-to/marker/blob/71dd5fd7e51ab24f8624b6ba2fcb6014b4e40ed4/pyproject.toml) advances Marker 2.0.0 to 2.1.0 and changes the Surya OCR range from 0.22 to 0.23. No Marker extraction source file is changed in this comparison.
+
+**Harness consequence:** Treat OCR dependency/model closure as part of extraction provenance and cache compatibility. A package version bump is not measured accuracy, runtime speed or license compatibility; benchmark the actual provisioned closure before changing a default.
+
+**Scope and limits:** Complete path inventory and manifest diff only; lock closure, contributor agreement and Surya implementation were not substantively reviewed. No install, OCR conversion or upstream tests were run.

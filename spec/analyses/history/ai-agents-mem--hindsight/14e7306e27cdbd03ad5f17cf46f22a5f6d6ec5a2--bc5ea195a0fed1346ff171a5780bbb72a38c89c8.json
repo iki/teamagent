@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-mem--hindsight",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/vectorize-io/hindsight",
+  "report": "spec/projects/ai-agents-mem--hindsight.md",
+  "analyzedSha": "14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T10:59:34+01:00",
+  "observedSha": "bc5ea195a0fed1346ff171a5780bbb72a38c89c8",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "bc5ea195a0fed1346ff171a5780bbb72a38c89c8",
+      "date": "2026-10-31T00:40:41+01:00",
+      "subject": "fix(reflect): the decision model's cut and verdict are retried on a rate limit (#6237)"
+    },
+    {
+      "sha": "7b46a07c82f997903230f0fb33deafe9dfd2e22b",
+      "date": "2026-10-30T22:07:13+01:00",
+      "subject": "fix(reflect): every piece of evidence carries its dates, raw chunks included (#6236)"
+    },
+    {
+      "sha": "71d4356b6fcbc2278d67edca421a1edf1e2b1e36",
+      "date": "2026-10-30T21:32:55+01:00",
+      "subject": "fix(consolidation): the decision model never writes observation text (#6211)"
+    },
+    {
+      "sha": "b801b694d06089d9743aab696a76db99d94f4471",
+      "date": "2026-10-30T18:40:27+01:00",
+      "subject": "fix(entities): keep mention_count exact under concurrent deletes and edits of one memory (#6233)"
+    },
+    {
+      "sha": "9ed0958822a005556b0b8dad12ad9522ee3c25ed",
+      "date": "2026-10-30T17:46:33+01:00",
+      "subject": "feat(knowledge): show the images behind a knowledge page's evidence (#6217)"
+    },
+    {
+      "sha": "dd250e65a8961e15986e282dc0153887a18c6901",
+      "date": "2026-10-30T16:35:31+01:00",
+      "subject": "fix(retain): read times with no UTC offset in the content's zone, not UTC (#6208) (#6224)"
+    },
+    {
+      "sha": "a461a00c0265955b8805dffab9d06bf30deb1ba8",
+      "date": "2026-10-30T16:25:32+01:00",
+      "subject": "fix(embeddings): run local embeddings on a fixed pool, not the default executor (#6110) (#6226)"
+    },
+    {
+      "sha": "2cc4be2baab879228bc78a4011eaa38971acf0ff",
+      "date": "2026-10-30T16:24:37+01:00",
+      "subject": "feat(embeddings): forward a configurable extra body on OpenAI-compatible embedding requests (#6209) (#6227)"
+    },
+    {
+      "sha": "1da02ab63ca6e1144583402533a82f1214f89611",
+      "date": "2026-10-30T16:11:11+01:00",
+      "subject": "fix: flaky tests — lock-order deadlocks, EvalPlanQual error, background-write races (#6225)"
+    },
+    {
+      "sha": "c1fdc5f448089b1db6c45b15599c6664d7a00620",
+      "date": "2026-10-30T10:32:51-04:00",
+      "subject": "chore(deps): bump authlib and dnspython in root uv.lock (#6179)"
+    },
+    {
+      "sha": "299cc80731abdcaa96eb70882956a4456d026030",
+      "date": "2026-10-30T15:30:55+01:00",
+      "subject": "feat(llm-requests): say how many days are kept, hourly 24h chart, split by model or operation (#6222)"
+    },
+    {
+      "sha": "ad6b2e02af513a4020b928dd4afdee443f36a079",
+      "date": "2026-10-30T10:29:12-04:00",
+      "subject": "chore(deps): bump vite in embed control center UI package-lock.json (#6223)"
+    },
+    {
+      "sha": "b61676a8a969abc827668f7335a2668515c9ac95",
+      "date": "2026-10-30T15:25:13+01:00",
+      "subject": "fix(llm-trace): write out buffered trace rows before a document delete removes them (#6221)"
+    },
+    {
+      "sha": "bba14b264b8e021ea38f13072333472f68cdecdf",
+      "date": "2026-10-30T10:09:06-04:00",
+      "subject": "chore(deps): bump litellm in litellm integration uv.lock (#6181)"
+    },
+    {
+      "sha": "6206eb7e40a12c8c25948e2c69ae7844dc8a4ffa",
+      "date": "2026-10-30T10:08:59-04:00",
+      "subject": "chore(deps): bump qs in root package-lock.json (#6184)"
+    },
+    {
+      "sha": "8c676c2614cf41e71bc12bc28f782616216b7ef3",
+      "date": "2026-10-30T14:56:31+01:00",
+      "subject": "fix(startup): bound the startup LLM probe so a busy backend can't stall or fail boot (#6219)"
+    },
+    {
+      "sha": "ca09078732ef2bd769ee88afb82a91be1e28ba7e",
+      "date": "2026-10-30T14:50:15+01:00",
+      "subject": "fix(llm): send images and files to Responses-API providers in Responses shape (#6172) (#6213)"
+    },
+    {
+      "sha": "d843830da3ea3d11c4f9c2c53b12b136d5d761a7",
+      "date": "2026-10-30T14:11:14+01:00",
+      "subject": "fix(metrics): count client-disconnect cancellations as success=\"cancelled\" (#6212)"
+    },
+    {
+      "sha": "daba7e6b4a5323b6c34b761c431f158657160cdb",
+      "date": "2026-10-30T13:50:35+01:00",
+      "subject": "feat(retain): separate reasoning effort and call settings for the vision slot (#6210)"
+    },
+    {
+      "sha": "81ec39531d91d97a6f7fbb5c7ead6f2295320301",
+      "date": "2026-10-30T13:50:20+01:00",
+      "subject": "fix(anthropic): cache the prompt-injected schema in its own system block (#6187) (#6216)"
+    },
+    {
+      "sha": "2884a992481dffddf982d9e8a78d05a8603d47d3",
+      "date": "2026-10-30T13:47:19+01:00",
+      "subject": "fix(reflect): an alias inside an identifier is not a citation (#6150) (#6215)"
+    },
+    {
+      "sha": "0b45cb942b160d4f2204d7a0b992bcb6a70a1e29",
+      "date": "2026-10-30T12:58:03+01:00",
+      "subject": "feat(llm-trace): opt-in flag to delete a document's request history with the document (#6098) (#6218)"
+    },
+    {
+      "sha": "d0855e68f9f6d6433bdd3bc583131b926d2b2c24",
+      "date": "2026-10-30T12:31:19+01:00",
+      "subject": "perf(lint): lint.sh 5-10x faster with the same checks; fix reflect done() crash (#6199) (#6194)"
+    },
+    {
+      "sha": "ccbfc14044a2973215c7d12b7f94b5dc86d60504",
+      "date": "2026-10-30T12:15:05+01:00",
+      "subject": "release(coding-agents): v0.8.4"
+    },
+    {
+      "sha": "ee51c8ecef206cd158a2669c97263ea99b1721d5",
+      "date": "2026-10-30T12:12:07+01:00",
+      "subject": "fix(coding-agents): pi custom-message runs no longer throw; auto-update reads npm 12 (#6214)"
+    },
+    {
+      "sha": "63b882cd74ea7efe93ff01db40937fd3dfadd713",
+      "date": "2026-10-30T11:36:06+01:00",
+      "subject": "fix(embed): control center Unicode profiles, unhealthy-daemon stop, safe delete (#6193)"
+    },
+    {
+      "sha": "8e8e9dc9cde79c4053befae35d84119d6b3b7cde",
+      "date": "2026-10-29T14:52:57-04:00",
+      "subject": "blog: OpenBot integration, shared memory over MCP (#6188)"
+    },
+    {
+      "sha": "4af9878ed35969fabe8216643b9d8ba55fd61f5f",
+      "date": "2026-10-29T19:41:22+01:00",
+      "subject": "feat(mcp): recall takes rerank prune/dedup, like the HTTP API (#6195)"
+    },
+    {
+      "sha": "1df40227bf1dd0c4e0164285773e7f9d179016eb",
+      "date": "2026-10-29T18:17:00+01:00",
+      "subject": "hindsight provider: use the final model names hs-decide-1-flash, hs-rerank-1, hs-embed-1 (#6192)"
+    },
+    {
+      "sha": "6c425f1b5a24d066c38dd7e4b7cb177080221f20",
+      "date": "2026-10-29T17:49:35+01:00",
+      "subject": "feat(llm): every tool call through a response schema; drop native tool calling (#6176)"
+    },
+    {
+      "sha": "0333ad722ba08454f99702335b54bf8a4633963a",
+      "date": "2026-10-29T17:19:44+01:00",
+      "subject": "feat(consolidation): one answer entry per fact, built for small models (#6164)"
+    },
+    {
+      "sha": "82109477af79f846ed4338e69d9848b5bbad00a5",
+      "date": "2026-10-29T11:32:58-04:00",
+      "subject": "docs: add the Hindsight Memory skill for OpenBot (#6161)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/alloydb/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/claude-code/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/cuda-onnx/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/cuda/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/custom-models/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/external-pg/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/local-llm/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/nginx/docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/pg_search/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/pg_textsearch/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/pgroonga/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/s3-file-storage/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/tei/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/timescale/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-compose/vchord/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/standalone/start-all.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/hindsight/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/hindsight/templates/api-deployment.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/hindsight/templates/worker-statefulset.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/hindsight/values.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/admin/cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/api/http.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/config_resolver.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/bank_stats_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/bank_templates.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/consolidation/consolidator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/consolidation/prompts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/consolidation/triage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/cross_encoder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/db/ops.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/db/ops_oracle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/db/ops_postgresql.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/decision_rerank_interface.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/embeddings.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/llm_interface.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/llm_trace.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/llm_wrapper.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/maintenance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/memories/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/memories/pg/entity_resolver.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/memories/pg/expand.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/memories/pg/graph.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/memories/pg/retain.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/memory_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/prompt_preview.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/anthropic_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/chatgpt_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/claude_code_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/cloud_auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/cloud_logo.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/codex_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/cursor_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/gemini_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/gemini_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/github_copilot_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/litellm_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/llamacpp_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/mock_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/none_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/nous_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/openai_compatible_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/openai_responses_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/tools_via_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/providers/xai_oauth_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/reflect/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/reflect/delta_ops.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/reflect/presentation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/reflect/prompts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/reflect/structured_doc.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/reflect/tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/reflect/tools_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/response_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/retain/fact_extraction.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/retain/orchestrator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/search/decision_reranker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/search/reranking.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/search/trace.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/search/tracer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/structured_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/engine/transfer/export.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/extensions/model_call.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/mcp_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/metrics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/hindsight_api/worker/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hindsight-api-slim/tests/consolidation_answers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/llm_judge.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hindsight-api-slim/tests/llm_trace_drain.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/reflect_script.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_anthropic_batch.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "hindsight-api-slim/tests/test_anthropic_forced_tool_choice_fallback.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hindsight-api-slim/tests/test_anthropic_output_config_fallback.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_anthropic_prompt_caching.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_anthropic_refusal.py",
+      "previousPath": null
+    },
+    {
+      "status": "R053",
+      "path": "hindsight-api-slim/tests/test_anthropic_structured_output.py",
+      "previousPath": "hindsight-api-slim/tests/test_anthropic_structured_tool_use.py"
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_bank_attribution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_bank_stats.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_bank_template_configurable_fields.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_bank_template_full_roundtrip.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_cache_affinity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_chatgpt_provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_claude_code_llm_error_result.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_claude_code_llm_isolation.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "hindsight-api-slim/tests/test_claude_code_llm_tool_round.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hindsight-api-slim/tests/test_cloud_login.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_codex_extra_body.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_codex_oauth_refresh.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_codex_quota_reset_defer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_codex_reasoning_effort.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_codex_request_headers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_codex_stream_deadline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_codex_stream_failure.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_codex_strict_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "hindsight-api-slim/tests/test_codex_tool_choice.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_codex_usage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_consolidation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_consolidation_batch_atomicity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_consolidation_batch_failure_visibility.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_consolidation_delete_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hindsight-api-slim/tests/test_consolidation_fact_format.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hindsight-api-slim/tests/test_consolidation_fact_format_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_consolidation_failure_isolation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_consolidation_failure_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "hindsight-api-slim/tests/test_consolidation_id_repair.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_consolidation_output_language.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_consolidation_recency_prompt_5938.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_consolidation_scope_parallelism.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_consolidation_triage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_content_policy_refusal_permanent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_cursor_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hindsight-api-slim/tests/test_db_dropped_connection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_decision_model_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_decision_rerank_interface.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_decision_reranker.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hindsight-api-slim/tests/test_deepseek_provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "hindsight-api-slim/tests/test_deepseek_tool_call_compat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_delta_operation_parse.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_document_transfer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_embeddings_asymmetric_prefixes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_embeddings_openai_batch_size.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_entity_mention_count.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_fact_extraction_occurred_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_gemini_400_fail_fast.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_gemini_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_gemini_content_block.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_gemini_deadline_retry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_gemini_implicit_cache_ratio.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_gemini_safety_settings.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "hindsight-api-slim/tests/test_gemini_thought_signature.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_github_copilot_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_gpt6_chat_completions_compat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_hierarchical_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_input_robustness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_litellm_json_repair.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hindsight-api-slim/tests/test_litellm_retry_status.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

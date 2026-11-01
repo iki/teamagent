@@ -2,7 +2,7 @@
 
 Source: [awesome-jev-live](https://github.com/wh000wh000/awesome-jev-live) · [decisions](../../decisions.md), [evolution](../../evolution.md), [memory](../../memory.md).
 
-Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-info--awesome-jev-live.md).
+Historical discovery: 2026-10-24T06:36:54.441Z, initially unreviewed. Dated scoped reviews below supersede that discovery-only status; they do not establish runtime validation. [Change evidence](../repos/ai-info--awesome-jev-live.md).
 
 ## Source update reviewed 2026-10-28
 
@@ -20,6 +20,18 @@ In [data/stats.json](https://github.com/wh000wh000/awesome-jev-live/blob/c17bba4
 
 **Harness implication and limits:** Use a live catalog for candidate discovery, then follow each claim to versioned primary evidence. Popularity and inferred relevance cannot choose a decision backend, set calibration thresholds or satisfy a privacy/authorization gate. No catalog entries were independently benchmarked or promoted, and this data refresh does not change Teamagent's Jev runtime contract. No upstream code or live service was executed for this review.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `966fb9c06c9a972d5f62c0eeb5b4060bceab90c5` (commit date `2026-11-01T17:27:04+08:00`), compared with `c17bba461c343b6e8473153bb33e6c196860129c`. Earlier observations remain historical evidence.
+
+**Scope:** Selected README and dated changelog passages from a complete scoped two-file diff; the full repository diff exceeded the collector bound. Catalog classifier code, entry datasets, linked projects and external model claims were not independently verified.
+
+The [README catalog](https://github.com/wh000wh000/awesome-jev-live/blob/966fb9c06c9a972d5f62c0eeb5b4060bceab90c5/README.md) updates its reported entry count from 812 to 831 and continues to distinguish official, observed, inferred and unverified labels across displayed material. Selected [changelog records](https://github.com/wh000wh000/awesome-jev-live/blob/966fb9c06c9a972d5f62c0eeb5b4060bceab90c5/data/CHANGELOG.md) carry collection times, categories and those evidence labels for additions. The page also quotes application descriptions and model-quality claims; a catalog label is not proof of calibrated probabilities, a working integration or maintained primary documentation. The inspected two-file comparison has original SHA-256 `3a765aa9208da645473a2746b5ff01f642e91971778c3f5f44211f5e344f470a`; only the stated passages were read, not all 5,163 rendered diff lines.
+
+**Teamagent implication (inference):** Use the index to discover decision-model candidates while retaining each source's evidence level and exact revision. Route adoption through primary-source implementation checks, held-out calibration and workload evaluation after hard policy eligibility. Keep catalog recency and popularity separate from correctness, and never let a model or index confidence label authorize an action.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [awesome-jev-live](https://github.com/wh000wh000/awesome-jev-live); analyzed commit `c17bba461c343b6e8473153bb33e6c196860129c`; commit date 2026-10-28T17:22:17+08:00; review date 2026-10-28T14:29:27.414Z; depth reviewed. [Maintenance record](../repos/ai-info--awesome-jev-live.md).
+Analysis metadata: source [awesome-jev-live](https://github.com/wh000wh000/awesome-jev-live); analyzed commit `966fb9c06c9a972d5f62c0eeb5b4060bceab90c5`; commit date 2026-11-01T17:27:04+08:00; review date 2026-11-01T11:35:43.470Z; depth reviewed. [Maintenance record](../repos/ai-info--awesome-jev-live.md).
 <!-- teamagent-analysis:end -->

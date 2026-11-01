@@ -2,11 +2,11 @@
 
 Source: [openai-agents-js](https://github.com/openai/openai-agents-js) · [Analysis](../../projects/ai-agents--openai-agents-js.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570`; commit date: 2026-10-21T13:19:06-07:00; review date: 2026-10-28T08:47:42.123Z; observed SHA: `be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `9b33d73a3ad696f0c43689d1428e901bfdc37fa0`; commit date: 2026-10-30T16:05:12-07:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `9b33d73a3ad696f0c43689d1428e901bfdc37fa0`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/openai/openai-agents-js/compare/be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570...be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/openai/openai-agents-js/compare/9b33d73a3ad696f0c43689d1428e901bfdc37fa0...9b33d73a3ad696f0c43689d1428e901bfdc37fa0). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

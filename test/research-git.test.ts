@@ -15,7 +15,7 @@ test("Git research maintenance preserves local evidence and validates source con
       "-File",
       resolve("test/research-git-fixtures.ps1"),
     ],
-    { cwd: resolve("."), stdout: "pipe", stderr: "pipe", timeout: 120_000 },
+    { cwd: resolve("."), stdout: "pipe", stderr: "pipe", timeout: 120_000, windowsHide: true },
   );
   assert.equal(
     result.exitCode,

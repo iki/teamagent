@@ -26,6 +26,7 @@ export default defineConfig({
     "teamagent/no-executable-input": "error",
     "teamagent/runtime-launchers": "error",
     "teamagent/temporary-fixtures": "error",
+    "teamagent/background-processes": "error",
     "teamagent/module-contract": "error",
     "teamagent/module-dependencies": "error",
     "teamagent/safe-rendering": "error",

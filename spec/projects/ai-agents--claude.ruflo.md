@@ -50,6 +50,18 @@ For Teamagent, reserve capacity transactionally when applying a plan; an in-memo
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `e580bbc8204874f762d132fe441b18192979211b` (commit date `2026-11-01T06:29:40Z`), compared with `5ae2d6527b24f1ae6d907a29b91d320cdc447d2d`. Earlier observations remain historical evidence.
+
+**Scope:** Complete new verified-guards.ts; 429 changed paths inventoried. Ingestion, verifier execution and lesson publication call sites not audited.
+
+The [learning guards](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/@claude-flow/cli/src/memory/verified-guards.ts) default to blocking recognized test/config/narrowed-verifier taints, require explicit re-verification opt-in, and hold lessons with only one recorded session, only narrowed successes, or suspicious perfect/tainted histories. Unknown taint values are dropped and malformed stats become zeros; therefore this parser alone does not fail closed on future or corrupted evidence classes. Different session labels are also not independent verification by themselves.
+
+**Teamagent implication (inference):** Preserve verifier inputs, edits and trust levels with each learning record, quarantine unknown evidence schemas, and distinguish independent validation from repeated self-report. Useful anomaly checks can only downgrade evidence; they cannot turn a pattern into an authorized or proven-successful skill.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [claude.ruflo](https://github.com/ruvnet/ruflo); analyzed commit `5ae2d6527b24f1ae6d907a29b91d320cdc447d2d`; commit date 2026-10-28T06:08:24-04:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--claude.ruflo.md).
+Analysis metadata: source [claude.ruflo](https://github.com/ruvnet/ruflo); analyzed commit `e580bbc8204874f762d132fe441b18192979211b`; commit date 2026-11-01T06:29:40Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--claude.ruflo.md).
 <!-- teamagent-analysis:end -->

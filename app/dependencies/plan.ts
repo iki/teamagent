@@ -53,10 +53,20 @@ export const patchPolicy = Effect.fnUntraced(function* (
     }
     for (const item of fix.packages) {
       const current = manifest.dependencies[item.name] ?? manifest.devDependencies[item.name];
-      if (current === undefined || !item.versions.includes(current)) {
+      // Aube resolves transitive package patches; require this fix's exact active selector.
+      // Host adapters still require a directly pinned package with supplied coverage.
+      const covered =
+        current === undefined
+          ? fix.kind === "package-patch" &&
+            item.versions.some((version) => {
+              const path = manifest.aube?.patchedDependencies?.[`${item.name}@${version}`];
+              return path !== undefined && fix.files.some((file) => file.artifactPath === path);
+            })
+          : item.versions.includes(current);
+      if (!covered) {
         return yield* new DependencyError({
           code: "blocked",
-          message: `ASK: ${fix.id} has no supplied Trigon coverage for the current ${item.name} pin.`,
+          message: `ASK: ${fix.id} has no supplied Trigon coverage for the ${item.name} pin or active exact patch selector.`,
         });
       }
     }

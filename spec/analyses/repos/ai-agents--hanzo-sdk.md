@@ -2,11 +2,11 @@
 
 Source: [hanzo-sdk](https://github.com/hanzoai/sdk) · [Analysis](../unreviewed/ai-agents--hanzo-sdk.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `833140e79c6b80427200c4ae7dd6d5ff1aea7ebe`; commit date: 2026-10-21T05:39:18-04:00; review date: 2026-10-28T09:27:32.685Z; observed SHA: `833140e79c6b80427200c4ae7dd6d5ff1aea7ebe`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `3dbc8b85419edaceb19ef744d9796ba6b5bbebb9`; commit date: 2026-10-28T15:30:03-07:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `3dbc8b85419edaceb19ef744d9796ba6b5bbebb9`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/hanzoai/sdk/compare/833140e79c6b80427200c4ae7dd6d5ff1aea7ebe...833140e79c6b80427200c4ae7dd6d5ff1aea7ebe). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/hanzoai/sdk/compare/3dbc8b85419edaceb19ef744d9796ba6b5bbebb9...3dbc8b85419edaceb19ef744d9796ba6b5bbebb9). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

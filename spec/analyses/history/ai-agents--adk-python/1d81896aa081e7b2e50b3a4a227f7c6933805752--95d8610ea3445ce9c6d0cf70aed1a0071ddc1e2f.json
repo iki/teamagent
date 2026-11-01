@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--adk-python",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/google/adk-python",
+  "report": "spec/projects/ai-agents--adk-python.md",
+  "analyzedSha": "1d81896aa081e7b2e50b3a4a227f7c6933805752",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T23:24:57-07:00",
+  "observedSha": "95d8610ea3445ce9c6d0cf70aed1a0071ddc1e2f",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "95d8610ea3445ce9c6d0cf70aed1a0071ddc1e2f",
+      "date": "2026-10-31T23:44:06-07:00",
+      "subject": "docs: fix Google Cloud Run typo in adk_knowledge_agent README"
+    },
+    {
+      "sha": "9a5117b73b8b7f8d7e6547d2e109336b8a7b053c",
+      "date": "2026-10-31T16:50:13-07:00",
+      "subject": "feat: allow McpToolset callers to receive MCP server notifications"
+    },
+    {
+      "sha": "8cd3b12c8a5d658c5e0d3ea0731d8be34a092a4a",
+      "date": "2026-10-30T22:07:51-07:00",
+      "subject": "fix(eval): preserve live usage without extra inference calls"
+    },
+    {
+      "sha": "af371b7236c87bad36957e5f691b350c513e6bb2",
+      "date": "2026-10-30T19:49:38-07:00",
+      "subject": "fix: keep thought parts out of FirestoreMemoryService"
+    },
+    {
+      "sha": "e9e8f6156fb73cdfe799af0a0a57786e807732df",
+      "date": "2026-10-30T17:35:26-07:00",
+      "subject": "feat: support configuring eval case parallelism in eval config and CLI"
+    },
+    {
+      "sha": "db60432275b8db9e41e0935d87d1b40b4c623675",
+      "date": "2026-10-30T16:57:52-07:00",
+      "subject": "fix(scripts): accept a shared guide page documenting a module's exports"
+    },
+    {
+      "sha": "81c3fe649232f79b03f5663da90d4434ddeb8073",
+      "date": "2026-10-30T16:42:22-07:00",
+      "subject": "fix: decode base64 bytes in rehydrated workflow node outputs"
+    },
+    {
+      "sha": "cddc57f63db9aa8e8048184b647c62f9800063f3",
+      "date": "2026-10-30T16:36:09-07:00",
+      "subject": "refactor(workflow): unify static node loop bookkeeping onto DynamicNodeRun"
+    },
+    {
+      "sha": "3a6b7a51da72cdffa9d0611dced7446fc49240dd",
+      "date": "2026-10-30T15:33:35-07:00",
+      "subject": "fix: keep partial events out of Agent Engine storage"
+    },
+    {
+      "sha": "28d49753845ad0ed0d024cdeb7f738b6ff1446e0",
+      "date": "2026-10-30T15:25:52-07:00",
+      "subject": "fix: send the request's headers when loading MCP resources"
+    },
+    {
+      "sha": "72205cd3ee52ed4ab49359cc951f2283e3d35191",
+      "date": "2026-10-30T15:16:43-07:00",
+      "subject": "fix: mark failed MCP tool results as errors on the interactions API"
+    },
+    {
+      "sha": "3a5bbd2f593c3785eff9b9855054744df0b64db8",
+      "date": "2026-10-30T15:15:44-07:00",
+      "subject": "fix: normalize array-tail schema types"
+    },
+    {
+      "sha": "611b8e7cc22008146c9e23587a81580424410477",
+      "date": "2026-10-30T15:13:42-07:00",
+      "subject": "fix: prevent file truncation on invalid write_file content"
+    },
+    {
+      "sha": "e5b7dc8c68c64a093363cc195ce27304a8efe904",
+      "date": "2026-10-30T15:13:24-07:00",
+      "subject": "fix: read Workflow.graph when drawing the dev UI graph"
+    },
+    {
+      "sha": "50ab3b5e9708900e2153d448647dc69b6164285f",
+      "date": "2026-10-30T15:12:25-07:00",
+      "subject": "fix(live): drop saved audio from history replayed to the CascadeLive reasoner"
+    },
+    {
+      "sha": "ce4e0c40772e8d460d6b727c3bdf56efe7ac779b",
+      "date": "2026-10-30T15:10:38-07:00",
+      "subject": "fix: preserve union arguments when exporting MCP tool schemas"
+    },
+    {
+      "sha": "73b6790b2688c27330eecd18b590157c0704ee58",
+      "date": "2026-10-30T14:58:50-07:00",
+      "subject": "fix: use set_model_response for output_schema agents that can transfer"
+    },
+    {
+      "sha": "e3d1594d04f8ae88921fadae4bc8f16bcb698d0b",
+      "date": "2026-10-30T14:57:53-07:00",
+      "subject": "fix: preserve non-UTF-8 bytes in EditFileTool"
+    },
+    {
+      "sha": "0af1cdce3b1a92d0067c66f43fb9a4fd217ec73a",
+      "date": "2026-10-30T14:55:19-07:00",
+      "subject": "fix: preserve split Unicode surrogate pairs"
+    },
+    {
+      "sha": "e4a824f24b5fd25b929419a6dfe3f871cafd61c6",
+      "date": "2026-10-30T14:18:24-07:00",
+      "subject": "fix(live): make CascadeLive reply to history that ends with a user turn"
+    },
+    {
+      "sha": "875e2aef7e800ca307fcff85b68e54d6101ba63c",
+      "date": "2026-10-30T14:06:31-07:00",
+      "subject": "feat: add a2a agent card generation with the CLI"
+    },
+    {
+      "sha": "da98d4d641b673369ef96ee94424459083dd7703",
+      "date": "2026-10-30T14:00:39-07:00",
+      "subject": "fix: report unreadable SKILL.md files to on_error"
+    },
+    {
+      "sha": "f6325bc2251302db26f3e5aa6dd8e4d439ea5d75",
+      "date": "2026-10-30T13:43:59-07:00",
+      "subject": "fix: send a JSON-safe state_delta from VertexAiSessionService"
+    },
+    {
+      "sha": "a9cabe7269b9d63feb812b3051d2a6eda89ce85f",
+      "date": "2026-10-30T13:42:00-07:00",
+      "subject": "fix: keep the streamed thought signature on its own part"
+    },
+    {
+      "sha": "2a0bffa1258dd3b806acb6368acc8f5d29868474",
+      "date": "2026-10-30T13:01:34-07:00",
+      "subject": "fix: allow whole-file reads of empty files in ReadFileTool"
+    },
+    {
+      "sha": "968cd869ff79be622eb921c5e314bd19efd889d2",
+      "date": "2026-10-30T10:34:03-07:00",
+      "subject": "fix: restrict VertexAiSessionService.create_session config options"
+    },
+    {
+      "sha": "2cabbddf1199f996e6e7e9040341eaecfb4add80",
+      "date": "2026-10-30T10:21:41-07:00",
+      "subject": "fix: keep rejected saves out of the FileArtifactService catalog"
+    },
+    {
+      "sha": "3638d764f72c7ccbf07ee5261305b27d9fc464db",
+      "date": "2026-10-30T10:10:29-07:00",
+      "subject": "fix: report truncated Apigee tool calls as max tokens"
+    },
+    {
+      "sha": "4fae7b75c9c9d41bc2ee3ac79001b87f005be6ab",
+      "date": "2026-10-30T09:39:32-07:00",
+      "subject": "fix: keep thought parts out of Memory Bank events"
+    },
+    {
+      "sha": "87d9dcdf5273b54f61ee9d9cba95c30e5c0a5e0e",
+      "date": "2026-10-30T09:37:52-07:00",
+      "subject": "fix(compaction): cancel in-flight summarization when invocation aborts"
+    },
+    {
+      "sha": "491d7dbdaa784011d5768d43341df25f13256d71",
+      "date": "2026-10-30T03:20:12-07:00",
+      "subject": "fix(antigravity): extract subagent names from step tool calls and avoid root_agent_subagent fallback"
+    },
+    {
+      "sha": "6bf806a0107be8ce8e9dff92631f19f68f0c8cf6",
+      "date": "2026-10-30T00:31:03-07:00",
+      "subject": "feat(artifacts): add experimental FsspecArtifactService with read and listing support"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/adk-architecture/references/interface-workflow.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/adk-unit-guide/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "constraints-3.11.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "constraints-3.12.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "constraints-3.13.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "constraints-3.14.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "constraints-3.15.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/adk_team/adk_knowledge_agent/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/integrations/livekit/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/integrations/livekit/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "contributing/samples/integrations/teams_agent/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "contributing/samples/integrations/teams_agent/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/integrations/teams_notification_agent/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/live/cascade/README_elevenlabs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/live/multi_agent/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/live/non_blocking_tool_agent/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/live/parallel_tools_agent/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/live/single_agent/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/live/streaming_tool_events/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/live/tool_callbacks_agent/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/live/tools_agent/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/live/workflow/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/live/workflow/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/managed_agent/basic/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/managed_agent/code_execution/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/managed_agent/remote_mcp/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/managed_agent/single_turn/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contributing/samples/managed_agent/system_instruction/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/agents/managed_agent/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/environment/base_environment/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/evaluation/agent_evaluator/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/evaluation/eval_config/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/evaluation/eval_service/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/evaluation/evaluator/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/features/feature_registry/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/integrations/bigquery/bigquery_toolset/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guides/integrations/openai/openai_decisions_classifier/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guides/integrations/teams/teams_runner/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/labs/classifiers/classifier_node/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/telemetry/telemetry_config/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/tools/mcp_tool/agent_to_mcp/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/tools/tool_args_matcher/tool_args_matcher/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/workflow/join_node/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/check_new_py_files.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/compliance_checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/agents/_managed_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/agents/context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/agents/invocation_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/apps/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/apps/compaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/artifacts/file_artifact_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/adk/cli/_cli_generate_agent_card.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/cli/agent_graph.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/cli/api_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/cli/cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/cli/cli_deploy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/cli/cli_eval.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/cli/cli_tools_click.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/cli/deployers/_dockerfile_template.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/cli/dev_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/cli/fast_api.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/adk/cli/utils/_eval_storage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/cli/utils/agent_loader.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/code_executors/container_code_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/dependencies/_mcp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/environment/_base_environment.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/environment/_local_environment.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/agent_evaluator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/eval_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/evaluation_generator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/final_response_match_v2.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/hallucinations_v1.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/llm_as_judge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/local_eval_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/metric_evaluator_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/rubric_based_evaluator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/rubric_based_final_response_quality_v1.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/rubric_based_tool_use_quality_v1.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/simulation/_llm_audio_user_simulator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/simulation/llm_backed_user_simulator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/simulation/per_turn_user_simulator_quality_v1.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/simulation/static_user_simulator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/simulation/user_simulator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/simulation/user_simulator_provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/events/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/events/_branch_path.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/events/_node_path_builder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/events/_rewind_events.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/events/event.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/features/_feature_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/flows/llm_flows/base_llm_flow.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/flows/llm_flows/basic.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/flows/llm_flows/context/_compaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/flows/llm_flows/context/_contents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/flows/llm_flows/core/_finalizer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/flows/llm_flows/prompt/_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/integrations/bigquery/_bigquery_skill.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/integrations/bigquery/bigquery_toolset.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/integrations/daytona/_daytona_environment.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/integrations/e2b/_e2b_environment.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/integrations/eleven_labs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/integrations/eleven_labs/_tts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/integrations/firestore/firestore_memory_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/integrations/firestore/firestore_session_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/adk/integrations/fsspec/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/adk/integrations/fsspec/_fsspec_artifact_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/integrations/openai/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/integrations/openai/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/integrations/openai/_openai_common.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/adk/integrations/openai/_openai_decisions_classifier.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/integrations/redis/_redis_session_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/adk/integrations/teams/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/adk/integrations/teams/_teams_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/labs/antigravity/_antigravity_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/labs/antigravity/_tool_result_capture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/labs/classifiers/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/labs/classifiers/_base_classifier.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/labs/classifiers/_classifier_node.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/labs/classifiers/_types.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/live/_cascade_live_connection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/live/_runner_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/memory/vertex_ai_memory_bank_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/models/apigee_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/models/gemini_llm_connection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/models/gemma_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/models/interactions_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/plugins/bigquery_agent_analytics_plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/runners.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/sessions/_rewind_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/sessions/vertex_ai_session_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/skills/_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/skills/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/telemetry/_genai_instrumentor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/telemetry/_instrumentation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/telemetry/_metrics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/telemetry/_token_usage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/telemetry/sqlite_span_exporter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/_function_parameter_parse_util.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/_url_validator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/agent_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/base_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/computer_use/computer_use_toolset.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/environment/_edit_file_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/environment/_read_file_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/environment_simulation/environment_simulation_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/environment_simulation/environment_simulation_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/load_mcp_resource_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/mcp_tool/_agent_to_mcp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/mcp_tool/conversion_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/mcp_tool/mcp_session_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/mcp_tool/mcp_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/mcp_tool/mcp_toolset.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/mcp_tool/session_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/retrieval/base_retrieval_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/retrieval/llama_index_retrieval.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/tool_args_matcher/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/adk/tools/tool_args_matcher/_semantic_arg_matcher.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/tool_confirmation.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

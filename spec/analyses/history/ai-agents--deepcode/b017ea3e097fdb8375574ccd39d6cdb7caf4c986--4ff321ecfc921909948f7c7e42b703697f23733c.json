@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--deepcode",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/HKUDS/DeepCode",
+  "report": "spec/projects/ai-agents--deepcode.md",
+  "analyzedSha": "b017ea3e097fdb8375574ccd39d6cdb7caf4c986",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T13:01:03+08:00",
+  "observedSha": "4ff321ecfc921909948f7c7e42b703697f23733c",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "4ff321ecfc921909948f7c7e42b703697f23733c",
+      "date": "2026-10-31T19:03:51+08:00",
+      "subject": "docs: news first, right after the table of contents"
+    },
+    {
+      "sha": "1e8cc867bcc9d2483cfe0815243c5fb54151f46c",
+      "date": "2026-10-31T17:53:11+08:00",
+      "subject": "docs: news and changelog for the interface polish"
+    },
+    {
+      "sha": "f5fa875dfcc3468a11843102c3e78ff98739262d",
+      "date": "2026-10-31T17:53:10+08:00",
+      "subject": "Merge polish: a calmer, more finished Web and Desktop interface"
+    },
+    {
+      "sha": "e29958f5f03010fb595276bcef82a0c6443b1eb6",
+      "date": "2026-10-31T17:47:17+08:00",
+      "subject": "fix(web): quieter small pieces around the conversation"
+    },
+    {
+      "sha": "e4bcd63dfa2e663b7a4c9738b27b8867757ee42c",
+      "date": "2026-10-31T17:38:41+08:00",
+      "subject": "fix(web): settings and management pages drop a layer of chrome"
+    },
+    {
+      "sha": "7197459b1c3245b052f1c2d59ad6fe46c13d0846",
+      "date": "2026-10-31T17:26:55+08:00",
+      "subject": "fix(web): quiet selection in the sidebar, ghost buttons in the header"
+    },
+    {
+      "sha": "0ddbb56c14fe126dcbde6aadf5d9cf82645efe21",
+      "date": "2026-10-31T16:27:16+08:00",
+      "subject": "fix(web): steps read as one quiet line each"
+    },
+    {
+      "sha": "bd887eb9b306a89d532ffd7ec802ae2564e68669",
+      "date": "2026-10-31T16:19:13+08:00",
+      "subject": "fix(web): one line per control in the composer toolbar"
+    },
+    {
+      "sha": "c88f5af2725b19fb7d013088669d0dd2b1400e83",
+      "date": "2026-10-31T16:09:33+08:00",
+      "subject": "fix(web): one interface typeface; monospace only for code"
+    },
+    {
+      "sha": "b7eb90d6b671a734cfe3e41dd9f2d595d62c6abc",
+      "date": "2026-10-31T15:48:52+08:00",
+      "subject": "Merge ux4: visible focus on custom selects, a fuller monospace stack, a guard against cross-component styles"
+    },
+    {
+      "sha": "7e6ac72ff1863a2f5d7253fd3d7606481bc769c1",
+      "date": "2026-10-31T15:48:52+08:00",
+      "subject": "Merge cleanup: remove unused images and references to an unpublished plan"
+    },
+    {
+      "sha": "2ef29873b0dea29feed9cd4fbdd1d362b499ecc6",
+      "date": "2026-10-31T15:16:46+08:00",
+      "subject": "chore: remove unused images and references to an unpublished plan"
+    },
+    {
+      "sha": "7d8cefc84fb1d9c60c1d016d5ecef30c2999cfdf",
+      "date": "2026-10-31T14:49:24+08:00",
+      "subject": "test(web): no component's styles reach into another's"
+    },
+    {
+      "sha": "f083bda7e1bd5f9b1f1f0cf44752c922d294de0f",
+      "date": "2026-10-31T14:44:44+08:00",
+      "subject": "fix(web): keyboard focus on three controls; monospace text in Menlo, not Courier"
+    },
+    {
+      "sha": "227ab4cff2df0209803de7dc4683340824384a4c",
+      "date": "2026-10-31T14:35:58+08:00",
+      "subject": "Merge ux2: long-task readability, the interface in your language, narrow windows"
+    },
+    {
+      "sha": "4957b7a2011d77e9e5da47591cb0789e99e27abd",
+      "date": "2026-10-31T14:27:36+08:00",
+      "subject": "docs: changelog and README news for the long-task, language and narrow-window work"
+    },
+    {
+      "sha": "ad5c87e0159a8ba21dae29b1fae7c81a6f882070",
+      "date": "2026-10-31T14:22:08+08:00",
+      "subject": "fix(web): widening the window keeps focus in the open review panel"
+    },
+    {
+      "sha": "4c8a72cedb75cafb147f00d4902a37fe07a1329d",
+      "date": "2026-10-31T14:17:28+08:00",
+      "subject": "fix(web): the floating review panel takes focus, and keeps Escape's order"
+    },
+    {
+      "sha": "ce3c1e851b5a8e8885913ed92a37901de4181889",
+      "date": "2026-10-31T14:10:30+08:00",
+      "subject": "fix(web): the narrow drawer and floating review panel hold the keyboard properly"
+    },
+    {
+      "sha": "a373faaf23ff1aa451d1a8a3879e55d67bea5d56",
+      "date": "2026-10-31T13:57:59+08:00",
+      "subject": "feat(web): the sidebar is a drawer on a narrow window"
+    },
+    {
+      "sha": "059fe004e1114abe6638cdfc3daab40c9e7e809b",
+      "date": "2026-10-31T13:48:55+08:00",
+      "subject": "fix(web): a composer control wider than its row shrinks to it"
+    },
+    {
+      "sha": "4601f304be2209bb1325e6c9e4f1b0e41293488e",
+      "date": "2026-10-31T13:38:40+08:00",
+      "subject": "fix(web): the composer's controls wrap instead of being cut"
+    },
+    {
+      "sha": "bcc57ad559d457ccb3049cdd7251b621620b5992",
+      "date": "2026-10-31T13:35:42+08:00",
+      "subject": "test(tui): skip only key-binding names in the key-name guard"
+    },
+    {
+      "sha": "2c1ad91617d32032ddef58e409875ed0c00f7c5c",
+      "date": "2026-10-31T13:34:21+08:00",
+      "subject": "fix(tui): find effort rows by explicit keywords; guard Enter and Tab too"
+    },
+    {
+      "sha": "a7226753cd0266c26393adf1a4697445f76ff5ab",
+      "date": "2026-10-31T13:29:48+08:00",
+      "subject": "fix(tui): item 4 review — effort filter, exec, guides, a wider key guard"
+    },
+    {
+      "sha": "2cd041f604b2ee741bcc7aa1a0d634e54f80a920",
+      "date": "2026-10-31T13:22:10+08:00",
+      "subject": "fix(tui): one way to name keys, efforts, Sessions and Turns"
+    },
+    {
+      "sha": "7d26b91b08102297c47e42b5c09b36fa3e4c2f11",
+      "date": "2026-10-31T13:03:52+08:00",
+      "subject": "fix: say Session where item 3 left thread, and capitalise it in the Web UI"
+    },
+    {
+      "sha": "d4c40ebb28ae03f85edbae348e1914239b4c6a59",
+      "date": "2026-10-31T12:57:24+08:00",
+      "subject": "fix(web): call a conversation a Session everywhere"
+    },
+    {
+      "sha": "300d004c9a0359aeaf287edf30ba6747dadf31e7",
+      "date": "2026-10-31T12:53:50+08:00",
+      "subject": "test(web): list plugin diagnostic severities like the other label tests"
+    },
+    {
+      "sha": "fa05746456bb8198f48e477435bd0af8a456468c",
+      "date": "2026-10-31T12:52:49+08:00",
+      "subject": "refactor(web): item 2 review nits"
+    },
+    {
+      "sha": "9af4e53bc4e8474727938b170d8e093b3afc7ca0",
+      "date": "2026-10-31T12:48:48+08:00",
+      "subject": "fix(web): MCP states from review, one name per scope, plugin statuses"
+    },
+    {
+      "sha": "1eb042e35be4e9f25225bb5364fb78afba6c22d0",
+      "date": "2026-10-31T12:36:38+08:00",
+      "subject": "fix(web): MCP, Skills, agent presets and diagnostics without raw values"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "CHANGELOG_ZH.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README_ZH.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/dispatcher.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/protocol/methods.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/protocol/retry.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/625302d6ce6e8bd6be7c3e6969cdab4e.JPG",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/Deepcode.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/IMG_8098.jpeg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/IMG_8099.jpeg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/access_credentials.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/chat_interface.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/core_metrics.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/download.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/feature_cognition.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/feature_hyper.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/feature_secure.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/feature_synthesis.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/operation_result.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/processing_core.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/runtime_status.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/status_error.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/status_success.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/system_diagnostics.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/tab_link.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/tab_pdf.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/tab_prompt.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/troubleshooting.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/icons/workflow_monitor.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/nanobot.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/readme/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/readme/web-ui.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/result_main.jpg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/automation_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/automation_foreground.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/exec_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/execution_options.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/hooks_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/service_events.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/service_thread_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tui/approval_view.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/commands.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/input.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/markdown_stream.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/picker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/renderer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/session_bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/text.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/theme.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/thread_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent_runtime/goal_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/agent_runtime/goal_verifier.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent_runtime/hook.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/agent_runtime/microcompact.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent_runtime/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/agent_runtime/tools/model_notes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent_runtime/tools/registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent_setup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/agent_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/approval_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/automation_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/extension_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/goal_extension.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/project_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/session_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/settings_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/thread_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/turn_projection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/turn_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/views.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/domain/approval.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/domain/message_provenance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/events/protocol.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/events/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/agents/control.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/harness/approval_scope.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/collaboration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/hooks/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/hooks/discovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/hooks/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/harness/hooks/trust.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/permissions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/harness/risk_evaluator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/tools/goal.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/tools/patch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/loop/autodream.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/persistence/execution_repository.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/model_compat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/sessions/index.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/sessions/transcript.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deepcode.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/e2e/cssLeaks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/e2e/web.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/App.module.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/App.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/App.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/BrowserShell.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/BrowserShell.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/ServerFolderPicker.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/ServerFolderPicker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/app/configScope.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/escapeLayer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/i18n.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/app/layout.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/replayThreadHistory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/threadEventStream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/app/useFocusHandoff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/app/useMediaQuery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/app/useNavigationDrawer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/app/useNavigationDrawer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/useSystemDarkMode.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/useWorkspaceController.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/workspaceState.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/workspaceState.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/components/ConfirmDialog.module.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/components/ConfirmDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/components/ConfirmHost.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/components/Dialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/components/Dialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/components/RuntimeNotice.module.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/components/RuntimeNotice.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/components/RuntimeNotice.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/components/dialogStack.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/components/runtimeNoticeText.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/components/runtimeNoticeText.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/automations/AutomationsPage.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/automations/AutomationsPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/execution/ApprovalCard.module.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/features/execution/ApprovalCard.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/execution/ApprovalCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/execution/Composer.module.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/execution/Composer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/execution/ModelPicker.module.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/execution/ModelPicker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/execution/TranscriptModePicker.module.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/features/execution/attachmentErrorText.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/features/execution/attachmentErrorText.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/features/execution/effortLabel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/features/execution/itemPresentation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/execution/itemPresentation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/extensions/SkillsPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/features/extensions/skillPresentation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/features/extensions/skillPresentation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/features/goal/GoalOutcomeView.module.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/features/goal/GoalOutcomeView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/goal/GoalRail.module.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/goal/GoalRail.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/goal/goalPresentation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/inspector/DetailsPanel.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

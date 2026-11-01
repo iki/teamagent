@@ -17,6 +17,7 @@ const json = (text: string): unknown =>
   Schema.decodeUnknownSync(Schema.fromJsonString(Schema.Unknown))(text);
 async function command(args: readonly string[], cwd = root) {
   const process_ = Bun.spawn([process.execPath, join(root, "app/cli/index.ts"), ...args], {
+    windowsHide: true,
     cwd,
     stdin: "ignore",
     stdout: "pipe",

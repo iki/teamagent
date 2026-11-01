@@ -44,6 +44,16 @@ In [crates/host-core/src/tools/mod.rs](https://github.com/vastsa/PI-Desktop/blob
 
 **Harness implication and limits:** Bound decoded dimensions separately from compressed bytes before retaining media in a transcript. Here a failed dimension probe returns None and does not reject, while signature checks do not fully decode the image; the new guard is not full image-integrity validation. The dimension parser and oversized session/runtime files were not audited, and no native or provider replay test was run. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `d2c85a95a599002672e1592df7bc58fb11f8d79b` against prior analyzed commit `93620a80635431b62f8d73b64339a96e1de56a04`. Historical reviews above remain separate evidence.
+
+The [skill settings page](https://github.com/vastsa/PI-Desktop/blob/d2c85a95a599002672e1592df7bc58fb11f8d79b/apps/desktop/src/components/settings/AgentSkillsPage.tsx) now reads and writes global toggles at global scope, obtains effective project state separately, and keeps its derived override map inside the same accepted collection. The [scope helper](https://github.com/vastsa/PI-Desktop/blob/d2c85a95a599002672e1592df7bc58fb11f8d79b/apps/desktop/src/lib/capability-scope.ts) adds the project path only for project rows and computes visible on/off differences. A reset action explicitly writes through project scope and reloads.
+
+The complete [scope fixtures](https://github.com/vastsa/PI-Desktop/blob/d2c85a95a599002672e1592df7bc58fb11f8d79b/apps/desktop/test/capability-scope.test.mjs) check both query levels and both override directions. The [race fixture](https://github.com/vastsa/PI-Desktop/blob/d2c85a95a599002672e1592df7bc58fb11f8d79b/apps/desktop/test/capability-override-race.test.mjs) uses a minimal React substitute to reject a late project-A collection after project B is accepted. Reuse atomic acceptance of rows plus derived policy state, and show effective overrides instead of silently changing the wrong scope. This UI evidence does not verify host enforcement or that reset durably removes a stored override; the host implementation remains a separate boundary.
+
+**Coverage:** Read the complete 305-line page/helper/scope-test selection and complete 84-line race-test addition. The collection hook itself was unchanged and not reread; native host persistence and packaged desktop behavior were not tested. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [pi-desktop](https://github.com/vastsa/PI-Desktop); analyzed commit `93620a80635431b62f8d73b64339a96e1de56a04`; commit date 2026-10-28T13:18:35+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--pi-desktop.md).
+Analysis metadata: source [pi-desktop](https://github.com/vastsa/PI-Desktop); analyzed commit `d2c85a95a599002672e1592df7bc58fb11f8d79b`; commit date 2026-11-01T14:37:35+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--pi-desktop.md).
 <!-- teamagent-analysis:end -->

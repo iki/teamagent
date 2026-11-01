@@ -57,6 +57,18 @@ Evidence: [obliteratus/models/checkpoint_export.py:78-110](https://github.com/el
 
 **Scope and limits:** Reviewed continuation validation, restore/publication paths and malformed-restoration fixtures; no model weights were loaded or modified and the whole export pipeline was not executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `0479da2f15148fa6b051f744910856aa44c89b2f` (commit date `2026-10-30T18:16:47-04:00`), compared with `1263570ae631a5a7f8008073d01e501f976f5dda`. Earlier observations remain historical evidence.
+
+**Scope:** Complete recurrent-backend qualifier and delegation diff, plus focused new fixture cases for callable identity, unknown backends and bounded tiny-model arithmetic. No model weights, optional kernels, training or benchmark runs were executed.
+
+The [backend qualifier](https://github.com/elder-plinius/OBLITERATUS/blob/0479da2f15148fa6b051f744910856aa44c89b2f/obliteratus/recurrent_memory_backend.py), called from [phase admission](https://github.com/elder-plinius/OBLITERATUS/blob/0479da2f15148fa6b051f744910856aa44c89b2f/obliteratus/phase_admission.py), inspects already-loaded modules and selected Qwen scan/convolution callables before accepting the modeled Torch path. It checks the actual closure implementation rather than trusting a wrapper's advertised fallback, rejects activated replacement kernels and leaves unsupported ownership/callables unmodeled. [Fixtures](https://github.com/elder-plinius/OBLITERATUS/blob/0479da2f15148fa6b051f744910856aa44c89b2f/tests/test_phase_admission_recurrent_backends.py) cover misleading wrapper metadata, late-layer replacement, no discovery imports/downloads and unknown owners; strict admission rejects unknown costs while warning-mode behavior remains explicit. These introspection checks are not cryptographic attestation, and source inspection does not reproduce the committed tiny-model memory measurements.
+
+**Teamagent implication (inference):** Bind resource estimates to the effective implementation and workload, retaining unknown components rather than inferring support from package versions. Keep strict admission, warning-only reporting and explicit operator bypass distinct. Reproduce host-specific peaks before routing expensive work; this useful resource-accounting pattern does not justify adopting weight intervention into ordinary harness evolution.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [obliteratus](https://github.com/elder-plinius/OBLITERATUS); analyzed commit `1263570ae631a5a7f8008073d01e501f976f5dda`; commit date 2026-10-27T18:02:41-04:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-edit--obliteratus.md).
+Analysis metadata: source [obliteratus](https://github.com/elder-plinius/OBLITERATUS); analyzed commit `0479da2f15148fa6b051f744910856aa44c89b2f`; commit date 2026-10-30T18:16:47-04:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-edit--obliteratus.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,845 @@
+{
+  "id": "ai-agents--copilot-sdk",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/github/copilot-sdk",
+  "report": "spec/projects/ai-agents--copilot-sdk.md",
+  "analyzedSha": "9bc718cb608c4cd3b63e0e71c637dcf1ebfd5409",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-27T22:50:27Z",
+  "observedSha": "68de1a7afe4bc9e7435d185825043bd9dc9c47cf",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "68de1a7afe4bc9e7435d185825043bd9dc9c47cf",
+      "date": "2026-11-01T02:19:22Z",
+      "subject": "Update SDK snapshot for Copilot CLI 1.0.106-2"
+    },
+    {
+      "sha": "cb930a09681a104074f2b034e80de999e3d65401",
+      "date": "2026-10-31T20:33:33Z",
+      "subject": "Update SDK snapshot for Copilot CLI 1.0.106-1"
+    },
+    {
+      "sha": "e22b95e6ead5e1de7e9a68d3087b8d28dc5f364a",
+      "date": "2026-10-28T10:51:00-07:00",
+      "subject": "README support (#2879)"
+    },
+    {
+      "sha": "856891781e2f7a3e011c42d9aa4345d29ed3094c",
+      "date": "2026-10-28T09:35:44-07:00",
+      "subject": "Revise README (#2877)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".devcontainer/devcontainer.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/java-publish-snapshot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/auth/authenticate.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/auth/byok.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/agent-loop.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/client-info.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/custom-agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/fleet-mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/hooks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/image-input.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/mcp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/plugin-directories.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/remote-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/session-limits.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/session-persistence.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/steering-and-queueing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/streaming-events.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/usage-and-billing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/hooks/error-handling.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/hooks/hooks-overview.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/hooks/post-tool-use.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/hooks/pre-tool-use.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/hooks/session-lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/hooks/user-prompt-submitted.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/hooks/user-prompt-transformed.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/observability/opentelemetry.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/runtime-supervised-host.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/setup/azure-managed-identity.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/setup/backend-services.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/setup/bundled-cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/setup/github-oauth.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/setup/local-cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/setup/multi-tenancy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/setup/scaling.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/troubleshooting/compatibility.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/troubleshooting/debugging.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/.config/dotnet-tools.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/Directory.Packages.props",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Client.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/CopilotRequestHandler.cs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dotnet/src/EntraTokenProvider.cs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dotnet/src/Generated/LifecycleDiagnostics.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Generated/Rpc.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Generated/SessionEvents.cs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dotnet/src/KerberosAuth.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/SdkProtocolVersion.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Session.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/SessionFsProvider.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Telemetry.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Types.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/E2E/ClientOptionsE2ETests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/E2E/CopilotRequestE2EProvider.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/E2E/CopilotRequestWebSocketE2ETests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/E2E/HooksE2ETests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/E2E/PendingWorkResumeE2ETests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/E2E/ScenarioTestingCloudE2ETests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/E2E/ScenarioTestingProvidersE2ETests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/E2E/TelemetryExportE2ETests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dotnet/test/EntraTokenProviderTests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/InstallationConfirmationTests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dotnet/test/Unit/ClientSessionLifetimeTests.KerberosAuth.cs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dotnet/test/Unit/ClientSessionLifetimeTests.SessionFsRanges.cs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dotnet/test/Unit/ClientSessionLifetimeTests.Telemetry.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/Unit/ClientSessionLifetimeTests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/Unit/CloneTests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/Unit/CopilotRequestHandlerProtocolTests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/Unit/GitHubTelemetryTests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dotnet/test/Unit/RpcModelsCompatibilityTests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/Unit/SerializationTests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/test/Unit/StructuredOutputTests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/client_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/copilot_request_handler.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/copilot_request_handler_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/entra_token_provider.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/entra_token_provider_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/handler_panic_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/hook_identity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/host.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/http_response_reader.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/e2e/compaction_e2e_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/e2e/copilot_request_handler_e2e_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/e2e/copilot_request_helpers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/e2e/scenario_testing_cloud_e2e_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/e2e/telemetry_e2e_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/e2e/testharness/inprocess_isolation.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/e2e/testharness/inprocess_isolation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/embeddedcli/embeddedcli.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/embeddedcli/embeddedcli_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/jsonrpc2/jsonrpc2.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/jsonrpc2/jsonrpc2_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/kerberos_auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/kerberos_auth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/permission_context_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/rpc/generated_rpc_union_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/rpc/lifecycle_diagnostics_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/rpc/settings_utilities_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/rpc/zlifecycle_diagnostics.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/rpc/zlifecycle_diagnostics_encoding.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/rpc/zrpc.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/rpc/zrpc_encoding.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/rpc/zsession_encoding.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/rpc/zsession_events.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/samples/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/samples/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/sdk_protocol_version.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/session.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/session_fs_provider.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/session_fs_range_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/session_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/test.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/types.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/zlifecycle_diagnostics.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/zsession_events.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/.mvn/maven.config",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/.mvn/wrapper/maven-wrapper.properties",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/docs/adr/adr-007-native-bundling-strategy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/pom.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/sdk/pom.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/AssistantMessageToolRequest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/AssistantReasoningEvent.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/AssistantTurnStartEvent.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/AssistantUsageEvent.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/AssistedApprovalAssessment.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/AssistedApprovalAssessmentCompleted.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/AssistedApprovalAssessmentExcluded.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/AssistedApprovalAssessmentFailed.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/AssistedApprovalAssessmentNotRun.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/AssistedApprovalAssessmentUnavailable.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/AssistedApprovalCompletedRecommendation.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/BlockedPermissionAction.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/CommandsChangedEvent.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/CompactionCompleteAttemptMetrics.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/CompactionCompleteFailureDiagnostics.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/CompactionCompleteSummarizerProgress.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/CustomAgentsUpdatedAgent.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/FusionStagedTerminal.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/InstructionUpdateEvent.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/McpServerMetadata.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/McpSkillOrigin.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/ModelCallFailureEvent.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/ModelCallProductStateError.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/PermissionRecoveryData.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/PermissionRecoveryRunState.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/PermissionRequestedEvent.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/PolicyHelperCapabilities.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/PolicyHelperFailure.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/PolicyHelperFailureDetail.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/sdk/src/generated/java/com/github/copilot/generated/PolicyHelperHelpLink.java",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

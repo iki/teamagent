@@ -2,7 +2,7 @@
 
 Source: [helix-foundry](https://github.com/helixdb/helix-foundry) · [memory](../../memory.md), [import-generation](../../import-generation.md), [evolution](../../evolution.md).
 
-Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-agents-mem--helix-foundry.md).
+Historical discovery: 2026-10-24T06:36:54.441Z, initially unreviewed. Dated scoped reviews below supersede that discovery-only status; they do not establish runtime validation. [Change evidence](../repos/ai-agents-mem--helix-foundry.md).
 
 
 ## Change review — 2026-10-27
@@ -29,6 +29,12 @@ Evidence: [backend/ai/detect/detect.go:60-69](https://github.com/helixdb/helix-f
 
 **Scope and limits:** Reviewed detector selection, limits and HTTP decoding; no local server or provider was contacted, and the full deployment validator was not audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review — 2026-11-01
+
+Reviewed `ca9c9b7066852a74b37014599595605facca7172` (2026-10-30T11:55:27Z) against `ed93e1580adb5f938647f58b8a15d3714a74ac27`; 335 changed paths. Scoped connector/store diffs add `Drop` for a previously admitted source that can no longer yield a document, such as emptied or no-longer-exportable content. Removal publication now owes graph removal through an extract rather than scheduling a general refresh. The sync fixture expects both replaced and removed document IDs to be listed for extraction and a lost lease to write nothing. [Connector contract](https://github.com/helixdb/helix-foundry/blob/ca9c9b7066852a74b37014599595605facca7172/backend/connector/documents.go), [store](https://github.com/helixdb/helix-foundry/blob/ca9c9b7066852a74b37014599595605facca7172/backend/store/connector_documents.go), [sync fixture](https://github.com/helixdb/helix-foundry/blob/ca9c9b7066852a74b37014599595605facca7172/backend/store/connector_documents_sync_test.go).
+
+Treat source revocation/removal as explicit lifecycle work, with retained pending status until derived graph evidence is actually removed. A queued extract is not completed deletion. Scope: four selected paths; downstream removal implementation and new connector authentication/ACL behavior were not audited. No connector, database or tests were run. Historical discovery/readiness findings remain separate.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [helix-foundry](https://github.com/helixdb/helix-foundry); analyzed commit `ed93e1580adb5f938647f58b8a15d3714a74ac27`; commit date 2026-10-27T20:44:25Z; review date 2026-10-28T14:52:35.205Z; depth reviewed. [Maintenance record](../repos/ai-agents-mem--helix-foundry.md).
+Analysis metadata: source [helix-foundry](https://github.com/helixdb/helix-foundry); analyzed commit `ca9c9b7066852a74b37014599595605facca7172`; commit date 2026-10-30T11:55:27Z; review date 2026-11-01T11:35:43.470Z; depth reviewed. [Maintenance record](../repos/ai-agents-mem--helix-foundry.md).
 <!-- teamagent-analysis:end -->

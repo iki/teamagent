@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-swarm--orca",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/stablyai/orca",
+  "report": "spec/projects/ai-agents-swarm--orca.md",
+  "analyzedSha": "478743dbbaba368b9795463f6770966bc0baf341",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T03:17:25-07:00",
+  "observedSha": "f29cc1aa82043ef8056ce641251eb4bf4bae5dcd",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f29cc1aa82043ef8056ce641251eb4bf4bae5dcd",
+      "date": "2026-11-01T01:52:57-08:00",
+      "subject": "feat(plugins): turn isolated plugin frames on by default (#36821)"
+    },
+    {
+      "sha": "321574af87814e8173176ca9c6b71c41d6fd657c",
+      "date": "2026-11-01T01:43:26-08:00",
+      "subject": "fix(native-chat): steer async question answers instead of queuing duplicates (#36917)"
+    },
+    {
+      "sha": "4b4c833e10a78308eca4e65f687461e1d61dd855",
+      "date": "2026-11-01T01:41:07-08:00",
+      "subject": "feat(window): working background opacity and blur on macOS, Windows and Linux (#36580)"
+    },
+    {
+      "sha": "543fa6a526897a526f88d9d213a3f152ee025c55",
+      "date": "2026-11-01T01:34:47-08:00",
+      "subject": "Fix typo and enhance clarity in AGENTS.md (#36972)"
+    },
+    {
+      "sha": "cd43250ad22a7a6b89d4c6876887ac5601f14945",
+      "date": "2026-11-01T01:34:02-08:00",
+      "subject": "Refactor AGENTS.md for clarity and importance (#36971)"
+    },
+    {
+      "sha": "4ee788a725f7695879959107856a80576aedff57",
+      "date": "2026-11-01T01:28:35-08:00",
+      "subject": "Build-less TS/TSX plugins, typings and authoring tools (#36918)"
+    },
+    {
+      "sha": "f139d70aadf2d33c060ab826cbcf7ba3a30bc8cd",
+      "date": "2026-11-01T04:26:52-05:00",
+      "subject": "Keep a kept-open worker open across follow-ups (#36954)"
+    },
+    {
+      "sha": "57454e6d7eacfc22ad055102048d16e1d52a185b",
+      "date": "2026-11-01T01:24:37-08:00",
+      "subject": "refactor(agent-session): group lifecycle records and direct owners (#36909)"
+    },
+    {
+      "sha": "f79b478c07d879b5c8c643356561506437f68a26",
+      "date": "2026-11-01T01:19:55-08:00",
+      "subject": "feat(themes): show the theme background image through native chat (#36796)"
+    },
+    {
+      "sha": "715a6944eaef453e7616036444eb1e6a03ce3cd0",
+      "date": "2026-11-01T09:19:09Z",
+      "subject": "feat(git): branch-only history pages with pushed state and paging (#36962)"
+    },
+    {
+      "sha": "30242d175939b01aa8d2b14e91b0d1efe464f4bf",
+      "date": "2026-11-01T09:04:00Z",
+      "subject": "test: remove 185 low-value test cases, including 30 suites (#36916)"
+    },
+    {
+      "sha": "a14fe3c589f6d05a4768d2a8f09c9a6db8c8f6c0",
+      "date": "2026-11-01T01:02:52-08:00",
+      "subject": "Show child activity counts inside the children toggle (#36951)"
+    },
+    {
+      "sha": "d77a49dd102dda0e6f214ee7bd51f8842e20f10e",
+      "date": "2026-11-01T01:54:16-07:00",
+      "subject": "Reland title-sized tabs as an experiment that holds widths through agent renames (#34527)"
+    },
+    {
+      "sha": "b30ab35992ec2310f1e3d3f7a1b3ccdb4cdad3fa",
+      "date": "2026-11-01T01:54:07-07:00",
+      "subject": "fix(ui): toasts sit behind a modal's backdrop until pressed, instead of looking live but dead (#36888)"
+    },
+    {
+      "sha": "ac21582b35d111fdb3656f5b83d57e2c4f9bdd70",
+      "date": "2026-11-01T08:40:38Z",
+      "subject": "fix(mobile): stop the chat jumping up when history draws during an Android scroll (#36949)"
+    },
+    {
+      "sha": "30ffe6e297c268af5c0cc5ccb73e4e54bf07dfc2",
+      "date": "2026-11-01T01:39:06-07:00",
+      "subject": "Improve agent picker updates and menu pointer handoffs (#36874)"
+    },
+    {
+      "sha": "57e287b555c881f0245710fd54915c979e9c0468",
+      "date": "2026-11-01T08:37:12Z",
+      "subject": "fix(mobile): stop the unfolded Duo crashing on split keyboard (#36948)"
+    },
+    {
+      "sha": "506bcaa5f2c27c842b701c89a554c586ef37974d",
+      "date": "2026-11-01T01:37:08-07:00",
+      "subject": "feat(sidebar): collapse sub-agent lists by default and group idle sub-agents (#36936)"
+    },
+    {
+      "sha": "7df246b9d1ae8a778ea4f49383702ec7c3b39a11",
+      "date": "2026-11-01T01:32:36-07:00",
+      "subject": "feat(plugins): components (TSX) plugin panels (#36814)"
+    },
+    {
+      "sha": "1760cd5d189add407ca240b9335d1285d2b56594",
+      "date": "2026-11-01T01:27:44-07:00",
+      "subject": "feat(file-explorer): add Open in submenu to explorer row context menu (#36895)"
+    },
+    {
+      "sha": "0054cd62af589a7571fa6de31797ed0cfafadba0",
+      "date": "2026-11-01T01:25:11-07:00",
+      "subject": "docs: make scoped validation example portable (#36946)"
+    },
+    {
+      "sha": "0671f09457fdac7a8472d192b4a842d3c1d1e47c",
+      "date": "2026-11-01T01:23:41-07:00",
+      "subject": "docs: clarify scoped validation before handoff (#36940)"
+    },
+    {
+      "sha": "c350f18083384eed307138cc1e0a2ca933c25a76",
+      "date": "2026-11-01T01:19:53-07:00",
+      "subject": "Update WeChat community QR code for group 14 (#36943)"
+    },
+    {
+      "sha": "d10ab00f3cd0e70d522b8bfd97446a991ff2073b",
+      "date": "2026-11-01T01:19:38-07:00",
+      "subject": "feat(themes): Match Terminal becomes a real app theme for the whole window (#36567)"
+    },
+    {
+      "sha": "25ac6fd1cf4d1458d8081cf97fbfd83d0ac78e8a",
+      "date": "2026-11-01T01:19:08-07:00",
+      "subject": "feat(mobile): collapse sub-agent lists by default and group idle sub-agents (#36939)"
+    },
+    {
+      "sha": "bcc03f90beaac8a38115b5c4627ff1d994855a9b",
+      "date": "2026-11-01T01:16:52-07:00",
+      "subject": "fix(wsl): host-row Start follows the same precedence as the other surfaces; Start's reload doesn't wake (#36934)"
+    },
+    {
+      "sha": "c433d58f5c25a57548e94a6fcfe9f3c35eccb756",
+      "date": "2026-11-01T01:04:49-07:00",
+      "subject": "test(mobile): count dictation refusals before the slot probe fills the bridge (#36938)"
+    },
+    {
+      "sha": "2e16a24941353784d6bb78ec657faa8c902461e2",
+      "date": "2026-11-01T08:03:59Z",
+      "subject": "fix(agents): open a shell, not an unrequested chat, in empty workspaces when the default agent is Auto (#36927)"
+    },
+    {
+      "sha": "abbbdd77141c9f5597c844c5c1a5b43041c832e0",
+      "date": "2026-11-01T01:03:13-07:00",
+      "subject": "feat(plugins): isolated plugin frames, off by default (#36813)"
+    },
+    {
+      "sha": "92fc8bc26d232e7ad115dee8b68889471fdeb0b8",
+      "date": "2026-11-01T08:00:08Z",
+      "subject": "fix(accounts): restart running Claude sessions when the account is switched from the phone (#36933)"
+    },
+    {
+      "sha": "b4c93baee806a2105bec19435d1e0834eebd8db9",
+      "date": "2026-11-01T00:50:20-07:00",
+      "subject": "Reuse existing tab groups for link opens (#36915)"
+    },
+    {
+      "sha": "f874a650ff2afe5e5d82ece8ab0dbd80fd2e48b9",
+      "date": "2026-11-01T00:41:20-07:00",
+      "subject": "fix(wsl): turning the WSL hosts setting off keeps saved hosts serving; it stops only new hosts and moves (#36783)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/prepare-native-runtime/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-closed-pr-caches.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/computer-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/computer-task-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dependency-security.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mobile-ios-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mobile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/preflight-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-cut.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ssh-windows-hosts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/unit-module-cache.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/unit-plan.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-wsl-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/wsl-orcad-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/zcode-transcript-contract.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxfmtrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxlintrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/.node-version",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/connector/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cloud/apps/connector/src/owner-controls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/push/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/relay/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/relay/src/app.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/relay/src/assignment-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "cloud/apps/relay/src/assignment/assignment-connection-headroom-postgres.test.ts",
+      "previousPath": "cloud/apps/relay/src/assignment-connection-headroom-postgres.test.ts"
+    },
+    {
+      "status": "R093",
+      "path": "cloud/apps/relay/src/assignment/assignment-connection-headroom-query.ts",
+      "previousPath": "cloud/apps/relay/src/assignment-connection-headroom-query.ts"
+    },
+    {
+      "status": "R099",
+      "path": "cloud/apps/relay/src/assignment/assignment-connection-headroom.test.ts",
+      "previousPath": "cloud/apps/relay/src/assignment-connection-headroom.test.ts"
+    },
+    {
+      "status": "R097",
+      "path": "cloud/apps/relay/src/assignment/assignment-control-supersession-postgres.test.ts",
+      "previousPath": "cloud/apps/relay/src/assignment-control-supersession-postgres.test.ts"
+    },
+    {
+      "status": "R098",
+      "path": "cloud/apps/relay/src/assignment/assignment-headroom-scope.test.ts",
+      "previousPath": "cloud/apps/relay/src/assignment-headroom-scope.test.ts"
+    },
+    {
+      "status": "R097",
+      "path": "cloud/apps/relay/src/assignment/assignment-row-lock-order-postgres.test.ts",
+      "previousPath": "cloud/apps/relay/src/assignment-row-lock-order-postgres.test.ts"
+    },
+    {
+      "status": "R099",
+      "path": "cloud/apps/relay/src/assignment/assignment-store-lock-order.test.ts",
+      "previousPath": "cloud/apps/relay/src/assignment-store-lock-order.test.ts"
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/relay/src/cell-connection-cap-postgres.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/relay/src/cell-reserve-routes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/relay/src/credential-store-cleanup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/relay/src/credential-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/relay/src/drain-release-cell-row-contention-postgres.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/relay/src/heap-window-reaper.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/relay/src/public-assignment-overload.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/relay/src/splice-forwarder.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/relay/src/splice-forwarder.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/apps/relay/vitest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/packages/relay-contract/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/packages/relay-contract/src/admission-budgets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/ast-grep/rule-tests/renderer-intl-ui-locale-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/ast-grep/rules/renderer-intl-ui-locale.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/bench.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/electron/main.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/fixture_gtk.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/fixture_win.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/linux_focus_probe.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/linux_typing_probe.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/obs_win.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/obs_x11.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/process_scope.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/providers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/sentinel.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/test_trial_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/trial_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/benchmarks/computer-use/windows_discovery_probe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/build-plugins/main-build-entry-points.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/build-plugins/plain-node-entry-guard.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/build-plugins/sucrase-unused-transformers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/daemon-blocking-call-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/direct-link-open-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/docker/headless-serve-shutdown/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/docker/headless-serve-shutdown/run-appimage-desktop-startup-case.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/electron-builder.config.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/flaky-test-pattern-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/focus-setting-read-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/host-list-render-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/i18n-german.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/i18next.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/id-only-store-write-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/knip.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/localization-coverage-allowlist.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/main-sync-spawn-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/memo-translate-subscription-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/mobile-ci.vitest.config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/mobile-localization-coverage-allowlist.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/nsis/orca-installer-hooks.nsh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/nsis/orca-other-install-check.nsh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/nsis/orca-user-path-cleanup.nsh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/patches/@tiptap__extension-list@3.31.3.patch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/patches/@tiptap__markdown@3.31.3.patch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/patches/@xterm__addon-webgl@0.20.0-beta.300.patch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/patches/node-pty@1.1.0.patch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/patches/pdfjs-dist@6.3.289.patch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/patches/vitest@5.0.5.patch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/patches/xterm-src/@xterm__addon-webgl@0.20.0-beta.300.src.patch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/path-literal-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/process-host-direct-import-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/reliability-gates.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/repo-host-read-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "config/scripts/adhoc-mac-parallelism.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/apply-translation-delta.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/audit-localization-coverage.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/benchmark-preflight-compilers.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/build-cli.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/build-mobile-web-app-bundle.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/build-mobile-web-app-bundle.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/build-plugin-declarative-runtime.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/build-plugin-declarative-runtime.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-changed-code-quality.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-changed-code-quality.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-changed-selection.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-changed.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "config/scripts/check-daemon-blocking-call-ratchet.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/check-direct-link-open-ratchet.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/check-has-restyle-scope.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-layout-writer-ratchets.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-layout-writer-ratchets.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-main-sync-spawn-ratchet.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/check-memo-translate-subscription-ratchet.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-readme-local-links.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-readme-local-links.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-test-file-runners.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-dependency-download-cache.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-shard-timings.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-unit-files.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-unit-input-ownership.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-unit-plan.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-unit-plan.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-unit-selection.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-unit-selection.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/dependency-security-release.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "config/scripts/dev-channel-orcad-template-workflow.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/electron-builder-config.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/electron-runtime-floor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/electron-vite-output-contract.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ensure-native-runtime.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ensure-native-runtime.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/export-legacy-plugin-catalog.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/generate-bundled-skill-guides.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "config/scripts/generate-monaco-associations.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/generate-plugin-author-typings.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/generate-plugin-declarative-typings.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/generate-plugin-schemas.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/generate-runtime-required-english-catalog.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/generate-skill-bundle-manifest.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/generate-skill-bundle-manifest.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/headless-serve-shutdown-matrix.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "config/scripts/locale-count-fragment-separator.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/locale-ja-value-overrides.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/locale-key-overrides.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "config/scripts/locale-ko-frozen-terminal-search-keywords.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/locale-ko-key-overrides.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/locale-plural-forms.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/localization-surfaces.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "config/scripts/macos-tcc-prompt-localization.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/mobile-release-check-scope.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/mobile-test-change-scope.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "config/scripts/mobile-typecheck-cache.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/mobile-web-app/mobile-web-app-bundle-dependencies.mjs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

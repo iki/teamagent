@@ -39,6 +39,14 @@ Evidence: [mem0/client/main.py:94-110](https://github.com/mem0ai/mem0/blob/26cde
 
 **Scope and limits:** Scoped static review of entity guards, related fixtures, the filter-copy hunk and Vertex initialization logging within the 78-path comparison; the full memory inference/storage pipeline and every changed path were not audited. Fixtures were read, not executed; no service, credential or deletion operation was invoked.
 
+## Change review - 2026-11-01
+
+Reviewed `753496cf1435d76c3a711f3af51303f7fdcb6420` against `26cdefb46600c0fa5953c4b5ee5003c125539fc4` (74 changed paths). Synchronous and asynchronous [memory update paths](https://github.com/mem0ai/mem0/blob/753496cf1435d76c3a711f3af51303f7fdcb6420/mem0/memory/main.py) reject an explicit false storage result before recording update history. The selected [PGVector adapter](https://github.com/mem0ai/mem0/blob/753496cf1435d76c3a711f3af51303f7fdcb6420/mem0/vector_stores/pgvector.py) reports whether SQL UPDATE affected a row. Legacy `None` results remain accepted, so this is not a universal capability guarantee for every backend. The [fixtures](https://github.com/mem0ai/mem0/blob/753496cf1435d76c3a711f3af51303f7fdcb6420/tests/memory/test_main.py) introduce a Qdrant delete-before-update race and an asynchronous false-result case, asserting absent resurrection/history.
+
+**Harness consequence:** Storage outcomes must distinguish changed, missing and unknown. Do not resurrect deleted memory through an upsert fallback or publish successful derived history before durable mutation is confirmed. Advertise the actual backend's concurrency contract rather than inferring it from the shared interface.
+
+**Scope and limits:** Selected shared update, PGVector and Python fixture deltas; other backend implementations were not audited. No race test, vector database or upstream suite was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mem0](https://github.com/mem0ai/mem0); analyzed commit `26cdefb46600c0fa5953c4b5ee5003c125539fc4`; commit date 2026-10-26T10:51:39-04:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--mem0.md).
+Analysis metadata: source [mem0](https://github.com/mem0ai/mem0); analyzed commit `753496cf1435d76c3a711f3af51303f7fdcb6420`; commit date 2026-10-30T17:35:34-04:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--mem0.md).
 <!-- teamagent-analysis:end -->

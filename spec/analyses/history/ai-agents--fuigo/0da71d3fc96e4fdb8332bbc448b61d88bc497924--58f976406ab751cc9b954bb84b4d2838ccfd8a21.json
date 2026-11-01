@@ -1,0 +1,855 @@
+{
+  "id": "ai-agents--fuigo",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/FerroxLabs/fuigo",
+  "report": "spec/projects/ai-agents--fuigo.md",
+  "analyzedSha": "0da71d3fc96e4fdb8332bbc448b61d88bc497924",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-26T13:24:25+07:00",
+  "observedSha": "58f976406ab751cc9b954bb84b4d2838ccfd8a21",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "58f976406ab751cc9b954bb84b4d2838ccfd8a21",
+      "date": "2026-10-30T21:27:33+08:00",
+      "subject": "Fuigo 1.0.37"
+    },
+    {
+      "sha": "d4cd5fa36a85eeefcedce26a4d2dc6b640ca2053",
+      "date": "2026-10-30T09:30:16Z",
+      "subject": "Fuigo 1.0.37"
+    },
+    {
+      "sha": "50de9813c81c1564c07fd680f3f4a00794e38857",
+      "date": "2026-10-30T01:15:26+07:00",
+      "subject": "Fuigo 1.0.36"
+    },
+    {
+      "sha": "adb22f8ac4e125c6b7e7d8c7c00edc29f721e228",
+      "date": "2026-10-29T13:46:37Z",
+      "subject": "Fuigo 1.0.36"
+    },
+    {
+      "sha": "2ecf122d71ccc568a4bb44bbb3d805e14536a957",
+      "date": "2026-10-28T22:30:16+07:00",
+      "subject": "Fuigo 1.0.35"
+    },
+    {
+      "sha": "c7badf3281e696f6bb2eea526cb8c9c9f4ef0cd5",
+      "date": "2026-10-28T20:16:33+08:00",
+      "subject": "Fuigo 1.0.35"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-process-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/src/builder.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/src/discovery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/src/plugins/discovery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/src/plugins/git_install.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/src/plugins/hooks_adapter.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/src/plugins/hooks_compat_fixture_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/src/plugins/manifest.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/src/plugins/marketplace.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/src/plugins/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/src/plugins/registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/src/prompt/agents_md.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/src/prompt/skills.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-agent/src/repo.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/codegen/fuigo-agent/tests/project_agent_trust_allow.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/codegen/fuigo-agent/tests/project_agent_trust_deny.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/codegen/fuigo-agent/tests/project_agent_trust_unset.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-config/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-config/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-config/src/loader.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-config/src/shell.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-dirs/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/codegen/fuigo-dirs/src/contained.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-dirs/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-external-agent-migration/src/hooks_cla.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-external-agent-migration/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-external-agent-migration/src/source_cla.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-external-agent-migration/src/source_cla_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-extra-ca/tests/identity_body_guard.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/bin/cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/copy/cow.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/copy/engine.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/copy/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/codegen/fuigo-fast-worktree/src/copy/tracked.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/copy/types.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/copy/worker.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/git/checkout.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/codegen/fuigo-fast-worktree/src/git/judged_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/git/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/git/reclaimed.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/git/safety.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/git/safety/conversions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/git/safety/reachability.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/git/worktree.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/nfs/liveness.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/sync.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/worktree/execute.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-fast-worktree/src/worktree/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-hooks-plugins-types/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-hooks/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-hooks/src/discovery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-hooks/src/runner/command.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager-bin/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager-bin/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager-minimal/src/auth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/docs/user-guide/04-slash-commands.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/docs/user-guide/08-skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/docs/user-guide/09-plugins.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/docs/user-guide/10-hooks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/docs/user-guide/14-headless-mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/docs/user-guide/15-agent-mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/docs/user-guide/16-subagents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/docs/user-guide/18-sandbox.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/docs/user-guide/22-permissions-and-safety.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/docs/user-guide/26-config-reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/npm/fuigo-darwin-arm64/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/npm/fuigo-darwin-x64/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/npm/fuigo-linux-arm64/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/npm/fuigo-linux-x64/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/npm/fuigo-win32-arm64/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/npm/fuigo-win32-x64/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/npm/fuigo/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/actions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/agent_view/extensions_row_hint_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/agent_view/modals.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/app_view.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/app_view_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/dispatch/router.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/dispatch/session/fork.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/dispatch/session/lifecycle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/dispatch/task_result.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/dispatch/tests/router.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/dispatch/tests/session/foreign.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/dispatch/tests/session/fork.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/dispatch/tests/session/lifecycle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/dispatch/tests/task_result.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/effects/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/event_loop.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/status_line/command.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/app/worktree_session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/headless.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/headless/cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/mcp_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/plugin_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/views/agents_modal.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/views/extensions_modal.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/views/welcome/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/src/worktree_cmd/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/tests/pty_e2e/common.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/tests/pty_e2e/folder_trust_decline_quits_without_grant.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-pager/tests/scenarios/folder_trust_prompt.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-plugin-marketplace/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-plugin-marketplace/src/catalog.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-plugin-marketplace/src/git.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-plugin-marketplace/src/installer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/codegen/fuigo-sampler/tests/mcp_schema_chat_wire.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-sampling-types/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-sampling-types/src/conversation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-sampling-types/src/conversation/chat_completions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-sampling-types/src/conversation/chat_completions_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/codegen/fuigo-sampling-types/src/conversation/tool_schema.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-sandbox/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-sandbox/src/profiles.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-secrets/src/child_env.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell-terminal/src/acp_terminal.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell-terminal/src/adapter.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell-terminal/src/adapter_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell-terminal/src/local_terminal.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell-terminal/src/pty_session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell-terminal/src/streaming_local_terminal.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/benches/session_list.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/config_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/folder_trust.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/init.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/mvp_agent/acp_agent.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/mvp_agent/agent_ops.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/mvp_agent/folder_trust_prompt.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/mvp_agent/handle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/mvp_agent/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/mvp_agent/session_setup.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/mvp_agent/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/mvp_agent/tests/p30_leader_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/codegen/fuigo-shell/src/agent/mvp_agent/tests/u35_modes_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/codegen/fuigo-shell/src/agent/mvp_agent/tests/u36_browser_mode_acp_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/codegen/fuigo-shell/src/agent/mvp_agent/tests/u36_launch_policy_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/subagent/handle_request.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/subagent/tests/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/agent/subagent/tests/rest.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/auth/auth_provider_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/bin/p15d-stdio-agent.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/claude_import_state.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/config/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/config/reloader.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/config/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/config_docs/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/codegen/fuigo-shell/src/extensions/marketplace.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

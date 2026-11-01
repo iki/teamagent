@@ -1,0 +1,285 @@
+{
+  "id": "ai-agents-mem--fokosdb",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/lambrospetrou/fokosdb",
+  "report": "spec/projects/ai-agents-mem--fokosdb.md",
+  "analyzedSha": "3ec80287b0b30251245c72212e0de2b23b9bf9d1",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-27T23:06:49Z",
+  "observedSha": "4629dc71f52887bcd5702c1fcb3f5d8cdc9526fd",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "4629dc71f52887bcd5702c1fcb3f5d8cdc9526fd",
+      "date": "2026-11-01T02:02:07Z",
+      "subject": "Degrade the behavior by rejecting requests after failed initialization instead of rejecting it"
+    },
+    {
+      "sha": "504b12f72512bf00fd3a204e114c9be13c8fe4dd",
+      "date": "2026-10-31T20:58:39Z",
+      "subject": "The topology keeper quarantines a failed group, and the admin alarm always re-arms"
+    },
+    {
+      "sha": "8ca47141e0703d09dd4def7148ba68f8631f50d8",
+      "date": "2026-10-31T20:36:26Z",
+      "subject": "Protocol-defect errors take the non-retryable wait"
+    },
+    {
+      "sha": "2a41fad26a5800f5aec538ec149e83b4d1a085f0",
+      "date": "2026-10-31T17:24:26Z",
+      "subject": "Job failure backoff suppresses the stale deadline, and the alarm never throws"
+    },
+    {
+      "sha": "f5e0d5202fd7d78eb5815a55daa57e4a1069fd10",
+      "date": "2026-10-31T16:29:27Z",
+      "subject": "spec for improving some error situations crashloops"
+    },
+    {
+      "sha": "d05131e13b6f0c27d09a0b6f0b01ec3838143b60",
+      "date": "2026-10-31T16:13:29Z",
+      "subject": "readme"
+    },
+    {
+      "sha": "48893440856475697253fb4af35fd59d47d85226",
+      "date": "2026-10-31T13:48:40Z",
+      "subject": "BREAKING CHANGE - Implemented fingerprinting of the DO namespaces when addressing the admin DOs"
+    },
+    {
+      "sha": "757217780b2b6cb447415a48da1baa223acd64c1",
+      "date": "2026-10-31T13:19:59Z",
+      "subject": "spec: rewrite the item size statistics spec"
+    },
+    {
+      "sha": "4f947bef5dc2f81aaec523e12a0c25b9e39f480f",
+      "date": "2026-10-31T00:55:05Z",
+      "subject": "extend the destroy() to cover admin/gsi DOs"
+    },
+    {
+      "sha": "bf0f3050645e796aa651594c8f8c9379914c1846",
+      "date": "2026-10-31T00:38:44Z",
+      "subject": "spec for fingerprinting DO names by namespace"
+    },
+    {
+      "sha": "b5ce9bd2bad1456d325e68d2a884d10934488091",
+      "date": "2026-10-29T23:43:44Z",
+      "subject": "Rewrite the README around what FokosDB gives its users"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".prettierrc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/agent-plans/2026-09-30-item-size-facts-and-range-split.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agent-plans/2026-10-31-alarm-job-and-init-failure-safety.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agent-plans/2026-10-31-item-size-facts-and-range-split.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agent-plans/2026-10-31-namespace-fingerprints-in-do-names.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ideas/2026-09-29-storage-and-query-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/client/db.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/client/db.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/do-auto-admin.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/do-partition.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/do-transaction-coordinator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/materialization/do-materialization.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/topology-entrypoint.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/errors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/exports-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/repartition-flow.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/runtime-types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/scheduler.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/scheduler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/sharding-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/topology-codec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/topology-keeper.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/do-stubs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/partition-context.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/partition-context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/topology-hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/materialization-do/apply-latest-images.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/materialization-do/gsi-query.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/materialization-do/split.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/helpers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/test/partition-do/init-failure.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-errors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/repartition/repartition-flow.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/sharding/counter-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/sharding/topology-keeper.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/sharding/topology-outbox.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/topology.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/transactions/tx-helpers.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

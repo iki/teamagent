@@ -30,6 +30,12 @@ Reviewed commit `88a5e810bdf5423f0c42cbcb765a8c00d8a6fa85` (commit date `2026-10
 
 The [Git adapter](https://github.com/Owloops/claude-powerline/blob/88a5e810bdf5423f0c42cbcb765a8c00d8a6fa85/src/segments/git.ts) now chooses the nearest repository containing the working directory before falling back to the configured project and recognizes unborn branches. [Formatters](https://github.com/Owloops/claude-powerline/blob/88a5e810bdf5423f0c42cbcb765a8c00d8a6fa85/src/utils/formatters.ts) compare whole path segments, advance units at rounding boundaries, and clamp bar cell counts while preserving out-of-range usage text. Renderer/TUI changes align warning colors with displayed percentages and expose conflicts consistently. [Regression fixtures](https://github.com/Owloops/claude-powerline/blob/88a5e810bdf5423f0c42cbcb765a8c00d8a6fa85/test/git-worktree.test.ts) cover nested worktrees and project fallback, but mock subprocess behavior. Adapt tests for workspace identity and numeric presentation; lexical path display helpers are not canonical containment checks. The new pricing entries remain upstream data, not independently verified billing rates. No tests, terminal integration, API or subscription checks were executed.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`484d15c0e0d0f751ceccac21976cd8af99b9826f`](https://github.com/Owloops/claude-powerline/commit/484d15c0e0d0f751ceccac21976cd8af99b9826f), compared with `88a5e810bdf5423f0c42cbcb765a8c00d8a6fa85`.
+
+The complete one-path comparison changes only the `_meta.updated` value in [pricing.json](https://github.com/Owloops/claude-powerline/blob/484d15c0e0d0f751ceccac21976cd8af99b9826f/pricing.json) from October 25 to November 1. It changes neither numeric prices nor implementation. Preserve this as metadata-only maintenance: a refreshed timestamp does not independently establish price accuracy, effective billing terms or successful acquisition. No upstream code, provider or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [claude-powerline](https://github.com/Owloops/claude-powerline); analyzed commit `88a5e810bdf5423f0c42cbcb765a8c00d8a6fa85`; commit date 2026-10-25T07:16:31Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--claude-powerline.md).
+Analysis metadata: source [claude-powerline](https://github.com/Owloops/claude-powerline); analyzed commit `484d15c0e0d0f751ceccac21976cd8af99b9826f`; commit date 2026-11-01T08:43:04Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--claude-powerline.md).
 <!-- teamagent-analysis:end -->

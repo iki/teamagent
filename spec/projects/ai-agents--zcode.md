@@ -34,6 +34,16 @@ The [OAuth contract](https://github.com/zai-org/ZCode/blob/3c5b227649371507ddc4e
 
 The [provider module](https://github.com/zai-org/ZCode/blob/3c5b227649371507ddc4eb46ac5133afe6db1cab/packages/shared/src/providers.ts) derives a runtime enum and type from one declared provider set, reducing duplicated schema drift without establishing transport enforcement. The [tool-error helper](https://github.com/zai-org/ZCode/blob/3c5b227649371507ddc4eb46ac5133afe6db1cab/packages/ui/src/lib/toolError.ts) preserves errors found in nested raw output even when a top-level status says completed. It can also interpret an ordinary output.message as an error independent of status, and the text is not bounded or redacted here. Adapt explicit outcome/error fields, validated transport data and safe presentation; no OAuth, credential access, UI or tests were executed.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `a60ba6a7e5a06742270ca605f5d2cc2766afa7e1` against prior analyzed commit `3c5b227649371507ddc4eb46ac5133afe6db1cab`. Historical reviews above remain separate evidence.
+
+The new [session-data adapter](https://github.com/zai-org/ZCode/blob/a60ba6a7e5a06742270ca605f5d2cc2766afa7e1/apps/zcode-cli/packages/adapters/src/storage/session-data-files/index.ts) enumerates per-session storage locations, admits only single safe session-ID segments, restricts computed memory folders to direct children of its projects directory, measures with `lstat`, and skips symbolic links when counting. Removal reports measured bytes and is idempotent for absent targets. [Fixtures](https://github.com/zai-org/ZCode/blob/a60ba6a7e5a06742270ca605f5d2cc2766afa7e1/apps/zcode-cli/packages/adapters/tests/session-data-files.test.ts) cover other-session preservation, invalid IDs, repeated removal, memory-folder scope and a top-level link whose external target remains intact.
+
+These checks do not prove protection against a replaced ancestor or a concurrent link race. Recursive `Promise.all` traversal has no explicit concurrency/depth bound, and measured bytes can differ from bytes removed after concurrent writes. Adopt an explicit deletion plan with stable ownership, bounded traversal and a shutdown barrier before cleanup. The separately inspected SQLite fault/concurrency tests are useful transaction-isolation requirements, but their production transaction implementation was outside this review and is not certified here.
+
+**Coverage:** Read the complete 158-line session-data implementation/test expansion, contract/example-test delta and 191-line transaction-test delta. SQLite production changes and platform-specific link behavior were not independently validated. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [zcode](https://github.com/zai-org/ZCode); analyzed commit `3c5b227649371507ddc4eb46ac5133afe6db1cab`; commit date 2026-10-20T14:23:05+08:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--zcode.md).
+Analysis metadata: source [zcode](https://github.com/zai-org/ZCode); analyzed commit `a60ba6a7e5a06742270ca605f5d2cc2766afa7e1`; commit date 2026-10-30T11:47:07+08:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--zcode.md).
 <!-- teamagent-analysis:end -->

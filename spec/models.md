@@ -380,3 +380,56 @@ Discovery, authentication, entitlement and data policy remain independent. [Heli
 Local model resources need the same recovery rigor as hosted jobs. [OBLITERATUS](https://github.com/elder-plinius/OBLITERATUS) ([review](projects/ai-model-edit--obliteratus.md#follow-up-change-review--2026-10-28)) verifies candidate/layout receipts, regular files, bytes and tensor headers before restored shards are reused; candidate identity still depends on a trusted live-weight attestation. [FreeToken](https://github.com/FlashML-org/FreeToken) ([review](projects/ai-model-run--freetoken.md#follow-up-change-review--2026-10-28)) returns speculative tail pages only after committed-token boundaries are known and producing device work has drained. Separate reproducible artifact integrity and resource ownership from model quality, throughput or permission to activate the result.
 
 [ccusage](https://github.com/ryoppippi/ccusage) ([review](projects/ai-agents-tokens--ccusage.md#follow-up-change-review--2026-10-28)) separates report compilation and reads a locked pricing URL; neither change validates the prices. [CodexBar Win](https://github.com/nesszer/Win-CodexBar) ([review](projects/ai-agents-tokens--codexbar-win.md#follow-up-change-review--2026-10-28)) improves estimated/unknown usage display without changing collection, and [cc-aio-mon](https://github.com/iM3SK/cc-aio-mon) ([review](projects/ai-agents-tokens--cc-aio-mon.md#follow-up-change-review--2026-10-28)) changes only a security-workflow dependency in this interval. Retain dated pricing provenance and disclose estimated or missing usage. These static reviews do not extend any provider approval or demonstrate a live call; the LiteLLM and Go SDK aggregate diffs were capped, with scoped complete file reads recorded in their reports.
+
+## Source refresh: 2026-11-01 — eligibility, inference and accounting
+
+Apply hard account/host/operation/model admission before scoring and again before
+upload. The generated [OpenRouter Go](https://github.com/OpenRouterTeam/go-sdk)
+([review](projects/ai-agents-proxy--openrouter-go-sdk.md)),
+[Python](https://github.com/OpenRouterTeam/python-sdk)
+([review](projects/ai-agents-proxy--openrouter-python-sdk.md)) and
+[TypeScript](https://github.com/OpenRouterTeam/typescript-sdk)
+([review](projects/ai-agents-proxy--openrouter-typescript-sdk.md)) shapes do not
+make a routing preference a hard allowlist. Keep omission, explicit values,
+fallback and semantic limits visible. [Experiential](https://github.com/experientiallabs/experiential)
+([review](analyses/unreviewed/ai-agents-proxy--experiential.md)) and
+[Switchyard](https://github.com/NVIDIA-NeMo/Switchyard)
+([review](projects/ai-agents-proxy--switchyard.md)) motivate separate policy,
+feature, pricing and evaluation fingerprints, with calibrated score meanings;
+schema acceptance alone does not establish routing benefit. No candidate changes
+the implemented [non-training default](media-training.md).
+
+Local inference needs effective resource and capability evidence.
+[Colibri](https://github.com/JustVugg/colibri)
+([review](projects/ai-model-run--colibri.md)) distinguishes supplied-digest checks
+from size-only completeness across split storage. [FreeToken](https://github.com/FlashML-org/FreeToken)
+([review](projects/ai-model-run--freetoken.md)) rejects unsupported completion
+options before dispatch. [YuE](https://github.com/multimodal-art-projection/YuE)
+([review](projects/ai-media--yue.md)), [Jan](https://github.com/janhq/jan)
+([review](projects/ai-agents--jan.md)) and [OBLITERATUS](https://github.com/elder-plinius/OBLITERATUS)
+([review](projects/ai-model-edit--obliteratus.md)) reinforce device identity,
+actual implementation coverage and unknown resource estimates. Allocation-bearing
+probes must not become passive list behavior. [Edge0](https://github.com/edge0-ai/edge0)
+([review](analyses/unreviewed/ai-model-run--edge0.md)) is a model-specific MoE
+prerouting candidate: matching staged experts to predicted routing is distinct
+from preserving the original model's choices or answer quality.
+
+Keep accounting provenance separate from authority. [ccusage](https://github.com/ryoppippi/ccusage)
+([review](projects/ai-agents-tokens--ccusage.md)) carries service-tier and merge
+precedence, [CodexBar Win](https://github.com/nesszer/Win-CodexBar)
+([review](projects/ai-agents-tokens--codexbar-win.md)) retains quota-window
+denominators, and [RTK](https://github.com/rtk-ai/rtk)
+([review](projects/ai-agents-proxy--rtk.md)) compares compression against the same
+requested window. None establishes provider billing, entitlement or quality.
+These are scoped source findings; no new model/provider or hardware benchmark
+was executed and no new inference backend was integrated.
+
+### Additional scoped reviews from November 1
+
+These newly reviewed sources complement the themes above. Each report states its selected source scope and limitations; listing it does not imply runtime integration or comparative quality.
+
+- [cindy](https://github.com/makecindy/cindy) ([scoped report](analyses/unreviewed/ai-agents--cindy.md)).
+- [oh-my-hermes](https://github.com/rlaope/oh-my-hermes) ([scoped report](analyses/unreviewed/ai-agents--oh-my-hermes.md)).
+- [thinkrail](https://github.com/jetbrains/thinkrail) ([scoped report](analyses/unreviewed/ai-agents--thinkrail.md)).
+- [diffmap](https://github.com/tanishqkancharla/diffmap) ([scoped report](analyses/unreviewed/ai-gen--diffmap.md)).
+- [yue2-studio](https://github.com/timoncool/yue2-studio) ([scoped report](analyses/unreviewed/ai-gen--yue2-studio.md)).

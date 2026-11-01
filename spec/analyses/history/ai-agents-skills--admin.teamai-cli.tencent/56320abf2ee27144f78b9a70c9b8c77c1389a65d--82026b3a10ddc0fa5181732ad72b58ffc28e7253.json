@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-skills--admin.teamai-cli.tencent",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/Tencent/teamai-cli",
+  "report": "spec/projects/ai-agents-skills--admin.teamai-cli.tencent.md",
+  "analyzedSha": "56320abf2ee27144f78b9a70c9b8c77c1389a65d",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T11:00:27+01:00",
+  "observedSha": "82026b3a10ddc0fa5181732ad72b58ffc28e7253",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "82026b3a10ddc0fa5181732ad72b58ffc28e7253",
+      "date": "2026-11-01T16:09:58+08:00",
+      "subject": "feat(sessions): read Pi and Oh My Pi transcripts (#1586)"
+    },
+    {
+      "sha": "3e8896accf10151397b0852754578fefd3a3d958",
+      "date": "2026-11-01T08:45:17+01:00",
+      "subject": "fix(mcp): preserve unindented examples in Codex TOML (#1651)"
+    },
+    {
+      "sha": "9f9f36b400763b7861d5ccf8e714e53c3247a411",
+      "date": "2026-11-01T12:00:45+08:00",
+      "subject": "feat(dashboard): match the website look and add a team Improvement Center (#1631)"
+    },
+    {
+      "sha": "6ef00e870d2d00d4cdc12b55af1c1ba720e60db8",
+      "date": "2026-11-01T08:15:08+08:00",
+      "subject": "ci(lint): reject duplicate webhook switch cases (#1648)"
+    },
+    {
+      "sha": "4ea4bf274cbcb5f187970897e22e65693c5614aa",
+      "date": "2026-11-01T00:26:41+01:00",
+      "subject": "feat(dashboard): show what every AI tool's requests cost, priced from a bundled LiteLLM snapshot (#1647)"
+    },
+    {
+      "sha": "3846d28289f93c72953f70ab354ae491b47cb7e9",
+      "date": "2026-10-31T23:34:07+01:00",
+      "subject": "fix(uninstall): clean replaced OpenCode homes (#1645)"
+    },
+    {
+      "sha": "a5a7ab9de21e3b0751fddc9cc87c576d42ece43a",
+      "date": "2026-10-31T23:14:50+01:00",
+      "subject": "feat(session): publish sessions without local paths, and record what the session ran as (#1644)"
+    },
+    {
+      "sha": "ee87cdfc37a84339cc73636268d635df08ecc7a7",
+      "date": "2026-10-31T22:54:27+01:00",
+      "subject": "docs(pi): clarify relocated legacy rule path (#1646)"
+    },
+    {
+      "sha": "af3d19ac6df17616040af954c1cf67ca51a0283e",
+      "date": "2026-10-31T22:48:18+01:00",
+      "subject": "fix(joycode): maintain agent index (#1642)"
+    },
+    {
+      "sha": "4c2211c0938bfde058d99db5e5c3718b7a357bcd",
+      "date": "2026-10-31T18:46:42+01:00",
+      "subject": "fix(uninstall): clean replaced tool homes after re-init (#1641)"
+    },
+    {
+      "sha": "c8020e32654f8c2e5a44084ae2723dc38185806f",
+      "date": "2026-10-31T18:39:23+01:00",
+      "subject": "fix(pricing): price Claude Haiku 5.5, Opus 5.5 and Sonnet 5.5 (#1643)"
+    },
+    {
+      "sha": "791da0701aefb21e02ece419ee0320d8cc44fc89",
+      "date": "2026-11-01T00:36:39+08:00",
+      "subject": "feat(recall): declared asset relations on recall hits, checked by review --branch (#1552 first slice) (#1629)"
+    },
+    {
+      "sha": "84b931d4bfdfe0080ece8aae3d1c0de9c9a024dd",
+      "date": "2026-11-01T00:32:11+08:00",
+      "subject": "ci(lint): enable remaining array and trim anti-slop checks (#1639)"
+    },
+    {
+      "sha": "c111930ec5e64f50900c504f8d25ebde0c5bc797",
+      "date": "2026-11-01T00:17:47+08:00",
+      "subject": "feat(workflow): read \\{{ in a template as a literal {{ (#1640)"
+    },
+    {
+      "sha": "f1f069d8db4f643bc068b8735c34dcf85a007d03",
+      "date": "2026-11-01T00:17:40+08:00",
+      "subject": "feat(recall): record query text in the session recall-quality cache (#1628)"
+    },
+    {
+      "sha": "4586771ae0a6d55ef7f46007071cc07209c59ddc",
+      "date": "2026-10-31T16:23:37+01:00",
+      "subject": "fix(doctor): warn about OMP when Pi home is relocated (#1638)"
+    },
+    {
+      "sha": "c9447a4dd30ff21753734141faaae2d86944cb35",
+      "date": "2026-10-31T15:09:54+01:00",
+      "subject": "fix(lint): guard provider merge member calls (#1635)"
+    },
+    {
+      "sha": "0d89cd742d6293eca486dabd0ee664eecb3a0b1a",
+      "date": "2026-10-31T15:09:14+01:00",
+      "subject": "fix(lint): guard dotted launch environment reads (#1634)"
+    },
+    {
+      "sha": "7f095c73a2eedcf45e4d0bad6687153b16064536",
+      "date": "2026-10-31T13:45:53+01:00",
+      "subject": "docs: clarify moved tool home paths (#1632)"
+    },
+    {
+      "sha": "9f1b45365270cbc1f924a1701c83ea9e64d2b193",
+      "date": "2026-10-31T12:51:37+01:00",
+      "subject": "ci(lint): move static checks into lint, cut rule-harness time (#1630)"
+    },
+    {
+      "sha": "843a3c9379f7ab488bb4785f5d57189e0b8aa883",
+      "date": "2026-10-31T18:14:44+08:00",
+      "subject": "fix(workflow): publish a session on the pick the person made at the start (#1580)"
+    },
+    {
+      "sha": "78b6869ce713fb85b23a2024ba3d84b457fa1507",
+      "date": "2026-10-31T16:08:17+08:00",
+      "subject": "ci(lint): document prefer-array-some policy (#1624)"
+    },
+    {
+      "sha": "a1ebc2a9c64a31ac542d40baa2c147745d3e3b47",
+      "date": "2026-10-31T08:55:23+01:00",
+      "subject": "fix(mcp): preserve indented Codex TOML tables (#1626)"
+    },
+    {
+      "sha": "58a709cca2aa61eecced4c79805c88b648b7c410",
+      "date": "2026-10-31T08:48:38+01:00",
+      "subject": "docs: refresh Pi instruction guidance (#1623)"
+    },
+    {
+      "sha": "576593d0ae32c4cd8ee0232ba92063bc89258549",
+      "date": "2026-10-31T08:21:10+01:00",
+      "subject": "fix(joycode): follow configured home (#1622)"
+    },
+    {
+      "sha": "cd644d810c0acdb3c431e58c5b5ae1009c5d4ddb",
+      "date": "2026-10-31T07:54:36+01:00",
+      "subject": "ci(lint): enable prefer-includes (#1617)"
+    },
+    {
+      "sha": "9e527e8355965fd5e07bf59b70d42c077bec5fa3",
+      "date": "2026-10-31T07:54:08+01:00",
+      "subject": "ci(lint): enable non-mutating array reversal checks (#1614)"
+    },
+    {
+      "sha": "22a9f2d318bb5ed6f0ff24b1ae2c071b60273823",
+      "date": "2026-10-31T08:18:29+08:00",
+      "subject": "feat(scorers): show the session judge the team skills it had and used (#1606)"
+    },
+    {
+      "sha": "a92925e1232cf938afc6718132800008340c0da2",
+      "date": "2026-10-31T08:18:18+08:00",
+      "subject": "fix(session): handle nested and symlinked archive paths (#1591)"
+    },
+    {
+      "sha": "42eade50b1f5247123df5ba6ec8610096c2c592c",
+      "date": "2026-10-31T08:15:22+08:00",
+      "subject": "ci(lint): guard direct HOME reads (#1604)"
+    },
+    {
+      "sha": "85671108521d4bd90c94d956d97401cde9814947",
+      "date": "2026-10-31T08:13:20+08:00",
+      "subject": "ci(lint): move learnings path guard out of Vitest (#1601)"
+    },
+    {
+      "sha": "44acb5c1badc2ed1528a5811c3e23f079c68c7e9",
+      "date": "2026-10-31T08:13:14+08:00",
+      "subject": "docs(lint): mark merged type-aware rules as landed (#1593)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxlintrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.ja.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.ko.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.th.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/teamai-recall.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/dashboard-unified.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/data-directory-layout.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/skill-serving.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/team-secrets.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dev/adding-a-provider.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dev/agent-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dev/workflow-engine.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/dashboard.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/diagnostics.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/distribution.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/faq.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/knowledge.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/member-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/reporting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/scorers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/sharing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/team-culture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/tool-support.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/windows.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/workflow-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/workflow.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/dashboard.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/diagnostics.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/distribution.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/faq.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/knowledge.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/member-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/reporting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/scorers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/sharing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/team-culture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/tool-support.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/windows.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/workflow-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/workflow.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/failure-codes.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/imports.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/config-load-options.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/config-load-options.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/configured-tool-paths.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/configured-tool-paths.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/home-env.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/home-env.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/launch-env.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/launch-env.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/learnings-root.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/learnings-root.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/no-provider-merge.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/no-provider-merge.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/remove-delivered.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/remove-delivered.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/rules-locate.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/rules-locate.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/windows-tests.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/windows-tests.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/workflow-boundaries.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/workflow-boundaries.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/workflow-failure-codes.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/rules/workflow-failure-codes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/test/harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oxlint-plugin-teamai/utils.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check-docs.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check-docs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check-docs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R085",
+      "path": "scripts/ci-recipe.ts",
+      "previousPath": "src/__tests__/helpers/ci-recipe.ts"
+    },
+    {
+      "status": "A",
+      "path": "scripts/command-table.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R095",
+      "path": "scripts/commands-reference.ts",
+      "previousPath": "src/commands-reference.ts"
+    },
+    {
+      "status": "A",
+      "path": "scripts/doc-check.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/doc-checks/readme-matrix.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R068",
+      "path": "scripts/doc-checks/skill-commands-exist.ts",
+      "previousPath": "src/__tests__/skill-commands-exist.test.ts"
+    },
+    {
+      "status": "A",
+      "path": "scripts/doc-checks/skill-content.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/doc-checks/team-wiki-codebase-skill.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/doc-checks/workflow-docs-examples.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/model-prices.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/model-prices.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R086",
+      "path": "scripts/tool-support.ts",
+      "previousPath": "src/tool-support.ts"
+    },
+    {
+      "status": "A",
+      "path": "scripts/typescript-loader.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/update-model-prices.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/update-model-prices.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/commands.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/contribute-member.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/troubleshooting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/setup/references/join-member.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/setup/references/manage-admin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/setup/references/setup-admin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/setup/references/uninstall.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/share/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/share/references/doc-template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/wiki/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/wiki/references/agents/graph-rag-agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/workflow-local/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/workflow/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/agent-model-aliases.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/agent-session-copy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/agent-session-find.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/agent-session-list.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/agent-skills.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/agent-version.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/agy-hooks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/agy-session-adapter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/agy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/asset-relations.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/auto-push-team-repo.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/bridged-team-hooks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/ci-extract-mr.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/claude-hook-host.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/cli-path.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/coauthor-reconcile.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/codebase-deep-enrich.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/codebase-dir-slug-collision.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/codebase-incremental-no-origin.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/codebase-reconcile.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/__tests__/commands-reference.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/config-not-initialized.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/contribute-check-e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/conversation-token-e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/conversation-token-metrics.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dashboard-collector.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dashboard-handoff-view.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-improvement.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-member-settings-view.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-member-settings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dashboard-resources-skills.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dashboard-session-sharing-view.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dashboard-session-sharing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-token-costs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-tokens-view.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dashboard-ui.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dashboard-workflow-runs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/default-workflows.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/delivered-copies.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/desired-skills.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/detached-processes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/doctor-agent-places.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/doctor-mcp-delivery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/doctor-scorers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/doctor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dry-run-guard.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/e2e/agy-support.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/assigned-roles-1186.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

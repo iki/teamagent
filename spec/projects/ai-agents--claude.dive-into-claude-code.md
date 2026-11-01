@@ -38,6 +38,18 @@ The expanded source notes mix papers, vendor posts and changelogs with differing
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `3216031b7017c56e841f0ee00e09155795653b84` (commit date `2026-11-01T11:26:04+08:00`), compared with `f5ae96a8bdad0b9ed075b444a0dc3b94875008f1`. Earlier observations remain historical evidence.
+
+**Scope:** Complete one-file README_zh.md diff; this repository supplies secondary analysis rather than the vendor runtime.
+
+The [Chinese reading list](https://github.com/VILA-Lab/Dive-into-Claude-Code/blob/3216031b7017c56e841f0ee00e09155795653b84/README_zh.md) changes a model-access statement from an ongoing suspension to a past suspension. The linked external provider pages were not fetched or verified during this scoped review. No agent implementation, availability probe or model entitlement code changed in this comparison; the revised wording therefore cannot establish present model availability.
+
+**Teamagent implication (inference):** Keep dated secondary-source assertions separate from effective account/route policy. Refresh a mutable availability claim against its primary source before using it to select a model; retain this static research snapshot as historical commentary.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [claude.dive-into-claude-code](https://github.com/VILA-Lab/Dive-into-Claude-Code); analyzed commit `f5ae96a8bdad0b9ed075b444a0dc3b94875008f1`; commit date 2026-10-27T00:42:11+08:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--claude.dive-into-claude-code.md).
+Analysis metadata: source [claude.dive-into-claude-code](https://github.com/VILA-Lab/Dive-into-Claude-Code); analyzed commit `3216031b7017c56e841f0ee00e09155795653b84`; commit date 2026-11-01T11:26:04+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--claude.dive-into-claude-code.md).
 <!-- teamagent-analysis:end -->

@@ -36,6 +36,18 @@ Source: [codeaf](https://github.com/Agent-Field/CodeAF); inspected snapshot `3bf
 
 The [bounded audit session](https://github.com/Agent-Field/CodeAF/blob/3bf6072fdd8a64f6497634191fa20f23730fe8cb/internal/agentsession/session.go) validates required turn/policy limits and locally validates output JSON. It reserves at most half of the remaining deadline for answering, removes tool definitions at the answer phase and retains provider failures separately from a schema-invalid completed response. An explicit unsupported-format refusal can retry without that provider format while retaining local validation and consuming a turn. ContextChars is a coarse running byte count of selected prompt/tool data, not an exact token or complete transcript budget; response.Choices[0] assumes a provider response shape here. Adopt the separate read/answer budgets and independent schema checks, while validating external response shape and measuring acceptance rather than assuming a well-formed audit is correct.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `20eb6952de6482ea8f8709784ff447b9d9ed3fc3` (commit date `2026-10-31T07:41:20-04:00`), compared with `3bf6072fdd8a64f6497634191fa20f23730fe8cb`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete approvals-door and fixture diff. Whole-repository diff was oversized; delegated pairing-link validation and transport implementation not audited.
+
+The [approval door](https://github.com/Agent-Field/CodeAF/blob/20eb6952de6482ea8f8709784ff447b9d9ed3fc3/cmd/codeaf/approvals.go) now invokes a dedicated link/service check before constructing the approver, keeps an unpaired device visible through local identity when synchronization is quiet, and reports a missing remembered pairing request as requiring the link to be reopened. [Changed fixtures](https://github.com/Agent-Field/CodeAF/blob/20eb6952de6482ea8f8709784ff447b9d9ed3fc3/cmd/codeaf/approvals_test.go) pin revoked-device messaging. The call ordering is visible, but correctness of the delegated URL comparison is outside this scope.
+
+**Teamagent implication (inference):** Validate pairing destination before disclosing pairing codes or keys, and bind approval to the original request and service. Local device listing should remain passive; a friendly fallback identity must not masquerade as authenticated pairing or authorize a remote action.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codeaf](https://github.com/Agent-Field/CodeAF); analyzed commit `3bf6072fdd8a64f6497634191fa20f23730fe8cb`; commit date 2026-10-27T11:49:16-04:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--codeaf.md).
+Analysis metadata: source [codeaf](https://github.com/Agent-Field/CodeAF); analyzed commit `20eb6952de6482ea8f8709784ff447b9d9ed3fc3`; commit date 2026-10-31T07:41:20-04:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--codeaf.md).
 <!-- teamagent-analysis:end -->

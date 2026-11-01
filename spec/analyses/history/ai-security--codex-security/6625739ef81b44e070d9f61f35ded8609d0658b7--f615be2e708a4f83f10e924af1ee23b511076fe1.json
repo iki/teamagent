@@ -1,0 +1,985 @@
+{
+  "id": "ai-security--codex-security",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/openai/codex-security",
+  "report": "spec/projects/ai-security--codex-security.md",
+  "analyzedSha": "6625739ef81b44e070d9f61f35ded8609d0658b7",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-27T23:35:27-07:00",
+  "observedSha": "f615be2e708a4f83f10e924af1ee23b511076fe1",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f615be2e708a4f83f10e924af1ee23b511076fe1",
+      "date": "2026-11-01T01:38:05-07:00",
+      "subject": "refactor(workbench): share saved coverage logic and checkpoint fixtures (#2185)"
+    },
+    {
+      "sha": "a43a30db9f34467a593a66fa47125fdaf77b8498",
+      "date": "2026-11-01T01:36:59-07:00",
+      "subject": "test(evals): share intake grading and discovery fixtures (#2184)"
+    },
+    {
+      "sha": "6f0a4caeada7ec9d543083634030c5c3bf9d47bc",
+      "date": "2026-10-31T13:33:00-07:00",
+      "subject": "feat: import SonarQube Cloud security findings (#2162)"
+    },
+    {
+      "sha": "c3efde8ceca7d5a8720474142f68dea64e3a24c9",
+      "date": "2026-10-31T06:51:23-07:00",
+      "subject": "chore(deps): update MCP SDK to 1.32.2 and Stryker to 10.1.1 (#2170)"
+    },
+    {
+      "sha": "b9556f28d465ebb0cecb5b71d449c7c421cd8fe7",
+      "date": "2026-10-30T17:49:32-07:00",
+      "subject": "fix(publication): link Markdown evidence to plain source lines (#2032)"
+    },
+    {
+      "sha": "517f4a77f7f24ef6ba01d0e574ba74d2e550b9de",
+      "date": "2026-10-30T16:34:03-07:00",
+      "subject": "fix(history): align Unicode repository columns (#2148)"
+    },
+    {
+      "sha": "73e944f9d9f00906caf3332e9d02d812ee40d3ed",
+      "date": "2026-10-30T15:23:25-07:00",
+      "subject": "ci: update taiki-e/install-action to 2.87.31 (#2156)"
+    },
+    {
+      "sha": "eeb969e87b464d67b963f109233bda3d692f4e88",
+      "date": "2026-10-30T14:22:54-07:00",
+      "subject": "fix(action): show highest-severity findings first (#2160)"
+    },
+    {
+      "sha": "5c1bd494c6b3831934da9727941d1cc764829843",
+      "date": "2026-10-30T13:02:31-07:00",
+      "subject": "fix(plugin): retain the reviewed surface count for completed Deep scans (#2161)"
+    },
+    {
+      "sha": "e2673d7f13173fe72eed122bc8aced8474baff98",
+      "date": "2026-10-30T11:35:42-07:00",
+      "subject": "fix(threat-model): count only CR and LF as assessment line breaks (#2147)"
+    },
+    {
+      "sha": "bb19ad7e71bb999274338afbceb24fef4127efc2",
+      "date": "2026-10-30T11:05:06-07:00",
+      "subject": "fix(runtime): name the outermost rejected Windows ancestor (#2065)"
+    },
+    {
+      "sha": "cf22bcd7af757f17594aecf93b0607ce3e8e74cc",
+      "date": "2026-10-30T12:44:35-05:00",
+      "subject": "fix: preserve local scan startup diagnostics (#2115)"
+    },
+    {
+      "sha": "f65ac53940d6fcc05cca140b87abbbfa2fcc5118",
+      "date": "2026-10-30T08:51:13-07:00",
+      "subject": "fix(cli): keep whole characters when shortening publish progress (#2158)"
+    },
+    {
+      "sha": "eb263134e92428463a1de1fcc5d12394f0a43992",
+      "date": "2026-10-30T08:44:17-07:00",
+      "subject": "chore(deps): update Codex SDK and CLI to 0.166.0 (#2154)"
+    },
+    {
+      "sha": "87a5c0afa4ac6d53e87de15a912128a3f8abe051",
+      "date": "2026-10-30T08:29:40-07:00",
+      "subject": "ci: update docker/login-action to 4.7.0 (#2155)"
+    },
+    {
+      "sha": "bf9489b7d018a51c800ea48f1c6afa202904ab51",
+      "date": "2026-10-30T08:29:01-07:00",
+      "subject": "chore(deps): update Ruff to 0.17.2 (#2153)"
+    },
+    {
+      "sha": "474d0a0665d068f2b0ed3d7c22d8233fc4acc378",
+      "date": "2026-10-30T08:11:55-07:00",
+      "subject": "chore(deps): update OpenCode SDK and Bun types (#2157)"
+    },
+    {
+      "sha": "ad6ec65ad13542328fbaccfb9c396319f88c7793",
+      "date": "2026-10-30T07:59:23-07:00",
+      "subject": "fix(auth): preserve IPv6 verification URL brackets (#232)"
+    },
+    {
+      "sha": "607038e13988b791886e1d68cc58174245eb9599",
+      "date": "2026-10-30T06:46:46-07:00",
+      "subject": "fix: accept UTF-8 BOMs in scan inputs and calibration datasets (#2151)"
+    },
+    {
+      "sha": "1b9523585522096727d31d1a310b8e7016af58ac",
+      "date": "2026-10-30T00:15:48-07:00",
+      "subject": "perf: avoid duplicate plugin setup inspection and defer CLI YAML (#2149)"
+    },
+    {
+      "sha": "7bd7e2ba98f69155e65571479f8d1f4966f2f3ae",
+      "date": "2026-10-30T00:02:59-07:00",
+      "subject": "fix(config): accept UTF-8 BOM in JSON project files (#980)"
+    },
+    {
+      "sha": "fa80b7f7cb24b0b63305a469642cf3ef68f76c57",
+      "date": "2026-10-29T23:44:46-07:00",
+      "subject": "feat(import): track Veracode static application policy flaws (#2099)"
+    },
+    {
+      "sha": "11c27a4c5186a0e6fdbd210cf15a4930bb92d903",
+      "date": "2026-10-29T23:19:45-07:00",
+      "subject": "fix(cli): avoid claiming output was kept after scan failures (#359)"
+    },
+    {
+      "sha": "ea1b18abd0105a14318e0409bdb39b42ea44649a",
+      "date": "2026-10-29T23:01:06-07:00",
+      "subject": "feat(import): track Black Duck SCA project-version vulnerabilities (#2098)"
+    },
+    {
+      "sha": "d2714476c39ce4443c85c6470f88e9bdad8e838a",
+      "date": "2026-10-29T22:39:18-07:00",
+      "subject": "perf: speed up plugin setup and defer CLI prompts (#2146)"
+    },
+    {
+      "sha": "ab9da3b427aa1197e08c3a82bf7f01e64c4832b0",
+      "date": "2026-10-29T17:43:46-07:00",
+      "subject": "test: share recovery and publication fixtures (#2138)"
+    },
+    {
+      "sha": "b20fb8e9ad11c58624ece3f09286ad087ec7e840",
+      "date": "2026-10-29T16:30:19-07:00",
+      "subject": "docs(release): explain package provenance (#361)"
+    },
+    {
+      "sha": "065d2e31ef1813a017a449dc7f5cc706f41886ab",
+      "date": "2026-10-29T16:18:17-07:00",
+      "subject": "perf: defer CLI and plugin validators until first use (#2140)"
+    },
+    {
+      "sha": "5f5ccd898a17709af549585db0cb2b3ec8c14b18",
+      "date": "2026-10-29T16:17:32-07:00",
+      "subject": "fix(evals): update vulnerable triage dependencies (#2142)"
+    },
+    {
+      "sha": "12cbba751a6b674b2f49af2164b6068963ffe04a",
+      "date": "2026-10-29T16:10:11-07:00",
+      "subject": "chore(release): approve npm and scanner images together (#2143)"
+    },
+    {
+      "sha": "af94f47318d8cbad345fe802cd44cc090fff9c79",
+      "date": "2026-10-29T15:48:29-07:00",
+      "subject": "fix(action): do not split surrogate pairs in truncated report text (#2133)"
+    },
+    {
+      "sha": "c721a107d46c71d60463c18e9eef0cc4eb922b09",
+      "date": "2026-10-29T15:37:18-07:00",
+      "subject": "fix(deps): update SDK and MCP parser dependencies (#2141)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actionlint.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/release-notes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/release-pr-state.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/release-progress.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/test_release_progress.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/action-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/container-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/container-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/container-validate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/invoice-desk-scan.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/node-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/node-github-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/node-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/publish-wolfi.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-quality.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/wolfi-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/workflow-quality.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "RELEASING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/prepare-container-index.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/prepare-release-package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/test-container-index.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/verify-container-release-version.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/verify-container-sandbox.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/wolfi/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/wolfi/apko.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/wolfi/build-inputs.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/wolfi/build.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/ci-build.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/wolfi/melange.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/payload/native-sources.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/wolfi/payload/stage.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/release-sbom.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/resolve-release.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/wolfi/tests/runtime.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/wolfi/tests/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/to-oci.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/verify-npm-release.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-workflows.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scanner-imports/blackduck.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scanner-imports/github-dependabot.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scanner-imports/inspector.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scanner-imports/schema-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scanner-imports/sonar.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scanner-imports/veracode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/secret-discovery/fixtures.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/secret-discovery/test_discovery.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/secret-discovery/test_runtime.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/assertions/github-rest-intake.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/assertions/missing-input.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/assertions/output.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/assertions/ticket-intake.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/assertions/triage-io.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/pnpm-workspace.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/sastbench/scripts/test-sastbench-result.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/scripts/generate-calibration-tests.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/scripts/hydrate-calibration-repos.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/scripts/test-generate-calibration-tests.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/scripts/test-intake-assertions.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/scripts/test-triage-io.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/scripts/test-triage-provider.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/tests/github-rest-intake.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/tests/ticket-intake.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/workflow-routing/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/workflow-routing/cases.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/github-actions/codex-security.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "github-action/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "github-action/dist/index.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "github-action/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "github-action/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "github-action/src/main.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "github-action/src/reporting.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "github-action/tests/main.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "github-action/tests/reporting.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/.codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/helpers-main.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/scripts/test_host_build.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/src/artifact-scan-draft.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/src/deep-scan/artifact-validation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/src/deep-scan/coordinator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/src/deep-scan/project-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/src/deep-scan/worker-runner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/src/helpers/generate-inventory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/mcp-app/src/helpers/hosted-scope-inventory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/src/helpers/validate-patch-risk-assessment.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/src/server/workbench-process.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/src/workbench/migrations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/deep_scan_coverage_fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/import-module.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/scan-draft-recovery-fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/scan-identity-recovery-fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/support/windows-output-fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/test_artifact_inventory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/test_artifact_scan_draft_recovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/test_artifact_scan_identity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/test_artifact_scan_publication_recovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/test_deep_scan_artifact_validation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/test_deep_scan_errors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/test_deep_scan_executor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/test_deep_scan_parent_sandbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/test_deep_scan_project_config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/test_deep_scan_stdio_lifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/mcp-app/tests/test_hosted_scope_inventory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/mcp-app/tests/test_hosted_scope_recovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/test_workbench_database.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/test_workbench_process.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/test_workbench_state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/mcp-app/tests/test_workbench_timeouts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/native/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/native/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/native/notices.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/plugin-files.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/references/scan-artifacts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/requirements-test.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/deep_scan_workbench.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/workbench/retained_coverage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/workbench/saved_coverage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/workbench_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/workbench_constants.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/workbench_coverage_receipts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/workbench_db.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/workbench_native_indexes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/workbench_saved_results.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/workbench_scan_usage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/workbench_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/scripts/workbench_setup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/workbench_target.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/workbench_validation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/shared/workbench-migrations.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/skills/publish-findings/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/resolve-dependency-alert/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/resolve-dependency-alert/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/skills/security-scan/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/threat-model-visualize/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/threat-model-visualize/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/threat-model-visualize/assets/context-reference-overview.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/threat-model-visualize/assets/context-reference-path.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/threat-model-visualize/assets/control-effects.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/threat-model-visualize/assets/explorer.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/threat-model-visualize/assets/explorer.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/threat-model-visualize/assets/explorer.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/threat-model-visualize/assets/route-paths.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/threat-model-visualize/assets/source-roles.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/threat-model-visualize/assets/svg-layout.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/threat-model-visualize/references/context-explorer.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/threat-model-visualize/references/view-model.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/skills/threat-model-visualize/scripts/build_explorer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/tests/deep_deadline_crash.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/tests/test_checkpoint_publication_authority.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/tests/test_checkpoint_recovery_fallbacks.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--mlflow",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/mlflow/mlflow",
+  "report": "spec/projects/ai-agents--mlflow.md",
+  "analyzedSha": "9f9c78b94b56f7593ad9de257e487c7dd0f04641",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T09:19:35Z",
+  "observedSha": "e8d8c09e79e5e0f69cc022409019fc0fb6ad2c30",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "e8d8c09e79e5e0f69cc022409019fc0fb6ad2c30",
+      "date": "2026-11-01T06:30:29Z",
+      "subject": "Require the stored name spelling for admin registered model, prompt, and MCP server deletes (#27378)"
+    },
+    {
+      "sha": "028e1b30c4aa45cfc6cda82277106e6d2202b7f5",
+      "date": "2026-11-01T01:02:24Z",
+      "subject": "Bump the actions-minor group across 3 directories with 5 updates (#27377)"
+    },
+    {
+      "sha": "d69980cef0a2bc93248d695f68c81ffdf5ae18e2",
+      "date": "2026-10-31T22:59:37Z",
+      "subject": "Skip LLM cost on `AGENT` spans at store time and record Strands cache tokens (#27371)"
+    },
+    {
+      "sha": "837f06524df076f6069e9d78ddbec9036e910e5e",
+      "date": "2026-10-31T22:59:30Z",
+      "subject": "Reject registered model/prompt rename while a named role has an exact-name grant on the old or new name (#27370)"
+    },
+    {
+      "sha": "da2ce59ecde62a8020cc5a762166ebc3afa7131c",
+      "date": "2026-10-31T16:20:19Z",
+      "subject": "Use prices from an explicitly set `MLFLOW_MODEL_CATALOG_URI` before litellm in trace cost calculation (#27369)"
+    },
+    {
+      "sha": "75761ffb2ad3bbf5e482d55f8833edd4cfe7200e",
+      "date": "2026-10-31T16:20:14Z",
+      "subject": "Fix `DeepEvalScorer` returning another row's results under concurrent scoring (#27368)"
+    },
+    {
+      "sha": "a1d0c1d6398c28c5b7cbbc0e4ba0e4b28d23eb29",
+      "date": "2026-10-31T14:43:21Z",
+      "subject": "[UI] Add rename action to evaluation runs table actions menu (#27139) (#27332)"
+    },
+    {
+      "sha": "c7027358d33437df5b9bea99058ea7b0ef884bde",
+      "date": "2026-10-31T13:27:38Z",
+      "subject": "Reword the issue fix prompt so it doesn't read as a bug in MLflow (#27364)"
+    },
+    {
+      "sha": "5a9b6a739605f5049db2e4781ed8e6f899dd6aa2",
+      "date": "2026-10-31T13:06:10Z",
+      "subject": "Terminate AI Gateway streaming chat responses with `data: [DONE]` (#27340)"
+    },
+    {
+      "sha": "520b5d394da7469b1b481cdf853e4974ea4db17c",
+      "date": "2026-10-31T12:59:42Z",
+      "subject": "Fix `compute_pandas_digest` failure on empty Arrow-backed string columns (#27359)"
+    },
+    {
+      "sha": "a37eef2561b74c03dcb541669b6bb59d857221ef",
+      "date": "2026-10-31T12:16:32Z",
+      "subject": "Fix basic-auth `_find_validator` missing `GetWorkspace` validator for concrete workspace paths (#27355)"
+    },
+    {
+      "sha": "64d84ff97633e8734e9b7312282a3c317fc82209",
+      "date": "2026-10-31T10:58:45Z",
+      "subject": "Fix `bedrock:/` judges without a trace raising `NotImplementedError` in `GatewayAdapter` (#27322)"
+    },
+    {
+      "sha": "82f69c5911df1673c2842db4c86a59e4ab0b969d",
+      "date": "2026-10-31T10:39:16Z",
+      "subject": "Fix a flaky `ExperimentIssuesScheduleControl` test by letting each save finish before the next test (#27366)"
+    },
+    {
+      "sha": "46fcc9bf0779fa00cba87fa2240814d6b47f4a75",
+      "date": "2026-10-31T19:32:18+09:00",
+      "subject": "Add `verify.yml` stub for branch testing (#27367)"
+    },
+    {
+      "sha": "d59baa031bfb182c2a44940eacf84dd0c2dd0ec9",
+      "date": "2026-10-31T09:40:53Z",
+      "subject": "Don't resend `POST` writes that the server may have already processed (#27329)"
+    },
+    {
+      "sha": "3b644e67f5cffa993b378fb5910d3ad8ea3f67b6",
+      "date": "2026-10-31T17:13:46+09:00",
+      "subject": "Enforce matching invocation policies for skills (#27365)"
+    },
+    {
+      "sha": "92c7d92d422ed7d01c14b2858e26a9d1645441e1",
+      "date": "2026-10-31T06:38:46Z",
+      "subject": "Stop timing an unfinished issue detection run against now (#27336)"
+    },
+    {
+      "sha": "627f057a29f8b89e400a5da24303a79e060fe8c0",
+      "date": "2026-10-31T05:07:32Z",
+      "subject": "Extract telemetry token minting into a composite action (#27360)"
+    },
+    {
+      "sha": "bb293ae330328966ddbb28e2eb01154a229cfcd2",
+      "date": "2026-10-31T01:17:46Z",
+      "subject": "Pass a real `RunContext` in `test_tool_validation_failure_is_traced` for pydantic-ai 2.60.0 (#27350)"
+    },
+    {
+      "sha": "5c9b6db8daf5299de071cc5c4d6bfa4a7d5c350b",
+      "date": "2026-10-31T01:02:30Z",
+      "subject": "Restore CrewAI autologging for 1.15.29 (#27357)"
+    },
+    {
+      "sha": "e847a91b44b9bbe7cf73f6eaf47e3cdc44b3a2e1",
+      "date": "2026-10-30T22:43:22Z",
+      "subject": "Allow `importlib_metadata` 10 for MLflow 3.18.0 (#27351)"
+    },
+    {
+      "sha": "3425209a2d16e577c4b2b1285f555016eee67405",
+      "date": "2026-10-30T19:25:53Z",
+      "subject": "Add Cloudflare Agents tracing integration guide (#27347)"
+    },
+    {
+      "sha": "bdb94c654505e8d02249b4895b75b0c1ff61bb75",
+      "date": "2026-10-30T14:32:46Z",
+      "subject": "Don't cache transient server-info failures in `HttpArtifactRepository` and warm the cache in the split-server test (#27335)"
+    },
+    {
+      "sha": "90cecf2abe370fc5feb3cc6c9a18785469fe3e71",
+      "date": "2026-10-30T13:03:28Z",
+      "subject": "Update model catalog from upstream sources (#27331)"
+    },
+    {
+      "sha": "8b162744a89245a50555ed28b5857796e756d0fe",
+      "date": "2026-10-30T12:37:18Z",
+      "subject": "Default triage effort to medium in `triage.yml` (#27333)"
+    },
+    {
+      "sha": "6172b6e7750c172aca4e972ef3d075a64c4633bd",
+      "date": "2026-10-30T12:21:17Z",
+      "subject": "Use medium effort for automatic issue triage in `triage.yml` (#27330)"
+    },
+    {
+      "sha": "abe03223d9bf2f7ebcaa08a5bd9b8d2240ae0d2f",
+      "date": "2026-10-30T10:47:42Z",
+      "subject": "Mock the registry store in `test_source_prompt_requirements_resolves_the_name_like_load_prompt` (#27326)"
+    },
+    {
+      "sha": "b8285c68592f44aac50db6c763d465a00a39d089",
+      "date": "2026-10-30T09:13:50Z",
+      "subject": "Document distributed tracing for remote agent evaluation (#27316)"
+    },
+    {
+      "sha": "1ce499618a4fab8882016bbd689e4bfbf5176169",
+      "date": "2026-10-30T08:48:08Z",
+      "subject": "Stream stored spans in the `log_spans` usage recompute (#27255)"
+    },
+    {
+      "sha": "a516ec82bf4a0d755c79ab63b47c66e2d8805918",
+      "date": "2026-10-30T07:29:35Z",
+      "subject": "Exclude srt placeholder paths from triage Git cleanup (#27328)"
+    },
+    {
+      "sha": "55cdf58bce9696ba26c6d0ecff1df868a78fdaab",
+      "date": "2026-10-30T07:02:18Z",
+      "subject": "Add a consistency example with repeated runs to the evaluation examples page (#27030)"
+    },
+    {
+      "sha": "3be5fd8f49c52d237f53c4c8c7c9997696ac1e3f",
+      "date": "2026-10-30T06:56:57Z",
+      "subject": "Speed up JS tests by caching computed styles (#27165)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/sandbox/gateway-proxy.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/scripts/stream.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/nightly/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/nightly/output.schema.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".claude/skills/pr-review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".claude/skills/pr-review/review-payload.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".claude/skills/pr-review/search-web.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".claude/skills/tests/test_review_payload_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/triage/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".claude/skills/ui-review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/mint-telemetry-token/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-gateway/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-java/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-python/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/autoformat.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-wheel.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/copilot-agent.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cross-version-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/examples.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/flaky-test-detector.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/fs2db.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/js.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/master.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nailaopus.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/protobuf-cross-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/protobuf-json-cross-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/push-images.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/r.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/remove-experimental-decorators.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tracing.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/typescript.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/ui-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/update-model-catalog.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/uv.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/verify.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/check_skills.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/classify_flaky_tests.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "dev/dev_stubs/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "dev/dev_stubs/claude_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/run_dev_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api_reference/source/rest-api.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/classic-ml/tracking/pickle-free-models/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/eval-monitor/ai-insights/detect-issues.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/eval-monitor/comparing-evaluation-runs.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/eval-monitor/faq.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/eval-monitor/running-evaluation/agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/eval-monitor/running-evaluation/eval-examples.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/prompt-registry/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/prompt-registry/use-prompts-in-apps.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/tracing/app-instrumentation/distributed-tracing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/docs/genai/tracing/integrations/listing/cloudflare-agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/tracing/token-usage-cost/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/self-hosting/architecture/artifact-store.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/self-hosting/security/role-based-access-control.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sidebarsGenAI.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/components/TracingIntegrations/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/static/images/genai/issue-detection/categories.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/genai/issue-detection/detection-settings.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/static/images/genai/issue-detection/edit-issue.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/static/images/genai/issue-detection/endpoint-selection.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/static/images/genai/issue-detection/issue-cards.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/static/images/genai/issue-detection/issue-details.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/static/images/genai/issue-detection/issue-detection-progress.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/static/images/genai/issue-detection/issue-detection.mp4",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/genai/issue-detection/issue-evidence.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/static/images/genai/issue-detection/issue-status.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/static/images/genai/issue-detection/model-selection.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/genai/issue-detection/schedule-detection.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/static/images/genai/issue-detection/summary.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/llms/tracing/cloudflare-agents/trace.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/logos/cloudflare-logo.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "libs/skinny/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/assistant/providers/codex.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/assistant/providers/openai_compatible.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/crewai/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/crewai/autolog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/data/digest_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/demo/data.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/demo/generators/evaluation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/demo/generators/issues.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/environment_variables.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/gateway/budget.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/gateway/guardrail_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/gateway/guardrails.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/gateway/providers/anthropic.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/gateway/providers/gemini.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/gateway/providers/litellm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/gateway/utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/genai/discovery/entities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/genai/discovery/job.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/genai/discovery/pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/genai/evaluation/job.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/genai/judges/adapters/gateway_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/genai/optimize/job.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/genai/scorers/builtin_scorers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/genai/scorers/deepeval/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/genai/scorers/deepeval/utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/genai/utils/gateway_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/genai/utils/trace_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/groq/_groq_autolog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/llama_index/serialize_objects.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/pyfunc/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/pyfunc/backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/server/_request_keys.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/server/_search_limits.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/auth/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/auth/sqlalchemy_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/fastapi_app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/gateway_api.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/handlers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/jobs/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/jobs/_job_subproc_entry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/jobs/utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/scripts/componentId-registry.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/server/js/src/common/utils/cacheComputedStyles.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/server/js/src/common/utils/cacheComputedStyles.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/server/js/src/common/utils/reuseInjectedStyles.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/server/js/src/common/utils/reuseInjectedStyles.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/components/experiment-page/components/traces-v3/IssueDetectionJobNotifications.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/components/experiment-page/components/traces-v3/IssueDetectionJobNotifications.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/components/experiment-page/components/traces-v4/components/TracesV4DisplayButton.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/components/experiment-page/components/traces-v4/components/TracesV4Toolbar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/components/experiment-page/hooks/useExperimentEvaluationRunsData.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/components/experiment-page/hooks/useGetExperimentPageActiveTabByRoute.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/constants.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/eval-run-details/EvalRunComparisonOverviewTab.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/eval-run-details/EvalRunComparisonOverviewTab.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/eval-run-details/EvalRunComparisonTracesV4Table.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/eval-run-details/EvalRunTracesSidebar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/eval-run-details/EvalRunTracesV4Table.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-evaluation-runs/ExperimentEvaluationRunsDisplayButton.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-evaluation-runs/ExperimentEvaluationRunsTableActions.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-evaluation-runs/ExperimentEvaluationRunsTableActions.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-evaluation-runs/ExperimentEvaluationRunsTableControls.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-evaluation-runs/ExperimentEvaluationRunsTableControlsV2.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/ExperimentIssueDetectionRunsPage.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/ExperimentIssueDetectionRunsPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/ExperimentIssuesActionBar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/ExperimentIssuesEmptyState.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/ExperimentIssuesPage.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/ExperimentIssuesPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/ExperimentIssuesScheduleControl.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/ExperimentIssuesScheduleControl.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/IssueProposedFixSection.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/IssueProposedFixSection.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/detectionRunHistory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/detectionRunHistory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/issueDetectionSchedule.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/issueFixPrompt.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/issueFixPrompt.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/useDetectionRuns.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-overview/ExperimentGenAIOverviewPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-overview/components/OverviewLayoutComponents.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

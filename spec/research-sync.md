@@ -48,11 +48,36 @@ An observation has `inspectionComplete=true` and `discoveryComplete=false`: it c
 
 The owned `git-sources.json` has schema version 1 and a sorted `repositories` array of `{category, name, url}` records. It contains no absolute paths, credentials, cache locations or review claims. Only the 19 requested AI source categories are selected. During an explicit source import, literal clone declarations provide category/name/URL mappings; clone scripts are never evaluated. A nonempty auxiliary `.git-sources` list must contain the selected declared URLs. A missing or empty auxiliary export is reported explicitly while complete validated clone declarations remain usable. Malformed declarations, unsafe paths, URL mismatches and duplicate identities fail before publication. The previous owned configuration survives a rejected import. The import never edits parent exports. Cache containment, aliases, reparse points, conflicting destinations and expected origins are checked before mutation. Completed staged clones and lifecycle prefix changes use an atomic native directory rename within the same parent. Every attempt rechecks cache containment and refuses an existing destination; the updater never merges, overwrites or deletes that destination. Only sharing or access errors are retried, for at most four attempts with bounded delays. Failed publication retains the staging directory and reports its relative path. The manifest records the operation stage, relative source/destination, attempt count and sanitized exception type/HResult/native error code; unrelated I/O failures are reported immediately.
 
+Report IDs use lowercase category/name identities; display names and physical
+checkout spelling retain their original case. Both imported declarations and
+the owned inventory reject case-folded ID collisions before publication.
+
+The reviewed parent-export category alias `ai-get` maps to canonical `ai-query`.
+Import records this mapping as a warning and keeps `ai-query` in the portable
+inventory and report IDs; it does not add a twentieth topic category or rewrite
+analysis history. A declaration under each spelling for the same canonical ID
+is a collision, not a request to choose one. Checkout discovery searches both
+category directories, including recognized lifecycle prefixes, and rejects
+multiple existing candidates. Existing origin, containment and reparse-point
+checks still apply. Lifecycle prefix changes stay within the selected checkout's
+current parent directory; they do not migrate it between `ai-get` and `ai-query`.
+When no checkout exists, a new clone uses the canonical category directory.
+
 Existing checkouts are fetched without pruning away retained evidence. By default, tracked and untracked changes are stashed before a fast-forward update, then reapplied by exact stash object ID. Ignored files are not stashed or overwritten. Recovery stashes remain available after restoration; a conflict is an explicit partial result with the stash retained. Set `TEAMAGENT_GIT_AUTO_STASH=false` or pass `--no-auto-stash` to leave dirty checkouts untouched.
 
 A detached checkout is preserved at its exact commit on a dedicated recovery branch before switching to the remote primary branch. Choosing a nearest commit could discard distinct detached work, so no proximity heuristic or replay is used. A local branch with no upstream, or with a configured origin upstream that is now missing, is left alone by default; explicitly passing `--use-primary-branch` preserves both that branch and an exact recovery reference before using the same primary-branch recovery path. For a missing upstream, the exact origin reference must be verified absent, and the reachable remote default determines the target even if cached origin/HEAD is stale. The original branch and its tracking configuration remain intact. Tracking another remote stays blocked.
 
 Existing primary branches must track the expected upstream and fast-forward safely. Divergence, blocked checkout and stash-restore conflicts retain recovery references and require review. The updater does not hard-reset, clean, force checkout, or delete a source repository.
+
+A failed fast-forward command does not establish divergent history. The updater
+rechecks branch distance and distinguishes a confirmed command failure from an
+uncertain transport outcome. Its recovery journal retains the exit/outcome,
+captured-text hashes and byte counts, plus allowlisted failure classifications
+and fixed guidance; raw Git/filter output can contain private data and is omitted.
+These hashes describe UTF-8 re-encoded captured text, not retained native stream
+bytes. A failed or ambiguous operation is not retried automatically. Platform
+path failures, locks and filters require their own diagnosis while the checkout
+and recovery references remain preserved.
 
 Outdated prefixes follow last-upstream-commit age and are removed if activity resumes. The `zz` prefix is an operational inaccessible classification, not proof that GitHub deleted a project: a private repository or revoked access can also return 404. Repeated authenticated not-found observations must span at least 24 hours; ordinary transport failures, rate limiting and authentication errors remain unavailable. Each subsequent sync rechecks these records, including temporarily banned sources. It does not forget them when a source disappears from the list.
 

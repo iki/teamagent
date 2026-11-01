@@ -1,0 +1,815 @@
+{
+  "id": "ai-agents--sage",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/ZHangZHengEric/Sage",
+  "report": "spec/projects/ai-agents--sage.md",
+  "analyzedSha": "5e66cbc8cc931155802c84e29d1cfd32d68a2c30",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T16:48:46+09:00",
+  "observedSha": "39bfe32f3de96442d667ce7ed4ccf8072790b090",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "39bfe32f3de96442d667ce7ed4ccf8072790b090",
+      "date": "2026-10-30T17:11:59+08:00",
+      "subject": "test(rsi): align fixtures with live call and repeated evaluation receipts"
+    },
+    {
+      "sha": "70588cfcbd4118bb4ae3979f92c06ee33478124d",
+      "date": "2026-10-30T17:05:46+08:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into codex/publish-rsi-latest"
+    },
+    {
+      "sha": "18e3929461c05fcd80e038277e0e31ce5715ba99",
+      "date": "2026-10-30T17:05:45+08:00",
+      "subject": "feat(rsi): add pairwise web design evaluation and resilient execution"
+    },
+    {
+      "sha": "f731c92f7326ddd40b3819587662eafcf8146b8c",
+      "date": "2026-10-29T15:46:08+08:00",
+      "subject": "feat(rsi): server Implement durable RSI operations and runtime management"
+    },
+    {
+      "sha": "cd4e208f165047785be9a81fa64187b507c16fc6",
+      "date": "2026-10-29T12:18:05+09:00",
+      "subject": "Merge pull request #322 from ZHangZHengEric/docs/builtin-provider-acceptance"
+    },
+    {
+      "sha": "d5c0597dd3c60dcb00b26166639483902ece1941",
+      "date": "2026-10-29T10:48:55+08:00",
+      "subject": "docs: define built-in model provider acceptance standard"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/cli/rsi_mcp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/rsi.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/rsi_evaluation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/desktop/backend/rsi_lint.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/rsi_presentation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/desktop/backend/rsi_save.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/run_composition.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/scorer_model_api.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/lib/src/api/v2_api.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/lib/src/state/workspace_controller.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/desktop/lib/src/ui/rsi_execution_stream.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/lib/src/ui/rsi_observatory.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/desktop/lib/src/ui/rsi_pairwise_summary.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/desktop/lib/src/ui/rsi_save_agent_dialog.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/lib/src/ui/rsi_score_history.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/lib/src/ui/rsi_screen.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/lib/src/ui/rsi_token_usage.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/pubspec.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/desktop/test/rsi_execution_stream_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/test/rsi_observatory_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/desktop/test/rsi_pairwise_observatory_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/desktop/test/rsi_pairwise_summary_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/desktop/test/rsi_pairwise_workflow_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/desktop/test/rsi_save_agent_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/test/rsi_shared_call_pool_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/test/rsi_token_usage_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/test/v2_api_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/bootstrap.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/catalog/repository.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/catalog/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/conversations/a2a/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/conversations/admission.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/conversations/agui/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/conversations/composition.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/im/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/optimization/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/optimization/contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/optimization/repository.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/optimization/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/optimization/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/routers/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/routers/rsi.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/runtime/loop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/runtime/sdk_plugins.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/skills/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/src/api.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/src/components/AgentEditor.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/components/RsiResults.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/components/RsiSetup.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/components/RsiVersionDiff.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/src/router.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/rsi.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/rsi.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/use-rsi.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/src/views/Agents.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/views/Rsi.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/tests/rsi-state.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/tests/rsi.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/en/MODEL_PROVIDER_ACCEPTANCE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/api/HTTP_API_REFERENCE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/applications/RSI.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/zh/MODEL_PROVIDER_ACCEPTANCE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/api/HTTP_API_REFERENCE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/applications/RSI.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evaluation_datasets/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/baseline.package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/baseline.system.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/browser_slots.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/experiment.settings.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/goal.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/lint/bin/eslint",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/lint/eslint.config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/lint/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/lint/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/lint_preflight.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/preflight.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/rendering.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/rsi.dataset.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/scorer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/scorer.runtime.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/web_design/workspace.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/model/plugins/_shared/wire.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/optimization/EVALUATION_PLUGINS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/optimization/PAIRWISE_EVALUATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/builtin_scoring.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/call_isolation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/optimization/comparison_plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/optimization/comparison_plugin_worker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/diagnostics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/evaluation_files.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/optimization/evaluation_plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/optimization/evaluation_plugin_worker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/native_episode.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/observer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/optimizer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/optimization/pairwise.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/python_scorer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/scorer_dependencies.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/optimization/scorer_snapshot.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/optimization/workspace_evidence.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/tool/composite.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/tool/localization.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/tool/official/lint/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/tool/official/lint/bin/eslint",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/tool/official/lint/eslint.config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/tool/official/lint/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/tool/official/lint/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/tool/official/quality.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/tool/official/web_syntax.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/cli/test_rsi_mcp.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/desktop/test_evaluation_capabilities.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/desktop/test_rsi_lint_environment.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/desktop/test_rsi_pairwise.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/desktop/test_rsi_presentation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/desktop/test_rsi_python_scorer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/desktop/test_rsi_save.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/server/fakes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/server/test_catalog_packages.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/server/test_external_run_lookup.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/server/test_rsi.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/server/test_rsi_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sagents/v2/test_call_isolation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sagents/v2/test_comparison_plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sagents/v2/test_evaluation_files.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sagents/v2/test_evaluation_plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sagents/v2/test_model_tool_provider_matrix.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sagents/v2/test_native_episode.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sagents/v2/test_official_quality.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sagents/v2/test_official_tool_provider_matrix.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sagents/v2/test_optimization_diagnostics.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sagents/v2/test_pairwise_evaluation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sagents/v2/test_python_scorer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sagents/v2/test_rsi_shared_scheduling.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sagents/v2/test_scorer_source_snapshot.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sagents/v2/test_summary_model_controls.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sagents/v2/test_web_design_dataset.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sagents/v2/test_workspace_evidence.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

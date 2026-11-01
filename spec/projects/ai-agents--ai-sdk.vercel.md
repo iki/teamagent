@@ -50,6 +50,18 @@ For Teamagent, capability evidence must be bound to the exact endpoint/operation
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `dffe4053c15709577329518044b1ec1d4c6bb0fe` (commit date `2026-10-30T20:27:03-07:00`), compared with `3216f06d0d892b03ad607b4716bbf04056cbfe3d`. Earlier observations remain historical evidence.
+
+**Scope:** Complete web-fetch redirect parsing diff and malformed-location fixture; 667 changed paths inventoried, other provider/runtime updates not audited.
+
+The [fetch helper](https://github.com/vercel/ai/blob/dffe4053c15709577329518044b1ec1d4c6bb0fe/packages/tool-web-fetch/src/fetch-web-resource.ts) catches malformed redirect URLs and returns a typed network_error result instead of leaking URL parsing exceptions. It requests cancellation of the redirect response body before parsing. The [fixture](https://github.com/vercel/ai/blob/dffe4053c15709577329518044b1ec1d4c6bb0fe/packages/tool-web-fetch/src/web-fetch-tool.test.ts) expects one request for the invalid-location case. This branch does not demonstrate that body cancellation finished, or establish redirect destination authorization; its coarse network_error label also covers an HTTP response already received.
+
+**Teamagent implication (inference):** Preserve typed public errors while retaining redacted phase-specific evidence internally: invalid redirect, confirmed HTTP rejection and transport uncertainty are different. Validate every destination against import/download policy and await owned cleanup where required before reporting closure.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ai-sdk.vercel](https://github.com/vercel/ai); analyzed commit `3216f06d0d892b03ad607b4716bbf04056cbfe3d`; commit date 2026-10-27T21:52:49-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--ai-sdk.vercel.md).
+Analysis metadata: source [ai-sdk.vercel](https://github.com/vercel/ai); analyzed commit `dffe4053c15709577329518044b1ec1d4c6bb0fe`; commit date 2026-10-30T20:27:03-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--ai-sdk.vercel.md).
 <!-- teamagent-analysis:end -->

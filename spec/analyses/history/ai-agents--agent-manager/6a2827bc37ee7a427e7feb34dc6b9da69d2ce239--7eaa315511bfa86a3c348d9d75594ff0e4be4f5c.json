@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--agent-manager",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/YoanWai/agent-manager",
+  "report": "spec/projects/ai-agents--agent-manager.md",
+  "analyzedSha": "6a2827bc37ee7a427e7feb34dc6b9da69d2ce239",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T00:24:10+02:00",
+  "observedSha": "7eaa315511bfa86a3c348d9d75594ff0e4be4f5c",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "7eaa315511bfa86a3c348d9d75594ff0e4be4f5c",
+      "date": "2026-11-01T01:23:07+02:00",
+      "subject": "Merge pull request #896 from ipl31/autopilot/issue-892"
+    },
+    {
+      "sha": "a7e4748b5092e34fbe75a009b63cdcc00459c97b",
+      "date": "2026-10-31T13:18:15-07:00",
+      "subject": "test(ui): follow stacked and key-only footer targets"
+    },
+    {
+      "sha": "20336c04188539d4fad308774ad158e40c8b9528",
+      "date": "2026-10-31T13:11:58-07:00",
+      "subject": "perf(ui): reuse unchanged footer layout measurements"
+    },
+    {
+      "sha": "917bc02a055ed671b15d881a52643b9c32141235",
+      "date": "2026-10-31T13:02:17-07:00",
+      "subject": "merge: update narrow footer layouts for current main"
+    },
+    {
+      "sha": "77a6caf4a5e2d85ba9c31ab2984490a87e879a44",
+      "date": "2026-10-31T20:37:08+02:00",
+      "subject": "chore(ci): bump actions/download-artifact from 7 to 8 (#902)"
+    },
+    {
+      "sha": "4cbcc6c57548e082092c33b37d29734104d3acb2",
+      "date": "2026-10-31T20:36:56+02:00",
+      "subject": "chore(ci): bump the actions group across 1 directory with 3 updates (#901)"
+    },
+    {
+      "sha": "3633d5abd1c45ec1c7300c0f7dc8ebb448b18847",
+      "date": "2026-10-31T20:36:45+02:00",
+      "subject": "chore(deps): bump modernc.org/sqlite (#900)"
+    },
+    {
+      "sha": "fd953f02d842b33eab94021effea244ee2747a7d",
+      "date": "2026-10-31T20:36:08+02:00",
+      "subject": "fix(ui): name the configured key in list badges and confirms"
+    },
+    {
+      "sha": "5db8ab8560bd31bece0a87b8c712fb1dfe258c2e",
+      "date": "2026-10-31T20:22:04+02:00",
+      "subject": "Merge pull request #793 from chancez/pr/chancez/commit-scope"
+    },
+    {
+      "sha": "2ef593f352249fbde9e8eb55dd6be1d2b94936ad",
+      "date": "2026-10-31T19:39:33+02:00",
+      "subject": "feat(ui): pick the scope review opens in from Settings"
+    },
+    {
+      "sha": "355500f43e1aedeed370d5386980e900e3f5fd5d",
+      "date": "2026-10-31T19:39:33+02:00",
+      "subject": "feat(ui): remember each session's review scope"
+    },
+    {
+      "sha": "a45d229502707958a96a165ddc36a052e4d86968",
+      "date": "2026-10-31T19:39:33+02:00",
+      "subject": "feat(ui): click a reviewed glyph to mark it"
+    },
+    {
+      "sha": "9be8b1c6b9abba32fd0739b370f771578bd38041",
+      "date": "2026-10-31T19:39:33+02:00",
+      "subject": "feat(ui): review any commit on the branch"
+    },
+    {
+      "sha": "cfad4e82cda0929d52d73cb06f5e05d65674371d",
+      "date": "2026-10-31T19:39:33+02:00",
+      "subject": "feat(diff): build a commit scope set for any commit"
+    },
+    {
+      "sha": "e739bd914fe19f0be656e402c81a72b15cbb2b15",
+      "date": "2026-10-31T19:39:33+02:00",
+      "subject": "feat(git): list and remap commits for a commit scope"
+    },
+    {
+      "sha": "efb87fc67dcd05654baac932f11800b72424cd5d",
+      "date": "2026-10-31T19:39:08+02:00",
+      "subject": "Merge pull request #792 from chancez/pr/chancez/default-branch-any-remote"
+    },
+    {
+      "sha": "fb45461ef8a0b83c4241b2253d90c1a87287bb23",
+      "date": "2026-10-31T19:26:02+02:00",
+      "subject": "fix(git): name the default base so a namesake cannot shadow it"
+    },
+    {
+      "sha": "26203382827d05f7f73e465a10988618e2856d80",
+      "date": "2026-10-31T19:26:02+02:00",
+      "subject": "fix(git): find the default branch on any remote"
+    },
+    {
+      "sha": "e0b2184b4f16cb686a4d91e3efdedd373b7ae65f",
+      "date": "2026-10-31T19:25:45+02:00",
+      "subject": "Merge pull request #794 from chancez/pr/chancez/git-test-isolation"
+    },
+    {
+      "sha": "f52b39b6c861049029c7d9cf9abc064333e4cb4a",
+      "date": "2026-10-31T18:46:30+02:00",
+      "subject": "test: isolate every package that builds git repos from GIT_DIR"
+    },
+    {
+      "sha": "ad1d203d0f8bcfda7d246420ecfcd67f63cf6930",
+      "date": "2026-10-31T18:46:30+02:00",
+      "subject": "test(testenv): unset the variables that bind git to a repo"
+    },
+    {
+      "sha": "80c18759c12810912d3347414a7f9d59b2ae3cf0",
+      "date": "2026-10-31T16:33:23+02:00",
+      "subject": "feat(ui): show a hand pointer over links in a focused pane (#945)"
+    },
+    {
+      "sha": "8d7a1ed62b4633e45848fe0fa505b53f7e1bbb90",
+      "date": "2026-10-31T15:18:46+02:00",
+      "subject": "feat(notices): turn the messages panel into an inbox (#944)"
+    },
+    {
+      "sha": "96cd41c2a4ed721c7d004b7dc65255407d744a8f",
+      "date": "2026-10-31T10:59:51+02:00",
+      "subject": "fix(ui): swap the list as soon as t toggles the archived view (#943)"
+    },
+    {
+      "sha": "4a683c27c778aa7d155c4baae06f2a125f8449ef",
+      "date": "2026-10-31T04:42:21+02:00",
+      "subject": "fix(tmux): keep killing a canceled command's group until it is empty (#940)"
+    },
+    {
+      "sha": "dacbe18c85cb947998b44b44ec0f4209d962de0c",
+      "date": "2026-10-31T03:45:57+02:00",
+      "subject": "fix(ui): turn worktree on when a toggle finds a repo the row called unavailable"
+    },
+    {
+      "sha": "cf82eb0690fd411c4c0c7f509cb87f65b051e351",
+      "date": "2026-10-31T03:45:57+02:00",
+      "subject": "test(ui): toggle the form's worktree after git init while it is open"
+    },
+    {
+      "sha": "05099e760c8c131b553177d0178c79aaa15b3a90",
+      "date": "2026-10-31T03:45:57+02:00",
+      "subject": "fix(ui): prove the quick bar picks up a repo initialised while open"
+    },
+    {
+      "sha": "641e773c6e3545b5177371c448d77113a1fdf980",
+      "date": "2026-10-31T03:45:57+02:00",
+      "subject": "fix(ui): retain worktree availability while composers idle"
+    },
+    {
+      "sha": "697f46e1d89ef208ca9be1f960210956d6217091",
+      "date": "2026-10-31T03:35:46+02:00",
+      "subject": "docs(readme): recognize sponsors and link funding (#941)"
+    },
+    {
+      "sha": "eb28d430e596cb29b334fc0ddf3208dcc71a7120",
+      "date": "2026-10-31T02:41:16+02:00",
+      "subject": "refactor(ui): follow-ups from the surface stack (#942)"
+    },
+    {
+      "sha": "9b763bde41a6b48e7edd9081406c47c2e7528362",
+      "date": "2026-10-30T20:02:11+02:00",
+      "subject": "docs(readme): add Simplified Chinese and Japanese READMEs (#935)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "README.ja.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/demo.gif",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/messages.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/notifications.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ssh-connections.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/usage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/antigravity.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/antigravity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/capture.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/capture_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/claude.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/cursor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/cursor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/fork.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/gemini.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/hermes_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/hermes_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/muse.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/muse_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/omp.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/omp_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/saved.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/saved_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/transcript.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/transcript_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/cli.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/cli_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/review.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/review_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/session.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/session_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cli/transfer.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cli/transfer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/diff/diff.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/diff/diff_bench_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/diff/diff_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/diff/diff_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/diff/model/model.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/diff/model/model_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/execution/helpers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/execution/polldelivery.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/execution/polldelivery_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/feed/feed.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/feed/feed_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/git/git.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/git/git_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/git/value/types.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/git/worktree.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/launch/launch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/launch/launch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/mcpserver/mcpserver.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/mcpserver/mcpserver_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/remote/operations.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/remote/operations_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/remote/sanitize.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/remote/sanitize_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/sessioncmd/conversation.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/sessioncmd/conversation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/sessioncmd/format.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/sessioncmd/format_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/sessioncmd/mailbox.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/sessioncmd/mailbox_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/sessioncmd/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/sessioncmd/session.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/sessioncmd/session_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/sessioncmd/spawn.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/sessioncmd/spawn_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/status/prompt.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/status/prompt_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/store/connections.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/store/keys.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/store/notice.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/store/notice_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/store/schema.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/store/sessionpresets.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/store/sessions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/store/sessions_creation.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/store/sessions_creation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/store/sessions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/store/transfer.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/store/transfer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/testenv/testenv.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/testenv/testenv_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/testfixture/fixture.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/tmux/command_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/tmux/input.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/tmux/input_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/tmux/launch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/tmux/panes.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/tmux/tmux_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "R051",
+      "path": "internal/ui/composer/composer.go",
+      "previousPath": "internal/ui/composer.go"
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/composer/composer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/composer/route.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/composer/sweep.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/composer/sweep_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/composer_adapter.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/composer_adapter_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/ui/composer_paste_cleanup.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/ui/composer_paste_cleanup_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/ui/composer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections/call.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections/call_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/connections/connections.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections/detail.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections/detail_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/connections/dialog.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections/link/call.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections/link/call_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections/link/effect.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections/link/effect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections/link/link.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections/link/link_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections/link/save.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections/link/save_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/connections/preview.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/connections/rows.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections/surface.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections/surface_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/connections_adapter.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/ui/connections_adapter_actions.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/ui/connections_adapter_actions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/ui/connections_adapter_dialog_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/ui/connections_adapter_poll_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/ui/connections_adapter_preview_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections_adapter_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/ui/connections_effect.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/ui/connections_effect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/connections_host.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/apply/apply.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/apply/apply_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/apply/effect.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/apply/fork.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/apply/inventory.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/apply/inventory_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/apply/rename.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/apply/rename_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/dialogs/card.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/dialogs/confirm.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/confirm_glyphs_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/confirm_surface.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/dialogs/confirm_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/dialogs/fork.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/fork_surface.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/dialogs/groupform.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/groupform_surface.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/groupform_surface_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/dialogs/launchhint.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/launchhint_surface.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/dialogs/launchhint_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/dialogs/move.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/dialogs/move_surface.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

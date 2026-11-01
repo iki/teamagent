@@ -31,7 +31,7 @@ test.skipIf(process.platform !== "win32")(
       {
         cwd: locked,
         windowsHide: true,
-        detached: true,
+        detached: false,
         stdio: "ignore",
         env: processEnvironment(),
       },
@@ -88,7 +88,7 @@ test.skipIf(process.platform !== "win32")(
           {
             cwd: directory,
             windowsHide: true,
-            detached: true,
+            detached: false,
             stdio: "ignore",
             env: processEnvironment(),
           },

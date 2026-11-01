@@ -39,6 +39,14 @@ Evidence: [src/app.ts:174-208](https://github.com/modelcontextprotocol/ext-apps/
 
 **Scope and limits:** Static review of the bridge changes and complete helper/polyfill implementations within the 48-path comparison. Test case names were inspected but the full interop/PDF test bodies and transport/CSP enforcement were not audited. No browser execution, upstream tests or current WebMCP specification conformance check.
 
+## Change review — 2026-11-01
+
+**Client discovery documentation moves; protocol behavior is unchanged in this delta.** Reviewed `cf599cc462406accc90ec3ca7879e3a22a9fc2a8` (commit date `2026-10-29T15:22:43+02:00`) against `07cda2513b0b691ac261ac69c856062c9afb2824`. The complete comparison changes only the README's client-list link to the extension client matrix while retaining the explicit warning that host support varies. Evidence: [README.md:96-104](https://github.com/modelcontextprotocol/ext-apps/blob/cf599cc462406accc90ec3ca7879e3a22a9fc2a8/README.md#L96-L104).
+
+**Harness consequence:** Discovering a listed MCP host does not prove that its deployed version supports the app extension. Retain runtime capability negotiation and per-host acceptance evidence before rendering an app or assuming its transport/security features.
+
+**Scope and limits:** Read the complete single-file documentation diff and inventory. No source/test behavior changed here; the linked live matrix and actual client implementations were not revalidated or executed. Historical source findings remain scoped to their recorded revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mcp-ext-apps](https://github.com/modelcontextprotocol/ext-apps); analyzed commit `07cda2513b0b691ac261ac69c856062c9afb2824`; commit date 2026-10-27T09:03:11Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-ext-apps.md).
+Analysis metadata: source [mcp-ext-apps](https://github.com/modelcontextprotocol/ext-apps); analyzed commit `cf599cc462406accc90ec3ca7879e3a22a9fc2a8`; commit date 2026-10-29T15:22:43+02:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-ext-apps.md).
 <!-- teamagent-analysis:end -->

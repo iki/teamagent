@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--paseo",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/getpaseo/paseo",
+  "report": "spec/projects/ai-agents--paseo.md",
+  "analyzedSha": "986687b8fd46c996df8c561af40e005667555508",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T17:04:52+07:00",
+  "observedSha": "fa89738e3a937e83d10b8998ee0d96f3708947dd",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "fa89738e3a937e83d10b8998ee0d96f3708947dd",
+      "date": "2026-11-01T14:46:52+07:00",
+      "subject": "chore(desktop): upgrade packaging tool and remove signing backport (#8450)"
+    },
+    {
+      "sha": "14519bdb5bb8306179e351ea568bd757bf59234a",
+      "date": "2026-11-01T06:52:48Z",
+      "subject": "Read archived Pi chats after their working folder is removed (#8442)"
+    },
+    {
+      "sha": "891e62309cd241ad89ac6d960692e746cce8e25c",
+      "date": "2026-11-01T13:35:11+07:00",
+      "subject": "fix(release): use the keychain password for macOS signing setup (#8445)"
+    },
+    {
+      "sha": "6ae6308cfbae5a72c11f2e54eebd32811744a490",
+      "date": "2026-11-01T06:01:30Z",
+      "subject": "test(server): control failed Git clone responses in credential test (#8428)"
+    },
+    {
+      "sha": "ef77b823ae6d4c2c1a11dad3df5a34c6ececa8f3",
+      "date": "2026-11-01T12:56:41+07:00",
+      "subject": "chore(release): reconcile 0.15.0-beta.1 metadata (#8443)"
+    },
+    {
+      "sha": "60f29a435073ef50fe3bfacacbb1bdb9c2ee1c02",
+      "date": "2026-11-01T06:31:01+01:00",
+      "subject": "docs(worktrees): add nested worktreeinclude reference"
+    },
+    {
+      "sha": "8efb21f55ca55ac8df24ec69ac49651732ea40f7",
+      "date": "2026-11-01T03:55:48Z",
+      "subject": "fix(server): close abandoned workspace service connections (#8421)"
+    },
+    {
+      "sha": "b2666a0aec4a309aa550dd3f344a997eed831cb2",
+      "date": "2026-11-01T03:43:24Z",
+      "subject": "fix: update lockfile signatures and Nix hash [skip ci]"
+    },
+    {
+      "sha": "82d5f6c580fccf500ed718aa8dad1be03639df7a",
+      "date": "2026-11-01T10:34:06+07:00",
+      "subject": "fix(app): keep layout sized to the window after rotation (#8377)"
+    },
+    {
+      "sha": "da75aa7a4aeca07fde29df038e1aec97d6e7d7e4",
+      "date": "2026-11-01T10:33:59+07:00",
+      "subject": "Fix terminal emoji size and alignment (#8375)"
+    },
+    {
+      "sha": "86c60d367c9dcc2edbfee29a06ee49ab6b77f28f",
+      "date": "2026-11-01T01:05:02Z",
+      "subject": "fix(claude): keep a resumed subagent on its row after the session reopens (#8408)"
+    },
+    {
+      "sha": "5afa1a9f8ef4b069ff84278668c1fd030df42273",
+      "date": "2026-11-01T00:01:29Z",
+      "subject": "test(server): isolate cold Git filter from control work (#8397)"
+    },
+    {
+      "sha": "2d7adfc450bd41a3771bbaf51a3d797165da6065",
+      "date": "2026-10-31T23:58:14Z",
+      "subject": "fix(app): restore directory subscriptions after demand returns (#8403)"
+    },
+    {
+      "sha": "7d9741ef778b9241b5f7ec2f841737ab74327d11",
+      "date": "2026-10-31T22:50:27Z",
+      "subject": "fix(app): expose the SSL checkbox checked state on web (#8399)"
+    },
+    {
+      "sha": "caf9300358ea40a7adf5c888d1b2f5a3cc8bc4c9",
+      "date": "2026-10-31T20:52:07Z",
+      "subject": "fix(server): preserve running status after agent creation (#8396)"
+    },
+    {
+      "sha": "f0dfb9134ce08cf99166fa36275a68b69672a75a",
+      "date": "2026-10-31T20:03:31Z",
+      "subject": "fix(app): keep the open workspace visible in collapsed groups (#8395)"
+    },
+    {
+      "sha": "56c051503b68ae8ad7a5b8baf331f8700b469f24",
+      "date": "2026-10-31T18:56:22Z",
+      "subject": "fix(server): keep promptless Codex agents usable after reopening (#8393)"
+    },
+    {
+      "sha": "85354fcb6aae7320f638685d55b8cf4bb7cb0dd2",
+      "date": "2026-10-31T18:38:48Z",
+      "subject": "test(terminal): verify cleanup by process identity (#8389)"
+    },
+    {
+      "sha": "2dd931c8bdd3714b1c958688b3a3d9f9659fb8fd",
+      "date": "2026-10-31T18:06:12Z",
+      "subject": "fix(app): accept host:port and URLs in the direct connection host field (#8223)"
+    },
+    {
+      "sha": "58eafd81e587d758d391c18b6b9b34de86f05962",
+      "date": "2026-10-31T17:01:27Z",
+      "subject": "fix(app): fall back to native terminal copy/paste without the Clipboard API (#8230)"
+    },
+    {
+      "sha": "eab9ac3b03c04fdf8d3bfb67449ec4d88e7860c0",
+      "date": "2026-10-31T16:07:08Z",
+      "subject": "fix(acp): include late-discovered skills in initial command lists (#8387)"
+    },
+    {
+      "sha": "e02fa9a5f893ff809f8850d0b9afd9c21c9c7577",
+      "date": "2026-10-31T14:55:17Z",
+      "subject": "fix(acp): report provider startup exits without waiting for timeout (#8384)"
+    },
+    {
+      "sha": "b117e3fb0f814730546346ec619720b100f03590",
+      "date": "2026-10-31T13:03:27Z",
+      "subject": "fix(claude): allow conversation rewind to messages sent during a turn (#8372)"
+    },
+    {
+      "sha": "2ac288f4d053eb8bc5ca37113c353c8ceed75593",
+      "date": "2026-10-31T12:26:32Z",
+      "subject": "test(plugins): make global switch recovery deterministic (#8342)"
+    },
+    {
+      "sha": "1008e9fffc20fc809d5d1023d43642b39df19c39",
+      "date": "2026-10-31T19:25:16+07:00",
+      "subject": "Insert suggested commands into the composer (#8371)"
+    },
+    {
+      "sha": "74613e4bc34313c03c5559a578337ef2a519d004",
+      "date": "2026-10-31T18:55:24+07:00",
+      "subject": "feat(opencode): reuse running OpenCode v2 services (#7435)"
+    },
+    {
+      "sha": "0e5bcbd9f50dfca46a8b5835c4b09f158762003d",
+      "date": "2026-10-31T11:05:06Z",
+      "subject": "fix(app): open relative chat links inside nested repositories (#8361)"
+    },
+    {
+      "sha": "a7d9bb34fce2633ecb847786d5bc03ce212f741c",
+      "date": "2026-10-31T17:48:42+07:00",
+      "subject": "fix(plugins): keep rewound conversations on their retained branch (#8368)"
+    },
+    {
+      "sha": "fd65985e9d588109898fcf84298b6ecd1815462a",
+      "date": "2026-10-31T14:45:13+07:00",
+      "subject": "fix(android): resize header fades after rotation (#8349)"
+    },
+    {
+      "sha": "254166e7c13b87f1bcf48105716a9021c48f643a",
+      "date": "2026-10-31T14:23:10+07:00",
+      "subject": "feat(terminal): add native selection handles (#8348)"
+    },
+    {
+      "sha": "9c5b47421a8c1a1b307612b59becf76f85ce800d",
+      "date": "2026-10-31T06:49:47Z",
+      "subject": "test(server): exclude filesystem startup from config responsiveness (#8296)"
+    },
+    {
+      "sha": "3b51b8ab2e2a394a7ae8c22645870cfe0ea44467",
+      "date": "2026-10-31T06:31:08Z",
+      "subject": "Recover terminal worker records after Windows reader contention (#8155)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/desktop-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxlintrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/store-screenshots/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/store-screenshots/render.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/android.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/custom-providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/glossary.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/menus.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mobile-testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/plugins.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/protocol-compatibility.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/release.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/terminal-performance.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/terminal-rendering.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/terminal-worker.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/timeline-sync.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/unistyles.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/140001.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/140002.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/140003.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/140004.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "fastlane/metadata/android/en-US/images/phoneScreenshots/1.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "fastlane/metadata/android/en-US/images/phoneScreenshots/2.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "fastlane/metadata/android/en-US/images/phoneScreenshots/3.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/images/phoneScreenshots/4.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/images/phoneScreenshots/5.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/images/tenInchScreenshots/1.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/images/tenInchScreenshots/2.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/images/tenInchScreenshots/3.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/images/tenInchScreenshots/4.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/images/tenInchScreenshots/5.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nix/desktop-package.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nix/npm-deps.hash",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/.eas/workflows/release-mobile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/.eas/workflows/upload-android-screenshots.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/app.config.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/app.config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/assistant-file-link-tooltip.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/composer-autocomplete.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/composer-diff-stat.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/daemon-lifecycle.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/folder-links.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/new-workspace-composer-draft.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/projects-settings.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/settings-host-page.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/settings-navigation.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/sidebar-reorder.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/split-pane-drag-tracking.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/terminal-retained-tab-stream.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/usage-modal.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/usage-off.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/usage-sidebar-item.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/workspace-relative-navigation.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/mobile/fold/android.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/mobile/terminal-rendering/check.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/mobile/terminal-rendering/fixture.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/mobile/terminal-rendering/identity.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/mobile/terminal-rendering/overhang.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/mobile/terminal-rendering/reattach.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/mobile/terminal-rendering/render.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/daemon-lifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/isolated-host-daemon.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/seed-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/settings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/terminal-perf.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/usage-reports.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/fastlane/Fastfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/android/build.gradle",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/android/src/androidTest/assets/grapheme-rows.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/android/src/androidTest/java/sh/paseo/terminal/TerminalRowLayoutTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/android/src/main/AndroidManifest.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/android/src/main/java/sh/paseo/terminal/PaseoTerminalModule.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/android/src/main/java/sh/paseo/terminal/PaseoTerminalView.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/android/src/main/java/sh/paseo/terminal/TerminalCustomGlyphs.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/android/src/main/java/sh/paseo/terminal/TerminalFont.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/android/src/main/java/sh/paseo/terminal/TerminalFrame.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/android/src/main/java/sh/paseo/terminal/TerminalRowLayout.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R081",
+      "path": "packages/app/modules/paseo-terminal/custom-glyphs.test.ts",
+      "previousPath": "packages/app/src/terminal/native-renderer/terminal-custom-glyph.test.ts"
+    },
+    {
+      "status": "R066",
+      "path": "packages/app/modules/paseo-terminal/custom-glyphs.ts",
+      "previousPath": "packages/app/src/terminal/native-renderer/terminal-custom-glyph.ts"
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/expo-module.config.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/frame-encoding.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/frame-encoding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/ios/PaseoTerminal.podspec",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/ios/PaseoTerminalModule.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/ios/PaseoTerminalView.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/ios/TerminalCustomGlyphs.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/ios/TerminalFont.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/ios/TerminalFrame.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/ios/TerminalRowLayout.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/modules/paseo-terminal/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "R054",
+      "path": "packages/app/src/agent-commands/cache/index.ts",
+      "previousPath": "packages/app/src/hooks/agent-commands-query.ts"
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/agent-commands/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "R051",
+      "path": "packages/app/src/agent-commands/query.test.ts",
+      "previousPath": "packages/app/src/hooks/agent-commands-query.test.ts"
+    },
+    {
+      "status": "R082",
+      "path": "packages/app/src/agent-commands/use-query.test.ts",
+      "previousPath": "packages/app/src/hooks/use-agent-commands-query.test.ts"
+    },
+    {
+      "status": "R070",
+      "path": "packages/app/src/agent-commands/use-query.ts",
+      "previousPath": "packages/app/src/hooks/use-agent-commands-query.ts"
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/view.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/assistant-file-links/path-open.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/assistant-file-links/path-open.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/assistant-file-links/resolver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/assistant-file-links/resolver.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/command-center/command-center.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/add-host-modal.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/add-project-flow.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/agent-list.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/attachment-lightbox.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/direct-connection-host.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/direct-connection-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/left-sidebar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/markdown/fence/mermaid/fullscreen-viewer.web.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/markdown/fence/mermaid/host.native.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/markdown/images.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/markdown/renderer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/markdown/renderer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/markdown/source.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/message.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/resize-handle.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/sidebar-workspace-list.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/sidebar-workspace-list.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/sidebar/sidebar-group-visibility.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/sidebar/sidebar-group-visibility.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/sidebar/sidebar-status-list.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/sidebar/use-limited-sidebar-group.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/split-container.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/terminal-emulator-contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/terminal-emulator-native-grid.native.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/terminal-emulator.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/terminal-pane.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/tool-call-details.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/combobox.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/ui/menu/menu-overlay.browser.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/menu/menu-overlay.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/menu/menu-surface.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/ui/modal.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/tooltip.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/draft/input-draft.live.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/draft/input-draft.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/editing-session/index.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/editing-session/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/input/input.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/contexts/session-context.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/data/acp-provider-catalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/data/providers-snapshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/data/push-router.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/data/query.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/git/checkout-status-cache.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/git/checkout-status-cache.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

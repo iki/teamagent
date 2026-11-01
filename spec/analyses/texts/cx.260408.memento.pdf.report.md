@@ -41,7 +41,7 @@ Extracted heading sample (up to 20; source text, not an endorsed analysis):
 
 [Original source](<https://raw.githubusercontent.com/microsoft/memento/d8c10e66ff313844b4b5f063dd4c075d3ea56aab/docs/memento.pdf>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-28T07:07:39.056Z. Local validation: 2026-10-28T14:56:36.677Z. Import: **pinned**. Content validation: **partial**.
+Mode: **static**. Last remote attempt: 2026-10-28T07:07:39.056Z. Local validation: 2026-11-01T08:51:16.093Z. Import: **pinned**. Content validation: **partial**.
 
 First captured: 2026-10-28T07:07:45.485Z. Source creation/publication date: unknown. Date evidence: unknown. Filename dates and Last-Modified are not treated as creation dates.
 

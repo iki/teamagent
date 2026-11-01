@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--omnigent",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/omnigent-ai/omnigent",
+  "report": "spec/projects/ai-agents--omnigent.md",
+  "analyzedSha": "6f917a3e63d25dfe923da26cf208cb14e812f163",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T10:07:29Z",
+  "observedSha": "194defcad8f5e6b63d31b0d05a65b80574266c3f",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "194defcad8f5e6b63d31b0d05a65b80574266c3f",
+      "date": "2026-11-01T05:47:41Z",
+      "subject": "fix(native): keep native harness bridge dirs in the configured data dir (#11606)"
+    },
+    {
+      "sha": "ad50b94f06d3584dc73be29c3d4b34122d503dc9",
+      "date": "2026-10-31T23:02:17Z",
+      "subject": "fix(web): bring a queued message back to the composer after a reload (#12093)"
+    },
+    {
+      "sha": "91cf3b9c238a4a33211bfda8fd81142aa79528a5",
+      "date": "2026-10-31T22:35:56Z",
+      "subject": "fix(web): keep Working lit until a native agent picks up a sent message (#12172)"
+    },
+    {
+      "sha": "4bc92c640065d1d8f0ab39be49a7976c4db886f0",
+      "date": "2026-10-31T22:35:04Z",
+      "subject": "fix(web): fold a finished turn's trace in place instead of jolting the answer (#12174)"
+    },
+    {
+      "sha": "9740fafe604de6b154ccffef30c098d0a71f9bf5",
+      "date": "2026-10-31T22:25:41Z",
+      "subject": "fix(web): keep a following reader at the end when a reply finishes (#12109)"
+    },
+    {
+      "sha": "09dc281ca9805b1062450801d34bfefb54c5d9e8",
+      "date": "2026-10-31T22:24:08Z",
+      "subject": "fix(web): keep a reply's actions hidden while its queued follow-up sends (#12166)"
+    },
+    {
+      "sha": "6f01a44d16d3ee2c735b5b9b509dcb0cad21c44f",
+      "date": "2026-10-31T22:14:33Z",
+      "subject": "feat(web): fold a finished Codex turn's commentary into one Worked row (#12170)"
+    },
+    {
+      "sha": "b99143f9b24102b0184a2be3e4403540c9216cd1",
+      "date": "2026-10-31T22:14:15Z",
+      "subject": "fix(web): keep an expanded tool output expanded while it streams (#12091)"
+    },
+    {
+      "sha": "dd962e581242b4496ed2bca823b7dd330cd34877",
+      "date": "2026-10-31T22:13:44Z",
+      "subject": "fix(web): paint an opened transcript at its end from the first frame (#12104)"
+    },
+    {
+      "sha": "ae3c6ea5b854278d0a4f381b5dcf0d7e8d9b6273",
+      "date": "2026-10-31T14:11:03-07:00",
+      "subject": "perf(auth): resolve Databricks credentials once per launch, without the SDK for CLI profiles (#12275)"
+    },
+    {
+      "sha": "065b4af096e667d5a7245f1f5c0f287f5b106783",
+      "date": "2026-10-31T13:13:50-07:00",
+      "subject": "feat(web): turn Always steer on by default (#12389)"
+    },
+    {
+      "sha": "824d804c3e4776c889ff824f5e66f6d7c71fd3e1",
+      "date": "2026-10-31T10:48:39Z",
+      "subject": "fix(desktop): refuse an SSH connect to a server on this computer (#12422)"
+    },
+    {
+      "sha": "8ceb87942b07f1f6135ab87fbe69af796af2bbcd",
+      "date": "2026-10-30T23:52:27-07:00",
+      "subject": "refactor(desktop): name browser navigation policy enforcement for what it does (#12307)"
+    },
+    {
+      "sha": "5122b74725f11efcb710a5d34f8b88505c99a60f",
+      "date": "2026-10-30T23:25:13-07:00",
+      "subject": "fix(desktop): apply the agent network policy to subresources, WebSockets and workers (#12306)"
+    },
+    {
+      "sha": "0193a265a7f77c6ac14d72bdc6e14322c0d18fe9",
+      "date": "2026-10-30T21:31:37-07:00",
+      "subject": "feat(desktop): let sessions on this machine open localhost in the browser pane (#12305)"
+    },
+    {
+      "sha": "22a97b3970491b1eb1842425365173cc7dac55ab",
+      "date": "2026-10-30T19:12:44-07:00",
+      "subject": "Track session PR refreshes by workspace as well as session id (#12199)"
+    },
+    {
+      "sha": "d6c6822a63e001bde2eddf26fe9ec7cdbd227b5f",
+      "date": "2026-10-31T01:25:18Z",
+      "subject": "fix(pi): give the pre-turn gateway token refresh room on a busy host (#12385)"
+    },
+    {
+      "sha": "24a91abc514e1f62e0b8a6b76a388c7da8f2c70d",
+      "date": "2026-10-30T17:54:36-07:00",
+      "subject": "feat(web): open the Codex approval-mode picker from /permissions (#12384)"
+    },
+    {
+      "sha": "43cf174a19c243b24729c114f2b22a97d8aecc84",
+      "date": "2026-10-30T17:40:09-07:00",
+      "subject": "fix(claude-native): send a sign-in-refused message once the sign-in completes (#10539)"
+    },
+    {
+      "sha": "542da6c8c8818fe93555c118f91523736241e2d5",
+      "date": "2026-10-30T16:42:37-06:00",
+      "subject": "fix(automations): let the poll start Run now requests (#12396)"
+    },
+    {
+      "sha": "7fcc51071bf36613161fc863bfc619d97c126f08",
+      "date": "2026-10-30T15:16:37-07:00",
+      "subject": "fix(auth): stop asking the IdP for a token that expires on arrival (#11499)"
+    },
+    {
+      "sha": "58228296f702f195e958a710c3ad57f6d86f0eb1",
+      "date": "2026-10-30T14:59:38-07:00",
+      "subject": "fix(native): let the policy allow guard see event keys after closed metadata (#12273)"
+    },
+    {
+      "sha": "01d337fd7c26026ba67d189eb92917c10f5a8c63",
+      "date": "2026-10-30T15:52:54-06:00",
+      "subject": "fix(web): clarify the trigger session cap and untrusted-source warning (#12383)"
+    },
+    {
+      "sha": "e79ccf125f74d52c1911aa7d8b6b56d703622b01",
+      "date": "2026-10-30T14:29:50-07:00",
+      "subject": "fix(web): keep dictated pastes and focus in the composer (#12373)"
+    },
+    {
+      "sha": "57fcefe0cbd575c5bea536a840df103d6528b9a8",
+      "date": "2026-10-30T14:03:04-07:00",
+      "subject": "fix(claude-native): start sessions when an enterprise managed-mcp.json exists (#12080)"
+    },
+    {
+      "sha": "164b0248c604d75bfeca3afe733791baf631d2a1",
+      "date": "2026-10-30T14:01:24-06:00",
+      "subject": "fix(web): simplify the trigger template help text (#12371)"
+    },
+    {
+      "sha": "b43a9fb6047a40aca8551edaf93f16ae80ecc65a",
+      "date": "2026-10-30T12:56:07-07:00",
+      "subject": "fix(runner): track every PR a batched shell create opens (#12160)"
+    },
+    {
+      "sha": "0209aa436d91dad3e3e8a287f76a78b358c712d3",
+      "date": "2026-10-30T19:30:02Z",
+      "subject": "fix: enlarge mobile approval and plan touch targets (#12281)"
+    },
+    {
+      "sha": "b2c7acb7f5672722b6b72a5a313c8ea795dbbc23",
+      "date": "2026-10-30T11:59:32-07:00",
+      "subject": "fix(runner): keep old terminal callbacks out of replacement state (#12331)"
+    },
+    {
+      "sha": "2f6d2b80c1cff58a566d1f2fc7dda0e2d25c09ac",
+      "date": "2026-10-30T11:56:10-07:00",
+      "subject": "fix(claude-native): preserve launcher installation prompts (#12327)"
+    },
+    {
+      "sha": "c26c74cc35df508267d334610b27a77af59fe606",
+      "date": "2026-10-30T11:49:38-07:00",
+      "subject": "fix(claude-native): keep retired status pollers inactive (#12330)"
+    },
+    {
+      "sha": "e68446c012a1b3c80b1aff140d3e8326841fcae4",
+      "date": "2026-10-30T11:45:29-07:00",
+      "subject": "fix(claude-native): find the input box under a title wider than the row (#12335)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/actions/run-omnigent-agent/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/areas.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/open-code-review/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/ci/python-matrix.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/merge-ready/compute-gate.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/merge-ready/enable-automerge-comment.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/merge-ready/enable-automerge-label.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/merge-ready/evaluate-checks.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/merge-ready/expiry.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/merge-ready/sweep.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/merge-ready/sweep.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/benchmark-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/bump-version.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-ui.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/flake-stress-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/flake-stress-ui.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/flake-stress.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/lint.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/merge-ready-sweep.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/merge-ready.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/open-code-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/oss-regen-on-comment.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/polly-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/security-scan.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ui-snapshot-update.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ui-snapshot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pre-commit-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/docker/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/docker/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/docker/docker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "designs/FEATURE_FLAGS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/benchmarks/ui/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/lint/custom_lint.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dev/lint/lint_sleep_then_assert.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dev/lint/sleep_then_assert_baseline.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/recording-lanes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/repro-agent/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/AUTOMATIONS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/devin-native.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/extending/provider_profiles.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/extending/sandbox_providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/git-pull-requests.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/open-in-editor.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/session-compaction.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/session-messaging-tool-boundary.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tunnel-lifecycle-diagnostics.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sandbox-profile-provider/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sandbox-profile-provider/catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sandbox-profile-provider/controller_demo.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sandbox-profile-provider/controller_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sandbox-profile-provider/demo.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sandbox-profile-provider/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sandbox-profile-provider/server.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sandbox-profile-provider/src/omnigent/community/sandbox/profile_demo/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sandbox-profile-provider/src/omnigent/community/sandbox/profile_demo/controller.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sandbox-profile-provider/tests/test_controller.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sandbox-profile-provider/tests/test_profile_demo.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "feature-map/automations-introduction.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/azure-devops.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/composer.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/gitlab.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/login-and-host-auth.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/markdown-editor.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/native-harnesses.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "feature-map/pull-request-conversations.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "feature-map/sandbox-profiles.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/session-orchestration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/terminals.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/tool-calls.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/chat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/cli_auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/codex_approval_modes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/conversation_browser.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/db/compression.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/db/db_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/db/workspace_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/entities/scheduled_task.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/antigravity_native/bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/claude_native/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/claude_native/bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/claude_native/delivery_diagnostics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/claude_native/forwarder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/claude_native/hook.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/claude_native/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/claude_native/program_status.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/claude_native/status_file.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/codex_native/app_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/codex_native/bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/codex_native/forwarder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/codex_native/hook.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/codex_native/process_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "omnigent/harnesses/codex_native/shell_input.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/codex_native/side_chat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/codex_native/skill_discovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/devin_native/hook.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "omnigent/harnesses/devin_native/questions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/diagnostics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/opencode_native/bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/opencode_native/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/pi_native/auth_command.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/pi_native/auth_refresh.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/pi_native/bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/pi_native/credentials.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/pi_native/resume.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/host/connect.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/host/daemon_launch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/host/frames.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "omnigent/host/launch_audit.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/host/mcp_inventory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/host/skills.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/inner/claude_native_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/inner/claude_sdk_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/inner/codex_harness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/inner/codex_native_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/inner/databricks_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/inner/executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/inner/pi_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/inner/terminal.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/models/model_catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/native/native_bridge_common.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "omnigent/native/policy_allow_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/native/tool_observer_hook.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/onboarding/ambient.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/onboarding/harness_install.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/onboarding/sandboxes/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/onboarding/sandboxes/daytona.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "omnigent/onboarding/sandboxes/profiles.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/onboarding/sandboxes/registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/policies/builtins/cel.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/policies/builtins/safety.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/resources/pi_native/auth_command.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/resources/pi_native/omnigent_pi_native_extension.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "omnigent/resources/scripts/claude_tool_env.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/_entry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/git_providers/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/git_providers/github.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "omnigent/runner/git_providers/github_created.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/git_providers/github_observer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/github_resource.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "omnigent/runner/github_review_threads.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/launch_failure.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/native/orchestration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/native_controls.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/pr_observer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/pr_resource.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/resource_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/resource_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/sign_in_watch.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "omnigent/runner/slow_io.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

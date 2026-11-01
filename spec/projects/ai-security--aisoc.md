@@ -44,6 +44,16 @@ The permission catalogue separates platform-wide switch writes from tenant setti
 
 **Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `0b052e5f84d6ca33968fc354d0a7b9a5f2d1b3c9` against prior analyzed commit `2af4d0ba9b2b347df5f17cfd67924a2862530bd1`. Historical reviews above remain separate evidence.
+
+The [approval policy](https://github.com/beenuar/AiSOC/blob/0b052e5f84d6ca33968fc354d0a7b9a5f2d1b3c9/services/actions/app/live_actions/approval_rules.py) adds a monotonic asset-context modifier: high/critical inventory context raises low/moderate/high action impact by one rank, while read-only and already severe/irreversible classifications remain unchanged. The [action gate](https://github.com/beenuar/AiSOC/blob/0b052e5f84d6ca33968fc354d0a7b9a5f2d1b3c9/services/actions/app/services/approval_gate.py) supplies tenant-target asset lookup results; the vendored API copy matches this delta.
+
+The complete [fixture](https://github.com/beenuar/AiSOC/blob/0b052e5f84d6ca33968fc354d0a7b9a5f2d1b3c9/services/actions/tests/test_asset_criticality_tightens.py) sweeps impact, criticality, confidence and tier to assert requirements never loosen, with positive controls that unknown context preserves the base policy. Unknown inventory does not grant a new permission; it simply supplies no extra tightening. Teamagent can apply monotonic context modifiers after a deterministic baseline policy, retaining provenance and freshness of the context. Inventory lookup authentication, failures and cross-tenant behavior were not inspected, and classifier confidence remains an input rather than authority.
+
+**Coverage:** Read the complete 297-line policy/gate/vendored-copy/fixture selection. Base evaluator and asset lookup implementation, live databases and actual actions were not audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [aisoc](https://github.com/beenuar/AiSOC); analyzed commit `2af4d0ba9b2b347df5f17cfd67924a2862530bd1`; commit date 2026-10-28T00:16:09-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-security--aisoc.md).
+Analysis metadata: source [aisoc](https://github.com/beenuar/AiSOC); analyzed commit `0b052e5f84d6ca33968fc354d0a7b9a5f2d1b3c9`; commit date 2026-11-01T01:13:22-07:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-security--aisoc.md).
 <!-- teamagent-analysis:end -->

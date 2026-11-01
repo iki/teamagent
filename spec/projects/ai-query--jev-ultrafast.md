@@ -26,6 +26,14 @@ Borrow the finite-choice contract and build a provider-neutral adapter with dete
 
 Related directions: [decisions](../decisions.md) · [agents](../agents.md) · [models](../models.md) · [channels](../channels.md).
 
+## Change review — 2026-11-01
+
+**A hosted-agent announcement does not change the inspected Jev decision contract.** Reviewed `8251e272398011cdef648965204d1c20cd838333` (commit date `2026-10-31T10:35:44-07:00`) against `1231850a0bf1a0c0341fe408ef1668dbbfdfac46`. The complete one-path diff replaces a waitlist notice with a README claim that Browser Use Cloud's hosted `bu-ultrafast` agent is available on every plan. The local classifier/action implementation and tests are unchanged in this comparison. Evidence: [README.md:2-14](https://github.com/browser-use/jev-ultrafast/blob/8251e272398011cdef648965204d1c20cd838333/README.md#L2-L14).
+
+**Harness consequence:** Keep the source-reviewed bounded-choice design separate from a hosted product's model identifier, commercial entitlement and actual account availability. A marketing announcement cannot establish route compatibility, privacy policy, calibrated probabilities or measured task performance; verify those before adding any hosted route to deterministic eligibility.
+
+**Scope and limits:** Complete README diff and path inventory, with the prior implementation review preserved. The announcement is an upstream claim, not an authenticated account check. No cloud service, model, browser session or benchmark was invoked.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [jev-ultrafast](https://github.com/browser-use/jev-ultrafast); analyzed commit `1231850a0bf1a0c0341fe408ef1668dbbfdfac46`; commit date 2026-09-18T09:28:35-07:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--jev-ultrafast.md).
+Analysis metadata: source [jev-ultrafast](https://github.com/browser-use/jev-ultrafast); analyzed commit `8251e272398011cdef648965204d1c20cd838333`; commit date 2026-10-31T10:35:44-07:00; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--jev-ultrafast.md).
 <!-- teamagent-analysis:end -->

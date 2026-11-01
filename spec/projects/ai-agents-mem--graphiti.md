@@ -53,6 +53,12 @@ Evidence: [graphiti_core/llm_client/anthropic_client.py:49-67](https://github.co
 
 **Scope and limits:** Reviewed the adapter's model/default tables, associated fixtures and changed routing example, not provider behavior. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review — 2026-11-01
+
+Reviewed `16bf514380de4e44884aed6779bece220e6fe470` (2026-11-01T01:04:59Z) against `b1c609f185107dc40e1ec8bad467be72c42dfe15`. All six changed paths are package constraints, lockfiles or contributor metadata; graph implementation and tests are unchanged. Root and MCP manifests add a uv Pillow ≥13 constraint, while the MCP Voyage minimum is lowered to permit a Python 3.10 route that the comment describes as avoiding Pillow. This is resolver-policy intent, not a reproduced dependency-resolution or vulnerability assessment. [Root manifest](https://github.com/getzep/graphiti/blob/16bf514380de4e44884aed6779bece220e6fe470/pyproject.toml), [MCP manifest](https://github.com/getzep/graphiti/blob/16bf514380de4e44884aed6779bece220e6fe470/mcp_server/pyproject.toml).
+
+Architecture consequence: version interpreter, resolver and optional-provider dependency closures together; a minimum package constraint alone does not establish effective security on every runtime. Historical temporal-memory conclusions remain unchanged. Scope: complete path classification and manifest diffs, not an exhaustive lockfile audit; no install, source execution or test run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [graphiti](https://github.com/getzep/graphiti); analyzed commit `b1c609f185107dc40e1ec8bad467be72c42dfe15`; commit date 2026-10-28T09:01:42Z; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--graphiti.md).
+Analysis metadata: source [graphiti](https://github.com/getzep/graphiti); analyzed commit `16bf514380de4e44884aed6779bece220e6fe470`; commit date 2026-11-01T01:04:59Z; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--graphiti.md).
 <!-- teamagent-analysis:end -->

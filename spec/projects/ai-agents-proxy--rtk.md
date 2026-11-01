@@ -37,6 +37,14 @@ The [error adapter](https://github.com/rtk-ai/rtk/blob/e05c7bdfacfcfe1f845d11f47
 
 The [model registry](https://github.com/rtk-ai/rtk/blob/e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5/proxy/src/models.rs) deliberately ships no price estimates and returns None unless both input/output prices are supplied. It documents a shared database copy as authority over per-pod bootstrap seeds, but those persistence paths were not inspected. Matching is first substring, floating prices/cache multipliers lack visible semantic bounds, and poisoned-lock writes silently do nothing. Preserve unknown cost and operator/source provenance, with explicit finite-value validation and update failure reporting. This review establishes neither compression savings nor proxy security. No proxy, model, database or tests were executed.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`550a5c13de4f635e29a21431404e0489440a1d24`](https://github.com/rtk-ai/rtk/commit/550a5c13de4f635e29a21431404e0489440a1d24), compared with `e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5`.
+
+The [read implementation](https://github.com/rtk-ai/rtk/blob/550a5c13de4f635e29a21431404e0489440a1d24/src/cmds/system/read.rs) now uses the requested head/tail/line window as both accounting sides for unfiltered reads. Filtered reads account against a corresponding raw window only when the window actually cuts output; fallback to raw output records no compression saving. The baseline is clamped to avoid negative estimates and is recorded without being printed. The complete new [tracking fixtures](https://github.com/rtk-ai/rtk/blob/550a5c13de4f635e29a21431404e0489440a1d24/tests/read_tracking_baseline_test.rs) read the persisted accounting row and cover file/stdin windows, filter savings and raw fallback.
+
+For Teamagent, compare equivalent requested evidence spans and report omission separately from compression. The fixture estimator uses bytes divided by four, so its savings are not model-token measurements; clamping also does not prove semantic fidelity or task benefit. The selected source/test comparison was read completely; other command filters in the 47-path update were not re-audited. No upstream binary, tests or benchmark was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [rtk](https://github.com/rtk-ai/rtk); analyzed commit `e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5`; commit date 2026-10-25T13:57:20+01:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--rtk.md).
+Analysis metadata: source [rtk](https://github.com/rtk-ai/rtk); analyzed commit `550a5c13de4f635e29a21431404e0489440a1d24`; commit date 2026-11-01T00:50:42+01:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--rtk.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-mem--agent-beacon",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/Asymptote-Labs/agent-beacon",
+  "report": "spec/projects/ai-agents-mem--agent-beacon.md",
+  "analyzedSha": "90b19ae0626fd6fd060c62ddbc70827a23242f4e",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T04:47:59+01:00",
+  "observedSha": "efbfef4e143a812c7daabaf65bfedba6c48c101c",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "efbfef4e143a812c7daabaf65bfedba6c48c101c",
+      "date": "2026-11-01T01:41:19-05:00",
+      "subject": "docs(runtimes): make the runtime pages match what the code does (#1154)"
+    },
+    {
+      "sha": "b2b84ea26c1c432fa184a613cbdab8a618122d92",
+      "date": "2026-11-01T06:18:36Z",
+      "subject": "docs(runtimes): fix the discovery and coverage tables"
+    },
+    {
+      "sha": "2ddb9c1610683bb09cee42d558d99d485b3d371b",
+      "date": "2026-11-01T06:18:36Z",
+      "subject": "docs(cloud): the GCS helper grants objectUser, not upload-only"
+    },
+    {
+      "sha": "4037582f761705d4eae93ecbc7fc66f0106d394a",
+      "date": "2026-11-01T06:18:36Z",
+      "subject": "docs(runtimes): endpoint install already writes the hooks"
+    },
+    {
+      "sha": "b6439f20a9c166cca2522d55a04bb454fcde05bb",
+      "date": "2026-10-30T20:55:00-04:00",
+      "subject": "fix(privacy): redact secrets that directly follow another secret (#1153)"
+    },
+    {
+      "sha": "ade6f5a4734a50a3920563dbfcd2f1ca4b15f53f",
+      "date": "2026-10-30T17:09:40-04:00",
+      "subject": "fix(privacy): sanitize values of every type in SanitizeMap (#1151)"
+    },
+    {
+      "sha": "c5196281d6a26b25e44516aa0879ebe782f9a475",
+      "date": "2026-10-30T16:21:01-04:00",
+      "subject": "test(git-hooks): keep the abandoned-upload test off the note-write timer (#1152)"
+    },
+    {
+      "sha": "648ee7a9ca318c599865360b2508842fb0545148",
+      "date": "2026-10-30T15:50:21-04:00",
+      "subject": "test(localingest): assert a remembered send failure skips the socket, not elapsed time (#1150)"
+    },
+    {
+      "sha": "86a35519df543f05d70fe92aaf5bb681f046dc3a",
+      "date": "2026-10-30T15:07:07-04:00",
+      "subject": "fix(privacy): sanitize gen_ai blocks holding values JSON cannot represent (#1146)"
+    },
+    {
+      "sha": "ef45d33f3b257f413496a44aba465bda5740ce9f",
+      "date": "2026-10-30T14:40:04-04:00",
+      "subject": "perf(sanitize): sanitize typed event fields without JSON round trips (#1144)"
+    },
+    {
+      "sha": "722e582777582eae8b766eab545bc62ffae9cc65",
+      "date": "2026-10-30T14:08:09-04:00",
+      "subject": "perf(redaction): find every rule's needles in one pass and run patterns only where they can match (#1143)"
+    },
+    {
+      "sha": "0f39026ce34186ff1e059f73f1681859a7c8df87",
+      "date": "2026-10-30T13:56:27-04:00",
+      "subject": "docs(changelog): unreleased fixes from #1098–#1142 (#1145)"
+    },
+    {
+      "sha": "f26a931578ad7c8d9ac31d501ce80f359a1b3be5",
+      "date": "2026-10-30T12:53:45-04:00",
+      "subject": "fix(ci): override inherited per-signal OTLP routing (#1128)"
+    },
+    {
+      "sha": "6962c4d6bc65d470e5f4f3d76c3689fce243be35",
+      "date": "2026-10-30T12:19:01-04:00",
+      "subject": "fix(mcp): preserve numeric request IDs without rounding (#1126)"
+    },
+    {
+      "sha": "3d8b28890f947335be354747c748629af385455a",
+      "date": "2026-10-30T12:04:30-04:00",
+      "subject": "fix(hermes): keep event ids when a profile is renamed or moved (#1137)"
+    },
+    {
+      "sha": "433ddf87a7324a677f542118a303345f2caa7394",
+      "date": "2026-10-30T12:02:48-04:00",
+      "subject": "fix(gitlink): link symlinks a session creates, not their targets (#1142)"
+    },
+    {
+      "sha": "a916603576060cfee57817dfa3c342aae0feab1a",
+      "date": "2026-10-30T12:02:24-04:00",
+      "subject": "fix(ci): retain uploads from every workflow session (#1125)"
+    },
+    {
+      "sha": "30f7c2950c658da443b28b6ec91ecb795eced5e0",
+      "date": "2026-10-30T11:55:29-04:00",
+      "subject": "fix(codex): one originator-to-surface mapping for live capture, import and usage (#1141)"
+    },
+    {
+      "sha": "199955e4c55d251522bb84573b18df5bc719d144",
+      "date": "2026-10-30T11:53:12-04:00",
+      "subject": "fix(localingest): reject malformed trailing JSON delimiters (#1124)"
+    },
+    {
+      "sha": "2dfb9b872c9dfeaaa43f5519c91cbf3675d0bc40",
+      "date": "2026-10-30T11:52:27-04:00",
+      "subject": "fix(shellcmd): track ln destinations when link name is omitted (#1111)"
+    },
+    {
+      "sha": "17a5c8d562b9dacbbf38c9fd976b8d95ecb43f67",
+      "date": "2026-10-30T11:51:24-04:00",
+      "subject": "fix(gitlink): preserve whitespace in worktree and evidence paths (#1112)"
+    },
+    {
+      "sha": "b2bd82dc3d7902d6a2fc14d6456baee39dd6f1bb",
+      "date": "2026-10-30T11:50:53-04:00",
+      "subject": "perf(threat-rules): compile constant matches() patterns once (#1138)"
+    },
+    {
+      "sha": "e25f324b42e22b8dd2f65cb0dd2076d4fe129483",
+      "date": "2026-10-30T11:50:01-04:00",
+      "subject": "refactor(hooks): one hook-command recogniser for installer and Cursor dedupe (#1140)"
+    },
+    {
+      "sha": "7992919910f38fc7bf9b391f3aa62a32390b2464",
+      "date": "2026-10-30T11:48:09-04:00",
+      "subject": "fix(git): time share uploads with the hook's clock (#1139)"
+    },
+    {
+      "sha": "b112457699be2123a94392ec2532db46a23ea21a",
+      "date": "2026-10-30T11:26:01-04:00",
+      "subject": "threat-rules: one egress sender check across egress rules (parsed_commands) (#1113)"
+    },
+    {
+      "sha": "bbb2e5816d3a584b00d48c91ace0e41fa31667ce",
+      "date": "2026-10-30T11:18:29-04:00",
+      "subject": "fix(hermes): key a cloned profile's event ids by its home (#1098)"
+    },
+    {
+      "sha": "5c79f394920366a60aaca2aca7f1f03e53634579",
+      "date": "2026-10-30T07:56:54-07:00",
+      "subject": "fix(hooks): record each Cursor IDE event once (#1100)"
+    },
+    {
+      "sha": "2138970cb9dc45f8b05a747376a4186db78278de",
+      "date": "2026-10-30T07:47:07-07:00",
+      "subject": "fix(collector): tell Codex CLI from Desktop by originator (#1099)"
+    },
+    {
+      "sha": "70732420a7e24913611259add0b51d922e06dee6",
+      "date": "2026-10-30T03:21:45-04:00",
+      "subject": "docs: rsyslog forwarding guide, with restricted log access (#1136)"
+    },
+    {
+      "sha": "292bf24cc7a2083ae63f4b98b60bfcab5ce6466a",
+      "date": "2026-10-30T07:20:09Z",
+      "subject": "docs: rsyslog drops to syslog only on Ubuntu"
+    },
+    {
+      "sha": "b546b9a7f53d3e7c6c4cf68e3b671657cfe2495d",
+      "date": "2026-10-30T03:18:27-04:00",
+      "subject": "auth: add a Go to dashboard button to the sign-in success page (#1133)"
+    },
+    {
+      "sha": "dd5d03232d97dbe50fd84a7a388361560718d5ce",
+      "date": "2026-10-30T07:07:58Z",
+      "subject": "docs: rsyslog forwarding guide, with restricted log access"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/cursor_compat.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/cursor_compat_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/helpers.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/policy.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/root.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/internal/cloudshuttle/shuttle.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/internal/logging/ingest_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/internal/logging/logging.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/internal/logging/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/endpoint.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/endpoint_connect.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/endpoint_destinations.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/endpoint_destinations_characterization_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/endpoint_diagnostics.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/endpoint_hermes.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/endpoint_hermes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/endpoint_install.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/cmd/endpoint_logaccess.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/cmd/endpoint_logaccess_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/endpoint_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/git_budget_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/git_hooks_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/git_share_sessions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/git_share_sessions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/handoff_resume.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/cmd/intel.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/cmd/intel_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/rules_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/scan_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/cmd/share.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/account/login.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/auth/auth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/auth/dashboard.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/auth/server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/ci/harness.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/ci/harness_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/ci/session.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/ci/signal_routing_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/ci/upload.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/ci/upload_session_clock_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/ci/upload_sessions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/ci/upload_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/claudeotel/claudeotel.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/codexsession/codexsession_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/codexsession/mapper.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/codexsession/types.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/devincloud/pull.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/devincloud/upload.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/collector/collector.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/collector/components.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/collector/logaccess_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/config/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/config/logaccess_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/dashboard/findings_skipped_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/dashboard/share_activity.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/dashboard/sharing_view_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/diagnostics/diagnostics.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/diagnostics/logaccess.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/diagnostics/logaccess_acl_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/diagnostics/logaccess_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/elastic/elastic.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/elastic/elastic_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/harness/harness.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/harness/harness_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/antigravity.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/command_parse_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/cursor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/cursor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/devin.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/dsh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/dsh_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/grok.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/hermes.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/kimi.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/kimi_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/kiro.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/muse.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/openhands.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/openhands_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/runtime.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/scope_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/settings_hooks.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/hooks/vscode.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/inventory/content.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/lifecycle/lifecycle.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/lifecycle/logaccess.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/lifecycle/logaccess_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/loggroup/loggroup.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/loggroup/loggroup_darwin.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/loggroup/loggroup_darwin_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/loggroup/loggroup_linux.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/loggroup/loggroup_linux_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/loggroup/loggroup_other.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/loggroup/loggroup_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/loggroup/loggroup_windows_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/sentinel/sentinel.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/siempack/log_paths_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/siempack/pack_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/siempack/siempack.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/siempack/smoke_scripts_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cli/beacon/internal/endpoint/siempack/vector_paths_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/sysacl/restricted.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/sysacl/restricted_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/sysacl/restricted_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/sysacl/restricted_windows_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/sysacl/sysacl_other.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/wazuh/wazuh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/wazuh/wazuh_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/writer/ingest_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/writer/logaccess_other.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/writer/logaccess_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/writer/logaccess_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/writer/logaccess_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/endpoint/writer/logaccess_windows_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/endpoint/writer/writer.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/gitlink/evidence.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/gitlink/git.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/gitlink/relpath_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/gitlink/shell.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/gitlink/shell_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/handoff/resume.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/handoff/resume_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/handoff/runtimelog.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/handoff/runtimelog_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/hermessession/collect.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/hermessession/event_id_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/hermessession/session_homes.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/hermessession/session_homes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/intel/intel.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/intel/intel_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon/internal/mcpserver/jsonrpc_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/mcpserver/server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/pricing/overrides.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/sessionfs/collectors_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/sessionsync/sessionsync.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/sessionsync/sessionsync_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/tokens/tokens.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon/internal/tokens/tokens_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "collector-builder/builder.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "collector-builder/exporter/beaconjsonexporter/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "collector-builder/exporter/beaconjsonexporter/beaconingestextension/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "collector-builder/exporter/beaconjsonexporter/beaconingestextension/extension.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "collector-builder/exporter/beaconjsonexporter/beaconingestextension/extension_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "collector-builder/exporter/beaconjsonexporter/beaconingestextension/extension_windows_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "collector-builder/exporter/beaconjsonexporter/beaconingestextension/factory.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "collector-builder/exporter/beaconjsonexporter/beaconingestextension/listen_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "collector-builder/exporter/beaconjsonexporter/beaconingestextension/listen_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "collector-builder/exporter/beaconjsonexporter/beaconingestextension/names.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "collector-builder/exporter/beaconjsonexporter/beaconingestextension/names_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "collector-builder/exporter/beaconjsonexporter/beaconingestextension/names_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "collector-builder/exporter/beaconjsonexporter/beaconingestextension/names_unix_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

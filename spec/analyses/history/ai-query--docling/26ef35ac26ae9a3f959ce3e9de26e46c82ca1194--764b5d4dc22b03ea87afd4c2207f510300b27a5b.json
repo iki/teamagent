@@ -1,0 +1,800 @@
+{
+  "id": "ai-query--docling",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/docling-project/docling",
+  "report": "spec/projects/ai-query--docling.md",
+  "analyzedSha": "26ef35ac26ae9a3f959ce3e9de26e46c82ca1194",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T10:52:44+01:00",
+  "observedSha": "764b5d4dc22b03ea87afd4c2207f510300b27a5b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "764b5d4dc22b03ea87afd4c2207f510300b27a5b",
+      "date": "2026-10-31T13:14:48+08:00",
+      "subject": "fix(xlsx): read images placed in cells (#5015)"
+    },
+    {
+      "sha": "7b12671e1d324710e70784c18844d1d97522414f",
+      "date": "2026-10-30T16:25:03+01:00",
+      "subject": "fix: allow chunks artifact type in ArtifactRef (#5111)"
+    },
+    {
+      "sha": "bdb1d20dffe4ceb06e68eaa8a665983ae78d86d7",
+      "date": "2026-10-30T16:13:18+01:00",
+      "subject": "feat(vlm): add Unlimited-OCR 2 preset and layout parser (#5107)"
+    },
+    {
+      "sha": "4b382ee0ea8cb60abcd05bbf6ab2a92dd92502c7",
+      "date": "2026-10-30T13:40:16+01:00",
+      "subject": "feat: add LightOnOCR-3 presets and grounded output parsing (#4789)"
+    },
+    {
+      "sha": "eb0bb2461bec3ccbf67463dba93f75346a518285",
+      "date": "2026-10-30T14:08:02+08:00",
+      "subject": "fix(iwork): keep converting when a date cell holds a span no datetime can hold (#5087)"
+    },
+    {
+      "sha": "af2dbadb4cd3fa39786916157a5c174eeb9bb7bf",
+      "date": "2026-10-29T16:42:51+01:00",
+      "subject": "fix(vlm): keep the vLLM stop reason so pages are not all read as incomplete (#4901)"
+    },
+    {
+      "sha": "84599f94ca1f045c5af25310598ef039dbd110b4",
+      "date": "2026-10-29T16:39:35+01:00",
+      "subject": "feat(vlm): add guarded Nemotron 3.5 multi-pass parsing (#4933)"
+    },
+    {
+      "sha": "45d334e33f7aca345fc26880777288b8cd14262d",
+      "date": "2026-10-29T14:40:22Z",
+      "subject": "chore: bump version to 2.145.0 [skip ci]"
+    },
+    {
+      "sha": "544f3683c5af90fcd5402a12387839fc1a3c4535",
+      "date": "2026-10-29T15:13:49+01:00",
+      "subject": "fix(pipeline): drop page backend references on unload (#5089)"
+    },
+    {
+      "sha": "dc4693f7f94bbf72a41ef1bf091fe6003ca2eb73",
+      "date": "2026-10-29T12:57:02+01:00",
+      "subject": "fix(jats): stop rendering the literal text None in figure and table captions (#4291)"
+    },
+    {
+      "sha": "8f9a97183aa76cb79dd992d808a793e80b8f0627",
+      "date": "2026-10-29T12:54:00+01:00",
+      "subject": "fix(md): strip leading YAML frontmatter instead of misparsing it (#4596)"
+    },
+    {
+      "sha": "55c1da8aa7d5044c6cc6d6e5f03be5fd3feda2ad",
+      "date": "2026-10-29T12:30:31+01:00",
+      "subject": "fix(asr): avoid initializing MLX during preset imports (#5090)"
+    },
+    {
+      "sha": "5e72863feb2a1664b3aade48f64ba8b49da6ad35",
+      "date": "2026-10-29T11:41:54+01:00",
+      "subject": "feat(ocr): detect page orientation for RapidOCR (#4709)"
+    },
+    {
+      "sha": "d518808da7520d2e6f865b8499582e641baa58aa",
+      "date": "2026-10-29T11:26:43+01:00",
+      "subject": "fix(jats): keep the target of an ext-link in a mixed citation (#4813)"
+    },
+    {
+      "sha": "ad03515e80405a7678b2a89e703f9e3703e5ded1",
+      "date": "2026-10-29T11:25:39+01:00",
+      "subject": "fix(html): keep rows stored in tfoot (#4323)"
+    },
+    {
+      "sha": "52aceeb41ae9e523d195263f12ee12a793486388",
+      "date": "2026-10-29T11:24:06+01:00",
+      "subject": "docs: correct Nemotron OCR installation instructions (#5083)"
+    },
+    {
+      "sha": "7d62caec96db33cc4e5f288e5f70a14d6d1dd5da",
+      "date": "2026-10-29T11:20:12+01:00",
+      "subject": "fix(vlm): keep the page when a Chandra table is too large (#5054)"
+    },
+    {
+      "sha": "851dce79b1d4e67456fc7be38d3024350d8401e5",
+      "date": "2026-10-29T10:54:33+01:00",
+      "subject": "fix(jats): keep tables whose only row is a header row span (#5041)"
+    },
+    {
+      "sha": "8e6ad9695e009701fe846ac79194026351d27d11",
+      "date": "2026-10-29T10:24:40+01:00",
+      "subject": "perf(email): do not copy .msg attachment content (#5025)"
+    },
+    {
+      "sha": "8f7ae54409583908f06a2172d260e71b964cc4dd",
+      "date": "2026-10-29T13:21:54+08:00",
+      "subject": "fix(xlsx): do not create empty cells while finding tables (#5024)"
+    },
+    {
+      "sha": "9051777f9e420fa3a37df77425b08f22d0bf5981",
+      "date": "2026-10-28T14:41:38+01:00",
+      "subject": "fix: preserve native VLM inline math through exports (#4908)"
+    },
+    {
+      "sha": "907dcf2a60b4f4b777bb41c1f5fd2bb9274976ed",
+      "date": "2026-10-28T14:36:26+01:00",
+      "subject": "fix(service_client): do not send default page range in request options (#5056)"
+    },
+    {
+      "sha": "ca26ff190856d0bc5d2c7d4a977c02232d8a3b5b",
+      "date": "2026-10-28T14:24:08+01:00",
+      "subject": "fix(pdf): replace NUL from unmapped glyphs with U+FFFD (#5070)"
+    },
+    {
+      "sha": "761d4cf51c5276bb84c45fb16e523bae92f71eb6",
+      "date": "2026-10-28T13:43:53+01:00",
+      "subject": "feat(api): add InputDocument.release() (#3600)"
+    },
+    {
+      "sha": "25cdd577d756097a576fe3a298de16f1d3cd0a88",
+      "date": "2026-10-28T13:17:06+01:00",
+      "subject": "fix(xlsx): keep currency, percent, and date number formats (#4628)"
+    },
+    {
+      "sha": "38719d4008624e92a9f547d7393039a8bbe06055",
+      "date": "2026-10-28T13:08:57+01:00",
+      "subject": "docs: document installing docling-slim without RapidOCR (#5058)"
+    },
+    {
+      "sha": "6d1470dd4e9e953428d3503d40fa0484ef0fe603",
+      "date": "2026-10-28T13:07:13+01:00",
+      "subject": "fix(vlm): scale DocLang locations to the page size (#5051)"
+    },
+    {
+      "sha": "a857fd208ccd61fb4a5d230384554ce778f216df",
+      "date": "2026-10-28T12:03:07Z",
+      "subject": "chore: bump version to 2.144.0 [skip ci]"
+    },
+    {
+      "sha": "7814a4e4326c4f3a1770389c75e33f75aecb5107",
+      "date": "2026-10-28T12:24:42+01:00",
+      "subject": "fix(vlm): drop the spaces around Chandra br line breaks (#4845)"
+    },
+    {
+      "sha": "46504cca817be8b53e7a2db62f72ffee2a3b37f5",
+      "date": "2026-10-28T12:18:40+01:00",
+      "subject": "fix(asr): import torch lazily in the transformers ASR decoder (#5072)"
+    },
+    {
+      "sha": "6a12963a4388edef851a0369367bd12b714284f3",
+      "date": "2026-10-28T19:14:52+08:00",
+      "subject": "feat(pdf): run the heading style signal without generate_parsed_pages and add --heading-hierarchy (#5071)"
+    },
+    {
+      "sha": "8bb0b6c07e8cc04b75905d0d1f83cbf28909dec9",
+      "date": "2026-10-28T12:01:30+01:00",
+      "subject": "fix(asr): forward temperature and anti-hallucination options to mlx-whisper (#5067)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/max-lines-ignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/checks.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/.agents/skills/docling/references/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/.agents/skills/docling/references/python-sdk.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/.agents/skills/docling/references/slim-packaging.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/docling_parse_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/email_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/html_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/iwork/numbers_content.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/iwork/numbers_iwa.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/md_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/msexcel_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/xml/jats_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/cli/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/cli/remote.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/asr_model_specs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/base_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/document.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/pipeline_options.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/pipeline_options_asr_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/pipeline_options_vlm_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/service/responses.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/stage_model_specs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/vlm_prompts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/experimental/pipeline/threaded_layout_vlm_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/inference_engines/vlm/api_openai_compatible_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/inference_engines/vlm/transformers_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/inference_engines/vlm/vllm_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/heading_hierarchy/heading_hierarchy_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/ocr/rapid_ocr_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/ocr/tesseract_ocr_cli_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/ocr/tesseract_ocr_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/ocr/tesseract_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/picture_description/picture_description_vlm_engine_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/vlm_convert/vlm_convert_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/vlm_pipeline_models/vllm_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/asr_transcriber.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/asr_transformers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/base_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/native_pdf_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/standard_pdf_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/video_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/vlm_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/service_client/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/api_image_request.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/chandra_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/dots_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/utils/lightonocr_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/utils/markdown_math.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/mineru_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/utils/nemotron_parse_multipass.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/nemotron_parse_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/nemotron_parse_v3_5_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/orientation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/utils/stop_reason.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/utils/unlimited_ocr2_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/vlm_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts/OCR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/examples/heading_levels.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting_started/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/usage/advanced_options.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/usage/heading_levels.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/usage/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/usage/model_catalog.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/usage/vision_models.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/docling-client/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/docling/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/jats/groundtruth/pntd.0008301.nxml.itxt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/jats/groundtruth/pntd.0008301.nxml.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/jats/groundtruth/pntd.0008301.nxml.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/jats/groundtruth/pone.0234687.nxml.itxt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/jats/groundtruth/pone.0234687.nxml.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/jats/groundtruth/pone.0234687.nxml.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/jats/groundtruth/ptag100.xml.itxt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/jats/groundtruth/ptag100.xml.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/jats/groundtruth/ptag100.xml.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/xlsx/groundtruth/xlsx_02_sample_sales_data.xlsm.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/xlsx/groundtruth/xlsx_02_sample_sales_data.xlsm.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/data/xlsx/groundtruth/xlsx_10_place_in_cell.xlsx.itxt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/data/xlsx/groundtruth/xlsx_10_place_in_cell.xlsx.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/data/xlsx/groundtruth/xlsx_10_place_in_cell.xlsx.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/data/xlsx/sources/xlsx_10_place_in_cell.xlsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_api_vlm_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_asr_mlx_whisper.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_asr_whisper_s2t.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_docling_parse.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_email.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_html.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_iwork_numbers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_jats.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_markdown.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_msexcel.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_optional_dependencies.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_chandra_vlm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_cli_remote.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_dots_parser.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_e2e_ocr_conversion.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_e2e_rotated_ocr.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_heading_hierarchy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_heading_hierarchy_pdf.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_input_doc.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_lightonocr3_vlm.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_markdown_math.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_mineru2_pro.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_nemotron_parse_multipass.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_service_client_sdk_unit.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_service_datamodels.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_stop_reason.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_threaded_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_transformers_engine_stop_reason.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_unlimited_ocr2.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_vllm_engine_stop_reason.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_vllm_model_stop_reason.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_vlm_convert_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_vlm_heading_exports.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_vlm_inline_math_exports.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_vlm_pipeline_doclang.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_vlm_presets_and_runtime_options.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "uv.lock",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

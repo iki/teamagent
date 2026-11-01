@@ -1,0 +1,965 @@
+{
+  "id": "ai-query--magika",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/google/magika",
+  "report": "spec/projects/ai-query--magika.md",
+  "analyzedSha": "3627c158bcfb146bee4747b0589e80ac2faa4d7f",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T10:17:42+01:00",
+  "observedSha": "00e908ff4945f3449d14a4407a806bc91e30006a",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "00e908ff4945f3449d14a4407a806bc91e30006a",
+      "date": "2026-10-30T10:41:23+01:00",
+      "subject": "Merge pull request #1586 from google/gh-1560-rules-remove-built-yara-rulesets"
+    },
+    {
+      "sha": "1bb319e58fa73cbec2f3383545f88ed9beb1f455",
+      "date": "2026-10-29T15:46:14Z",
+      "subject": "style(rust): format single-element slice in resolvers dataset test"
+    },
+    {
+      "sha": "698fe61d976d0d67dd0b01658de5876488d7e448",
+      "date": "2026-10-29T15:38:31Z",
+      "subject": "rules: remove built-in YARA rulesets and migrate regression tests to resolvers"
+    },
+    {
+      "sha": "a07710c39455f0ddfb42c20f28dea263115c2c03",
+      "date": "2026-10-29T14:06:13+01:00",
+      "subject": "Merge pull request #1584 from google/gh-162-163-kb-t1-clean"
+    },
+    {
+      "sha": "f269aad470a759c81d8d9002eb16bba22b70e721",
+      "date": "2026-10-29T11:14:46Z",
+      "subject": "kb, rust: rewire sync_kb.py to resolvers and migrate KB coverage booleans"
+    },
+    {
+      "sha": "3a3a6a00d9efc52ce54c63ffe7e17200a628ab4e",
+      "date": "2026-10-29T12:13:16+01:00",
+      "subject": "Merge pull request #1583 from google/gh-164-kb-t3-move-repo-wide"
+    },
+    {
+      "sha": "d100c9de6c141d2db5b26d9502cf5c98498fb979",
+      "date": "2026-10-29T11:05:59Z",
+      "subject": "scripts: move repo-wide checks to root scripts/ and remove dead pre-PyO3 scripts"
+    },
+    {
+      "sha": "83e670815866b10ed44c0600e17a0539b0f49ad2",
+      "date": "2026-10-29T11:32:29+01:00",
+      "subject": "Merge pull request #1582 from google/adhoc-need-improve-ci-time-basic"
+    },
+    {
+      "sha": "de568acde27c3739ce7bf4d3d762b198eb8f64d3",
+      "date": "2026-10-29T10:05:58Z",
+      "subject": "python, ci: speed up Python CI and local dev Rust builds"
+    },
+    {
+      "sha": "385f6fabe70401af71a7b0afb6dbd3b7d9ae71d3",
+      "date": "2026-10-29T08:26:32+01:00",
+      "subject": "Merge pull request #1580 from google/gh-1452-python-ty-followups"
+    },
+    {
+      "sha": "a77b64b56f5c3886a1d83be7c89bb52ba50e2882",
+      "date": "2026-10-29T07:21:56Z",
+      "subject": "python: tighten ty checks and remove StrEnum inline ignore"
+    },
+    {
+      "sha": "a5010ac6bc1e4c0e80577e3ac5f69c5f3395b405",
+      "date": "2026-10-29T08:16:29+01:00",
+      "subject": "Merge pull request #1579 from google/gh-1452-python-move-from-mypy-ty"
+    },
+    {
+      "sha": "7a8cceb8cb662794fd8447eb4ec90d3bdb6a3a05",
+      "date": "2026-10-29T07:12:01Z",
+      "subject": "python: move type checking from mypy to ty"
+    },
+    {
+      "sha": "1c05cf56cf20a66bb5891ba5aa989b985a1f1952",
+      "date": "2026-10-29T07:55:25+01:00",
+      "subject": "Merge pull request #1578 from google/gh-1574-js-ci-upgrade-workflows-from"
+    },
+    {
+      "sha": "dd6e790f8617ea3a75ecfee9770ca4446ed77a5a",
+      "date": "2026-10-29T06:46:52Z",
+      "subject": "js, ci: upgrade workflows and package engines to Node.js 22 LTS"
+    },
+    {
+      "sha": "110b93c0194db00fa19103eca70beb3dcc6db373",
+      "date": "2026-10-29T07:11:28+01:00",
+      "subject": "Merge pull request #1576 from google/gh-1573-ci-pin-github-actions-runner"
+    },
+    {
+      "sha": "0ed608bffd84bf8947a682fada36be6766a66ae0",
+      "date": "2026-10-29T06:53:26+01:00",
+      "subject": "Merge pull request #1539 from shivamtiwari3/ci-kb-check-python-js-sync"
+    },
+    {
+      "sha": "09018a36ffcb2ddfc1316d8f343df54ce8db55c9",
+      "date": "2026-10-29T05:51:45Z",
+      "subject": "ci: pin GitHub Actions runner images instead of relying on *-latest"
+    },
+    {
+      "sha": "0ec4558889a75110876219f63037381036d754d3",
+      "date": "2026-10-29T06:34:07+01:00",
+      "subject": "ci: check Python and JS KB sync in kb-check.yml (fixes #1535)"
+    },
+    {
+      "sha": "633ecb785591f7d6ac85ba95163ed0902a676d5a",
+      "date": "2026-10-28T21:26:30+01:00",
+      "subject": "Merge pull request #1575 from google/adhoc-gh-action-broken-failing-main"
+    },
+    {
+      "sha": "24bb89b889e62162e042fc9270bf295168c2fdaa",
+      "date": "2026-10-28T20:20:12Z",
+      "subject": "gh: fix JS workflows broken by setup-node v7 NODE_AUTH_TOKEN change"
+    },
+    {
+      "sha": "2e7f88f03e04f9885aa51d60a339488817fb788c",
+      "date": "2026-10-28T16:51:57+01:00",
+      "subject": "Merge pull request #1570 from google/gh-1564-resolvers-fix-clippy-collapsible"
+    },
+    {
+      "sha": "18a2d8ff59f507e22f28c6b6eabed3f5cc5dba65",
+      "date": "2026-10-28T16:49:59+01:00",
+      "subject": "resolvers: fix clippy::collapsible_if and remove allow attributes"
+    },
+    {
+      "sha": "55c849c4f3a8d3578ac2a201be77dc3563523b97",
+      "date": "2026-10-28T16:48:32+01:00",
+      "subject": "Merge pull request #1572 from google/gh-1456-justfile-common-python-commands"
+    },
+    {
+      "sha": "79af9a6e2934a1d5c26c486c9aaf52c61bca4519",
+      "date": "2026-10-28T15:25:12Z",
+      "subject": "Merge pull request #1571 from google/gh-1563-docs-ffi-python-update-stale"
+    },
+    {
+      "sha": "8a80d6bc8978a3413de5b58e06e3b4a81cdac1f3",
+      "date": "2026-10-28T15:22:42Z",
+      "subject": "Merge branch 'main' into gh-1563-docs-ffi-python-update-stale"
+    },
+    {
+      "sha": "6177eaf4e37f4d622eedaf92260e1ebc2e12a84c",
+      "date": "2026-10-28T15:22:36Z",
+      "subject": "Merge pull request #1569 from google/gh-1565-resolvers-use-standard-13-line"
+    },
+    {
+      "sha": "be74dd6eb74f1e523167b7925f7e5c87d0ba1669",
+      "date": "2026-10-28T15:18:22Z",
+      "subject": "python: add justfile for common development commands"
+    },
+    {
+      "sha": "8e2dc714e0d9d6b2e8409c2feddc2cc3406a82a6",
+      "date": "2026-10-28T15:17:34Z",
+      "subject": "Merge branch 'main' into gh-1565-resolvers-use-standard-13-line"
+    },
+    {
+      "sha": "db6a8c436fae90ff53ab1e2383c70da97f8d8a6e",
+      "date": "2026-10-28T15:56:44+01:00",
+      "subject": "Merge pull request #1568 from google/adhoc-gh-action-logs-like-https"
+    },
+    {
+      "sha": "2de3b00776e6799d07ffafaf61a34cc4b64d8fa4",
+      "date": "2026-10-28T14:29:17Z",
+      "subject": "gh: pin test-wheels-legacy-python Linux runner to ubuntu-24.04"
+    },
+    {
+      "sha": "1fe82cc8fe6f1eae0bbc9dc001fc0fa5445a1b54",
+      "date": "2026-10-28T14:28:12Z",
+      "subject": "gh: harden check_gh_actions.py with git ls-remote and YAML AST validation"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cli-latest.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cli-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gh-actions-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/github-pages.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/go-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/js-check-import-scenarios.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/js-docs-builder.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/js-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/js-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/kb-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-build-test-and-release-package.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-coverage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-test-published-package.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-test-published-rc-package.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-test-suite.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/rust-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scorecard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/website-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/active_model.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/content_types.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/content_types_kb.min.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dist-workspace.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cli/cli.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cli/cli_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cli/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/example/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/magika/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/magika/content.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/magika/features.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/magika/features_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/magika/scanner.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/magika/scanner_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/onnx/onnx.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/onnx/onnx_runtime.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/onnx/onnx_runtime.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/onnx/onnx_runtime_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/onnx/onnx_zero.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "js/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "js/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "justfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "python/justfile",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "python/mypy.ini",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/scripts/build_and_stage_cli.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "python/scripts/check_source.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "python/scripts/generate_reference.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/scripts/pre_release_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/scripts/run_phases_1_to_3.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/scripts/sync_dev.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "python/scripts/test_magika_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/src/magika/magika.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/src/magika/types/strenum.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/tests/test_magika_python_module.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/tests/utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/cli/test.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/ffi/include/magika.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/ffi/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/ffi/test.c",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/gen/model",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/gen/rules/content_types",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/gen/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/content.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/file.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/options.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/resolvers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/resolvers/facts/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/resolvers/facts/pe.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/resolvers/facts/zip.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/resolvers/magic/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/lib/src/resolvers/magic/notworking.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/lib/src/resolvers/tests/corpus.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R075",
+      "path": "rust/lib/src/resolvers/tests/dataset.rs",
+      "previousPath": "rust/rules/tests/dataset.rs"
+    },
+    {
+      "status": "R068",
+      "path": "rust/lib/src/resolvers/tests/regressions.rs",
+      "previousPath": "rust/rules/tests/regressions.rs"
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/rules.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/rules/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/rules/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/rules/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/rules/rulesets/full/facts.yar",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/rules/rulesets/full/formats.yar",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/rules/rulesets/notworking/formats.yar",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/rules/rulesets/partial/facts.yar",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/rules/rulesets/partial/formats.yar",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/rules/src/bin/gen.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/rules/src/bundled.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/rules/src/codegen.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/rules/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/rules/src/facts/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/rules/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/rules/src/matcher.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/rules/src/source.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/rules/test.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/rules/tests/bundled.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/rules/tests/corpus.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/rules/tests/perf.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/rules/tests/scan.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/rules/tests/source.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/sync.sh",
+      "previousPath": null
+    },
+    {
+      "status": "R080",
+      "path": "scripts/check_copyright.py",
+      "previousPath": "python/scripts/check_copyright.py"
+    },
+    {
+      "status": "R098",
+      "path": "scripts/check_documentation.py",
+      "previousPath": "python/scripts/check_documentation.py"
+    },
+    {
+      "status": "A",
+      "path": "scripts/check_gh_actions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/sync_kb.py",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/export_regressions.py",
+      "previousPath": "rust/rules/tests/data/export_regressions.py"
+    },
+    {
+      "status": "R097",
+      "path": "tests_data/resolvers/negative/RESULTS.md",
+      "previousPath": "rust/rules/tests/data/negative/RESULTS.md"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/aar_manifest_classes_jar.zip",
+      "previousPath": "rust/rules/tests/data/negative/aar_manifest_classes_jar.zip"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/ac10_text.txt",
+      "previousPath": "rust/rules/tests/data/negative/ac10_text.txt"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/arc_1a02.bin",
+      "previousPath": "rust/rules/tests/data/negative/arc_1a02.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/avi_only_at8.bin",
+      "previousPath": "rust/rules/tests/data/negative/avi_only_at8.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/cws_text.txt",
+      "previousPath": "rust/rules/tests/data/negative/cws_text.txt"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/dna_mpegts.txt",
+      "previousPath": "rust/rules/tests/data/negative/dna_mpegts.txt"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/docx_names_in_comment.zip",
+      "previousPath": "rust/rules/tests/data/negative/docx_names_in_comment.zip"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/empty_ish_sas.txt",
+      "previousPath": "rust/rules/tests/data/negative/empty_ish_sas.txt"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/flv_text.txt",
+      "previousPath": "rust/rules/tests/data/negative/flv_text.txt"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/gzip_2bytes.bin",
+      "previousPath": "rust/rules/tests/data/negative/gzip_2bytes.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/gzip_escape_literal.txt",
+      "previousPath": "rust/rules/tests/data/negative/gzip_escape_literal.txt"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/ico_4bytes.bin",
+      "previousPath": "rust/rules/tests/data/negative/ico_4bytes.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/jar_manifest_only.zip",
+      "previousPath": "rust/rules/tests/data/negative/jar_manifest_only.zip"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/jxl_2bytes.bin",
+      "previousPath": "rust/rules/tests/data/negative/jxl_2bytes.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/msa_wasm.bin",
+      "previousPath": "rust/rules/tests/data/negative/msa_wasm.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/mz_garbage.bin",
+      "previousPath": "rust/rules/tests/data/negative/mz_garbage.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/odf_deflated_mimetype.zip",
+      "previousPath": "rust/rules/tests/data/negative/odf_deflated_mimetype.zip"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/odf_text_template.ott",
+      "previousPath": "rust/rules/tests/data/negative/odf_text_template.ott"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/ogg_4bytes.bin",
+      "previousPath": "rust/rules/tests/data/negative/ogg_4bytes.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/orc_text.txt",
+      "previousPath": "rust/rules/tests/data/negative/orc_text.txt"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/pe_lfanew_out_of_range.bin",
+      "previousPath": "rust/rules/tests/data/negative/pe_lfanew_out_of_range.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/pk_escape_literal.txt",
+      "previousPath": "rust/rules/tests/data/negative/pk_escape_literal.txt"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/psd_escape_literal.txt",
+      "previousPath": "rust/rules/tests/data/negative/psd_escape_literal.txt"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/sas_text.txt",
+      "previousPath": "rust/rules/tests/data/negative/sas_text.txt"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/tiff_be_3d3d.tif",
+      "previousPath": "rust/rules/tests/data/negative/tiff_be_3d3d.tif"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/wave_only_at8.bin",
+      "previousPath": "rust/rules/tests/data/negative/wave_only_at8.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/xcoff_2bytes.bin",
+      "previousPath": "rust/rules/tests/data/negative/xcoff_2bytes.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/zip64_docx_names.zip",
+      "previousPath": "rust/rules/tests/data/negative/zip64_docx_names.zip"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/negative/zip_plain_names.zip",
+      "previousPath": "rust/rules/tests/data/negative/zip_plain_names.zip"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/positive/provenance.json",
+      "previousPath": "rust/rules/tests/data/positive/provenance.json"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/positive/review-3dsx.bin",
+      "previousPath": "rust/rules/tests/data/positive/review-3dsx.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/positive/review-au.bin",
+      "previousPath": "rust/rules/tests/data/positive/review-au.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/positive/review-blend.bin",
+      "previousPath": "rust/rules/tests/data/positive/review-blend.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/positive/review-fbx-legacy.bin",
+      "previousPath": "rust/rules/tests/data/positive/review-fbx-legacy.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/positive/review-fbx.bin",
+      "previousPath": "rust/rules/tests/data/positive/review-fbx.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/positive/review-gltf.bin",
+      "previousPath": "rust/rules/tests/data/positive/review-gltf.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/positive/review-midi.bin",
+      "previousPath": "rust/rules/tests/data/positive/review-midi.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/positive/review-npy.bin",
+      "previousPath": "rust/rules/tests/data/positive/review-npy.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/positive/review-qoi.bin",
+      "previousPath": "rust/rules/tests/data/positive/review-qoi.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/positive/review-woff.bin",
+      "previousPath": "rust/rules/tests/data/positive/review-woff.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/positive/review-woff2.bin",
+      "previousPath": "rust/rules/tests/data/positive/review-woff2.bin"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/positive/zws-0.swf",
+      "previousPath": "rust/rules/tests/data/positive/zws-0.swf"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/positive/zws-1.swf",
+      "previousPath": "rust/rules/tests/data/positive/zws-1.swf"
+    },
+    {
+      "status": "R100",
+      "path": "tests_data/resolvers/regressions.json",
+      "previousPath": "rust/rules/tests/data/regressions.json"
+    },
+    {
+      "status": "M",
+      "path": "website-ng/src/content/docs/cli-and-bindings/js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "website-ng/src/content/docs/contributing/developer-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "website-ng/src/content/docs/contributing/how-to-contribute.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

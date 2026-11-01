@@ -44,6 +44,16 @@ In [sagents/v2/agent/factory.py](https://github.com/ZHangZHengEric/Sage/blob/5e6
 
 **Harness implication and limits:** Budget the assembled context against the effective model route and keep host prompt policy separate from retrieval providers. Removing defaults here does not prove that the underlying assembler enforces the desired segment protections; inspect its new behavior before adopting. Invalid limits, reserve-versus-input overflow and token-estimation accuracy were not tested. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `39bfe32f3de96442d667ce7ed4ccf8072790b090` against prior analyzed commit `5e66cbc8cc931155802c84e29d1cfd32d68a2c30`. Historical reviews above remain separate evidence.
+
+The [Python scorer adapter](https://github.com/ZHangZHengEric/Sage/blob/39bfe32f3de96442d667ce7ed4ccf8072790b090/sagents/v2/optimization/python_scorer.py) assigns distinct source/dependency-change errors, selects an admitted worker source tree under isolated Python startup, keeps a minimal environment, and creates a POSIX process group. Finally cleanup kills that group, including descendants, while non-POSIX cleanup targets only the leader. Frozen scorer bytes are checked before and after execution.
+
+The selected [fixtures](https://github.com/ZHangZHengEric/Sage/blob/39bfe32f3de96442d667ce7ed4ccf8072790b090/tests/sagents/v2/test_python_scorer.py) separate ordinary error typing from the short timeout case and add a POSIX-only child-heartbeat test after timeout. Desktop restoration propagates the selected worker source root. The heartbeat fixture observes stopped writes, not a native process-handle proof, and post-run hashing detects changes after code may already have executed. Adopt frozen scorer/dependency identities and explicit invalid-run outcomes for evolution; retain Teamagent's owned supervisor and descendant shutdown barrier on Windows as well as POSIX. Isolated Python mode is not a network/filesystem sandbox.
+
+**Coverage:** Read the complete 190-line scorer and selected scorer/desktop fixture delta. Dependency verifier, worker bootstrap internals, source snapshot publication and live model scoring were not audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [sage](https://github.com/ZHangZHengEric/Sage); analyzed commit `5e66cbc8cc931155802c84e29d1cfd32d68a2c30`; commit date 2026-10-28T16:48:46+09:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--sage.md).
+Analysis metadata: source [sage](https://github.com/ZHangZHengEric/Sage); analyzed commit `39bfe32f3de96442d667ce7ed4ccf8072790b090`; commit date 2026-10-30T17:11:59+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--sage.md).
 <!-- teamagent-analysis:end -->

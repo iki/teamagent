@@ -76,7 +76,8 @@ export function runMediaProcess(
       env: processEnvironment(),
       shell: false,
       windowsHide: true,
-      detached: true,
+      // Preserve POSIX process groups without enabling Bun's visible Windows detach path.
+      detached: process.platform !== "win32",
       stdio: ["pipe", "pipe", "pipe"],
     });
     const chunks: Uint8Array[] = [];

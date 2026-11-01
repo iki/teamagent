@@ -2,11 +2,11 @@
 
 Source: [utopia](https://github.com/deeplethe/utopia) · [Analysis](../../projects/ai-agents-mem--utopia.md) · [memory](../../memory.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `1142792979b61272d92cf322cbfd2f86615f6cb3`; commit date: 2026-10-27T15:37:10+08:00; review date: 2026-10-28T08:47:42.123Z; observed SHA: `1142792979b61272d92cf322cbfd2f86615f6cb3`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `fbe13bd07e336be9df84ccf45eeddc660205c69e`; commit date: 2026-10-31T03:15:23+08:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `fbe13bd07e336be9df84ccf45eeddc660205c69e`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/deeplethe/utopia/compare/1142792979b61272d92cf322cbfd2f86615f6cb3...1142792979b61272d92cf322cbfd2f86615f6cb3). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/deeplethe/utopia/compare/fbe13bd07e336be9df84ccf45eeddc660205c69e...fbe13bd07e336be9df84ccf45eeddc660205c69e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

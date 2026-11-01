@@ -48,6 +48,18 @@ Definitively rejected credentials are remembered privately until credential cont
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `a6507a62a147db4a35e27f4294589742ccac5060` (commit date `2026-10-30T14:21:13-07:00`), compared with `f817e59f698f01487920c00ede2dbecad5c0fa50`. Earlier observations remain historical evidence.
+
+**Scope:** Complete auth-service privacy-path propagation and fixture diff; 143 changed paths inventoried. Privacy page, account settings and navigation validation not audited.
+
+The [auth service](https://github.com/cline/cline/blob/a6507a62a147db4a35e27f4294589742ccac5060/apps/vscode/src/sdk/auth-service.ts) now forwards an optional dataPrivacyPath from user information into its exposed account state. The [fixture](https://github.com/cline/cline/blob/a6507a62a147db4a35e27f4294589742ccac5060/apps/vscode/src/sdk/auth-service.test.ts) checks the expected dashboard path. This exposes a settings destination; it neither reads effective training policy nor establishes an opt-out, Enterprise coverage or authenticated policy verification.
+
+**Teamagent implication (inference):** Offer route-specific setup/privacy links while keeping policy evidence and its verification level separate. Never infer a non-training decision from a key, successful sign-in or the presence of a privacy-settings URL; validate navigation destinations at the host boundary.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cline](https://github.com/cline/cline); analyzed commit `f817e59f698f01487920c00ede2dbecad5c0fa50`; commit date 2026-10-27T17:34:58-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--cline.md).
+Analysis metadata: source [cline](https://github.com/cline/cline); analyzed commit `a6507a62a147db4a35e27f4294589742ccac5060`; commit date 2026-10-30T14:21:13-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--cline.md).
 <!-- teamagent-analysis:end -->

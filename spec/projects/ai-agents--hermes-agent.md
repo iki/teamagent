@@ -53,6 +53,16 @@ In [tools/approval.py](https://github.com/NousResearch/hermes-agent/blob/8acb7f6
 
 **Harness implication and limits:** Use one authoritative approval state with multiple presentation observers. A channel card disappearing or being acknowledged must not authorize an effect. A late observer must handle the already-settled case explicitly. This inspection does not establish callback invocation, timeout races, Discord delivery or durability across process restart; those call sites were outside this scoped review. No upstream tests, agent execution or provider requests were run.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `a4994d4ead8f9c915b485cec5689909b349a49df` against prior analyzed commit `8acb7f65801fa7548b223244dee57465adfda8ec`. Historical reviews above remain separate evidence.
+
+The new [timeout summarizer](https://github.com/NousResearch/hermes-agent/blob/a4994d4ead8f9c915b485cec5689909b349a49df/agent/timeout_error_summary.py) follows explicit exception causes, guards cycles, distinguishes connection from read timeouts, and declines to assign a provider-response hint to pool/write timeouts. It intentionally ignores exception context, so an authentication error raised while handling a timeout keeps its own classification. The [fixtures](https://github.com/NousResearch/hermes-agent/blob/a4994d4ead8f9c915b485cec5689909b349a49df/tests/agent/test_timeout_error_summary.py) construct real SDK/httpx exception types without making requests and cover those distinctions, including the retained HTTP 401 summary.
+
+The [client cache key](https://github.com/NousResearch/hermes-agent/blob/a4994d4ead8f9c915b485cec5689909b349a49df/agent/client_lifecycle.py) now includes the Bedrock timeout and passes it into construction; otherwise a changed policy could reuse a client with stale deadlines. A timeout without a transport cause is still classified as a read timeout by this helper, so Teamagent should preserve that as an inference, not proof of server receipt or permission to retry. Keep typed transport phase and provider acceptance uncertainty separate from human advice, and avoid making downstream classifiers depend on summary wording.
+
+**Coverage:** Read the complete targeted client/session lifecycle and timeout summarizer/test deltas. Retry loops, SDK transport execution and the remaining oversized update were not inspected. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hermes-agent](https://github.com/NousResearch/hermes-agent); analyzed commit `8acb7f65801fa7548b223244dee57465adfda8ec`; commit date 2026-10-28T15:28:40+05:30; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--hermes-agent.md).
+Analysis metadata: source [hermes-agent](https://github.com/NousResearch/hermes-agent); analyzed commit `a4994d4ead8f9c915b485cec5689909b349a49df`; commit date 2026-10-31T23:05:03-07:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--hermes-agent.md).
 <!-- teamagent-analysis:end -->

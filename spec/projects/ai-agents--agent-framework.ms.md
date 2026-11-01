@@ -52,6 +52,18 @@ For Teamagent, express transport ownership in scoped services and preserve clean
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `b7884ad88eb85c27b2a7bf40c0e15948e7ccc28d` (commit date `2026-10-30T18:51:42Z`), compared with `4a272d2b8e96242a1e00783e833d42922a618d23`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete new computer-item converter and selected hosted-loop fixture bodies. Whole-repository diff exceeded the collection bound; direct source extraction rejected opaque text, so the successful complete scoped diff supplied these files. Other changes and real provider execution not reviewed.
+
+The [converter](https://github.com/microsoft/agent-framework/blob/b7884ad88eb85c27b2a7bf40c0e15948e7ccc28d/dotnet/src/Microsoft.Agents.AI.Foundry.Hosting/ComputerToolItemConverter.cs) preserves ordered computer-action batches and screenshot detail across two SDK representations, removes only known server envelope fields and a null preview action, and retains call IDs while replacing server-owned item IDs. Its raw replay wrapper intentionally ignores subsequent typed-property mutations. [Hosted-loop fixtures](https://github.com/microsoft/agent-framework/blob/b7884ad88eb85c27b2a7bf40c0e15948e7ccc28d/dotnet/tests/Microsoft.Agents.AI.Foundry.Hosting.UnitTests/ComputerToolHostingLoopTests.cs) inspect exact serialized requests through a fake HTTP transport, including two-turn replay and store:false; they are not live-provider or account-retention evidence.
+
+**Teamagent implication (inference):** Treat SDK translation as a versioned protocol adapter with exact-wire fixtures and preserved call/result causality. Store raw and normalized representations with provenance, make normalization explicit, and do not confuse retained protocol fields or store:false with authorization or a verified provider data policy.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-framework.ms](https://github.com/microsoft/agent-framework); analyzed commit `4a272d2b8e96242a1e00783e833d42922a618d23`; commit date 2026-10-28T06:27:42Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agent-framework.ms.md).
+Analysis metadata: source [agent-framework.ms](https://github.com/microsoft/agent-framework); analyzed commit `b7884ad88eb85c27b2a7bf40c0e15948e7ccc28d`; commit date 2026-10-30T18:51:42Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agent-framework.ms.md).
 <!-- teamagent-analysis:end -->

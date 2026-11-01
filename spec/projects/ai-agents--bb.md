@@ -50,6 +50,18 @@ For Teamagent, preserve queued input and exact operation identity while context 
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `916d684ac23d0b0de82c09cfc7553a50287d2188` (commit date `2026-10-30T23:10:24-07:00`), compared with `f8c0701e94ba74a09bf48b1dcc4f49aa22ce81b7`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete session-model catalog handler and fixture. Whole-repository diff was oversized; event transport authentication, catalog persistence and provider health internals not audited.
+
+The [catalog handler](https://github.com/get-bb/bb/blob/916d684ac23d0b0de82c09cfc7553a50287d2188/apps/server/src/services/providers/session-model-catalog.ts) accepts schema-valid catalog updates only for a thread with an environment and the current provider session, then stores them with host/provider/working-directory context. The [fixture](https://github.com/get-bb/bb/blob/916d684ac23d0b0de82c09cfc7553a50287d2188/apps/server/test/providers/session-model-catalog.test.ts) contrasts current and retired sessions and expects reuse without another list-models RPC. This is session fencing, not independent verification that listed models are currently usable.
+
+**Teamagent implication (inference):** Bind discovered models to account/host/workspace and session generation so stale asynchronous events cannot replace current routing evidence. Keep freshness, authenticated readiness and data-policy eligibility separate from a reusable catalog; revalidate route conditions before content upload.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bb](https://github.com/get-bb/bb); analyzed commit `f8c0701e94ba74a09bf48b1dcc4f49aa22ce81b7`; commit date 2026-10-27T22:42:15-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--bb.md).
+Analysis metadata: source [bb](https://github.com/get-bb/bb); analyzed commit `916d684ac23d0b0de82c09cfc7553a50287d2188`; commit date 2026-10-30T23:10:24-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--bb.md).
 <!-- teamagent-analysis:end -->

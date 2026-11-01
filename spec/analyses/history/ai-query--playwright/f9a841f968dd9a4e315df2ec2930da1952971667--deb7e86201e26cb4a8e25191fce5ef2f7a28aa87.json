@@ -1,0 +1,985 @@
+{
+  "id": "ai-query--playwright",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/microsoft/playwright",
+  "report": "spec/projects/ai-query--playwright.md",
+  "analyzedSha": "f9a841f968dd9a4e315df2ec2930da1952971667",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-27T16:11:56-07:00",
+  "observedSha": "deb7e86201e26cb4a8e25191fce5ef2f7a28aa87",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "deb7e86201e26cb4a8e25191fce5ef2f7a28aa87",
+      "date": "2026-10-31T07:56:17-07:00",
+      "subject": "feat(extension): allow disabling controlled tab groups (#43814)"
+    },
+    {
+      "sha": "a294eb09849fac170e0939b7832b0b995d387e5e",
+      "date": "2026-10-31T07:56:01-07:00",
+      "subject": "feat(webkit): roll to r2387 (#43812)"
+    },
+    {
+      "sha": "a6fb02f5aa494764a21a637f2db6ea1031461935",
+      "date": "2026-10-30T14:49:07-07:00",
+      "subject": "fix(chromium): preserve fonts when connecting with noDefaults (#43773)"
+    },
+    {
+      "sha": "3eea037cb2e0984267b7c58100de843572b12a96",
+      "date": "2026-10-30T14:48:51-07:00",
+      "subject": "fix(aria): match mixed-case selected options in accessible names (#43787)"
+    },
+    {
+      "sha": "e98cad7facf48fdd1f0d8e8f17f7ec30cc8109e6",
+      "date": "2026-10-30T14:48:40-07:00",
+      "subject": "fix(test runner): retain PWTEST_CACHE_DIR compatibility (#43802)"
+    },
+    {
+      "sha": "f6f780362df7dc02abeef13f70d7d61084b14337",
+      "date": "2026-10-30T14:48:27-07:00",
+      "subject": "test(mcp): cover URL redaction in network tools (#43803)"
+    },
+    {
+      "sha": "e57ce0170d799d2d8f6d699e3d6e4d90966db11d",
+      "date": "2026-10-30T14:48:16-07:00",
+      "subject": "fix(reporter): remove reporter-only-failures CLI flag (#43805)"
+    },
+    {
+      "sha": "8d309121bc110cc8bf6aeceae45066a6db051286",
+      "date": "2026-10-30T21:21:23Z",
+      "subject": "fix(mcp): report event listener exceptions as console errors (#43686)"
+    },
+    {
+      "sha": "daf7c1d1b9209fc03abbc7ebbeba979db7837415",
+      "date": "2026-10-30T20:19:57Z",
+      "subject": "devops(docker): add OCI source and version labels to the images (#43801)"
+    },
+    {
+      "sha": "eac236da288cdc3d0891278a61e1a876348950a0",
+      "date": "2026-10-30T09:19:07-07:00",
+      "subject": "docs: explain how to type generic custom matchers (#43808)"
+    },
+    {
+      "sha": "f0f066e95404747a8317f56ddc11b9e443b95ffc",
+      "date": "2026-10-30T09:14:40-07:00",
+      "subject": "fix(frames): reject context waits when page closes (#43650)"
+    },
+    {
+      "sha": "256c5308d6bc84c1f12942386c906a1c2909b1b5",
+      "date": "2026-10-30T09:10:23-07:00",
+      "subject": "fix(docker): use latest stable Chrome for Testing and Node.js LTS (#43679)"
+    },
+    {
+      "sha": "3a76ecac48ce34859f965386b992079a57d337fc",
+      "date": "2026-10-30T08:35:23-07:00",
+      "subject": "fix: serve every server with a WebSocket under a random path (#43694)"
+    },
+    {
+      "sha": "33e70e8c4f2c46e676932c49d13c5a956f4fca57",
+      "date": "2026-10-30T08:32:45-07:00",
+      "subject": "fix(selector generator): do not throw when css fallback path is not unique (#43705)"
+    },
+    {
+      "sha": "08c4cbd067d5636b9300dbef8dd36b086db3cc95",
+      "date": "2026-10-30T08:32:06-07:00",
+      "subject": "fix(test-runner): disallow skips in after hooks (#43713)"
+    },
+    {
+      "sha": "3d9a27ed2558a9d94c2d01e4673b9d213b61a85d",
+      "date": "2026-10-30T08:31:13-07:00",
+      "subject": "fix(har): recognize archived HAR extensions regardless of case (#43725)"
+    },
+    {
+      "sha": "19194314009bb361095b5b37fd88ae9866c26224",
+      "date": "2026-10-30T08:30:41-07:00",
+      "subject": "fix(fetch): handle destroyed reused TLS sockets (#43729)"
+    },
+    {
+      "sha": "565f39b50c92804a9376471ceef138392f27093e",
+      "date": "2026-10-30T08:30:00-07:00",
+      "subject": "fix(expect): preserve screenshot assertion errors without comparison details (#43749)"
+    },
+    {
+      "sha": "ac65100a5ffe1fba641c288d920ed87fd3e2f860",
+      "date": "2026-10-30T08:28:47-07:00",
+      "subject": "fix(install): report missing dependencies for all browsers (#43750)"
+    },
+    {
+      "sha": "5d5a5c7f7833b5ea24ec70124494f38f69a0a962",
+      "date": "2026-10-30T08:26:30-07:00",
+      "subject": "fix(webkit): preserve PublicKeyCredential interface shape (#43775)"
+    },
+    {
+      "sha": "7d0dcc276f54255464a1d76eb8aecd1d935707d4",
+      "date": "2026-10-30T08:26:12-07:00",
+      "subject": "fix(clock): preserve long fast-forward durations (#43789)"
+    },
+    {
+      "sha": "2fc0d9cc2adac94265b49b1f028b3bd8233d875c",
+      "date": "2026-10-30T08:24:19-07:00",
+      "subject": "docs(navigation): note Firefox navigation interruption (#43791)"
+    },
+    {
+      "sha": "1d5572d5ddfb7f3c8dfbbe19c8e97def0b2738db",
+      "date": "2026-10-30T11:49:24Z",
+      "subject": "test: answer favicon requests in the test server with 204 (#43772)"
+    },
+    {
+      "sha": "f540a629853ea5aeb38944e817b91788a52dc369",
+      "date": "2026-10-30T11:17:25Z",
+      "subject": "feat(chromium): roll to r1253 (#43778)"
+    },
+    {
+      "sha": "e924e3949ebbf53188b5f24179ffa62583a293fc",
+      "date": "2026-10-30T11:15:51Z",
+      "subject": "feat(firefox): roll to r1570 (#43779)"
+    },
+    {
+      "sha": "7410b3ae2da95b9623669064b838042758140902",
+      "date": "2026-10-30T11:08:26Z",
+      "subject": "fix(runner): preserve quoted paths in only-changed detection (#43726)"
+    },
+    {
+      "sha": "018adb570c757898e7035f23e29ebb689d1d6ead",
+      "date": "2026-10-29T17:01:39-07:00",
+      "subject": "devops(revision): rebase the PR on main before the revision (#43781)"
+    },
+    {
+      "sha": "3f53e5cf3905b91d4346b69223245eea741b55b0",
+      "date": "2026-10-29T21:18:14Z",
+      "subject": "fix(aria): match mixed-case roles and states (#43727)"
+    },
+    {
+      "sha": "18f21e8cb131627ed69ca7497f92214c1354e10e",
+      "date": "2026-10-29T21:16:23Z",
+      "subject": "fix(chromium): fail inflight requests when the document goes away (#43730)"
+    },
+    {
+      "sha": "de4a9068cb08f1a5fbe847782c2efa68915287ca",
+      "date": "2026-10-29T21:02:32Z",
+      "subject": "chore(skills): add the api-review skill (#43774)"
+    },
+    {
+      "sha": "b3dec9eedf56108b3a09a218e6fbaaf7c4324148",
+      "date": "2026-10-29T13:27:17-07:00",
+      "subject": "devops(revision): take the actions from main in the revise and push jobs (#43777)"
+    },
+    {
+      "sha": "bda54b052be6c5272557f3f1c972ad378bd1dc60",
+      "date": "2026-10-29T19:40:46Z",
+      "subject": "docs(docker): use version placeholder in Codespaces devcontainer example (#43731)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".claude/skills/api-review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/api-review/template.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/playwright-devops/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".claude/skills/playwright-revision/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/playwright-triage/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".claude/skills/playwright-triage/bot-voice.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".claude/skills/playwright-triage/triage.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/ci-env/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/ci-env/exec.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/ci-env/windows-normal-io.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/collect-review/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/publish-patch/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/rebase-pr/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/run-agent/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/run-agent/guides/bot-voice.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/run-agent/guides/revision.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/run-agent/guides/triage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/run-test/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/triage-comment/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/bots.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/create_test_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/merge.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-ci-triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/revision.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/juggler/NetworkObserver.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/juggler/TargetRegistry.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/juggler/content/FrameTree.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/juggler/content/PageAgent.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/juggler/content/main.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/juggler/protocol/BrowserHandler.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/juggler/protocol/Protocol.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/patches/bootstrap.diff",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/preferences/playwright.cfg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-browsertype.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-clock.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/docker.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/navigations.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-assertions-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-cli-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-reporter-api/class-reporter.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-reporter-api/class-testrun.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-reporters-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-ui-mode-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/vite.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/src/background.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/src/connectedTabGroup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/src/ui/connect.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/injected/src/clock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/injected/src/roleUtils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/injected/src/selectorGenerator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/isomorphic/deviceDescriptorsSource.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-client/types/types.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/browsers.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/eventEmitter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/page.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/bidi/bidiBrowser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/bidi/bidiPage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/bidi/third_party/bidiCommands.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/bidi/third_party/bidiProtocolCore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/chromium/crPage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/chromium/protocol.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/clock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/fetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/firefox/ffBrowser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/firefox/protocol.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/frames.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/javascript.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/localUtils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/network.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/registry/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/registry/nativeDeps.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/trace/viewer/traceViewer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/webkit/protocol.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/webkit/webview/wvPage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/webkit/wkPage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/tools/backend/context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/tools/backend/tab.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/tools/dashboard/dashboardApp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/tools/mcp/browserFactory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/tools/mcp/cdpRelay.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/tools/mcp/config.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/tools/mcp/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/tools/mcp/configIni.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/tools/mcp/extensionContextFactory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/tools/mcp/program.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/tools/skills/playwright-cli/references/running-code.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/types/protocol.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/types/types.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/cli/reportActions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/cli/testActions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/common/ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/mcp/test/generatorTools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/mcp/test/plannerTools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/mcp/test/testTools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/program.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/reporters/base.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/reporters/html.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/reporters/json.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/reporters/junit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/runner/DEPS.list",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/runner/fsWatcher.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/runner/reporterTestRun.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/runner/reporters.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/runner/testRunner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/runner/testServer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/runner/vcs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/transform/compilationCache.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/worker/workerMain.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/types/testReporter.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/trace-viewer/src/ui/uiModeView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/trace-viewer/src/ui/workbenchLoader.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/utils/fileUtils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/utils/httpServer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/assets/serviceworkers/fetchdummy/sw.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/bidi/expectations/moz-firefox-nightly-library.conf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/bidi/expectations/moz-firefox-nightly-page.conf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/config/testserver/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/extension/tab-grouping.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/browsercontext-har.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/browsercontext-reuse.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/browsercontext-user-agent.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/capabilities.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/chromium/connect-over-cdp.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/library/events/listener-errors.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/events/remove-all-listeners-wait.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/page-clock.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/page-close.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/role-utils.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/selector-generator.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/tap.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/library/unit/http-server.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/mcp/cli-session.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/mcp/config-resolve.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/mcp/generator.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/mcp/run-code.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/mcp/secrets.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/page/elementhandle-scroll-into-view.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/page/elementhandle-wait-for-element-state.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/page/interception.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/page/page-event-network.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/page/page-event-pageerror.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/page/page-focus.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/page/page-goto.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/page/page-set-input-files.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/page/selectors-role.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/page/to-match-aria-snapshot.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/playwright-test/cache.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/playwright-test/hooks.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/playwright-test/only-changed.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/playwright-test/playwright-test-fixtures.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/playwright-test/reporter-only-failures.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/playwright-test/reporter-preprocess.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/playwright-test/test-server.spec.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

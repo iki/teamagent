@@ -2,11 +2,11 @@
 
 Source: [query-last30days](https://github.com/mvanhorn/last30days-skill) · [Analysis](../../projects/ai-skills--query-last30days.md) · [skills](../../skills.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `e06af25a9a78487b75e8509e0e1687fec137176e`; commit date: 2026-10-27T02:23:07-07:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `e06af25a9a78487b75e8509e0e1687fec137176e`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `7efc0ef764765ed9ceff5ce1204462b35b89d680`; commit date: 2026-10-28T09:30:56-07:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `7efc0ef764765ed9ceff5ce1204462b35b89d680`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/mvanhorn/last30days-skill/compare/e06af25a9a78487b75e8509e0e1687fec137176e...e06af25a9a78487b75e8509e0e1687fec137176e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/mvanhorn/last30days-skill/compare/7efc0ef764765ed9ceff5ce1204462b35b89d680...7efc0ef764765ed9ceff5ce1204462b35b89d680). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

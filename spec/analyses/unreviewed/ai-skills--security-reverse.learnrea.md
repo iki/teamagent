@@ -1,0 +1,17 @@
+# security-reverse.learnrea
+
+Source: [security-reverse.learnrea](https://github.com/aicodeking/leanrea) · [skills](../../skills.md), [evolution](../../evolution.md), [agents](../../agents.md).
+
+Initially discovered 2026-11-01T10:08:32.081Z as unreviewed. The scoped initial source review below supersedes that discovery-only status; it does not establish runtime validation. [Change evidence](../repos/ai-skills--security-reverse.learnrea.md).
+
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`09ba4aa0217f82cd880f855a60b877f59f39b22b`](https://github.com/aicodeking/leanrea/commit/09ba4aa0217f82cd880f855a60b877f59f39b22b).
+
+Initial review of the complete [leanrea skill](https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/leanrea/SKILL.md) and [benchmark runner](https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/bench/run.py). The skill routes by format/magic, starts with inexpensive inventories and labels seen, inferred and unknown claims separately. The benchmark records time, cost, usage and tools for skill/no-skill arms, but scores regular-expression hits in the final answer rather than independently verifying artifacts or behavior.
+
+Teamagent can reuse the evidence discipline and progressive inspection concept. The example shell commands, unpinned package execution, reused extraction paths and recursive cleanup must be replaced with trusted provisioned tools and owned bounded scratch before adoption. A compact answer containing expected terms is not sufficient correctness evidence. No benchmark, external target, installer, debugger or model was executed; the remaining small source inventory was not exhaustively audited.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [security-reverse.learnrea](https://github.com/aicodeking/leanrea); analyzed commit `09ba4aa0217f82cd880f855a60b877f59f39b22b`; commit date 2026-10-17T03:26:06Z; review date 2026-11-01T11:37:37.120Z; depth reviewed. [Maintenance record](../repos/ai-skills--security-reverse.learnrea.md).
+<!-- teamagent-analysis:end -->

@@ -37,6 +37,16 @@ The [cleanup helper](https://github.com/NVIDIA/SkillSpector/blob/e7172462caf3677
 
 The [graph](https://github.com/NVIDIA/SkillSpector/blob/e7172462caf367736645f66c1aa154ca5f9c64dc/src/skillspector/graph.py) wraps analyzers in ledger guards and explicitly finalizes inspection coverage before reporting. Credential-independent graph construction is useful, but an analyzer whose is_available() returns false is still skipped; the unseen finalizer determines how that becomes visible. The [import-order tests](https://github.com/NVIDIA/SkillSpector/blob/e7172462caf367736645f66c1aa154ca5f9c64dc/tests/unit/test_graph_proxy.py) restore shared module/proxy state and check alternate import paths, protecting test isolation rather than scan accuracy. Adapt interruption cleanup and explicit analyzer-status accounting behind owned paths. No scan, provider, cleanup operation or tests were executed.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `6d0b7c849949cab9181e57798247f89e48ce5d6a` against prior analyzed commit `e7172462caf367736645f66c1aa154ca5f9c64dc`. Historical reviews above remain separate evidence.
+
+The [inspection finalizer](https://github.com/NVIDIA/SkillSpector/blob/6d0b7c849949cab9181e57798247f89e48ce5d6a/src/skillspector/nodes/finalize_inspection_ledger.py) propagates missing/partial/failed descendant coverage upward through inspected-container membership. It changes an apparently analyzed container to partial, updates references to that container and downgrades both complete and complete-with-caveats when coverage findings remain. The [new fixture](https://github.com/NVIDIA/SkillSpector/blob/6d0b7c849949cab9181e57798247f89e48ce5d6a/tests/nodes/test_finalize_inspection_ledger.py) specifically checks that a coverage finding cannot remain complete-with-caveats.
+
+The parent propagation uses a visited set to avoid repeatedly processing an already incomplete ancestor, but the visible inventory precheck validates only list/dictionary/path shape before reading richer fields. Typed inventory validation and nested archive traversal remain separate upstream responsibilities. Adopt explicit coverage graphs for resource imports and skill inspection: successful traversal of an archive or successful analyzer execution must not imply every descendant was inspected. This fixture supports the caveat downgrade, not the entire container propagation algorithm or security-rule accuracy.
+
+**Coverage:** Read the complete 144-line finalizer/fixture delta. Inventory producer schemas, linked-archive integration fixtures and analyzer semantics were not audited or executed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [skillspector](https://github.com/NVIDIA/SkillSpector); analyzed commit `e7172462caf367736645f66c1aa154ca5f9c64dc`; commit date 2026-10-27T10:50:17-07:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--skillspector.md).
+Analysis metadata: source [skillspector](https://github.com/NVIDIA/SkillSpector); analyzed commit `6d0b7c849949cab9181e57798247f89e48ce5d6a`; commit date 2026-10-31T09:12:46-07:00; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--skillspector.md).
 <!-- teamagent-analysis:end -->

@@ -42,6 +42,16 @@ Evidence: [src/compiler/extraction-snapshot.ts:1-80](https://github.com/atomicme
 
 **Scope and limits:** Static scoped extraction-snapshot, semantic-outcome and public citation-cache review within the 804-path comparison. Atomic compile publication, underlying embedding loaders, judge keyed-cache implementation and complete evaluation were not audited or executed.
 
+## Change review — 2026-11-01
+
+**Configurable source retention keeps truncation visible but is not a hard resource budget.** Reviewed `0f8ff86ef0a28f4c15627a2ea5e94a96cadd834e` (commit date `2026-10-30T16:58:21-07:00`) against `c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f`. The five-path comparison adds `LLMWIKI_MAX_SOURCE_CHARS`: blank/unset values retain 100,000; configured values must be safe integers of at least the minimum source length. Truncation now reports the omitted amount while preserving `truncated` and `originalChars`. Tests cover raising the limit, the default, below-minimum/fractional values and an explicitly supplied limit.
+
+The environment resolver has no practical upper cap below JavaScript's safe-integer bound, and the callable truncator accepts its explicit numeric argument without revalidating it. The function receives an already materialized string and uses JavaScript length/slicing, so its count is UTF-16 code units, not UTF-8 bytes, model tokens or guaranteed whole Unicode characters. Evidence: [src/utils/constants.ts:5-31](https://github.com/atomicmemory/llm-wiki-compiler/blob/0f8ff86ef0a28f4c15627a2ea5e94a96cadd834e/src/utils/constants.ts#L5-L31), [src/commands/ingest.ts:147-184](https://github.com/atomicmemory/llm-wiki-compiler/blob/0f8ff86ef0a28f4c15627a2ea5e94a96cadd834e/src/commands/ingest.ts#L147-L184) and [test/ingest-truncation.test.ts:64-104](https://github.com/atomicmemory/llm-wiki-compiler/blob/0f8ff86ef0a28f4c15627a2ea5e94a96cadd834e/test/ingest-truncation.test.ts#L64-L104).
+
+**Harness consequence:** Preserve explicit omission metadata, but enforce independent pre-read byte limits, bounded validated overrides and downstream token budgets. Distinguish Unicode-safe excerpt boundaries from character-count labels and test both environment and direct library entry points.
+
+**Scope and limits:** Read all five changed-file diffs, including added fixtures and documentation. No parser, PDF import, model call or upstream test was executed. Existing parser allocation behavior and full conversion fidelity were not audited by this small change review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [llm-wiki-compiler](https://github.com/atomicmemory/llm-wiki-compiler); analyzed commit `c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f`; commit date 2026-10-19T12:40:59-07:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--llm-wiki-compiler.md).
+Analysis metadata: source [llm-wiki-compiler](https://github.com/atomicmemory/llm-wiki-compiler); analyzed commit `0f8ff86ef0a28f4c15627a2ea5e94a96cadd834e`; commit date 2026-10-30T16:58:21-07:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--llm-wiki-compiler.md).
 <!-- teamagent-analysis:end -->

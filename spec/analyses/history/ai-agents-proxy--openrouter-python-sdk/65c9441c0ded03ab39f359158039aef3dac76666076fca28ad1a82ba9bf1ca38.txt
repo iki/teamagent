@@ -1,0 +1,53 @@
+# openrouter-python-sdk
+
+Source: [openrouter-python-sdk](https://github.com/OpenRouterTeam/python-sdk) · Category: [ai-agents-proxy](../categories/ai-agents-proxy.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `9e4603cff5c454dd777ef2e0ec4b73bb391d5654`; commit timestamp `2026-10-02T21:49:15Z`; 3,614 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/OpenRouterTeam/python-sdk/blob/9e4603cff5c454dd777ef2e0ec4b73bb391d5654/README.md)):
+
+> The OpenRouter SDK is a Python toolkit designed to help you build AI-powered features and solutions. Giving you easy access to 400+ models across providers in an easy and type-safe way. To learn more about how to use the OpenRouter SDK, check out our API Reference and Documentation.
+
+Build/package evidence: [pyproject.toml](https://github.com/OpenRouterTeam/python-sdk/blob/9e4603cff5c454dd777ef2e0ec4b73bb391d5654/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/OpenRouterTeam/python-sdk/blob/9e4603cff5c454dd777ef2e0ec4b73bb391d5654/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-proxy**. Its category places it in the candidate set for models, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [models](../models.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`06088198aa7ff3de169115abba13e03983a97396`](https://github.com/OpenRouterTeam/python-sdk/commit/06088198aa7ff3de169115abba13e03983a97396). Scope: Full generated deferred-tool/computer-use/search-call models and namespace smoke tests read. OAuth, transport and referenced base-model/union validation were not audited.
+
+The [deferred-tool shape](https://github.com/OpenRouterTeam/python-sdk/blob/06088198aa7ff3de169115abba13e03983a97396/src/openrouter/components/deferredtoolscontrol.py) exposes the versioned portable/runtime protocol, while [search-call serialization](https://github.com/OpenRouterTeam/python-sdk/blob/06088198aa7ff3de169115abba13e03983a97396/src/openrouter/components/toolsearchcallitem.py) distinguishes omitted optional fields from explicitly supplied null status/ID fields. Preserve call_id and missing-versus-null semantics in adapters; arbitrary arguments and forward-compatible status/execution strings still need semantic validation.
+
+The [computer-use model](https://github.com/OpenRouterTeam/python-sdk/blob/06088198aa7ff3de169115abba13e03983a97396/src/openrouter/components/computeruseservertool.py) declares integer display dimensions without visible positive/maximum bounds. The [namespace tests](https://github.com/OpenRouterTeam/python-sdk/blob/06088198aa7ff3de169115abba13e03983a97396/tests/test_responses_namespace.py) check that Responses is top-level with a beta alias and Analytics exists; they do not call a service or validate provider behavior. Adapt compatibility tests and protocol records, not a claim that every advertised tool is available or authorized. No Python SDK, OAuth, network request or tests were executed.
+
+## Follow-up change review — 2026-10-28
+
+**Generated provider option names expand without establishing route eligibility.** Reviewed commit `0305e470a6aa7a082d478386b0f0303493501264` (commit date `2026-10-28T08:52:46Z`), compared with `06088198aa7ff3de169115abba13e03983a97396`. The complete no-rename Git path inventory contains 32 changed paths.
+
+The image-generation preferences type adds primalabs to the typed-dict, Pydantic model and serialized field list. The option's value remains an unconstrained string-keyed dictionary. This is generated wire-shape evidence, not proof that an account may use the provider or that its route satisfies retention, training, licensing or cost requirements.
+
+Evidence: [src/openrouter/components/imagegenerationproviderpreferences.py:140-153](https://github.com/OpenRouterTeam/python-sdk/blob/0305e470a6aa7a082d478386b0f0303493501264/src/openrouter/components/imagegenerationproviderpreferences.py#L140-L153) · [src/openrouter/components/imagegenerationproviderpreferences.py:439-452](https://github.com/OpenRouterTeam/python-sdk/blob/0305e470a6aa7a082d478386b0f0303493501264/src/openrouter/components/imagegenerationproviderpreferences.py#L439-L452) · [src/openrouter/components/imagegenerationproviderpreferences.py:649-661](https://github.com/OpenRouterTeam/python-sdk/blob/0305e470a6aa7a082d478386b0f0303493501264/src/openrouter/components/imagegenerationproviderpreferences.py#L649-L661).
+
+**Harness consequence:** Apply Teamagent's validated provider options and effective route policy before SDK serialization. Newly enumerated providers remain unknown/blocked until reviewed; generated permissive dictionaries must not bypass a typed boundary.
+
+**Scope and limits:** Reviewed the provider-option delta within the broader generated SDK update; no account, model, response schema or live request was tested. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`4e0fe9b982aa86c17134e2791e99096ba1749fab`](https://github.com/OpenRouterTeam/python-sdk/commit/4e0fe9b982aa86c17134e2791e99096ba1749fab), compared with `0305e470a6aa7a082d478386b0f0303493501264`.
+
+The full [Jev router model](https://github.com/OpenRouterTeam/python-sdk/blob/4e0fe9b982aa86c17134e2791e99096ba1749fab/src/openrouter/components/jevrouterplugin.py) defines optional inclusion, exclusion and cost-tier fields, omitting unset/optional-null values in serialization. Comments describe cost tiers replacing shared routing policy and include-list fallback to the current pool when catalog matches are outside that pool. These declarations must not be interpreted as hard local admission checks.
+
+The reviewed [provider-preference declarations](https://github.com/OpenRouterTeam/python-sdk/blob/4e0fe9b982aa86c17134e2791e99096ba1749fab/src/openrouter/components/providerpreferences.py#L1-L160) keep data collection and provider fallback optional, with permissive defaults described in comments and an open enum allowing unknown values. Teamagent should explicitly serialize its approved policy, distinguish omitted/null/explicit settings, and block unknown account/operation policies rather than treating type acceptance as evidence. The 1,468-path comparison was expanded selectively; later preference serialization, transport and other generated APIs were not fully audited. No account, provider, SDK or upstream tests were exercised.

@@ -1,0 +1,68 @@
+# GitHub Spec Kit
+
+Source: [github/spec-kit](https://github.com/github/spec-kit) · Reviewed revision: `ae5ade7234be5cb1d975f736c4e06dd46d1326d6` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [skills](../skills.md) · [evolution](../evolution.md) · [agents](../agents.md).
+
+## Evidence inspected
+
+- [`src/specify_cli/agents.py` lines 307–387](https://github.com/github/spec-kit/blob/ae5ade7234be5cb1d975f736c4e06dd46d1326d6/src/specify_cli/agents.py#L307-L387)
+- [`templates/commands/implement.md` lines 1–84](https://github.com/github/spec-kit/blob/ae5ade7234be5cb1d975f736c4e06dd46d1326d6/templates/commands/implement.md#L1-L84)
+
+## Observed architecture and behavior
+
+Spec Kit materializes development commands for different agent formats. The inspected renderer supports Markdown and TOML, with careful handling of non-string descriptions, backslashes, triple quotes, and control characters. The implementation template separates prerequisite discovery, extension hooks, checklist state, and task execution. It explicitly distinguishes requirements-quality checklist completion from implementation completion. This is useful operational structure for specification-driven work, with parts enforced by tools and parts delegated to agent instructions.
+
+## Implications and tradeoffs for Teamagent
+
+Teamagent should represent requirements, plans, tasks, verification evidence, and decisions as typed artifacts with stable IDs and links. Formatting commands into a host's native syntax is worthwhile, but a prompt that requests a gate does not equal a runtime-enforced gate. Extension hooks need the same provenance and permissions as other executable plugins. Checklist validity should be tied to the exact specification revision; editing a requirement can invalidate an earlier check. The inspected template's detailed workflow also illustrates why heavyweight spec processes should be selected for consequential changes, not injected into every small edit.
+
+## Adoption decision
+
+Offer a spec-driven coding bundle or importer rather than adopting Spec Kit's directory conventions as the entire harness architecture. Reuse format adapters and artifact templates where suitable. Enforce required state transitions in the task engine, with policy-controlled overrides recorded as decisions. Evaluate cross-platform paths, command escaping, hook failures, stale checklists, and end-to-end requirement-to-test traceability. Preserve the user's chosen workflow and allow a lightweight task path where a full specification adds little value.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+## Review update — 2026-10-24
+
+Updated focused revision: `67e0f7294e6e728ab60bf7b4590deb470448bc2d` from [github/spec-kit](https://github.com/github/spec-kit). The October 4 renderer/workflow review remains above and in its immutable maintenance snapshot. This update inspects archive integrity, integration trust and shared-file installation; it does not establish end-to-end agent correctness.
+
+The current shared infrastructure layer verifies a declared archive SHA-256 before installation. It accepts a normalized hexadecimal digest or explicit `sha256:` prefix, rejects malformed declarations and mismatches, and uses constant-time comparison. Crucially, an absent digest remains accepted for compatibility and is logged as **unverified**; this is not a universal signed-catalog guarantee ([implementation](https://github.com/github/spec-kit/blob/67e0f7294e6e728ab60bf7b4590deb470448bc2d/src/specify_cli/shared_infra.py#L48-L104)). Shared destination preparation rejects symlinked parents and checks resolved containment. Writes stage a temporary sibling, revalidate the destination and replace it atomically ([path handling](https://github.com/github/spec-kit/blob/67e0f7294e6e728ab60bf7b4590deb470448bc2d/src/specify_cli/shared_infra.py#L184-L238), [writer](https://github.com/github/spec-kit/blob/67e0f7294e6e728ab60bf7b4590deb470448bc2d/src/specify_cli/shared_infra.py#L323-L344)). These are concrete implementation safeguards; this inspection did not test races or all platform-specific filesystem behavior.
+
+Executable integration trust is stored outside the project in user-local state. Its identity hashes the resolved project identity, integration key and package file hashes. A copied repository's mutable declarations therefore do not by themselves confer execution trust ([trust identity](https://github.com/github/spec-kit/blob/67e0f7294e6e728ab60bf7b4590deb470448bc2d/src/specify_cli/integrations/installer.py#L326-L343)). Grant and recovery code ties ownership metadata to that trusted identity, checks recovery records and rejects expanded mutable manifests during cleanup ([grant and recovery](https://github.com/github/spec-kit/blob/67e0f7294e6e728ab60bf7b4590deb470448bc2d/src/specify_cli/integrations/installer.py#L425-L501)). This is a stronger integration lifecycle model than treating every file listed by a repository as safe to delete or execute.
+
+**Updated Teamagent decision:** retain the spec-workflow adapter approach, while adopting content-bound execution grants and an installation ownership ledger for future external integration packages. Require integrity status to remain explicit when a source lacks a digest. Refreshing package bytes must trigger revalidation and, where policy requires it, a fresh trust decision; cleanup authority must be limited to previously recorded ownership. Store personal execution consent separately from shared project instructions. These findings refine [skills](../skills.md), [evolution](../evolution.md) and [security](../security.md); they do not imply Teamagent's current integration registry already implements this entire package-execution model. No Spec Kit installer or agent was executed for this review.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`ce8592390a88c6bbc229e9720ef45cc1f6cff46a`](https://github.com/github/spec-kit/commit/ce8592390a88c6bbc229e9720ef45cc1f6cff46a). Scope: Full installation-ignore helper, bundle validator and validator tests read. Manifest decoding, source resolution, installer transactions and archive/path enforcement were not audited.
+
+The [ignore helper](https://github.com/github/spec-kit/blob/ce8592390a88c6bbc229e9720ef45cc1f6cff46a/src/specify_cli/_install_ignore.py) shares source-directory filtering, handles a UTF-8 BOM and Windows separators, rejects invalid patterns before copying and always excludes the control file itself. It explicitly documents that excluding a parent prevents child negation from restoring descendants. No default exclusions exist when no ignore file is provided; this packaging filter is not a secret scanner, archive validator or containment boundary.
+
+The [bundle validator](https://github.com/github/spec-kit/blob/ce8592390a88c6bbc229e9720ef45cc1f6cff46a/src/specify_cli/bundles/validator.py) separates structural checks from optional reference resolution and can validate an expanded component selection with origin-chain diagnostics. Its [tests](https://github.com/github/spec-kit/blob/ce8592390a88c6bbc229e9720ef45cc1f6cff46a/tests/specify_cli/bundles/test_validator.py) cover duplicate versions, expanded references and propagation of unexpected parser failures. report.ok means no recorded errors; without a reference checker it does not prove that dependencies resolve, and parsing a version constraint does not prove installed-version compatibility. Adapt explicit validation phases and preserve which phases ran in the receipt. No install, source resolution or tests were executed.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `222a973f8b8794366680c043fb935a31f71902af` (commit date `2026-10-27T15:01:21-05:00`), compared with `ce8592390a88c6bbc229e9720ef45cc1f6cff46a`. Earlier findings remain historical evidence.
+
+**Scope:** Vibe managed-hook TOML scanner delta; related fixtures were identified but not executed, and the extension catalogue remains discovery evidence. The complete changed-path inventory contains 7 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+Managed-hook span detection now ends after the last TOML value and its immediate blank lines, preserving a standalone following comment for the next user-owned block. Multiline-string/array contents remain part of the managed span even when they resemble comments. The surrounding branch parses TOML first and returns no spans for malformed or ambiguous state. [src/specify_cli/integrations/vibe/__init__.py](https://github.com/github/spec-kit/blob/222a973f8b8794366680c043fb935a31f71902af/src/specify_cli/integrations/vibe/__init__.py#L394-L415); [src/specify_cli/integrations/vibe/__init__.py](https://github.com/github/spec-kit/blob/222a973f8b8794366680c043fb935a31f71902af/src/specify_cli/integrations/vibe/__init__.py#L491-L499); [src/specify_cli/integrations/vibe/__init__.py](https://github.com/github/spec-kit/blob/222a973f8b8794366680c043fb935a31f71902af/src/specify_cli/integrations/vibe/__init__.py#L520-L540).
+
+This supports a general configuration ownership rule: validate the full format, identify an exact managed region, and leave adjacent user text intact when rewriting or uninstalling. Teamagent should retain explicit no-change/ambiguous outcomes rather than regenerate the whole file. This scoped scanner review does not establish atomic writing, concurrency safety or byte preservation across every caller.
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `7370e592f3cd9c06e5b698983957e227c75b30e2` (commit date `2026-10-30T11:10:26-05:00`), compared with `222a973f8b8794366680c043fb935a31f71902af`. Earlier observations remain historical evidence.
+
+**Scope:** Complete integration-state adapter diff and selected added fixtures through symlink rejection and observer ordering. The unchanged FileHelper implementation, concurrent path substitution and platform-specific filesystem behavior were not fully audited.
+
+The [integration-state adapter](https://github.com/github/spec-kit/blob/7370e592f3cd9c06e5b698983957e227c75b30e2/src/specify_cli/integration_state.py) routes reads and writes through FileHelper, reports linked state as an error independently of the general symlink opt-in, and checks the destination before invoking the mutation observer. It continues to distinguish absent state from unreadable or invalid state. [Fixtures](https://github.com/github/spec-kit/blob/7370e592f3cd9c06e5b698983957e227c75b30e2/tests/integrations/test_integration_state.py) cover external, contained, dangling and cyclic links, unchanged targets on rejection, and general symlink permission not overriding the protected state rule. Those fixtures may skip when links cannot be created; this review does not establish race resistance or cross-platform execution.
+
+**Teamagent implication (inference):** Protect policy-bearing integration state more strictly than ordinary project files, and reject uncertain access before snapshotting or mutation. Preserve absent/error distinctions and record actual platform coverage. Review the filesystem helper's race behavior separately before treating a preflight path check as an enduring containment guarantee.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.

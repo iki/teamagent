@@ -34,7 +34,7 @@ const moduleSchema = Schema.Struct({
 async function git(args: readonly string[]): Promise<string> {
   const child = Bun.spawn(
     ["git", "-c", `safe.directory=${reference.replaceAll("\\", "/")}`, "-C", reference, ...args],
-    { stdout: "pipe", stderr: "pipe" },
+    { stdout: "pipe", stderr: "pipe", windowsHide: true },
   );
   const [out, error, exit] = await Promise.all([
     new Response(child.stdout).text(),

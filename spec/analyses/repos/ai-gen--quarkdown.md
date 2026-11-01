@@ -2,11 +2,11 @@
 
 Source: [quarkdown](https://github.com/iamgio/quarkdown) · [Analysis](../../projects/ai-gen--quarkdown.md) · [import-generation](../../import-generation.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `0bacdef6bd32c6dba1b6ef34c45a83c864a716c7`; commit date: 2026-10-25T20:14:41-07:00; review date: 2026-10-28T08:47:42.123Z; observed SHA: `0bacdef6bd32c6dba1b6ef34c45a83c864a716c7`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `e4351a53391210a1fbb4c91f9542ddf578d5d0da`; commit date: 2026-11-01T01:35:28-07:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `e4351a53391210a1fbb4c91f9542ddf578d5d0da`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/iamgio/quarkdown/compare/0bacdef6bd32c6dba1b6ef34c45a83c864a716c7...0bacdef6bd32c6dba1b6ef34c45a83c864a716c7). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/iamgio/quarkdown/compare/e4351a53391210a1fbb4c91f9542ddf578d5d0da...e4351a53391210a1fbb4c91f9542ddf578d5d0da). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

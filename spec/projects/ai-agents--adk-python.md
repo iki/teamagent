@@ -50,6 +50,18 @@ For Teamagent, distinguish ephemeral child context from durable memory, preserve
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `95d8610ea3445ce9c6d0cf70aed1a0071ddc1e2f` (commit date `2026-10-31T23:44:06-07:00`), compared with `1d81896aa081e7b2e50b3a4a227f7c6933805752`. Earlier observations remain historical evidence.
+
+**Scope:** Complete classifier-node refusal diff/test plus selected new OpenAI decision-adapter conversion branches; 317 changed paths inventoried. SDK transport and full adapter lifecycle not audited.
+
+The [classifier node](https://github.com/google/adk-python/blob/95d8610ea3445ce9c6d0cf70aed1a0071ddc1e2f/src/google/adk/labs/classifiers/_classifier_node.py) explicitly rejects RefusalAnswer with a workflow data error instead of selecting a route, with a corresponding [fixture case](https://github.com/google/adk-python/blob/95d8610ea3445ce9c6d0cf70aed1a0071ddc1e2f/tests/unittests/labs/classifiers/test_classifier_node.py). The new [OpenAI adapter](https://github.com/google/adk-python/blob/95d8610ea3445ce9c6d0cf70aed1a0071ddc1e2f/src/google/adk/integrations/openai/_openai_decisions_classifier.py) preserves provider refusals as that answer type and validates expected answer types, labels and numeric ranges. Its speed claims and provider availability were not verified; source conversion logic is not calibration evidence.
+
+**Teamagent implication (inference):** Represent refusal and insufficient evidence separately from false/negative classifications, and leave authorization deterministic. A route must not become an implicit default merely because the classifier declined; use an explicit escalation or task-specific fallback with provenance and budget.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [adk-python](https://github.com/google/adk-python); analyzed commit `1d81896aa081e7b2e50b3a4a227f7c6933805752`; commit date 2026-10-27T23:24:57-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-python.md).
+Analysis metadata: source [adk-python](https://github.com/google/adk-python); analyzed commit `95d8610ea3445ce9c6d0cf70aed1a0071ddc1e2f`; commit date 2026-10-31T23:44:06-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-python.md).
 <!-- teamagent-analysis:end -->

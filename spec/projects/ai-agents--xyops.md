@@ -38,6 +38,16 @@ For Teamagent channels, retain separate connected, detached, close-requested and
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 scoped source refresh
+
+Reviewed `af06253a33af35db89f0ef1e944a5b001ea01756` → `e93950062015a3eb6ab9b58a8a4115499ef3c944`: all changed server/installer code, extension-admin UI and SSO/hosting documentation deltas. The 14-path inventory contains no changed test files; dependency-lock contents, browser rendering and deployed proxies were not verified.
+
+The [job streaming response](https://github.com/pixlcore/xyops/blob/e93950062015a3eb6ab9b58a8a4115499ef3c944/lib/api/jobs.js#L1477-L1490) now asks Nginx to disable buffering. [Proxy guidance](https://github.com/pixlcore/xyops/blob/e93950062015a3eb6ab9b58a8a4115499ef3c944/docs/sso.md) separates browser SSO from MCP API-key authentication and requires preserving the caller's authorization header. That is useful channel design, but the separately linked MCP extension's enforcement was not inspected. The OAuth2-Proxy example also exempts `/mcp/` descendants, while prose and another example describe an exact path. Teamagent should make the admitted route set explicit and test it at each proxy boundary; a response header is not proof of end-to-end streaming.
+
+The [extension serializer](https://github.com/pixlcore/xyops/blob/e93950062015a3eb6ab9b58a8a4115499ef3c944/lib/ext.js) now exposes package metadata for an admin inventory and removal flow. The [UI](https://github.com/pixlcore/xyops/blob/e93950062015a3eb6ab9b58a8a4115499ef3c944/htdocs/js/pages/admin/System.class.js#L453-L518) sanitizes several display fields but interpolates some identifiers/icon values directly; this scope does not establish their upstream validation or deletion authorization. Treat installed extension metadata as a validated projection, and distinguish a removal request from completed shutdown.
+
+The runtime/installer raise their declared Node minimum and replace two glob matchers with `Path.matchesGlob`. Those are portability and matching-semantics changes, not independently measured compatibility. No extension, native process, proxy or upstream test was run; earlier terminal-lifecycle findings remain historical.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [xyops](https://github.com/pixlcore/xyops); analyzed commit `af06253a33af35db89f0ef1e944a5b001ea01756`; commit date 2026-10-25T18:11:36-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--xyops.md).
+Analysis metadata: source [xyops](https://github.com/pixlcore/xyops); analyzed commit `e93950062015a3eb6ab9b58a8a4115499ef3c944`; commit date 2026-10-30T22:08:48-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--xyops.md).
 <!-- teamagent-analysis:end -->

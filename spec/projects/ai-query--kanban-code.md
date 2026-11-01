@@ -51,6 +51,14 @@ Evidence: [Sources/KanbanCodeCore/UseCases/Master/PeerTranscriptMirror.swift:38-
 
 **Scope and limits:** Reviewed the complete mirror implementation; peer transport validation, path trust and distributed consistency were not certified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `d2113f616555525b7a134177d3a519fad83848a4` against `ff9c751124216bea3e38844e273b272faa4fede2` (55 changed paths). The new [prompt-file protocol/client](https://github.com/langwatch/kanban-code/blob/d2113f616555525b7a134177d3a519fad83848a4/Sources/KanbanCodeRemoteKit/PromptFiles.swift) streams non-image attachments in 8 MiB chunks after a 2 GiB preflight size check and represents delivered files as path lines. It validates upload-ID syntax, checks cancellation between chunks and gives each request a 600-second timeout. Responses are decoded structurally, but the shown loop accepts `received >= size` without binding returned counters/path to the expected local file, offset or hash. The initial [fixtures](https://github.com/langwatch/kanban-code/blob/d2113f616555525b7a134177d3a519fad83848a4/Tests/KanbanCodeRemoteKitTests/PromptFilesTests.swift) cover marker round trips, name cleanup, image-extension routing and upload-ID syntax.
+
+**Harness consequence:** Path text is not an attachment capability or authorization. Validate server ownership, exact byte progression, final hash and containment before supplying a model with a usable asset reference. A pre-read stat and per-request timeout do not bound a file that changes during upload or the total transfer duration; enforce cumulative limits and one operation deadline.
+
+**Scope and limits:** Complete new protocol/client file and initial helper fixtures, not server storage, remote authorization or mobile UI. No upload, Swift/native test or end-to-end acceptance was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [kanban-code](https://github.com/langwatch/kanban-code); analyzed commit `ff9c751124216bea3e38844e273b272faa4fede2`; commit date 2026-10-27T22:34:49+01:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--kanban-code.md).
+Analysis metadata: source [kanban-code](https://github.com/langwatch/kanban-code); analyzed commit `d2113f616555525b7a134177d3a519fad83848a4`; commit date 2026-10-30T13:13:43+01:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--kanban-code.md).
 <!-- teamagent-analysis:end -->

@@ -50,6 +50,18 @@ For Teamagent, imported skills must state which restrictions the host can enforc
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `4ff321ecfc921909948f7c7e42b703697f23733c` (commit date `2026-10-31T19:03:51+08:00`), compared with `b017ea3e097fdb8375574ccd39d6cdb7caf4c986`. Earlier observations remain historical evidence.
+
+**Scope:** Complete permissions.py diff; 285 changed paths inventoried. Advisor implementation, runtime call sites and fixtures not audited.
+
+The [permission layer](https://github.com/HKUDS/DeepCode/blob/4ff321ecfc921909948f7c7e42b703697f23733c/core/harness/permissions.py) adds an optional risk evaluator only on mode-default allow decisions, after sensitive-path, read-only and explicit-rule handling. Its opinion can request approval, and exceptions or malformed opinions also request approval; it cannot turn an existing denial into permission. Explicit rules bypass this advisor. Tool classifications still depend on declared names/suffixes rather than independently observed effects.
+
+**Teamagent implication (inference):** Keep deterministic authorization authoritative and use model risk opinions only to restrict an otherwise allowed operation. Bind opinions to exact content and context; trustworthy effect declarations and explicit-rule governance remain necessary even when an advisor fails closed.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deepcode](https://github.com/HKUDS/DeepCode); analyzed commit `b017ea3e097fdb8375574ccd39d6cdb7caf4c986`; commit date 2026-10-28T13:01:03+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepcode.md).
+Analysis metadata: source [deepcode](https://github.com/HKUDS/DeepCode); analyzed commit `4ff321ecfc921909948f7c7e42b703697f23733c`; commit date 2026-10-31T19:03:51+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepcode.md).
 <!-- teamagent-analysis:end -->

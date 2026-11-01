@@ -78,7 +78,8 @@ def command(repo: Path, *args: str):
 
 
 def read_git(repo: Path, *args: str):
-    result = subprocess.run(command(repo, *args), capture_output=True, timeout=30, env=git_environment())
+    result = subprocess.run(command(repo, *args), capture_output=True, timeout=30, env=git_environment(),
+                            creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
     if len(result.stdout) > 65536 or len(result.stderr) > 65536:
         raise ValueError("External Git diagnostic exceeds 64 KiB")
     return result
@@ -128,7 +129,8 @@ def check_cache(root: Path, source):
 def terminate(process):
     if os.name == "nt":
         subprocess.run(["taskkill", "/PID", str(process.pid), "/T", "/F"],
-                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=15)
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=15,
+                       creationflags=subprocess.CREATE_NO_WINDOW)
     else:
         os.killpg(process.pid, signal.SIGKILL)
     process.wait(timeout=15)

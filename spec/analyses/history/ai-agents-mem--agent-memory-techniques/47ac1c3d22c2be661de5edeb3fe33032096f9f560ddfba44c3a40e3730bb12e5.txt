@@ -1,0 +1,52 @@
+# agent-memory-techniques
+
+Source: [agent-memory-techniques](https://github.com/NirDiamant/Agent_Memory_Techniques) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `4767c0341ccd8b714147334c5f17c26ff99d8e41`; commit timestamp `2026-09-21T13:54:19+03:00`; 173 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/4767c0341ccd8b714147334c5f17c26ff99d8e41/README.md)):
+
+> ⭐  **If you find this useful, please star the repo** so more learners can discover it. 🧭  **New here?** Start with 01 Conversation Buffer Memory or pick a Learning Path. Prefer a visual? See the Decision Tree below. 30 runnable Jupyter notebooks covering conversation buffers, vector stores, knowledge graphs, episodic and semantic memory, working memory, MemGPT, Mem0, Letta, Zep, Graphiti, LoCoMo benchmarks, and production memory patterns.
+
+Build/package evidence: [requirements.txt](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/4767c0341ccd8b714147334c5f17c26ff99d8e41/requirements.txt)
+
+License evidence: [LICENSE](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/4767c0341ccd8b714147334c5f17c26ff99d8e41/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Four memory notebooks illustrate persistence, sharing and evaluation while retaining demo-only authority and budget gaps.** Reviewed commit `6e8fb023235e3f3ecd2d2d122b94fa86a4bf9118` (commit date `2026-10-27T16:12:51+02:00`). Compared with `4767c0341ccd8b714147334c5f17c26ff99d8e41`; the complete Git comparison contains 33 changed paths.
+
+The cross-session example uses parameterized SQLite persistence but defaults to an in-memory database and INSERT OR REPLACE with no revision predicate. Loading strategies mutate the loaded state; last_n/summary can therefore discard message history when that state is saved. Model-extracted facts replace prior facts and are inserted into a system prompt as known user facts without source provenance or confidence validation.
+
+The shared-memory example checks an in-process ACL and locks writes, but version_check only rejects a stale version when the caller supplies expected_version; the agent's write wrapper omits it. Reads return mutable entry objects rather than immutable copies, and summary/history methods do not take an agent identity. Namespace/key concatenation and caller-supplied identities are illustrative storage choices, not an authenticated cross-agent boundary.
+
+The evaluation notebook parses judge JSON without semantic score validation, substitutes 0.5 on parse failure and silently drops malformed contradiction responses. Contradictions are searched only within batches yet divided by all possible global pairs, so the reported rate understates unexamined cross-batch pairs; zero temporal cases return score 1.0 with n_cases zero. These are unsuitable as acceptance metrics without explicit missing/error/coverage states.
+
+The production-pattern notebook simulates stores and embeddings. Its graph queries key only by entity/relation despite edges carrying user_id. Cost limits report a boolean but the inspected ingestion/extraction paths do not enforce it before work, and the monthly comparison uses total ledger spend rather than a calendar window. Extraction sends raw text before later fact redaction, accepts unvalidated parsed structures and treats malformed JSON as an empty successful extraction.
+
+Evidence: [all_techniques/21_cross_session_memory/cross_session_memory.ipynb:184-279](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/6e8fb023235e3f3ecd2d2d122b94fa86a4bf9118/all_techniques/21_cross_session_memory/cross_session_memory.ipynb#L184-L279) · [all_techniques/21_cross_session_memory/cross_session_memory.ipynb:369-549](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/6e8fb023235e3f3ecd2d2d122b94fa86a4bf9118/all_techniques/21_cross_session_memory/cross_session_memory.ipynb#L369-L549) · [all_techniques/22_multi_agent_shared_memory/multi_agent_shared_memory.ipynb:235-389](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/6e8fb023235e3f3ecd2d2d122b94fa86a4bf9118/all_techniques/22_multi_agent_shared_memory/multi_agent_shared_memory.ipynb#L235-L389) · [all_techniques/22_multi_agent_shared_memory/multi_agent_shared_memory.ipynb:433-444](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/6e8fb023235e3f3ecd2d2d122b94fa86a4bf9118/all_techniques/22_multi_agent_shared_memory/multi_agent_shared_memory.ipynb#L433-L444) · [all_techniques/28_memory_evaluation/memory_evaluation.ipynb:390-608](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/6e8fb023235e3f3ecd2d2d122b94fa86a4bf9118/all_techniques/28_memory_evaluation/memory_evaluation.ipynb#L390-L608) · [all_techniques/30_production_memory_patterns/production_memory_patterns.ipynb:560-617](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/6e8fb023235e3f3ecd2d2d122b94fa86a4bf9118/all_techniques/30_production_memory_patterns/production_memory_patterns.ipynb#L560-L617) · [all_techniques/30_production_memory_patterns/production_memory_patterns.ipynb:812-902](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/6e8fb023235e3f3ecd2d2d122b94fa86a4bf9118/all_techniques/30_production_memory_patterns/production_memory_patterns.ipynb#L812-L902) · [all_techniques/30_production_memory_patterns/production_memory_patterns.ipynb:922-1030](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/6e8fb023235e3f3ecd2d2d122b94fa86a4bf9118/all_techniques/30_production_memory_patterns/production_memory_patterns.ipynb#L922-L1030) · [all_techniques/30_production_memory_patterns/production_memory_patterns.ipynb:1427-1487](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/6e8fb023235e3f3ecd2d2d122b94fa86a4bf9118/all_techniques/30_production_memory_patterns/production_memory_patterns.ipynb#L1427-L1487).
+
+**Harness consequence:** Use these notebooks as educational fixture ideas, not deployable memory infrastructure. Require authenticated tenant-scoped queries, immutable provenance, mandatory compare-and-swap revisions, preserved raw history, explicit extraction failure, pre-dispatch cost reservations and validated judge output. Evaluation receipts must report examined pairs, missing judgments and zero-case coverage separately from quality scores; redaction and data-egress permission must precede model calls.
+
+**Scope and limits:** Static selected implementation cells from four notebooks (21, 22, 28 and 30) within the 33-path comparison, with original notebook JSON line ranges retained. Other techniques and notebook execution order were not fully audited. No notebook, dependency installer, model call or embedded output was executed or treated as fresh validation.
+
+## Change review - 2026-11-01
+
+Reviewed `f0b663472899e58568bf3e71b51ac4f2672dd669` against `6e8fb023235e3f3ecd2d2d122b94fa86a4bf9118` (40 changed paths). The selected [compaction notebook](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/f0b663472899e58568bf3e71b51ac4f2672dd669/all_techniques/15_memory_compaction/memory_compaction.ipynb) repairs separated method cells by assigning functions to classes, centralizes the default model, and retains sequential raw-text, key-point, summary and tag stages. Retrieval can fall back to the current level when the requested level is absent. Character totals are storage estimates, not tokenizer measurements; JSON tag parsing is not a validated domain schema. The inspected cells have empty outputs and no execution count.
+
+**Harness consequence:** Store compaction lineage and the actual delivered level, keep source recovery possible, and validate model-produced structure before admitting memory. Compare query quality and token cost across levels; a notebook's model-name change does not establish availability, price or improved retrieval. The [validation workflow](https://github.com/NirDiamant/Agent_Memory_Techniques/blob/f0b663472899e58568bf3e71b51ac4f2672dd669/.github/workflows/validate.yml) adds a smoke-test dependency, not evidence that these model calls succeeded.
+
+**Scope and limits:** Selected notebook repair and workflow delta only; other notebooks were not audited or executed. This remains research guidance rather than a production memory implementation.

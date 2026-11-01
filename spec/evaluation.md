@@ -54,6 +54,15 @@ Use paired tasks and repeated seeds/runs where stochasticity matters. Report suc
 
 ## Workload suite
 
+The history experiment motivated by the
+[Delta article](https://delta.dev/blog/fine-grained-version-control-for-agents)
+([review](analyses/delta-fine-grained-version-control-2026-11-01.md)) must compare
+against event logs and isolated Git worktrees. Proposed checks cover cold replay,
+reconnect bytes, UI latency, storage growth, crash boundaries, reordered delivery
+and offline permission revocation. Verify combined-code semantics independently
+of history convergence. Keep those requirements separate from vendor claims and
+report actual workload, resource limits and unrun cases; no benchmark was run.
+
 | Slice | Examples | Primary metrics |
 |---|---|---|
 | Coding | Bug fix, multi-file feature, unfamiliar repo, dependency upgrade, flaky test diagnosis | Hidden-test pass, patch correctness, regressions, human edits, cost/task |
@@ -83,6 +92,32 @@ The [evaluation category](categories/ai-eval.md) includes individual reviews and
 [DSPy](https://github.com/stanfordnlp/dspy) ([review](projects/ai-agents--dspy.md)) explicitly defaults omitted validation data to training data. The harness must provide its own held-out discipline. [MetaHarness](https://github.com/SuperagenticAI/metaharness) ([review](projects/ai-agents--metaharness.md)) adds candidate diffs and scope checks; test isolation and evaluator authority remain harness responsibilities.
 
 ## Promotion gates
+
+### November 1 evidence refinements
+
+Require a valid completed trace before judging its answer. The
+[Addy Osmani skill review](projects/ai-skills--plan.addyosmani.md)
+([source](https://github.com/addyosmani/agent-skills)) checks terminal and tool-pair
+structure; the [Leanrea review](analyses/unreviewed/ai-skills--security-reverse.learnrea.md)
+([source](https://github.com/aicodeking/leanrea)) demonstrates a different limit:
+answer-keyword hits can be recorded alongside cost and latency without proving
+correct reverse engineering. Source links and exact inspected scopes in the
+reports govern these comparisons; no upstream benchmark was executed.
+
+Keep raw findings alongside evidence-backed adjustments.
+[Ontos](https://github.com/TechsioCZ/ontos)
+([review](projects/ai-spec--techsio.ontos.md)) binds modeled dependency usage to
+declaration positions and owning manifests while preserving native counts.
+[RTK](https://github.com/rtk-ai/rtk)
+([review](projects/ai-agents-proxy--rtk.md)) reinforces a common-window denominator
+for savings. Cost savings, structural matches and reduced finding counts are
+separate from successful task outcomes.
+
+The [source-refresh evidence](analyses/research-refresh-evidence-2026-11-01.md)
+also distinguishes source bytes from redacted diagnostic presentation. URL
+canonicalization can alter a literal; verify the original committed object
+before making a literal-dependent defect claim. Hash-verified capture establishes
+the identity of the captured representation, not byte equivalence to its source.
 
 A proposed initial promotion policy: no new security/isolation failures; no statistically or operationally material regression in a required workload slice; a predeclared quality or efficiency gain; bounded worst-case cost; and an available rollback artifact. Set actual statistical margins/sample sizes from baseline variance and risk, rather than pretending one arbitrary pass percentage is universal.
 

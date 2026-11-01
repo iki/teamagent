@@ -39,6 +39,16 @@ Evidence: [book_to_skill/utils.py:1108-1189](https://github.com/virgiliojr94/boo
 
 **Scope and limits:** Static review of selected extraction/resume/parser changes and related fixtures within the 43-path comparison. Not a complete review of chapter detection, the sanitizer implementation, dependency installation, PDF Inspector integration or all converters; no source code, extraction job or upstream tests executed.
 
+## Change review — 2026-11-01
+
+**BOM-aware EPUB decoding preserves chapter order across UTF-16 package and content files.** Reviewed `7540eefbe74933f5fc84c86becac52486b347778` (commit date `2026-10-28T09:26:03-04:00`) against `fece258123879acf4ac6535dc4986b32e13df0c9`. The two-path delta introduces a shared decoder for container, package and chapter bytes, including chapter counting. It recognizes UTF-16 LE/BE byte-order marks and explicitly excludes the overlapping UTF-32 LE mark; other inputs keep the UTF-8 replacement path. Both decoders use replacement on errors, so successful extraction is still potentially lossy.
+
+The added synthetic fixtures exercise UTF-16 in each XML role, non-ASCII chapter text, package spine order/counts, a decoy OPF to expose failed container lookup, unchanged UTF-8 and UTF-32 exclusion. A subprocess fixture specifies a dependency-free CLI extraction and checks its text and source metadata; its presence is not evidence that it ran here. Evidence: [book_to_skill/parsers/epub.py:29-44](https://github.com/virgiliojr94/book-to-skill/blob/7540eefbe74933f5fc84c86becac52486b347778/book_to_skill/parsers/epub.py#L29-L44), [book_to_skill/parsers/epub.py:95-201](https://github.com/virgiliojr94/book-to-skill/blob/7540eefbe74933f5fc84c86becac52486b347778/book_to_skill/parsers/epub.py#L95-L201) and [tests/test_epub_utf16.py:1-128](https://github.com/virgiliojr94/book-to-skill/blob/7540eefbe74933f5fc84c86becac52486b347778/tests/test_epub_utf16.py#L1-L128).
+
+**Harness consequence:** Retain byte-level encoding provenance, original assets and a decoding-loss signal alongside extracted text and reading order. Test misleading package candidates rather than letting a permissive fallback accidentally satisfy a fixture. This decoding fix supplies no archive expansion or input-allocation bound.
+
+**Scope and limits:** Complete parser/test delta read statically. No EPUB, optional parser, installer or subprocess fixture was executed; broader ZIP/parser safety and malformed unmarked encodings remain outside this review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [book-to-skill](https://github.com/virgiliojr94/book-to-skill); analyzed commit `fece258123879acf4ac6535dc4986b32e13df0c9`; commit date 2026-10-27T10:53:55-04:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--book-to-skill.md).
+Analysis metadata: source [book-to-skill](https://github.com/virgiliojr94/book-to-skill); analyzed commit `7540eefbe74933f5fc84c86becac52486b347778`; commit date 2026-10-28T09:26:03-04:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-query--book-to-skill.md).
 <!-- teamagent-analysis:end -->

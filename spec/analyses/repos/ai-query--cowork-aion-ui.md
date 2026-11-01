@@ -2,11 +2,11 @@
 
 Source: [cowork-aion-ui](https://github.com/iOfficeAI/AionUi) · [Analysis](../../projects/ai-query--cowork-aion-ui.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `11cd2a9a20d1e033157636efc570b41384c66d85`; commit date: 2026-10-23T14:21:49Z; review date: 2026-10-28T08:26:04.502Z; observed SHA: `11cd2a9a20d1e033157636efc570b41384c66d85`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `11cd2a9a20d1e033157636efc570b41384c66d85`; commit date: 2026-10-23T14:21:49Z; review date: 2026-10-28T08:26:04.502Z; observed SHA: `11cd2a9a20d1e033157636efc570b41384c66d85`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/iOfficeAI/AionUi/compare/11cd2a9a20d1e033157636efc570b41384c66d85...11cd2a9a20d1e033157636efc570b41384c66d85). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

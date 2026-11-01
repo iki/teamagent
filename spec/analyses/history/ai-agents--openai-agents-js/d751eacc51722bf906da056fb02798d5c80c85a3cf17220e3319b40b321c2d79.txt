@@ -1,0 +1,49 @@
+# openai-agents-js
+
+Source: [openai-agents-js](https://github.com/openai/openai-agents-js) · Category: [ai-agents](../categories/ai-agents.md)
+
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `96aa754b69282fef3bf8be2f15897985400ee0a6`; commit timestamp `2026-10-02T11:29:53-07:00`; 1,682 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/openai/openai-agents-js/blob/96aa754b69282fef3bf8be2f15897985400ee0a6/README.md)):
+
+> The OpenAI Agents SDK is a lightweight yet powerful framework for building multi-agent workflows in JavaScript/TypeScript. It is provider-agnostic, supporting OpenAI APIs and more. 1. **Agents**: LLMs configured with instructions, tools, guardrails, and handoffs
+
+Build/package evidence: [docs/package.json](https://github.com/openai/openai-agents-js/blob/96aa754b69282fef3bf8be2f15897985400ee0a6/docs/package.json); [examples/agent-patterns/package.json](https://github.com/openai/openai-agents-js/blob/96aa754b69282fef3bf8be2f15897985400ee0a6/examples/agent-patterns/package.json); [examples/ai-sdk-ui/package.json](https://github.com/openai/openai-agents-js/blob/96aa754b69282fef3bf8be2f15897985400ee0a6/examples/ai-sdk-ui/package.json); [examples/ai-sdk/package.json](https://github.com/openai/openai-agents-js/blob/96aa754b69282fef3bf8be2f15897985400ee0a6/examples/ai-sdk/package.json); [examples/basic/package.json](https://github.com/openai/openai-agents-js/blob/96aa754b69282fef3bf8be2f15897985400ee0a6/examples/basic/package.json)
+
+License evidence: [LICENSE](https://github.com/openai/openai-agents-js/blob/96aa754b69282fef3bf8be2f15897985400ee0a6/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped update review
+
+Reviewed commit `be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570` (commit date `2026-10-21T13:19:06-07:00`). The original snapshot above remains historical evidence.
+
+**Scope:** MCP-to-function-tool conversion, function-tool timeout implementation and complete mcp.ts/tool.ts deltas; underlying MCP shim pagination, runner, providers and tests were not audited.
+
+The [MCP converter](https://github.com/openai/openai-agents-js/blob/be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570/packages/agents-core/src/mcp.ts#L1207-L1315) preserves raw server/tool identity separately from the display name, snapshots guardrail arrays and forwards a supplied abort signal. Structured content replaces the visible result only when the response is not marked as an error; custom data retains per-call argument/result provenance. Those are useful adapter distinctions, but argument JSON parsing, metadata forwarding and result-shape assumptions still need a typed host boundary and confidential-data policy.
+
+[Schema conversion](https://github.com/openai/openai-agents-js/blob/be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570/packages/agents-core/src/mcp.ts#L1334-L1395) can warn and fall back to non-strict mode when strict conversion fails, except for the explicitly handled depth-error path. Model-facing strictness is therefore not a guarantee of semantic validation or authorization. The reviewed delta documents a default limit of sixty-four listing pages, but its underlying shim implementation was not inspected; this review does not verify pagination enforcement. Computer safety callback wording likewise describes only model-reported pending checks, not a universal host action gate.
+
+The [tool timeout](https://github.com/openai/openai-agents-js/blob/be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570/packages/agents-core/src/tool.ts#L2104-L2218) races execution with a timer and aborts the combined signal, then clears listeners. It does not await the underlying invocation's eventual settlement after timeout, and its optional error formatter can itself remain pending. Teamagent must distinguish a timeout response from cancelled external work, retain operation identity for reconciliation and fence late effects. Output validation is optional, so an absent output schema cannot certify tool results. No SDK test, provider request or upstream code was executed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `9b33d73a3ad696f0c43689d1428e901bfdc37fa0` against prior analyzed commit `be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570`. Historical reviews above remain separate evidence.
+
+The [mount credential validator](https://github.com/openai/openai-agents-js/blob/9b33d73a3ad696f0c43689d1428e901bfdc37fa0/packages/agents-core/src/sandbox/mountSecurity.ts) now models unresolved environment references explicitly during a pre-resolution pass. When requested, it preserves their presence with a sentinel and defers pair-completeness checks involving unresolved names instead of treating missing resolved values as empty credentials. Already resolved pairs retain their validation path.
+
+The selected [sandbox-runner fixture](https://github.com/openai/openai-agents-js/blob/9b33d73a3ad696f0c43689d1428e901bfdc37fa0/packages/agents-core/test/sandboxRunner.test.ts) asserts that direct-client normalization permits a deferred reference resolving to an empty value; adjacent inspected fixtures restore trusted path grants before client-owned resume. These are different phases, not evidence that pending credentials or persisted grants are trusted execution authority. Teamagent should keep unresolved, absent and resolved states distinct and bind the final validation to the actual resolved environment and current owner before mount execution. The complete resolver/resume lifecycle was outside this scope.
+
+**Coverage:** Read the complete 151-line mountSecurity delta and targeted runner-test slice around deferred normalization and trusted-grant resume. Other runtime/serialization/materialization changes were not fully audited; no Docker or cloud mount was used. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.

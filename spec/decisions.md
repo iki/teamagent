@@ -87,6 +87,18 @@ These catalog associations provide navigation to scoped source reviews. Each rep
 - [awesome-jev-live](analyses/unreviewed/ai-info--awesome-jev-live.md)
 - [best-of-agent-harnesses](analyses/unreviewed/ai-info--best-of-agent-harnesses.md)
 
+## Source refresh: 2026-11-01 — decision semantics and admission
+
+[ADK Go](https://github.com/google/adk-go) ([review](projects/ai-agents--adk-go.md)) adds a typed Jev adapter with answer-label validation, bounded response reads and returned model identity. Its individual probability range checks do not establish a normalized distribution or calibration. [ADK Python](https://github.com/google/adk-python) ([review](projects/ai-agents--adk-python.md)) preserves refusal as a distinct answer and rejects it at a routing node. [Switchyard](https://github.com/NVIDIA-NeMo/Switchyard) ([review](projects/ai-agents-proxy--switchyard.md)) distinguishes the scored proposition, selected choice, confidence and application cutoff. Version all four with model/schema/context identity; refusal and unknown must not silently become a negative label or an allowed default route.
+
+Hard eligibility precedes both ranking and any upload. Generated SDK types and model preferences can still permit external fallback, as the [OpenRouter TypeScript SDK review](projects/ai-agents-proxy--openrouter-typescript-sdk.md) ([source](https://github.com/OpenRouterTeam/typescript-sdk)) illustrates. Apply current account, operation, host, training-data, cost and capability evidence before shortlist construction and again at execution. An override, fallback, cached choice or high confidence must not bypass that gate. Keep policy exclusions visible in passive plans; authenticated diagnostics and allocation-bearing probes are separate operations.
+
+Scoring must retain its meaning. [Xerj](https://github.com/xerj-org/xerj) ([review](analyses/unreviewed/ai-agents-mem--xerj.md)) improves CJK lexical reranking while its fixture deliberately holds candidates fixed; that establishes neither first-stage recall nor calibrated semantic probability. [GitNexus](https://github.com/abhigyanpatwari/GitNexus) ([review](projects/ai-agents-mem--gitnexus.md)) preserves missing observation and incomplete coverage, and [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) ([review](projects/ai-agents--anything-llm.md)) motivates filtering before top-k rather than spending rank slots on ineligible entries. Preserve zero, missing, refused, unavailable and truncated states through metrics and UI.
+
+Action verification must use a new observation without manufacturing authority. [Lightpanda](https://github.com/lightpanda-io/browser) ([review](projects/ai-query--lightpanda-browser.md)) combines consent-wall and control classification, then rereads the page after bounded model-driven clicks. Its accept default and separately unbounded selector replay must not become Teamagent policy. User consent, replay identity and execution limits remain deterministic; classifier confidence and a vanished banner prove neither authorization nor acceptance of the intended legal/data terms.
+
+Evolution must freeze the evaluation rule with its evidence. [Reef](https://github.com/Human-Agent-Society/reef) ([review](projects/ai-agents-mem--reef.md)) treats failed repeats differently for paired wins, independent means, floors and no-evaluation selection. Report the admitted/dropped population and failure rate beside the score. These are source-grounded requirements, not newly implemented routers, independently reproduced upstream results or authorization to change an active default.
+
 <!-- coverage:start -->
 ## Project coverage
 
@@ -205,3 +217,9 @@ The [Paseo review](projects/ai-agents--paseo.md) ([source](https://github.com/ge
 [Contextrie](https://github.com/feuersteiner/contextrie) ([review](projects/ai-agents-mem--xx-2604-contextrie.md)) validates score shape but does not establish calibration. Its composed text omits a returned selected-source manifest. A Jev-like router should rank only authorized candidates, preserve the input/output evidence versions, abstain when evidence is missing and be evaluated on held-out decisions. Prompt instructions about tightness are not an enforced inference budget.
 
 [LangWatch](https://github.com/langwatch/langwatch) ([review](projects/ai-eval--langwatch.md)) separates evaluator execution from cost-row deduplication. Judge/evaluation scheduling must account for repeated provider effects even when local billing receipts are unique. [Orca](https://github.com/stablyai/orca) ([review](projects/ai-agents-swarm--orca.md)) likewise shows that permission-handler cancellation and session cancellation can have different owners. Deterministic authorization, receipt reconciliation and resource settlement remain outside model ranking.
+
+### Additional scoped reviews from November 1
+
+These newly reviewed sources complement the themes above. Each report states its selected source scope and limitations; listing it does not imply runtime integration or comparative quality.
+
+- [building-a-coding-agent-from-scratch-course](https://github.com/decodingai-magazine/building-a-coding-agent-from-scratch-course) ([scoped report](analyses/unreviewed/ai-info--building-a-coding-agent-from-scratch-course.md)).

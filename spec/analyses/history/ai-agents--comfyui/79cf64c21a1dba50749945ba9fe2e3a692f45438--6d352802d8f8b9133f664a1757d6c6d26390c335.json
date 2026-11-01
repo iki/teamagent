@@ -1,0 +1,290 @@
+{
+  "id": "ai-agents--comfyui",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/comfy-org/comfyui",
+  "report": "spec/projects/ai-agents--comfyui.md",
+  "analyzedSha": "79cf64c21a1dba50749945ba9fe2e3a692f45438",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T00:43:04-07:00",
+  "observedSha": "6d352802d8f8b9133f664a1757d6c6d26390c335",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "6d352802d8f8b9133f664a1757d6c6d26390c335",
+      "date": "2026-10-31T23:00:10-04:00",
+      "subject": "Support prores and using different chroma subsampling for video saving. (#17463)"
+    },
+    {
+      "sha": "0698f6d7c24ce1790c5e48f42eff3023d92cd4f3",
+      "date": "2026-10-31T17:00:16-07:00",
+      "subject": "Return execution_meta in the job detail (#17397)"
+    },
+    {
+      "sha": "0dbfd493b4cc604db743c699f0f7ce01348e54a4",
+      "date": "2026-10-31T10:46:38-07:00",
+      "subject": "Stop paging GitHub releases at the first prerelease (#17434)"
+    },
+    {
+      "sha": "7c4390a6f70cd8eb41014d6af52969397a752fc4",
+      "date": "2026-10-31T12:32:07+04:00",
+      "subject": "[Partner Nodes] feat(MiniMax): add H3 Max Recast, Extend, Reframe, Insert, Lip Sync and Camera Control nodes (#17424)"
+    },
+    {
+      "sha": "6ea48ffc21d2a0c9be0df79f08d72b4ecf2d678f",
+      "date": "2026-10-31T10:14:16+08:00",
+      "subject": "[Partner Nodes] feat(Pruna): add P-Video Upscale node (#17443)"
+    },
+    {
+      "sha": "fbca05a62e23c1b08b6e77f408db2742127a9929",
+      "date": "2026-10-30T21:05:40-04:00",
+      "subject": "Add a node to set the VAE compute dtype. (#17450)"
+    },
+    {
+      "sha": "b5a432157de6b8884f81104cd02926adf4d597e4",
+      "date": "2026-10-29T21:31:46-04:00",
+      "subject": "Don't call torch.equal when the two tensors are the same. (#17439)"
+    },
+    {
+      "sha": "8c4f1f240426eb3ffad9791cad52bd9890e9833d",
+      "date": "2026-10-29T20:42:17-04:00",
+      "subject": "[Partner Nodes] feat(Ideogram): add context window region editing to Ideogram 4.5 Precise Edit (#17428)"
+    },
+    {
+      "sha": "6651247a8b50cefd1436c834f704bdf7767722e9",
+      "date": "2026-10-29T20:08:57-04:00",
+      "subject": "Support context windows for MiniMax-H3 (#17425)"
+    },
+    {
+      "sha": "ad14690578989818a57d476f06306b10dbbedf46",
+      "date": "2026-10-29T20:02:21-04:00",
+      "subject": "chore: update workflow templates to v0.11.100 (#17432)"
+    },
+    {
+      "sha": "fd7639f477050e5c25b68fc38a9c2a6b6d988211",
+      "date": "2026-10-29T15:50:57+04:00",
+      "subject": "[Partner Nodes] feat(WaveSpeed): move FlashVSR and image upscale nodes to Comfy Router (#17319)"
+    },
+    {
+      "sha": "0df1646a9cd71d4c990a87014fb37797a2956ead",
+      "date": "2026-10-28T19:46:26-04:00",
+      "subject": "Support MiniMax Sol-H3-VAE  (#17411)"
+    },
+    {
+      "sha": "e6354106fa0761ea1f40773b9971985dbe51421a",
+      "date": "2026-10-28T18:54:41-04:00",
+      "subject": "Fix empty concat in more conds. (#17414)"
+    },
+    {
+      "sha": "35060f0156181ae78a86b10f098f67ce8e83697f",
+      "date": "2026-10-28T13:05:56-07:00",
+      "subject": "Support MiniMax-H3 latent upscaler model (#17412)"
+    },
+    {
+      "sha": "c7bd15c28213348d72042ba0675747f1ebbed95f",
+      "date": "2026-10-28T20:15:18+04:00",
+      "subject": "[Partner Nodes] feat(BFL): add 1080p, 2K and 4K targets to Flux Video Upscale V2 node (#17394)"
+    },
+    {
+      "sha": "4845e7a3ffc48a6961f15824239e9042cc7d4ad1",
+      "date": "2026-10-28T10:31:29-04:00",
+      "subject": "Skip concat if only a single cond. (#17413)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "app/frontend_management.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy/conds.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy/context_windows.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "comfy/ldm/minimax/latent_upscaler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy/ldm/minimax/vae.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy/model_base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy/sd.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_api/latest/_input/video_types.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_api/latest/_input_impl/video_types.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_api/latest/_util/video_types.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_api_nodes/apis/ideogram.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_api_nodes/apis/minimax.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_api_nodes/apis/pruna.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_api_nodes/apis/wavespeed.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_api_nodes/nodes_bfl.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_api_nodes/nodes_ideogram.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_api_nodes/nodes_minimax.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_api_nodes/nodes_pruna.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_api_nodes/nodes_wavespeed.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_api_nodes/util/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_api_nodes/util/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_execution/asset_enrichment.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_execution/jobs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_extras/nodes_context_windows.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_extras/nodes_hunyuan.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_extras/nodes_minimax_h3.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_extras/nodes_model_advanced.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_extras/nodes_multigpu.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "comfy_extras/nodes_video.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests-unit/app_test/frontend_manager_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests-unit/comfy_api_test/video_accumulation_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests-unit/comfy_api_test/video_bit_depth_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests-unit/execution_test/test_enrich_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/execution/test_execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/execution/test_jobs.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

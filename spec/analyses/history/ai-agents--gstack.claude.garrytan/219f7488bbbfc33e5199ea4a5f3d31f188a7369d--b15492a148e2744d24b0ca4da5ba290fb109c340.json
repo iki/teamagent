@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--gstack.claude.garrytan",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/garrytan/gstack",
+  "report": "spec/projects/ai-agents--gstack.claude.garrytan.md",
+  "analyzedSha": "219f7488bbbfc33e5199ea4a5f3d31f188a7369d",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T09:59:40Z",
+  "observedSha": "b15492a148e2744d24b0ca4da5ba290fb109c340",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "b15492a148e2744d24b0ca4da5ba290fb109c340",
+      "date": "2026-11-01T09:52:31Z",
+      "subject": "v1.92.23.0 feat(harness): opt-in start hook for OpenClaw and Hermes, so agents run a skill's start command (GST-718) (#3786)"
+    },
+    {
+      "sha": "e4e4e42967c3bde658ec3a42df62f37e69ca0f1a",
+      "date": "2026-11-01T09:35:42Z",
+      "subject": "v1.92.22.0 feat: Gemini CLI host, and older installs drop the dev toolchain (#3778)"
+    },
+    {
+      "sha": "c03f185d15b40404dcccfcf7c01404616fd69352",
+      "date": "2026-11-01T09:19:25Z",
+      "subject": "v1.92.21.0 ci: blobless clones on the PR and train path, fail-loud history reads (GSTA-203 PR 5) (#3713)"
+    },
+    {
+      "sha": "fd5fcb4318844ad103ab4c0340dac1562197fa35",
+      "date": "2026-11-01T08:12:16Z",
+      "subject": "v1.92.20.0 /retro global counts Kimi Code, OMP and Antigravity sessions (#3740)"
+    },
+    {
+      "sha": "dcc1c51bfcfacc16efe0bdbc352970db5b84c9c2",
+      "date": "2026-11-01T07:56:05Z",
+      "subject": "v1.92.19.0 Skip the Aside probe off macOS so Linux and Windows render through gstack's own browser (#2864) (#3734)"
+    },
+    {
+      "sha": "93d73bf755da71a16a942f47e626fcbe8cbfdb07",
+      "date": "2026-11-01T07:41:10Z",
+      "subject": "v1.92.18.0 fix(install): --project resolves to its git toplevel and refuses a repo slug (GST-743) (#3783)"
+    },
+    {
+      "sha": "3f1741ddb4bcebb068dade65277f64b884fce94e",
+      "date": "2026-11-01T07:28:08Z",
+      "subject": "v1.92.17.0 fix(review): pass takes DIFF_BASE from the origin merge base (GST-716) (#3780)"
+    },
+    {
+      "sha": "b71009c36b32f809c9ad918bddc378d6a96bb82f",
+      "date": "2026-11-01T07:14:43Z",
+      "subject": "v1.92.16.0 fix: /ship stops re-running the review loop after base merges, test fixes and audit-requested doc fixes (#3684)"
+    },
+    {
+      "sha": "8695938e7464ebfb8e4b26da324b23dc1598b439",
+      "date": "2026-11-01T06:11:17Z",
+      "subject": "v1.92.15.0 feat: plan reviews check facts and keep one task list; /office-hours hands its wireframe to design review (#340, #513, #973, #1048, #1791) (#3775)"
+    },
+    {
+      "sha": "482ffd1440ab13d105bfd3e571be3d7a0a7bb99a",
+      "date": "2026-11-01T05:57:18Z",
+      "subject": "v1.92.14.0 feat: a .gstack-project file makes a nested repo or umbrella folder its own project (#2649, #1923) (#3777)"
+    },
+    {
+      "sha": "066ceb084a7263f77f1f35e40b880c9d2be9477f",
+      "date": "2026-11-01T05:41:50Z",
+      "subject": "v1.92.13.0 fix: /ship's preflight skips git merge when the base is already in HEAD (GST-691) (#3774)"
+    },
+    {
+      "sha": "44fb9376e4af0dd42f3ca7e01a3ac95fb89e5803",
+      "date": "2026-11-01T05:29:22Z",
+      "subject": "v1.92.12.0 feat: wave PRs land 3 to 6 queued PRs as one train slot (gstack-ship-queue wave) (GST-574) (#3772)"
+    },
+    {
+      "sha": "71acd83aa68fd8fd45b09ab4d63098b63d04cc16",
+      "date": "2026-11-01T05:17:06Z",
+      "subject": "v1.92.11.0 feat: design mockups with Gemini when there's no OpenAI key (#990) (#3768)"
+    },
+    {
+      "sha": "3f79d816730e8cd3633f31dc20351c0501ad958e",
+      "date": "2026-11-01T02:21:49Z",
+      "subject": "v1.92.10.0 fix: /ship's scoped review pass runs again and reads the fix range (GST-619) (#3766)"
+    },
+    {
+      "sha": "510dd07d6b9fd063ab2c8795cdbf8f4a44c8c935",
+      "date": "2026-11-01T02:06:25Z",
+      "subject": "v1.92.9.0 fix: /freeze checks where an edit really lands, so new-folder paths can't escape it (#3623) (#3758)"
+    },
+    {
+      "sha": "64fb6ecaf8f3a6022a39a52c68b215fc4cbe1e16",
+      "date": "2026-11-01T01:50:36Z",
+      "subject": "v1.92.8.0 fix(redact): env.kv reads Python, Dart and JSX source syntax as code (#3630) (#3742)"
+    },
+    {
+      "sha": "5b7b0950b80180ff9eee1fc424efffe27ebacf59",
+      "date": "2026-11-01T01:38:04Z",
+      "subject": "v1.92.7.0 fix: /ship's review pass works on large diffs again (GST-507) (#3736)"
+    },
+    {
+      "sha": "ed107918db445ce474f4cbab41f648e958c47639",
+      "date": "2026-11-01T01:25:15Z",
+      "subject": "v1.92.6.0 feat: proactive core routes only the four core skills, and they carry their trigger phrases (#3770)"
+    },
+    {
+      "sha": "b95de2254e452da11a78d32b86e02fad54491ebf",
+      "date": "2026-11-01T00:29:06Z",
+      "subject": "v1.92.5.0 fix(upgrade): refuse an install whose enclosing project tracks its files (#1022) (#3750)"
+    },
+    {
+      "sha": "7f815411f3d927ad54ef2f875f6e9bd58bd07a54",
+      "date": "2026-11-01T00:12:59Z",
+      "subject": "v1.92.4.0 ship-policy: merge trains carry up to 5 READY PRs (train.max_size 3 -> 5) (#3731)"
+    },
+    {
+      "sha": "d9182b6250a06b7a5081cb1850088df8301ce5af",
+      "date": "2026-10-31T23:55:37Z",
+      "subject": "v1.92.3.0 fix(redact): env.kv catches a credential on a diff line (GST-543) (#3726)"
+    },
+    {
+      "sha": "4eff47c5cf8464c1537194817ffa8984139d3ca0",
+      "date": "2026-10-31T22:41:36Z",
+      "subject": "v1.92.2.0 evals: no-gstack arms for the model panel, arm-benchmark, safety and routing evals (#3708)"
+    },
+    {
+      "sha": "ca7bd684b158f51dc26b778901e381e63a2d5fd3",
+      "date": "2026-10-31T22:10:26Z",
+      "subject": "ci(free-tests): run the free suite on ubicloud-standard-4 (week-1 revert rule for #3617) (#3710)"
+    },
+    {
+      "sha": "92a9350a323dead0a267e7f018312694a708a184",
+      "date": "2026-10-31T21:46:33Z",
+      "subject": "v1.92.0.0 ship-queue: merge trains for any repo (train gates, every prefix gated, direct/update land, train init/doctor) (GSTA-157 PR 2) (#3692)"
+    },
+    {
+      "sha": "2d1b55d7621df1a71e02037c79b63b7ee2fdc64f",
+      "date": "2026-10-31T18:42:54Z",
+      "subject": "v1.91.379.0 fix: review readers work in the checkout /ship ships (GST-482) (#3701)"
+    },
+    {
+      "sha": "3bfe5667fb02a45378fa930d5f498a48d9764155",
+      "date": "2026-10-31T18:12:53Z",
+      "subject": "v1.91.378.0 fix(cso): pin scout-sbom-indexer source to 1.24.0, refuse floating source tags (GST-495) (#3699)"
+    },
+    {
+      "sha": "c830c9b8bafaf2a2327f6ef4cd3a133ad5939731",
+      "date": "2026-10-31T17:58:20Z",
+      "subject": "v1.91.377.0 pregate: clear the remote gate with verified Actions runs on the same tree (clear --run) (#3592)"
+    },
+    {
+      "sha": "5ba425af4b9a6734317d43b6ea9b4077d08ff1af",
+      "date": "2026-10-31T17:05:40Z",
+      "subject": "v1.91.376.0 feat(ubicloud): reattach to a live verify VM and checkpoint tiers (GSTA-158 P3) (#3615)"
+    },
+    {
+      "sha": "7d4e71bd940a9611ffc7020a4128403952c77af9",
+      "date": "2026-10-31T16:50:03Z",
+      "subject": "v1.91.375.0 captain: stop a finished /ship subagent at READY once its parent subscribes to the PR (#3597)"
+    },
+    {
+      "sha": "1b46f375df8812a4b34e17c1b6e031b637541eee",
+      "date": "2026-10-31T16:31:27Z",
+      "subject": "v1.91.374.0 ship: pause /ship on a red base instead of failing (gstack-base-red, conditional receipts) (GSTA-157 PR 1) (#3611)"
+    },
+    {
+      "sha": "0cd2b4a9f9445c5ef3ac715b996ab67ff75f9833",
+      "date": "2026-10-31T15:49:11Z",
+      "subject": "v1.91.373.0 feat(eval-plan): require a no-gstack arm in every head-to-head preregistration (#3690)"
+    },
+    {
+      "sha": "44eeeb3c9b8011f17a44cb234fdf052afef660f8",
+      "date": "2026-10-31T15:33:39Z",
+      "subject": "v1.91.372.0 feat(flaky): gstack-flaky reruns a failed test command once and ledgers the flake (GSTA-158 P1) (#3612)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/docker/Dockerfile.ci",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/dia-gui-readiness.c",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/dia-launch-driver.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/history-read.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/qualify-dia-macos.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/run-dia-native-qualification.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/evals-main-backstop.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/evals.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/free-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/native-qualification.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/version-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-free-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gstack/always-run.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gstack/pregate.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gstack/ship-policy.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BROWSER.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "TODOS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "VERSION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents-digest/gstack-AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/DRIVER.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/DRIVER.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark-models/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark-models/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/dev-setup",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-approvals",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-autoplan",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-base-red",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-capy-install",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-capy-session",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-checks",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-config",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-decision-trail",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-diff-scope",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-docs-candidate",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-doctor",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-doctor-check.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-doctor-components.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-eval-plan",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-evidence",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-factory-scorecard",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-ff-update",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-flaky",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-global-discover.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-harness",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-harness-ledger.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-harness-pid.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-hook-check",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-host-renders.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-install-registry.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-install-verdict.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-launch-probe.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-lease",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-model-benchmark",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-modules",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-office-hours-review",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-owner-brief",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-plan-reality",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-pregate",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-redact-prepush",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-repo-mode",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-review-dispatch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-review-log",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-review-plan",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-review-read",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-review-scope",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-session-update",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-ship-budget",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-ship-policy",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-ship-preflight",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-ship-queue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-ship-receipt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-ship-release",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-skill-start",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-slug",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-state-matrix",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-tasks",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-team-init",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-uninstall",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-upgrade",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-version-bump",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-wtree",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/bin/remote-slug",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/sections/command-list.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/src/commands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/src/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/src/cookie-import-browser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/src/terminal-agent-control.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/test/config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/test/cookie-auth-verification.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/test/cookie-credential-deadline.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/test/cookie-import-native-job.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/test/cookie-import-native.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/test/cookie-import-reliability.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/test/cookie-picker-ui.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "browse/test/dia-gui-readiness.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "browse/test/dia-launch-comparison.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "browse/test/dia-macos-qualification.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/test/path-security-realpath.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/test/playwright-core-patch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/test/process-liveness-windows.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "captain/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "captain/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "captain/templates/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "captain/templates/CREW.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "captain/templates/DIGEST.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "captain/templates/READY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "captain/templates/brief.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "captain/templates/merge-ask.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "captain/templates/merge-train-peer.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "captain/templates/plan-ask.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "captain/templates/report.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "captain/templates/slot-call.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "capy/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capy/skill/gstack/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capy/skill/gstack/captain.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "capy/skill/gstack/factory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "careful/bin/hook-extract.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design-consultation/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design-html/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design-html/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design-review/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design-shotgun/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "design/scripts/live-gemini-check.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/src/auth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/src/check.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/src/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/src/commands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/src/design-to-code.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/src/diff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/src/evolve.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/src/generate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/src/iterate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/src/memory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/src/models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "design/src/provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/src/receipted-fetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/src/session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/src/variants.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/test/cli-persistence.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "design/test/gemini-provider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "devex-review/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ADDING_A_HOST.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/CONTRIBUTOR_REFERENCE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/OPENCLAW.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

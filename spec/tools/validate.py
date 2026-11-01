@@ -7,6 +7,7 @@ import concurrent.futures
 import datetime
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -40,6 +41,7 @@ def git(repo: Path, *args: str) -> subprocess.CompletedProcess:
         ["git", "--no-replace-objects", "-c", "safe.directory=" + repo.as_posix(),
          "-c", "core.hooksPath=/dev/null", "-C", str(repo), *args],
         capture_output=True, timeout=30, env=git_environment(),
+        creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,
     )
 
 

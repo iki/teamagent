@@ -48,6 +48,16 @@ In [modules/analytics/browser/src/behavior/frame-bridge.ts](https://github.com/l
 
 **Teamagent implication:** Evaluation and UI worker bridges need runtime schemas, bounded work and attempt identity in addition to request IDs. Add fixtures for duplicate and reused IDs, late settlement after teardown, invalid messages and uncooperative executors; keep a cancellation signal distinct from proof that work has ceased.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `c7fad93329af25f82b1b1260ff8634cd5a070946` against prior analyzed commit `7aeb146c2b2ebe4e6d866177e365ceca44a5124b`. Historical reviews above remain separate evidence.
+
+The new [docs-key service](https://github.com/langwatch/langwatch/blob/c7fad93329af25f82b1b1260ff8634cd5a070946/modules/api-key/process/src/services/docs-session-key.service.ts) parses inputs, refuses impersonation/missing browser sessions and unregistered origins before minting, obtains effective project permissions, and creates a hidden system-managed key tied to its originating browser session. [Pure rules](https://github.com/langwatch/langwatch/blob/c7fad93329af25f82b1b1260ff8634cd5a070946/modules/api-key/process/src/rules/docs-session-key.rules.ts) restrict project-grantable permissions and choose the earliest of five minutes, browser expiry and the configured session ceiling; a missing session start explicitly omits that ceiling. Revocation targets only docs keys and supports idempotent session-scoped cleanup.
+
+The [unit fixtures](https://github.com/langwatch/langwatch/blob/c7fad93329af25f82b1b1260ff8634cd5a070946/modules/api-key/process/src/rules/__tests__/docs-session-key.rules.unit.test.ts) cover lifetime/permission rules. The [memory-backed integration fixtures](https://github.com/langwatch/langwatch/blob/c7fad93329af25f82b1b1260ff8634cd5a070946/modules/api-key/process/src/app/__tests__/docs-session-key.integration.test.ts) cover lookalike origins, no writes on refusal, different-session preservation, non-docs key preservation and the authorization engine's live-owner ceiling. The engine is invoked directly in that last fixture: it does not prove every deployed HTTP request rechecks live grants. Teamagent can adopt short-lived, one-project browser handoffs only with independently verified origin delivery, backend authorization, revocation and confidential storage; hiding a key from a list is not encryption.
+
+**Coverage:** Read all four complete targeted docs-key source/test additions. Browser transport, production persistence and request authentication middleware were not inspected. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [langwatch](https://github.com/langwatch/langwatch); analyzed commit `7aeb146c2b2ebe4e6d866177e365ceca44a5124b`; commit date 2026-10-28T11:19:16+01:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-eval--langwatch.md).
+Analysis metadata: source [langwatch](https://github.com/langwatch/langwatch); analyzed commit `c7fad93329af25f82b1b1260ff8634cd5a070946`; commit date 2026-11-01T05:41:04Z; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-eval--langwatch.md).
 <!-- teamagent-analysis:end -->

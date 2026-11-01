@@ -1,0 +1,595 @@
+{
+  "id": "ai-security--ghidra",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/NationalSecurityAgency/ghidra",
+  "report": "spec/projects/ai-security--ghidra.md",
+  "analyzedSha": "1b9e58a915cf867e106495eaa2a4b18eb4971c9d",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-27T05:11:25-04:00",
+  "observedSha": "4718f50d9941b9d7b7ebd1febc2982f055560a73",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "4718f50d9941b9d7b7ebd1febc2982f055560a73",
+      "date": "2026-10-30T11:27:06-04:00",
+      "subject": "Merge remote-tracking branch 'origin/patch'"
+    },
+    {
+      "sha": "1e919300c75cd9cf6843fe5be3cbffa79d99a075",
+      "date": "2026-10-30T11:03:51-04:00",
+      "subject": "GP-7286: Further increased max allowed compression for unpacking Ghidra DB file (gzf, gdt.gtz)"
+    },
+    {
+      "sha": "a104f676adfdf8554a599bb7b0e6b0e64b7dc305",
+      "date": "2026-10-30T11:00:25-04:00",
+      "subject": "GP-0: Excluding error_prone_annotations from gson"
+    },
+    {
+      "sha": "62ead3c98e102de2a7a1945b9d1213752dfdb0fd",
+      "date": "2026-10-30T05:00:21-04:00",
+      "subject": "Merge remote-tracking branch 'origin/patch'"
+    },
+    {
+      "sha": "3d407dec401e3a634d821b1ccb4ed7b981655efb",
+      "date": "2026-10-30T04:57:15-04:00",
+      "subject": "Merge remote-tracking branch 'origin/GP-7439-dragonmacher-batch-task-dialog-jumping-fix' into patch"
+    },
+    {
+      "sha": "e91c368e147e30104f70e1b27a560fb3a36f09f2",
+      "date": "2026-10-30T04:54:01-04:00",
+      "subject": "Merge remote-tracking branch 'origin/GP-7438_dragonmacher_PR-9993_lzandman_leon_fix-dialog-parent-fallback' (Closes #9963, Closes #9993)"
+    },
+    {
+      "sha": "67334d1542d012cda9b4fa7c36d2cf0493e8e494",
+      "date": "2026-10-29T18:42:11-04:00",
+      "subject": "GP7439 - Fixed batch import task dialog jumping"
+    },
+    {
+      "sha": "92cfb5553b508faaa197df2954c81abb84651635",
+      "date": "2026-10-29T14:37:40-04:00",
+      "subject": "GP-7382: Fixing compilation error caused by new \"Counter bytesAvailable\" parameter"
+    },
+    {
+      "sha": "6948eaa3dc3f60b17ffbf75b4e9b432334d329c6",
+      "date": "2026-10-29T14:28:52-04:00",
+      "subject": "GP-7382 - Updated the Paste Bytes command to be consistent in error reporting"
+    },
+    {
+      "sha": "d3ff159d95afbf77917eb66b1b8ae6c32cfc1f81",
+      "date": "2026-10-29T14:27:24-04:00",
+      "subject": "Merge remote-tracking branch 'origin/patch'"
+    },
+    {
+      "sha": "3ca5ba8bd591d8a8a6947479caa9c70cf102f8e9",
+      "date": "2026-10-29T14:25:33-04:00",
+      "subject": "Merge remote-tracking branch 'origin/GP-7429-dragonmacher-analysis-task-timing-fix--SQUASHED' into patch"
+    },
+    {
+      "sha": "21b771841e62c13216d9848d3362d86306f79f12",
+      "date": "2026-10-29T14:16:28-04:00",
+      "subject": "Merge remote-tracking branch 'origin/GP-7427-dragonmacher-copy-comments-fix--SQUASHED' (Closes #9812)"
+    },
+    {
+      "sha": "57df817cd74e244977ebaacbb6e813a201ea2eac",
+      "date": "2026-10-29T14:11:26-04:00",
+      "subject": "Merge branch 'GP-0_ryanmkurtz_PR-10054_b84330808_symbolpath-arrow-operator'"
+    },
+    {
+      "sha": "dd1a9ac9013e356e90f6d8bc44524ac4926df202",
+      "date": "2026-10-29T13:20:55-04:00",
+      "subject": "GP-7427 - Updated Comments copying to preserve newlines; added a truncation indicator to the Comments Field"
+    },
+    {
+      "sha": "501951214a313217be14461084d646b69efc4482",
+      "date": "2026-10-29T13:19:45-04:00",
+      "subject": "Fixed race condition that allowed 2 tasks threads to be running at once"
+    },
+    {
+      "sha": "bf04cced00a1041dcb9bc3bdf8a0e49839f5c1d4",
+      "date": "2026-10-29T12:44:21-04:00",
+      "subject": "Merge remote-tracking branch 'origin/GP-0-dragonmacher-test-fixes-10-29-26'"
+    },
+    {
+      "sha": "b52b1f649dbb9930071d2303a3fc8732f73b7920",
+      "date": "2026-10-29T12:41:41-04:00",
+      "subject": "test fixes"
+    },
+    {
+      "sha": "4f5cf7ffb38977fccd5eeb5e9523384ff264166f",
+      "date": "2026-10-29T12:13:05-04:00",
+      "subject": "Merge remote-tracking branch 'origin/GP-7411_ghidra007_RTTI_Analyzer_handle_dupe_classes' (#9747)"
+    },
+    {
+      "sha": "6bed26c590229dde4cca7ff5759dc49b5db19d47",
+      "date": "2026-10-29T11:12:57-04:00",
+      "subject": "Merge remote-tracking branch 'origin/patch'"
+    },
+    {
+      "sha": "23ef3bf7442bc2923dea18af294ce721ca54a513",
+      "date": "2026-10-29T11:04:07-04:00",
+      "subject": "GP-7437: Fixing BatchIimportDialog NPE"
+    },
+    {
+      "sha": "6751c9ad49e7b2dc52ba8bbe4cb586852ca29a1f",
+      "date": "2026-10-29T06:34:38-04:00",
+      "subject": "Merge remote-tracking branch 'origin/patch'"
+    },
+    {
+      "sha": "2ff68f9be1c726c84dfe07f48aea96b3d6259ae7",
+      "date": "2026-10-29T06:19:01-04:00",
+      "subject": "Merge branch 'GP-7436_ryanmkurtz_PR-9911_designonet_pr_one-shot-analysis-inputs' into patch (Closes #9911, Closes #10053)"
+    },
+    {
+      "sha": "688ffecba26c4c18a8161f68397b643512f20eb0",
+      "date": "2026-10-29T06:04:36-04:00",
+      "subject": "Release input address sets after one-shot analysis execution"
+    },
+    {
+      "sha": "96a3fc83e90b1aa0c2ffa97a00701699f2a7ceae",
+      "date": "2026-10-29T05:13:59-04:00",
+      "subject": "Merge remote-tracking branch 'origin/patch'"
+    },
+    {
+      "sha": "6ab37d997f88bbac697a4037d7bdf52b74a7602b",
+      "date": "2026-10-29T05:02:57-04:00",
+      "subject": "Merge remote-tracking branch 'origin/GP-7420_ryanmkurtz_asm-upgrade' into patch (Closes #9997)"
+    },
+    {
+      "sha": "59b0ad23fb9e1e790381d737ad36356d46e6407c",
+      "date": "2026-10-29T04:48:44-04:00",
+      "subject": "Merge remote-tracking branch 'origin/GP-7425-dragonmacher-bento-plugin-fix'"
+    },
+    {
+      "sha": "1b24e0bafe802ee6c27246a5aca56a3c30434d6d",
+      "date": "2026-10-28T20:21:37Z",
+      "subject": "GP-7411 updated RTTI analyzer to correctly handle duplicate classes and _ptr64 type descriptors."
+    },
+    {
+      "sha": "7f4a3f31cada2c347fa745c42afbe49d33fc5eeb",
+      "date": "2026-10-28T14:12:16-04:00",
+      "subject": "Merge remote-tracking branch 'origin/GP-7424_caheckman_MoreVectorExpressions' (Closes #9744, Closes #9755, Closes #9759, Closes #9762)"
+    },
+    {
+      "sha": "38c401627eb3fc5f622db72092126e2560fc8d02",
+      "date": "2026-10-28T14:09:02-04:00",
+      "subject": "GP-5653: Add button to toggle lower panel in breakpoints window."
+    },
+    {
+      "sha": "fcbdcb4eba113016644a18aef3b37cc4a53f87f1",
+      "date": "2026-10-29T00:55:49+09:00",
+      "subject": "Keep template namespaces before a terminal operator-> or operator->*"
+    },
+    {
+      "sha": "bcde2e066604285ce1a8daf5f6eedeb63677d240",
+      "date": "2026-10-28T08:36:25-04:00",
+      "subject": "Merge remote-tracking branch 'origin/GP-7402_dev747368_PR-9808_rudycelekli_candidate_string-parser-codepoints-20261011' (Closes #9808)"
+    },
+    {
+      "sha": "713252d3d0f2a560926b0a6f5d786a53ea4ca466",
+      "date": "2026-10-28T08:33:23-04:00",
+      "subject": "Merge remote-tracking branch 'origin/patch'"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts/TerminalGhidraScript.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Debug/Debugger-rmi-trace/src/main/java/ghidra/app/plugin/core/debug/gui/tracermi/launcher/AbstractTraceRmiLaunchOffer.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Debug/Debugger/certification.manifest",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Debug/Debugger/data/debugger.theme.properties",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Debug/Debugger/src/main/java/ghidra/app/plugin/core/debug/gui/breakpoint/DebuggerBreakpointsProvider.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Debug/Debugger/src/main/java/ghidra/app/plugin/core/debug/gui/listing/DebuggerListingProvider.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Debug/Debugger/src/main/java/ghidra/app/plugin/core/debug/gui/memory/DebuggerMemoryBytesProvider.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Debug/Debugger/src/main/java/ghidra/app/plugin/core/debug/gui/memview/DebuggerMemviewPlugin.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Debug/Debugger/src/main/java/ghidra/app/plugin/core/debug/gui/modules/DebuggerModulesProvider.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Ghidra/Debug/Debugger/src/main/resources/images/table-l.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Ghidra/Debug/Debugger/src/main/svg/table-l.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Debug/Framework-TraceModeling/src/main/java/ghidra/trace/database/address/DBTraceOverlaySpaceAdapter.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Debug/Framework-TraceModeling/src/test/java/ghidra/trace/database/ToyDBTraceBuilder.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Debug/ProposedUtils/src/main/java/ghidra/util/database/DBCachedObjectStoreFactory.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/plugin/core/analysis/OneShotAnalysisCommand.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/plugin/core/bento/BentoProvider.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/plugin/core/bento/BentoService.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/plugin/core/bento/BentoServicePlugin.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/plugin/core/clipboard/CodeBrowserClipboardProvider.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/plugin/core/codebrowser/hover/TruncatedTextListingHover.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/plugin/core/disassembler/AddressTableDialog.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/plugin/core/hover/AbstractReferenceHover.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/plugin/core/osgi/GhidraSourceBundle.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/util/ByteCopier.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/util/CodeUnitInfoTransferable.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/util/EolComments.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/util/bin/format/dwarf/DWARFDataTypeImporter.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/util/bin/format/pe/cli/CliMetadataRoot.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/util/viewer/field/CommentFieldMouseHandler.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/util/viewer/field/EolCommentFieldFactory.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/util/viewer/field/FunctionRepeatableCommentFieldMouseHandler.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/util/viewer/field/ListingField.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/app/util/viewer/field/VariableCommentFieldMouseHandler.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/plugins/importer/batch/BatchImportDialog.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/plugins/importer/batch/BatchInfo.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/main/java/ghidra/test/processors/support/PCodeTestAbstractControlBlock.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Base/src/test.slow/java/docking/widgets/dialogs/NumberRangeInputDialogTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Decompiler/certification.manifest",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Decompiler/src/decompile/cpp/coreaction.cc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Decompiler/src/decompile/cpp/coreaction.hh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/Decompiler/src/decompile/cpp/subflow.cc",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Ghidra/Features/Decompiler/src/decompile/datatests/laneleft.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Ghidra/Features/Decompiler/src/decompile/datatests/stackmatrix.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Ghidra/Features/Decompiler/src/decompile/datatests/zeroload.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Ghidra/Features/Decompiler/src/decompile/datatests/zerotop.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/FileFormats/Module.manifest",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/FileFormats/build.gradle",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/FileFormats/src/main/java/ghidra/file/formats/ext4/Ext4Extent.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/FileFormats/src/main/java/ghidra/file/formats/ext4/Ext4ExtentsHelper.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/FileFormats/src/main/java/ghidra/file/formats/ext4/NewExt4Analyzer.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/MicrosoftCodeAnalyzer/src/main/java/ghidra/app/cmd/data/CreateTypeDescriptorBackgroundCmd.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/MicrosoftCodeAnalyzer/src/main/java/ghidra/app/cmd/data/TypeDescriptorModel.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/MicrosoftCodeAnalyzer/src/main/java/ghidra/app/cmd/data/rtti/Rtti1Model.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/MicrosoftCodeAnalyzer/src/main/java/ghidra/app/cmd/data/rtti/Rtti4Model.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/MicrosoftDmang/src/main/java/mdemangler/MDMang.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/SystemEmulation/ghidra_scripts/DebuggerEmuExampleScript.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/SystemEmulation/ghidra_scripts/DemoSyscallLibrary.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Features/SystemEmulation/ghidra_scripts/StandAloneSyscallEmuExampleScript.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/Docking/src/main/java/docking/DockingWindowManager.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/Docking/src/main/java/docking/widgets/fieldpanel/field/AttributedString.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Ghidra/Framework/Docking/src/test.slow/java/docking/DialogParentFallbackTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/Emulation/src/main/java/ghidra/pcode/emu/EmulatorUtilities.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/FileSystem/src/main/java/ghidra/framework/store/local/ItemDeserializer.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/Generic/build.gradle",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/Generic/src/main/java/generic/text/TextLayoutGraphics.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/Project/src/main/java/ghidra/framework/plugintool/mgr/ToolTaskManager.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/Pty/src/main/java/ghidra/pty/windows/ConPtyChild.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/Pty/src/main/java/ghidra/pty/windows/Win32Err.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/SoftwareModeling/src/main/java/ghidra/app/util/SymbolPathParser.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/SoftwareModeling/src/main/java/ghidra/program/model/data/StringRenderParser.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/SoftwareModeling/src/main/java/ghidra/program/model/lang/ConstantPool.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/SoftwareModeling/src/main/java/ghidra/program/util/FunctionRepeatableCommentFieldLocation.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/SoftwareModeling/src/main/java/ghidra/program/util/VariableCommentFieldLocation.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/SoftwareModeling/src/main/java/ghidra/util/charset/CharsetInfoManager.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/SoftwareModeling/src/test/java/ghidra/program/model/data/DialogResourceDataTypeTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/SoftwareModeling/src/test/java/ghidra/program/model/data/StringDataTypeTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Framework/SoftwareModeling/src/test/java/ghidra/program/model/data/StringRenderBuilderTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Test/DebuggerIntegrationTest/src/screen/java/ghidraclass/debugger/screenshot/TutorialDebuggerScreenShots.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/AbstractRmiConnectorsTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Test/IntegrationTest/src/screen/java/help/screenshot/DefinedStringsPluginScreenShots.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Ghidra/Test/IntegrationTest/src/test.slow/java/ghidra/app/plugin/core/terminal/TerminalProviderTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "GhidraBuild/BuildFiles/Doclets/build.gradle",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

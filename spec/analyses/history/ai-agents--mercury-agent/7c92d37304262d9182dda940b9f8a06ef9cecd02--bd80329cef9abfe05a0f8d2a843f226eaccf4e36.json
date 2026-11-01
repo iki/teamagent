@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--mercury-agent",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/cosmicstack-labs/mercury-agent",
+  "report": "spec/projects/ai-agents--mercury-agent.md",
+  "analyzedSha": "7c92d37304262d9182dda940b9f8a06ef9cecd02",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T05:51:52Z",
+  "observedSha": "bd80329cef9abfe05a0f8d2a843f226eaccf4e36",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "bd80329cef9abfe05a0f8d2a843f226eaccf4e36",
+      "date": "2026-11-01T12:43:32+05:30",
+      "subject": "feat(providers): add Runcrate OpenAI-compatible provider preset (#246)"
+    },
+    {
+      "sha": "76f2ff1013965f994600ea11a1cac8bf8e995b9c",
+      "date": "2026-11-01T12:43:23+05:30",
+      "subject": "fix(bots): dedupe bot uploads on content, honour declared vision; isolate tests from the real home (#262)"
+    },
+    {
+      "sha": "d1b7894be402c9dba94846b2d18349eea627474d",
+      "date": "2026-11-01T12:32:04+05:30",
+      "subject": "feat(bots): bots take files too -- attachments ride the job (#231)"
+    },
+    {
+      "sha": "2a098d372860ee8b3e4523173ad642ff29b885f9",
+      "date": "2026-11-01T12:31:54+05:30",
+      "subject": "feat(vision): a declared capability beats the name-based guess (#232)"
+    },
+    {
+      "sha": "e58d1101e7551e828b01ae41d965856399705689",
+      "date": "2026-11-01T12:31:46+05:30",
+      "subject": "Budget: a zero daily budget is no ceiling, and a spent one says so (#260)"
+    },
+    {
+      "sha": "4046871167a02f74989f3b2bf48b13766d4a59b9",
+      "date": "2026-11-01T12:31:37+05:30",
+      "subject": "fix(telegram): keep the typing indicator alive during pre-stream work (#258)"
+    },
+    {
+      "sha": "2ae799fba8d6dd9a3da66f45141064a0c15bcda9",
+      "date": "2026-11-01T12:21:25+05:30",
+      "subject": "fix(deps): fetch ws from the npm registry, not a mirror (#259)"
+    },
+    {
+      "sha": "939e04bd00e11f71d813664af53165cce89cd1a1",
+      "date": "2026-11-01T06:18:23Z",
+      "subject": "chore(badges): refresh download totals [skip ci]"
+    },
+    {
+      "sha": "e875299f3f1c4ffb1924df6bdfb9e07a6289da93",
+      "date": "2026-10-31T21:41:44Z",
+      "subject": "chore(badges): refresh download totals [skip ci]"
+    },
+    {
+      "sha": "997c46fb3c88f91d7244a1b5e564edaa9f4213a2",
+      "date": "2026-10-31T12:43:22Z",
+      "subject": "chore(badges): refresh download totals [skip ci]"
+    },
+    {
+      "sha": "c7037a4635f9045a647ca6c596214ce5678feaff",
+      "date": "2026-10-31T05:53:17Z",
+      "subject": "chore(badges): refresh download totals [skip ci]"
+    },
+    {
+      "sha": "54d5c05cb2673b85847cedda8dfe439acb6eaf13",
+      "date": "2026-10-30T22:26:51Z",
+      "subject": "chore(badges): refresh download totals [skip ci]"
+    },
+    {
+      "sha": "c865caefa818f4fd930ce760026294d5934df907",
+      "date": "2026-10-30T21:42:48+05:30",
+      "subject": "plugins: catalog serves WhatsApp 0.1.2 (LID senders, #247) (#255)"
+    },
+    {
+      "sha": "57e9f8cd00a1f425867752d7b7c3fcb9c8421dc8",
+      "date": "2026-10-30T21:32:51+05:30",
+      "subject": "usage: report the budget the runtime enforces, not the file's snapshot (#245)"
+    },
+    {
+      "sha": "e0f721c8aefb4fcb58b5d44a4506935a6a0f282a",
+      "date": "2026-10-30T13:05:32Z",
+      "subject": "chore(badges): refresh download totals [skip ci]"
+    },
+    {
+      "sha": "0a1b749cdf2d7910fad3c828c67852099c5f9abd",
+      "date": "2026-10-30T05:57:12Z",
+      "subject": "chore(badges): refresh download totals [skip ci]"
+    },
+    {
+      "sha": "e9ae545d09ee681bc6f817ac143dcced960e2360",
+      "date": "2026-10-29T22:49:30Z",
+      "subject": "chore(badges): refresh download totals [skip ci]"
+    },
+    {
+      "sha": "7f5fb93bfdc4942b1e9e00f6b5ade962bd3a4a39",
+      "date": "2026-10-30T00:13:14+05:30",
+      "subject": "fix(whatsapp): owner and member messages arrive when WhatsApp sends a LID (#252)"
+    },
+    {
+      "sha": "99ab515b5d1a3c53e5f95e20154cd7b94d183506",
+      "date": "2026-10-29T23:32:54+05:30",
+      "subject": "blog: Running an agent overnight: what breaks first (#254)"
+    },
+    {
+      "sha": "9c5f74faf97f18c92b5b0f04d54c13e0382ef28a",
+      "date": "2026-10-29T23:28:15+05:30",
+      "subject": "fix(desktop): a gateway shows the address field only when it needs one (#253)"
+    },
+    {
+      "sha": "9e28af081e594e6d2736b32d5953bd7551f3003d",
+      "date": "2026-10-29T23:27:42+05:30",
+      "subject": "site: deploy with \"Running an agent overnight\""
+    },
+    {
+      "sha": "53dde0166dd55bd169bf086a8134024edb7c1b71",
+      "date": "2026-10-29T23:25:39+05:30",
+      "subject": "blog: Running an agent overnight: what breaks first"
+    },
+    {
+      "sha": "5abf611a48e3399b4c27fd4b3f92e4d1676de1a0",
+      "date": "2026-10-29T22:57:49+05:30",
+      "subject": "fix(lint): drop two unused imports that put main over the lint baseline (#251)"
+    },
+    {
+      "sha": "a4e7928f854ae1559e2620bd13b79e50ddd0c8b6",
+      "date": "2026-10-29T22:43:36+05:30",
+      "subject": "bots: announce a config edit on the fleet feed (#244)"
+    },
+    {
+      "sha": "383816179426b1d75e4491ad894bca894d259e32",
+      "date": "2026-10-29T22:43:29+05:30",
+      "subject": "feat(bots): a bot can be renamed, and its deliverables stay where they are (#241)"
+    },
+    {
+      "sha": "f7e4e290c37def2ec3c156c08e50055b40d019f6",
+      "date": "2026-10-29T22:40:54+05:30",
+      "subject": "fix(api): a route that has no answer says so, instead of answering zero (#242)"
+    },
+    {
+      "sha": "6d047e5dc0ec9a6dcba3aa7f2e04488f82a090a8",
+      "date": "2026-10-29T22:39:47+05:30",
+      "subject": "Mercury Desktop and the runtime APIs behind it (#250)"
+    },
+    {
+      "sha": "d59a4350705edfc619864bedc104125bfa63e2be",
+      "date": "2026-10-29T21:40:10+05:30",
+      "subject": "chore(lint): no new any, control-regex or escape violations; tests stay deterministic"
+    },
+    {
+      "sha": "e1e409eaa7a7d3386ceeada22bce1cad51663345",
+      "date": "2026-10-29T21:40:10+05:30",
+      "subject": "fix: artifacts on Windows paths; permissions file follows MERCURY_HOME"
+    },
+    {
+      "sha": "3e4bb37bbfdb9730d5450d7b40224a5a7ae7e249",
+      "date": "2026-10-29T21:28:27+05:30",
+      "subject": "ci(desktop): build the Linux tester bundles from main and its pull requests"
+    },
+    {
+      "sha": "9501536d1b81c1a585747e5c3070bae1316fab1f",
+      "date": "2026-10-29T13:13:00Z",
+      "subject": "chore(badges): refresh download totals [skip ci]"
+    },
+    {
+      "sha": "ab7b465725c06fd0cf40c06508f0562ccbdbb61f",
+      "date": "2026-10-29T15:59:36+05:30",
+      "subject": "fix(desktop): scroll up while Mercury is still answering"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/badges/downloads-breakdown.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/badges/downloads.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/desktop-tester.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/desktop.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".lint-baseline.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "DECISIONS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/postcss.config.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/public/boot-guard.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/public/logo-dark.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/public/logo-full-dark.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/public/logo-full-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/public/logo-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/public/notification-icon.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/icons/build.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/icons/mark.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/Entitlements.plist",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/Info.plist",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/capabilities/default.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/capabilities/notch.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/128x128.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/128x128@2x.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/32x32.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/64x64.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/Square107x107Logo.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/Square142x142Logo.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/Square150x150Logo.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/Square284x284Logo.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/Square30x30Logo.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/Square310x310Logo.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/Square44x44Logo.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/Square71x71Logo.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/Square89x89Logo.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/StoreLogo.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/icon-macos.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/icon-square.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/icon.icns",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/icon.ico",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/icon.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/mark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/tray/macos-template.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/icons/tray/tray.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/src/commands/installer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/src/commands/local.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/src/commands/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/src/commands/secrets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/src/notch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/src/tray.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src-tauri/tauri.conf.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/api/artifacts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/api/brain.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/api/channels.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/api/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/api/mercury.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/api/models.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/api/models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/api/stream.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/api/stream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/api/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/App.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/conversation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/events.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/health.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/notify/notify.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/notify/notify.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/notify/sounds.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/notify/store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/profile.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/pulse.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/stop.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/theme.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/undo.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/voice.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/Alerts.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/Attachments.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/BotAvatar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/ErrorBoundary.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/Logo.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/Markdown.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/ModelPicker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/OptimusFace.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/PixelWordmark.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/ThoughtProcess.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/UserAvatar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/VoiceOrb.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/artifacts/ArtifactCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/artifacts/ArtifactViewer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/artifacts/artifacts.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/dictation/Dictation.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/dictation/dictation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/dictation/useDictation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/highlight.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/indicators/Activity.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/indicators/Approval.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/indicators/Approval.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/indicators/StateOrb.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/indicators/Thinking.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/readAloud/ReadAloud.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/readAloud/speech.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/readAloud/speech.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/ui/Button.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/ui/Dialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/ui/Input.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/ui/Menu.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/ui/Switch.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/ui/Tooltip.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/ui/bits.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/ui/kit.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/extensions/builtin-status.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/extensions/registry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/extensions/registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/layout/EnvironmentBar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/layout/Rail.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/layout/StatusBar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/layout/Workspace.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/cx.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/main.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/notch/NotchApp.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/shell/AddRemote.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/shell/FirstModel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/shell/InstallRuntime.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/shell/Onboarding.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/shell/compat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/shell/connections.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/shell/tauri.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/shell/updateLocal.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/shell/updateLocal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/shell/useRuntime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/styles/base.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/styles/tokens.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/artifacts/ArtifactsView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/bots/Activity.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/bots/BotsView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/bots/Deliverables.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/bots/Usage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/brain/BrainGraph.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/brain/BrainGraph.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/brain/BrainView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/brain/Memories.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/brain/MindMap.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/brain/MindMap.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/brain/NoteHoverCard.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/brain/NoteHoverCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/brain/NoteWeb.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/brain/NoteWeb.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/brain/People.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/views/brain/PersonCard.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -2,7 +2,7 @@
 
 Source: [murage](https://github.com/ferroxlabs/murage) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md).
 
-Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-agents--murage.md).
+Historical discovery: 2026-10-24T06:36:54.441Z, initially unreviewed. Dated scoped reviews below supersede that discovery-only status; they do not establish runtime validation. [Change evidence](../repos/ai-agents--murage.md).
 
 ## 2026-10-28 scoped source review
 
@@ -24,6 +24,16 @@ In [server/drivers/pi-permission-gate.ts](https://github.com/ferroxlabs/murage/b
 
 **Harness implication and limits:** Credential protection must follow actual relocated storage roots as well as conventional filenames. Pattern matching is a defense-in-depth heuristic; renamed files, indirection, shell expansion and alternate effect routes require resolved-path authorization and OS boundaries. The permission evaluator and restore implementation were not inspected, and no credentials or shell actions were accessed. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `f23d9fbff36a1ae3d841006f35e39a39ade12089` against prior analyzed commit `24ab901bc8bdd90685398df00be35a7627937992`. Historical reviews above remain separate evidence.
+
+The [Pi permission gate](https://github.com/ferroxlabs/murage/blob/f23d9fbff36a1ae3d841006f35e39a39ade12089/server/drivers/pi-permission-gate.ts) expands sensitive-path patterns for gcloud credentials and the Hermes ask-hook directory. It also expands the trusted own-mount bypass table to phone operations and email sending/replying. These changes increase both protection and preauthorized capability scope; adding a tool to an owned mount is not, by itself, evidence that the user authorized its effects.
+
+The [new fixture](https://github.com/ferroxlabs/murage/blob/f23d9fbff36a1ae3d841006f35e39a39ade12089/server/drivers/pi-permission-gate.test.ts) checks every declared phone tool on `own:phoneJobs` proceeds without a desktop approval card, while an identically named calendar tool on a custom mount still asks. This supports mount-and-tool identity separation, not validation of the phone handler's downstream consent or operating-system authorization. Teamagent should retain explicit operation-scoped consent for sending, dialing, location and scheduling, even when the tool implementation is first party. The regex additions are defense-in-depth patterns, not a complete filesystem or shell parser.
+
+**Coverage:** Read the complete targeted Pi permission-gate implementation/test delta. Phone/email handlers, other engines and the remaining oversized repository change were not inspected. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [murage](https://github.com/ferroxlabs/murage); analyzed commit `24ab901bc8bdd90685398df00be35a7627937992`; commit date 2026-10-28T03:30:19+07:00; review date 2026-10-28T14:29:27.414Z; depth reviewed. [Maintenance record](../repos/ai-agents--murage.md).
+Analysis metadata: source [murage](https://github.com/ferroxlabs/murage); analyzed commit `f23d9fbff36a1ae3d841006f35e39a39ade12089`; commit date 2026-10-31T16:10:13+08:00; review date 2026-11-01T11:33:30.893Z; depth reviewed. [Maintenance record](../repos/ai-agents--murage.md).
 <!-- teamagent-analysis:end -->

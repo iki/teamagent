@@ -2,11 +2,11 @@
 
 Source: [zero](https://github.com/Gitlawb/zero) · [Analysis](../../projects/ai-agents--zero.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `4247a07aba0f89c3c2597314a33edaede56be70c`; commit date: 2026-10-27T06:25:41-07:00; review date: 2026-10-28T09:27:32.685Z; observed SHA: `4247a07aba0f89c3c2597314a33edaede56be70c`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `2e10a4b60b5ef8ebbf18bde8aea6dbfc65c7b43b`; commit date: 2026-10-29T06:30:41-07:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `2e10a4b60b5ef8ebbf18bde8aea6dbfc65c7b43b`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Gitlawb/zero/compare/4247a07aba0f89c3c2597314a33edaede56be70c...4247a07aba0f89c3c2597314a33edaede56be70c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Gitlawb/zero/compare/2e10a4b60b5ef8ebbf18bde8aea6dbfc65c7b43b...2e10a4b60b5ef8ebbf18bde8aea6dbfc65c7b43b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

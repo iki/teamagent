@@ -1,0 +1,58 @@
+# agentmemory
+
+Source: [agentmemory](https://github.com/rohitg00/agentmemory) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `2a00e7b38fc4ae4e38af4134586be0bbe9612706`; commit timestamp `2026-10-03T13:30:09+05:30`; 790 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/rohitg00/agentmemory/blob/2a00e7b38fc4ae4e38af4134586be0bbe9612706/README.md)):
+
+> Persistent memory for Claude Code, GitHub Copilot CLI, Cursor, Gemini CLI, Codex CLI, Hermes, OpenClaw, pi, OpenCode, and any MCP client. The gist extends Karpathy's LLM Wiki pattern with confidence scoring, lifecycle, knowledge graphs, and hybrid search: agentmemory is the implementation.
+
+Build/package evidence: [integrations/filesystem-watcher/package.json](https://github.com/rohitg00/agentmemory/blob/2a00e7b38fc4ae4e38af4134586be0bbe9612706/integrations/filesystem-watcher/package.json); [integrations/openclaw/package.json](https://github.com/rohitg00/agentmemory/blob/2a00e7b38fc4ae4e38af4134586be0bbe9612706/integrations/openclaw/package.json); [integrations/pi/package.json](https://github.com/rohitg00/agentmemory/blob/2a00e7b38fc4ae4e38af4134586be0bbe9612706/integrations/pi/package.json); [package.json](https://github.com/rohitg00/agentmemory/blob/2a00e7b38fc4ae4e38af4134586be0bbe9612706/package.json); [packages/mcp/package.json](https://github.com/rohitg00/agentmemory/blob/2a00e7b38fc4ae4e38af4134586be0bbe9612706/packages/mcp/package.json)
+
+License evidence: [LICENSE](https://github.com/rohitg00/agentmemory/blob/2a00e7b38fc4ae4e38af4134586be0bbe9612706/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Graph projections expose partial coverage and invalidate changed generations before returning evidence.** Reviewed commit `c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8` (commit date `2026-10-26T19:06:20+05:30`). Compared with `2a00e7b38fc4ae4e38af4134586be0bbe9612706`; the complete Git comparison contains 733 changed paths.
+
+The graph retrieval index separates canonical records from bounded projections and hashed postings, records truncation as indexIncomplete/incompleteRecords, and uses build/revision-bound cursors. Pending writes and recovery journals prevent readers from accepting an unfinished view; journal replay uses absolute edits and fixtures cover lost acknowledgements, generation reset, stale cursors, corruption and request-isolated cancellation. Readers cap point reads, serialized decoded bytes and active concurrency, cache index records only, and recheck generation/revision at finish. GraphQuery refreshes current source observations before emitting bounded titles and invokes an optional authorization callback; secure ownership therefore depends on the caller supplying it. Bytes are accounted after the underlying get returns, not before engine allocation; documentation explicitly excludes strict end-to-end deadlines and identifies bulk legacy migration and a still-enumerating MCP stats resource. The embedding wrapper rejects wrong dimensions but does not check finite values or returned batch cardinality.
+
+Evidence: [src/state/graph-retrieval-index.ts:79-170](https://github.com/rohitg00/agentmemory/blob/c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8/src/state/graph-retrieval-index.ts#L79-L170) · [src/state/graph-retrieval-index.ts:238-291](https://github.com/rohitg00/agentmemory/blob/c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8/src/state/graph-retrieval-index.ts#L238-L291) · [src/state/graph-retrieval-index.ts:397-495](https://github.com/rohitg00/agentmemory/blob/c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8/src/state/graph-retrieval-index.ts#L397-L495) · [src/functions/graph-retrieval.ts:73-122](https://github.com/rohitg00/agentmemory/blob/c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8/src/functions/graph-retrieval.ts#L73-L122) · [test/graph-retrieval-index.test.ts:88-207](https://github.com/rohitg00/agentmemory/blob/c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8/test/graph-retrieval-index.test.ts#L88-L207) · [src/providers/embedding/index.ts:52-80](https://github.com/rohitg00/agentmemory/blob/c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8/src/providers/embedding/index.ts#L52-L80) · [docs/reliability/graph-search-budget.md:1-13](https://github.com/rohitg00/agentmemory/blob/c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8/docs/reliability/graph-search-budget.md#L1-L13).
+
+**Harness consequence:** Use bounded derived projections as disposable retrieval accelerators, retain canonical source evidence, mark incomplete coverage and discard stale generation results. Make source authorization mandatory at Teamagent's adapter boundary. Add transport allocation/admission limits beyond post-read accounting, and validate embedding cardinality, finite values, model/revision and dimensions together. Keep explicit migration and bulk maintenance separate from ordinary searches.
+
+**Scope and limits:** Scoped static review of graph index budgets/recovery, selected evidence-finalization and embedding guards in the 733-path comparison. The complete changed repository, underlying KV engine, all authorization call sites and migration implementation were not audited. Tests were read, not run; no model, storage-load or recovery experiment was performed.
+
+## Follow-up change review — 2026-10-28
+
+**Registered, connected and failed workers remain distinct in the health viewer.** Reviewed commit `76db6ac6c090efe9c1fa07bcde1618e816717c10` (commit date `2026-10-28T12:22:15+05:30`), compared with `c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8`. The complete no-rename Git path inventory contains 8 changed paths.
+
+The viewer now treats connected/running as healthy, starting/reconnecting as transitional, explicit failure states as problems, and unfamiliar or missing states as unknown. Engine services are grouped using runtime/isolation metadata (with a legacy compose fallback); the UI explicitly says that available means registered rather than enabled. Worker labels and status strings are escaped. The new fixtures exercise state classification, grouping and hostile label strings; they do not establish live worker readiness.
+
+Evidence: [src/types.ts:270-282](https://github.com/rohitg00/agentmemory/blob/76db6ac6c090efe9c1fa07bcde1618e816717c10/src/types.ts#L270-L282) · [src/viewer/index.html:7246-7269](https://github.com/rohitg00/agentmemory/blob/76db6ac6c090efe9c1fa07bcde1618e816717c10/src/viewer/index.html#L7246-L7269) · [test/viewer-workers.test.ts:18-66](https://github.com/rohitg00/agentmemory/blob/76db6ac6c090efe9c1fa07bcde1618e816717c10/test/viewer-workers.test.ts#L18-L66).
+
+**Harness consequence:** Expose capability registration, process connectivity, feature enablement and task readiness as separate facts. Preserve unknown states through adapters instead of converting them to failures or successful authentication.
+
+**Scope and limits:** Reviewed the health type change, worker-rendering functions and new viewer fixtures in the eight-path delta. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
+## Change review - 2026-11-01
+
+Reviewed `c6c476d2905926727fa5848a134d7a3b38a7fa98` against `76db6ac6c090efe9c1fa07bcde1618e816717c10` (81 changed paths). The [Cline connector](https://github.com/rohitg00/agentmemory/blob/c6c476d2905926727fa5848a134d7a3b38a7fa98/src/cli/connect/cline.ts) uses the Cline data/settings location and an explicit environment override. Its detection accepts a nonempty override or the default directory; that is a configuration/discovery signal, not proof of agent installation or readiness. The [connector fixtures](https://github.com/rohitg00/agentmemory/blob/c6c476d2905926727fa5848a134d7a3b38a7fa98/test/connect-new-agents.test.ts) cover default/custom paths, empty fallback, preserved servers/settings, backup bytes, already-wired operation and dry-run behavior.
+
+**Harness consequence:** Keep discovery, configuration changes and authenticated/runtime readiness as separate states. Validate an override's intended location before writing and preserve existing user configuration with explicit backup provenance.
+
+**Scope and limits:** Complete selected connector and fixture diffs; shared JSON writing internals and the remaining changed areas were not re-audited. No Cline launch or upstream tests were run.

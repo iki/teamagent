@@ -1,0 +1,330 @@
+{
+  "id": "ai-agents--adk-go",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/google/adk-go",
+  "report": "spec/projects/ai-agents--adk-go.md",
+  "analyzedSha": "4bd9638d01cfe49df79c196d3322b2b451e34ed8",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T10:19:21+01:00",
+  "observedSha": "beea418caa2b5cc9417251a37e7ee527ae7f99df",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "beea418caa2b5cc9417251a37e7ee527ae7f99df",
+      "date": "2026-10-30T15:41:14+01:00",
+      "subject": "feat(toolauth): add adk-python's auth data model and wire format (#2032)"
+    },
+    {
+      "sha": "c7b32cba7d696af806f11d40b2152e1a7b07eaed",
+      "date": "2026-10-30T15:34:09+01:00",
+      "subject": "feat(exp): add LLMClassifier backed by model.LLM (#2035)"
+    },
+    {
+      "sha": "1454362458e30e1d09541d24068e4c31b1420682",
+      "date": "2026-10-30T12:29:37+01:00",
+      "subject": "feat(exp): add workflow routing Node for classifiers (#2005)"
+    },
+    {
+      "sha": "410c1ef96509a0548e394798fa3e54d8d3305584",
+      "date": "2026-10-30T12:20:40+01:00",
+      "subject": "Added google_maps, url_contex + gemini guards (#2026)"
+    },
+    {
+      "sha": "5f5e1b537e5e2932f0e97bd6606ece9020828029",
+      "date": "2026-10-30T10:38:04+01:00",
+      "subject": "feat(exp): add classifier interface and TypeSafe Jev decision model client (#2003)"
+    },
+    {
+      "sha": "391b92529d107ec03c82b23fbbe60994f99530e4",
+      "date": "2026-10-30T02:09:33+01:00",
+      "subject": "fix(mcptoolset): give each user its own MCP session with Config.Auth (#1755)"
+    },
+    {
+      "sha": "714d35ffcef5e6652e14309d43b3e88a7ed0b956",
+      "date": "2026-10-29T00:08:39+01:00",
+      "subject": "fix(agentanalytics): release deferred upload reservations on append or Close panic (#1954)"
+    },
+    {
+      "sha": "017295fba0037cfd60256f327337a90bcb8cfeed",
+      "date": "2026-10-28T16:47:16+01:00",
+      "subject": "fix(agentanalytics): tidy span bookkeeping, comments and tests (#1953)"
+    },
+    {
+      "sha": "6f67c5ade58abd478284283cc948463771d0e943",
+      "date": "2026-10-28T14:33:57+01:00",
+      "subject": "fix(llminternal): match close code 1008 by type in isResumable (#1993)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "auth/gcp/provider.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/classifier/classifier.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/classifier/classifier_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/classifier/doc.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/classifier/llm.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/classifier/llm_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/classifier/node.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/classifier/node_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/classifier/typesafe/doc.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/classifier/typesafe/errors.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/classifier/typesafe/typesafe.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/classifier/typesafe/typesafe_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/doc.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/base_flow.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/base_flow_live_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/base_flow_resumable_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/basic_processor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/googlellm/variant.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/googlellm/variant_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/workflowroute/workflowroute.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/workflowroute/workflowroute_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/batch_processor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/batch_processor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/bigquery_agent_analytics_plugin.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/gcs_offloader.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/gcs_offloader_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/trace_manager.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/trace_manager_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/geminitool/enterprise_web_search.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/geminitool/enterprise_web_search_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/geminitool/google_maps.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tool/geminitool/google_search.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tool/geminitool/tool.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/geminitool/url_context.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/mcptoolset/auth_session_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tool/mcptoolset/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tool/mcptoolset/client_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/mcptoolset/export_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tool/mcptoolset/set.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/toolauth/auth_credential.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/toolauth/auth_credential_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/toolauth/auth_schemes.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/toolauth/auth_schemes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/toolauth/auth_tool.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/toolauth/auth_tool_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/toolauth/doc.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/toolauth/model_json.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/toolauth/redact.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tool/toolauth/redact_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "workflow/validation.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "workflow/validation_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

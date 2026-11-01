@@ -1,0 +1,986 @@
+{
+  "id": "ai-gen--hyperframes",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/heygen-com/hyperframes",
+  "report": "spec/projects/ai-gen--hyperframes.md",
+  "analyzedSha": "0e32ee9b56bd0815c0dc23a1c3fbb81aa8c43a87",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T09:52:07Z",
+  "observedSha": "8c22ddba0fda22c3ec6faa83f4686249804d299d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": true,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "8c22ddba0fda22c3ec6faa83f4686249804d299d",
+      "date": "2026-11-01T06:16:39Z",
+      "subject": "fix(cli): snapshot warns when self-closed audio or video clips have swallowed the page (#6915)"
+    },
+    {
+      "sha": "f08f07ab64f834a5d0bb526fc360f5650b18d954",
+      "date": "2026-11-01T06:04:20Z",
+      "subject": "chore: release v0.8.226 (#6917)"
+    },
+    {
+      "sha": "bbd487c6f8d216ab15041220a3e1131f5d543b84",
+      "date": "2026-11-01T05:36:49Z",
+      "subject": "fix(cli): snapshot ends the process once its stills are saved, like render (#6916)"
+    },
+    {
+      "sha": "98520366a6fccb0447a61f8e4baffa0f2568c359",
+      "date": "2026-11-01T05:17:00Z",
+      "subject": "feat(producer): opt-in video layer passthrough for a lone full-canvas video (#6914)"
+    },
+    {
+      "sha": "a7075fcb6c712e183736aac938d3ef57e8b12004",
+      "date": "2026-11-01T04:32:07Z",
+      "subject": "feat(studio): a host that draws its own loader can turn off both of Studio's preview loaders (#6911)"
+    },
+    {
+      "sha": "e181d34edc45e2f9590007ebf7318f8a139bf747",
+      "date": "2026-11-01T03:53:30Z",
+      "subject": "feat(core): WebKit plays bare audio from a decoded buffer on the audio clock (#6912)"
+    },
+    {
+      "sha": "2c1a10f3ad1fc2c356d3f9b4a4fd329a6900e806",
+      "date": "2026-11-01T03:08:27Z",
+      "subject": "fix(core): Safari keeps playing edits' audio without seeks or rate changes (#6888)"
+    },
+    {
+      "sha": "52a42983db0e9b1db5d3ab0826f1686a09064462",
+      "date": "2026-11-01T02:46:55Z",
+      "subject": "fix(cli): snapshot gives a seek that will not settle its own --timeout, not three minutes (#6910)"
+    },
+    {
+      "sha": "94849bf1e0b3bdc2d5eb118b82109e310c4215b1",
+      "date": "2026-11-01T00:54:54Z",
+      "subject": "refactor(engine): one builder for the video frame filter chain (#6908)"
+    },
+    {
+      "sha": "f486ad6d49c7c6880b83cad63ab99b764ba3bb36",
+      "date": "2026-11-01T00:53:35Z",
+      "subject": "fix(engine): ffprobe read intervals never carry an exponent (#6909)"
+    },
+    {
+      "sha": "a2c5a8a0245ef770695212c14f1f3f21d90bf78d",
+      "date": "2026-11-01T00:44:13Z",
+      "subject": "ci: split the cli test job into two shards so each stays well under its limit (#6902)"
+    },
+    {
+      "sha": "ef0007b003384d321b90b7a9b7c0d4e06d014612",
+      "date": "2026-11-01T00:16:48Z",
+      "subject": "test(engine): run the non-PNG probe test on a fake clock (#6907)"
+    },
+    {
+      "sha": "32de0196d59f73d1f7512315eac1acb88dfd9e42",
+      "date": "2026-11-01T00:09:14Z",
+      "subject": "fix(producer): a failed video extraction names which clip files failed (#6905)"
+    },
+    {
+      "sha": "bba3676a3705e1e51a239899404f9982fca86951",
+      "date": "2026-10-31T23:29:33Z",
+      "subject": "feat(core): the playback health reading says which clock the film followed (#6906)"
+    },
+    {
+      "sha": "5ce6b30bdbe18d5351c67b168d0e057d16d1d48c",
+      "date": "2026-10-31T22:49:12Z",
+      "subject": "fix(cli): billing and Desktop handoff read their hosts from settings (#6897)"
+    },
+    {
+      "sha": "f3cdf2b4739d7012f67803668f47c5e22dd39408",
+      "date": "2026-10-31T22:48:26Z",
+      "subject": "fix(engine): scale static-frame verification budget with the job (#6901)"
+    },
+    {
+      "sha": "8a0b8a9c2224fc0fb4e9d239556fc63e7c6411d3",
+      "date": "2026-10-31T22:26:35Z",
+      "subject": "fix(cli): measure ink, one output-folder flag spelling, logo wordmark variant (#6891)"
+    },
+    {
+      "sha": "bb3c3b211840b08ff8889e021320ba5962f0f6e6",
+      "date": "2026-10-31T21:42:26Z",
+      "subject": "fix(producer): render telemetry reports beyond-viewport capture as the workers used it (#6702)"
+    },
+    {
+      "sha": "5259097261a33c8c2aac8bcfa8c2a1b0eae5540f",
+      "date": "2026-10-31T21:40:38Z",
+      "subject": "fix(cli): one cut detector that tells real cuts from flashes and fast moves (#6894)"
+    },
+    {
+      "sha": "ee50cd2fc0d0fe4a4eac22683ed23b6066289ab3",
+      "date": "2026-10-31T21:04:00Z",
+      "subject": "fix(cli): cloud render uses the composition's data-fps and skips unused heavy files (#6895)"
+    },
+    {
+      "sha": "88f9ae8468f0ce9b09efbdf29720aec0f2eb3207",
+      "date": "2026-10-31T21:02:41Z",
+      "subject": "fix(core): a page saved as UTF-16 bundles as its text, not NUL bytes (#6580)"
+    },
+    {
+      "sha": "b687d062353f2dd43a9a4b8b77aafeb1077b3875",
+      "date": "2026-10-31T20:58:04Z",
+      "subject": "chore: release v0.8.225 (#6898)"
+    },
+    {
+      "sha": "47fe68562f39d91b4d9280dff41ae43d67805fae",
+      "date": "2026-10-31T20:08:23Z",
+      "subject": "fix(engine): nested video clips on a frame boundary export every source frame (#6893)"
+    },
+    {
+      "sha": "4d44c0d0ab459e4defad0954480a0798f353e421",
+      "date": "2026-10-31T19:59:49Z",
+      "subject": "fix(cli): billing top-up opens the pricing page (#6887)"
+    },
+    {
+      "sha": "919e138fc25c5ae3dc6bc3ca46adc7f6b52cd0c8",
+      "date": "2026-10-31T19:48:28Z",
+      "subject": "fix(cli): fill --mask boxes from the picture behind and crop generated clips to the requested aspect (#6892)"
+    },
+    {
+      "sha": "2239771efd9ef8ed34171fe40dcdc096f33ec856",
+      "date": "2026-10-31T15:13:39-04:00",
+      "subject": "chore: release v0.8.224 (#6885)"
+    },
+    {
+      "sha": "6b0fd6d10992ebf5913dcc8418b7b8b58803f035",
+      "date": "2026-10-31T18:23:00Z",
+      "subject": "fix(skills): paid-plan cloud final keeps the composition fps and high quality (#6886)"
+    },
+    {
+      "sha": "2b76e9a70a749c445cd137946512b0dda8aa770f",
+      "date": "2026-10-31T17:36:34Z",
+      "subject": "feat(skills): render final cuts in the cloud on a paid HyperFrames plan (#6884)"
+    },
+    {
+      "sha": "ea7d43c616c4cd3bb77f27eaf9f3becd32e41744",
+      "date": "2026-10-31T17:08:22Z",
+      "subject": "fix(cli): stopping remove-background on a Mac no longer aborts the process (#6848)"
+    },
+    {
+      "sha": "1e5413f34ce489a1b35eaf46635a630a44cb5804",
+      "date": "2026-10-31T16:48:36Z",
+      "subject": "fix(core): a stuck seek in check or snapshot fails named before the protocol timeout (#6596)"
+    },
+    {
+      "sha": "5c92fb07761cd0667d22380c2c855b89766f8fa4",
+      "date": "2026-10-31T16:46:25Z",
+      "subject": "fix(core): style a sub-composition root written as #root[data-composition-id] (#6843)"
+    },
+    {
+      "sha": "124a00f563944a006dd9ac286ecb91043b0fa0b9",
+      "date": "2026-10-31T16:21:02Z",
+      "subject": "fix(studio-server): repeated splits stop stacking id CSS rules (#6874)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".fallowrc.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/fast-video-validation.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/player-safari-audio.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/regression.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-render.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".prettierignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ADOPTERS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/ai-answer-rank.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/ai-chat-reveal.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/app-showcase.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/apple-money-count.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/aurora.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/bar-chart-race.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/beat-freeze-cut.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/blob.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/blue-sweater-intro-video.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/camcorder-hud.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/camera-dolly-zoom.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/canopy-part-title.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-circle-1.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-circle-2.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-circle-3.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-circle-4.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-circle-5.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-orbit-1.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-orbit-2.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-orbit-3.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-orbit-4.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-orbit-5.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-path-1.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-path-2.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-path-3.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-path-4.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-path-5.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-text-circle-1.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-text-circle-2.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-text-circle-3.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-text-circle-4.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-text-circle-5.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-vision-1.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-vision-2.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-vision-3.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-vision-4.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/carousel-vision-5.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/chatgpt-exchange.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/chromatic-radial-split.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/chrome-orb.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/cinemagraph.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/cinematic-zoom.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/claude-exchange.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/code-3d-extrude.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/code-diff.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/code-highlight.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/code-morph.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/code-particle-assemble.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/code-scroll.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/code-shader-dissolve.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/code-slice-hero.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/code-snippet-apple-terminal-pro.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/code-snippet-dark-2026.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/code-snippet-dark-modern.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/code-typing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/color-wheel.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/cosmic-orb.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/cross-warp-morph.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/cuboid-carousel.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/data-chart.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/domain-warp-dissolve.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/editorial-flash-overlay.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/exploded-stack.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/extruded-logo.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/falling-lines.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/flash-through-white.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/flowchart-vertical.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/flowchart.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/flowing-gradient.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/fractal-noise.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/freeze-frame-dressing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/frost-sequence-camera-orbit.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/frost.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/gabor-noise.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/gallery-tunnel.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/glass-hero.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/glass-shard-title.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/glitch.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/godrays.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/goo.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/gooey-split.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/gravitational-lens.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/halftone-field.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/heatmap.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/heygen-avatar-promo-card.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/hologram.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/holographic.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/hw-frame.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/hw-path-text.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/hw-pipeline.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/hw-scribble-transition.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/hw-text-cloud.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/hw-title.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/hw-write-title.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/instagram-follow.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/ios26-liquid-glass.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/lens-flare.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/light-edge.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/light-leak.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/liquid-glass-notification.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/liquid-glass-widgets.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/liquid-metal.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/logo-outro.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/lottie-character-walk.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/lower-third-bild.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/lt-accent-underline.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/lt-bold-block.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/lt-clean-bar.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/lt-color-block.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/lt-dark-card.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/lt-kicker-name.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/lt-mask-reveal.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/lt-neon-border.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/lt-side-rule.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/lt-soft-pill.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/lt-stack-bars.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/macos-notification.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/macos-tahoe-liquid-glass.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/marble.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/mesh-gradient.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/message-thread-reveal.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/mk-background.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/mk-callout-highlight.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/mk-clone-wall-transition.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/mk-line-graph.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/mk-placeholder-grid.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/mk-progress-stat.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/mk-specs-list.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/nebula.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/news-ticker.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/north-korea-locked-down.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/notes-reveal.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/notification-cascade.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/nyc-paris-flight.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/obsidian.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/orbit-card.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/organic-light-leak-overlay.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/oscilloscope-trace.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/plasma.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/plastic.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/prism.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/product-turntable.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/rack-focus.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/reddit-post.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/ridged-burn.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/ripple-waves.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/catalog/blocks/ripples.mdx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated_with_local_changes; source lifecycle: active; upstream availability: available.",
+    "Working-tree modifications are excluded from committed change evidence.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

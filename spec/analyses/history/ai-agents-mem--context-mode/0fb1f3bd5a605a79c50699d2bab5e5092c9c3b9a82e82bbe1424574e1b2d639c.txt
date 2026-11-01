@@ -1,0 +1,61 @@
+# context-mode
+
+Tool-output indexing and adapter detection with explicit lessons about inherited environment leakage.
+
+Source: [context-mode](https://github.com/mksglu/context-mode) · Snapshot: `dbfa57d50ccaacb37ade53dd226c5b0cf7bea335` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [src/store.ts:475-543](https://github.com/mksglu/context-mode/blob/dbfa57d50ccaacb37ade53dd226c5b0cf7bea335/src/store.ts#L475-L543)
+- [src/adapters/detect.ts:1-142](https://github.com/mksglu/context-mode/blob/dbfa57d50ccaacb37ade53dd226c5b0cf7bea335/src/adapters/detect.ts#L1-L142)
+
+The content store creates separate SQLite FTS5 indexes with porter/unicode61 and trigram tokenizers. This supplies lexical retrieval without an embedding dependency. Adapter detection distinguishes environment identifiers from workspace variables, maintains a client/platform registry, and documents confidence levels for environment and directory signals. The examined helper checks installed Claude plugin metadata to disambiguate a VS Code environment. Its comments also explain why foreign identification variables must be scrubbed when spawning under a different host.
+
+## Harness implications
+
+Use a searchable tool-result buffer for large command output, fetched documents and session events. Give the model a compact handle and retrieve relevant spans on demand. For installed-agent discovery, combine executable resolution, version/capability probes and explicit runtime identity; directory existence is only a weak signal. Child-agent environment construction should whitelist the relevant identity and workspace variables so one agent does not misattribute another's memory or settings.
+
+## Limitations and tradeoffs
+
+Lexical indexing reduces prompt volume but is not semantic long-term memory or proof that a resumed model has all required context. The documented fallback to a common host is inappropriate as a harness authority decision: unknown must remain a valid result. Installed plugin metadata can be stale. Porter stemming and trigram search have language and storage tradeoffs. The review did not execute adapter hooks, establish exact client compatibility, or measure claimed context savings.
+
+## Adoption and validation
+
+Adopt the buffer and adapter-registry patterns behind harness-owned session identities. Treat discovery as observation, then probe before use. Preserve raw output as an artifact, index scoped excerpts, and return source spans with every search result. Test nested agents, stale configuration directories, multiple installed clients, non-English logs, revocation after indexing and compaction/resume with missing context.
+
+Related directions: [memory](../memory.md) · [agents](../agents.md) · [models](../models.md).
+
+
+## Change review — 2026-10-27
+
+**Popularity update leaves the inspected retrieval and adapter design unchanged.** Reviewed commit `da399d384f03ae9c28d955c2e56c834c56d6ea93` (commit date `2026-10-27T12:07:01Z`) against `dbfa57d50ccaacb37ade53dd226c5b0cf7bea335`. The complete Git comparison contains 1 changed paths.
+
+The complete comparison contains only stats.json: reported usage counters changed. The retained SQLite store still declares porter/unicode61 and trigram FTS5 indexes; the previously reviewed adapter-detection implementation is absent from the changed-path set. This revision is a metadata-only reconciliation of the existing architecture review, not a new retrieval-performance result.
+
+Evidence: [stats.json:1-8](https://github.com/mksglu/context-mode/blob/da399d384f03ae9c28d955c2e56c834c56d6ea93/stats.json#L1-L8) · [src/store.ts:475-543](https://github.com/mksglu/context-mode/blob/da399d384f03ae9c28d955c2e56c834c56d6ea93/src/store.ts#L475-L543).
+
+**Harness consequence:** Keep lexical/trigram retrieval as a bounded baseline and keep host identification separate from authorization. Do not use download/marketplace counts as effectiveness scores or reasons to change tool permissions.
+
+**Scope and limits:** Complete changed-path inventory and the counter diff were checked; only the cited existing implementation range was re-read. No runtime, migration or retrieval benchmark was executed.
+
+## Follow-up change review — 2026-10-28
+
+**The new revision updates usage counters only.** Reviewed commit `b77ba447f51ff193962d6f0fb78c061c76ae871c` (commit date `2026-10-27T18:04:03Z`), compared with `da399d384f03ae9c28d955c2e56c834c56d6ea93`. The complete no-rename Git path inventory contains 1 changed paths.
+
+The complete one-path comparison changes stats.json display counters. The retained file is an aggregate users/npm/marketplace badge payload, with no changed retrieval, compaction, authorization or runtime code in this interval. These values are upstream reporting data and were not independently measured.
+
+Evidence: [stats.json:1-8](https://github.com/mksglu/context-mode/blob/b77ba447f51ff193962d6f0fb78c061c76ae871c/stats.json#L1-L8).
+
+**Harness consequence:** Keep popularity telemetry out of architectural capability, quality and adoption evidence. Preserve the prior runtime assessment until implementation evidence changes.
+
+**Scope and limits:** Reviewed the complete single-file counter delta. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
+## Change review — 2026-11-01
+
+**The refresh changes installation counters only.** Reviewed `baf6a5510790cba7e9d5c2f5399354f54a962bb1` (commit date `2026-10-31T12:03:24Z`) against `b77ba447f51ff193962d6f0fb78c061c76ae871c`. The complete comparison contains one path, [stats.json:1-8](https://github.com/mksglu/context-mode/blob/baf6a5510790cba7e9d5c2f5399354f54a962bb1/stats.json#L1-L8): its display total and npm/marketplace counters change. No implementation or test path changed in this interval.
+
+**Harness consequence:** Installation counters are adoption metadata, not retrieval-quality, isolation or performance evidence. The previously inspected context-buffer behavior remains the relevant design evidence; this update supplies no reason to change its adapter contract or ranking.
+
+**Scope and limits:** Read the complete one-file diff and its full changed-path inventory. Counter provenance was not independently verified. No upstream code, provider call, installation or benchmark was executed; historical findings retain their original scope.

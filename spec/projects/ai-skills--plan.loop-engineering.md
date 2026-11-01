@@ -44,6 +44,14 @@ The badge records the latest reported triage date, not source coverage, a succes
 
 **Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`c0d2497531969073911234d7b862e8f8e42dd24e`](https://github.com/cobusgreyling/loop-engineering/commit/c0d2497531969073911234d7b862e8f8e42dd24e), compared with `d6d9ead4ce2ebc8b875f0bbc94fac4ff8611026e`.
+
+The six-path comparison updates [STATE.md](https://github.com/cobusgreyling/loop-engineering/blob/c0d2497531969073911234d7b862e8f8e42dd24e/STATE.md), triage/run metadata, two generated popularity graphics and the MCP SDK lock entry. The [run log](https://github.com/cobusgreyling/loop-engineering/blob/c0d2497531969073911234d7b862e8f8e42dd24e/loop-run-log.md) adds recent report-only runs while dropping older entries under its rolling retention policy. The metadata and lockfile diffs were read; long SVG point arrays were explicitly omitted. No runtime or skill implementation changes in this inventory.
+
+Keep rolling dashboards distinct from immutable audit evidence. A readiness score or popularity count is not task correctness, and an upstream dependency bump does not authorize changing Teamagent's pinned stack. No workflow, dependency installation or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [plan.loop-engineering](https://github.com/cobusgreyling/loop-engineering); analyzed commit `d6d9ead4ce2ebc8b875f0bbc94fac4ff8611026e`; commit date 2026-10-28T08:02:11Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--plan.loop-engineering.md).
+Analysis metadata: source [plan.loop-engineering](https://github.com/cobusgreyling/loop-engineering); analyzed commit `c0d2497531969073911234d7b862e8f8e42dd24e`; commit date 2026-11-01T02:24:35Z; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--plan.loop-engineering.md).
 <!-- teamagent-analysis:end -->

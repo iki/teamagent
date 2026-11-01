@@ -1,0 +1,980 @@
+{
+  "id": "ai-security--aisoc",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/beenuar/AiSOC",
+  "report": "spec/projects/ai-security--aisoc.md",
+  "analyzedSha": "2af4d0ba9b2b347df5f17cfd67924a2862530bd1",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T00:16:09-07:00",
+  "observedSha": "0b052e5f84d6ca33968fc354d0a7b9a5f2d1b3c9",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "0b052e5f84d6ca33968fc354d0a7b9a5f2d1b3c9",
+      "date": "2026-11-01T01:13:22-07:00",
+      "subject": "depth2 Phase 0: kickoff, re-derived baseline and the SIEM-scope decision (#1584)"
+    },
+    {
+      "sha": "152c6d5ff37ef07f139b187588fa8bc6b3776d12",
+      "date": "2026-10-31T22:01:15-07:00",
+      "subject": "Release v21.0.0 — the eval-honesty major (#1582)"
+    },
+    {
+      "sha": "f840cbe2a66531ab07f57fe1d3b9255eba503443",
+      "date": "2026-10-31T19:29:34-07:00",
+      "subject": "Eval honesty wave: serving-model attribution, full-cohort closure accounting, conservative correlation fallback (#1581)"
+    },
+    {
+      "sha": "f958621fc7148d4e696a581ef0a083eff0198b41",
+      "date": "2026-10-31T15:36:49-07:00",
+      "subject": "Agentmetry ingest template: AI coding-agent activity and detections (Discussion #1577) (#1580)"
+    },
+    {
+      "sha": "1a9d86dbc9ff92cffed0f1aa9e0f3cf6a4f94710",
+      "date": "2026-10-31T15:13:45-07:00",
+      "subject": "fix(api): the rail's business-context leg reads the event the writer writes (#1579)"
+    },
+    {
+      "sha": "df369dfda5d21c256be69978099873507f818b89",
+      "date": "2026-10-31T14:18:43-07:00",
+      "subject": "Asset criticality reaches fusion confidence and action approval, tighten-only (#1578)"
+    },
+    {
+      "sha": "828ff9c51d8a7f10ffdb91eccd46d7eb55bd61bf",
+      "date": "2026-10-31T13:26:44-07:00",
+      "subject": "Business context reaches the triage model, and impact statements must cite it (#1575)"
+    },
+    {
+      "sha": "7db3de5c9c7a8eaf077c75b197c53310fd5e616a",
+      "date": "2026-10-31T12:22:33-07:00",
+      "subject": "Asset criticality orders the investigation queue (#1576)"
+    },
+    {
+      "sha": "f8d92e6ec227753fe97e6345dc2899523f7a92fe",
+      "date": "2026-10-31T11:05:25-07:00",
+      "subject": "feat(escalations): ack-clock escalation bridge for unacknowledged CRITICAL/HIGH cases (#1573)"
+    },
+    {
+      "sha": "70dd054d69296cb82ac24499b3cf99c55d1c36de",
+      "date": "2026-10-31T10:28:04-07:00",
+      "subject": "fix(deps): clear minimatch/glob ReDoS advisories across all three lockfiles (#1574)"
+    },
+    {
+      "sha": "1ba1497e9bb01e6be1c051adfc288ea710768da7",
+      "date": "2026-10-30T20:43:36-07:00",
+      "subject": "fix(deps): clear the Oct-30 npm advisory wave (follow-redirects, joi, node-forge) (#1572)"
+    },
+    {
+      "sha": "31ffd411689f6f685a8b360e7f1406b222d0fec7",
+      "date": "2026-10-30T17:43:40-07:00",
+      "subject": "chore(release): v20.4.0 (#1570)"
+    },
+    {
+      "sha": "013ecd3895412ab03d68291fef3138abb97b7e8d",
+      "date": "2026-10-30T16:11:57-07:00",
+      "subject": "fix(api): SSO activation no longer locks out the admin; funnel lake column (#1569)"
+    },
+    {
+      "sha": "412eee4fd617117ac04b2d8608076ec8eea20510",
+      "date": "2026-10-29T22:50:40-07:00",
+      "subject": "fix(agents): retry failed scheduled hunts (#1567)"
+    },
+    {
+      "sha": "e3edeb857ddd1a4a5f939d06d67080f204be88a8",
+      "date": "2026-10-29T20:55:57-07:00",
+      "subject": "chore(release): v20.3.0 (#1565)"
+    },
+    {
+      "sha": "34d6b1d4623ba12e45de7c6f3d038f74aecd70a2",
+      "date": "2026-10-29T17:24:40-07:00",
+      "subject": "chore(agents): raise auto-triage max_tokens 512 -> 2048 (#1558)"
+    },
+    {
+      "sha": "dff53340f79ab1adbb1abd68a64a4ac734820053",
+      "date": "2026-10-29T16:49:51-07:00",
+      "subject": "fix(deps): connector-ts SDK on zod ^4.6.6 via zod/v3 compat (GHSA-mrhx-c7xc-m3w5) (#1560)"
+    },
+    {
+      "sha": "88dc4b88104390ac170c26043e995d837e86e16f",
+      "date": "2026-10-29T16:49:36-07:00",
+      "subject": "fix(deploy): pass REALTIME_URL and AISOC_INVESTIGATION_MAX_SECONDS through to agents (#1557)"
+    },
+    {
+      "sha": "0297b98a73a7cb2c0ef85abcdb13fed96743f6ad",
+      "date": "2026-10-29T16:49:22-07:00",
+      "subject": "fix(deploy): mount slack-bot source into teams-bot (fresh-install crash-loop) (#1556)"
+    },
+    {
+      "sha": "021473595534b12ca912cc2d94b57b3ae58fdb53",
+      "date": "2026-10-29T16:49:08-07:00",
+      "subject": "fix(agents): cap prompt bytes at egress; dead-letter deterministic 400s (#1554)"
+    },
+    {
+      "sha": "00ea72e9439db982f47075db4bc92902ab25c452",
+      "date": "2026-10-29T16:35:56-07:00",
+      "subject": "fix(connectors): exclude scheduler-owned keys on saved-connector test-connection (#1555)"
+    },
+    {
+      "sha": "8ebedd2fcf3fa9a6af1761a5c1000a644b1548b8",
+      "date": "2026-10-29T15:05:00-07:00",
+      "subject": "fix(web): a self-hosted install's root lands on the console, not the marketing page (#1561)"
+    },
+    {
+      "sha": "07417e203a6fc1cf9aa125608f61357ef496dff4",
+      "date": "2026-10-29T13:36:00-07:00",
+      "subject": "fix(deps): decode-uri-component 0.5.1 for GHSA-qr28-fpjm-wq7f (high, DoS) (#1562)"
+    },
+    {
+      "sha": "1f5f71c070e2a538f96e472a2cb55d95007e721c",
+      "date": "2026-10-28T17:22:29-07:00",
+      "subject": "fix(changelog): restore the [20.2.1] header dropped by #1551's stale-base merge (#1553)"
+    },
+    {
+      "sha": "bb6ad2c4d2c770b2c27ff6b93b4a3fa7f800437a",
+      "date": "2026-10-28T16:26:40-07:00",
+      "subject": "fix(deps): bump @hono/node-server override to >=2.1.3 <3 (GHSA-rmxm-3fg6-px4f) (#1551)"
+    },
+    {
+      "sha": "fa03ae2d7caa3b1ba40050235c1ffda7f088c933",
+      "date": "2026-10-28T15:25:44-07:00",
+      "subject": "docs(papers): sync technical guide detection count to 2,530 (#1550)"
+    },
+    {
+      "sha": "b751b475432563704a71b58f77d7a7fb14e96415",
+      "date": "2026-10-28T14:26:38-07:00",
+      "subject": "fix(detections): align GitHub rules with what the connector actually emits (#1545) (#1547)"
+    },
+    {
+      "sha": "75406389599e636a44c9490030e62b64c29fac44",
+      "date": "2026-10-28T12:31:32-07:00",
+      "subject": "docs(papers): technical guide v1.1 — Windows install truth, current figures, model discovery (#1546)"
+    },
+    {
+      "sha": "14ae676bf11afa9403f094dea3b6191b6e30a2ea",
+      "date": "2026-10-28T11:33:06-07:00",
+      "subject": "feat(llm): offer a custom endpoint's chat models in the BYOK selector (#1543)"
+    },
+    {
+      "sha": "73ac0d295d92162e77c2013579a901ff31b4f903",
+      "date": "2026-10-28T08:43:41-07:00",
+      "subject": "chore(release): v20.2.1 (#1542)"
+    },
+    {
+      "sha": "a0a6ac3d86619c3a56c99f9faee92f0f4646ebab",
+      "date": "2026-10-28T07:37:34-07:00",
+      "subject": "fix(phishing): linear-time display-name scan on attacker-sized headers (GHSA-9m2j-23jf-gg3p) (#1541)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/compose-smoke-nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/compose-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/integration.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/validate-detections.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "DEPTH2_PROGRESS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "DEPTH_PROGRESS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "FEEDBACK_EVAL_PROGRESS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "RELEASES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ROADMAP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "VERSION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/api/rest.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/benchmark.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/compliance/evidence-pack.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/concepts/ai-estate.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/concepts/real-vs-synthetic.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/connectors/agentmetry.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/connectors/universal-capture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/console/queue.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/console/triage-context.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/deployment/env-vars.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/detections/coverage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/operations/where-the-model-runs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/quickstart.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/sidebars.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/static/data/scoreboard.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/static/llms-full.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/static/llms.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/content/papers/aisoc-technical-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/public/marketplace/curated.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/public/marketplace/index.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/public/papers/aisoc-technical-guide.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/public/papers/render-manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/app/(app)/settings/business-context/BusinessContextSettings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/app/(app)/settings/business-context/RuleBuilder.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/app/(app)/settings/business-context/RuleBuilder.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/app/page.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/app/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/components/alerts/BusinessContextSection.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/alerts/InvestigationRail.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/settings/SettingsView.byok.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/settings/SettingsView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/data/corpus-stats.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/lib/api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/lib/homeRoute.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/application/app-ci-workflow-modified-by-non-owner.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/application/app-deploy-key-added-github.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/application/app-protected-branch-disabled.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/application/app-self-hosted-runner-external.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/application/github-protected-branch-bypass.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/application/github-public-repo-flip.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/data-exfil/github-pii-pattern-push.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/app-deploy-key-added-github.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/app-protected-branch-disabled.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/app-self-hosted-runner-external.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/cloud-cloudflare-access-policy-bypass.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/cloud-cloudflare-zone-transfer.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/cloud-do-droplet-snapshot-shared.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/cloud-iac-drift-bypassed.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/cloud-terraform-state-modified-direct.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/github-public-repo-flip.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/ident-atlassian-api-token-created.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/ident-github-deploy-key-added-org-wide.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/ident-github-org-2fa-disabled.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/ident-github-org-collaborator-removed-bulk.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/ident-github-pat-classic-created-with-broad-scopes.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/ident-jamf-mdm-policy-mfa-removed.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/negative/ident-slack-app-installed-bot-token.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/positive/app-deploy-key-added-github.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/positive/app-protected-branch-disabled.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/positive/app-self-hosted-runner-external.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/positive/github-public-repo-flip.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/fixtures/positive/ident-github-deploy-key-added-org-wide.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/identity/app-token-broad-default.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/identity/ident-github-deploy-key-added-org-wide.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/identity/ident-github-pat-classic-created-with-broad-scopes.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.prod.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/audit/CLAIM_TO_GATE_MATRIX.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/audit/depth2-baseline/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/decisions/0015-siem-replacement-scope.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/decisions/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/detections/truth-table.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/evaluation/verdict_scorecard.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/openapi.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/operations/slos.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "infra/helm/aisoc/Chart.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "marketplace/curated.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "marketplace/index.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/aisoc-benchmark/aisoc_benchmark/replay.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/aisoc-benchmark/tests/test_replay_cohort_metrics.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plans/aisoc_depth_wave2.plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plans/cyble-aisoc/platform/sdk/connector-ts/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plans/cyble-aisoc/platform/sdk/connector-ts/src/_zodSchema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plans/cyble-aisoc/platform/sdk/connector-ts/src/dev.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plans/cyble-aisoc/platform/sdk/connector-ts/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/check_detection_fields.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check_github_rule_alignment.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/check_tenant_query_predicates.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/check_verdict_quality.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/detection_specs_part2.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/detection_specs_part3_application.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/detection_specs_part3_identity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/enrichment_decisions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/generate_connector_docs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/generate_corpus_stats.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/generate_detections.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/measure_triage_reliability.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/mypy_baseline.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/run_model_matrix.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/run_verdict_eval.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/score_replay_set.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/windowed_translation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/actions/app/live_actions/approval_rules.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/actions/app/live_actions/dispatcher.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/actions/app/services/approval_gate.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/actions/app/services/asset_lookup.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/actions/tests/test_asset_criticality_tightens.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/agents/auto_triage_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/confidence/claim_support.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/confidence/eligibility.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/context/bundle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/core/cost_telemetry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/app/core/model_attribution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/hunt/scheduler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/investigator/ledger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/llm/contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/models/state.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/replay/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/tools/investigation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/workers/fused_alert_consumer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/app/workers/reflex_observability.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/tests/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/tests/replay_recording.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/tests/test_auto_triage_autonomy_eligibility.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/tests/test_auto_triage_ledger_records_the_prompt.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/tests/test_auto_triage_truncated_json.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/tests/test_autonomy_eligibility.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/tests/test_bundle_incident_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/tests/test_business_context_hotpath.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/test_business_context_tenant_rules_live.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/test_claim_support_measured.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/test_hunt_scheduler.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/test_model_attribution.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/test_prompt_byte_cap.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/test_reflex_observability.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/tests/test_replay_route.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/test_triage_business_context_prompt.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/test_triage_terminal_400.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/_vendor/action_contracts/approval_rules.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/_vendor/aisoc_benchmark/replay.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/api/v1/endpoints/business_context.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

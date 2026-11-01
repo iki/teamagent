@@ -1,0 +1,61 @@
+# deer-flow
+
+Source: [deer-flow](https://github.com/bytedance/deer-flow) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `9eb01b371a478d9be477476eb19bc8381433b2ba`; commit timestamp `2026-10-03T23:11:48+08:00`; 3,468 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/bytedance/deer-flow/blob/9eb01b371a478d9be477476eb19bc8381433b2ba/README.md)):
+
+> On February 28th, 2026, DeerFlow claimed the 🏆 #1 spot on GitHub Trending following the launch of version 2. Thanks a million to our incredible community — you made this happen! 💪🔥 DeerFlow (**D**eep **E**xploration and **E**fficient **R**esearch **Flow**) is an open-source **super agent harness** that orchestrates **sub-agents**, **memory**, and **sandboxes** to do almost anything — powered by **extensible skills**.
+
+Build/package evidence: [backend/packages/extension-api/pyproject.toml](https://github.com/bytedance/deer-flow/blob/9eb01b371a478d9be477476eb19bc8381433b2ba/backend/packages/extension-api/pyproject.toml); [backend/packages/harness/pyproject.toml](https://github.com/bytedance/deer-flow/blob/9eb01b371a478d9be477476eb19bc8381433b2ba/backend/packages/harness/pyproject.toml); [backend/pyproject.toml](https://github.com/bytedance/deer-flow/blob/9eb01b371a478d9be477476eb19bc8381433b2ba/backend/pyproject.toml); [backend/tests/monocle/requirements.txt](https://github.com/bytedance/deer-flow/blob/9eb01b371a478d9be477476eb19bc8381433b2ba/backend/tests/monocle/requirements.txt); [examples/deerflow-extension-bookmarks/pyproject.toml](https://github.com/bytedance/deer-flow/blob/9eb01b371a478d9be477476eb19bc8381433b2ba/examples/deerflow-extension-bookmarks/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/bytedance/deer-flow/blob/9eb01b371a478d9be477476eb19bc8381433b2ba/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped source review
+
+Source: [deer-flow](https://github.com/bytedance/deer-flow); inspected saved discovery revision `fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7`. Prior analyzed revision `9eb01b371a478d9be477476eb19bc8381433b2ba` remains historical evidence.
+
+**Scope:** Complete channel base class and lightweight sandbox-mode shell detector. MessageBus, platform adapters, connection-code validation, outbox, local isolation implementation and tests were not inspected; large README/test captures were not substituted for source evidence.
+
+The [channel base](https://github.com/bytedance/deer-flow/blob/fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7/backend/app/channels/base.py#L320-L440) closes submission intake under a lock, retains actual asyncio tasks, releases reservations on refusal/finalization and waits on shielded completion futures during shutdown. This addresses cross-thread ownership rather than merely cancelling proxy futures. Its drain has no local timeout, and a closed loop can prevent a scheduled task/finalizer from settling; the platform adapter must own the stop budget and unresolved-worker outcome. The [private-loop helper](https://github.com/bytedance/deer-flow/blob/fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7/backend/app/channels/base.py#L68-L109) bounds waiting for pending tasks, but its subsequent async-generator shutdown has no independent bound here.
+
+[Inbound admission](https://github.com/bytedance/deer-flow/blob/fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7/backend/app/channels/base.py#L492-L532) explicitly drops when immediate queue reservation is unavailable; it is not durable guaranteed delivery. [Outbound handling](https://github.com/bytedance/deer-flow/blob/fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7/backend/app/channels/base.py#L534-L585) sends text before files, reports unsupported/failed attachments in the same conversation, removes interactive-input metadata from feedback and avoids proactive fallback. Text-send failure is caught and logged, so this callback returning is not a successful delivery receipt. The generic retry helper retries ordinary exceptions with exponential delay, without a local per-attempt deadline or idempotency condition.
+
+The [sandbox detector](https://github.com/bytedance/deer-flow/blob/fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7/scripts/sandbox-mode.sh#L1-L43) openly supports only a narrow block-mapping syntax and defaults missing/unknown configurations to local mode. It does not validate URLs, YAML aliases or actual isolation. Teamagent should retain explicit unsupported attachments, bounded intake and real task ownership, while separately validating channel identity/binding, durable receipt semantics and runtime enforcement. No channel, shell script, provider, attachment transfer or upstream test was executed.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `f79debed59ca6b1a31628e6b5ce55c8507793a4c` (commit date `2026-10-28T14:00:34+08:00`), compared with `fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7`. Earlier findings remain historical evidence.
+
+**Scope:** DingTalk card token acquisition adapter. The complete changed-path inventory contains 26 paths; the assessment below is limited to the cited branches.
+
+Card creation and streaming now obtain the channel's access token before invoking the SDK replier. A narrow client serves only that already acquired value, preventing the replier from taking its own synchronous token-refresh path on the gateway event loop. See [backend/app/channels/dingtalk.py](https://github.com/bytedance/deer-flow/blob/f79debed59ca6b1a31628e6b5ce55c8507793a4c/backend/app/channels/dingtalk.py#L1250-L1292) and [backend/app/channels/dingtalk.py](https://github.com/bytedance/deer-flow/blob/f79debed59ca6b1a31628e6b5ce55c8507793a4c/backend/app/channels/dingtalk.py#L1321-L1338).
+
+For Teamagent, keep authentication acquisition under the host's asynchronous resource owner instead of allowing hidden SDK refresh behavior. This adapter does not itself establish a bounded card-send lifetime, authenticated delivery or credential-generation fencing. The existing channel token provider, MCP changes and artifact preview loaders were not re-audited.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `38e6be638bc79daa1a16ac314aa14d5460f88c6c` (commit date `2026-11-01T15:04:16+08:00`), compared with `f79debed59ca6b1a31628e6b5ce55c8507793a4c`. Earlier observations remain historical evidence.
+
+**Scope:** Complete relevance-confidence and legacy-import normalization diffs; 258 changed paths inventoried. Retrieval evaluation and migration fixtures not audited.
+
+[Relevance normalization](https://github.com/bytedance/deer-flow/blob/38e6be638bc79daa1a16ac314aa14d5460f88c6c/backend/packages/harness/deerflow/agents/memory/backends/deermem/deermem/core/relevance.py) now catches numeric overflow as well as malformed confidence, assigning invalid/non-finite values zero and clamping finite values. [Legacy import](https://github.com/bytedance/deer-flow/blob/38e6be638bc79daa1a16ac314aa14d5460f88c6c/backend/packages/harness/deerflow/agents/memory/backends/deermem/deermem/core/storage.py) instead defaults malformed/non-finite confidence to 0.5. This improves parser robustness but creates different meanings for invalid inputs; neither default establishes factual confidence or calibration.
+
+**Teamagent implication (inference):** Represent missing, invalid and measured confidence separately. Preserve original evidence and migration provenance instead of silently treating a parser fallback as a learned probability; evaluate retrieval changes against grounded queries before promoting memory policy.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.

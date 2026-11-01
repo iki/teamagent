@@ -37,6 +37,12 @@ Evidence: [src/cache/store.ts:345-419](https://github.com/KnockOutEZ/wigolo/blob
 
 **Scope and limits:** Scoped static review of cache identity, result envelopes, citation mapping and reranker selection within a 152-path comparison. No search engine, remote reranker, source fetch, upstream test or relevance/entailment benchmark ran. The shared normalization implementation and remote transport/authentication were not audited.
 
+## Change review — 2026-11-01
+
+Reviewed `0b38aebe471952c4412a07d7a08e615824ff36e1` (2026-10-31T19:08:30+06:00); 12 paths changed from `9180e934442255fac68377c5537dc9b4fbc75469`. The new idle-unload helper counts in-flight calls, rearms after completion and unrefs timers. Its proxy calls the target before wrapping in `Promise.resolve`; a synchronous throw therefore bypasses the attached `finally` and can retain an in-flight count. Positive but non-finite or host-overflow timeout values also need explicit validation. [Helper](https://github.com/KnockOutEZ/wigolo/blob/0b38aebe471952c4412a07d7a08e615824ff36e1/src/providers/idle-unload.ts).
+
+Read fixtures cover overlapping calls, disabled timers, rejected unloads, retained-handle ownership and initialization/disposal races. They use mocked asynchronous providers and do not prove actual native-memory release or synchronous-throw safety. Teamagent should scope load/use/disposal ownership, join cleanup, and test synchronous and asynchronous failures separately. Scope: helper and two fixture files; factories/native provider implementations not fully audited or executed. [Timer fixtures](https://github.com/KnockOutEZ/wigolo/blob/0b38aebe471952c4412a07d7a08e615824ff36e1/tests/unit/providers/idle-unload.test.ts), [provider fixtures](https://github.com/KnockOutEZ/wigolo/blob/0b38aebe471952c4412a07d7a08e615824ff36e1/tests/unit/providers/provider-idle-unload.test.ts).
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [wigolo](https://github.com/KnockOutEZ/wigolo); analyzed commit `9180e934442255fac68377c5537dc9b4fbc75469`; commit date 2026-10-25T01:55:22+06:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-query--wigolo.md).
+Analysis metadata: source [wigolo](https://github.com/KnockOutEZ/wigolo); analyzed commit `0b38aebe471952c4412a07d7a08e615824ff36e1`; commit date 2026-10-31T19:08:30+06:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--wigolo.md).
 <!-- teamagent-analysis:end -->

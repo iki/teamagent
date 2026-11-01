@@ -1,0 +1,44 @@
+# deploy-pulumi
+
+Source: [deploy-pulumi](https://github.com/pulumi/agent-skills) · Category: [ai-skills](../categories/ai-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `9b794aec9c4169f137285c2763c06064d247dd47`; commit timestamp `2026-09-14T14:56:03-06:00`; 92 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/pulumi/agent-skills/blob/9b794aec9c4169f137285c2763c06064d247dd47/README.md)):
+
+> A collection of Agent Skills for infrastructure as code workflows with Pulumi. These skills teach AI coding assistants how to help with infrastructure migrations, secret management, and code translation. Agent Skills are reusable knowledge packages that teach AI coding assistants domain-specific workflows. They follow the agentskills.io open standard and work with:
+
+Build/package evidence: [pyproject.toml](https://github.com/pulumi/agent-skills/blob/9b794aec9c4169f137285c2763c06064d247dd47/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/pulumi/agent-skills/blob/9b794aec9c4169f137285c2763c06064d247dd47/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-skills**. Its category places it in the candidate set for skills; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`2517e28e4bc029424e9c9ee48016394296be0f6a`](https://github.com/pulumi/agent-skills/commit/2517e28e4bc029424e9c9ee48016394296be0f6a). Scope: Full Gemini package builder, release workflow and 408-line packaging/release test suite read; provider-upgrade guidance and other manifest changes not fully reviewed.
+
+The [builder](https://github.com/pulumi/agent-skills/blob/2517e28e4bc029424e9c9ee48016394296be0f6a/scripts/build_gemini_extension.py) derives one extension version from the combined plugin manifest, rejects malformed versions/tag mismatches and duplicate skill names, and preserves skill files while emitting identical platform-named archives. [Tests](https://github.com/pulumi/agent-skills/blob/2517e28e4bc029424e9c9ee48016394296be0f6a/tests/test_gemini_package.py) independently compare complete archive contents and optionally verify actual CLI discovery in an isolated profile; mock release scenarios cover failed uploads, conflicting tags and preserving newer latest releases. Adapt artifact-content parity plus installed-skill discovery as separate checks. The [workflow](https://github.com/pulumi/agent-skills/blob/2517e28e4bc029424e9c9ee48016394296be0f6a/.github/workflows/release-gemini.yml) checks existing public assets by name/nonzero size, not digest identity; local source paths are trusted inputs without containment/resource validation. Optional CLI tests can skip without GEMINI_CLI, so fixture success is not host compatibility. No archive build, CLI install, release or provider migration was executed.
+
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `82f222a529a499e8005a820000148cc5e28c934c` (commit date `2026-10-30T15:58:08-05:00`), compared with `2517e28e4bc029424e9c9ee48016394296be0f6a`. Earlier observations remain historical evidence.
+
+**Scope:** Complete two-file plugin-manifest diff; no skill body, builder or runtime change in this comparison.
+
+The [Claude manifest](https://github.com/pulumi/agent-skills/blob/82f222a529a499e8005a820000148cc5e28c934c/.claude-plugin/plugin.json) adds documentation, support and terms URLs and changes its discovery description/keywords; both it and the [Codex manifest](https://github.com/pulumi/agent-skills/blob/82f222a529a499e8005a820000148cc5e28c934c/.codex-plugin/plugin.json) advance to 2.0.8. The Codex description still describes Neo delegation while the revised Claude description emphasizes infrastructure, troubleshooting and migration. These are surface-specific discovery descriptions, not evidence of new deployment permissions or verified service capabilities.
+
+**Teamagent implication (inference):** Fingerprint the full selected manifest and skill payload, not only its version. Keep host-specific discovery text distinct from executable capabilities and approval requirements; a terms URL is a research pointer, not a verified license or account-entitlement decision.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.

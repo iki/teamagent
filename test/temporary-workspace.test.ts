@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
+import { writeFileSync } from "node:fs";
 import {
   access,
   lstat,
@@ -14,10 +15,12 @@ import {
 import { hostname } from "node:os";
 import { basename, join, relative, resolve, sep } from "node:path";
 import { test } from "node:test";
+import { Schema } from "effect";
 import {
   borrowTemporaryWorkspace,
   createTemporaryWorkspace,
   pruneTemporaryWorkspaces,
+  recoverTemporaryWorkspace,
   temporaryLimits,
   temporaryParent,
   temporaryRootPath,
@@ -37,6 +40,38 @@ async function fixture() {
       await rm(root, { recursive: true, force: true });
     },
   };
+}
+
+async function completedWorkspace(root: string) {
+  const launcher = join(root, "create-workspace.ts");
+  const implementation = new URL("../app/check/temporary-workspace.ts", import.meta.url).href;
+  await writeFile(
+    launcher,
+    `import { createTemporaryWorkspace } from ${JSON.stringify(implementation)};
+const workspace = await createTemporaryWorkspace(${JSON.stringify(root)}, "finished");
+process.stdout.write(JSON.stringify(workspace.recovery) + "\\n");
+`,
+    "utf8",
+  );
+  const ended = spawnSync(process.execPath, [launcher], {
+    cwd: root,
+    shell: false,
+    windowsHide: true,
+    encoding: "utf8",
+    timeout: 10_000,
+    maxBuffer: 16_384,
+  });
+  assert.equal(ended.error, undefined);
+  assert.equal(ended.status, 0);
+  assert.ok(Number.isSafeInteger(ended.pid) && ended.pid > 0);
+  assert.throws(() => process.kill(ended.pid, 0), { code: "ESRCH" });
+  const proof = Schema.decodeUnknownSync(
+    Schema.fromJsonString(
+      Schema.Struct({ path: Schema.NonEmptyString, originalMarker: Schema.NonEmptyString }),
+    ),
+    { onExcessProperty: "error" },
+  )(ended.stdout);
+  return { proof, pid: ended.pid };
 }
 
 await test("temporary ownership isolates environment, preserves siblings and separates borrowing from disposal", async () => {
@@ -69,6 +104,7 @@ await test("temporary ownership isolates environment, preserves siblings and sep
     assert.equal(parent?.path, owner.path);
     const borrowed = await borrowTemporaryWorkspace(f.root, owner.path, owner.token);
     assert.equal(Object.hasOwn(borrowed, "dispose"), false);
+    assert.equal(Object.hasOwn(borrowed, "recovery"), false);
     const nested = await createTemporaryWorkspace(f.root, "nested", borrowed);
     assert.equal(nested.environment().TEAMAGENT_TEMPORARY_PARENT, owner.path);
     await nested.dispose();
@@ -238,6 +274,155 @@ await test("explicit recovery preserves old live, reused, foreign, malformed and
     assert.equal(await readFile(join(unmarked, "evidence.txt"), "utf8"), "preserve\n");
     for (const lease of leases.slice(1)) await access(lease.path);
     await latest.dispose();
+  } finally {
+    await f.close();
+  }
+});
+
+await test("creator recovery removes exact fresh completed scratch while bulk recovery retains its age guard", async () => {
+  const f = await fixture();
+  try {
+    const { proof } = await completedWorkspace(f.root);
+    assert.equal(await readFile(join(proof.path, ".owner.json"), "utf8"), proof.originalMarker);
+    const sibling = await createTemporaryWorkspace(f.root, "sibling");
+    const evidence = join(f.root, ".cache/workflow");
+    await mkdir(evidence, { recursive: true });
+    await writeFile(join(evidence, "receipt.json"), "{}\n", "utf8");
+    await symlink(
+      evidence,
+      join(proof.path, "link"),
+      process.platform === "win32" ? "junction" : "dir",
+    );
+    assert.deepEqual((await pruneTemporaryWorkspaces(f.root)).removed, []);
+    await access(proof.path);
+    await recoverTemporaryWorkspace(f.root, { ...proof, descendantsStopped: true });
+    await assert.rejects(access(proof.path));
+    await access(sibling.path);
+    assert.equal(await readFile(join(evidence, "receipt.json"), "utf8"), "{}\n");
+    await sibling.dispose();
+  } finally {
+    await f.close();
+  }
+});
+
+await test("creator recovery rejects missing authority, live or unknown owners and any marker drift", async () => {
+  const f = await fixture();
+  try {
+    const live = await createTemporaryWorkspace(f.root, "live");
+    await assert.rejects(
+      recoverTemporaryWorkspace(
+        f.root,
+        { ...live.recovery, descendantsStopped: true },
+        { isAlive: () => false },
+      ),
+      /not definitively absent/u,
+    );
+    await live.dispose();
+    const { proof, pid } = await completedWorkspace(f.root);
+    const marker = join(proof.path, ".owner.json");
+    for (const request of [
+      proof,
+      { ...proof, descendantsStopped: false },
+      { ...proof, descendantsStopped: true, extra: true },
+    ]) {
+      await assert.rejects(recoverTemporaryWorkspace(f.root, request));
+      await access(proof.path);
+    }
+    await assert.rejects(
+      recoverTemporaryWorkspace(
+        f.root,
+        { ...proof, descendantsStopped: true },
+        { isAlive: () => undefined },
+      ),
+      /not definitively absent/u,
+    );
+    await writeFile(marker, proof.originalMarker + "\n", "utf8");
+    await assert.rejects(
+      recoverTemporaryWorkspace(f.root, { ...proof, descendantsStopped: true }),
+      /marker changed/u,
+    );
+    await writeFile(marker, proof.originalMarker, "utf8");
+    await writeFile(marker, "\uFEFF" + proof.originalMarker, "utf8");
+    await assert.rejects(recoverTemporaryWorkspace(f.root, { ...proof, descendantsStopped: true }));
+    const crlf = proof.originalMarker.replaceAll("\n", "\r\n");
+    await writeFile(marker, crlf, "utf8");
+    await assert.rejects(
+      recoverTemporaryWorkspace(f.root, {
+        ...proof,
+        originalMarker: crlf,
+        descendantsStopped: true,
+      }),
+      /bounded LF text/u,
+    );
+    await assert.rejects(
+      recoverTemporaryWorkspace(f.root, { ...proof, descendantsStopped: true }),
+      /marker changed/u,
+    );
+    await writeFile(marker, proof.originalMarker, "utf8");
+    const foreign = proof.originalMarker.replace(
+      `"host":${JSON.stringify(hostname())}`,
+      '"host":"another-host"',
+    );
+    assert.notEqual(foreign, proof.originalMarker);
+    await writeFile(marker, foreign, "utf8");
+    await assert.rejects(
+      recoverTemporaryWorkspace(f.root, {
+        ...proof,
+        originalMarker: foreign,
+        descendantsStopped: true,
+      }),
+      /original host/u,
+    );
+    await writeFile(marker, proof.originalMarker, "utf8");
+    let checks = 0;
+    await assert.rejects(
+      recoverTemporaryWorkspace(
+        f.root,
+        { ...proof, descendantsStopped: true },
+        {
+          isAlive: (checkedPid) => {
+            assert.equal(checkedPid, pid);
+            if (++checks === 2) writeFileSync(marker, proof.originalMarker + "\n", "utf8");
+            return false;
+          },
+        },
+      ),
+      /marker changed/u,
+    );
+    assert.equal(checks, 2);
+    await access(proof.path);
+    await writeFile(marker, proof.originalMarker, "utf8");
+    await recoverTemporaryWorkspace(f.root, { ...proof, descendantsStopped: true });
+  } finally {
+    await f.close();
+  }
+});
+
+await test("creator recovery rejects nested, evidence and redirected paths without touching their contents", async () => {
+  const f = await fixture();
+  try {
+    const { proof } = await completedWorkspace(f.root);
+    const evidence = join(f.root, ".cache/workflow");
+    await mkdir(evidence, { recursive: true });
+    await writeFile(join(evidence, "receipt.json"), "{}\n", "utf8");
+    for (const path of [
+      join(proof.path, "nested"),
+      evidence,
+      `${proof.path}${sep}..${sep}${basename(proof.path)}`,
+    ]) {
+      await assert.rejects(
+        recoverTemporaryWorkspace(f.root, { ...proof, path, descendantsStopped: true }),
+        /direct owned child/u,
+      );
+    }
+    await access(proof.path);
+    await recoverTemporaryWorkspace(f.root, { ...proof, descendantsStopped: true });
+    await symlink(evidence, proof.path, process.platform === "win32" ? "junction" : "dir");
+    await assert.rejects(
+      recoverTemporaryWorkspace(f.root, { ...proof, descendantsStopped: true }),
+      /physical directory/u,
+    );
+    assert.equal(await readFile(join(evidence, "receipt.json"), "utf8"), "{}\n");
   } finally {
     await f.close();
   }

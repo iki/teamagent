@@ -119,6 +119,38 @@ artwork and OCR still need source inspection.
 The [memory benchmark](benchmarks/results.md) records retrieval, extraction,
 source lifecycle and competitor measurements, including remaining evidence gaps.
 
+## Research article policy and runtime boundaries
+
+Repository article/post lists use the [text maintenance policy](research-sync.md):
+capture once by default, retain the successful source/version and validate it
+locally on subsequent syncs. Only `refresh=true` on that exact list URL enables
+remote updates. A missing or damaged captured snapshot fails and needs local
+restoration or an explicit refresh decision. Parser improvements can derive a
+new representation from retained bytes without changing the historical source.
+This list policy belongs to the research synchronizer; the explicit `memory sync`
+command above requests a runtime source check and is not an automatic article
+refresh scheduler.
+
+Keep `firstCapturedAt`, source publication/creation assertions and refresh
+validation time separate. User-supplied `published=` dates remain assertions;
+unknown or conflicting dates stay unknown/conflicting, and Last-Modified is not
+a publication date. Refresh-enabled sources use the implemented exact-URL
+validators and independently checked image assets described above. A 304 is a
+server statement about the response, not independent verification of source
+truth or permission to reuse damaged local files.
+
+The 2026-11-01 [pipeline review](import-pipeline.md) adds design acceptance cases,
+not new runtime capabilities: preview/page coverage, model stop reason,
+unsupported text mappings and missing images must not collapse into an
+unqualified complete result. See [MinerU](https://github.com/opendatalab/MinerU)
+([review](projects/ai-query--mineru.md)),
+[Docling](https://github.com/docling-project/docling)
+([review](projects/ai-query--docling.md)) and
+[OfficeParser](https://github.com/harshankur/officeParser)
+([review](projects/ai-query--office-parser.md)). Current builtin/external adapter
+limits, lexical search and warning behavior remain as documented here; these
+upstream changes were inspected statically, not installed or executed.
+
 ## External document extractors
 
 [extractors.config.ts](../extractors.config.ts) contains named option sets for

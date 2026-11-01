@@ -38,13 +38,14 @@ export function runProcess(
       [...arguments_],
       {
         encoding: "buffer",
-        windowsHide: true,
         maxBuffer: options.bytes ?? importLimits.totalBytes,
         timeout: options.timeoutMs ?? importLimits.processMs,
         killSignal: "SIGKILL",
         signal: options.signal,
         env: options.env ?? processEnvironment(),
         ...(options.cwd === undefined ? {} : { cwd: options.cwd }),
+        // Fixed background policy wins over optional settings.
+        windowsHide: true,
       },
       (error, stdout) => {
         if (error !== null)

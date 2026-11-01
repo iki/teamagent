@@ -39,6 +39,12 @@ Evidence: [src/app/search.rs:76-182](https://github.com/RivoLink/leaf/blob/29f6a
 
 **Scope and limits:** Static scoped review of diff-search state and selected new parser/fixture regions within the 133-path comparison. Terminal rendering, path-opening behavior, full word/combined parser and interactive layout tests were not exhaustively audited or executed.
 
+## Change review — 2026-11-01
+
+Reviewed `9543395b8fb89bd74b051a5c9647514f047bcd89` (2026-10-28T21:06:17+03:00) against `29f6ad480d95a4240c63f63d390e9909afdad9e8`; 12 changed paths. The updater moves from reqwest to ureq, preserves explicit HTTP-status interpretation and a 20-second global timeout, disables redirects for latest-release discovery, and streams downloaded assets before size validation and flush. These hunks do not introduce a cumulative download byte cap; post-copy length equality is not admission control. [Updater](https://github.com/RivoLink/leaf/blob/9543395b8fb89bd74b051a5c9647514f047bcd89/src/update.rs).
+
+The test helper replaces a theme mutex with shared read/exclusive write guards to permit read-only fixture concurrency. That approach requires every mutating fixture to acquire the write guard; reviewing the helper alone cannot establish complete race coverage or a speedup. Keep the earlier tolerant-display versus exact-evidence boundary unchanged. Scope: updater and lock-helper diffs plus full path classification, not every reformatted test or transitive dependency. No download, update, terminal execution or upstream test was run. [Test lock](https://github.com/RivoLink/leaf/blob/9543395b8fb89bd74b051a5c9647514f047bcd89/src/tests/mod.rs).
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [leaf](https://github.com/RivoLink/leaf); analyzed commit `29f6ad480d95a4240c63f63d390e9909afdad9e8`; commit date 2026-10-25T19:46:31Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--leaf.md).
+Analysis metadata: source [leaf](https://github.com/RivoLink/leaf); analyzed commit `9543395b8fb89bd74b051a5c9647514f047bcd89`; commit date 2026-10-28T21:06:17+03:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--leaf.md).
 <!-- teamagent-analysis:end -->

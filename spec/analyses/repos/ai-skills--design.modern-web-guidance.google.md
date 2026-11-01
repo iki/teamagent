@@ -2,11 +2,11 @@
 
 Source: [design.modern-web-guidance.google](https://github.com/GoogleChrome/modern-web-guidance-src) · [Analysis](../../projects/ai-skills--design.modern-web-guidance.google.md) · [skills](../../skills.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `a6cdb9f811492f1784ac5b3248520839a5e04614`; commit date: 2026-10-27T17:14:09-07:00; review date: 2026-10-28T14:52:35.205Z; observed SHA: `a6cdb9f811492f1784ac5b3248520839a5e04614`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `7f01aec02769d9ff20014600720a7d4f56cb41f2`; commit date: 2026-10-31T19:10:43-04:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `7f01aec02769d9ff20014600720a7d4f56cb41f2`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/GoogleChrome/modern-web-guidance-src/compare/a6cdb9f811492f1784ac5b3248520839a5e04614...a6cdb9f811492f1784ac5b3248520839a5e04614). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/GoogleChrome/modern-web-guidance-src/compare/7f01aec02769d9ff20014600720a7d4f56cb41f2...7f01aec02769d9ff20014600720a7d4f56cb41f2). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

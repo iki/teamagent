@@ -50,6 +50,16 @@ In [packages/core/src/permission.ts](https://github.com/anomalyco/opencode/blob/
 
 **Harness implication and limits:** A denial precheck is not authorization. Name and type preliminary policy checks so a caller cannot accidentally use successful preflight as permission to perform an effect. This function also lacks the adjacent assert path's explicit closed check; call-site lifecycle enforcement and rule evaluation were not reviewed. No effect-policy or cancellation test was run. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `69269e4ebe309a08919b3c9be7948b9fd699c3a4` against prior analyzed commit `d6867f221061f7688a9b784b840ec6b7e3c9d40a`. Historical reviews above remain separate evidence.
+
+The [authentication-options helper](https://github.com/anomalyco/opencode/blob/69269e4ebe309a08919b3c9be7948b9fd699c3a4/packages/ai/src/route/auth-options.ts) now exposes an explicit no-key route: the visible `key === false` branch returns `Auth.none` before environment resolution. An explicit custom auth definition has precedence. [Anthropic](https://github.com/anomalyco/opencode/blob/69269e4ebe309a08919b3c9be7948b9fd699c3a4/packages/ai/src/providers/anthropic.ts) uses the shared resolver; [OpenAI-compatible settings](https://github.com/anomalyco/opencode/blob/69269e4ebe309a08919b3c9be7948b9fd699c3a4/packages/ai/src/providers/openai-compatible.ts) accept the same no-key mode. This enables deliberately unauthenticated local gateways without treating a missing credential as permission to omit authentication.
+
+The inspected loopback fixtures assert that ordinary missing-key configuration fails, explicit keyless requests omit Authorization, custom gateway headers remain separate, and image/Anthropic routes support the mode. Captured credential-associated literals are redacted, so their exact values are not evidence here. No-key routing does not prove local processing, trusted origin, privacy exclusion or account entitlement. Teamagent should keep explicit authentication mode, endpoint identity and training/egress policy independently enforced before selection or upload.
+
+**Coverage:** Read the complete 146-line resolver/provider expansion and the earlier 85-line keyless fixture plus selected auth-path changes. Underlying transport, all provider integrations and image response handling were not fully audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [opencode](https://github.com/anomalyco/opencode); analyzed commit `d6867f221061f7688a9b784b840ec6b7e3c9d40a`; commit date 2026-10-28T05:06:39-05:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--opencode.md).
+Analysis metadata: source [opencode](https://github.com/anomalyco/opencode); analyzed commit `69269e4ebe309a08919b3c9be7948b9fd699c3a4`; commit date 2026-11-01T01:07:13-05:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--opencode.md).
 <!-- teamagent-analysis:end -->

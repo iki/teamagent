@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-mem--gbrain",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/garrytan/gbrain",
+  "report": "spec/projects/ai-agents-mem--gbrain.md",
+  "analyzedSha": "82b7ef601fdfc449b0d242f7e61a4604aa2c8a8e",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T08:33:05Z",
+  "observedSha": "1e763e28cb76655891096334d03f0883356c3ae8",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "1e763e28cb76655891096334d03f0883356c3ae8",
+      "date": "2026-11-01T08:27:16Z",
+      "subject": "Merge pull request #8367 from garrytan/capy/gbra269-fence-coverage"
+    },
+    {
+      "sha": "1233eb56a95e1c085ebee06f3aea77f0846f64c8",
+      "date": "2026-11-01T07:20:53Z",
+      "subject": "docs: quote fence by trust tier in the MCP, evidence and trust guides (/ship Step 14.5)"
+    },
+    {
+      "sha": "381db29afeba1158ee20e799ae3b3fb224a07931",
+      "date": "2026-11-01T07:15:15Z",
+      "subject": "v0.60.536.0 chore(release): restamp onto master v0.60.535.0"
+    },
+    {
+      "sha": "825376330f38a513ff60c6b0f23a4df4eeb703f7",
+      "date": "2026-11-01T07:15:03Z",
+      "subject": "v0.60.536.0 chore(release): stamp"
+    },
+    {
+      "sha": "cb7b0239a17e282953b6577e290fb8d457ed6b90",
+      "date": "2026-11-01T07:14:23Z",
+      "subject": "fix: put_page keeps an owner page's fence only when its stored body holds one, so a read from before a claim stores the body (/ship Step 11)"
+    },
+    {
+      "sha": "6b4fca7c87429968d614afd37f53692f410a4ba9",
+      "date": "2026-11-01T07:09:31Z",
+      "subject": "Merge remote-tracking branch 'origin/master' into capy/gbra269-fence-coverage"
+    },
+    {
+      "sha": "7b5fe87df02621330a98c561c27f27c733ab3f96",
+      "date": "2026-11-01T07:09:24Z",
+      "subject": "fix: put_page's summary guard refuses a summary a whole read never produces, as a cut window gives (/ship fix-check)"
+    },
+    {
+      "sha": "88d3f572950a772d268b22afe0bd53c2a2f090ff",
+      "date": "2026-11-01T07:04:50Z",
+      "subject": "Merge pull request #8376 from garrytan/capy/gbra258-fix-dst-census"
+    },
+    {
+      "sha": "80cef5c3622a3dda3fb547e180885ef0f49b15f9",
+      "date": "2026-11-01T07:03:38Z",
+      "subject": "docs: name the reads #8367 quotes and point the rest to #8377"
+    },
+    {
+      "sha": "d4ffed6558132ba7b6f5b5ae7f548fd2e89fac4b",
+      "date": "2026-11-01T07:01:49Z",
+      "subject": "fix: put_page's summary guard compares tool calls kept, in one scan; local think fallback unchanged (/ship Step 11)"
+    },
+    {
+      "sha": "eb274fa6b603c75a288779ccffbf130f1fa20029",
+      "date": "2026-11-01T06:32:39Z",
+      "subject": "fix: put_page's summary guard counts against the stored body, not overlapping chunks (/ship fix-check)"
+    },
+    {
+      "sha": "8af074e44423912a9d50bcdae368c291ed8edd9b",
+      "date": "2026-11-01T06:28:00Z",
+      "subject": "v0.60.535.0 chore(release): restamp onto master v0.60.534.0"
+    },
+    {
+      "sha": "8ffd2c35d2eb6a2c02629a4b552e070411e3fa71",
+      "date": "2026-11-01T06:27:48Z",
+      "subject": "chore(release): v0.60.535.0"
+    },
+    {
+      "sha": "4792e8c0328b0411e5e3a581eed59841a8517f1f",
+      "date": "2026-11-01T06:25:27Z",
+      "subject": "fix: put_page's summary guard counts each summary against the stored page's literal copies (/ship red-team)"
+    },
+    {
+      "sha": "72ff4355977b8925bbdd57399f7fc9d83580f77e",
+      "date": "2026-11-01T06:19:08Z",
+      "subject": "fix: pre-landing review fixes (a pinned clock is reset after every test; the red-since time matches the watermark)"
+    },
+    {
+      "sha": "2040cb1e26ee58f1272c6f7f7ab52dc8d036f97b",
+      "date": "2026-11-01T06:18:17Z",
+      "subject": "fix(brainbench): a quote fence that ends the text still labels its canary; known_as_of covers an agent-written note; CHANGELOG names the quoted reads (/ship review)"
+    },
+    {
+      "sha": "0f61783a5bc91dc084c16274f8ba0a25a25a3f95",
+      "date": "2026-11-01T05:58:46Z",
+      "subject": "test(fence-census): the DST-fallback pass uses the next fallback ahead of now() and runs under pinned clocks (master red since 2026-11-01 05:18Z)"
+    },
+    {
+      "sha": "7382db9e521d104416c236201683ae4700b385e4",
+      "date": "2026-11-01T05:53:44Z",
+      "subject": "Merge remote-tracking branch 'origin/master' into capy/gbra269-fence-coverage"
+    },
+    {
+      "sha": "e0949f65e7e6de764e0dd01f84cd2f437c4a2b3f",
+      "date": "2026-11-01T05:52:14Z",
+      "subject": "Merge pull request #8333 from garrytan/capy/train-s-20261101"
+    },
+    {
+      "sha": "9c49726b0e7a3beef1334aade1250fb85e6f0149",
+      "date": "2026-11-01T05:09:12Z",
+      "subject": "v0.60.534.0 chore(release): restamp onto master v0.60.533.0"
+    },
+    {
+      "sha": "c5891dc3a4c00f72f521de266007a8bc25dbf307",
+      "date": "2026-11-01T05:08:58Z",
+      "subject": "Merge remote-tracking branch 'origin/master' into capy/train-s-20261101"
+    },
+    {
+      "sha": "1f4eca3c172f5defe0736f509ebd69ed63a2359a",
+      "date": "2026-11-01T05:08:23Z",
+      "subject": "Merge pull request #8355 from garrytan/capy/gbra258-fix-8354"
+    },
+    {
+      "sha": "7572cda5a149214d0bb9254b779410ba4904892c",
+      "date": "2026-11-01T04:31:52Z",
+      "subject": "v0.60.533.0 chore(release): restamp onto master v0.60.532.0"
+    },
+    {
+      "sha": "40e14b9a4b826fba9ad0721d78b14c7c2834f40e",
+      "date": "2026-11-01T04:31:41Z",
+      "subject": "chore(release): v0.60.533.0"
+    },
+    {
+      "sha": "b44de895dcc8432602d608cc22745fd8e7e65b3c",
+      "date": "2026-11-01T04:25:27Z",
+      "subject": "fix: pre-landing review fixes (an abort after the run returned its result no longer marks the job aborting)"
+    },
+    {
+      "sha": "33375989214501772ebcb1f3b2fdb6d930e7a7ce",
+      "date": "2026-11-01T04:09:12Z",
+      "subject": "Merge master (v0.60.532.0) into #8355"
+    },
+    {
+      "sha": "be09acf758dd47f8919dd9851e727c533abc4f56",
+      "date": "2026-11-01T03:19:43Z",
+      "subject": "v0.60.533.0 chore(release): restamp onto master v0.60.532.0"
+    },
+    {
+      "sha": "44f29db9eb2df4208d945cbf62f54cb5295b314b",
+      "date": "2026-11-01T02:56:56Z",
+      "subject": "test(refresh): give the race test's checkout a Git identity for the publish merge (#7686)"
+    },
+    {
+      "sha": "3f483bca113afbe4faea32636d5919a72551b657",
+      "date": "2026-11-01T02:29:08Z",
+      "subject": "GST-687: fix the diff-gate failures"
+    },
+    {
+      "sha": "8a2dc90acf53f226c440cd87bffd8e0edee9194e",
+      "date": "2026-11-01T02:23:20Z",
+      "subject": "chore(regen): CLI flag registry after the bound publish (#7686)"
+    },
+    {
+      "sha": "6bd6f07bb2d1d30f5f6d1f4a5cf4be995d6a5522",
+      "date": "2026-11-01T02:22:36Z",
+      "subject": "docs(changelog): train S notes for the bound publish and the linear quoted-marker screen"
+    },
+    {
+      "sha": "32e6c7ec8912b5e2a072573e6f5d7898798ef127",
+      "date": "2026-11-01T02:07:56Z",
+      "subject": "fix(refresh): bind the diverged publish to the upstream the refresh checked (#7686)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/gbrain-launcher",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/persistence-validation.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitleaksignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gstack/pregate.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gstack/ubicloud.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BOOTSTRAP_FOR_AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "INSTALL_FOR_AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "VERSION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "admin/bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "admin/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ENGINES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/INSTALL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/TESTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/KEY_FILES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/RETRIEVAL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/canonical-writers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/canonical-writers.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/coordinated-writes.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/agent-bootstrap-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/agent-bootstrap.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/agent-contract.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/ambient-capture.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/canonical-reconciliation-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/canonical-reconciliation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/ci-health-and-test-guards.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/commands-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/commands-3-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/commands-4-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/commands-5.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/commands-6.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-ai-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-cycle-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-cycle-patterns.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-cycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-minions-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-minions-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-persistence-capacity.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-persistence-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/core-persistence-git.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-persistence-graduation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-persistence-request-indexes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-persistence.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-search-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-search-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-search-evidence.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-services-1-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-services-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-services-2-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-services-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-utilities-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-utilities-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/engines-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/entity-recall.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/entrypoints-and-docs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/files-and-sync-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/files-and-sync-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/google-and-loops-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/google-api-access.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/managed-sync-bookkeeping.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/mcp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/secret-scan.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/security.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/shared-skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/workspace-push-and-backup.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/system-of-record.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/thin-client.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ci-event-parity.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ci-red-runbook.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/GIT_CANONICAL_MEMORY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/eval-bench.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/eval/hnsw-scale-bench.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/eval/managed-sync-stall-repro.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/eval/managed-sync-two-consumer-repro.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/eval/system-one/runners/ubicloud-setup.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/evidence-delivery.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/ambient-writeback.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/capabilities.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/concurrent-writes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/error-codes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/exit-codes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/fence-format.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/hosted-harness-access.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/live-sync.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/memory-trust.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/multi-source-brains.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/remote-mcp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/repair.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/search-modes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/shared-checkout-git.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/sync-unblock-runbook.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/troubleshooting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/upgrades-auto-update.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/write-refusals.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/integrations/qm-harness.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/ADMIN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/CLAUDE_CODE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/CODEX.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/DEPLOY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/GROK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/HERMES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/OPENCLAW.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/OPENCODE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/TOOL_REFERENCE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/operations/mcp-surface-runbook.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/protocol/AGENT_OPERATOR_v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/protocol/MCP_META_CHANNELS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/protocol/MEMORY_VERBS_v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/storage-tiering.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/test-audit/2026-10-04/expected-deltas.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tutorials/connect-coding-agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "llms-full.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openclaw.plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-coding/.agents/gbrain-launcher",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-coding/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-coding/.codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-coding/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-coding/skills/conventions/agent-operator-protocol.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-coding/skills/maintain/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-daily/.agents/gbrain-launcher",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-daily/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-daily/.codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-daily/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-daily/skills/conventions/agent-operator-protocol.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/conventions/agent-operator-protocol.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/frontmatter-guard/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/maintain/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/bench/conversion-strict-pass.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/bench/production-soak/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/bench/production-soak/ubicloud.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/bench/production-soak/vm-setup.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/bench/stall-repro-vm-setup.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/build-fence-format.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/build-schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/check-core-guard-coverage.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/check-engine-sql-dynamic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/check-test-isolation.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci-executed-counts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci-full-suite-tree.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/ci-mcp-tap.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/ci-openclaw-mcp.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci-reuse.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci-ubicloud.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/e2e-matrix.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/e2e-provider-key-notice.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/e2e-weights.json",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

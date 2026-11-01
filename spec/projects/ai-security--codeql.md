@@ -36,6 +36,16 @@ The [Go registry adapter](https://github.com/github/codeql/blob/fd2bfc8a3da9c73a
 
 The reviewed helper logs temporary-file creation errors but continues to dereference the file, and a write error can still be followed by publication if Close succeeds. Its globals cache environment inspection without synchronization or refresh, while ApplyProxyEnvVars rebuilds from the process environment rather than preserving an existing command-specific environment. Debug output includes full command arguments and proxy variables; registry URLs can carry sensitive values. Adapt scoped certificate plumbing only with typed failures, resource cleanup, redaction and explicit policy for the public/direct registry fallback. No extractor, dependency fetch or tests were run.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `950734fc80d48083479843e2284039832eaf54c7` against prior analyzed commit `fd2bfc8a3da9c73a0c8be05d110efaf14a856445`. Historical reviews above remain separate evidence.
+
+The new [dependency configuration planner](https://github.com/github/codeql/blob/950734fc80d48083479843e2284039832eaf54c7/rust/extractor/src/configuration.rs) groups candidate Rust dependency files by distinct cfg sets, deduplicates equivalent configurations deterministically, prefers more enabled features with sorted tie-breaks, and retains lower-priority alternatives. It uses source-root metadata only when all associated crates agree; ambiguous roots require semantic lookup. More features are not a monotonic coverage guarantee, so an alternate configuration can remain necessary when the preferred one disables a module.
+
+Embedded fixtures check metadata-only selection and insertion-order-independent preference. The [integration fixture](https://github.com/github/codeql/blob/950734fc80d48083479843e2284039832eaf54c7/rust/ql/integration-tests/dependency-features/test_dependency_features.py) creates two workspaces with crossed feature selections, reverses enumeration order, and includes a module disabled by a richer feature configuration. The [workspace-discovery delta](https://github.com/github/codeql/blob/950734fc80d48083479843e2284039832eaf54c7/rust/extractor/src/rust_analyzer.rs) treats an already-workspace manifest separately while honoring member/exclude patterns for enclosing workspaces. Teamagent code knowledge should record build configuration and extraction coverage with each symbol/evidence version; a single preferred build is not every reachable program variant.
+
+**Coverage:** Read complete targeted configuration planner including embedded tests, workspace-discovery delta and integration fixture. Extractor orchestration and expected query results were not inspected or executed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codeql](https://github.com/github/codeql); analyzed commit `fd2bfc8a3da9c73a0c8be05d110efaf14a856445`; commit date 2026-10-27T17:43:02+01:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--codeql.md).
+Analysis metadata: source [codeql](https://github.com/github/codeql); analyzed commit `950734fc80d48083479843e2284039832eaf54c7`; commit date 2026-10-31T00:10:03+01:00; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--codeql.md).
 <!-- teamagent-analysis:end -->

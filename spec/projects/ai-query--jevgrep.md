@@ -42,6 +42,18 @@ Evidence: [packages/core/src/retrieve.ts:25-109](https://github.com/dzhng/jevgre
 
 **Scope and limits:** Static scoped review of retrieval scheduling, evidence refinement and cache maintenance within the 107-path comparison. Evaluator transport, all parser/language changes and end-to-end filesystem/provider tests were not fully audited or executed. Cache maintenance was inspected as source/diff; no cache files were modified.
 
+## Change review — 2026-11-01
+
+**Development checks move to a shared worktree hook; retrieval algorithms are unchanged in this interval.** Reviewed `58b7091e813ade120ed759a0b3f6249b8680b640` (commit date `2026-10-30T13:53:56+04:00`) against `28cf384d444e1f4bf5571142ec32357cb84973ae`. The complete 12-path comparison covers skills, dependency/setup metadata and developer scripts. The installer targets Git's common hooks directory, runs the committing checkout's own lint-staged and rejects missing local dependencies. It warns and returns successfully when a custom hooks path or unrecognized existing hook prevents installation, and exempts branches whose package manifest does not mention lint-staged. Those are explicit coverage limitations, not proof that every worktree is protected.
+
+The file-size audit now batches staged blob-size queries through `cat-file` instead of starting one Git process per file. Its new mapping converts each output line with `Number` without separately checking response cardinality or finite integer sizes; its positive-integer token option also has no practical upper bound. Treat the bytes-divided-by-four number as a rough readability heuristic, not model-token accounting or complete integrity validation. Evidence: [scripts/install-git-hooks.mjs:1-56](https://github.com/dzhng/jevgrep/blob/58b7091e813ade120ed759a0b3f6249b8680b640/scripts/install-git-hooks.mjs#L1-L56) and [scripts/check-file-size.mjs:143-166](https://github.com/dzhng/jevgrep/blob/58b7091e813ade120ed759a0b3f6249b8680b640/scripts/check-file-size.mjs#L143-L166).
+
+The renamed decision-audit skill asks agents to retain a public decision ledger and judge choices against the final implementation. That is useful review organization, but its policy that user-only decisions never block a run is an upstream instruction, not authority for Teamagent to bypass consent or deterministic gates. Evidence: [.agents/skills/audit-decisions/SKILL.md:43-82](https://github.com/dzhng/jevgrep/blob/58b7091e813ade120ed759a0b3f6249b8680b640/.agents/skills/audit-decisions/SKILL.md#L43-L82).
+
+**Harness consequence:** Separate installed-hook coverage from installer exit status, verify each checkout's execution path and validate every batched Git result. Preserve decision provenance and human authorization separately from model confidence. This source's package-manager and hook choices do not replace Teamagent's adopted workflow or centrally maintained dependency policy.
+
+**Scope and limits:** Complete changed-path inventory and diff read, including the new installer and changed skills. Upstream skills were analyzed as data, not adopted or executed. No hook installation, commit fixture, token benchmark or retrieval evaluation was run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [jevgrep](https://github.com/dzhng/jevgrep); analyzed commit `28cf384d444e1f4bf5571142ec32357cb84973ae`; commit date 2026-10-21T23:34:38+04:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--jevgrep.md).
+Analysis metadata: source [jevgrep](https://github.com/dzhng/jevgrep); analyzed commit `58b7091e813ade120ed759a0b3f6249b8680b640`; commit date 2026-10-30T13:53:56+04:00; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--jevgrep.md).
 <!-- teamagent-analysis:end -->

@@ -228,6 +228,7 @@ test("media receipt transaction crashes roll back and release locks while commit
         '); db.exec("BEGIN IMMEDIATE"); db.query("INSERT INTO receipts(id,key_digest,payload) VALUES (?,?,?)").run("uncommitted",null,new Uint8Array([1])); process.exit(17);',
     );
     const child = Bun.spawn([process.execPath, script], {
+      windowsHide: true,
       cwd: process.cwd(),
       stdout: "ignore",
       stderr: "ignore",

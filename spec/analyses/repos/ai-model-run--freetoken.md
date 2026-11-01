@@ -2,11 +2,11 @@
 
 Source: [freetoken](https://github.com/FlashML-org/FreeToken) · [Analysis](../../projects/ai-model-run--freetoken.md) · [models](../../models.md), [decisions](../../decisions.md), [memory](../../memory.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `a2ce636083a0137571ba505768ad36be5f7a393b`; commit date: 2026-10-27T23:56:59-07:00; review date: 2026-10-28T14:52:35.205Z; observed SHA: `a2ce636083a0137571ba505768ad36be5f7a393b`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `ee43b2a11345d056ba349d22ee073c6828b1364b`; commit date: 2026-10-29T17:15:32-07:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `ee43b2a11345d056ba349d22ee073c6828b1364b`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/FlashML-org/FreeToken/compare/a2ce636083a0137571ba505768ad36be5f7a393b...a2ce636083a0137571ba505768ad36be5f7a393b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/FlashML-org/FreeToken/compare/ee43b2a11345d056ba349d22ee073c6828b1364b...ee43b2a11345d056ba349d22ee073c6828b1364b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

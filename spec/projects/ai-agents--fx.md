@@ -50,6 +50,18 @@ For Teamagent, retain the original bounded/redacted HTTP evidence alongside any 
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `c11b301dddd376d037af1dc7bf3eb0dd197caee0` (commit date `2026-11-01T03:49:27-05:00`), compared with `fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete image-budget diff including inline algorithm fixtures; whole-repository diff was oversized. Other request assembly and provider prompt-cache behavior not audited.
+
+The [image budget](https://github.com/vercel-labs/fx/blob/c11b301dddd376d037af1dc7bf3eb0dd197caee0/src/core/agent/runtime/request_image_budget.zig) rounds the minimum number of withheld old images to stable count/byte block boundaries, retaining the newest block when rounding would remove it. Inline fixtures cover monotone cuts, large images and growing synthetic sessions. Withholding uses an explicit projection with notes. The tests establish intended local algorithm invariants, not measured provider cache savings or equivalent task quality after extra images are withheld.
+
+**Teamagent implication (inference):** Keep full image evidence outside the bounded model context and disclose omissions with retrievable references. Evaluate cache-friendly batching against task quality, actual serialized limits and measured route costs; do not treat reduced prefix churn as a verified optimization without provider-specific evidence.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [fx](https://github.com/vercel-labs/fx); analyzed commit `fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e`; commit date 2026-10-27T23:35:02-04:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--fx.md).
+Analysis metadata: source [fx](https://github.com/vercel-labs/fx); analyzed commit `c11b301dddd376d037af1dc7bf3eb0dd197caee0`; commit date 2026-11-01T03:49:27-05:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--fx.md).
 <!-- teamagent-analysis:end -->

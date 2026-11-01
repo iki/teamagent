@@ -2,11 +2,11 @@
 
 Source: [anything-llm](https://github.com/Mintplex-Labs/anything-llm) · [Analysis](../../projects/ai-agents--anything-llm.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `0941fb03596862899f7df2bdeb022eb68d4216a7`; commit date: 2026-10-27T16:04:07-07:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `0941fb03596862899f7df2bdeb022eb68d4216a7`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `9caf2b4c29d9782f1cba4142be2525ebfa0ecd43`; commit date: 2026-10-30T13:49:57-07:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `9caf2b4c29d9782f1cba4142be2525ebfa0ecd43`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Mintplex-Labs/anything-llm/compare/0941fb03596862899f7df2bdeb022eb68d4216a7...0941fb03596862899f7df2bdeb022eb68d4216a7). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Mintplex-Labs/anything-llm/compare/9caf2b4c29d9782f1cba4142be2525ebfa0ecd43...9caf2b4c29d9782f1cba4142be2525ebfa0ecd43). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

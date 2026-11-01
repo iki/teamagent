@@ -1,0 +1,985 @@
+{
+  "id": "ai-eval--langwatch",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/langwatch/langwatch",
+  "report": "spec/projects/ai-eval--langwatch.md",
+  "analyzedSha": "7aeb146c2b2ebe4e6d866177e365ceca44a5124b",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T11:19:16+01:00",
+  "observedSha": "c7fad93329af25f82b1b1260ff8634cd5a070946",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c7fad93329af25f82b1b1260ff8634cd5a070946",
+      "date": "2026-11-01T05:41:04Z",
+      "subject": "Release docs (auto-release on merge to main) [skip ci]"
+    },
+    {
+      "sha": "abfdbbfac18f4294d31c06c3460df60741c1c79a",
+      "date": "2026-11-01T06:40:20+01:00",
+      "subject": "fix(model-provider): drop the Doubleword models shut down on 30 Oct (#9214)"
+    },
+    {
+      "sha": "9b88cb83ee98280bc15c738832b696249d3d09e5",
+      "date": "2026-10-31T21:14:34+01:00",
+      "subject": "fix(data-privacy): raise the per-span PII redaction budget to 400,000 characters (#9209)"
+    },
+    {
+      "sha": "252263af272827d94c2e31b85348f581bc52232f",
+      "date": "2026-10-31T20:36:14+01:00",
+      "subject": "feat(instant-eval-judge): judge router behind release_instant_evals_judge_router (#9118)"
+    },
+    {
+      "sha": "810702be0e8c98069407adbc18673d163dc5fada",
+      "date": "2026-10-30T16:24:19+01:00",
+      "subject": "fix(langy): show an AI gateway spending limit as a budget card, not a failed reply (#9197)"
+    },
+    {
+      "sha": "9d8d0ff2bbd68de04f0b1a0c1a58f196c5347cb0",
+      "date": "2026-10-30T14:43:52Z",
+      "subject": "Release docs (auto-release on merge to main) [skip ci]"
+    },
+    {
+      "sha": "aa27b1ffaa92860abe40548cbbb5009369472bdd",
+      "date": "2026-10-30T15:42:59+01:00",
+      "subject": "feat(aigateway): serve OpenAI Decisions API on /v1/decisions (#9200)"
+    },
+    {
+      "sha": "93a434256d91bdc1cc0333a347c5e83140dab0fd",
+      "date": "2026-10-30T19:21:35+08:00",
+      "subject": "chore(main): release typescript-sdk 2.1.0 (#9144)"
+    },
+    {
+      "sha": "972827627f3481ce6fab0a5b33a0151fb3f144dc",
+      "date": "2026-10-30T19:11:17+08:00",
+      "subject": "docs(github): add a Decisions table to the PR template (#9196)"
+    },
+    {
+      "sha": "3f7af90638356c3cd68ae91dd167d5ce4ba36e60",
+      "date": "2026-10-30T04:20:46Z",
+      "subject": "Release docs (auto-release on merge to main) [skip ci]"
+    },
+    {
+      "sha": "af5a9c342951371a1cf547188cff78f9cd50bcc1",
+      "date": "2026-10-30T12:19:50+08:00",
+      "subject": "feat(dashboards): widget queries take sources and projects as params (#9171)"
+    },
+    {
+      "sha": "1ccf84aa5a72f4031401f8112533d7f5839c2255",
+      "date": "2026-10-30T12:08:17+08:00",
+      "subject": "chore(main): release mcp-server 3.0.0 (#8971)"
+    },
+    {
+      "sha": "c1e94f74379ab2bbb555412385330a65d385fe3e",
+      "date": "2026-10-29T18:11:25+01:00",
+      "subject": "feat(instant-eval): let an LLM judge pick its own decision model (#9142)"
+    },
+    {
+      "sha": "c10b515d4ca48f48215a3002df500024c6757a62",
+      "date": "2026-10-29T15:42:05Z",
+      "subject": "Release docs (auto-release on merge to main) [skip ci]"
+    },
+    {
+      "sha": "622e043f59595eb96f2ae020801aee1d37c22ffe",
+      "date": "2026-10-29T16:41:24+01:00",
+      "subject": "fix(clickhouse-client): async inserts waiting for a slot share one statement (#9182)"
+    },
+    {
+      "sha": "d8adba263b07692e61b5621527d5ade34d019894",
+      "date": "2026-10-29T16:41:06+01:00",
+      "subject": "fix(trace): a span's own attributes never break its read on a request-param name (#9179)"
+    },
+    {
+      "sha": "df9775c86aa762a4d9eabd56ef2970e20b5964f2",
+      "date": "2026-10-29T15:45:51+01:00",
+      "subject": "fix(eventing): a state projection's rebuild accepts the log's copy of a re-sent key (#9181)"
+    },
+    {
+      "sha": "a2d681b5fb2c32838ee9625ac9d6862022974a9f",
+      "date": "2026-10-29T15:44:42+01:00",
+      "subject": "feat(design-system): search other projects from the scope filter (#9116)"
+    },
+    {
+      "sha": "3b0992a620fd062492febab1b16e59081c4ff00e",
+      "date": "2026-10-29T15:44:33+01:00",
+      "subject": "fix(auth): tell a person their identity provider refused them, and stop paging on it (#9180)"
+    },
+    {
+      "sha": "c9160f862f028ff073fac7a52ef389ac0ed4a6d7",
+      "date": "2026-10-29T15:42:11+01:00",
+      "subject": "fix(clickhouse): split an id index retention raise under the server's 128 KiB field cap (#9178)"
+    },
+    {
+      "sha": "beadf5d7326eebbb948fae339901b25568a1f14e",
+      "date": "2026-10-29T21:13:18+08:00",
+      "subject": "fix(langy): expanded panel pushes open drawers left instead of covering them (#9159)"
+    },
+    {
+      "sha": "db0fe368e413231050dff872ed02e3e5d40de776",
+      "date": "2026-10-29T13:05:40Z",
+      "subject": "Release docs (auto-release on merge to main) [skip ci]"
+    },
+    {
+      "sha": "42a13b7f97128db7cf1570ba86b7f238fdc9d33a",
+      "date": "2026-10-29T21:04:44+08:00",
+      "subject": "fix(langy): pick an existing test suite before creating a scenario (#9158)"
+    },
+    {
+      "sha": "697a4ec99b1138987441b20d5507ad80812ed0f6",
+      "date": "2026-10-29T12:14:07+01:00",
+      "subject": "fix(ci): keep Content-Type when a re-tagged app image copies its CDN assets (#9028)"
+    },
+    {
+      "sha": "60d900e4304cc52627fac4b14c08ecc9d7b5330e",
+      "date": "2026-10-29T09:13:46+01:00",
+      "subject": "fix(docs): inset the compact contents bar so its label clears the edge (#9174)"
+    },
+    {
+      "sha": "7a323a59e6a873283c6370fd06584693ab2fb6d6",
+      "date": "2026-10-29T08:46:05+01:00",
+      "subject": "perf(docs-site): faster long pages, steadier all-pages Lighthouse (#9173)"
+    },
+    {
+      "sha": "cf6c6fbfb008662912253444bc6049530531d17f",
+      "date": "2026-10-29T06:52:11Z",
+      "subject": "Release docs (auto-release on merge to main) [skip ci]"
+    },
+    {
+      "sha": "ac821b6201e5537c7f5011d9b1b6eeec979464c8",
+      "date": "2026-10-29T07:51:06+01:00",
+      "subject": "feat(docs-site): 404 mark intro, API reference polish and live-site fixes (#9170)"
+    },
+    {
+      "sha": "215f67b0f07bafc98d6ac27b4b7deb5e20f6b99f",
+      "date": "2026-10-29T05:32:20Z",
+      "subject": "Release docs (auto-release on merge to main) [skip ci]"
+    },
+    {
+      "sha": "5e82c1ebc1d2dbfda817cf175f3aba62e485a0d8",
+      "date": "2026-10-29T13:29:44+08:00",
+      "subject": "feat(dashboards): per-widget \"Langy traces\" setting in the query editor (#9137)"
+    },
+    {
+      "sha": "e5a3e997ae2173f90d6fe44d857ab563402f07ae",
+      "date": "2026-10-29T04:56:34+01:00",
+      "subject": "feat(docs-site): deploy the /docs build to its bucket from main (#9165)"
+    },
+    {
+      "sha": "09d75a62818f91307034bd8b546721de2a6dac0c",
+      "date": "2026-10-29T04:50:55+01:00",
+      "subject": "ci: build the arm64 app image on the standard hosted arm runner (#9166)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".claude/rules/docs-app.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/api-transports/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/core/repository-rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/haven-browser/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/haven-lifecycle/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/haven/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/repo-tree/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".coderabbit.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/.release-please-manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/package-suites.weights",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pr-filters.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/__tests__/publish-ecr-filters.test.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/__tests__/publish-lambda-tag.test.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/guard-architecture-section.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/guard-architecture-section.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/guard-breaking-change-scope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/guard-deployment-impact.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/guard-deployment-impact.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/nearest-ancestor-tag.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/notify-slack-job-failure.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/pr-impact-map-categories.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/publish-lambda-tag.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/run-package-suites.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/run-package-suites.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/architecture-section-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cache-cleanup.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/deployment-impact-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/docs-site-lighthouse-all.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/docs-site.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/embedded-binaries-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gateway-matrix.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/go-ci.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/go-services.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/issue-link.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/langwatch-app-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/operator-action-notes.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/pr-conventional-commits-title.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pr-conventions.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/pr-impact-map.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/prerelease-charts-oci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-docker-app.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-docker-ecr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-docker-private.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/release-scope-guard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitleaks.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxlintrc.native.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/api/src/main.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/OPTIMIZATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/public/fonts/Inter-LICENSE.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/public/fonts/JetBrainsMono-LICENSE.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/public/fonts/Sentient-LICENSE.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/agent-controls.smoke.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/assets.smoke.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/audit.smoke.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/browser-checks.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/browser-fixture.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/code-preference.smoke.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/contrast.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/interaction-sizes.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/layout.smoke.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/mount.smoke.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/news.smoke.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/performance-report.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/performance.smoke.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/polish.smoke.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/refinement.smoke.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/session.smoke.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/shots.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/smoke.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/agent-discovery.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/agent-readiness.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/audit.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/deployment.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/docs-config.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/generation.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/generators.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/links.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/performance.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/playground-session.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/published-urls.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/refinement.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/releases.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/rendering.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/seo.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/specs/smoke.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/__tests__/page-in.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/app.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/docs.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/entry-server.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/fonts/Inter-Variable-latin-ext.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/fonts/Inter-Variable-latin.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/fonts/JetBrainsMono-Variable-latin-ext.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/fonts/JetBrainsMono-Variable-latin.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/fonts/Sentient-Medium.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/fonts/Sentient-Regular.woff2",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/pages.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/theme-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/virtual.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/virtual/docs-nav.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/virtual/docs-operations.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/app/virtual/docs-pages.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/browser/compiler-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/browser/entry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/browser/islands.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/browser/navigation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/browser/reading.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/__tests__/codegen.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/__tests__/docs-session.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/__tests__/json-tokens.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/__tests__/openapi.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/__tests__/operation-schema.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/__tests__/playground-no-app.integration.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/__tests__/playground-refused-frame.integration.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/__tests__/playground-session.integration.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/__tests__/playground-source.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/__tests__/response-schema.integration.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/browser/docs-session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/browser/playground-dom.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/browser/playground.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/browser/response-view.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/browser/session-controls.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/compile.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/compile/openapi.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/model/codegen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/model/docs-session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/model/json-code.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/model/json-tokens.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/model/operation-schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/model/operation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/model/playground-outcome.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/model/playground-source.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/model/request-validation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/ui.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/ui/endpoint-state.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/ui/method-badge.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/ui/panel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/ui/playground-examples.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/ui/playground-request.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/ui/playground.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/ui/reference.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/ui/responsive-examples.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/api-reference/ui/schema.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/code/__tests__/language-family.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/code/compile.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/src/features/code/compile/diagram-theme.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "id": "ai-eval--falsify",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/studio-11-co/falsify",
+  "report": "spec/projects/ai-eval--falsify.md",
+  "analyzedSha": "1b3950487b4fe730aaef005800d9b2f47bf77ff9",
+  "analyzedAt": "2026-10-28T08:26:04.502Z",
+  "analyzedCommitDate": "2026-10-23T17:29:42Z",
+  "observedSha": "4b6aece648f9db1b8cd586b2e982942982389344",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "4b6aece648f9db1b8cd586b2e982942982389344",
+      "date": "2026-10-31T14:58:40+03:00",
+      "subject": "v0.5.2: ship falsify_linkage.py; falsify linkage subcommand"
+    },
+    {
+      "sha": "b25fe5f7b949f4c9a1e492abb5d4c89918b7e8cf",
+      "date": "2026-10-30T17:27:40Z",
+      "subject": "ci: bump github/codeql-action (#56)"
+    },
+    {
+      "sha": "456a564dc14ebee947ed5a605faa76bf2091e0b5",
+      "date": "2026-10-28T15:22:16+03:00",
+      "subject": "release 0.5.1: --json on verify, lock and hash; JSON errors on every path"
+    },
+    {
+      "sha": "b3334b6050394e2766239994d93a66bb9712cea8",
+      "date": "2026-10-28T14:41:57+03:00",
+      "subject": "verify/lock/hash --json: one JSON object, stable keys, exit codes unchanged"
+    },
+    {
+      "sha": "d149235d2e9b4c21534fc6ef9ac8fa03f4551ef6",
+      "date": "2026-10-28T14:27:13+03:00",
+      "subject": "release 0.5.0: anchor + receipt verify, lockable init, attest --as test-result"
+    },
+    {
+      "sha": "e8c65c779fa7d16782941ee73a6fa8771cf82f9e",
+      "date": "2026-10-28T14:24:51+03:00",
+      "subject": "attest --as test-result: in-toto Test Result v0.1 with the locked manifest as configuration"
+    },
+    {
+      "sha": "4d26ec0b7b2ff16409156a3db9d477c8211c0aef",
+      "date": "2026-10-28T14:19:31+03:00",
+      "subject": "init: UUIDv7 claim_id, current created_at, --dataset hashing, clean errors; engine docs use falsify-engine"
+    },
+    {
+      "sha": "1aee151e3075ed570ec6de02ff4ff785d4fa8a65",
+      "date": "2026-10-28T14:13:03+03:00",
+      "subject": "falsify anchor + falsify receipt verify: timestamped receipts from the CLI, verified offline (RFC 3161 + Rekor v2)"
+    },
+    {
+      "sha": "811323a942c582c14b521d8c070f9fbb908ee9ad",
+      "date": "2026-10-28T13:54:28+03:00",
+      "subject": "release 0.4.1: verify rejects non-finite --observed; README quick start"
+    },
+    {
+      "sha": "0ada01da4ae8070457df71ab48571ec1478c2c15",
+      "date": "2026-10-28T13:44:24+03:00",
+      "subject": "verify: reject non-finite --observed (Python, Go); README quick start: Python 3.11+ and clone step"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/falsify.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scorecard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CITATION.cff",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/CASE_STUDIES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/DEMO_SCRIPT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/EXAMPLES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "falsify.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "falsify_prml.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "falsify_receipt.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "impl/go/falsify.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/receipt/claim.prml.rekor.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/receipt/claim.prml.tsr",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/receipt/claim.prml.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_attest_test_result.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_case_studies_doc.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_packaging.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_prml_init.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_prml_json.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_prml_verify_observed.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_receipt.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

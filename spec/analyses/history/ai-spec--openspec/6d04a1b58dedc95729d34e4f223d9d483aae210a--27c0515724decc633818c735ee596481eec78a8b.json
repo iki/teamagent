@@ -1,0 +1,915 @@
+{
+  "id": "ai-spec--openspec",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/Fission-AI/OpenSpec",
+  "report": "spec/projects/ai-spec--openspec.md",
+  "analyzedSha": "6d04a1b58dedc95729d34e4f223d9d483aae210a",
+  "analyzedAt": "2026-10-24T06:36:54.441Z",
+  "analyzedCommitDate": "2026-10-24T03:51:03Z",
+  "observedSha": "27c0515724decc633818c735ee596481eec78a8b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "27c0515724decc633818c735ee596481eec78a8b",
+      "date": "2026-10-30T23:30:00Z",
+      "subject": "Version Packages (#2176)"
+    },
+    {
+      "sha": "4abbb373654478f223c58bfca22d7910fc54d58d",
+      "date": "2026-10-30T23:00:49Z",
+      "subject": "chore(deps): bump the website-dependencies group (#2183)"
+    },
+    {
+      "sha": "e55e53377edd0f703359ac5774a3f88a6b3454be",
+      "date": "2026-10-30T22:48:29Z",
+      "subject": "chore(deps-dev): bump typescript-eslint from 8.71.2 to 8.72.0 (#2179)"
+    },
+    {
+      "sha": "05cc75f265d9233814f83364e390e54d5c2c8a3d",
+      "date": "2026-10-30T22:41:15Z",
+      "subject": "fix(completion): write the zsh block to $ZDOTDIR/.zshrc when set (#2172)"
+    },
+    {
+      "sha": "33c6f93e3deeb6f26f0526f0f8577e30241db40f",
+      "date": "2026-10-30T22:04:56Z",
+      "subject": "build!: drop Node.js 20, require 22.12.0 or newer (#2159)"
+    },
+    {
+      "sha": "ebdd9a5314d6584980bd8619c6a0d800a1c0e634",
+      "date": "2026-10-30T22:04:45Z",
+      "subject": "chore(openspec): archive 19 shipped changes and remove 5 stale entries (#2128)"
+    },
+    {
+      "sha": "c499010178c46144c8370b2b5c9eb464a8a0e465",
+      "date": "2026-10-30T22:04:33Z",
+      "subject": "test(store): give the real-git store tests 30s on Windows (#2178)"
+    },
+    {
+      "sha": "dc37609827c8c3aba49e49347745f47aaa65cb1b",
+      "date": "2026-10-30T19:42:06Z",
+      "subject": "feat(validate): warn when a scenario has no WHEN/GIVEN or THEN step (#2079)"
+    },
+    {
+      "sha": "18a75a5d17c0711586dee1af171033dd632a4f78",
+      "date": "2026-10-30T19:41:25Z",
+      "subject": "feat(store): suggest the store that matches the repo's origin name (#2077)"
+    },
+    {
+      "sha": "625834c8fe8b94b4ebc3ae6550e67cd7039fcde8",
+      "date": "2026-10-30T19:41:22Z",
+      "subject": "docs(community-schemas): add epic-driven schema entry to customization (#2107)"
+    },
+    {
+      "sha": "ae7ad75025b5b84f605e9616692ec97f9fb09f28",
+      "date": "2026-10-30T19:41:19Z",
+      "subject": "fix(validate): fail when config.yaml is not valid YAML (#2127)"
+    },
+    {
+      "sha": "0c3d1c6cd664318eee6894a90a6a58b40f1b7a02",
+      "date": "2026-10-30T17:55:13Z",
+      "subject": "fix(website): serve docs logo and favicons under /docs (#2161)"
+    },
+    {
+      "sha": "50949cdeb9873ef8128830e99330dc4df1c196b7",
+      "date": "2026-10-30T17:55:09Z",
+      "subject": "chore(deps): bump the website-dependencies group (#2153)"
+    },
+    {
+      "sha": "d924004d25a663d394f5841d79cc6641a178df84",
+      "date": "2026-10-30T17:55:01Z",
+      "subject": "ci: bump the github-actions group with 3 updates (#2149)"
+    },
+    {
+      "sha": "6368683d01b3e9911090bf0d49bfd8fbb4dd043c",
+      "date": "2026-10-30T17:54:57Z",
+      "subject": "chore(deps): bump vite 8.3.5, eslint 10.13.0, @inquirer/core 12.0.5 (#2158)"
+    },
+    {
+      "sha": "cb1adee51a472f872999afdafb68e0cc348b7935",
+      "date": "2026-10-30T17:54:49Z",
+      "subject": "fix(validate): match unspaced ###Requirement: headers in the main-spec structure check (#2133)"
+    },
+    {
+      "sha": "a6cd3bc926c6151b89d3e0fbdf3676f8fc416ecb",
+      "date": "2026-10-30T17:54:44Z",
+      "subject": "fix(parser): don't open a fence on backtick lines with backticks in the info string (#2131)"
+    },
+    {
+      "sha": "d68fc51262a95957e4280756b10c61843ecb900b",
+      "date": "2026-10-30T17:52:24Z",
+      "subject": "docs(install): simplify the install page and ship archives (#2160)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/release-openspec/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/binaries.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/security.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs-lab/multi-repo/stores.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs-lab/reference/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs-lab/reference/configuration/config-yaml.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs-lab/reference/schemas/spec-driven/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs-lab/start/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/customization.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/troubleshooting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flake.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "install.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/IMPLEMENTATION_ORDER.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/add-change-stacking-awareness/.openspec.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/add-change-stacking-awareness/proposal.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/add-change-stacking-awareness/specs/change-creation/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/add-change-stacking-awareness/specs/change-stacking-workflow/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/add-change-stacking-awareness/specs/cli-change/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/add-change-stacking-awareness/specs/openspec-conventions/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/add-change-stacking-awareness/tasks.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/add-qa-smoke-harness/.openspec.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/add-qa-smoke-harness/proposal.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/add-qa-smoke-harness/specs/developer-qa-workflow/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-amp-support/.openspec.yaml",
+      "previousPath": "openspec/changes/add-amp-support/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-amp-support/proposal.md",
+      "previousPath": "openspec/changes/add-amp-support/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-amp-support/specs/ai-tool-paths/spec.md",
+      "previousPath": "openspec/changes/add-amp-support/specs/ai-tool-paths/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-amp-support/tasks.md",
+      "previousPath": "openspec/changes/add-amp-support/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-devin-desktop-support/.openspec.yaml",
+      "previousPath": "openspec/changes/add-devin-desktop-support/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-devin-desktop-support/proposal.md",
+      "previousPath": "openspec/changes/add-devin-desktop-support/proposal.md"
+    },
+    {
+      "status": "R083",
+      "path": "openspec/changes/archive/2026-10-19-add-devin-desktop-support/specs/ai-tool-paths/spec.md",
+      "previousPath": "openspec/changes/add-devin-desktop-support/specs/ai-tool-paths/spec.md"
+    },
+    {
+      "status": "R080",
+      "path": "openspec/changes/archive/2026-10-19-add-devin-desktop-support/specs/cli-init/spec.md",
+      "previousPath": "openspec/changes/add-devin-desktop-support/specs/cli-init/spec.md"
+    },
+    {
+      "status": "R090",
+      "path": "openspec/changes/archive/2026-10-19-add-devin-desktop-support/specs/cli-update/spec.md",
+      "previousPath": "openspec/changes/add-devin-desktop-support/specs/cli-update/spec.md"
+    },
+    {
+      "status": "R070",
+      "path": "openspec/changes/archive/2026-10-19-add-devin-desktop-support/specs/command-generation/spec.md",
+      "previousPath": "openspec/changes/add-devin-desktop-support/specs/command-generation/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-devin-desktop-support/tasks.md",
+      "previousPath": "openspec/changes/add-devin-desktop-support/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-init-agents-target/.openspec.yaml",
+      "previousPath": "openspec/changes/add-init-agents-target/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-init-agents-target/proposal.md",
+      "previousPath": "openspec/changes/add-init-agents-target/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-init-agents-target/specs/ai-tool-paths/spec.md",
+      "previousPath": "openspec/changes/add-init-agents-target/specs/ai-tool-paths/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-init-agents-target/specs/cli-init/spec.md",
+      "previousPath": "openspec/changes/add-init-agents-target/specs/cli-init/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-init-agents-target/tasks.md",
+      "previousPath": "openspec/changes/add-init-agents-target/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-skill-cli-auto-approval/proposal.md",
+      "previousPath": "openspec/changes/add-skill-cli-auto-approval/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-skill-cli-auto-approval/specs/cli-init/spec.md",
+      "previousPath": "openspec/changes/add-skill-cli-auto-approval/specs/cli-init/spec.md"
+    },
+    {
+      "status": "R069",
+      "path": "openspec/changes/archive/2026-10-19-add-skill-cli-auto-approval/specs/command-generation/spec.md",
+      "previousPath": "openspec/changes/add-skill-cli-auto-approval/specs/command-generation/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-skill-cli-auto-approval/tasks.md",
+      "previousPath": "openspec/changes/add-skill-cli-auto-approval/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-status-next-step/.openspec.yaml",
+      "previousPath": "openspec/changes/add-status-next-step/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-status-next-step/proposal.md",
+      "previousPath": "openspec/changes/add-status-next-step/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-status-next-step/specs/cli-artifact-workflow/spec.md",
+      "previousPath": "openspec/changes/add-status-next-step/specs/cli-artifact-workflow/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-status-next-step/tasks.md",
+      "previousPath": "openspec/changes/add-status-next-step/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-update-workflow/.openspec.yaml",
+      "previousPath": "openspec/changes/add-update-workflow/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-update-workflow/design.md",
+      "previousPath": "openspec/changes/add-update-workflow/design.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-update-workflow/proposal.md",
+      "previousPath": "openspec/changes/add-update-workflow/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-update-workflow/specs/opsx-update-skill/spec.md",
+      "previousPath": "openspec/changes/add-update-workflow/specs/opsx-update-skill/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-update-workflow/tasks.md",
+      "previousPath": "openspec/changes/add-update-workflow/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-validation-findings-report/.openspec.yaml",
+      "previousPath": "openspec/changes/add-validation-findings-report/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-validation-findings-report/design.md",
+      "previousPath": "openspec/changes/add-validation-findings-report/design.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-validation-findings-report/proposal.md",
+      "previousPath": "openspec/changes/add-validation-findings-report/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-validation-findings-report/specs/cli-validate/spec.md",
+      "previousPath": "openspec/changes/add-validation-findings-report/specs/cli-validate/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-validation-findings-report/tasks.md",
+      "previousPath": "openspec/changes/add-validation-findings-report/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-version-command/.openspec.yaml",
+      "previousPath": "openspec/changes/add-version-command/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-version-command/design.md",
+      "previousPath": "openspec/changes/add-version-command/design.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-version-command/proposal.md",
+      "previousPath": "openspec/changes/add-version-command/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-version-command/specs/cli-version/spec.md",
+      "previousPath": "openspec/changes/add-version-command/specs/cli-version/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-add-version-command/tasks.md",
+      "previousPath": "openspec/changes/add-version-command/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-extend-config-injection-to-apply-archive/.openspec.yaml",
+      "previousPath": "openspec/changes/extend-config-injection-to-apply-archive/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-extend-config-injection-to-apply-archive/design.md",
+      "previousPath": "openspec/changes/extend-config-injection-to-apply-archive/design.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-extend-config-injection-to-apply-archive/proposal.md",
+      "previousPath": "openspec/changes/extend-config-injection-to-apply-archive/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-extend-config-injection-to-apply-archive/specs/cli-archive-instructions/spec.md",
+      "previousPath": "openspec/changes/extend-config-injection-to-apply-archive/specs/cli-archive-instructions/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-extend-config-injection-to-apply-archive/specs/cli-artifact-workflow/spec.md",
+      "previousPath": "openspec/changes/extend-config-injection-to-apply-archive/specs/cli-artifact-workflow/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-extend-config-injection-to-apply-archive/specs/config-loading/spec.md",
+      "previousPath": "openspec/changes/extend-config-injection-to-apply-archive/specs/config-loading/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-extend-config-injection-to-apply-archive/specs/context-injection/spec.md",
+      "previousPath": "openspec/changes/extend-config-injection-to-apply-archive/specs/context-injection/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-extend-config-injection-to-apply-archive/specs/operation-guidance/spec.md",
+      "previousPath": "openspec/changes/extend-config-injection-to-apply-archive/specs/operation-guidance/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-extend-config-injection-to-apply-archive/specs/opsx-apply-skill/spec.md",
+      "previousPath": "openspec/changes/extend-config-injection-to-apply-archive/specs/opsx-apply-skill/spec.md"
+    },
+    {
+      "status": "R096",
+      "path": "openspec/changes/archive/2026-10-19-extend-config-injection-to-apply-archive/specs/opsx-archive-skill/spec.md",
+      "previousPath": "openspec/changes/extend-config-injection-to-apply-archive/specs/opsx-archive-skill/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-extend-config-injection-to-apply-archive/specs/opsx-bulk-archive-skill/spec.md",
+      "previousPath": "openspec/changes/extend-config-injection-to-apply-archive/specs/opsx-bulk-archive-skill/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-extend-config-injection-to-apply-archive/specs/specs-sync-skill/spec.md",
+      "previousPath": "openspec/changes/extend-config-injection-to-apply-archive/specs/specs-sync-skill/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-extend-config-injection-to-apply-archive/tasks.md",
+      "previousPath": "openspec/changes/extend-config-injection-to-apply-archive/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-feat-add-omp-tool-support/.openspec.yaml",
+      "previousPath": "openspec/changes/feat-add-omp-tool-support/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-feat-add-omp-tool-support/design.md",
+      "previousPath": "openspec/changes/feat-add-omp-tool-support/design.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-feat-add-omp-tool-support/proposal.md",
+      "previousPath": "openspec/changes/feat-add-omp-tool-support/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-feat-add-omp-tool-support/specs/cli-init/spec.md",
+      "previousPath": "openspec/changes/feat-add-omp-tool-support/specs/cli-init/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-feat-add-omp-tool-support/specs/cli-update/spec.md",
+      "previousPath": "openspec/changes/feat-add-omp-tool-support/specs/cli-update/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-feat-add-omp-tool-support/specs/oh-my-pi-tool/spec.md",
+      "previousPath": "openspec/changes/feat-add-omp-tool-support/specs/oh-my-pi-tool/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-feat-add-omp-tool-support/tasks.md",
+      "previousPath": "openspec/changes/feat-add-omp-tool-support/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-archive-retirement-guidance/.openspec.yaml",
+      "previousPath": "openspec/changes/fix-archive-retirement-guidance/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-archive-retirement-guidance/proposal.md",
+      "previousPath": "openspec/changes/fix-archive-retirement-guidance/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-archive-retirement-guidance/specs/cli-archive/spec.md",
+      "previousPath": "openspec/changes/fix-archive-retirement-guidance/specs/cli-archive/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-archive-retirement-guidance/tasks.md",
+      "previousPath": "openspec/changes/fix-archive-retirement-guidance/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-cli-local-date-semantics/.openspec.yaml",
+      "previousPath": "openspec/changes/fix-cli-local-date-semantics/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-cli-local-date-semantics/design.md",
+      "previousPath": "openspec/changes/fix-cli-local-date-semantics/design.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-cli-local-date-semantics/proposal.md",
+      "previousPath": "openspec/changes/fix-cli-local-date-semantics/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-cli-local-date-semantics/specs/change-creation/spec.md",
+      "previousPath": "openspec/changes/fix-cli-local-date-semantics/specs/change-creation/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-cli-local-date-semantics/specs/cli-archive/spec.md",
+      "previousPath": "openspec/changes/fix-cli-local-date-semantics/specs/cli-archive/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-cli-local-date-semantics/tasks.md",
+      "previousPath": "openspec/changes/fix-cli-local-date-semantics/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-opencode-commands-directory/.openspec.yaml",
+      "previousPath": "openspec/changes/fix-opencode-commands-directory/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-opencode-commands-directory/design.md",
+      "previousPath": "openspec/changes/fix-opencode-commands-directory/design.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-opencode-commands-directory/proposal.md",
+      "previousPath": "openspec/changes/fix-opencode-commands-directory/proposal.md"
+    },
+    {
+      "status": "R093",
+      "path": "openspec/changes/archive/2026-10-19-fix-opencode-commands-directory/specs/command-generation/spec.md",
+      "previousPath": "openspec/changes/fix-opencode-commands-directory/specs/command-generation/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-opencode-commands-directory/tasks.md",
+      "previousPath": "openspec/changes/fix-opencode-commands-directory/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-schemas-root-selection/.openspec.yaml",
+      "previousPath": "openspec/changes/fix-schemas-root-selection/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-schemas-root-selection/design.md",
+      "previousPath": "openspec/changes/fix-schemas-root-selection/design.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-schemas-root-selection/proposal.md",
+      "previousPath": "openspec/changes/fix-schemas-root-selection/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-schemas-root-selection/specs/schema-resolution/spec.md",
+      "previousPath": "openspec/changes/fix-schemas-root-selection/specs/schema-resolution/spec.md"
+    },
+    {
+      "status": "R097",
+      "path": "openspec/changes/archive/2026-10-19-fix-schemas-root-selection/tasks.md",
+      "previousPath": "openspec/changes/fix-schemas-root-selection/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-spec-parser-fidelity/.openspec.yaml",
+      "previousPath": "openspec/changes/fix-spec-parser-fidelity/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-spec-parser-fidelity/design.md",
+      "previousPath": "openspec/changes/fix-spec-parser-fidelity/design.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-spec-parser-fidelity/proposal.md",
+      "previousPath": "openspec/changes/fix-spec-parser-fidelity/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-spec-parser-fidelity/specs/cli-validate/spec.md",
+      "previousPath": "openspec/changes/fix-spec-parser-fidelity/specs/cli-validate/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-spec-parser-fidelity/tasks.md",
+      "previousPath": "openspec/changes/fix-spec-parser-fidelity/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-validate-view-resolution-parity/.openspec.yaml",
+      "previousPath": "openspec/changes/fix-validate-view-resolution-parity/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-validate-view-resolution-parity/design.md",
+      "previousPath": "openspec/changes/fix-validate-view-resolution-parity/design.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-validate-view-resolution-parity/proposal.md",
+      "previousPath": "openspec/changes/fix-validate-view-resolution-parity/proposal.md"
+    },
+    {
+      "status": "R075",
+      "path": "openspec/changes/archive/2026-10-19-fix-validate-view-resolution-parity/specs/cli-archive/spec.md",
+      "previousPath": "openspec/changes/fix-validate-view-resolution-parity/specs/cli-archive/spec.md"
+    },
+    {
+      "status": "R085",
+      "path": "openspec/changes/archive/2026-10-19-fix-validate-view-resolution-parity/specs/cli-validate/spec.md",
+      "previousPath": "openspec/changes/fix-validate-view-resolution-parity/specs/cli-validate/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-validate-view-resolution-parity/specs/cli-view/spec.md",
+      "previousPath": "openspec/changes/fix-validate-view-resolution-parity/specs/cli-view/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-validate-view-resolution-parity/tasks.md",
+      "previousPath": "openspec/changes/fix-validate-view-resolution-parity/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-windows-archive-claim-release/.openspec.yaml",
+      "previousPath": "openspec/changes/fix-windows-archive-claim-release/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-windows-archive-claim-release/proposal.md",
+      "previousPath": "openspec/changes/fix-windows-archive-claim-release/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-windows-archive-claim-release/specs/cli-archive/spec.md",
+      "previousPath": "openspec/changes/fix-windows-archive-claim-release/specs/cli-archive/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-fix-windows-archive-claim-release/tasks.md",
+      "previousPath": "openspec/changes/fix-windows-archive-claim-release/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-graceful-status-no-changes/.openspec.yaml",
+      "previousPath": "openspec/changes/graceful-status-no-changes/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-graceful-status-no-changes/design.md",
+      "previousPath": "openspec/changes/graceful-status-no-changes/design.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-graceful-status-no-changes/proposal.md",
+      "previousPath": "openspec/changes/graceful-status-no-changes/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-graceful-status-no-changes/specs/graceful-status-empty/spec.md",
+      "previousPath": "openspec/changes/graceful-status-no-changes/specs/graceful-status-empty/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-graceful-status-no-changes/tasks.md",
+      "previousPath": "openspec/changes/graceful-status-no-changes/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-make-codex-skills-only/.openspec.yaml",
+      "previousPath": "openspec/changes/make-codex-skills-only/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-make-codex-skills-only/design.md",
+      "previousPath": "openspec/changes/make-codex-skills-only/design.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-make-codex-skills-only/proposal.md",
+      "previousPath": "openspec/changes/make-codex-skills-only/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-make-codex-skills-only/specs/ai-tool-paths/spec.md",
+      "previousPath": "openspec/changes/make-codex-skills-only/specs/ai-tool-paths/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-make-codex-skills-only/specs/cli-init/spec.md",
+      "previousPath": "openspec/changes/make-codex-skills-only/specs/cli-init/spec.md"
+    },
+    {
+      "status": "R090",
+      "path": "openspec/changes/archive/2026-10-19-make-codex-skills-only/specs/cli-update/spec.md",
+      "previousPath": "openspec/changes/make-codex-skills-only/specs/cli-update/spec.md"
+    },
+    {
+      "status": "R075",
+      "path": "openspec/changes/archive/2026-10-19-make-codex-skills-only/specs/command-generation/spec.md",
+      "previousPath": "openspec/changes/make-codex-skills-only/specs/command-generation/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-make-codex-skills-only/tasks.md",
+      "previousPath": "openspec/changes/make-codex-skills-only/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-rename-bob-to-ibm-bob/.openspec.yaml",
+      "previousPath": "openspec/changes/rename-bob-to-ibm-bob/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-rename-bob-to-ibm-bob/proposal.md",
+      "previousPath": "openspec/changes/rename-bob-to-ibm-bob/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-rename-bob-to-ibm-bob/specs/ai-tool-paths/spec.md",
+      "previousPath": "openspec/changes/rename-bob-to-ibm-bob/specs/ai-tool-paths/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-rename-bob-to-ibm-bob/tasks.md",
+      "previousPath": "openspec/changes/rename-bob-to-ibm-bob/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-spec-diffs/.openspec.yaml",
+      "previousPath": "openspec/changes/spec-diffs/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-spec-diffs/design.md",
+      "previousPath": "openspec/changes/spec-diffs/design.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-spec-diffs/proposal.md",
+      "previousPath": "openspec/changes/spec-diffs/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-spec-diffs/specs/cli-show/spec.md",
+      "previousPath": "openspec/changes/spec-diffs/specs/cli-show/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-spec-diffs/tasks.md",
+      "previousPath": "openspec/changes/spec-diffs/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-suppress-telemetry-notice-in-json/.openspec.yaml",
+      "previousPath": "openspec/changes/suppress-telemetry-notice-in-json/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-suppress-telemetry-notice-in-json/proposal.md",
+      "previousPath": "openspec/changes/suppress-telemetry-notice-in-json/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-suppress-telemetry-notice-in-json/specs/telemetry/spec.md",
+      "previousPath": "openspec/changes/suppress-telemetry-notice-in-json/specs/telemetry/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-suppress-telemetry-notice-in-json/tasks.md",
+      "previousPath": "openspec/changes/suppress-telemetry-notice-in-json/tasks.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-warn-on-purpose-placeholder/.openspec.yaml",
+      "previousPath": "openspec/changes/warn-on-purpose-placeholder/.openspec.yaml"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-warn-on-purpose-placeholder/design.md",
+      "previousPath": "openspec/changes/warn-on-purpose-placeholder/design.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-warn-on-purpose-placeholder/proposal.md",
+      "previousPath": "openspec/changes/warn-on-purpose-placeholder/proposal.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-warn-on-purpose-placeholder/specs/cli-validate/spec.md",
+      "previousPath": "openspec/changes/warn-on-purpose-placeholder/specs/cli-validate/spec.md"
+    },
+    {
+      "status": "R100",
+      "path": "openspec/changes/archive/2026-10-19-warn-on-purpose-placeholder/tasks.md",
+      "previousPath": "openspec/changes/warn-on-purpose-placeholder/tasks.md"
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/schema-alias-support/.openspec.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/schema-alias-support/proposal.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/unify-template-generation-pipeline/.openspec.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "openspec/changes/unify-template-generation-pipeline/design.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

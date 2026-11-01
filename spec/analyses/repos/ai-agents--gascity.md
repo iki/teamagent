@@ -2,11 +2,11 @@
 
 Source: [gascity](https://github.com/gastownhall/gascity) · [Analysis](../../projects/ai-agents--gascity.md) · [agents](../../agents.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `28bf3f3a778d28f2a4d29d0d2c49bde66a933651`; commit date: 2026-10-28T09:59:03Z; review date: 2026-10-28T14:29:27.414Z; observed SHA: `28bf3f3a778d28f2a4d29d0d2c49bde66a933651`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `879a71fa0bc58a33c890e2c0980cbe1977204487`; commit date: 2026-11-01T09:16:28Z; review date: 2026-11-01T11:33:30.893Z; observed SHA: `879a71fa0bc58a33c890e2c0980cbe1977204487`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/gastownhall/gascity/compare/28bf3f3a778d28f2a4d29d0d2c49bde66a933651...28bf3f3a778d28f2a4d29d0d2c49bde66a933651). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/gastownhall/gascity/compare/879a71fa0bc58a33c890e2c0980cbe1977204487...879a71fa0bc58a33c890e2c0980cbe1977204487). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

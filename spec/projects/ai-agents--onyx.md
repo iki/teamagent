@@ -42,6 +42,16 @@ In [backend/onyx/agents/tools.py](https://github.com/onyx-dot-app/onyx/blob/3138
 
 **Harness implication and limits:** Suspension should release execution capacity and resume against an identified request, without confusing supplied output with authorization to execute. These are model/protocol definitions, not proof that the scheduler persists waits or checks ownership. The changed tool-model file relocates result types; runtime dispatch, human principal validation, persistence and child cleanup remain outside this scope. No upstream runtime or live provider behavior was verified.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `3eb6420f6c7d6c0a94a0b7107a6138509c6d0f48` against prior analyzed commit `31382417ff60a07c425bfe529e04e0e5fab10d23`. Historical reviews above remain separate evidence.
+
+The [permission attempt store](https://github.com/onyx-dot-app/onyx/blob/3eb6420f6c7d6c0a94a0b7107a6138509c6d0f48/backend/onyx/db/permission_sync_attempt.py) now permits resuming a failed or canceled checkpoint only when it belongs to the same connector pair, follows the requested full-refresh boundary, and no intervening non-failure attempt superseded it. Cancellation and provider failure remain different outcomes: retry backoff ignores cancellations, examines at most eight relevant terminal outcomes, and stops its consecutive-failure run on success or completed-with-errors. The [scheduler](https://github.com/onyx-dot-app/onyx/blob/3eb6420f6c7d6c0a94a0b7107a6138509c6d0f48/backend/ee/onyx/background/celery/tasks/doc_permission_syncing/tasks.py) applies that retry boundary before dispatch. Pause admission uses a row lock and refuses a paused pair; selected cancellation helpers deliberately leave an unowned running attempt alone.
+
+The inspected checkpoint fixture adds canceled-mid-crawl and failed-then-queued-cancel cases, verifies continuation from the prior cursor with the original time window, and clears the checkpoint after success. Adopt versioned resume eligibility separate from retry policy for imports and memory refreshes. This does not establish every connector's permission semantics or database isolation under a live deployment.
+
+**Coverage:** Read the complete 526-line targeted scheduler/store delta, the prior checkpointer comment change and the 179-line checkpoint-test delta. Other Onyx changes and the shared retry-delay implementation were not reviewed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [onyx](https://github.com/onyx-dot-app/onyx); analyzed commit `31382417ff60a07c425bfe529e04e0e5fab10d23`; commit date 2026-10-28T09:26:33Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--onyx.md).
+Analysis metadata: source [onyx](https://github.com/onyx-dot-app/onyx); analyzed commit `3eb6420f6c7d6c0a94a0b7107a6138509c6d0f48`; commit date 2026-11-01T03:27:52Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--onyx.md).
 <!-- teamagent-analysis:end -->

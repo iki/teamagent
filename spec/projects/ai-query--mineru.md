@@ -41,6 +41,16 @@ Evidence: [mineru/parser/task_api.py:39-250](https://github.com/opendatalab/Mine
 
 **Scope and limits:** Static scoped review of the new task adapter and selected storage/auth/wait integration within the 108-path comparison, with task fixture bodies read. Full router proxy, underlying queue/resource registry, inference engine recovery, OCR changes and real HTTP/model/document execution were not audited or run.
 
+## Change review - 2026-11-01
+
+Reviewed `0ef2c20c4a56e68f81a66647f819d924ef2d89ce` against `b7f3dd0c5f6e6d66a298239ffd02b328b873918e`. The selected [parse policy](https://github.com/opendatalab/MinerU/blob/0ef2c20c4a56e68f81a66647f819d924ef2d89ce/mineru/doclib/services/parse_policy.py) defaults to a page preview, tracks covered/uncovered page sets and preserves authentication versus quality-tier-unavailable errors. Interactive default resolution requires explicit flash/remote choices when a quality engine is unavailable; a separate background-rule helper retains its own downgrade behavior. The [output builder](https://github.com/opendatalab/MinerU/blob/0ef2c20c4a56e68f81a66647f819d924ef2d89ce/mineru/parser/task_outputs.py) materializes assets once, validates their references and renders requested formats before returning one downloadable output. Direct writes/ZIP creation are not exclusive atomic publication and can leave a partial file on write failure.
+
+The [output fixtures](https://github.com/opendatalab/MinerU/blob/0ef2c20c4a56e68f81a66647f819d924ef2d89ce/tests/unittest/test_task_outputs.py) cover fifteen format combinations, actual image bytes in HTML/DOCX/ZIP, shared asset paths, authentication and missing-image failure without a success URL.
+
+**Harness consequence:** Preserve preview coverage and actual quality tier; never equate partial page parsing with a complete document. Validate asset closure before publication and wrap rendering in bounded, exclusive atomic storage. Cross-batch page coverage must also bind source version and extraction settings, which the set-union helper alone does not establish.
+
+**Scope and limits:** Three complete selected files, not all parser/server changes or imported export-library internals. No model, service, export test or visual document inspection was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mineru](https://github.com/opendatalab/MinerU); analyzed commit `b7f3dd0c5f6e6d66a298239ffd02b328b873918e`; commit date 2026-10-11T10:21:25+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mineru.md).
+Analysis metadata: source [mineru](https://github.com/opendatalab/MinerU); analyzed commit `0ef2c20c4a56e68f81a66647f819d924ef2d89ce`; commit date 2026-10-30T10:44:06Z; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mineru.md).
 <!-- teamagent-analysis:end -->

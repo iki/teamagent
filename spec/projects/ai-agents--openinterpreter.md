@@ -38,6 +38,16 @@ For Teamagent discovery, retain distinct fields for installed product/build, ser
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `7482ce18a13ae23a4783b7ad18b781cc3e7dd95b` against prior analyzed commit `ac1fcc8fe57aba51fcc3c79afd57a0883237fe87`. Historical reviews above remain separate evidence.
+
+The new [large-feedback upload adapter](https://github.com/openinterpreter/openinterpreter/blob/7482ce18a13ae23a4783b7ad18b781cc3e7dd95b/codex-rs/feedback/src/signed_upload.rs) separates grant acquisition, direct object upload and finalization. It binds declared report path/size/method/content type/expiry, checks an HTTPS storage host without URL userinfo, hashes the attachment and shares an absolute deadline across stages. Error projection uses fixed messages instead of echoing the signed URL. Embedded fixtures reject a lookalike host, wrong report identity and size mismatch.
+
+The 200 MiB attachment cap is checked against an already materialized buffer; the small grant-body limit is checked after reading its entire response. The inspected code does not establish the client's redirect policy, streaming byte bound, confidentiality of retained grants or resumable recovery after a successful upload but failed finalization. Adopt stage-specific receipts and bearer-sensitive recovery storage for Teamagent media; a signed URL or upload success must not collapse generation, transfer and publication into one outcome.
+
+**Coverage:** Read the complete 173-line signed-upload module including embedded tests. HTTP client routing/redirects, feedback caller consent and end-to-end recovery were not audited or exercised. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openinterpreter](https://github.com/openinterpreter/openinterpreter); analyzed commit `ac1fcc8fe57aba51fcc3c79afd57a0883237fe87`; commit date 2026-10-11T01:37:07+01:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openinterpreter.md).
+Analysis metadata: source [openinterpreter](https://github.com/openinterpreter/openinterpreter); analyzed commit `7482ce18a13ae23a4783b7ad18b781cc3e7dd95b`; commit date 2026-11-01T08:21:18Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openinterpreter.md).
 <!-- teamagent-analysis:end -->

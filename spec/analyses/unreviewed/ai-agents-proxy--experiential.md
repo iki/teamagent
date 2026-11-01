@@ -1,0 +1,19 @@
+# experiential
+
+Source: [experiential](https://github.com/experientiallabs/experiential) · [models](../../models.md), [channels](../../channels.md), [security](../../security.md).
+
+Initially discovered 2026-11-01T10:08:32.081Z as unreviewed. The scoped initial source review below supersedes that discovery-only status; it does not establish runtime validation. [Change evidence](../repos/ai-agents-proxy--experiential.md).
+
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`712954f68c01423d274242b2b85d6c6361ad6c09`](https://github.com/experientiallabs/experiential/commit/712954f68c01423d274242b2b85d6c6361ad6c09).
+
+Initial source review of the [frozen routing policy contract](https://github.com/experientiallabs/experiential/blob/712954f68c01423d274242b2b85d6c6361ad6c09/exp/common/routing/policy.py) and its complete [tests](https://github.com/experientiallabs/experiential/blob/712954f68c01423d274242b2b85d6c6361ad6c09/exp/common/routing/policy_test.py). The policy pins candidates, baseline, embedder, feature schema, pricing snapshot, evidence bank, task set and evaluation protocol. Guards require finite thresholds, at least eight paired observations and a reachable neighbor count. Decision records retain selected/baseline aliases, evidence counts, uncertainty and an optional fallback reason; paired counts cannot exceed neighbors.
+
+The serializer omits an empty baseline-coverage-gap field to retain historical complete-policy digests, while persisting nonempty gaps. Tests specify legacy digest preservation and invalid guard rejection. These contracts are useful for auditable routing/evolution: version the evidence and policy together, represent incomplete coverage, and distinguish provisional from human-calibrated judgment. The statistical adequacy of eight pairs is not established by a schema minimum.
+
+This new repository has 1,843 inventoried paths. Fitting, online selection, gateway authorization, attempt authority, hosted models and cost/quality outcomes were not evaluated. The cited code and tests were read, not executed. Retain as a research candidate; no Teamagent adapter or dependency is adopted by this review.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [experiential](https://github.com/experientiallabs/experiential); analyzed commit `712954f68c01423d274242b2b85d6c6361ad6c09`; commit date 2026-10-31T22:50:30-07:00; review date 2026-11-01T11:35:43.470Z; depth reviewed. [Maintenance record](../repos/ai-agents-proxy--experiential.md).
+<!-- teamagent-analysis:end -->

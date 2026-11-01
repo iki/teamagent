@@ -40,6 +40,14 @@ In [src/lib/listing-pagination.ts](https://github.com/f/prompts.chat/blob/54deb4
 
 **Harness implication and limits:** Apply visibility filters consistently to both counts and page contents, and validate pagination before streaming a successful response. The parser accepts numeric prefixes such as 2junk, and parseable calendar rollover is not strict date validation; server timezone and the end-of-day second also need explicit semantics. Caller ownership checks, trusted header replacement and route behavior were not audited or executed. No upstream code or live service was executed for this review.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`25f9e4c4cd2e583680ce7d38da173228e483f87f`](https://github.com/f/prompts.chat/commit/25f9e4c4cd2e583680ce7d38da173228e483f87f), compared with `54deb4298a6e88f586a392a5700e47b9a2040602`.
+
+The [admin helper](https://github.com/f/prompts.chat/blob/25f9e4c4cd2e583680ce7d38da173228e483f87f/src/lib/admin-auth.ts) accepts an existing session user or an API-key lookup restricted to administrators for the new mixed-auth helper. The new [MCP auth module](https://github.com/f/prompts.chat/blob/25f9e4c4cd2e583680ce7d38da173228e483f87f/src/lib/mcp/auth.ts) accepts several credential headers and a query parameter, then caches user/null results keyed by the supplied credential for five minutes. The inspected module has no size cap or automatic removal of expired entries; lookup expiry does not itself bound retained entries.
+
+Teamagent should keep credentials out of public URLs, bound authentication caches and invalidate effective permissions when account/key state changes. A cached user record is not independent proof that the key remains authorized. These selected redacted code diffs were fully read; exact redacted credential expressions, caller authorization, key-at-rest protection and the rest of the 371-path update were not audited. No account, request, service or upstream tests were exercised.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [prompts.chat](https://github.com/f/prompts.chat); analyzed commit `54deb4298a6e88f586a392a5700e47b9a2040602`; commit date 2026-10-28T03:14:10Z; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-prompts--prompts.chat.md).
+Analysis metadata: source [prompts.chat](https://github.com/f/prompts.chat); analyzed commit `25f9e4c4cd2e583680ce7d38da173228e483f87f`; commit date 2026-11-01T12:59:19+03:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-prompts--prompts.chat.md).
 <!-- teamagent-analysis:end -->

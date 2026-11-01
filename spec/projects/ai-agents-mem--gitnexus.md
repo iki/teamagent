@@ -54,6 +54,14 @@ Evidence: [gitnexus/src/core/ingestion/languages/typescript/file-private-exports
 
 **Scope and limits:** Reviewed the new classifier and its fixture matrix; overall impact traversal, dependency updates and logger changes were not re-audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `21298f24234e538dc0d0b5369c410e76da77e70e` against `51ce19d77abe86978e34d89dd77188c4dba3ba53` (252 changed paths). The new [retrieval diagnostic scorer](https://github.com/abhigyanpatwari/GitNexus/blob/21298f24234e538dc0d0b5369c410e76da77e70e/eval/workflow_bench/retrieval_diagnostics.py) validates declared source/runtime versions, current completed index, sanitized graph and query options, rejects duplicate/unknown cases, and distinguishes missing observation from an observed empty answer. Its relevance labels support anchor recall, not precision or false-positive estimates. The [fixtures](https://github.com/abhigyanpatwari/GitNexus/blob/21298f24234e538dc0d0b5369c410e76da77e70e/eval/tests/test_retrieval_diagnostics.py) exercise incomplete observations and invalid provenance.
+
+**Harness consequence:** Evaluate retrieval only against pinned, complete inputs and preserve missing/truncated coverage. Declared provenance still needs independent capture integrity; flattened symbol order is not a calibrated relevance score, and re-encoded JSON size is not measured wire traffic. Benchmark receipts should distinguish those quantities.
+
+**Scope and limits:** Complete new scorer and fixture files, not the runtime graph/index implementation or all 252 changed paths. No benchmark or source tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gitnexus](https://github.com/abhigyanpatwari/GitNexus); analyzed commit `51ce19d77abe86978e34d89dd77188c4dba3ba53`; commit date 2026-10-28T08:09:10Z; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--gitnexus.md).
+Analysis metadata: source [gitnexus](https://github.com/abhigyanpatwari/GitNexus); analyzed commit `21298f24234e538dc0d0b5369c410e76da77e70e`; commit date 2026-11-01T08:30:56Z; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--gitnexus.md).
 <!-- teamagent-analysis:end -->

@@ -2,11 +2,11 @@
 
 Source: [awesome-design-md](https://github.com/VoltAgent/awesome-design-md) · [Analysis](../../projects/ai-info--awesome-design-md.md) · [agents](../../agents.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `3b605329240ce735b510037cca322f1831fdd7f8`; commit date: 2026-10-14T08:46:47+03:00; review date: 2026-10-28T09:27:32.685Z; observed SHA: `3b605329240ce735b510037cca322f1831fdd7f8`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `fcc70284932276d085f01ef9f83edde90b1258cb`; commit date: 2026-10-28T18:45:37+03:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `fcc70284932276d085f01ef9f83edde90b1258cb`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/VoltAgent/awesome-design-md/compare/3b605329240ce735b510037cca322f1831fdd7f8...3b605329240ce735b510037cca322f1831fdd7f8). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/VoltAgent/awesome-design-md/compare/fcc70284932276d085f01ef9f83edde90b1258cb...fcc70284932276d085f01ef9f83edde90b1258cb). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

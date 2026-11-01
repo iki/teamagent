@@ -32,6 +32,18 @@ The [scanner procedure](https://github.com/wshobson/agents/blob/0874a27b17a22e2b
 
 The [E2E guide](https://github.com/wshobson/agents/blob/0874a27b17a22e2b7c2e2bcd725768e0803cad06/plugins/developer-essentials/skills/e2e-testing-patterns/SKILL.md) emphasizes independent tests, user-visible assertions and explicit setup for accessibility selectors. Its categorical exclusion of edge cases is too broad for high-risk browser/native boundaries, and mocks cannot replace the real runtime checks required here. Adapt layered verification and trace-based debugging, preserve coverage as unknown unless measured, and retain Teamagent's dependency and instruction workflow. No plugins, scan, browser or tests were run.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `7e2fb559cf4b824b27f1fec49fe88f7511066d26` (commit date `2026-10-30T19:34:46-04:00`), compared with `0874a27b17a22e2b7c2e2bcd725768e0803cad06`. Earlier observations remain historical evidence.
+
+**Scope:** Complete new version-bump checker; 185 changed paths inventoried. Its tests and release enforcement call sites not audited.
+
+The [checker](https://github.com/wshobson/agents/blob/7e2fb559cf4b824b27f1fec49fe88f7511066d26/tools/check_version_bumps.py) compares plugin changes against a merge base and requires increasing simple semantic versions for existing versioned manifests. Lockfiles and one generated plugin descriptor are exempt. Manifest reads collapse Git command failures into absence, while new/removed or unversioned manifests are skipped; consequently this check is narrower than complete content or release integrity.
+
+**Teamagent implication (inference):** Use declared versions for compatibility and immutable content hashes for actual skill identity. Verification caches must include executable payloads and dependency locks even when release policy exempts them from a version bump; distinguish unavailable Git evidence from a genuinely absent manifest.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle-claude.wshobson](https://github.com/wshobson/agents); analyzed commit `0874a27b17a22e2b7c2e2bcd725768e0803cad06`; commit date 2026-10-17T17:39:17-04:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle-claude.wshobson.md).
+Analysis metadata: source [bundle-claude.wshobson](https://github.com/wshobson/agents); analyzed commit `7e2fb559cf4b824b27f1fec49fe88f7511066d26`; commit date 2026-10-30T19:34:46-04:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle-claude.wshobson.md).
 <!-- teamagent-analysis:end -->

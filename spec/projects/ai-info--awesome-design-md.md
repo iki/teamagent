@@ -32,6 +32,12 @@ The [catalog delta](https://github.com/VoltAgent/awesome-design-md/blob/3b605329
 
 The sampled [DJI document](https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/dji/DESIGN.md#L1) labels itself alpha and records a descriptive palette and typography with intended roles. This supports storing design observations as structured, provenance-bearing reference material. It does not establish official brand specifications, accessibility, visual fidelity or implementation quality. No design was rendered, external page opened or new catalog entry endorsed; the uninspected designs and binary assets remain outside this update.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`fcc70284932276d085f01ef9f83edde90b1258cb`](https://github.com/VoltAgent/awesome-design-md/commit/fcc70284932276d085f01ef9f83edde90b1258cb), compared with `3b605329240ce735b510037cca322f1831fdd7f8`.
+
+The complete one-file delta adds a linked starter-kit promotional image to the [README](https://github.com/VoltAgent/awesome-design-md/blob/fcc70284932276d085f01ef9f83edde90b1258cb/README.md). No design schema, generator, test or application implementation changes. The banner is a discovery link, not evidence of output quality, compatibility or product readiness. No external product, image or runtime was tested; the earlier assessment remains scoped to its cited snapshot.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [awesome-design-md](https://github.com/VoltAgent/awesome-design-md); analyzed commit `3b605329240ce735b510037cca322f1831fdd7f8`; commit date 2026-10-14T08:46:47+03:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-info--awesome-design-md.md).
+Analysis metadata: source [awesome-design-md](https://github.com/VoltAgent/awesome-design-md); analyzed commit `fcc70284932276d085f01ef9f83edde90b1258cb`; commit date 2026-10-28T18:45:37+03:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-info--awesome-design-md.md).
 <!-- teamagent-analysis:end -->

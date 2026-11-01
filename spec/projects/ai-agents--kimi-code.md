@@ -46,6 +46,16 @@ In [packages/klient/src/core/facade/agent.ts](https://github.com/MoonshotAI/kimi
 
 **Harness implication and limits:** Treat transcript migration as a versioned wire contract: preserve identity, provenance and accounting fields independently of provider message conversion, and test absent/null distinctions. The shown facade uses type assertions around remote results; this review does not establish runtime validation or losslessness inside the conversion functions. The broader core refactor and append-log recovery were not certified. No upstream tests, agent execution or provider requests were run.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `a2afdbc7d1fa0737d45d5780cc6c2bd38e477b55` against prior analyzed commit `62399b32a79d49e8c0bf481b14475ed181a4cec8`. Historical reviews above remain separate evidence.
+
+The [Git-control-path policy](https://github.com/MoonshotAI/kimi-code/blob/a2afdbc7d1fa0737d45d5780cc6c2bd38e477b55/packages/agent-core-v2/src/agent/permissionPolicy/policies/git-control-path-access-ask.ts) now acquires an environment lease and retains it through asynchronous Git worktree discovery, disposing it in finally. Path semantics and filesystem access come from the same environment instead of a separate Git service. The [lease helper](https://github.com/MoonshotAI/kimi-code/blob/a2afdbc7d1fa0737d45d5780cc6c2bd38e477b55/packages/agent-core-v2/src/agent/permissionPolicy/policies/environment-lease.ts) converts EnvironmentError into unavailable; the policy also returns no decision when host path support or filesystem access is absent. That abstention requires a fail-closed outer policy, which this scope did not establish.
+
+The [approval service](https://github.com/MoonshotAI/kimi-code/blob/a2afdbc7d1fa0737d45d5780cc6c2bd38e477b55/packages/agent-core-v2/src/agent/toolApproval/toolApprovalService.ts) and [matching fixture](https://github.com/MoonshotAI/kimi-code/blob/a2afdbc7d1fa0737d45d5780cc6c2bd38e477b55/packages/agent-core-v2/test/agent/toolApproval/toolApproval.test.ts) replace trace_id with request_id in approval-result telemetry. Teamagent should retain environment/resource ownership for the complete inspection and keep request correlation distinct from distributed trace identity. No newly inspected fixture demonstrates the lease failure path or end-to-end Git protection.
+
+**Coverage:** Read all four targeted lease/Git-policy/approval-service/test deltas; broader environment migration and policy aggregation were not inspected. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [kimi-code](https://github.com/MoonshotAI/kimi-code); analyzed commit `62399b32a79d49e8c0bf481b14475ed181a4cec8`; commit date 2026-10-28T16:08:43+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--kimi-code.md).
+Analysis metadata: source [kimi-code](https://github.com/MoonshotAI/kimi-code); analyzed commit `a2afdbc7d1fa0737d45d5780cc6c2bd38e477b55`; commit date 2026-10-30T19:15:24+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--kimi-code.md).
 <!-- teamagent-analysis:end -->

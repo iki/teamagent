@@ -1,0 +1,17 @@
+# diffmap
+
+Source: [diffmap](https://github.com/tanishqkancharla/diffmap) · [generation](../../generation.md), [import-generation](../../import-generation.md), [models](../../models.md).
+
+Initially discovered 2026-11-01T10:08:32.081Z as unreviewed. The scoped initial source review below supersedes that discovery-only status; it does not establish runtime validation. [Change evidence](../repos/ai-gen--diffmap.md).
+
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`973e2c932f8c1871cdff01e4bae55c877269822a`](https://github.com/tanishqkancharla/diffmap/commit/973e2c932f8c1871cdff01e4bae55c877269822a).
+
+Initial source review of the complete [GitHub fetch module](https://github.com/tanishqkancharla/diffmap/blob/973e2c932f8c1871cdff01e4bae55c877269822a/src/github/fetchRepo.ts) and [fixtures](https://github.com/tanishqkancharla/diffmap/blob/973e2c932f8c1871cdff01e4bae55c877269822a/src/github/fetchRepo.test.ts). A pull request resolves to its head SHA before fetching the spec; blob keys include repository, commit and path. Commit-file pagination is distinguished from compare pagination, and capped results are explicitly marked truncated. The fixture demonstrates a 302-file paginated commit and a capped 300-file comparison.
+
+Revision pinning is worth adopting for evidence viewers, but completeness still depends on the transport. The inspected maps have no eviction cap, dynamic JSON uses assertions with partial checks, and raw download fallback trusts a returned URL without a reviewed destination or byte bound in this module. Teamagent should retain its stricter schema, timeout, cache and download controls. Local Git/UI behavior and the remaining source were not audited; no upstream tests, network fetch or viewer was executed.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [diffmap](https://github.com/tanishqkancharla/diffmap); analyzed commit `973e2c932f8c1871cdff01e4bae55c877269822a`; commit date 2026-10-31T22:37:55Z; review date 2026-11-01T11:35:43.470Z; depth reviewed. [Maintenance record](../repos/ai-gen--diffmap.md).
+<!-- teamagent-analysis:end -->

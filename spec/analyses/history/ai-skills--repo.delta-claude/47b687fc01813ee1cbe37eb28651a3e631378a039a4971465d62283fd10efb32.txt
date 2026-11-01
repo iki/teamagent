@@ -1,0 +1,15 @@
+# repo.delta-claude
+
+Source: [repo.delta-claude](https://github.com/zed-industries/delta-claude) · [skills](../../skills.md), [evolution](../../evolution.md), [agents](../../agents.md).
+
+Initially discovered 2026-11-01T10:08:32.081Z as unreviewed. The scoped initial source review below supersedes that discovery-only status; it does not establish runtime validation. [Change evidence](../repos/ai-skills--repo.delta-claude.md).
+
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`ac769c681ba7a95ec7347b591f0858857a1a9e80`](https://github.com/zed-industries/delta-claude/commit/ac769c681ba7a95ec7347b591f0858857a1a9e80).
+
+Initial scoped review of the complete [delivery policy](https://github.com/zed-industries/delta-claude/blob/ac769c681ba7a95ec7347b591f0858857a1a9e80/hooks/recording/delivery-policy.ts), [fixtures](https://github.com/zed-industries/delta-claude/blob/ac769c681ba7a95ec7347b591f0858857a1a9e80/hooks/recording/delivery-policy.test.ts) and [outbox helper](https://github.com/zed-industries/delta-claude/blob/ac769c681ba7a95ec7347b591f0858857a1a9e80/hooks/recording/outbox.ts). Retry decisions use a classified error/envelope, with exponential delays and a five-minute maximum after server hints. Verification pauses and delivery pauses are distinct, and notice suppression tracks code/retry state rather than changing error text.
+
+The outbox helper bounds a JSONL record at 16MiB, chunks without splitting UTF-16 surrogate pairs, verifies sequence/turn association for acknowledgement prefixes, and rejects noncanonical pending-envelope representations. Cleanup candidates must precede the durable pending frontier, be regular non-link entries and not belong to pending records. Windows deletion uses explicit JSON-fed paths rather than shell-expanded patterns. The actual durable writer, acknowledgement parser, directory trust checks and server-side idempotency were not audited here.
+
+This provides concrete client-side evidence alongside [the Delta architecture article](../delta-fine-grained-version-control-2026-11-01.md), whose broader causal-history/server claims remain separately scoped. Delivery retries for recorded history must never become retries of the original external tool action. This new source has 158 inventoried paths; no plugin, cloud service, installer, upstream tests or Teamagent integration was executed.

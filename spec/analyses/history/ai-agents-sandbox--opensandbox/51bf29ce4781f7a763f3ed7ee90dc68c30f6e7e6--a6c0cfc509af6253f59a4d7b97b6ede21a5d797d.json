@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-sandbox--opensandbox",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/alibaba/OpenSandbox",
+  "report": "spec/projects/ai-agents-sandbox--opensandbox.md",
+  "analyzedSha": "51bf29ce4781f7a763f3ed7ee90dc68c30f6e7e6",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T14:54:32+08:00",
+  "observedSha": "a6c0cfc509af6253f59a4d7b97b6ede21a5d797d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "a6c0cfc509af6253f59a4d7b97b6ede21a5d797d",
+      "date": "2026-11-01T17:56:45+08:00",
+      "subject": "Merge pull request #2523 from acodercat/fix/cli-terminal-delete-unconnected-session"
+    },
+    {
+      "sha": "4c0c9347d0ed7a79ad55d36cfa71595c76fe4706",
+      "date": "2026-11-01T15:27:08+08:00",
+      "subject": "Merge pull request #2501 from Pangjiping/osep-0025-t1-egress-vault-core"
+    },
+    {
+      "sha": "ec18af5b52daf82c6b9ed7ff19a5a7d7c8a7be04",
+      "date": "2026-11-01T15:21:09+08:00",
+      "subject": "test(egress): close remaining reply-before-read races in resolver stub and smoke nft checks"
+    },
+    {
+      "sha": "512ce0d2796ec4e427c4db22310742a66e79264c",
+      "date": "2026-11-01T15:14:43+08:00",
+      "subject": "Merge pull request #2525 from acodercat/fix/sdk-python-stream-body-errors"
+    },
+    {
+      "sha": "5c2adecd9e07aa02ac923701673ed9294211c7ce",
+      "date": "2026-11-01T15:11:26+08:00",
+      "subject": "Merge pull request #2527 from sangkyoonnam/fix/python-sse-read-timeout"
+    },
+    {
+      "sha": "98519f800d692fcac827d44b965ef16c09a853e8",
+      "date": "2026-11-01T15:04:00+08:00",
+      "subject": "fix(egress): reject empty https hosts and out-of-range ports on resolver endpoints"
+    },
+    {
+      "sha": "0ff4d1e5f6eae02c3580e043187dcbd7694e4689",
+      "date": "2026-11-01T15:01:42+08:00",
+      "subject": "test(egress): drain resolver request body before early replies"
+    },
+    {
+      "sha": "3b6cae828e2b274e37917cd38be74e6e3261bb27",
+      "date": "2026-11-01T14:59:09+08:00",
+      "subject": "Merge pull request #2531 from Dev-next-gen/fix/sdk-python-async-stream-close-before-read"
+    },
+    {
+      "sha": "1863add303b8943cd6fc114ecb7b4f4f11d56c6d",
+      "date": "2026-11-01T14:58:26+08:00",
+      "subject": "Merge pull request #2500 from opensandbox-group/osep-0025-t2a-resolver-client"
+    },
+    {
+      "sha": "7ffb95bdee3f64ec99f0a654135b7d55121815b3",
+      "date": "2026-11-01T14:51:32+08:00",
+      "subject": "fix(egress): resolver redactions longest-first; timeout bounds queueing"
+    },
+    {
+      "sha": "d423c013fa0422eafc60960c58bc2e3a65c12826",
+      "date": "2026-11-01T14:47:35+08:00",
+      "subject": "chore(egress): trim resolver client comments to match repo terseness"
+    },
+    {
+      "sha": "d35228dfc86fa2936379e70e199ac0d60a68e6bc",
+      "date": "2026-11-01T14:38:13+08:00",
+      "subject": "fix(egress): address T2a review — wire shape, field-value validation, taxonomy"
+    },
+    {
+      "sha": "c659343d2964385ccef796dbcd4b7ad38151fd85",
+      "date": "2026-11-01T14:34:23+08:00",
+      "subject": "Merge pull request #2524 from acodercat/fix/mcp-sdk-errors-as-tool-errors"
+    },
+    {
+      "sha": "89a0c374169aade7771f9efff6299291853fa0fb",
+      "date": "2026-11-01T14:33:52+08:00",
+      "subject": "fix(egress): review fixes for exchange vault core"
+    },
+    {
+      "sha": "caa1f30671bfb1d6d18fccfd72cd4162572574c0",
+      "date": "2026-11-01T13:59:17+08:00",
+      "subject": "Merge pull request #2457 from Pangjiping/osep-0025-credential-vault-provider-spi"
+    },
+    {
+      "sha": "52f2f8306fc46ca5d752a928e9f6e02d52df1b86",
+      "date": "2026-11-01T03:56:52Z",
+      "subject": "fix(sdk-python): release an async download closed before its first chunk"
+    },
+    {
+      "sha": "678f770746b6697385734556a5c5897f5c577362",
+      "date": "2026-10-31T21:51:19+09:00",
+      "subject": "fix(sdk-python): bound SSE command streams with a read timeout"
+    },
+    {
+      "sha": "f93c046703a85c9801173ea5f851131596fb9768",
+      "date": "2026-10-31T18:13:06+08:00",
+      "subject": "refactor(sdk-python): spell out the download stream's exception cases"
+    },
+    {
+      "sha": "d3a240a3f239d84138d8246e43b1576ebf005d8b",
+      "date": "2026-10-31T18:12:18+08:00",
+      "subject": "refactor(mcp): name the tool error wrapper like the CLI's"
+    },
+    {
+      "sha": "eb1f69a6a5572498d5900d7d2c391b53212c43b5",
+      "date": "2026-10-31T18:05:05+08:00",
+      "subject": "fix(sdk-python): map transport errors raised while reading a download body"
+    },
+    {
+      "sha": "4c5b3dc907388545bd56109beb1f686b582d46d0",
+      "date": "2026-10-31T16:54:13+08:00",
+      "subject": "fix(mcp): report SDK errors to MCP clients instead of a generic message"
+    },
+    {
+      "sha": "1760f43a3598626fb6f1fcdb568ade2548461d35",
+      "date": "2026-10-31T16:52:04+08:00",
+      "subject": "fix(cli): delete the PTY session when the terminal WebSocket never opens"
+    },
+    {
+      "sha": "22741d114628980a9969550f3eb571646015de5c",
+      "date": "2026-10-31T00:05:58+08:00",
+      "subject": "feat(egress): add exchange credential source, typeless auth, and vault snapshot markers (OSEP-0025 T1)"
+    },
+    {
+      "sha": "4840c34501234c36ac1bae873ce8fff2a372eb47",
+      "date": "2026-10-31T00:01:20+08:00",
+      "subject": "feat(egress): OSEP-0025 T2a — resolver client transport (UDS/HTTPS + envelope enforcement)"
+    },
+    {
+      "sha": "c2f55b20e945d89efe3d35220942a997a3551751",
+      "date": "2026-10-30T23:09:43+08:00",
+      "subject": "Merge pull request #2495 from opensandbox-group/osep-0025-w1-contracts-and-resolver"
+    },
+    {
+      "sha": "83cf46cce05a76cae733688cb10fc2cb0286c8c7",
+      "date": "2026-10-30T23:07:40+08:00",
+      "subject": "Merge pull request #2496 from opensandbox-group/chore/remove-confirmed-dead-code"
+    },
+    {
+      "sha": "1a1fbac66dd42cfa3a8a3f12ab0e041096047496",
+      "date": "2026-10-30T22:58:58+08:00",
+      "subject": "fix(egress): reject null exchange markers; harden resolver CLI; retarget credential repr redaction"
+    },
+    {
+      "sha": "b214dae4a14bb0b0e3ad0a22e55574e6d6143c86",
+      "date": "2026-10-30T22:27:54+08:00",
+      "subject": "test(egress): trim resolver and addon comments to match repo terseness"
+    },
+    {
+      "sha": "1f761e04bf842435ff34dd1c5fa5d2134ad2ce39",
+      "date": "2026-10-30T22:11:01+08:00",
+      "subject": "test(egress): make resolver harness fail on handler errors, one connection per request"
+    },
+    {
+      "sha": "7fe032a369aa42e44806a2b62b05ae8ba528d785",
+      "date": "2026-10-30T22:03:09+08:00",
+      "subject": "docs: explain intentional polling error suppression"
+    },
+    {
+      "sha": "46602e9ef36666934ce2cdf7209fd4083989a07c",
+      "date": "2026-10-30T21:58:27+08:00",
+      "subject": "chore: remove confirmed dead code across modules"
+    },
+    {
+      "sha": "125775c2688c5760ad110b1fe125ea5d9b0bcf47",
+      "date": "2026-10-30T21:42:54+08:00",
+      "subject": "test(egress): commit resolver fixture certificates and license header"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/execd-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/fast-sandbox-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "CHARTER.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "GOVERNANCE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "MAINTAINERS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ROADMAP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/commands/template.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/commands/terminal.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/skills/opensandbox-sandbox-lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tests/test_cli_help.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tests/test_commands.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_actions.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_actions_v2_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_owner.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_policy.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_vault.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/mitmscripts/credential_bound.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/mitmscripts/system.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/actionhandler/actionhandler.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/constants/configuration.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/credentialvault/candidate.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/credentialvault/decision_snapshot.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/credentialvault/decision_snapshot_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/resolver_client.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/resolver_client_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/resolver_redaction.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/resolver_redaction_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/resolver_stub_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/credentialvault/source.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/source_exchange.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/source_exchange_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/credentialvault/vault.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/credentialvault/vault_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "components/egress/pkg/telemetry/meminfo_parse.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "components/egress/pkg/telemetry/procstat_parse.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/tests/resolver/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/tests/resolver/fixtures/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/tests/resolver/fixtures/test-localhost-cert.pem",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/tests/resolver/fixtures/test-localhost-key.pem",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/tests/resolver/resolver.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/tests/resolver/test_resolver.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/tests/smoke-fast-sandbox.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/tests/test_credential_bound_h2_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/tests/test_credential_bound_h2_wakeup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/tests/test_decision_snapshot.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/tests/test_mitmscripts_system.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/pkg/flag/flags.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/pkg/flag/parser.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/pkg/flag/parser_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/pkg/runtime/context.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/pkg/runtime/context_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/pkg/runtime/ctrl.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/pkg/runtime/jupyter.go",
+      "previousPath": null
+    },
+    {
+      "status": "R055",
+      "path": "components/execd/pkg/runtime/jupyter_runtime_other.go",
+      "previousPath": "components/egress/pkg/telemetry/meminfo_parse_test.go"
+    },
+    {
+      "status": "R063",
+      "path": "components/execd/pkg/runtime/jupyter_runtime_unix.go",
+      "previousPath": "components/egress/pkg/telemetry/procstat_parse_test.go"
+    },
+    {
+      "status": "A",
+      "path": "components/execd/pkg/web/controller/file_owner_other.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/execd/pkg/web/controller/file_owner_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/pkg/web/controller/filesystem.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/pkg/web/controller/filesystem_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/pkg/web/controller/filesystem_upload.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/execd/pkg/web/controller/filesystem_upload_atomic_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/pkg/web/controller/filesystem_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/pkg/web/controller/isolated_session_files.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/pkg/web/controller/sse.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/execd/pkg/web/controller/sse_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/pkg/web/filesystem_identity_other.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/execd/tests/runtime_init_smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/ingress/pkg/proxy/proxy.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/ingress/pkg/proxy/proxy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/ingress/pkg/proxy/wake_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "console/bff/app/routes/proxy_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "console/bff/app/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "console/web/src/api/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "console/web/src/api/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "console/web/src/components/DismissibleAlert.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/.vitepress/config.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/data-plane/execd.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/fast-sandbox/templates.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/network/egress.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/cli/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/community/contributing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/examples/docker-pvc-volume-mount.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started/configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guides/oci-templates.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/pause-resume.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/code-interpreter-image-migration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sdks/csharp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sdks/go.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sdks/javascript.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sdks/kotlin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sdks/python.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/aio-sandbox/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/openclaw/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kubernetes/cmd/controller/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kubernetes/hack/pool-perf.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kubernetes/internal/controller/batchsandbox_controller_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kubernetes/internal/controller/sandboxsnapshot_controller.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kubernetes/internal/controller/sandboxsnapshot_controller_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kubernetes/internal/controller/sandboxsnapshot_lifecycle.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "oseps/0025-credential-vault-provider-spi.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "oseps/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/fast-sandbox-env/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/fast-sandbox-env/integration-env.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/fast-sandbox-env/integration.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/fast-sandbox-env/verify/init-mode.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "scripts/tests/test_fast_sandbox_integration_env.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/code-interpreter/python/src/code_interpreter/adapters/code_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/code-interpreter/python/src/code_interpreter/sync/adapters/code_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/mcp/sandbox/python/src/opensandbox_mcp/server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/mcp/sandbox/python/tests/test_mcp2_protocol.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/csharp/src/OpenSandbox/Adapters/FilesystemAdapter.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/csharp/src/OpenSandbox/Internal/HttpClientWrapper.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/csharp/src/OpenSandbox/Models/Filesystem.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/csharp/src/OpenSandbox/Models/Templates.cs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdks/sandbox/csharp/src/OpenSandbox/SandboxFilesExtensions.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/csharp/src/OpenSandbox/Services/ISandboxFiles.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/csharp/tests/OpenSandbox.Tests/CommandsAdapterTests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/csharp/tests/OpenSandbox.Tests/EgressAdapterNetworkPolicyTests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/csharp/tests/OpenSandbox.Tests/FilesystemAdapterTests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/csharp/tests/OpenSandbox.Tests/SandboxEgressLifecycleTests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/go/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/go/code_interpreter_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/go/execd.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/go/execution.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/go/filesystem_identity.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/go/filesystem_identity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/go/opensandbox_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/go/sandbox_exec.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/go/sandbox_files.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/go/types.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdks/sandbox/javascript/src/adapters/downloadResponse.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/javascript/src/adapters/filesystemAdapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/javascript/src/adapters/isolatedFilesystemAdapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/javascript/src/api/lifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/javascript/src/config/redirectFetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/javascript/src/factory/defaultAdapterFactory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/javascript/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/javascript/src/models/filesystem.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/javascript/src/models/templates.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/javascript/src/services/filesystem.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdks/sandbox/javascript/tests/filesystem.download-response.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/javascript/tests/public-exports.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/javascript/tests/redirect-headers.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/kotlin/sandbox/src/main/kotlin/com/alibaba/opensandbox/sandbox/domain/models/execd/filesystem/FilesystemModels.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/kotlin/sandbox/src/main/kotlin/com/alibaba/opensandbox/sandbox/domain/models/sandboxes/TemplateModels.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/kotlin/sandbox/src/main/kotlin/com/alibaba/opensandbox/sandbox/domain/services/Filesystem.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdks/sandbox/kotlin/sandbox/src/main/kotlin/com/alibaba/opensandbox/sandbox/infrastructure/adapters/service/DownloadResponseMapper.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/kotlin/sandbox/src/main/kotlin/com/alibaba/opensandbox/sandbox/infrastructure/adapters/service/FilesystemAdapter.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/kotlin/sandbox/src/main/kotlin/com/alibaba/opensandbox/sandbox/infrastructure/adapters/service/IsolatedFilesystemAdapter.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdks/sandbox/kotlin/sandbox/src/test/kotlin/com/alibaba/opensandbox/sandbox/domain/services/FilesystemCompatibilityTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/kotlin/sandbox/src/test/kotlin/com/alibaba/opensandbox/sandbox/infrastructure/adapters/service/FilesystemAdapterTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/python/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/sandbox/python/scripts/generate_api.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

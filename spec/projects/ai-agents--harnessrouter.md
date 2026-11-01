@@ -52,6 +52,16 @@ For Teamagent, retain producer/model/account/session provenance for opaque conti
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `e94398d9c91a21ae7e01c630e2eeffa4defe1cfb` against prior analyzed commit `b2091142cdca2f1d0cbaffc3e0e42c983dc88b24`. Historical reviews above remain separate evidence.
+
+The [harness creation path](https://github.com/HarnessRouter/harnessrouter/blob/e94398d9c91a21ae7e01c630e2eeffa4defe1cfb/gateway/app.py) now reserves an optional idempotency key before preparation writes, scopes it by organization/workspace/operation, hashes the request before preparation rewrites it, rejects changed-body reuse and replays an existing result. Missing durable storage refuses keyed creation. The [complete focused fixture](https://github.com/HarnessRouter/harnessrouter/blob/e94398d9c91a21ae7e01c630e2eeffa4defe1cfb/gateway/tests/test_harness_idempotency.py) checks replay, body mismatch, preparation mutation/failure, waiting, workspace separation, deletion and advertised capability.
+
+The recovery policy treats a missing result after 120 seconds as an abandoned claim and takes it over; a caught preparation/upsert exception also releases the claim. Those observations alone do not prove the original worker stopped or that a remote upsert had no effect. The fixture's stale-claim case creates an artificial missing result, not a still-running original operation. Adopt durable request identity and pre-effect receipts, but require ownership/fencing or reconciliation before ambiguous takeover. Do not transfer this age-only policy to billable speech or voice enrollment.
+
+**Coverage:** Read the complete 193-line idempotency fixture and the gateway claim/create delta (selected diff offsets 117–239), plus nearby alias changes. Durable-store atomicity, upsert uncertainty and full preparation side effects were not audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [harnessrouter](https://github.com/HarnessRouter/harnessrouter); analyzed commit `b2091142cdca2f1d0cbaffc3e0e42c983dc88b24`; commit date 2026-10-27T13:12:25-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--harnessrouter.md).
+Analysis metadata: source [harnessrouter](https://github.com/HarnessRouter/harnessrouter); analyzed commit `e94398d9c91a21ae7e01c630e2eeffa4defe1cfb`; commit date 2026-10-31T11:27:24-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--harnessrouter.md).
 <!-- teamagent-analysis:end -->

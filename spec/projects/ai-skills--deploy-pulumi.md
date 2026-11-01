@@ -31,6 +31,18 @@ Reviewed commit: [`2517e28e4bc029424e9c9ee48016394296be0f6a`](https://github.com
 The [builder](https://github.com/pulumi/agent-skills/blob/2517e28e4bc029424e9c9ee48016394296be0f6a/scripts/build_gemini_extension.py) derives one extension version from the combined plugin manifest, rejects malformed versions/tag mismatches and duplicate skill names, and preserves skill files while emitting identical platform-named archives. [Tests](https://github.com/pulumi/agent-skills/blob/2517e28e4bc029424e9c9ee48016394296be0f6a/tests/test_gemini_package.py) independently compare complete archive contents and optionally verify actual CLI discovery in an isolated profile; mock release scenarios cover failed uploads, conflicting tags and preserving newer latest releases. Adapt artifact-content parity plus installed-skill discovery as separate checks. The [workflow](https://github.com/pulumi/agent-skills/blob/2517e28e4bc029424e9c9ee48016394296be0f6a/.github/workflows/release-gemini.yml) checks existing public assets by name/nonzero size, not digest identity; local source paths are trusted inputs without containment/resource validation. Optional CLI tests can skip without GEMINI_CLI, so fixture success is not host compatibility. No archive build, CLI install, release or provider migration was executed.
 
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `82f222a529a499e8005a820000148cc5e28c934c` (commit date `2026-10-30T15:58:08-05:00`), compared with `2517e28e4bc029424e9c9ee48016394296be0f6a`. Earlier observations remain historical evidence.
+
+**Scope:** Complete two-file plugin-manifest diff; no skill body, builder or runtime change in this comparison.
+
+The [Claude manifest](https://github.com/pulumi/agent-skills/blob/82f222a529a499e8005a820000148cc5e28c934c/.claude-plugin/plugin.json) adds documentation, support and terms URLs and changes its discovery description/keywords; both it and the [Codex manifest](https://github.com/pulumi/agent-skills/blob/82f222a529a499e8005a820000148cc5e28c934c/.codex-plugin/plugin.json) advance to 2.0.8. The Codex description still describes Neo delegation while the revised Claude description emphasizes infrastructure, troubleshooting and migration. These are surface-specific discovery descriptions, not evidence of new deployment permissions or verified service capabilities.
+
+**Teamagent implication (inference):** Fingerprint the full selected manifest and skill payload, not only its version. Keep host-specific discovery text distinct from executable capabilities and approval requirements; a terms URL is a research pointer, not a verified license or account-entitlement decision.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deploy-pulumi](https://github.com/pulumi/agent-skills); analyzed commit `2517e28e4bc029424e9c9ee48016394296be0f6a`; commit date 2026-10-09T05:58:16-04:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--deploy-pulumi.md).
+Analysis metadata: source [deploy-pulumi](https://github.com/pulumi/agent-skills); analyzed commit `82f222a529a499e8005a820000148cc5e28c934c`; commit date 2026-10-30T15:58:08-05:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--deploy-pulumi.md).
 <!-- teamagent-analysis:end -->

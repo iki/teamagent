@@ -1,0 +1,880 @@
+{
+  "id": "ai-agents--agents.cloudflare",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/cloudflare/agents",
+  "report": "spec/projects/ai-agents--agents.cloudflare.md",
+  "analyzedSha": "743cfa5a193a98b766d396c0fde79124fba4c501",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T00:40:18Z",
+  "observedSha": "be1749221ab3efc8be4e976d8e7d8344d1446032",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "be1749221ab3efc8be4e976d8e7d8344d1446032",
+      "date": "2026-10-29T18:49:01Z",
+      "subject": "Version Packages (#2746)"
+    },
+    {
+      "sha": "3832749972260704c65dc584c94b4614b981d9fa",
+      "date": "2026-10-29T18:14:06Z",
+      "subject": "Revert \"fix(agents): upgrade opencode to 2.2.1 (#2767)\" (#2775)"
+    },
+    {
+      "sha": "5cfafcf538e769e04a4863f9e54e50ca9c82209e",
+      "date": "2026-10-29T18:08:49Z",
+      "subject": "fix(agents): upgrade opencode to 2.2.1 (#2767)"
+    },
+    {
+      "sha": "54ae3e86987be92ae20bc6a8b06c26ec1884d01c",
+      "date": "2026-10-29T17:09:09Z",
+      "subject": "feat(skills): load Agent Skills from Workspace files, R2, or a manifest (#2771)"
+    },
+    {
+      "sha": "b372289fdee424366b6bd8a8ae9923afb3ac803f",
+      "date": "2026-10-29T17:03:34Z",
+      "subject": "Allow @tanstack/ai 1.x in agents and codemode peer ranges (#2766)"
+    },
+    {
+      "sha": "08747d9aa7a11f284dbd85e3b024ef1ce1ddaa41",
+      "date": "2026-10-29T12:29:25Z",
+      "subject": "perf(agents): mark the package side-effect free so Workers drop unused modules (#2737)"
+    },
+    {
+      "sha": "8cf6da190aa4212c83dd11089413f390a9f510ac",
+      "date": "2026-10-29T12:24:03Z",
+      "subject": "perf(models/pi-ai): parse streamed tool-call arguments incrementally (#2740)"
+    },
+    {
+      "sha": "786d30e305baebc5fbf5ad5ed80461f88a728468",
+      "date": "2026-10-28T17:15:23Z",
+      "subject": "gardener: start fixes automatically for high-impact, low-cost issues; upgrade to 0.1.21 (#2762)"
+    },
+    {
+      "sha": "df85805ed79b4287f35f59efdbf2e947854bc14a",
+      "date": "2026-10-28T16:19:18Z",
+      "subject": "feat(observability): set error status on failed Agents SDK spans (#2763)"
+    },
+    {
+      "sha": "34cbd305c6d55d2c38f4063c58ddbe97785fb8c8",
+      "date": "2026-10-28T16:03:59Z",
+      "subject": "feat(observability): experimental_registerOpenTelemetry() bridges the OpenTelemetry API to Workers tracing (#2752)"
+    },
+    {
+      "sha": "d69277b51d073065e037fe9072dadaa2555d0037",
+      "date": "2026-10-28T10:30:08Z",
+      "subject": "chore: typecheck with tsrs instead of tsgo (#2757)"
+    }
+  ],
+  "files": [
+    {
+      "status": "D",
+      "path": ".changeset/mcp-sdk-2-4-cimd.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gardener/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gardener/gardener.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gardener/gardener.lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gardener/tasks/fix-blocked/TASK.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gardener/tasks/fix-ready/TASK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gardener/tasks/fix/TASK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gardener/tasks/triage/TASK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gardener-dependabot-merge.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gardener-fix-blocked.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gardener-fix-ready.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gardener-fix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gardener-mention-reply.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gardener-opencode-upgrade.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gardener-pi-upgrade.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gardener-pr-review-fix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gardener-sync.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gardener-triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-think/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-think/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-think/src/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-think/test/worker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-think/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "design/rfc-opentelemetry-bridge.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/rfc-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/test-coverage-matrix.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/think-roadmap.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/think-vs-aichat.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/think.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/harnesses/pi.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/observability.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/think/getting-started.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/think/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/think/lifecycle-hooks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/think/multi-chat.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/think/tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/agent-skills/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/agent-skills/src/client.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/agent-skills/src/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/agent-skills/src/skills/debug-plan/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/agent-skills/src/skills/debug-plan/references/checklist.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/agent-skills/src/skills/pirate-voice/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/agent-skills/src/skills/release-notes/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/agent-skills/src/skills/release-notes/references/style-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/agent-skills/src/skills/release-notes/scripts/format-release-notes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/agent-skills/src/skills/test-plan/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/agent-skills/src/styles.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/agents-as-tools/src/tests/vitest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/agents/assistant/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/agents/assistant/agents/my-assistant/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/agents/assistant/agents/my-assistant/skills/workspace-digest/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/agents/assistant/agents/my-assistant/skills/workspace-digest/references/format.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/agents/assistant/agents/my-assistant/skills/workspace-digest/scripts/digest.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/agents/assistant/shared-mcp-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/agents/assistant/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/env.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/public/favicon.ico",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/auth-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/auth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/client.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/secrets.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/tests/daily-summary.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/tests/directory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/tests/env.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/tests/helpers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/tests/routing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/tests/setup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/tests/shared-mcp.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/tests/shared-workspace.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/tests/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/tests/vitest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/tests/worker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/tests/workspace-broadcast.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/tests/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/src/use-chats.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/browser-live-view/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/computer-skills/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "examples/computer-skills/env.d.ts",
+      "previousPath": "examples/agent-skills/env.d.ts"
+    },
+    {
+      "status": "R079",
+      "path": "examples/computer-skills/index.html",
+      "previousPath": "examples/assistant/index.html"
+    },
+    {
+      "status": "R072",
+      "path": "examples/computer-skills/package.json",
+      "previousPath": "examples/assistant/package.json"
+    },
+    {
+      "status": "R100",
+      "path": "examples/computer-skills/public/favicon.ico",
+      "previousPath": "examples/agent-skills/public/favicon.ico"
+    },
+    {
+      "status": "A",
+      "path": "examples/computer-skills/src/client.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/computer-skills/src/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/computer-skills/src/skill-files.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "examples/computer-skills/src/styles.css",
+      "previousPath": "examples/assistant/src/styles.css"
+    },
+    {
+      "status": "R100",
+      "path": "examples/computer-skills/tsconfig.json",
+      "previousPath": "examples/agent-skills/tsconfig.json"
+    },
+    {
+      "status": "R100",
+      "path": "examples/computer-skills/vite.config.ts",
+      "previousPath": "examples/agent-skills/vite.config.ts"
+    },
+    {
+      "status": "R094",
+      "path": "examples/computer-skills/wrangler.jsonc",
+      "previousPath": "examples/agent-skills/wrangler.jsonc"
+    },
+    {
+      "status": "M",
+      "path": "examples/context-overflow-recovery/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/playground/src/demos/ai/ThinkComputerDemo.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/r2-skills/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/r2-skills/env.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R094",
+      "path": "examples/r2-skills/index.html",
+      "previousPath": "examples/agent-skills/index.html"
+    },
+    {
+      "status": "R079",
+      "path": "examples/r2-skills/package.json",
+      "previousPath": "examples/agent-skills/package.json"
+    },
+    {
+      "status": "A",
+      "path": "examples/r2-skills/public/favicon.ico",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/r2-skills/src/client.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/r2-skills/src/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/r2-skills/src/skill-files.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/r2-skills/src/styles.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/r2-skills/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "examples/r2-skills/vite.config.ts",
+      "previousPath": "examples/assistant/vite.config.ts"
+    },
+    {
+      "status": "A",
+      "path": "examples/r2-skills/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/scripts/build.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/agents/skills-module.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/src/browser/tanstack-ai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/src/harness/pi/skills.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/src/harness/pi/tests/factory-fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/src/harness/pi/tests/factory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/src/models/pi-ai/wires/chat-completions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/models/pi-ai/wires/partial-arguments.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/node-tests/observability-bundle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/node-tests/otel/bridge.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/node-tests/otel/fake-tracing.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/node-tests/otel/registration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/node-tests/vite-removed-skills-import.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/agents/src/node-tests/vite-skills.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/observability/emitter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/src/observability/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/observability/otel/bridge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/observability/otel/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/observability/otel/register.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/src/observability/tracing/cloudflare.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/observability/tracing/native.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/src/observability/tracing/tracer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/otel-tests/fixture/worker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/otel-tests/fixture/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/otel-tests/otel-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/otel-tests/vitest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/skills/catalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/agents/src/skills/compile.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/agents/src/skills/frontmatter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/src/skills/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/src/skills/manifest.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/skills/markdown.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/src/skills/r2.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/agents/src/skills/registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/skills/resource.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/skills/result.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/src/skills/runner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/skills/script-workspace.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/skills/script.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/skills/skill.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/skills/source.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/skills/tools/ai-sdk.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agents/src/skills/tree.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "id": "ai-security--trivy",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/aquasecurity/trivy",
+  "report": "spec/projects/ai-security--trivy.md",
+  "analyzedSha": "8b5ad79cd35944ed96f825d0df23ffc84aa20ddd",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T09:34:40Z",
+  "observedSha": "e2c05f7ae66bedacd4a51594a71cbe95566cc838",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "e2c05f7ae66bedacd4a51594a71cbe95566cc838",
+      "date": "2026-10-30T13:29:27Z",
+      "subject": "feat(crypto): add check for small EC private keys (#11479)"
+    },
+    {
+      "sha": "60b69032794eb8003b64cb3267dfa10270736b5b",
+      "date": "2026-10-30T12:20:25Z",
+      "subject": "fix(containerd): export image by its stored name (#11511)"
+    },
+    {
+      "sha": "6ec0da294ff6501226a42a222a313938e79d95e0",
+      "date": "2026-10-29T12:26:56Z",
+      "subject": "feat(crypto): report the EC-P-192 algorithm for P-192 keys and certificates (#11431)"
+    },
+    {
+      "sha": "4cdb2db63d52cfb5f6c9199e2d08196f2bb9dc77",
+      "date": "2026-10-28T13:17:13Z",
+      "subject": "feat(crypto): show findings in table output (#11395)"
+    },
+    {
+      "sha": "948767f83940a9a69efa06d456eb101c80ca0509",
+      "date": "2026-10-28T10:33:30Z",
+      "subject": "chore(deps): bump golang.org/x/net from 0.61.0 to 0.62.0 (#11489)"
+    },
+    {
+      "sha": "273e46ebb8f55fee0ae9c1d912bef1ab0bfd1b7b",
+      "date": "2026-10-28T10:26:47Z",
+      "subject": "perf(vex): open each VEX repository document once per repository set (#11477)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "docs/guide/configuration/others.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/configuration/reporting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/references/configuration/cli/trivy_convert.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/scanner/crypto.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/target/container_image.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integration/testdata/crypto.cdx.json.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integration/testdata/crypto.json.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/commands/app.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/commands/convert/run.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/check/check.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/check/check_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/check/rules.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/parser/x509/asset.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/parser/x509/export_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/parser/x509/parser.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/parser/x509/parser_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/strength.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/strength_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/fanal/analyzer/crypto/crypto.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/fanal/image/daemon/containerd.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/fanal/test/integration/containerd_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/flag/options.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/flag/options_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/report/table/crypto.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/report/table/crypto_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/report/table/summary.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/report/table/summary_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/report/table/table.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/rpc/convert_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/sbom/cyclonedx/crypto.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/types/report.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/vex/repo.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/vex/repo_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

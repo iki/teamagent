@@ -44,6 +44,16 @@ In [exp/runtime/router/application.py](https://github.com/experientiallabs/world
 
 **Harness implication and limits:** Preserve ownership when cleanup is incomplete and report that state separately from closed. The startup cleanup loop is unbounded, so the nominal startup timeout does not bound total failure-return latency; later worker shutdown also has no visible timeout here. A robust host needs cancellable recovery ownership and a documented hard-stop strategy. No server, accounting workload or shutdown test was run. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `712954f68c01423d274242b2b85d6c6361ad6c09` against prior analyzed commit `5e53609b1a67accb8f01487488e02da6ee451a28`. Historical reviews above remain separate evidence.
+
+The [guardrail engine](https://github.com/experientiallabs/world-model-optimizer/blob/712954f68c01423d274242b2b85d6c6361ad6c09/exp/runtime/gateway/guardrails/enforcement.py) adds an optional bounded classification-record worker, separate from serving and from asynchronous observation records. Scored verdicts carry authenticated request identity, policy/check identity, outcome, category scores, subject digest, cache flag and latency; missing request identity or unscored verdicts produce no score record. Drop/failure counters remain visible, and shutdown consumes the remaining shared deadline.
+
+The [added fixtures](https://github.com/experientiallabs/world-model-optimizer/blob/712954f68c01423d274242b2b85d6c6361ad6c09/exp/runtime/gateway/guardrails/enforcement_test.py) check an enforced rejection still records scores, an observe-only allow leaves the request unchanged, and unscored adapters do not fabricate scores. The score model and recording implementation were not re-audited. Teamagent decision-model telemetry should preserve policy version, privacy and missing-record coverage while keeping classification evidence distinct from deterministic authorization. Subject digests can still identify sensitive known inputs and require access/retention controls; no accuracy or latency benchmark was reproduced.
+
+**Coverage:** Read complete enforcement implementation/test delta (466 presented lines). Classification model, recorder internals, routing/cache changes and live model behavior were outside scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [world-model-optimizer](https://github.com/experientiallabs/world-model-optimizer); analyzed commit `5e53609b1a67accb8f01487488e02da6ee451a28`; commit date 2026-10-27T15:17:31-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--world-model-optimizer.md).
+Analysis metadata: source [world-model-optimizer](https://github.com/experientiallabs/world-model-optimizer); analyzed commit `712954f68c01423d274242b2b85d6c6361ad6c09`; commit date 2026-10-31T22:50:30-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--world-model-optimizer.md).
 <!-- teamagent-analysis:end -->

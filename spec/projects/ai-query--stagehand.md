@@ -51,6 +51,14 @@ Evidence: [packages/protocol/json-rpc/build-json-rpc-schema.ts:63-72](https://gi
 
 **Scope and limits:** Reviewed the schema-generation deltas, workspace catalog update and complete path inventory; generated protocol equivalence and removed integration behavior were not executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `b7a4b899079f198a0ee78a6dcb62ad02f545cf49` against `737480022acbf5ec3450885f120fc33ee561a9b4`. The new [client lifecycle controller](https://github.com/browserbase/stagehand/blob/b7a4b899079f198a0ee78a6dcb62ad02f545cf49/packages/extension/clientLifecycle.ts) schema-validates attach/detach messages, serializes lifecycle work and tracks a browser-side client target. Intentional detach disarms close-on-disconnect before cleanup; completed detach retains its target ID for acknowledgment of a retry. Lost connections separately close owned Chrome or release a retained browser connection, rejecting client callbacks before potentially stalled disposal. Initial [fixtures](https://github.com/browserbase/stagehand/blob/b7a4b899079f198a0ee78a6dcb62ad02f545cf49/packages/extension/tests/client-lifecycle.test.ts) model hung disposal and fresh reconnect.
+
+**Harness consequence:** Separate ownership-based termination from deliberate detach and retain reconciliation identity for uncertain cleanup acknowledgments. This controller schedules disposal in the background; its acknowledgment is not evidence that all descendants/resources have stopped. The lifecycle queue and dependency calls need external bounds, and a target marker is not caller authentication or destination authorization.
+
+**Scope and limits:** Complete controller and initial mock lifecycle tests; SDK target creation, full native behavior, all test cases and extension transport authorization were not audited. No Chrome/session lifecycle or upstream tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [stagehand](https://github.com/browserbase/stagehand); analyzed commit `737480022acbf5ec3450885f120fc33ee561a9b4`; commit date 2026-10-27T15:45:29-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--stagehand.md).
+Analysis metadata: source [stagehand](https://github.com/browserbase/stagehand); analyzed commit `b7a4b899079f198a0ee78a6dcb62ad02f545cf49`; commit date 2026-10-29T18:04:01-07:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--stagehand.md).
 <!-- teamagent-analysis:end -->

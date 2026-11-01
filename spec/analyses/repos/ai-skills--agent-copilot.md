@@ -2,11 +2,11 @@
 
 Source: [agent-copilot](https://github.com/github/awesome-copilot) · [Analysis](../../projects/ai-skills--agent-copilot.md) · [skills](../../skills.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `0fe6545b950671641b2b14b44eb56678fea6c6b4`; commit date: 2026-10-28T16:23:53+11:00; review date: 2026-10-28T14:52:35.205Z; observed SHA: `0fe6545b950671641b2b14b44eb56678fea6c6b4`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `5269f7ea2d6c3a9bfda5ed878b6726cf509121fd`; commit date: 2026-10-30T11:35:13+11:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `5269f7ea2d6c3a9bfda5ed878b6726cf509121fd`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/github/awesome-copilot/compare/0fe6545b950671641b2b14b44eb56678fea6c6b4...0fe6545b950671641b2b14b44eb56678fea6c6b4). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/github/awesome-copilot/compare/5269f7ea2d6c3a9bfda5ed878b6726cf509121fd...5269f7ea2d6c3a9bfda5ed878b6726cf509121fd). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

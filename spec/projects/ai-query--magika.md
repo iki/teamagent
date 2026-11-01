@@ -52,6 +52,14 @@ Evidence: [rust/lib/src/resolvers.rs:14-66](https://github.com/google/magika/blo
 
 **Scope and limits:** Reviewed resolver orchestration, selected in-file fixtures and the FFI field removal; individual format verifiers and binary ABI compatibility were not exhaustively tested. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `00e908ff4945f3449d14a4407a806bc91e30006a` against `3627c158bcfb146bee4747b0589e80ac2faa4d7f`. The selected [ZIP](https://github.com/google/magika/blob/00e908ff4945f3449d14a4407a806bc91e30006a/rust/lib/src/resolvers/facts/zip.rs) and [PE](https://github.com/google/magika/blob/00e908ff4945f3449d14a4407a806bc91e30006a/rust/lib/src/resolvers/facts/pe.rs) deltas are license-header expansion and an equivalent certificate-range conditional, not a newly proven classifier algorithm. The new [native regression harness](https://github.com/google/magika/blob/00e908ff4945f3449d14a4407a806bc91e30006a/rust/lib/src/resolvers/tests/regressions.rs) consumes recorded signature cases, distinguishes complete input from held prefix, records an explicit superseded expectation and asserts a fixed 15,169-case corpus count. It also asserts abstention below eight bytes across repository samples.
+
+**Harness consequence:** Keep byte-coverage and abstention explicit, retain original regression provenance and explain expectation changes. Format identification is routing evidence, not permission to execute content or proof a document is valid, safe or fully parsed.
+
+**Scope and limits:** Three complete selected diffs; the exported regression dataset and complete resolver implementation were not re-audited. The corpus size is an assertion read from source, not a measured passing run; no model or Rust tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [magika](https://github.com/google/magika); analyzed commit `3627c158bcfb146bee4747b0589e80ac2faa4d7f`; commit date 2026-10-28T10:17:42+01:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--magika.md).
+Analysis metadata: source [magika](https://github.com/google/magika); analyzed commit `00e908ff4945f3449d14a4407a806bc91e30006a`; commit date 2026-10-30T10:41:23+01:00; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--magika.md).
 <!-- teamagent-analysis:end -->

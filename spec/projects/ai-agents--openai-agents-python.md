@@ -46,6 +46,14 @@ In [src/agents/util/_asyncio_tasks.py](https://github.com/openai/openai-agents-p
 
 **Harness implication and limits:** Give cleanup one owner and distinguish a grace period from a hard shutdown deadline. The final gather has no timeout and still depends on child cooperation, so this helper alone cannot guarantee bounded process termination. Test cancellation during cleanup, cancellation-resistant children and callback failures at the host boundary. No upstream tests or provider calls were run. No upstream runtime or live provider behavior was verified.
 
+## 2026-11-01 scoped source refresh
+
+Reviewed the complete two-path delta from `cd26bbbc52847845fde73b9952b51e62e2bcbdc0` to `e355d69152d4f4730dfb03b63dbce53e8d9f5d8c`, including the new 132-line transport/runner fixture. Earlier assessments remain historical evidence.
+
+The [streamed run loop](https://github.com/openai/openai-agents-python/blob/e355d69152d4f4730dfb03b63dbce53e8d9f5d8c/src/agents/run_internal/run_loop.py#L2649-L2726) records the number and last type of observed events and the response/request IDs exposed by response objects. A stream ending without a final response raises a diagnostic error with those observations; absent values remain `None`. This preserves incomplete delivery as an error instead of inventing completion or a request identifier.
+
+The [new fixtures](https://github.com/openai/openai-agents-python/blob/e355d69152d4f4730dfb03b63dbce53e8d9f5d8c/tests/models/test_responses_stream_diagnostics.py) use mock HTTP transport with the actual SSE parser and runner, covering empty/partial streams, present/absent request IDs and explicit completed/incomplete/failed terminal events. Assertions require one request, a closed response, no final output on failure and omission of the synthetic private input/output from the error. These tests were inspected, not executed; they do not establish universal identifier redaction or bounded runner shutdown. Teamagent should preserve observed transport evidence separately from task success and avoid replaying an uncertain request merely to obtain a better error.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openai-agents-python](https://github.com/openai/openai-agents-python); analyzed commit `cd26bbbc52847845fde73b9952b51e62e2bcbdc0`; commit date 2026-10-27T19:22:01Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openai-agents-python.md).
+Analysis metadata: source [openai-agents-python](https://github.com/openai/openai-agents-python); analyzed commit `e355d69152d4f4730dfb03b63dbce53e8d9f5d8c`; commit date 2026-10-30T20:13:59Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openai-agents-python.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,465 @@
+{
+  "id": "ai-agents--future-agi",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/future-agi/future-agi",
+  "report": "spec/projects/ai-agents--future-agi.md",
+  "analyzedSha": "b544357d026d428d90ec73be6dd8990934edab33",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T01:12:07+05:30",
+  "observedSha": "6840e44914cf7c85cd0ae65d98761f7728b8afcc",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "6840e44914cf7c85cd0ae65d98761f7728b8afcc",
+      "date": "2026-10-28T19:07:57+05:30",
+      "subject": "Merge pull request #3644 from future-agi/release-please--branches--main"
+    },
+    {
+      "sha": "626b97fd96a0092de5ba4d8b474aa63094b811b2",
+      "date": "2026-10-28T12:09:34Z",
+      "subject": "chore(main): release 1.56.1"
+    },
+    {
+      "sha": "45fa4280e82a9742c64e4b0c4c73617f57a1b14b",
+      "date": "2026-10-28T17:38:43+05:30",
+      "subject": "Merge pull request #3643 from future-agi/hotfix/TH-8831-gateway-retest-fixes"
+    },
+    {
+      "sha": "7d7a95900321794fc4a176974bc0c5db3150ddad",
+      "date": "2026-10-28T17:12:11+05:30",
+      "subject": "fix(gateway): retest fixes for streams, cost, request logs, tools, providers, budgets, guardrails and alerts"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".release-please-manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/cmd/agentcc/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/anthropicfmt/errors.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/anthropicfmt/stream_usage.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/config/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/genaifmt/errors.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/genaifmt/format.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/guardrails/block_keeps_usage_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/guardrails/engine_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/guardrails/plugin.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/modeldb/endpoint_pricing_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/modeldb/litellm.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/modeldb/modeldb.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/modeldb/pricing.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/models/assistants.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/models/assistants_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/models/audio.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/models/completion.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/models/context.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/models/image.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/pipeline/engine.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/pipeline/plugin.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/pipeline/post_priority_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/budget/budget.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/budget/budget_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/plugins/budget/catalogue_cost_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/cache/plugin.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/cost/cost.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/plugins/cost/endpoint_cost_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/credits/credits.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/credits/credits_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/logging/logging.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/logging/logging_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/anthropic/anthropic.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/anthropic/stream.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/providers/anthropic/stream_error_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/azure/azure.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/providers/azure/stream_error_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/gemini/gemini.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/gemini/stream.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/providers/gemini/stream_error_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/openai/openai.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/providers/openai/responses_chat.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/providers/openai/responses_chat_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/providers/openai/stream_error_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/provider.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/anthropic_responses_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/assistants_runs.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/assistants_runs_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/endpoint_billing_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/guardrail_routes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/guardrail_text.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_anthropic.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_assistants.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_audio.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_completion.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_genai.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_responses.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_stream_retry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_vector_stores.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/metadata_header_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/org_model_prefix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/price_table_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/run_charges.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/server.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/stream_end.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/stream_end_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/streaming/sse.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/streaming/sse_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/tokenizer/tokenizer.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/tokenizer/tokenizer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/translation/anthropic/to_openai.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/helm/futureagi/Chart.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/sections/gateway/providers/AddProviderDialog.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/sections/gateway/providers/AddProviderDialog.test.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/sections/gateway/providers/ProviderManagementSection.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "futureagi/agentcc/migrations/0029_request_log_unique_request_id.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "futureagi/agentcc/models/request_log.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "futureagi/agentcc/services/email_sender.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "futureagi/agentcc/services/log_ingestion.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "futureagi/agentcc/tests/test_services.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "futureagi/tfc/temporal/common/registry.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

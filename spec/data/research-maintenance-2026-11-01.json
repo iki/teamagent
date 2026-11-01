@@ -1,0 +1,3464 @@
+{
+  "version": 1,
+  "recordedOn": "2026-11-01",
+  "pathsRelativeTo": "project root",
+  "scope": "Historical source/text refresh, bounded source-review evidence and maintenance verification on 2026-11-01. This does not attest the later final tree, source-project correctness, live providers or publication.",
+  "runtime": {
+    "bun": "1.4.2 (744846f84)",
+    "bunEvidence": "Successful and preceding unit stderr captures report the actual running version.",
+    "platform": "win32",
+    "architecture": "x64",
+    "platformEvidence": "Successful tracked tests receipt runtime tuple; receipt SHA-256 1a14f324f70b28e590e4c6df5b1a2c837cf23b32105ae86cfd2e0f81f5ef937c.",
+    "aubeSelectedVersion": "2.5.1",
+    "aubeEvidence": "Bounded maintenance runner selected the provisioned 2.5.1 executable path; these captures do not contain a separate Aube version response.",
+    "otherToolVersions": "Not separately recorded in these command captures; no versions inferred from earlier tasks."
+  },
+  "bounds": {
+    "maximumWorkers": 3,
+    "unitPhaseSeconds": 240,
+    "perTestSeconds": 120,
+    "liveMemoryAdmission": true,
+    "unknownFilesRemainTogether": true,
+    "singleWorkerFileOrderPreserved": true,
+    "cacheSuiteIsolation": "Three-worker mode only, queued after analysis-sync; two-worker grouping unchanged."
+  },
+  "successfulStep": {
+    "command": "aube run --no-install step:check",
+    "finishedAt": "2026-11-01T09:39:23.812Z",
+    "wholeCommandSeconds": 317.8962945,
+    "exitCode": 0,
+    "outcome": "exited",
+    "termination": "closed",
+    "executedAndVerified": [
+      "format",
+      "types",
+      "lint",
+      "tests"
+    ],
+    "liveLfAndExportIntegrity": "passed",
+    "files": 67,
+    "workers": 3,
+    "testsPassed": 516,
+    "testsSkipped": 1,
+    "testsFailed": 0,
+    "skippedScope": "Existing escaped POSIX-pipes test on Windows.",
+    "bunExpectCalls": 1550,
+    "batches": [
+      {
+        "name": "remaining",
+        "files": 63,
+        "passed": 432,
+        "skipped": 1,
+        "failed": 0,
+        "seconds": 194.88
+      },
+      {
+        "name": "research-git",
+        "files": 1,
+        "passed": 1,
+        "skipped": 0,
+        "failed": 0,
+        "seconds": 58.98
+      },
+      {
+        "name": "workflow",
+        "files": 1,
+        "passed": 16,
+        "skipped": 0,
+        "failed": 0,
+        "seconds": 204.95
+      },
+      {
+        "name": "analysis-sync",
+        "files": 1,
+        "passed": 20,
+        "skipped": 0,
+        "failed": 0,
+        "seconds": 25.76
+      },
+      {
+        "name": "verification-cache",
+        "files": 1,
+        "passed": 47,
+        "skipped": 0,
+        "failed": 0,
+        "seconds": 64.36
+      }
+    ],
+    "timingBoundary": "Whole-command time includes verification and live checks. Bun batch times overlap; neither their sum nor maximum is an independently measured unit-phase duration.",
+    "receipt": {
+      "path": ".cache/research/refresh-2026-11-01/step-check-1c533df7-35b2-4681-86ff-9e1fa2fac829.json",
+      "sha256": "efa382cff4ff36e1f132bacd583b057402ac7e02dea38e07f7a87c8434fae6fd"
+    },
+    "logs": [
+      {
+        "path": ".cache/research/refresh-2026-11-01/step-check-1c533df7-35b2-4681-86ff-9e1fa2fac829.stdout.log",
+        "sha256": "0e784d6d31b5b14d072d95c367735db356ec95e9e75d18d0ca94e864afea7dd8"
+      },
+      {
+        "path": ".cache/research/refresh-2026-11-01/step-check-1c533df7-35b2-4681-86ff-9e1fa2fac829.stderr.log",
+        "sha256": "9a8ed891719954392bd3997e9fb5cb004f9e7738d47ab01229529264e6200df9"
+      }
+    ]
+  },
+  "precedingAttempts": [
+    {
+      "finishedAt": "2026-11-01T09:06:26.221Z",
+      "wholeCommandSeconds": 295.46183469999994,
+      "exitCode": 1,
+      "outcome": "exited",
+      "termination": "closed",
+      "filesInInventory": 65,
+      "workers": 3,
+      "result": "Two logged assertion failures in citation initialization and the research-settings temporary-path expectation. The remaining batch has no completion summary; the scheduler did not retain a distinct per-batch failure cause. This is failed, incomplete verification, not a timing baseline.",
+      "receipt": {
+        "path": ".cache/research/refresh-2026-11-01/step-check-f98c78bc-3a44-4b09-91e9-6e679605b76d.json",
+        "sha256": "80f2d9957f0542c5b42dbfcc78be51a2e1c0bef3999d278831c6d350a695bebc"
+      },
+      "log": {
+        "path": ".cache/research/refresh-2026-11-01/step-check-f98c78bc-3a44-4b09-91e9-6e679605b76d.stderr.log",
+        "sha256": "bf13e8032eac61cefd18d8f4e1c8c6b56f016778dd7ea3dae7ffe262b76bd3e1"
+      }
+    },
+    {
+      "startedAt": "2026-11-01T09:14:21.395Z",
+      "wholeCommandSeconds": null,
+      "exitCode": null,
+      "outcome": "operator-interrupted; final command receipt absent",
+      "termination": null,
+      "result": "The operator stopped this attempt after reported visible windows. Retained pending intent establishes the start only; no completed test totals, timing or cleanup outcome are inferred from it.",
+      "pendingReceipt": {
+        "path": ".cache/research/refresh-2026-11-01/step-check-ef04b750-da12-47da-8520-87d007f5b244.pending.json",
+        "sha256": "d0a626a3c124213f359e0beaf0efb254bbce68991fa205bf88c67efb290a59be"
+      }
+    },
+    {
+      "finishedAt": "2026-11-01T09:28:41.065Z",
+      "wholeCommandSeconds": 71.7954154,
+      "exitCode": 1,
+      "outcome": "exited",
+      "termination": "closed",
+      "result": "Format and types passed; lint rejected three conditional spreads after windowsHide:true. Unit tests did not start. The launch sites were corrected by placing the fixed option last without weakening the rule.",
+      "receipt": {
+        "path": ".cache/research/refresh-2026-11-01/step-check-5ff1bab9-e340-4534-97e9-e8db8518f01e.json",
+        "sha256": "11e7236e8494901c9813fbbc9a3dd928f8354ef2c614d8732b362b34f58ac54f"
+      },
+      "logs": [
+        {
+          "path": ".cache/research/refresh-2026-11-01/step-check-5ff1bab9-e340-4534-97e9-e8db8518f01e.stdout.log",
+          "sha256": "1ef26b4986a9af2535ee525c49197c57b16df78acc7980baba4eb108424ad7dc"
+        },
+        {
+          "path": ".cache/research/refresh-2026-11-01/step-check-5ff1bab9-e340-4534-97e9-e8db8518f01e.stderr.log",
+          "sha256": "9d2385d5680fdbc7be7915b6bdbe6fd6a34cd2fbc5c38d3e27bf46b9790b998b"
+        }
+      ]
+    }
+  ],
+  "subsequentSteps": [
+    {
+      "scope": "Creator-owned immediate scratch recovery API and repository case-ID repair, after the earlier successful step.",
+      "command": "aube run --no-install step:check",
+      "finishedAt": "2026-11-01T09:54:47.187Z",
+      "wholeCommandSeconds": 276.2075355,
+      "exitCode": 0,
+      "outcome": "exited",
+      "termination": "closed",
+      "bun": "1.4.2 (744846f84)",
+      "executedAndVerified": [
+        "format",
+        "types",
+        "lint",
+        "tests"
+      ],
+      "liveLfAndExportIntegrity": "passed",
+      "files": 67,
+      "workers": 3,
+      "unitPhaseSeconds": 240,
+      "testsPassed": 519,
+      "testsSkipped": 1,
+      "testsFailed": 0,
+      "skippedScope": "Existing escaped POSIX-pipes test on Windows.",
+      "bunExpectCalls": 1550,
+      "batches": [
+        {
+          "name": "remaining",
+          "files": 63,
+          "passed": 435,
+          "skipped": 1,
+          "failed": 0,
+          "seconds": 180.8
+        },
+        {
+          "name": "research-git",
+          "files": 1,
+          "passed": 1,
+          "skipped": 0,
+          "failed": 0,
+          "seconds": 57.83
+        },
+        {
+          "name": "workflow",
+          "files": 1,
+          "passed": 16,
+          "skipped": 0,
+          "failed": 0,
+          "seconds": 183.44
+        },
+        {
+          "name": "analysis-sync",
+          "files": 1,
+          "passed": 20,
+          "skipped": 0,
+          "failed": 0,
+          "seconds": 24.11
+        },
+        {
+          "name": "verification-cache",
+          "files": 1,
+          "passed": 47,
+          "skipped": 0,
+          "failed": 0,
+          "seconds": 53.94
+        }
+      ],
+      "timingBoundary": "Whole-command time includes verification and live checks. Batch times overlap; source and test cases changed, so this is not a controlled repeat or speedup measurement.",
+      "receipt": {
+        "path": ".cache/research/refresh-2026-11-01/step-check-26e019a5-f2a9-4589-842d-18141f9fed55.json",
+        "sha256": "afad79b70de59e8c31147620906d8169e17e5ede992451acfb96fb285396c77c"
+      },
+      "logs": [
+        {
+          "path": ".cache/research/refresh-2026-11-01/step-check-26e019a5-f2a9-4589-842d-18141f9fed55.stdout.log",
+          "sha256": "360e67bc5e73402da959ce44a3a2a98e25bfb5ca58ee0df2191324421b31f808"
+        },
+        {
+          "path": ".cache/research/refresh-2026-11-01/step-check-26e019a5-f2a9-4589-842d-18141f9fed55.stderr.log",
+          "sha256": "bdb6b2489e427e92baf4cbad5c6586fcdc297f77e74bbcbf4c45e5c4f061a598"
+        }
+      ]
+    },
+    {
+      "scope": "Git failure classification and earlier ownership/launch repairs; full execution succeeded before live LF failed.",
+      "capture": {
+        "action": "step:check",
+        "finishedAt": "2026-11-01T10:26:46.661Z",
+        "seconds": 276.4746741,
+        "exitCode": 1,
+        "outcome": "exited",
+        "termination": "closed",
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/step-check-03e1d852-6bd9-4930-a2dd-45f1c654d6fe.json",
+          "sha256": "96d376849a75855005a9e4cd913365ed4fde6e1c0e229a3b339eb99be85248a8"
+        },
+        "logs": [
+          {
+            "path": ".cache/research/refresh-2026-11-01/step-check-03e1d852-6bd9-4930-a2dd-45f1c654d6fe.stdout.log",
+            "sha256": "f42a88f76a7ff7657384b40f85f8e1916ddaf3fecb651f17f5db044c9c1dc7d6"
+          },
+          {
+            "path": ".cache/research/refresh-2026-11-01/step-check-03e1d852-6bd9-4930-a2dd-45f1c654d6fe.stderr.log",
+            "sha256": "75f204d882330281213c17c049554871816a8272684ab3ff7e4b934eaa49e076"
+          }
+        ]
+      },
+      "executedAndVerified": [
+        "format",
+        "types",
+        "lint",
+        "tests"
+      ],
+      "overallPassed": false,
+      "files": 67,
+      "workers": 3,
+      "testsPassed": 519,
+      "testsSkipped": 1,
+      "testsFailed": 0,
+      "bunExpectCalls": 1550,
+      "failedBoundary": "Live LF gate rejected four generated review partition files. This command is failed despite passing prerequisite checks."
+    },
+    {
+      "scope": "After lossless partition LF migration; matching cooperative prerequisites reused, live LF/export integrity rerun.",
+      "capture": {
+        "action": "step:check",
+        "finishedAt": "2026-11-01T10:35:55.288Z",
+        "seconds": 85.6742584,
+        "exitCode": 0,
+        "outcome": "exited",
+        "termination": "closed",
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/step-check-f07046bb-a347-487f-a611-c708c2d5a5c2.json",
+          "sha256": "3523a87328e496717b946add5ef35c9d5eb3d96c374f144d9b980b19fffec4ec"
+        },
+        "logs": [
+          {
+            "path": ".cache/research/refresh-2026-11-01/step-check-f07046bb-a347-487f-a611-c708c2d5a5c2.stdout.log",
+            "sha256": "0da966eee27fc7979181dd7c90fd1bbd8a7587071fdb9fc9584a00f48209e55d"
+          },
+          {
+            "path": ".cache/research/refresh-2026-11-01/step-check-f07046bb-a347-487f-a611-c708c2d5a5c2.stderr.log",
+            "sha256": "af0d56be4b6c7c32119a2c88d6fc6229e77fdba28cba9459a4866440e71393b1"
+          }
+        ]
+      },
+      "reusedAndValidated": [
+        "format",
+        "types",
+        "lint",
+        "tests"
+      ],
+      "newlyExecutedUnitTests": false,
+      "overallPassed": true,
+      "liveIntegrity": {
+        "textFiles": 20612,
+        "opaqueFiles": 3155,
+        "hashVerifiedHistoricalInputs": 27,
+        "retainedOriginals": 3082,
+        "missingOrLinked": 0,
+        "textExports": 79,
+        "exportFiles": 938
+      },
+      "limitation": "85.674-second whole-command time includes cooperative reuse and live checks. It is not a fresh full test run, a controlled speedup measurement or verification of later report/docs edits."
+    }
+  ],
+  "limitations": [
+    "Source/test inventory and fixes changed between attempts. The successful samples are not controlled repeats; no speedup or machine-cold claim.",
+    "Bun expect counts do not enumerate Node assertion calls.",
+    "Raw logs and receipts remain local ignored evidence. This tracked summary preserves their identities without requiring them to resolve documentation links or disclosing raw diagnostics.",
+    "The historical successful step does not verify subsequent source or documentation edits, final review, real providers or other platforms."
+  ],
+  "refresh": {
+    "sourceImports": [
+      {
+        "action": "sources:sync",
+        "finishedAt": "2026-11-01T08:49:56.981Z",
+        "seconds": 1.8871865,
+        "exitCode": 0,
+        "outcome": "exited",
+        "termination": "closed",
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/sources-sync-749ba459-ecda-43a3-a58d-73f9914c5a04.json",
+          "sha256": "6659a63a2e0ae8b26aa7af5b8ababe756c10e17804d869155fd2d21f7d5d2ee8"
+        },
+        "logs": [
+          {
+            "path": ".cache/research/refresh-2026-11-01/sources-sync-749ba459-ecda-43a3-a58d-73f9914c5a04.stdout.log",
+            "sha256": "239308171b2bffb3cc6a1aad3a26f2a8182cd005cf11b2db03a54dd3f6288424"
+          },
+          {
+            "path": ".cache/research/refresh-2026-11-01/sources-sync-749ba459-ecda-43a3-a58d-73f9914c5a04.stderr.log",
+            "sha256": "cd82920e8ddba47ed5b9b7af31ea673269a4078614d542ef497cda5ddde43371"
+          }
+        ],
+        "repositories": 489,
+        "warnings": []
+      },
+      {
+        "action": "sources:sync",
+        "finishedAt": "2026-11-01T09:44:59.806Z",
+        "seconds": 1.9532937000000001,
+        "exitCode": 0,
+        "outcome": "exited",
+        "termination": "closed",
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/sources-sync-5670d9e1-cf15-48b9-b4c2-f66cf4802af7.json",
+          "sha256": "d74ba46f80629d6ae45fefca4decc292b6860e4a55fd94a6f6489a38a4e5f142"
+        },
+        "logs": [
+          {
+            "path": ".cache/research/refresh-2026-11-01/sources-sync-5670d9e1-cf15-48b9-b4c2-f66cf4802af7.stdout.log",
+            "sha256": "8933c7c1c0cc2b46418453a536698c4ccaa0ec89ae0c21c1a3a2f0296c9c658e"
+          },
+          {
+            "path": ".cache/research/refresh-2026-11-01/sources-sync-5670d9e1-cf15-48b9-b4c2-f66cf4802af7.stderr.log",
+            "sha256": "cd82920e8ddba47ed5b9b7af31ea673269a4078614d542ef497cda5ddde43371"
+          }
+        ],
+        "repositories": 548,
+        "warnings": [
+          "source_category_alias_ai-get_to_ai-query"
+        ]
+      },
+      {
+        "action": "sources:sync",
+        "finishedAt": "2026-11-01T09:56:02.131Z",
+        "seconds": 1.9563124,
+        "exitCode": 0,
+        "outcome": "exited",
+        "termination": "closed",
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/sources-sync-5b64016d-e5f0-4630-af4f-e6daf2c26884.json",
+          "sha256": "66ce6cf6ec4b34d618e66e9ac550c501d687609d73e4339af5cf525bcc07ffcc"
+        },
+        "logs": [
+          {
+            "path": ".cache/research/refresh-2026-11-01/sources-sync-5b64016d-e5f0-4630-af4f-e6daf2c26884.stdout.log",
+            "sha256": "cd5a590e9abdb5765b6ca188267731728302dfd8f2cdc89df2642bf03040609b"
+          },
+          {
+            "path": ".cache/research/refresh-2026-11-01/sources-sync-5b64016d-e5f0-4630-af4f-e6daf2c26884.stderr.log",
+            "sha256": "cd82920e8ddba47ed5b9b7af31ea673269a4078614d542ef497cda5ddde43371"
+          }
+        ],
+        "repositories": 548,
+        "warnings": [
+          "source_category_alias_ai-get_to_ai-query"
+        ]
+      }
+    ],
+    "sourceImportInterpretation": "Initial import omitted the regenerated ai-get category (489 entries); explicit alias repair recovered canonical ai-query identities (548); final import also canonicalized lowercase IDs while preserving display/cache spelling. Import success does not mean all requested categories were understood by the earlier implementation.",
+    "git": {
+      "receipt": {
+        "path": ".cache/research/refresh-2026-11-01/repos-sync-f5e5db0c-952d-4d75-823e-6d6027e62b92.json",
+        "sha256": "13d503a4b01ef9daa5d8d700d17f879407cd0d67a186615ce66e1ba37498f6dd"
+      },
+      "startedAt": "2026-11-01T09:57:44.94Z",
+      "finishedAt": "2026-11-01T10:04:20.263Z",
+      "seconds": 395.31851670000003,
+      "exitCode": 1,
+      "outcome": "exited",
+      "termination": "closed",
+      "runtime": "Bun 1.4.2",
+      "command": "Aube 2.5.1 run --no-install repos:sync --concurrency 4 --timeout-seconds 120",
+      "timeoutMs": 3600000,
+      "maximumBytes": 16777216,
+      "maximumLineBytes": 1048576,
+      "cleanupScope": "windows-job-object",
+      "scratchDisposed": true,
+      "discoveryComplete": true,
+      "status": "partial",
+      "repositories": 548,
+      "checkedThisRun": 548,
+      "statusesAsOriginallyRecorded": {
+        "blocked": 1,
+        "cloned": 1,
+        "diverged": 1,
+        "unchanged": 457,
+        "unchanged_with_local_changes": 1,
+        "updated": 86,
+        "updated_with_local_changes": 1
+      },
+      "statusCorrection": "The one original diverged label is MentisDB; later read-only history and dry-run evidence establish an operational Windows path rejection rather than history divergence.",
+      "frozen": {
+        "path": ".cache/research/refresh-2026-11-01/frozen-git-state.json",
+        "sha256": "b6ab5aa8478f017f88ac445521b64965d3ede42b0370c262d46e3ee4e117b8ac"
+      },
+      "logs": [
+        {
+          "path": ".cache/research/refresh-2026-11-01/repos-sync-f5e5db0c-952d-4d75-823e-6d6027e62b92.stdout.log",
+          "sha256": "b6ab5aa8478f017f88ac445521b64965d3ede42b0370c262d46e3ee4e117b8ac",
+          "bytes": 626186,
+          "truncated": false
+        },
+        {
+          "path": ".cache/research/refresh-2026-11-01/repos-sync-f5e5db0c-952d-4d75-823e-6d6027e62b92.stderr.log",
+          "sha256": "64f69d4efa9fe987e575f044e89d5ab7ca7547915a258b1552b5f51286043952",
+          "bytes": 31286,
+          "truncated": false
+        }
+      ],
+      "preservedLocalChanges": [
+        "ai-agents--wayland",
+        "ai-gen--hyperframes"
+      ],
+      "freshClone": "ai-gen--yue2-studio"
+    },
+    "analysisPreparation": {
+      "capture": {
+        "action": "analysis:sync",
+        "finishedAt": "2026-11-01T10:09:56.555Z",
+        "seconds": 84.83790229999998,
+        "exitCode": 0,
+        "outcome": "exited",
+        "termination": "closed",
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/analysis-sync-a34cf754-6a15-408c-94e3-58dd1292bac8.json",
+          "sha256": "2f3e764954e34e8984bc07529d09c0cb995385b0cadabb48c4a7fb06adc90a88"
+        },
+        "logs": [
+          {
+            "path": ".cache/research/refresh-2026-11-01/analysis-sync-a34cf754-6a15-408c-94e3-58dd1292bac8.stdout.log",
+            "sha256": "cd6dc2c9beb95be058a590c5755c1757ba5a2be96fc595311f199201a275762f"
+          },
+          {
+            "path": ".cache/research/refresh-2026-11-01/analysis-sync-a34cf754-6a15-408c-94e3-58dd1292bac8.stderr.log",
+            "sha256": "ad54a18f8ae3c65cd7ff32001b632373eac2b1afd446a5e859e1d9fb3746a434"
+          }
+        ]
+      },
+      "records": 549,
+      "statuses": {
+        "changed": 255,
+        "current": 276,
+        "history-diverged": 1,
+        "archived": 1,
+        "unreviewed": 16
+      },
+      "pendingSourceReviews": 272,
+      "interpretation": "Preparation only. These pre-review counts are not final promotion totals; fetching or collecting packets never advances an analyzed SHA."
+    },
+    "textResources": {
+      "capture": {
+        "action": "resources:sync",
+        "finishedAt": "2026-11-01T08:51:18.421Z",
+        "seconds": 2.7603728999999997,
+        "exitCode": 0,
+        "outcome": "exited",
+        "termination": "closed",
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/resources-sync-30b83c8c-83c1-4ec9-8040-a18f97c65670.json",
+          "sha256": "07713f7a7e485511525d542bee271b8b71d82db52ba9d2173081dc971b521772"
+        },
+        "logs": [
+          {
+            "path": ".cache/research/refresh-2026-11-01/resources-sync-30b83c8c-83c1-4ec9-8040-a18f97c65670.stdout.log",
+            "sha256": "c175e356a2940e3b7d41c2838c7132ebd0534e1517fc06e10870fd97f6319fdc"
+          },
+          {
+            "path": ".cache/research/refresh-2026-11-01/resources-sync-30b83c8c-83c1-4ec9-8040-a18f97c65670.stderr.log",
+            "sha256": "792d6e97d4ce859f3c608724d414c188cbce9cae03653e8f804f30a7d5440b93"
+          }
+        ]
+      },
+      "configured": 43,
+      "selected": 43,
+      "initialOrRefreshImports": 1,
+      "pinned": 42,
+      "counts": {
+        "usable-text": 32,
+        "partial": 11,
+        "blocked": 0,
+        "unsupported": 0,
+        "failed": 0
+      },
+      "article": {
+        "name": "agents.261029.fine-grained-version-control.delta.md",
+        "source": "https://delta.dev/blog/fine-grained-version-control-for-agents",
+        "sourceId": "18b13a90-d472-42e2-bbc4-b71b5385e5de",
+        "versionId": "a006e2cb-2ab2-438c-936f-04d8eabcc6ff",
+        "contentHash": "6e188765049d9c9caa679bdad9b4a56e62286d866798b5279260364bb95faef2",
+        "status": "created",
+        "validation": "usable-text",
+        "originalBytes": 383588,
+        "markdownCharacters": 31446,
+        "images": 3,
+        "mode": "static",
+        "firstCapturedAt": "2026-11-01T08:51:18.154Z",
+        "sourcePublishedAt": "2026-10-29",
+        "publicationEvidence": "publisher-html-meta"
+      },
+      "limitations": "42 previously captured static pins were checked locally, not refreshed. The 11 partial resources retain extraction/social/PDF limitations. Three captured Delta images do not establish visual fidelity or completeness. Publication date is publisher metadata, not independent attestation."
+    }
+  },
+  "sourceReviewEvidence": {
+    "frozenSha256": "b6ab5aa8478f017f88ac445521b64965d3ede42b0370c262d46e3ee4e117b8ac",
+    "analysisStateSha256": "eaefa252986c5105340764b750a4b6c46098190a4b8332cbe232b9871b402c7c",
+    "inspectorSha256": "744aa1b1cbba1f0f3804d0fd84c160f5f45a1538cda8cbca66f33956f6168304",
+    "collectorSha256": "59ef2a5c26122007ed28b04126cc355ecdfa3f726b1b4c41df3ddf34635a7d28",
+    "packetCount": 271,
+    "completeSummaryCount": 271,
+    "completeFullDiffCount": 164,
+    "unavailableFullDiffCount": 91,
+    "newSourceWithoutComparisonCount": 16,
+    "requiresExpansionCount": 107,
+    "packetIntegrity": {
+      "action": "packet-audit",
+      "finishedAt": "2026-11-01T10:36:04.038Z",
+      "seconds": 1.5846046,
+      "exitCode": 0,
+      "outcome": "exited",
+      "termination": "closed",
+      "receipt": {
+        "path": ".cache/research/refresh-2026-11-01/packet-audit-99fc1e45-ad48-4873-8152-a00874efd269.json",
+        "sha256": "3e47d61a0466c8aa6a20acb2ddffbdecfd401a622b8bf339a3ace08c1805ac43"
+      },
+      "logs": [
+        {
+          "path": ".cache/research/refresh-2026-11-01/packet-audit-99fc1e45-ad48-4873-8152-a00874efd269.stdout.log",
+          "sha256": "b7e81ee3adb449913dfe28035a38072ad464ee593a2c5d80a98b0e6871d94500"
+        },
+        {
+          "path": ".cache/research/refresh-2026-11-01/packet-audit-99fc1e45-ad48-4873-8152-a00874efd269.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    "captureProvenance": {
+      "action": "packet-capture-audit",
+      "finishedAt": "2026-11-01T10:36:04.494Z",
+      "seconds": 0.35013730000000004,
+      "exitCode": 0,
+      "outcome": "exited",
+      "termination": "closed",
+      "receipt": {
+        "path": ".cache/research/refresh-2026-11-01/packet-capture-audit-7de2f7a7-d201-4c61-a22f-b360bdb07270.json",
+        "sha256": "12a7efc0999e5bacb37bb98a9a64f144251afd9917ac98d9a7cfe80afaaab6ec"
+      },
+      "logs": [
+        {
+          "path": ".cache/research/refresh-2026-11-01/packet-capture-audit-7de2f7a7-d201-4c61-a22f-b360bdb07270.stdout.log",
+          "sha256": "ff7194c4000b383278f7b1c542f6d159f48c6429b74e26b6fd03a9fe139474ea"
+        },
+        {
+          "path": ".cache/research/refresh-2026-11-01/packet-capture-audit-7de2f7a7-d201-4c61-a22f-b360bdb07270.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    "auditResult": "All271 packet identities, canonical response hashes and capture provenance passed; no missing packets or audit failures. This validates captured evidence, not report correctness or whole-project coverage.",
+    "partitionMigration": {
+      "receipt": {
+        "path": ".cache/research/refresh-2026-11-01/partition-line-ending-migration.json",
+        "sha256": "3b8352e9b945c80fe1a66f1d8dd7ad178f0f007371f5cc130768d8736646e76b"
+      },
+      "originals": "Exact original bytes retained as base64 in the local migration receipt before LF conversion; semantic JSON equality checked.",
+      "files": [
+        {
+          "path": ".cache/research/refresh-2026-11-01/partition-delta_review.json",
+          "originalBytes": 30092,
+          "originalSha256": "a567886ac240e9e188d600088c1a53959890d9aeb5f073160d63764e33a1fb50",
+          "normalizedBytes": 29118,
+          "normalizedSha256": "fa705ee633869ecde945629f49ac2d44da0ea3f5f2bd3f4967dacb6828ebd3b0",
+          "jsonContentsUnchanged": true
+        },
+        {
+          "path": ".cache/research/refresh-2026-11-01/partition-refresh_audit.json",
+          "originalBytes": 27922,
+          "originalSha256": "0d4035cd473321b73c13dc5fe72728816fb54fa26e054be2faf7d71f547401ad",
+          "normalizedBytes": 26994,
+          "normalizedSha256": "bade2a9138b5d9255d80ab94f0ee29ac0d5c711f421175706ca4ea383ada2aeb",
+          "jsonContentsUnchanged": true
+        },
+        {
+          "path": ".cache/research/refresh-2026-11-01/partition-review_method.json",
+          "originalBytes": 29539,
+          "originalSha256": "df75a040c414852da87f0977ca803219c2ae48935c343a9b68c6b7349e2bde2a",
+          "normalizedBytes": 28596,
+          "normalizedSha256": "deb88c785b909e0635f05a1b3f9c6cf87d23e4ad378d867259a31a3ac3582c74",
+          "jsonContentsUnchanged": true
+        },
+        {
+          "path": ".cache/research/refresh-2026-11-01/partition-root.json",
+          "originalBytes": 28190,
+          "originalSha256": "aec5dcdab7e9183233ae06aaa925b1ae9721b3d4ea67da23c1c2275d06577d91",
+          "normalizedBytes": 27302,
+          "normalizedSha256": "f600d2ebd351848ca3c8e64edce4b871ae77a2489e01b61055f10763ad88fb4a",
+          "jsonContentsUnchanged": true
+        }
+      ]
+    },
+    "expansions": {
+      "batches": 18,
+      "requests": 212,
+      "complete": 207,
+      "unavailable": 5,
+      "repositoryIds": 108,
+      "sourceRequests": 116,
+      "diffRequests": 96,
+      "limits": "Explicit literal paths only; max64 requests/batch,4 workers,600 lines/source slice,1..8 paths/diff,128MiB evidence store. Unavailable outputs remain explicit; no source program or network execution.",
+      "limitations": [
+        "ClosedLoop: two after-ranges ending at200 exceeded113/189-line files; subsequent complete sources were read. A third current path is absent; before-source and two-tree diff were inspected without inferring deletion of equivalent behavior elsewhere.",
+        "Microsoft agent-framework: two valid direct source paths were rejected as changed-size/opaque text; the complete30,511-byte scoped diff was inspected instead. Original diff SHA256 b53004d5143435cee656634b25cdc7dc328f73fde31e2f4e696596e3dca2975a. Direct source reads remain unavailable.",
+        "Capture completeness is not review completeness. Each report states actual inspected functions/tests and remaining scope; none claims upstream test execution."
+      ],
+      "receipts": [
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-00f8030c-a81f-4005-a82a-d79045228887.json",
+            "sha256": "571ee53758e4b038a64b558a51df61a4e81a66b30d0ba7f787f99f7b2c93caf1"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/expansion-refresh_audit-3.json",
+          "manifestSha256": "0ee77b4f38cf690d44ad1bc4221bf08b089697cc10856aad7194957f0d816a35",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents--onyx",
+              "operation": "diff",
+              "args": [
+                "backend/ee/onyx/background/celery/tasks/doc_permission_syncing/tasks.py",
+                "backend/onyx/db/permission_sync_attempt.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "4dfca2216b3ab6a114fb86214acb5de899feedaac6b8c4edbf5c02b551f169d0"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-01e29914-3305-4514-b50d-c58bab132f41.json",
+            "sha256": "d2607ddb85d71a38b82607e617156b81514093be2c2f20883feae2d2d267cfb4"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/expansion-refresh_audit-1.json",
+          "manifestSha256": "76451241d4be23b2746afd265224d52297b37a2a174a49df2d1387f1b0c3bb45",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents--mastra",
+              "operation": "diff",
+              "args": [
+                "packages/core/src/loop/timeout.ts",
+                "packages/core/src/loop/timeout.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "0a251b7151d2f03fc34d6da59a4112d1d50f7f5716cabc6cfb706aef69513a66"
+            },
+            {
+              "id": "ai-agents--hermes-agent",
+              "operation": "diff",
+              "args": [
+                "agent/client_lifecycle.py",
+                "agent/runtime_session_lifecycle.py",
+                "agent/timeout_error_summary.py",
+                "tests/agent/test_timeout_error_summary.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "dcdbd67fbfdade9ff90ec9a4d617e4407dddd844631a3ed8f088339708d27a13"
+            },
+            {
+              "id": "ai-agents--loopx",
+              "operation": "diff",
+              "args": [
+                "loopx/control_plane/goals/acceptance_authority.ts",
+                "loopx/capabilities/explore/worker_branch_plan.py",
+                "tests/control_plane/test_quota_acceptance_references.py",
+                "tests/control_plane/test_delegation_source_authority.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "298c856384650cd7766252f23c5cb34521251782aa5713791bb40e72a0dcf377"
+            },
+            {
+              "id": "ai-agents--kimi-code",
+              "operation": "diff",
+              "args": [
+                "packages/agent-core-v2/src/agent/permissionPolicy/policies/environment-lease.ts",
+                "packages/agent-core-v2/src/agent/permissionPolicy/policies/git-control-path-access-ask.ts",
+                "packages/agent-core-v2/src/agent/toolApproval/toolApprovalService.ts",
+                "packages/agent-core-v2/test/agent/toolApproval/toolApproval.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "3c763e2d3c13e732bf459a57749131018c71576f61eeb8a8dade5d205f247762"
+            },
+            {
+              "id": "ai-agents--mlflow",
+              "operation": "diff",
+              "args": [
+                "mlflow/server/auth/sqlalchemy_store.py",
+                "tests/server/auth/test_auth_search_scope.py",
+                "tests/server/auth/test_fastapi_job_ownership.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "0f522a58ff0f19eb8372f9da3a17e90f6fa5c814872f191d845719a8660411df"
+            },
+            {
+              "id": "ai-agents--murage",
+              "operation": "diff",
+              "args": [
+                "server/drivers/pi-permission-gate.ts",
+                "server/drivers/pi-permission-gate.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "9ab47b97ec587a5d0005f7c96fe3035a48daa466307ea0aa2887517174d13b34"
+            },
+            {
+              "id": "ai-agents--mercury-agent",
+              "operation": "diff",
+              "args": [
+                "src/capabilities/permissions.ts",
+                "src/sessions/repository.ts",
+                "src/sessions/repository.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "823fa52a91095f3600c419d95db3937cc4304c0132c89c3a622135807b1dc5fc"
+            },
+            {
+              "id": "ai-agents--multica",
+              "operation": "diff",
+              "args": [
+                "server/internal/daemon/execenv/hermes_sessions.go",
+                "server/internal/daemon/execenv/hermes_sessions_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "5662d70b717546a8b56f90255f8f00f736f0221ad1b4b469bb7c405c839fc4ed"
+            },
+            {
+              "id": "ai-agents--nanobot",
+              "operation": "diff",
+              "args": [
+                "nanobot/agent/goal_permission.py",
+                "nanobot/agent/session_activity.py",
+                "tests/agent/test_mid_turn_goal.py",
+                "tests/session/test_goal_state.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "2e1cb0943656773373ef8f9379cdd607cd4dbeaa03f8b33b01544fa6672cc055"
+            },
+            {
+              "id": "ai-agents--odysseus",
+              "operation": "diff",
+              "args": [
+                "src/session_actions.py",
+                "src/agent_runtime/authority.py",
+                "tests/test_session_actions_cleanup.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "48f6070172cc411c22caa1e0b2191de9145f8466a60f16ccb5ddc10e6f61695b"
+            },
+            {
+              "id": "ai-agents--oh-my-hermes",
+              "operation": "source",
+              "args": [
+                "src/workflows/approval_receipts.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "30379ff7d0d1e871d224ded2d4088dd9da033fa4b87e88b605200137cafa6b24"
+            },
+            {
+              "id": "ai-agents--oh-my-hermes",
+              "operation": "source",
+              "args": [
+                "README.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "2f64c4bc5157a0e1b08068dd84055243f2cb4d1d131fca94d008154293f2e463"
+            },
+            {
+              "id": "ai-agents--oh-my-openagent",
+              "operation": "diff",
+              "args": [
+                "crates/senpi-desktop-session/src/intervention/mod.rs",
+                "crates/senpi-desktop-session/src/intervention/record.rs",
+                "crates/senpi-desktop-session/src/intervention/tests.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "64471800ab17550fc78877d3373464f29fc88d2d95bee6b496ac8dce4e57ba1f"
+            },
+            {
+              "id": "ai-agents--oh-my-hermes",
+              "operation": "source",
+              "args": [
+                "tests/test_approval_receipts.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "4df305bd16d80ebbd511cc5cd9b7047dcec46fc02e0aa58151f1bf64df5777cd"
+            },
+            {
+              "id": "ai-agents--omnigent",
+              "operation": "diff",
+              "args": [
+                "omnigent/sandbox/copy_on_write.py",
+                "tests/inner/test_copy_on_write.py",
+                "tests/runner/test_copy_on_write.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "e67e84058d75c7d016821fa95cd9bacfd1209194f760d5708c0477a43a5f5cd2"
+            },
+            {
+              "id": "ai-agents--oh-my-pi",
+              "operation": "diff",
+              "args": [
+                "packages/ai/src/auth/refresh.ts",
+                "packages/ai/src/auth/rotation.ts",
+                "packages/ai/test/auth-storage-force-refresh-rotate.test.ts",
+                "packages/ai/test/auth-storage-oauth-refresh-race.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "2dcd47e4f2000c0deea023e9e5aafd9e50de30977a5a529f4482bd690afd1650"
+            },
+            {
+              "id": "ai-agents--onyx",
+              "operation": "diff",
+              "args": [
+                "backend/ee/onyx/background/celery/tasks/doc_permission_syncing/checkpointer.py",
+                "backend/tests/external_dependency_unit/permission_sync/test_perm_sync_checkpoint_resume.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "241a1171d219ebec9862fb22460d36ba1b821e5cedabe2e9f6626344feee4828"
+            },
+            {
+              "id": "ai-agents--openbot",
+              "operation": "diff",
+              "args": [
+                "agent-computer/src/sessions.ts",
+                "agent-computer/tests/sessions.test.ts",
+                "agent-computer/tests/session-cookies.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "ddc9d30cbd9834c76987cef0c59b8ed839be9b9749ab14271946df947a8e622b"
+            },
+            {
+              "id": "ai-agents--opencode",
+              "operation": "diff",
+              "args": [
+                "packages/ai/src/route/auth.ts",
+                "packages/ai/test/auth.test.ts",
+                "packages/ai/test/keyless-auth.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "ad4f9adc0e16383ed0254473038948b58b00f8f227801da39ea745fff7f83667"
+            },
+            {
+              "id": "ai-agents--openhuman",
+              "operation": "diff",
+              "args": [
+                "crates/openhuman-core/src/agent/session_host/builder/host_policy.rs",
+                "crates/openhuman-core/src/agent/session_host/builder/builder_tests_host_only_tests.rs",
+                "crates/openhuman-core/src/agent/session_host/builder/builder_tests_explicit_definition_tests.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "0fe688b6ec176b7fddf6b1a3da3dcab759169b187ace915a3970d46f50ec3972"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-04a4aed5-a0ff-4759-bf74-0ed042e0c1dc.json",
+            "sha256": "dee6815e0a35ce25b38ec670698e8b0078fb7d253d6bb405623a6cc8a5953e5b"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/expansion-refresh_audit-mentis.json",
+          "manifestSha256": "55d07cf1bc93004d6711e5d9faf2f1feaca1c05074f35d99ceeba844306ec6dd",
+          "expanderSha256": "38f47931ecc3ab63bc4e9e5d920a98d32cd7b68fc8f9c9596c52948b59721823",
+          "requests": [
+            {
+              "id": "ai-agents-mem--mentisdb",
+              "operation": "diff",
+              "args": [
+                "src/access.rs",
+                "src/signing.rs",
+                "tests/access_policy_tests.rs",
+                "tests/signing_tests.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "2522d4a86cbc0339c801b485606baff81a4fec9c746f4cf9a3ee03a4578c7538"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-0e1696bb-6cc6-4a7d-9b76-e5940fab5a09.json",
+            "sha256": "f159d5856bc3c4f2e34e03af58786a8808cc7af3ff89f29c3a62ab8f52012b07"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/expansion-refresh_audit-4.json",
+          "manifestSha256": "61a6fb609aafb5c6bfdb116836901630c79cb74d4dd14a2fb1e9bac85ff2d8b5",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents--paseo",
+              "operation": "diff",
+              "args": [
+                "packages/server/src/server/plugins/lifecycle/index.ts",
+                "packages/server/src/server/worktree-bootstrap.ts",
+                "packages/server/src/server/paseo-worktree-service.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b07bda929486e28c0ee48739e63b6a618d0a48ec81724c5b464a114bf487b3d9"
+            },
+            {
+              "id": "ai-agents--qm",
+              "operation": "diff",
+              "args": [
+                "src/slack/approval-store.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "11818288d431c9d7ea8dc2cfc8f4d4c8871b903a8ee3e2587f07d065fab4b23b"
+            },
+            {
+              "id": "ai-agents--nanobot",
+              "operation": "diff",
+              "args": [
+                "tests/agent/session_helpers.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "683bb0fbd5054c30878d090ecfca42ecd5571ed4ad08c2a6cb61772db6398065"
+            },
+            {
+              "id": "ai-agents--zcode",
+              "operation": "diff",
+              "args": [
+                "apps/zcode-cli/packages/adapters/src/storage/session-store/sqlite-session-store.ts",
+                "apps/zcode-cli/packages/adapters/src/storage/session-data-files/index.ts",
+                "apps/zcode-cli/packages/adapters/tests/session-data-files.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b1c18b1ad958ac984d8bac5abe25551dd1469aed7a32a5f2ecd68c4fb43e4da7"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-1cd27b53-7e4f-48d1-bb40-1c82627e2a44.json",
+            "sha256": "db04728071a283888761acf074db5215f91fbac70f1339eb52e2993cb15ced84"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/root-expansion-1.json",
+          "manifestSha256": "e19db257661f84a46528b7ccfcea355c5313341fd912630793aeae082e84dda1",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents-proxy--cockpit-tools",
+              "operation": "diff",
+              "args": [
+                "sidecars/cockpit-cliproxy/quota_cooldown.go",
+                "sidecars/cockpit-cliproxy/quota_cooldown_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b88c50f4ce4cb68e03f0363d399841b66d7af237b2ecdbbf6f459dff3a687e63"
+            },
+            {
+              "id": "ai-agents-proxy--bifrost",
+              "operation": "diff",
+              "args": [
+                "transports/bifrost-http/handlers/mcpoauth2issuance.go",
+                "transports/bifrost-http/handlers/mcpoauth2issuance_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "1ee6b77fec2b702a01ab4efa8a4b4ddacb049e8175ce1f7efb5ca812816de7c1"
+            },
+            {
+              "id": "ai-agents-proxy--experiential",
+              "operation": "source",
+              "args": [
+                "exp/common/routing/policy.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "9b58f283e6cb5af86091e501ad14405ee1224fe7ed33fe3138664b7a408fa3ee"
+            },
+            {
+              "id": "ai-agents-proxy--experiential",
+              "operation": "source",
+              "args": [
+                "exp/common/routing/policy_test.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "a66d63ef28dd4eba90bc512f70e6993fb913bf1de16ee6e017293a8610934b9b"
+            },
+            {
+              "id": "ai-agents-proxy--litellm",
+              "operation": "diff",
+              "args": [
+                "litellm/proxy/dev_reload.py",
+                "tests/unit/proxy/test_dev_reload.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "6ee6aa517c6c401b40061d951a862cb4deaa14da8db16f7db746d7183b6c75d8"
+            },
+            {
+              "id": "ai-agents-proxy--experiential",
+              "operation": "source",
+              "args": [
+                "exp/optimize/router/attempt_authority.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "ae7fcad6f7a02611bf15e083ad0837fb73dd000c022d5a4030da82f1546afc58"
+            },
+            {
+              "id": "ai-agents-proxy--openrouter-go-sdk",
+              "operation": "source",
+              "args": [
+                "models/components/jevrouterplugin.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "2d50e7924b5a97533aed5d95c2af58c9a1bd26b50acfef4626e579149e79e294"
+            },
+            {
+              "id": "ai-agents-proxy--openrouter-go-sdk",
+              "operation": "source",
+              "args": [
+                "models/components/providerpreferences.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "cf8b0a22fcba5317d931fe80d5a1f42fc8ea7fbf4bd592874680a4cd28a115aa"
+            },
+            {
+              "id": "ai-agents-proxy--openrouter-python-sdk",
+              "operation": "source",
+              "args": [
+                "src/openrouter/components/jevrouterplugin.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "12f018cb4d162dffcb99a135e79652c640fe9cdf40105be0feb9c44a6151a0f1"
+            },
+            {
+              "id": "ai-agents-proxy--openrouter-python-sdk",
+              "operation": "source",
+              "args": [
+                "src/openrouter/components/providerpreferences.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "7ce53c216261efe95fc58c3ccb34eb0062d5e16ec1dcb7a8ae711341739e25ae"
+            },
+            {
+              "id": "ai-agents-proxy--openrouter-typescript-sdk",
+              "operation": "source",
+              "args": [
+                "src/models/jevrouterplugin.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "f1e9fa264322d04af17a78256755983ff1f24a0f786940d3be69bdd8afeeee50"
+            },
+            {
+              "id": "ai-agents-proxy--openrouter-typescript-sdk",
+              "operation": "source",
+              "args": [
+                "src/models/providerpreferences.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "c7d35f08b67ba7bc2e3b71987377866dda3d4c53c296238c8bee72bce66c493b"
+            },
+            {
+              "id": "ai-agents-proxy--switchyard",
+              "operation": "diff",
+              "args": [
+                "crates/libsy/src/algorithms/llm_class/decision.rs",
+                "crates/switchyard-runner/tests/openai_decisions.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "0440dbe1e6089238cb4182f65c1e4b4f45ef35fd05e49e1bd12fb361dc10572a"
+            },
+            {
+              "id": "ai-agents-skills--admin.teamai-cli.tencent",
+              "operation": "diff",
+              "args": [
+                "src/scorers/skill-evidence.ts",
+                "src/__tests__/skill-evidence.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "07ff5adb44d920794e5bc1d863a5c62baf34ffb1c0e34572e89be60c381eeaf4"
+            },
+            {
+              "id": "ai-agents-swarm--crewai",
+              "operation": "diff",
+              "args": [
+                "lib/crewai/src/crewai/tools/agent_tools/deferred_tool_result_reader.py",
+                "lib/crewai/tests/tools/agent_tools/test_deferred_tool_result_reader.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "0f0d12a19571e86f61c7f987e5be160ca83a3bf5b1bae9e68365ae9ba46b2b36"
+            },
+            {
+              "id": "ai-agents-swarm--optio",
+              "operation": "diff",
+              "args": [
+                "apps/api/src/services/session-service.ts",
+                "apps/web/e2e/session-delete.spec.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "ce47e801c4d2e99d75bafd1ee3f81d8fbb1b2a835648705583515f3432b2e522"
+            },
+            {
+              "id": "ai-agents-swarm--orca",
+              "operation": "diff",
+              "args": [
+                "src/main/ai-vault/session-list-result-validation.ts",
+                "src/main/ai-vault/session-list-result-validation.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "3340e72fdd45ada0200c66ec7e46a674856141a2e8ce8e42dc15f75365dbf579"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-47e306c4-94eb-4b22-9d63-f7a3bd2d9f2e.json",
+            "sha256": "6230025f639b02557a185b46b65ddc2bd2c48b5eb8bfc530ee3d50d99d88c01a"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/expansion-delta-review-3.json",
+          "manifestSha256": "7c91a0d69c4b915106355f39a32295b42767611cc1e15a93c48c8add9b437b66",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents--cindy",
+              "operation": "source",
+              "args": [
+                "apps/desktop/src/main/im/telegram/__tests__/permissionPolicy.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "f7478a9d5ac417a3d1b72c3d729c5ebde04aadf4841f82a99d01a64d970b56ba"
+            },
+            {
+              "id": "ai-agents--cindy",
+              "operation": "source",
+              "args": [
+                "apps/desktop/src/main/file-access/permissions.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "1ddcf7753d9bc84604c5cbefcc9aefcc75afb839c1f1e14cdbf3b08fb563a057"
+            },
+            {
+              "id": "ai-agents--cindy",
+              "operation": "source",
+              "args": [
+                "apps/desktop/src/main/im/telegram/permissionPolicy.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "8aaa478e6d695a873e9e10725f9097aa66897d35086c4567a8d48f91ab1290be"
+            },
+            {
+              "id": "ai-agents--cindy",
+              "operation": "source",
+              "args": [
+                "README.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "be86d48174c648a1c7d6b751adf4fbaad3f84c35f6b42c676b7971c3288b9c42"
+            },
+            {
+              "id": "ai-skills--game.awesome-gamedev",
+              "operation": "source",
+              "args": [
+                "README.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "26f4b6afa0825d4b2353a984685866bde5b843603d19696c554f34d947ce2c63"
+            },
+            {
+              "id": "ai-skills--game.awesome-gamedev",
+              "operation": "source",
+              "args": [
+                "router/SKILL.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "46859d938a326c56cb30045e916b1c1ecfc0bc78b3da575ac49737926fdf72a5"
+            },
+            {
+              "id": "ai-skills--game.awesome-gamedev",
+              "operation": "source",
+              "args": [
+                "skills/disciplines/ai-behavior-trees-utility-ai/SKILL.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "63161120820afbc479b4f734cde0e4def1d26ec11612ab8cafbe82c483e58420"
+            },
+            {
+              "id": "ai-skills--interact.archify",
+              "operation": "source",
+              "args": [
+                "README_EN.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "e0a2365d65e41542ebc738ba81d117e704bda0dde0716a4a014d721a5096d8ee"
+            },
+            {
+              "id": "ai-skills--interact.archify",
+              "operation": "source",
+              "args": [
+                "archify/SKILL.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "ab75a1cb758394a7eca6091ef78aef9f03254782d5f08e7307004fd9a27080fa"
+            },
+            {
+              "id": "ai-skills--interact.archify",
+              "operation": "source",
+              "args": [
+                "archify/scripts/generate-validators.mjs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b6ee61f518b899d333260db90323d24a5f71cd018ac8f4887921f13f92cf0a23"
+            },
+            {
+              "id": "ai-skills--log.betterstack.claude",
+              "operation": "source",
+              "args": [
+                "README.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "8e795de69978b853b484aef221e848adcd5207bdc596dbef2a8ee8912881ab3e"
+            },
+            {
+              "id": "ai-skills--log.betterstack.claude",
+              "operation": "source",
+              "args": [
+                "skills/connect-betterstack/SKILL.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "8f6cc3b68fa4168e979dc3d4cf6805b4f67125894375e3c530d0ae2e1dbba688"
+            },
+            {
+              "id": "ai-skills--log.betterstack.claude",
+              "operation": "source",
+              "args": [
+                "skills/logs-query/SKILL.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "206c5571337811379e7995d4752eb0dde47c72356a897ff8ff0ebcfb2e271758"
+            },
+            {
+              "id": "ai-agents--closedloop-ai",
+              "operation": "source",
+              "args": [
+                "apps/desktop/src/server/operations/plugin-cache.ts",
+                "1",
+                "200",
+                "before"
+              ],
+              "status": "complete",
+              "evidenceSha256": "a7dd555eeb4affe2da3f493910a233a1738c7174683b9b2922b4bc45953a7035"
+            },
+            {
+              "id": "ai-agents--closedloop-ai",
+              "operation": "source",
+              "args": [
+                "apps/desktop/src/server/operations/health-check-plugin-enable.ts",
+                "1",
+                "200",
+                "before"
+              ],
+              "status": "complete",
+              "evidenceSha256": "8b2616aef0b32eae20e99d99646bdb06e6a72cfcff318a367dba8ea51cc646d9"
+            },
+            {
+              "id": "ai-agents--closedloop-ai",
+              "operation": "source",
+              "args": [
+                "apps/desktop/test/plugin-cache.test.ts",
+                "1",
+                "200",
+                "before"
+              ],
+              "status": "complete",
+              "evidenceSha256": "abf6b5097a93bc0970fb4f8990a5b05de81ad322a5615728d18f8cd55ce30233"
+            },
+            {
+              "id": "ai-agents--closedloop-ai",
+              "operation": "source",
+              "args": [
+                "apps/desktop/src/server/operations/health-check-plugin-enable.ts",
+                "1",
+                "200",
+                "after"
+              ],
+              "status": "unavailable",
+              "evidenceSha256": "c8b0877ebf6c471aef234e9dab92e2995aa77bce36832fab1ebc038fb12e9e4e"
+            },
+            {
+              "id": "ai-agents--closedloop-ai",
+              "operation": "source",
+              "args": [
+                "apps/desktop/src/server/operations/plugin-cache.ts",
+                "1",
+                "200",
+                "after"
+              ],
+              "status": "unavailable",
+              "evidenceSha256": "43abdeff9c1597c1b356b3ac447d799a34f744cbe1687763a70f6930c538930c"
+            },
+            {
+              "id": "ai-agents--closedloop-ai",
+              "operation": "source",
+              "args": [
+                "apps/desktop/test/plugin-cache.test.ts",
+                "1",
+                "200",
+                "after"
+              ],
+              "status": "unavailable",
+              "evidenceSha256": "7a593ae37f29b073c5e0487b18cc7a82d50a0629d15cd99bf0d8af2429d12658"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-6379cbb7-8cc4-419c-8d86-9e8afca32754.json",
+            "sha256": "a91a75d5c23566345586cef1e093e40bb5c30cab6f4d914a55930ee861d13636"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/review_method-expansion-3.json",
+          "manifestSha256": "bbb14868fa8d2415d37a5ac3dc727094aa564a0a7d79337cd619b128e9e6779e",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-query--minipcm-ocr",
+              "operation": "source",
+              "args": [
+                "scripts/minicpm-ocr-jev/sdk/jev_score/selfcheck.py",
+                "401"
+              ],
+              "status": "complete",
+              "evidenceSha256": "1e4a32fe0794a61924ef320eea92888d2e9ff26af74c55c16f02971de88700ba"
+            },
+            {
+              "id": "ai-agents-mem--midbrain-memory-mcp",
+              "operation": "source",
+              "args": [
+                "shared/midbrain-api.mjs",
+                "401"
+              ],
+              "status": "complete",
+              "evidenceSha256": "05a2098c4e547a3231b2a17cea4442a67acc11f12580cefab536ab9daab3ede5"
+            },
+            {
+              "id": "ai-agents-mem--midbrain-memory-mcp",
+              "operation": "source",
+              "args": [
+                "tests/history-import.test.mjs",
+                "401"
+              ],
+              "status": "complete",
+              "evidenceSha256": "0d3ffcb69d29634400b9ffcd295b6b1d96acfc733392eeb744adcf03ba3676d4"
+            },
+            {
+              "id": "ai-query--minipcm-ocr",
+              "operation": "source",
+              "args": [
+                "sdk/minicpmvocr/pipeline/overlapped.py",
+                "401"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b06acb2e707963936adb7f1d10a4540ddd52973fc2a142006910c50c2627d4b0"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-64032a91-cdfc-40f9-81a5-042aa3066fa5.json",
+            "sha256": "4f9eee3cc69bb3df575ad0fa86ac5b5242aed8c202f51f4ad871cbab8411e64a"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/review_method-expansion-4.json",
+          "manifestSha256": "b5609483b09f7496f5fd106d530e2cd9b42617348f4ae9e2e92bbb4a7f98febd",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents-mem--reef",
+              "operation": "diff",
+              "args": [
+                "reef/artifact/memory.py",
+                "reef/evaluation/harness/policy.py",
+                "tests/artifact/test_repository_backend_capabilities.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "82010421fb311d640d4f3890cec8fed9ed296e127a15bdff1fa46d72fd4dfba8"
+            },
+            {
+              "id": "ai-agents-mem--tolaria",
+              "operation": "diff",
+              "args": [
+                "src/lib/aiAgentStreamCallbacks.ts",
+                "src/lib/aiAgentStreamCallbacks.performance.test.ts",
+                "src/lib/aiWorkspaceSessionStore.ts",
+                "src/lib/aiWorkspaceSessionPersistence.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "25db1578c49e108f2f07c13437968c4872e17a9422d5a6de8bca5de02cd3fabb"
+            },
+            {
+              "id": "ai-agents-mem--tracedecay",
+              "operation": "diff",
+              "args": [
+                "crates/tracedecay-agent-hosts/src/agents/host_bundle/capability_admission.rs",
+                "crates/tracedecay-agent-hosts/src/agents/host_bundle/tests.rs",
+                "crates/tracedecay-application/src/primitives/production/unavailable_evidence_tests.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "1fafca5b0b4ed211b1b62a3edd56d3c90b5f049c186658731ae8a73e45f96dc6"
+            },
+            {
+              "id": "ai-agents-mem--xerj",
+              "operation": "diff",
+              "args": [
+                "engine/crates/xerj-rerank/src/judge.rs",
+                "engine/crates/xerj-api/tests/judge_stage_http.rs",
+                "engine/crates/xerj-engine/src/read_budget.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "97c47e18a56811409a5777b29883053823d608e7caebc121a6cdbaeb4024b973"
+            },
+            {
+              "id": "ai-query--dbx",
+              "operation": "diff",
+              "args": [
+                "apps/desktop/src/composables/useAiToolApprovalDock.ts",
+                "apps/desktop/src/composables/__tests__/useAiToolApprovalDock.spec.ts",
+                "apps/desktop/src/components/editor/AiToolApprovalCard.vue"
+              ],
+              "status": "complete",
+              "evidenceSha256": "005a5fe1738c0d178fdc1a2b6915e2909dd7136b40630b9f9524213376c14142"
+            },
+            {
+              "id": "ai-query--lightpanda-browser",
+              "operation": "diff",
+              "args": [
+                "src/browser/tools/consent.zig",
+                "src/browser/tests/consent_banner.html",
+                "src/browser/tests/consent_banner_confirm.html",
+                "src/browser/tests/consent_banner_navigates.html"
+              ],
+              "status": "complete",
+              "evidenceSha256": "2a9a44ecc7cff4c4a24eb98a3473801fb3dffa73ef4cad8d8f18b758784ee8e1"
+            },
+            {
+              "id": "ai-query--magika",
+              "operation": "diff",
+              "args": [
+                "rust/lib/src/resolvers/facts/zip.rs",
+                "rust/lib/src/resolvers/facts/pe.rs",
+                "rust/lib/src/resolvers/tests/regressions.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "a542ec41584ada8de5e0dbf1953f7e83124cccbf5354d740a602f7f78ba9563c"
+            },
+            {
+              "id": "ai-query--marker",
+              "operation": "diff",
+              "args": [
+                "pyproject.toml"
+              ],
+              "status": "complete",
+              "evidenceSha256": "c5955b0181f72d5c20b09f021e93a5737d3f3c242e16658bb40ed1fb01898e16"
+            },
+            {
+              "id": "ai-query--mineru",
+              "operation": "diff",
+              "args": [
+                "mineru/doclib/services/parse_policy.py",
+                "mineru/parser/task_outputs.py",
+                "tests/unittest/test_task_outputs.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "5a942d95bd6f21e92f6c5e57d822ee0564a91845b19956b29a804ab1df6f802d"
+            },
+            {
+              "id": "ai-query--xberg",
+              "operation": "diff",
+              "args": [
+                "crates/xberg-native-pdf/src/extractors/images.rs",
+                "crates/xberg-native-pdf/src/extractors/image_raw_bytes_limit_tests.rs",
+                "crates/xberg/src/core/extractor/bytes.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "384eb580d42a6c94afc402212b56bbf5cd4768b2907016f788a501d273204ea6"
+            },
+            {
+              "id": "ai-query--office-parser",
+              "operation": "diff",
+              "args": [
+                "src/parsers/pdf/actualText.ts",
+                "src/parsers/pdf/textGlyphs.ts",
+                "src/parsers/pdf/pdfTypes.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "40eca259a1e83105fa553e4b99ddd0760561d6d7a26460eda52b99a2b85ae4b3"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-72c962a9-e9ee-497d-86bb-b1f395195301.json",
+            "sha256": "260503f1f99c4867a0416ce286c9931db3ca2b9a02787fb9fd88242ba0183c31"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/review_method-expansion-1.json",
+          "manifestSha256": "d4cc1521ecaa2a329c5d1ff3e100257d379a89611ebcd1b9951d32b5e9f3074d",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents-mem--midbrain-memory-mcp",
+              "operation": "source",
+              "args": [
+                "shared/history-import/cli.mjs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b1bb4291f3adf83d62d401b292b2f4bc1320fa128e6d00555f0f0a6063b0cbcd"
+            },
+            {
+              "id": "ai-agents-mem--midbrain-memory-mcp",
+              "operation": "source",
+              "args": [
+                "shared/history-import/plan.mjs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "66ebdce8d3490a3b51b67198a6053f01f05e786eb4fa65ba7b5a2bf419bc212a"
+            },
+            {
+              "id": "ai-agents-mem--midbrain-memory-mcp",
+              "operation": "source",
+              "args": [
+                "shared/history-import/readers/common.mjs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "a6ebe7e2511933552bb81c7b63be987f2c2d97ab0a4f5f36a1f8abf6bb898ed7"
+            },
+            {
+              "id": "ai-agents-mem--midbrain-memory-mcp",
+              "operation": "source",
+              "args": [
+                "package.json"
+              ],
+              "status": "complete",
+              "evidenceSha256": "8025b00e878af3dcba7bc7a4172c9076151e3bdf25607ed78069223b652f7920"
+            },
+            {
+              "id": "ai-query--minipcm-ocr",
+              "operation": "source",
+              "args": [
+                "sdk/minicpmvocr/pipeline/overlapped.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b5993b93281b43d98cbef5c6faab859f3c6caadaca03b57e917b8fe4e4f4223d"
+            },
+            {
+              "id": "ai-agents-mem--midbrain-memory-mcp",
+              "operation": "source",
+              "args": [
+                "tests/history-import.test.mjs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "4864bc2bd90fffb48499d7e5136b97133552f0c5c6a2ed012e1417a66cf10011"
+            },
+            {
+              "id": "ai-agents-mem--midbrain-memory-mcp",
+              "operation": "source",
+              "args": [
+                "shared/midbrain-api.mjs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "7f53ea43d338a57212ad909ebf60735135cb2d11b1a62b2356335d900c6e21ce"
+            },
+            {
+              "id": "ai-query--minipcm-ocr",
+              "operation": "source",
+              "args": [
+                "sdk/minicpmvocr/backends/client.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "777a71ed5f36647cabd0c3080133cdd00d3f203dd517e389e345c3fdc2c0a237"
+            },
+            {
+              "id": "ai-query--minipcm-ocr",
+              "operation": "source",
+              "args": [
+                "sdk/tests/test_pipeline_robustness.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "e3f5e8e4988c641a80f51e3a8a7becc2a62cc5efcbbc76e08395e2dcf115d8bb"
+            },
+            {
+              "id": "ai-query--minipcm-ocr",
+              "operation": "source",
+              "args": [
+                "scripts/minicpm-ocr-jev/sdk/jev_score/scorer.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "3fa9dabd3feffdf9f1cb1baf28a8459d2b4aa29cb57c8b2aca4ae2cdd99573d6"
+            },
+            {
+              "id": "ai-query--minipcm-ocr",
+              "operation": "source",
+              "args": [
+                "scripts/minicpm-ocr-jev/sdk/jev_score/selfcheck.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "3244e98fc871e4521aa8e0b7146a59ab6ee79f74c0986837a1035627faff4001"
+            },
+            {
+              "id": "ai-query--minipcm-ocr",
+              "operation": "source",
+              "args": [
+                "sdk/tests/test_infer_scheduling.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "26e30a1d5538a308e625a7aac04a31fa36919d00494d203337bb9250062ecd11"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-7d6f8223-7083-4df6-897b-e0a460f12374.json",
+            "sha256": "ad9527f773319121f7197e5e4a801f018d9b962b78d50fa54c2917095ce3e385"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/root-expansion-2.json",
+          "manifestSha256": "0c33c3030e1123d73d16005549c93c8798496ac2088435657c59daba97e927ed",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-gen--a2ui",
+              "operation": "diff",
+              "args": [
+                "typescript/core/web_core/src/common/sanitize_media_url.ts",
+                "typescript/core/web_core/src/common/sanitize_media_url.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "798d9664d76a39cf332b0cca589d5e0762011abcc9b81b9d37313a767c743050"
+            },
+            {
+              "id": "ai-gen--diffmap",
+              "operation": "source",
+              "args": [
+                "src/git.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "52a44d57af4b45147a95ee70af8871a0a4b536a7e6d9a55c8cfc19fc06c5e686"
+            },
+            {
+              "id": "ai-gen--diffmap",
+              "operation": "source",
+              "args": [
+                "src/github/fetchRepo.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "8769d820574f8a328e074a69820a89f370abc7b73351646faf98aa548aff480d"
+            },
+            {
+              "id": "ai-gen--diffmap",
+              "operation": "source",
+              "args": [
+                "src/github/fetchRepo.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "fa9e67b599d978c683d742348923e91c284c2a44e1e5963cfab88edcfbd8569a"
+            },
+            {
+              "id": "ai-gen--hyperframes",
+              "operation": "diff",
+              "args": [
+                "packages/producer/src/services/render/planValidation.ts",
+                "packages/producer/src/services/render/planValidation.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "9793bfd82760658df8698168cf16c34d2886fe9bbc7686de8c18f1bd458c0e21"
+            },
+            {
+              "id": "ai-gen--open-design",
+              "operation": "diff",
+              "args": [
+                "apps/daemon/src/runtimes/opencode-permissions.ts",
+                "apps/daemon/tests/runtimes/od-next-profile-permissions.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "54f24bda4b1e8941a5de460034e4b0f5e55af918ed467f749e2798e3812b70dc"
+            },
+            {
+              "id": "ai-gen--yue2-studio",
+              "operation": "source",
+              "args": [
+                "crates/music-server/src/audio_facts.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "afd30f2b4a559c0f8f60db6e79b9d3cf25c6a8c61c1f09de41f1f4c39be72c25"
+            },
+            {
+              "id": "ai-gen--yue2-studio",
+              "operation": "source",
+              "args": [
+                "crates/music-engine/src/process_group.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "35e7b425f5ddcc0248f1e1ffc461c5dcc96ff8090454d1b870520203fdca7648"
+            },
+            {
+              "id": "ai-info--awesome-jev-live",
+              "operation": "diff",
+              "args": [
+                "README.md",
+                "data/CHANGELOG.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "cce14c94f491fddb742f449935259d04197ec000792c79d860f6b53d1d4277b5"
+            },
+            {
+              "id": "ai-gen--yue2-studio",
+              "operation": "source",
+              "args": [
+                "README.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "df28448c3ed1ccd0f3326ebb96722587618b3a4f0cdcfbdc72b3a6e0ce36040c"
+            },
+            {
+              "id": "ai-info--building-a-coding-agent-from-scratch-course",
+              "operation": "source",
+              "args": [
+                "src/decode/permissions/gate.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "d754d7b40673c1d8993e5718ad53ac93ddcedf36744156624648e49b7c52cfda"
+            },
+            {
+              "id": "ai-info--building-a-coding-agent-from-scratch-course",
+              "operation": "source",
+              "args": [
+                "tests/unit/decode/permissions/test_gate.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "5724c74e3792b754d1fd6edf2d20bc25060a0ad6fef446578d57668ce21c23fe"
+            },
+            {
+              "id": "ai-media--career-ops",
+              "operation": "diff",
+              "args": [
+                "lib/privacy-guard.mjs",
+                "tests/privacy-guard.test.mjs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "e74ec6f867a80e4891c88dcb87fd5ba56596e3a876b548facfc00a8dadd0bf78"
+            },
+            {
+              "id": "ai-media--voicestudio",
+              "operation": "diff",
+              "args": [
+                "mobile/ios/scripts/validate_privacy_manifests.py",
+                "tests/test_ios_privacy_manifests.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "d03cf7dae688b9998ef47ce3346d4e5dd42e6f743bc73dd47804f511bddec7d6"
+            },
+            {
+              "id": "ai-model-run--colibri",
+              "operation": "diff",
+              "args": [
+                "c/setup_download.py",
+                "c/tests/test_setup_download.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "91f6a0e2035233ecd193e4d97cf362d2cf2c055d08272f80d97115397fb4202b"
+            },
+            {
+              "id": "ai-model-run--edge0",
+              "operation": "source",
+              "args": [
+                "python/src/edge0/prerouter/spec.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "5d0051db540fd4f3d53154d8300f77c2db502a584b9ac6152b580a5bdb477b68"
+            },
+            {
+              "id": "ai-prompts--prompts.chat",
+              "operation": "diff",
+              "args": [
+                "src/lib/admin-auth.ts",
+                "src/lib/mcp/auth.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "16e04a5aa7e0bf705ee8da6a10636f10b3bf73c00ac25f561899302f4dbaca11"
+            },
+            {
+              "id": "ai-model-run--edge0",
+              "operation": "source",
+              "args": [
+                "python/src/edge0/prerouter/stager.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "99a97ccd979c6014c2019d74b97f519bd87e62e1f8f5c1db7d02f7fba9118cd2"
+            },
+            {
+              "id": "ai-skills--log.betterstack.codex",
+              "operation": "source",
+              "args": [
+                "skills/investigate-incident/SKILL.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "e36043914e041dd45e0bf481e9f8c27d8825675fafe17d73d178b3d8086333b5"
+            },
+            {
+              "id": "ai-skills--log.betterstack.codex",
+              "operation": "source",
+              "args": [
+                "skills/logs-query/SKILL.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "6a613d31d4495abe53fffe24c7b75e172469ed07ec6c34313d219a7ba96d1af1"
+            },
+            {
+              "id": "ai-skills--log.betterstack.codex",
+              "operation": "source",
+              "args": [
+                ".mcp.json"
+              ],
+              "status": "complete",
+              "evidenceSha256": "6d9c07a3aca5c0374aa78377a04bb5db6303dded1743607389efc648c063adee"
+            },
+            {
+              "id": "ai-skills--repo.delta-claude",
+              "operation": "source",
+              "args": [
+                "hooks/recording/delivery-policy.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "984fc1beb8a4b45423c04c6bd7aa16fe98428421a817fa346bc138f153ec27b0"
+            },
+            {
+              "id": "ai-skills--repo.delta-claude",
+              "operation": "source",
+              "args": [
+                "hooks/recording/delivery-policy.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "9250ba83830af66d3e940126b24bc1ed462fb119a1acf0c43f8ca1591d082f67"
+            },
+            {
+              "id": "ai-skills--repo.delta-claude",
+              "operation": "source",
+              "args": [
+                "hooks/recording/outbox.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "f1756bfc585ab9182d7327b42435fb74fd79ba8db463020631be339c5281696f"
+            },
+            {
+              "id": "ai-skills--security-reverse.learnrea",
+              "operation": "source",
+              "args": [
+                "leanrea/SKILL.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "cf687d535d37044bb6f057cf18fd2dc6e3446aece83a04507f0c582dab1f04ee"
+            },
+            {
+              "id": "ai-spec--techsio.ontos",
+              "operation": "diff",
+              "args": [
+                "app/scripts/quality-audit.mts",
+                "app/scripts/tests/quality-audit.test.mts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "3058d57e0643a1dc9213fd84829a2cd5e3f26b92d451e48cc5995e0b9bd811d5"
+            },
+            {
+              "id": "ai-skills--security-reverse.learnrea",
+              "operation": "source",
+              "args": [
+                "bench/run.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b7cf89e87d0a2c4cee67275ac137e27911b87fcda6d74138e5f7c4ce6ee15103"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-7e8de8ac-6735-4153-a893-58bfffc28adb.json",
+            "sha256": "9b5419b17d9a588ccb484631aab012f7117a34cc68a2c089dbc93bb5eabbc156"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/expansion-delta-review-4.json",
+          "manifestSha256": "3b01c33902c5fa366e0c80ab0913d3b565fbaa684ad2594570b5a3067ebc4732",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents--closedloop-ai",
+              "operation": "diff",
+              "args": [
+                "apps/desktop/src/server/operations/plugin-cache.ts",
+                "apps/desktop/test/plugin-cache.test.ts",
+                "apps/desktop/src/server/operations/health-check-plugin-enable.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "e050f9f0f48203c412c9166bf7a2e4b2a8364aa505dfb3ef9f7a2d95cd77b4ff"
+            },
+            {
+              "id": "ai-agents--closedloop-ai",
+              "operation": "source",
+              "args": [
+                "apps/desktop/test/plugin-cache.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "69352bcd534254e7db637036f9aaa3189dc731f172237929c6eea48d57e97e6e"
+            },
+            {
+              "id": "ai-agents--closedloop-ai",
+              "operation": "source",
+              "args": [
+                "apps/desktop/src/server/operations/plugin-cache.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b6c86b325a610a4524d2c892c0acc9cb7714c2122a2c89267e208bd31e32ff64"
+            },
+            {
+              "id": "ai-agents--closedloop-ai",
+              "operation": "source",
+              "args": [
+                "README.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "160d7b2bcb6754913773559211189fda224831ee791e0ad0c948c10d540fd9d6"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-801c734c-7c81-440e-b528-f1b9180f24c6.json",
+            "sha256": "215112a87d1480eb7b2178a277ca5695833205c7efc33177fce9f6b0b91f2c98"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/review_method-expansion-2.json",
+          "manifestSha256": "4e53c93b7eab64eac1387e4cf2b3464edb11a793f24f9d29ea4cfc6b1d3e1cfa",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents-mem--codegraph",
+              "operation": "diff",
+              "args": [
+                "src/db/index.ts",
+                "src/mcp/index-version-warning.ts",
+                "__tests__/index-recovery-off-thread.test.ts",
+                "__tests__/mcp-index-version-warning.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "972c8c0a80e2d0e090478e56e41bdeadbc4fcf8aa0966217e83d25161d0c4487"
+            },
+            {
+              "id": "ai-agents-mem--cognee",
+              "operation": "diff",
+              "args": [
+                "cognee/tasks/memify/review_conflicts/accept_review.py",
+                "cognee/tasks/memify/review_conflicts/validate_review.py",
+                "cognee/tasks/memify/review_conflicts/trim_facts_to_budget.py",
+                "cognee/tests/unit/tasks/memify/review_conflicts/test_accept_review.py",
+                "cognee/tests/unit/tasks/memify/review_conflicts/test_review_facts.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "5a2f7719368cf6d4a035f5d1374c682394cf396fd6ed0e12d9fc08390c9f2e23"
+            },
+            {
+              "id": "ai-agents-mem--helix-foundry",
+              "operation": "diff",
+              "args": [
+                "backend/store/connector_documents.go",
+                "backend/store/connector_documents_sync_test.go",
+                "backend/connector/documents.go",
+                "backend/connector/documents_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "c6f1022c17d84dc39765233eed7beefd73100f0d2b9e7897f628fa7da6968f7b"
+            },
+            {
+              "id": "ai-agents-mem--gbrain",
+              "operation": "diff",
+              "args": [
+                "src/core/search/private-visibility.ts",
+                "src/core/search/evidence-delivery.ts",
+                "src/core/search/read-policy-sql.ts",
+                "test/recall-federated-search-scope.test.ts",
+                "test/retrieval-op-redaction.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "1976f79708bcef039836cb6cbd07d0bf8f469568076e5f274c330a16e2d9ffb6"
+            },
+            {
+              "id": "ai-agents-mem--hindsight",
+              "operation": "diff",
+              "args": [
+                "hindsight-api-slim/hindsight_api/engine/search/decision_reranker.py",
+                "hindsight-api-slim/tests/test_recall_boost_pipeline.py",
+                "hindsight-api-slim/tests/test_recall_pipeline_toggles.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "160cef0f05b6974864318189d7687f708861b29ee2736c6043b79697367b9e60"
+            },
+            {
+              "id": "ai-agents-mem--lean-ctx",
+              "operation": "diff",
+              "args": [
+                "rust/src/core/engine_interface/context_plan/sources.rs",
+                "rust/src/core/engine_interface/context_plan/materialize.rs",
+                "rust/src/core/engine_interface/context_plan/source_handoff_tests.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "e5031f4e0af65aeae533aca75563bf83386f8969989f9539be1880dd91b60150"
+            },
+            {
+              "id": "ai-agents-mem--ragflow",
+              "operation": "diff",
+              "args": [
+                "internal/parser/media/budget.go",
+                "internal/parser/media/budget_test.go",
+                "internal/ingestion/mediacache/store.go",
+                "internal/ingestion/mediacache/store_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "f7107c95a319229f2147f4f39d2cfd254e64d5477f983458a8a1654f55f6156f"
+            },
+            {
+              "id": "ai-agents-mem--open-viking",
+              "operation": "diff",
+              "args": [
+                "openviking/storage/queuefs/semantic_work.py",
+                "openviking/storage/queuefs/semantic_processor.py",
+                "tests/agfs/test_handoff_requeue_enqueue_failure.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "9e33d3cca041eb97677030f1c6f7c0ab98c5f8153060b0a09dab67006bf96944"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-8daa5e8c-dc09-4018-ae4f-bd8a825f366c.json",
+            "sha256": "ec3b94ee667f363a88e553a61a538df96a44a1de7c8dc26c006cc71bac704b68"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/expansion-delta-review-2.json",
+          "manifestSha256": "d8bd72b382122b424378706e5bed5b439f95c68452c656395431920a544c245c",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents--bb",
+              "operation": "diff",
+              "args": [
+                "apps/server/src/services/providers/session-model-catalog.ts",
+                "apps/server/test/providers/session-model-catalog.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "c61452103f218180d44ad6beac628a6555423a53214509f19733c62e54a77fb4"
+            },
+            {
+              "id": "ai-agents--copilot-sdk",
+              "operation": "source",
+              "args": [
+                "go/session_fs_provider.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "1fb39c16be9a036c31a55fedf8a5a143bb8d720c741af14e67ef1aa968ddd860"
+            },
+            {
+              "id": "ai-agents--bb",
+              "operation": "source",
+              "args": [
+                "apps/server/src/services/providers/session-model-catalog.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "7508c9fb4bb80b3532621584b4ff76f557f8a26b82b1d401b4868fbbece4e40f"
+            },
+            {
+              "id": "ai-agents--bb",
+              "operation": "source",
+              "args": [
+                "apps/server/test/providers/session-model-catalog.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "4091bbcb21c3d2e572b49b5244f3e94374db18e81be92c594ec0abaae787a1bb"
+            },
+            {
+              "id": "ai-agents--copilot-sdk",
+              "operation": "diff",
+              "args": [
+                "go/session_fs_provider.go",
+                "go/session_fs_range_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "113d14c49889ddd7a27c1ebf06e2ff31e28ed3c206a791f6967af6e4f04e73de"
+            },
+            {
+              "id": "ai-agents--copilot-sdk",
+              "operation": "source",
+              "args": [
+                "go/session_fs_range_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "e3b968d6e6898481fc0033257da9ddb37f154424c4c83afec7a1b2bd21c79034"
+            },
+            {
+              "id": "ai-agents--deepseek-harness",
+              "operation": "source",
+              "args": [
+                "packages/experimental/webworker-runtime/src/compile/transform.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "a434398b9eef979bb031cab325c3b437868f79ae6bb0ae6240aadda1f7c168b8"
+            },
+            {
+              "id": "ai-agents--deepseek-harness",
+              "operation": "source",
+              "args": [
+                "packages/experimental/webworker-runtime/tests/compile/transform-imports.spec.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "01e3fc853f3500c344edfb64d91e9e3029615ac53dc9fef0a23fe646202d4438"
+            },
+            {
+              "id": "ai-agents--deepseek-harness",
+              "operation": "diff",
+              "args": [
+                "packages/experimental/webworker-runtime/src/compile/transform.ts",
+                "packages/experimental/webworker-runtime/tests/compile/transform-imports.spec.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "107e6e300d805911bd5d3761db223b86dccae6f753bc3b0f94dd23c69ac701af"
+            },
+            {
+              "id": "ai-agents--deepseek-tui",
+              "operation": "source",
+              "args": [
+                "crates/engine/src/core/authority/auto_review.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "de45e56b02515abd28cce6ff9292be6b3a9141e8c149b17b4e1e5a67cbc3696d"
+            },
+            {
+              "id": "ai-agents--deepseek-tui",
+              "operation": "diff",
+              "args": [
+                "crates/engine/src/core/authority/auto_review.rs",
+                "crates/engine/src/core/queued_approval_tests.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "a7e27fc83dcbff11e90f83a5ca87dcbd137ab15455dc64cad775aa092d38c001"
+            },
+            {
+              "id": "ai-agents--deepseek-tui",
+              "operation": "source",
+              "args": [
+                "crates/engine/src/core/queued_approval_tests.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "6aa49e77c2d0c30bf62f4e146575237c3a53a04be5c98c64c5abe489b3980667"
+            },
+            {
+              "id": "ai-agents--deeptutor",
+              "operation": "source",
+              "args": [
+                "deeptutor/services/session/selection_grounding.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "64cd8ab2806e7ad4e9126a238867ad199cec7f05b701a88c38c3c758e145ed55"
+            },
+            {
+              "id": "ai-agents--deeptutor",
+              "operation": "diff",
+              "args": [
+                "deeptutor/services/session/selection_grounding.py",
+                "tests/services/session/test_selection_grounding.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "5d4a2d6a7b9f36ebc74241e60c1091e782b7cf09393363fc047581617395686b"
+            },
+            {
+              "id": "ai-agents--deeptutor",
+              "operation": "source",
+              "args": [
+                "tests/services/session/test_selection_grounding.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "ecd3c5298687d6cd612db5a3c154b0de1e3d847cf54ac3773f5d5d175b53ebfd"
+            },
+            {
+              "id": "ai-agents--dify",
+              "operation": "source",
+              "args": [
+                "api/controllers/openapi/auth/requirements.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "704742b660dfc5028fc4a7bbd39e7a1025f49eb4dd1e35e429e3a6219d1ff812"
+            },
+            {
+              "id": "ai-agents--dify",
+              "operation": "source",
+              "args": [
+                "api/tests/unit_tests/controllers/openapi/auth/test_requirements.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "dfbac85cf591a0e2eed33ed40ea5130e0cdbd35d642cc2f85d83931e1bb5386b"
+            },
+            {
+              "id": "ai-agents--dify",
+              "operation": "diff",
+              "args": [
+                "api/controllers/openapi/auth/requirements.py",
+                "api/tests/unit_tests/controllers/openapi/auth/test_requirements.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "7360bcbc7aaf1fcfa09f8a82d52a30d4c275b87b7c85fd5f850f06b27e70ee8a"
+            },
+            {
+              "id": "ai-agents--eve",
+              "operation": "source",
+              "args": [
+                "packages/eve/src/eve-channel/auth.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "5cb710ac16a935765fb9aa9b0e0c39ee8c5a4ef8a019ddcddd42ff709e754775"
+            },
+            {
+              "id": "ai-agents--eve",
+              "operation": "source",
+              "args": [
+                "packages/eve/src/eve-channel/auth.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "fdff32854db9decaa63b88e2da01524503a2fd8de0050a708c902803fe9d175c"
+            },
+            {
+              "id": "ai-agents--eve",
+              "operation": "diff",
+              "args": [
+                "packages/eve/src/eve-channel/auth.ts",
+                "packages/eve/src/eve-channel/auth.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "3b0ccc6c37b7806338bb427f2fc422dfd7a698d0f83c69a72ce63c94ef3725ea"
+            },
+            {
+              "id": "ai-agents--fuigo",
+              "operation": "source",
+              "args": [
+                "crates/codegen/fuigo-tools/src/sandbox_launch.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b383d2f54f53baab27ff1d4a0832fa851149e47f48e08ce97b5e38e7cced94a4"
+            },
+            {
+              "id": "ai-agents--fuigo",
+              "operation": "source",
+              "args": [
+                "crates/codegen/fuigo-tools/src/sandbox_launch_tests.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "16df81c719ed58b4abbdfb227eae94e74ef2593c5388986ed836adbcca5e1081"
+            },
+            {
+              "id": "ai-agents--fuigo",
+              "operation": "diff",
+              "args": [
+                "crates/codegen/fuigo-tools/src/sandbox_launch.rs",
+                "crates/codegen/fuigo-tools/src/sandbox_launch_tests.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "032cac9e7005647e94632938c69dbe6263536d6d46de253b3fd759f3692db090"
+            },
+            {
+              "id": "ai-agents--fx",
+              "operation": "source",
+              "args": [
+                "src/core/agent/runtime/request_image_budget.zig"
+              ],
+              "status": "complete",
+              "evidenceSha256": "6ed074847d980e5589dc61bbb7ecf4ae38e581fbe17ec43eb4b3bb712bc25446"
+            },
+            {
+              "id": "ai-agents--fx",
+              "operation": "source",
+              "args": [
+                "tests/e2e/auth-refresh.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "0f5e60ad4de9933bb52823add086800b26406d71a9abbf5c5d0328d89872fab7"
+            },
+            {
+              "id": "ai-agents--fx",
+              "operation": "diff",
+              "args": [
+                "src/core/agent/runtime/request_image_budget.zig",
+                "tests/e2e/auth-refresh.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "a223883d7cbc7f3aee0df268c0130f995775ebb3e817d938129cab5acf4fc47b"
+            },
+            {
+              "id": "ai-agents--gascity",
+              "operation": "source",
+              "args": [
+                "internal/session/resume.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "ec9eb6a0d85aa9016b752310d09f268bc4eb8add57eff35638e8a1950fcc0dd6"
+            },
+            {
+              "id": "ai-agents--gascity",
+              "operation": "diff",
+              "args": [
+                "internal/session/resume.go",
+                "internal/session/resume_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "7e6d3603f040479b304b7006a07c2ec7f920277ae99f66796679642f139bee76"
+            },
+            {
+              "id": "ai-agents--gascity",
+              "operation": "source",
+              "args": [
+                "internal/session/resume_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b96bdb4d3655a62e7bb15248387207fd84bb91d7b9f719cbf5cbfe4f642fbcf0"
+            },
+            {
+              "id": "ai-agents--gods-eye-view",
+              "operation": "source",
+              "args": [
+                "src/layers/weather/display.js"
+              ],
+              "status": "complete",
+              "evidenceSha256": "c79d62bef7457b22e8251759f73a607d66517964fbcd17f29629a8cf62813bf7"
+            },
+            {
+              "id": "ai-agents--gods-eye-view",
+              "operation": "source",
+              "args": [
+                "src/layers/weather/display.test.mjs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "8872ccf0225f21de455b8d1d4a266f8afdba904a5eebf9a8eb649ed31d19047f"
+            },
+            {
+              "id": "ai-agents--gods-eye-view",
+              "operation": "diff",
+              "args": [
+                "src/layers/weather/display.js",
+                "src/layers/weather/display.test.mjs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "3c825859c3e28cb2bb2b9235dff6dbb4f6921ed2dc03e71ade7d4ae5150191e3"
+            },
+            {
+              "id": "ai-agents--gstack.claude.garrytan",
+              "operation": "source",
+              "args": [
+                "test/approval-record.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "8091456ec95065e955796a4011cf993737d2378bcb3d428ebad352f4c2e1998b"
+            },
+            {
+              "id": "ai-agents--gstack.claude.garrytan",
+              "operation": "source",
+              "args": [
+                "lib/approval-record.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "200955bcecb25fbeb14e83757caf0b03eb83b4e1a51864db6e4976e28073c5d1"
+            },
+            {
+              "id": "ai-agents--gstack.claude.garrytan",
+              "operation": "diff",
+              "args": [
+                "lib/approval-record.ts",
+                "test/approval-record.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "f99729cd67b857ec4e194e8e5cf0fa60b782d7a8339ac80b88adec67df3153c4"
+            },
+            {
+              "id": "ai-skills--bundle-x-antigravity.sickn33",
+              "operation": "source",
+              "args": [
+                "plugins/agentic-awesome-skills-claude/skills/requirements-writing/SKILL.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "f1e8f23bdd1444fc16619652393be95c96eaf2862949055686dc246b144021d5"
+            },
+            {
+              "id": "ai-skills--bundle-x-antigravity.sickn33",
+              "operation": "diff",
+              "args": [
+                "plugins/agentic-awesome-skills-claude/skills/requirements-writing/SKILL.md",
+                "docs/integrations/jetski-gemini-loader/README.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b0f153e898b5d80f575c3d682cbad4e86a868565622c670644aa43601d5b9d8e"
+            },
+            {
+              "id": "ai-skills--bundle-x-antigravity.sickn33",
+              "operation": "source",
+              "args": [
+                "docs/integrations/jetski-gemini-loader/README.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "00ba6bb6a9a2db77a9052bf36bac34dc7fb02c53ad62de3bd097311cdd98211f"
+            },
+            {
+              "id": "ai-skills--deploy-cloudflare",
+              "operation": "source",
+              "args": [
+                "src/content/partials/workers/platform-auth-route-policy.mdx"
+              ],
+              "status": "complete",
+              "evidenceSha256": "46a13e7be393b8c41807f00986cab2a535e357725a355fa1a7efac163d24faf3"
+            },
+            {
+              "id": "ai-skills--deploy-cloudflare",
+              "operation": "diff",
+              "args": [
+                "src/content/partials/workers/platform-auth-route-policy.mdx",
+                "src/content/docs/dynamic-workers/usage/authentication.mdx"
+              ],
+              "status": "complete",
+              "evidenceSha256": "34e7b199049da4b835f2252b3d06d9a6397fb6e2e1bc1dca0835a243a4e0e65f"
+            },
+            {
+              "id": "ai-skills--deploy-cloudflare",
+              "operation": "source",
+              "args": [
+                "src/content/docs/dynamic-workers/usage/authentication.mdx"
+              ],
+              "status": "complete",
+              "evidenceSha256": "d61da4375caa60458e63c6aec687fc96febbf075e0daf464f37280a7cdc9f1c8"
+            },
+            {
+              "id": "ai-skills--design.modern-web-guidance.google",
+              "operation": "source",
+              "args": [
+                "guides/security/sanitize-untrusted-html/targets/daily-grind/grader.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "a47f947b17d8cd376f2cc7b053a58209b63ad0f77961825ee9b2f9d5c073183f"
+            },
+            {
+              "id": "ai-skills--design.modern-web-guidance.google",
+              "operation": "source",
+              "args": [
+                "guides/security/trusted-types/targets/daily-grind/grader.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "61f7014591a866b950b2d3e5d21e50f6c1151dfef3f17261c06ee1735723ea35"
+            },
+            {
+              "id": "ai-skills--design.modern-web-guidance.google",
+              "operation": "diff",
+              "args": [
+                "guides/security/sanitize-untrusted-html/targets/daily-grind/grader.ts",
+                "guides/security/trusted-types/targets/daily-grind/grader.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "a1540acdfad3afa446d7bc04c907d8dfc255abb0bb8ed7f319cc4b4ecc62fb2f"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-b4f657e7-5c98-4a55-bb51-e69fa934e0e7.json",
+            "sha256": "7eedd51fcac7f582e2bc7fe535b04a518ba7127791e138f8c022e2f045840db4"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/expansion-refresh_audit-6.json",
+          "manifestSha256": "f7fc259afe85e66cb636d8b795b97b667991c7bef88dc44c6fb193434ff32647",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents--oh-my-hermes",
+              "operation": "source",
+              "args": [
+                "src/workflows/approval_receipts.py",
+                "401",
+                "800"
+              ],
+              "status": "complete",
+              "evidenceSha256": "a9753aa279df64ee7e22e56d82a91e9ee0173e1419325f3904aa8045a7c2ddfb"
+            },
+            {
+              "id": "ai-agents--oh-my-hermes",
+              "operation": "source",
+              "args": [
+                "src/workflows/approval_receipts.py",
+                "801",
+                "1239"
+              ],
+              "status": "complete",
+              "evidenceSha256": "075c6cdd49e3083558c6144beade7551dc84baeff69c268f8c61200ce490f819"
+            },
+            {
+              "id": "ai-agents--nanobot",
+              "operation": "source",
+              "args": [
+                "tests/agent/session_helpers.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "31b917ea700c9c104e9205b3d9dfea386bc5c7c116e6ee4b7867d181724cd83f"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-bb77b5aa-f5e2-408f-bcad-cfb13ba87837.json",
+            "sha256": "2f4d00db71966943bd89bf115a30c0c28583dc28083cf1657e4368526910838d"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/expansion-refresh_audit-2.json",
+          "manifestSha256": "227a6a6a0d583a938b3254df974913a33c0359a143b691ac9a9f750b1beb50e2",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents--openrig",
+              "operation": "diff",
+              "args": [
+                "packages/daemon/src/domain/seat-lifecycle-service.ts",
+                "packages/daemon/test/seat-lifecycle-service.test.ts",
+                "packages/daemon/src/domain/codex-rebuild-permissions.ts",
+                "packages/daemon/test/codex-rebuild-permissions.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "1cd35b15aa8a4162574ac7fa4e6437d44a0e42552bdfa8db09a7ab437a5a4681"
+            },
+            {
+              "id": "ai-agents--paseo",
+              "operation": "diff",
+              "args": [
+                "packages/plugin/src/server/lifecycle.ts",
+                "packages/server/src/server/plugins/lifecycle.e2e.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "93b9142bd6902448340ad22e31f4161d1ad99a86a632e79498510e515813bce7"
+            },
+            {
+              "id": "ai-agents--openmausbot",
+              "operation": "diff",
+              "args": [
+                "server/permission-proxy.ts",
+                "server/permission-proxy.test.ts",
+                "server/drivers/claude-auth-recovery.ts",
+                "server/drivers/claude-auth-recovery.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "e7c47c37de784b8be0e27a1820a83f9070b30cbb5b33a97fddd3d9dc4ba319ac"
+            },
+            {
+              "id": "ai-agents--paperclip",
+              "operation": "diff",
+              "args": [
+                "packages/adapter-utils/src/sandbox-managed-runtime.ts",
+                "packages/adapter-utils/src/sandbox-managed-runtime.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "04c94312e9d4b5d09fa152685eeee6d331df943bb95f1a73fc06736f359f59d2"
+            },
+            {
+              "id": "ai-agents--pi",
+              "operation": "diff",
+              "args": [
+                "packages/chord/src/next-node/workers/process.ts",
+                "packages/chord/test/next-node/workers/process.test.ts",
+                "packages/chord/src/next-node/workers/control.ts",
+                "packages/chord/test/next-node/workers/control.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "60ae8a0c04c47436fd13933c1ef49be81d4ac9e6f5cc629a603767d295514690"
+            },
+            {
+              "id": "ai-agents--qm",
+              "operation": "diff",
+              "args": [
+                "src/core/approval-store.ts",
+                "test/approval-store.test.ts",
+                "src/auth/replay-dedupe.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "d55fa64040dc44b77ef70c449b014e9bf33391124cd9499f3fe1f4eb0379ad04"
+            },
+            {
+              "id": "ai-agents--thinkrail",
+              "operation": "source",
+              "args": [
+                "README.md"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b4e62da6dca1b0b517a78b7e29f7090791d709acab1955650f57ba7f12c6583d"
+            },
+            {
+              "id": "ai-agents--thinkrail",
+              "operation": "source",
+              "args": [
+                "packages/server/src/host/subagentPolicy.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "0b5e8ffb66a4f3188fa10d6eb336ebb337c00084444afd70df3de1b0201b1c2a"
+            },
+            {
+              "id": "ai-agents--zcode",
+              "operation": "diff",
+              "args": [
+                "apps/zcode-cli/packages/adapters/src/storage/session-data-files/contract.ts",
+                "apps/zcode-cli/packages/adapters/src/storage/session-data-files/contract.test.ts",
+                "apps/zcode-cli/packages/adapters/tests/session-store-transaction-isolation.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "298c515dcc74c5b1f9247dca91608b04f9beb048d9f0a2d48b1cd9dfa668001f"
+            },
+            {
+              "id": "ai-agents--thinkrail",
+              "operation": "source",
+              "args": [
+                "packages/server/src/host/subagentPolicy.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b81a6bdc0aaaf9aa2fc8c73e40c30c679f3a3dfabb8e2d5104966f60d71be4f8"
+            },
+            {
+              "id": "ai-eval--langwatch",
+              "operation": "diff",
+              "args": [
+                "modules/api-key/process/src/rules/docs-session-key.rules.ts",
+                "modules/api-key/process/src/rules/__tests__/docs-session-key.rules.unit.test.ts",
+                "modules/api-key/process/src/services/docs-session-key.service.ts",
+                "modules/api-key/process/src/app/__tests__/docs-session-key.integration.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "e89198581da7d208767c572ba9001430177f97eb1494eddb218bcec8bd393981"
+            },
+            {
+              "id": "ai-security--clawseccheck",
+              "operation": "diff",
+              "args": [
+                "clawseccheck/checks/_vet.py",
+                "tests/test_b1001_vet_unchecked_pyc.py",
+                "tests/test_c715_vet_exit_codes_follow_the_verdict.py",
+                "tests/test_c738_vet_footer_counts.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "7e8fee94ff88434e529fff7bedb76525b1402c4da6092680e4a24cff980f317c"
+            },
+            {
+              "id": "ai-security--codeql",
+              "operation": "diff",
+              "args": [
+                "rust/extractor/src/rust_analyzer.rs",
+                "rust/extractor/src/configuration.rs",
+                "rust/ql/integration-tests/dependency-features/test_dependency_features.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "8e479dde79a96460718547a6441db7e574902f57a65e5d44a2bd47f32f337f55"
+            },
+            {
+              "id": "ai-security--codex-security",
+              "operation": "diff",
+              "args": [
+                "plugins/codex-security/mcp-app/src/deep-scan/worker-runner.ts",
+                "plugins/codex-security/mcp-app/tests/test_deep_scan_parent_sandbox.ts",
+                "plugins/codex-security/mcp-app/tests/test_deep_scan_stdio_lifecycle.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "181d253cf3c42fee9e3a6d2132675745c59c1e41b369fa3e30dd060702072a54"
+            },
+            {
+              "id": "ai-security--fengarde",
+              "operation": "diff",
+              "args": [
+                "services/shared/window.py",
+                "services/ws4-detection/test_window_lua.py",
+                "services/ws4-detection/test_window_pipeline.py"
+              ],
+              "status": "complete",
+              "evidenceSha256": "42d622d5b00eeeb3d7513f72689a2a251d3b4b57d8a27ee90fcc7e2d39fd5af5"
+            },
+            {
+              "id": "ai-security--rea",
+              "operation": "diff",
+              "args": [
+                "src/application/JsonAuthenticationHeadroom.ts",
+                "src/application/JsonAuthenticationHeadroom.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "79b743a421215f647bab7d9ebd27663c4ba9aac2e05790aced84cbbcb933bfbe"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-ce0d9ecd-9a4f-40fc-a0de-7c6d394a0e0e.json",
+            "sha256": "85f35debb8765acd912f41bc034aa4e05e2d7d47a6b4c7e717fb55d71a241cb3"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/expansion-refresh_audit-5.json",
+          "manifestSha256": "68f328abe7f925f982958e8be9b099f80ee0f0e960041189cd9d041c12400882",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents--opencode",
+              "operation": "diff",
+              "args": [
+                "packages/ai/src/route/auth-options.ts",
+                "packages/ai/src/providers/openai-compatible.ts",
+                "packages/ai/src/providers/anthropic.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "4dac823e04973b5586316ff74193a03c0c31cc5cde807429e79bd2ab8dcba80c"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-f75a975a-8273-44df-8405-d99e2d8ee698.json",
+            "sha256": "bae17a34e4453a79f1612764bbb7d3683bfad96e58429c046f2abfa08f8d7676"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/expansion-root-final.json",
+          "manifestSha256": "f4c506a4bd43cdcfd1b338c68eeab92c4702fd5a9941b730bf544e592c53dfae",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents-proxy--cockpit-tools",
+              "operation": "diff",
+              "args": [
+                "README.en.md",
+                "src-tauri/src/modules/codex_quota_refresh_scheduler.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b07b87911d5c1e159765da04836314d0dba5edcae368e11cf67d5acf0b72e08e"
+            }
+          ]
+        },
+        {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/expansions/batch-fd98edce-d6a2-4634-a35e-d8a687e3e446.json",
+            "sha256": "0d8a119a619bc25f3ccad8358533922a2071f609de9255a42773360d99d6f5d9"
+          },
+          "manifest": ".cache/research/refresh-2026-11-01/expansion-delta-review-1.json",
+          "manifestSha256": "32f01d060af40c40a0493e27959bee37bd2651e35a7863d22718f18d3194cad2",
+          "expanderSha256": "eefafea13961b065e999266f7b88a45dc59d1a7780b6bacdf9183d4700eb4529",
+          "requests": [
+            {
+              "id": "ai-agents--agent-framework.ms",
+              "operation": "diff",
+              "args": [
+                "dotnet/src/Microsoft.Agents.AI.Foundry.Hosting/ComputerToolItemConverter.cs",
+                "dotnet/tests/Microsoft.Agents.AI.Foundry.Hosting.UnitTests/ComputerToolHostingLoopTests.cs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "bdcc96bd1507ffbc9bb00daa33a30106d174319919e786d653529a25b2bdb062"
+            },
+            {
+              "id": "ai-agents--agent-framework.ms",
+              "operation": "source",
+              "args": [
+                "dotnet/tests/Microsoft.Agents.AI.Foundry.Hosting.UnitTests/ComputerToolHostingLoopTests.cs"
+              ],
+              "status": "unavailable",
+              "evidenceSha256": "b55c0d161c9e3ad628cc7a8313633c1c9c9adc649cd93962a39671065f2180b2"
+            },
+            {
+              "id": "ai-agents--agent-framework.ms",
+              "operation": "source",
+              "args": [
+                "dotnet/src/Microsoft.Agents.AI.Foundry.Hosting/ComputerToolItemConverter.cs"
+              ],
+              "status": "unavailable",
+              "evidenceSha256": "463da3afaa1d37993b43143c6fa5c124325377611782aca42c6ac534e08c54c3"
+            },
+            {
+              "id": "ai-agents--agent-manager",
+              "operation": "source",
+              "args": [
+                "internal/agentsession/saved.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "b2c54c2a9a106b0c27ffed3303fdf17461928f64b29f6a6f31a702cf5ac0bf99"
+            },
+            {
+              "id": "ai-agents--agent-manager",
+              "operation": "diff",
+              "args": [
+                "internal/agentsession/saved.go",
+                "internal/agentsession/saved_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "54d181ec5dc1cd69f97a373f8f7c79369208d1428d1b1a1e8f40b3b1511e95c0"
+            },
+            {
+              "id": "ai-agents--agent-manager",
+              "operation": "source",
+              "args": [
+                "internal/agentsession/saved_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "9e33ed30b8ec55123c2165a338f38490534e0a2e26b167ccbe2af5721e94fd0e"
+            },
+            {
+              "id": "ai-agents--agent-orchestrator",
+              "operation": "source",
+              "args": [
+                "backend/internal/adapters/telemetry/policyauthority/reader.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "367c3b8c98da192cbfa9eb5369748c5656e87a977efa2e68b25486a8a249b46b"
+            },
+            {
+              "id": "ai-agents--agent-orchestrator",
+              "operation": "source",
+              "args": [
+                "backend/internal/adapters/telemetry/policyauthority/reader_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "ac89a17d23fe410841a59f7820f45e96278c9224f7c6e3f6a69532716ea965ef"
+            },
+            {
+              "id": "ai-agents--agent-orchestrator",
+              "operation": "diff",
+              "args": [
+                "backend/internal/adapters/telemetry/policyauthority/reader.go",
+                "backend/internal/adapters/telemetry/policyauthority/reader_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "38afd2161da2db26a593996baf2749414341e5dcb13ea9379640c9d06d92cf29"
+            },
+            {
+              "id": "ai-agents--buzz",
+              "operation": "source",
+              "args": [
+                "crates/buzz-auth/src/nip_fi/verifier.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "3204eec32cedb52052ff6de5b3b25c80335f4fdeb350a6c3fb544b92812258b5"
+            },
+            {
+              "id": "ai-agents--buzz",
+              "operation": "diff",
+              "args": [
+                "crates/buzz-auth/src/nip_fi/verifier.rs",
+                "crates/buzz-auth/src/nip_fi/verifier/tests.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "f455772adcb83980c975107a2dff5dad6b48882bdc6da85ac247de8354e86ce8"
+            },
+            {
+              "id": "ai-agents--buzz",
+              "operation": "source",
+              "args": [
+                "crates/buzz-auth/src/nip_fi/verifier/tests.rs"
+              ],
+              "status": "complete",
+              "evidenceSha256": "9a060d865aa69787eeb2cffafc611921ccb98f78b4db9d31042bf7f96a075d17"
+            },
+            {
+              "id": "ai-agents--cezar",
+              "operation": "source",
+              "args": [
+                "packages/cezar/src/core/provider-auth.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "327fcd1afe4423234407f4d21f610182fb35c79b560dd3f0fd6b7e119e53cf34"
+            },
+            {
+              "id": "ai-agents--cezar",
+              "operation": "diff",
+              "args": [
+                "packages/cezar/src/core/provider-auth.ts",
+                "packages/cezar/src/core/provider-auth.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "da3e76bdae4a119bf1aaecec06bef0755140e020679b8414f5a237cd233f5505"
+            },
+            {
+              "id": "ai-agents--cezar",
+              "operation": "source",
+              "args": [
+                "packages/cezar/src/core/provider-auth.test.ts"
+              ],
+              "status": "complete",
+              "evidenceSha256": "e449fe414f6f3b5e879aafe87e78d1177ce6ee51f6814ea2b55eb23e91a00da0"
+            },
+            {
+              "id": "ai-agents--codeaf",
+              "operation": "source",
+              "args": [
+                "cmd/codeaf/approvals.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "8adc695ba464f59f87aad5ad281e9bde14662121067ea9fe869b2024a1528306"
+            },
+            {
+              "id": "ai-agents--codeaf",
+              "operation": "diff",
+              "args": [
+                "cmd/codeaf/approvals.go",
+                "cmd/codeaf/approvals_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "f70be98c8956881d7349ed3b0764f1896935ed1e28965df634f830f345caa1e1"
+            },
+            {
+              "id": "ai-agents--codeaf",
+              "operation": "source",
+              "args": [
+                "cmd/codeaf/approvals_test.go"
+              ],
+              "status": "complete",
+              "evidenceSha256": "0987b6a04058b82649cf3d6dbfe107f2acd688a9848fbc76a922c64602948abf"
+            }
+          ]
+        }
+      ]
+    },
+    "presentationBoundary": {
+      "rule": "Original object/diff hashes and redacted LF presentation hashes are different evidence. diagnostic() reparses URLs and may normalize slashes or encode syntax while removing sensitive components. Exact URL/regex claims require a bounded original-object check; never run diagnostic() over serialized JSON intended for decoding.",
+      "a2ui": {
+        "primitiveProbe": {
+          "path": ".cache/research/refresh-2026-11-01/a2ui-url-probe-f005ddc8-6735-4b30-9b92-ab2fcb067d32.json",
+          "sha256": "c0b2017620503b038d98b6794282ac0b73ab3aec9b7d4f81e6660b06458f1528"
+        },
+        "originalObjectCheck": {
+          "path": ".cache/research/refresh-2026-11-01/source-literal-check-cd540c27-ccff-4f86-96bd-db9a99e36295.json",
+          "sha256": "3423099ec2589918ec3312895bfedc322cfe95b2605461e671dd9112447fcd63"
+        },
+        "outcome": "Original source had the origin without trailing slash; diagnostic presentation added one. The primitive URL probe did not execute upstream source and established no upstream defect. No source-bug claim was published."
+      },
+      "mentis": {
+        "rejectedCapture": {
+          "path": ".cache/research/refresh-2026-11-01/mentis-rejected-evidence.json",
+          "sha256": "aeb20c40e8eb5bc2aa5a3c58e90c5e40e8bffa308be0b4716ffe771ffb363d82"
+        },
+        "captureReceipt": {
+          "path": ".cache/research/refresh-2026-11-01/mentis-diff-b5d5abdf-5a31-4008-829d-2a36cfd897eb.json",
+          "sha256": "eab23d86e0d7f1891079cfa785c313031bd18de916a0ed1b466d6bcc2c9e4c95"
+        },
+        "recovery": {
+          "path": ".cache/research/refresh-2026-11-01/expansions/batch-04a4aed5-a0ff-4759-bf74-0ed042e0c1dc.json",
+          "sha256": "dee6815e0a35ce25b38ec670698e8b0078fb7d253d6bb405623a6cc8a5953e5b"
+        },
+        "outcome": "Original full-diff process completed but its outer diagnostic pass broke JSON quoting. The malformed capture remains retained and unused for claims. A separate Mentis-only structured four-path expansion passed identity/hash checks and supplied scoped review evidence."
+      }
+    }
+  },
+  "operationalRepairs": {
+    "interruption": {
+      "path": ".cache/research/refresh-2026-11-01/interruption-reconciliation.json",
+      "sha256": "f4335f85551cd1ca72e47dd111ca79bee846490106eb506b6b8b6e5446c24901"
+    },
+    "interruptionSummary": "Initial Git run was deliberately stopped after62 completed rows (50 unchanged,12 updated) when ai-get rename was discovered. Helper was absent, no active Git processes were observed and the exclusive maintenance lock was acquired/released without deleting it. Partial evidence was retained before deliberate full rerun.",
+    "scratchRecovery": {
+      "path": ".cache/research/refresh-2026-11-01/approved-scratch-cleanup.json",
+      "sha256": "7d1e9570feae37e66f938e86fc56c68b8bb4f111fbff946d8b85a935a1e88988"
+    },
+    "scratchSummary": "Two explicitly reviewed stopped task-owned scratch directories were removed after original marker/path/owner reconciliation. Research evidence and other scratch were preserved. The creator-proof recovery API is separate from age-based pruning and never grants blanket cache/lock deletion.",
+    "windowsFixtures": {
+      "action": "windows-fixtures",
+      "finishedAt": "2026-11-01T09:25:18.631Z",
+      "seconds": 12.8518878,
+      "exitCode": 0,
+      "outcome": "exited",
+      "termination": "closed",
+      "receipt": {
+        "path": ".cache/research/refresh-2026-11-01/windows-fixtures-36a39598-2c7d-4425-9ff5-ebe30431739e.json",
+        "sha256": "c2c1ed6e45663aa3eb67c0e0c006ab375fe2e916bb8d9e5e9b5031efc8a4acd0"
+      },
+      "logs": [
+        {
+          "path": ".cache/research/refresh-2026-11-01/windows-fixtures-36a39598-2c7d-4425-9ff5-ebe30431739e.stdout.log",
+          "sha256": "6043908c8d26d62698476b88f737f39d5d3e91008d4155a81730902f5a37479c"
+        },
+        {
+          "path": ".cache/research/refresh-2026-11-01/windows-fixtures-36a39598-2c7d-4425-9ff5-ebe30431739e.stderr.log",
+          "sha256": "5362618680f13aa4939fd330bb58377265502d13f3594cc21841f82803034f7d"
+        }
+      ]
+    },
+    "windowsFixtureSummary": "17 tests across6 files passed, including real async/sync Bun native children checking their Windows console visibility, stdin, quoted argv, stderr and deliberate nonzero exit. This is local Windows evidence, not other-platform execution.",
+    "launchLint": {
+      "action": "launch-lint",
+      "finishedAt": "2026-11-01T09:27:29.144Z",
+      "seconds": 0.9357884999999999,
+      "exitCode": 0,
+      "outcome": "exited",
+      "termination": "closed",
+      "receipt": {
+        "path": ".cache/research/refresh-2026-11-01/launch-lint-9c565862-adff-4739-8cf3-9ec22551b978.json",
+        "sha256": "ef30e387792dfc275b5e90b22c7268599943c1c5b1273070bed8e0226ad22426"
+      },
+      "logs": [
+        {
+          "path": ".cache/research/refresh-2026-11-01/launch-lint-9c565862-adff-4739-8cf3-9ec22551b978.stdout.log",
+          "sha256": "6043908c8d26d62698476b88f737f39d5d3e91008d4155a81730902f5a37479c"
+        },
+        {
+          "path": ".cache/research/refresh-2026-11-01/launch-lint-9c565862-adff-4739-8cf3-9ec22551b978.stderr.log",
+          "sha256": "6dd84dc4b8ed90674b19777c21e14d72411701dda104ff7dbaf2f09120cbed57"
+        }
+      ]
+    },
+    "launchSummary": "Nested Bun/Node launches use explicit effective windowsHide:true; Python and PowerShell native launch boundaries suppress console creation. A binding-aware regression-tested lint guard rejects missing/overridden options. Hiding an outer supervisor alone does not hide grandchildren.",
+    "gitFailureClassification": "Proven branch non-ancestry is separate from confirmed operational fast-forward failure and uncertain timeout/transport. Journals retain status, bounded classifications and captured-text hashes, not private raw Git/filter payloads. No automatic retry/reset was added."
+  },
+  "unresolvedSources": [
+    {
+      "id": "ai-agents-mem--mentisdb",
+      "report": "spec/projects/ai-agents-mem--mentisdb.md",
+      "reviewedSha": "67cb559d3b004951232387ea694df4c490d12ba1",
+      "fetchedUnreviewedSha": "203a19f4447a738c0370b20aa46e9aa21a60ef6e",
+      "reason": "Windows-reserved path fuzz/corpus/chain_key/nul prevents checkout. LocalHEAD is an ancestor with0 local-only/16 upstream-only commits. Source protections were not relaxed and no reset/force checkout occurred.",
+      "evidence": [
+        {
+          "path": ".cache/research/refresh-2026-11-01/mentisdb-readonly-history.json",
+          "sha256": "fdd7501308f4b3deea98661d32adb6e78db51d850e04af93a5652854a45f0950"
+        },
+        {
+          "path": ".cache/research/refresh-2026-11-01/mentisdb-dry-run-d8ef0cba06ac4df7a673374880ebaadd.json",
+          "sha256": "ee49f95d74d9c895b58b339d28b30728ced155b619187ef922bd8f8a8c300b47"
+        },
+        {
+          "path": ".cache/research/refresh-2026-11-01/sparse-probe-f4e6f59c-62f6-427a-8184-584cb6a644f8.json",
+          "sha256": "b68e78ea716cd4e8d6b5f67d6553f299989a9a57c5023233fe29cadd978e835f"
+        }
+      ],
+      "fixture": "An isolated local sparse-checkout experiment still rejected reserved nul during fast-forward. It did not mutate the source checkout or establish a portable workaround."
+    },
+    {
+      "id": "ai-skills--bundle.vasilyu83",
+      "report": "spec/projects/ai-skills--bundle.vasilyu83.md",
+      "source": "https://github.com/vasilyu1983/ai-agents-public",
+      "retainedSha": "01246042082225a482980162543f453067143e8b",
+      "status": "not_found_or_inaccessible",
+      "reason": "Three recorded authenticated404 observations across dates meet operational inaccessible-prefix policy; they do not prove deletion. Retained checkout moved within its category to zz-2611 prefix; private backup status complete. No backup URL or credentials included here.",
+      "nextStep": "Recheck availability during later explicit sync; preserve the report and retained source evidence."
+    }
+  ],
+  "preliminaryCitationValidation": {
+    "receipt": {
+      "path": ".cache/research/refresh-2026-11-01/citations-2d3063e1-fe3a-48c2-9c6f-496736d732bf.json",
+      "sha256": "83dfc0e4418e37c9e1b27ed977f9836a005ad31863d8d040e66688e19530c357"
+    },
+    "stdout": {
+      "path": ".cache/research/refresh-2026-11-01/citations-2d3063e1-fe3a-48c2-9c6f-496736d732bf.stdout.log",
+      "sha256": "2193b082ace3ce498d839baaf60ef19777bdc0f03693afe4838bdc3e6beb1400"
+    },
+    "stderr": {
+      "path": ".cache/research/refresh-2026-11-01/citations-2d3063e1-fe3a-48c2-9c6f-496736d732bf.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "finishedAt": "2026-11-01T11:29:02.174Z",
+    "seconds": 118.0712419,
+    "exitCode": 1,
+    "termination": "closed",
+    "mode": "active-links-and-pinned-git-blobs",
+    "relativeLinksChecked": 12385,
+    "pinnedSourceLinksChecked": 4893,
+    "uniquePinnedBlobsChecked": 4337,
+    "unmappedExternalSourceLinks": 0,
+    "issueCount": 3,
+    "issues": [
+      "spec/architecture.md: broken link analyses/research-refresh-evidence-2026-11-01.md",
+      "spec/evaluation.md: broken link analyses/research-refresh-evidence-2026-11-01.md",
+      "spec/projects/ai-gen--json-render.md: github.com/vercel-labs/json-render@277df7f26d03e45c490ffb8d11a4dde488c5f289/apps/web/app/(main: pinned blob unavailable or exceeds 8388608 byte verification limit"
+    ],
+    "disposition": "Preliminary failure retained. The missing evidence document and parenthesized Markdown source path were corrected. The later full pinned-source validation completed successfully; see finalSourceCitationValidation. These checks do not establish semantic correctness or live public reachability.",
+    "limits": [
+      "Exact historical Git objects are checked; current working-tree equality is neither required nor inferred.",
+      "Unmapped external source links are explicitly unverified; no network fallback or source substitution occurs.",
+      "Link and line-count checks do not establish semantic correctness, task quality or upstream public reachability."
+    ]
+  },
+  "finalSourceCitationValidation": {
+    "receipt": {
+      "path": ".cache/research/refresh-2026-11-01/citations-27139a6c-1c47-41eb-adbf-10d78066f7ae.json",
+      "sha256": "f84c0e81e3170a42bc0d45e8503fbdcde97a564c14dd82390a337e5a8bf44772"
+    },
+    "logs": [
+      {
+        "path": ".cache/research/refresh-2026-11-01/citations-27139a6c-1c47-41eb-adbf-10d78066f7ae.stdout.log",
+        "sha256": "7eadbcaddfda7532ff4b2ba68077393bbbf25c7b4077c78aecabc4d5cfdd6b60"
+      },
+      {
+        "path": ".cache/research/refresh-2026-11-01/citations-27139a6c-1c47-41eb-adbf-10d78066f7ae.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "finishedAt": "2026-11-01T18:21:11.918Z",
+    "seconds": 127.0546026,
+    "exitCode": 0,
+    "outcome": "exited",
+    "termination": "closed",
+    "mode": "active-links-and-pinned-git-blobs",
+    "markdownDocuments": 1262,
+    "relativeLinksChecked": 12408,
+    "pinnedSourceLinksChecked": 4894,
+    "uniquePinnedBlobsChecked": 4338,
+    "unmappedExternalSourceLinks": [],
+    "issues": [],
+    "limits": [
+      "Exact historical Git objects are checked; current working-tree equality is neither required nor inferred.",
+      "Unmapped external source links are explicitly unverified; no network fallback or source substitution occurs.",
+      "Link and line-count checks do not establish semantic correctness, task quality or upstream public reachability.",
+      "The automated scan covers active spec/**/*.md and excludes configured immutable archives/history/conversations. Patch README links and supplied patch/source-fixture bytes have separate reviewed source-object evidence.",
+      "This citation command finished before the separate exact local source-cache refetch. Its success does not certify that later cache operation or imply coverage of new patch README links. A later links-only check covers the final prose without replacing this stronger pinned-source record."
+    ]
+  },
+  "subsequentDocumentLinks": {
+    "receipt": {
+      "path": ".cache/research/refresh-2026-11-01/final-links-f1508561-38c4-4723-bf48-6474c7e512ec.json",
+      "sha256": "815ed4d2f72bae200815f745a6cb4d40964488aed53af2a981f68344992be8d9"
+    },
+    "mode": "links-only",
+    "markdownDocuments": 1262,
+    "relativeLinksChecked": 12404,
+    "issues": [],
+    "preservedPinnedSourceReceiptSha256": "2ffd6d3a384f3a4a705e3fe5ded16c72a6da7c0540d919e8e4d3daf4dfd0b190"
+  },
+  "finalLedgerAudit": {
+    "receipt": {
+      "path": ".cache/research/refresh-2026-11-01/final-ledger-audit-96775cff-d0ed-4316-a644-a7b1dc1b7593.json",
+      "sha256": "64449d333479def23b18e5894ebcd8583f66aaedfe67fe68a8f7ef5d95c2f4d9"
+    },
+    "auditedAt": "2026-11-01T12:05:10.032Z",
+    "baseline": "d4a716873224da2e0f2154e9c4a26707de66600d",
+    "stateSha256": "77d1274903fa26c120e48c116d8322998807e241ef95a78a18a2d213cca80025",
+    "expectedReviews": 272,
+    "ledgerIdentities": 549,
+    "active": 548,
+    "archived": 1,
+    "newReports": 16,
+    "topicChecks": 46,
+    "reportDigests": 549,
+    "historyFiles": 3413,
+    "hashSnapshots": 2368,
+    "historyPackets": 1045,
+    "baselineFiles": 2869,
+    "issues": [],
+    "limits": "Quiescent read-only check of this ledger/report/history state. Exact Git objects and links do not establish review quality, upstream execution, final repository verification, or authorization.",
+    "priorAttempts": [
+      {
+        "path": ".cache/research/refresh-2026-11-01/final-ledger-audit-first-attempt.json",
+        "sha256": "f8dd14f84dd6a9b9da33c80b4fb779ddadd7fc66ad3b6926dedebdf33072dc62"
+      },
+      {
+        "path": ".cache/research/refresh-2026-11-01/final-ledger-audit-failure-1c184028-1063-4d2a-aded-fd7f9b9759aa.json",
+        "sha256": "58805729c0a20399b99b3b3d75cb11589ef27190ff897a1994af3c70c524c385"
+      }
+    ],
+    "repair": "The failed bare-name Git resolution was replaced in the cache-only auditor by a verified physical executable. No source repository or historical evidence was changed."
+  },
+  "completedStepBeforeConsoleFollowup": {
+    "receipt": {
+      "path": ".cache/research/refresh-2026-11-01/step-check-88ddb5ca-8385-48dc-a8f4-8e861136592e.json",
+      "sha256": "e663a4860741674b0fe5f40fe7ed48be882e2b4d70d3d82a6617edc9833a9637"
+    },
+    "finishedAt": "2026-11-01T11:52:46.110Z",
+    "seconds": 312.27828830000004,
+    "exitCode": 0,
+    "outcome": "exited",
+    "termination": "closed",
+    "scope": "Full step check completed before subsequent console-launch repairs; not proof for the later changed source."
+  },
+  "consoleFollowup": {
+    "reportedSymptom": "User described multiple blank PowerShell console windows opening and immediately closing. Later reported no new visible popups during the then-current runs.",
+    "nativeProbe": {
+      "path": ".cache/research/refresh-2026-11-01/console-checks-b7b26d02-d235-495f-bd00-2a6453774e05.json",
+      "sha256": "34c4b02049095a93c6b952c91e8d5726c318beabb7299071319d3d0f94a68102"
+    },
+    "observation": {
+      "path": ".cache/research/refresh-2026-11-01/console-observation-5e95e19d-45e4-401f-ac30-10dd124dc81e.json",
+      "sha256": "43bcaa5ed62e3b4e89a6fe31b41913b92d5d1508c9c9e6be37218d4cade03d48"
+    },
+    "measuredDefect": "Bun 1.4.2 Node-compatible spawn with windowsHide:true and detached:true produced a visible Python console. The non-detached launch passed. This is a real defect, not proof of the reported PowerShell windows' cause.",
+    "otherFixtureFailures": "Two native TypeScript fixtures initially failed due to missing project-version metadata and use of rm for an empty directory. The real compiler version/rejection checks passed then; the corrected fixtures passed in the subsequent focused run. Initial failure evidence is retained.",
+    "formatterProbe": {
+      "path": ".cache/research/refresh-2026-11-01/formatter-fork-probe-15cbe07b-33ec-4f7d-83b0-9a0dfe135152-result.json",
+      "sha256": "a62f1b301d72e0faf7b7ca5dd330f7dd4cc6b51bc5332246ac812ccc23ae031a"
+    },
+    "formatterMeaning": "Actual Tinypool constructor/fork options omitted windowsHide. The mock stopped before native fork; effective false is a documented-default inference, not a visibility measurement. No operational monkeypatch was installed.",
+    "authorization": "User authorized creating the missing patch in an isolated Trigon worktree, without merging main, and reusing its pinned source here. The separate shared patch-management extraction proposal was subsequently deferred by the user and removed from this task.",
+    "state": "Signed source patch imported; frozen install, regression and complete implementation checks passed. Bounded console observation and automated spec citation validation completed; exact local citation-cache recovery is separately recorded. Frozen-workflow final review and Teamagent publication remain pending.",
+    "focusedCompletion": {
+      "receipt": {
+        "path": ".cache/research/refresh-2026-11-01/console-checks-v2-a30bed7e-5031-44f5-8fcb-72ee5ecd0512.json",
+        "sha256": "0f27de4272423761fa5c33be48c1ce8cf2c24ec2eb17d83769fd818a0041b80b"
+      },
+      "finishedAt": "2026-11-01T12:18:18.519Z",
+      "wholeCommandSeconds": 90.2771223,
+      "files": 7,
+      "testsPassed": 30,
+      "testsFailed": 0,
+      "observation": {
+        "path": ".cache/research/refresh-2026-11-01/console-events-f7a1632d-44fb-4814-8731-f8e24341ced8.json",
+        "sha256": "4a869c91de1baf950f260bb4f5af8fbc76964bffca10f9e7c9e805766535f741"
+      },
+      "observationSeconds": 90.0,
+      "newConsoleEvents": 0,
+      "limits": "Only top-level console classes; callback delivery can outlive a short-lived window. Baseline user windows are separate. No titles/arguments, no causal attribution from proximity alone.",
+      "scope": "Corrected Windows detachment, hidden launches, native TypeScript resolver, real signal/cleanup and Git-hook launches. Does not certify the separate Tinypool import or final publication tree."
+    },
+    "historicalState": "Console follow-up fixtures passed; Trigon patch import and final assembled verification/publication remain pending. Earlier checks never certify later changed inputs.",
+    "completion": {
+      "recordedAt": "2026-11-01T18:27:09.515Z",
+      "state": "Signed source patch imported; frozen install, regression and complete implementation checks passed. Bounded console observation and automated spec citation validation completed; exact local citation-cache recovery is separately recorded. Frozen-workflow final review and Teamagent publication remain pending.",
+      "sourceRevision": "9ef18967b46fe01571933c3ba6216823ad961c16",
+      "sourceMainMerged": false,
+      "patchSha256": "de8f773eec7e3e36c669f0a21df874afe37d23f88efc1b61498602a9701253be",
+      "source": {
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/trigon-manual-publish-01a19646-aa5f-7902-ab41-718036cb638e.complete.json",
+          "sha256": "9b4463cca3cc37fef2023d0efbc6f13673b6f9b8cde52c4266759b9e5a6166ba"
+        },
+        "finishedAt": "2026-11-01T17:34:31.016Z",
+        "outcome": "confirmed-signed-own-branch-publication",
+        "summary": "The exact source revision was signed and its own branch refs/heads/codex/tinypool-windows-hide-2-2-0 was confirmed remotely. This task did not merge main or enqueue integration. Original source main HEAD, branch and index were guarded; concurrent unrelated main working-tree activity was observed, not adopted. No source working-tree byte-preservation claim is made. Source publication is separate from Teamagent publication. The later source final-verification receipt completed all five recorded stages with exit 0 and confirmed closure; this is not a claim that every source test was freshly rerun.",
+        "evidence": [
+          {
+            "path": ".cache/research/refresh-2026-11-01/trigon-final-recovered-05a0ce8d-834a-4fab-a432-3b0032c425cd.json",
+            "sha256": "6e13f9e03f81a0a223d415b4369a72b0abdecd101e5945b77f2dd1760d46c161"
+          }
+        ]
+      },
+      "import": {
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/import-trigon-patch-ad733dae-e7fa-449a-8a00-989372e44808.json",
+          "sha256": "e176a609c9e1dea8caa04a1046619b71c31ce6dcfea975f887ef31b5ffddf5ff"
+        },
+        "finishedAt": "2026-11-01T17:36:31.325Z",
+        "outcome": "exact-source-artifacts-imported",
+        "summary": "The source patch matched the reviewed SHA-256 exactly. Existing supplied license/native-lifetime/Tauri adapter artifacts also matched both the new source revision and their prior local hashes. Import activated only the selected Tinypool patch mapping; this receipt explicitly records installed:false because installation followed separately.",
+        "evidence": []
+      },
+      "install": {
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/teamagent-patch-install-77ed7d16-abae-4594-8e55-01cd055fd1fb.json",
+          "sha256": "695c193ea1658a72d755159ea28a4d88f5c06b70039ae4fb0925ab9d098ad6d2"
+        },
+        "finishedAt": "2026-11-01T17:36:43.629Z",
+        "outcome": "exited-0-closed",
+        "summary": "Aube install completed in 12.1713373 seconds. Manifest and workspace hashes were unchanged across installation; the lock changed to bind the supplied patch. These hashes alone do not establish unchanged package versions; the separate root static review below covers the full diff.",
+        "evidence": []
+      },
+      "frozenInstall": {
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/teamagent-patch-frozen-8d9f4f09-d746-407f-a0cd-f6bbfaa73994.json",
+          "sha256": "29616f5244680a33f25937c2ac1c61e997cb8b7d88b592c387dad511ab2dcbe7"
+        },
+        "finishedAt": "2026-11-01T17:39:06.110Z",
+        "outcome": "exited-0-closed",
+        "summary": "Aube frozen install completed in 5.413614 seconds with unchanged package.json, aube-lock.yaml and aube-workspace.yaml hashes.",
+        "evidence": []
+      },
+      "regressions": {
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/teamagent-patch-regressions-fa473136-c4c1-4e82-a1f7-5e2fc8b2583e.json",
+          "sha256": "e6bcfaba5d1dc81e58dce9fbee3b5dcde235e0581d51c47d16e97c1731a647dc"
+        },
+        "finishedAt": "2026-11-01T17:39:11.353Z",
+        "outcome": "exited-0-closed",
+        "summary": "All 14 tests across two files passed, including exact transitive patch policy, installed hidden fork options, a real Tinypool process-worker task and teardown. Bun reported 4.96 seconds; the owned wrapper took 5.1230113 seconds. All three installation input hashes remained unchanged.",
+        "evidence": [
+          {
+            "path": ".cache/research/refresh-2026-11-01/teamagent-patch-regressions-fa473136-c4c1-4e82-a1f7-5e2fc8b2583e.stderr.log",
+            "sha256": "5e87b9ac54b4d06e1abb1f51fe2d88bf51678cbb8d9648780ab8089b14ecda95"
+          }
+        ]
+      },
+      "implementationStep": {
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/step-check-591a53ee-3c50-4e83-8832-afefa88d7a50.json",
+          "sha256": "ca79ecd935a281cd364e0b80c727778243208650767eae412d73386ea369f356"
+        },
+        "finishedAt": "2026-11-01T17:45:25.583Z",
+        "outcome": "exited-0-closed",
+        "summary": "The complete implementation check took 374.1058874 seconds and executed format, types, lint and tests. It passed 527 tests across 69 files, skipped only the existing POSIX-pipes test on Windows and had zero failures. Three workers retained the 240-second shared unit-phase deadline. Live LF/export checks covered 21,690 text files, 3,155 opaque files including 27 hash-verified historical inputs, 3,082 retained originals and 79 exports containing 938 files, with zero missing/linked entries. Whole-command time is not unit-phase time or a controlled performance comparison.",
+        "evidence": [
+          {
+            "path": ".cache/research/refresh-2026-11-01/step-check-591a53ee-3c50-4e83-8832-afefa88d7a50.stdout.log",
+            "sha256": "08c56948ac69f5beaef38c64068fe4a9c31073f76f4e6c48a899120224671a9b"
+          },
+          {
+            "path": ".cache/research/refresh-2026-11-01/step-check-591a53ee-3c50-4e83-8832-afefa88d7a50.stderr.log",
+            "sha256": "fbe97bedd42ae2df27b93402572e31aaafcf71e57310dcad51fe0c9ad4eba00a"
+          }
+        ]
+      },
+      "consoleObservation": {
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/console-checks-v3-b3428381-c687-45b4-94b8-a85241c20907.json",
+          "sha256": "c97d35074e811a1a98ec8e58cf0076ceddd488230ac1fd71d6cfd24e7101b714"
+        },
+        "finishedAt": "2026-11-01T17:48:22.901Z",
+        "outcome": "three-owned-commands-exited-0-closed",
+        "summary": "The v3 focused run passed 32 tests across eight files in 17.76 seconds and the actual formatter checked 296 files in 551 ms. During the concurrent 90-second WinEvent SHOW/HIDE observation, no new matching console-class events were recorded and its event limit was not reached. The whole wrapper took 90.25289 seconds. Existing Far/Windows Terminal windows were separate baseline entries. The identical zero-event observation payload hash in an earlier run does not imply reuse: this run has its own parent receipt and observer stdout naming the new output file.",
+        "evidence": [
+          {
+            "path": ".cache/research/refresh-2026-11-01/console-events-a730f923-5470-427b-bcd7-77ba333c252a.json",
+            "sha256": "4a869c91de1baf950f260bb4f5af8fbc76964bffca10f9e7c9e805766535f741"
+          },
+          {
+            "path": ".cache/research/refresh-2026-11-01/console-checks-v3-b3428381-c687-45b4-94b8-a85241c20907-0.stderr.log",
+            "sha256": "d00873654c1696f53894a8acab9ff5077c0fb14415dfdb8af999d28492e8ecc8"
+          },
+          {
+            "path": ".cache/research/refresh-2026-11-01/console-checks-v3-b3428381-c687-45b4-94b8-a85241c20907-1.stdout.log",
+            "sha256": "ea37117107d28ad213fe5928f616503b872a1e209b1d0c9384d42903b4c470da"
+          },
+          {
+            "path": ".cache/research/refresh-2026-11-01/console-checks-v3-b3428381-c687-45b4-94b8-a85241c20907-2.stdout.log",
+            "sha256": "82e7a046836d4332c5e41db01e0910429087cfc6dddda435cf6d72c1ded46030"
+          }
+        ]
+      },
+      "historicalRegressionEvidence": {
+        "teamagentExpectedRed": {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/teamagent-patch-red-1494d692-7e95-4bc8-874c-20456454ef48.json",
+            "sha256": "492061fd86863525073311b123ddf85b6352d29bd125e5b05d003bd63e9f4158"
+          },
+          "finishedAt": "2026-11-01T12:55:50.157Z",
+          "outcome": "expected-rejection-exit-1-closed",
+          "summary": "Before the supplied patch was installed, the no-worker-launch options probe failed the explicit hidden-child assertion: one failing test, one filtered test, 0.7575802 seconds at the owned wrapper. This expected rejection is retained as red evidence, not relabeled as a passing regression.",
+          "evidence": [
+            {
+              "path": ".cache/research/refresh-2026-11-01/teamagent-patch-red-1494d692-7e95-4bc8-874c-20456454ef48.stderr.log",
+              "sha256": "77cd477baf079761fe24d7832e0e6ff6995780a9a7137887278119b2774e3776"
+            }
+          ]
+        },
+        "sourceGreen": {
+          "receipt": {
+            "path": ".cache/research/refresh-2026-11-01/trigon-apply-cc92771d-8118-46ff-97ba-e835cbd607db.json",
+            "sha256": "c8a2fee63843b652a60d28a1f7cd544e2da48fdb2f420e8602eb57872026f804"
+          },
+          "finishedAt": "2026-11-01T12:26:45.175Z",
+          "outcome": "source-install-and-tests-exited-0-closed",
+          "summary": "The initial historical regression in the isolated Trigon source worktree passed three tests across two files in 710 ms: patch policy, installed hidden fork options and a real process-worker task/teardown. These are source-side tests, not Teamagent tests. Source helper and fixture changes followed; this initial result does not certify those later inputs. The later source final-verification receipt is linked separately under source.",
+          "evidence": [
+            {
+              "path": ".cache/research/refresh-2026-11-01/trigon-apply-cc92771d-8118-46ff-97ba-e835cbd607db-green.stderr.log",
+              "sha256": "c01ba8dd9ec31c14f87b971eace9940db61776e27dd3363283d317aff6ee7c92"
+            }
+          ]
+        }
+      },
+      "reviewAssertions": {
+        "kind": "separate-static-review-assertion",
+        "reviewer": "root",
+        "summary": "Root reviewed the complete package/lock/workspace diff. The manifest adds only aube.patchedDependencies for tinypool@2.2.0 at patches/trigon/tinypool@2.2.0.patch. The lock has only the matching patch declaration/hash, the Oxfmt 0.74.0 edge to the same Tinypool 2.2.0 with patch_hash, and that same patched snapshot key. No package-version or declared lifecycle-trust changes were found; workspace has no diff. This is the recorded root review assertion, not a fact inferred from process exit or hash equality. The following hashes describe installation inputs before/after, not an independent semantic graph proof.",
+        "beforeAfterHashes": {
+          "packageBefore": "5225dd525ef27ed66fe742c8484b2bdabec4bb549577e5582cfbaec008257b54",
+          "packageAfter": "5225dd525ef27ed66fe742c8484b2bdabec4bb549577e5582cfbaec008257b54",
+          "lockBefore": "a5c844e28640fbe0c7dd2db56e109f718860c27a5cdd7e6055b11865d9211bac",
+          "lockAfter": "d04576f4dabdbdbc5cd801ee1b686cf30a82cabbeddf2de1e8062ae03fb47442",
+          "workspaceBefore": "6ffc72c2b87aa267f3d31311e2b01d97712b09dcb19370a7ff2588d706a8f84a",
+          "workspaceAfter": "6ffc72c2b87aa267f3d31311e2b01d97712b09dcb19370a7ff2588d706a8f84a"
+        }
+      },
+      "limitations": [
+        "These dated receipts describe measured earlier inputs. They do not attest later final-tree verification or Teamagent publication.",
+        "Execution evidence is local Windows/Bun evidence; no equivalent POSIX, macOS or live-provider test is claimed.",
+        "WinEvent observation covers selected top-level console classes; callbacks can outlive short-lived windows. Zero events do not prove universal window absence or identify the cause of the earlier PowerShell flashes.",
+        "The isolated Tinypool options probe intercepts the inspected launch route before a native worker starts; it is not a generic execution sandbox. Real worker/teardown coverage is recorded separately.",
+        "Whole-command and Bun-reported durations have different boundaries and differing cache/input states; no controlled speedup benchmark is inferred.",
+        "Exact pinned Git object/link checks establish bounded object and line availability, not semantic correctness or public network reachability.",
+        "The user-deferred shared patch-management extraction design is not part of this implementation.",
+        "Automated Markdown citation validation scans active spec/**/*.md. Patch README links and supplied patch/source-fixture bytes have separate reviewed source-object evidence; they are not included in that automated Markdown coverage."
+      ],
+      "finalReview": "pending-frozen-workflow",
+      "teamagentPublication": "pending-frozen-workflow",
+      "citationCache": {
+        "receipt": {
+          "path": ".cache/research/refresh-2026-11-01/citation-local-refetch-9ef18967b46fe01571933c3ba6216823ad961c16.complete.json",
+          "sha256": "733924bf4fb7fdf4d458120df84015c4afb066bdb0a05cb2928ad832ec9d5928"
+        },
+        "finishedAt": "2026-11-01T18:23:09.945Z",
+        "outcome": "explicit-exact-source-refetch-completed",
+        "summary": "An explicit local import supplied the same signed, remotely confirmed source commit to the independent citation cache without checkout or source execution. An earlier credential-free public fetch failed for a generic cache/exact-pin/bound reason, so public reachability remains unverified. The first local fetch was a confirmed exit 128/closed rejection with 214 unresolved deltas; read-only reconciliation found the missing base absent from the older cache and unchanged refs. One separately reviewed --refetch then succeeded. Post-fetch disk usage was 132,332,830 bytes for this repository and 196,093,789 bytes aggregate, before the 41-byte pin; both were below the maintained 128/512 MiB limits. The 169,888,372-byte uncompressed source-tree metric is not on-disk cache usage. 250 ms sampling and bounded postchecks are not an OS quota. This operation is separate from the earlier completed automated Markdown citation audit.",
+        "evidence": [
+          {
+            "path": ".cache/research/refresh-2026-11-01/citation-pin-fetch-866e20a2-9ad1-436d-a4d8-ed1814e4be73.json",
+            "sha256": "07cb4fde110d330523b8fb13636be07e95f87fc578ae464a51e87bc5668930a0"
+          },
+          {
+            "path": ".cache/research/refresh-2026-11-01/citation-local-import-9ef18967b46fe01571933c3ba6216823ad961c16.fetch.json",
+            "sha256": "0c0e4ff0183815b2850cc52605528c7583ece64afc7f01c9f4f222980ddbb79c"
+          },
+          {
+            "path": ".cache/research/refresh-2026-11-01/citation-refetch-reconciliation-b3e6206a-1899-4643-89ba-0f7eeeb6af19.json",
+            "sha256": "1f8afd258240ae05a3cc635fbe9cef6ff3ddf6737540011deb9ea6ebf1d873f4"
+          }
+        ]
+      }
+    }
+  },
+  "finalSourceCitationValidationHistory": [
+    {
+      "receipt": {
+        "path": ".cache/research/refresh-2026-11-01/citations-a02a6ec1-1103-4ed8-878e-b52dacfb4599.json",
+        "sha256": "f3c0333c9617f272b45f9a18adffc523bc7fe54631bb5fb3275c7578d71e675e"
+      },
+      "finishedAt": "2026-11-01T11:41:40.984Z",
+      "seconds": 111.72578539999999,
+      "exitCode": 0,
+      "outcome": "exited",
+      "termination": "closed",
+      "mode": "active-links-and-pinned-git-blobs",
+      "markdownDocuments": 1261,
+      "relativeLinksChecked": 12397,
+      "pinnedSourceLinksChecked": 4894,
+      "uniquePinnedBlobsChecked": 4338,
+      "unmappedExternalSourceLinks": [],
+      "issues": [],
+      "limits": [
+        "Exact historical Git objects are checked; current working-tree equality is neither required nor inferred.",
+        "Unmapped external source links are explicitly unverified; no network fallback or source substitution occurs.",
+        "Link and line-count checks do not establish semantic correctness, task quality or upstream public reachability."
+      ]
+    }
+  ]
+}

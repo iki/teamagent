@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--onyx",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/onyx-dot-app/onyx",
+  "report": "spec/projects/ai-agents--onyx.md",
+  "analyzedSha": "31382417ff60a07c425bfe529e04e0e5fab10d23",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T09:26:33Z",
+  "observedSha": "3eb6420f6c7d6c0a94a0b7107a6138509c6d0f48",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3eb6420f6c7d6c0a94a0b7107a6138509c6d0f48",
+      "date": "2026-11-01T03:27:52Z",
+      "subject": "fix(chat): don't re-add a dropped chat when an older page fails (#17036)"
+    },
+    {
+      "sha": "4ada862e7884fcde8f0d83ee7ef30950ba07511f",
+      "date": "2026-10-31T17:09:08Z",
+      "subject": "chore(deps): update node base image digests (#17029)"
+    },
+    {
+      "sha": "16b6cac1703e9ab8a47fd3ce5e89754c9ab0066d",
+      "date": "2026-10-31T09:18:17Z",
+      "subject": "perf(chat): load a chat a page at a time (#17025)"
+    },
+    {
+      "sha": "c93e4466c1bac2bd5d1230a37bb5dd696ebe2bb0",
+      "date": "2026-10-31T09:18:17Z",
+      "subject": "perf(chat): window long chats, so only rows near the viewport are mounted (#17021)"
+    },
+    {
+      "sha": "030e7503f2f5f91c285f7674c605b156e47937f6",
+      "date": "2026-10-31T01:24:47Z",
+      "subject": "chore(desktop): remove unused disabled styles for titlebar history buttons (#17022)"
+    },
+    {
+      "sha": "d136f24b437aa2ee94111c4a42894ae266e789c9",
+      "date": "2026-10-31T00:39:48Z",
+      "subject": "test(image-gen): nightly real image generation per provider (#16980)"
+    },
+    {
+      "sha": "c1ad347abe10c4546b8fe0e2add4532956c53c8b",
+      "date": "2026-10-31T00:39:30Z",
+      "subject": "fix(desktop): in-app OAuth popups, JS dialogs, titlebar layout, Back/Forward, downloads and file drops (#16976)"
+    },
+    {
+      "sha": "3d86bc60b23a23d9beee8630198dbb32e3929247",
+      "date": "2026-10-31T00:38:47Z",
+      "subject": "feat(sidebar): Cmd+E folds the sidebar while a text field has focus (#17009)"
+    },
+    {
+      "sha": "62e32bb706e84a625cc9709a4fcf0c82cecc715d",
+      "date": "2026-10-31T00:00:43Z",
+      "subject": "chore(image-gen): remove unused imageProviderId from ImageGenSubmitPayload (#17007)"
+    },
+    {
+      "sha": "6157123644bd08b5def62fe7f154485dd05d5cae",
+      "date": "2026-10-30T23:57:37Z",
+      "subject": "refactor(sidebar): one branded header for the app, admin and Craft sidebars (#17004)"
+    },
+    {
+      "sha": "67f4fe0134de8bf9ab9f2adc464219819f51dbf4",
+      "date": "2026-10-30T23:22:21Z",
+      "subject": "chore(image-gen): remove unreachable create path from legacy image gen form (#17003)"
+    },
+    {
+      "sha": "dc7d0ac4f7bcd57f92066bdd5c723be9ebcdd932",
+      "date": "2026-10-30T22:56:39Z",
+      "subject": "feat(image-gen): image generation page lists models from connected LLM providers (#16979)"
+    },
+    {
+      "sha": "1b91746a87ea679346ac575a01364a0abd37f30f",
+      "date": "2026-10-30T22:56:38Z",
+      "subject": "feat(image-gen): image generation from any connected LLM provider (#16978)"
+    },
+    {
+      "sha": "ea909520d2406615889f7a99ec7bb9f79cd7e0ac",
+      "date": "2026-10-30T22:50:07Z",
+      "subject": "feat(sidebar): header wordmark fades in place; only the fold button moves (#16996)"
+    },
+    {
+      "sha": "328fec4307111c783d4f3dedf54716db6a7ba64c",
+      "date": "2026-10-30T22:49:19Z",
+      "subject": "fix(llm): keep a complete streamed answer when the body fails after finish_reason (#17001)"
+    },
+    {
+      "sha": "ce782596a3e4abbb6e672353bf662c7d41eedc86",
+      "date": "2026-10-30T22:41:09Z",
+      "subject": "ci(integration): keep LLM stream timings and thread dumps from a hung multi-tenant run (#16998)"
+    },
+    {
+      "sha": "c92ceadd0cba729760a540316eb187882f8ee748",
+      "date": "2026-10-30T22:30:28Z",
+      "subject": "feat(slack): make the Slack cloud configurable for GovSlack (#16985)"
+    },
+    {
+      "sha": "e50652c04397e5417aec43a31319011561e0eb35",
+      "date": "2026-10-30T21:31:20Z",
+      "subject": "refactor(opal): SidebarTab lays out its label without ContentAction (#16971)"
+    },
+    {
+      "sha": "a702227362b8478e99848bb9bf44d6c9e5103afd",
+      "date": "2026-10-30T21:31:19Z",
+      "subject": "fix(sidebar): the folded sidebar keeps the unfolded button order (#16967)"
+    },
+    {
+      "sha": "4fede91589af2f1ee6cf3445fffbcf000e774771",
+      "date": "2026-10-30T21:31:18Z",
+      "subject": "feat(sidebar): show each section with a shimmer while it loads (#16963)"
+    },
+    {
+      "sha": "b24bd462ca0303b2e8b12d6589b32a335a691264",
+      "date": "2026-10-30T21:15:49Z",
+      "subject": "ci(image-gen): nightly image generation failures open a Claude Code fix PR (#16987)"
+    },
+    {
+      "sha": "07308b6b33fca31e2d818cbb647e94b3def9acd6",
+      "date": "2026-10-30T21:15:48Z",
+      "subject": "ci: add a shared restricted coding harness for generated PR tasks (#16984)"
+    },
+    {
+      "sha": "12bdb7c1ce2779defe9687d314a9bcc36d2d4747",
+      "date": "2026-10-30T20:55:45Z",
+      "subject": "fix(user-files): mark a user file FAILED after three pickups instead of retrying it forever (#16983)"
+    },
+    {
+      "sha": "3b1d5dc4c644b05cc04eab1f5a868e5d24706c3a",
+      "date": "2026-10-30T20:25:06Z",
+      "subject": "fix(mcp): one-click connect for hosted MCP suggestions (#16965)"
+    },
+    {
+      "sha": "6f1e701f88fe2b3f24abd05bfbd046731965a2bd",
+      "date": "2026-10-30T20:21:20Z",
+      "subject": "fix(model-selector): two picker menus that close on pick and never move while open (#16961)"
+    },
+    {
+      "sha": "5a9b865d7b23d8a592685542c657fa2cb60d7462",
+      "date": "2026-10-30T19:57:38Z",
+      "subject": "feat(craft): show unviewed scheduled task results with blue dots (#16969)"
+    },
+    {
+      "sha": "f23b53f6dae330ec55e559c765b12cef522a460e",
+      "date": "2026-10-30T19:18:21Z",
+      "subject": "fix(ci): pin same-run images by digest and keep shared ECR cache out of trusted builds (#16970)"
+    },
+    {
+      "sha": "c4cf559b70221c23f43991095e1173a51ca0fd3b",
+      "date": "2026-10-30T19:14:33Z",
+      "subject": "ci: add Google AI Studio to nightly LLM provider chat tests (#16972)"
+    },
+    {
+      "sha": "a33a7d3642c3cd4c3dc5d19d707df90808056fa7",
+      "date": "2026-10-30T19:04:21Z",
+      "subject": "perf(file processing): throttle garbage collection by time instead of skipping it (#16973)"
+    },
+    {
+      "sha": "babe04f64658a18207bb187536e6fdd2b906a8ad",
+      "date": "2026-10-30T18:55:05Z",
+      "subject": "docs(connectors): Azure Data Lake Storage docs page and live permission tests (#16888)"
+    },
+    {
+      "sha": "d9377907d9d02a7b8585b0e71fa4e67922c40ab0",
+      "date": "2026-10-30T18:55:04Z",
+      "subject": "feat(connectors): Azure Data Lake Storage permission and group sync (#16887)"
+    },
+    {
+      "sha": "f5f217a90fdca08602602f7a8d251642611187bb",
+      "date": "2026-10-30T18:55:03Z",
+      "subject": "feat(connectors): Azure Data Lake Storage admin form (#16886)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".agents/feature-map/ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/CROSS-CUTTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/GLOSSARY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/INDEX.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/PATHS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/VERIFYING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/check_feature_map.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/access-control.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/agent-runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/agents-personas.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/auth-and-identity.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/authorization.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/background-jobs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/billing.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/feature-map/components/cc-pairs-and-credentials.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/cc-pairs-and-creds.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/chat-frontend.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/chat-persistence.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/chat-preferences.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/citations.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/code-execution.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/connector-capability-checks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/connectors.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/connectors/confluence.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/connectors/google-drive.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/connectors/microsoft-graph.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/connectors/outlook.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/connectors/slack.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/connectors/teams.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/context-assembly.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/core-chat-loop.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/craft-admin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/craft-external-apps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/craft-frontend.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/craft-sandboxes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/craft-scheduled-tasks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/craft-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/craft-streaming.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/craft-webapp-proxy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/desktop-widget-extensions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/discord-bot.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/document-index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/editions-and-gating.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/federated-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/file-store-and-user-files.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/fleet-telemetry.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/hooks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/image-generation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/indexing-pipeline.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/internal-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/llm-gateway.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/llm-providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/mcp-and-custom-tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/mcp-server.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/mobile-app.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/multi-tenancy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/notifications.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/observability.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/onyx-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/permission-sync.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/plugins.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/projects.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/rate-and-usage-limits.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/slack-bot.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/standard-answers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/streaming-protocol.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/tools-framework.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/voice.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/web-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/whitelabelling-and-theme.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/path-allowlist.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/stale_docs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/hooks/ensure_latest_main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/hooks/pre_commit_on_stop.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/docs-writing/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/feature-map/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/onyx-craft-dev/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "R084",
+      "path": ".agents/tests/test_ensure_latest_main.py",
+      "previousPath": "backend/tests/unit/scripts/test_ensure_latest_main.py"
+    },
+    {
+      "status": "R095",
+      "path": ".agents/tests/test_ensure_latest_main_repos.py",
+      "previousPath": "backend/tests/external_dependency_unit/scripts/test_ensure_latest_main_repos.py"
+    },
+    {
+      "status": "A",
+      "path": ".agents/tests/test_feature_map_tooling.py",
+      "previousPath": null
+    },
+    {
+      "status": "R063",
+      "path": ".agents/tests/test_pre_commit_on_stop.py",
+      "previousPath": "backend/tests/external_dependency_unit/scripts/test_pre_commit_on_stop.py"
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/AGENT_TASKS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/build-backend-image/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/build-devcontainer-image/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/build-model-server-image/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/dhi-base-images/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/run-coding-agent/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/run-nightly-provider-chat-test/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": ".github/assets/architecture.png",
+      "previousPath": "docs/assets/architecture.png"
+    },
+    {
+      "status": "R100",
+      "path": ".github/assets/onyx-chat-use-cases.png",
+      "previousPath": "docs/assets/onyx-chat-use-cases.png"
+    },
+    {
+      "status": "A",
+      "path": ".github/prompts/image-generation-maintenance.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/run_coding_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/test_run_coding_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/validate_image_generation_maintenance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cve-alerts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/deployment.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/docs-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/docs-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mcp-compatibility.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly-llm-provider-chat.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pr-agent-tooling-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pr-coding-agent-runner-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-craft-compose-integration.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-craft-k8s-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-desktop-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-external-dependency-unit-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-golang-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-helm-chart-testing.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-integration-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-jest-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-playwright-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-python-connector-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-python-model-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-python-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-quality-checks.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-terraform-provider-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-opal.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/reusable-agent-task-pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/reusable-nightly-llm-provider-chat.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".greptile/config.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".greptile/files.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".greptile/rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pre-commit-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".secretsignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".zed/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/alembic/env.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/alembic/versions/3951a74ef078_add_partial_index_on_unresolved_index_.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/alembic/versions/3e30a81ec3bd_add_position_to_tool_call__search_doc.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/alembic/versions/859be0a5310b_add_viewed_revision_to_scheduled_task_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/alembic/versions/a7a7e8c828c0_add_processing_attempts_to_user_file.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/alembic/versions/b02d7b35e48b_add_opencode_serve_fields_to_build_session.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/alembic/versions/b7d2e4f1a9c3_add_llm_provider_owned_to_image_gen_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/alembic/versions/e0ea2ae62e51_add_index_on_chat_session_user_id_and_.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/alembic/versions/f57f35403f6c_add_index_on_chat_message_chat_session_.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ee/onyx/background/celery/tasks/doc_permission_syncing/checkpointer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ee/onyx/background/celery/tasks/doc_permission_syncing/tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ee/onyx/background/celery/tasks/external_group_syncing/tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ee/onyx/background/celery/tasks/log_export/tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ee/onyx/configs/app_configs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ee/onyx/connectors/capability_checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ee/onyx/connectors/perm_sync_valid.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ee/onyx/db/analytics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ee/onyx/db/external_perm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ee/onyx/db/query_history.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/ee/onyx/external_permissions/azure_datalake/access.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/ee/onyx/external_permissions/azure_datalake/acl.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/ee/onyx/external_permissions/azure_datalake/capability_checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/ee/onyx/external_permissions/azure_datalake/connector.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/ee/onyx/external_permissions/azure_datalake/directory.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/ee/onyx/external_permissions/azure_datalake/doc_sync.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/ee/onyx/external_permissions/azure_datalake/exclusion_groups.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/ee/onyx/external_permissions/azure_datalake/group_sync.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

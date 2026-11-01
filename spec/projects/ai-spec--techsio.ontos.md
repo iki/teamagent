@@ -32,6 +32,14 @@ The [core database adapter](https://github.com/TechsioCZ/ontos/blob/ed7ecb1fcf39
 
 The [test evidence helper](https://github.com/TechsioCZ/ontos/blob/ed7ecb1fcf395ccfbffab7c2bff3edf0c0c15a2f/app/packages/core-runtime/src/testing/owner-evidence.ts) separates disposable outbox cleanup from authority publication and serializes the latter in a transaction with a publication lock. Outbox deletion is three tenant-filtered statements without an enclosing transaction in this helper, and no test-only destination guard is visible; callers must own both isolation and partial-failure handling. The [privacy](https://github.com/TechsioCZ/ontos/blob/ed7ecb1fcf395ccfbffab7c2bff3edf0c0c15a2f/app/verticals/privacy/src/modern.runtime.ts) and [projects](https://github.com/TechsioCZ/ontos/blob/ed7ecb1fcf395ccfbffab7c2bff3edf0c0c15a2f/app/verticals/projects/src/modern.runtime.ts) configs use separate i18n instances and explicit route namespaces, not a demonstrated full shared-state design. Adapt ownership boundaries without changing Teamagent's stack. No database, runtime or tests were executed.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`8c33380bcfc92a62bf09f616751e6404fbb6a232`](https://github.com/TechsioCZ/ontos/commit/8c33380bcfc92a62bf09f616751e6404fbb6a232), compared with `ed7ecb1fcf395ccfbffab7c2bff3edf0c0c15a2f`.
+
+The selected [quality auditor](https://github.com/TechsioCZ/ontos/blob/8c33380bcfc92a62bf09f616751e6404fbb6a232/app/scripts/quality-audit.mts) retains native finding counts while separately subtracting modeled categories using declaration source, position, workspace, owning manifest and resolved-target evidence. Counts below zero fail. The selected [fixtures](https://github.com/TechsioCZ/ontos/blob/8c33380bcfc92a62bf09f616751e6404fbb6a232/app/scripts/tests/quality-audit.test.mts) also exercise retention of an unrecorded run and the last successful run after a later failure.
+
+The new retention path trusts completed run records older than the current start. Teamagent's stronger resource contract additionally requires exact ownership, physical containment and confirmed descendant shutdown for immediate scratch recovery. Completion timestamps alone do not establish those properties; disposable scratch rules never authorize pruning preserved research evidence. This selected diff was fully read, but underlying evidence producers, every resolver and native audit execution were not independently tested.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [techsio.ontos](https://github.com/TechsioCZ/ontos); analyzed commit `ed7ecb1fcf395ccfbffab7c2bff3edf0c0c15a2f`; commit date 2026-10-23T17:42:24Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-spec--techsio.ontos.md).
+Analysis metadata: source [techsio.ontos](https://github.com/TechsioCZ/ontos); analyzed commit `8c33380bcfc92a62bf09f616751e6404fbb6a232`; commit date 2026-10-31T23:20:24Z; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-spec--techsio.ontos.md).
 <!-- teamagent-analysis:end -->

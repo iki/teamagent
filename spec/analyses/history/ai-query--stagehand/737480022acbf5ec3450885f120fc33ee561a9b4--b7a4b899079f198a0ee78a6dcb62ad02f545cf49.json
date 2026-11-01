@@ -1,0 +1,430 @@
+{
+  "id": "ai-query--stagehand",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/browserbase/stagehand",
+  "report": "spec/projects/ai-query--stagehand.md",
+  "analyzedSha": "737480022acbf5ec3450885f120fc33ee561a9b4",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-27T15:45:29-07:00",
+  "observedSha": "b7a4b899079f198a0ee78a6dcb62ad02f545cf49",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "b7a4b899079f198a0ee78a6dcb62ad02f545cf49",
+      "date": "2026-10-29T18:04:01-07:00",
+      "subject": "fix(integrations): save facade screenshot artifacts only as images in a dedicated directory (#3350)"
+    },
+    {
+      "sha": "edb76b0e867790132c2e51f3f34027b950463086",
+      "date": "2026-10-29T11:59:02-07:00",
+      "subject": "[fix]: bump ai-sdk for opus 5.5 support (#3340)"
+    },
+    {
+      "sha": "44d99dfbdd24baaf06986492792348582266d8f0",
+      "date": "2026-10-29T10:17:50-07:00",
+      "subject": "[fix]: adopt pre-existing and nested cross-origin iframes (#3262) (#3339)"
+    },
+    {
+      "sha": "d59afde37e995b165a41f754a12a446f11d471a2",
+      "date": "2026-10-28T18:15:41-07:00",
+      "subject": "feat: extension watchdog for lost SDK clients (#3325)"
+    },
+    {
+      "sha": "aeb1ba0d27d08e1d653db3e73c042928e27f33b1",
+      "date": "2026-10-28T18:15:41-07:00",
+      "subject": "feat: add browser.disconnect() to the TypeScript and Python SDKs (#3305)"
+    },
+    {
+      "sha": "7d90812785c3ffea93b080982568fca07f952b1f",
+      "date": "2026-10-28T12:40:11-07:00",
+      "subject": "fix(evals): authenticate the local code-execution bridge (#3156)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".changeset/adopt-preexisting-oopifs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/extension-opus-5-5.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/facade-image-artifacts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/quiet-hosts-detach.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/watchful-hosts-leave.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/docs/v4/configuration/browser.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/evals/framework/codexCodeBridge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/evals/framework/codexToolAdapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/evals/framework/mastraToolAdapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/evals/tests/framework/codexCodeBridge.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/evals/tests/framework/mastraToolAdapter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/extension/clientLifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/clients/rpcClient.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/service-worker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/extension/tests/client-lifecycle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/tests/extension-build.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/tests/gateway-e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/tests/runtime-state.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/extension/tests/understudy-context-oopif-adoption.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/understudy/context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/understudy/frameRegistry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/understudy/page.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/conformance/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/conformance/cases/artifacts.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/conformance/cases/limits.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/python/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/python/src/stagehand_middleware/facade/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/python/src/stagehand_middleware/facade/_bundle.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/python/src/stagehand_middleware/facade/tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/python/tests/test_conformance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/python/tests/test_facade.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/python/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/src/facade/bundle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/src/facade/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/src/facade/contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/src/facade/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/src/facade/runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/src/facade/stdio-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/src/facade/tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/tests/facade-bundle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/tests/facade-conformance.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/tests/facade-contract.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/tests/facade-stdio-session-age.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/core/tests/facade-tools.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/deepagents/examples/managed/tools/stagehand.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/deepagents/src/stagehand_deepagents/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/deepagents/tests/test_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/mastra-sdk/src/session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/middleware/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/integrations/pi/extensions/stagehand.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/protocol/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk-python/src/stagehand/_generated/protocol_version.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk-python/src/stagehand/browser.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk-python/src/stagehand/cdp_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk-python/src/stagehand/stagehand.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk-python/tests/test_browser.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/sdk-python/tests/test_browser_disconnect_live.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk-python/tests/test_cdp_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/sdk-python/tests/test_client_lifecycle_live.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk-python/tests/test_stagehand.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk-ts/src/browser/factories.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk-ts/src/browser/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk-ts/src/cdpClient.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk-ts/src/stagehand.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/sdk-ts/tests/browser-runtime/browserDisconnect.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/sdk-ts/tests/browser-runtime/clientLifecycle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/sdk-ts/tests/browser-runtime/fixtures/clientLifecycleChild.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk-ts/tests/browser/factories.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk-ts/tests/cdpClient.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk-ts/tests/stagehandCreate.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-workspace.yaml",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

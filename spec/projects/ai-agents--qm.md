@@ -42,6 +42,16 @@ In [src/persistence/s3.ts](https://github.com/yc-software/qm/blob/11b683774440fc
 
 **Harness implication and limits:** Treat endpoint and retry configuration as explicit storage-adapter policy, with endpoint credential scope and trust validated before constructing the client. This helper forwards those values without such validation, and a falsey maxAttempts value is omitted. S3-compatible support is not evidence of equivalent consistency, checksum coverage or retention behavior; no remote storage operation was run. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `c3f9c8de324c6a1d96ed8265745a977df3c74466` against prior analyzed commit `11b683774440fc1dd3c53198cec7ccca2ecce452`. Historical reviews above remain separate evidence.
+
+The approval store moves into the [Slack adapter](https://github.com/yc-software/qm/blob/c3f9c8de324c6a1d96ed8265745a977df3c74466/src/slack/approval-store.ts). Its implementation writes the approval record before queuing delivery, derives an idempotency key from approval ID and creation time, routes only Slack requests with a non-system external actor, and carries account/team and direct-message thread context. Delivery failure after persistence is caught; `deliverPending` can replay retained approvals. The inspected store test uses an in-memory backing implementation, so it supports the adapter contract rather than PostgreSQL durability or exactly-once delivery.
+
+The same scoped delta removes the in-memory replay-dedupe implementation from the inspected core path. Do not interpret that removal alone as proof that every caller now uses durable replay protection. For Teamagent, keep approval persistence, notification delivery, authenticated response validation and action authorization separate; replaying a notification must not replay the approved action.
+
+**Coverage:** Read the relocated 48-line implementation, its deleted predecessor, changed approval-store fixtures and the selected replay-dedupe delta. Database wiring, notification transports and action execution were not audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [qm](https://github.com/yc-software/qm); analyzed commit `11b683774440fc1dd3c53198cec7ccca2ecce452`; commit date 2026-10-27T23:57:03-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--qm.md).
+Analysis metadata: source [qm](https://github.com/yc-software/qm); analyzed commit `c3f9c8de324c6a1d96ed8265745a977df3c74466`; commit date 2026-10-31T18:57:15-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--qm.md).
 <!-- teamagent-analysis:end -->

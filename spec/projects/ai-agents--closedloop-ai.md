@@ -38,6 +38,20 @@ Borrow the separation of installed, enabled, verified and required capabilities.
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `835c12105aca440ed40945540b117be2a20bb207` (commit date `2026-10-28T15:04:26-05:00`), compared with `e812713cd7332d455e315079ee3b362a5051b92e`. Earlier observations remain historical evidence.
+
+**Scope:** Explicit tree comparison of preserved commit e812713cd7332d455e315079ee3b362a5051b92e and observed commit 835c12105aca440ed40945540b117be2a20bb207: complete current plugin-cache source, selected current/previous fixtures, previous inventory types and enable-helper branches. A separate read-only local Git history check established unrelated reachable histories for these exact objects; no cause for the history change was established. Other possible replacement modules not audited.
+
+At the [preserved revision](https://github.com/closedloop-ai/closedloop-ai/blob/e812713cd7332d455e315079ee3b362a5051b92e/apps/desktop/src/server/operations/plugin-cache.ts), inventory types distinguished command failure, unreadable output and missing enabled state. At the [observed revision](https://github.com/closedloop-ai/closedloop-ai/blob/835c12105aca440ed40945540b117be2a20bb207/apps/desktop/src/server/operations/plugin-cache.ts), this file instead resolves a code-plugin version from an environment override or existing user-scoped registry entry, returns unknown on failure, and treats legacy entries without scope as user-scoped when their paths exist. [Current fixtures](https://github.com/closedloop-ai/closedloop-ai/blob/835c12105aca440ed40945540b117be2a20bb207/apps/desktop/test/plugin-cache.test.ts) cover stale/disabled/project entries and invalid versions. The old health-check-plugin-enable.ts path is absent in the current tree. This is a two-tree difference, not evidence of a forward removal commit or proof that equivalent behavior disappeared everywhere.
+
+**Historical reconciliation:** the local check at `2026-11-01T11:06:48.9807593+00:00` confirmed both exact commit objects in a non-shallow repository, neither an ancestor of the other, no common merge base and left/right reachable-commit counts of 27/31. The preserved tree is `2379d9bd34ba25e5179e24edcddc575a71886b59`; the observed tree is `00a206446c090971b77bca6376baa5f77a63c4b1`. HEAD remained at the observed commit; the check used no network and executed no source code. Local ancestry receipt SHA-256: `afe1d29562ef74dd50121ca908961a16edb583c8d9e03689c2f4f4425430955f`. These observations justify retaining two separate historical baselines, without inferring a rename, rollback or reason for replacement.
+
+**Teamagent implication (inference):** Retain both exact revisions and historical findings during history reconciliation. Separate declared version, installed bytes, authenticated enabled state and unavailable diagnostics; environment overrides and path existence are not readiness or integrity proof. Do not advance an analysis baseline on an assumed rename, rollback or ancestry relationship.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [closedloop-ai](https://github.com/closedloop-ai/closedloop-ai); analyzed commit `e812713cd7332d455e315079ee3b362a5051b92e`; commit date 2026-10-23T21:07:48-05:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--closedloop-ai.md).
+Analysis metadata: source [closedloop-ai](https://github.com/closedloop-ai/closedloop-ai); analyzed commit `835c12105aca440ed40945540b117be2a20bb207`; commit date 2026-10-28T15:04:26-05:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--closedloop-ai.md).
 <!-- teamagent-analysis:end -->

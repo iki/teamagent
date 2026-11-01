@@ -50,6 +50,18 @@ For Teamagent, distinguish a normalized comparison view from source bytes and pr
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `6814e00d6b148c3a1d57244d5d7040f7c541009d` (commit date `2026-10-30T21:38:47Z`), compared with `b8fa817155731c783d47dc6eaeee63163c0ec723`. Earlier observations remain historical evidence.
+
+**Scope:** Complete core client diff; 109 changed paths inventoried. Provider adapters, fallback fixtures and retry side-effect semantics not audited.
+
+The [client](https://github.com/google-gemini/gemini-cli/blob/6814e00d6b148c3a1d57244d5d7040f7c541009d/packages/core/src/core/client.ts) clears sequence-specific model state when history is replaced or a turn aborts/completes, and reselects model/configuration on retries when the prior attempt is unavailable. It records the initial active model and includes HTTP status in retry notification. These changes distinguish a temporary attempt route from persistent user choice; they do not establish that retried operations are idempotent.
+
+**Teamagent implication (inference):** Record requested and effective per-attempt routes separately, resetting temporary state on cancellation or rewind. Reapply account, training and cost gates before any fallback; reconcile ambiguous side effects instead of equating model failover with permission to repeat them.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gemini-cli](https://github.com/google-gemini/gemini-cli); analyzed commit `b8fa817155731c783d47dc6eaeee63163c0ec723`; commit date 2026-10-28T01:27:48Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gemini-cli.md).
+Analysis metadata: source [gemini-cli](https://github.com/google-gemini/gemini-cli); analyzed commit `6814e00d6b148c3a1d57244d5d7040f7c541009d`; commit date 2026-10-30T21:38:47Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gemini-cli.md).
 <!-- teamagent-analysis:end -->

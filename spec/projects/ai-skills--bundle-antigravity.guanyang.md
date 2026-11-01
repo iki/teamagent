@@ -32,6 +32,18 @@ The [creation skill](https://github.com/guanyang/antigravity-skills/blob/dbefc83
 
 The [documentation experiment](https://github.com/guanyang/antigravity-skills/blob/dbefc83e32a42b7319fef8af75e3e307506251c8/skills/writing-skills/references/CLAUDE_MD_TESTING.md) includes a no-skill baseline and pressure scenarios, but its success criterion is compliance with skill loading, not independent task correctness. Expected results are predictions, and the harness is listed as future work in this file. Test selection precision, unnecessary loading, authority preservation and outcomes alongside compliance; a skill should not override user instructions merely to pass its own rubric. No project, media, subagent experiment or tests were run.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `0b394cddfb8910f6287441ef8b9c9447e36fc3fc` (commit date `2026-10-31T04:47:03Z`), compared with `dbefc83e32a42b7319fef8af75e3e307506251c8`. Earlier observations remain historical evidence.
+
+**Scope:** Complete main-agent hook classifier diff; nine changed paths inventoried. Host event producers and surrounding fixtures not audited.
+
+The [plan injector](https://github.com/guanyang/antigravity-skills/blob/0b394cddfb8910f6287441ef8b9c9447e36fc3fc/skills/planning-with-files/scripts/inject-plan.py) treats absent or empty agent_id as main-agent input, ignores agent_type, and skips malformed input in the classifier. With the optional skip-subagents setting, pre/post-tool hooks return before state processing for other classifications. The classifier's stdin read is unbounded, and an event field is not independently authenticated identity.
+
+**Teamagent implication (inference):** Version host-specific event contracts and bound input before decoding. Keep subagent filtering distinct from authorization and expose unsupported/unknown host events rather than importing a role heuristic as a universal harness rule.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle-antigravity.guanyang](https://github.com/guanyang/antigravity-skills); analyzed commit `dbefc83e32a42b7319fef8af75e3e307506251c8`; commit date 2026-10-27T04:19:02Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle-antigravity.guanyang.md).
+Analysis metadata: source [bundle-antigravity.guanyang](https://github.com/guanyang/antigravity-skills); analyzed commit `0b394cddfb8910f6287441ef8b9c9447e36fc3fc`; commit date 2026-10-31T04:47:03Z; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle-antigravity.guanyang.md).
 <!-- teamagent-analysis:end -->

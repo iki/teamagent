@@ -32,6 +32,18 @@ The [CI delta](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b0197698
 
 The [contribution policy](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/CONTRIBUTING.md) separates corrections from new-tool submissions and requests affiliation disclosure. [Retirement records](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/scripts/retired-tools.json) distinguish removal from a curated list from a project's lifecycle, although one lifecycle claim remains an unverified catalog assertion in this review. [Routes](https://github.com/baronfanthe/seeaifirst/blob/1c19caea72b019769852ce3be6aca8660ed73a9d/vercel.json) preserve old identities via redirects and explicit retired pages. Adapt provenance-preserving catalog changes; deployment routing behavior, current tool status, prices and ranking quality were not tested or independently verified.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `1b550ff8e3be5f84ed75492a8ed0edb8b160dfab` (commit date `2026-10-31T13:38:36+07:00`), compared with `1c19caea72b019769852ce3be6aca8660ed73a9d`. Earlier observations remain historical evidence.
+
+**Scope:** Changed repository-override file and selected dated catalog entries from data.json; the captured path inventory shows catalog/generated-page changes. Primary external product claims, ingestion runtime and catalog-wide correctness were not independently verified.
+
+The [override registry](https://github.com/baronfanthe/seeaifirst/blob/1b550ff8e3be5f84ed75492a8ed0edb8b160dfab/scripts/cip-1-repo-overrides.json) removes several manual repository exceptions while retaining exceptions for multi-repository or non-repository products. Selected [catalog entries](https://github.com/baronfanthe/seeaifirst/blob/1b550ff8e3be5f84ed75492a8ed0edb8b160dfab/data.json) revise descriptions, source references, popularity metadata and verification-date fields. Those dates are upstream editorial assertions, not evidence that Teamagent checked the referenced services or that the claims remain current. This review concerns source attribution and catalog maintenance, not a newly implemented agent capability.
+
+**Teamagent implication (inference):** Use secondary directories for discovery, then resolve canonical repository identity and obtain primary evidence before adopting a capability. Keep editorial review dates distinct from retrieval dates and authenticated checks; popularity and removed overrides must not automatically promote a source's trust, freshness or architectural ranking.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [seeaifirst](https://github.com/baronfanthe/seeaifirst); analyzed commit `1c19caea72b019769852ce3be6aca8660ed73a9d`; commit date 2026-10-26T13:07:28+07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-info--xx-2604-seeaifirst.md).
+Analysis metadata: source [seeaifirst](https://github.com/baronfanthe/seeaifirst); analyzed commit `1b550ff8e3be5f84ed75492a8ed0edb8b160dfab`; commit date 2026-10-31T13:38:36+07:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-info--xx-2604-seeaifirst.md).
 <!-- teamagent-analysis:end -->

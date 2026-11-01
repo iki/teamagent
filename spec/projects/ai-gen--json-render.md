@@ -42,6 +42,14 @@ Evidence: [packages/yaml/src/transform.ts:20-47](https://github.com/vercel-labs/
 
 **Scope and limits:** Scoped static review of patch mutation/budget helpers, React action handlers and PDF repetition in the 75-path comparison. Full catalog/schema validation, Solid rendering and final renderer output were not audited. Fixtures were read, not executed; no UI action, generated artifact or provider operation was run.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`277df7f26d03e45c490ffb8d11a4dde488c5f289`](https://github.com/vercel-labs/json-render/commit/277df7f26d03e45c490ffb8d11a4dde488c5f289), compared with `c6f73d7d5f69acb80fc89faefd12c0865c8603d1`.
+
+The 40-path inventory is dominated by package metadata and documentation/skill files. The selected [example registry](https://github.com/vercel-labs/json-render/blob/277df7f26d03e45c490ffb8d11a4dde488c5f289/apps/web/lib/examples.ts) adds explicit source/template URLs and an eve/TanStack example; the [card](https://github.com/vercel-labs/json-render/blob/277df7f26d03e45c490ffb8d11a4dde488c5f289/apps/web/app/%28main%29/examples/page.tsx) conditionally renders the template link with `noopener noreferrer`. These changes broaden discovery, not the reviewed rendering protocol.
+
+Keep curated template discovery distinct from imported executable content and verified host compatibility. The two selected code diffs were read fully; other documentation and release metadata were not exhaustively audited. No linked template was imported, deployed, rendered or executed, and no upstream tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [json-render](https://github.com/vercel-labs/json-render); analyzed commit `c6f73d7d5f69acb80fc89faefd12c0865c8603d1`; commit date 2026-10-23T20:52:23-05:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--json-render.md).
+Analysis metadata: source [json-render](https://github.com/vercel-labs/json-render); analyzed commit `277df7f26d03e45c490ffb8d11a4dde488c5f289`; commit date 2026-10-30T12:41:41-05:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--json-render.md).
 <!-- teamagent-analysis:end -->

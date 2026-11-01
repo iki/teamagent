@@ -1,0 +1,910 @@
+{
+  "id": "ai-agents--nanobot",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/HKUDS/nanobot",
+  "report": "spec/projects/ai-agents--nanobot.md",
+  "analyzedSha": "8f7a7d17590de7ab187650381894dba2b9e060ab",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T17:28:59+08:00",
+  "observedSha": "8b37976d36c2812c62b464321e729a88872b60f9",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "8b37976d36c2812c62b464321e729a88872b60f9",
+      "date": "2026-10-31T11:55:13+08:00",
+      "subject": "fix(providers): tighten tool calls and compatibility fallbacks"
+    },
+    {
+      "sha": "3e4068411275fac02fbc109926fffea855a94961",
+      "date": "2026-10-30T18:31:05+08:00",
+      "subject": "refactor(agent): delegate recovery channel eligibility to admission"
+    },
+    {
+      "sha": "29d0023fcadf7fecd595f32f999d8e9b83392e8c",
+      "date": "2026-10-30T18:19:23+08:00",
+      "subject": "fix(tools): correct DeepSeek Search rate-limit guidance"
+    },
+    {
+      "sha": "7eacc789d426a8293459d0ed0d5ca48c0c65ce1d",
+      "date": "2026-10-30T14:32:46+08:00",
+      "subject": "docs: add nanobot WeChat community QR entry"
+    },
+    {
+      "sha": "a4d2430140735a85cf0634d8ae888cd42f1913bf",
+      "date": "2026-10-30T13:07:03+08:00",
+      "subject": "refactor: remove redundant comments and docstrings (#6527)"
+    },
+    {
+      "sha": "cb3ba4531761b49f61568754eb3d3ce84db4b75d",
+      "date": "2026-10-29T18:28:44+08:00",
+      "subject": "refactor: remove legacy history and proxy migrations (#6518)"
+    },
+    {
+      "sha": "1c28b20c7e11c06b5f589259e62be238da387b11",
+      "date": "2026-10-29T13:11:21+08:00",
+      "subject": "fix(gateway): reuse Windows-safe atomic lease I/O"
+    },
+    {
+      "sha": "2853287ed79d9abe997bb98e8163ad79419a4cbd",
+      "date": "2026-10-29T13:11:21+08:00",
+      "subject": "perf(gateway): avoid unchanged client lease writes"
+    },
+    {
+      "sha": "8a989d5adf1aebf497288351582572c342d794ed",
+      "date": "2026-10-29T11:52:57+08:00",
+      "subject": "feat(matrix): per-room group policy overrides (groupPolicyOverrides) (#6287)"
+    },
+    {
+      "sha": "c5cee9f204b6788a8384fb41375f3cb5ce0d36f7",
+      "date": "2026-10-29T11:18:26+08:00",
+      "subject": "feat(matrix): make non-threaded reply quoting optional"
+    },
+    {
+      "sha": "4e77d9c3f2bc6b7a77f4e9f3640a98ef19ce80e0",
+      "date": "2026-10-29T11:13:44+08:00",
+      "subject": "fix(retry): prevent replay amplification and isolate backoff (NAN-313)"
+    },
+    {
+      "sha": "b6d9009bb472f25cc1e89623d254a0ec16d96d0f",
+      "date": "2026-10-29T10:38:06+08:00",
+      "subject": "refactor(sessions): discover target handles through search (#6315)"
+    },
+    {
+      "sha": "acc3750c281a322f9647fc7285ed6647c4d214bf",
+      "date": "2026-10-29T10:37:29+08:00",
+      "subject": "refactor(channels): move tool hint rendering out of core (#6498)"
+    },
+    {
+      "sha": "b1cc89e9220f31a9af32f2d3abb76185a1eb13ce",
+      "date": "2026-10-28T23:17:05+08:00",
+      "subject": "feat(matrix): add \"listen\" group policy (observe room, reply on mention) (#6289)"
+    },
+    {
+      "sha": "55210eb9f1217bcddb53b8987bcd74ecadd975af",
+      "date": "2026-10-28T22:20:10+08:00",
+      "subject": "docs: refresh README news and WebUI gallery"
+    },
+    {
+      "sha": "2a3d29ce73bb7649faba089aba23e351fed3e67f",
+      "date": "2026-10-28T22:17:53+08:00",
+      "subject": "refactor(webui): centralize outbound delivery (NAN-365)"
+    },
+    {
+      "sha": "4a14faa47e9af06a66968cb59f5b5d46754dc6fe",
+      "date": "2026-10-28T21:37:23+08:00",
+      "subject": "fix(webui): keep saved topics bound to their project (#6509)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agent/design.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "COMMUNICATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/channel-package-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/chat-apps.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/cli-reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/release-archive.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/releases/0.4.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/releasing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/webui.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "entrypoint.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hatch_build.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "images/nanobot-apps.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "images/nanobot-automations.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "images/nanobot-context.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "images/nanobot-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "images/nanobot-workbench.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "images/nanobot_webui-source.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "images/nanobot_webui.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "images/wechat-group-2026-10-30.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/__main__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/autocompact.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/automation_turns.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/context_governance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/cron_turns.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/goal_permission.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/hook.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/hooks/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/hooks/file_edit_activity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/loop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/model_presets.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/model_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/plugins.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/progress_hook.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/session_activity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/skill_metadata.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/skills.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/subagent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/subagent_sessions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/subagent_status.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/_search_content.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/_windows_job.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/apply_patch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/cli_apps.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/cli_apps_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/cron.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/exec_session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/file_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/filesystem.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/filesystem_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/image_generation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/image_generation_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/loader.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/long_task.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/mcp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/mcp_oauth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/message.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/path_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/rg.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/runtime_control.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/self.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/self_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/session_messages.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/sessions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/shell.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/shell_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/shell_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/subagent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/web.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/tools/web_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/turn_delivery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/agent/turn_hooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/api/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/api/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/api/server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/apps/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/apps/cli/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/apps/cli/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/apps/cli/utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/audio/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/build_info.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/bun.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/bus/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/bus/delivery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/bus/events.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/bus/notification_delivery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/bus/queue.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/bus/runtime_events.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/_manifest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/_setup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/connect.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/dingtalk/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/dingtalk/manifest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/dingtalk/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/dingtalk/tests/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/dingtalk/tests/test_dingtalk_channel.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/discord/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/discord/manifest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/discord/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/discord/tests/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/discord/tests/test_discord_channel.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/discord/validation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/email/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/email/manifest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/email/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/email/tests/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/email/tests/test_attachment_filenames.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/email/tests/test_authentication_results.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/email/tests/test_email_channel.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/email/validation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/connect.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/instances.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/manifest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/tests/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/tests/test_feishu_domain.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/tests/test_feishu_markdown_rendering.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/tests/test_feishu_mention.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/tests/test_feishu_mentions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/tests/test_feishu_post_content.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/tests/test_feishu_reaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/tests/test_feishu_reply.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/tests/test_feishu_streaming.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/tests/test_feishu_table_split.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/tests/test_feishu_tool_hint_code_block.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/feishu/validation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/linear/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/linear/access.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/linear/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/linear/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/linear/connect.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/linear/manifest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/linear/oauth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nanobot/channels/linear/runtime.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

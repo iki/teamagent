@@ -1,0 +1,65 @@
+# A2UI: declarative cross-client artifact UI
+
+Source: [a2ui](https://github.com/google/A2UI) · Category: `ai-gen`
+
+Review depth: **source-reviewed**. Snapshot `1444719acd8833eeb5e70529c7ac47bc50b7390c`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+A2UI represents user interfaces as declarative component/data updates mapped to client-owned renderers. The inspected TypeScript validator scopes each payload to one catalog, checks identifiers and component schemas, and validates nested functions. Exceptions are used by the surrounding processor to trigger rollback of a partially applied update, according to the file's contract.
+
+One material implementation detail contradicts a simplistic assumption that declarative output is automatically safe: when validation configuration is absent, unknown components/functions are tolerated. With a configuration present, unknown elements default to disallowed. A harness must opt into a strict validation policy rather than relying solely on the README's security framing.
+
+## Harness adoption
+
+Use for structured task status, approval cards, forms, search result inspectors, and generated artifacts shared across web and native clients. Keep the everyday navigation and task controls deterministic application UI. Bind generated actions to server-issued capability tokens and authenticated task state; a visual button must never grant a new permission.
+
+Pin protocol and catalog versions in the task event stream. Validate schema, reference integrity, component count, nesting, URL destinations, action identifiers, and update size before a client renders. Reject or quarantine invalid updates and preserve the last valid view.
+
+## Limitations and decision
+
+Shortlist where cross-client interoperability matters. The repository states that protocol versions are evolving; use the reviewed snapshot and negotiate versions explicitly. A trusted component may itself load URLs or invoke sensitive actions, so component safety and data validation are separate obligations. No client performance or accessibility claims were measured. Compare [json-render](ai-gen--json-render.md) for application-owned React-centric catalogs; avoid supporting two full protocols in the first release without a concrete interoperability requirement.
+
+## Evidence read
+
+- [Catalog-scoped validator and default strictness](https://github.com/google/A2UI/blob/1444719acd8833eeb5e70529c7ac47bc50b7390c/typescript/web_core/src/validation/payload-validator.ts#L31-L130)
+- [Protocol positioning and component catalogs](https://github.com/google/A2UI/blob/1444719acd8833eeb5e70529c7ac47bc50b7390c/README.md#L1-L65)
+
+## Related directions
+
+[Generation](../generation.md) · [Channels](../channels.md) · [Security](../security.md)
+
+
+## Change review - 2026-10-28
+
+**Renderer identity reuse preserves inputs but does not fence asynchronous generations.** Reviewed commit `02174297d59451bd293c3c995792274b5d333c58` (commit date `2026-10-27T13:42:14-04:00`). Compared with `1444719acd8833eeb5e70529c7ac47bc50b7390c`; the complete Git comparison contains 2409 changed paths.
+
+The Angular v0.8 renderer observes the processor version and reuses an existing component when ID and type match, updating inputs rather than recreating the DOM. Unknown catalog types produce a logged empty render. The lazy-resolution callback checks only ID and type: repeated updates while loading, or an A-to-B-to-A transition, can allow multiple pending callbacks for the same identity to create components and apply an old captured node/surface. It has no generation token, rejection handler or explicit destruction fence. Reused components receive present properties but removed properties are not cleared, and property-setting exceptions are only warnings.
+
+The Lit sample advertises v0.9 capabilities and requests a non-streamed A2A response. It parses object-like input text into data, casts the response to a Task and returns every data part without a MIME/schema check; unsupported response shapes collapse to an empty array. Renderer fixtures cover basic catalog resolution and missing inputs, not the competing lazy-load or property-removal cases. These paths do not establish the guarantees of other renderers or the sandbox implementation.
+
+Evidence: [typescript/renderers/angular/src/v0_8/rendering/renderer.ts:1-182](https://github.com/google/A2UI/blob/02174297d59451bd293c3c995792274b5d333c58/typescript/renderers/angular/src/v0_8/rendering/renderer.ts#L1-L182) · [samples/client/lit/shell/client.ts:1-123](https://github.com/google/A2UI/blob/02174297d59451bd293c3c995792274b5d333c58/samples/client/lit/shell/client.ts#L1-L123) · [typescript/renderers/angular/src/v0_8/rendering/renderer.spec.ts:1-247](https://github.com/google/A2UI/blob/02174297d59451bd293c3c995792274b5d333c58/typescript/renderers/angular/src/v0_8/rendering/renderer.spec.ts#L1-L247).
+
+**Harness consequence:** Keep declarative catalog selection and stable component identity, but decode transport messages before rendering and fence every lazy load by generation, lifecycle and surface. Report unsupported/partial renders explicitly, clear removed inputs according to a declared schema and test identity reuse under delayed completion. A generated UI remains a proposal; action authority belongs in the host policy boundary.
+
+**Scope and limits:** Scoped static review of the Angular v0.8 renderer, its fixtures and one Lit transport sample from the 2,409-path comparison. Other protocol versions, Swift/Dart renderers, sandbox internals and deployed behavior were not audited or executed.
+
+## Follow-up change review — 2026-10-28
+
+**Generated UI data assignments distinguish updates from initial nested construction.** Reviewed commit `ccf5dc20d0b0ed041b03e3913d807420ff45e178` (commit date `2026-10-27T17:04:19-07:00`), compared with `02174297d59451bd293c3c995792274b5d333c58`. The complete no-rename Git path inventory contains 196 changed paths.
+
+The compiler emits per-path updateDataModel messages for updates, while initial surface creation walks typed containers, permits bounded numeric array indexes, pads new array entries with null and rejects traversal through primitives. Root replacement requires a map. Fixtures cover preserving neighboring array objects, null padding, invalid array keys, primitive traversal and an over-limit index.
+
+Evidence: [typescript/agents/a2ui_agent/src/inference-formats/express/compiler.ts:100-191](https://github.com/google/A2UI/blob/ccf5dc20d0b0ed041b03e3913d807420ff45e178/typescript/agents/a2ui_agent/src/inference-formats/express/compiler.ts#L100-L191) · [typescript/agents/a2ui_agent/src/inference-formats/express/compiler.ts:744-805](https://github.com/google/A2UI/blob/ccf5dc20d0b0ed041b03e3913d807420ff45e178/typescript/agents/a2ui_agent/src/inference-formats/express/compiler.ts#L744-L805) · [typescript/agents/a2ui_agent/tests/unit/inference-formats/express/compiler.test.ts:150-220](https://github.com/google/A2UI/blob/ccf5dc20d0b0ed041b03e3913d807420ff45e178/typescript/agents/a2ui_agent/tests/unit/inference-formats/express/compiler.test.ts#L150-L220).
+
+**Harness consequence:** Apply generated UI mutations through a typed, bounded data-path contract. Test create and update semantics separately and preserve existing values; the inspected traversal is not a complete prototype-key or untrusted-UI security audit.
+
+**Scope and limits:** Reviewed assignment/path handling and its focused fixtures; other schema/version and rendering changes were not exhaustively audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`825beac2813a6d0ccef3b6fb4124ad6c3c8419f0`](https://github.com/google/A2UI/commit/825beac2813a6d0ccef3b6fb4124ad6c3c8419f0), compared with `ccf5dc20d0b0ed041b03e3913d807420ff45e178`.
+
+The complete selected [media URL sanitizer](https://github.com/google/A2UI/blob/825beac2813a6d0ccef3b6fb4124ad6c3c8419f0/typescript/core/web_core/src/common/sanitize_media_url.ts) and its fixtures distinguish HTTP/HTTPS/data and relative references from disallowed schemes, protocol-relative references and separator/control-character bypasses. This is useful renderer input filtering, not a network destination allowlist, SSRF defense, data MIME validator or byte budget. Teamagent's reviewed exact origin/path checks remain separate requirements.
+
+The source packet's diagnostic redactor canonicalizes URLs, including root trailing slashes. A separate read of the original Git object confirmed the sentinel origin literal has no trailing slash; no sanitizer defect is inferred from that altered presentation. This review read the complete selected 126-line diff, not the entire repository update, and ran no browser or upstream tests.

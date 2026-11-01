@@ -39,6 +39,16 @@ Evidence: [packages/leann-core/src/leann/embedding_server_endpoint.py:1-35](http
 
 **Scope and limits:** Scoped static review of binding, cache/connection ownership and incremental-ID hunks within a 77-path comparison. No ZMQ listener, native index, embedding model, upstream tests or recall/latency benchmark ran. Backend authentication, registry loading and full update atomicity remain outside this review.
 
+## Change review — 2026-11-01
+
+**Release waiting is commit-bound, while native test coverage becomes narrower on macOS.** Reviewed `07796bd7e40f2d5f3a4be9e45adf1f62a68481fd` (commit date `2026-10-29T05:26:06+08:00`) against `c443fc418417f7f2f84d6e1a30115f5e13376ed3`. Four changed paths affect workflows and tests, not retrieval implementation. Release verification captures a main SHA and polls its named workflow until successful completion or a four-hour deadline; missing/running and completed-failed remain separate outcomes. That script's deadline does not itself bound each underlying API request. The build retries MKL installation three times and also accepts the presence of one library after a nonzero installer exit, which is weaker than verified installation/version integrity.
+
+Dependency assertions now derive expected lower bounds from the project's current version. A native non-compact HNSW append fixture is skipped on all macOS runners, expanding its previous Intel-only exclusion because of reported native aborts. Evidence: [.github/workflows/release-manual.yml:23-78](https://github.com/yichuan-w/LEANN/blob/07796bd7e40f2d5f3a4be9e45adf1f62a68481fd/.github/workflows/release-manual.yml#L23-L78), [.github/workflows/build-reusable.yml:181-219](https://github.com/yichuan-w/LEANN/blob/07796bd7e40f2d5f3a4be9e45adf1f62a68481fd/.github/workflows/build-reusable.yml#L181-L219) and [tests/test_update_index_auto_passage_ids.py:152-167](https://github.com/yichuan-w/LEANN/blob/07796bd7e40f2d5f3a4be9e45adf1f62a68481fd/tests/test_update_index_auto_passage_ids.py#L152-L167).
+
+**Harness consequence:** Bind reused CI evidence to exact source revisions and record skipped platform coverage. A file-presence fallback is not installation attestation; check actual binary identity and isolate crashing native operations before adopting this backend on macOS. Successful checks elsewhere cannot close the explicit coverage gap.
+
+**Scope and limits:** Complete four-file delta read, including changed test assertions. CI polling, installer retries and native tests were not run. No new retrieval-quality, startup or cross-platform compatibility result is established.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [leann](https://github.com/yichuan-w/LEANN); analyzed commit `c443fc418417f7f2f84d6e1a30115f5e13376ed3`; commit date 2026-10-27T23:34:38+08:00; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--leann.md).
+Analysis metadata: source [leann](https://github.com/yichuan-w/LEANN); analyzed commit `07796bd7e40f2d5f3a4be9e45adf1f62a68481fd`; commit date 2026-10-29T05:26:06+08:00; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--leann.md).
 <!-- teamagent-analysis:end -->

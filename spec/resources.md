@@ -6,6 +6,22 @@ child's exit status alone is insufficient. Unconfirmed shutdown fails the check
 and retains its scratch directory for inspection. Resource cleanup cannot turn
 incomplete verification into reusable success.
 
+Background subprocesses must explicitly suppress Windows console windows at
+every launch boundary, including grandchildren and test helpers. Use
+`windowsHide: true` for Bun/Node launches, `CREATE_NO_WINDOW` for ordinary Python
+children, and `CreateNoWindow` with `UseShellExecute=false` for PowerShell/.NET.
+Hiding an outer supervisor does not make these settings inheritable.
+Windows background launches must also avoid `detached:true`: Bun 1.4.2's
+Node-compatible spawn can allocate a visible console despite `windowsHide:true`.
+Use `detached:false` or the reviewed `process.platform !== "win32"` guard;
+retain POSIX process groups and the existing owned Windows termination path.
+The native regression checks both absence of a console and preserved streams.
+Real console-control fixtures need a deliberately isolated hidden console and must
+verify its visibility while preserving actual signal and cleanup coverage.
+Interactive windows require an explicit user request. Native console-handle
+checks complement the lint guard; neither a redirected stream nor a passing
+non-Windows test proves the Windows behavior.
+
 ## Resource classes
 
 | Resource                                                                      | Owner and lifetime                                                                          |
@@ -56,11 +72,26 @@ own exact allocations and validate
 the same owner and traversal bounds; borrowing a test worker's parent does not
 permit deleting another worker's fixtures.
 
-Creating a workspace does not prune previous runs. Explicit recovery is limited
+Finished task-owned scratch has no minimum retention period. Its creating scope
+disposes it immediately after confirmed descendant shutdown. If that scope has
+already stopped, `recoverTemporaryWorkspace` accepts the creator's saved path
+and exact original marker bytes, plus an explicit confirmation that the owned
+descendants have stopped. It validates a direct physical child of this project's
+temporary root, the complete unchanged marker, the same host and a definitively
+absent original process, then rechecks those conditions before removal. A live
+or reused PID, unknown liveness, marker drift or redirected path blocks recovery.
+The descendant confirmation is the trusted caller's assertion after joining or
+otherwise verifying shutdown; it is not independent OS attestation. Borrowing a
+workspace does not provide its creator's recovery proof. Retain the proof before
+launch when recovery across an interrupted owner is required.
+
+Creating a workspace does not prune previous runs. Broader stale-folder cleanup
+retains the 24-hour minimum as a conservative buffer for folders whose finished
+task scope is not individually established. `pruneTemporaryWorkspaces` is limited
 to marked top-level directories in this project's temporary root. It first
 admits a bounded inventory of at most 4,096 entries, then considers at most 256
 leases per call. A returned cursor supports another explicit bounded call.
-Recovery requires a valid matching marker, the same host, an age of at least
+Bulk recovery requires a valid matching marker, the same host, an age of at least
 24 hours and a definitively absent process. A live or reused PID, permission
 error, foreign host, malformed marker or otherwise unknown process state is
 preserved. Unmarked entries are preserved. Neither the operating system's

@@ -1,0 +1,475 @@
+{
+  "id": "ai-agents--yoagent",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/yologdev/yoagent",
+  "report": "spec/analyses/unreviewed/ai-agents--yoagent.md",
+  "analyzedSha": "a03fc35ccc2c3f48ce107a7ec542d8f4700df2f9",
+  "analyzedAt": "2026-10-28T08:26:04.502Z",
+  "analyzedCommitDate": "2026-10-26T07:41:07+01:00",
+  "observedSha": "3693c60cb5e01f81af5d8ee8754bd7ecd7ac00fe",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3693c60cb5e01f81af5d8ee8754bd7ecd7ac00fe",
+      "date": "2026-10-30T23:47:28+01:00",
+      "subject": "release: 0.26.3 (#401)"
+    },
+    {
+      "sha": "a26da1421adf4bff60ac1bb85baeda3e39489787",
+      "date": "2026-10-30T23:32:46+01:00",
+      "subject": "refactor(google): SseBuffer resumes its separator search; pin malformed-UTF-8 handling (#400)"
+    },
+    {
+      "sha": "a8ab017517fe3353d3db5bdb9b97a4fc4bc0578d",
+      "date": "2026-10-30T23:06:04+01:00",
+      "subject": "docs(changelog): #392's entry under Unreleased, not 0.26.1 (#399)"
+    },
+    {
+      "sha": "4be2bdc7b80bb5625a1562252a370b800aa50b88",
+      "date": "2026-10-30T22:59:18+01:00",
+      "subject": "fix: preserve UTF-8 across Gemini streaming chunks (#392)"
+    },
+    {
+      "sha": "09965c0d28864f154779905c50aa1aad47a7bbfc",
+      "date": "2026-10-30T16:28:41+01:00",
+      "subject": "release: 0.26.2 (#395)"
+    },
+    {
+      "sha": "97c885f76a035384d20e8e2927ef837b53faa840",
+      "date": "2026-10-30T15:36:29+01:00",
+      "subject": "chore: GitHub actions off Node 20; rand floor 0.10.1 (#397)"
+    },
+    {
+      "sha": "08c8c99b904fc96c7cfc34ef2c4a7047898895b2",
+      "date": "2026-10-30T15:26:11+01:00",
+      "subject": "docs: fix errors and fill gaps found in a full docs review (#398)"
+    },
+    {
+      "sha": "b20b715dc4ad9bceceb2c309572534e5e0986ec1",
+      "date": "2026-10-30T15:25:51+01:00",
+      "subject": "fix(prices): mistral_large_4 at $0.70 / $2.10, cached $0.07 (#396)"
+    },
+    {
+      "sha": "8b286da25dbae10aac3d9b492b738d01f7926e14",
+      "date": "2026-10-30T11:30:02+01:00",
+      "subject": "fix(context): compaction keeps the task prompt, the latest ask and the newest turn (#150) (#393)"
+    },
+    {
+      "sha": "24314dfc996ab0b05835337919a65990e7884518",
+      "date": "2026-10-30T08:09:45+01:00",
+      "subject": "release: 0.26.1 (#390)"
+    },
+    {
+      "sha": "20ae4926fb8bd2f1a2c0e29ff73e2bcd2081e1cd",
+      "date": "2026-10-30T02:49:03+01:00",
+      "subject": "fix(mcp): keep the configured URL out of HTTP error text; a notification's 404 clears an expired session (#389)"
+    },
+    {
+      "sha": "7c1a21f4c61c9e619d06a285e38f5efb6269cc6c",
+      "date": "2026-10-29T23:32:49+01:00",
+      "subject": "release: 0.26.0 (yoagent-rutis 0.10.0, yoagent-workers 0.3.0) (#388)"
+    },
+    {
+      "sha": "af2719d7245546c3ab53a051e9cd4794a903bd99",
+      "date": "2026-10-29T23:09:15+01:00",
+      "subject": "feat(mcp)!: a typed HTTP status on errors — McpError::Http { status, message } (#387)"
+    },
+    {
+      "sha": "df3534f3293e136c8d6f6dd9c136278531314550",
+      "date": "2026-10-29T22:32:54+01:00",
+      "subject": "fix(mcp): HTTP redirects stay within the server's origin by default (#386)"
+    },
+    {
+      "sha": "0ab30a4e2dcf166204bf4b199db82640c9353106",
+      "date": "2026-10-29T18:01:32+01:00",
+      "subject": "feat(mcp): with own_process_group, kill the group when the command's exit is first seen (#385)"
+    },
+    {
+      "sha": "03e61bd0b94f4dfd938a7b0de7cb2269a0ad45a4",
+      "date": "2026-10-28T16:58:00+01:00",
+      "subject": "release: 0.25.16 (#384)"
+    },
+    {
+      "sha": "7c01018dd8cad9baff72aa9db5619d5c651bffe4",
+      "date": "2026-10-28T16:31:20+01:00",
+      "subject": "feat(mcp): stdio servers in a process group of their own (option); a server that stops reading reads as gone (#383)"
+    },
+    {
+      "sha": "9675e7d695383de2e5bdd04950b40fa3f1d45384",
+      "date": "2026-10-28T14:45:23+01:00",
+      "subject": "release: yoagent-rutis 0.9.0 (#382)"
+    },
+    {
+      "sha": "716c7f1534163b7b2f3dfe97e3949a6fd2b1b3e6",
+      "date": "2026-10-28T14:19:01+01:00",
+      "subject": "feat(rutis): restricted runtimes (tools only), and handlers joining a run mid-run (#381)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/live-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mutants.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pi-latest.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/plugin-matrix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/overview.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts/agent-loop.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts/callbacks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts/context-management.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts/decision-models.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts/extensions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts/gasp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts/messages-events.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts/pricing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts/prompt-caching.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts/sub-agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/design-philosophy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/design-philosophy.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/evals/compaction-defaults.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started/quick-start.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/mcp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/wasm-workers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/providers/bedrock.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/providers/google.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/providers/model-presets.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/providers/openai-compat.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/providers/overview.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/api.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/yoagent-rutis/CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/yoagent-rutis/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/yoagent-rutis/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/yoagent-rutis/src/bridge.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/yoagent-rutis/src/extension.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/yoagent-rutis/src/languages.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/yoagent-rutis/src/late.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/yoagent-rutis/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/yoagent-rutis/src/registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/yoagent-rutis/tests/pi_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/yoagent-rutis/tests/restricted_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/yoagent-workers/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/yoagent-workers/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/yoagent-workers/examples/clef-worker/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/yoagent-workers/examples/clef-worker/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "llms.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/yoagent/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/context.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/mcp/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/mcp/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/mcp/transport.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/mcp/types.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/provider/google.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/provider/model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/provider/prices.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/provider/traits.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/fixtures/models_dev_slice.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/google_utf8_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/mcp_http_transport_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/mcp_stdio_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/preset_prices_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/price_audit.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/price_fetch_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/skill_test.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

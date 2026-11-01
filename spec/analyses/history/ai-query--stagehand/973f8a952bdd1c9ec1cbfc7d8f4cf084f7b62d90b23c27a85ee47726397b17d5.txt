@@ -1,0 +1,60 @@
+# stagehand
+
+Source: [stagehand](https://github.com/browserbase/stagehand) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `50f3ab81659365ab0fcb960205f41aa88bbfd028`; commit timestamp `2026-10-02T16:09:52-07:00`; 1,607 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/browserbase/stagehand/blob/50f3ab81659365ab0fcb960205f41aa88bbfd028/README.md)):
+
+> Sign in once, keep the session, and pull structured data out the other side. The Playwright-style methods you and your agents already know:  goto ,  click ,  locator ,  screenshot .
+
+Build/package evidence: [package.json](https://github.com/browserbase/stagehand/blob/50f3ab81659365ab0fcb960205f41aa88bbfd028/package.json); [packages/cli/package.json](https://github.com/browserbase/stagehand/blob/50f3ab81659365ab0fcb960205f41aa88bbfd028/packages/cli/package.json); [packages/docs/package.json](https://github.com/browserbase/stagehand/blob/50f3ab81659365ab0fcb960205f41aa88bbfd028/packages/docs/package.json); [packages/evals/package.json](https://github.com/browserbase/stagehand/blob/50f3ab81659365ab0fcb960205f41aa88bbfd028/packages/evals/package.json); [packages/examples/package.json](https://github.com/browserbase/stagehand/blob/50f3ab81659365ab0fcb960205f41aa88bbfd028/packages/examples/package.json)
+
+License evidence: [LICENSE](https://github.com/browserbase/stagehand/blob/50f3ab81659365ab0fcb960205f41aa88bbfd028/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Cache transport validates envelopes while answer completeness still needs an independent oracle.** Reviewed commit `63078cf85ddfe189da88204539ec30d41959378b` (commit date `2026-10-26T19:30:30-07:00`). Compared with `50f3ab81659365ab0fcb960205f41aa88bbfd028`; the complete Git comparison contains 928 changed paths.
+
+The extension cache client limits serialized request bodies to 25,000,000 UTF-8 bytes and returns explicit skipped/miss reasons when oversized. It starts a five-second deadline before serialization, passes the remaining budget and AbortSignal to the connected transport and validates response envelopes and payload fields. UTF-8 boundary and malformed-response fixtures cover useful wire cases. Serialization still happens before the byte decision; response.json has no local byte bound, and deadline enforcement depends on transport cooperation. Requests are statically typed but not parsed through their declared request schema. A hit does not require a value, usage counts are plain numbers without nonnegative/integer constraints, and raw accessibility nodes are only checked as non-null objects.
+
+The inspected CSA extraction benchmark asks for all publications but passes when at least 14 entries exist and two expected records appear anywhere. It does not validate every remaining record, exact completeness, uniqueness or absence of hallucinated extras. Its success is a useful narrow fixture result, not an independent whole-page extraction guarantee. The cached payload and reported token savings likewise do not establish that reusing a prior action or extraction is safe for the current page.
+
+Evidence: [packages/extension/clients/cacheClient.ts:1-214](https://github.com/browserbase/stagehand/blob/63078cf85ddfe189da88204539ec30d41959378b/packages/extension/clients/cacheClient.ts#L1-L214) · [packages/extension/tests/cache-client.test.ts:1-143](https://github.com/browserbase/stagehand/blob/63078cf85ddfe189da88204539ec30d41959378b/packages/extension/tests/cache-client.test.ts#L1-L143) · [packages/evals/tasks/bench/extract/extract_csa.ts:1-149](https://github.com/browserbase/stagehand/blob/63078cf85ddfe189da88204539ec30d41959378b/packages/evals/tasks/bench/extract/extract_csa.ts#L1-L149).
+
+**Harness consequence:** Retain explicit cache outcomes and bounded transport budgets, adding bounded serialization/response decoding and semantic response invariants. Cache authorization and page identity must be checked where results are reused. Evaluate extraction against a complete source-derived expected set and provenance spans; report precision, recall and malformed/extra items instead of promoting a minimum-count check to task correctness.
+
+**Scope and limits:** Scoped static review of the extension cache client, its direct fixtures and one extraction benchmark in the 928-path comparison. Server Redis keys, consumer fallback decisions, transport implementation and other benchmarks were not audited; no extension, browser, model, server or upstream tests were executed.
+
+## Follow-up change review — 2026-10-28
+
+**Schema metadata behavior is adjusted alongside centralized dependency versions.** Reviewed commit `737480022acbf5ec3450885f120fc33ee561a9b4` (commit date `2026-10-27T15:45:29-07:00`), compared with `63078cf85ddfe189da88204539ec30d41959378b`. The complete no-rename Git path inventory contains 69 changed paths.
+
+The Zod update is accompanied by two concrete schema-generation changes: the protocol document root loses its metadata id to remain inline, and the standalone default extraction schema uses a fresh metadata registry. Cookbook dependencies move to the workspace catalog, while the path inventory also removes CrewAI examples/docs and some Go cookbook implementations. These removals must not be advertised as current integrations merely because older reports mention them.
+
+Evidence: [packages/protocol/json-rpc/build-json-rpc-schema.ts:63-72](https://github.com/browserbase/stagehand/blob/737480022acbf5ec3450885f120fc33ee561a9b4/packages/protocol/json-rpc/build-json-rpc-schema.ts#L63-L72) · [packages/protocol/schemas.ts:1559-1570](https://github.com/browserbase/stagehand/blob/737480022acbf5ec3450885f120fc33ee561a9b4/packages/protocol/schemas.ts#L1559-L1570) · [pnpm-workspace.yaml:1-8](https://github.com/browserbase/stagehand/blob/737480022acbf5ec3450885f120fc33ee561a9b4/pnpm-workspace.yaml#L1-L8) · [pnpm-workspace.yaml:33-41](https://github.com/browserbase/stagehand/blob/737480022acbf5ec3450885f120fc33ee561a9b4/pnpm-workspace.yaml#L33-L41).
+
+**Harness consequence:** Treat schema-generator upgrades as wire-format changes until fixtures establish compatibility. Pin generated contract provenance and distinguish historical examples from maintained adapters in capability lists.
+
+**Scope and limits:** Reviewed the schema-generation deltas, workspace catalog update and complete path inventory; generated protocol equivalence and removed integration behavior were not executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
+## Change review - 2026-11-01
+
+Reviewed `b7a4b899079f198a0ee78a6dcb62ad02f545cf49` against `737480022acbf5ec3450885f120fc33ee561a9b4`. The new [client lifecycle controller](https://github.com/browserbase/stagehand/blob/b7a4b899079f198a0ee78a6dcb62ad02f545cf49/packages/extension/clientLifecycle.ts) schema-validates attach/detach messages, serializes lifecycle work and tracks a browser-side client target. Intentional detach disarms close-on-disconnect before cleanup; completed detach retains its target ID for acknowledgment of a retry. Lost connections separately close owned Chrome or release a retained browser connection, rejecting client callbacks before potentially stalled disposal. Initial [fixtures](https://github.com/browserbase/stagehand/blob/b7a4b899079f198a0ee78a6dcb62ad02f545cf49/packages/extension/tests/client-lifecycle.test.ts) model hung disposal and fresh reconnect.
+
+**Harness consequence:** Separate ownership-based termination from deliberate detach and retain reconciliation identity for uncertain cleanup acknowledgments. This controller schedules disposal in the background; its acknowledgment is not evidence that all descendants/resources have stopped. The lifecycle queue and dependency calls need external bounds, and a target marker is not caller authentication or destination authorization.
+
+**Scope and limits:** Complete controller and initial mock lifecycle tests; SDK target creation, full native behavior, all test cases and extension transport authorization were not audited. No Chrome/session lifecycle or upstream tests were executed.

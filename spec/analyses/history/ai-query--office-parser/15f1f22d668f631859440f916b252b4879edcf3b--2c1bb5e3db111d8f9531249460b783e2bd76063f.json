@@ -1,0 +1,985 @@
+{
+  "id": "ai-query--office-parser",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/harshankur/officeParser",
+  "report": "spec/projects/ai-query--office-parser.md",
+  "analyzedSha": "15f1f22d668f631859440f916b252b4879edcf3b",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-28T08:24:38+01:00",
+  "observedSha": "2c1bb5e3db111d8f9531249460b783e2bd76063f",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "2c1bb5e3db111d8f9531249460b783e2bd76063f",
+      "date": "2026-11-01T00:13:03+01:00",
+      "subject": "chore(release): 8.5.0 changelog, version, docs, site, blog revisions and browser bundles"
+    },
+    {
+      "sha": "b5e6e22626adbcd48705246c204f9700e2109e94",
+      "date": "2026-10-31T23:35:43+01:00",
+      "subject": "fix(pdf): a font read as its glyph ids is reported with its pages (Fix #127)"
+    },
+    {
+      "sha": "c798eaebe5cbea5fc1ddbaad669c76db74cec2e1",
+      "date": "2026-10-31T00:54:03+01:00",
+      "subject": "fix(pdf): a line counts pages only where nothing else in it changes"
+    },
+    {
+      "sha": "e8828cc9341453aab0b8fde66612f16076b1ae0d",
+      "date": "2026-10-31T00:44:54+01:00",
+      "subject": "fix(pdf): a number of a line's own keeps it in the text, beside the page's number or stepping with it"
+    },
+    {
+      "sha": "7233179c6cce17c971f9a129445561affa39843f",
+      "date": "2026-10-31T00:32:49+01:00",
+      "subject": "fix(pdf): a number of its own on the page number's line keeps the line in the text"
+    },
+    {
+      "sha": "9ec8d0b86dc405a2489e6dc8f8ea19e1db2e2d0a",
+      "date": "2026-10-31T00:15:32+01:00",
+      "subject": "fix: a glyph with no place of its own opens the item the page moved to; a list label is written whole, up to a bound"
+    },
+    {
+      "sha": "06ba4ecbd3938597d6eb62062e830d6468b2b7bc",
+      "date": "2026-10-31T00:04:43+01:00",
+      "subject": "fix: the review fixes keep to their findings; what they added beyond them is deferred"
+    },
+    {
+      "sha": "fc9c2c53e13565a665eef71ce986ec3c68cdbbcf",
+      "date": "2026-10-30T23:32:25+01:00",
+      "subject": "fix: second review findings on running lines, list labels, HTML table cells and right-to-left glyphs"
+    },
+    {
+      "sha": "cadc0811176fc8a702d112612f12b39b93d28a89",
+      "date": "2026-10-30T21:52:18+01:00",
+      "subject": "fix: review findings on running lines, list labels, HTML table cells and right-to-left glyphs"
+    },
+    {
+      "sha": "71905e28211610af3c3f77c0c44b820a25e5f336",
+      "date": "2026-10-30T19:05:56+01:00",
+      "subject": "fix(pdf): running lines stay out of the text across blank pages, alternation and renumbering, and print on their own pages (Fix #124)"
+    },
+    {
+      "sha": "13e757ea6ceef52101dc33cfd15d29c509a2e6ff",
+      "date": "2026-10-30T18:49:40+01:00",
+      "subject": "fix(lists): read letter and numeral markers in sequence, and keep their labels in Markdown and chunks (Fix #126)"
+    },
+    {
+      "sha": "78b6c1503486717e6315d722d8702179c28d52cb",
+      "date": "2026-10-30T18:41:54+01:00",
+      "subject": "fix(markdown): HTML table cells honor inlineFormatting and textFormatting (Fix #125)"
+    },
+    {
+      "sha": "edcc7da36564da4c57c7c668756c9dbda25d8bee",
+      "date": "2026-10-30T18:40:19+01:00",
+      "subject": "fix(pdf): an item is matched to its own first glyph, so a tiny run keeps the space after it (Fix #123)"
+    },
+    {
+      "sha": "2f48ff83db95a89da4e5e2f7af3ccfe9fa346dcd",
+      "date": "2026-10-30T13:01:03+01:00",
+      "subject": "docs(blog): the Node.js releases the package now asks for"
+    },
+    {
+      "sha": "b3b4c7bfca65c7556caa187899be2a63875c100f",
+      "date": "2026-10-30T12:47:56+01:00",
+      "subject": "fix(security): a PDF or font never reaches a Brotli decoder with a known flaw"
+    },
+    {
+      "sha": "daae104331f2c58c268a1af774f63ca9e6ec8dd1",
+      "date": "2026-10-30T12:47:06+01:00",
+      "subject": "test: time and memory limits measure again before failing"
+    },
+    {
+      "sha": "9130b9d1e169b6a54ed8b1b13e47ef19fc33a773",
+      "date": "2026-10-30T11:31:25+01:00",
+      "subject": "fix(docx): read non-breaking hyphens and positional tabs as characters (#119)"
+    },
+    {
+      "sha": "0e2bec77e2be5da37e43c53022f4e4f9fdccda9b",
+      "date": "2026-10-30T09:46:57+01:00",
+      "subject": "fix(chunks): keep surrogate pairs whole at RAG chunk boundaries (#122)"
+    },
+    {
+      "sha": "8a1d01f6f555dd76aebd128a15610e356822f385",
+      "date": "2026-10-29T23:50:57+01:00",
+      "subject": "docs(blog): reading a filled PDF form, and headers and footers a PDF never marked"
+    },
+    {
+      "sha": "e757dda922605eeeee90ff057355d69954462c5e",
+      "date": "2026-10-29T21:55:39+01:00",
+      "subject": "chore(release): 8.4.1 changelog, version, docs, site and browser bundles"
+    },
+    {
+      "sha": "53d90d0dc17ffae706035c3da87a0ae3ab95b640",
+      "date": "2026-10-29T21:47:35+01:00",
+      "subject": "fix(site): a million downloads to two decimals, 1.26M+ rather than 1.2M+"
+    },
+    {
+      "sha": "fae5a2acda3ee68cecc1fb412391a15b9940fa5f",
+      "date": "2026-10-29T21:01:46+01:00",
+      "subject": "fix(pdf): the first of two pages without a header is no cover"
+    },
+    {
+      "sha": "89ecf8ba626d24b51b7560b092e52a9fe1d10169",
+      "date": "2026-10-29T17:25:59+01:00",
+      "subject": "fix(pdf): a header only some pages have stays on them"
+    },
+    {
+      "sha": "25b2a3b77d96ea00768a1562074233c27fb3b8f1",
+      "date": "2026-10-29T16:57:31+01:00",
+      "subject": "fix(pdf): only the first page read is a cover, and a large header's line is a paragraph of it"
+    },
+    {
+      "sha": "0e8ca8cbad0585c6aaaf364bb6a4a5d1e24dc255",
+      "date": "2026-10-29T16:26:58+01:00",
+      "subject": "fix(pdf): a cover's own header stays on the cover, a header put back is a line not a heading, and runs beside right-to-left text are spaced as before"
+    },
+    {
+      "sha": "edb612810f42297d1de36a91098718987ef5665c",
+      "date": "2026-10-29T15:15:18+01:00",
+      "subject": "fix(pdf): a header the PDF marks as its own that changes stays in its pages, a header put back stands after a logo, and right-to-left runs keep their spaces"
+    },
+    {
+      "sha": "086d675168a542f449db5d359d25926aa29d7f17",
+      "date": "2026-10-29T14:38:58+01:00",
+      "subject": "fix(pdf): a running head that changes from page to page stays in its pages, and LaTeX writes page fields"
+    },
+    {
+      "sha": "30ed3ae014c24451e46969313b29688a6ef61e62",
+      "date": "2026-10-29T14:38:58+01:00",
+      "subject": "fix(text): runs of a line that touch are joined, however their columns round"
+    },
+    {
+      "sha": "396ce17db17f6d8f9f3388f0f70dce07ea4e9cb8",
+      "date": "2026-10-29T06:27:15+01:00",
+      "subject": "fix(pdf): a serial or a day's number is no chapter's page, a running footer's page number in any shape is its field, and letters in wide boxes are choices"
+    },
+    {
+      "sha": "6cd4b6176767171d8e079bec88ad890091e82bb1",
+      "date": "2026-10-29T06:12:16+01:00",
+      "subject": "docs: which numbers make a PDF's line a running header, as now read"
+    },
+    {
+      "sha": "349f73b0b0e85f082207c12f4b669920d21f5ecd",
+      "date": "2026-10-29T06:00:32+01:00",
+      "subject": "fix(pdf): a page's own number in any script's digits runs on two pages, and \"Report -5\" stays the page's text"
+    },
+    {
+      "sha": "417eda93f225c33c70a0dd98cb38fcc073c8990e",
+      "date": "2026-10-29T05:58:51+01:00",
+      "subject": "fix(pdf): a row of boxes a little wider than tall holds a date's digits as one value, and a scale's stay a table"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blog/posts.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "blog/posts/headers-and-footers-a-pdf-never-marked.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blog/posts/how-pptx-stores-a-slide.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "blog/posts/reading-a-filled-pdf-form.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "blog/posts/text-that-looks-real-a-pdf-font-with-no-map.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "blog/posts/the-answer-was-in-the-glyph-name.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blog/posts/what-is-actually-inside-a-docx.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blog/posts/where-officeparser-is-the-wrong-tool.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/feed.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/blog/headers-and-footers-a-pdf-never-marked.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/how-pptx-stores-a-slide.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/laying-out-a-page-around-a-floating-frame.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/blog/reading-a-filled-pdf-form.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/search.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/blog/text-that-looks-real-a-pdf-font-with-no-map.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/blog/the-answer-was-in-the-glyph-name.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/what-is-actually-inside-a-docx.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/where-officeparser-is-the-wrong-tool.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dist/officeparser.browser.iife.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dist/officeparser.browser.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dist/officeparser.browser.slim.iife.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dist/officeparser.browser.slim.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/repo/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/repo/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/repo/SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sitemap.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/ast_fragment.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/cli_fragment.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/config_fragment.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/debugging_fragment.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/generator_config_fragment.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/defaults.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/generators/ChunkingGenerator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/generators/DocxGenerator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/generators/HtmlGenerator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/generators/LatexGenerator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/generators/MarkdownGenerator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/generators/OdtGenerator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/generators/RtfGenerator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/generators/TextGenerator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/generators/pdf/nativePdfEngine.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/parsers/PdfParser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/parsers/WordParser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/parsers/pdf/actualText.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/parsers/pdf/geometry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/parsers/pdf/glyphNames.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/parsers/pdf/pdfFile.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/parsers/pdf/pdfJpeg.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/parsers/pdf/pdfProcess.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/parsers/pdf/pdfShapes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/parsers/pdf/pdfTypes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/parsers/pdf/rulings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/parsers/pdf/runningLines.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/parsers/pdf/structTree.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/parsers/pdf/textGlyphs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/parsers/pdf/textLayout.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/utils/brotliFlaw.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/errorUtils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/listMarkers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/officeGenUtils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/pageNumbers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.csv.to.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.csv.to.html.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.docx.to.chunks.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.docx.to.chunks.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.docx.to.epub.epub",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.docx.to.epub.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.docx.to.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.docx.to.html.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.docx.to.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.docx.to.md.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.epub.to.epub.epub",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.epub.to.epub.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.epub.to.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.epub.to.html.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.html.to.epub.epub",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.html.to.epub.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.html.to.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.html.to.html.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.md.to.epub.epub",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.md.to.epub.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.md.to.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.md.to.html.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odg.to.epub.epub",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odg.to.epub.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odg.to.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odg.to.html.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odp.to.chunks.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odp.to.chunks.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odp.to.epub.epub",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odp.to.epub.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odp.to.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odp.to.html.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odp.to.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odp.to.md.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.ods.to.epub.epub",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.ods.to.epub.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.ods.to.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.ods.to.html.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.ods.to.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.ods.to.md.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odt.to.chunks.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odt.to.chunks.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odt.to.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odt.to.html.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odt.to.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.odt.to.md.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.chunks.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.chunks.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.docx.docx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.docx.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.epub.epub",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.epub.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.html.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.md.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.odp.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.odp.odp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.ods.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.ods.ods",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.odt.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.odt.odt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.pptx.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.pptx.pptx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.rtf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.rtf.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.tex",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.tex.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.text",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.xlsx.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pdf.to.xlsx.xlsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pptx.to.epub.epub",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pptx.to.epub.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pptx.to.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pptx.to.html.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pptx.to.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.pptx.to.md.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.rtf.to.epub.epub",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.rtf.to.epub.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.rtf.to.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.rtf.to.html.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.rtf.to.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.rtf.to.md.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.tex.to.epub.epub",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.tex.to.epub.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.tex.to.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.tex.to.html.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.xlsx.to.epub.epub",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.xlsx.to.epub.metrics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/generator/baseline/gen.xlsx.to.html",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

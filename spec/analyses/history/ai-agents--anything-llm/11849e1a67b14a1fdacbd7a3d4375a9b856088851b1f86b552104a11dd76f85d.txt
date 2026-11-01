@@ -1,0 +1,61 @@
+# anything-llm
+
+Source: [anything-llm](https://github.com/Mintplex-Labs/anything-llm) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `09e68e357a90973fd2b143b318b31640bee50a0b`; commit timestamp `2026-10-03T13:42:58-07:00`; 5,716 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/Mintplex-Labs/anything-llm/blob/09e68e357a90973fd2b143b318b31640bee50a0b/README.md)):
+
+> Chat with your docs, use AI Agents, hyper-configurable, multi-user, & no frustrating setup required. Chat with your docs. Automate complex workflows with AI Agents. Hyper-configurable, multi-user ready, battle-tested—and runs locally by default with zero setup friction.
+
+Build/package evidence: [collector/package.json](https://github.com/Mintplex-Labs/anything-llm/blob/09e68e357a90973fd2b143b318b31640bee50a0b/collector/package.json); [frontend/package.json](https://github.com/Mintplex-Labs/anything-llm/blob/09e68e357a90973fd2b143b318b31640bee50a0b/frontend/package.json); [open-computer/cli/package.json](https://github.com/Mintplex-Labs/anything-llm/blob/09e68e357a90973fd2b143b318b31640bee50a0b/open-computer/cli/package.json); [open-computer/services/interface-service/package.json](https://github.com/Mintplex-Labs/anything-llm/blob/09e68e357a90973fd2b143b318b31640bee50a0b/open-computer/services/interface-service/package.json); [open-computer/services/memory-manager/package.json](https://github.com/Mintplex-Labs/anything-llm/blob/09e68e357a90973fd2b143b318b31640bee50a0b/open-computer/services/memory-manager/package.json)
+
+License evidence: [LICENSE](https://github.com/Mintplex-Labs/anything-llm/blob/09e68e357a90973fd2b143b318b31640bee50a0b/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped source review
+
+Source: [anything-llm](https://github.com/Mintplex-Labs/anything-llm); inspected saved discovery revision `9b1fcab141000eaba9f78ed131151de04904454b`. Prior analyzed revision `09e68e357a90973fd2b143b318b31640bee50a0b` remains historical evidence.
+
+**Scope:** Complete Telegram agent response adapter and its 267-line final-answer delivery test. Ephemeral agent implementation, sender/workspace admission, generated-file storage, formatter internals and live Telegram behavior were not audited.
+
+The [Telegram response adapter](https://github.com/Mintplex-Labs/anything-llm/blob/9b1fcab141000eaba9f78ed131151de04904454b/server/utils/telegramBot/chat/agent.js#L282-L387) awaits pending preview sends and edits, prefers the explicit final answer over draft chunks, persists the selected text, then reconciles previews with Unicode-aware final chunks. It retries malformed HTML as plain text and removes superseded previews only after replacements are sent. Persistence precedes final delivery, so stored completion is not a delivery receipt; partial channel failure can still leave a saved answer and an incomplete visible result.
+
+The [delivery tests](https://github.com/Mintplex-Labs/anything-llm/blob/9b1fcab141000eaba9f78ed131151de04904454b/server/__tests__/utils/telegramBot/agent.test.js#L87-L267) use a fake bot to cover late preview edits, long answers, surrogate pairs, shorter final answers, HTML expansion and failed final sends. They do not exercise real Telegram rate limits, transport ambiguity or durable replay. The adapter's streamed text, event arrays and chained edits have no local aggregate bound. Its [thought flush](https://github.com/Mintplex-Labs/anything-llm/blob/9b1fcab141000eaba9f78ed131151de04904454b/server/utils/telegramBot/chat/agent.js#L184-L220) reschedules in finally; clearing the current timer at overall completion does not stop an already in-flight flush from scheduling another timer. There is no closed-state guard or awaited flush join in this file.
+
+Agent events are parsed without a structural schema here, and generated files are delivered by delegated storage lookup rather than a visible owner-bound handle. Teamagent should retain final-versus-preview reconciliation with bounded queues, explicit delivery states and owned cancellation, then separately validate source events, sender authority and attachment access. No agent, bot, chart renderer, filesystem export or upstream test was executed.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `0941fb03596862899f7df2bdeb022eb68d4216a7` (commit date `2026-10-27T16:04:07-07:00`), compared with `9b1fcab141000eaba9f78ed131151de04904454b`. Earlier findings remain historical evidence.
+
+**Scope:** Agent-history projection and default-model changes in persistent/ephemeral agent paths. The complete changed-path inventory contains 69 paths; the assessment below is limited to the cited branches.
+
+History reconstruction now skips an entire prompt/response pair when the parsed response has no truthy text, avoiding a blank assistant message for providers that reject one. Remaining pairs are projected with success states; a history-read exception returns an empty history. See [server/utils/agents/index.js](https://github.com/Mintplex-Labs/anything-llm/blob/0941fb03596862899f7df2bdeb022eb68d4216a7/server/utils/agents/index.js#L105-L132). Several defaults also change to gpt-5.6-luna in persistent, ephemeral and channel construction. See [server/utils/agents/index.js](https://github.com/Mintplex-Labs/anything-llm/blob/0941fb03596862899f7df2bdeb022eb68d4216a7/server/utils/agents/index.js#L329-L341) and [server/utils/agents/ephemeral.js](https://github.com/Mintplex-Labs/anything-llm/blob/0941fb03596862899f7df2bdeb022eb68d4216a7/server/utils/agents/ephemeral.js#L533-L546).
+
+For Teamagent, retain the durable original conversation separately from each provider-compatible projection, including unanswered prompts and missing-history evidence. A filtered projection must not rewrite an uncertain turn as absent or successful. Default-model changes require route, policy and cost evaluation; a string in source is not proof of account access or model quality. Other flow/network changes were not audited.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `9caf2b4c29d9782f1cba4142be2525ebfa0ecd43` (commit date `2026-10-30T13:49:57-07:00`), compared with `0941fb03596862899f7df2bdeb022eb68d4216a7`. Earlier observations remain historical evidence.
+
+**Scope:** Complete Lance reranking eligibility diff; 47 changed paths inventoried. No matching changed Lance fixture appeared in this inventory, and broader retrieval behavior was not executed.
+
+The [Lance adapter](https://github.com/Mintplex-Labs/anything-llm/blob/9caf2b4c29d9782f1cba4142be2525ebfa0ecd43/server/utils/vectorDbProviders/lance/index.js) now removes below-threshold and pinned-source candidates before the reranker's topK selection, returns early for an empty eligible set, and creates the reranker only after eligibility is known. Previously ineligible candidates could consume topK slots before removal. The inspected score expression still uses a truthy fallback, so a numeric zero rerank score falls back to vector similarity rather than remaining explicitly zero.
+
+**Teamagent implication (inference):** Apply authorization/eligibility before ranking and paid reranking, preserving empty results honestly. Keep each score's meaning and presence explicit; do not use truthiness to merge zero scores with missing evidence. Measure recall and ranking quality separately from this structural correction.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.

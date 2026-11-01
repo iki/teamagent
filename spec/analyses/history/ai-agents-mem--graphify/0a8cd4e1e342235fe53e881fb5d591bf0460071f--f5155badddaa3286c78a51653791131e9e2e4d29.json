@@ -1,0 +1,960 @@
+{
+  "id": "ai-agents-mem--graphify",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/safishamsi/graphify",
+  "report": "spec/projects/ai-agents-mem--graphify.md",
+  "analyzedSha": "0a8cd4e1e342235fe53e881fb5d591bf0460071f",
+  "analyzedAt": "2026-10-28T14:52:35.205Z",
+  "analyzedCommitDate": "2026-10-27T18:08:07Z",
+  "observedSha": "f5155badddaa3286c78a51653791131e9e2e4d29",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f5155badddaa3286c78a51653791131e9e2e4d29",
+      "date": "2026-11-01T00:43:59Z",
+      "subject": "chore: bump version to 0.9.100"
+    },
+    {
+      "sha": "24f342adfe6a94d9f8874afcad971a0833a3483c",
+      "date": "2026-11-01T00:29:31Z",
+      "subject": "chore: bump AST cache schema to 33 (scala + terraform); changelog for the second 0.9.100 batch"
+    },
+    {
+      "sha": "1954192a8c6ef340a6a3ab56d3fba8e8490fc286",
+      "date": "2026-11-01T00:28:31Z",
+      "subject": "fix: preserve graph relations and tagged templates"
+    },
+    {
+      "sha": "50e812321f6f38c55d44901df3841cc00bd81eb5",
+      "date": "2026-11-01T00:25:03Z",
+      "subject": "fix(terraform): discard scope metadata outside scan root (#4858)"
+    },
+    {
+      "sha": "14d1f4d2bd97b95ece1e4fc2c4421e83cadd3b6d",
+      "date": "2026-11-01T00:25:03Z",
+      "subject": "fix(terraform): preserve cached IDs across project moves (#4858)"
+    },
+    {
+      "sha": "20b002a518bcc11f889f538c1b89f093d35806bc",
+      "date": "2026-11-01T00:24:27Z",
+      "subject": "fix(install): remove every platform's user skill on uninstall"
+    },
+    {
+      "sha": "6667a491e876663ba2e5de3a35798fb23bac03e8",
+      "date": "2026-11-01T00:23:31Z",
+      "subject": "fix(prompt): escape the backslash in the [^\\\\W] node-id rule (for #4799)"
+    },
+    {
+      "sha": "8dd649952c98091bc496f856c63258af3446e67d",
+      "date": "2026-11-01T00:22:31Z",
+      "subject": "fix(prompt): describe the node-ID class ids.py actually produces"
+    },
+    {
+      "sha": "8dff9e380cf5567c810fae2cadf06e1de168ba61",
+      "date": "2026-11-01T00:22:14Z",
+      "subject": "fix(scala): scope extension methods to their receiver type (#2044)"
+    },
+    {
+      "sha": "611ea9e2dd1db3a343bf08b0cade396381780e00",
+      "date": "2026-11-01T00:21:52Z",
+      "subject": "test(llm): cover Claude prompt cache overrides and unsupported endpoints"
+    },
+    {
+      "sha": "1b35dc4c8e113367f55def3e568e1f87a7ff5208",
+      "date": "2026-11-01T00:21:52Z",
+      "subject": "feat(llm): allow disabling Claude prompt caching"
+    },
+    {
+      "sha": "40536ee77ee0f3fbbc2a0977ac435ab89eab31bc",
+      "date": "2026-11-01T00:21:52Z",
+      "subject": "docs(llm): document Claude prompt cache override"
+    },
+    {
+      "sha": "08af9b6aa8eb01b0ec3d385cee31eb25da29667a",
+      "date": "2026-11-01T00:21:14Z",
+      "subject": "docs: update language count and model backend wording in how-it-works"
+    },
+    {
+      "sha": "35bf28a14f38692eaa78da130a4b8977c7420913",
+      "date": "2026-11-01T00:21:12Z",
+      "subject": "fix(affected): resolve the reference forms explain already accepts"
+    },
+    {
+      "sha": "992428e6d8e464968a1f765ffae1cba4ba71ec47",
+      "date": "2026-11-01T00:21:10Z",
+      "subject": "test(extract): drop unused helper from the #4874 fixture"
+    },
+    {
+      "sha": "5945b5a538a4d808166ac825333a2a36c2392e5a",
+      "date": "2026-11-01T00:21:10Z",
+      "subject": "fix(extract): let JVM member calls bind across Java and Kotlin (#4874)"
+    },
+    {
+      "sha": "128f08c3f4f9ea4732d345a4b9c46c91ec9fe91d",
+      "date": "2026-11-01T00:21:10Z",
+      "subject": "test(extract): pin Kotlin member calls into Java (#4874)"
+    },
+    {
+      "sha": "e4f02657f838a3b1ec6c7153cad62825cae29f49",
+      "date": "2026-11-01T00:21:10Z",
+      "subject": "fix(extract): resolve Java/Kotlin imports through one JVM index (#4874)"
+    },
+    {
+      "sha": "4412039f53d95145eb63f4d3c9017642660696d5",
+      "date": "2026-11-01T00:21:10Z",
+      "subject": "test(extract): pin Java/Kotlin import and inheritance resolution (#4874)"
+    },
+    {
+      "sha": "0fff3d8e06900886b7d96e2486130c69f1141847",
+      "date": "2026-11-01T00:21:07Z",
+      "subject": "fix(llm): count cached prompt tokens in claude input_tokens (#4835)"
+    },
+    {
+      "sha": "e0736ac6a05fe0ad7549c1daf26c536b1c8571ee",
+      "date": "2026-11-01T00:21:07Z",
+      "subject": "fix(llm): cache the claude backend system prompt (#4835)"
+    },
+    {
+      "sha": "45e2917073c1a141d6e393a03b8e6b1e1d6c2088",
+      "date": "2026-11-01T00:21:05Z",
+      "subject": "fix(kilo): remove the skill references on uninstall"
+    },
+    {
+      "sha": "00920b222fa98651cb3b0dd4fe9848c151066968",
+      "date": "2026-11-01T00:21:03Z",
+      "subject": "fix(export): report a partial backup as no backup and retry it (#3769)"
+    },
+    {
+      "sha": "35bfdd6166e7575f30291dd2074593d2a54b2d5f",
+      "date": "2026-10-31T23:50:43Z",
+      "subject": "chore: extend schema 32 comment for R/elixir/dart/fortran; changelog for video + extractors"
+    },
+    {
+      "sha": "fe35d24530076bd950975f5bbb1f9272aebc92e8",
+      "date": "2026-10-31T23:49:25Z",
+      "subject": "Add regression tests for Fortran derived type inheritance"
+    },
+    {
+      "sha": "8e820e2e90a5b0c2dc35dc670cebfdf85b88f69f",
+      "date": "2026-10-31T23:49:25Z",
+      "subject": "Emit an inherits edge for a Fortran derived type extends clause"
+    },
+    {
+      "sha": "8652055ed2281a7644c3cd729edfb6ffb02cd73b",
+      "date": "2026-10-31T23:49:14Z",
+      "subject": "Add regression tests for a multi constraint Dart mixin on clause"
+    },
+    {
+      "sha": "462b86213cc73ee8133ad5a750f0e16eab81ed91",
+      "date": "2026-10-31T23:49:14Z",
+      "subject": "Resolve every superclass constraint in a Dart mixin on clause"
+    },
+    {
+      "sha": "e51618a9bcd13729a3146432cd7936016c95f4d6",
+      "date": "2026-10-31T23:49:06Z",
+      "subject": "Add regression tests for a bare call scoped to its own module"
+    },
+    {
+      "sha": "e471f80b524c138394f4fddbb1aaac1b87489af6",
+      "date": "2026-10-31T23:49:06Z",
+      "subject": "Scope a bare Elixir call to the caller's own module first"
+    },
+    {
+      "sha": "d48684c848f4a0803a9e6907c3519f99ddf39e21",
+      "date": "2026-10-31T23:49:01Z",
+      "subject": "Add regression tests for the contains inheritance keyword"
+    },
+    {
+      "sha": "80f2712c05d232d8e321bbae51a169ae77dc0dcf",
+      "date": "2026-10-31T23:49:01Z",
+      "subject": "Recognize contains as an R class inheritance keyword"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/how-it-works.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/__main__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/affected.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/analyze.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/build.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/dedup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/export.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/commonlisp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/csharp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/dart.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/elixir.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/fortran.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/go.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/julia.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/pascal_forms.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/powershell.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/r.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/resolution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/rust.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/solidity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/terraform.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/verilog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/file_slice.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/hooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/ids.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/install.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/serve.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-aider.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-amp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-claw.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-codex.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-copilot.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-devin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-droid.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-kilo.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-kiro.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-opencode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-pi.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-trae.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-vscode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-windows.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/agents/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/amp/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/claude/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/claw/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/codex/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/copilot/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/droid/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/kilo/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/kiro/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/opencode/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/pi/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/trae/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/vscode/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/windows/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/watch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/wiki.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/fixtures/sample.sv",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/sample_inherited.dfm",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/sample_inherited.lfm",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_4874_jvm_resolution.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_4909_reference_binding_scale.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_affected_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_affected_seed_reference_forms.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_extras.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_case_only_decl_ids_4904.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_cli_export.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_confidence_score_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_csharp_method_owner_labels.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_dart.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_dedup.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_edge_also_seen.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_elixir_unqualified_call_scope.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_explain_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_export.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_file_id_collision_4854.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_go_method_value_indirect_calls.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_go_package_var_calls.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_go_receiver_member_calls.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_hooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_import_extension_resolution.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_indirect_dispatch_module_attr.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_install.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_install_references.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_languages.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_llm_backends.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_opencode_plugin_refresh.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_pascal.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_path_confidence.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_path_type_member.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_pdf_slicing.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_php_class_const_initializer_refs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_prompt_id_rule_matches_ids.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_r_extractor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_report_gap_thresholds.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_scala_extension_methods.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_serve.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_serve_http.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_skill_auto_refresh.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_skill_when_to_build.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_solidity_extractor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_terraform_modules.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_transcribe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_ts_parse_warning.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_undirected_two_file_import_cycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_uninstall_scope.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-aider.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-amp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-claw.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-codex.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-copilot.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-devin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-droid.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-kilo.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-kiro.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-opencode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-pi.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-trae.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-vscode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill-windows.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skill.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skills__agents__references__extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skills__amp__references__extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skills__claude__references__extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skills__claw__references__extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skills__codex__references__extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skills__copilot__references__extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skills__droid__references__extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skills__kilo__references__extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skills__kiro__references__extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skills__opencode__references__extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skills__pi__references__extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skills__trae__references__extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skills__vscode__references__extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/expected/graphify__skills__windows__references__extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/fragments/core/aider.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/fragments/core/core.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/fragments/core/devin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/fragments/references/shared/extraction-spec-compact.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/fragments/references/shared/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/skillgen/gen.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "uv.lock",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

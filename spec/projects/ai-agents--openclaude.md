@@ -44,6 +44,16 @@ In [scripts/provider-launch.ts](https://github.com/Gitlawb/openclaude/blob/ffa79
 
 **Harness implication and limits:** Separate launcher control syntax from opaque downstream arguments. Fixture coverage should include prompts named after providers, option/value pairs, explicit delimiters and missing launcher values. The shown --goal branch still consumes the next argument before downstream parsing; provider discovery, credential routing and process launch were not inspected or executed. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `cd6655470ac45a099d9fd33604178caa4016b1ae` against prior analyzed commit `ffa79d9cbb7f3ca9589601f1657803bae6847722`. Historical reviews above remain separate evidence.
+
+The [SDK session adapter](https://github.com/Gitlawb/openclaude/blob/cd6655470ac45a099d9fd33604178caa4016b1ae/src/entrypoints/sdk/v2.ts) snapshots explicit and selected provider-derived environment variables, serializes nonempty environment overrides through a mutex, clears credential caches on entry/restore, and restores within the generator's finally block. It enumerates overrides once before acquiring the lock and uses a null-prototype snapshot. Closing a session requests active generators to return so their cleanup can run before restoration.
+
+The complete [direct fixture](https://github.com/Gitlawb/openclaude/blob/cd6655470ac45a099d9fd33604178caa4016b1ae/src/entrypoints/sdk/v2.sessionEnv.test.ts) covers apply/remove/restore and two overriding sessions; selected [turn fixtures](https://github.com/Gitlawb/openclaude/blob/cd6655470ac45a099d9fd33604178caa4016b1ae/src/entrypoints/sdk/v2.sessionEnvTurn.test.ts) use a fake engine to check abandoned iterators and delayed cleanup. The documented and visible limitation matters: absent or empty overrides take no lock and can observe another turn's process-wide environment. Paused iterators/nested scoped calls can hold the mutex indefinitely, and `close()` does not return an awaitable shutdown receipt. Teamagent should prefer per-request credentials or isolated owned processes; a writer-only mutex is not credential isolation for arbitrary readers.
+
+**Coverage:** Read v2.ts delta offsets 0–259 and 390–452, the complete 130-line direct fixture and selected turn-fixture setup/abandonment/close cases. Remaining turn body, mutex implementation and real initialization/provider behavior were not audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openclaude](https://github.com/Gitlawb/openclaude); analyzed commit `ffa79d9cbb7f3ca9589601f1657803bae6847722`; commit date 2026-10-27T15:36:29-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openclaude.md).
+Analysis metadata: source [openclaude](https://github.com/Gitlawb/openclaude); analyzed commit `cd6655470ac45a099d9fd33604178caa4016b1ae`; commit date 2026-10-31T08:24:47-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openclaude.md).
 <!-- teamagent-analysis:end -->

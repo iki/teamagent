@@ -2,11 +2,11 @@
 
 Source: [mlflow](https://github.com/mlflow/mlflow) · [Analysis](../../projects/ai-agents--mlflow.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `9f9c78b94b56f7593ad9de257e487c7dd0f04641`; commit date: 2026-10-28T09:19:35Z; review date: 2026-10-28T14:29:27.414Z; observed SHA: `9f9c78b94b56f7593ad9de257e487c7dd0f04641`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `e8d8c09e79e5e0f69cc022409019fc0fb6ad2c30`; commit date: 2026-11-01T06:30:29Z; review date: 2026-11-01T11:33:30.893Z; observed SHA: `e8d8c09e79e5e0f69cc022409019fc0fb6ad2c30`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/mlflow/mlflow/compare/9f9c78b94b56f7593ad9de257e487c7dd0f04641...9f9c78b94b56f7593ad9de257e487c7dd0f04641). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/mlflow/mlflow/compare/e8d8c09e79e5e0f69cc022409019fc0fb6ad2c30...e8d8c09e79e5e0f69cc022409019fc0fb6ad2c30). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

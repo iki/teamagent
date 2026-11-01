@@ -82,6 +82,16 @@ In [packages/server/src/server/agent/agent-manager.ts](https://github.com/getpas
 
 **Harness implication and limits:** Version extension event names and distinguish a hook that may transform a proposed operation from a notification about recorded state. Migration requires compatibility tests for subscribers, not just producer renaming. The dispatcher, hook authorization, async error policy and UI back-navigation were not audited or executed; the oversized session implementation was outside capture. This static review does not certify other changed subsystems.
 
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `fa89738e3a937e83d10b8998ee0d96f3708947dd` against prior analyzed commit `986687b8fd46c996df8c561af40e005667555508`. Historical reviews above remain separate evidence.
+
+The [lifecycle adapter](https://github.com/getpaseo/paseo/blob/fa89738e3a937e83d10b8998ee0d96f3708947dd/packages/server/src/server/plugins/lifecycle/index.ts) adds a strict discriminated schema for worktree-before hooks and rejects changes to repository root or source checkout. Branch, slug, output path and kind-specific references remain explicitly transformable. This is structural validation and immutable-owner validation; a nonempty output path is not itself a containment or authorization proof. The creation dependency now exposes both `before` and `wait`.
+
+The inspected integration fixtures exercise transformed placement/branch/base references, persisted metadata, no rerun of creation hooks during restore, collision handling, and rollback after include-copy failure. They also make `.worktreeinclude` a deliberate mechanism for copying ignored local configuration while preserving tracked versions. That mechanism can carry secrets into a new workspace and needs a separate scoped grant in Teamagent. Reuse the validated hook result and persisted creation decision pattern; independently validate resolved destination ownership and secret-copy policy before Git/filesystem mutation.
+
+**Coverage:** Read the complete 190-line lifecycle/service/bootstrap expansion, worktree contract change and selected 553-line integration-test delta. The underlying worktree creation and copy implementations were not audited; no daemon or Git fixture was executed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [paseo](https://github.com/getpaseo/paseo); analyzed commit `986687b8fd46c996df8c561af40e005667555508`; commit date 2026-10-28T17:04:52+07:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paseo.md).
+Analysis metadata: source [paseo](https://github.com/getpaseo/paseo); analyzed commit `fa89738e3a937e83d10b8998ee0d96f3708947dd`; commit date 2026-11-01T14:46:52+07:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paseo.md).
 <!-- teamagent-analysis:end -->

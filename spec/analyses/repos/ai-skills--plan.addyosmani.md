@@ -2,11 +2,11 @@
 
 Source: [plan.addyosmani](https://github.com/addyosmani/agent-skills) · [Analysis](../../projects/ai-skills--plan.addyosmani.md) · [skills](../../skills.md)
 
-Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `aeac41d4d005999432bb7312f7ff06383a91d59d`; commit date: 2026-10-13T16:21:06-04:00; review date: 2026-10-28T08:26:04.502Z; observed SHA: `aeac41d4d005999432bb7312f7ff06383a91d59d`.
+Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `8bfcc1f9916f2eea55494d8c1fa7f4bde867dd9e`; commit date: 2026-10-30T23:40:28-07:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `8bfcc1f9916f2eea55494d8c1fa7f4bde867dd9e`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/addyosmani/agent-skills/compare/aeac41d4d005999432bb7312f7ff06383a91d59d...aeac41d4d005999432bb7312f7ff06383a91d59d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/addyosmani/agent-skills/compare/8bfcc1f9916f2eea55494d8c1fa7f4bde867dd9e...8bfcc1f9916f2eea55494d8c1fa7f4bde867dd9e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: inspected; source lifecycle: active; upstream availability: available.
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

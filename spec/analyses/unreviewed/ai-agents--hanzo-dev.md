@@ -2,7 +2,7 @@
 
 Source: [hanzo-dev](https://github.com/hanzoai/dev) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md).
 
-Depth: **unreviewed**. Discovered 2026-10-24T06:36:54.441Z; no source code or capabilities reviewed. [Change evidence](../repos/ai-agents--hanzo-dev.md).
+Historical discovery: 2026-10-24T06:36:54.441Z, initially unreviewed. Dated scoped reviews below supersede that discovery-only status; they do not establish runtime validation. [Change evidence](../repos/ai-agents--hanzo-dev.md).
 
 ## 2026-10-28 scoped source review
 
@@ -16,6 +16,18 @@ A version label is not an artifact digest. The script does not verify a download
 
 The [shell-tool entry](https://github.com/hanzoai/dev/blob/6fabbcc260f131d4efa5389a186ecccf7cc44e69/shell-tool-mcp/src/index.ts) resolves and prints a bundled Bash path through delegated platform helpers. It does not itself prove tool authorization, process isolation or runtime availability. Reject direct adoption of this installer as a trusted Teamagent boundary; no installer, downloads, packages, subprocesses or tests were executed.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `5193cc41eb96095e4cb12768bf4f5cc26bd7afda` (commit date `2026-10-29T15:43:30-07:00`), compared with `6fabbcc260f131d4efa5389a186ecccf7cc44e69`. Earlier observations remain historical evidence.
+
+**Scope:** Nine changed paths inventoried; complete new idle.rs implementation and its inline tests, with the beginning of main.rs wiring inspected. Logo renderer and updated submodule contents not audited.
+
+The [idle preview](https://github.com/hanzoai/dev/blob/5193cc41eb96095e4cb12768bf4f5cc26bd7afda/crates/hanzo-dev/src/idle.rs) uses a static plain frame for non-terminal or dumb-terminal output; interactive rendering uses bounded stage dimensions, reduced-motion/color choices and a Drop guard that requests terminal restoration. Frames are assembled before writing to reduce intermediate clearing. Inline tests check dimensions, monochrome shading and escape-free plain frames. Those checks do not establish native terminal behavior or cleanup after forced termination; restoration errors are ignored.
+
+**Teamagent implication (inference):** Keep passive/noninteractive output finite and free of terminal controls, and separate preview capability from provider readiness. Terminal-state cleanup needs platform acceptance tests; this presentation change does not resolve the historical installer provenance concerns.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hanzo-dev](https://github.com/hanzoai/dev); analyzed commit `6fabbcc260f131d4efa5389a186ecccf7cc44e69`; commit date 2026-10-24T20:32:24-07:00; review date 2026-10-28T09:27:32.685Z; depth reviewed. [Maintenance record](../repos/ai-agents--hanzo-dev.md).
+Analysis metadata: source [hanzo-dev](https://github.com/hanzoai/dev); analyzed commit `5193cc41eb96095e4cb12768bf4f5cc26bd7afda`; commit date 2026-10-29T15:43:30-07:00; review date 2026-11-01T11:33:30.893Z; depth reviewed. [Maintenance record](../repos/ai-agents--hanzo-dev.md).
 <!-- teamagent-analysis:end -->

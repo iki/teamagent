@@ -51,6 +51,14 @@ Evidence: [crates/xberg-tesseract/src/api.rs:746-754](https://github.com/xberg-i
 
 **Scope and limits:** Reviewed changed binding/ownership hunks, complete shim and native qualification fixture; no native OCR, model-pack download or asset verification was run. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `68b39a7fd43e29b8892047326d84b84a424baa14` against `2e7128df7deaeff75486d128817ccfb7ce3f979e`. The [PDF image handle](https://github.com/xberg-io/xberg/blob/68b39a7fd43e29b8892047326d84b84a424baa14/crates/xberg-native-pdf/src/extractors/images.rs) gains a bounded raw-byte copy that checks actual stored stream length before allocating the copied vector, rather than trusting dimensions or declared size. It does not decode pixels. [Fixtures](https://github.com/xberg-io/xberg/blob/68b39a7fd43e29b8892047326d84b84a424baa14/crates/xberg-native-pdf/src/extractors/image_raw_bytes_limit_tests.rs) cover misleading metadata, exact/zero limits, inline/XObject streams and unchanged decoder counts. Object loading occurs before this copy check, so the limit is not a bound on total parser memory. The selected [byte-extraction route](https://github.com/xberg-io/xberg/blob/68b39a7fd43e29b8892047326d84b84a424baa14/crates/xberg/src/core/extractor/bytes.rs) propagates explicit layout-page selection and rejects it for non-PDF validated MIME types.
+
+**Harness consequence:** Apply separate actual-byte, decode-pixel, total-memory and deadline budgets. Record page selection in cache coverage and reject incompatible options before expensive downstream processing. Metadata-only admission is insufficient for hostile files.
+
+**Scope and limits:** Complete three selected diffs; no proof of end-to-end allocation/cancellation bounds or every caller's use of the bounded method. No native PDF parser, fixture or performance test was run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [xberg](https://github.com/xberg-io/xberg); analyzed commit `2e7128df7deaeff75486d128817ccfb7ce3f979e`; commit date 2026-10-28T10:06:03+02:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--xberg.md).
+Analysis metadata: source [xberg](https://github.com/xberg-io/xberg); analyzed commit `68b39a7fd43e29b8892047326d84b84a424baa14`; commit date 2026-11-01T08:23:59+02:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--xberg.md).
 <!-- teamagent-analysis:end -->

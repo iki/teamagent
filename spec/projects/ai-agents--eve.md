@@ -50,6 +50,18 @@ For Teamagent, keep unattended authority distinct from the conversation being ad
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `db7850007a424b2f0d62f1909145acd2ff2d124f` (commit date `2026-10-31T01:22:21Z`), compared with `3205c7ba382799e63dc5dae6b518282c7720870b`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete eve-channel OIDC wrapper and fixture diff, with credential literals redacted by the collector; whole-repository diff was oversized. Delegated token verifier and channel executor not audited.
+
+The [wrapper](https://github.com/vercel/eve/blob/db7850007a424b2f0d62f1909145acd2ff2d124f/packages/eve/src/eve-channel/auth.ts) grants tool-stub permission only after authentication and only to service/runtime principals matching an explicit configured grant. Plain subject entries and implicit same-project authentication do not grant it. [Fixtures](https://github.com/vercel/eve/blob/db7850007a424b2f0d62f1909145acd2ff2d124f/packages/eve/src/eve-channel/auth.test.ts) cover invalid signatures, user principals, token-supplied grants and overlapping wildcard rules. Any matching true rule grants, even beside a matching false entry; false is not an overriding denial.
+
+**Teamagent implication (inference):** Keep identity, route access and evaluation-only capabilities separate. Make policy-combination semantics visible and bind fixture/stub authority to the authenticated caller and environment; token claims or successful sign-in must never independently enable test bypasses in production.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [eve](https://github.com/vercel/eve); analyzed commit `3205c7ba382799e63dc5dae6b518282c7720870b`; commit date 2026-10-28T04:27:43Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--eve.md).
+Analysis metadata: source [eve](https://github.com/vercel/eve); analyzed commit `db7850007a424b2f0d62f1909145acd2ff2d124f`; commit date 2026-10-31T01:22:21Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--eve.md).
 <!-- teamagent-analysis:end -->

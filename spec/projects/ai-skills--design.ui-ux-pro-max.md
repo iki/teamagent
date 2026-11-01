@@ -32,6 +32,18 @@ The [uninstaller](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/2
 
 The [generator fixtures](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/28b3b8dee8c976df4fa3e94aed4e092ad43fcb03/.claude/skills/design/scripts/tests/test_cip_generate.py) isolate the SDK and restore module state, test extension selection, model overrides, no-call prompt-only mode and failure exit codes. They explicitly accept exit zero when only part of a requested set succeeds. Their tiny signature-like byte fixtures are not valid decoded image verification, and a constant model ID assertion does not establish provider availability. Preserve requested/generated/failed item counts and validate bytes independently before publication. No uninstall, provider request, image generation or tests were run.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `3a13158ff1f32156cbe144108de48eda2ecaed9a` (commit date `2026-11-01T14:04:28+07:00`), compared with `28b3b8dee8c976df4fa3e94aed4e092ad43fcb03`. Earlier observations remain historical evidence.
+
+**Scope:** Complete search-loader and applicability-version diffs; 33 changed paths inventoried. Search implementation, guidance corpus and embedded-Python execution not audited.
+
+The [search entry](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/3a13158ff1f32156cbe144108de48eda2ecaed9a/cli/assets/scripts/search.py) prepends its own absolute script directory before importing sibling core/design-system modules, accommodating embedded isolated Python that omits that directory. The [core declaration](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/3a13158ff1f32156cbe144108de48eda2ecaed9a/cli/assets/scripts/core.py) updates a stack applicability version. This is a loading/metadata change, not validation of the guidance against that framework release.
+
+**Teamagent implication (inference):** Provision skill executables as trusted, hash-bound bundles including sibling modules. Resolve imports independently of the caller's working directory while retaining code trust and compatibility checks; a version label alone does not establish a tested harness/model variant.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [design.ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill); analyzed commit `28b3b8dee8c976df4fa3e94aed4e092ad43fcb03`; commit date 2026-10-26T17:07:27+07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.ui-ux-pro-max.md).
+Analysis metadata: source [design.ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill); analyzed commit `3a13158ff1f32156cbe144108de48eda2ecaed9a`; commit date 2026-11-01T14:04:28+07:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.ui-ux-pro-max.md).
 <!-- teamagent-analysis:end -->

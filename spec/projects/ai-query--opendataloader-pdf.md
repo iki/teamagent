@@ -51,6 +51,14 @@ Evidence: [java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/pro
 
 **Scope and limits:** Reviewed the complete operator scanner, filtering call sites and selected issue fixtures; no PDF conversion or full tag-tree conformance run was performed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Change review - 2026-11-01
+
+Reviewed `5421dedf39717eca35682eb77c0f036afb98b191` against `94a17ec03c7e902706a92a0bd4e8918e979c4967` (87 changed paths). The [Docling health client](https://github.com/opendataloader-project/opendataloader-pdf/blob/5421dedf39717eca35682eb77c0f036afb98b191/java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/hybrid/DoclingFastServerClient.java) uses a configured availability timeout for connect/read waits independently of conversion timeout. The [regression fixture](https://github.com/opendataloader-project/opendataloader-pdf/blob/5421dedf39717eca35682eb77c0f036afb98b191/java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue644HybridAvailabilityTimeoutTest.java) models a four-second cold-start delay, checks API/CLI overrides, rejects zero/negative/nonnumeric CLI values and retains the default three-second behavior.
+
+**Harness consequence:** Keep readiness probing separate from conversion deadlines, capability checks, policy and authenticated entitlement. Per-connect/read timeout configuration is not by itself one end-to-end wall-clock budget; validate the total route including retries and startup. A healthy endpoint does not establish extraction completeness.
+
+**Scope and limits:** Complete health-client diff and mock-server fixture; configuration propagation outside the exercised fixture and other parser/layout changes were not fully reviewed. No service, Java test, conversion or rendering benchmark was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf); analyzed commit `94a17ec03c7e902706a92a0bd4e8918e979c4967`; commit date 2026-10-28T12:10:01+03:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--opendataloader-pdf.md).
+Analysis metadata: source [opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf); analyzed commit `5421dedf39717eca35682eb77c0f036afb98b191`; commit date 2026-10-30T09:55:21Z; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--opendataloader-pdf.md).
 <!-- teamagent-analysis:end -->

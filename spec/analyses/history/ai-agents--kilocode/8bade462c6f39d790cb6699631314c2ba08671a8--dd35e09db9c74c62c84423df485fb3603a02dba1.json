@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--kilocode",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/Kilo-Org/kilocode",
+  "report": "spec/projects/ai-agents--kilocode.md",
+  "analyzedSha": "8bade462c6f39d790cb6699631314c2ba08671a8",
+  "analyzedAt": "2026-10-28T14:29:27.414Z",
+  "analyzedCommitDate": "2026-10-28T09:54:57Z",
+  "observedSha": "dd35e09db9c74c62c84423df485fb3603a02dba1",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "dd35e09db9c74c62c84423df485fb3603a02dba1",
+      "date": "2026-10-31T15:22:06+01:00",
+      "subject": "Merge pull request #15638 from MihaelaStoica/docs/desktop-0.1.15"
+    },
+    {
+      "sha": "271b373980c7e93f6d249eed6038099ef828ad39",
+      "date": "2026-10-31T11:19:25Z",
+      "subject": "docs(kilo-docs): add Kilo Desktop release notes"
+    },
+    {
+      "sha": "c6279f53066baafee62f1cc979a9c15cddb0468e",
+      "date": "2026-10-31T11:19:24Z",
+      "subject": "docs(kilo-docs): update Kilo Desktop docs for 0.1.15"
+    },
+    {
+      "sha": "0a9faeff69fff8712da184ee5188bb7985c6f057",
+      "date": "2026-10-29T11:13:39+01:00",
+      "subject": "Merge pull request #15597 from Kilo-Org/curious-pebble"
+    },
+    {
+      "sha": "17bb2e11cc9f25bed41152f1df62dcfb883d161c",
+      "date": "2026-10-29T11:04:42+01:00",
+      "subject": "fix(jetbrains): address transcript accessibility review"
+    },
+    {
+      "sha": "a44b770c22e3f9a05e96189597290e03621d22ba",
+      "date": "2026-10-29T10:45:19+01:00",
+      "subject": "feat(jetbrains): label transcript messages for accessibility"
+    },
+    {
+      "sha": "8e51a3785e9849930b59106d73e48a99ea0c7637",
+      "date": "2026-10-29T04:55:57-04:00",
+      "subject": "Merge pull request #15569 from Kilo-Org/nix-brotli"
+    },
+    {
+      "sha": "42037e8b5586b6d7a0c30211ed5869dc5a427da6",
+      "date": "2026-10-28T18:40:05-04:00",
+      "subject": "Merge pull request #15571 from Kilo-Org/nix-overlay"
+    },
+    {
+      "sha": "87825606ccdd7f13c32d7cf94d687ddf7b17528f",
+      "date": "2026-10-28T22:49:26+01:00",
+      "subject": "fix(nix): restore Kilo overlay and evaluate it on main"
+    },
+    {
+      "sha": "3d2e81aa32e04cf5e9f9808ddd04c803fe8d712d",
+      "date": "2026-10-28T22:02:09+01:00",
+      "subject": "fix(nix): replace Node 20 and patch shared Brotli"
+    },
+    {
+      "sha": "b3b2f3d1d9460e3de0bcf528d757c0e8ac4cbb2c",
+      "date": "2026-10-28T20:43:16Z",
+      "subject": "release: v7.8.25"
+    },
+    {
+      "sha": "d1cbd355ad521ae4216aa1029a9a4b414ae7bfdb",
+      "date": "2026-10-28T20:44:54+01:00",
+      "subject": "Merge pull request #15567 from Kilo-Org/jetbrains/release/v7.2.1-rc.1"
+    },
+    {
+      "sha": "da48cb4970912cb389b4c28ac861a3466edf324c",
+      "date": "2026-10-28T20:34:42+01:00",
+      "subject": "docs(jetbrains): edit changelog for v7.2.1-rc.1"
+    },
+    {
+      "sha": "8e0597a82ade302b55fa4c3b0e4645805eaf5e98",
+      "date": "2026-10-28T19:26:31Z",
+      "subject": "release(jetbrains): v7.2.1-rc.1"
+    },
+    {
+      "sha": "a0099d797cf372e745bdc2b75a36fd7fe1bc0524",
+      "date": "2026-10-28T20:20:25+01:00",
+      "subject": "Merge pull request #15531 from Kilo-Org/feat/jetbrains-hosted-cloud-sessions"
+    },
+    {
+      "sha": "2ff3dd98935313b6259d9716a297c0aa9a861ae4",
+      "date": "2026-10-28T19:53:49+01:00",
+      "subject": "fix(jetbrains): harden hosted retention and status loading"
+    },
+    {
+      "sha": "dd3df25435757f0c1d79d512645d09febb7e19e3",
+      "date": "2026-10-28T19:25:55+01:00",
+      "subject": "test(jetbrains): register session dispose timeout for side panel tests"
+    },
+    {
+      "sha": "315ef00999c54a137a5d03b53e81ad13fdb04cbf",
+      "date": "2026-10-28T19:18:50+01:00",
+      "subject": "fix(jetbrains): keep hosted stream ownership across restarts"
+    },
+    {
+      "sha": "1f7f6dfbef8ad56a1f21e558feebd6653cde7f91",
+      "date": "2026-10-28T19:05:07+01:00",
+      "subject": "merge: latest main into hosted Cloud sessions"
+    },
+    {
+      "sha": "1985242e619d7d3d855470a58d6ac2ec9956bf28",
+      "date": "2026-10-28T18:59:54+01:00",
+      "subject": "fix(jetbrains): address Cloud session review feedback"
+    },
+    {
+      "sha": "e2be0624ccf5d91c0bcc032b641d00be777fb790",
+      "date": "2026-10-28T18:05:12+01:00",
+      "subject": "Merge pull request #15546 from Kilo-Org/chore/jetbrains-kotlin-rpc-guard"
+    },
+    {
+      "sha": "1cdd817708742099871444530ff744a3089c1d6e",
+      "date": "2026-10-28T17:52:49+01:00",
+      "subject": "chore(jetbrains): also require kotlin-serialization-plugin to match Kotlin"
+    },
+    {
+      "sha": "c3963a0190af198a83fdb82b2cf32e33c92e4ac8",
+      "date": "2026-10-28T17:50:52+01:00",
+      "subject": "Merge branch 'main' into chore/jetbrains-kotlin-rpc-guard"
+    },
+    {
+      "sha": "a9b980a94440ca65c808bd40b828cd8b94e397d9",
+      "date": "2026-10-28T17:50:33+01:00",
+      "subject": "Merge pull request #15540 from Kilo-Org/fix/dependabot-catch-all-groups"
+    },
+    {
+      "sha": "ad4634e82f6f0d8b2a69f1a59638a88fa0fc5212",
+      "date": "2026-10-28T17:47:19+01:00",
+      "subject": "chore(jetbrains): fail fast when Kotlin and the RPC compiler plugin diverge"
+    },
+    {
+      "sha": "cbbaeb8d9f6dc63bae66f7c60fe86217c3985fac",
+      "date": "2026-10-28T17:41:39+01:00",
+      "subject": "chore(jetbrains): unpin CLI to the local repo build"
+    },
+    {
+      "sha": "0ccfc66c7ebabc9abd7dc00ab84d00301535be0e",
+      "date": "2026-10-28T17:38:11+01:00",
+      "subject": "feat(jetbrains): share Cloud and worktree editor chrome"
+    },
+    {
+      "sha": "38ec923804c88d1568f424b9119b1f19823a981e",
+      "date": "2026-10-28T17:08:09+01:00",
+      "subject": "fix(security): make Dependabot catch-all groups the lowest-priority match"
+    },
+    {
+      "sha": "722e4656118fbcdad602179ffd8bde0237007e4a",
+      "date": "2026-10-28T17:01:43+01:00",
+      "subject": "Merge pull request #15538 from Kilo-Org/chore/jetbrains-commonmark-0.30.1"
+    },
+    {
+      "sha": "23c33ddd913879ca80b3e6f0a664832a06697a97",
+      "date": "2026-10-28T16:41:36+01:00",
+      "subject": "test(jetbrains): make WorktreeTrash.drain wait for job cleanup"
+    },
+    {
+      "sha": "06b4740fcea333086505b0e66b27360c42d6edcb",
+      "date": "2026-10-28T16:38:14+01:00",
+      "subject": "Merge branch 'main' into chore/jetbrains-commonmark-0.30.1"
+    },
+    {
+      "sha": "be0353512e4061fdd5b7af29250ce43e0bf02098",
+      "date": "2026-10-28T16:30:13+01:00",
+      "subject": "Merge pull request #15529 from Kilo-Org/chore/jetbrains-cli-pin-v7.8.22"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".changeset/nix-overlay.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/quiet-transcript-accessibility.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-bun/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nix-eval.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".kilo/skills/jetbrains-sandbox/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".kilo/skills/jetbrains-sandbox/script/desktop.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".kilo/skills/jetbrains-sandbox/script/desktop.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".kilo/skills/jetbrains-sandbox/script/mcp.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".kilo/skills/jetbrains-sandbox/script/mcp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".kilo/skills/jetbrains-sandbox/script/setup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".kilo/skills/jetbrains-sandbox/view/http.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".kilo/skills/jetbrains-sandbox/view/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".kilo/skills/release-jetbrains/script/set-pin.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "RELEASING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "artifacts/glm52-rise-video/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flake.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flake.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/client/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/codemode/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/npm-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core/test/kilocode/npm-config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/effect-drizzle-sqlite/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/effect-sqlite-node/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extensions/zed/extension.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/http-recorder/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/httpapi-codegen/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-console/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-docs/lib/nav/desktop.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-docs/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-docs/pages/desktop/features/browser.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-docs/pages/desktop/features/environments.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-docs/pages/desktop/features/files.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-docs/pages/desktop/features/git.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-docs/pages/desktop/features/terminal.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-docs/pages/desktop/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-docs/pages/desktop/quickstart.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-docs/pages/desktop/release-notes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-docs/pages/desktop/troubleshooting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-docs/pages/desktop/what-you-can-ask.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-gateway/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-i18n/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-indexing/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-indexing/src/file/ignore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-indexing/src/indexing/constants/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-indexing/src/indexing/processors/file-watcher.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-indexing/src/indexing/processors/scanner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-indexing/src/indexing/shared/load-ignore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-indexing/src/indexing/vector-store/lancedb-vector-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-indexing/test/kilocode/indexing/file/ignore.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-indexing/test/kilocode/indexing/processors/scanner.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-indexing/test/kilocode/indexing/vector-store/lancedb-vector-store.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/backend/src/main/kotlin/ai/kilocode/backend/app/HostedEventMapper.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/backend/src/main/kotlin/ai/kilocode/backend/app/HostedSystemEventParser.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/backend/src/main/kotlin/ai/kilocode/backend/app/KiloBackendAppService.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/backend/src/main/kotlin/ai/kilocode/backend/app/KiloBackendChatManager.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/backend/src/main/kotlin/ai/kilocode/backend/app/KiloBackendHostedManager.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/backend/src/main/kotlin/ai/kilocode/backend/cli/KiloCliDataParser.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/backend/src/main/kotlin/ai/kilocode/backend/rpc/KiloHostedRpcApiImpl.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/backend/src/main/kotlin/ai/kilocode/backend/rpc/KiloHostedRpcApiProvider.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/backend/src/main/kotlin/ai/kilocode/backend/rpc/KiloSessionRpcApiImpl.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/backend/src/main/kotlin/ai/kilocode/backend/worktree/WorktreeTrash.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/backend/src/main/resources/kilo.jetbrains.backend.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/backend/src/test/kotlin/ai/kilocode/backend/app/HostedEventMapperTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/backend/src/test/kotlin/ai/kilocode/backend/app/HostedStreamLifecycleTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/backend/src/test/kotlin/ai/kilocode/backend/app/HostedSystemEventParserTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/backend/src/test/kotlin/ai/kilocode/backend/cli/KiloCliDataParserTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/backend/src/test/kotlin/ai/kilocode/backend/rpc/KiloHostedRoutingTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/backend/src/test/kotlin/ai/kilocode/backend/testing/MockCliServer.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/build.gradle.kts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/actions/OpenConfigActions.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/actions/RefreshCloudAction.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/actions/RefreshHostedWorkspaceAction.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/AgentManagerPanel.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/WorkspaceSessionEditorManager.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/WorkspaceSessionEditorPanel.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/WorkspaceSessionHeader.kt",
+      "previousPath": null
+    },
+    {
+      "status": "R095",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/WorkspaceSessionListToggle.kt",
+      "previousPath": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/worktree/WorktreeSessionListToggle.kt"
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/WorkspaceSessionRow.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/hosted/HostedWorkspaceCache.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/hosted/HostedWorkspaceDataKeys.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/hosted/HostedWorkspaceEditorKind.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/hosted/HostedWorkspaceEditorManager.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/hosted/HostedWorkspaceEditorPanel.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/hosted/HostedWorkspaceIcons.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/hosted/HostedWorkspaceRow.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/hosted/HostedWorkspaceStatus.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/hosted/HostedWorkspaceTitle.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/worktree/WorktreeActivity.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/worktree/WorktreePrHeaderView.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/worktree/WorktreeSessionEditorManager.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/agentManager/worktree/WorktreeSessionEditorPanel.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/app/KiloHostedService.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/SessionHost.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/SessionManager.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/SessionRef.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/SessionSidePanelManager.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/SessionUi.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/controller/SessionController.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/controller/SessionUpdateQueue.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/history/HistoryController.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/history/HistoryItem.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/model/Message.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/model/SessionModel.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/ui/ProgressPanel.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/ui/SessionMessageListPanel.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/ui/header/PrHeaderView.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/ui/header/SessionHeaderPanel.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/ui/prompt/KiloPromptCompletionProvider.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/ui/prompt/PromptPanel.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/views/MessageView.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/session/views/TextView.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/ui/list/ActiveListMenu.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/ui/list/ActiveListModel.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/ui/list/ActiveListRenderer.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/ui/md/MdView.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/kotlin/ai/kilocode/client/ui/md/hybrid/MdViewHybrid.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/resources/icons/cloud.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/main/resources/icons/cloud_dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/resources/kilo.jetbrains.frontend.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/main/resources/messages/KiloBundle.properties",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/actions/HistorySessionActionsTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/actions/KiloRecoveryActionsTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/actions/RefreshHostedWorkspaceActionTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/actions/SessionContextMenuActionsTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/agentManager/AgentManagerPanelTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "R093",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/agentManager/WorkspaceSessionListToggleTest.kt",
+      "previousPath": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/agentManager/worktree/WorktreeSessionListToggleTest.kt"
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/agentManager/hosted/HostedWorkspaceEditorPanelTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/agentManager/hosted/HostedWorkspaceRowTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/agentManager/worktree/WorktreePrHeaderViewTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/agentManager/worktree/WorktreeSessionEditorManagerTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/agentManager/worktree/WorktreeSessionEditorPanelTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/app/KiloHostedServiceTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/SessionRefHostedTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/SessionSidePanelManagerTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/SessionUiEditorSelectionTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/SessionUiFactoryTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/controller/ConfigSelectionTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/controller/SessionRecoveryTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/controller/SessionUpdateQueueTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/history/HistoryControllerTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/model/SessionModelTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/ui/ProgressPanelTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/ui/PromptPanelTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/ui/SessionMessageListPanelTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/ui/header/SessionHeaderPanelTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/ui/prompt/KiloPromptCompletionProviderTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/session/views/TurnViewTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/testing/FakeSessionRpcApi.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/frontend/src/test/kotlin/ai/kilocode/client/ui/list/ActiveListMenuTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/gradle.properties",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/gradle/libs.versions.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/shared/src/main/kotlin/ai/kilocode/log/ChatLogSummary.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/kilo-jetbrains/shared/src/main/kotlin/ai/kilocode/rpc/KiloHostedRpcApi.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/kilo-jetbrains/shared/src/main/kotlin/ai/kilocode/rpc/dto/ChatDto.kt",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

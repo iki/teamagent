@@ -1,0 +1,865 @@
+{
+  "id": "ai-agents-mem--lean-ctx",
+  "generatedAt": "2026-11-01T10:08:32.081Z",
+  "observedAt": "2026-11-01T09:57:45.9414852+00:00",
+  "source": "https://github.com/yvgude/lean-ctx",
+  "report": "spec/projects/ai-agents-mem--lean-ctx.md",
+  "analyzedSha": "10a74ea6e7224b21547f92e6f46fb4b7d52b280f",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T13:45:19+01:00",
+  "observedSha": "78df21ebe1fe3f16761e3a6667f19b7bb2793fb2",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "78df21ebe1fe3f16761e3a6667f19b7bb2793fb2",
+      "date": "2026-10-31T21:39:51+01:00",
+      "subject": "fix: 3.12.1 emspace follow-up, background job output, semantic scan bound (#2167)"
+    },
+    {
+      "sha": "9fc77dece20437f146cad1839f043c72b4251197",
+      "date": "2026-10-31T12:17:06+01:00",
+      "subject": "chore: 3.12.1 cleanup, emspace provider, read outline (#2163)"
+    },
+    {
+      "sha": "d4b3ded1bf2828b8e75fb2b20d2d7ec5f4b6a9d1",
+      "date": "2026-10-31T00:53:16+01:00",
+      "subject": "fix: 3.12.1 fixes, engine optimizations and OSS hardening (#2161)"
+    },
+    {
+      "sha": "1cc7060229ae6816d6a10abe482a33b4501e614c",
+      "date": "2026-10-30T16:23:05+01:00",
+      "subject": "perf(build): split the engine crate into 256 codegen units in dev-fast (#2160)"
+    },
+    {
+      "sha": "e95146ff5586e1e2b12c855d788877d31c4af7cb",
+      "date": "2026-10-29T19:58:04+01:00",
+      "subject": "ci(release): build once on main, reuse the verified build on the tag (#2159)"
+    },
+    {
+      "sha": "e8afaecfed46cd00394c60a73a67d805978b0dc3",
+      "date": "2026-10-29T13:54:44+01:00",
+      "subject": "Release 3.12.0: the Cockpit installs itself, faster release (#2158)"
+    },
+    {
+      "sha": "8a99cb2047ac7d551b9a9a4091a219c6fdfc7c99",
+      "date": "2026-10-29T10:14:41+01:00",
+      "subject": "Release 3.12.0: release pipeline fix and security alerts (#2157)"
+    },
+    {
+      "sha": "4f01dfc1c2f1b5ebc53f1d69fd5807e181413ebe",
+      "date": "2026-10-29T04:53:50+01:00",
+      "subject": "Release 3.12.0 (#2153)"
+    }
+  ],
+  "files": [
+    {
+      "status": "D",
+      "path": ".cargo/config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".cursor/rules/leanctx-ip-governance.mdc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".githooks/pre-commit",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github-ignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/windows-signing/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/codeql-config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/hooks/hooks.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/benchmark-study.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/control-plane-regressions.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dep-update.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/grammar-addons.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/publish-sdk.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".windsurfrules",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRACTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "DEPRECATIONS.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LEAN-CTX.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LICENSE_MATRIX.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "PUBLIC-EXPORT-RECEIPT.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "PUBLISH_MANIFEST.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SBOM.cdx.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "THIRD_PARTY_NOTICES",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/PROMPT.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/PROTOCOL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/config.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/r2/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/r2/faithful-arm.env",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/r2/lean-ctx.toml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/r2/pi-config.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/r2/preflight.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/swebench_harness/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/swebench_harness/collect.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/swebench_harness/preflight.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/swebench_harness/report.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/swebench_harness/run_arm.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/swebench_harness/select_tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/agent-task/tasks.lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/compress/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/compress/benchmark.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/lifecycle/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/lifecycle/config.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/lifecycle/harness/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/lifecycle/harness/__main__.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/lifecycle/harness/codex_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/lifecycle/harness/repo_setup.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/lifecycle/harness/report.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/lifecycle/harness/run_lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/lifecycle/lanes/beets.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/lifecycle/lanes/fastify.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/lifecycle/lanes/terraform.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/research/SYNTHESIS.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/research/agent-1-information-theory.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/research/agent-2-neuroscience.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/research/agent-3-mathematics.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/bench/research/agent-4-systems-engineering.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmark/lean-ctx-benchmark.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmark/locomo/LOCOMO.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmark/locomo/results/locomo-latest.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmark/results/benchmark-raw.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmark/results/benchmark-results-fixed.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmark/results/benchmark-results.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmark/run_benchmark.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/E-BENCH-REPORT-v2.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/bigcodebench-baseline-v2-2026-07-30.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/bigcodebench-compressed-v2-2026-07-30.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/blame/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/blame/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/diff_large/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/diff_large/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/diff_medium/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/diff_medium/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/diff_small/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/diff_small/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/log_compact/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/log_compact/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/log_verbose/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/log_verbose/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/show/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/show/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/status_clean/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/status_clean/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/status_staged/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/status_staged/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/status_untracked/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/git/status_untracked/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/docker_ps/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/docker_ps/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/docker_ps_all/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/docker_ps_all/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/find_source_files/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/find_source_files/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/find_with_prune/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/find_with_prune/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/kubectl_get_deployments/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/kubectl_get_deployments/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/kubectl_get_pods/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/kubectl_get_pods/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/ls_la/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/ls_la/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/ls_la_nested/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/ls_la_nested/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/npm_list/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/npm_list/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/npm_list_depth/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/structured/npm_list_depth/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/cargo_test_fail/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/cargo_test_fail/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/cargo_test_ignored/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/cargo_test_ignored/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/cargo_test_pass/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/cargo_test_pass/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/cargo_test_workspace/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/cargo_test_workspace/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/go_test/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/go_test/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/jest_failure/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/jest_failure/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/jest_pass/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/jest_pass/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/pytest_failure/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/pytest_failure/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/pytest_pass/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/pytest_pass/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/pytest_verbose/input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/capability-comparison/rtk-v1/test/pytest_verbose/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/efficiency/METHODOLOGY.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/efficiency/RESULTS-baseline.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/efficiency/task-spine-v1/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/efficiency/task-spine-v1/validate.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/humaneval-baseline-v2-2026-07-29.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/humaneval-codex-cli-2026-07-29.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/humaneval-compressed-v2-2026-07-29.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/mbpp-baseline-v2-2026-07-30.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/mbpp-compressed-v2-2026-07-30.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/multifile-context-v2-2026-07-30.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/multifile-context-v3-2026-07-30.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/shell-compression-v2-2026-07-30.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/benchmarks/shell-compression-v3-2026-07-30.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/blog/twir-lean-ctx.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/chrome-lean-ctx/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/chrome-lean-ctx/icons/icon-128.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/chrome-lean-ctx/icons/icon-16.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/chrome-lean-ctx/icons/icon-48.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/chrome-lean-ctx/managed_schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/chrome-lean-ctx/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "_archive/chrome-lean-ctx/native-host/bridge.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

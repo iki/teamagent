@@ -45,6 +45,14 @@ Evidence: [rust/crates/ccusage-report/src/lib.rs:1-17](https://github.com/ryoppi
 
 **Scope and limits:** Reviewed report crate exports, pricing URL construction and the complete path inventory; moved reporting implementations and price values were not exhaustively revalidated. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`f0a8a9c38c37847e83f2d7ca18b8cadba929534a`](https://github.com/ryoppippi/ccusage/commit/f0a8a9c38c37847e83f2d7ca18b8cadba929534a), compared with `b8ad727170fc0dabe35cbf7b940f0a3f9fba475b`.
+
+The complete inventory contains 47 changed paths. The selected [Codex parser](https://github.com/ryoppippi/ccusage/blob/f0a8a9c38c37847e83f2d7ca18b8cadba929534a/rust/adapters/codex/src/parser.rs), [aggregation](https://github.com/ryoppippi/ccusage/blob/f0a8a9c38c37847e83f2d7ca18b8cadba929534a/rust/adapters/codex/src/aggregate.rs) and [types](https://github.com/ryoppippi/ccusage/blob/f0a8a9c38c37847e83f2d7ca18b8cadba929534a/rust/adapters/codex/src/types.rs) diffs add an explicit Ultrafast tier and its usage buckets. Duplicate merging gives Standard precedence over Ultrafast, followed by Fast and Flex. The [compaction fixtures](https://github.com/ryoppippi/ccusage/blob/f0a8a9c38c37847e83f2d7ca18b8cadba929534a/rust/adapters/codex/src/compaction_tests.rs) exercise copied records across tiers while retaining a single 300-token total. These are upstream accounting rules, not evidence of a provider's billing contract.
+
+For Teamagent, retain original service-tier provenance, identify copied usage before summing it, and make conflict precedence inspectable. Do not infer current prices or billable amounts solely from a normalized tier. Selected code and test changes were read completely; other Antigravity, pricing and build changes in this comparison were not exhaustively audited. No upstream tests, provider requests or billing reconciliation were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ccusage](https://github.com/ryoppippi/ccusage); analyzed commit `b8ad727170fc0dabe35cbf7b940f0a3f9fba475b`; commit date 2026-10-28T03:27:51Z; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-tokens--ccusage.md).
+Analysis metadata: source [ccusage](https://github.com/ryoppippi/ccusage); analyzed commit `f0a8a9c38c37847e83f2d7ca18b8cadba929534a`; commit date 2026-11-01T03:24:41Z; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-tokens--ccusage.md).
 <!-- teamagent-analysis:end -->

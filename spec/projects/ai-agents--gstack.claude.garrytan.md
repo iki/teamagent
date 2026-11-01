@@ -50,6 +50,18 @@ The Codex host comment now documents a template-supplied default prompt with a f
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
 
+## 2026-11-01 scoped source review
+
+Reviewed commit `b15492a148e2744d24b0ca4da5ba290fb109c340` (commit date `2026-11-01T09:52:31Z`), compared with `219f7488bbbfc33e5199ea4a5f3d31f188a7369d`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete approval-record/fixture diff; whole-repository diff was oversized. Carry-forward decision authority, CLI stack-import implementation and publication enforcement not audited.
+
+The [approval record](https://github.com/garrytan/gstack/blob/b15492a148e2744d24b0ca4da5ba290fb109c340/lib/approval-record.ts) identifies repository-scoped records, labels carried answers with their originating gate revision and distinguishes owner-seen content from later carried items. Rendered tables are explicitly display-only. [Fixtures](https://github.com/garrytan/gstack/blob/b15492a148e2744d24b0ca4da5ba290fb109c340/test/approval-record.test.ts) expect idempotent imports across branch records and no partial writes when a named branch is unknown. Human names or relayed words in a record do not authenticate the underlying grant.
+
+**Teamagent implication (inference):** Preserve original authorization, exact reviewed content and later scope deltas as separate records. Portable display/history can explain authority but cannot create it; reconciliation and execution gates must verify the actual session grant and exact destination rather than trust copied approval prose.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gstack.claude.garrytan](https://github.com/garrytan/gstack); analyzed commit `219f7488bbbfc33e5199ea4a5f3d31f188a7369d`; commit date 2026-10-28T09:59:40Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gstack.claude.garrytan.md).
+Analysis metadata: source [gstack.claude.garrytan](https://github.com/garrytan/gstack); analyzed commit `b15492a148e2744d24b0ca4da5ba290fb109c340`; commit date 2026-11-01T09:52:31Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gstack.claude.garrytan.md).
 <!-- teamagent-analysis:end -->
