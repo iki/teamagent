@@ -56,6 +56,16 @@ The visible receiver still buffers without a line/byte cap and parses broker JSO
 
 **Coverage:** Read the complete four-file targeted permission-proxy and refusal-recovery delta. Broker authentication and full driver retry policy remain outside scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## External-update review - 2026-11-01
+
+Reviewed `6e32504b9d08674834bef034d76787751f39d9a3` against `9230dc9b71a22375a9d3b296172b5664c2ae3201`.
+
+The 47-path update extends the [Electron permission policy](https://github.com/milind-soni/OpenMausBot/blob/6e32504b9d08674834bef034d76787751f39d9a3/electron/app-permissions.mjs) so notifications can be requested by the currently active remote server as well as the home origin. Admission requires the main window's web-contents identity, an explicitly true main-frame flag, and a matching parsed web origin. The active origin is obtained at the decision boundary, so removing it also removes that eligibility instead of leaving a stale allowlist entry.
+
+The complete inspected [permission fixtures](https://github.com/milind-soni/OpenMausBot/blob/6e32504b9d08674834bef034d76787751f39d9a3/electron/app-permissions.node-test.mjs) deny other windows, subframes, other origins, unknown frame state and opaque URLs. They keep geolocation, camera, clipboard and fullscreen denied in this policy rather than generalizing a notification exception to every capability.
+
+**Harness consequence:** Bind desktop capability grants to the current connection, exact origin, owning window and frame, and revoke eligibility when the connection changes. This is application-level eligibility, distinct from browser/OS permission and user consent. The review covers both complete deltas; actual Electron permission events, native notifications, packaged applications and the other changed files were not executed or audited.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openmausbot](https://github.com/milind-soni/OpenMausBot); analyzed commit `9230dc9b71a22375a9d3b296172b5664c2ae3201`; commit date 2026-11-01T15:12:08+05:30; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openmausbot.md).
+Analysis metadata: source [openmausbot](https://github.com/milind-soni/OpenMausBot); analyzed commit `6e32504b9d08674834bef034d76787751f39d9a3`; commit date 2026-11-01T23:40:16+05:30; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openmausbot.md).
 <!-- teamagent-analysis:end -->

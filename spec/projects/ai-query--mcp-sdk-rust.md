@@ -45,6 +45,16 @@ Reviewed `c742b5536724ec376b14b7ddcbbd024b7d6ae163` (2026-10-30T16:54:49-07:00);
 
 Keep redirect decisions explicit and log minimal approved summaries. A custom supplied client can choose a different policy, which needs its own adapter review. Scope is this transport delta only, not new skills/request association/enterprise features; no Rust build, network action or test was executed.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/modelcontextprotocol/rust-sdk](https://github.com/modelcontextprotocol/rust-sdk) at `fe458714e77cbae67498ac9f4da8005a5648fd0d` against prior analyzed `c742b5536724ec376b14b7ddcbbd024b7d6ae163`. Evidence: [crates/rmcp/src/error.rs](https://github.com/modelcontextprotocol/rust-sdk/blob/fe458714e77cbae67498ac9f4da8005a5648fd0d/crates/rmcp/src/error.rs), [crates/rmcp/src/transport.rs](https://github.com/modelcontextprotocol/rust-sdk/blob/fe458714e77cbae67498ac9f4da8005a5648fd0d/crates/rmcp/src/transport.rs), [crates/rmcp/src/transport/auth.rs](https://github.com/modelcontextprotocol/rust-sdk/blob/fe458714e77cbae67498ac9f4da8005a5648fd0d/crates/rmcp/src/transport/auth.rs).
+
+OAuth discovery now exposes distinct structured errors for transport failure, unusable protected-resource metadata and exhausted advertised authorization servers. Resource mismatch, missing resource, fragments and non-metadata documents have typed reasons. Transport causes remain in the error chain rather than being flattened into one message. Advertised bad metadata fails explicitly while a failed well-known guess may be skipped.
+
+**Architecture consequence:** Preserve semantic failure classes and source causes for reconciliation, while redacting URLs and nested messages at user/log boundaries. Discovery failure must not silently redirect authorization to an unadvertised base server. Structured error types do not themselves ensure safe presentation.
+
+**Scope and limits:** Read all changed production auth/error/export code and selected revised error assertions within a nine-path update. Remaining classification fixtures, action upgrades and runtime OAuth flows were not executed or comprehensively audited.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mcp-sdk-rust](https://github.com/modelcontextprotocol/rust-sdk); analyzed commit `c742b5536724ec376b14b7ddcbbd024b7d6ae163`; commit date 2026-10-30T16:54:49-07:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-sdk-rust.md).
+Analysis metadata: source [mcp-sdk-rust](https://github.com/modelcontextprotocol/rust-sdk); analyzed commit `fe458714e77cbae67498ac9f4da8005a5648fd0d`; commit date 2026-11-01T13:52:30-05:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-sdk-rust.md).
 <!-- teamagent-analysis:end -->

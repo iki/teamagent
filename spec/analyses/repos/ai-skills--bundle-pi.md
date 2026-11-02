@@ -2,11 +2,11 @@
 
 Source: [bundle-pi](https://github.com/badlogic/pi-skills) · [Analysis](../../projects/ai-skills--bundle-pi.md) · [skills](../../skills.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `90bb51cae36515a648515b633a81c0c6efc8c74d`; commit date: 2026-06-06T22:27:56+02:00; review date: unknown; observed SHA: `90bb51cae36515a648515b633a81c0c6efc8c74d`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `90bb51cae36515a648515b633a81c0c6efc8c74d`; commit date: 2026-06-06T22:27:56+02:00; review date: unknown; observed SHA: `90bb51cae36515a648515b633a81c0c6efc8c74d`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/badlogic/pi-skills/compare/90bb51cae36515a648515b633a81c0c6efc8c74d...90bb51cae36515a648515b633a81c0c6efc8c74d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: outdated; upstream availability: available.
+- Git discovery: inspected; source lifecycle: outdated; upstream availability: available.
 
 ## Recent commits
 

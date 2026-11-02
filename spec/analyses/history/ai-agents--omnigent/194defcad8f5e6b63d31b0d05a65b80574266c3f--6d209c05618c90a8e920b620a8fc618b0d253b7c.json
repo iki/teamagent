@@ -1,0 +1,745 @@
+{
+  "id": "ai-agents--omnigent",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/omnigent-ai/omnigent",
+  "report": "spec/projects/ai-agents--omnigent.md",
+  "analyzedSha": "194defcad8f5e6b63d31b0d05a65b80574266c3f",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-11-01T05:47:41Z",
+  "observedSha": "6d209c05618c90a8e920b620a8fc618b0d253b7c",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "6d209c05618c90a8e920b620a8fc618b0d253b7c",
+      "date": "2026-11-01T10:20:32-08:00",
+      "subject": "Preserve known originals for native edits outside Git (#12308)"
+    },
+    {
+      "sha": "084456864db357ace65f4c7aa423a68f148f3ea1",
+      "date": "2026-11-01T10:20:31-08:00",
+      "subject": "Show sibling repository changes using the existing Git reader (#12303)"
+    },
+    {
+      "sha": "e7282f512a64757de0b6fefbb43ba81fee27a2c9",
+      "date": "2026-11-01T15:22:15Z",
+      "subject": "chore(deps): bump ruby/setup-ruby from 1.329.0 to 1.335.0 (#12474)"
+    },
+    {
+      "sha": "fe6fde0ed95768fe29a946188b5669a30828e2e1",
+      "date": "2026-11-01T14:33:19Z",
+      "subject": "test(cli): give each literal MCP fixture a valid transport (#8743)"
+    },
+    {
+      "sha": "fac0d2558ea0c9598943ec315c1df83e0fd9d638",
+      "date": "2026-11-01T14:24:20Z",
+      "subject": "chore(deps): bump notify from 8.2.0 to 8.2.1 in /dev/omnidev (#12457)"
+    },
+    {
+      "sha": "2ab08730da824c9aa24373203f8bfcccd33ef2e9",
+      "date": "2026-11-01T13:52:56Z",
+      "subject": "chore(deps): bump tokio in /tests/codex_parity/sidecar (#12461)"
+    },
+    {
+      "sha": "e737daf27a703a871944e63376f1c1171ba46297",
+      "date": "2026-11-01T12:52:54Z",
+      "subject": "ci(nightly-monitor): assign tracking issues to repo-automation owners (#12311)"
+    },
+    {
+      "sha": "4346e8b5d95ca7a36ba3faecf25b84b2a93337b3",
+      "date": "2026-11-01T12:51:52Z",
+      "subject": "chore(deps): bump tokio from 1.53.3 to 1.54.1 in /dev/omnidev (#12458)"
+    },
+    {
+      "sha": "4bf910422401de980774d9067981dcf63c285840",
+      "date": "2026-11-01T19:37:49+07:00",
+      "subject": "ci(e2e): run the opencode-native journeys against a real OpenCode (#12452)"
+    },
+    {
+      "sha": "76225908826c437aeb1b7d5faf5699fb6970742a",
+      "date": "2026-11-01T11:12:57Z",
+      "subject": "feat(web): show example automations in the Automations walkthrough (#12425)"
+    },
+    {
+      "sha": "170e4d223f9fe81567f233384e9331c8c629828d",
+      "date": "2026-11-01T10:49:48Z",
+      "subject": "chore(triage-v2): run issue prioritization as a team-owned prod job (#12419)"
+    },
+    {
+      "sha": "8c2a4b3c20b2e51b13a2af74a8fddcd72dcf113b",
+      "date": "2026-11-01T18:05:45+08:00",
+      "subject": "feat(opencode-native): run on OpenCode 2.0.x (#8513)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/actions/setup-opencode-e2e/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-opencode-e2e/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-opencode-e2e/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/triage_v2/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/triage_v2/databricks.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly-failure-monitor.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/web-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/docker/install-harness-cli.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "designs/opencode-native-gaps-qa.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "designs/opencode-native-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "designs/opencode-v2-native-harness.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/omnidev/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/QUEUE_STEER_DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/harness-diagnostics.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/opencode-native.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/automations-introduction.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/markdown-editor.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/native-harnesses.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/cli_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/cli_native.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harness_plugins.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/claude_native/bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/codex_native/forwarder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/codex_native/stderr_diagnostics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/diagnostics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/opencode_native/app_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/opencode_native/bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/opencode_native/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/opencode_native/forwarder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/opencode_native/http_transport.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/opencode_native/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/opencode_native/permissions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/opencode_native/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/inner/opencode_native_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/inner/os_env.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/native/native_server_harness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/native/native_server_transport.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/onboarding/harness_install.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/onboarding/harness_readiness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/onboarding/opencode_auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/policies/builtins/safety.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/native/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/native/interrupt.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/native/orchestration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/native_controls.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/native_file_observer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/resource_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runtime/filesystem_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/routes/_sessions/helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/routes/sessions/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/routes/sessions/routes_core.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/session_import/local.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/cli/test_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/cli/test_configure_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/cli/test_import.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/codex_parity/sidecar/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/deploy/test_host_image_cli_install.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/e2e/_opencode_native_helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/test_chat_import_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/test_codex_continuous_diagnostics_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/test_filesystem_changed_files_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/test_host_opencode_native_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/e2e/test_host_opencode_native_mock_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/test_native_file_change_tracking_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/test_opencode_native_launch_config_timeout_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/test_opencode_native_wire_contract_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/approvals/test_opencode_question.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/scheduled/test_scheduled_tasks_page.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/opencode_v2/events.ndjson",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/opencode_v2/messages.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/opencode_v2/openapi.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/claude_native/test_claude_native_bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/codex_native/forwarder/test_subagents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/codex_native/session/test_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/codex_native/test_codex_native.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/codex_native/test_codex_native_continuous_diagnostics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/inner/test_opencode_native_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/inner/test_os_env.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/onboarding/test_harness_install.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/onboarding/test_harness_readiness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/onboarding/test_native_harnesses_windows_unavailable.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/onboarding/test_opencode_auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/opencode_v2_fixtures.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/policies/builtins/test_safety.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner/test_app_sessions_native_events_lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner/test_app_sessions_native_events_options.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner/test_comment_relay.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner/test_environment_filesystem.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner/test_native_file_observer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner/test_native_interrupt_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner/test_native_subagent_turn_outcome_delivery.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner/test_opencode_launch_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner/test_opencode_native_orchestration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner/test_opencode_policy_evaluator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner/test_opencode_resume.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runtime/test_filesystem_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/server/routes/test_sessions_fork.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_harness_capabilities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_native_server_harness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_opencode_forwarder_reconnect.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_opencode_http_transport.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_opencode_native.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_opencode_native_app_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_opencode_native_bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_opencode_native_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_opencode_native_forwarder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_opencode_native_mcp_timeout.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_opencode_native_permissions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_opencode_native_provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_opencode_v2_fixtures.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_session_import.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/components/scheduled/AutomationsIntro.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/components/scheduled/AutomationsIntro.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/hooks/useFileDiff.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/hooks/useFileDiff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/hooks/useWorkspaceChangedFiles.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/hooks/useWorkspaceChangedFiles.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/lib/harnessSetup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/lib/harnessSetup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/lib/nativeCodingAgents.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/pages/TasksPage.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/pages/TasksPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/shell/FileViewer.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/shell/FileViewer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/shell/FlatFileList.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/shell/FlatFileList.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/shell/NewChatDialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web/src/shell/NewChatDialog.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

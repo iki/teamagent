@@ -177,7 +177,7 @@ export function socialSource(locator: string): boolean {
   return /^(?:www\.|mobile\.)?(?:x|twitter)\.com$/.test(new URL(locator).hostname);
 }
 export function redactSourceUrls(value: string): string {
-  return value.replace(/https?:\/\/[^\s)]+/g, (url) => {
+  return value.replace(/https?:\/\/[^\s)]+/gi, (url) => {
     try {
       return displaySource(url);
     } catch {

@@ -67,6 +67,49 @@ export interface MemoryOptions {
 const fail = (code: MemoryError["code"], message: string): never => {
   throw new MemoryError({ code, message });
 };
+/** Preserve only recognized operation/error categories; native messages and paths stay private. */
+export const memoryStorageMessage = (error: unknown): string => {
+  const base = "The source store could not complete the operation.";
+  if (!(error instanceof Error)) return base;
+  const code = "code" in error && typeof error.code === "string" ? error.code : "";
+  const syscall = "syscall" in error && typeof error.syscall === "string" ? error.syscall : "";
+  const codes = new Set([
+    "ENOENT",
+    "EPERM",
+    "EACCES",
+    "EEXIST",
+    "ENOTDIR",
+    "EISDIR",
+    "EBUSY",
+    "EMFILE",
+    "ENFILE",
+    "ENOSPC",
+    "EXDEV",
+    "EINVAL",
+    "EIO",
+    "ENAMETOOLONG",
+    "EROFS",
+  ]);
+  const operations = new Set([
+    "open",
+    "read",
+    "write",
+    "rename",
+    "unlink",
+    "rm",
+    "mkdir",
+    "link",
+    "stat",
+    "lstat",
+    "realpath",
+    "fsync",
+    "close",
+    "scandir",
+  ]);
+  return codes.has(code)
+    ? `${base} (${operations.has(syscall) ? `${syscall}: ` : ""}${code})`
+    : base;
+};
 const attempt = <A>(body: () => A): Effect.Effect<A, MemoryError> =>
   Effect.try({
     try: body,
@@ -75,7 +118,7 @@ const attempt = <A>(body: () => A): Effect.Effect<A, MemoryError> =>
         ? error
         : new MemoryError({
             code: "storage",
-            message: "The source store could not complete the operation.",
+            message: memoryStorageMessage(error),
           }),
   });
 const decode = <A>(

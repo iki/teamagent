@@ -1,0 +1,73 @@
+# fx
+
+Source: [fx](https://github.com/vercel-labs/fx) · Category: [ai-agents](../categories/ai-agents.md)
+
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `6bdd49736abd4a85fb6dd60a824e4329784f34c0`; commit timestamp `2026-10-03T13:52:26-04:00`; 992 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/vercel-labs/fx/blob/6bdd49736abd4a85fb6dd60a824e4329784f34c0/README.md)):
+
+> fx is a coding agent CLI written in Zig: a small native binary that is open source (Apache-2.0), model-agnostic, and embeddable as a harness in larger systems. Its interface stays closer to a Unix shell than an IDE in the terminal. - **Any model:** Vercel AI Gateway, ChatGPT or Grok subscriptions, or your own OpenAI-compatible endpoint such as Ollama or OpenRouter
+
+Build/package evidence: [examples/browser-agent/package.json](https://github.com/vercel-labs/fx/blob/6bdd49736abd4a85fb6dd60a824e4329784f34c0/examples/browser-agent/package.json); [examples/nextjs-agent/package.json](https://github.com/vercel-labs/fx/blob/6bdd49736abd4a85fb6dd60a824e4329784f34c0/examples/nextjs-agent/package.json); [examples/node-chat/package.json](https://github.com/vercel-labs/fx/blob/6bdd49736abd4a85fb6dd60a824e4329784f34c0/examples/node-chat/package.json); [examples/nuxt-agent/package.json](https://github.com/vercel-labs/fx/blob/6bdd49736abd4a85fb6dd60a824e4329784f34c0/examples/nuxt-agent/package.json); [sdk/node/package.json](https://github.com/vercel-labs/fx/blob/6bdd49736abd4a85fb6dd60a824e4329784f34c0/sdk/node/package.json)
+
+License evidence: [LICENSE](https://github.com/vercel-labs/fx/blob/6bdd49736abd4a85fb6dd60a824e4329784f34c0/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped update review
+
+Reviewed commit `404b5ed7b7da357b889996bf2446846bb906f1a9` (commit date `2026-10-27T13:53:54-04:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete SDK OAuth helpers, custom-provider definition/authorization spec, MCP adapter and host tool-observation wrapper; native engine, subscription authorizer, transport implementation and end-to-end fixtures were not audited.
+
+The [custom-provider adapter](https://github.com/vercel-labs/fx/blob/404b5ed7b7da357b889996bf2446846bb906f1a9/sdk/custom-provider.js#L26-L123) rejects credential-bearing/query/fragment URLs, permits HTTP only for explicit loopback hosts, bounds model metadata and gives the engine an auth-free definition. Its host authorization specification matches the exact normalized chat endpoint. That is a useful separation of engine state from host-held credentials, but redirects and the subscription authorizer are outside this review. The [OAuth helper](https://github.com/vercel-labs/fx/blob/404b5ed7b7da357b889996bf2446846bb906f1a9/sdk/oauth.js#L15-L54) generates cryptographic secrets and S256 challenges and bounds pasted input to 16 KiB; address parsing extracts code/state without checking the pasted origin or comparing state. Those checks must be evidenced at the flow owner before treating a parsed code as an authorized callback.
+
+The [MCP adapter](https://github.com/vercel-labs/fx/blob/404b5ed7b7da357b889996bf2446846bb906f1a9/sdk/mcp.js#L31-L118) bounds pagination to 64 pages and rejects repeated/malformed cursors and duplicate raw tool names. Display names are sanitized and collision-suffixed while execution preserves the raw server name. Every imported tool defaults to non-idempotent despite server hints; correlation identifiers are explicitly separate from progress tokens. Page limits do not bound tools or bytes per page, and the 64 KiB instruction check occurs after resource/prompt text is accumulated. Teamagent still needs bounded ingress and source-tagged, untrusted external context.
+
+The [observation wrapper](https://github.com/vercel-labs/fx/blob/404b5ed7b7da357b889996bf2446846bb906f1a9/sdk/tool-observation.js#L20-L171) caps captured text with UTF-8-safe truncation and makes terminal emission one-shot. Abort can emit a cancelled observation while the awaited host effect continues; an already-aborted signal still invokes the supplied effect. Thus its cancellation event is an observation, not proof of effect termination. Start-event publication is outside the guarded terminal callback, so preservation of effects under a throwing emitter depends on the uninspected emitter contract. No engine, provider, OAuth server or upstream fixture was executed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e` (commit date `2026-10-27T23:35:02-04:00`), compared with `404b5ed7b7da357b889996bf2446846bb906f1a9`. Earlier findings remain historical evidence.
+
+**Scope:** Neutral stream event callbacks and provider HTTP failure classification. The complete changed-path inventory contains 25 paths; the assessment below is limited to the cited branches.
+
+The stream provider now maps selected HTTP statuses into invalid-request, authentication/authorization, size, rate-limit and server classes, keeping an explicit generic provider-error fallback. Its event sink adapters preserve content, reasoning, tool-input and tool-start distinctions. See [src/core/agent/stream_provider.zig](https://github.com/vercel-labs/fx/blob/fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e/src/core/agent/stream_provider.zig#L305-L350) and [src/core/agent/stream_provider.zig](https://github.com/vercel-labs/fx/blob/fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e/src/core/agent/stream_provider.zig#L43-L78). Added fixtures inspect status mappings and callback projections; they were not executed. See [src/core/agent/stream_provider.zig](https://github.com/vercel-labs/fx/blob/fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e/src/core/agent/stream_provider.zig#L635-L691).
+
+For Teamagent, retain the original bounded/redacted HTTP evidence alongside any normalized class, and keep transport uncertainty distinct from a confirmed response. This classifier alone is not an idempotency or retry policy; even its fixture maps an unexpected successful status to generic provider_error. Callbacks do not establish durable delivery or settled execution. Gateway/catalog/context changes were not fully audited.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `c11b301dddd376d037af1dc7bf3eb0dd197caee0` (commit date `2026-11-01T03:49:27-05:00`), compared with `fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete image-budget diff including inline algorithm fixtures; whole-repository diff was oversized. Other request assembly and provider prompt-cache behavior not audited.
+
+The [image budget](https://github.com/vercel-labs/fx/blob/c11b301dddd376d037af1dc7bf3eb0dd197caee0/src/core/agent/runtime/request_image_budget.zig) rounds the minimum number of withheld old images to stable count/byte block boundaries, retaining the newest block when rounding would remove it. Inline fixtures cover monotone cuts, large images and growing synthetic sessions. Withholding uses an explicit projection with notes. The tests establish intended local algorithm invariants, not measured provider cache savings or equivalent task quality after extra images are withheld.
+
+**Teamagent implication (inference):** Keep full image evidence outside the bounded model context and disclose omissions with retrievable references. Evaluate cache-friendly batching against task quality, actual serialized limits and measured route costs; do not treat reduced prefix churn as a verified optimization without provider-specific evidence.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/vercel-labs/fx](https://github.com/vercel-labs/fx) at `15070ecbda474d798c0e24a516b03331108f2662` against prior analyzed `c11b301dddd376d037af1dc7bf3eb0dd197caee0`. Evidence: [.github/workflows/release.yml](https://github.com/vercel-labs/fx/blob/15070ecbda474d798c0e24a516b03331108f2662/.github/workflows/release.yml).
+
+The Linux x86_64 release now consumes a reusable profile-guided optimization workflow, alongside the existing ARM workflow. Packaging selects an explicit artifact ID per architecture, requires a matching native host, and retains executable-size output, license notices and archive hashes. Release still depends on the packaging jobs and the validation-only guard.
+
+**Architecture consequence:** Carry the measured candidate artifact into packaging instead of rebuilding an unmeasured substitute. Architecture-specific provenance and an artifact hash are useful evidence, but this review does not independently establish the optimization's speed or size benefit.
+
+**Scope and limits:** Reviewed the release-workflow delta in a five-path packaging/documentation update. The called optimization workflow, release jobs and benchmark claims were not executed or rebenchmarked.

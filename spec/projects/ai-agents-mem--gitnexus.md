@@ -62,6 +62,16 @@ Reviewed `21298f24234e538dc0d0b5369c410e76da77e70e` against `51ce19d77abe86978e3
 
 **Scope and limits:** Complete new scorer and fixture files, not the runtime graph/index implementation or all 252 changed paths. No benchmark or source tests were executed.
 
+## External-update review - 2026-11-01
+
+Reviewed `347cc99b4a237f9a71c0084167bcbcbd9d06e610` against `21298f24234e538dc0d0b5369c410e76da77e70e`.
+
+Within the 94-path range, the [analysis fast path](https://github.com/abhigyanpatwari/GitNexus/blob/347cc99b4a237f9a71c0084167bcbcbd9d06e610/gitnexus/src/core/run-analyze.ts) can reuse a dirty checkout only after checking recorded dirty paths, completeness receipts, file-size policy, the full enumerated path set and current covered-file hashes. Enumeration errors reject reuse; Git status alone is insufficient for hidden edits or ignored scan-policy changes. It records hashes before parsing, then restricts them to actual graph file nodes, so a later analysis can detect an edit that occurred after parsing rather than falsely certifying those new bytes as indexed.
+
+The complete inspected [dirty-snapshot fixture](https://github.com/abhigyanpatwari/GitNexus/blob/347cc99b4a237f9a71c0084167bcbcbd9d06e610/gitnexus/test/integration/analyze-dirty-snapshot.test.ts) checks preserved database bytes, edges and native FTS, plus additions/deletions/renames, hidden edits, scan policy, interrupted writes, incomplete scope and concurrent edits. Its FTS case may skip when the extension is unavailable unless explicitly required. [Metadata](https://github.com/abhigyanpatwari/GitNexus/blob/347cc99b4a237f9a71c0084167bcbcbd9d06e610/gitnexus/src/storage/repo-meta.ts) also distinguishes a complete-empty unresolved-overload summary from missing/unverified evidence.
+
+**Harness consequence:** Cache identity includes readable content coverage and extraction completeness, not just commit identity or an empty status. Pre-parse receipts aid next-run reconciliation; they do not make a concurrently changing worktree an atomic snapshot. This review covers the three complete deltas above; the extensive Java/Python resolver changes and upstream benchmark claims remain outside this assessment. No native graph, FTS, analyzer, upstream test or benchmark was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gitnexus](https://github.com/abhigyanpatwari/GitNexus); analyzed commit `21298f24234e538dc0d0b5369c410e76da77e70e`; commit date 2026-11-01T08:30:56Z; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--gitnexus.md).
+Analysis metadata: source [gitnexus](https://github.com/abhigyanpatwari/GitNexus); analyzed commit `347cc99b4a237f9a71c0084167bcbcbd9d06e610`; commit date 2026-11-01T16:48:35Z; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--gitnexus.md).
 <!-- teamagent-analysis:end -->

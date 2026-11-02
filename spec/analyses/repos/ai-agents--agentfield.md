@@ -2,11 +2,11 @@
 
 Source: [agentfield](https://github.com/Agent-Field/agentfield) · [Analysis](../../projects/ai-agents--agentfield.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `d4c963bacd57b5e05013997e5eae54b099d51ed1`; commit date: 2026-10-31T13:08:06Z; review date: 2026-11-01T11:33:30.893Z; observed SHA: `d4c963bacd57b5e05013997e5eae54b099d51ed1`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `959dae9b17364ee2e6fd29e61c9e30ee2a036cab`; commit date: 2026-11-01T14:05:38Z; review date: 2026-11-01T23:12:06.798Z; observed SHA: `959dae9b17364ee2e6fd29e61c9e30ee2a036cab`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Agent-Field/agentfield/compare/d4c963bacd57b5e05013997e5eae54b099d51ed1...d4c963bacd57b5e05013997e5eae54b099d51ed1). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Agent-Field/agentfield/compare/959dae9b17364ee2e6fd29e61c9e30ee2a036cab...959dae9b17364ee2e6fd29e61c9e30ee2a036cab). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

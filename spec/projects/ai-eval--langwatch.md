@@ -58,6 +58,16 @@ The [unit fixtures](https://github.com/langwatch/langwatch/blob/c7fad93329af25f8
 
 **Coverage:** Read all four complete targeted docs-key source/test additions. Browser transport, production persistence and request authentication middleware were not inspected. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/langwatch/langwatch](https://github.com/langwatch/langwatch) at `846b5bc8a179175e75bc16caa0475a2d6b137d61` against prior analyzed `c7fad93329af25f82b1b1260ff8634cd5a070946`. Evidence: [services/aigateway/adapters/providers/bedrock_system_reminders.go](https://github.com/langwatch/langwatch/blob/846b5bc8a179175e75bc16caa0475a2d6b137d61/services/aigateway/adapters/providers/bedrock_system_reminders.go), [services/aigateway/adapters/providers/bedrock_cache_ttl.go](https://github.com/langwatch/langwatch/blob/846b5bc8a179175e75bc16caa0475a2d6b137d61/services/aigateway/adapters/providers/bedrock_cache_ttl.go), [services/aigateway/adapters/providers/anthropic_translation.go](https://github.com/langwatch/langwatch/blob/846b5bc8a179175e75bc16caa0475a2d6b137d61/services/aigateway/adapters/providers/anthropic_translation.go), [services/aigateway/adapters/providers/anthropic_stream_iterator.go](https://github.com/langwatch/langwatch/blob/846b5bc8a179175e75bc16caa0475a2d6b137d61/services/aigateway/adapters/providers/anthropic_stream_iterator.go), [pkg/aitrace/usage.go](https://github.com/langwatch/langwatch/blob/846b5bc8a179175e75bc16caa0475a2d6b137d61/pkg/aitrace/usage.go).
+
+The Bedrock translation path keeps mid-conversation system reminders in chronology by wrapping their text in adjacent user turns, preserving leading tool-result ordering and cache-control blocks. A version-specific Bifrost workaround copies hour-long cache TTLs onto prefix cache points for recognized model names, and translated usage carries one-hour write tokens separately.
+
+**Architecture consequence:** Provider translation must test message chronology, authority changes and tool-result ordering independently from cache reuse. Pricing telemetry needs cache lifetime, not only aggregate cached tokens. Model-name heuristics and reminder wrappers require compatibility evidence; wrapping system text as user text is a semantic adaptation, not proof of identical instruction authority.
+
+**Scope and limits:** Read five changed production files within twelve paths. Upstream unit/live tests and pricing fixtures were inventoried but not executed; no Bedrock request or savings benchmark was performed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [langwatch](https://github.com/langwatch/langwatch); analyzed commit `c7fad93329af25f82b1b1260ff8634cd5a070946`; commit date 2026-11-01T05:41:04Z; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-eval--langwatch.md).
+Analysis metadata: source [langwatch](https://github.com/langwatch/langwatch); analyzed commit `846b5bc8a179175e75bc16caa0475a2d6b137d61`; commit date 2026-11-01T15:45:10+01:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-eval--langwatch.md).
 <!-- teamagent-analysis:end -->

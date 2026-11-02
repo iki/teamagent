@@ -59,6 +59,16 @@ Reviewed `3c31db796f44ebe41c1a74b204531d936232598f` against `1003abc059039467594
 
 **Scope and limits:** Admission-table and refusal-fixture deltas only; the large host test deletion and broader implementation were not fully re-audited. No host deployment or upstream test was executed.
 
+## External-update review - 2026-11-01
+
+Reviewed `122fae92ab3fedd3513ffa873221d849547a2c32` against `3c31db796f44ebe41c1a74b204531d936232598f`.
+
+The ten-path comparison repairs dispatch after a retained project server is retired. Before a handler runs, [request admission](https://github.com/ScriptedAlchemy/tracedecay/blob/122fae92ab3fedd3513ffa873221d849547a2c32/crates/tracedecay/src/mcp/server/requests.rs) may resolve its current owner, but checks registered profile, exact scope, database/project identity, serving branch and preservation of session capability. Resolver refusals retain their typed meaning, and successor lookup shares the transport cancellation boundary. The [retained route](https://github.com/ScriptedAlchemy/tracedecay/blob/122fae92ab3fedd3513ffa873221d849547a2c32/crates/tracedecay/src/mcp/project_route.rs) is retargeted so later readers do not reopen the retired handle; [graph lookup](https://github.com/ScriptedAlchemy/tracedecay/blob/122fae92ab3fedd3513ffa873221d849547a2c32/crates/tracedecay-dashboard-api/src/project_graph.rs) distinguishes an unconstrained lookup from an explicitly unscoped or scoped owner.
+
+The inspected [daemon fixture](https://github.com/ScriptedAlchemy/tracedecay/blob/122fae92ab3fedd3513ffa873221d849547a2c32/crates/tracedecay/tests/daemon_suite/retired_project_owner_route_test.rs) holds startup after core publication, opens a connection, publishes its successor and checks the next call on that same session. Its endpoint is Unix; this source review does not establish Windows behavior.
+
+**Harness consequence:** Rebind only before execution and only within the same authority and store identity. Retargeting a pending request is not permission to replay an ambiguous effect. Reviewed routing implementation deltas, the route unit fixture and complete daemon fixture; the larger added request-unit suite, readiness changes and dependency lock were not exhaustively reviewed. No daemon, tool action or upstream tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [tracedecay](https://github.com/ScriptedAlchemy/tracedecay); analyzed commit `3c31db796f44ebe41c1a74b204531d936232598f`; commit date 2026-11-01T01:58:07-08:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tracedecay.md).
+Analysis metadata: source [tracedecay](https://github.com/ScriptedAlchemy/tracedecay); analyzed commit `122fae92ab3fedd3513ffa873221d849547a2c32`; commit date 2026-11-01T11:05:24-08:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tracedecay.md).
 <!-- teamagent-analysis:end -->

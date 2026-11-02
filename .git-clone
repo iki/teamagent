@@ -11,6 +11,10 @@ declare -A settings=(
   [TEAMAGENT_REPOMIX_CACHE]='.cache/git.repomix' [TEAMAGENT_TEXT_CACHE]='.cache/text'
 )
 fail() { printf '%s\n' "$1" >&2; exit 2; }
+# Select for the Git executable, not Bash's POSIX redirection semantics.
+git_version=$(git --version) || fail git_version_unavailable
+git_null_device=/dev/null
+case "$git_version" in *'.windows.'*) git_null_device=NUL ;; esac
 for env_name in .env .env.local; do
   env_path=$script_dir/$env_name
   [[ ! -L "$env_path" ]] || fail dotenv_symlink_rejected
@@ -113,6 +117,6 @@ clone() {
   if [[ ${#matches[@]} -eq 1 ]]; then
     printf 'Existing repository: %s\n' "${matches[0]#"$cache_root"/}" >&2
   else
-    GIT_TERMINAL_PROMPT=0 GCM_INTERACTIVE=Never git -c credential.interactive=false -c core.hooksPath=/dev/null clone --no-recurse-submodules -- "$2" "$target"
+    GIT_TERMINAL_PROMPT=0 GCM_INTERACTIVE=Never git -c credential.interactive=false -c "core.hooksPath=$git_null_device" clone --no-recurse-submodules -- "$2" "$target"
   fi
 }

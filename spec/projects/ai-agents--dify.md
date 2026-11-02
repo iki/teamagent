@@ -62,6 +62,16 @@ The [auth requirement](https://github.com/langgenius/dify/blob/262158cfdbe590951
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/langgenius/dify](https://github.com/langgenius/dify) at `a79e2116f85b64aea89e3d60725c7adba8277cbb` against prior analyzed `262158cfdbe590951adceffe264eef225381346b`. Evidence: [web/app/components/app/deploy/shared/deployment-configuration/credential-field.tsx](https://github.com/langgenius/dify/blob/a79e2116f85b64aea89e3d60725c7adba8277cbb/web/app/components/app/deploy/shared/deployment-configuration/credential-field.tsx), [web/app/components/app/deploy/shared/deployment-configuration/__tests__/credential-field.spec.tsx](https://github.com/langgenius/dify/blob/a79e2116f85b64aea89e3d60725c7adba8277cbb/web/app/components/app/deploy/shared/deployment-configuration/__tests__/credential-field.spec.tsx).
+
+Credential selection moves from a bespoke error/controlled-value interface to the shared Field/FieldError primitives and a defaultValue-based Select. SelectValue resolves the displayed candidate from the selected value; fixtures change their setup accordingly. This reduces duplicated presentation logic, but shared-field behavior and later external value changes must be verified at the composed form boundary.
+
+**Architecture consequence:** Reuse accessible validation primitives while retaining tests for reset/reinitialization, missing candidates and actual permission enforcement. UI credential availability is not evidence of authenticated provider access or entitlement.
+
+**Scope and limits:** Focused credential component and fixture diff review within a 35-path update. Other form and test refactors were inventoried; browser, backend and credential access tests were not executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [dify](https://github.com/langgenius/dify); analyzed commit `262158cfdbe590951adceffe264eef225381346b`; commit date 2026-11-01T09:27:39Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--dify.md).
+Analysis metadata: source [dify](https://github.com/langgenius/dify); analyzed commit `a79e2116f85b64aea89e3d60725c7adba8277cbb`; commit date 2026-11-01T15:14:02Z; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--dify.md).
 <!-- teamagent-analysis:end -->

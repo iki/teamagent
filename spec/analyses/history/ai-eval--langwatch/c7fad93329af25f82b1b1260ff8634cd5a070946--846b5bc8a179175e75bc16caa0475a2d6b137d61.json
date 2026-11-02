@@ -1,0 +1,90 @@
+{
+  "id": "ai-eval--langwatch",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/langwatch/langwatch",
+  "report": "spec/projects/ai-eval--langwatch.md",
+  "analyzedSha": "c7fad93329af25f82b1b1260ff8634cd5a070946",
+  "analyzedAt": "2026-11-01T11:35:43.470Z",
+  "analyzedCommitDate": "2026-11-01T05:41:04Z",
+  "observedSha": "846b5bc8a179175e75bc16caa0475a2d6b137d61",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "846b5bc8a179175e75bc16caa0475a2d6b137d61",
+      "date": "2026-11-01T15:45:10+01:00",
+      "subject": "fix(aigateway): keep mid-conversation system messages in place on Bedrock (#9219)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "modules/gateway/process/src/services/__tests__/model-catalog.gateway-spend-rating.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/aitrace/usage.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/aigateway/adapters/providers/anthropic_stream_iterator.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/aigateway/adapters/providers/anthropic_translation.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/aigateway/adapters/providers/bedrock_cache_ttl.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/aigateway/adapters/providers/bedrock_cache_ttl_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/aigateway/adapters/providers/bedrock_system_reminders.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/aigateway/adapters/providers/bedrock_system_reminders_live_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/aigateway/adapters/providers/bedrock_system_reminders_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/aigateway/adapters/providers/bifrost.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "specs/ai-gateway/cache-token-telemetry.feature",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "specs/ai-gateway/messages-translation.feature",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

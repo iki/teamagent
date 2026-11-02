@@ -62,6 +62,16 @@ Reviewed commit `7eaa315511bfa86a3c348d9d75594ff0e4be4f5c` (commit date `2026-11
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/YoanWai/agent-manager](https://github.com/YoanWai/agent-manager) at `d2e9378c7af7983b8f8865f1c0213a02e99893a7` against prior analyzed `7eaa315511bfa86a3c348d9d75594ff0e4be4f5c`. Evidence: [internal/feed/feed.go](https://github.com/YoanWai/agent-manager/blob/d2e9378c7af7983b8f8865f1c0213a02e99893a7/internal/feed/feed.go), [internal/feed/feed_test.go](https://github.com/YoanWai/agent-manager/blob/d2e9378c7af7983b8f8865f1c0213a02e99893a7/internal/feed/feed_test.go), [internal/ui/notices/list.go](https://github.com/YoanWai/agent-manager/blob/d2e9378c7af7983b8f8865f1c0213a02e99893a7/internal/ui/notices/list.go), [internal/ui/notices/panel.go](https://github.com/YoanWai/agent-manager/blob/d2e9378c7af7983b8f8865f1c0213a02e99893a7/internal/ui/notices/panel.go), [internal/ui/quick/decide.go](https://github.com/YoanWai/agent-manager/blob/d2e9378c7af7983b8f8865f1c0213a02e99893a7/internal/ui/quick/decide.go), [internal/ui/quick/decide_test.go](https://github.com/YoanWai/agent-manager/blob/d2e9378c7af7983b8f8865f1c0213a02e99893a7/internal/ui/quick/decide_test.go).
+
+The feed parser now carries a pinned flag through sanitization and notice rendering; pinned notices sort first within their kind and omit the dismiss action. The shipped-feed fixture requires an expiry on pinned entries, but this is a fixture for the shipped document, not a runtime guarantee that every remotely supplied pinned notice expires. Quick-bar CLI changes now dispatch a catalog-load effect for the selected tool; the inspected key/click fixture checks the requested tool sequence.
+
+**Architecture consequence:** Bind model discovery to the selected agent adapter and expose its loading state. Treat remote notice lifetime and dismissibility as explicit product policy; do not infer a runtime expiry bound from a checked fixture alone.
+
+**Scope and limits:** Reviewed selected feed, notice and catalog-dispatch implementation/test changes across a 15-path update. No upstream Go tests, terminal interaction or remote feed calls were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-manager](https://github.com/YoanWai/agent-manager); analyzed commit `7eaa315511bfa86a3c348d9d75594ff0e4be4f5c`; commit date 2026-11-01T01:23:07+02:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agent-manager.md).
+Analysis metadata: source [agent-manager](https://github.com/YoanWai/agent-manager); analyzed commit `d2e9378c7af7983b8f8865f1c0213a02e99893a7`; commit date 2026-11-01T20:10:35+02:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agent-manager.md).
 <!-- teamagent-analysis:end -->

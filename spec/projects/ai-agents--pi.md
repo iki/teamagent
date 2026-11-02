@@ -78,6 +78,16 @@ The [process fixture](https://github.com/earendil-works/pi/blob/2c8d1feb147f6b3d
 
 **Coverage:** Read the complete 397-line four-file worker/control expansion. Child support fixture, IPC-link implementation, native behavior and other Pi changes were not audited or executed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## External-update review - 2026-11-01
+
+Reviewed `b556cfe5b0300a91f39c7bc5369a65a25fb7fcd5` against `2c8d1feb147f6b3d97e855da803bfe7b19f3c403`.
+
+The 252-path update replaces the tool-argument wrapper's separate TypeBox/plain-schema coercion paths with the shared pi-schema compiler. The complete inspected [validation delta](https://github.com/earendil-works/pi/blob/b556cfe5b0300a91f39c7bc5369a65a25fb7fcd5/packages/ai/src/utils/validation.ts) compiles with formats, coercion and unresolved-reference rejection, caches by schema-object identity, and parses a structured clone so tool-side changes cannot rewrite the recorded model arguments. Pointer decoding now preserves escaped path segments before rendering diagnostics. A dangling reference rejects values at that location rather than preventing every use of an otherwise optional field.
+
+Selected [regression probes](https://github.com/earendil-works/pi/blob/b556cfe5b0300a91f39c7bc5369a65a25fb7fcd5/packages/ai/test/validation-probes.test.ts) expose important compatibility limits. An authored test explicitly expects a TypeBox `Refine` callback not to run; a value that callback would reject can pass the JSON Schema shape. Another test deliberately preserves the compiled validator after the same schema object is mutated, so changing an in-place minimum does not update validation. Fixtures also specify scalar/array conversion, optional-null removal, unresolved references, recursive unions and differing BigInt/Undefined behavior. Read coverage was diff lines 1-220 and 551-785 of this new 785-line patch, not every probe or compiler implementation.
+
+**Harness consequence:** Treat a schema-engine migration as a semantic compatibility change. Keep authorization and business invariants in independently enforced semantic validation; do not assume executable refinements survive a JSON Schema bridge. Use immutable/versioned schema objects or explicit cache invalidation. Retain original arguments as evidence and make coercion observable, while redacting the wrapper's raw-argument error text before any host diagnostics. Compilation, recursion/resource bounds and the shared schema engine were not audited here, and no performance conclusion follows from the added tests. No source program, upstream test or provider was executed; this is not a recommendation to replace Teamagent's adopted Effect Schema boundary.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [pi](https://github.com/earendil-works/pi); analyzed commit `2c8d1feb147f6b3d97e855da803bfe7b19f3c403`; commit date 2026-11-01T00:36:33Z; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--pi.md).
+Analysis metadata: source [pi](https://github.com/earendil-works/pi); analyzed commit `b556cfe5b0300a91f39c7bc5369a65a25fb7fcd5`; commit date 2026-11-01T15:20:46Z; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--pi.md).
 <!-- teamagent-analysis:end -->

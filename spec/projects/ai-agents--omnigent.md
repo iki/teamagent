@@ -54,6 +54,16 @@ This scoped change is dependency/lifecycle refactoring rather than demonstrated 
 
 **Coverage:** Read the complete targeted copy-on-write implementation and two test deltas. Native process-tree killer, namespace setup and remaining oversized changes were not reviewed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## External-update review - 2026-11-01
+
+Reviewed `6d209c05618c90a8e920b620a8fc618b0d253b7c` against `194defcad8f5e6b63d31b0d05a65b80574266c3f`.
+
+The 132-path range includes a migration of the [OpenCode permission adapter](https://github.com/omnigent-ai/omnigent/blob/6d209c05618c90a8e920b620a8fc618b0d253b7c/omnigent/harnesses/opencode_native/permissions.py) to the 2.x `id`, `action`, `resources`, session and source-tool/message fields. The parser constructs action-specific arguments: shell resources are joined, edit resources retain the complete path list, and query/fetch actions preserve their corresponding patterns or URLs. It retains the raw request and compatibility projections rather than treating a display summary as the complete action scope. Evaluation IDs are deterministic hashes of the request ID, useful for correlation but not an independent authenticated identity.
+
+The complete inspected [adapter fixtures](https://github.com/omnigent-ai/omnigent/blob/6d209c05618c90a8e920b620a8fc618b0d253b7c/tests/test_opencode_native_permissions.py) cover multi-resource actions, metadata, source linkage and stable IDs. They also make an important boundary explicit: old `permission`/`patterns` shapes are ignored, and non-string resource entries are filtered out. The parser alone therefore does not prove fail-closed admission; unknown protocol/action values or lossy resource parsing must be rejected or independently reconciled before an authorization decision. No end-to-end policy refusal was established by this slice.
+
+**Harness consequence:** Version permission schemas, preserve the full requested scope through policy evaluation, and make unsupported or partially decoded actions explicit. Correlation hashes do not grant consent. This review covers the complete permission-module and fixture deltas, not other harness integrations, the complete policy engine or a running OpenCode session. No upstream tests or providers were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [omnigent](https://github.com/omnigent-ai/omnigent); analyzed commit `194defcad8f5e6b63d31b0d05a65b80574266c3f`; commit date 2026-11-01T05:47:41Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--omnigent.md).
+Analysis metadata: source [omnigent](https://github.com/omnigent-ai/omnigent); analyzed commit `6d209c05618c90a8e920b620a8fc618b0d253b7c`; commit date 2026-11-01T10:20:32-08:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--omnigent.md).
 <!-- teamagent-analysis:end -->

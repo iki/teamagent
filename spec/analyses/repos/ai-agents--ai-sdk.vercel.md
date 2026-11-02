@@ -2,11 +2,11 @@
 
 Source: [ai-sdk.vercel](https://github.com/vercel/ai) · [Analysis](../../projects/ai-agents--ai-sdk.vercel.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `dffe4053c15709577329518044b1ec1d4c6bb0fe`; commit date: 2026-10-30T20:27:03-07:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `dffe4053c15709577329518044b1ec1d4c6bb0fe`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `dffe4053c15709577329518044b1ec1d4c6bb0fe`; commit date: 2026-10-30T20:27:03-07:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `dffe4053c15709577329518044b1ec1d4c6bb0fe`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/vercel/ai/compare/dffe4053c15709577329518044b1ec1d4c6bb0fe...dffe4053c15709577329518044b1ec1d4c6bb0fe). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

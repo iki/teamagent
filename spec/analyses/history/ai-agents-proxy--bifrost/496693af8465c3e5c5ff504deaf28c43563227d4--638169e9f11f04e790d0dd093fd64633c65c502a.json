@@ -1,0 +1,565 @@
+{
+  "id": "ai-agents-proxy--bifrost",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/maximhq/bifrost",
+  "report": "spec/projects/ai-agents-proxy--bifrost.md",
+  "analyzedSha": "496693af8465c3e5c5ff504deaf28c43563227d4",
+  "analyzedAt": "2026-11-01T11:35:43.470Z",
+  "analyzedCommitDate": "2026-11-01T14:10:26+05:30",
+  "observedSha": "638169e9f11f04e790d0dd093fd64633c65c502a",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "638169e9f11f04e790d0dd093fd64633c65c502a",
+      "date": "2026-11-01T11:40:34-08:00",
+      "subject": "feat: trust the global proxy's CA and always verify targets through a proxy (#7602)"
+    },
+    {
+      "sha": "5cdcd85d85b95485a2e5b85521809f44dbf0da2c",
+      "date": "2026-11-01T09:56:06-08:00",
+      "subject": "feat: trust the global proxy's CA and always verify targets through a proxy"
+    },
+    {
+      "sha": "46ca04029ce3d4381506f9db653aa47a1f818003",
+      "date": "2026-11-01T09:44:55-08:00",
+      "subject": "feat: export base-path hooks for builds with their own bootstrap (#9433)"
+    },
+    {
+      "sha": "3380f76e8ad03c7cefc9de1947079e3008d6e36e",
+      "date": "2026-11-01T17:31:35Z",
+      "subject": "feat: export base-path hooks for builds with their own bootstrap"
+    },
+    {
+      "sha": "8b7123743e690c858f9fc1db5f2fcdd6631c562b",
+      "date": "2026-11-01T09:30:27-08:00",
+      "subject": "fix(e2e): navigate collapsed sidebar groups in SidebarPage (#9057)"
+    },
+    {
+      "sha": "c9882cd50f343f5e1a7b399b2e8e9fe3de410c07",
+      "date": "2026-11-01T17:28:22Z",
+      "subject": "fix(e2e): navigate collapsed sidebar groups in SidebarPage"
+    },
+    {
+      "sha": "a4bed4e4e2032c2f9f0e69e1f6fb068ba99a0ec6",
+      "date": "2026-11-01T09:26:27-08:00",
+      "subject": "test(e2e): run the dashboard and HTTP routes under a base path (#9056)"
+    },
+    {
+      "sha": "83b8bea27c0c9d609374c8e83458b42ecb5abc9c",
+      "date": "2026-11-01T17:24:23Z",
+      "subject": "test(e2e): run the dashboard and HTTP routes under a base path"
+    },
+    {
+      "sha": "5cd3149a31fb29fdc86f4093ca241bfd29046883",
+      "date": "2026-11-01T09:22:27-08:00",
+      "subject": "docs: document serving under a path prefix; add Helm basePath (#8924)"
+    },
+    {
+      "sha": "a9869878306092d163f29b843c5bf2fbf178ae85",
+      "date": "2026-11-01T17:20:22Z",
+      "subject": "docs: document serving under a path prefix; add Helm basePath"
+    },
+    {
+      "sha": "defc52405799a263eded0bec0ee530c092fcb321",
+      "date": "2026-11-01T09:18:25-08:00",
+      "subject": "feat: carry the base path in server-generated URLs and redirects (#8923)"
+    },
+    {
+      "sha": "d1d6505a15635a4cc10cc82e9b7681420dd9abc3",
+      "date": "2026-11-01T17:16:21Z",
+      "subject": "feat: carry the base path in server-generated URLs and redirects"
+    },
+    {
+      "sha": "4a5319a428122016950914dd0134835e8f4f0a02",
+      "date": "2026-11-01T09:14:26-08:00",
+      "subject": "feat: resolve UI routes, API calls and assets under the base path (#8922)"
+    },
+    {
+      "sha": "b84ca903c7f97c7e541df558e8dab8b58c6dfedb",
+      "date": "2026-11-01T17:12:22Z",
+      "subject": "feat: resolve UI routes, API calls and assets under the base path"
+    },
+    {
+      "sha": "95acd55009001578f1ca68911e8d09a6051cc958",
+      "date": "2026-11-01T09:10:31-08:00",
+      "subject": "feat: serve the UI shell under the configured base path (#8921)"
+    },
+    {
+      "sha": "8add7092b9e9e3b634316822a39e6119e162de96",
+      "date": "2026-11-01T17:08:22Z",
+      "subject": "feat: serve the UI shell under the configured base path"
+    },
+    {
+      "sha": "bdcd0616cf1e0cb6a31accca97e6f9fd70558f6b",
+      "date": "2026-11-01T17:08:21Z",
+      "subject": "feat: add base_path config for serving under a URL prefix"
+    },
+    {
+      "sha": "bf95780bd7080ac5b4b8fe0fc16a415b3c8b478e",
+      "date": "2026-11-01T09:06:28-08:00",
+      "subject": "feat: strip the configured base path before routing (#8920)"
+    },
+    {
+      "sha": "22bb695224d14f647575e656a7cb5fb3ce5801db",
+      "date": "2026-11-01T17:04:23Z",
+      "subject": "feat: strip the configured base path before routing"
+    },
+    {
+      "sha": "d15247f71ab1b9544722caad4e536f54769d6573",
+      "date": "2026-11-01T09:02:28-08:00",
+      "subject": "feat: add base_path config for serving under a URL prefix (#8919)"
+    },
+    {
+      "sha": "e4241cf621eeea4fea1a88c6a055afb246487ba4",
+      "date": "2026-11-01T17:00:21Z",
+      "subject": "feat: add base_path config for serving under a URL prefix"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/scripts/harness-gateway.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/clientmanager_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/network/http.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/network/http_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/network/ssrf.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/network/ssrf_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/bedrock/bedrock.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/utils/proxy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/utils/utils.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/relay/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/deployment-guides/how-to/nginx-reverse-proxy.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "framework/configstore/tables/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "framework/configstore/tables/config_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm-charts/bifrost/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm-charts/bifrost/templates/_helpers.tpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm-charts/bifrost/values.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm-charts/bifrost/values.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/api/collections/bifrost-api-management.postman_collection.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/api/runners/proxy/run-proxy-matrix.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/core/pages/sidebar.page.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/e2e/features/base-path/base-path.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/features/config/config-proxy.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/features/config/config.data.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/features/config/pages/config-settings.page.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/e2e/features/navigation/sidebar.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/plan.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/playwright.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/scripts/run-e2e.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/handlers/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/handlers/config_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/handlers/mcp_oauth_flow_poll_status_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/handlers/mcpoauth2.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/handlers/middlewares.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/handlers/middlewares_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/handlers/ui.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "transports/bifrost-http/handlers/ui_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/lib/account.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/lib/account_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "transports/bifrost-http/lib/basepath.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "transports/bifrost-http/lib/basepath_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/lib/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/lib/ctx.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/lib/ctx_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/server/server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/bifrost-http/server/server_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "transports/config.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/_fallbacks/enterprise/components/data-connectors/kafka/kafkaConnectorView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/main.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/oauth/consent/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/agent-gateway/views/agentSheet.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/config/views/proxyView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/config/views/securityView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/dashboard/components/exportPopover.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/mcp-registry/library/views/mcpLibraryServerCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/mcp-registry/library/views/mcpLibraryServersTable.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/mcp-registry/views/mcpUsageGuide/harnesses/antigravityHarnessInstall.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/mcp-registry/views/mcpUsageGuide/harnesses/claudeCodeHarnessInstall.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/mcp-registry/views/mcpUsageGuide/harnesses/codexHarnessInstall.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/mcp-registry/views/mcpUsageGuide/harnesses/cursorHarnessInstall.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/mcp-registry/views/mcpUsageGuide/harnesses/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/mcp-registry/views/mcpUsageGuide/harnesses/opencodeHarnessInstall.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/mcp-registry/views/mcpUsageGuide/harnesses/vscodeHarnessInstall.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/mcp-registry/views/mcpUsageGuide/harnesses/windsurfHarnessInstall.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/mcp-registry/views/mcpUsageGuide/platformSelect.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/mcp-sessions/auth/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/mcp-sessions/views/sessionsTable.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/app/workspace/observability/views/observabilityView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/components/prompts/utils/executor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/components/rssFeedIcon.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/components/sidebar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/components/tempTokenScope.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/components/warp/warpMessage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/lib/constants/icons.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/lib/constants/logs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/lib/hooks/useBranding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/lib/store/apis/baseApi.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ui/lib/utils/basePath.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ui/lib/utils/basePath.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ui/lib/utils/builtUrl.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ui/lib/utils/builtUrl.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/lib/utils/loginGoto.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ui/lib/utils/port.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/lib/utils/port.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/locales/en/config.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ui/vite.config.mts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

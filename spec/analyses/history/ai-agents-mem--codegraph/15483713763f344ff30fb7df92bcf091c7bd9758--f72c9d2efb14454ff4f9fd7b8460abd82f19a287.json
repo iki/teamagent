@@ -1,0 +1,195 @@
+{
+  "id": "ai-agents-mem--codegraph",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/colbymchenry/codegraph",
+  "report": "spec/projects/ai-agents-mem--codegraph.md",
+  "analyzedSha": "15483713763f344ff30fb7df92bcf091c7bd9758",
+  "analyzedAt": "2026-11-01T11:35:43.470Z",
+  "analyzedCommitDate": "2026-11-01T03:39:32-06:00",
+  "observedSha": "f72c9d2efb14454ff4f9fd7b8460abd82f19a287",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "f72c9d2efb14454ff4f9fd7b8460abd82f19a287",
+      "date": "2026-11-01T10:22:32-06:00",
+      "subject": "fix(resolution): what a resolver keeps goes when what it was read from moves (#3214)"
+    },
+    {
+      "sha": "483a09884d272a334c2f279c024951e8e0504b66",
+      "date": "2026-11-01T08:41:43-06:00",
+      "subject": "fix(ruby): a call on a parameter takes its class from the method's call sites (#3195)"
+    },
+    {
+      "sha": "47a9c7d65d5c39094ef1e45ee9486561a9b298df",
+      "date": "2026-11-01T06:32:36-06:00",
+      "subject": "fix(python): whether a name is a local goes by the line reading it, not who asked first (#3194)"
+    },
+    {
+      "sha": "6aa358ccbae30fbf27318f79ee183212f726f9ba",
+      "date": "2026-11-01T04:47:10-06:00",
+      "subject": "fix(java): a lambda or method reference reaches the overload that takes a function (#3193)"
+    },
+    {
+      "sha": "4e96d75946b4ffbacf3cc5c25ee5fbc8ac176d30",
+      "date": "2026-11-01T04:34:36-06:00",
+      "subject": "fix(resolution): a large run waits for its pool, so the main thread doesn't scan the project (#3192)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/java-overload-arguments.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/name-matcher-memo-clears.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/parameter-flow.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/python-local-binding-order.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/resolution.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/resolver-pool-pipeline.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/sync-memo-lifetime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/sync-module-config-change.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/worker-teardown.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/db/parameter-flow-queries.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/db/queries.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/engine.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/file-limits.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/resolution/frameworks/angular-router.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/resolution/frameworks/cargo-workspace.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/resolution/frameworks/cics.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/resolution/frameworks/expo-modules.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/resolution/frameworks/rust.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/resolution/import-resolver.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/resolution/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/resolution/name-matcher.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/resolution/parameter-flow.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/resolution/resolver-pool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/resolution/ruby-constant-paths.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/resolution/ruby-parameter-flow.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/resolution/types.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

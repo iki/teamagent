@@ -39,6 +39,16 @@ Reviewed `e6b1a478b7618def254e8a45b23a8ce2e0b61aa9` against `a382bd25a4a8eb9371d
 
 **Scope and limits:** Complete three selected UI/fixture diffs, not executor authorization or IPC validation. No browser/native acceptance run or upstream tests were executed.
 
+## External-update review - 2026-11-01
+
+Reviewed `c4e30dce3e6e9651c1035fd548102fe2c9f02cfb` against `e6b1a478b7618def254e8a45b23a8ce2e0b61aa9`.
+
+The 48-path update fixes a connection-ownership problem in the [web plugin-event adapter](https://github.com/t8y2/dbx/blob/c4e30dce3e6e9651c1035fd548102fe2c9f02cfb/apps/desktop/src/lib/backend/http.ts). Plugin hosts now share one EventSource and fan out event/binary messages to registered subscribers. Removing a subscriber is idempotent; the connection closes only when the last subscriber leaves, and a later subscriber opens a new stream. The upstream rationale is avoiding per-workbench connections starving other HTTP requests; no browser connection-limit measurement was performed here.
+
+The complete inspected [shared-stream fixture](https://github.com/t8y2/dbx/blob/c4e30dce3e6e9651c1035fd548102fe2c9f02cfb/apps/desktop/src/lib/backend/__tests__/pluginEventsSharedStream.spec.ts) covers three consumers, binary delivery, duplicate unsubscribe, continued delivery to the remaining consumer, final closure and reopening. This establishes authored resource-lifecycle coverage, not tested browser or native behavior.
+
+**Harness consequence:** Share expensive transport resources with explicit subscriber ownership and last-owner cleanup, while preserving tenant/session/origin isolation. The inspected handler still parses JSON with an unchecked assertion, ignores the lagged-message variant, and invokes subscriber callbacks without isolation; malformed data or one throwing subscriber can interrupt delivery. A reusable harness adapter needs validated messages, bounded fanout, explicit gap recovery and per-subscriber failure handling. Those are static limits, not executed reproductions. Scope is the two complete deltas; desktop grids, MQTT and Rust startup changes remain unreviewed. No upstream tests, browser stream or native application was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [dbx](https://github.com/t8y2/dbx); analyzed commit `e6b1a478b7618def254e8a45b23a8ce2e0b61aa9`; commit date 2026-11-01T16:44:46+08:00; review date 2026-11-01T11:35:43.470Z; depth reviewed. [Maintenance record](../repos/ai-query--dbx.md).
+Analysis metadata: source [dbx](https://github.com/t8y2/dbx); analyzed commit `c4e30dce3e6e9651c1035fd548102fe2c9f02cfb`; commit date 2026-11-01T18:07:24Z; review date 2026-11-01T23:12:06.798Z; depth reviewed. [Maintenance record](../repos/ai-query--dbx.md).
 <!-- teamagent-analysis:end -->

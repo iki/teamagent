@@ -30,6 +30,9 @@ const ManifestSchema = Schema.Struct({
 function historicalOpaquePath(path: string): boolean {
   return (
     path === ".cache/benchmark-documents/2.txt" ||
+    // Exact retained 2026-10-28 PDF text derivative; one NUL remains part of its immutable hash.
+    path ===
+      ".cache/research/reconcile-2026-11-01/texts/34f46bf9-6b55-49fb-89f9-5dc6eb598d44/eb27a1d43387bcad8ca7fc151d13430d184cc61c969b8118d5584669b7c73484.md" ||
     /^\.cache\/commit-split-2026-10-27\/(?:staged-snapshot\.patch|index\.before)$/u.test(path) ||
     /^\.cache\/extractor-benchmark\/2026-10-04-(?:fast|full-v2|full-v3)\/[^/]+\/[^/]+\/\d+\/(?:extracted\.md|assets\/[a-f0-9]{64}\.jp2)$/u.test(
       path,

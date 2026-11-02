@@ -48,6 +48,16 @@ The [admin helper](https://github.com/f/prompts.chat/blob/25f9e4c4cd2e583680ce7d
 
 Teamagent should keep credentials out of public URLs, bound authentication caches and invalidate effective permissions when account/key state changes. A cached user record is not independent proof that the key remains authorized. These selected redacted code diffs were fully read; exact redacted credential expressions, caller authorization, key-at-rest protection and the rest of the 371-path update were not audited. No account, request, service or upstream tests were exercised.
 
+## External-update review - 2026-11-01
+
+Reviewed `861d3ed616a7b14fb7180eceed5b449e1f17fea3` against `25f9e4c4cd2e583680ce7d38da173228e483f87f`.
+
+The 90-path update adds complete bot/team snapshots rather than versioning prompt text alone. The inspected [bot snapshot module](https://github.com/f/prompts.chat/blob/861d3ed616a7b14fb7180eceed5b449e1f17fea3/src/lib/bots/change-snapshot.ts) includes platforms, installation URL, routines, skills and connectors alongside title/instructions. The [team snapshot module](https://github.com/f/prompts.chat/blob/861d3ed616a7b14fb7180eceed5b449e1f17fea3/src/lib/bots/team-snapshot.ts) stores stable member/category/tag IDs plus historical display names, roles and handoff edges. Comparison treats display-name changes separately from identity/content changes and retains member ordering as meaningful.
+
+The complete inspected [snapshot fixtures](https://github.com/f/prompts.chat/blob/861d3ed616a7b14fb7180eceed5b449e1f17fea3/src/__tests__/lib/change-snapshots.test.ts) cover legacy records, malformed input, renamed members, field/item diffs, member ordering and hiding both inaccessible members and their incident handoff edges. The redaction helper receives an externally computed visibility set; this review does not establish that every API applies it to both sides of a diff. Likewise the tolerant team parser drops malformed parts and defaults missing fields, which is useful for display but is not strict authorization or restoration validation.
+
+**Harness consequence:** Version the complete executable configuration of a skill or team, retain stable identities with historical labels, and apply current visibility to historical projections. Keep loss-tolerant display decoding separate from strict restore/apply validation and report missing legacy fields as unknown rather than unchanged. This scoped static review covers the three complete new snapshot/fixture deltas, not migrations, concurrent change acceptance, route permissions or all UI paths. No upstream code, database or test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [prompts.chat](https://github.com/f/prompts.chat); analyzed commit `25f9e4c4cd2e583680ce7d38da173228e483f87f`; commit date 2026-11-01T12:59:19+03:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-prompts--prompts.chat.md).
+Analysis metadata: source [prompts.chat](https://github.com/f/prompts.chat); analyzed commit `861d3ed616a7b14fb7180eceed5b449e1f17fea3`; commit date 2026-11-01T23:06:52+03:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-prompts--prompts.chat.md).
 <!-- teamagent-analysis:end -->

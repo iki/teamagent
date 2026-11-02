@@ -258,6 +258,22 @@ passed 519 tests across the same 67 files in 276.208 seconds, also retained in
 that record. These changed-source samples are not a controlled speedup comparison
 or machine-cold measurements.
 
+A later November 1 reconciliation run reached the unchanged unit deadline in
+the workflow suite after 15 of its 16 cases passed. A fixture-only optimization
+replaced eleven configuration setter processes with an explicit per-fixture LF
+Git template and one exact parsed-value check. The bare remote still receives
+an empty template; each working fixture retains its own key, hooks, unsigned
+baseline commit and real signed publication. No test case or deadline changed.
+On Bun 1.4.2 and Git 2.56.0.windows.4 on Windows x64, a configuration-only
+comparison used one labeled warmup per method followed by three samples each.
+The measured medians were 2,032.94 ms for initialization plus eleven setters
+and 396.89 ms for template writing, initialization and parsed-value validation
+(12 versus two Git processes). Baseline value validation was outside its timed
+region. These are warm local setup measurements, not whole-suite speedup or
+production signing performance. Exact source hashes, all samples and subsequent
+behavioral checks are retained in the
+[reconciliation measurements](data/research-reconciliation-2026-11-01.json).
+
 The first assembled process-transfer check timed out at that deadline after
 394 tests across 51 files had passed, before completing the workflow suite.
 It admitted one worker because memory was below the floor. This remains failed

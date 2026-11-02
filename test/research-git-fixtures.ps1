@@ -441,6 +441,8 @@ Assert-That ($fresh.repositories[0].dirty -eq $true -and $fresh.repositories[0].
 $observationPath=Join-Path $root '.cache/research/git-state.json'
 $observationRow=$diverged.Clone();$observationRow.head=$row.head
 $priorRemoteAt=$observationRow.checkedAt
+$observeOwnedConfig=Read-ResearchText (Join-Path $root 'git-sources.json')
+Write-ResearchJson (Join-Path $root 'git-sources.json') @{schemaVersion=1;repositories=@(@{category=$observationRow.category;name=(Get-ResearchBaseName ($observationRow.id.Substring($observationRow.category.Length+2)) $settings);url=$observationRow.url})}
 # Prior state deliberately has no config; the active nondefault cache comes from settings.
 $expectedObservationCache=Get-ResearchRelativePath $settings.ProjectRoot $settings.GitCache
 Write-ResearchJson $observationPath @{schemaVersion=1;generatedAt=$now.ToString('o');discoveryComplete=$true;repositories=@($observationRow)}
@@ -541,6 +543,7 @@ try {
     try { Rejects { Invoke-ResearchGitSync -ProjectRoot $root -Action observe } 'observation publication errors are explicit' } finally { Set-Item function:Write-ResearchJson $oldObserveWriter }
     Assert-That ((Read-ResearchText $observationPath) -ceq $beforeFailedPublication) 'failed publication retains prior analysis input'
 } finally {
+    Put (Join-Path $root 'git-sources.json') $observeOwnedConfig
     Set-Item function:Read-ResearchSourceList $oldObserveSources
     Set-Item function:Get-ResearchGitHubCredential $oldObserveCredential
     Set-Item function:Invoke-ResearchRepository $oldObserveRepository
@@ -591,12 +594,15 @@ $bash=Get-Command bash -CommandType Application -ErrorAction SilentlyContinue | 
 $bashPath=if ($null -ne $bash) { $bash.Source } elseif (Test-Path -LiteralPath 'C:/Program Files/Git/bin/bash.exe') { 'C:/Program Files/Git/bin/bash.exe' } else { '' }
 if ($bashPath -eq '') { throw 'fixture_bash_required' }
 $loader=Join-Path $fixture 'loader';[void][IO.Directory]::CreateDirectory($loader)
-Put (Join-Path $loader '.git-clone') ($header+"`nclone 'ai-agents/test' '$url'`n")
+$loaderProbe='printf ''fixture_hooks_path=%s\n'' "$(git -c "core.hooksPath=$git_null_device" config --get core.hooksPath)"'
+Put (Join-Path $loader '.git-clone') ($header+"`nclone 'ai-agents/test' '$url'`n"+$loaderProbe+"`n")
 Put (Join-Path $loader '.env') 'TEAMAGENT_GIT_CACHE=cache with spaces'
 $info=[Diagnostics.ProcessStartInfo]::new();$info.FileName=$bashPath;$info.WorkingDirectory=$loader;$info.UseShellExecute=$false;$info.RedirectStandardInput=$true;$info.RedirectStandardOutput=$true;$info.RedirectStandardError=$true;$info.CreateNoWindow=$true
 $info.ArgumentList.Add('--noprofile');$info.ArgumentList.Add('--norc');$info.ArgumentList.Add('./.git-clone')
 $bashResult=[TeamagentResearchProcess]::Run($info,'',20000,1048576)
 Assert-That ($bashResult[0] -eq '0' -and (Test-Path -LiteralPath (Join-Path $loader 'cache with spaces/ai-agents/test/.git'))) ('Bash literal cache clone: '+$bashResult[2])
+$nativeNull=if ($IsWindows) { 'NUL' } else { '/dev/null' }
+Assert-That ($bashResult[1].Contains('fixture_hooks_path='+$nativeNull)) 'Bash loader selects the native Git null hook device'
 $cache=Join-Path $loader 'cache with spaces/ai-agents'
 $base=Get-ResearchSafePath $cache 'test';$renamed=Get-ResearchSafePath $cache 'xx-2501-test'
 Move-Item -LiteralPath $base -Destination $renamed

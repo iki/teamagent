@@ -53,6 +53,14 @@ function fixtureGit(root: string, template: string): Git {
     return result.stdout;
   };
 }
+function fixtureConfigValue(value: string): string {
+  assert.ok(!/[\0\r]/u.test(value), "Fixture Git configuration excludes NUL and CR");
+  return `"${value
+    .replace(/\\/gu, "\\\\")
+    .replace(/"/gu, '\\"')
+    .replace(/\n/gu, "\\n")
+    .replace(/\t/gu, "\\t")}"`;
+}
 async function fixture(verifier = fixtureVerifier, persist?: typeof saveTask) {
   const root = await directory();
   const bare = join(root, "remote.git");
@@ -62,11 +70,46 @@ async function fixture(verifier = fixtureVerifier, persist?: typeof saveTask) {
   await mkdir(template);
   const git = fixtureGit(repo, template);
   await git(["init", "--bare", bare]);
+  const key = join(root, "signing");
+  const keygen =
+    process.platform === "win32" ? "C:/Windows/System32/OpenSSH/ssh-keygen.exe" : "ssh-keygen";
+  const generated = await runProcess(root, keygen, ["-q", "-t", "ed25519", "-N", "", "-f", key]);
+  assert.equal(generated.code, 0, "Generate isolated fixture signing key");
+  const allowed = join(root, "allowed-signers");
+  await writeFile(
+    allowed,
+    "fixture@example.invalid " + (await readFile(key + ".pub", "utf8")).trim() + "\n",
+  );
+  // The bare remote received the empty template. Only this working checkout receives
+  // fixture-owned configuration; verify Git's parsed values in one process below.
+  const settings = [
+    ["user", "name", "Workflow Fixture"],
+    ["user", "email", "fixture@example.invalid"],
+    ["user", "signingkey", key],
+    ["core", "autocrlf", "false"],
+    ["core", "hooksPath", ".githooks"],
+    ["commit", "gpgsign", "true"],
+    ["gpg", "format", "ssh"],
+    ['gpg "ssh"', "program", keygen],
+    ['gpg "ssh"', "allowedSignersFile", allowed],
+    ["teamagent", "bunPath", process.execPath],
+  ] as const;
+  await writeFile(
+    join(template, "config"),
+    settings
+      .map(([section, name, value]) => `[${section}]\n\t${name} = ${fixtureConfigValue(value)}\n`)
+      .join(""),
+  );
   await git(["init", "-b", "main"]);
-  await git(["config", "user.name", "Workflow Fixture"]);
-  await git(["config", "user.email", "fixture@example.invalid"]);
-  await git(["config", "core.autocrlf", "false"]);
-  await git(["config", "commit.gpgsign", "false"]);
+  const configured = (await git(["config", "--null", "--list", "--local"])).split("\0");
+  for (const [section, name, value] of settings) {
+    const keyName = `${section.replace(' "ssh"', ".ssh")}.${name}`.toLowerCase();
+    assert.deepEqual(
+      configured.filter((entry) => entry.startsWith(`${keyName}\n`)),
+      [`${keyName}\n${value}`],
+      `Exact isolated Git setting: ${keyName}`,
+    );
+  }
   await writeFile(join(repo, ".gitignore"), ".cache/\n", "utf8");
   await writeFile(
     join(repo, ".workflow.json"),
@@ -85,27 +128,10 @@ async function fixture(verifier = fixtureVerifier, persist?: typeof saveTask) {
     await writeFile(path, "#!/bin/sh\nexit 0\n");
     await chmod(path, 0o755);
   }
-  await git(["config", "core.hooksPath", ".githooks"]);
-  await git(["config", "teamagent.bunPath", process.execPath]);
   await git(["add", "."]);
-  await git(["commit", "-m", "test: Initialize fixture"]);
+  await git(["-c", "commit.gpgsign=false", "commit", "-m", "test: Initialize fixture"]);
   await git(["remote", "add", "origin", bare]);
   await git(["push", "-u", "origin", "main"]);
-  const key = join(root, "signing");
-  const keygen =
-    process.platform === "win32" ? "C:/Windows/System32/OpenSSH/ssh-keygen.exe" : "ssh-keygen";
-  const generated = await runProcess(root, keygen, ["-q", "-t", "ed25519", "-N", "", "-f", key]);
-  assert.equal(generated.code, 0, "Generate isolated fixture signing key");
-  const allowed = join(root, "allowed-signers");
-  await writeFile(
-    allowed,
-    "fixture@example.invalid " + (await readFile(key + ".pub", "utf8")).trim() + "\n",
-  );
-  await git(["config", "commit.gpgsign", "true"]);
-  await git(["config", "gpg.format", "ssh"]);
-  await git(["config", "gpg.ssh.program", keygen]);
-  await git(["config", "user.signingkey", key]);
-  await git(["config", "gpg.ssh.allowedSignersFile", allowed]);
   let remoteAllowed = true,
     commits = 0,
     pushes = 0,

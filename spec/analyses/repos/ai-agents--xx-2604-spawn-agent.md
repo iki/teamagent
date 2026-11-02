@@ -2,11 +2,11 @@
 
 Source: [spawn-agent](https://github.com/millionco/spawn-agent) · [Analysis](../../projects/ai-agents--xx-2604-spawn-agent.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `f0769c6209876059ec524b436ba606710ee9df6f`; commit date: 2026-04-25T23:08:40-07:00; review date: unknown; observed SHA: `f0769c6209876059ec524b436ba606710ee9df6f`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `f0769c6209876059ec524b436ba606710ee9df6f`; commit date: 2026-04-25T23:08:40-07:00; review date: unknown; observed SHA: `f0769c6209876059ec524b436ba606710ee9df6f`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/millionco/spawn-agent/compare/f0769c6209876059ec524b436ba606710ee9df6f...f0769c6209876059ec524b436ba606710ee9df6f). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: outdated; upstream availability: available.
+- Git discovery: inspected; source lifecycle: outdated; upstream availability: available.
 
 ## Recent commits
 

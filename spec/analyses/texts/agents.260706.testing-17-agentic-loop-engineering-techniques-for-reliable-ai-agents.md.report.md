@@ -6,23 +6,19 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://levelup.gitconnected.com/testing-17-agentic-loop-engineering-techniques-for-reliable-ai-agents-7966adad5835>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-28T14:33:55.032Z. Local validation: 2026-11-01T08:51:16.093Z. Import: **pinned**. Content validation: **partial**.
+Mode: **static**. Last remote attempt: 2026-10-28T14:33:55.032Z. Local validation: 2026-11-01T21:49:04.531Z. Import: **pinned**. Content validation: **partial**.
 
 First captured: 2026-10-28T14:33:55.176Z. Source creation/publication date: 2026-07-06. Date evidence: configured (published= source-list assertion). Filename dates and Last-Modified are not treated as creation dates.
 
 Source revision: not supplied.
 
-Original bytes: 76844. Extracted Markdown characters: 68476. Captured images: 2.
+Original bytes: 76844. Extracted Markdown characters: 74591. Captured images: 60.
 
-Memory source: `4d9ae7d0-ce1c-43c8-831e-f1f16f7f9939`. Version: `e84c6c52-8681-45ee-8374-c31776827e84`. Content SHA-256: `e4f3a64d895ff6319034ec79502777fdc84db292d6f5366ba0d4dc907181af39`.
+Memory source: `4d9ae7d0-ce1c-43c8-831e-f1f16f7f9939`. Version: `0a19256f-78fb-452b-93fd-a93ed504e226`. Content SHA-256: `4dc0646a6fffa6b2eb0bcb60b90d47f62ca4293162ba72ec5870754626dd778c`.
 
-[Version evidence and assets](../../../.cache/text/exports/4d9ae7d0-ce1c-43c8-831e-f1f16f7f9939/e84c6c52-8681-45ee-8374-c31776827e84/manifest.json). Export manifests retain exact locators; treat the cache as private.
+[Version evidence and assets](../../../.cache/text/exports/4d9ae7d0-ce1c-43c8-831e-f1f16f7f9939/0a19256f-78fb-452b-93fd-a93ed504e226/manifest.json). Export manifests retain exact locators; treat the cache as private.
 
-- Rendered article text and DOM image inventory&#44; not original HTTP HTML&#46;
-- Image inventory does not establish saved image coverage&#46;
-- No authentication&#44; paywall bypass or challenge interaction&#46;
-- 61 article image elements &#47; 60 distinct displayed image URLs were inventoried&#59; two assets were saved&#44; including the author avatar&#46; Remaining images are missing&#46;
-- Rendered text preserves visible wording and code indentation&#59; original DOM structure&#44; links and visual layout are not retained&#46; Saved assets are appended without claiming original placement&#46;
+- Retained browser&#45;rendered text&#44; not original publisher HTTP HTML&#46; Original links&#44; DOM layout and inline image placement remain unverified&#46;
 - Image count is measured&#59; visual fidelity and completeness are unverified&#46;
 - Static snapshot checked locally&#59; no remote freshness check&#44; conversion or export rewrite was performed&#46;
 

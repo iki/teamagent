@@ -1,0 +1,25 @@
+# Yue2 Studio — duplicate catalog identity
+
+Source: [Yue2 Studio](https://github.com/timoncool/yue2-studio).
+
+## 2026-11-01 duplicate disposition
+
+The regenerated source declarations include two configured checkouts of this
+same public repository, under the generation and media categories. The bounded
+local observation found the same canonical origin and full commit
+`bd62c50e4b6ea7e0551b1378b198519b7e0376ce` in both. Both configured checkouts are
+preserved; their operational identities are not merged or deleted.
+
+The authoritative [generation-category review](ai-gen--yue2-studio.md) retains
+the source history and the scoped analysis at that commit. This report is an
+explicit duplicate pointer, archived to avoid counting the same source review
+twice. It is not a second capability audit or evidence of a fresh remote fetch.
+Any later differing revision requires reconciliation before its findings can be
+inferred from the primary report.
+
+Related conclusions remain in [media processing](../../media-processing.md),
+[generation](../../generation.md) and [import/generation](../../import-generation.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [yue2-studio](https://github.com/timoncool/yue2-studio); analyzed commit `bd62c50e4b6ea7e0551b1378b198519b7e0376ce`; commit date 2026-11-01T10:27:24Z; review date 2026-11-01T23:16:12.661Z; depth reviewed. [Maintenance record](../repos/ai-media--yue2-studio.md).
+<!-- teamagent-analysis:end -->

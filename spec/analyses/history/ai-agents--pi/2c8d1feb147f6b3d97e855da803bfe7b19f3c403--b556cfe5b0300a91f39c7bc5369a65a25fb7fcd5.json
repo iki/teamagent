@@ -1,0 +1,860 @@
+{
+  "id": "ai-agents--pi",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/earendil-works/pi",
+  "report": "spec/projects/ai-agents--pi.md",
+  "analyzedSha": "2c8d1feb147f6b3d97e855da803bfe7b19f3c403",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-11-01T00:36:33Z",
+  "observedSha": "b556cfe5b0300a91f39c7bc5369a65a25fb7fcd5",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "b556cfe5b0300a91f39c7bc5369a65a25fb7fcd5",
+      "date": "2026-11-01T15:20:46Z",
+      "subject": "docs(chord): schemas are pi-schema's in the design"
+    },
+    {
+      "sha": "c09c98d7d2caf659b4bbe1e2427adb1bdac4b114",
+      "date": "2026-11-01T14:47:36+01:00",
+      "subject": "fix(chord): admit a routed host even when the relay that spawned it is gone"
+    },
+    {
+      "sha": "0f21a3319d83d3a17176cf0850f69b3d9cc3f5ca",
+      "date": "2026-11-01T14:40:56+01:00",
+      "subject": "fix(coding-agent,tui): reuse syntax highlighting and rendered Markdown blocks"
+    },
+    {
+      "sha": "6291b9bcc3ee9480c2caba8676fc2f6cd321eaa9",
+      "date": "2026-11-01T11:12:44Z",
+      "subject": "feat(agent): pi-schema's Static types TypeBox-built schemas too, without depending on TypeBox"
+    },
+    {
+      "sha": "a6bde34bb61499cfcd9ef70545d5750416a632f7",
+      "date": "2026-11-01T10:22:20Z",
+      "subject": "feat(schema): benchmark against ata-validator, Ajv and Zod"
+    },
+    {
+      "sha": "be039fb316a22c70cdf22eddf4b992110d84d6fb",
+      "date": "2026-11-01T10:15:02Z",
+      "subject": "feat(chord): Chord v1 and v2 on pi-schema, drop TypeBox"
+    },
+    {
+      "sha": "6536f80129a266c3619c044f8487c0279fc39cd9",
+      "date": "2026-11-01T10:08:42Z",
+      "subject": "feat(ai,agent,coding-agent): validate tool arguments with pi-schema, drop TypeBox"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/examples/mcp-codemode/tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/src/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/agent-loop.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agent/test/agent-tool-typebox.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/agent.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/utils/calculate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/utils/get-current-time.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/compat-schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/model-schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/providers/schema-builders.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R068",
+      "path": "packages/ai/src/utils/string-enum.ts",
+      "previousPath": "packages/ai/src/utils/typebox-helpers.ts"
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils/transcript.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils/validation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/compat-schema.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/faux-provider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/interleaved-thinking.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/stream.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/validation-probes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/validation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/vitest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/docs/guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/docs/next/design.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/docs/next/layer-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/docs/next/slice-3a.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/docs/next/slices.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/docs/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/docs/tutorial.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/cell.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/contracts/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/contracts/contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/contracts/declare.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/contracts/evolve.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/contracts/history.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/contracts/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/contracts/params.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/contracts/schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/contracts/snapshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/data/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/data/args.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/data/validator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/documents/definition.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/jobs/definition.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/link/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/link/message.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/store/archive.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/store/columns.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/store/expression.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/store/json-column.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/next/store/table-evolve.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/object.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/remote.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/wire.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/awaiting.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/bindings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/boundary.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/cluster.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/contract.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/fixtures/echo.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/fixtures/loader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/test/fixtures/schemas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/flow-units.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/flow.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/generations.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/host-objects-reload.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/host.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/hydration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/link.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/links-review.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/next/contracts/declare.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/next/contracts/evolve.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/next/contracts/fingerprint.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/next/contracts/params.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/next/contracts/schema.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/next/contracts/snapshot.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/next/data/args.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/next/data/params.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/next/data/validator.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/next/examples/37-plugin-imports/plugins/shapes/units.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/test/next/schema/declarations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/test/next/schema/owner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/test/next/schema/proofs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/test/next/schema/recorded.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/test/next/schema/schema-switch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/test/next/schema/stored/archive.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/test/next/schema/stored/store.db",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/chord/test/next/schema/write-stored.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/placement.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/principals.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/provider-cost.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/readiness.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/reload.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/requests.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/review.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/state-init.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/state.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/tutorial.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/types.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/variants.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/websocket.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/codemode/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/codemode/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/docs/extensions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/coding-agent/examples/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/install-lock/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/schemas/models.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/core/extensions/loader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/coding-agent/src/core/extensions/pi-ai-extension-view.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/core/extensions/virtual-modules.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/core/model-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/coding-agent/src/core/pi-ai-schemas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/core/settings-schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/core/tools/bash.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/core/tools/edit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/core/tools/find.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/core/tools/grep.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/core/tools/ls.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/core/tools/read.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/core/tools/renderers/write.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/core/tools/tool-definition-wrapper.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/core/tools/write.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/extensions/codemode/renderer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/extensions/codemode/tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/modes/interactive/components/assistant-message.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/modes/interactive/components/markdown-transform.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/modes/interactive/components/user-message.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/utils/highlight-js.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/utils/syntax-highlight.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/test/assistant-message.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/coding-agent/test/code-highlighter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/test/suite/agent-session-codemode.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/codemode/codemode.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/codemode/models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/harness/define.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/harness/tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/harness/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/tool-search/tool-search.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/tools/bash.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/tools/edit.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

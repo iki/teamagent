@@ -35,6 +35,18 @@ Teamagent should reject over-budget representations before cloning/canonicalizin
 
 **Coverage:** Read the complete targeted estimator and new test delta. Wider authentication callers and existing traversal tests were not re-audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## External-update review - 2026-11-01
+
+Reviewed `d3ab0faf52a02ff5a618f3ed7beb608b78752abd` against `60c0cf977a34c99afa7942466625aeba74969bdf`.
+
+The 418-path update has a focused lifecycle improvement in [call-relationship traversal](https://github.com/morluto/rea/blob/d3ab0faf52a02ff5a618f3ed7beb608b78752abd/src/application/CallRelationshipTraversal.ts): provider cancellation or unconfirmed owned-resource cleanup returns stopped, while an ordinary unavailable read and an unreadable response retain separate states. The stopped result identifies discovered procedures that were not expanded, preserving uncertainty instead of continuing into unresolved provider state.
+
+The complete inspected [direct cleanup delta](https://github.com/morluto/rea/blob/d3ab0faf52a02ff5a618f3ed7beb608b78752abd/src/application/DirectAnalysisCleanup.ts) and [composed-error delta](https://github.com/morluto/rea/blob/d3ab0faf52a02ff5a618f3ed7beb608b78752abd/src/domain/analysisErrorCleanup.ts) retain the primary failure alongside cleanup failure and project remediation for the invocation that owns the resources. They preserve admitted partial observation and avoid duplicating captured output in a nested error projection. Shared projection/redaction internals were not re-audited.
+
+The first 190 diff lines of the new [MCP boundary fixture](https://github.com/morluto/rea/blob/d3ab0faf52a02ff5a618f3ed7beb608b78752abd/tests/boundary/mcp/callGraphCleanupIncomplete.test.ts) construct an owned-worker cleanup failure and expect traversal to stop before the queued sibling, with an inline partial observation, explicit cleanup resources and unknown goal status. Remaining fixture cases were not read in this slice.
+
+**Harness consequence:** Treat cleanup completeness as a separate execution prerequisite, keep useful partial evidence with its unexpanded scope, and assign retry/recovery authority to the actual resource owner. A primary analysis failure does not erase a cleanup obligation, and releasing a caller's view does not establish process termination. This scoped review covers three complete implementation deltas and the stated fixture prefix, not the remaining reverse-engineering providers, installers or application boundaries. No upstream program, native analyzer, MCP service, fixture or test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [rea](https://github.com/morluto/rea); analyzed commit `60c0cf977a34c99afa7942466625aeba74969bdf`; commit date 2026-11-01T17:53:37+08:00; review date 2026-11-01T11:37:37.120Z; depth reviewed. [Maintenance record](../repos/ai-security--rea.md).
+Analysis metadata: source [rea](https://github.com/morluto/rea); analyzed commit `d3ab0faf52a02ff5a618f3ed7beb608b78752abd`; commit date 2026-11-02T03:14:29+08:00; review date 2026-11-01T23:12:06.798Z; depth reviewed. [Maintenance record](../repos/ai-security--rea.md).
 <!-- teamagent-analysis:end -->

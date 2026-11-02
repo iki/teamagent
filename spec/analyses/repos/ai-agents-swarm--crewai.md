@@ -2,11 +2,11 @@
 
 Source: [crewai](https://github.com/crewaiinc/crewai) · [Analysis](../../projects/ai-agents-swarm--crewai.md) · [agents](../../agents.md), [memory](../../memory.md), [evolution](../../evolution.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `f04cce923973df6ea87386ec7355878c9b655dd3`; commit date: 2026-11-01T05:07:47-03:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `f04cce923973df6ea87386ec7355878c9b655dd3`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `b2762ddae6edd7dae1637f81b68924db6b3ece62`; commit date: 2026-11-01T12:42:28-03:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `b2762ddae6edd7dae1637f81b68924db6b3ece62`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/crewaiinc/crewai/compare/f04cce923973df6ea87386ec7355878c9b655dd3...f04cce923973df6ea87386ec7355878c9b655dd3). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/crewaiinc/crewai/compare/b2762ddae6edd7dae1637f81b68924db6b3ece62...b2762ddae6edd7dae1637f81b68924db6b3ece62). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -1,0 +1,385 @@
+{
+  "id": "ai-security--codex-security",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/openai/codex-security",
+  "report": "spec/projects/ai-security--codex-security.md",
+  "analyzedSha": "f615be2e708a4f83f10e924af1ee23b511076fe1",
+  "analyzedAt": "2026-11-01T11:37:37.120Z",
+  "analyzedCommitDate": "2026-11-01T01:38:05-07:00",
+  "observedSha": "4694a0b07044704e834a9b2da2109c4cc998cf36",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "4694a0b07044704e834a9b2da2109c4cc998cf36",
+      "date": "2026-11-01T10:52:33-08:00",
+      "subject": "docs: give each scanner import a focused guide (#2201)"
+    },
+    {
+      "sha": "03e73d8048b9b87ec51fc44ebcb6a3198c304c94",
+      "date": "2026-11-01T10:20:40-08:00",
+      "subject": "perf(imports): skip Cloud number formatting for local evidence (#2202)"
+    },
+    {
+      "sha": "417145afb3dbff9631a07d3d07a631e3ffea1cb7",
+      "date": "2026-11-01T10:18:37-08:00",
+      "subject": "test(imports): isolate Git commands in local import fixtures (#2206)"
+    },
+    {
+      "sha": "bd55abcee8a236b588c63fb10974dfe1faec1344",
+      "date": "2026-11-01T10:18:24-08:00",
+      "subject": "perf(imports): avoid duplicate Git metadata discovery (#2205)"
+    },
+    {
+      "sha": "7d2f3b7aebb844a1b6d07a0b795ba61db640b534",
+      "date": "2026-11-01T10:18:12-08:00",
+      "subject": "refactor(github): share connection and error handling for finding imports (#2204)"
+    },
+    {
+      "sha": "51b6fd886345d664e8c86432b831839fc9f3c6b0",
+      "date": "2026-11-01T10:17:59-08:00",
+      "subject": "fix(sdk): isolate rejected publication progress callbacks (#2203)"
+    },
+    {
+      "sha": "78b300b1d6fe5b07424a6345fe5e0b403c07fd93",
+      "date": "2026-11-01T10:17:47-08:00",
+      "subject": "refactor(imports): share SARIF rule indexing and reference checks (#2200)"
+    },
+    {
+      "sha": "a6a25475f1a12a40f0e896e7f987b790c2188449",
+      "date": "2026-11-01T10:17:34-08:00",
+      "subject": "docs: share scanner Cloud publication and recovery guidance (#2199)"
+    },
+    {
+      "sha": "a55d39176e45b9f03705ea7f241e04b639d4d893",
+      "date": "2026-11-01T10:17:21-08:00",
+      "subject": "refactor(imports): share optional field parsing across GitHub and Wiz (#2198)"
+    },
+    {
+      "sha": "2c7b3776cf34ec2cb1ca77e3e11a965f29ea3552",
+      "date": "2026-11-01T10:17:09-08:00",
+      "subject": "test(imports): share the historical Wiz replay fixture (#2197)"
+    },
+    {
+      "sha": "80821889d0b58aa1e23ba0a4c4e2805feaf0be60",
+      "date": "2026-11-01T09:44:36-08:00",
+      "subject": "feat(imports): normalize selected Semgrep Code findings for local import (#2164)"
+    },
+    {
+      "sha": "09d08d9c9bcc8977299759d9f8f0ed6817ab4397",
+      "date": "2026-11-01T08:09:56-08:00",
+      "subject": "refactor(imports): require exhaustive scanner reader dispatch (#2195)"
+    },
+    {
+      "sha": "fe1f1dc63eeda4ebec4116d5aabf98db6c609c7a",
+      "date": "2026-11-01T08:09:48-08:00",
+      "subject": "refactor(imports): share local Git metadata discovery (#2194)"
+    },
+    {
+      "sha": "5b987f25e1efd4d071310e1234d28d074dbfcceb",
+      "date": "2026-11-01T08:09:35-08:00",
+      "subject": "perf(imports): reuse Wiz replay projections for package reports (#2193)"
+    },
+    {
+      "sha": "8b21fa740d8afde3c83bc3863b3a1ce0e636e869",
+      "date": "2026-11-01T08:09:23-08:00",
+      "subject": "docs: normalize GitHub scanner evidence for its destination (#2192)"
+    },
+    {
+      "sha": "a1558f24dc6f62998ad301690239ad15776c3812",
+      "date": "2026-11-01T08:09:11-08:00",
+      "subject": "perf(sdk): index SARIF artifact URIs once per run (#2191)"
+    },
+    {
+      "sha": "4fbb98e8326e1c2a82ddb3657c03ff42a9eb0971",
+      "date": "2026-11-01T08:08:57-08:00",
+      "subject": "test: reuse local report fixtures for Wiz package imports (#2190)"
+    },
+    {
+      "sha": "25bba53b4eb4c4222e5435e6a62312ecb0c9da41",
+      "date": "2026-11-01T02:33:04-08:00",
+      "subject": "docs: organize external scanner integration guides (#2189)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scanner-imports/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scanner-imports/blackduck.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scanner-imports/endor.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scanner-imports/github-code-scanning.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scanner-imports/github-dependabot.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scanner-imports/github-security-advisories.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scanner-imports/inspector.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scanner-imports/opengrep.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scanner-imports/schema-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scanner-imports/semgrep.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scanner-imports/snyk.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scanner-imports/sonar.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scanner-imports/veracode.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scanner-imports/wiz.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/skills/publish-findings/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/skills/publish-findings/references/wiz-import.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/docs/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/scripts/package-dist-files.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/endor-findings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/external-findings-local.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/external-findings-publish.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/external-findings-read.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/external-import-contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/github-advisories.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/github-findings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/github.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/inspector-findings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/typescript/src/local-git-metadata.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/record.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/scanner-import.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/semgrep-findings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/typescript/src/semgrep-platform-findings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/snyk-findings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/sonar-collector.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/sonar-import.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/wiz-csv.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/wiz-findings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/blackduck-repository-import.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/external-findings-import.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/external-findings-local-helpers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/external-findings-local.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/external-findings-publish.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/github-advisories.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/inspector-repository-import.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/request-metadata.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/scanner-import.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/semgrep-findings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/typescript/tests-ts/semgrep-platform-selection.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/sonar-findings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/veracode-repository-import.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/wiz-findings.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

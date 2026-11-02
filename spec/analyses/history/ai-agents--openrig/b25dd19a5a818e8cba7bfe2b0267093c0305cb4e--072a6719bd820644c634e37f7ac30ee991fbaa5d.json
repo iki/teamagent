@@ -1,0 +1,695 @@
+{
+  "id": "ai-agents--openrig",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/mvschwarz/openrig",
+  "report": "spec/analyses/unreviewed/ai-agents--openrig.md",
+  "analyzedSha": "b25dd19a5a818e8cba7bfe2b0267093c0305cb4e",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-10-30T07:49:24-07:00",
+  "observedSha": "072a6719bd820644c634e37f7ac30ee991fbaa5d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "072a6719bd820644c634e37f7ac30ee991fbaa5d",
+      "date": "2026-11-01T11:46:06-08:00",
+      "subject": "fix(daemon): rebuild a Claude seat behind a non-exec launcher, and keep the resume target on a failed handover (#2341) (#2354)"
+    },
+    {
+      "sha": "3fb3f286a5e68c905e631494df53bc1c61eeb40e",
+      "date": "2026-11-01T11:06:49-08:00",
+      "subject": "docs(community-harness): a dsh example runner for the runner contract (#2305)"
+    },
+    {
+      "sha": "b65e4ea831a037a11b786fddb4ce1e7750c0a971",
+      "date": "2026-11-01T10:38:15-08:00",
+      "subject": "feat(docs): the conformance check covers the answered permission path (#2306)"
+    },
+    {
+      "sha": "73a1de0b4fc413daa3234def4693f0e1b022d8c2",
+      "date": "2026-11-01T10:29:31-08:00",
+      "subject": "docs: correct migration 145 permission default comment (#2355)"
+    },
+    {
+      "sha": "eb6c158217b3ededcb5b38bed3d1e41c994b5d5a",
+      "date": "2026-11-01T10:11:18-08:00",
+      "subject": "docs(reference): add Pi tool-selection recovery runbook (#2186)"
+    },
+    {
+      "sha": "0af3a1092867dda05c8d4e583908ab8bf8f170fa",
+      "date": "2026-11-01T09:41:38-08:00",
+      "subject": "fix(daemon): match OPENRIG_WAKE_SUSPEND entries by their destination's own prefix (finishes #2114) (#2353)"
+    },
+    {
+      "sha": "ab02a480d19310321898b73765203b12706a34b5",
+      "date": "2026-11-01T09:26:50-08:00",
+      "subject": "feat: answer a runner seat's permission requests through a chosen person (#2301)"
+    },
+    {
+      "sha": "5b4627efa38eb1a41da6680d56d6998e5deb2b22",
+      "date": "2026-11-01T09:00:04-08:00",
+      "subject": "slack: a resolved decision notice no longer re-renders as a live ask (#2349)"
+    },
+    {
+      "sha": "1f068d2ee244e00df315983e8c8b22f0afdd8cae",
+      "date": "2026-11-01T08:55:07-08:00",
+      "subject": "test(cli): use fileURLToPath instead of URL.pathname in host-bindings and restore tests (#2352)"
+    },
+    {
+      "sha": "860d352556986151eed96d0cc8af62cfed8a5520",
+      "date": "2026-11-01T08:33:36-08:00",
+      "subject": "fix: preserve drafts throughout managed compaction (#2347)"
+    },
+    {
+      "sha": "31a08f70bdd75836079c3164744a791cdc9cb15f",
+      "date": "2026-11-01T08:04:46-08:00",
+      "subject": "fix(daemon): re-apply current Claude activity hooks on contained resume (#2338)"
+    },
+    {
+      "sha": "9fa4f2c055b878a15a4df56281dac89bfc734b19",
+      "date": "2026-11-01T08:01:01-08:00",
+      "subject": "fix(daemon): a provider switch keeps the seat's record true and its running effort (#2344)"
+    },
+    {
+      "sha": "bcb2edfd1141a4fb284b0a87006a1999c77669ed",
+      "date": "2026-11-01T07:41:04-08:00",
+      "subject": "daemon: status reports a pending start under a live reservation (#2348)"
+    },
+    {
+      "sha": "0389245d87c5031ef5f823ca66d4edac0bdf463d",
+      "date": "2026-11-01T07:27:22-08:00",
+      "subject": "fix(cli): learn hosts with prototype-named aliases (#2346)"
+    },
+    {
+      "sha": "7c6746e612effcbeaad2fee1a406cf00ab058b99",
+      "date": "2026-11-01T07:26:24-08:00",
+      "subject": "fix(daemon): submit through the paste route when a read-only tmux client refuses send-keys (#2345)"
+    },
+    {
+      "sha": "1c5cbf728e890d419fa63de05defb2a30ad0908e",
+      "date": "2026-11-01T07:25:20-08:00",
+      "subject": "fix(slack): clarify typed decision replies (#2299)"
+    },
+    {
+      "sha": "ac3406ea7685ea1f1b10b386b951486f8425f28c",
+      "date": "2026-11-01T07:23:54-08:00",
+      "subject": "Preserve member startup declarations in rig exports (#2190)"
+    },
+    {
+      "sha": "2d7275c91860cce5265161b8aa1e47e9cc53917d",
+      "date": "2026-11-01T07:22:42-08:00",
+      "subject": "fix(daemon): keep a seat's skill copy when its source moved on (#2337)"
+    },
+    {
+      "sha": "2f1abfa6bf3b3700bd328e6005e06af80387e00f",
+      "date": "2026-11-01T07:21:36-08:00",
+      "subject": "fix(daemon): preserve image pin on unpin failure (#2332)"
+    },
+    {
+      "sha": "97bb7d33b4fe342377ff78aab577c4d9c01c65d8",
+      "date": "2026-11-01T07:20:00-08:00",
+      "subject": "fix(seat): include process-chain evidence in restart refusals (#2330)"
+    },
+    {
+      "sha": "b5128b1fd2b12fcfeb80e3adbf2da1523f482884",
+      "date": "2026-11-01T07:19:04-08:00",
+      "subject": "fix(tmux): avoid control mode on vulnerable servers (#2325)"
+    },
+    {
+      "sha": "86e17cd2f8b28f567c98465239b61d11ef29d227",
+      "date": "2026-11-01T07:18:07-08:00",
+      "subject": "fix(tui): separate rigs in the instance table (#2327)"
+    },
+    {
+      "sha": "cd8f8b4f0848bc66e4993eae6269415958b44500",
+      "date": "2026-11-01T07:16:45-08:00",
+      "subject": "fix(gateway): render agent Markdown in Slack row bodies, with native lists (#2316)"
+    },
+    {
+      "sha": "660598e6411d8a0cab94f99a4e3efba27a70a92d",
+      "date": "2026-11-01T07:14:34-08:00",
+      "subject": "fix: retain prompt escalations when human delivery is unavailable (#2343)"
+    },
+    {
+      "sha": "caeefec951bfc99340568258cc700c7fca9afcc1",
+      "date": "2026-11-01T07:11:29-08:00",
+      "subject": "fix(daemon): a never-started seat on rig launch --seats starts (#2342)"
+    },
+    {
+      "sha": "cd4b7c39ca05a3c8d6cef9bb5bf17694d83d3719",
+      "date": "2026-11-01T07:09:11-08:00",
+      "subject": "Keep completed compaction maps armed through a bounded idle wait (#2323)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "docs/as-built/cli-reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/agent-startup-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reference/community-harness-examples/dsh/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reference/community-harness-examples/dsh/dsh.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reference/community-harness-examples/dsh/openrig-dsh-runner.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/community-harness-presets.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/harness-runner-contract.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reference/pi-tool-selection-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/rig-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/runner-conformance/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/runner-conformance/check-runner.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/runner-conformance/fake-acp-agent.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/tmux-servers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/compact.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/daemon.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/export.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/seat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/daemon-lifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/daemon-reachability.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/host-bindings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/daemon-lifecycle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/export-import.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/test/host-bindings-prototype.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/host-bindings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/restore.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/test/seat-permissions-to-verb.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/context-packs-src/onboarding-width/public-what-you-can-do.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/adapters/tmux-control.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/adapters/tmux.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/db/all-migrations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/db/migrations/145_node_permissions_to.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/agent-images/agent-image-library-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/claude-compaction-enforcer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/context-monitor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/domain/desired-claude-activity-hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/gateway/operator-delivery-engine.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/gateway/slack/inbound.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/gateway/slack/message.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/gateway/slack/slack-delivery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/mission-control/mission-control-write-contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/model-divergence/current-generation-record.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/native-process-lineage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/node-launcher.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/provider/claude-seat-switch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/provider/provider-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/queue-repository.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/queue-wake-ladder.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/restore-check-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/restore-orchestrator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/rig-repository.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/rigspec-exporter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/rigspec-instantiator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/domain/runner-permissions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/seat-lifecycle-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/seat-restart-in-place.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/seat-skill-storage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/seat-status-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/session-transport.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/routes/activity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/routes/compaction.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/routes/provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/routes/restore-check.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/routes/rigspec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/routes/seat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/startup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/agent-image-library-service.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/claude-compaction-enforcer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/claude-conversation-rotation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/claude-core-plugin-load.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/test/claude-uncommitted-generation-identity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/claude-wrapper-launch-identity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/test/community-harness-dsh-example.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/compaction-command-submission.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/compaction-draft-aware.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/compaction-preparation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/compaction-restart.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/current-generation-record.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/delivery-rules-engine.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/fixtures/runner-conformance/minimal-acp-runner.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/helpers/test-app.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/launch-node-subset.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/participants-default-consumers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/pod-rigspec-instantiator.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/prompt-blocked-alert.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/provider-routes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/provider-switch-claude-seat.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/queue-wake-ladder.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/quiet-hold-release.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/restore-claude-activity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/rigspec-exporter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/rigspec-routes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/runner-conformance-check.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/test/runner-conformance-real-routes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/test/runner-permission-path.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/test/seat-permissions-to.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/seat-restart-in-place.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/seat-skill-storage.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/test/slack-markdown-mrkdwn.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/slack-sender-first.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/slack-structured-questions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/tmux-adapter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/tmux-control.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/tui/src/render.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/tui/test/instance-mission-control.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

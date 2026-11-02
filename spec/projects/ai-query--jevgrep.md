@@ -54,6 +54,16 @@ The renamed decision-audit skill asks agents to retain a public decision ledger 
 
 **Scope and limits:** Complete changed-path inventory and diff read, including the new installer and changed skills. Upstream skills were analyzed as data, not adopted or executed. No hook installation, commit fixture, token benchmark or retrieval evaluation was run.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/dzhng/jevgrep](https://github.com/dzhng/jevgrep) at `3dca47aa1c8bd80731b84ce2a884c5d099ebc7f3` against prior analyzed `58b7091e813ade120ed759a0b3f6249b8680b640`. Evidence: [scripts/check-file-size.mjs](https://github.com/dzhng/jevgrep/blob/3dca47aa1c8bd80731b84ce2a884c5d099ebc7f3/scripts/check-file-size.mjs), [.agents/skills/port-features/SKILL.md](https://github.com/dzhng/jevgrep/blob/3dca47aa1c8bd80731b84ce2a884c5d099ebc7f3/.agents/skills/port-features/SKILL.md).
+
+The staged size checker switches rename parsing to NUL-separated name/status records, consuming both paths for rename entries so quoted non-ASCII names do not break origin lookup. A new upstream skill describes retaining source revision, history, tests and an explained adaptation diff when porting features; that document is research input, not an installed Teamagent instruction.
+
+**Architecture consequence:** Use unambiguous Git path framing and regression cases for unusual names. Preserve patch provenance and deliberate adapter differences without treating upstream workflow prose as authority to execute or install anything.
+
+**Scope and limits:** Read the complete two-file diff. No upstream size-check process or feature port was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [jevgrep](https://github.com/dzhng/jevgrep); analyzed commit `58b7091e813ade120ed759a0b3f6249b8680b640`; commit date 2026-10-30T13:53:56+04:00; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--jevgrep.md).
+Analysis metadata: source [jevgrep](https://github.com/dzhng/jevgrep); analyzed commit `3dca47aa1c8bd80731b84ce2a884c5d099ebc7f3`; commit date 2026-11-01T15:29:21+04:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--jevgrep.md).
 <!-- teamagent-analysis:end -->

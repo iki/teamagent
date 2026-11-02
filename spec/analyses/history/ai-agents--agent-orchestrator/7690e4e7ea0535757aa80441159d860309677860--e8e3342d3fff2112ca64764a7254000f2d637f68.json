@@ -1,0 +1,905 @@
+{
+  "id": "ai-agents--agent-orchestrator",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/ComposioHQ/agent-orchestrator",
+  "report": "spec/projects/ai-agents--agent-orchestrator.md",
+  "analyzedSha": "7690e4e7ea0535757aa80441159d860309677860",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-11-01T14:48:59+05:30",
+  "observedSha": "e8e3342d3fff2112ca64764a7254000f2d637f68",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "e8e3342d3fff2112ca64764a7254000f2d637f68",
+      "date": "2026-11-02T01:23:31+05:30",
+      "subject": "fix: stabilize five desktop recovery paths (#7553)"
+    },
+    {
+      "sha": "b39378b96389e5cafef47aee3cd65660269fae80",
+      "date": "2026-11-02T00:54:53+05:30",
+      "subject": "feat(claude): gate models the installed Claude Code is too old for (#7136)"
+    },
+    {
+      "sha": "d23a10a6303ee47738408d1f6451ab3555dd0d8b",
+      "date": "2026-11-01T23:25:15+05:30",
+      "subject": "fix(chat): window model menu choices to prevent lag on large catalogs (#7526)"
+    },
+    {
+      "sha": "b824bc8867baf5805820530b5b7154d3b84bb24a",
+      "date": "2026-11-01T12:24:31-05:00",
+      "subject": "fix: keep selection actions visible and responsive (#7327)"
+    },
+    {
+      "sha": "e7f30a44d2c2876a25c20c6ab7450cc62e1d42c2",
+      "date": "2026-11-01T12:24:16-05:00",
+      "subject": "fix: recover unanswered side-chat creation requests (#7560)"
+    },
+    {
+      "sha": "24e2d7eb80b51841f88bdb1f93c0b79beee261c7",
+      "date": "2026-11-01T22:52:00+05:30",
+      "subject": "fix(chat): guide DeepSeek missing-key failures to setup (#7303)"
+    },
+    {
+      "sha": "4815e4729e180f97f0c8a4e3b036bddd657d447d",
+      "date": "2026-11-01T22:47:58+05:30",
+      "subject": "fix(browser): preserve viewport width during inspector toggles (#7561)"
+    },
+    {
+      "sha": "b303d2fe60beaf2712bc8b8071d8c08a6389bee4",
+      "date": "2026-11-01T10:25:03-05:00",
+      "subject": "fix: consolidate AO side-chat commands to /btw (#7501)"
+    },
+    {
+      "sha": "021072c453889aca29fa6a62a879b1bd4f0cbb55",
+      "date": "2026-11-01T10:23:40-05:00",
+      "subject": "fix(desktop): block shell reload and devtools in packaged builds (#7558)"
+    },
+    {
+      "sha": "6e37fc410cd54ae4be9ebe7491327c309b3a93a2",
+      "date": "2026-11-01T10:22:44-05:00",
+      "subject": "fix: follow chat selections and add Ctrl/Cmd+L attachment (#7489)"
+    },
+    {
+      "sha": "17d060345a9a885f8f998ddc402d4df79a666bc5",
+      "date": "2026-11-01T20:41:30+05:30",
+      "subject": "fix(chat): support Codex structured user input (#7186)"
+    },
+    {
+      "sha": "9785047f8172156aee186c22b9fda177f6807824",
+      "date": "2026-11-01T08:17:29-05:00",
+      "subject": "feat(desktop): ask Local or Cloud before listing project sources (#7554)"
+    },
+    {
+      "sha": "a40c241331f71d22f95dbbc6f2ec0bface8223e0",
+      "date": "2026-11-01T16:49:49+05:30",
+      "subject": "fix: keep AO's ao first after login-shell startup files (#7429)"
+    },
+    {
+      "sha": "648d8379f7d4ef0b618ab4fbdc91483f775bf962",
+      "date": "2026-11-01T16:32:36+05:30",
+      "subject": "fix(chat): draw live work in the conversation, not a nested scroll box (#7528)"
+    },
+    {
+      "sha": "3c51c71a9f074f13cdc62fe76385f67f3464e76c",
+      "date": "2026-11-01T16:10:26+05:30",
+      "subject": "feat(desktop): map Cmd+Backspace to delete-to-line-start (#5202)"
+    },
+    {
+      "sha": "85f47aba961a25a21a7b9280d26f0608b0a944e9",
+      "date": "2026-11-01T05:30:30-05:00",
+      "subject": "fix(desktop): extend the macOS sidebar over the center panel inset (#7552)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/auggie/hooks.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/claudecode/model_versions.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/claudecode/model_versions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/claudecode/transcript_model.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/codex/codex_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/codex/hooks.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/acp/config_options.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/acp/conversation.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/acp/driver.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/acp/prompt_failure_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/claudeacp/driver.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/claudeacp/driver_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/claudeacp/usage_limit_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/codexappserver/conversation.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/codexappserver/driver.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/chatdriver/codexappserver/input.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/chatdriver/codexappserver/input_persistence_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/chatdriver/codexappserver/input_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/chatdriver/codexappserver/testdata/user_input.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/deepseekharnessacp/driver.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/deepseekharnessacp/driver_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/nativeacp/driver.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/workspace/gitworktree/workspace.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/workspace/gitworktree/workspace_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/workspace/gitworktree/workspace_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/agentlaunch/devlauncher.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/agentlaunch/devlauncher_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/agentlaunch/executable.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/agentlaunch/executable_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/agentlaunch/loginshell.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/agentlaunch/loginshell_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/doctor.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/cli/doctor_login_shell_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/daemon/daemon.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/domain/conversation.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/apispec/openapi.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/conversation_provider_state_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/conversations.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/dto.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/sessions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/sessions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/ports/agent.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/ports/chat.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/ports/outbound.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/ports/session.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/review/launcher.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/review/launcher_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/agent/catalog_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/agent/service.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/controller.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/controller_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/side.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/side_memory.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/side_memory_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/side_workflow_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/session/delegation.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/session/delegation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/session/service.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/session/service_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/shellterm/cueready_windows_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/shellterm/service.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/shellterm/service_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/session_manager/manager.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/session_manager/manager_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/storage/sqlite/gen/conversations.sql.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/storage/sqlite/gen/models.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/storage/sqlite/migrate_burned_versions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/storage/sqlite/migrations/20261026083409462_deepseek_chat_failure_code.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/storage/sqlite/queries/conversations.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/storage/sqlite/store/conversation_history_store_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/storage/sqlite/store/conversation_store.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/daemon-environment.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/e2e/btw-command.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/e2e/files-ask-in-chat.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/scripts/build-daemon.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/api/schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/docs/content/configuration/projects.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/docs/content/troubleshooting.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/app-devtools.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/app-devtools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/app-shortcuts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/auto-updater.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/auto-updater.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/browser-view-host.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/browser-view-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/menu.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/menu.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/new-session-shortcut.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/window-composition.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/window-composition.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/__tests__/integration/board-empty-states.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/CreateProjectFlow.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/CreateProjectFlow.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/FileContentPane.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/NewChatPage.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/NewChatPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/ReadOnlyFileView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/RemoteHostsSection.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/SessionFileExplorer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/SessionView.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/Sidebar.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/TaskComposer.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/TaskComposer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/WindowTitlebar.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/WindowTitlebar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/XtermTerminal.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/XtermTerminal.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/AgentSwitchPicker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatComposer.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatComposer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/ChatLiveTurn.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/ChatSelectionActions.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/ChatSelectionActions.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatTimelineItems.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatTimelineItems.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatWorkspace.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatWorkspace.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatWorkspaceRetry.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/CloudSessionChatSurface.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ElicitationDock.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/IndependentSideChatDelivery.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/IndependentSideChats.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/IndependentSideChats.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/IndependentSideCreation.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "frontend/src/renderer/components/chat/LiveActivityWindow.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "frontend/src/renderer/components/chat/LiveActivityWindow.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/ModelMenuChoices.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ModelMenuChoices.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/SessionChatSurface.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/SessionChatSurface.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/SideCommandHandoff.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/TurnSettingsBar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/TurnSettleSnapshot.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/AoDiffFile.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/SelectionAskButton.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/SelectionAskButton.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/diffs/SelectionStableContent.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/diffs/SelectionStableContent.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/WorkspaceReviewPane.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/useCodeSelection.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/useCodeSelection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/settings/AgentModelCombobox.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/settings/AgentModelCombobox.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/settings/GeneralSettingsSection.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/settings/ProjectAgentRoleControls.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useBrowserView.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useBrowserView.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useCanResumeAgent.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useCanResumeAgent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useChatModelChoices.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useChatModelChoices.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useChatSelectionPosition.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useChatSelectionPosition.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useCloudGate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useConversation.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useConversation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useConversationPromptSuggestion.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useConversationPromptSuggestion.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

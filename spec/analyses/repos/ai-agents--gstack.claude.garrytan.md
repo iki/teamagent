@@ -2,11 +2,11 @@
 
 Source: [gstack.claude.garrytan](https://github.com/garrytan/gstack) · [Analysis](../../projects/ai-agents--gstack.claude.garrytan.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `b15492a148e2744d24b0ca4da5ba290fb109c340`; commit date: 2026-11-01T09:52:31Z; review date: 2026-11-01T11:33:30.893Z; observed SHA: `b15492a148e2744d24b0ca4da5ba290fb109c340`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `ab2852fb40219669c583f34a6f69b08f623543b4`; commit date: 2026-11-01T20:15:10Z; review date: 2026-11-01T23:12:06.798Z; observed SHA: `ab2852fb40219669c583f34a6f69b08f623543b4`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/garrytan/gstack/compare/b15492a148e2744d24b0ca4da5ba290fb109c340...b15492a148e2744d24b0ca4da5ba290fb109c340). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/garrytan/gstack/compare/ab2852fb40219669c583f34a6f69b08f623543b4...ab2852fb40219669c583f34a6f69b08f623543b4). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

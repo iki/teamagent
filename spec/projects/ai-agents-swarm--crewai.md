@@ -56,6 +56,16 @@ The [deferred result reader](https://github.com/crewaiinc/crewai/blob/f04cce9239
 
 Teamagent should expose bounded, run-scoped artifact handles and explicit unavailable/expired states. An error message describing deletion does not itself prove descendant shutdown or safe cleanup; those require ownership and lifecycle evidence. The unchanged filesystem reader and the rest of the 871-path update were not exhaustively audited. No agents, cleanup routines or upstream tests were executed.
 
+## External-update review - 2026-11-01
+
+Reviewed `b2762ddae6edd7dae1637f81b68924db6b3ece62` against `f04cce923973df6ea87386ec7355878c9b655dd3` after reconciling the local category move. The source URL and existing report identity remain unchanged.
+
+The [release CLI delta](https://github.com/crewaiinc/crewai/blob/b2762ddae6edd7dae1637f81b68924db6b3ece62/lib/devtools/src/crewai_devtools/cli.py) separates LiteLLM model-catalog refresh into its own review branch and PR before the version bump, waits for that PR to merge, and skips branch/PR creation when the catalog is unchanged. An explicit skip option and failure/resume guidance are added. [New fixtures](https://github.com/crewaiinc/crewai/blob/b2762ddae6edd7dae1637f81b68924db6b3ece62/lib/devtools/tests/test_release_catalog_phase.py) cover unchanged catalogs, a dedicated changed-catalog PR and cleanup when branch reset is declined. The eight-path update also changes an Anthropic import-isolation fixture and dependency metadata.
+
+**Teamagent implication:** Version model capability/pricing catalogs independently from release packaging, expose their source and review date, and review semantic changes before selection uses them. Catalog freshness is not evidence of account entitlement, training exclusion or live model access. Keep publication authorization separate from catalog review and preserve unrelated edits during recovery; this upstream release workflow is not imported as Teamagent authorization.
+
+**Scope and limits:** Complete eight-path delta inspected, including the new release fixture. The unchanged catalog downloader/validator, branch-reset implementation, dependency artifacts and live publication behavior were not audited. No upstream install, test, model request, PR or release was executed. Related directions: [models](../models.md), [decisions](../decisions.md), [evolution](../evolution.md).
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [crewai](https://github.com/crewaiinc/crewai); analyzed commit `f04cce923973df6ea87386ec7355878c9b655dd3`; commit date 2026-11-01T05:07:47-03:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-swarm--crewai.md).
+Analysis metadata: source [crewai](https://github.com/crewaiinc/crewai); analyzed commit `b2762ddae6edd7dae1637f81b68924db6b3ece62`; commit date 2026-11-01T12:42:28-03:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-swarm--crewai.md).
 <!-- teamagent-analysis:end -->

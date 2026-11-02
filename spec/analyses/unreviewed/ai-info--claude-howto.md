@@ -1,0 +1,31 @@
+# Claude How To
+
+Source: [Claude How To](https://github.com/luongnv89/claude-howto) · [agents](../../agents.md) · [memory](../../memory.md) · [skills](../../skills.md) · [decisions](../../decisions.md) · [evolution](../../evolution.md) · [security](../../security.md).
+
+## 2026-11-01 initial scoped source review
+
+Reviewed commit `b968f429866a02d2b18765f418e90cbc7f871b3e`; commit date `2026-10-29T01:16:48+01:00`. This newly declared source had no matching identity, URL or alias in the task's original analysis baseline. Origin matched the configured GitHub repository. The checkout was clean and non-shallow; HEAD and origin remained unchanged across each read-only capture. Only committed Git objects were read.
+
+The complete inventory has 675 paths. An initial metadata/README packet and a separate 6-file packet have SHA-256 `1623e6d980d08fe6523b377ca1fc142f884ef25eeaca8a6f558e6a47dc86ab6a` and `6a84b5b8b3fe1923099f9bebb7374cb7ec22813ae7ce4681470cf9e156efd5a5`. **Review scope:** Read README positioning, memory-guide introduction, complete code-review skill and subagent templates, complete character-based context tracker and push-all workflow, and hook-guide command/HTTP/input/output/security sections. Version-specific product claims, translated tutorials, metric scripts and linked official documentation were not independently verified; no hook or instruction template was executed. Captured files beyond the named portions are retained evidence, not an assertion that every line was audited. No source program, installer, test suite or network request was executed.
+
+Claude How To is an educational collection of agent instructions, hook examples, memory guidance and workflows. It is useful as a source of patterns to evaluate, not as an authority that replaces repository policy. The captured README and templates make product/version compatibility claims; those were not verified against an installed Claude runtime or current official API. [Overview](https://github.com/luongnv89/claude-howto/blob/b968f429866a02d2b18765f418e90cbc7f871b3e/README.md), [memory-guide introduction](https://github.com/luongnv89/claude-howto/blob/b968f429866a02d2b18765f418e90cbc7f871b3e/02-memory/README.md#L6-L29).
+
+## Skills and reviews are executable policy inputs
+
+The review skill provides categories, finding fields and references to metric scripts. The subagent template assigns Read/Grep/Glob/Bash tools and asks for a changed-file review. These descriptions do not prove defect-detection quality or read-only behavior: a Bash grant is broader than its role label, and helper scripts require separate provenance and execution authorization. Teamagent should attach supported harness/model versions, exact resource hashes, allowed effects and measured regression results to any adapted skill. Arbitrary stylistic thresholds and confident role descriptions should not become correctness tests. [Review skill](https://github.com/luongnv89/claude-howto/blob/b968f429866a02d2b18765f418e90cbc7f871b3e/03-skills/code-review-specialist/SKILL.md), [subagent template](https://github.com/luongnv89/claude-howto/blob/b968f429866a02d2b18765f418e90cbc7f871b3e/04-subagents/code-reviewer.md).
+
+## Token telemetry must disclose its approximation
+
+The context tracker reads transcript JSONL text blocks, estimates tokens as character count divided by four, writes a session-derived temporary file, and compares the before/after estimates to a hardcoded context limit. It skips malformed JSON lines and uses platform-default text I/O. This is an educational estimate, not provider usage, complete context accounting or a safe bounded ingestion adapter. Its claimed accuracy was not measured. A Teamagent adaptation would require schema/path/size checks, owned atomic LF storage, actual model limits, explicit malformed-record coverage and separately labeled provider-token measurements. [Tracker](https://github.com/luongnv89/claude-howto/blob/b968f429866a02d2b18765f418e90cbc7f871b3e/06-hooks/context-tracker.py).
+
+## Hook and publication boundaries
+
+The hook guide usefully separates process arguments, structured hook messages and command authority, and explicitly warns that hooks execute arbitrary commands. Its versioned hook fields and precedence rules remain upstream documentation claims until tested in the target host. Teamagent must validate the host-specific contract and run deterministic boundary fixtures before treating hooks as enforcement. [Hook I/O](https://github.com/luongnv89/claude-howto/blob/b968f429866a02d2b18765f418e90cbc7f871b3e/06-hooks/README.md#L706-L791), [security section](https://github.com/luongnv89/claude-howto/blob/b968f429866a02d2b18765f418e90cbc7f871b3e/06-hooks/README.md#L1466-L1495).
+
+The push-all template recommends staging all changes and retrying a rejected push through pull/rebase. It is reviewed as source material only and is not adopted: Teamagent retains task-owned staging, the original baseline, signed commits, the exact authorized destination and reconciliation of uncertain publication outcomes. A generic template's confirmation step or broad grant neither revokes standing user authorization nor permits unrelated changes/history rewriting. [Publication template](https://github.com/luongnv89/claude-howto/blob/b968f429866a02d2b18765f418e90cbc7f871b3e/01-slash-commands/push-all.md).
+
+The captured license identifies MIT. No template, metric helper, hook, package installer, external citation or product integration was executed. The repository is an educational candidate for carefully tested adaptations, not an imported workflow or compatibility certification.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [claude-howto](https://github.com/luongnv89/claude-howto); analyzed commit `b968f429866a02d2b18765f418e90cbc7f871b3e`; commit date 2026-10-29T01:16:48+01:00; review date 2026-11-01T23:16:12.661Z; depth reviewed. [Maintenance record](../repos/ai-info--claude-howto.md).
+<!-- teamagent-analysis:end -->

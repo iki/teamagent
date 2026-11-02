@@ -2,11 +2,11 @@
 
 Source: [murage](https://github.com/ferroxlabs/murage) · [Analysis](../unreviewed/ai-agents--murage.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `f23d9fbff36a1ae3d841006f35e39a39ade12089`; commit date: 2026-10-31T16:10:13+08:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `f23d9fbff36a1ae3d841006f35e39a39ade12089`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `b0ea88d32e74f8844c6e5165472adec0b85ccaad`; commit date: 2026-11-01T15:10:21+08:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `b0ea88d32e74f8844c6e5165472adec0b85ccaad`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ferroxlabs/murage/compare/f23d9fbff36a1ae3d841006f35e39a39ade12089...f23d9fbff36a1ae3d841006f35e39a39ade12089). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ferroxlabs/murage/compare/b0ea88d32e74f8844c6e5165472adec0b85ccaad...b0ea88d32e74f8844c6e5165472adec0b85ccaad). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -63,6 +63,16 @@ The [client cache key](https://github.com/NousResearch/hermes-agent/blob/a4994d4
 
 **Coverage:** Read the complete targeted client/session lifecycle and timeout summarizer/test deltas. Retry loops, SDK transport execution and the remaining oversized update were not inspected. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## External-update review - 2026-11-01
+
+Reviewed `c7da41dd522dc19cc08bbfcfa69d4b078224b45d` against `a4994d4ead8f9c915b485cec5689909b349a49df`.
+
+The 87-path range adds collision-aware update preparation in the [scoped autostash module](https://github.com/NousResearch/hermes-agent/blob/c7da41dd522dc19cc08bbfcfa69d4b078224b45d/hermes_cli/update_cmd_stash.py). It compares untracked paths against the target tree's file/directory set, handles porcelain `-z` rename records, and separates colliding from unrelated untracked content. Literal exclusion pathspecs keep unrelated directories out of the stash operation; unreadable target-tree information falls back to preserving all untracked changes. Stash success requires a new observed stash object, not merely a successful-looking command.
+
+The complete inspected [autostash fixtures](https://github.com/NousResearch/hermes-agent/blob/c7da41dd522dc19cc08bbfcfa69d4b078224b45d/tests/hermes_cli/test_update_scoped_autostash.py) author real temporary Git scenarios with tracked edits, an upstream-added collision and an unrelated untracked file. They check selective preservation and the no-update case. The source also has an explicit discard branch using hard reset and targeted clean after a negative prompt answer. That branch is not a suitable default or implicit authorization for Teamagent; preserving changes and retaining a recovery reference remain the local contract.
+
+**Harness consequence:** Compute collisions against a frozen target identity, preserve tracked and colliding untracked work before synchronization, and retain unrelated local content. Revalidate state if the checkout changes between observation and action; the scoped helper does not by itself prove a transactional update. This review covers the complete new helper and fixture deltas, not all existing update/reset paths or the other changed files. No source checkout was changed and no upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hermes-agent](https://github.com/NousResearch/hermes-agent); analyzed commit `a4994d4ead8f9c915b485cec5689909b349a49df`; commit date 2026-10-31T23:05:03-07:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--hermes-agent.md).
+Analysis metadata: source [hermes-agent](https://github.com/NousResearch/hermes-agent); analyzed commit `c7da41dd522dc19cc08bbfcfa69d4b078224b45d`; commit date 2026-11-01T11:07:22-08:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--hermes-agent.md).
 <!-- teamagent-analysis:end -->

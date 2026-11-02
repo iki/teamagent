@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--loopx",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/huangruiteng/loopx",
+  "report": "spec/projects/ai-agents--loopx.md",
+  "analyzedSha": "70f643153ea773b7bc1ef71bdb06095b0744bd6d",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-11-01T17:24:27+08:00",
+  "observedSha": "07b555494550c12ff6e3dc4b139cdf7cd1bdae32",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "07b555494550c12ff6e3dc4b139cdf7cd1bdae32",
+      "date": "2026-11-02T01:35:54+05:30",
+      "subject": "docs: connect context delivery with the control-plane engineering story (#7829)"
+    },
+    {
+      "sha": "9cc63c27ffb7a841651a2db82a387f0fd9f95934",
+      "date": "2026-11-02T01:35:13+05:30",
+      "subject": "fix(scheduler): keep admission observations inline (#7843)"
+    },
+    {
+      "sha": "f1ae02eb665bf6bffec1e7ce2f4ff17c564db9ff",
+      "date": "2026-11-02T01:34:16+05:30",
+      "subject": "Merge pull request #7847 from loopx-project/codex/release220-upload-recovery-20261101"
+    },
+    {
+      "sha": "5a9c0a6126dd92902f0bacd22762811afa60c407",
+      "date": "2026-11-02T03:32:43+08:00",
+      "subject": "Merge pull request #7846 from loopx-project/codex/reconcile-original-returns-20261101"
+    },
+    {
+      "sha": "36259b632c51ee2744a43b5c416566f81ef291b8",
+      "date": "2026-11-02T00:55:05+05:30",
+      "subject": "fix(release): safely resume validated artifact publication"
+    },
+    {
+      "sha": "b2ce2aea4e986a8617c4c6dad4ff4d4ac215423f",
+      "date": "2026-11-02T00:47:33+05:30",
+      "subject": "fix(chat): retain steward identity across executor changes"
+    },
+    {
+      "sha": "035f7ac666cef390676c00b6fb0537ede3c9cf44",
+      "date": "2026-11-02T00:22:01+05:30",
+      "subject": "Merge pull request #7820 from loopx-project/codex/context-private-read-buffer-20261101"
+    },
+    {
+      "sha": "6ad80633c4d0ce360e18f3f3d7b1913540355226",
+      "date": "2026-11-02T02:28:05+08:00",
+      "subject": "Merge pull request #7832 from loopx-project/codex/antigravity-argon-steward-20261101"
+    },
+    {
+      "sha": "afb15e601ca0538d1374f98c6b5e1a51b8bd8bee",
+      "date": "2026-11-02T02:23:25+08:00",
+      "subject": "Merge pull request #7840 from loopx-project/codex/retained-pending-work-20261101"
+    },
+    {
+      "sha": "2c3524857e8a3dd553335b79444333786f492c43",
+      "date": "2026-11-02T02:21:45+08:00",
+      "subject": "Merge pull request #7838 from loopx-project/codex/machine-namespace-isolation-release220-20261101"
+    },
+    {
+      "sha": "c656e063497ca03e306f7097b26c7e4b24fce15f",
+      "date": "2026-11-01T23:39:53+05:30",
+      "subject": "fix(chat): retain pending partial results after quota recovery"
+    },
+    {
+      "sha": "4ed408d39b49180c0a03e3116e8dd9caf9418ad1",
+      "date": "2026-11-01T23:34:01+05:30",
+      "subject": "fix(chat): make cancelled native permission recovery explicit"
+    },
+    {
+      "sha": "3503d823256c02bc531558f4a3bc9ea7c963d6eb",
+      "date": "2026-11-02T02:03:31+08:00",
+      "subject": "Merge pull request #7833 from loopx-project/codex/context-sessionless-fallback-release220-20261101"
+    },
+    {
+      "sha": "815502466c3baab1e74f97f870c3aa11088de149",
+      "date": "2026-11-01T23:25:23+05:30",
+      "subject": "refactor(chat): share native provider configuration before dispatch"
+    },
+    {
+      "sha": "3cd4465c2d85d7fcbfc12364c15a9b0c3a4ca315",
+      "date": "2026-11-02T01:55:04+08:00",
+      "subject": "Merge pull request #7828 from loopx-project/codex/edgebench-feedback-source-20261101"
+    },
+    {
+      "sha": "e7eec6a67342a66a018b867f2fefb106c30ccd7e",
+      "date": "2026-11-01T23:19:36+05:30",
+      "subject": "fix(machine-config): scope capability reads to their owning namespaces"
+    },
+    {
+      "sha": "fd3019ec6ba808d64b07f2df43d1e7ef0df7d3e2",
+      "date": "2026-11-01T23:18:05+05:30",
+      "subject": "fix(chat): qualify Argon cancellation, resume and tool permissions"
+    },
+    {
+      "sha": "b58f84e8e1b65bcd4db711d67b296b3a966bca44",
+      "date": "2026-11-01T23:18:05+05:30",
+      "subject": "feat(chat): support Antigravity (Gemini 4 Argon) as Steward and Chat executor"
+    },
+    {
+      "sha": "a098263f4fba407f4ee9c9b6f4c3b3d8bfe1c377",
+      "date": "2026-11-02T01:33:26+08:00",
+      "subject": "Merge pull request #7826 from keoyyo85/refactor/progress-review-pending-reason-owner"
+    },
+    {
+      "sha": "fdb35899be567b04ceeeb5848045ad3c81c90338",
+      "date": "2026-11-02T01:33:07+08:00",
+      "subject": "Merge pull request #7825 from keoyyo85/refactor/chat-action-kind-owner"
+    },
+    {
+      "sha": "77e65a36e7e1a1bfcfe36bc740644e4e8ac9c207",
+      "date": "2026-11-01T22:51:03+05:30",
+      "subject": "fix(context): recover full captures before native initialization"
+    },
+    {
+      "sha": "068b5073e4741e50f081cd354daa62f559b5e657",
+      "date": "2026-11-01T22:45:33+05:30",
+      "subject": "fix(benchmark): retain checkpoint codec with cleanup-safe native provider"
+    },
+    {
+      "sha": "b9f697468420e6d4c4ff3c6f0494379d4f097909",
+      "date": "2026-11-01T22:45:33+05:30",
+      "subject": "fix(benchmark): isolate feedback source from game lifecycle changes"
+    },
+    {
+      "sha": "e7e99db739babb06a213914890d9325695006ab8",
+      "date": "2026-11-01T22:45:33+05:30",
+      "subject": "fix(benchmark): qualify non-finite native feedback source"
+    },
+    {
+      "sha": "73c5daab342afe8aa6c1a85dc92bc0bf352d9132",
+      "date": "2026-11-01T22:13:17+05:30",
+      "subject": "Merge pull request #7818 from loopx-project/codex/effect-rpc-utf8-20261101"
+    },
+    {
+      "sha": "594577f3d3add8897c755a6c2dc1efe86171d3bb",
+      "date": "2026-11-01T22:11:53+05:30",
+      "subject": "docs(governance): align Jason review scope with runtime I/O boundary (#7830)"
+    },
+    {
+      "sha": "d2937a8d3265a7e24046471a1a34884f543ac1a0",
+      "date": "2026-11-01T21:55:45+05:30",
+      "subject": "fix(quota): render host-native settlement Turn references (#7823)"
+    },
+    {
+      "sha": "c40fdcbff65dfd2d595d5613ed19987aa628bfbc",
+      "date": "2026-11-02T00:22:04+08:00",
+      "subject": "Merge pull request #7827 from loopx-project/codex/health-observation-snapshot-20261101"
+    },
+    {
+      "sha": "d8d81476212af75b5f878b578f42181e21a941f6",
+      "date": "2026-11-01T23:28:20+08:00",
+      "subject": "refactor(progress-review): read the pending reason from the policy that owns it"
+    },
+    {
+      "sha": "ff9da09c0e9a83705a05c495e62ce237b5686f89",
+      "date": "2026-11-01T20:57:46+05:30",
+      "subject": "fix(chat): bound quota-backlog health observations"
+    },
+    {
+      "sha": "1d31f0cb9b82d2d96ca193030b1b415909c03153",
+      "date": "2026-11-01T23:21:01+08:00",
+      "subject": "refactor(chat): read the action-kind vocabulary from the store that owns it"
+    },
+    {
+      "sha": "38fcfece0dea9a754832390d8eb0e24037cb669b",
+      "date": "2026-11-01T23:05:23+08:00",
+      "subject": "Merge pull request #7792 from loopx-project/codex/outcome-refinement-order-20261101"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/GOVERNANCE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-artifacts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/codex-account-clients-fixture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/delegation-media-browser-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/delegation-search-browser-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/smoke/openai-key-settings-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/settings-target-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/data/conversation-requests.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/background-services-settings.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/background-services-settings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/codex-account-settings.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/codex-account-settings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/context-drawer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/conversation-requests.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/conversation-requests.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/machine-configuration-settings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/openai-key-settings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/personal-workspace-model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/personal-workspace.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/workspace-settings-page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/workspace-settings-route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/site/public/blog/context-delivery/example.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/site/public/blog/context-delivery/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/site/public/blog/context-delivery/measurements.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/site/public/blog/edgebench-feedback-and-memory/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/site/public/blog/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/site/public/blog/typescript-control-plane-refactor/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/site/public/blog/zh/context-delivery/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/site/public/blog/zh/edgebench-feedback-and-memory/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/site/public/blog/zh/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/site/public/blog/zh/typescript-control-plane-refactor/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/feedback.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/source-default.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/RUNTIME.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/codex.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/harbor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/sforge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/worker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_checkpoint_joint_receiver.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_checkpoint_judge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_edgebench_feedback.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/tests/test_edgebench_feedback_http.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_native_checkpoint_handoff.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_resume_sessions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_sforge_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_shared_codex_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/rfcs/STATUS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/rfcs/STATUS.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/rfcs/manager-runtime-profile-v0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/rfcs/manager-runtime-profile-v0.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/delegation-loading/after-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/delegation-loading/after-narrow.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/delegation-loading/before-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/delegation-loading/loading-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/development/frontend-delivery.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/heartbeat-automation-prompt.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/product/release-readiness.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/product/releases/v2.2.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/canonical-snapshot-pagination.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/configuration-backup.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/extensions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/handoff-mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/protocols/goal-vision-replan-contract-v0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/protocols/loopx-turn-v0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/protocols/manager-evidence-and-continuity-v0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/required-work-context.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/research-checkpoint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/reviewed-coordination-promotion.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/reviewed-coordination-promotion.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/trajectory-assessment.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/canary/catalog-run-e2e-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/control_plane/agent-onboard-host-loop-activation-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/control_plane/control-plane-integrated-canary-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/control_plane/goal-artifact-lifecycle-projection-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/control_plane/heartbeat-prompt-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/control_plane/heartbeat-quota-flow-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/control_plane/monitor-poll-writeback-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/control_plane/quota-scheduler-hint-compaction-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/control_plane/quota-scheduler-registry-route-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/control_plane/quota-scheduler-state-ack-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/control_plane/status-quota-review-packet-parity-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/export-frontstage-share-bundle.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/frontstage-share-bundle-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/personal-workspace-browser/configuration-backup.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/personal-workspace-browser/goal-work-map.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/personal-workspace-browser/steward_requests_fixture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/pr-review-command-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/release-artifacts-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/agent_onboarding.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/canary/module_metric_baseline.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/canary/qualification_profiles.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/change_quality/receipt.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/explore/machine_defaults.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/machine_configuration/builtins.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/machine_configuration/context_delivery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/machine_configuration/contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/machine_configuration/goal_storage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/machine_configuration/store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/manager_context/roundtrip.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "loopx/capabilities/native_chat/antigravity_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/native_chat/external_conversations.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/native_chat/model_settings.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/performance_diagnosis/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/performance_diagnosis/README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/periodic_report/machine_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/periodic_report/private_generation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/pr_review_queue/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/pr_review_queue/catalog_entry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/progress_review/receipt.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/steward_executor/machine_defaults.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/todo_replan_cadence/machine_defaults.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/chat_actions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/chat_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/chat_endpoint_catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/chat_endpoints.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/chat_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/chat_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/chat_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/context_machine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/pr_review.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/quota.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/quota_capture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/quota_registration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/todo.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/turn_host_request.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/turn_run_once.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/collaboration/conversation_binding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/collaboration/conversation_inventory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/coordination/canonical_snapshot_page.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/effect_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/effect_runtime_handlers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/effect_runtime_server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/goals/outcome_requirements.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/quota/context_selection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/quota/effect_program.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/quota/settlement_plan.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/quota/should_run_packet.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/quota/turn_envelope.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "loopx/control_plane/runtime/background_services.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/todos/active_state_todos.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/turn_driver/codex_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/turn_driver/decision_capture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/turn_driver/host_process_transport.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/work_items/accountable_settlement.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/work_items/external_progress_review.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/work_items/interaction_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/work_items/progress_review_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/work_items/task_lease_workspace.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "loopx/extensions/background_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "loopx/extensions/background_services.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/extensions/lark/goal_topic_runtime_service.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

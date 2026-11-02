@@ -60,6 +60,16 @@ Reviewed `00e908ff4945f3449d14a4407a806bc91e30006a` against `3627c158bcfb146bee4
 
 **Scope and limits:** Three complete selected diffs; the exported regression dataset and complete resolver implementation were not re-audited. The corpus size is an assertion read from source, not a measured passing run; no model or Rust tests were executed.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/google/magika](https://github.com/google/magika) at `bd768570513ffb5d53c3e738abafb717e1f3ad01` against prior analyzed `00e908ff4945f3449d14a4407a806bc91e30006a`. Evidence: [website-ng/cloudbuild.yaml](https://github.com/google/magika/blob/bd768570513ffb5d53c3e738abafb717e1f3ad01/website-ng/cloudbuild.yaml).
+
+The sole new file defines a website build/deploy pipeline with a 1200-second job timeout, dependency installation, Astro build, pruning of older zero-traffic App Engine versions and deployment. It changes website operations, not the file-type classifier.
+
+**Architecture consequence:** Keep deployment/pruning authority distinct from classifier execution and benchmark evidence. This pipeline is not adopted or executed by Teamagent.
+
+**Scope and limits:** Read the complete new configuration. Cloud permissions, rollback retention and deployed behavior were not tested.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [magika](https://github.com/google/magika); analyzed commit `00e908ff4945f3449d14a4407a806bc91e30006a`; commit date 2026-10-30T10:41:23+01:00; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--magika.md).
+Analysis metadata: source [magika](https://github.com/google/magika); analyzed commit `bd768570513ffb5d53c3e738abafb717e1f3ad01`; commit date 2026-11-01T13:58:10+01:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--magika.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,69 @@
+# LangWatch
+
+Source: [langwatch/langwatch](https://github.com/langwatch/langwatch) · Reviewed revision: `8f81ac27475a33c2a58c2fb07b95c109ec721ccb` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [evolution](../evolution.md) · [memory](../memory.md) · [decisions](../decisions.md) · [channels](../channels.md).
+
+## Evidence inspected
+
+- [`platform/app/src/server/app-layer/evaluations/evaluation-execution.service.ts` lines 1–145](https://github.com/langwatch/langwatch/blob/8f81ac27475a33c2a58c2fb07b95c109ec721ccb/platform/app/src/server/app-layer/evaluations/evaluation-execution.service.ts#L1-L145)
+
+## Observed architecture and behavior
+
+The inspected evaluation execution service integrates trace mapping, native evaluators, code evaluators, model environment resolution, and workflow-based evaluators. It carries parent trace/span identifiers into evaluation workflows and validates their shape. Root selection is deterministic when multiple parentless spans exist. Comments describe a causality-depth mechanism to prevent evaluation-generated traces from feeding an unbounded evaluation loop. Internal evaluation access explicitly includes captured inputs, outputs, and costs even when user-facing trace views may be protected.
+
+## Implications and tradeoffs for Teamagent
+
+This supports an evaluation control plane attached to the same event graph as production execution. Teamagent should retain parent task/run IDs, evaluator versions, causality depth, and evaluation cost separately from task cost. Automated evaluators are themselves workloads that can fail, leak data, consume budget, or trigger further monitoring. Trace access and data export therefore need independent scope enforcement. The observed internal protection setting makes it especially important to verify which evaluators receive raw sensitive content, rather than assuming a redacted UI means redacted evaluation inputs. The large platform also brings operational complexity beyond a small local harness.
+
+## Adoption decision
+
+Integrate through an optional observability/evaluation exporter before adopting the whole platform as a required runtime dependency. Keep a local evaluation interface and storage path for offline use. Evaluate code-based verifiers first for deterministic tasks, supplementing them with calibrated model judges. Test evaluator recursion, unavailable models, tenant isolation, interrupted runs, and artifact retention. Review deployment and license requirements separately before selecting a hosted or self-hosted production configuration.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+## 2026-10-28 reconciliation and scoped source review
+
+Reviewed source: [ai-eval--langwatch](https://github.com/langwatch/langwatch) at `81135c1fa9f1b83580e7967eedeb972603180b35`.
+
+**Scope:** Complete 48,889-path inventory and seven selected evaluation-service/rule/test files. All seven were read, including the 304-line test fixture. No upstream tests, evaluator services or billing calls executed.
+
+The analyzed commit 8f81ac27475a33c2a58c2fb07b95c109ec721ccb remains an ancestor. The complete no-renames inventory is 3,816,825 UTF-8 bytes; the former inspection failure was a bounded-output limitation, not absent source. The inspected evaluation implementation moved from platform/app into modules/evaluation; this review does not cover the repository-wide reorganization.
+
+[Evaluation execution](https://github.com/langwatch/langwatch/blob/81135c1fa9f1b83580e7967eedeb972603180b35/modules/evaluation/process/src/features/execution/services/evaluation-execution.service.ts#L148-L288) preserves skipped outcomes, passes field protections into trace reads, and obtains an internal project-scoped proof for earlier-evaluation expansion. Internal queued evaluation defaults to full input/output/cost visibility. [Dispatch](https://github.com/langwatch/langwatch/blob/81135c1fa9f1b83580e7967eedeb972603180b35/modules/evaluation/process/src/features/execution/services/evaluation-execution.service.ts#L311-L399) separates custom, instant-judge, native and remote routes; the shown custom branch does not forward the idempotency key or cancellation signal passed to the remote evaluator branch. These differences require per-route privacy, cancellation and deduplication contracts.
+
+The production [receipt service](https://github.com/langwatch/langwatch/blob/81135c1fa9f1b83580e7967eedeb972603180b35/modules/evaluation/process/src/features/execution/services/evaluation-execution-receipt.service.ts#L12-L87) executes the evaluator before recording cost and explicitly protects cost only. The [cost service](https://github.com/langwatch/langwatch/blob/81135c1fa9f1b83580e7967eedeb972603180b35/modules/evaluation/process/src/features/execution/services/evaluation-cost.service.ts#L28-L59) reuses an already-recorded ID within the project. A failed cost write retains the evaluation result with a null cost ID. This is not provider-side exactly-once inference or proof that repeated calls incur no additional charge.
+
+The [retry tests](https://github.com/langwatch/langwatch/blob/81135c1fa9f1b83580e7967eedeb972603180b35/modules/evaluation/process/src/__tests__/execute-evaluation-retry-receipt.unit.test.ts#L34-L75) use an [in-memory receipt fixture](https://github.com/langwatch/langwatch/blob/81135c1fa9f1b83580e7967eedeb972603180b35/modules/evaluation/process/src/__tests__/support/evaluation-execution.fixtures.ts#L184-L235) that caches complete outcomes. Its reuse assertion must not be attributed to the production receipt service. The crash case explicitly permits two evaluator executions while preserving one cost record. [Retry delay](https://github.com/langwatch/langwatch/blob/81135c1fa9f1b83580e7967eedeb972603180b35/modules/evaluation/process/src/rules/evaluation-retry-window.rules.ts#L6-L37) has a caller-supplied time window and caps exponential delay at ten minutes; it is scheduling policy, not evidence of safe external replay. Teamagent should report executed, cost-recorded, result-published and delivery states separately, expose unavailable cost attribution, and reconcile ambiguous effects before retry.
+
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `81135c1fa9f1b83580e7967eedeb972603180b35` to `7aeb146c2b2ebe4e6d866177e365ceca44a5124b`. This is a bounded static source review, not an upstream runtime or performance result.
+
+In [modules/analytics/browser/src/behavior/frame-bridge.ts](https://github.com/langwatch/langwatch/blob/7aeb146c2b2ebe4e6d866177e365ceca44a5124b/modules/analytics/browser/src/behavior/frame-bridge.ts#L203-L274), The iframe bridge caps active queries, gives each an abort controller, and drops settlement after disposal or after a request is forgotten. Disposal aborts tracked work, removes listeners and closes the port (`124-154`). The examined message handler casts incoming data to a TypeScript message type rather than decoding a runtime schema, and active work is keyed only by caller-supplied request ID. Duplicate-ID rejection or per-attempt identity checking is not present in this handler; uniqueness must not be assumed merely because the port is private.
+
+[Inspected fixtures](https://github.com/langwatch/langwatch/blob/7aeb146c2b2ebe4e6d866177e365ceca44a5124b/modules/analytics/browser/src/behavior/__tests__/frame-bridge.session.integration.test.ts#L194-L215): The inspected session fixture sends nine unique requests, verifies only eight start, checks an overload response and confirms tracked signals abort on repeated disposal. It does not establish duplicate-ID safety or OS/browser isolation. The upstream browser suite was not executed; existing report findings about receipt/result identity remain applicable.
+
+**Teamagent implication:** Evaluation and UI worker bridges need runtime schemas, bounded work and attempt identity in addition to request IDs. Add fixtures for duplicate and reused IDs, late settlement after teardown, invalid messages and uncooperative executors; keep a cancellation signal distinct from proof that work has ceased.
+
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `c7fad93329af25f82b1b1260ff8634cd5a070946` against prior analyzed commit `7aeb146c2b2ebe4e6d866177e365ceca44a5124b`. Historical reviews above remain separate evidence.
+
+The new [docs-key service](https://github.com/langwatch/langwatch/blob/c7fad93329af25f82b1b1260ff8634cd5a070946/modules/api-key/process/src/services/docs-session-key.service.ts) parses inputs, refuses impersonation/missing browser sessions and unregistered origins before minting, obtains effective project permissions, and creates a hidden system-managed key tied to its originating browser session. [Pure rules](https://github.com/langwatch/langwatch/blob/c7fad93329af25f82b1b1260ff8634cd5a070946/modules/api-key/process/src/rules/docs-session-key.rules.ts) restrict project-grantable permissions and choose the earliest of five minutes, browser expiry and the configured session ceiling; a missing session start explicitly omits that ceiling. Revocation targets only docs keys and supports idempotent session-scoped cleanup.
+
+The [unit fixtures](https://github.com/langwatch/langwatch/blob/c7fad93329af25f82b1b1260ff8634cd5a070946/modules/api-key/process/src/rules/__tests__/docs-session-key.rules.unit.test.ts) cover lifetime/permission rules. The [memory-backed integration fixtures](https://github.com/langwatch/langwatch/blob/c7fad93329af25f82b1b1260ff8634cd5a070946/modules/api-key/process/src/app/__tests__/docs-session-key.integration.test.ts) cover lookalike origins, no writes on refusal, different-session preservation, non-docs key preservation and the authorization engine's live-owner ceiling. The engine is invoked directly in that last fixture: it does not prove every deployed HTTP request rechecks live grants. Teamagent can adopt short-lived, one-project browser handoffs only with independently verified origin delivery, backend authorization, revocation and confidential storage; hiding a key from a list is not encryption.
+
+**Coverage:** Read all four complete targeted docs-key source/test additions. Browser transport, production persistence and request authentication middleware were not inspected. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/langwatch/langwatch](https://github.com/langwatch/langwatch) at `846b5bc8a179175e75bc16caa0475a2d6b137d61` against prior analyzed `c7fad93329af25f82b1b1260ff8634cd5a070946`. Evidence: [services/aigateway/adapters/providers/bedrock_system_reminders.go](https://github.com/langwatch/langwatch/blob/846b5bc8a179175e75bc16caa0475a2d6b137d61/services/aigateway/adapters/providers/bedrock_system_reminders.go), [services/aigateway/adapters/providers/bedrock_cache_ttl.go](https://github.com/langwatch/langwatch/blob/846b5bc8a179175e75bc16caa0475a2d6b137d61/services/aigateway/adapters/providers/bedrock_cache_ttl.go), [services/aigateway/adapters/providers/anthropic_translation.go](https://github.com/langwatch/langwatch/blob/846b5bc8a179175e75bc16caa0475a2d6b137d61/services/aigateway/adapters/providers/anthropic_translation.go), [services/aigateway/adapters/providers/anthropic_stream_iterator.go](https://github.com/langwatch/langwatch/blob/846b5bc8a179175e75bc16caa0475a2d6b137d61/services/aigateway/adapters/providers/anthropic_stream_iterator.go), [pkg/aitrace/usage.go](https://github.com/langwatch/langwatch/blob/846b5bc8a179175e75bc16caa0475a2d6b137d61/pkg/aitrace/usage.go).
+
+The Bedrock translation path keeps mid-conversation system reminders in chronology by wrapping their text in adjacent user turns, preserving leading tool-result ordering and cache-control blocks. A version-specific Bifrost workaround copies hour-long cache TTLs onto prefix cache points for recognized model names, and translated usage carries one-hour write tokens separately.
+
+**Architecture consequence:** Provider translation must test message chronology, authority changes and tool-result ordering independently from cache reuse. Pricing telemetry needs cache lifetime, not only aggregate cached tokens. Model-name heuristics and reminder wrappers require compatibility evidence; wrapping system text as user text is a semantic adaptation, not proof of identical instruction authority.
+
+**Scope and limits:** Read five changed production files within twelve paths. Upstream unit/live tests and pricing fixtures were inventoried but not executed; no Bedrock request or savings benchmark was performed.

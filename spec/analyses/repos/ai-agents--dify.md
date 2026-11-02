@@ -2,11 +2,11 @@
 
 Source: [dify](https://github.com/langgenius/dify) · [Analysis](../../projects/ai-agents--dify.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `262158cfdbe590951adceffe264eef225381346b`; commit date: 2026-11-01T09:27:39Z; review date: 2026-11-01T11:33:30.893Z; observed SHA: `262158cfdbe590951adceffe264eef225381346b`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `a79e2116f85b64aea89e3d60725c7adba8277cbb`; commit date: 2026-11-01T15:14:02Z; review date: 2026-11-01T23:12:06.798Z; observed SHA: `a79e2116f85b64aea89e3d60725c7adba8277cbb`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/langgenius/dify/compare/262158cfdbe590951adceffe264eef225381346b...262158cfdbe590951adceffe264eef225381346b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/langgenius/dify/compare/a79e2116f85b64aea89e3d60725c7adba8277cbb...a79e2116f85b64aea89e3d60725c7adba8277cbb). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -1,0 +1,375 @@
+{
+  "id": "ai-agents--paperclip",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/paperclipai/paperclip",
+  "report": "spec/projects/ai-agents--paperclip.md",
+  "analyzedSha": "d941ed3879d9f9b49573bc138e1f6c465271fca4",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-11-01T03:56:44-06:00",
+  "observedSha": "1a6017d6460267ad89d7e1784e2b521c28d8e9ac",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "1a6017d6460267ad89d7e1784e2b521c28d8e9ac",
+      "date": "2026-11-01T10:08:51-06:00",
+      "subject": "fix(server): resume suspended sessions after controller replacement (#18554)"
+    },
+    {
+      "sha": "c0550e7010b5b733b745f60433788db3e6fd2e2e",
+      "date": "2026-11-01T09:14:34-06:00",
+      "subject": "fix(server): preserve sessions and defer busy overlap recovery (#18552)"
+    },
+    {
+      "sha": "7751fc3107d7dd968ededec7ee25e04873d50b77",
+      "date": "2026-11-01T08:24:14-06:00",
+      "subject": "fix(server): complete volume-free controller admission and recovery (#18543)"
+    },
+    {
+      "sha": "e1224783685405eb7d987ece2446962920ee0cf5",
+      "date": "2026-11-01T06:09:47-06:00",
+      "subject": "test(evals): run and record the chat completion pilot through TestOps (#18516)"
+    },
+    {
+      "sha": "247552fe0719dcc92f7b42c50b658be6f624986d",
+      "date": "2026-11-01T05:13:30-06:00",
+      "subject": "test(server): avoid deep traversal in durable file assertions (#18533)"
+    },
+    {
+      "sha": "1d348bbef04bfd229459a707a98e67690096e444",
+      "date": "2026-11-01T04:09:47-06:00",
+      "subject": "fix(server): restore durable agent folders with bounded concurrency (#18531)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/workflows/chat-completion-testops.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/DEVELOPING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/agent-files.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/plans/2026-10-31-zero-downtime-web-deploys.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/backends/codex-native-backend.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/backends/native-backend-factory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/backends/native-backend-factory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/control-plane/durable-prp-control-plane.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/control-plane/durable-prp-control-plane.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/live/runnerd-codex-transport.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/live/runnerd-codex-transport.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/__tests__/release-verify-workflow.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/__tests__/agent-directory-working-copies.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/__tests__/agent-file-durability.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/__tests__/attention-retention-work.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/__tests__/ephemeral-server-contract.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/__tests__/ephemeral-server-data.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/__tests__/heartbeat-workspace-session.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/__tests__/helpers/remote-warm-controller.test-worker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/__tests__/native-session-resumption.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/agent-directory-working-copies.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/agent-file-durability.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/agent-instruction-working-copies.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/agent-instructions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/ephemeral-server-contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/heartbeat/recovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/heartbeat/runtime-selection.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/heartbeat/runtime-selection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/heartbeat/session-preparation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/heartbeat/workspace-preparation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/heartbeat/workspace-preparation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/heartbeat/workspaces.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/native-runtime/native-restart-recovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/native-runtime/native-runner-restart-recovery.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/native-runtime/native-session-executor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/native-runtime/paperclip-control-plane-port.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/native-runtime/paperclip-control-plane-port.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/remote-workspaces.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/services/skill-installation-maintenance.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/vendor/paperclip-runner/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner-e2e/CHAT-FEATURES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner-e2e/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner-e2e/chat-completion-testops-api.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner-e2e/chat-completion-testops-api.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner-e2e/chat-completion-testops-cli.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner-e2e/chat-completion-testops-contract.d.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner-e2e/chat-completion-testops-contract.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner-e2e/chat-completion-testops-contract.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner-e2e/chat-completion-testops-export.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner-e2e/chat-completion-testops-export.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner-e2e/chat-completion-testops-host-control.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner-e2e/chat-completion-testops-results.d.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner-e2e/chat-completion-testops-results.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner-e2e/directory-cleanup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/runner-e2e/directory-cleanup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner-e2e/launch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner-e2e/rolling-deployment-smoke.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner-e2e/rolling-deployment-supervisor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner-e2e/rolling-deployment-supervisor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner-e2e/run-unit.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner-e2e/testops-chat-export.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner-e2e/vitest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner-e2e/workflow-security.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -60,6 +60,16 @@ The inspected loopback fixtures assert that ordinary missing-key configuration f
 
 **Coverage:** Read the complete 146-line resolver/provider expansion and the earlier 85-line keyless fixture plus selected auth-path changes. Underlying transport, all provider integrations and image response handling were not fully audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/anomalyco/opencode](https://github.com/anomalyco/opencode) at `8c750e3750f84ffae3ff36910ab4c5dbeea132a9` against prior analyzed `69269e4ebe309a08919b3c9be7948b9fd699c3a4`. Evidence: [packages/ai/src/provider-error.ts](https://github.com/anomalyco/opencode/blob/8c750e3750f84ffae3ff36910ab4c5dbeea132a9/packages/ai/src/provider-error.ts), [packages/ai/src/schema/errors.ts](https://github.com/anomalyco/opencode/blob/8c750e3750f84ffae3ff36910ab4c5dbeea132a9/packages/ai/src/schema/errors.ts), [packages/ai/src/utils/provider-codes.ts](https://github.com/anomalyco/opencode/blob/8c750e3750f84ffae3ff36910ab4c5dbeea132a9/packages/ai/src/utils/provider-codes.ts), [packages/core/src/plugin/provider/claude-agent/claude/query-options.ts](https://github.com/anomalyco/opencode/blob/8c750e3750f84ffae3ff36910ab4c5dbeea132a9/packages/core/src/plugin/provider/claude-agent/claude/query-options.ts).
+
+AIError now exposes HTTP status, primary provider/transport code, retry delay and retryability directly while the helper delegates to the same decision. Accepted write transports are distinguished from read recovery, but unknown errors and an x-should-retry override can still be marked retryable. Claude query isolation adds flags disabling nonstreaming and refusal fallbacks.
+
+**Architecture consequence:** Preserve actionable provider diagnostics without conflating a retry hint with authorization to repeat an accepted or ambiguous billable mutation. Keep route/fallback policy in the host and retain durable delivery evidence independently of SDK error classes.
+
+**Scope and limits:** Selected provider-error and Claude isolation implementation inspected from the complete 16-path diff; no live provider request, SDK execution or compatibility claim.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [opencode](https://github.com/anomalyco/opencode); analyzed commit `69269e4ebe309a08919b3c9be7948b9fd699c3a4`; commit date 2026-11-01T01:07:13-05:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--opencode.md).
+Analysis metadata: source [opencode](https://github.com/anomalyco/opencode); analyzed commit `8c750e3750f84ffae3ff36910ab4c5dbeea132a9`; commit date 2026-11-01T13:59:02-05:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--opencode.md).
 <!-- teamagent-analysis:end -->

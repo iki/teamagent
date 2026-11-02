@@ -5,7 +5,7 @@ import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { mkdir, readFile, rename, rm, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { join, resolve } from "node:path";
 import {
   GitInspectionError,
   analysisErrorMessage,
@@ -21,6 +21,7 @@ import {
 } from "../app/research/analysis-sync.ts";
 import {
   AnalysisStateSchema,
+  GitStateSchema,
   parseAnalysisJson,
   type AnalysisRecord,
   type ObservedRepository,
@@ -127,13 +128,167 @@ const options = (root: string) => ({
 test("remote normalization preserves known hosts and rejects credentials and path injection", () => {
   expect(canonicalRemote("git@github.com:Example/Original.git")).toBe(source);
   expect(canonicalRemote("https://GITHUB.com/Example/Original/")).toBe(source);
+  expect(canonicalRemote("https://GIST.github.com/Example/AbC.git")).toBe(
+    "https://gist.github.com/example/abc",
+  );
   expect(canonicalRemote("https://gitlab.com/Group/Repository")).toBe(
-    "https://gitlab.com/group/repository",
+    "https://gitlab.com/Group/Repository",
+  );
+  expect(canonicalRemote("https://GITLAB.com/Group/Repository.git")).not.toBe(
+    canonicalRemote("https://gitlab.com/group/repository"),
   );
   expect(() => canonicalRemote("https://token@github.com/Example/Original")).toThrow();
   expect(() => canonicalRemote("https://github.com/Example/Original?token=private")).toThrow();
   expect(() => canonicalRemote("https://unknown.invalid/Example/Original")).toThrow();
 });
+
+test("case-distinct GitLab identities cannot reuse another source's analysis", async () => {
+  const { root, observed } = await fixture();
+  try {
+    const baseline = (await migrateAnalysis(root, timestamp)).records[0];
+    if (baseline === undefined) throw new Error("Missing fixture baseline");
+    expect(
+      matchRepository({ ...baseline, url: "https://gitlab.com/Group/Repository" }, [
+        { ...observed, url: "https://gitlab.com/group/repository" },
+      ]).repository,
+    ).toBeNull();
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("analysis rename ignores replacement and graft ancestry without changing their evidence", async () => {
+  const { root, repo, second, observed } = await fixture();
+  try {
+    const initial = await migrateAnalysis(root, timestamp);
+    const baseline = initial.records[0];
+    if (baseline === undefined) throw new Error("Missing fixture baseline");
+    const tree = git(repo, ["rev-parse", `${second}^{tree}`]);
+    const unrelated = git(repo, ["commit-tree", tree, "-m", "Independent fixture root"]);
+    const replacement = git(repo, [
+      "commit-tree",
+      tree,
+      "-p",
+      unrelated,
+      "-m",
+      "Replacement fixture ancestry",
+    ]);
+    const record = { ...baseline, analyzedSha: unrelated };
+    const renamed = {
+      ...observed,
+      id: "ai-agents--renamed",
+      url: "https://github.com/example/renamed",
+    };
+    await mkdir(join(root, "spec/analyses"), { recursive: true });
+    const ledger = JSON.stringify({ ...initial, records: [record] }) + "\n";
+    await writeFile(join(root, "spec/analyses/state.json"), ledger);
+    await writeFile(
+      join(root, "git-state.json"),
+      JSON.stringify({
+        schemaVersion: 1,
+        generatedAt: timestamp,
+        discoveryComplete: true,
+        repositories: [renamed],
+      }) + "\n",
+    );
+    const reader = gitReader(new AbortController().signal);
+    const renameOptions = { ...options(root), rename: new Map([[record.id, renamed.id]]) };
+    git(repo, ["replace", second, replacement]);
+    expect(git(repo, ["merge-base", "--is-ancestor", unrelated, second])).toBe("");
+    expect((await reader(repo, ["merge-base", "--is-ancestor", unrelated, second])).code).toBe(1);
+    await rejects(syncAnalyses(renameOptions), /cannot establish full baseline ancestry/);
+    expect(await readFile(join(root, "spec/analyses/state.json"), "utf8")).toBe(ledger);
+    expect(git(repo, ["replace", "-l"])).toBe(second);
+    git(repo, ["replace", "-d", second]);
+
+    const graftPath = join(repo, ".git/info/grafts");
+    const graft = `${second} ${unrelated}\n`;
+    await writeFile(graftPath, graft);
+    expect(
+      git(repo, [
+        "-c",
+        "core.commitGraph=false",
+        "-c",
+        "advice.graftFileDeprecated=false",
+        "merge-base",
+        "--is-ancestor",
+        unrelated,
+        second,
+      ]),
+    ).toBe("");
+    expect((await reader(repo, ["merge-base", "--is-ancestor", unrelated, second])).code).toBe(1);
+    await rejects(syncAnalyses(renameOptions), /cannot establish full baseline ancestry/);
+    expect(await readFile(join(root, "spec/analyses/state.json"), "utf8")).toBe(ledger);
+    expect(await readFile(graftPath, "utf8")).toBe(graft);
+    expect(git(repo, ["rev-parse", "HEAD"])).toBe(second);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+}, 30_000);
+
+test("analysis reader refuses promisor fetches and transport helpers before child launch", async () => {
+  const { root, repo, observed } = await fixture();
+  const priorTrace = process.env.GIT_TRACE2_EVENT;
+  try {
+    const baseline = (await migrateAnalysis(root, timestamp)).records[0];
+    if (baseline === undefined) throw new Error("Missing fixture baseline");
+    git(repo, ["remote", "add", "origin", "ta-fixture::unavailable"]);
+    git(repo, ["config", "remote.origin.promisor", "true"]);
+    git(repo, ["config", "remote.origin.partialclonefilter", "blob:none"]);
+    git(repo, ["config", "protocol.file.allow", "always"]);
+    git(repo, ["config", "protocol.ta-fixture.allow", "always"]);
+    const tracePath = join(root, "offline-git-trace.jsonl");
+    process.env.GIT_TRACE2_EVENT = tracePath;
+    const reader = gitReader(new AbortController().signal);
+    const packet = await buildChangePacket({ ...baseline, analyzedSha: "f".repeat(40) }, observed, {
+      root,
+      cache: join(root, "cache"),
+      now: timestamp,
+      observedAt: timestamp,
+      git: reader,
+    });
+    expect(packet.status).toBe("baseline-missing");
+    expect((await reader(repo, ["ls-remote", "--", repo, "HEAD"])).code).toBeGreaterThan(0);
+    expect(
+      (await reader(repo, ["ls-remote", "--", "ta-fixture::unavailable", "HEAD"])).code,
+    ).toBeGreaterThan(0);
+    const trace = await readFile(tracePath, "utf8");
+    expect(trace).toContain('"event":"start"');
+    expect(trace).not.toMatch(/"event"\s*:\s*"child_start"/u);
+  } finally {
+    if (priorTrace === undefined) delete process.env.GIT_TRACE2_EVENT;
+    else process.env.GIT_TRACE2_EVENT = priorTrace;
+    await rm(root, { recursive: true, force: true });
+  }
+}, 30_000);
+
+test("analysis reader uses the native null device and cannot run checkout hooks", async () => {
+  const { root, repo } = await fixture();
+  try {
+    const hooks = join(repo, "inspection-hooks");
+    await mkdir(hooks);
+    await writeFile(
+      join(hooks, "post-checkout"),
+      "#!/bin/sh\nprintf 'unexpected\\n' > hook-executed\n",
+      {
+        mode: 0o755,
+      },
+    );
+    git(repo, ["config", "core.hooksPath", hooks]);
+    git(repo, ["hook", "run", "post-checkout"]);
+    expect(await readFile(join(repo, "hook-executed"), "utf8")).toBe("unexpected\n");
+    await rm(join(repo, "hook-executed"));
+    const reader = gitReader(new AbortController().signal);
+    expect((await reader(repo, ["config", "--get", "core.hooksPath"])).text.trim()).toBe(
+      process.platform === "win32" ? "NUL" : "/dev/null",
+    );
+    expect((await reader(repo, ["hook", "run", "post-checkout"])).code).toBe(1);
+    expect(await Bun.file(join(repo, "hook-executed")).exists()).toBe(false);
+    expect(await Bun.file(join(repo, "dev/null/post-checkout")).exists()).toBe(false);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+}, 30_000);
 
 test("migration and fetch preserve reviewed SHA/date/body and create bounded change evidence", async () => {
   const { root, first, second } = await fixture();
@@ -318,6 +473,87 @@ test("identity ambiguity is refused and a renamed checkout needs full analyzed a
     await rm(root, { recursive: true, force: true });
   }
 });
+
+test("local observation consumes an actual analysis rename event without rewriting review history", async () => {
+  const { root, repo, first, second, observed } = await fixture();
+  try {
+    const renamed = {
+      ...observed,
+      id: "ai-agents--renamed",
+      url: "https://github.com/example/renamed",
+    };
+    git(repo, ["remote", "add", "origin", renamed.url]);
+    await writeFile(
+      join(root, "git-state.json"),
+      JSON.stringify({
+        schemaVersion: 1,
+        generatedAt: timestamp,
+        discoveryComplete: false,
+        repositories: [renamed],
+      }) + "\n",
+    );
+    await syncAnalyses({ ...options(root), rename: new Map([[observed.id, renamed.id]]) });
+    const before = await readFile(join(root, "spec/analyses/state.json"), "utf8");
+    const reviewed = parseAnalysisJson(AnalysisStateSchema, before);
+    expect(reviewed.events.some((event) => event.action === "renamed")).toBe(true);
+    expect(reviewed.records[0]?.aliases).toContain(renamed.id);
+    expect(reviewed.records[0]?.aliases).toContain(source);
+    await writeFile(join(root, ".env"), "TEAMAGENT_GIT_CACHE=cache\n");
+    await writeFile(
+      join(root, "git-sources.json"),
+      JSON.stringify({
+        schemaVersion: 1,
+        repositories: [{ category: "ai-agents", name: "renamed", url: renamed.url }],
+      }) + "\n",
+    );
+    await mkdir(join(root, ".cache/research"), { recursive: true });
+    await writeFile(
+      join(root, ".cache/research/git-state.json"),
+      JSON.stringify({
+        schemaVersion: 1,
+        repositories: [
+          {
+            ...observed,
+            path: "cache/former-missing",
+            head: first,
+            checkedAt: timestamp,
+            upstreamHead: first,
+          },
+          { ...renamed, checkedAt: null, upstreamHead: null, availability: "unknown" },
+        ],
+      }) + "\n",
+    );
+    const shell = Bun.which("pwsh");
+    if (shell === null) throw new Error("PowerShell 7 is required for identity compatibility.");
+    const output = execFileSync(
+      shell,
+      [
+        "-NoLogo",
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        resolve("app/research/git-sync.ps1"),
+        "-Action",
+        "observe",
+        "-ProjectRoot",
+        root,
+        "-TimeoutSeconds",
+        "5",
+      ],
+      { encoding: "utf8", windowsHide: true, timeout: 25_000, maxBuffer: 1024 * 1024 },
+    );
+    const reconciled = parseAnalysisJson(GitStateSchema, output);
+    expect(reconciled.repositories).toHaveLength(1);
+    expect(reconciled.repositories[0]?.id).toBe(renamed.id);
+    expect(reconciled.repositories[0]?.url).toBe(renamed.url);
+    expect(reconciled.repositories[0]?.head).toBe(second);
+    expect(reconciled.repositories[0]?.availability).toBe("unknown");
+    expect(await readFile(join(root, "spec/analyses/state.json"), "utf8")).toBe(before);
+    expect(git(repo, ["rev-parse", "HEAD"])).toBe(second);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+}, 30_000);
 
 test("missing shallow baseline is explicit, never substituted with checkout HEAD", async () => {
   const { root, observed } = await fixture();

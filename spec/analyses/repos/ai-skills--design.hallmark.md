@@ -2,11 +2,11 @@
 
 Source: [design.hallmark](https://github.com/nutlope/hallmark) · [Analysis](../../projects/ai-skills--design.hallmark.md) · [skills](../../skills.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `4f6a46c6dc325d40ab268c93e25c7b96676ebccd`; commit date: 2026-10-29T17:50:04+01:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `4f6a46c6dc325d40ab268c93e25c7b96676ebccd`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `4f6a46c6dc325d40ab268c93e25c7b96676ebccd`; commit date: 2026-10-29T17:50:04+01:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `4f6a46c6dc325d40ab268c93e25c7b96676ebccd`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/nutlope/hallmark/compare/4f6a46c6dc325d40ab268c93e25c7b96676ebccd...4f6a46c6dc325d40ab268c93e25c7b96676ebccd). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

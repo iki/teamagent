@@ -56,6 +56,16 @@ The [acceptance-reference fixture additions](https://github.com/huangruiteng/loo
 
 **Coverage:** Read complete targeted acceptance-inspection and planner deltas plus two fixture deltas. Reference-compaction implementation, mutation authority and the rest of the oversized change remain outside scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## External-update review - 2026-11-01
+
+Reviewed `07b555494550c12ff6e3dc4b139cdf7cd1bdae32` against `70f643153ea773b7bc1ef71bdb06095b0744bd6d`.
+
+The 265-path update includes a portable workspace-containment correction. The complete inspected [lease-workspace delta](https://github.com/huangruiteng/loopx/blob/07b555494550c12ff6e3dc4b139cdf7cd1bdae32/loopx/control_plane/work_items/task_lease_workspace.ts) replaces a slash-specific `realpath.startsWith(root + "/")` comparison with the platform path library's `relative`, separator and absolute-path checks. A resolved location equal to the root, outside it through `..`, or on an absolute/different-root path is rejected. Traversal still uses the declared overlap predicate, and symlinks retain their separate existing validation path.
+
+The complete inspected [fixture delta](https://github.com/huangruiteng/loopx/blob/07b555494550c12ff6e3dc4b139cdf7cd1bdae32/tests/control_plane_ts/task_lease_workspace.test.ts) adds real scoped directory contents while retaining origin-identity checks, including distinct ports. This establishes the authored regression intent; it is not evidence that Windows junction attacks or concurrent replacement have been executed successfully.
+
+**Harness consequence:** Use canonical, platform-aware path containment independently of slash-normalized logical scope matching. A successful point-in-time observation does not establish an immutable filesystem view: recheck at the consuming operation, bind the workspace generation, and separately validate symlink targets. This narrow review does not audit the unchanged link helper or the remaining context, quota and release changes. No upstream programs or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [loopx](https://github.com/huangruiteng/loopx); analyzed commit `70f643153ea773b7bc1ef71bdb06095b0744bd6d`; commit date 2026-11-01T17:24:27+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--loopx.md).
+Analysis metadata: source [loopx](https://github.com/huangruiteng/loopx); analyzed commit `07b555494550c12ff6e3dc4b139cdf7cd1bdae32`; commit date 2026-11-02T01:35:54+05:30; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--loopx.md).
 <!-- teamagent-analysis:end -->

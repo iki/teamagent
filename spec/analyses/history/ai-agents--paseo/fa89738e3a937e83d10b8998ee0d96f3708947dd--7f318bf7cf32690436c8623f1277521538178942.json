@@ -1,0 +1,195 @@
+{
+  "id": "ai-agents--paseo",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/getpaseo/paseo",
+  "report": "spec/projects/ai-agents--paseo.md",
+  "analyzedSha": "fa89738e3a937e83d10b8998ee0d96f3708947dd",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-11-01T14:46:52+07:00",
+  "observedSha": "7f318bf7cf32690436c8623f1277521538178942",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "7f318bf7cf32690436c8623f1277521538178942",
+      "date": "2026-11-01T19:58:12Z",
+      "subject": "fix(codex): end an interrupted turn's shell commands (#7525)"
+    },
+    {
+      "sha": "04fe4be40f88db94ee701dbd7148c4bf04283d35",
+      "date": "2026-11-01T18:59:04Z",
+      "subject": "fix(claude): retain configured model metadata before a turn (#8465)"
+    },
+    {
+      "sha": "2d75cc80b2608ca4604cee54bb8ae4c5cfe956c8",
+      "date": "2026-11-01T18:34:57Z",
+      "subject": "test(server): cover routed permissions in one host journey (#8486)"
+    },
+    {
+      "sha": "bfac1329204f9aaeb6d47742885c51551d64f70b",
+      "date": "2026-11-01T18:02:26Z",
+      "subject": "Stop Git polling while workspace folders are missing (#8462)"
+    },
+    {
+      "sha": "34f996b32aba3b03a6a89ce3e8031b80825677bc",
+      "date": "2026-11-01T17:11:42Z",
+      "subject": "Preserve pending questions and approvals after peer messages (#8453)"
+    },
+    {
+      "sha": "3e83f433da29b87a73da2550e34898e070b9856a",
+      "date": "2026-11-01T15:56:42Z",
+      "subject": "Import large Claude sessions without exceeding the string limit (#8457)"
+    },
+    {
+      "sha": "674530152e99b3023c1587211d0c891d6e3e3a2c",
+      "date": "2026-11-01T15:31:08Z",
+      "subject": "test(server): cover filename downloads in one workspace journey (#8475)"
+    },
+    {
+      "sha": "919e44b3195452a8dcdc0bbbfa7e7a7d3b8ca252",
+      "date": "2026-11-01T12:59:34Z",
+      "subject": "fix(server): start configured plugins concurrently (#8427)"
+    },
+    {
+      "sha": "4fe44038e3fd31200bdd88fd13d6ec8617051e5c",
+      "date": "2026-11-01T12:35:50Z",
+      "subject": "test(server): check subdirectory diffs before and after commit (#8466)"
+    },
+    {
+      "sha": "9b0542d127ec6452e09c5f4d01e7da328aea5fc0",
+      "date": "2026-11-01T10:59:33Z",
+      "subject": "fix(server): retry a connected host that failed the capability check (#8423)"
+    },
+    {
+      "sha": "81301474265fbe3b0a798d519b71ffc31e6d255d",
+      "date": "2026-11-01T10:04:25Z",
+      "subject": "fix(app): stop the terminal from typing its version reply into the shell (#8419)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "docs/connected-hosts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/composer-recall.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/terminal/runtime/terminal-emulator-runtime.browser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/terminal/runtime/terminal-emulator-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/client/src/node/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/agent/providers/claude/agent.import-titles.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/server/agent/providers/claude/agent.runtime-info.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/agent/providers/claude/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/agent/providers/codex-app-server-agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/server/agent/providers/codex-interrupted-turn-terminals.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/connected-hosts/hosts.e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/connected-hosts/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/daemon-e2e/checkout-diff-content.e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/daemon-e2e/file-download.e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/server/daemon-e2e/peer-message-permissions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/plugins/index.posix.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/plugins/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/workspace-git-service.observation.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/workspace-git-service.observation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/workspace-git-service.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/workspace-git-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/terminal/terminal-worker-runtime.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

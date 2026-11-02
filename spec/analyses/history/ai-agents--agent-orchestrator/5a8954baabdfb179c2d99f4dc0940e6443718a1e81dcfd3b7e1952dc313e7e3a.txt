@@ -1,0 +1,79 @@
+# agent-orchestrator
+
+Source: [agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **focused source review**. Snapshot `a2a8917c22e2246bf63b98e06a97c417f3b3fb76` (2026-10-03T20:20:43+05:30). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+An explicit adapter registry scales installed-agent support without pretending every executable follows one protocol.
+
+## Source evidence inspected
+
+- [backend/internal/adapters/agent/registry/registry.go, lines 47–128](https://github.com/ComposioHQ/agent-orchestrator/blob/a2a8917c22e2246bf63b98e06a97c417f3b3fb76/backend/internal/adapters/agent/registry/registry.go#L47-L128)
+
+## Observed design and algorithms
+
+Constructors returns a stable list of concrete adapter factories, including Codex, Claude Code, Gemini, Copilot, Pi and many others. Build registers them by manifest ID and reports empty/duplicate registration failures through the registry. Harnessed retains only adapters implementing the Agent port and associates each with its domain harness and manifest. Adapter identity, capabilities and implementation remain separate objects.
+
+## Harness decision
+
+Adopt a manifest-plus-port contract and a central registry with deterministic registration. Add a generic protocol adapter for conforming unknown agents, then explicit adapters where semantics differ. The README describes isolated worker worktrees; treat the reviewed registry as the source evidence for extensibility, not proof of all workspace safety behavior.
+
+## Limits and tradeoffs
+
+Adding an agent still requires concrete implementation or an existing shared protocol. The literal goal of automatically operating any installed binary is impossible without a negotiated contract. Repository origin and current README branding differ; the recorded GitHub remote may redirect.
+
+## Validation before adoption
+
+Validate duplicate IDs, missing binaries, unsupported versions and environment-specific executable resolution. Exercise each adapter against contract tests without relying on terminal text heuristics for success. No tests, live inference, installation, or production operation were performed for this review. License indicator: Apache-2.0; verify the exact files and dependencies before reuse.
+
+Related directions: [agents](../agents.md) · [channels](../channels.md) · [models](../models.md).
+
+## 2026-10-28 scoped update review
+
+Reviewed commit `f2ef7e90192c5afae069fc99b079726d9666b3dc` (commit date `2026-10-27T22:54:40+05:30`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete shipped-agent registry, cloud OIDC/principal verifier, local HTTP authentication middleware and small keychain-command seam; OIDC dependency internals, route authorization, session dispatch and live transport were not audited.
+
+The [cloud verifier](https://github.com/ComposioHQ/agent-orchestrator/blob/f2ef7e90192c5afae069fc99b079726d9666b3dc/cloud/internal/auth/auth.go#L62-L195) delegates token validation to an OIDC verifier, explicitly checks the expected client_id and resolves user/organization metadata before producing a principal. Legacy external IDs support identity migration, so their provenance and mapping integrity are authorization-sensitive. The fallback verifier tries the previous environment only after an invalid-token error; provider/profile failures remain visible rather than silently selecting another authority. This is a useful failure taxonomy, but dependency verification, migration uniqueness and route-specific grants were outside scope.
+
+The [local middleware](https://github.com/ComposioHQ/agent-orchestrator/blob/f2ef7e90192c5afae069fc99b079726d9666b3dc/backend/internal/httpd/auth.go#L145-L329) distinguishes preview-cookie authentication from bearer authentication in request context and exempts only an exact GET identity-probe route. Cookies are HttpOnly and scoped to preview-file paths, but the source deliberately omits Secure for a plaintext LAN design. Cookie paths are delivery constraints, not independent authorization boundaries; downstream handling must preserve the context distinction. A forwarded source address is trusted only for a loopback peer, which assumes local forwarders are trusted. An opaque host ID can detect an accidental wrong endpoint but is not cryptographic server authentication against an active network adversary.
+
+Retired password hashes avoid locking out newly paired clients when stale clients retry, but the retired list is not bounded here; per-source failure entries expire yet have no admission cap. The [registry](https://github.com/ComposioHQ/agent-orchestrator/blob/f2ef7e90192c5afae069fc99b079726d9666b3dc/backend/internal/adapters/agent/registry/registry.go) centralizes constructors and manifest identity, which does not establish installed binaries, valid accounts or effective sandboxing. Teamagent should keep authenticated identity, accepted transport, capability availability and action grants separate, with bounded auth state and real transport/rotation tests. No upstream tests or authentication/provider calls were executed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `c8be3cbd452eccabdc7001536b917e0572cf5b89` (commit date `2026-10-28T13:18:15+05:30`), compared with `f2ef7e90192c5afae069fc99b079726d9666b3dc`. Earlier findings remain historical evidence.
+
+**Scope:** Mobile uncertain message edits, bounded session lookup and child launch environment changes. The complete changed-path inventory contains 253 paths; the assessment below is limited to the cited branches.
+
+The mobile edit hook retains the exact payload and delivery identifier after an uncertain result; only a classified definitive refusal creates a new identifier. An unresolved edit stays visible even if its original prompt disappears, and late completions are fenced by delivery ID. See [packages/mobile/lib/chat/useMessageEdit.ts](https://github.com/ComposioHQ/agent-orchestrator/blob/c8be3cbd452eccabdc7001536b917e0572cf5b89/packages/mobile/lib/chat/useMessageEdit.ts#L40-L80). Session lookup deduplicates requests and caps entries at 200, but its key contains host/session identity rather than credential generation, and failed reads become null. See [packages/mobile/lib/chat/sessionLookup.ts](https://github.com/ComposioHQ/agent-orchestrator/blob/c8be3cbd452eccabdc7001536b917e0572cf5b89/packages/mobile/lib/chat/sessionLookup.ts#L4-L28).
+
+For Teamagent, persist uncertain edits beyond a component lifetime and reconcile before replay; this hook alone does not prove server idempotency. Cache identity needs the effective account/credential generation and explicit unavailable results. The launch-environment delta also copies the process environment while augmenting PATH: this is compatibility handling, not credential isolation. See [backend/internal/agentlaunch/env.go](https://github.com/ComposioHQ/agent-orchestrator/blob/c8be3cbd452eccabdc7001536b917e0572cf5b89/backend/internal/agentlaunch/env.go#L163-L181).
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `7690e4e7ea0535757aa80441159d860309677860` (commit date `2026-11-01T14:48:59+05:30`), compared with `c8be3cbd452eccabdc7001536b917e0572cf5b89`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded complete telemetry-authority reader and fixtures. Whole-repository diff was oversized; desktop writer, queue invalidation and Windows ACL enforcement not audited.
+
+The [reader](https://github.com/ComposioHQ/agent-orchestrator/blob/7690e4e7ea0535757aa80441159d860309677860/backend/internal/adapters/telemetry/policyauthority/reader.go) validates a versioned consent record, generation UUID and UTC timestamp, rejects unsafe file types and non-private POSIX permissions, and bounds decoding to 4,097 bytes. Read errors veto events. With explicit enabling environment flags, an absent policy permits events; legacy production flags do not override the recorded choice. [Fixtures](https://github.com/ComposioHQ/agent-orchestrator/blob/7690e4e7ea0535757aa80441159d860309677860/backend/internal/adapters/telemetry/policyauthority/reader_test.go) pin those defaults. The pre-open path check is not an atomic no-follow open, and Windows permissions are outside this reader.
+
+**Teamagent implication (inference):** Keep policy authority, generation and evidence level explicit across desktop/daemon boundaries. Teamagent's unknown-training default remains blocked rather than inheriting this telemetry default; revalidate live consent before egress and use platform-appropriate file ownership checks.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/ComposioHQ/agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator) at `e8e3342d3fff2112ca64764a7254000f2d637f68` against prior analyzed `7690e4e7ea0535757aa80441159d860309677860`. Evidence: [backend/internal/adapters/agent/claudecode/model_versions.go](https://github.com/ComposioHQ/agent-orchestrator/blob/e8e3342d3fff2112ca64764a7254000f2d637f68/backend/internal/adapters/agent/claudecode/model_versions.go), [backend/internal/adapters/agent/claudecode/model_versions_test.go](https://github.com/ComposioHQ/agent-orchestrator/blob/e8e3342d3fff2112ca64764a7254000f2d637f68/backend/internal/adapters/agent/claudecode/model_versions_test.go), [backend/internal/service/session/delegation.go](https://github.com/ComposioHQ/agent-orchestrator/blob/e8e3342d3fff2112ca64764a7254000f2d637f68/backend/internal/service/session/delegation.go).
+
+The Claude adapter separates account model availability from installed CLI compatibility. It persists provider-observed minimum versions, applies the stricter base/variant minimum, removes a gated default selection, and caches version probes by executable path/size/mtime. Unknown installed versions remain ungated; that is absence of a known incompatibility, not verified readiness. Fixtures cover learned-versus-seeded requirements and changed executable fingerprints. Delegation also checks local and remote branch references before accepting an explicit new task branch.
+
+**Architecture consequence:** Model selection should retain separate account, runtime-version and policy evidence. Treat an unknown probe as unknown, invalidate observations when the executable changes, and recheck branch ownership at the mutation boundary. Provider model/version seeds are dated upstream evidence, not automatically adopted Teamagent support.
+
+**Scope and limits:** Scoped inspection of model-version implementation, its fixture definitions and delegation branch preflight within a 181-path update; upstream tests were not executed and desktop recovery changes were not comprehensively audited.

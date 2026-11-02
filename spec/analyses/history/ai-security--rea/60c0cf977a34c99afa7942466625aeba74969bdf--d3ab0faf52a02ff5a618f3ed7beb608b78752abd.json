@@ -1,0 +1,965 @@
+{
+  "id": "ai-security--rea",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/morluto/rea",
+  "report": "spec/analyses/unreviewed/ai-security--rea.md",
+  "analyzedSha": "60c0cf977a34c99afa7942466625aeba74969bdf",
+  "analyzedAt": "2026-11-01T11:37:37.120Z",
+  "analyzedCommitDate": "2026-11-01T17:53:37+08:00",
+  "observedSha": "d3ab0faf52a02ff5a618f3ed7beb608b78752abd",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "d3ab0faf52a02ff5a618f3ed7beb608b78752abd",
+      "date": "2026-11-02T03:14:29+08:00",
+      "subject": "refactor(ci): parse readiness fences with a static expression (#8586)"
+    },
+    {
+      "sha": "6d60db19510896559214094cecfcc262b76e8a33",
+      "date": "2026-11-02T02:52:20+08:00",
+      "subject": "fix(test): restrict storage fixture to loopback (#8582)"
+    },
+    {
+      "sha": "0354145a2ad9844f87b602bd457ae3df9982e0d3",
+      "date": "2026-11-02T02:21:40+08:00",
+      "subject": "docs: clarify test audits and organize verification lanes"
+    },
+    {
+      "sha": "7bcefead69bf97b45225f8cfc1ce57ce9e6903ec",
+      "date": "2026-11-02T02:13:32+08:00",
+      "subject": "test: strengthen and prune audited test coverage (#8573)"
+    },
+    {
+      "sha": "ce9095d727c5ca32513f0e1c915e7cbf540e28f0",
+      "date": "2026-11-02T01:48:46+08:00",
+      "subject": "fix(test): contain browser fixture HTTP request targets (#8566)"
+    },
+    {
+      "sha": "46c13b9981f62373215f748928dcf099d417c026",
+      "date": "2026-11-02T01:15:08+08:00",
+      "subject": "fix(electron): preserve runtime rejection and exception policies (#8542)"
+    },
+    {
+      "sha": "85013da0cec7b854f51e47de77fd24391c8fd8ed",
+      "date": "2026-11-01T08:57:32-08:00",
+      "subject": "fix(cli): describe one-shot timeouts for an invocation whose session has ended (#8535)"
+    },
+    {
+      "sha": "cbc69537cdf54dca6cc1cfada4ed8a5f1d9633df",
+      "date": "2026-11-01T08:57:11-08:00",
+      "subject": "fix(discovery): carry provider repair instructions into capability discovery (#8532)"
+    },
+    {
+      "sha": "eb39a07966168ae61685cc8b5cf798c8fc6f9436",
+      "date": "2026-11-01T08:56:58-08:00",
+      "subject": "feat(evidence): read selected complete records without the whole bundle (#8528)"
+    },
+    {
+      "sha": "4b840aa1fb9d07e93220c3feb58919c1d846048a",
+      "date": "2026-11-01T08:56:38-08:00",
+      "subject": "fix(setup): report the failed Hopper request URL and HTTP status (#8526)"
+    },
+    {
+      "sha": "423059a4de9669afa44d81942803083e82149dc4",
+      "date": "2026-11-01T08:56:05-08:00",
+      "subject": "feat(javascript): page retained feature traces through analysis views (#8522)"
+    },
+    {
+      "sha": "44b638400940d24b24b3a73add010933ca4fc9fb",
+      "date": "2026-11-01T08:53:29-08:00",
+      "subject": "fix(native): find procedures by the secondary names exact lookup accepts (#8520)"
+    },
+    {
+      "sha": "3f61303939711680d07e6d00d021aa550c15e8d3",
+      "date": "2026-11-01T08:53:11-08:00",
+      "subject": "fix(session): clear provider-inferred unavailability after recovery (#8518)"
+    },
+    {
+      "sha": "35ae7232bf5ddc0e26954557055f9c01fc4b8d6c",
+      "date": "2026-11-01T08:52:53-08:00",
+      "subject": "fix(enhanced): stop call graph traversals at unconfirmed provider cleanup (#8516)"
+    },
+    {
+      "sha": "76cd23d2e87bb4361507fec40fadb2416ad0f4f9",
+      "date": "2026-11-01T08:52:42-08:00",
+      "subject": "fix(process): remove unused Darwin helper cache type export (#8511)"
+    },
+    {
+      "sha": "3e6a5cb20ac7aa6353b80421aafb25d7ca552090",
+      "date": "2026-11-02T00:52:27+08:00",
+      "subject": "fix!: preserve address context input errors (#8419)"
+    },
+    {
+      "sha": "1d343a88e53af51101a408d437641c60b7bb34e4",
+      "date": "2026-11-02T00:25:06+08:00",
+      "subject": "feat(kuna): verify release 1.988 (#8509)"
+    },
+    {
+      "sha": "df25bc8068b4d62c0e8db2b38648648ed831ae0e",
+      "date": "2026-11-01T23:53:56+08:00",
+      "subject": "fix(ghidra): retain relocation symbol observations (#8531)"
+    },
+    {
+      "sha": "aa48d494e9726d469a1b9ed917f021d8a1a4c7ea",
+      "date": "2026-11-01T21:24:01+08:00",
+      "subject": "fix(pe): enforce certificate name string alphabets (#8494)"
+    },
+    {
+      "sha": "32c253ba318204c8ba0d81f1dab0ce6dfd8cead9",
+      "date": "2026-11-01T21:23:46+08:00",
+      "subject": "fix(electron): preserve application argv during active capture (#8492)"
+    },
+    {
+      "sha": "bafe3784cd6fd3f46dd472a913e97f08f4d7427f",
+      "date": "2026-11-01T21:17:55+08:00",
+      "subject": "fix(native): report dispatch target applicability (#8400)"
+    },
+    {
+      "sha": "d684125eedc75ea3ea6061d086ae9c530da198a4",
+      "date": "2026-11-01T21:14:27+08:00",
+      "subject": "docs(providers): verify prerequisite recovery and sibling failures"
+    },
+    {
+      "sha": "53363166f068a21f00a605187e1c3af428aa7d5d",
+      "date": "2026-11-01T20:27:34+08:00",
+      "subject": "fix(evidence)!: validate native view parent predicates (#8451)"
+    },
+    {
+      "sha": "3842809c371a59609f576a9db8f9c492a3f071e6",
+      "date": "2026-11-01T20:27:15+08:00",
+      "subject": "docs(setup): clarify Hopper failures and installer verification"
+    },
+    {
+      "sha": "e5e0dc5542f6a63b790881ac906dc9fcd6d46659",
+      "date": "2026-11-01T19:05:37+08:00",
+      "subject": "fix(ci): include hidden VitePress configuration in CodeQL (#8486)"
+    },
+    {
+      "sha": "1aa6beb5dc937a19e87df70b56df48f0d4e09541",
+      "date": "2026-11-01T18:42:27+08:00",
+      "subject": "fix(decompile): name the differing resume identity (#8465)"
+    },
+    {
+      "sha": "71746351d322c847cb6b8bc8e1b21e80491a878e",
+      "date": "2026-11-01T18:36:21+08:00",
+      "subject": "fix(ci): preserve the package verifier HTTP boundary (#8483)"
+    },
+    {
+      "sha": "293db94dd00e1ee084dd0fcc7a8a9e4b49f671a1",
+      "date": "2026-11-01T18:29:34+08:00",
+      "subject": "docs: prioritize product contracts over skill guidance"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/reverse-engineer-anything/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/reverse-engineer-anything/references/javascript-applications.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/reverse-engineer-anything/references/native-and-artifacts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/codeql/production.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "THIRD_PARTY_NOTICES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bridge/ghidra/ReaGhidraBridge.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adb-device-analysis.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/design/limits-and-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/electron-observation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ghidra-provider.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ida-provider.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/javascript-application-workflows.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/javascript-route-inventory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/kuna-provider.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp-contracts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/native-investigation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/testing-lanes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tool-design.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-visible-errors.csv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/wasm-artifacts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/windows-ghidra-p0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci/pr-readiness.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/electron-active-hook.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/lib/browser-fixture-http.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/browser-scenario-service-worker-setup-e2e.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/browser-scenario-service-workers-e2e.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/browser-scenario-storage-e2e.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/real-ghidra-entry-aliases.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/real-ghidra-namespace-annotations.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/lib/real-ghidra-relocation-symbols.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/test-discovery.d.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/test-discovery.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/test-website.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-adb.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-bun-standalone.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-claude-client.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-commandcode-client.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-copilot-client.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-deepseek-client.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-flutter.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-frida.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-gemini-client.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-grok-client.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-http3-network-captures.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-il2cpp-metadata.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-jeb.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-omp-client.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-opencode-client.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/verify-package-update.d.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-package-update.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-qwen-client.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-real-cutter.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-real-electron.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-real-ghidra-assertions.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-real-ghidra-com.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-real-ghidra-dos.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-real-ghidra-function.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-real-ghidra-nativeaot.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-real-ghidra.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-real-kuna.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-test-discovery.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify/javascript/application-workflows.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify/javascript/runtime-observation.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adb/AdbConfiguration.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adb/AdbProvider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/android/JadxConfiguration.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/android/JadxDoctor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/apktool/ApktoolConfiguration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/apktool/ApktoolConfiguration.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/AnalysisContextQueries.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/AnalysisProvider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/BinaryTargetResolver.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/BrowserScenarioCaptureService.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/CallPathTracing.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/application/CallRelationshipTraversal.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/CallRelationshipTraversal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/CapabilityInventory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/CapabilityInventory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/DirectAnalysis.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/DirectAnalysisCleanup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/DirectAnalysisStatus.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/EnhancedToolTypes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/EnhancedTools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/EvidenceBundleCommands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/HopperDownload.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/HopperReleaseFeed.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/JsonFiles.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/LinuxHopper.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/LinuxHopper.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/LinuxHopperPublisher.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/MacHopper.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/MacHopper.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/Setup.configuration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/Setup.fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/Setup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/SetupHost.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/SetupInstallFailure.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/SetupInstallFailure.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/SetupTypes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/WebRuntimeService.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/WebSourceLocationService.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/WorkflowEvidence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/analysisView/AnalysisViewService.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/analysisView/BrowserScenarioViews.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/analysisView/NativeLoadImageViews.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/binary/AnalysisProviderEvaluation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/binary/AnalysisProviderRegistry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/binary/AnalysisProviderRegistry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/binary/BinarySession.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/binary/BinarySessionStatus.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/binary/BinarySessionStatus.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/application/binary/SessionRuntimeAvailability.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/decompileDirectory/decompileAll.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/decompileDirectory/exportTree.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/electron/ElectronFuseService.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/investigation/InspectEvidenceBundle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/javascript/ElectronObservationService.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/javascript/JavaScriptAnalysisControl.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/javascript/JavaScriptRecoveryService.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/managed/ManagedReconstructionService.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/native/NativeFunctionMatchingService.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/native/NativeFunctionMatchingViews.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/native/NativeMatchingSources.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/ownedProcessAvailability.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/ArtifactPaths.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/artifacts/BundleResourceArtifactClient.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/FitArtifactReader.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/FitArtifactReader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/GodotPckArtifactReader.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/UImageArtifactReader.boundaries.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/pyinstaller/CArchive.fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/pyinstaller/PyInstallerArtifactReader.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/BrowserScenario.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/PlaywrightElectronActiveActions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/PlaywrightElectronActiveProvider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/PlaywrightElectronActiveProvider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/analysisViewCommands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/applicationCommands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/finishAnalysisCommand.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/composition/jeb.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/contracts/analysisDetail.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/contracts/applicationToolContracts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/contracts/errorSchemas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/contracts/javascript/applicationWorkflowInputContracts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/contracts/officialToolContracts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/contracts/sessionStatusContract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/contracts/sessionToolContracts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/contracts/sessionToolSchemas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/contracts/toolOutputSchemaGroups.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/contracts/toolOutputSchemaPrimitives.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisErrorBase.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisErrorCleanup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisErrorPresentation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisErrorProjection.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

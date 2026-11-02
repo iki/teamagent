@@ -28,6 +28,16 @@ The new [audit script](https://github.com/hanzoai/hips/blob/afe61b0ed001ee6912cd
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/hanzoai/hips](https://github.com/hanzoai/hips) at `397a3bd2df786caba9b84b95f1d8b74544d96991` against prior analyzed `afe61b0ed001ee6912cda2125e83354d713e4c6d`. Evidence: [HIPs/hip-0024-hanzo-sovereign-l1-chain-architecture.md](https://github.com/hanzoai/hips/blob/397a3bd2df786caba9b84b95f1d8b74544d96991/HIPs/hip-0024-hanzo-sovereign-l1-chain-architecture.md), [HIPs/hip-0045-documentation-framework-standard.md](https://github.com/hanzoai/hips/blob/397a3bd2df786caba9b84b95f1d8b74544d96991/HIPs/hip-0045-documentation-framework-standard.md), [README.md](https://github.com/hanzoai/hips/blob/397a3bd2df786caba9b84b95f1d8b74544d96991/README.md), [docs/components/docs-footer.tsx](https://github.com/hanzoai/hips/blob/397a3bd2df786caba9b84b95f1d8b74544d96991/docs/components/docs-footer.tsx).
+
+The four-file delta removes one stale reference and changes the community invite in documentation and its footer component. The architectural proposal itself receives no new implementation or validation here.
+
+**Architecture consequence:** Preserve the distinction between a proposal, its documentation site and implemented harness behavior; no recommendation changes follow from this link maintenance.
+
+**Scope and limits:** Read the complete diff. Invite reachability and the rendered site were not tested.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hanzo-hips](https://github.com/hanzoai/hips); analyzed commit `afe61b0ed001ee6912cda2125e83354d713e4c6d`; commit date 2026-10-30T06:18:06-07:00; review date 2026-11-01T11:33:30.893Z; depth reviewed. [Maintenance record](../repos/ai-agents--hanzo-hips.md).
+Analysis metadata: source [hanzo-hips](https://github.com/hanzoai/hips); analyzed commit `397a3bd2df786caba9b84b95f1d8b74544d96991`; commit date 2026-11-01T11:52:30-08:00; review date 2026-11-01T23:12:06.798Z; depth reviewed. [Maintenance record](../repos/ai-agents--hanzo-hips.md).
 <!-- teamagent-analysis:end -->

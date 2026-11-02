@@ -68,6 +68,16 @@ The [video implementation](https://github.com/comfy-org/comfyui/blob/6d352802d8f
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/comfy-org/comfyui](https://github.com/comfy-org/comfyui) at `17ff1dcce963bd9f23095ec9b28febbfc4db8388` against prior analyzed `6d352802d8f8b9133f664a1757d6c6d26390c335`. Evidence: [comfy/model_prefetch.py](https://github.com/comfy-org/comfyui/blob/17ff1dcce963bd9f23095ec9b28febbfc4db8388/comfy/model_prefetch.py), [comfy/text_encoders/qwen35.py](https://github.com/comfy-org/comfyui/blob/17ff1dcce963bd9f23095ec9b28febbfc4db8388/comfy/text_encoders/qwen35.py), [tests-unit/comfy_test/model_prefetch_cleanup_test.py](https://github.com/comfy-org/comfyui/blob/17ff1dcce963bd9f23095ec9b28febbfc4db8388/tests-unit/comfy_test/model_prefetch_cleanup_test.py).
+
+Prefetch cleanup now clears the global queue before walking it, distinguishes consumed/pinned heads from unreached module groups, clears stale prefetch markers in finally, and attempts later cleanup after an earlier failure before rethrowing the first error. Qwen's grouped draft entry becomes a list. The inspected fault-injection fixtures cover interrupted groups, failed unpinning and graph-cleanup failure.
+
+**Architecture consequence:** Media workers should clear stale ownership markers without converting cleanup errors into success, attempt independent cleanup, and report the retained failure. Clearing a marker does not prove that GPU memory was actually released.
+
+**Scope and limits:** Reviewed both changed implementation files and the new cleanup fixture in a four-path update. No model inference, CUDA execution, memory measurement or upstream tests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [comfyui](https://github.com/comfy-org/comfyui); analyzed commit `6d352802d8f8b9133f664a1757d6c6d26390c335`; commit date 2026-10-31T23:00:10-04:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--comfyui.md).
+Analysis metadata: source [comfyui](https://github.com/comfy-org/comfyui); analyzed commit `17ff1dcce963bd9f23095ec9b28febbfc4db8388`; commit date 2026-11-01T14:14:38-05:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--comfyui.md).
 <!-- teamagent-analysis:end -->

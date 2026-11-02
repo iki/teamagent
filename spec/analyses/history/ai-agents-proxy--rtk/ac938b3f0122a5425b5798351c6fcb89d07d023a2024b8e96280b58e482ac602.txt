@@ -1,0 +1,56 @@
+# RTK: recoverable compression of command output
+
+Source: [rtk](https://github.com/rtk-ai/rtk) · Category: `ai-agents-proxy`
+
+Review depth: **source-reviewed**. Snapshot `c356374fc1c9cff132c02484d2b9195c796b8e8f`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+RTK is a command-output adapter. Its CLI exposes filtered execution, unfiltered execution with usage tracking, recall by content hash, custom-filter trust management, and filter verification. The shared search implementation runs the requested search engine, groups matches by file, caps output, and retains overflow. The code explicitly distinguishes grep and ripgrep argument semantics instead of rewriting one into the other.
+
+A documented Windows limitation in the inspected code uses a broader stdin-detection rule than Unix. This is a useful reminder that compression tools affect tool semantics and require platform-specific fixtures, even when their primary purpose is reducing tokens.
+
+## Harness adoption
+
+Adopt the pattern of a compact observation plus a stable handle to complete output. Store raw stdout, stderr, exit status, truncation metadata, command arguments, and provenance in the artifact store before presenting a smaller model-facing result. Preserve failures, stack traces, filenames, and diagnostic counts. An agent should be able to request omitted evidence without rerunning a potentially expensive or stateful command.
+
+Treat compression as a decision problem: compress verbose successful output aggressively, retain diagnostic evidence for failures, and bypass lossy transforms for machine-readable contracts or exact-match analysis. Measure total task cost including recall and repeated commands; a smaller first observation is not automatically a cheaper successful task.
+
+## Limitations and decision
+
+Shortlist for optional terminal adapters after regression checks on Windows and the target shell. Custom project filters are executable policy and should be reviewed/versioned like skills. Compression is not durable semantic memory and does not certify that the retained lines are sufficient. The harness should preserve authoritative raw output even when RTK's own recall facility is used.
+
+## Evidence read
+
+- [CLI filter, trust, and recall surface](https://github.com/rtk-ai/rtk/blob/c356374fc1c9cff132c02484d2b9195c796b8e8f/src/main.rs#L730-L787)
+- [Search engine preservation and platform caveat](https://github.com/rtk-ai/rtk/blob/c356374fc1c9cff132c02484d2b9195c796b8e8f/src/cmds/system/search.rs#L1-L103)
+
+## Related directions
+
+[Models](../models.md) · [Memory](../memory.md) · [Agents](../agents.md) · [Decisions](../decisions.md)
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5`](https://github.com/rtk-ai/rtk/commit/e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5). Scope: Full proxy HTTP-error mapping and model-registry module including embedded tests read. Compression, proxy request handling, persistence and model-call runtime were not audited.
+
+The [error adapter](https://github.com/rtk-ai/rtk/blob/e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5/proxy/src/error.rs) returns generic server-error messages and tests that upstream/internal details do not reach the HTTP body. It still logs the original details, including possible upstream URLs, so this is client-response redaction rather than end-to-end secret protection. Teamagent needs structured redacted diagnostics at the logging boundary as well as safe user errors.
+
+The [model registry](https://github.com/rtk-ai/rtk/blob/e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5/proxy/src/models.rs) deliberately ships no price estimates and returns None unless both input/output prices are supplied. It documents a shared database copy as authority over per-pod bootstrap seeds, but those persistence paths were not inspected. Matching is first substring, floating prices/cache multipliers lack visible semantic bounds, and poisoned-lock writes silently do nothing. Preserve unknown cost and operator/source provenance, with explicit finite-value validation and update failure reporting. This review establishes neither compression savings nor proxy security. No proxy, model, database or tests were executed.
+
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`550a5c13de4f635e29a21431404e0489440a1d24`](https://github.com/rtk-ai/rtk/commit/550a5c13de4f635e29a21431404e0489440a1d24), compared with `e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5`.
+
+The [read implementation](https://github.com/rtk-ai/rtk/blob/550a5c13de4f635e29a21431404e0489440a1d24/src/cmds/system/read.rs) now uses the requested head/tail/line window as both accounting sides for unfiltered reads. Filtered reads account against a corresponding raw window only when the window actually cuts output; fallback to raw output records no compression saving. The baseline is clamped to avoid negative estimates and is recorded without being printed. The complete new [tracking fixtures](https://github.com/rtk-ai/rtk/blob/550a5c13de4f635e29a21431404e0489440a1d24/tests/read_tracking_baseline_test.rs) read the persisted accounting row and cover file/stdin windows, filter savings and raw fallback.
+
+For Teamagent, compare equivalent requested evidence spans and report omission separately from compression. The fixture estimator uses bytes divided by four, so its savings are not model-token measurements; clamping also does not prove semantic fidelity or task benefit. The selected source/test comparison was read completely; other command filters in the 47-path update were not re-audited. No upstream binary, tests or benchmark was executed.
+
+## External-update review - 2026-11-01
+
+Reviewed `1d20b015ebad73177a6c086c4292b809c7ce2e38` against `550a5c13de4f635e29a21431404e0489440a1d24`.
+
+Within the 13-path comparison, the [Hermes hook](https://github.com/rtk-ai/rtk/blob/1d20b015ebad73177a6c086c4292b809c7ce2e38/hooks/hermes/rtk-rewrite/__init__.py) mutates the shared terminal argument payload without returning a later modify directive that could overwrite an earlier plugin's queued decision. It preserves other arguments, disables stdin and uses a five-second default rewrite timeout; configured values must be finite and positive. The override has no upper clamp, subprocess output remains captured without a byte bound, and this optional compressor deliberately fails open to the original command.
+
+The inspected [fixtures](https://github.com/rtk-ai/rtk/blob/1d20b015ebad73177a6c086c4292b809c7ce2e38/hooks/hermes/tests/test_rtk_rewrite_plugin.py) simulate directive ordering, preserve workdir/timeout, distinguish accepted versus passthrough exit codes and cover invalid timeout values, missing executables and failures. Their simulated merge rules are not a fresh live Hermes compatibility test.
+
+**Harness consequence:** Optional token compression must not override authorization or another hook's command decision. Validate the final effective command after composition and keep a deterministic execution gate independent of a fail-open optimizer. Reviewed the complete hook and fixture deltas; analytics, Rust scratch isolation and command changes were not audited. No hook, subprocess, installer or upstream test was run.

@@ -6,19 +6,20 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://dropbox.com/scl/fi/y64dzlo9lvly3hcd9vmex/Forge-Field-Manual-No10-Graph-Engineering.pdf>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-11-01T08:51:16.093Z. Import: **pinned**. Content validation: **partial**.
+Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-11-01T21:49:04.531Z. Import: **pinned**. Content validation: **partial**.
 
 First captured: 2026-10-24T05:51:33.887Z. Source creation/publication date: unknown. Date evidence: unknown. Filename dates and Last-Modified are not treated as creation dates.
 
 Source revision: not supplied.
 
-Original bytes: 355012. Extracted Markdown characters: 29914. Captured images: 3.
+Original bytes: 355012. Extracted Markdown characters: 56183. Captured images: 9.
 
-Memory source: `e21c46ca-4f1d-4913-977b-87d3511e3a91`. Version: `2b94e4a3-d4ef-42ce-8b95-40238dd68ccc`. Content SHA-256: `543154651900ccdc5d52abd0e8d5afcc0c8b3f1ad0ebfee691ee60999915192e`.
+Memory source: `e21c46ca-4f1d-4913-977b-87d3511e3a91`. Version: `c3bbcfc0-10a0-4af1-8011-32ecdb743876`. Content SHA-256: `9b4538dcac42cfcf2d2fd5ea56db076b352ba912cfa68688d406092f0d07ae0d`.
 
-[Version evidence and assets](../../../.cache/text/exports/e21c46ca-4f1d-4913-977b-87d3511e3a91/2b94e4a3-d4ef-42ce-8b95-40238dd68ccc/manifest.json). Export manifests retain exact locators; treat the cache as private.
+[Version evidence and assets](../../../.cache/text/exports/e21c46ca-4f1d-4913-977b-87d3511e3a91/c3bbcfc0-10a0-4af1-8011-32ecdb743876/manifest.json). Export manifests retain exact locators; treat the cache as private.
 
-- original&#47;file&#58; PDF text stream and physical page boundaries retained&#59; reading order&#44; table layout&#44; equations&#44; vector artwork and OCR are not reconstructed&#59; original PDF retained
+- Alternative local extraction from the retained 15&#45;page PDF&#46; All physical pages have baseline text&#59; table&#44; equation&#44; reading&#45;order and visual fidelity remain unverified&#46; OCR was disabled&#46;
+- The prior page&#45;structured Markdown and its asset paths are also retained as a separate representation&#46; Alternate extraction is not a replacement completeness claim&#46;
 - Image count is measured&#59; visual fidelity and completeness are unverified&#46;
 - Static snapshot checked locally&#59; no remote freshness check&#44; conversion or export rewrite was performed&#46;
 
@@ -39,4 +40,9 @@ Extracted heading sample (up to 20; source text, not an endorsed analysis):
 - PDF page 13
 - PDF page 14
 - PDF page 15
+- GRAPH ENGINEERING
+- THAT JUST FttCKING WORKS
+- 28&#46;9x &#46;
+- THE CHEAT SHEET
+- WHAT IT IS
 

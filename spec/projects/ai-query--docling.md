@@ -63,6 +63,16 @@ Reviewed `764b5d4dc22b03ea87afd4c2207f510300b27a5b` against `26ef35ac26ae9a3f959
 
 **Scope and limits:** Complete normalizer and fixture files; full propagation through every model engine, ASR/video/OCR changes and the remaining 123-path comparison were not audited. No model or upstream tests were run.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/docling-project/docling](https://github.com/docling-project/docling) at `07154cdc82500058ad9377bac92beed3de820458` against prior analyzed `764b5d4dc22b03ea87afd4c2207f510300b27a5b`. Evidence: [docling/backend/asciidoc_backend.py](https://github.com/docling-project/docling/blob/07154cdc82500058ad9377bac92beed3de820458/docling/backend/asciidoc_backend.py), [docling/backend/mspowerpoint_backend.py](https://github.com/docling-project/docling/blob/07154cdc82500058ad9377bac92beed3de820458/docling/backend/mspowerpoint_backend.py), [docling/backend/msword_backend.py](https://github.com/docling-project/docling/blob/07154cdc82500058ad9377bac92beed3de820458/docling/backend/msword_backend.py), [docling/utils/text_decoding.py](https://github.com/docling-project/docling/blob/07154cdc82500058ad9377bac92beed3de820458/docling/utils/text_decoding.py), [tests/test_text_decoding.py](https://github.com/docling-project/docling/blob/07154cdc82500058ad9377bac92beed3de820458/tests/test_text_decoding.py).
+
+AsciiDoc paragraph parsing now keeps hyperlink targets separately from formatted text, with explicit URL/macro matching and nested-label handling. PowerPoint preserves supported letter/Roman/parenthesized numbering schemes with a 32767 start bound, while Word resolves instance-level numbering overrides before abstract definitions. Explicit Unicode decoding removes the leading BOM; the decoding fixtures distinguish Unicode aliases from cp1252 byte interpretation.
+
+**Architecture consequence:** Extraction evidence needs structural labels, link targets and encoding provenance, not just text volume. Keep raw originals before BOM/newline normalization, identify fallback numbering schemes, and validate each parser upgrade with representative documents. Parsed file/FTP/relative hyperlinks are data, not permission to fetch or open them.
+
+**Scope and limits:** Read the four changed conversion implementations and full encoding fixture diff within ten changed paths. The other fixtures were inventoried but not executed; no actual Office, AsciiDoc or PDF conversion was run for this source review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [docling](https://github.com/docling-project/docling); analyzed commit `764b5d4dc22b03ea87afd4c2207f510300b27a5b`; commit date 2026-10-31T13:14:48+08:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--docling.md).
+Analysis metadata: source [docling](https://github.com/docling-project/docling); analyzed commit `07154cdc82500058ad9377bac92beed3de820458`; commit date 2026-11-01T13:34:59+01:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--docling.md).
 <!-- teamagent-analysis:end -->

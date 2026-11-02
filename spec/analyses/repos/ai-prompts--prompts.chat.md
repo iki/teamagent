@@ -2,11 +2,11 @@
 
 Source: [prompts.chat](https://github.com/f/prompts.chat) · [Analysis](../../projects/ai-prompts--prompts.chat.md) · [skills](../../skills.md), [import-generation](../../import-generation.md), [evolution](../../evolution.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `25f9e4c4cd2e583680ce7d38da173228e483f87f`; commit date: 2026-11-01T12:59:19+03:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `25f9e4c4cd2e583680ce7d38da173228e483f87f`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `861d3ed616a7b14fb7180eceed5b449e1f17fea3`; commit date: 2026-11-01T23:06:52+03:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `861d3ed616a7b14fb7180eceed5b449e1f17fea3`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/f/prompts.chat/compare/25f9e4c4cd2e583680ce7d38da173228e483f87f...25f9e4c4cd2e583680ce7d38da173228e483f87f). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/f/prompts.chat/compare/861d3ed616a7b14fb7180eceed5b449e1f17fea3...861d3ed616a7b14fb7180eceed5b449e1f17fea3). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

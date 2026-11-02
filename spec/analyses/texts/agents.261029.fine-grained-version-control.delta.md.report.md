@@ -6,7 +6,7 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://delta.dev/blog/fine-grained-version-control-for-agents>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-11-01T08:51:16.093Z. Local validation: 2026-11-01T08:51:16.093Z. Import: **created**. Content validation: **usable-text**.
+Mode: **static**. Last remote attempt: 2026-11-01T08:51:16.093Z. Local validation: 2026-11-01T21:49:04.531Z. Import: **pinned**. Content validation: **usable-text**.
 
 First captured: 2026-11-01T08:51:18.154Z. Source creation/publication date: 2026-10-29. Date evidence: publisher-html-meta (article:published_time). Filename dates and Last-Modified are not treated as creation dates.
 
@@ -19,6 +19,7 @@ Memory source: `18b13a90-d472-42e2-bbc4-b71b5385e5de`. Version: `a006e2cb-2ab2-4
 [Version evidence and assets](../../../.cache/text/exports/18b13a90-d472-42e2-bbc4-b71b5385e5de/a006e2cb-2ab2-438c-936f-04d8eabcc6ff/manifest.json). Export manifests retain exact locators; treat the cache as private.
 
 - Image count is measured&#59; visual fidelity and completeness are unverified&#46;
+- Static snapshot checked locally&#59; no remote freshness check&#44; conversion or export rewrite was performed&#46;
 
 Extracted heading sample (up to 20; source text, not an endorsed analysis):
 

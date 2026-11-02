@@ -1,0 +1,95 @@
+{
+  "id": "ai-query--docling",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/docling-project/docling",
+  "report": "spec/projects/ai-query--docling.md",
+  "analyzedSha": "764b5d4dc22b03ea87afd4c2207f510300b27a5b",
+  "analyzedAt": "2026-11-01T11:35:43.470Z",
+  "analyzedCommitDate": "2026-10-31T13:14:48+08:00",
+  "observedSha": "07154cdc82500058ad9377bac92beed3de820458",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "07154cdc82500058ad9377bac92beed3de820458",
+      "date": "2026-11-01T13:34:59+01:00",
+      "subject": "fix(asciidoc): turn links in paragraphs into hyperlinks (#5115)"
+    },
+    {
+      "sha": "26a5bcfd0812b2483338b591563fd64664f7272b",
+      "date": "2026-11-01T11:33:36+01:00",
+      "subject": "fix(pptx): render lettered, Roman and parenthesized list markers (#5122)"
+    },
+    {
+      "sha": "bb7340d5c431b42a0938da8d40b6f3b59b734f5a",
+      "date": "2026-11-01T11:32:00+01:00",
+      "subject": "fix(docx): apply the w:lvlOverride of a list numbering instance (#5123)"
+    },
+    {
+      "sha": "7346d1e976db5fe2a7cad631f67c6cc4f3e0bdcc",
+      "date": "2026-11-01T11:30:55+01:00",
+      "subject": "fix(utils): drop leading UTF-8 BOM for explicit encoding=\"utf-8\" (#4849)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "docling/backend/asciidoc_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/boxnote_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/mspowerpoint_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/msword_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/webvtt_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/text_decoding.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_asciidoc.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_backend_msword_list_overrides.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_backend_pptx_list_markers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_text_decoding.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

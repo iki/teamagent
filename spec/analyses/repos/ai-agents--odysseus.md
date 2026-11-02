@@ -2,11 +2,11 @@
 
 Source: [odysseus](https://github.com/pewdiepie-archdaemon/odysseus) · [Analysis](../../projects/ai-agents--odysseus.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `8450793fe68a0cc37ed9dc523620ba49bc234e2f`; commit date: 2026-11-01T08:45:11Z; review date: 2026-11-01T11:33:30.893Z; observed SHA: `8450793fe68a0cc37ed9dc523620ba49bc234e2f`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `f7f6abf82ba20bc80cd62e9f27d55f780825880e`; commit date: 2026-11-01T12:22:56-07:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `f7f6abf82ba20bc80cd62e9f27d55f780825880e`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/pewdiepie-archdaemon/odysseus/compare/8450793fe68a0cc37ed9dc523620ba49bc234e2f...8450793fe68a0cc37ed9dc523620ba49bc234e2f). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/pewdiepie-archdaemon/odysseus/compare/f7f6abf82ba20bc80cd62e9f27d55f780825880e...f7f6abf82ba20bc80cd62e9f27d55f780825880e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

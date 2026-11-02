@@ -1,0 +1,325 @@
+{
+  "id": "ai-query--dbx",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/t8y2/dbx",
+  "report": "spec/analyses/unreviewed/ai-query--dbx.md",
+  "analyzedSha": "e6b1a478b7618def254e8a45b23a8ce2e0b61aa9",
+  "analyzedAt": "2026-11-01T11:35:43.470Z",
+  "analyzedCommitDate": "2026-11-01T16:44:46+08:00",
+  "observedSha": "c4e30dce3e6e9651c1035fd548102fe2c9f02cfb",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "c4e30dce3e6e9651c1035fd548102fe2c9f02cfb",
+      "date": "2026-11-01T18:07:24Z",
+      "subject": "chore(docs): refresh contributor activity"
+    },
+    {
+      "sha": "68964eae06c5851c6d6946c5a54802ae3f845ecc",
+      "date": "2026-11-02T01:21:13+08:00",
+      "subject": "fix(startup): point the WebView2 recovery dialog at the download page"
+    },
+    {
+      "sha": "dcb5f1c1dd83074d9d988fa8783318b4f078c55f",
+      "date": "2026-11-02T01:21:09+08:00",
+      "subject": "fix(docs): link downloads through the stable release directory"
+    },
+    {
+      "sha": "4badb6aea79e990dd4ec013214e9cb9a2c55fe5f",
+      "date": "2026-11-02T01:21:06+08:00",
+      "subject": "fix(release): alias Linux packages and add aliases to R2 before promotion"
+    },
+    {
+      "sha": "286b5e44f1f244e707f47385c390adb0091e43e6",
+      "date": "2026-11-02T01:10:21+08:00",
+      "subject": "chore(deps): keep renovate off cargo 0.x minors, vendored pins and volar"
+    },
+    {
+      "sha": "6806fdbc93a8dcd060fc31b7fdc0d3bfc5a65db5",
+      "date": "2026-11-02T00:57:04+08:00",
+      "subject": "fix(grid): scroll the DOM grid to search matches outside the rendered rows"
+    },
+    {
+      "sha": "8cc97b1f28334d6bbe72c6d485373f58305d64c6",
+      "date": "2026-11-02T00:56:20+08:00",
+      "subject": "feat(mqtt): support aliases for saved topic subscriptions"
+    },
+    {
+      "sha": "42460016193841c686598afff35c81934609aec0",
+      "date": "2026-11-02T00:55:33+08:00",
+      "subject": "fix(plugins): share one plugin event stream across web workbenches"
+    },
+    {
+      "sha": "a117c6baf1b4a8f78bc9b524d40f752f04e9fd2a",
+      "date": "2026-11-02T00:54:36+08:00",
+      "subject": "fix(ddl): refresh definitions after external schema changes, keep drafts"
+    },
+    {
+      "sha": "1e1ad39c099cb5635a36a7afc8a89c396bffbf15",
+      "date": "2026-11-02T00:44:37+08:00",
+      "subject": "fix(release): publish stable R2 aliases from a local download instead of server-side copy"
+    },
+    {
+      "sha": "71f0b72b2ac60c0f24bd70f3437607bc6e3d18ad",
+      "date": "2026-11-02T00:33:33+08:00",
+      "subject": "fix(release): skip object tagging when copying stable aliases within R2"
+    },
+    {
+      "sha": "f3f9fd47126b32bbb8bb273483c35ae6ec3437c6",
+      "date": "2026-11-01T16:25:53Z",
+      "subject": "chore(release): sync source version to 0.6.63 [skip ci]"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/scripts/stable-asset-aliases.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/stable-asset-aliases.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-packages.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/grid/DataGrid.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/grid/__tests__/DataGrid.ddlRefresh.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/grid/__tests__/DataGridSearchScrollToMatch.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/mqtt/MqttAdminConsole.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/mqtt/TopicTreeNode.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/mqtt/__tests__/MqttAdminConsolePublishTopic.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/mqtt/__tests__/TopicTreeNode.alias.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/structure/TableStructureEditor.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/structure/__tests__/TableStructureEditor.ddlTabLifecycle.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/composables/__tests__/useDataGridTableMetadataLoaders.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/composables/useDataGridTableMetadataLoaders.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/en.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/es.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/it.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/ja.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/ko.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/pt-BR.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/ru.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/th.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/zh-CN.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/zh-TW.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/backend/__tests__/mqttTopicAlias.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/backend/__tests__/pluginEventsSharedStream.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/backend/http.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/backend/mqtt-http.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/backend/mqtt-tauri.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/types/mqtt.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-core/src/admin/mqtt/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-types/src/mqtt.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-web/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/app/[lang]/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/landing/InstallTabs.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/data/contributors.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/lib/downloadLinks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/lib/downloadLinks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/lib/latestRelease.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/lib/latestRelease.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "renovate.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/release.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/startup_messages.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/startup_recovery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/tauri.conf.json",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

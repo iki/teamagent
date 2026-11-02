@@ -56,13 +56,35 @@ export async function safeDirectory(directory: string): Promise<void> {
     throw new Error("Research directories must not be symbolic links or files.");
 }
 
-export async function atomicText(path: string, text: string): Promise<void> {
+export async function atomicText(
+  path: string,
+  text: string,
+  operations: { readonly rename?: typeof rename } = {},
+): Promise<void> {
   if (Buffer.byteLength(text) > textLimits.stateBytes)
     throw new Error("Research report exceeds its byte limit.");
+  const normalized = normalizeLf(text);
+  // Reconciliation resumes publish the same report set. Avoid replacing exact existing LF bytes.
+  if ((await boundedText(path, textLimits.stateBytes)) === normalized) return;
   const temporary = `${path}.${randomUUID()}.tmp`;
   try {
-    await writeFile(temporary, normalizeLf(text), { flag: "wx", mode: 0o600 });
-    await rename(temporary, path);
+    await writeFile(temporary, normalized, { flag: "wx", mode: 0o600 });
+    const delays = [0, 10, 25, 50, 100, 200, 400];
+    for (const [attempt, delay] of delays.entries()) {
+      if (delay) await new Promise<void>((done) => setTimeout(done, delay));
+      try {
+        await (operations.rename ?? rename)(temporary, path);
+        return;
+      } catch (error) {
+        if (
+          attempt === delays.length - 1 ||
+          process.platform !== "win32" ||
+          !(error instanceof Error && "code" in error) ||
+          !["EPERM", "EACCES", "EBUSY"].includes(String(error.code))
+        )
+          throw error;
+      }
+    }
   } finally {
     await unlink(temporary).catch((error: unknown) => {
       if (!(error instanceof Error && "code" in error && error.code === "ENOENT")) throw error;
@@ -454,7 +476,10 @@ export async function publishTextReports(
   directory: string,
   state: TextState,
   previous: TextState,
+  reconciliationId?: string,
 ): Promise<void> {
+  if (reconciliationId !== undefined && !/^[a-f0-9]{64}$/.test(reconciliationId))
+    throw new Error("Invalid reconciliation publication identity.");
   await safeDirectory(directory);
   const groups = Map.groupBy(state.records, (record) => record.name);
   for (const [name, records] of groups)
@@ -475,6 +500,8 @@ export async function publishTextReports(
       "Optional `--x-api` explicitly enables official post lookup using `X_BEARER_TOKEN` from the process environment. It may use paid API access and is never selected automatically. Numeric post URLs, long-form note text, grouped chosen posts and up to four public image assets are supported; unknown article bodies and standalone article URLs are reported as unsupported. API JSON is retained as original evidence. No authenticated live success is claimed without an actual credentialed run. [Official lookup contract](https://docs.x.com/x-api/posts/lookup/introduction) and [field dictionary](https://docs.x.com/x-api/fundamentals/data-dictionary) were checked on 2026-10-24.",
       "",
       "Static entries with a captured version perform only local export integrity checks: no network, conversion, export rewrite or account authentication. Initial entries without any successful capture may be retried; a missing or corrupt recorded snapshot is an explicit error and never silently fetched again. A successful capture remains pinned even when local export publication failed. Source state migrates from v1 without replacing pinned versions. If the private cache ledger is absent, the portable report ledger preserves the pin. Transfer the private cache/exports separately when moving machines; historical `data/research/texts` files are not substituted. Imports reuse Teamagent memory's immutable versions, conversion, images, source provenance and size/network limits. Cached exports are checksum-verified before reuse. Reports with `failed` status retain any previous version only as stale evidence. Removed configuration entries retain their prior report and state until deliberately archived; their check time makes staleness visible.",
+      "",
+      "Explicit derivative adoption uses `bun app/research/text-reconcile.ts --root . --request reviewed-request.json`; see [the maintenance contract](../../research-sync.md). It accepts an already exported same-source version with exact old/new pins and a hash of the prior record. It verifies every retained original byte, writes an immutable before/after receipt, and preserves static policy, publication/capture dates and the last remote-check time. It never fetches or converts. Grouped sources, conflicting aliases, changed originals and later-state retries require separate resolution. Receipt reasons are public evidence and must contain no secrets or private URL parameters.",
       "",
       "First-captured time comes from the retained memory source creation timestamp. Source creation/publication date is separate: explicit configuration, publisher HTML metadata/Article JSON-LD, or official X created_at, with evidence recorded; absent or conflicting metadata stays unknown. Filename dates and HTTP Last-Modified never become creation dates. Existing dates survive refresh failures. Refresh-marked HTTP sources use validators when available and retained bytes are integrity-checked; assets are checked separately. Official X edit-history IDs are recorded for the exact requested post without silently following another version.",
       "",
@@ -506,12 +533,17 @@ export async function publishTextReports(
   const history =
     (await boundedText(changelogPath, textLimits.stateBytes)) ??
     "# Text extraction changelog\n\nRecords source-version and extraction-status changes. Unchanged checks update source state without inventing content changes.\n";
+  const marker =
+    reconciliationId === undefined
+      ? undefined
+      : `<!-- teamagent-text-reconciliation:${reconciliationId} -->`;
+  if (marker !== undefined && history.includes(marker)) return;
   const details = changed.map(
     (record) =>
       `- ${record.name}: ${record.status}, ${record.validation}; version ${record.versionId ?? "none"}; content ${record.contentHash ?? "none"}.`,
   );
   await atomicText(
     changelogPath,
-    `${history}\n## ${state.checkedAt}\n\n${details.length ? details.join("\n") : "No content or extraction-status changes."}\n`,
+    `${history}\n## ${state.checkedAt}\n\n${marker === undefined ? "" : `${marker}\n\n[Explicit reconciliation receipt](reconciliations/${reconciliationId}.json).\n\n`}${details.length ? details.join("\n") : "No content or extraction-status changes."}\n`,
   );
 }

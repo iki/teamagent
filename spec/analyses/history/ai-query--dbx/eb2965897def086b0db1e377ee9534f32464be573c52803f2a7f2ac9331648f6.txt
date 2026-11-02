@@ -1,0 +1,50 @@
+# dbx
+
+Source: [dbx](https://github.com/t8y2/dbx) · [memory](../../memory.md), [import-generation](../../import-generation.md).
+
+Historical discovery: 2026-10-24T06:36:54.441Z, initially unreviewed. Dated scoped reviews below supersede that discovery-only status; they do not establish runtime validation. [Change evidence](../repos/ai-query--dbx.md).
+
+
+## Initial source review - 2026-10-28
+
+**Transfer-state serialization and generated database models are useful adapter references, not execution guarantees.** Reviewed commit `6ea903e33904f479bc7cd626e8d2d6320dd84fa2` (commit date `2026-10-28T01:14:18+08:00`). The enumerated snapshot contains 7928 tracked paths.
+
+This initial inspection covers DBX's desktop transfer-task store, deterministic model renderers and MCP binary launcher. The transfer store rejects unknown library versions and invalid top-level entries before allowing queued mutations, retries a failed initialization, serializes public mutations within one store instance and rolls back optimistic state when whole-library persistence fails. It deliberately resets dropTargetConfirmed on load. Nested data is still normalized by partial casts and coercion: unknown object-kind keys survive, several enum-like values are passed through, and any positive numeric batch size is accepted. The queue has no local admission cap or deadline and does not establish cross-process compare-and-swap persistence.
+
+The model registry emits 15 language/schema targets and deduplicates normalized names, preserving original field-name mappings explicitly for Go/Rust. It maps TypeScript integer columns to number, which does not preserve every database integer's precision; generated shapes do not reproduce all database constraints. Fixtures check selected emitted strings and registry membership, not compilation and round-trip validity across every target. The MCP launcher selects an installed platform package or an explicit executable override, inherits environment/stdio and forwards signals. --verify-platform checks the platform table only; it does not resolve the binary or verify its integrity or execution.
+
+Evidence: [apps/desktop/src/stores/transferTaskStore.ts:50-243](https://github.com/t8y2/dbx/blob/6ea903e33904f479bc7cd626e8d2d6320dd84fa2/apps/desktop/src/stores/transferTaskStore.ts#L50-L243) · [apps/desktop/src/stores/transferTaskStore.ts:470-496](https://github.com/t8y2/dbx/blob/6ea903e33904f479bc7cd626e8d2d6320dd84fa2/apps/desktop/src/stores/transferTaskStore.ts#L470-L496) · [apps/desktop/src/lib/model/modelRendererRegistry.ts:1-243](https://github.com/t8y2/dbx/blob/6ea903e33904f479bc7cd626e8d2d6320dd84fa2/apps/desktop/src/lib/model/modelRendererRegistry.ts#L1-L243) · [apps/desktop/src/lib/model/modelRendererRegistry.spec.ts:1-37](https://github.com/t8y2/dbx/blob/6ea903e33904f479bc7cd626e8d2d6320dd84fa2/apps/desktop/src/lib/model/modelRendererRegistry.spec.ts#L1-L37) · [packages/mcp-server/bin/dbx-mcp-server.js:1-71](https://github.com/t8y2/dbx/blob/6ea903e33904f479bc7cd626e8d2d6320dd84fa2/packages/mcp-server/bin/dbx-mcp-server.js#L1-L71).
+
+**Harness consequence:** Reuse serialized state mutations and removal of persisted destructive confirmation, but validate nested data with schemas and require a versioned transactional backend for shared writers. Generated model artifacts need original-name mappings, exact numeric semantics and target compiler/round-trip checks. Wrap the native MCP executable with a pinned artifact manifest, explicit environment, bounded lifecycle and host authorization; platform recognition alone is not an installation or safety check.
+
+**Scope and limits:** Initial scoped static review of selected implementation files and renderer fixtures from the enumerated 7,928-path snapshot. Database drivers, SQL execution/authorization, backend persistence, release packaging, license/dependency suitability and native application behavior remain outside this review. No database connection, binary, generated code or upstream test was executed; README capability and size claims are not validated here.
+
+## Follow-up change review — 2026-10-28
+
+**Comparison queries inherit explicit connection timeout settings.** Reviewed commit `a382bd25a4a8eb9371d1330cd251810743e9a1e9` (commit date `2026-10-28T17:46:30+08:00`), compared with `6ea903e33904f479bc7cd626e8d2d6320dd84fa2`. The complete no-rename Git path inventory contains 150 changed paths.
+
+The new compare-query option helper reads the connection's effective timeout while preserving max_rows. The fixture checks explicit zero as unlimited, a configured 120-second value and a missing connection as None for the historical default. This removes a hidden default from comparison operations but does not supply a safe universal task deadline.
+
+Evidence: [crates/dbx-core/src/data/data_compare.rs:29-42](https://github.com/t8y2/dbx/blob/a382bd25a4a8eb9371d1330cd251810743e9a1e9/crates/dbx-core/src/data/data_compare.rs#L29-L42) · [crates/dbx-core/src/data/data_compare.rs:2197-2230](https://github.com/t8y2/dbx/blob/a382bd25a4a8eb9371d1330cd251810743e9a1e9/crates/dbx-core/src/data/data_compare.rs#L2197-L2230).
+
+**Harness consequence:** Propagate intentional query limits consistently across interactive and background operations. At the harness boundary, retain a finite outer task budget and cancellation even when a database connection explicitly permits unlimited execution.
+
+**Scope and limits:** Reviewed the helper and its complete timeout fixture; database drivers, synchronization writes and large-table behavior were not executed or certified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
+## Change review - 2026-11-01
+
+Reviewed `e6b1a478b7618def254e8a45b23a8ce2e0b61aa9` against `a382bd25a4a8eb9371d1330cd251810743e9a1e9`. The new [approval dock](https://github.com/t8y2/dbx/blob/e6b1a478b7618def254e8a45b23a8ce2e0b61aa9/apps/desktop/src/composables/useAiToolApprovalDock.ts) keeps live pending/submitting approvals visible independently of streamed prose, removes expired entries using a deadline-driven timer and cleans that timer when its watcher is disposed. The [card](https://github.com/t8y2/dbx/blob/e6b1a478b7618def254e8a45b23a8ce2e0b61aa9/apps/desktop/src/components/editor/AiToolApprovalCard.vue) treats a command as a preview while retaining complete arguments. [Fixtures](https://github.com/t8y2/dbx/blob/e6b1a478b7618def254e8a45b23a8ce2e0b61aa9/apps/desktop/src/composables/__tests__/useAiToolApprovalDock.spec.ts) cover streamed text, multiple approvals, expiry, conversation changes and cleanup.
+
+**Harness consequence:** Approval UI must expose exact action identity and survive unrelated rendering updates. Display expiry is not the security gate: the executor must independently reject stale, changed or already-resolved approvals and bind them to the operation/session. Historical cards must never revive authority.
+
+**Scope and limits:** Complete three selected UI/fixture diffs, not executor authorization or IPC validation. No browser/native acceptance run or upstream tests were executed.
+
+## External-update review - 2026-11-01
+
+Reviewed `c4e30dce3e6e9651c1035fd548102fe2c9f02cfb` against `e6b1a478b7618def254e8a45b23a8ce2e0b61aa9`.
+
+The 48-path update fixes a connection-ownership problem in the [web plugin-event adapter](https://github.com/t8y2/dbx/blob/c4e30dce3e6e9651c1035fd548102fe2c9f02cfb/apps/desktop/src/lib/backend/http.ts). Plugin hosts now share one EventSource and fan out event/binary messages to registered subscribers. Removing a subscriber is idempotent; the connection closes only when the last subscriber leaves, and a later subscriber opens a new stream. The upstream rationale is avoiding per-workbench connections starving other HTTP requests; no browser connection-limit measurement was performed here.
+
+The complete inspected [shared-stream fixture](https://github.com/t8y2/dbx/blob/c4e30dce3e6e9651c1035fd548102fe2c9f02cfb/apps/desktop/src/lib/backend/__tests__/pluginEventsSharedStream.spec.ts) covers three consumers, binary delivery, duplicate unsubscribe, continued delivery to the remaining consumer, final closure and reopening. This establishes authored resource-lifecycle coverage, not tested browser or native behavior.
+
+**Harness consequence:** Share expensive transport resources with explicit subscriber ownership and last-owner cleanup, while preserving tenant/session/origin isolation. The inspected handler still parses JSON with an unchecked assertion, ignores the lagged-message variant, and invokes subscriber callbacks without isolation; malformed data or one throwing subscriber can interrupt delivery. A reusable harness adapter needs validated messages, bounded fanout, explicit gap recovery and per-subscriber failure handling. Those are static limits, not executed reproductions. Scope is the two complete deltas; desktop grids, MQTT and Rust startup changes remain unreviewed. No upstream tests, browser stream or native application was executed.

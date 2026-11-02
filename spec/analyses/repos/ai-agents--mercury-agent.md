@@ -2,11 +2,11 @@
 
 Source: [mercury-agent](https://github.com/cosmicstack-labs/mercury-agent) · [Analysis](../../projects/ai-agents--mercury-agent.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `bd80329cef9abfe05a0f8d2a843f226eaccf4e36`; commit date: 2026-11-01T12:43:32+05:30; review date: 2026-11-01T11:33:30.893Z; observed SHA: `bd80329cef9abfe05a0f8d2a843f226eaccf4e36`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `a61d6276fbfc634f5efb5dc1ee7027a9501c0e80`; commit date: 2026-11-01T17:57:19Z; review date: 2026-11-01T23:12:06.798Z; observed SHA: `a61d6276fbfc634f5efb5dc1ee7027a9501c0e80`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/cosmicstack-labs/mercury-agent/compare/bd80329cef9abfe05a0f8d2a843f226eaccf4e36...bd80329cef9abfe05a0f8d2a843f226eaccf4e36). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/cosmicstack-labs/mercury-agent/compare/a61d6276fbfc634f5efb5dc1ee7027a9501c0e80...a61d6276fbfc634f5efb5dc1ee7027a9501c0e80). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

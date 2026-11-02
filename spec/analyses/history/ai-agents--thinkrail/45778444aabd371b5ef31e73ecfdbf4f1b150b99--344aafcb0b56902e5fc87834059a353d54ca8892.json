@@ -1,0 +1,530 @@
+{
+  "id": "ai-agents--thinkrail",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/jetbrains/thinkrail",
+  "report": "spec/analyses/unreviewed/ai-agents--thinkrail.md",
+  "analyzedSha": "45778444aabd371b5ef31e73ecfdbf4f1b150b99",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-10-31T23:20:06Z",
+  "observedSha": "344aafcb0b56902e5fc87834059a353d54ca8892",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "344aafcb0b56902e5fc87834059a353d54ca8892",
+      "date": "2026-11-01T20:20:29+02:00",
+      "subject": "feat: global search palette — find chats, workspaces and projects, run commands, open Settings sections (#804)"
+    },
+    {
+      "sha": "dfae2569c19682fda33a7493dc0fa6ee3879fa43",
+      "date": "2026-11-01T14:35:08Z",
+      "subject": "fix(artifact-tests): make installer-smoke failures diagnosable and clean up the installed app (#1105)"
+    },
+    {
+      "sha": "09f0489a1ed9c6d4a1f458a6bc1a61a6d9faa66f",
+      "date": "2026-11-01T13:07:48Z",
+      "subject": "fix(resource-renderers): show MB when an image size rounds to 1024 KB (#1096)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/commands/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/commands/commands.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/commands/commands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/commands/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/commands/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/main.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/notifications/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/notifications/attentionNotificationEngine.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/notifications/attentionPipeline.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/notifications/channel.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/notifications/formatNotification.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/notifications/formatNotification.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/notifications/useAttentionNotifications.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/panels/SettingsDialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/panels/SettingsDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/panels/settingsNav.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/panels/workspaceActions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/SearchPalette.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/SearchSettings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/commandItems.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/core.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/doubleShift.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/ime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/learning.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/preferences.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/query.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/rank.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/scopeChord.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/scopeChord.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/sections.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/sections.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/workItems.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/search/workItems.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/shell/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/shell/SearchPaletteHost.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/web/src/shell/SessionSwitcher.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/shell/Shell.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/shell/backfillQueue.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/shell/backfillQueue.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/shell/chordActions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/shell/locationBar/ProjectSegment.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/shell/locationBar/WorkspaceSegment.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/shell/paletteBackfill.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/shell/paletteBackfill.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/shell/paletteCatalog.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/shell/paletteCatalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/shell/paletteNavigation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/shell/paletteNavigation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/shell/shortcutCommands.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/shell/useGlobalHotkeys.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/shell/useGlobalHotkeys.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/shell/useSearchPalette.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/web/src/shell/useSessionSwitcher.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/store/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/store/appStore.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/store/appStore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/store/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/web/src/store/selectSwitcherGroups.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/web/src/store/selectSwitcherGroups.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/store/selectors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/store/selectors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/transport/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/chat-title-fallback.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/run-desktop.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/search-palette.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "e2e/session-switcher.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/artifact-tests/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/artifact-tests/installerSmoke.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/artifact-tests/smoke.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/artifact-tests/src/artifact.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/artifact-tests/src/documents.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/artifact-tests/src/documents.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/artifact-tests/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/artifact-tests/src/lifecycle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/artifact-tests/src/lifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/src/domain.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/contracts/src/match.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/contracts/src/match.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/locales/en.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/locales/es.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/locales/ja.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/locales/ru.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/locales/zh-CN.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/resource-renderers/src/renderers/image/imageState.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/resource-renderers/src/renderers/image/index.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/agent/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/agent/agentSessionManager.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/agent/agentSessionManager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/host/SPEC.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

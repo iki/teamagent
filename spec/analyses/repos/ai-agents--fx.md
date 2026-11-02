@@ -2,11 +2,11 @@
 
 Source: [fx](https://github.com/vercel-labs/fx) · [Analysis](../../projects/ai-agents--fx.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `c11b301dddd376d037af1dc7bf3eb0dd197caee0`; commit date: 2026-11-01T03:49:27-05:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `c11b301dddd376d037af1dc7bf3eb0dd197caee0`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `15070ecbda474d798c0e24a516b03331108f2662`; commit date: 2026-11-01T05:16:38-05:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `15070ecbda474d798c0e24a516b03331108f2662`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/vercel-labs/fx/compare/c11b301dddd376d037af1dc7bf3eb0dd197caee0...c11b301dddd376d037af1dc7bf3eb0dd197caee0). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/vercel-labs/fx/compare/15070ecbda474d798c0e24a516b03331108f2662...15070ecbda474d798c0e24a516b03331108f2662). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -32,6 +32,18 @@ The [seat lifecycle](https://github.com/mvschwarz/openrig/blob/b25dd19a5a818e8cb
 
 **Coverage:** Read all four targeted permission/lifecycle implementation and fixture deltas. Native argv collection and other lifecycle paths were not re-audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## External-update review - 2026-11-01
+
+Reviewed `072a6719bd820644c634e37f7ac30ee991fbaa5d` against `b25dd19a5a818e8cba7bfe2b0267093c0305cb4e`.
+
+The 108-path range adds a [runner permission service](https://github.com/mvschwarz/openrig/blob/072a6719bd820644c634e37f7ac30ee991fbaa5d/packages/daemon/src/domain/runner-permissions.ts) that binds a request to seat, launch generation, native conversation, request and turn. Repeated matching requests reuse an ask; reused request IDs in another turn are refused. Reads distinguish pending, answered, withdrawn and stale generations. Handoffs follow a bounded chain of exact successor edges, and an unresolved cross-host handoff stays pending. Native allow-always choices are disclosed as remembered by the agent's harness, outside OpenRig's revocation ownership.
+
+The complete inspected [route fixtures](https://github.com/mvschwarz/openrig/blob/072a6719bd820644c634e37f7ac30ee991fbaa5d/packages/daemon/test/runner-permission-path.test.ts) cover generation replacement, grant revocation, wrong-seat access, wait-time replacement, withdrawal, typed refusal and handoff identity. They also pin a materially different authorization default: missing/unavailable approvers, options that cannot be displayed, or a closed reply that is neither yes nor no can select the agent's own allow option. The source prefers allow-once but can use allow-always when that is the offered allow. A still-open unanswered ask remains pending; explicit refusal is preserved. Thus silence while pending and closing without a recognized answer have different effects upstream.
+
+**Harness consequence:** Reuse the generation-bound correlation, explicit stale/withdrawn states and native-option disclosures, but do not adopt the permissive fallback. Teamagent must retain unavailable, unsupported and ambiguous decisions as unresolved or denied; they cannot manufacture consent, including persistent native consent. Bind both the approving actor and complete action scope before dispatch. The fixtures permit any registered person's click, so routing to a chosen person is not itself a proof that only that person can authorize.
+
+This scoped static review covers the complete new permission module and 462-line fixture file. It does not audit all route authentication, native runner delivery, migrations, Slack or agent-image handling in the range. No upstream program, route, database fixture, terminal or provider was executed. Existing historical findings and metadata remain in this authoritative per-project record.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openrig](https://github.com/mvschwarz/openrig); analyzed commit `b25dd19a5a818e8cba7bfe2b0267093c0305cb4e`; commit date 2026-10-30T07:49:24-07:00; review date 2026-11-01T11:33:30.893Z; depth reviewed. [Maintenance record](../repos/ai-agents--openrig.md).
+Analysis metadata: source [openrig](https://github.com/mvschwarz/openrig); analyzed commit `072a6719bd820644c634e37f7ac30ee991fbaa5d`; commit date 2026-11-01T11:46:06-08:00; review date 2026-11-01T23:12:06.798Z; depth reviewed. [Maintenance record](../repos/ai-agents--openrig.md).
 <!-- teamagent-analysis:end -->

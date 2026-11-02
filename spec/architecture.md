@@ -148,3 +148,19 @@ The implemented [maintenance workflow](research-sync.md) separates source discov
 
 Apply the same boundary to the product: fetched knowledge is a candidate input; analyzed claims and executable skills require their own promotion receipt. Source age, commit volume and cache hits are operational signals, not estimates of truth or task success. An automated change packet must carry truncation, shallow-history and dirty-worktree limits to the human or agent reviewer.
 
+The [November 1 reconciliation](analyses/reconciliation-2026-11-01.md) extends
+these maintenance boundaries to regenerated folder layouts, reviewed upstream
+renames and explicitly registered additional sources. Imported declarations
+update the owned inventory; they do not replace the portable review ledger.
+Local observation preserves remote-check timestamps and dirty checkout contents.
+An unavailable public source remains tracked independently from its private
+recovery backup.
+
+Static-text improvements now have an explicit derivative-adoption operation:
+verify the exact prior record, both exports and unchanged original bytes, retain
+an immutable before/after receipt, then publish. An interrupted report write
+resumes from that receipt without repeating capture or conversion. The
+[source-maintenance contract](research-sync.md) states the actual bounds and
+partial-state behavior. These research-tool changes do not install the reviewed
+agents, change media/provider admission or establish comparative performance.
+

@@ -2,11 +2,11 @@
 
 Source: [rea](https://github.com/morluto/rea) · [Analysis](../unreviewed/ai-security--rea.md) · [security](../../security.md), [agents](../../agents.md), [skills](../../skills.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `60c0cf977a34c99afa7942466625aeba74969bdf`; commit date: 2026-11-01T17:53:37+08:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `60c0cf977a34c99afa7942466625aeba74969bdf`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `d3ab0faf52a02ff5a618f3ed7beb608b78752abd`; commit date: 2026-11-02T03:14:29+08:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `d3ab0faf52a02ff5a618f3ed7beb608b78752abd`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/morluto/rea/compare/60c0cf977a34c99afa7942466625aeba74969bdf...60c0cf977a34c99afa7942466625aeba74969bdf). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/morluto/rea/compare/d3ab0faf52a02ff5a618f3ed7beb608b78752abd...d3ab0faf52a02ff5a618f3ed7beb608b78752abd). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

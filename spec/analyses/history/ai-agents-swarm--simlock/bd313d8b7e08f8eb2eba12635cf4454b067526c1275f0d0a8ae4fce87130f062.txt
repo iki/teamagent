@@ -1,0 +1,21 @@
+# Simlock
+
+Source: [Simlock](https://github.com/callstackincubator/simlock). Related: [agents](../../agents.md), [channels](../../channels.md), [decisions](../../decisions.md), [security](../../security.md).
+
+## Initial scoped source review — 2026-11-01
+
+Reviewed commit `822ea4c47d68cd8f7b1168192c40bbcffa23f4e9`, committed 2026-11-01T20:31:47+01:00. No prior identity or alias was present in the preserved analysis baseline. The committed tree contains 1,581 paths. The source checkout was clean and non-shallow; origin and full HEAD matched before and after capture.
+
+The complete [README](https://github.com/callstackincubator/simlock/blob/822ea4c47d68cd8f7b1168192c40bbcffa23f4e9/README.md) describes a lease pool for simulators, emulators and enrolled phones, with a gateway for local agents. This review covers host-side lease lifecycle code, not native-device execution, enrollment security or platform support in practice.
+
+The complete [release coordinator](https://github.com/callstackincubator/simlock/blob/822ea4c47d68cd8f7b1168192c40bbcffa23f4e9/src/leasing/lease-release-coordinator.ts) commits the lease-release decision under serialization and performs slow reclamation outside that critical section. A returned background release can mean the lease record is gone while the device remains `reclaiming`, unavailable for a new grant. Claims and tracked background work prevent premature reuse. Maintenance admission drains active operations and reclamation; a release already authorized by maintenance can await reclamation inline.
+
+Optional lease-end participants share a wait ceiling. They run outside the serialized decision and receive cancellation when maintenance, shutdown or the ceiling cuts the wait short. Reclamation can proceed when that wait ends. A cancellation signal is not proof that every participant stopped; graceful draining of tracked reclamation should not be represented as unconditional descendant shutdown. Selected [release fixtures](https://github.com/callstackincubator/simlock/blob/822ea4c47d68cd8f7b1168192c40bbcffa23f4e9/src/leasing/lease-release-coordinator.test.ts#L137-L290) cover stale expiry, unknown leases, failed cleanup remaining unavailable, maintenance draining and inline reclamation.
+
+The complete [expiry scheduler](https://github.com/callstackincubator/simlock/blob/822ea4c47d68cd8f7b1168192c40bbcffa23f4e9/src/leasing/lease-expiry-scheduler.ts) restores deadlines in deterministic deadline/identifier order, schedules already-expired work immediately, and cancels replaced/disposed timers. The coordinator checks an expected expiry against the current lease before releasing, so a timer for an older lease deadline does not revoke a renewal. Complete [scheduler fixtures](https://github.com/callstackincubator/simlock/blob/822ea4c47d68cd8f7b1168192c40bbcffa23f4e9/src/leasing/lease-expiry-scheduler.test.ts) express these fake-clock cases.
+
+The complete [refusal helper](https://github.com/callstackincubator/simlock/blob/822ea4c47d68cd8f7b1168192c40bbcffa23f4e9/src/leasing/lease-refusal.ts) reports a worker decline for a fleet request, leaving the gateway to decide the overall request outcome; a direct local refusal is a rejection. This distinguishes local inability from aggregate failure. The identifier's presence is routing evidence, not a full authorization proof.
+
+**Harness consequence:** Represent lease-ended, cleanup-in-progress and reusable as separate states. A successful release receipt must not imply successful device reset or stopped child processes. Bind expiry callbacks to the exact deadline or generation they were created for, retain ownership while cleanup drains, and keep the aggregate scheduler responsible for final outcome. These patterns are useful for local/cloud workers as well as devices; they do not change Teamagent's deferred mobile implementation scope.
+
+**Coverage and limits:** Read the complete README (44 lines), release coordinator (486), expiry scheduler (87), scheduler fixture (108) and refusal helper (32), plus release-fixture lines 137–290 of 752. Other test titles were inventoried without claiming their bodies as reviewed. No source code, upstream test, simulator, emulator, phone or gateway was executed. This is initial scoped source review, not certification of the pool's complete cleanup or concurrency behavior.

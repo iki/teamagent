@@ -2,11 +2,11 @@
 
 Source: [leaf](https://github.com/RivoLink/leaf) · [Analysis](../../projects/ai-query--leaf.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `9543395b8fb89bd74b051a5c9647514f047bcd89`; commit date: 2026-10-28T21:06:17+03:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `9543395b8fb89bd74b051a5c9647514f047bcd89`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `9543395b8fb89bd74b051a5c9647514f047bcd89`; commit date: 2026-10-28T21:06:17+03:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `9543395b8fb89bd74b051a5c9647514f047bcd89`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/RivoLink/leaf/compare/9543395b8fb89bd74b051a5c9647514f047bcd89...9543395b8fb89bd74b051a5c9647514f047bcd89). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

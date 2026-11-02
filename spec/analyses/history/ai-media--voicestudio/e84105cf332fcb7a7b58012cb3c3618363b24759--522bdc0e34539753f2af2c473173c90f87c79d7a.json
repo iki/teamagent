@@ -1,0 +1,490 @@
+{
+  "id": "ai-media--voicestudio",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/debpalash/VoiceStudio",
+  "report": "spec/projects/ai-media--voicestudio.md",
+  "analyzedSha": "e84105cf332fcb7a7b58012cb3c3618363b24759",
+  "analyzedAt": "2026-11-01T11:35:43.470Z",
+  "analyzedCommitDate": "2026-11-01T12:00:36+05:30",
+  "observedSha": "522bdc0e34539753f2af2c473173c90f87c79d7a",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "522bdc0e34539753f2af2c473173c90f87c79d7a",
+      "date": "2026-11-01T20:36:35+05:30",
+      "subject": "feat(macos): bundle the runtime for sandbox validation (#3755)"
+    },
+    {
+      "sha": "40c5e3ce6f5a3006056a433114527e729a229c20",
+      "date": "2026-11-01T19:27:50+05:30",
+      "subject": "fix(mobile): make model downloads resumable with background transfers and live progress (#3752)"
+    },
+    {
+      "sha": "cb1d6783a1c9e32044cce7137ab2fdde25c6c646",
+      "date": "2026-11-01T17:27:46+05:30",
+      "subject": "fix(tests): pin the backend launch fixtures to a supported host (#3754)"
+    },
+    {
+      "sha": "c9ee676bc2d8b298cfa983103e170d6be0c2283b",
+      "date": "2026-11-01T16:33:25+05:30",
+      "subject": "fix(packaging): use the registered Mac App Store bundle ID (#3753)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/mac-app-store.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/core/bundled_code.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/core/bundled_espeak.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/core/path_authorization.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/core/sandbox_bookmarks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3752.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3753.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3754.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3755.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/build/entitlements.mas.plist",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/electron-builder.config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "electron/mas-runtime-bundle.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/omnivoice-tts-bundle.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/main/backend-launch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/main/backend.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "electron/src/main/bundled-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "electron/src/main/bundled-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/main/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "electron/src/main/ipc-media-scope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/main/ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/main/security-scoped-files.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/main/security-scoped-files.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/ar.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/de.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/en.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/es.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/fr.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/gl.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/hi.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/id.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/it.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/ja.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/ko.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/nl.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/pl.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/pt.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/ru.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/sv.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/th.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/tr.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/uk.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/vi.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/zh-CN.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/renderer/src/i18n/locales/zh-TW.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "electron/tests/distribution-identity.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "electron/tests/mas-runtime-bundle.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/tests/packaging-contract.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/android/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/android/app/build.gradle.kts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/android/app/src/test/kotlin/com/voicestudio/mobile/FirstUseFlowsTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/android/app/src/test/kotlin/com/voicestudio/mobile/ModelDownloadJobsTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/android/app/src/test/kotlin/com/voicestudio/mobile/UiPolishRegressionTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/android/core/data/src/main/AndroidManifest.xml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/android/core/data/src/main/kotlin/com/voicestudio/mobile/data/ModelDownloadJobs.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/android/core/data/src/main/kotlin/com/voicestudio/mobile/data/ModelDownloadPresentation.kt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/android/core/local/src/main/kotlin/com/voicestudio/mobile/local/DownloadMeter.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/android/core/local/src/main/kotlin/com/voicestudio/mobile/local/ModelDownloads.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/android/core/local/src/test/kotlin/com/voicestudio/mobile/local/LocalPolicyTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/android/core/local/src/test/kotlin/com/voicestudio/mobile/local/ReviewRegressionTest.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/android/features/src/main/kotlin/com/voicestudio/mobile/features/PhoneStudio.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/android/features/src/main/kotlin/com/voicestudio/mobile/features/models/ModelsScreen.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/android/gradle/libs.versions.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/contract/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/contract/strings.mobile.en.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/VoiceStudio/App/VoiceStudioApp.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/VoiceStudio/Features/ModelsView.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/ios/VoiceStudio/Platform/BackgroundModelDownloads.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/VoiceStudio/Platform/PhoneModels.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/ios/VoiceStudioKit/Sources/VoiceStudioKit/Local/DownloadMeter.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/ios/VoiceStudioKit/Sources/VoiceStudioKit/Local/ModelDownloadPermits.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/VoiceStudioKit/Sources/VoiceStudioKit/Local/ModelStore.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/VoiceStudioKit/Sources/VoiceStudioKit/Networking/HTTP.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/VoiceStudioKit/Tests/VoiceStudioKitTests/ContractTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/VoiceStudioKit/Tests/VoiceStudioKitTests/LocalInferenceTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/ios/VoiceStudioKit/Tests/VoiceStudioKitTests/ModelDownloadStartTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/stage_mas_media.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/stage_mas_python.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/validate_store_foundation.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "store/google-play/listing.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "store/mac-app-store.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "store/metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_bundled_code_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_bundled_espeak.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_mac_app_store_workflow.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_mas_media_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_mas_python_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_path_authorization.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_sandbox_bookmarks.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

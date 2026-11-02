@@ -59,6 +59,30 @@ Reviewed `6c27bb663c927dd1a12772c44582746d1a039893` against `ba51536f8e143d0ed20
 
 **Scope and limits:** Selected worktree diff and status fixtures only. The replacement dependency's lock implementation was not inspected, so this is not a claim of native Windows correctness; no upstream processes or tests were run.
 
+## External-update review - 2026-11-01
+
+Reviewed `3805533e943f42469ed3d49457c7c7ffa94fe4a4` against
+`6c27bb663c927dd1a12772c44582746d1a039893`. The complete inventory has 44 paths:
+knowledge documents and release/install records plus Python manifest/lock data;
+no implementation or executable test path changed. The inspected
+[context-scoping note](https://github.com/zby/commonplace/blob/3805533e943f42469ed3d49457c7c7ffa94fe4a4/kb/theory/llm-context-is-composed-without-scoping.md)
+withdraws a stronger claim that different prompt-interference studies establish
+one mechanism. It now separates a shared architectural condition from the open
+mechanism question. The new
+[spot-check proposal](https://github.com/zby/commonplace/blob/3805533e943f42469ed3d49457c7c7ffa94fe4a4/kb/work/epistemic-relevance-and-conceptual-blending/spot-check-protocol.md)
+uses warranted controls, fresh read-only workers, explicit dispositions and parent
+adjudication, and labels itself a draft rather than an operating gate. The
+[manifest](https://github.com/zby/commonplace/blob/3805533e943f42469ed3d49457c7c7ffa94fe4a4/pyproject.toml)
+advances the package version to 0.3.3.
+
+**Harness consequence:** Preserve distinctions between common symptoms, causal
+mechanisms and evaluated interventions when consolidating knowledge. Review a
+sample containing non-errors and retain disagreements; an agent's agreement is
+not independent empirical verification. Scope covers these complete selected
+deltas and the full path inventory. The referenced papers, broader workshop,
+release acceptance and packaging compatibility were not revalidated; no source
+program or proposed review experiment was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [commonplace](https://github.com/zby/commonplace); analyzed commit `6c27bb663c927dd1a12772c44582746d1a039893`; commit date 2026-11-01T09:29:59+01:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--commonplace.md).
+Analysis metadata: source [commonplace](https://github.com/zby/commonplace); analyzed commit `3805533e943f42469ed3d49457c7c7ffa94fe4a4`; commit date 2026-11-01T20:37:26+01:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--commonplace.md).
 <!-- teamagent-analysis:end -->

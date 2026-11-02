@@ -63,6 +63,16 @@ The [updated fixtures](https://github.com/multica-ai/multica/blob/5a2cc891ac338e
 
 **Coverage:** Read the complete targeted session-home implementation/test delta. Unchanged migration helpers, gateway initialization and the rest of the large update were outside this scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/multica-ai/multica](https://github.com/multica-ai/multica) at `c321e49098cd1a3e01714a179c0bfca78c510e0f` against prior analyzed `5a2cc891ac338eed1919aa11a1eef5957cd82cec`. Evidence: [packages/views/issues/components/advanced-filter-panel.tsx](https://github.com/multica-ai/multica/blob/c321e49098cd1a3e01714a179c0bfca78c510e0f/packages/views/issues/components/advanced-filter-panel.tsx), [packages/views/issues/components/issues-header.advanced-filter.test.tsx](https://github.com/multica-ai/multica/blob/c321e49098cd1a3e01714a179c0bfca78c510e0f/packages/views/issues/components/issues-header.advanced-filter.test.tsx).
+
+The advanced-filter panel removes its generated prose summary and moves the reason for an unavailable simple-filter conversion into a tooltip on a focusable wrapper. The representability guard and disabled action remain; inspected tests retain the conversion restrictions while removing expectations for always-visible explanatory prose.
+
+**Architecture consequence:** Separate an unavailable action's reason from its enforcement. Reduced interface text is not a change to task leases or execution authority, and keyboard/screen-reader discoverability still needs rendered acceptance coverage.
+
+**Scope and limits:** Reviewed the changed component and unit assertions within a nine-path UI/localization update. Browser, accessibility and upstream tests were not executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [multica](https://github.com/multica-ai/multica); analyzed commit `5a2cc891ac338eed1919aa11a1eef5957cd82cec`; commit date 2026-11-01T04:01:38+08:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--multica.md).
+Analysis metadata: source [multica](https://github.com/multica-ai/multica); analyzed commit `c321e49098cd1a3e01714a179c0bfca78c510e0f`; commit date 2026-11-01T23:38:14+08:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--multica.md).
 <!-- teamagent-analysis:end -->

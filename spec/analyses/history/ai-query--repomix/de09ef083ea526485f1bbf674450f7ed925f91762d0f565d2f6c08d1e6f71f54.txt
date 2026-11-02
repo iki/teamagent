@@ -1,0 +1,67 @@
+# repomix
+
+Repository packaging with deterministic discovery, safety hooks and explicit token/omission accounting.
+
+Source: [repomix](https://github.com/yamadashy/repomix) · Snapshot: `8d6429121e98ed178e4d3a975c2bdbbecc958c4a` · Category: `ai-query`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [src/core/packager.ts:1-168](https://github.com/yamadashy/repomix/blob/8d6429121e98ed178e4d3a975c2bdbbecc958c4a/src/core/packager.ts#L1-L168)
+
+The pack entry point composes file search, collection, processing, safety validation, output production and token metrics behind injectable dependencies. It supports multiple roots, deduplicates and sorts discovered paths, and constructs disambiguating root labels. Token-count cache loading and Git sort-data prefetch overlap discovery. PackResult includes processed/safe/skipped files, token counts and suspicious-file/diff/log results. A confineToBaseDir option is available for untrusted-agent callers, and the source states it is off by default for ordinary CLI/library use.
+
+## Harness implications
+
+Use packaging for explicit repository snapshots, model handoffs and reproducible evaluation inputs. Every package should include a commit/tree hash, include/exclude configuration, tokenizer identity and omission manifest. The optional confinement flag is essential in an automated importer that accepts user- or model-supplied include patterns. File bundling is complementary to code search: compact summaries and relevant source slices should normally reach the model before a whole-repository package.
+
+## Limitations and tradeoffs
+
+A token-count report measures size, not relevance or semantic completeness. Secret detection and suspicious-file reporting cannot guarantee that a package is safe to transmit. Compression and processors may omit details necessary for editing. Prefetched Git metadata or collected files can become stale while packaging a changing checkout, so a consistent snapshot is needed for evidence-heavy tasks. The review did not run every safety rule or inspect all formatter outputs.
+
+## Adoption and validation
+
+Adopt as an export/import helper with confinement explicitly enabled and a harness-owned destination policy. Preserve the package as a derived artifact linked to its source snapshot. Test symlinks, absolute/parent include patterns, multiple roots with duplicate filenames, secrets in diffs, generated files, changed files during packing and token-budget overflow. Do not use a large bundle as a substitute for version-aware retrieval.
+
+Related directions: [import-generation](../import-generation.md) · [memory](../memory.md) · [skills](../skills.md).
+
+## Scoped packaging audit — 2026-10-24
+
+A subsequent source inspection covered configuration at `e696384d062f08f0246ffd2580d5a206484fc0a4`, together with an independently identified installed Repomix 1.18.1 package. The current Git observation is `64c9671337d865177486360caefb80cfd77a164e` (commit date 2026-10-24T07:13:27+02:00). That newer commit has not received this review, so this scoped audit does not advance the report's analyzed baseline to either fetched HEAD or an incompletely reviewed release.
+
+At the inspected commit, [processor configuration](https://github.com/yamadashy/repomix/blob/e696384d062f08f0246ffd2580d5a206484fc0a4/src/config/configSchema.ts#L34-L55) describes external commands, timeout and failure policy. A separate [runtime configuration gate](https://github.com/yamadashy/repomix/blob/e696384d062f08f0246ffd2580d5a206484fc0a4/src/config/configSchema.ts#L175-L192) documents opt-in processor enablement for library, MCP and hosted integrations. This is evidence about the configuration contract, not an audit of every processor execution path. Teamagent's benchmark supplied an explicit JSON configuration with no processors, retained security scanning, and avoided repository executable configuration.
+
+The [packing audit and measured results](../analyses/repomix.md) compare the archived legacy exclusions with evidence-retaining defaults on three source repositories. All 12 measured invocations completed. Removing the additional exclusions retained 95, 71 and 388 more paths respectively, including test and fixture material omitted by the legacy profile. The larger outputs also completed faster in this particular run, but fixed ordering and uncontrolled caches prevent attributing a general performance advantage to either profile. The [unchanged measurement manifest](../analyses/repomix-benchmark.json) records runtime/package identity, source commits, file counts, omissions, elapsed times and hashes; it contains no answer-quality or retrieval-quality measurement.
+
+Adopt packaging as an optional derived evidence artifact. Record the source commit, configuration digest, actual included paths and explicit omissions. Keep test fixtures, skill scripts and security-boundary code whenever the research question depends on them. Prefer bounded commit changes and selected original files for incremental updates. Package regeneration alone must never advance the analyzed SHA or confer execution trust on embedded scripts.
+
+## Change review - 2026-10-28
+
+**Pack cancellation gains phase checks and output settling, while shutdown timeout still reports process success.** Reviewed commit `a835271f41701245ee24b3c8ba162c5abb3d6f12` (commit date `2026-10-26T00:46:24+09:00`). Compared with `8d6429121e98ed178e4d3a975c2bdbbecc958c4a`; the complete Git comparison contains 122 changed paths.
+
+The pack operation accepts an AbortSignal, checks it before and between phases and passes it to metrics/security/file-processing workers. Its finally block waits for any started output write to settle before cleanup, preventing a late write after the caller removes its output directory. File search, source collection, Git operations, skill output and ordinary output production are not passed the signal in the inspected calls; cancellation can therefore wait on those operations and does not roll back files already written. An aborted pack surfaces the abort reason over a worker failure.
+
+The MCP server factory becomes synchronous for protocol-probe/fallback creation and configures a recursive tool-input element limit of 10,000 plus one-hour list cache hints for fixed tools/prompts. Shutdown handles signals and stdin EOF once, races close against five seconds and exits with code zero on either normal close or timeout. A timed-out drain is only a trace message, so exit success is not a clean-delivery receipt. Ignore-pattern expansion retains both wildcard leaf and directory forms, and split output exclusion escapes the base/extension while matching only positive non-zero-padded part numbers, avoiding accidental self-ingestion and preserving similarly named user files.
+
+Evidence: [src/core/packager.ts:68-120](https://github.com/yamadashy/repomix/blob/a835271f41701245ee24b3c8ba162c5abb3d6f12/src/core/packager.ts#L68-L120) · [src/core/packager.ts:162-204](https://github.com/yamadashy/repomix/blob/a835271f41701245ee24b3c8ba162c5abb3d6f12/src/core/packager.ts#L162-L204) · [src/core/packager.ts:233-291](https://github.com/yamadashy/repomix/blob/a835271f41701245ee24b3c8ba162c5abb3d6f12/src/core/packager.ts#L233-L291) · [src/core/packager.ts:296-383](https://github.com/yamadashy/repomix/blob/a835271f41701245ee24b3c8ba162c5abb3d6f12/src/core/packager.ts#L296-L383) · [src/mcp/mcpServer.ts:48-196](https://github.com/yamadashy/repomix/blob/a835271f41701245ee24b3c8ba162c5abb3d6f12/src/mcp/mcpServer.ts#L48-L196) · [src/core/file/fileSearch.ts:21-33](https://github.com/yamadashy/repomix/blob/a835271f41701245ee24b3c8ba162c5abb3d6f12/src/core/file/fileSearch.ts#L21-L33) · [src/core/file/fileSearch.ts:91-120](https://github.com/yamadashy/repomix/blob/a835271f41701245ee24b3c8ba162c5abb3d6f12/src/core/file/fileSearch.ts#L91-L120) · [src/core/file/fileSearch.ts:498-522](https://github.com/yamadashy/repomix/blob/a835271f41701245ee24b3c8ba162c5abb3d6f12/src/core/file/fileSearch.ts#L498-L522).
+
+**Harness consequence:** Use signal propagation and settle-before-cleanup ordering, but budget every I/O phase and report cancellation side effects/partial output explicitly. Distinguish forced shutdown from successful drain. Keep recursive element limits alongside byte/depth limits and list caches tied to the actual capability configuration. Adopt the ignore-pattern cases as regression inputs while retaining a separate source inventory and containment boundary.
+
+**Scope and limits:** Static scoped review of pack cancellation, server lifecycle and ignore fixes within the 122-path comparison. SDK limit enforcement, worker-pool cancellation, sandbox containment and all changed tests were not fully audited or executed; no packing, file deletion or external repository fetch performed.
+
+## Change review — 2026-11-01
+
+Reviewed `915945cc18c71064d9074fb176b665eeeca63f59` (2026-11-01T16:32:03+09:00); 40 paths changed from `a835271f41701245ee24b3c8ba162c5abb3d6f12`. Scoped remote-parser diffs replace a backtracking SCP host matcher with a linear scan and next-closing-bracket table. The fixture compares short-string behavior to the old matcher and exercises a 150,000-character adversarial input; no timing assertion was executed here. Linear work still allocates proportionally to input, requiring an outer size limit. [Matcher](https://github.com/yamadashy/repomix/blob/915945cc18c71064d9074fb176b665eeeca63f59/src/core/git/gitMetadataEndpoint.ts), [fixtures](https://github.com/yamadashy/repomix/blob/915945cc18c71064d9074fb176b665eeeca63f59/tests/core/git/gitMetadataEndpoint.test.ts).
+
+Parsed web repository URLs now retain a requested subpath/kind for warning, while the documented packing scope remains the whole repository. Warning metadata excludes query/fragment and attempts decoding; malformed encoding is retained. Treat that path as display intent, not a trusted filesystem path or proof of restricted import coverage. Metadata-host checks remain separate from DNS/redirect/network policy. [Remote parse](https://github.com/yamadashy/repomix/blob/915945cc18c71064d9074fb176b665eeeca63f59/src/core/git/gitRemoteParse.ts). Three paths reviewed; no clone, packing benchmark or upstream execution.
+
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/yamadashy/repomix](https://github.com/yamadashy/repomix) at `fe02ab760f14cc2b22123597cb46b37fc52144e7` against prior analyzed `915945cc18c71064d9074fb176b665eeeca63f59`. Evidence: [src/core/file/fileSearch.ts](https://github.com/yamadashy/repomix/blob/fe02ab760f14cc2b22123597cb46b37fc52144e7/src/core/file/fileSearch.ts), [tests/core/file/dotIgnoreSpec.test.ts](https://github.com/yamadashy/repomix/blob/fe02ab760f14cc2b22123597cb46b37fc52144e7/tests/core/file/dotIgnoreSpec.test.ts), [tests/core/file/fileSearch.gitignoreSpec.test.ts](https://github.com/yamadashy/repomix/blob/fe02ab760f14cc2b22123597cb46b37fc52144e7/tests/core/file/fileSearch.gitignoreSpec.test.ts), [tests/core/file/fileSearch.negatedIgnore.test.ts](https://github.com/yamadashy/repomix/blob/fe02ab760f14cc2b22123597cb46b37fc52144e7/tests/core/file/fileSearch.negatedIgnore.test.ts), [tests/core/file/fileSearch.test.ts](https://github.com/yamadashy/repomix/blob/fe02ab760f14cc2b22123597cb46b37fc52144e7/tests/core/file/fileSearch.test.ts), [website/server/package.json](https://github.com/yamadashy/repomix/blob/fe02ab760f14cc2b22123597cb46b37fc52144e7/website/server/package.json).
+
+Git info/exclude patterns without a slash are lifted to any-depth globs, while leading or inner slashes remain anchored. Negated exclude patterns are explicitly warned and skipped rather than accidentally treated as exclusions. Added fixtures cover combination with custom ignore patterns, subdirectory input honoring parent gitignore within a Git root, and the boundary outside a repository. The website Hono version also advances.
+
+**Architecture consequence:** A package omission manifest must retain effective ignore sources and unsupported negations. Treat Git-root discovery as part of input scope; an ignore matcher is not a containment or secret-release policy. These changes do not justify silently broadening Teamagent packaging or updating its dependency pins.
+
+**Scope and limits:** Read implementation and all four changed ignore-fixture diffs in the seven-path update, plus the website dependency declaration. The lockfile was identified but not audited; no packing or upstream tests ran.

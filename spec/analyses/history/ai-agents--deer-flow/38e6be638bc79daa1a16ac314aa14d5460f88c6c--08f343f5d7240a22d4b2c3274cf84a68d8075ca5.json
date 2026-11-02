@@ -1,0 +1,285 @@
+{
+  "id": "ai-agents--deer-flow",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/bytedance/deer-flow",
+  "report": "spec/projects/ai-agents--deer-flow.md",
+  "analyzedSha": "38e6be638bc79daa1a16ac314aa14d5460f88c6c",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-11-01T15:04:16+08:00",
+  "observedSha": "08f343f5d7240a22d4b2c3274cf84a68d8075ca5",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "08f343f5d7240a22d4b2c3274cf84a68d8075ca5",
+      "date": "2026-11-01T23:59:00+08:00",
+      "subject": "fix(wecom): report False when send_file cannot upload instead of True (#7768)"
+    },
+    {
+      "sha": "17b05718e029ca14b377c6f3bd0f73efca2f33bf",
+      "date": "2026-11-01T23:34:59+08:00",
+      "subject": "fix(agents): store an explicit null description as empty (#7638)"
+    },
+    {
+      "sha": "a0ce43d46a2ecf61b90a4f142958d6f0b7c2ef16",
+      "date": "2026-11-01T23:32:00+08:00",
+      "subject": "fix(agents): tolerate deeply nested JSON in tool-call normalization (#7742)"
+    },
+    {
+      "sha": "02df37c5dee091403c368fd3f1a3e0c3b88500a0",
+      "date": "2026-11-01T23:28:04+08:00",
+      "subject": "fix(runtime): charge a steered subagent's usage to the token budget (#7776)"
+    },
+    {
+      "sha": "830c8ff6f13e41f98a69a64be60f14d760a94f08",
+      "date": "2026-11-01T23:27:00+08:00",
+      "subject": "fix(runs): trim event_types filter entries before querying (#7758)"
+    },
+    {
+      "sha": "51f732304a226b932e1bbc4ceb3fe79b4ad78edc",
+      "date": "2026-11-01T23:25:44+08:00",
+      "subject": "test(channels): drop the POSIX-only utime flag that breaks 9 tests on Windows (#7750)"
+    },
+    {
+      "sha": "980cf3a4481b645c8b69b142ef21ae60e22ba2fb",
+      "date": "2026-11-01T23:24:07+08:00",
+      "subject": "fix(frontend): preserve skill HTTP errors for malformed bodies (#7774)"
+    },
+    {
+      "sha": "be39a8a87904b24507e7026db6775183817a6661",
+      "date": "2026-11-01T23:18:49+08:00",
+      "subject": "fix(runtime): resume children paused for a withdrawn steer (#7753)"
+    },
+    {
+      "sha": "a17e5694cc75f1007c8b0ede948e8b65bb81d169",
+      "date": "2026-11-01T23:09:25+08:00",
+      "subject": "fix(sandbox): stop owned command processes when a run is cancelled (#7772)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG_zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/wecom.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/agents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/thread_runs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/middlewares/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/middlewares/clarification_middleware.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/middlewares/dangling_tool_call_middleware.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/middlewares/loop_detection_middleware.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/middlewares/run_input_middleware.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/agents/middlewares/token_usage_middleware.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/community/aio_sandbox/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/community/aio_sandbox/aio_sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/packages/harness/deerflow/community/aio_sandbox/command_cleanup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/config/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/persistence/agents/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/runs/input_control.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/runtime/runs/worker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/sandbox/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/packages/harness/deerflow/sandbox/command_scope.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/sandbox/lease.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/sandbox/local/local_sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/sandbox/middleware.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/sandbox/sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/sandbox/tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/subagents/executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/blocking_io/test_channel_outbound_files.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_agent_store_sql.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_channel_credential_staging.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_custom_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_github_token_plumbing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_run_events_endpoint.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_run_input_graph.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_sandbox_command_cancellation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_tool_call_json_depth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/core/skills/api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/core/skills/error-detail.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/core/skills/export.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/tests/unit/core/skills/api.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/tests/unit/core/skills/export.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

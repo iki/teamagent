@@ -194,3 +194,114 @@ Records source-version and extraction-status changes. Unchanged checks update so
 ## 2026-11-01T08:51:16.093Z
 
 - agents.261029.fine-grained-version-control.delta.md: created, usable-text; version a006e2cb-2ab2-438c-936f-04d8eabcc6ff; content 6e188765049d9c9caa679bdad9b4a56e62286d866798b5279260364bb95faef2.
+
+## 2026-11-01T21:19:33.660Z
+
+- agents.260311.equip-responses-api-computer-environment.md: updated, partial; version 0ba971da-2184-4ede-b673-f4400f035ba9; content f4c4329165b49913e4f6da51a4fbe05589248dad475442ec68cbab716f67f775.
+
+## 2026-11-01T21:19:33.660Z
+
+<!-- teamagent-text-reconciliation:54ec26903291b7326d8affdfa3c3a7631952662558f36115689d465bd7ca649c -->
+
+[Explicit reconciliation receipt](reconciliations/54ec26903291b7326d8affdfa3c3a7631952662558f36115689d465bd7ca649c.json).
+
+- agents.260311.equip-responses-api-computer-environment.md: updated, partial; version 0ba971da-2184-4ede-b673-f4400f035ba9; content f4c4329165b49913e4f6da51a4fbe05589248dad475442ec68cbab716f67f775.
+
+## 2026-11-01T21:19:33.789Z
+
+<!-- teamagent-text-reconciliation:6d6e8f51852b6688033f5f95e19398e3904c5a7ed088b978560ff94902b1d570 -->
+
+[Explicit reconciliation receipt](reconciliations/6d6e8f51852b6688033f5f95e19398e3904c5a7ed088b978560ff94902b1d570.json).
+
+- agents.260607.hermes.guide.pdf: updated, partial; version 85e5dd54-bc73-40f9-adac-2846fdd96794; content c8c2da1efa0fceac603842046b4c2beb87455752c573437ea9e25102d70577b2.
+
+## 2026-11-01T21:38:36.636Z
+
+<!-- teamagent-text-reconciliation:aea967c8133b6a9f484643e97c4c885e406667db49ed99a37a85ffe2bbdaaaf5 -->
+
+[Explicit reconciliation receipt](reconciliations/aea967c8133b6a9f484643e97c4c885e406667db49ed99a37a85ffe2bbdaaaf5.json).
+
+- agents.260706.testing-17-agentic-loop-engineering-techniques-for-reliable-ai-agents.md: updated, partial; version 0a19256f-78fb-452b-93fd-a93ed504e226; content 4dc0646a6fffa6b2eb0bcb60b90d47f62ca4293162ba72ec5870754626dd778c.
+
+## 2026-11-01T21:44:05.101Z
+
+<!-- teamagent-text-reconciliation:be6ef5bc0d8c05a6b5d268da4871f4d1204d62165150e9bfd085d077e4ef5613 -->
+
+[Explicit reconciliation receipt](reconciliations/be6ef5bc0d8c05a6b5d268da4871f4d1204d62165150e9bfd085d077e4ef5613.json).
+
+- agents.260728.camel-ai-on-durable-objects.md: updated, partial; version 99323382-5b94-4e6f-9b88-42751f251cf3; content 41056d704af07bd6b01bd060e56f0d254f944a431406b71d244a5742bf6a1c9f.
+
+## 2026-11-01T21:44:05.148Z
+
+<!-- teamagent-text-reconciliation:8e973a43f58d665a9fa51b03851f06e068fdc13b29662e82a56e3d9de7447f1b -->
+
+[Explicit reconciliation receipt](reconciliations/8e973a43f58d665a9fa51b03851f06e068fdc13b29662e82a56e3d9de7447f1b.json).
+
+- agents.260731.ferrox-ffm10-graph-engineering.pdf: updated, partial; version c3bbcfc0-10a0-4af1-8011-32ecdb743876; content 9b4538dcac42cfcf2d2fd5ea56db076b352ba912cfa68688d406092f0d07ae0d.
+
+## 2026-11-01T21:44:05.187Z
+
+<!-- teamagent-text-reconciliation:4fed2919d363058b1e0973b1d8688e0971553b65e2bb112472a826fc45fe079a -->
+
+[Explicit reconciliation receipt](reconciliations/4fed2919d363058b1e0973b1d8688e0971553b65e2bb112472a826fc45fe079a.json).
+
+- ai.260330.x-miesler-top-5-ideas-in-ai.md: updated, partial; version 7ed1e094-07bb-4a15-b1f8-453ae0a897de; content e7ed1afda13f2d441763768f4fd85e7bdb65665c2c046d6f2e8a71f6f9f4153a.
+
+## 2026-11-01T21:44:05.259Z
+
+<!-- teamagent-text-reconciliation:1af5e9306f04c21505b31dabaca6a66dccf05144aa205c60b273c8145afa6558 -->
+
+[Explicit reconciliation receipt](reconciliations/1af5e9306f04c21505b31dabaca6a66dccf05144aa205c60b273c8145afa6558.json).
+
+- cx.260408.memento.pdf: updated, partial; version 09efc6e8-e2ea-4e85-b78d-c6b8f0fe5062; content f7eb75a7f8dcd2483ec6e4263e1d702776a1ca8a4f550edcd87d5cb1f409171d.
+
+## 2026-11-01T21:44:05.307Z
+
+<!-- teamagent-text-reconciliation:2d0b37711a9136c0dc7bffc0d5d81f802c7415d7e285cb6cec61bb2d339364ef -->
+
+[Explicit reconciliation receipt](reconciliations/2d0b37711a9136c0dc7bffc0d5d81f802c7415d7e285cb6cec61bb2d339364ef.json).
+
+- kb.260402.x-karpathy-llm-kb.md: updated, partial; version 533758c0-ce33-424b-b841-dbf695d30e42; content cfa578482b3bb2857f631280b80dd4ae3cb4f60b809ec6eb5fc1a5f1b4e77607.
+
+## 2026-11-01T21:44:05.394Z
+
+<!-- teamagent-text-reconciliation:6b6716c5f64b7c163866f71775760ad0b5d774d1db09ad6c6111a32e118aaa4a -->
+
+[Explicit reconciliation receipt](reconciliations/6b6716c5f64b7c163866f71775760ad0b5d774d1db09ad6c6111a32e118aaa4a.json).
+
+- sandbox.260803.cloudflare-computer.md: updated, usable-text; version 9063b2c1-efc4-4a35-b436-055eef6744b5; content a92d5459e804a183c5bb5802a6899ab3dc29159f02f922d5ee705389dca650c9.
+
+## 2026-11-01T21:44:05.452Z
+
+<!-- teamagent-text-reconciliation:63233ad71c892357b7ac34119e36154222fd5adeacbb868b5a3861dd7026560f -->
+
+[Explicit reconciliation receipt](reconciliations/63233ad71c892357b7ac34119e36154222fd5adeacbb868b5a3861dd7026560f.json).
+
+- security.260413.many-ih.2604.09443.pdf: updated, partial; version 592a795e-6a8b-4ee6-8529-dd65eadfebfb; content 7a8b7e84bb868eeb9cdd103eab97b471bbf766dd47560410093cdad1c9c5ec2b.
+
+## 2026-11-01T21:44:05.510Z
+
+<!-- teamagent-text-reconciliation:031b34b2b7018e51984540af2d1251a78fb42c61c2d0d37906d1b75d16066750 -->
+
+[Explicit reconciliation receipt](reconciliations/031b34b2b7018e51984540af2d1251a78fb42c61c2d0d37906d1b75d16066750.json).
+
+- tools.260408.tanstack-ai-code-mode-blog.md: updated, usable-text; version 04d048a6-91b0-4bf4-9648-297c264303bb; content d503faf990ee2c39cf207f19b88915d7d5e6988cb493d0e4c020ad5a59e0edaa.
+
+## 2026-11-01T21:44:05.887Z
+
+- agents.260311.equip-responses-api-computer-environment.md: pinned, partial; version 0ba971da-2184-4ede-b673-f4400f035ba9; content f4c4329165b49913e4f6da51a4fbe05589248dad475442ec68cbab716f67f775.
+- agents.260607.hermes.guide.pdf: pinned, partial; version 85e5dd54-bc73-40f9-adac-2846fdd96794; content c8c2da1efa0fceac603842046b4c2beb87455752c573437ea9e25102d70577b2.
+- agents.260706.testing-17-agentic-loop-engineering-techniques-for-reliable-ai-agents.md: pinned, partial; version 0a19256f-78fb-452b-93fd-a93ed504e226; content 4dc0646a6fffa6b2eb0bcb60b90d47f62ca4293162ba72ec5870754626dd778c.
+- agents.260728.camel-ai-on-durable-objects.md: pinned, partial; version 99323382-5b94-4e6f-9b88-42751f251cf3; content 41056d704af07bd6b01bd060e56f0d254f944a431406b71d244a5742bf6a1c9f.
+- agents.260731.ferrox-ffm10-graph-engineering.pdf: pinned, partial; version c3bbcfc0-10a0-4af1-8011-32ecdb743876; content 9b4538dcac42cfcf2d2fd5ea56db076b352ba912cfa68688d406092f0d07ae0d.
+- agents.261029.fine-grained-version-control.delta.md: pinned, usable-text; version a006e2cb-2ab2-438c-936f-04d8eabcc6ff; content 6e188765049d9c9caa679bdad9b4a56e62286d866798b5279260364bb95faef2.
+- ai.260330.x-miesler-top-5-ideas-in-ai.md: pinned, partial; version 7ed1e094-07bb-4a15-b1f8-453ae0a897de; content e7ed1afda13f2d441763768f4fd85e7bdb65665c2c046d6f2e8a71f6f9f4153a.
+- cx.260408.memento.pdf: pinned, partial; version 09efc6e8-e2ea-4e85-b78d-c6b8f0fe5062; content f7eb75a7f8dcd2483ec6e4263e1d702776a1ca8a4f550edcd87d5cb1f409171d.
+- kb.260402.x-karpathy-llm-kb.md: pinned, partial; version 533758c0-ce33-424b-b841-dbf695d30e42; content cfa578482b3bb2857f631280b80dd4ae3cb4f60b809ec6eb5fc1a5f1b4e77607.
+- sandbox.260803.cloudflare-computer.md: pinned, usable-text; version 9063b2c1-efc4-4a35-b436-055eef6744b5; content a92d5459e804a183c5bb5802a6899ab3dc29159f02f922d5ee705389dca650c9.
+- security.260413.many-ih.2604.09443.pdf: pinned, partial; version 592a795e-6a8b-4ee6-8529-dd65eadfebfb; content 7a8b7e84bb868eeb9cdd103eab97b471bbf766dd47560410093cdad1c9c5ec2b.
+- tools.260408.tanstack-ai-code-mode-blog.md: pinned, usable-text; version 04d048a6-91b0-4bf4-9648-297c264303bb; content d503faf990ee2c39cf207f19b88915d7d5e6988cb493d0e4c020ad5a59e0edaa.
+
+## 2026-11-01T21:49:04.531Z
+
+No content or extraction-status changes.

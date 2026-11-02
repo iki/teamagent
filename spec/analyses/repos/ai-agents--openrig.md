@@ -2,11 +2,11 @@
 
 Source: [openrig](https://github.com/mvschwarz/openrig) · [Analysis](../unreviewed/ai-agents--openrig.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `b25dd19a5a818e8cba7bfe2b0267093c0305cb4e`; commit date: 2026-10-30T07:49:24-07:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `b25dd19a5a818e8cba7bfe2b0267093c0305cb4e`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `072a6719bd820644c634e37f7ac30ee991fbaa5d`; commit date: 2026-11-01T11:46:06-08:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `072a6719bd820644c634e37f7ac30ee991fbaa5d`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/mvschwarz/openrig/compare/b25dd19a5a818e8cba7bfe2b0267093c0305cb4e...b25dd19a5a818e8cba7bfe2b0267093c0305cb4e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/mvschwarz/openrig/compare/072a6719bd820644c634e37f7ac30ee991fbaa5d...072a6719bd820644c634e37f7ac30ee991fbaa5d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

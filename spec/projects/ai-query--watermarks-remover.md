@@ -39,6 +39,16 @@ Evidence: [service/scripts/container_meta.py:2088-2192](https://github.com/guill
 
 **Scope and limits:** Static scoped review of OOXML web-extension inspection/removal, owner-file refusal and BMFF padding classification within the 23-path comparison. No document/media transformations, upstream tests or signature verification executed; broader HTML/Markdown/LaTeX scrubbing, ZIP budget implementation and installation behavior were not audited.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/guillaumemeyer/watermarks-remover](https://github.com/guillaumemeyer/watermarks-remover) at `5a62be6338d2812372b1da440e55c82922f97d53` against prior analyzed `5c180932a00c793261177f79aee21db8929f3fe2`. Evidence: [service/scripts/requirements-ctrlregen.txt](https://github.com/guillaumemeyer/watermarks-remover/blob/5a62be6338d2812372b1da440e55c82922f97d53/service/scripts/requirements-ctrlregen.txt), [service/scripts/requirements-markllm.txt](https://github.com/guillaumemeyer/watermarks-remover/blob/5a62be6338d2812372b1da440e55c82922f97d53/service/scripts/requirements-markllm.txt), [service/scripts/requirements-synthid-scorer.txt](https://github.com/guillaumemeyer/watermarks-remover/blob/5a62be6338d2812372b1da440e55c82922f97d53/service/scripts/requirements-synthid-scorer.txt).
+
+Three isolated worker requirement files move Pillow from 12.3.0 to 13.0.0. The delta includes no processing algorithm or compatibility result.
+
+**Architecture consequence:** Keep media-worker dependency environments explicit and require representative decode/encode compatibility checks before adopting such a major-version change; Teamagent's pins are unchanged.
+
+**Scope and limits:** Read the complete requirements-only diff. No package installation, worker execution or image-quality test was performed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [watermarks-remover](https://github.com/guillaumemeyer/watermarks-remover); analyzed commit `5c180932a00c793261177f79aee21db8929f3fe2`; commit date 2026-10-21T16:02:50-06:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--watermarks-remover.md).
+Analysis metadata: source [watermarks-remover](https://github.com/guillaumemeyer/watermarks-remover); analyzed commit `5a62be6338d2812372b1da440e55c82922f97d53`; commit date 2026-11-01T18:16:06+05:30; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-query--watermarks-remover.md).
 <!-- teamagent-analysis:end -->

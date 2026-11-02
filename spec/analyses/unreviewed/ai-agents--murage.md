@@ -34,6 +34,16 @@ The [new fixture](https://github.com/ferroxlabs/murage/blob/f23d9fbff36a1ae3d841
 
 **Coverage:** Read the complete targeted Pi permission-gate implementation/test delta. Phone/email handlers, other engines and the remaining oversized repository change were not inspected. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/ferroxlabs/murage](https://github.com/ferroxlabs/murage) at `b0ea88d32e74f8844c6e5165472adec0b85ccaad` against prior analyzed `f23d9fbff36a1ae3d841006f35e39a39ade12089`. Evidence: [electron/backup-recovery-key.mjs](https://github.com/ferroxlabs/murage/blob/b0ea88d32e74f8844c6e5165472adec0b85ccaad/electron/backup-recovery-key.mjs), [electron/backup-recovery-key.node-test.mjs](https://github.com/ferroxlabs/murage/blob/b0ea88d32e74f8844c6e5165472adec0b85ccaad/electron/backup-recovery-key.node-test.mjs), [electron/installation-recovery-runner.mjs](https://github.com/ferroxlabs/murage/blob/b0ea88d32e74f8844c6e5165472adec0b85ccaad/electron/installation-recovery-runner.mjs), [electron/installation-recovery-runner.node-test.mjs](https://github.com/ferroxlabs/murage/blob/b0ea88d32e74f8844c6e5165472adec0b85ccaad/electron/installation-recovery-runner.node-test.mjs).
+
+Recovery-key folder selection handles missing Documents directories and avoids excluding the whole home directory when XDG Documents resolves to home. The recovery worker now accepts normalized backup progress messages on a one-way presentation channel, while malformed messages or a throwing UI callback do not replace the private final result. Authored fixtures keep disk-full and timeout outcomes intact despite progress delivery.
+
+**Architecture consequence:** Separate optional user folders from authority roots and keep progress observations outside authoritative recovery outcomes. A responsive progress UI is not evidence that backup completion, integrity or safe key storage succeeded.
+
+**Scope and limits:** Four targeted implementation/test deltas inspected from a 587-path update whose complete diff exceeded the bound. Progress normalization implementation and the full backup/security subsystem were not independently audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [murage](https://github.com/ferroxlabs/murage); analyzed commit `f23d9fbff36a1ae3d841006f35e39a39ade12089`; commit date 2026-10-31T16:10:13+08:00; review date 2026-11-01T11:33:30.893Z; depth reviewed. [Maintenance record](../repos/ai-agents--murage.md).
+Analysis metadata: source [murage](https://github.com/ferroxlabs/murage); analyzed commit `b0ea88d32e74f8844c6e5165472adec0b85ccaad`; commit date 2026-11-01T15:10:21+08:00; review date 2026-11-01T23:12:06.798Z; depth reviewed. [Maintenance record](../repos/ai-agents--murage.md).
 <!-- teamagent-analysis:end -->

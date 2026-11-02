@@ -77,6 +77,16 @@ The complete new [archive validator](https://github.com/debpalash/VoiceStudio/bl
 
 This is packaging-contract evidence within a 361-path update. It does not prove actual runtime data flows, the correctness of every declared reason, provider non-training terms, voice consent or commercial rights. Teamagent must keep those dimensions separate, and require actual packaged-native acceptance for an implemented mobile route. No iOS archive, model, voice synthesis, provider or upstream test was executed.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio) at `522bdc0e34539753f2af2c473173c90f87c79d7a` against prior analyzed `e84105cf332fcb7a7b58012cb3c3618363b24759`. Evidence: [backend/core/bundled_code.py](https://github.com/debpalash/VoiceStudio/blob/522bdc0e34539753f2af2c473173c90f87c79d7a/backend/core/bundled_code.py), [backend/core/path_authorization.py](https://github.com/debpalash/VoiceStudio/blob/522bdc0e34539753f2af2c473173c90f87c79d7a/backend/core/path_authorization.py), [electron/src/main/backend.ts](https://github.com/debpalash/VoiceStudio/blob/522bdc0e34539753f2af2c473173c90f87c79d7a/electron/src/main/backend.ts), [electron/src/main/bundled-runtime.ts](https://github.com/debpalash/VoiceStudio/blob/522bdc0e34539753f2af2c473173c90f87c79d7a/electron/src/main/bundled-runtime.ts), [electron/src/main/security-scoped-files.ts](https://github.com/debpalash/VoiceStudio/blob/522bdc0e34539753f2af2c473173c90f87c79d7a/electron/src/main/security-scoped-files.ts).
+
+A selected packaged distribution launches a bundled Python runtime and media tools, directs mutable models/cache/data to the app container and avoids runtime installer fallback. Python audit hooks restrict several execution/import/native-library/subprocess paths to bundled or selected OS locations. Explicit directory selections are retained as security-scoped bookmarks; child path authorization restores the relevant grant and refuses expired access instead of silently switching data roots.
+
+**Architecture consequence:** Provision executable code separately from mutable model data and propagate explicit path grants through the full process tree. Report stale grants and unsupported host architectures. Python audit hooks and environment settings supplement platform enforcement; they do not prove OS sandbox containment, signed-package integrity or network isolation. Persisted bookmarks are sensitive local capabilities.
+
+**Scope and limits:** Read bundled-code policy, path authorization, backend selection/environment and initial bookmark restore/admission changes within an 89-path update. Mobile transfer changes were inventoried but not reviewed here. No signed Mac build, App Store validation, mobile download, inference or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [voicestudio](https://github.com/debpalash/VoiceStudio); analyzed commit `e84105cf332fcb7a7b58012cb3c3618363b24759`; commit date 2026-11-01T12:00:36+05:30; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-media--voicestudio.md).
+Analysis metadata: source [voicestudio](https://github.com/debpalash/VoiceStudio); analyzed commit `522bdc0e34539753f2af2c473173c90f87c79d7a`; commit date 2026-11-01T20:36:35+05:30; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-media--voicestudio.md).
 <!-- teamagent-analysis:end -->

@@ -53,6 +53,16 @@ The complete inventory contains 47 changed paths. The selected [Codex parser](ht
 
 For Teamagent, retain original service-tier provenance, identify copied usage before summing it, and make conflict precedence inspectable. Do not infer current prices or billable amounts solely from a normalized tier. Selected code and test changes were read completely; other Antigravity, pricing and build changes in this comparison were not exhaustively audited. No upstream tests, provider requests or billing reconciliation were executed.
 
+## External-update review - 2026-11-01
+
+Reviewed `66e18571055fda8c210fd6ec79a497707dcc37bb` against `f0a8a9c38c37847e83f2d7ca18b8cadba929534a`.
+
+The seven-path update fixes [configuration precedence](https://github.com/ryoppippi/ccusage/blob/66e18571055fda8c210fd6ec79a497707dcc37bb/rust/crates/ccusage-config/src/config.rs): generic report settings are applied before space-form agent commands, then colon-form commands, followed by agent defaults and agent-specific report settings. Unified reports obtain the same source-specific view as focused commands. Embedded fixtures cover both spellings, their collision and preserved unrelated defaults; [CLI source tests](https://github.com/ryoppippi/ccusage/blob/66e18571055fda8c210fd6ec79a497707dcc37bb/rust/crates/ccusage/src/cli/sources.rs) distinguish unified options from an overridden Codex source.
+
+The [generated schema implementation](https://github.com/ryoppippi/ccusage/blob/66e18571055fda8c210fd6ec79a497707dcc37bb/rust/crates/ccusage-config/src/config_schema.rs) adds weekly sections and references each supported agent/report schema for both command spellings. Its tests exclude unsupported combinations. This aligns discoverability with runtime configuration; it is not evidence that pricing or token attribution is correct.
+
+**Harness consequence:** Resolve per-source cost policy through the same documented precedence as direct commands and test alias collisions, rather than patching aggregate options after parsing. The separate pricing snapshot and flake lock changes were inventoried but not independently price-verified. No billing data, upstream Rust build or tests were executed; review scope is the three complete Rust implementation/test deltas.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ccusage](https://github.com/ryoppippi/ccusage); analyzed commit `f0a8a9c38c37847e83f2d7ca18b8cadba929534a`; commit date 2026-11-01T03:24:41Z; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-tokens--ccusage.md).
+Analysis metadata: source [ccusage](https://github.com/ryoppippi/ccusage); analyzed commit `66e18571055fda8c210fd6ec79a497707dcc37bb`; commit date 2026-11-01T18:15:37Z; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-tokens--ccusage.md).
 <!-- teamagent-analysis:end -->

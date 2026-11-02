@@ -56,6 +56,16 @@ The [transformer](https://github.com/pbakaus/impeccable/blob/4f956490f0056ae1ff5
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## External-update review - 2026-11-01
+
+Reviewed `e89e3ada3e875a89ac2c5d33d11e65ebef6fe285` against `4f956490f0056ae1ff5ea80372cf56e83c001d3c`.
+
+The 42-path update adapts validation to concrete harness event contracts. The complete inspected [hook-library delta](https://github.com/pbakaus/impeccable/blob/e89e3ada3e875a89ac2c5d33d11e65ebef6fe285/crates/hook/src/hook_lib.rs) recognizes VS Code input variants, projects patch/replacement paths into the existing edit path, and emits both nested and top-level context fields for its two consumers. It keeps the complete per-edit rule set when a dependable nonblocking Stop channel is not established. Event-shape detection outranks the manifest environment hint, avoiding accidental misidentification when another harness honors that same environment setting.
+
+The complete [hook fixture delta](https://github.com/pbakaus/impeccable/blob/e89e3ada3e875a89ac2c5d33d11e65ebef6fe285/crates/hook/tests/hook_tests.rs) pins payload shapes, detection precedence, four edit-input forms and the skipped VS Code Stop path. Separately, the [image-source matcher](https://github.com/pbakaus/impeccable/blob/e89e3ada3e875a89ac2c5d33d11e65ebef6fe285/crates/detect/src/regex_matchers.rs) recognizes Angular `ngSrc`, bracket bindings and `attr.src`; the [detection fixture](https://github.com/pbakaus/impeccable/blob/e89e3ada3e875a89ac2c5d33d11e65ebef6fe285/crates/detect/tests/broken_image_source.rs) and [HTML input](https://github.com/pbakaus/impeccable/blob/e89e3ada3e875a89ac2c5d33d11e65ebef6fe285/crates/detect/tests/fixtures/broken-image/missing.html) distinguish those source forms from an image with only an alt binding.
+
+**Harness consequence:** Tune skills/hooks to the actual adapter's observed input/output phases, and never defer required coverage to a phase whose delivery is unsupported. Preserve tool-event provenance and validate normalized paths independently. Recognizing a syntactic image binding does not prove the resource exists or renders correctly. Scope is these five complete deltas, not all launch scripts or native editor integration. No upstream Rust test, skill, editor hook or rendered browser was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [design.impeccable](https://github.com/pbakaus/impeccable); analyzed commit `4f956490f0056ae1ff5ea80372cf56e83c001d3c`; commit date 2026-11-01T02:13:22+08:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.impeccable.md).
+Analysis metadata: source [design.impeccable](https://github.com/pbakaus/impeccable); analyzed commit `e89e3ada3e875a89ac2c5d33d11e65ebef6fe285`; commit date 2026-11-01T14:26:36Z; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.impeccable.md).
 <!-- teamagent-analysis:end -->

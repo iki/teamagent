@@ -2,11 +2,11 @@
 
 Source: [claude.ruflo](https://github.com/ruvnet/ruflo) · [Analysis](../../projects/ai-agents--claude.ruflo.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `e580bbc8204874f762d132fe441b18192979211b`; commit date: 2026-11-01T06:29:40Z; review date: 2026-11-01T11:33:30.893Z; observed SHA: `e580bbc8204874f762d132fe441b18192979211b`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `a3d45e64b9ce66d3a172c8051e8b20561321eb64`; commit date: 2026-11-01T14:13:37-05:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `a3d45e64b9ce66d3a172c8051e8b20561321eb64`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ruvnet/ruflo/compare/e580bbc8204874f762d132fe441b18192979211b...e580bbc8204874f762d132fe441b18192979211b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ruvnet/ruflo/compare/a3d45e64b9ce66d3a172c8051e8b20561321eb64...a3d45e64b9ce66d3a172c8051e8b20561321eb64). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

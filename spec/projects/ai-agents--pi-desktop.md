@@ -54,6 +54,16 @@ The complete [scope fixtures](https://github.com/vastsa/PI-Desktop/blob/d2c85a95
 
 **Coverage:** Read the complete 305-line page/helper/scope-test selection and complete 84-line race-test addition. The collection hook itself was unchanged and not reread; native host persistence and packaged desktop behavior were not tested. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/vastsa/PI-Desktop](https://github.com/vastsa/PI-Desktop) at `0ba8cfd57cdc6baa4c1dbf16a617eb933ad3e0ee` against prior analyzed `d2c85a95a599002672e1592df7bc58fb11f8d79b`. Evidence: [docs/spec/07-plugins/12-plugin-ipc-and-host-services.md](https://github.com/vastsa/PI-Desktop/blob/0ba8cfd57cdc6baa4c1dbf16a617eb933ad3e0ee/docs/spec/07-plugins/12-plugin-ipc-and-host-services.md).
+
+The documentation removes conceptual IPC channels that are not exported, distinguishes renderer invokes, plugin-process calls and panel bridges, and narrows audit/timeout statements to the paths that implement them. Audio registration helpers are documented as local UNSUPPORTED failures without a host audit, while broker-reaching audio calls have different permission/audit behavior. It explicitly records no generic child-to-host timeout and no automatic panel-crash recovery handler.
+
+**Architecture consequence:** Capability documentation must enumerate the actual transport surface and unsupported paths. A declared service, permission name, API skeleton or conceptual responsibility map is not implementation evidence; per-direction timeouts and cleanup need independent verification.
+
+**Scope and limits:** The update contains only two documentation files. The English specification diff was inspected; implementation assertions here remain upstream documentation claims rather than a fresh runtime/source audit.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [pi-desktop](https://github.com/vastsa/PI-Desktop); analyzed commit `d2c85a95a599002672e1592df7bc58fb11f8d79b`; commit date 2026-11-01T14:37:35+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--pi-desktop.md).
+Analysis metadata: source [pi-desktop](https://github.com/vastsa/PI-Desktop); analyzed commit `0ba8cfd57cdc6baa4c1dbf16a617eb933ad3e0ee`; commit date 2026-11-01T19:16:07+08:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--pi-desktop.md).
 <!-- teamagent-analysis:end -->

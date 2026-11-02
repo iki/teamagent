@@ -60,6 +60,16 @@ Reviewed commit `38e6be638bc79daa1a16ac314aa14d5460f88c6c` (commit date `2026-11
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/bytedance/deer-flow](https://github.com/bytedance/deer-flow) at `08f343f5d7240a22d4b2c3274cf84a68d8075ca5` against prior analyzed `38e6be638bc79daa1a16ac314aa14d5460f88c6c`. Evidence: [backend/app/channels/wecom.py](https://github.com/bytedance/deer-flow/blob/08f343f5d7240a22d4b2c3274cf84a68d8075ca5/backend/app/channels/wecom.py), [backend/packages/harness/deerflow/sandbox/command_scope.py](https://github.com/bytedance/deer-flow/blob/08f343f5d7240a22d4b2c3274cf84a68d8075ca5/backend/packages/harness/deerflow/sandbox/command_scope.py), [backend/packages/harness/deerflow/sandbox/lease.py](https://github.com/bytedance/deer-flow/blob/08f343f5d7240a22d4b2c3274cf84a68d8075ca5/backend/packages/harness/deerflow/sandbox/lease.py), [backend/packages/harness/deerflow/community/aio_sandbox/command_cleanup.py](https://github.com/bytedance/deer-flow/blob/08f343f5d7240a22d4b2c3274cf84a68d8075ca5/backend/packages/harness/deerflow/community/aio_sandbox/command_cleanup.py), [backend/tests/test_sandbox_command_cancellation.py](https://github.com/bytedance/deer-flow/blob/08f343f5d7240a22d4b2c3274cf84a68d8075ca5/backend/tests/test_sandbox_command_cancellation.py).
+
+New execution-scoped cancellation uses a server-owned token, rejects canceled queued work and signals cancellation before draining blocking worker operations. The Linux AIO cleanup controller uses exact inherited markers and pidfds rather than process-name matching; inspected fixtures require unsuccessful cleanup to prevent warm reuse. WeCom file sending no longer returns early success for a non-final message before checking transport/thread availability.
+
+**Architecture consequence:** Distinguish cancellation request, owned-process termination and reusable-sandbox admission. Retaining another run's preview service is a separate lifetime choice. Marker/pidfd cleanup depends on its platform and visibility assumptions; it is not a general sandbox guarantee.
+
+**Scope and limits:** Reviewed selected cancellation, lease and delivery changes plus regression assertions within a 43-path update. No upstream tests, sandbox container, process controller or live channel delivery was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deer-flow](https://github.com/bytedance/deer-flow); analyzed commit `38e6be638bc79daa1a16ac314aa14d5460f88c6c`; commit date 2026-11-01T15:04:16+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deer-flow.md).
+Analysis metadata: source [deer-flow](https://github.com/bytedance/deer-flow); analyzed commit `08f343f5d7240a22d4b2c3274cf84a68d8075ca5`; commit date 2026-11-01T23:59:00+08:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deer-flow.md).
 <!-- teamagent-analysis:end -->

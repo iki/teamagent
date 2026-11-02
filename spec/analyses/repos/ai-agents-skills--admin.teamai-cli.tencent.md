@@ -2,11 +2,11 @@
 
 Source: [admin.teamai-cli.tencent](https://github.com/Tencent/teamai-cli) · [Analysis](../../projects/ai-agents-skills--admin.teamai-cli.tencent.md) · [skills](../../skills.md), [evolution](../../evolution.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `82026b3a10ddc0fa5181732ad72b58ffc28e7253`; commit date: 2026-11-01T16:09:58+08:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `82026b3a10ddc0fa5181732ad72b58ffc28e7253`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `d2230c9630b86b47ddfd50c1014664a1f51ce4f7`; commit date: 2026-11-01T14:50:56+01:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `d2230c9630b86b47ddfd50c1014664a1f51ce4f7`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Tencent/teamai-cli/compare/82026b3a10ddc0fa5181732ad72b58ffc28e7253...82026b3a10ddc0fa5181732ad72b58ffc28e7253). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Tencent/teamai-cli/compare/d2230c9630b86b47ddfd50c1014664a1f51ce4f7...d2230c9630b86b47ddfd50c1014664a1f51ce4f7). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

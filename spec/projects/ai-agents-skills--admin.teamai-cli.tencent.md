@@ -50,6 +50,16 @@ The full new [skill-evidence scorer input](https://github.com/Tencent/teamai-cli
 
 For skill evolution, retain what was delivered and loaded at the time of each decision, plus content digest and model/harness version. Latest-description-by-name is insufficient to identify every historical skill revision, and a supplied masking callback is not proof of redaction efficacy. The remaining580-path update was inventoried for scope rather than exhaustively audited. No scorer, host agent or tests were executed.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/Tencent/teamai-cli](https://github.com/Tencent/teamai-cli) at `d2230c9630b86b47ddfd50c1014664a1f51ce4f7` against prior analyzed `82026b3a10ddc0fa5181732ad72b58ffc28e7253`. Evidence: [src/session-flow/agent-session.ts](https://github.com/Tencent/teamai-cli/blob/d2230c9630b86b47ddfd50c1014664a1f51ce4f7/src/session-flow/agent-session.ts), [src/__tests__/agent-session-list.test.ts](https://github.com/Tencent/teamai-cli/blob/d2230c9630b86b47ddfd50c1014664a1f51ce4f7/src/__tests__/agent-session-list.test.ts), [src/codebase-wiki-lint.ts](https://github.com/Tencent/teamai-cli/blob/d2230c9630b86b47ddfd50c1014664a1f51ce4f7/src/codebase-wiki-lint.ts), [src/__tests__/codebase-wiki-lint.test.ts](https://github.com/Tencent/teamai-cli/blob/d2230c9630b86b47ddfd50c1014664a1f51ce4f7/src/__tests__/codebase-wiki-lint.test.ts).
+
+Session listing now passes the requested project cwd into adapter readiness. The Pi fixture creates a project-only settings file pointing to a custom session store outside process cwd, then expects that session without a false unavailable result. Wiki health-check strings become English and a new fixture checks both missing assets and healthy graph output.
+
+**Architecture consequence:** Installed-agent discovery and readiness must use the same workspace scope as session lookup. Keep machine-readable health categories independent from human-facing language; graph connectivity and file existence are health signals, not evidence quality measurements.
+
+**Scope and limits:** Read the complete four-file delta and its fixture assertions. No upstream session scanner or tests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [admin.teamai-cli.tencent](https://github.com/Tencent/teamai-cli); analyzed commit `82026b3a10ddc0fa5181732ad72b58ffc28e7253`; commit date 2026-11-01T16:09:58+08:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--admin.teamai-cli.tencent.md).
+Analysis metadata: source [admin.teamai-cli.tencent](https://github.com/Tencent/teamai-cli); analyzed commit `d2230c9630b86b47ddfd50c1014664a1f51ce4f7`; commit date 2026-11-01T14:50:56+01:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--admin.teamai-cli.tencent.md).
 <!-- teamagent-analysis:end -->

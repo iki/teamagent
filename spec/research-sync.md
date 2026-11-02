@@ -8,6 +8,22 @@ The maintenance tasks refresh source evidence and prepare reviewable changes. Fe
 
 The versioned `.env` contains non-secret defaults. The ignored `.env.local` overrides them for this checkout. Both files resolve paths relative to their own project directory, independently of the caller's working directory. The portable source inventory is [`git-sources.json`](../git-sources.json), and review status remains in [`spec/analyses/state.json`](analyses/state.json). A fresh checkout needs neither the original parent folder nor its generated shell script. This machine imports parent exports and uses `..` as its Git cache through local settings.
 
+Optional `git-sources.additional.json` records explicitly registered sources that
+regenerated parent exports may omit. It uses the same strict version-1 schema
+and public source URLs as the owned inventory. Only an explicit `sources:sync`
+merges it into `git-sources.json`; observation and repository synchronization read
+the compiled owned inventory and never import supplemental declarations on their
+own. The import receipt identifies this additional configuration and its added
+count. An exact canonical duplicate is deduplicated if the parent later lists
+the source; a conflicting identity or URL fails before inventory publication.
+The optional file and compiled inventory are portable and do not require the
+original parent exports. Parent exports are never modified by this merge.
+
+The configured `ai-*` sources are intended public repositories. Prefer anonymous
+source-availability probes; a 404 records current inaccessibility and does not
+establish a private repository or deletion. Authentication and private-backup
+evidence, where separately obtained, retain their actual scope and dates.
+
 | Setting | Default | Meaning |
 |---|---|---|
 | `TEAMAGENT_GIT_SOURCES_DIR` | unset | Optional directory containing regenerable `.git-clone` / `.git-sources` import data; unset uses the repository-owned inventory |
@@ -40,7 +56,39 @@ aube run --no-install research:sync
 
 The standalone Git entry point is `pwsh -NoProfile -File app/research/git-sync.ps1 -Action sync -ProjectRoot .`. Actions are `lists`, `sync`, `status` and `observe`. Run `status` to detect staged, unstaged, untracked and submodule changes without merging them. The output manifests are `.cache/research/git-state.json` and `.cache/research/git-sync.json`; their local paths are project-relative. These caches are machine state, not portable source citations.
 
-Use `repos:observe` before `analysis:sync` when local checkouts have advanced and only their committed revisions need review. It inspects every known checkout under the maintenance lock, publishes `.cache/research/git-observation.json`, then updates the analysis input `.cache/research/git-state.json`. It does not import source lists, fetch, switch branches, stash edits or contact backup services. `repos:status` remains nonpublishing. Both local inspection actions disable Git optional writes/index refresh and repository-configured filesystem monitors. Observation rejects selection/update flags, records dirty or unavailable checkouts explicitly, and clears unverified HEAD values on inspection failure. Review remains pinned to committed objects, excluding local edits.
+Use `repos:observe` before `analysis:sync` when local checkouts have advanced and only their committed revisions need review. It inspects known identities and the repository-owned inventory under the maintenance lock, publishes `.cache/research/git-observation.json`, then updates the analysis input `.cache/research/git-state.json`. It does not import external source lists, fetch, switch branches, stash edits or contact backup services. `repos:status` remains nonpublishing. Both local inspection actions disable Git optional writes/index refresh and repository-configured filesystem monitors. Read-only Git calls also disable replacement objects, legacy grafts, commit-graph shortcuts and lazy promisor fetching, and deny Git transports, including repository-enabled remote helpers. Missing local objects fail closed rather than fetching. These restrictions follow Git's [documented environment and object-read controls](https://git-scm.com/docs/git); legacy graft files require a separate empty-file override because Git [loads them separately from replacement refs](https://github.com/git/git/blob/v2.51.0/commit.c). Observation rejects selection/update flags, records dirty or unavailable checkouts explicitly, and clears unverified HEAD values on inspection failure. Review remains pinned to committed objects, excluding local edits.
+
+Hook suppression uses the native null device: `NUL` for native Windows Git and
+`/dev/null` for POSIX Git. Do not substitute an empty hook path. The installed
+Git LFS filter can install hooks while Git inspects worktree status; on Windows,
+the former POSIX path created four hooks under the checkout's `dev/null`, and an
+empty path created them at its root. The [local reproduction](data/research-reconciliation-2026-11-01.json)
+confirmed that native `NUL` prevents those worktree additions while retaining
+correct LFS clean/dirty classification. Git status still permits configured
+normalization filters: Git LFS can maintain its private `.git` objects and local
+format setting. Observation is therefore not a guarantee of zero filesystem
+writes or isolation from arbitrary configured filters. Disabling LFS filtering
+would falsely mark unchanged hydrated content as modified. Committed-object
+reviews avoid worktree conversion; Git transport restrictions are not an OS
+network boundary for external filter programs. See Git's [hook-path contract](https://git-scm.com/docs/git-config#Documentation/git-config.txt-corehooksPath)
+and the [Git LFS filter entry point](https://github.com/git-lfs/git-lfs/blob/main/commands/command_filter_process.go).
+
+After another tool reorganizes the cache, explicitly import regenerated exports
+with `sources:sync`, then observe. Saved identities match the owned inventory by
+exact ID and URL, or by a unique unchanged canonical URL. Discovery checks the
+configured category and its reviewed folder aliases, validates the actual origin,
+and rejects simultaneous checkout candidates. A moved checkout retains its
+saved identity, former path and remote-observation time. A newly configured local
+identity is recorded separately with unknown remote availability and no remote
+check time; local access does not establish upstream freshness or a rename.
+The next full synchronization reuses a unique unchanged-origin prior record for
+its current configured identity, rather than adding the former ID as a second
+update job. Ambiguous same-origin identities remain separate and require review;
+this rule does not equate different upstream URLs. Canonical URL comparisons are
+case-sensitive after provider normalization: GitHub owner/repository spelling
+is folded, but a non-GitHub `/Repo` cannot authorize, replace or inherit evidence
+from `/repo`. This also applies to auxiliary source-list membership and actual
+checkout-origin checks.
 
 An observation has `inspectionComplete=true` and `discoveryComplete=false`: it covers known local identities, not fresh upstream discovery. Earlier `checkedAt`, upstream revisions and availability evidence retain their original remote meaning; the new `inspectedAt` identifies the local check. Its `config.gitCache` comes from the current validated project settings as a project-relative path, so downstream citation containment works with nondefault caches; stale sync options are not copied. The last remote synchronization receipt in `.cache/research/git-sync.json` is preserved. Individual manifest replacements are atomic, not a transaction across all checkouts; external Git clients can still advance a repository, and analysis rechecks those HEADs. A failed observation publication preserves the prior analysis input. If the second replacement fails, `git-observation.json` may be newer; it is not authoritative analysis input until `git-state.json` is successfully published.
 
@@ -52,10 +100,12 @@ Report IDs use lowercase category/name identities; display names and physical
 checkout spelling retain their original case. Both imported declarations and
 the owned inventory reject case-folded ID collisions before publication.
 
-The reviewed parent-export category alias `ai-get` maps to canonical `ai-query`.
-Import records this mapping as a warning and keeps `ai-query` in the portable
-inventory and report IDs; it does not add a twentieth topic category or rewrite
-analysis history. A declaration under each spelling for the same canonical ID
+The reviewed parent-export category aliases map `ai-get` to canonical `ai-query`
+and `ai-agents-manage` to canonical `ai-agents-swarm`. Import records each mapping
+as a warning and keeps the canonical category in the portable inventory;
+it does not add a twentieth topic category or rewrite analysis history.
+Existing report identities and verified aliases remain authoritative.
+A declaration under each spelling for the same canonical ID
 is a collision, not a request to choose one. Checkout discovery searches both
 category directories, including recognized lifecycle prefixes, and rejects
 multiple existing candidates. Existing origin, containment and reparse-point
@@ -84,6 +134,36 @@ Outdated prefixes follow last-upstream-commit age and are removed if activity re
 Private backup requires a retained checkout and an authenticated account. A deterministic destination name includes a source identity hash. Creation requests `private=true`; an existing destination must match a recorded backup identity, owner and privacy status before pushes. Failed creation, insufficient permissions, shallow history and missing retained material are recorded rather than described as complete backups. No public publishing or origin rewrite is involved.
 
 A directory rename is not a source identity change. Analysis reconciliation uses canonical origin and full analyzed SHA ancestry, preserves aliases, refuses ambiguous matches, and explicitly reports unavailable/shallow history. A shared ancestor alone does not establish that an arbitrary fork is an upstream rename; changed-origin cases need reviewed identity mapping. Reports retain their established links and original commit evidence.
+
+For a changed upstream URL, first verify publisher identity independently, then
+use the explicit `analysis:sync` rename procedure in
+[the analysis workflow](analyses/README.md#renames-and-ambiguous-identities).
+The next local observation or repository synchronization can consume that
+portable ledger's exact old-URL alias, new canonical URL, new inventory-ID alias
+and recorded rename event. It rechecks the actual origin and full analyzed and
+rename-event commit ancestry, rejects multiple target identities or checkouts,
+and retains the prior machine row under `previousIdentities`. This prevents a
+later synchronization from recloning the former redirected URL as an unlisted
+source. Missing review evidence, shared history alone, a wrong origin or an
+unavailable baseline never authorizes that reconciliation.
+
+Retained identity history is flat, limited to 16 entries and 1 MiB, and stays in
+the private machine manifest, including any prior backup metadata. Recursion,
+duplicate identities and invalid paths fail. Old availability, upstream SHA and
+remote-check timestamps stay bound to their old URL; a new identity starts with
+unknown remote state unless it already has its own matching observation.
+Reconciliation never changes a checkout or creates a backup. Its source review
+and the subsequent local inspection remain separate operations.
+
+Canonical URL comparisons are exact after the declared host normalization:
+GitHub/gist names fold case, while other source paths retain case. Neither a
+same-origin fallback nor an auxiliary source list may merge case-distinct
+paths. Local observation and analysis proofs disable replacement objects,
+legacy grafts, commit-graph shortcuts, lazy fetching and every transport.
+Missing local objects are unavailable evidence, never permission to contact a
+remote helper. Hooks, filesystem monitors and optional Git writes are disabled
+for these inspections. Explicit repository updates retain their separate
+network and mutation boundary.
 
 ## Analysis review and promotion
 
@@ -125,5 +205,43 @@ Initial imports and explicitly marked refreshes fetch the original public URLs w
 The current [X field dictionary](https://docs.x.com/x-api/fundamentals/data-dictionary) describes an `article` object without a stable body schema. Unknown article objects are preserved in original JSON and marked unsupported for body extraction. Standalone article URLs cannot be inferred as post IDs. Video media is not downloaded; available preview images may be retained with an explicit warning. An authenticated live run requires a usable token and account access; fixture success does not prove live permissions or current article compatibility.
 
 `usable-text` is a coarse extraction check: at least 100 web/PDF Markdown characters, no detected access shell, no parser warnings and the expected PDF media type. It does not establish complete or accurate extraction. Short API-validated posts use their known post identity instead of the web-page length threshold and remain partial for unverified thread/article coverage. Image counts do not prove visual fidelity, OCR accuracy or completeness. Public reports strip URL query parameters; private export manifests retain exact locators.
+
+### Explicit local derivative reconciliation
+
+An extraction repair from retained evidence does not turn a static source into a
+refreshing source. First prepare and review an immutable memory version and its
+export; then explicitly adopt that derivative with:
+
+```sh
+bun app/research/text-reconcile.ts --root . --request .cache/research/reconcile-request.json
+```
+
+The JSON request names one configured static resource and supplies `sourceId`,
+`expectedVersionId`, `expectedContentHash`, `expectedRecordHash`,
+`candidateVersionId`, `candidateContentHash` and a public `reason`.
+`expectedRecordHash` is SHA-256 of `JSON.stringify` applied to the validated
+current text record, including its order as decoded by the record schema. This
+guards changes to policy, status and provenance as well as the content pin.
+The operation verifies both exports, their exact source locator, workspace,
+source kind, conversion mode, creation date and strictly increasing version.
+Every original descriptor and byte hash must remain identical and nonempty.
+It does not capture, convert, authenticate, change refresh policy or advance a
+record's last remote-check time.
+
+The command retains an immutable before/after receipt under
+`spec/analyses/texts/reconciliations/` before replacing the private pin or public
+reports. Receipts contain public source summaries, hashes and a redacted reason;
+private query-bearing locators stay in the export. Retry the exact saved request
+after an interrupted publication. A different current record, candidate,
+receipt or later edit fails rather than being overwritten. Report publication
+uses the retained pre-change record and receipt identity so recovery preserves
+one attributable changelog entry. A corrupt or truncated receipt is an explicit
+repair case, never permission to recapture or overwrite evidence.
+
+The [November 1 reconciliation](analyses/texts/reconciliation-2026-11-01.md)
+records the eleven reviewed repairs and remaining fidelity limits. Alternate
+PDF extraction, recovered images and focused social-post text remain derivative
+operations with named tools and provenance. Text overlap and image counts are
+diagnostics, not proof of complete extraction or perceptual fidelity.
 
 Original resource documents and images are preserved in [data/research/texts](../data/research/texts/). Earlier generated reports and retired helper scripts remain in [the legacy archive](archive/legacy-research/README.md), with a SHA-256 migration manifest and explicit evidence limitations. Their presence is not a current source review. The old helpers depended on untracked machine commands and do not drive the new tasks.

@@ -68,6 +68,16 @@ Evidence: [src/utils/useCredits.js:1-34](https://github.com/truelockmc/streamber
 
 **Scope and limits:** Reviewed the complete new credits hook in the six-path UI change; existing security and playback caveats remain unresolved by this delta. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/truelockmc/streambert](https://github.com/truelockmc/streambert) at `270d5fa9fec9a846195b2e08df45c2d939863b64` against prior analyzed `2ffba661397392b83fd8c84dc8383d842b9f802f`. Evidence: [index.js](https://github.com/truelockmc/streambert/blob/270d5fa9fec9a846195b2e08df45c2d939863b64/index.js), [preload.js](https://github.com/truelockmc/streambert/blob/270d5fa9fec9a846195b2e08df45c2d939863b64/preload.js), [src/components/DownloadModal.jsx](https://github.com/truelockmc/streambert/blob/270d5fa9fec9a846195b2e08df45c2d939863b64/src/components/DownloadModal.jsx), [src/ipc/player.js](https://github.com/truelockmc/streambert/blob/270d5fa9fec9a846195b2e08df45c2d939863b64/src/ipc/player.js).
+
+A new renderer-to-main operation opens captured HTTP(S) streams in mpv or VLC. A capped 50-entry map retains Referer, Origin and User-Agent but intentionally excludes cookies; control characters and header lengths are restricted. Player discovery uses where/which and startup is inferred after 2.5 seconds. Detached players write temporary logs; the launcher explicitly sets windowsHide false and remote subtitles are sent only to mpv.
+
+**Architecture consequence:** External playback is a separately authorized host capability with URL, header, subtitle and subprocess ownership boundaries. Reuse the explicit no-cookie intent, but do not copy visible-window defaults, command-line bearer exposure or raw player diagnostics into Teamagent. A startup timer does not prove successful playback, and HTTP(S) scheme checking alone does not establish destination safety.
+
+**Scope and limits:** Read the complete four implementation/UI diffs in a six-path version/lock update. No external player, browser interception, network stream or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [streambert](https://github.com/truelockmc/streambert); analyzed commit `2ffba661397392b83fd8c84dc8383d842b9f802f`; commit date 2026-10-27T19:28:04+01:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-media--streambert.md).
+Analysis metadata: source [streambert](https://github.com/truelockmc/streambert); analyzed commit `270d5fa9fec9a846195b2e08df45c2d939863b64`; commit date 2026-11-01T17:15:28+01:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-media--streambert.md).
 <!-- teamagent-analysis:end -->

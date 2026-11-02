@@ -40,6 +40,23 @@ The complete inventory contains 39 changed paths. The [classifier](https://githu
 
 Normalize observed tool aliases at the import boundary and retain parser/version provenance for inferred activity. Classification is telemetry, not permission to execute the classified command. The selected source/test delta was read completely; credential, quota and UI changes elsewhere in this comparison were not audited. No upstream test, transcript import or command execution was performed.
 
+## External-update review - 2026-11-01
+
+Reviewed `a9d5575201f710711c5c474b03c492d9040bb8ab` against
+`49064483674aecf5f57f598f64bcfb8fb1728fc0`. All six changed paths are dependency
+manifests or lockfiles. The complete selected
+[desktop manifest](https://github.com/getagentseal/codeburn/blob/a9d5575201f710711c5c474b03c492d9040bb8ab/app/package.json),
+[dashboard manifest](https://github.com/getagentseal/codeburn/blob/a9d5575201f710711c5c474b03c492d9040bb8ab/dash/package.json)
+and [root lockfile](https://github.com/getagentseal/codeburn/blob/a9d5575201f710711c5c474b03c492d9040bb8ab/package-lock.json)
+deltas update UI/build packages and transitive HTTP/IP parsing packages. No
+accounting, classification or test implementation changed in this interval.
+
+Dependency movement does not establish improved cost accuracy, compatibility or
+security without separate validation. Preserve the previous runtime assessment;
+these upstream manifests do not authorize changes to Teamagent's pinned stack.
+The other three lockfile bodies and dependency implementations were not audited.
+No installation, upstream build/test or provider operation ran.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codeburn](https://github.com/getagentseal/codeburn); analyzed commit `49064483674aecf5f57f598f64bcfb8fb1728fc0`; commit date 2026-10-31T07:52:41+01:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-tokens--codeburn.md).
+Analysis metadata: source [codeburn](https://github.com/getagentseal/codeburn); analyzed commit `a9d5575201f710711c5c474b03c492d9040bb8ab`; commit date 2026-11-01T17:05:18+01:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-tokens--codeburn.md).
 <!-- teamagent-analysis:end -->

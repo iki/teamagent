@@ -1,0 +1,650 @@
+{
+  "id": "ai-agents-mem--gbrain",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/garrytan/gbrain",
+  "report": "spec/projects/ai-agents-mem--gbrain.md",
+  "analyzedSha": "1e763e28cb76655891096334d03f0883356c3ae8",
+  "analyzedAt": "2026-11-01T11:35:43.470Z",
+  "analyzedCommitDate": "2026-11-01T08:27:16Z",
+  "observedSha": "da6abab69d4fe08c1f2244f7dcba3b590d52c630",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "da6abab69d4fe08c1f2244f7dcba3b590d52c630",
+      "date": "2026-11-01T16:54:50Z",
+      "subject": "Merge pull request #8404 from garrytan/capy/gbra269-8384-followups"
+    },
+    {
+      "sha": "e9c580596f8e2140707b2bda59b0c0f67c795df5",
+      "date": "2026-11-01T16:04:32Z",
+      "subject": "test(pg-arms): measured arm weights for the quote-fence suites, so the arms shards fit the step budget"
+    },
+    {
+      "sha": "de4700bf25e1be71a4f858ba6b4e3a8f2d0d531e",
+      "date": "2026-11-01T15:34:11Z",
+      "subject": "docs: the unquote scan budget is eight times the text length (#8384)"
+    },
+    {
+      "sha": "03a6e0538c29b807c45b3294ba9c7024a7f2dab0",
+      "date": "2026-11-01T15:32:03Z",
+      "subject": "v0.60.539.0 chore(release): restamp onto master v0.60.538.0"
+    },
+    {
+      "sha": "09a21552d3fb647dcbb92ce69761bc5c80fd9ca5",
+      "date": "2026-11-01T15:31:52Z",
+      "subject": "chore: stamp v0.60.539.0"
+    },
+    {
+      "sha": "fac040f04cdbac90ba0be8b2f5dbca982152f452",
+      "date": "2026-11-01T15:28:18Z",
+      "subject": "test: remote ontology values arrive quoted in ontology-fact-visibility (fc2)"
+    },
+    {
+      "sha": "e41c8a224bd1454e2017c36cabaeaa3d81e294e0",
+      "date": "2026-11-01T14:50:24Z",
+      "subject": "fix: quote ontology_conflicts values in one batch; widen the unquote scan budget so a few cut-off fences keep later quotes unquoted"
+    },
+    {
+      "sha": "e3ac3855e7b6fc36560a0907b61dacd4c952062a",
+      "date": "2026-11-01T14:39:54Z",
+      "subject": "fix: drop tilde-block tracking from the closing-fence search (concatenated cut windows double-charged the scan budget)"
+    },
+    {
+      "sha": "80eba81db146efa1ce8357c9faad3484ee385e7c",
+      "date": "2026-11-01T14:36:48Z",
+      "subject": "fix: pre-landing review fixes (linear unquote scan budget, ontology_conflicts quoted, agent tilde block kept)"
+    },
+    {
+      "sha": "af1f5bb2d0e5fc0afa87001c04dd4d65f882ae0f",
+      "date": "2026-11-01T14:12:31Z",
+      "subject": "fix(security): whole-markdown put_page keeps agent code blocks and frontmatter; quote timeline source and ontology values; AN5 unverified-origin notice (#8384)"
+    },
+    {
+      "sha": "83c8a14e435591bf8888a231973c7ea419494e67",
+      "date": "2026-11-01T13:45:28Z",
+      "subject": "Merge pull request #8380 from garrytan/capy/gbra269-quote-followups"
+    },
+    {
+      "sha": "19ad8a0b3e825de44e4307f46116334dd7fd93f0",
+      "date": "2026-11-01T13:11:34Z",
+      "subject": "docs: put_page unfences a whole-markdown read edited past its closing fence (#8377)"
+    },
+    {
+      "sha": "7b9ad7ec4bf3bbbfd891fd3066faae07c0d6c528",
+      "date": "2026-11-01T12:33:03Z",
+      "subject": "fix(security): put_page unfences a whole-markdown read edited past its closing fence; tests assert fenced remote titles and takes (#8377)"
+    },
+    {
+      "sha": "29d937d8086d0fec23ab845cf15a86eeb291b4d2",
+      "date": "2026-11-01T12:05:24Z",
+      "subject": "v0.60.538.0 chore(release): restamp onto master v0.60.537.0"
+    },
+    {
+      "sha": "34bd517e1406b817c0403af1c48058d87a5c4426",
+      "date": "2026-11-01T12:05:11Z",
+      "subject": "chore: stamp v0.60.538.0"
+    },
+    {
+      "sha": "a200567079b4e97a9f7c3f51f98e01cd5fc75150",
+      "date": "2026-11-01T11:00:22Z",
+      "subject": "docs: key-files index lists the #8377 and #8352 tests"
+    },
+    {
+      "sha": "a47f52a5a649775e612be3822c33010d687a4a97",
+      "date": "2026-11-01T10:52:23Z",
+      "subject": "Merge remote-tracking branch 'origin/master' into capy/gbra269-quote-followups"
+    },
+    {
+      "sha": "1b03855c138b5c8fba7628e282e742f974a8b6c8",
+      "date": "2026-11-01T10:51:36Z",
+      "subject": "Merge pull request #8369 from garrytan/capy/deterministic-ownership-refusals"
+    },
+    {
+      "sha": "c5e09489c2f4798a28ab13a1c5b6f2f37bf2c5ef",
+      "date": "2026-11-01T10:45:35Z",
+      "subject": "fix: fix-check fixes (#8377: frontmatter unfenced whole again; owner-tier metadata keeps a stored self-quote)"
+    },
+    {
+      "sha": "f6bdc33448e75b992ef89687b7a3034f1428c165",
+      "date": "2026-11-01T10:31:16Z",
+      "subject": "fix: Step 11 review fixes (#8377: paged fence names the host slug; whole-markdown round trip keeps quoted metadata; iterative backtick run; takes writes and add_timeline_entry unfence copied text)"
+    },
+    {
+      "sha": "404898560e945b59453de958291307f503138c97",
+      "date": "2026-11-01T10:08:14Z",
+      "subject": "fix: per-member failure isolation in failRefusedClaims; wedge test on the shared engine (#8368)"
+    },
+    {
+      "sha": "2aeeeb2c2e64528e580a7fdf78ab53066d4c5662",
+      "date": "2026-11-01T09:59:40Z",
+      "subject": "fix: pre-landing review fixes (#8377: put_page unfences a quoted read's title and frontmatter; takes sources quoted; tests assert the quoted claim)"
+    },
+    {
+      "sha": "5d3d815e99e8469b4404a6f12823118de531d2cc",
+      "date": "2026-11-01T09:51:15Z",
+      "subject": "v0.60.537.0 chore(release): restamp onto master v0.60.536.0"
+    },
+    {
+      "sha": "ba16374a282539b6227994bafa1f6da732158d83",
+      "date": "2026-11-01T09:51:04Z",
+      "subject": "v0.60.537.0 chore(release): stamp onto master v0.60.536.0"
+    },
+    {
+      "sha": "7b35fcd3216a325de8560a0860a4152532b9cc5e",
+      "date": "2026-11-01T09:48:00Z",
+      "subject": "docs: CHANGELOG entry and TODOS follow-ups for #8368 (/ship Steps 13-14)"
+    },
+    {
+      "sha": "c56e6479dab937bcbef012dd22f010fb9ad216dc",
+      "date": "2026-11-01T09:40:52Z",
+      "subject": "fix: adversarial review fixes (#8368)"
+    },
+    {
+      "sha": "82426792eaf27b49f6afce394d6f5dcd11638fbd",
+      "date": "2026-11-01T09:21:17Z",
+      "subject": "fix: pre-landing review fixes, pass 2 (#8368)"
+    },
+    {
+      "sha": "d0367dbf3a543dcb87f036518104db427c159ff4",
+      "date": "2026-11-01T09:08:42Z",
+      "subject": "test: goldens for the chronicle trust_tier column and the quote-fence exports (#8377)"
+    },
+    {
+      "sha": "5833924caedd49865b96b8155fd3dbb23d5293e9",
+      "date": "2026-11-01T09:04:25Z",
+      "subject": "fix(security): quote chronicle, takes and page metadata reads and hook-injected facts below the owner tier; copied-back fences stored unquoted (#8377, #8352)"
+    },
+    {
+      "sha": "4278dceb335405933161c11eaeac0b3cc741c814",
+      "date": "2026-11-01T08:57:24Z",
+      "subject": "fix: pre-landing review fixes (#8368)"
+    },
+    {
+      "sha": "ea8811d17b8935336b69f65d0d0cbce0e89fbf3d",
+      "date": "2026-11-01T08:28:35Z",
+      "subject": "Merge commit '1e763e28cb76655891096334d03f0883356c3ae8' into capy/deterministic-ownership-refusals"
+    },
+    {
+      "sha": "3cb7dbdf6dee94db2efbd5b49460e68e28b7033c",
+      "date": "2026-11-01T05:19:06Z",
+      "subject": "fix(persistence): owner_marker_missing in public category, runbook row, goldens and narrowed test expectations"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BOOTSTRAP_FOR_AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "TODOS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "VERSION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-search-evidence.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/concurrent-writes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/error-codes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/sync-unblock-runbook.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/write-refusals.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openclaw.plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-coding/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-coding/.codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-coding/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-daily/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-daily/.codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-daily/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/module-size-limits.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/postgres-arm-weights.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/structural-suites.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/page-render.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/doctor/checks/persistence-capacity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/behavior-change-notice.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/chronicle/narrative.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/connectors/item-holds.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/context/turn-context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/engine-sql/timeline.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/error-registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/item-failure.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/ops/chronicle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/ops/get-page-body.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/ops/get-page-projection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/ops/pages.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/ops/takes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/ops/timeline-quote.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/ops/timeline.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/consumer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/effects.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/embedding-noop-settle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/journal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/core/persistence/owner-marker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/ownership.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/page-mutations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/physical-root-record.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/public-category.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/sync-fault-class.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/terminal-classify.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/topology-recovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/worktree-refresh.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/search/transcript-quote.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/snapshot-schema-inputs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/verbs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/mcp/context-pack-handler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "templates/bootstrap/template-repo/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/background-owner-verification.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/chronicle-event-privacy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/chronicle-ontology-private-visibility.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/chronicle-ops-scope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/cycle-patterns-read-budget.serial.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/deep-research-fetch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/e2e/engine-content-privacy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/e2e/serve-http-multi-agent.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/e2e/write-cap-wedge-8368-postgres.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/doctor/content-pglite-json.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/doctor/hot-checks-pglite-json.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/doctor/hot-checks-postgres-json.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/doctor/json-pglite-degraded.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/doctor/json-pglite-fresh.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/doctor/json-postgres-fresh.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/exports/types.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/sql-text/timeline.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/write-contract-conformance-cases.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/get-page-federated-scope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/hidden-tool-hint.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/ontology-fact-visibility.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/persistence-admin-recovery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/persistence-effects.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/persistence-physical-root.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/postgres-unit-arms.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/search-transcript-quote-8384.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/search-transcript-quote-coverage.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/search-transcript-quote-followups.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/search-transcript-quote-tiers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/takes-mcp-allowlist.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/trust-keep-maintenance-reimport-8352.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/turn-context-dedupe-attribution-7023.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/write-cap-wedge-8368.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -68,6 +68,16 @@ The [reader](https://github.com/ComposioHQ/agent-orchestrator/blob/7690e4e7ea053
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/ComposioHQ/agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator) at `e8e3342d3fff2112ca64764a7254000f2d637f68` against prior analyzed `7690e4e7ea0535757aa80441159d860309677860`. Evidence: [backend/internal/adapters/agent/claudecode/model_versions.go](https://github.com/ComposioHQ/agent-orchestrator/blob/e8e3342d3fff2112ca64764a7254000f2d637f68/backend/internal/adapters/agent/claudecode/model_versions.go), [backend/internal/adapters/agent/claudecode/model_versions_test.go](https://github.com/ComposioHQ/agent-orchestrator/blob/e8e3342d3fff2112ca64764a7254000f2d637f68/backend/internal/adapters/agent/claudecode/model_versions_test.go), [backend/internal/service/session/delegation.go](https://github.com/ComposioHQ/agent-orchestrator/blob/e8e3342d3fff2112ca64764a7254000f2d637f68/backend/internal/service/session/delegation.go).
+
+The Claude adapter separates account model availability from installed CLI compatibility. It persists provider-observed minimum versions, applies the stricter base/variant minimum, removes a gated default selection, and caches version probes by executable path/size/mtime. Unknown installed versions remain ungated; that is absence of a known incompatibility, not verified readiness. Fixtures cover learned-versus-seeded requirements and changed executable fingerprints. Delegation also checks local and remote branch references before accepting an explicit new task branch.
+
+**Architecture consequence:** Model selection should retain separate account, runtime-version and policy evidence. Treat an unknown probe as unknown, invalidate observations when the executable changes, and recheck branch ownership at the mutation boundary. Provider model/version seeds are dated upstream evidence, not automatically adopted Teamagent support.
+
+**Scope and limits:** Scoped inspection of model-version implementation, its fixture definitions and delegation branch preflight within a 181-path update; upstream tests were not executed and desktop recovery changes were not comprehensively audited.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator); analyzed commit `7690e4e7ea0535757aa80441159d860309677860`; commit date 2026-11-01T14:48:59+05:30; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--agent-orchestrator.md).
+Analysis metadata: source [agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator); analyzed commit `e8e3342d3fff2112ca64764a7254000f2d637f68`; commit date 2026-11-02T01:23:31+05:30; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--agent-orchestrator.md).
 <!-- teamagent-analysis:end -->

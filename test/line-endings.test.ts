@@ -227,6 +227,37 @@ await test("opaque declarations cannot waive authored text, valid UTF-8 or missi
   });
 });
 
+await test("the exact retained PDF derivative needs verified provenance and cannot waive sibling text", () => {
+  fixture((root) => {
+    const path =
+      ".cache/research/reconcile-2026-11-01/texts/34f46bf9-6b55-49fb-89f9-5dc6eb598d44/eb27a1d43387bcad8ca7fc151d13430d184cc61c969b8118d5584669b7c73484.md";
+    const sibling = path.replace(/[^/]+$/u, "unregistered.md");
+    const bytes = new TextEncoder().encode("Historical PDF derivative\n\u0000\n");
+    write(root, path, bytes);
+    assert.equal(inspectLineEndings(root, [path]).violations.length, 1);
+    const { originalPath } = declareOpaque(root, path, bytes);
+    const accepted = inspectLineEndings(root, [path]);
+    assert.equal(accepted.violations.length, 0);
+    assert.equal(accepted.verifiedOpaqueInputs, 1);
+    assert.equal(accepted.retainedOriginals, 1);
+    assert.deepEqual(readFileSync(join(root, path)), Buffer.from(bytes));
+    write(root, path, new TextEncoder().encode("Changed derivative\n\u0000\n"));
+    assert.throws(() => inspectLineEndings(root, [path]), /opaque input hash mismatch/u);
+    write(root, path, bytes);
+    write(root, originalPath, new TextEncoder().encode("Changed original\n\u0000\n"));
+    assert.throws(() => inspectLineEndings(root, [path]), /retained original hash mismatch/u);
+    declareOpaque(root, path, bytes);
+    write(root, sibling, bytes);
+    const rejectedSibling = inspectLineEndings(root, [path, sibling]);
+    assert.equal(rejectedSibling.violations.length, 1);
+    assert.ok(rejectedSibling.violations[0]?.includes(sibling));
+    declareOpaque(root, sibling, bytes);
+    assert.throws(() => inspectLineEndings(root, []), /allowed historical input/u);
+    declareOpaque(root, path, new TextEncoder().encode("Ordinary authored text\n"));
+    assert.throws(() => inspectLineEndings(root, []), /Valid UTF-8 text/u);
+  });
+});
+
 await test("inventory includes owned ignored outputs without following vendors, byte fixtures or junctions", () => {
   fixture((root) => {
     const git = spawnSync("git", ["init", "--quiet"], {

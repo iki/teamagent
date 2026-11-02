@@ -59,6 +59,16 @@ The new [privacy guard](https://github.com/santifer/career-ops/blob/6210e4414ad0
 
 Absent configuration means no protected values and automatic detection disabled; a successful check in that state is not proof that personal data was removed. The environment bypass requires two variables, but the second is merely nonempty and is not authenticated approval. These distinctions must remain visible if Teamagent adopts similar checks. Pattern matching cannot establish anonymity, provider non-training policy, retention or voice consent. This review read selected implementation and fixture ranges from the 1,816-line delta, not every helper or outbound caller; no upstream tests or external requests were executed.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/santifer/career-ops](https://github.com/santifer/career-ops) at `a86398e9060da3e681d41effe6fa82f2cbf98c66` against prior analyzed `6210e4414ad052f83baa560b5ab8e5bdcd2def6a`. Evidence: [tests/nonzero-exit-guard.test.mjs](https://github.com/santifer/career-ops/blob/a86398e9060da3e681d41effe6fa82f2cbf98c66/tests/nonzero-exit-guard.test.mjs), [validate-profile.mjs](https://github.com/santifer/career-ops/blob/a86398e9060da3e681d41effe6fa82f2cbf98c66/validate-profile.mjs), [verify-cv-facts.mjs](https://github.com/santifer/career-ops/blob/a86398e9060da3e681d41effe6fa82f2cbf98c66/verify-cv-facts.mjs), [web/src/lib/cv-studio/preview-html.mjs](https://github.com/santifer/career-ops/blob/a86398e9060da3e681d41effe6fa82f2cbf98c66/web/src/lib/cv-studio/preview-html.mjs).
+
+A new structural test guards against treating status-null timeout/spawn failures as expected nonzero exits, including a shrink-only exception list and detector coverage floor. Profile validation now recognizes equals-form arguments and rejects missing explicit profiles. Fact matching adds narrowly defined ATS glyph folding while preserving phrase boundaries. Preview Markdown emphasis is mapped over text segments while script/style/raw-element regions remain untouched.
+
+**Architecture consequence:** Verification should assert that rejection actually executed, not merely that success was absent. Preserve original and normalized text when matching delivery artifacts, and test multilingual glyphs. Preview formatting is not HTML sanitization; untrusted HTML still needs a separate rendering/security boundary. Prefer parsed structural lint rules over copying a handwritten JavaScript lexer.
+
+**Scope and limits:** Read four focused implementation/guard diffs within 48 changed paths. Font/PDF, locale, job-parser and browser changes were inventoried but not executed or fully audited; no resume generation or external publication occurred.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [career-ops](https://github.com/santifer/career-ops); analyzed commit `6210e4414ad052f83baa560b5ab8e5bdcd2def6a`; commit date 2026-10-31T23:55:09Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-media--career-ops.md).
+Analysis metadata: source [career-ops](https://github.com/santifer/career-ops); analyzed commit `a86398e9060da3e681d41effe6fa82f2cbf98c66`; commit date 2026-11-01T20:08:10Z; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-media--career-ops.md).
 <!-- teamagent-analysis:end -->

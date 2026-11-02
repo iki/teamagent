@@ -2,11 +2,11 @@
 
 Source: [deer-flow](https://github.com/bytedance/deer-flow) · [Analysis](../../projects/ai-agents--deer-flow.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `38e6be638bc79daa1a16ac314aa14d5460f88c6c`; commit date: 2026-11-01T15:04:16+08:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `38e6be638bc79daa1a16ac314aa14d5460f88c6c`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `08f343f5d7240a22d4b2c3274cf84a68d8075ca5`; commit date: 2026-11-01T23:59:00+08:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `08f343f5d7240a22d4b2c3274cf84a68d8075ca5`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/bytedance/deer-flow/compare/38e6be638bc79daa1a16ac314aa14d5460f88c6c...38e6be638bc79daa1a16ac314aa14d5460f88c6c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/bytedance/deer-flow/compare/08f343f5d7240a22d4b2c3274cf84a68d8075ca5...08f343f5d7240a22d4b2c3274cf84a68d8075ca5). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -56,6 +56,16 @@ The [guide](https://github.com/cloudflare/cloudflare-docs/blob/d09c8238fd7278400
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/cloudflare/cloudflare-docs](https://github.com/cloudflare/cloudflare-docs) at `492f4244c57f6b4656470b8219d19e88da193357` against prior analyzed `d09c8238fd7278400b29c5b0ee4c8d1d9d8be3a6`. Evidence: [src/components/models/ModelDetailPage.astro](https://github.com/cloudflare/cloudflare-docs/blob/492f4244c57f6b4656470b8219d19e88da193357/src/components/models/ModelDetailPage.astro).
+
+Catalog model pages now distinguish the model identifier used with Workers AI and gateway APIs from the provider-native identifier used by a direct provider endpoint or SDK. This is a conditional documentation component, not a routing implementation change.
+
+**Architecture consequence:** Represent a model route with its host and API namespace, not just a display name; do not pass a gateway catalog identifier unchanged to an unrelated native adapter.
+
+**Scope and limits:** Read the complete one-file delta. No provider model availability, entitlement or runtime compatibility was tested.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deploy-cloudflare](https://github.com/cloudflare/cloudflare-docs); analyzed commit `d09c8238fd7278400b29c5b0ee4c8d1d9d8be3a6`; commit date 2026-10-31T20:24:42Z; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--deploy-cloudflare.md).
+Analysis metadata: source [deploy-cloudflare](https://github.com/cloudflare/cloudflare-docs); analyzed commit `492f4244c57f6b4656470b8219d19e88da193357`; commit date 2026-11-01T20:05:10Z; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--deploy-cloudflare.md).
 <!-- teamagent-analysis:end -->

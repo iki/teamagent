@@ -1,0 +1,980 @@
+{
+  "id": "ai-agents-mem--mentisdb",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/CloudLLM-ai/mentisdb",
+  "report": "spec/projects/ai-agents-mem--mentisdb.md",
+  "analyzedSha": "67cb559d3b004951232387ea694df4c490d12ba1",
+  "analyzedAt": "2026-11-01T11:35:43.470Z",
+  "analyzedCommitDate": "2026-10-31T10:56:46-06:00",
+  "observedSha": "3a4442a9f65feb2578b04d9977806911aeb719de",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "3a4442a9f65feb2578b04d9977806911aeb719de",
+      "date": "2026-11-01T13:07:49-07:00",
+      "subject": "docs(whitepaper): a second daemon now refuses to start (7548de9)"
+    },
+    {
+      "sha": "f89365c82964ff01b25dc2107923cac90b5d49e9",
+      "date": "2026-11-01T13:07:29-07:00",
+      "subject": "docs: 45 MCP tools after mentisdb_migration_status"
+    },
+    {
+      "sha": "7548de968a2b902be4c4c868b049c193e6b03749",
+      "date": "2026-11-01T13:06:42-07:00",
+      "subject": "fix(daemon): refuse to start a second daemon on a data directory in use"
+    },
+    {
+      "sha": "01f80fa18ec84bc338ab0cc44d6ec229313ff06b",
+      "date": "2026-11-01T13:06:22-07:00",
+      "subject": "docs(whitepaper): background migrations are live in the daemon (8cfebe2)"
+    },
+    {
+      "sha": "93e312f48869aff418983173dd23e8df48a37437",
+      "date": "2026-11-01T13:06:01-07:00",
+      "subject": "docs(changelog): drop a truncated duplicate of the migration entry"
+    },
+    {
+      "sha": "8cfebe2457dc27b85902e1eca05bfc6dc997be5a",
+      "date": "2026-11-01T13:05:18-07:00",
+      "subject": "feat(migration): daemon wiring, status surfaces, migrate CLI, dashboard gate and banner"
+    },
+    {
+      "sha": "62933407ad3068b8684d7aebfdacc80c5a77ecf1",
+      "date": "2026-11-01T13:05:05-07:00",
+      "subject": "docs(whitepaper): data-directory lock and what it does not prevent"
+    },
+    {
+      "sha": "91b480ab53480727d43ad1808da3525794922965",
+      "date": "2026-11-01T13:04:30-07:00",
+      "subject": "docs(whitepaper): Python read signer; no general request rate limiting"
+    },
+    {
+      "sha": "9a85d5907de57caa637a57b5178c6de3881c30dc",
+      "date": "2026-11-01T13:03:59-07:00",
+      "subject": "test(security): cross-chain lineage must not leak a private replacement to a public reader"
+    },
+    {
+      "sha": "3caedd47c8e30f3a777df6a05bc1fedb5a3c0627",
+      "date": "2026-11-01T13:02:06-07:00",
+      "subject": "docs(readme): current-master search scoring and full-protocol benchmark numbers"
+    },
+    {
+      "sha": "631e6de5a4ae38e630a501587b862df4e22caa0a",
+      "date": "2026-11-01T13:01:26-07:00",
+      "subject": "docs(whitepaper): full-protocol benchmark run as the headline (LoCoMo-10P R@10 76.7%, LongMemEval R@5 69.8%)"
+    },
+    {
+      "sha": "70e6e35ac0d526e8449a512bf81964446f0207c4",
+      "date": "2026-11-01T12:59:55-07:00",
+      "subject": "feat(retrieval): cross-chain/branch lineage, bundle seed redirection; full-protocol benchmark results"
+    },
+    {
+      "sha": "4a46177b26b3ac231f07284d50a1d51e804a272d",
+      "date": "2026-11-01T12:59:32-07:00",
+      "subject": "security(mcp)+feat(pymentisdb): regression tests for the cloudllm_mcp holes; read-proof signing in the Python client"
+    },
+    {
+      "sha": "b66008520e51faa1d20f43d21cbf8318975cbb52",
+      "date": "2026-11-01T12:47:20-07:00",
+      "subject": "docs(whitepaper): thesaurus applies in the library too; per-query knobs on every surface; deprecated PPR/LLM rerank"
+    },
+    {
+      "sha": "26d27b386b58fc564a0be9314fcb4bc254e68103",
+      "date": "2026-11-01T12:47:14-07:00",
+      "subject": "docs: vector multiplier at the best lexical match is 11x, not 8x"
+    },
+    {
+      "sha": "8399dd7e82bc4a87af7b551fea3601af886eeffc",
+      "date": "2026-11-01T12:41:41-07:00",
+      "subject": "feat(api): ranking knobs on REST, MCP and CLI; library/server thesaurus parity; deprecate llm_rerank and ppr"
+    },
+    {
+      "sha": "8f4f2b8e5b0fb35c76563c6c64b719f726d09b80",
+      "date": "2026-11-01T12:37:16-07:00",
+      "subject": "docs(whitepaper): open-time verification of governed chains, quarantine, operator-signed checkpoint"
+    },
+    {
+      "sha": "4fbca40386614b4870e5c1f3c55e1f6506fe5fb2",
+      "date": "2026-11-01T12:36:30-07:00",
+      "subject": "feat(security): verify governed chains when they open; quarantine forged thoughts; signed checkpoint; lock diverged chains"
+    },
+    {
+      "sha": "5f044b0cedb7eab44c575ae5ea355a76aa945059",
+      "date": "2026-11-01T12:14:35-07:00",
+      "subject": "docs(whitepaper): current-default benchmark figures are a provisional A/B; 0.10.9.54 stays the reference"
+    },
+    {
+      "sha": "8c3dee2fc4e95f0e8c3b647b9b2ebc187ec387d2",
+      "date": "2026-11-01T12:13:57-07:00",
+      "subject": "docs(whitepaper): live reads honour invalidation edge validity (2bc4560)"
+    },
+    {
+      "sha": "f48b0fece02f5a64ddb2ddda71916770481e8da6",
+      "date": "2026-11-01T12:13:34-07:00",
+      "subject": "docs(whitepaper): benchmark A/B setup stated exactly; all cutoffs for the current defaults"
+    },
+    {
+      "sha": "2168abbe4b60fb3a290133955b1e39f9247f540e",
+      "date": "2026-11-01T12:12:55-07:00",
+      "subject": "fix(security): federated hits and MEMORY.md export named private successors and contesters to public readers"
+    },
+    {
+      "sha": "2bc4560dabfbdcd8deb17d21677e1ad2a69b41a7",
+      "date": "2026-11-01T12:12:03-07:00",
+      "subject": "fix: lineage compiles without default features; expired invalidations stop hiding their target"
+    },
+    {
+      "sha": "8ccf1dfc2bb71face056ae3ed9f4224960e64bf5",
+      "date": "2026-11-01T12:07:27-07:00",
+      "subject": "docs(readme): note that relative vector fusion replaced the absolute formula as default"
+    },
+    {
+      "sha": "7e3f8421c81581cce89c02451fb3067dc61d290a",
+      "date": "2026-11-01T12:07:19-07:00",
+      "subject": "feat(dashboard)+perf+fix: access panel for the operator, audience benchmark, llm-extraction gate on the wrong module"
+    },
+    {
+      "sha": "525f9e2c94aeaf6a072b2eba6568517abb1eaa3a",
+      "date": "2026-11-01T12:06:10-07:00",
+      "subject": "docs(whitepaper): relative vector fusion, result-time duplicate collapse, current benchmark numbers"
+    },
+    {
+      "sha": "642fe0d96dde91392f9f70b790f6def06fdf8035",
+      "date": "2026-11-01T12:03:55-07:00",
+      "subject": "feat(search): length-independent vector fusion, result-time duplicate collapse, registry-aware lexical refresh"
+    },
+    {
+      "sha": "d8e3818324f54be890605444ada5162b674d852b",
+      "date": "2026-11-01T11:54:54-07:00",
+      "subject": "fix(export): MEMORY.md export drops superseded thoughts and marks contested ones; federated hits carry version"
+    },
+    {
+      "sha": "4c25506c41655ad9aa4ba37ec28bb983d1d92b82",
+      "date": "2026-11-01T11:49:32-07:00",
+      "subject": "docs(whitepaper): operator-only key administration, closed push side channels, governed merge/restore rules"
+    },
+    {
+      "sha": "1a794a4d7c798906751f45faffbae166a240ec17",
+      "date": "2026-11-01T11:45:07-07:00",
+      "subject": "test(fuzz): seed corpora for read_auth_header, operator_op and segment_map"
+    },
+    {
+      "sha": "918ec6dfb0f59bf5f5a89f601643005a994e065d",
+      "date": "2026-11-01T11:37:31-07:00",
+      "subject": "feat(security): operator-only key administration, closed side channels, governed backup fast-forward"
+    },
+    {
+      "sha": "e8ae15bcd0050276db39a9e711d5787447ade9da",
+      "date": "2026-11-01T11:01:27-07:00",
+      "subject": "fix(lineage): saturate caller-supplied limits in successor redirection"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MENTISDB_SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "WHITEPAPER.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "WHITEPAPER.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "WHITEPAPER.tex",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benches/audience_search.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benches/search_ranked.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benches/standing_context.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benches/storage_paths.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "build-whitepaper.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "changelog.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/CHAIN_ACCESS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/CLI_PARITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/correction_audit.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/recall_audit.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "fuzz/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "fuzz/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/chain_key/4a3dec2d1f8245280855c42db0ee4239f917fdb8",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/chain_key/blank",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/chain_key/empty",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/chain_key/padded",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/chain_key/traversal",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/chain_key/unicode-space",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/operator_op/allow",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/operator_op/bad",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/operator_op/deny",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/operator_op/keyspec",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/operator_op/set_mode",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/operator_op/show",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/read_auth_header/empty",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/read_auth_header/escaped_ids",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/read_auth_header/long_nonce",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/read_auth_header/negative_ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/read_auth_header/valid_shape",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/read_auth_header/wrong_version",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/segment_map/ff",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/segment_map/one",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/corpus/segment_map/zeros",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/fuzz_targets/chain_key.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/fuzz_targets/migration_chain.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/fuzz_targets/migration_record.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/fuzz_targets/operator_op.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/fuzz_targets/read_auth_header.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fuzz/fuzz_targets/segment_map.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pymentisdb/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pymentisdb/cffi-2.1.1-cp314-cp314-macosx_11_0_arm64.whl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pymentisdb/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pymentisdb/cryptography-50.0.2-cp311-abi3-macosx_11_0_arm64.whl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pymentisdb/pycparser-3.12-py3-none-any.whl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pymentisdb/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pymentisdb/read_auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pymentisdb/tests/test_read_auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "results/benchmarks/2026-11-01-full-protocol/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "results/benchmarks/2026-11-01-full-protocol/lme_default.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "results/benchmarks/2026-11-01-full-protocol/lme_rerank.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "results/benchmarks/2026-11-01-full-protocol/locomo_default_k10.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "results/benchmarks/2026-11-01-full-protocol/locomo_default_k10.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "results/benchmarks/2026-11-01-full-protocol/locomo_default_k5.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "results/benchmarks/2026-11-01-full-protocol/locomo_default_k5.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "results/benchmarks/2026-11-01-full-protocol/locomo_rerank_k10.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "results/benchmarks/2026-11-01-full-protocol/locomo_rerank_k10.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "results/benchmarks/2026-11-01-full-protocol/locomo_rerank_k5.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "results/benchmarks/2026-11-01-full-protocol/locomo_rerank_k5.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/whitepaper/header.tex",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/whitepaper/md2tex.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/whitepaper/table_widths.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/access.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/audience.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/auth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/backup.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/bin/mentisdb.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/args.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/catalog.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cli/migrate.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/remote.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/dashboard.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/dashboard_static/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/decode_limits.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/lineage.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/migration/codec.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/migration/engine.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/migration/fixtures.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/migration/manager.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/migration/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/operator.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/read_auth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/search/expansion.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/search/hnsw_backend.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/search/implicit_edges.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/search/lexical.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/search/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/search/ppr.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/search/sidecar.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/server_lens.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/signing.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skills.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/standing.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/access_dashboard_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/access_policy_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/access_rest_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/audience_segments_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/backup_governed_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/cli_payload_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/cli_remote_behavior_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/cli_remote_parse_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/collapse_duplicates_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/core_agent_registry_counters_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/core_bincode_limits_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/core_crash_recovery_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/core_dedup_window_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/core_embed_outside_lock_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/core_hnsw_digest_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/core_sidecar_background_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/dashboard_security_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/dashboard_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/dedup_guard_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/df_scope_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/migration_cli_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/migration_daemon_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/migration_engine_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/migration_manager_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/migration_server_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/migration_signature_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/open_verification_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/operator_surfaces_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/operator_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/private_side_channels_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/ranking_knobs_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/read_auth_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/search_lexical_scratch_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/search_ranked_query_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/search_ranked_topk_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/search_rrf_rerank_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/search_sidecar_digest_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sec_access_paths_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sec_audience_server_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sec_chain_key_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sec_cross_chain_lineage_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sec_dashboard_hardening_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sec_dashboard_host_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sec_dashboard_pin_bearer_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sec_limits_probe_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sec_mcp_library_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sec_rebinding_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sec_scope_bypass_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sec_signing_governance_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/server_federated_rrf_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/server_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/skill_protocol_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/standing_context_server_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/standing_context_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/valid_version_retrieval_tests.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -1,0 +1,740 @@
+{
+  "id": "ai-agents--claude.ruflo",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/ruvnet/ruflo",
+  "report": "spec/projects/ai-agents--claude.ruflo.md",
+  "analyzedSha": "e580bbc8204874f762d132fe441b18192979211b",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-11-01T06:29:40Z",
+  "observedSha": "a3d45e64b9ce66d3a172c8051e8b20561321eb64",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "a3d45e64b9ce66d3a172c8051e8b20561321eb64",
+      "date": "2026-11-01T14:13:37-05:00",
+      "subject": "feat(core): governed context delegation with reproducible benchmark proof (#4648)"
+    },
+    {
+      "sha": "902f973b36aad98af7841d91951c4349e7df1bd8",
+      "date": "2026-11-01T13:03:22-05:00",
+      "subject": "docs(dream-cycle): correct 2026-11-01 reachability framing (post-review) (#4637)"
+    },
+    {
+      "sha": "3c30ee3fa3ac43b732f20771da36abcba74c5635",
+      "date": "2026-11-01T12:52:22-05:00",
+      "subject": "feat(agentdb): episode CRUD over agentdb 3.3 (ADR-520) + release 3.69.0 (#4642)"
+    },
+    {
+      "sha": "47406b0a9620ecf1134e29569b6b9527c2beba4d",
+      "date": "2026-11-01T12:17:59-05:00",
+      "subject": "fix(memory,neural): AgentDB SQL fallback persistence, cache size reuse, MoE mean P_i (#4639)"
+    },
+    {
+      "sha": "73b20daf6e4e455549f83eef267ed0641dd91f50",
+      "date": "2026-11-01T12:17:55-05:00",
+      "subject": "fix(cli): session-end consolidation, session snapshot IDs, Fisher decay env (#4638)"
+    },
+    {
+      "sha": "60f3b336ca3c5f3604503d1cd60620cef1413ae3",
+      "date": "2026-11-01T12:17:51-05:00",
+      "subject": "fix(security): realpath containment in hooks_codemod (#4346); strict-majority Raft quorum (#4458) (#4636)"
+    },
+    {
+      "sha": "7cd8c4517c087d6fcea8bee86740d8cc3e06fee1",
+      "date": "2026-11-01T12:17:47-05:00",
+      "subject": "fix(security): prototype pollution in config MCP tools scope handling (#4635)"
+    },
+    {
+      "sha": "3667ba6573ef811383881f8a887978798bf2113d",
+      "date": "2026-11-01T11:43:06-05:00",
+      "subject": "fix(cli): enforce swarm.maxAgents in agent_spawn (#4572); fix the two red main CI tests (#4640)"
+    },
+    {
+      "sha": "bb3869c9c96f0664724999922f0b00c05f039448",
+      "date": "2026-11-01T10:26:26-05:00",
+      "subject": "fix: align bundled SKILL.md name: fields with their directory names (#1054) (#4616)"
+    },
+    {
+      "sha": "45b42984d3e9956bf799484484b2ee7683f0912f",
+      "date": "2026-11-01T10:26:22-05:00",
+      "subject": "fix: statusline DDD% reflects pattern count, not DDD domains (#1047) (#4615)"
+    },
+    {
+      "sha": "1b783e0c98faa35836b2be9a8808da1e272a3077",
+      "date": "2026-11-01T10:26:18-05:00",
+      "subject": "dream(security): gate admin-plane trust-change/topology-change below ATTESTED (evaluated) #4633 (#4634)"
+    },
+    {
+      "sha": "36a1575eaf739b4f8de3303953a432691aa717d2",
+      "date": "2026-11-01T10:26:15-05:00",
+      "subject": "fix(ruflo-core): say why a stale local CLI build failed and fall back to npx (0.2.13) (#4607)"
+    },
+    {
+      "sha": "b18d64147876d1db75602d6c10c154b4c7be2177",
+      "date": "2026-11-01T10:26:11-05:00",
+      "subject": "fix(claims): keep recorded progress when claims_handoff omits progress (#4596)"
+    },
+    {
+      "sha": "173e047e04e04499ea96671e09c565d8371c2670",
+      "date": "2026-11-01T10:26:07-05:00",
+      "subject": "fix(daa): keep the names of object steps in daa_workflow_create (#4599)"
+    },
+    {
+      "sha": "3590274e30e7ecab7ccad9bac3b4f8f8989574e3",
+      "date": "2026-11-01T10:26:03-05:00",
+      "subject": "fix(daa): keep same-millisecond daa_knowledge_share entries from overwriting each other (#4601)"
+    },
+    {
+      "sha": "dbf708a75aa8d6b7273d6e122802b24c31c4a8f9",
+      "date": "2026-11-01T10:25:59-05:00",
+      "subject": "fix(coordination): rotate through active nodes in round-robin load balancing (#4621)"
+    },
+    {
+      "sha": "f5c8b346e35f58a5d60991209e0be2d2d597d2d1",
+      "date": "2026-11-01T10:25:56-05:00",
+      "subject": "fix(workflow): workflow_run creates a ready workflow instead of a fake running one (#4612)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/marketplace.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/agentdb-advanced/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/agentdb-learning/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/agentdb-memory-patterns/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/agentdb-optimization/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/agentdb-vector-search/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/hooks-automation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/pair-programming/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/reasoningbank-agentdb/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/reasoningbank-intelligence/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/skill-builder/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/swarm-orchestration/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/v3-cli-modernization/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/v3-core-implementation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/v3-ddd-architecture/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/v3-integration-deep/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/v3-mcp-optimization/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/v3-memory-unification/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/v3-performance-optimization/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/v3-security-overhaul/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/v3-swarm-coordination/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/verification-quality/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/context-delegation.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/context-delegation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dream-cycle/LEDGER.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-11-01.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-core/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-core/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-core/scripts/mcp-launch.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-core/scripts/mcp-launch.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-core/scripts/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ruflo/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/agentdb-advanced/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/agentdb-learning/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/agentdb-memory-patterns/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/agentdb-optimization/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/agentdb-vector-search/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/hooks-automation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/pair-programming/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/reasoningbank-agentdb/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/reasoningbank-intelligence/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/skill-builder/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/swarm-orchestration/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/v3-cli-modernization/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/v3-core-implementation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/v3-ddd-architecture/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/v3-integration-deep/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/v3-mcp-optimization/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/v3-memory-unification/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/v3-performance-optimization/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/v3-security-overhaul/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/v3-swarm-coordination/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/verification-quality/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/agent-spawn-maxagents-4572.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/agentdb-episode-crud-520.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/anthropic-context-adapter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/__tests__/bug-cluster-2219-2226.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/claims-handoff-progress.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/config-scope-prototype-safety.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/context-delegation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/context-provider-pilot.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/context-subscription-pilot.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/coordination-load-balance-round-robin.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/daa-knowledge-share-same-ms.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/daa-workflow-step-names.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/ewc-fisher-decay-env-3475.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/hooks-codemod-symlink-containment.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/issue-1047-ddd-statusline-metrics.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/__tests__/issue-4203-rabitq-auto-build.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/session-end-nightly-learner-3908.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/session-memory-snapshot-ids-4404.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/skill-name-matches-dir-1054.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/__tests__/workflow-cli-tool-shape.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/workflow-run-ready-4609.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/benchmarks/context-delegation/corpus.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/benchmarks/context-delegation/provider-pilot.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/benchmarks/context-delegation/provider-preflight.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/benchmarks/context-delegation/results.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/benchmarks/context-delegation/run.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/benchmarks/context-delegation/subscription-live-attempt.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/benchmarks/context-delegation/subscription-pilot.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/benchmarks/context-delegation/validation.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/benchmarks/context-delegation/verify.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/src/commands/context-plan.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/commands/hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/commands/workflow.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/src/mcp-tools/agentdb-episode-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/mcp-tools/agentdb-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/mcp-tools/claims-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/mcp-tools/config-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/mcp-tools/coordination-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/mcp-tools/daa-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/mcp-tools/hooks-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/mcp-tools/session-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/mcp-tools/workflow-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/src/memory/episode-crud.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/memory/ewc-consolidation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/memory/memory-bridge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/src/services/anthropic-context-adapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/src/services/context-delegation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/tsconfig.context-delegation.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/memory/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/memory/src/agentdb-backend-lock.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/memory/src/agentdb-backend-sql-fallback.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/memory/src/agentdb-backend.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/memory/src/cache-manager-size-reuse.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/memory/src/cache-manager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/neural/__tests__/moe-router-load-balance.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/neural/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/neural/src/moe-router.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/plugin-agent-federation/__tests__/unit/policy-engine.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/plugin-agent-federation/src/application/policy-engine.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/plugin-agent-federation/src/domain/entities/trust-level.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/swarm/__tests__/consensus.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/swarm/__tests__/raft-quorum-strict-majority-4458.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/swarm/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/swarm/src/consensus/raft.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/docs/adr/ADR-520-agentdb-3-3-episode-crud.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/docs/adr/ADR-521-bounded-context-delegation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/pnpm-lock.yaml",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

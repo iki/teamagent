@@ -2,11 +2,11 @@
 
 Source: [gflow-cli](https://github.com/ffroliva/gflow-cli) · [Analysis](../../projects/ai-query--gflow-cli.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `4ee2c60af9ca2230c9b38cb8d29b3eb18648a69f`; commit date: 2026-11-01T07:40:41Z; review date: 2026-11-01T11:35:43.470Z; observed SHA: `4ee2c60af9ca2230c9b38cb8d29b3eb18648a69f`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `4ee2c60af9ca2230c9b38cb8d29b3eb18648a69f`; commit date: 2026-11-01T07:40:41Z; review date: 2026-11-01T11:35:43.470Z; observed SHA: `4ee2c60af9ca2230c9b38cb8d29b3eb18648a69f`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ffroliva/gflow-cli/compare/4ee2c60af9ca2230c9b38cb8d29b3eb18648a69f...4ee2c60af9ca2230c9b38cb8d29b3eb18648a69f). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

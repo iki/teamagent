@@ -56,6 +56,16 @@ The complete selected [OAuth issuance comparison](https://github.com/maximhq/bif
 
 For Teamagent, cached grants need live scope/identity checks at refresh as well as at initial consent, with explicit reconciliation and revocation outcomes. Do not infer that rejecting a replay invalidates every previously issued access token; the inspected change specifically revokes refresh tokens. The selected 348-line delta was fully read within a 1,209-path update. Other OAuth handlers, store concurrency and full protocol correctness were not audited; no credentials, provider or upstream tests were used.
 
+## External-update review - 2026-11-01
+
+Reviewed `638169e9f11f04e790d0dd093fd64633c65c502a` against `496693af8465c3e5c5ff504deaf28c43563227d4`.
+
+The 87-path range separates TLS to an HTTPS proxy from TLS to the requested destination. The [HTTP factory](https://github.com/maximhq/bifrost/blob/638169e9f11f04e790d0dd093fd64633c65c502a/core/network/http.go) now confines the global proxy `skip_tls_verify` option to the proxy hop, merges an explicitly configured proxy CA with root trust, and opens a separate CONNECT tunnel so the target does not inherit that global skip flag. Caller-supplied TLS configuration is cloned: this change alone is not a guarantee against an independently insecure caller configuration. A malformed CA is logged and ignored by the factory; no fail-closed configuration claim follows from this layer alone.
+
+The [proxy-aware transport](https://github.com/maximhq/bifrost/blob/638169e9f11f04e790d0dd093fd64633c65c502a/core/network/ssrf.go) rebuilds a derived transport when the global configuration identity changes, allowing existing clients to observe updated CA settings without mutating their base transport. The complete inspected [TLS fixture delta](https://github.com/maximhq/bifrost/blob/638169e9f11f04e790d0dd093fd64633c65c502a/core/network/ssrf_test.go) distinguishes untrusted proxy, untrusted target, proxy-only skip and target/proxy CA combinations for clients created before and after updates.
+
+**Harness consequence:** Scope certificate policy and credentials to each hop and retain destination validation independently of routing. Trusting an inspection CA changes who can observe traffic and must be explicit. The HTTPS helper keeps a target-address-to-proxy map with no bound in the inspected delta; resource ownership and concurrent per-request route isolation need separate verification. Reviewed HTTP, proxy-aware transport and selected TLS fixtures only; the rest of SSRF policy, providers, configuration save path and base-path UI were not exhaustively audited. No network requests, proxy, TLS tests or benchmark were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bifrost](https://github.com/maximhq/bifrost); analyzed commit `496693af8465c3e5c5ff504deaf28c43563227d4`; commit date 2026-11-01T14:10:26+05:30; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--bifrost.md).
+Analysis metadata: source [bifrost](https://github.com/maximhq/bifrost); analyzed commit `638169e9f11f04e790d0dd093fd64633c65c502a`; commit date 2026-11-01T11:40:34-08:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--bifrost.md).
 <!-- teamagent-analysis:end -->

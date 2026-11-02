@@ -2,11 +2,11 @@
 
 Source: [repomix](https://github.com/yamadashy/repomix) · [Analysis](../../projects/ai-query--repomix.md) · [import-generation](../../import-generation.md), [memory](../../memory.md), [skills](../../skills.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `915945cc18c71064d9074fb176b665eeeca63f59`; commit date: 2026-11-01T16:32:03+09:00; review date: 2026-11-01T11:37:37.120Z; observed SHA: `915945cc18c71064d9074fb176b665eeeca63f59`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `fe02ab760f14cc2b22123597cb46b37fc52144e7`; commit date: 2026-11-02T00:33:19+09:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `fe02ab760f14cc2b22123597cb46b37fc52144e7`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/yamadashy/repomix/compare/915945cc18c71064d9074fb176b665eeeca63f59...915945cc18c71064d9074fb176b665eeeca63f59). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/yamadashy/repomix/compare/fe02ab760f14cc2b22123597cb46b37fc52144e7...fe02ab760f14cc2b22123597cb46b37fc52144e7). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

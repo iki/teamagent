@@ -40,6 +40,16 @@ The complete six-path delta expands planner guidance for collision-prone organiz
 
 For Teamagent, identity gates must apply consistently to both evidence and derived summaries. Preserve excluded-item provenance and uncertainty in internal receipts even when irrelevant namesakes are omitted from the user-facing answer; the changed synthesis prompt's instruction to drop them silently is not an evidence-retention policy. The unchanged matcher was not re-audited; fixtures were read, not run, and no live source or retrieval-quality benchmark was used.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) at `6894d44e088c449ecdd7246a18763fddba1ff805` against prior analyzed `7efc0ef764765ed9ceff5ce1204462b35b89d680`. Evidence: [skills/last30days/scripts/last30days.py](https://github.com/mvanhorn/last30days-skill/blob/6894d44e088c449ecdd7246a18763fddba1ff805/skills/last30days/scripts/last30days.py), [skills/last30days/scripts/lib/pipeline.py](https://github.com/mvanhorn/last30days-skill/blob/6894d44e088c449ecdd7246a18763fddba1ff805/skills/last30days/scripts/lib/pipeline.py), [skills/last30days/scripts/lib/youtube_yt.py](https://github.com/mvanhorn/last30days-skill/blob/6894d44e088c449ecdd7246a18763fddba1ff805/skills/last30days/scripts/lib/youtube_yt.py).
+
+External research plans can arrive on stdin and are parsed/validated before their normalized content is hashed for cache identity; invalid plans fail before falling back to an internal paid planner. Requested but unavailable source sets get a setup error. YouTube work adds a shared per-run bot/rate-limit flag, rechecked after acquiring the subprocess slot, and reserves 60–75 seconds for transcript work according to target count.
+
+**Architecture consequence:** Plan identity must follow validated content, independent of its transport. Preserve requested-source failures and avoid unauthorized fallback. Reserve task budgets for downstream stages and recheck stop conditions after queue admission. A timing heuristic is not a retrieval-completeness guarantee, and stdin still requires an outer byte/deadline bound.
+
+**Scope and limits:** Read CLI and source-availability changes plus the budget/block/queue-admission portion of YouTube changes within eighteen paths. The full alternate transcript-provider path, updated fixtures and live research behavior were not executed or comprehensively reviewed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [query-last30days](https://github.com/mvanhorn/last30days-skill); analyzed commit `7efc0ef764765ed9ceff5ce1204462b35b89d680`; commit date 2026-10-28T09:30:56-07:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--query-last30days.md).
+Analysis metadata: source [query-last30days](https://github.com/mvanhorn/last30days-skill); analyzed commit `6894d44e088c449ecdd7246a18763fddba1ff805`; commit date 2026-11-01T12:13:06-05:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--query-last30days.md).
 <!-- teamagent-analysis:end -->

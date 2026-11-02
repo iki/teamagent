@@ -46,6 +46,16 @@ The complete new [recovery cases](https://github.com/zeroclaw-labs/zeroclaw/blob
 
 **Coverage:** Read host delta offsets 0–289 covering staging/admission changes and the complete 126-line recovery-fixture delta. Remaining host changes, recovery primitive internals and platform behavior were not fully audited or run. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/zeroclaw-labs/zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) at `b28d1c3de99099fd565cdedd4d80d8cff7f6a855` against prior analyzed `0bb1d4a801ac7dbecc9e9a91128c0a96ace98ab3`. Evidence: [install.sh](https://github.com/zeroclaw-labs/zeroclaw/blob/b28d1c3de99099fd565cdedd4d80d8cff7f6a855/install.sh), [scripts/ci/install_cli_package_version_test.sh](https://github.com/zeroclaw-labs/zeroclaw/blob/b28d1c3de99099fd565cdedd4d80d8cff7f6a855/scripts/ci/install_cli_package_version_test.sh).
+
+Installer version reporting now selects the package-version field instead of the last token, which can be a parenthesized build identifier. The new isolated fixture exercises old/new version formats across prebuilt installation, source installation and uninstall, with synthetic executables and download stubs.
+
+**Architecture consequence:** Installed-agent capability discovery needs a version parser tied to the actual CLI format, with package version and build identity stored separately. These fixture definitions do not establish a live installation result.
+
+**Scope and limits:** Reviewed installer changes and the complete new fixture within a three-path update. No installer, upstream CI or source binary was run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [zeroclaw](https://github.com/zeroclaw-labs/zeroclaw); analyzed commit `0bb1d4a801ac7dbecc9e9a91128c0a96ace98ab3`; commit date 2026-11-01T01:58:43Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--zeroclaw.md).
+Analysis metadata: source [zeroclaw](https://github.com/zeroclaw-labs/zeroclaw); analyzed commit `b28d1c3de99099fd565cdedd4d80d8cff7f6a855`; commit date 2026-11-01T16:31:30Z; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--zeroclaw.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,88 @@
+# VoiceStudio: local speech tools and artifact delivery
+
+Source: [voicestudio](https://github.com/debpalash/VoiceStudio) · Category: `ai-media`
+
+Review depth: **source-reviewed**. Snapshot `c4d63ef207f345b4405f8e8320a73d273ce7187f`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+The MCP server exposes speech synthesis, voice profile creation, transcription, voice/language discovery, and health information. It supports stdio and optional SSE transport. Generated audio can be returned inline, as files/URLs, or both. The implementation calls out the token cost of inline base64 and establishes a configured base directory as the boundary for file-shaped audio inputs.
+
+The inspected helpers validate base64, infer common audio container extensions from content signatures, define input-size and identifier constraints, and canonicalize the base path. These are useful adapter patterns; they do not amount to a full audit of every decoder, filesystem operation, or remote transport.
+
+## Harness adoption
+
+Shortlist as an optional local speech worker for dictation, transcription, narration, dubbing workflows, and user-authorized voice profiles. Prefer file mode in the harness: return an artifact ID, MIME type, duration, checksum, and signed delivery URL, then let desktop/mobile/channel clients play the audio. Only transcriptions, captions, and relevant metadata should enter text context by default.
+
+Expose engine readiness and hardware requirements through the model/tool registry. Keep long speech jobs asynchronous with progress, cancellation, and partial artifact cleanup. Voice reference assets need explicit ownership/consent metadata and access controls consistent with other personal media.
+
+## Limitations and decision
+
+Adopt after verifying the chosen engine and distribution requirements. The repository README identifies an AGPL license; review the actual license and dependencies before embedding or distributing a modified service. Advertised language counts and engine quality were not validated. A local voice service can still access remote models/workers depending on configuration, so locality is a per-job property. Native model downloads and third-party engines belong in the plugin lifecycle rather than happening implicitly during an agent task.
+
+## Evidence read
+
+- [MCP capability surface and output modes](https://github.com/debpalash/VoiceStudio/blob/c4d63ef207f345b4405f8e8320a73d273ce7187f/backend/mcp_server.py#L1-L34)
+- [Input handling, limits, and base-path boundary](https://github.com/debpalash/VoiceStudio/blob/c4d63ef207f345b4405f8e8320a73d273ce7187f/backend/mcp_server.py#L45-L125)
+
+## Related directions
+
+[Generation](../generation.md) · [Channels](../channels.md) · [Models](../models.md) · [Security](../security.md)
+
+## Speech review: 2026-10-25
+
+Focused source snapshot: [`caf567e1cb4da89e5266ade484ee9a3211d632b8`](https://github.com/debpalash/VoiceStudio/commit/caf567e1cb4da89e5266ade484ee9a3211d632b8), commit date 2026-10-24T06:28:05+02:00. This supplements the earlier report; it does not silently advance the managed analyzed baseline. The three newly cited files match their exact upstream Git blobs; see [source validation](../data/media-source-validation.json).
+
+[Speech discovery](https://github.com/debpalash/VoiceStudio/blob/caf567e1cb4da89e5266ade484ee9a3211d632b8/backend/api/routers/speech_platform.py#L18-L145) publishes a versioned protocol, relative endpoints, transport formats, events and authentication expectations. This is a strong pattern for installed-service discovery: clients need not hardcode the desktop deployment. However, top-level capability flags are declarations. They do not prove that every dynamically selected engine supplies word timestamps, refinement or the advertised behavior under every format.
+
+The [routing resolver](https://github.com/debpalash/VoiceStudio/blob/caf567e1cb4da89e5266ade484ee9a3211d632b8/backend/services/engine_routing.py#L146-L237) distinguishes accelerated, CPU-native, CPU fallback and unavailable outcomes. It treats an engine without a compatible accelerator and without CPU support as unavailable, and explains when CPU execution is a fallback. Transfer those explicit outcomes to selection and diagnostics. A compatibility declaration alone still does not demonstrate model readiness, sufficient memory or measured acceleration.
+
+[Progressive synthesis](https://github.com/debpalash/VoiceStudio/blob/caf567e1cb4da89e5266ade484ee9a3211d632b8/backend/api/routers/tts_stream.py#L173-L271) normalizes and splits text, renders sentences in a guarded pool, uses the backend's actual sample rate and applies mastering/provenance processing. This is sentence-level progressive delivery: it must not be described as token-level streaming inference. The implementation separates measured synthesis time from queue wait, a useful distinction for time-to-first-audio and real-time-factor telemetry. Resource leases and engine eviction also make the model-memory budget visible.
+
+Adopt the discovery schema and explicit routing vocabulary as design references. Integrate the service only behind an adapter with engine-specific tests, license/model provenance and authenticated remote transport. The existing stdio/MCP integration does not itself secure every WebSocket deployment. Test source cancellation, per-engine input/output formats, unavailable hardware and runtime capability drift before declaring a backend ready. No server, engine or model was executed for this review.
+
+Related: [channel input](../channel-input.md) · [media processing](../media-processing.md) · [generation](../generation.md).
+
+## Change review - 2026-10-28
+
+**Streaming engine leases and confined file input improve lifecycle without proving whole-request bounds.** Reviewed commit `331879da16f2d04088a58fc43a6e1cc7ae1efef3` (commit date `2026-10-27T22:45:02+05:30`). Compared with `c4d63ef207f345b4405f8e8320a73d273ce7187f`; the complete Git comparison contains 2703 changed paths.
+
+Streaming resolution checks engine-license requirements before selecting a cached or active instance. Requests hold an engine-in-use lease across routing, eviction of other engines, sentence generation and delivery, and release it on every normal/error exit through a finally block. Unavailable routing is reported and CPU fallback/caveats are surfaced before audio. Each sentence uses a guarded GPU-pool call with a length-scaled timeout. The WebSocket path nonetheless consumes receive_json directly instead of the declared StreamTTSRequest model, checks only a truthy text field and has no local aggregate text, sentence, output-byte or whole-request limit. Per-sentence timeouts do not bound slow socket delivery; disconnect is not monitored concurrently with generation in this handler.
+
+The MCP file lane requires a configured realpath base, checks containment, uses directory-relative no-follow opens where available and verifies the opened descriptor. It requires a regular file and combines an initial size check with an actual bounded read; the base64 lane also checks encoded and decoded sizes. Output filenames validate backend IDs and use exclusive creation. Platform-specific fallback confinement still needs real Windows/macOS testing. The stream distinguishes synthesis RTF, wall duration and first bytes handed to the socket; none is proof of first audible playback. Generic stream errors still send str(e), unlike explicitly scrubbed routing messages.
+
+Evidence: [backend/api/routers/tts_stream.py:43-103](https://github.com/debpalash/VoiceStudio/blob/331879da16f2d04088a58fc43a6e1cc7ae1efef3/backend/api/routers/tts_stream.py#L43-L103) · [backend/api/routers/tts_stream.py:238-282](https://github.com/debpalash/VoiceStudio/blob/331879da16f2d04088a58fc43a6e1cc7ae1efef3/backend/api/routers/tts_stream.py#L238-L282) · [backend/api/routers/tts_stream.py:284-381](https://github.com/debpalash/VoiceStudio/blob/331879da16f2d04088a58fc43a6e1cc7ae1efef3/backend/api/routers/tts_stream.py#L284-L381) · [backend/api/routers/tts_stream.py:390-509](https://github.com/debpalash/VoiceStudio/blob/331879da16f2d04088a58fc43a6e1cc7ae1efef3/backend/api/routers/tts_stream.py#L390-L509) · [backend/mcp_server.py:118-280](https://github.com/debpalash/VoiceStudio/blob/331879da16f2d04088a58fc43a6e1cc7ae1efef3/backend/mcp_server.py#L118-L280).
+
+**Harness consequence:** Reuse request-scoped engine leases, explicit routing metadata and descriptor-verified bounded reads. Add schema validation at the actual WebSocket boundary, aggregate budgets, cancellation tied to transport closure and bounded sends. Keep cancellation/timeout claims conditional on the GPU worker's joined-cleanup behavior, and scrub error payloads consistently. Preserve distinct synthesis, socket and playback measurements.
+
+**Scope and limits:** Scoped static review of streaming engine selection, lease/dispatch/delivery and MCP audio-file boundaries in the 2,703-path comparison. GPU-pool internals, engine-cache eviction, global WebSocket authorization and native filesystem guarantees were not audited or executed; no model or provider call and no audio-quality benchmark was performed.
+
+## Follow-up change review — 2026-10-28
+
+**Startup configuration handles BOM encodings without overwriting launcher values.** Reviewed commit `f7203feb76383c2afd29fde4bc826fea6e601c24` (commit date `2026-10-28T15:34:04+05:30`), compared with `331879da16f2d04088a58fc43a6e1cc7ae1efef3`. The complete no-rename Git path inventory contains 385 changed paths.
+
+The new loader recognizes UTF-32 and UTF-16 BOMs, otherwise uses UTF-8 with optional BOM, and loads project files with override disabled. Encoding/I/O failures are warned and do not prevent independent saved-user settings from loading. Fixtures preserve malformed settings bytes and assert launcher precedence over project files. Saved settings have their own documented override behavior, so project-file precedence is not a claim about every configuration source.
+
+Evidence: [backend/core/env_startup.py:8-39](https://github.com/debpalash/VoiceStudio/blob/f7203feb76383c2afd29fde4bc826fea6e601c24/backend/core/env_startup.py#L8-L39) · [tests/test_env_startup_decoding.py:6-47](https://github.com/debpalash/VoiceStudio/blob/f7203feb76383c2afd29fde4bc826fea6e601c24/tests/test_env_startup_decoding.py#L6-L47).
+
+**Harness consequence:** Decode configuration deliberately, preserve malformed originals and report failure without logging values. Treat startup compatibility separately from credential authentication, backend readiness and voice-data policy.
+
+**Scope and limits:** Reviewed the complete startup loader and its encoding/precedence fixtures; the broader voice stack and saved-settings implementation were not audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
+## Source update reviewed 2026-11-01
+
+Reviewed commit [`e84105cf332fcb7a7b58012cb3c3618363b24759`](https://github.com/debpalash/VoiceStudio/commit/e84105cf332fcb7a7b58012cb3c3618363b24759), compared with `f7203feb76383c2afd29fde4bc826fea6e601c24`.
+
+The complete new [archive validator](https://github.com/debpalash/VoiceStudio/blob/e84105cf332fcb7a7b58012cb3c3618363b24759/mobile/ios/scripts/validate_privacy_manifests.py) checks the app plus directly enumerated extension/framework bundles for privacy manifests, false tracking declarations, empty tracking domains and syntactically valid nonduplicate required-reason categories. The [fixtures](https://github.com/debpalash/VoiceStudio/blob/e84105cf332fcb7a7b58012cb3c3618363b24759/tests/test_ios_privacy_manifests.py) cover generated app/framework declarations, a missing framework manifest and shared app-group identifiers; native compilation is mocked in the relevant packaging fixtures.
+
+This is packaging-contract evidence within a 361-path update. It does not prove actual runtime data flows, the correctness of every declared reason, provider non-training terms, voice consent or commercial rights. Teamagent must keep those dimensions separate, and require actual packaged-native acceptance for an implemented mobile route. No iOS archive, model, voice synthesis, provider or upstream test was executed.
+
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio) at `522bdc0e34539753f2af2c473173c90f87c79d7a` against prior analyzed `e84105cf332fcb7a7b58012cb3c3618363b24759`. Evidence: [backend/core/bundled_code.py](https://github.com/debpalash/VoiceStudio/blob/522bdc0e34539753f2af2c473173c90f87c79d7a/backend/core/bundled_code.py), [backend/core/path_authorization.py](https://github.com/debpalash/VoiceStudio/blob/522bdc0e34539753f2af2c473173c90f87c79d7a/backend/core/path_authorization.py), [electron/src/main/backend.ts](https://github.com/debpalash/VoiceStudio/blob/522bdc0e34539753f2af2c473173c90f87c79d7a/electron/src/main/backend.ts), [electron/src/main/bundled-runtime.ts](https://github.com/debpalash/VoiceStudio/blob/522bdc0e34539753f2af2c473173c90f87c79d7a/electron/src/main/bundled-runtime.ts), [electron/src/main/security-scoped-files.ts](https://github.com/debpalash/VoiceStudio/blob/522bdc0e34539753f2af2c473173c90f87c79d7a/electron/src/main/security-scoped-files.ts).
+
+A selected packaged distribution launches a bundled Python runtime and media tools, directs mutable models/cache/data to the app container and avoids runtime installer fallback. Python audit hooks restrict several execution/import/native-library/subprocess paths to bundled or selected OS locations. Explicit directory selections are retained as security-scoped bookmarks; child path authorization restores the relevant grant and refuses expired access instead of silently switching data roots.
+
+**Architecture consequence:** Provision executable code separately from mutable model data and propagate explicit path grants through the full process tree. Report stale grants and unsupported host architectures. Python audit hooks and environment settings supplement platform enforcement; they do not prove OS sandbox containment, signed-package integrity or network isolation. Persisted bookmarks are sensitive local capabilities.
+
+**Scope and limits:** Read bundled-code policy, path authorization, backend selection/environment and initial bookmark restore/admission changes within an 89-path update. Mobile transfer changes were inventoried but not reviewed here. No signed Mac build, App Store validation, mobile download, inference or upstream test was executed.

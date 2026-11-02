@@ -86,7 +86,11 @@ export function canonicalRemote(value: string): string {
   const path = url.pathname.replace(/\.git\/?$/u, "").replace(/\/$/u, "");
   if (!/^\/[a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+$/u.test(path))
     throw new Error("Invalid repository remote path");
-  return `https://${url.hostname.toLowerCase()}${path.toLowerCase()}`;
+  const host = url.hostname.toLowerCase();
+  const canonicalPath = ["github.com", "gist.github.com"].includes(host)
+    ? path.toLowerCase()
+    : path;
+  return `https://${host}${canonicalPath}`;
 }
 
 function contained(root: string, path: string): string {
@@ -210,11 +214,26 @@ export function gitReader(signal: AbortSignal): GitReader {
       execFile(
         "git",
         [
+          "--no-optional-locks",
           "--no-replace-objects",
           "-c",
           `safe.directory=${slash(path)}`,
           "-c",
           "core.quotepath=false",
+          "-c",
+          "core.fsmonitor=false",
+          "-c",
+          "core.commitGraph=false",
+          "-c",
+          `core.hooksPath=${process.platform === "win32" ? "NUL" : "/dev/null"}`,
+          "-c",
+          "advice.graftFileDeprecated=false",
+          "-c",
+          "submodule.recurse=false",
+          "-c",
+          "credential.interactive=false",
+          "-c",
+          "protocol.allow=never",
           "-C",
           path,
           ...args,
@@ -225,6 +244,18 @@ export function gitReader(signal: AbortSignal): GitReader {
           timeout: 30_000,
           maxBuffer: args[0] === "diff" ? limits.diffBytes : limits.gitBytes,
           signal,
+          // Inspection uses existing immutable objects; missing evidence cannot start a fetch.
+          env: {
+            ...process.env,
+            GIT_OPTIONAL_LOCKS: "0",
+            GIT_NO_REPLACE_OBJECTS: "1",
+            GIT_GRAFT_FILE: process.platform === "win32" ? "NUL" : "/dev/null",
+            GIT_NO_LAZY_FETCH: "1",
+            GIT_ALLOW_PROTOCOL: "",
+            GIT_PROTOCOL_FROM_USER: "0",
+            GIT_TERMINAL_PROMPT: "0",
+            GCM_INTERACTIVE: "Never",
+          },
         },
         (error, stdout) => {
           if (error === null) resolveResult({ code: 0, text: stdout });

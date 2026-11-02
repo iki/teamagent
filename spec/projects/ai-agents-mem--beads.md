@@ -59,6 +59,27 @@ Reviewed `062fe1e0d555dddeef8266ca912ec01d9013b8d6` against `93531223bb96262627c
 
 **Scope and limits:** Selected maintenance implementation and SQL guard fixtures only; no database, cleanup or upstream tests were executed.
 
+## External-update review - 2026-11-01
+
+Reviewed `cbfdafc0fee4285f8c253d374003258b43d93acc` against
+`062fe1e0d555dddeef8266ca912ec01d9013b8d6`; the complete inventory has 14 paths.
+The [backup restore error wrapper](https://github.com/gastownhall/beads/blob/cbfdafc0fee4285f8c253d374003258b43d93acc/internal/storage/versioncontrolops/backup.go)
+now treats both the displayed source URL and the underlying engine error as
+potential credential carriers. For unsafe or credential-bearing locators it
+withholds engine text while preserving the error through `Unwrap`; it leaves the
+actual restore argument unchanged. The inspected
+[fixtures](https://github.com/gastownhall/beads/blob/cbfdafc0fee4285f8c253d374003258b43d93acc/internal/storage/versioncontrolops/backup_test.go)
+exercise malformed/userinfo/query/fragment forms, force and ordinary restore,
+error identity and argument preservation.
+
+**Harness consequence:** Redaction must cover nested causes as well as the outer
+message. Preserve machine-readable error identity and privately retained recovery
+locators separately from public diagnostics; downstream cause logging can still
+reveal withheld text. The local-file naming exception is not a general privacy
+guarantee for filesystem paths. This scoped review covers both complete changed
+backup files; the Windows CI/build changes were not audited. No Dolt restore,
+upstream test or dependency installation was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [beads](https://github.com/gastownhall/beads); analyzed commit `062fe1e0d555dddeef8266ca912ec01d9013b8d6`; commit date 2026-11-01T09:20:07Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--beads.md).
+Analysis metadata: source [beads](https://github.com/gastownhall/beads); analyzed commit `cbfdafc0fee4285f8c253d374003258b43d93acc`; commit date 2026-11-01T11:00:39Z; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--beads.md).
 <!-- teamagent-analysis:end -->

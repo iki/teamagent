@@ -1,0 +1,59 @@
+# fuigo
+
+Source: [fuigo](https://github.com/FerroxLabs/fuigo) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `2eb306e08ae24d05c15c74b6b1c1d3235e0f1d96`; commit timestamp `2026-09-17T18:52:23+07:00`; 3,794 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/FerroxLabs/fuigo/blob/2eb306e08ae24d05c15c74b6b1c1d3235e0f1d96/README.md)):
+
+> Get started · Headless CLI · ACP integration · Memory · Documentation · Build from source Fuigo is a general-purpose, multi-provider AI agent engine. It gives models the machinery to work: tools, persistent sessions, permission controls, workspace memory, and other agents to collaborate with. Use it to research and analyze information, create documents and code, produce structured outputs, or coordinate work across connected systems.
+
+Build/package evidence: [Cargo.toml](https://github.com/FerroxLabs/fuigo/blob/2eb306e08ae24d05c15c74b6b1c1d3235e0f1d96/Cargo.toml); [crates/build/fuigo-proto-build/Cargo.toml](https://github.com/FerroxLabs/fuigo/blob/2eb306e08ae24d05c15c74b6b1c1d3235e0f1d96/crates/build/fuigo-proto-build/Cargo.toml); [crates/codegen/fuigo-acp-lib/Cargo.toml](https://github.com/FerroxLabs/fuigo/blob/2eb306e08ae24d05c15c74b6b1c1d3235e0f1d96/crates/codegen/fuigo-acp-lib/Cargo.toml); [crates/codegen/fuigo-active-sessions/Cargo.toml](https://github.com/FerroxLabs/fuigo/blob/2eb306e08ae24d05c15c74b6b1c1d3235e0f1d96/crates/codegen/fuigo-active-sessions/Cargo.toml); [crates/codegen/fuigo-agent-lifecycle/Cargo.toml](https://github.com/FerroxLabs/fuigo/blob/2eb306e08ae24d05c15c74b6b1c1d3235e0f1d96/crates/codegen/fuigo-agent-lifecycle/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/FerroxLabs/fuigo/blob/2eb306e08ae24d05c15c74b6b1c1d3235e0f1d96/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 divergent-history investigation and scoped source review
+
+Source: [fuigo](https://github.com/FerroxLabs/fuigo); inspected snapshot `0da71d3fc96e4fdb8332bbc448b61d88bc497924`; prior analyzed commit `2eb306e08ae24d05c15c74b6b1c1d3235e0f1d96`. The inspected snapshot is the saved discovery version, not a claim about the checkout's latest HEAD.
+
+**Scope:** Complete committed path inventory (2,747 paths); full permission.rs (73 lines) and agent.rs (258 lines). Builder/enforcement paths and upstream tests were not executed or audited.
+
+**History outcome:** both full commits are available, but the analyzed commit is not an ancestor and the complete trees differ. The two-tree comparison contains 2,747 changed paths; common ancestor: `none`. These counts establish comparison coverage, not semantic review of every file. The prior analyzed baseline and findings remain preserved as historical evidence. A separately acknowledged, guarded reconciliation records the inspected revision as a new scoped analysis baseline; it does not establish ancestry, publisher intent or whole-project correctness. The managed metadata below is authoritative for whether that acknowledgment has been recorded.
+
+The [permission value types](https://github.com/FerroxLabs/fuigo/blob/0da71d3fc96e4fdb8332bbc448b61d88bc497924/crates/codegen/fuigo-config-types/src/permission.rs) make Deny the Rust enum default and include a fixture rejecting unknown tool-filter values. PermissionRule.action is required in the shown deserializer; the enum default alone does not prove the comment's omitted-TOML-action behavior. The actual evaluation/defaulting path needs its own tests.
+
+The [agent object](https://github.com/FerroxLabs/fuigo/blob/0da71d3fc96e4fdb8332bbc448b61d88bc497924/crates/codegen/fuigo-agent/src/agent.rs) preserves unresolved tool-allowlist names for diagnostics and stores hosted-tool capability information separately. Its comments describe an earlier allowlist expansion failure, but the filtering builder was not inspected here. More directly, update_policies_from_definition is a no-op with a TODO, and prompt rendering uses unwrap_or_default. Teamagent should expose policy-update support as a capability, reject unsupported changes explicitly, preserve a validated prior prompt on rendering failure, and treat hosted capabilities as eligibility signals rather than grants.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `58f976406ab751cc9b954bb84b4d2838ccfd8a21` (commit date `2026-10-30T21:27:33+08:00`), compared with `0da71d3fc96e4fdb8332bbc448b61d88bc497924`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded selected launch-time environment/trust/shell checks and their fixture branches; whole-repository diff was oversized. Every spawn site, installed classifiers and actual Windows containment not audited.
+
+The [launch checks](https://github.com/FerroxLabs/fuigo/blob/58f976406ab751cc9b954bb84b4d2838ccfd8a21/crates/codegen/fuigo-tools/src/sandbox_launch.rs) re-evaluate calls previously allowed without a grant using the effective child environment and both judged/execution directories. Missing judges in strict mode and shells whose syntax the classifier does not model are refused; explicit grants bypass this additional check. [Fixtures](https://github.com/FerroxLabs/fuigo/blob/58f976406ab751cc9b954bb84b4d2838ccfd8a21/crates/codegen/fuigo-tools/src/sandbox_launch_tests.rs) distinguish inherited steering variables, trusted directories and PowerShell/cmd versus Bash. Those fixture branches model shell families; they are not an OS isolation test.
+
+**Teamagent implication (inference):** Bind automated permission decisions to executable resolution, shell grammar, cwd and effective environment, then revalidate changed conditions immediately before launch. Preserve explicit scoped grants and use platform-aware parsing; a command considered read-only under one environment may execute different code under another.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
+## External-update review - 2026-11-01
+
+Reviewed `86fb32c8dbf97499b4da18dbec4dd7db7acb5eb3` against `58f976406ab751cc9b954bb84b4d2838ccfd8a21`.
+
+Within the 66-path change, [withheld project instructions](https://github.com/FerroxLabs/fuigo/blob/86fb32c8dbf97499b4da18dbec4dd7db7acb5eb3/crates/codegen/fuigo-shell/src/session/acp_session_impl/withheld_instructions.rs) use structured conversation metadata to record an outstanding delivery obligation after an untrusted-folder start. Grant-time rediscovery inserts or replaces a tagged instruction item; instruction text and clearing the obligation are submitted together to persisted history. Empty discovery retains the obligation, and a failed history replacement restores the previous agent file list. Tagged items avoid mistaking user-authored reminder-like text for system-maintained instructions.
+
+The inspected first portion of [fixtures](https://github.com/FerroxLabs/fuigo/blob/86fb32c8dbf97499b4da18dbec4dd7db7acb5eb3/crates/codegen/fuigo-shell/src/session/acp_session_tests/withheld_instructions_tests.rs) covers idempotent delivery, user-text preservation, pinned prefixes, empty discovery and reconstruction after a failed write. The complete implementation also uses a drop guard for its start reservation. Grant checking precedes asynchronous discovery; this file alone does not establish revocation fencing across that await, which requires a dedicated race check before adoption.
+
+**Harness consequence:** Persist withheld-context obligations with the conversation and discharge them only when delivery is durably recorded. Keep trust verdicts separate from content discovery and preserve user text through explicit provenance tags. This static review covers the complete delivery module and selected pure/compaction fixture cases, not the remaining actor suite, folder-trust storage, model switching or rate-limit logic. No agent, model, history mutation or upstream test was executed.

@@ -1,0 +1,215 @@
+{
+  "id": "ai-agents--open-code-review.spencermarx",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/spencermarx/open-code-review",
+  "report": "spec/projects/ai-agents--open-code-review.spencermarx.md",
+  "analyzedSha": "a793b059f7fa8e7abd9d6acdbd8fa77cc8b166d7",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-10-30T22:39:02+01:00",
+  "observedSha": "9fce816b8c9abbd56b95e5c216ef4ca825e46661",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "9fce816b8c9abbd56b95e5c216ef4ca825e46661",
+      "date": "2026-11-01T12:50:05+01:00",
+      "subject": "chore(release): 2.5.1"
+    },
+    {
+      "sha": "e7bb242c428b2710341f68df15c3b7671ff09eaa",
+      "date": "2026-11-01T12:46:05+01:00",
+      "subject": "Merge pull request #76 from spencermarx/fix/chat-tool-containment"
+    },
+    {
+      "sha": "5379fd9bd7849c879b5681385901244ad17184e8",
+      "date": "2026-11-01T12:40:53+01:00",
+      "subject": "fix(dashboard): keep a newer turn from re-storing a stopped session"
+    },
+    {
+      "sha": "cae9e2b599fa47fada2c11a2fe9f58f6ab46e61a",
+      "date": "2026-11-01T12:27:17+01:00",
+      "subject": "fix(dashboard): keep a late close from touching the newer chat turn"
+    },
+    {
+      "sha": "2aeab0319d570cbdd6fb8c7cce06e6896a5a0c6b",
+      "date": "2026-11-01T12:27:10+01:00",
+      "subject": "fix(platform): stop the root before killTreeNow walks the tree"
+    },
+    {
+      "sha": "5b277e2b9050696afb54197cf851fd732f351a65",
+      "date": "2026-11-01T12:09:13+01:00",
+      "subject": "fix(dashboard): finish a stopped chat turn without waiting on its pipes"
+    },
+    {
+      "sha": "c786984d1f056306f6f967bc419b437445002aa5",
+      "date": "2026-11-01T12:09:09+01:00",
+      "subject": "fix(dashboard): check the CLI version on every chat turn"
+    },
+    {
+      "sha": "5d6731455b433b4e98099948bdd921db2bc73704",
+      "date": "2026-11-01T12:09:05+01:00",
+      "subject": "fix(platform): add killTreeNow for an immediate process-tree kill"
+    },
+    {
+      "sha": "018a25fcc381e18e0d4c6f4fb5166bceca78fed9",
+      "date": "2026-11-01T11:42:32+01:00",
+      "subject": "docs: note the Ask the Team chat's read-only scope and CLI versions"
+    },
+    {
+      "sha": "526271642294122e3db8d9c2209220c37866523a",
+      "date": "2026-11-01T11:42:32+01:00",
+      "subject": "fix(dashboard): enforce the chat's read-only tool set"
+    },
+    {
+      "sha": "a67d6cd32b7ee7d5725f62d2cec8d6f7843af0d5",
+      "date": "2026-11-01T11:42:32+01:00",
+      "subject": "fix(platform): register the OpenCode chat restriction env injections"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openspec/specs/dashboard/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agents/skills/ocr/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/server/child-env.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/server/db.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/server/services/ai-cli/__tests__/helpers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dashboard/src/server/services/ai-cli/__tests__/query-containment.live.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dashboard/src/server/services/ai-cli/__tests__/query-containment.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/server/services/ai-cli/__tests__/spawn-shape.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/server/services/ai-cli/claude-adapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/server/services/ai-cli/helpers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/server/services/ai-cli/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/server/services/ai-cli/opencode-adapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/server/services/ai-cli/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dashboard/src/server/socket/__tests__/chat-handler.process.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dashboard/src/server/socket/__tests__/chat-handler.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/dashboard/src/server/socket/chat-handler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/shared/platform/src/__tests__/child-env.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/shared/platform/src/__tests__/platform.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/shared/platform/src/child-env.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/shared/platform/src/index.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

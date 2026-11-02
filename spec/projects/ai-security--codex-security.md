@@ -55,6 +55,16 @@ The [parent-sandbox fixture delta](https://github.com/openai/codex-security/blob
 
 **Coverage:** Read complete worker-runner and two targeted fixture deltas. Parent-sandbox parser, artifact reread integrity and directory ownership implementation were not re-audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## External-update review - 2026-11-01
+
+Reviewed `4694a0b07044704e834a9b2da2109c4cc998cf36` against `f615be2e708a4f83f10e924af1ee23b511076fe1`.
+
+The 54-path range refines two external-evidence boundaries. The inspected [import-contract delta](https://github.com/openai/codex-security/blob/4694a0b07044704e834a9b2da2109c4cc998cf36/sdk/typescript/src/external-import-contract.ts) keeps JSON-number validation for local evidence but skips cloud-specific textual number-format checks on that local route. Local validity and a provider's canonical wire representation are therefore separate constraints; this does not remove the shared numeric validation.
+
+The [publication preparation delta](https://github.com/openai/codex-security/blob/4694a0b07044704e834a9b2da2109c4cc998cf36/sdk/typescript/src/external-findings-publish.ts) delegates optional progress notification to the shared notification helper. The complete inspected [publication fixture delta](https://github.com/openai/codex-security/blob/4694a0b07044704e834a9b2da2109c4cc998cf36/sdk/typescript/tests-ts/external-findings-publish.test.ts) now makes one observer return a rejected promise and others throw synchronously, while expecting publication to complete and progress phases to remain separate from machine-readable JSON output. The unchanged notification helper and full publication protocol were not re-audited.
+
+**Harness consequence:** Keep optional observability failures from changing publication semantics, while keeping mandatory authorization, integrity and publication-result failures fatal. Separate local evidence-schema validity from remote serialization constraints, and test asynchronous as well as synchronous observer failures. This scoped static review covers the three complete deltas, not all scanner mappings, cloud admission or successful real publication. No upstream test, scanner, service or publication request was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codex-security](https://github.com/openai/codex-security); analyzed commit `f615be2e708a4f83f10e924af1ee23b511076fe1`; commit date 2026-11-01T01:38:05-07:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-security--codex-security.md).
+Analysis metadata: source [codex-security](https://github.com/openai/codex-security); analyzed commit `4694a0b07044704e834a9b2da2109c4cc998cf36`; commit date 2026-11-01T10:52:33-08:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-security--codex-security.md).
 <!-- teamagent-analysis:end -->

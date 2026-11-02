@@ -48,6 +48,16 @@ The [launch checks](https://github.com/FerroxLabs/fuigo/blob/58f976406ab751cc9b9
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## External-update review - 2026-11-01
+
+Reviewed `86fb32c8dbf97499b4da18dbec4dd7db7acb5eb3` against `58f976406ab751cc9b954bb84b4d2838ccfd8a21`.
+
+Within the 66-path change, [withheld project instructions](https://github.com/FerroxLabs/fuigo/blob/86fb32c8dbf97499b4da18dbec4dd7db7acb5eb3/crates/codegen/fuigo-shell/src/session/acp_session_impl/withheld_instructions.rs) use structured conversation metadata to record an outstanding delivery obligation after an untrusted-folder start. Grant-time rediscovery inserts or replaces a tagged instruction item; instruction text and clearing the obligation are submitted together to persisted history. Empty discovery retains the obligation, and a failed history replacement restores the previous agent file list. Tagged items avoid mistaking user-authored reminder-like text for system-maintained instructions.
+
+The inspected first portion of [fixtures](https://github.com/FerroxLabs/fuigo/blob/86fb32c8dbf97499b4da18dbec4dd7db7acb5eb3/crates/codegen/fuigo-shell/src/session/acp_session_tests/withheld_instructions_tests.rs) covers idempotent delivery, user-text preservation, pinned prefixes, empty discovery and reconstruction after a failed write. The complete implementation also uses a drop guard for its start reservation. Grant checking precedes asynchronous discovery; this file alone does not establish revocation fencing across that await, which requires a dedicated race check before adoption.
+
+**Harness consequence:** Persist withheld-context obligations with the conversation and discharge them only when delivery is durably recorded. Keep trust verdicts separate from content discovery and preserve user text through explicit provenance tags. This static review covers the complete delivery module and selected pure/compaction fixture cases, not the remaining actor suite, folder-trust storage, model switching or rate-limit logic. No agent, model, history mutation or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [fuigo](https://github.com/FerroxLabs/fuigo); analyzed commit `58f976406ab751cc9b954bb84b4d2838ccfd8a21`; commit date 2026-10-30T21:27:33+08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--fuigo.md).
+Analysis metadata: source [fuigo](https://github.com/FerroxLabs/fuigo); analyzed commit `86fb32c8dbf97499b4da18dbec4dd7db7acb5eb3`; commit date 2026-11-01T21:53:32+08:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--fuigo.md).
 <!-- teamagent-analysis:end -->

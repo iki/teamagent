@@ -1,0 +1,620 @@
+{
+  "id": "ai-agents--hermes-agent",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/NousResearch/hermes-agent",
+  "report": "spec/projects/ai-agents--hermes-agent.md",
+  "analyzedSha": "a4994d4ead8f9c915b485cec5689909b349a49df",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-10-31T23:05:03-07:00",
+  "observedSha": "c7da41dd522dc19cc08bbfcfa69d4b078224b45d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "c7da41dd522dc19cc08bbfcfa69d4b078224b45d",
+      "date": "2026-11-01T11:07:22-08:00",
+      "subject": "fix(desktop): a session's running highlight ends when its background work ends off screen"
+    },
+    {
+      "sha": "d3e586881eacb132595edcbe4c170be8381e40c5",
+      "date": "2026-11-02T00:18:00+05:30",
+      "subject": "test: the runtime-binding restore fixture survives a stubbed aux module"
+    },
+    {
+      "sha": "57d491383b3c27641e70eeaf15f7afade90893fb",
+      "date": "2026-11-02T00:18:00+05:30",
+      "subject": "refactor(aux): the runtime-main lookup reads only the context variable"
+    },
+    {
+      "sha": "281f3f32e7e3d4822148f604b9b14bbd720bfe95",
+      "date": "2026-11-02T00:18:00+05:30",
+      "subject": "refactor(aux): delete auxiliary_is_nous and get_auxiliary_extra_body"
+    },
+    {
+      "sha": "a6fc11dc7625671d017b5cb9ba024ee3d656bf5a",
+      "date": "2026-11-02T00:18:00+05:30",
+      "subject": "test: restore the aux main-runtime binding after every test (#105888)"
+    },
+    {
+      "sha": "a3f4c2e5183be4366dafb9266284872b8566b8b2",
+      "date": "2026-11-02T00:18:00+05:30",
+      "subject": "chore: map Solidee-def contributor email (salvage #134236)"
+    },
+    {
+      "sha": "d1a82ffff37a62de6fbdfabb496d1d2d0bc22822",
+      "date": "2026-11-01T10:14:58-08:00",
+      "subject": "test: gate the reaped-proxy test with the platforms marker, not a bare skipif"
+    },
+    {
+      "sha": "c6d6538c51135a305ec779df0fb67dcbae4ad791",
+      "date": "2026-11-01T10:14:58-08:00",
+      "subject": "fix: a process reaped mid-probe reads as gone, not as an error or alive"
+    },
+    {
+      "sha": "1d79ef8bebb3e9cde694468aaeef49da7860e12b",
+      "date": "2026-11-01T10:14:58-08:00",
+      "subject": "test: wait for the PTY drain's own read count instead of a 50 ms sleep"
+    },
+    {
+      "sha": "001b0eba27e352d9aedeaf379ab17c55661d113d",
+      "date": "2026-11-01T10:08:01-08:00",
+      "subject": "fix(update): never offer the delete answer when there is nothing to pull; scan ignores showUntrackedFiles"
+    },
+    {
+      "sha": "c48393332559c3422e143bcabf2cb19a4dfafa51",
+      "date": "2026-11-01T10:08:01-08:00",
+      "subject": "fix(update): tree-ref probe reads only the exit code, so it needs no text decoding"
+    },
+    {
+      "sha": "005fbe80586c15a6195f186466a0f2fd129263b3",
+      "date": "2026-11-01T10:08:01-08:00",
+      "subject": "fix(update): stash only what the update collides with, and ask before stashing"
+    },
+    {
+      "sha": "9f050ccc82f8240ae57f3c039a22b913ebcd2829",
+      "date": "2026-11-01T10:01:59-08:00",
+      "subject": "fix(desktop): status bar names the profile when another profile's messaging is down"
+    },
+    {
+      "sha": "c7c7e0fa92f40c8f526e4a52c0966c128245ffd3",
+      "date": "2026-11-01T09:05:22-08:00",
+      "subject": "fix(desktop): dismissing a background row never hides roster-reported work"
+    },
+    {
+      "sha": "337b95c993cb1b3c770cc9e1358d4f0b78a5ecbc",
+      "date": "2026-11-01T09:05:22-08:00",
+      "subject": "fix(desktop): roster route hints never outlive a primary re-home"
+    },
+    {
+      "sha": "f8bcc73c79b21ff798dffc807e5ad6414655b373",
+      "date": "2026-11-01T09:05:22-08:00",
+      "subject": "fix(desktop): roster never crosses profiles and one hung backend never freezes the rest"
+    },
+    {
+      "sha": "34527866734980c795587dbc989238d50a0cae92",
+      "date": "2026-11-01T09:05:22-08:00",
+      "subject": "fix(desktop): roster lights background-only rows, every owner, and stops churn"
+    },
+    {
+      "sha": "e032b8a26425a24493cacb9625acbfc1bba2ed24",
+      "date": "2026-11-01T09:05:22-08:00",
+      "subject": "fix(desktop): sidebar rows not on screen show running subagents and background work"
+    },
+    {
+      "sha": "c627ec84664d43e0b18b95d9d86d8963747d56c7",
+      "date": "2026-11-01T09:36:49-05:00",
+      "subject": "perf(desktop): ignore root geometry in theme observation"
+    },
+    {
+      "sha": "915fb1b87578e3bbdbe18ac86007b759b7ec68ad",
+      "date": "2026-11-01T09:36:49-05:00",
+      "subject": "perf(desktop): suppress hidden terminal DOM rows only"
+    },
+    {
+      "sha": "4a15cf36b6e460f244226a214bf687a04647444f",
+      "date": "2026-11-01T09:36:49-05:00",
+      "subject": "perf(desktop): bound terminal retention without redundant publication"
+    },
+    {
+      "sha": "57864bb220d481594384819cff0a3570659879f9",
+      "date": "2026-11-01T09:28:35-05:00",
+      "subject": "perf(desktop): keep live deltas out of navigation context"
+    },
+    {
+      "sha": "80b32de90069195aa62f8ee1ecdeda051a1b9cc4",
+      "date": "2026-11-01T06:26:57-08:00",
+      "subject": "test(desktop): pin PaneTab's data-slot under a context-menu trigger"
+    },
+    {
+      "sha": "8c4ab7b8b37ffc404490a42e865b63fbd48c8956",
+      "date": "2026-11-01T06:26:57-08:00",
+      "subject": "fix(desktop): preserve tab styling through context menu composition"
+    },
+    {
+      "sha": "cc9dbb0583fc46281a882aa20a8f300c99df01a5",
+      "date": "2026-11-01T06:06:08-08:00",
+      "subject": "fix(desktop): sessions waiting on subagents or background processes keep the running highlight"
+    },
+    {
+      "sha": "df128a1cb40c517e53c54813653b539fff94745b",
+      "date": "2026-11-01T19:35:16+05:30",
+      "subject": "refactor(telegram): read a video note through the video branch at each site"
+    },
+    {
+      "sha": "48f744e99743661031398783371c0e8b3eedb127",
+      "date": "2026-11-01T19:35:16+05:30",
+      "subject": "test(telegram): fold video-note coverage into the existing media tests"
+    },
+    {
+      "sha": "840d104031c81d5fb4660e6d64fbc1580edc0ebf",
+      "date": "2026-11-01T19:35:16+05:30",
+      "subject": "fix(telegram): an uncaptioned video note keeps the group silence notice"
+    },
+    {
+      "sha": "ed960fe9602f6cc3767b3d9047c6bdc5bf6e27b9",
+      "date": "2026-11-01T19:35:16+05:30",
+      "subject": "fix(telegram): localize the download-failure reply for video notes"
+    },
+    {
+      "sha": "016bc1df65e5134bde709e50a221cd3713a9aa34",
+      "date": "2026-11-01T19:35:16+05:30",
+      "subject": "feat(telegram): support video note messages"
+    },
+    {
+      "sha": "f7cca8452723504774e6cd90c716ae2fa7483a50",
+      "date": "2026-11-01T19:35:16+05:30",
+      "subject": "chore: map Horizont367 commit email (salvage #119077)"
+    },
+    {
+      "sha": "94bd0837121a69d8ad17dd534fa275332b681ad6",
+      "date": "2026-11-01T19:24:04+05:30",
+      "subject": "fix(mattermost): tidy the user-ID setup hint and move the plugin test"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "agent/auxiliary_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/auxiliary_key_rotation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/i18n.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/i18n_languages.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/i18n_layers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/proxy_sources/iron_proxy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/ENGINEERING.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/e2e/sidebar-background-finish-offscreen.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/history-window.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/chat-sidebar.integration.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/section-states.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/contrib/hooks/use-background-sync.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/contrib/hooks/use-live-work-roster.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/contrib/hooks/use-live-work-roster.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/right-sidebar/terminal/agent-terminal-recovery.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/right-sidebar/terminal/agent-terminal-stream.bound.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/right-sidebar/terminal/agent-terminal-stream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/right-sidebar/terminal/terminals.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/right-sidebar/terminal/terminals.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/right-sidebar/terminal/use-agent-terminal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/assistant-ui/thread/transcript-window.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/ui/pane-tab.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/ui/pane-tab.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/hooks/use-theme-epoch.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/hooks/use-theme-epoch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/backend-packs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/backend-packs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/context.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/profile-locale.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/profile-provider.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/gateway-health-pill.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/gateway-health-pill.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/store/composer-status.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/store/gateway-primary-rider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/store/gateway-shared-route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/store/gateway.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/store/live-work-roster.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/store/live-work-roster.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/store/session-dot-state.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/store/session-dot-state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/store/session-states.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/styles.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/shared/src/gateway-contract.generated.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/shared/src/gateway-contract.openrpc.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "contributors/emails/262245234+Horizont367@users.noreply.github.com",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "contributors/emails/334796025+Solidee-def@users.noreply.github.com",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes_cli/gateway_setup_wizard.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes_cli/update_cmd.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes_cli/update_cmd_stash.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/platforms/mattermost/adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/platforms/telegram/adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/platforms/telegram/telegram_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests-js/scripts/mock-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/agent/test_anthropic_third_party_oauth_guard.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/agent/test_aux_runtime_main_context_only.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/agent/test_auxiliary_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/agent/test_auxiliary_main_first.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/agent/test_i18n_languages.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/agent/test_i18n_layers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/agent/test_iron_proxy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/agent/test_nous_welcome_client_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/gateway/test_mattermost_plugin_setup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/gateway/test_telegram_documents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/gateway/test_telegram_group_gating.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/hermes_cli/test_kanban_decompose.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/hermes_cli/test_mattermost_user_id_setup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/hermes_cli/test_profile_describer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/hermes_cli/test_pty_session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/hermes_cli/test_update_custody_tree.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/hermes_cli/test_update_scoped_autostash.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/tui_gateway/test_i18n_methods.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/tui_gateway/test_subagent_roster.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/tui_gateway/test_subagent_roster_profiles.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tui_gateway/contracts/i18n.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tui_gateway/contracts/profiles_vault_complete_foreign_subagents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tui_gateway/methods_i18n.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tui_gateway/methods_subagents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tui_gateway/server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "website/docs/reference/cli-commands.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "website/docs/user-guide/configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "website/docs/user-guide/messaging/mattermost.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "website/docs/user-guide/messaging/telegram.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "website/i18n/zh-Hans/docusaurus-plugin-content-docs/current/user-guide/messaging/mattermost.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

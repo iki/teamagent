@@ -45,6 +45,16 @@ Reviewed `0727ae724122e3f70e103f55d07c6528f60e7241` (2026-10-31T12:01:42-07:00).
 
 Treat these as versioned skill proposals with upstream-reported observations, not verified live site contracts or authority to bypass access restrictions. Enforce host/network/size/time/privacy policy in tools outside skill prose. Scope: all changed path names and the initial Bluesky request helper, not all six guides or later snippets. No site access, skill execution or service claims were independently tested.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/browser-use/browser-harness](https://github.com/browser-use/browser-harness) at `a83c0be1fe1eddd8da5d440ee4a9324910ee6f7c` against prior analyzed `0727ae724122e3f70e103f55d07c6528f60e7241`. Evidence: [SKILL.md](https://github.com/browser-use/browser-harness/blob/a83c0be1fe1eddd8da5d440ee4a9324910ee6f7c/SKILL.md), [agent-workspace/domain-skills/google-trends/scraping.md](https://github.com/browser-use/browser-harness/blob/a83c0be1fe1eddd8da5d440ee4a9324910ee6f7c/agent-workspace/domain-skills/google-trends/scraping.md).
+
+The skill documents explicit allowResizing admission for cloud device/viewport emulation. Six new site recipes are added; the inspected Google Trends recipe distinguishes the ten-item RSS view from the larger inline page dataset, marks traffic as a floor, compares rows with the pager and stops on consent/bot/rate-limit failures. Its November 1 field-test counts are upstream claims.
+
+**Architecture consequence:** Bind extraction scope to the actual representation, pagination and session capabilities. Load only the relevant dated site recipe and preserve omissions; site recipes should not automatically enable paid browser sessions, authenticated access or arbitrary script execution. Treat reported field tests as provenance, not independently reproduced evidence.
+
+**Scope and limits:** Read the root skill delta and selected Google Trends implementation/claimed-result sections, plus the complete seven-path inventory. The other five recipes and live sites were not audited; no browser or HTTP request was executed for this review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [browser-harness](https://github.com/browser-use/browser-harness); analyzed commit `0727ae724122e3f70e103f55d07c6528f60e7241`; commit date 2026-10-31T12:01:42-07:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-query--browser-harness.md).
+Analysis metadata: source [browser-harness](https://github.com/browser-use/browser-harness); analyzed commit `a83c0be1fe1eddd8da5d440ee4a9324910ee6f7c`; commit date 2026-11-01T12:09:59-08:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-query--browser-harness.md).
 <!-- teamagent-analysis:end -->

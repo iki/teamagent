@@ -1,0 +1,74 @@
+# multica
+
+Source: [multica](https://github.com/multica-ai/multica) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **focused source review**. Snapshot `b2561aad61055dd9937fc08f6497846b1458d018` (2026-10-02T07:25:26-07:00). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+Token-checked channel leases are a useful cloud replication pattern, with limits beyond the lease store.
+
+## Source evidence inspected
+
+- [server/internal/integrations/channel/engine/redis_lease_store.go, lines 13–99](https://github.com/multica-ai/multica/blob/b2561aad61055dd9937fc08f6497846b1458d018/server/internal/integrations/channel/engine/redis_lease_store.go#L13-L99)
+- [server/internal/integrations/channel/engine/redis_lease_store.go, lines 131–158](https://github.com/multica-ai/multica/blob/b2561aad61055dd9937fc08f6497846b1458d018/server/internal/integrations/channel/engine/redis_lease_store.go#L131-L158)
+
+## Observed design and algorithms
+
+Acquire, renew and release use Redis Lua to atomically compare an owner token and update expiry or delete a lease. A stale release is a no-op. The readiness function verifies connectivity, loads scripts and executes a temporary acquire/renew/release cycle. The source explicitly requires startup to fail closed when readiness fails.
+
+## Harness decision
+
+Use channel ownership leases when multiple server replicas could process the same integration. Combine them with durable inbox deduplication, an outbox, per-conversation ordering and epoch checks at the effect boundary. This is a mechanism to study, not a requirement to add Redis to the initial single-host build.
+
+## Limits and tradeoffs
+
+Owner-token compare-and-delete prevents stale lease mutations; it does not by itself stop a paused former owner from sending a network message after expiry. External effects require their own stale-owner checks, idempotency strategy and reconciliation. Redis failure/failover behavior was not tested.
+
+## Validation before adoption
+
+Simulate a lease expiry while a process is suspended, two replicas claiming the same channel, renewal loss, failover and replayed webhook delivery. Confirm only the intended logical response reaches the conversation. No tests, live inference, installation, or production operation were performed for this review.
+
+License correction from implementation audit, 2026-10-04: the [LICENSE at this snapshot](https://github.com/multica-ai/multica/blob/b2561aad61055dd9937fc08f6497846b1458d018/LICENSE) is the custom Multica License, combining Apache-2.0 with additional hosting, commercial embedding, branding and attribution conditions. The earlier Apache-2.0 indicator was incomplete. Reuse the general concurrency pattern through an independent implementation; do not copy this project's source or UI under an assumption of plain Apache-2.0 terms. See [reuse decisions](../architecture/reuse.md).
+
+Related directions: [channels](../channels.md) · [agents](../agents.md).
+
+## 2026-10-28 scoped source review
+
+Source: [multica](https://github.com/multica-ai/multica); inspected saved discovery revision `d7d1831fcf39b874911aae1e48b2fbf804bd068e`. Prior analyzed revision `b2561aad61055dd9937fc08f6497846b1458d018` remains historical evidence.
+
+**Scope:** Complete common agent contract/constructor and one runtime-sharing browser test. Provider implementations, daemon admission and the sharing API were not read; declarations are distinguished from enforced behavior.
+
+The [common execution contract](https://github.com/multica-ai/multica/blob/d7d1831fcf39b874911aae1e48b2fbf804bd068e/server/pkg/agent/agent.go#L25-L217) separates startup, inactivity, tool, interrupt and overall budgets; `runContext` actually applies a wall-clock timeout only when positive. Zero or negative values create a cancellable context without a deadline. It also distinguishes authoritative terminal observation from cleanup acknowledgement and marks supplemental-input readiness separately. These are useful adapter requirements, but this file does not prove each provider honors them: many option comments explicitly identify supported backends or say other backends ignore the field.
+
+[Resume and usage metadata](https://github.com/multica-ai/multica/blob/d7d1831fcf39b874911aae1e48b2fbf804bd068e/server/pkg/agent/agent.go#L245-L326) distinguish permanent rejection, transient inability and undetectable rejection rather than treating a missing session ID as permission to restart. Provider-reported cost has a separate integer unit and zero means unreported; it should not be conflated with a verified free run. Constructor filtering is centralized, while the filter and process-launch implementation remain outside this scope.
+
+The [runtime-sharing test](https://github.com/multica-ai/multica/blob/d7d1831fcf39b874911aae1e48b2fbf804bd068e/e2e/runtime-sharing.spec.ts#L4-L60) checks owner-side draft/save/reload behavior, revocation to private, member removal and re-addition remaining private. Although it creates a member client, it does not attempt member-side execution or access after revocation. Thus it supports a UI persistence scenario, not comprehensive runtime authorization evidence. Teamagent should carry explicit capability and cleanup receipts into adapter conformance tests and separately test denied use after revocation. This review read test source but ran no browser, provider or subprocess.
+
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `d7d1831fcf39b874911aae1e48b2fbf804bd068e` to `9af15b1446f9d91f90ea97b65c504a7aa49da714`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [server/pkg/agent/opencode.go](https://github.com/multica-ai/multica/blob/9af15b1446f9d91f90ea97b65c504a7aa49da714/server/pkg/agent/opencode.go#L145-L158), OpenCode execution now chooses ACP through an explicit transport decision and reports why the run-format transport remains selected otherwise. The same delta normalizes version-dependent tool-call identity: legacy callID wins, while a tool part can use its id when callID is absent (lines850–866). This repairs correlation between tool starts/results across wire versions.
+
+**Harness implication and limits:** Negotiate capabilities per runtime version and transport, not per product name alone. Tool-start visibility matters to hang detection, while an output-only transport has a different observability contract. The ACP implementation and selector were not captured here; comments about MCP support are not proof that it works. Preserve native IDs and avoid treating transport fallback as equivalent permission or cancellation enforcement. This review is static and does not certify other changed subsystems.
+
+## 2026-11-01 scoped source review
+
+Reviewed frozen commit `5a2cc891ac338eed1919aa11a1eef5957cd82cec` against prior analyzed commit `9af15b1446f9d91f90ea97b65c504a7aa49da714`. Historical reviews above remain separate evidence.
+
+The [Hermes session storage change](https://github.com/multica-ai/multica/blob/5a2cc891ac338eed1919aa11a1eef5957cd82cec/server/internal/daemon/execenv/hermes_sessions.go) makes the durable conversation directory the effective Hermes home, instead of symlinking a task-local state.db to it. It prepares/migrates the prior task-local state before removing that task's database family, stamps the durable directory for the overlay initializer, and returns `Home`, `Mounted` and `HistoryPresent` separately. A mounted empty store must not be advertised as resumable history.
+
+The [updated fixtures](https://github.com/multica-ai/multica/blob/5a2cc891ac338eed1919aa11a1eef5957cd82cec/server/internal/daemon/execenv/hermes_sessions_test.go) read a regular file from the durable home across tasks, isolate two conversation directories, and delete the scratch home while verifying both transcript and WAL bytes survive. These tests use ordinary text files to model the database family; this review did not establish live SQLite quiescence, concurrent-writer serialization, migration atomicity internals or native gateway behavior. Teamagent should keep persistent conversation ownership outside task cleanup and test actual database journals, rollback and interruption separately.
+
+**Coverage:** Read the complete targeted session-home implementation/test delta. Unchanged migration helpers, gateway initialization and the rest of the large update were outside this scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
+
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/multica-ai/multica](https://github.com/multica-ai/multica) at `c321e49098cd1a3e01714a179c0bfca78c510e0f` against prior analyzed `5a2cc891ac338eed1919aa11a1eef5957cd82cec`. Evidence: [packages/views/issues/components/advanced-filter-panel.tsx](https://github.com/multica-ai/multica/blob/c321e49098cd1a3e01714a179c0bfca78c510e0f/packages/views/issues/components/advanced-filter-panel.tsx), [packages/views/issues/components/issues-header.advanced-filter.test.tsx](https://github.com/multica-ai/multica/blob/c321e49098cd1a3e01714a179c0bfca78c510e0f/packages/views/issues/components/issues-header.advanced-filter.test.tsx).
+
+The advanced-filter panel removes its generated prose summary and moves the reason for an unavailable simple-filter conversion into a tooltip on a focusable wrapper. The representability guard and disabled action remain; inspected tests retain the conversion restrictions while removing expectations for always-visible explanatory prose.
+
+**Architecture consequence:** Separate an unavailable action's reason from its enforcement. Reduced interface text is not a change to task leases or execution authority, and keyboard/screen-reader discoverability still needs rendered acceptance coverage.
+
+**Scope and limits:** Reviewed the changed component and unit assertions within a nine-path UI/localization update. Browser, accessibility and upstream tests were not executed.

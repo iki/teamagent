@@ -40,6 +40,14 @@ The nine-path delta pins matching React/React DOM versions, groups their depende
 
 Adapt installed compatibility checks for coupled packages and local asset provenance where offline builds matter. A local font alone does not establish that the whole build or application is offline. This update does not independently change or validate the swarm design; no upstream install, CI, browser or tests were run.
 
+## External-update review - 2026-11-01
+
+Reviewed `40c129f07b91714e437ead56f23f2a2432747e04` against `8e7d967de5e7f4d8448594096e1921624b133501` after reconciling the local category move. The two-path update changes [frontend/package.json](https://github.com/bigbodycobain/shadowbroker/blob/40c129f07b91714e437ead56f23f2a2432747e04/frontend/package.json) and its [lockfile](https://github.com/bigbodycobain/shadowbroker/blob/40c129f07b91714e437ead56f23f2a2432747e04/frontend/package-lock.json): Next.js moves from 16.3.8 to 16.4.3, with matching environment/native compiler artifacts, explicit Linux libc metadata and an updated optional sharp requirement. No application source or authorization tests change in this delta.
+
+**Architecture consequence:** Preserve the earlier session and locality trust findings; framework-version churn does not independently validate them. Verification reuse must include the resolved dependency graph and platform/native artifact identity, with applicable application acceptance checks after a framework change. This observation neither selects a new Teamagent framework nor bypasses its Trigon-owned shared dependency process.
+
+**Scope and limits:** Complete two-path inventory and dependency delta inspected. No package download, installation, build, browser/native acceptance test or upstream CI result was executed or independently verified. The update establishes declared dependency state, not security remediation or improved swarm behavior. Related directions: [agents](../agents.md), [decisions](../decisions.md), [evolution](../evolution.md).
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [shadowbroker](https://github.com/bigbodycobain/shadowbroker); analyzed commit `8e7d967de5e7f4d8448594096e1921624b133501`; commit date 2026-10-30T12:07:09-06:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--shadowbroker.md).
+Analysis metadata: source [shadowbroker](https://github.com/bigbodycobain/shadowbroker); analyzed commit `40c129f07b91714e437ead56f23f2a2432747e04`; commit date 2026-11-01T10:01:10-07:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--shadowbroker.md).
 <!-- teamagent-analysis:end -->

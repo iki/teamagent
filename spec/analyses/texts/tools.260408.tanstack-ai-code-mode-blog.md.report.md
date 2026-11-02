@@ -6,20 +6,19 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://github.com/tanstack/tanstack.com/raw/refs/heads/main/src/blog/tanstack-ai-code-mode.md>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-11-01T08:51:16.093Z. Import: **pinned**. Content validation: **partial**.
+Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-11-01T21:49:04.531Z. Import: **pinned**. Content validation: **usable-text**.
 
 First captured: 2026-10-24T05:51:07.579Z. Source creation/publication date: unknown. Date evidence: unknown. Filename dates and Last-Modified are not treated as creation dates.
 
 Source revision: not supplied.
 
-Original bytes: 15485. Extracted Markdown characters: 15093. Captured images: 0.
+Original bytes: 15485. Extracted Markdown characters: 15150. Captured images: 1.
 
-Memory source: `f1fa2c3b-2aa0-4aa8-9a61-d65ab4c8c359`. Version: `ec30d1c5-773c-4157-baba-ab9311b74c31`. Content SHA-256: `0eb697287c8b8abad2896bdb3fd7f849be6ec34c6c8c3c83aaf725f41314617c`.
+Memory source: `f1fa2c3b-2aa0-4aa8-9a61-d65ab4c8c359`. Version: `04d048a6-91b0-4bf4-9648-297c264303bb`. Content SHA-256: `d503faf990ee2c39cf207f19b88915d7d5e6988cb493d0e4c020ad5a59e0edaa`.
 
-[Version evidence and assets](../../../.cache/text/exports/f1fa2c3b-2aa0-4aa8-9a61-d65ab4c8c359/ec30d1c5-773c-4157-baba-ab9311b74c31/manifest.json). Export manifests retain exact locators; treat the cache as private.
+[Version evidence and assets](../../../.cache/text/exports/f1fa2c3b-2aa0-4aa8-9a61-d65ab4c8c359/04d048a6-91b0-4bf4-9648-297c264303bb/manifest.json). Export manifests retain exact locators; treat the cache as private.
 
-- original&#47;tanstack&#45;ai&#45;code&#45;mode&#46;md&#58; A referenced image could not be retrieved under the import policy
-- No images were captured&#59; whether the source contains missing images is unverified&#46;
+- Image count is measured&#59; visual fidelity and completeness are unverified&#46;
 - Static snapshot checked locally&#59; no remote freshness check&#44; conversion or export rewrite was performed&#46;
 
 Extracted heading sample (up to 20; source text, not an endorsed analysis):

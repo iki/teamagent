@@ -1,0 +1,115 @@
+{
+  "id": "ai-agents-mem--graphify",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/safishamsi/graphify",
+  "report": "spec/projects/ai-agents-mem--graphify.md",
+  "analyzedSha": "f5155badddaa3286c78a51653791131e9e2e4d29",
+  "analyzedAt": "2026-11-01T11:35:43.470Z",
+  "analyzedCommitDate": "2026-11-01T00:43:59Z",
+  "observedSha": "32e5efe935e6844ef39a5e33409e4efe848f2172",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "32e5efe935e6844ef39a5e33409e4efe848f2172",
+      "date": "2026-11-01T16:01:28Z",
+      "subject": "chore: bump AST cache schema to 34 for the merged go/python extractor fixes"
+    },
+    {
+      "sha": "96fa042152421026192df5bc6cf8cbd11e9b3f22",
+      "date": "2026-11-01T16:00:28Z",
+      "subject": "Merge pull request #4932 from nothariharan/fix/go-package-var-type-references"
+    },
+    {
+      "sha": "5f7d7e80ac03597ea6278e7adf7f767570b6469b",
+      "date": "2026-11-01T16:00:24Z",
+      "subject": "Merge pull request #4931 from nothariharan/fix/go-field-method-value"
+    },
+    {
+      "sha": "87fa551c5746030ce159d724fe165546fda7b558",
+      "date": "2026-11-01T16:00:20Z",
+      "subject": "Merge pull request #4933 from nothariharan/fix/python-bare-call-not-enclosing-method"
+    },
+    {
+      "sha": "2fcbdc020de707ab7ca4b10b90bd86cd32e2814e",
+      "date": "2026-11-01T16:00:16Z",
+      "subject": "Merge pull request #4929 from nothariharan/fix/python-pep420-src-namespace"
+    },
+    {
+      "sha": "590c77d89c22cbec3ee586a2d2d7300529dbd333",
+      "date": "2026-11-01T18:24:02+05:30",
+      "subject": "fix(go): reference the types a package-level var initialiser names (#2360)"
+    },
+    {
+      "sha": "f3e50225ed32bbfe3cc85c776820041cf25d47dc",
+      "date": "2026-11-01T18:22:23+05:30",
+      "subject": "fix(python): don't resolve a bare call in a method to a method"
+    },
+    {
+      "sha": "6bb5913dac57a7b9748537b418528e73199a9476",
+      "date": "2026-11-01T18:22:15+05:30",
+      "subject": "fix(go): link a method value reached through a receiver field (#1566)"
+    },
+    {
+      "sha": "eaa4aba022529cf4c7073b346d3d63da03313b78",
+      "date": "2026-11-01T17:15:08+05:30",
+      "subject": "fix(python): resolve imports across PEP 420 namespace packages under src/"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/go.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_go_method_value_indirect_calls.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_go_package_var_type_refs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_python_bare_call_not_enclosing_method.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_src_layout_import_resolution.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

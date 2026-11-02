@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--oh-my-pi",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/can1357/oh-my-pi",
+  "report": "spec/projects/ai-agents--oh-my-pi.md",
+  "analyzedSha": "1c291b87e4b889398cc4b8e4ccdfa650b56a0486",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-11-01T00:48:27+01:00",
+  "observedSha": "686b5e2fb542848dc3ff1a9e36a42a8fefdd2278",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "686b5e2fb542848dc3ff1a9e36a42a8fefdd2278",
+      "date": "2026-11-01T17:59:18+01:00",
+      "subject": "fix(coding-agent): offer Hindsight global scope from the session state"
+    },
+    {
+      "sha": "c5242aa665a1111bb3647928b48d530c466493e7",
+      "date": "2026-11-01T17:45:32+01:00",
+      "subject": "Merge PR #17706: feat(coding-agent): let retain and learn write global memories with Hindsight (@alphastorm)"
+    },
+    {
+      "sha": "ff6e544ccea3a44713b236b96337e8a9b184d773",
+      "date": "2026-11-01T17:44:51+01:00",
+      "subject": "fix(coding-agent): report a failed Hindsight retain flush in one notice"
+    },
+    {
+      "sha": "3769a1c53501b08e21ec1a9c2fb08f8cfb15e2e6",
+      "date": "2026-11-01T17:44:16+01:00",
+      "subject": "Merge PR #17529: fix(coding-agent): show retry errors in text print mode (@Mannan-Goyal)"
+    },
+    {
+      "sha": "0fb0dbd3433de72db1d5d4574457d60b4b7bcdc8",
+      "date": "2026-11-01T17:43:44+01:00",
+      "subject": "Merge PR #17704: refactor: replace duplicated helpers with existing shared implementations (@H4vC)"
+    },
+    {
+      "sha": "9d0ef44656236e14e6d9f372718585d9bf66631b",
+      "date": "2026-11-01T08:32:18-08:00",
+      "subject": "feat(coding-agent): make Hindsight global memory scope opt-in"
+    },
+    {
+      "sha": "1f1546dc20957b2fb5ef7bda673845df5344507e",
+      "date": "2026-11-01T17:12:24+01:00",
+      "subject": "fix: keep moved agent/ai exports as deprecated aliases"
+    },
+    {
+      "sha": "57dfd0f2a60a49e56be25dccf5e256c3724a6491",
+      "date": "2026-11-01T17:08:25+01:00",
+      "subject": "refactor(coding-agent): drop offline chain special-casing, keep the retry status line"
+    },
+    {
+      "sha": "a8d02bc73b16597fdd2c7815870d7ee42b1872cb",
+      "date": "2026-11-01T07:57:27-08:00",
+      "subject": "test(coding-agent): cover Hindsight global scoping in the scope exposure table"
+    },
+    {
+      "sha": "1280651939c5ceb730686e0ef8767e590ca6a66e",
+      "date": "2026-11-01T16:54:30+01:00",
+      "subject": "fix(coding-agent): keep outage evidence on local answers; allow other proxy routes"
+    },
+    {
+      "sha": "487a06ea0d7ea9d36450aa5b96dcc34dbbce80fd",
+      "date": "2026-11-01T07:51:14-08:00",
+      "subject": "docs(coding-agent): credit #17706 in changelog"
+    },
+    {
+      "sha": "af24c93ad5ad3ca363630da29167e07462ecbfe5",
+      "date": "2026-11-01T16:42:28+01:00",
+      "subject": "fix(coding-agent): cancel deferred /btw injections on dispose and during session moves"
+    },
+    {
+      "sha": "ef29d887414c974b53cf223429526f1ef14dedb6",
+      "date": "2026-11-01T16:42:18+01:00",
+      "subject": "fix(coding-agent): resolve Alibaba and Azure routes for offline locality"
+    },
+    {
+      "sha": "8f14f8ba32abaedd26037dfb2c3ee7829742f255",
+      "date": "2026-11-01T07:40:25-08:00",
+      "subject": "fix(coding-agent): reject global items at the Hindsight retain queue under per-project scoping"
+    },
+    {
+      "sha": "1fcb49863e7ed2eb479b1bab4db543f077f0b20a",
+      "date": "2026-11-01T07:40:25-08:00",
+      "subject": "fix(coding-agent): keep two-argument HindsightRetainQueue.enqueue project-scoped"
+    },
+    {
+      "sha": "782bd9beaa3a96b7cd7e53d39a6e86ad7d6f41c0",
+      "date": "2026-11-01T07:40:25-08:00",
+      "subject": "docs(coding-agent): credit #15030 in changelog"
+    },
+    {
+      "sha": "c730d0806eb569479fa1db5bc2e5c08b94e799ce",
+      "date": "2026-11-01T07:39:52-08:00",
+      "subject": "feat(coding-agent): let retain and learn write global memories with Hindsight"
+    },
+    {
+      "sha": "7681413e7eed05192c501c4513127d9158809ab9",
+      "date": "2026-11-01T16:32:54+01:00",
+      "subject": "fix(mnemopi): keep strict boolean parse for LLM flags; add changelog entries"
+    },
+    {
+      "sha": "cfcfb4202f9c2381958359b98df4dca392faaf04",
+      "date": "2026-11-01T16:32:54+01:00",
+      "subject": "chore: regenerate export viewer metadata"
+    },
+    {
+      "sha": "bdf0fa736d4d42b72a1353bb833590519149255a",
+      "date": "2026-11-01T16:32:54+01:00",
+      "subject": "refactor: replace duplicated helpers with existing shared implementations"
+    },
+    {
+      "sha": "798fbd853f290f80a8e14e5585274de42c4b53f2",
+      "date": "2026-11-01T16:31:09+01:00",
+      "subject": "fix(coding-agent): resolve fallback locality through request endpoint rules"
+    },
+    {
+      "sha": "144bb8c05525efee9d3b15e52daa5350c7e321e0",
+      "date": "2026-11-01T16:22:47+01:00",
+      "subject": "Merge PR #17699: refactor: replace hand-rolled schemas and validators with omptype (@H4vC)"
+    },
+    {
+      "sha": "8b258043acb4176b7bd512329d4c603b9cbb3486",
+      "date": "2026-11-01T16:19:15+01:00",
+      "subject": "fix(coding-agent): tighten offline locality and sanitize retry lines"
+    },
+    {
+      "sha": "111448ce93c566749782fb59e0e16e10c75dc983",
+      "date": "2026-11-01T16:09:40+01:00",
+      "subject": "fix(coding-agent): key the offline inference on failed hosts and resolve local routes"
+    },
+    {
+      "sha": "2059a40ca12ed9f930d9e76e51e299b21cd3c428",
+      "date": "2026-11-01T15:59:42+01:00",
+      "subject": "docs(changelog): note the offline fallback change"
+    },
+    {
+      "sha": "56afa58235035565ef245a3245e4ad52cb5f47d7",
+      "date": "2026-11-01T15:58:44+01:00",
+      "subject": "Merge branch 'main' into fix/offline-fallback-probe"
+    },
+    {
+      "sha": "0047ed0657a3ff46174dcb39043fd477635d2142",
+      "date": "2026-11-01T15:58:43+01:00",
+      "subject": "fix(coding-agent): stop the fallback chain offline and jump to a local model"
+    },
+    {
+      "sha": "906ed3b49f7c7a18a0ba8499ee1e54acb3887b02",
+      "date": "2026-11-01T15:51:19+01:00",
+      "subject": "fix: restore validator parity in omptype migration; drop job-widgets rewrite"
+    },
+    {
+      "sha": "0dc2f98fe145f76ea12f87450b27ba8367a0f9af",
+      "date": "2026-11-01T15:49:25+01:00",
+      "subject": "refactor: replace hand-rolled schemas and validators with omptype"
+    },
+    {
+      "sha": "a11a75799c4f4829e2acf16ca151ed2286499c11",
+      "date": "2026-11-01T15:39:17+01:00",
+      "subject": "Merge PR #17672: feat(auth): add Mistral Vibe browser sign-in to /login mistral (@abilliontokens)"
+    },
+    {
+      "sha": "376816d2c91b51d0d4f3f42791ae76976d3598fa",
+      "date": "2026-11-01T15:39:05+01:00",
+      "subject": "Merge PR #17618: feat(coding-agent): inject /btw steering prompts into the main session (@apullin)"
+    },
+    {
+      "sha": "52fe688ccbfab4b0a8438f7011687b15b0bf6725",
+      "date": "2026-11-01T15:38:37+01:00",
+      "subject": "refactor(coding-agent): simplify /btw inject state and rendering"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MODULE.bazel.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/host.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/rsync/daemon.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/rsync/session/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/stdio.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-iso/src/overlayfs.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-natives/src/syntaxes/Markdown.sublime-syntax",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-shell/tests/descriptor_limit.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/vendor/brush-core/src/commands.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/vendor/brush-core/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/vendor/brush-core/src/interp.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/vendor/brush-core/src/ioutils.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/vendor/brush-core/src/openfiles.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/vendor/brush-core/src/pipetap.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/vendor/brush-core/src/shell/execution.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/vendor/brush-core/src/shell/io.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/bash-tool-runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/compaction.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/environment-variables.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/keybindings.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/lsp-config.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/memory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/non-compaction-retry-policy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/provider-quirks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/python-repl.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sdk.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/settings.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/slash-command-internals.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tools/eval.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tools/learn.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tools/retain.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/src/agent-loop.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/src/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/src/compaction/branch-summarization.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/src/compaction/compaction-v2-streaming.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/src/compaction/compaction.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/src/compaction/openai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/agent/src/compaction/prompts/file-operations.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/src/compaction/utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/src/sent-tool-definitions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/src/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/anthropic-native-compaction.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/compaction-boundary.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/compaction-error-status.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/compaction-file-ops.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/compaction-short-summary.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/compaction-summary-cap.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/compaction-telemetry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/compaction-thinking-level.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/remote-compaction.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth-broker/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth-broker/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth-broker/snapshot-cache.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth-gateway/http.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth-gateway/routes/embeddings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth-gateway/routes/images.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth-gateway/routes/rerank.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth-gateway/routes/speech.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth-gateway/routes/systemone.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth-gateway/routes/transcriptions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth-gateway/routes/video.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth-gateway/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth/refresh.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth/usage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/dialect/kimi.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/anthropic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/aws-sigv4.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/embeddings-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/google-auth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/images-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openai-chat-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openai-codex-responses.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openai-codex/request-transformer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openai-reasoning-fallback.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openai-responses-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openai-shared.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/pi-native-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/rerank-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/speech-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/systemone-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/transcriptions-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/video-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/registry/hooks/custom.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/registry/oauth/device-code.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/registry/oauth/mistral-vibe.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/registry/oauth/muse-code.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/registry/oauth/xiaomi.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/stream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils/validation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/auth-broker-usage-probe-refresh.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/auth-gateway-pi-native.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/auth-storage-usage-cache.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/fixtures/oauth-sigterm-child.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/mistral-vibe-login.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/openai-responses-history-payload.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/providers/google-auth.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/sambanova-reasoning-replay-wire.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/service-tier-premium-requests.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/scripts/equivalence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/compat/auth-ids.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/compat/collapse.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/compat/provider-ids.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/compat/revision.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/compat/rules.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/compat/rules/auth/_order.kdl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/compat/rules/auth/mistral.kdl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/catalog/src/compat/rules/auth/modular.kdl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/catalog/src/compat/rules/providers/modular.kdl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/compat/rules/providers/sambanova.kdl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/discovery/codex.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/discovery/openai-compatible.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/model-cache.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/model-catalog-format.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/model-manager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/model-tokenizer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/models.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/pricing.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/provider-models/openai-compat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/src/utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/test/cerebras-provider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/catalog/test/modular-provider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/DEVELOPMENT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/scripts/legacy-pi-virtual-module.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/async/job-control.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/async/job-manager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/blob-broker/provider-file-types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/blob-broker/uploaders-object-storage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/cleanse/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/cli/gc-cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/cli/git-tui/ai-stage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/cli/images-cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/collab/crypto.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/collab/guest.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/collab/protocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/collab/registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/commit/conventional/inference.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/config/model-discovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/config/model-resolver.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/config/service-tier.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -1,0 +1,810 @@
+{
+  "id": "ai-agents-proxy--cli-proxy-api",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/router-for-me/CLIProxyAPI",
+  "report": "spec/projects/ai-agents-proxy--cli-proxy-api.md",
+  "analyzedSha": "250d598175db61a4e99ac38b9164ed04745754e5",
+  "analyzedAt": "2026-11-01T11:35:43.470Z",
+  "analyzedCommitDate": "2026-10-31T21:09:56+08:00",
+  "observedSha": "7cad1cb7df48c6c5ffb7ff0b34ef8198806115bc",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "7cad1cb7df48c6c5ffb7ff0b34ef8198806115bc",
+      "date": "2026-11-02T01:07:10+08:00",
+      "subject": "Merge pull request #7142 from gabrielrinaldi/fix/grok-video-1.5-lite"
+    },
+    {
+      "sha": "3ac384983ea2f2dcc8f198ab8fbca0a661036c5b",
+      "date": "2026-11-02T01:04:13+08:00",
+      "subject": "fix(gemini): preserve parallel responses tool output batches across developer notices"
+    },
+    {
+      "sha": "00b7677102fa6e3b1a2c2fa90c13458beaffd1b0",
+      "date": "2026-11-02T01:03:01+08:00",
+      "subject": "fix(translator): preserve developer roles in responses to chat completions"
+    },
+    {
+      "sha": "4448b96e4c6e6bdfa69346d5c9ecee282b1644ac",
+      "date": "2026-11-02T00:49:56+08:00",
+      "subject": "Merge pull request #7113 from zoidypuh/pr/muse-1414-client-headers"
+    },
+    {
+      "sha": "ec06c3cb8bac53c7577772fd6272db8c70a2a93d",
+      "date": "2026-11-01T23:42:37+08:00",
+      "subject": "fix(translator): normalize numeric schema constraints when converting parameters (#7149)"
+    },
+    {
+      "sha": "53ff2f9e7478464007690edf4392b05231a2264a",
+      "date": "2026-11-01T22:46:17+08:00",
+      "subject": "feat(pluginhost): expose per-entry name and logo for multi-entry OAuth plugins"
+    },
+    {
+      "sha": "24f97440138d99f6704be0336f8f66968dec067d",
+      "date": "2026-11-01T22:29:52+08:00",
+      "subject": "Merge pull request #7143 from router-for-me/fix/codex-no-refresh-token-spin"
+    },
+    {
+      "sha": "ce39bc620f65173575aa9b049b9954276124ba6e",
+      "date": "2026-11-01T22:16:29+08:00",
+      "subject": "feat(pluginstore): support plugin locales normalization and management passthrough"
+    },
+    {
+      "sha": "f7331b5197730226829cab32c31fb4ce546ef8fc",
+      "date": "2026-11-01T21:29:23+08:00",
+      "subject": "fix(pluginhost): deframe same-format plugin executor streams and gate hooks"
+    },
+    {
+      "sha": "aca8dfe0f419376432115ede9c0379ced69f4db9",
+      "date": "2026-11-01T21:29:23+08:00",
+      "subject": "Merge pull request #7154"
+    },
+    {
+      "sha": "08437a6742a548b001a42569be2de6d150a2e94c",
+      "date": "2026-11-01T21:21:33+08:00",
+      "subject": "fix(codex): keep shortened gateway mcp tool names readable in claude translator"
+    },
+    {
+      "sha": "a21814ec608aeb53727edd2ae176b0c1d6568535",
+      "date": "2026-11-01T19:46:44+08:00",
+      "subject": "docs(config): note connection-pool pruning boundaries on save"
+    },
+    {
+      "sha": "9513c2d5dc8574022df84725a99d5d0ac45c20ff",
+      "date": "2026-11-01T18:07:44+08:00",
+      "subject": "docs(auth): explain Codex refresh token key requirement"
+    },
+    {
+      "sha": "d65840fb5c8644fdb4e650706d1f4c5b685d348f",
+      "date": "2026-11-01T15:28:05+08:00",
+      "subject": "fix(xai): append identity hash to credential filenames to prevent collisions"
+    },
+    {
+      "sha": "9037d5430db95b76e1b2235587d0237feac7f826",
+      "date": "2026-11-01T15:27:05+08:00",
+      "subject": "fix(openai): drop output-only content_token_count from replayed responses websocket items"
+    },
+    {
+      "sha": "41c03b74511a5ac97e5768b015c0c6e2903fe4cd",
+      "date": "2026-11-01T06:55:20Z",
+      "subject": "fix(pluginhost): normalize same-format plugin executor streams through the stream translator"
+    },
+    {
+      "sha": "675debc06890c20e3b211ded5d8ea34ecd830959",
+      "date": "2026-11-01T14:34:54+08:00",
+      "subject": "Merge pull request #7141 from Ruanyuxi1337/fix/release-flusher-idle"
+    },
+    {
+      "sha": "a96e640d886a38f289f82a8e53590cc3b5e36ffa",
+      "date": "2026-11-01T14:27:47+08:00",
+      "subject": "fix(auth): keep sign-in-required Codex credentials quarantined across manual refresh"
+    },
+    {
+      "sha": "ecbaa6c710bb2e28a18cfd8e7298b704fd402532",
+      "date": "2026-11-01T14:27:46+08:00",
+      "subject": "fix(devin): route compound fast thinking levels to upstream fast variants"
+    },
+    {
+      "sha": "bb6e1aa8c0e8518667519a595e06c956fde287e2",
+      "date": "2026-11-01T14:27:45+08:00",
+      "subject": "fix(meta): include Muse namespace in tool-bearing requests"
+    },
+    {
+      "sha": "5d8fddd338df8926b2c4903e931105f4693b2a11",
+      "date": "2026-11-01T14:27:43+08:00",
+      "subject": "chore(meta): match Muse Code 1.4.14 client headers"
+    },
+    {
+      "sha": "f692d93e2797a51c6840ba16367650e59a0c0330",
+      "date": "2026-11-01T14:24:39+08:00",
+      "subject": "Merge pull request #7101 from sususu98/feat/proxy-connection-pool"
+    },
+    {
+      "sha": "fd02b720e6b303c2fcea6ec2c120204c507d6456",
+      "date": "2026-11-01T14:20:38+08:00",
+      "subject": "fix(proxy): stamp keepalive on uTLS dialers, rebind stale compat executors, and close retired pools outside fence lock"
+    },
+    {
+      "sha": "893958e401699ace52f3e3896ce2006c867d1be4",
+      "date": "2026-11-01T14:14:16+08:00",
+      "subject": "fix(proxy): decline pooling when http.DefaultTransport is not *http.Transport"
+    },
+    {
+      "sha": "6c231c23321bf60593a45bea16bd22f51d9d9151",
+      "date": "2026-11-01T14:14:16+08:00",
+      "subject": "fix(proxy): lazily allocate uTLS pools and close fenced transports"
+    },
+    {
+      "sha": "638f5f55e0d9121433862cd4e56f8ed3e051ac44",
+      "date": "2026-11-01T14:14:16+08:00",
+      "subject": "fix(proxy): honour per-key pool opt-in and isolate pools per runtime"
+    },
+    {
+      "sha": "9f0c9ff420c656e8d88c6a778d84d54457967ae5",
+      "date": "2026-11-01T14:14:16+08:00",
+      "subject": "docs(config): document per-api-key connection pools"
+    },
+    {
+      "sha": "34a01b7602b38ee886f1d1d5fa5571fd386ee8e8",
+      "date": "2026-11-01T14:14:16+08:00",
+      "subject": "feat(proxy): pool upstream transports per api key"
+    },
+    {
+      "sha": "bf834311e6d648efbd457ca7d2c7c740fec04ead",
+      "date": "2026-11-01T14:14:16+08:00",
+      "subject": "feat(config): add per-api-key connection-pool settings"
+    },
+    {
+      "sha": "b63322b9c35af112d7eecedc5bf5aa18c0a49ebb",
+      "date": "2026-11-01T13:45:03+08:00",
+      "subject": "fix(registry): preserve explicit thinkingLevel on Antigravity Claude 5.5 models"
+    },
+    {
+      "sha": "d00267c3fe243516a4c338a2b2e65581d0296e2a",
+      "date": "2026-11-01T13:15:28+08:00",
+      "subject": "fix(auth): treat Anthropic credit balance 400 errors as payment required"
+    },
+    {
+      "sha": "c69cdd933d1928561f3c1e437e1443f6b6573b6f",
+      "date": "2026-10-31T13:36:33-06:00",
+      "subject": "fix(xai): preserve Lite resolution and catalog fallback"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "config.example.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/handlers/management/auth_files_cooldown_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/handlers/management/auth_files_fields.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/handlers/management/auth_files_plugin_oauth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/handlers/management/auth_files_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/handlers/management/auth_files_relogin_preserve_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/handlers/management/plugin_store.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/handlers/management/plugin_store_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/handlers/management/plugins.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/auth/xai/filename.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/auth/xai/filename_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/auth/xai/token.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/clienterror/client_error.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/clienterror/client_error_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/clone_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/config_types.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/config_v8.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/config_yaml.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/config/connection_pool_entry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/vertex_compat.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/home/concurrency_release.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/home/concurrency_release_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/pluginhost/adapters_executors.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/pluginhost/adapters_executors_deframe.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/pluginhost/adapters_executors_deframe_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/pluginhost/adapters_executors_usage_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/pluginhost/adapters_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/pluginhost/auth_provider.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/pluginhost/auth_provider_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/pluginhost/plugin_refresh_compat_executor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/pluginhost/rpc_client.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/pluginhost/rpc_schema.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/pluginhost/rpc_schema_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/pluginhost/snapshot.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/pluginhost/test_helpers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/pluginstore/manifest.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/pluginstore/registry.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/pluginstore/registry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/registry/model_definitions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/registry/model_definitions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/registry/models/models.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/runtime/executor/antigravity_executor_buildrequest_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/runtime/executor/codex_executor_auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/runtime/executor/codex_executor_auth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/runtime/executor/helps/devin_models.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/runtime/executor/helps/devin_models_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/runtime/executor/helps/meta_muse_tools.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/runtime/executor/helps/meta_muse_tools_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/runtime/executor/helps/proxy_helpers.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/runtime/executor/helps/proxy_helpers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/runtime/executor/helps/proxy_pool_generation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/runtime/executor/helps/proxy_pool_isolation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/runtime/executor/helps/proxy_pool_override_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/runtime/executor/helps/proxy_pool_settings_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/runtime/executor/helps/proxy_pool_test_helpers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/runtime/executor/helps/thinking_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/runtime/executor/helps/transport_cache.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/runtime/executor/helps/utls_client.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/runtime/executor/helps/utls_proxy_pool_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/runtime/executor/meta_executor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/runtime/executor/meta_executor_execute.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/runtime/executor/meta_executor_muse_tools_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/runtime/executor/meta_executor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/runtime/executor/openai_compat_executor.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/runtime/executor/openai_compat_executor_roles_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/store/xai_filename_adoption_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/translator/antigravity/gemini/antigravity_gemini_request.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/translator/antigravity/gemini/antigravity_gemini_request_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/translator/claude/gemini/claude_gemini_request.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/translator/codex/claude/codex_claude_request.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/translator/codex/claude/codex_claude_tool_names_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/translator/codex/gemini/codex_gemini_request.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/translator/gemini/gemini/gemini_gemini_request.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/translator/gemini/gemini/gemini_gemini_request_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/translator/gemini/interactions/interactions_gemini_common.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/translator/gemini/openai/responses/gemini_openai-responses_request.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/translator/gemini/openai/responses/gemini_openai-responses_request_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/translator/openai/gemini/openai_gemini_request.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/translator/openai/openai/responses/openai_openai-responses_request.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/translator/openai/openai/responses/openai_openai-responses_roles_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/util/gemini_schema.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/util/gemini_schema_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/watcher/diff/config_diff.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/watcher/diff/config_diff_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/watcher/diff/openai_compat.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/watcher/synthesizer/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/watcher/synthesizer/config_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/api/handlers/openai/openai_responses_websocket_replay_sanitize_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/api/handlers/openai/openai_responses_websocket_requests.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/api/handlers/openai/openai_responses_websocket_toolcall_repair.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/api/handlers/openai/openai_videos_handlers.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/api/handlers/openai/openai_videos_handlers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/auth/manager.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/auth/manager_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/auth/auto_refresh_loop.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/cliproxy/auth/codex_no_refresh_token_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/auth/conductor_cooldown.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/cliproxy/auth/conductor_disabled_refresh_outcome_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/auth/conductor_lifecycle.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/auth/conductor_overrides_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/auth/conductor_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/auth/conductor_unauthorized_refresh_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/auth/cooldown_view.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/auth/cooldown_view_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/auth/metadata_merge.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/auth/selector.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/auth/types.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/builder.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/model_registration_config_fence_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/model_registration_plugin_exclusion_fence_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/cliproxy/proxy_pool_publisher_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/service.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/service_codex_executor_binding_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/service_config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/service_executors.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/cliproxy/service_lifecycle.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/config/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/pluginabi/types.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/pluginapi/types.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/pluginhost/host.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/pluginstore/pluginstore.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/pluginstore/pluginstore_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/proxyutil/proxy.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/gemini_ref_sibling_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

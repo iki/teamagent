@@ -59,6 +59,16 @@ Reviewed `bac62a353d72cfc5af2ade296432445b192e4d7b` against `95a84466936f1cdffcb
 
 **Scope and limits:** Complete three selected diffs from an oversized aggregate comparison; not all repository changes or evaluator internals. Fixtures were read, not executed; no evolution run or quality benchmark was performed.
 
+## External-update review - 2026-11-01
+
+Reviewed `9149bc9d4dab3dada6b771d074ef40822215e14b` against `bac62a353d72cfc5af2ade296432445b192e4d7b`.
+
+The 134-path change replaces a shared base release with a root release owned by each scenario. The [factory](https://github.com/Human-Agent-Society/reef/blob/9149bc9d4dab3dada6b771d074ef40822215e14b/reef/scenario/factory.py) constructs a default or imported item root, checks imported layout and training-start compatibility before registration, and rereads durable registration after a possible creator race. Existing scenarios recover their own root rather than adopting a changed deployment default. [RootSource](https://github.com/Human-Agent-Society/reef/blob/9149bc9d4dab3dada6b771d074ef40822215e14b/reef/core/artifact_ref.py) distinguishes default inputs from item/URI/version provenance; its strict dictionary decoder rejects mixed shapes. A missing source version is explicitly the empty string, not a verified immutable version.
+
+[Metadata decoding](https://github.com/Human-Agent-Society/reef/blob/9149bc9d4dab3dada6b771d074ef40822215e14b/reef/storage/commits.py) advances to reef-scenario/5 and explicitly refuses the previous format rather than silently migrating it. The inspected [scenario fixtures](https://github.com/Human-Agent-Society/reef/blob/9149bc9d4dab3dada6b771d074ef40822215e14b/tests/scenario/test_reef_scenarios.py) cover distinct roots with equal content, preservation after default changes, concurrent creation, old-format refusal and rejection before registration. [Component fixtures](https://github.com/Human-Agent-Society/reef/blob/9149bc9d4dab3dada6b771d074ef40822215e14b/tests/artifact/test_release_components.py) retain unchanged components and distinguish activation from training start. These use fixture runtimes/backends, not real training.
+
+**Harness consequence:** Keep content identity, release ownership, active serving state and training start distinct, and freeze the starting provenance per experiment. A format refusal requires an explicit export/migration/recreation decision that preserves historical evidence; automatic destructive recreation is not an acceptable harness recovery policy. This review covers artifact identity, release-chain, factory, metadata and selected fixture deltas plus serving-comment changes; the other service/trainer changes were not exhaustively audited. No scenario, training, model, storage migration or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [reef](https://github.com/Human-Agent-Society/reef); analyzed commit `bac62a353d72cfc5af2ade296432445b192e4d7b`; commit date 2026-11-01T17:02:34+08:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--reef.md).
+Analysis metadata: source [reef](https://github.com/Human-Agent-Society/reef); analyzed commit `9149bc9d4dab3dada6b771d074ef40822215e14b`; commit date 2026-11-01T17:28:14Z; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--reef.md).
 <!-- teamagent-analysis:end -->

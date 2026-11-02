@@ -62,6 +62,18 @@ The [learning guards](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d13
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## External-update review - 2026-11-01
+
+Reviewed `a3d45e64b9ce66d3a172c8051e8b20561321eb64` against `e580bbc8204874f762d132fe441b18192979211b`.
+
+Within the 126-path comparison, [context delegation](https://github.com/ruvnet/ruflo/blob/a3d45e64b9ce66d3a172c8051e8b20561321eb64/v3/@claude-flow/cli/src/services/context-delegation.ts) is an explicit, host-authorized operation over supplied snapshots. Legacy/observe modes do not invoke a worker; targeted reads and edit/debug/architecture intent retain exact source. Enforced bulk-analysis delegation limits files, serialized input/output, findings, depth and waiting time, then verifies source hashes and exact quoted line ranges. It returns explicit escalation on failure rather than retrying or exposing raw corpus. Unknown usage remains absent; byte reduction is measured separately from provider token/cost information.
+
+The complete inspected [delegation fixture](https://github.com/ruvnet/ruflo/blob/a3d45e64b9ce66d3a172c8051e8b20561321eb64/v3/@claude-flow/cli/__tests__/context-delegation.test.ts) covers denial before invocation, forged/stale citations, extra-field stripping, envelope overhead, cancellation and noncooperative adapters. A timer and abort signal bound caller waiting but cannot forcibly stop an adapter that ignores cancellation. Exact quotes establish provenance, not entailment or task completeness; host policy and output authorization remain necessary.
+
+The [configuration tools](https://github.com/ruvnet/ruflo/blob/a3d45e64b9ce66d3a172c8051e8b20561321eb64/v3/@claude-flow/cli/src/mcp-tools/config-tools.ts) also reject reserved scope/key names and use own-property checks, with [prototype fixtures](https://github.com/ruvnet/ruflo/blob/a3d45e64b9ce66d3a172c8051e8b20561321eb64/v3/@claude-flow/cli/__tests__/config-scope-prototype-safety.test.ts) preserving ordinary scopes named like inherited methods without modifying Object.prototype.
+
+**Harness consequence:** Delegate broad source reduction only through an explicit task/policy boundary and preserve hash-bound evidence plus uncertain usage. Keep exact-source paths for consequential edits and verify conclusions independently. Reviewed these four complete source/test deltas; launcher, AgentDB, Raft, provider/subscription pilots and published benchmark claims were not audited or rerun. No upstream CLI, worker, model/provider, install or benchmark was executed; this does not establish subscription eligibility, measured savings or complete security of the release.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [claude.ruflo](https://github.com/ruvnet/ruflo); analyzed commit `e580bbc8204874f762d132fe441b18192979211b`; commit date 2026-11-01T06:29:40Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--claude.ruflo.md).
+Analysis metadata: source [claude.ruflo](https://github.com/ruvnet/ruflo); analyzed commit `a3d45e64b9ce66d3a172c8051e8b20561321eb64`; commit date 2026-11-01T14:13:37-05:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--claude.ruflo.md).
 <!-- teamagent-analysis:end -->

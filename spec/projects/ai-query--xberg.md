@@ -59,6 +59,16 @@ Reviewed `68b39a7fd43e29b8892047326d84b84a424baa14` against `2e7128df7deaeff7548
 
 **Scope and limits:** Complete three selected diffs; no proof of end-to-end allocation/cancellation bounds or every caller's use of the bounded method. No native PDF parser, fixture or performance test was run.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/xberg-io/xberg](https://github.com/xberg-io/xberg) at `4c3d9618c94dd63b083b6a3063943c5572c08fde` against prior analyzed `68b39a7fd43e29b8892047326d84b84a424baa14`. Evidence: [crates/xberg/src/pdf/native/table.rs](https://github.com/xberg-io/xberg/blob/4c3d9618c94dd63b083b6a3063943c5572c08fde/crates/xberg/src/pdf/native/table.rs), [crates/xberg/src/pdf/native/table/header_metadata_tests.rs](https://github.com/xberg-io/xberg/blob/4c3d9618c94dd63b083b6a3063943c5572c08fde/crates/xberg/src/pdf/native/table/header_metadata_tests.rs), [CHANGELOG.md](https://github.com/xberg-io/xberg/blob/4c3d9618c94dd63b083b6a3063943c5572c08fde/CHANGELOG.md).
+
+Native PDF table conversion carries each cell's explicit header role through span-grid placement, including non-spanned tables. If any positive source role exists, it governs the grid; otherwise the legacy first-row fallback remains for spanned tables. Fixtures cover mixed row/cell headers, spans, unknown roles and reordered sidecars with identical content on different pages.
+
+**Architecture consequence:** Preserve table roles and source-page identity as structured sidecars alongside Markdown. Markdown alone can discard distinctions such as mixed headers, and a parser upgrade does not establish fidelity on the actual research PDFs. The separate local 1.3.10 re-extraction measurements do not prove this later source commit is in that executable.
+
+**Scope and limits:** Read the changed native conversion and header fixture assertions in the four-path delta; the mirrored changelog is documentation. No Rust build, upstream fixtures or visual table audit was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [xberg](https://github.com/xberg-io/xberg); analyzed commit `68b39a7fd43e29b8892047326d84b84a424baa14`; commit date 2026-11-01T08:23:59+02:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-query--xberg.md).
+Analysis metadata: source [xberg](https://github.com/xberg-io/xberg); analyzed commit `4c3d9618c94dd63b083b6a3063943c5572c08fde`; commit date 2026-11-01T14:59:40-05:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-query--xberg.md).
 <!-- teamagent-analysis:end -->

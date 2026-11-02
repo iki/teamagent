@@ -2,6 +2,20 @@
 
 This log records changes to cross-project conclusions. Per-source ingestion/review events are kept in [repository analysis changes](analyses/CHANGELOG.md) and [text-resource changes](analyses/texts/CHANGELOG.md). The [initial survey](README.md) remains dated evidence, not a continuously current audit.
 
+## 2026-11-02 — Source additions and Git LFS inspection correction
+
+- Added the scoped [OpenWorker](https://github.com/andrewyng/openworker) [review](analyses/unreviewed/ai-agents--openworker.md) and ten architecture updates, covering Jev probability validation, authority rechecks, memory/skills, team journals, channel binding and local English dictation. These are source findings, with explicit runtime and calibration limits.
+- Reviewed the user-updated [HyperFrames](https://github.com/heygen-com/hyperframes) [revision](projects/ai-gen--hyperframes.md) for cache-root consistency, file-path compatibility, bounded preview retries, hardware-dependent LUT fitting and authentication cleanup ownership. Existing media policy and the Czech workflow remain unchanged.
+- Reproduced the Windows Git LFS hook-path defect, selected the native null device, preserved and removed four exact generated gh-aw hooks, and observed all 564 configured checkouts clean without fetching. [Reconciliation and evidence](analyses/reconciliation-2026-11-01.md) distinguish worktree integrity from Git LFS private-cache writes and retain earlier observations.
+
+## 2026-11-01 — source reconciliation
+
+- Added [91 updated-source reviews and 14 initial reviews](analyses/reconciliation-2026-11-01.md), including [Open Notebook](https://github.com/lfnovo/open-notebook) ([report](analyses/unreviewed/ai-agents--open-notebook.md)). Reconciled moved locations and [ECC](https://github.com/affaan-m/ecc) identity continuity; the duplicate [Yue2](https://github.com/timoncool/yue2-studio) analysis points to its primary report while both configured checkouts remain.
+- Resolved the [MentisDB](https://github.com/CloudLLM-ai/mentisdb) Windows filename exception through its upstream fix. Retained the inaccessible [public Vasilyu source](https://github.com/vasilyu1983/ai-agents-public) and verified private backup, following the user's explicit disposition; a 404 is not evidence that the source became private or was deleted.
+- Reconciled [eleven static text derivatives](analyses/texts/reconciliation-2026-11-01.md) with immutable before/after receipts and retained originals. The 43 active resources now contain 34 usable texts and nine explicit partials; a repeat static sync makes zero capture calls. Extraction counts and text overlap remain diagnostics, not completeness guarantees.
+- Refined source-version completeness, account/route admission before Jev ranking, skill disclosure and child-state transfer, completion versus delivery, trust-store recovery and truthful media/platform claims across the architecture directions. Educational catalogues and unexecuted upstream fixtures remain explicitly limited evidence.
+- Hardened portable source reconciliation with exact canonical URL comparisons and offline object proofs that exclude replacement refs, legacy grafts and lazy fetching. The [operational contract](research-sync.md) retains static resource policy, explicit derivative adoption and recovery without recapture. [Measurements](data/research-reconciliation-2026-11-01.json) preserve failed verification attempts separately from successful checks.
+
 ## 2026-11-01
 
 - Completed [272 scoped revision reviews](analyses/run-2026-11-01.md) after checking all 548 configured Git sources. Retained the Windows-blocked MentisDB update and inaccessible bundle as exceptions; reconciled Closedloop's exact trees without inventing ancestry or a cause for its history change. Updated related directions and preserved report history.

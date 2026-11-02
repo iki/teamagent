@@ -62,6 +62,16 @@ The [image budget](https://github.com/vercel-labs/fx/blob/c11b301dddd376d037af1d
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/vercel-labs/fx](https://github.com/vercel-labs/fx) at `15070ecbda474d798c0e24a516b03331108f2662` against prior analyzed `c11b301dddd376d037af1dc7bf3eb0dd197caee0`. Evidence: [.github/workflows/release.yml](https://github.com/vercel-labs/fx/blob/15070ecbda474d798c0e24a516b03331108f2662/.github/workflows/release.yml).
+
+The Linux x86_64 release now consumes a reusable profile-guided optimization workflow, alongside the existing ARM workflow. Packaging selects an explicit artifact ID per architecture, requires a matching native host, and retains executable-size output, license notices and archive hashes. Release still depends on the packaging jobs and the validation-only guard.
+
+**Architecture consequence:** Carry the measured candidate artifact into packaging instead of rebuilding an unmeasured substitute. Architecture-specific provenance and an artifact hash are useful evidence, but this review does not independently establish the optimization's speed or size benefit.
+
+**Scope and limits:** Reviewed the release-workflow delta in a five-path packaging/documentation update. The called optimization workflow, release jobs and benchmark claims were not executed or rebenchmarked.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [fx](https://github.com/vercel-labs/fx); analyzed commit `c11b301dddd376d037af1dc7bf3eb0dd197caee0`; commit date 2026-11-01T03:49:27-05:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--fx.md).
+Analysis metadata: source [fx](https://github.com/vercel-labs/fx); analyzed commit `15070ecbda474d798c0e24a516b03331108f2662`; commit date 2026-11-01T05:16:38-05:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--fx.md).
 <!-- teamagent-analysis:end -->

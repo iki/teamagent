@@ -38,6 +38,14 @@ Reviewed commit [`4f9289ba129ea8dd3e39339daf3ffada2a14fff7`](https://github.com/
 
 The complete two-file delta adds 15-minute deadlines to unit, frontend, agent smoke and lint jobs in [tests.yml](https://github.com/aaronjmars/miroshark/blob/4f9289ba129ea8dd3e39339daf3ffada2a14fff7/.github/workflows/tests.yml), plus workflow/ref concurrency with cancellation restricted to pull-request events. The [image job](https://github.com/aaronjmars/miroshark/blob/4f9289ba129ea8dd3e39339daf3ffada2a14fff7/.github/workflows/docker-image.yml) gets a 30-minute deadline. This is verification scheduling, not a changed swarm algorithm. Teamagent should retain bounded jobs, distinguish supersession from success, and verify descendant cleanup separately from a CI cancellation request. No workflow, build or upstream test was executed.
 
+## External-update review - 2026-11-01
+
+Reviewed `570efde85638223df1271f29ec6bf60e779b2718` against `4f9289ba129ea8dd3e39339daf3ffada2a14fff7` after reconciling the local category move. The complete change inventory contains only [backend/uv.lock](https://github.com/aaronjmars/miroshark/blob/570efde85638223df1271f29ec6bf60e779b2718/backend/uv.lock) and [frontend/package-lock.json](https://github.com/aaronjmars/miroshark/blob/570efde85638223df1271f29ec6bf60e779b2718/frontend/package-lock.json): Tornado moves from 6.5.9 to 6.6 with revised distribution metadata, and follow-redirects from 1.16.1 to 1.16.2 with a new integrity entry.
+
+**Architecture consequence:** This dependency-only update supplies no new agent, decision or adapter behavior to adopt; the earlier CLI semantic and telemetry findings remain applicable. Dependency identity changes must invalidate relevant verification caches, and platform-specific artifacts require their own compatibility checks. Upstream dependency maintenance does not authorize changing Teamagent's shared pins or central patch provenance.
+
+**Scope and limits:** Inspected the two-file delta and changed dependency entries. Recorded artifact hashes and wheel listings were not independently downloaded, authenticated or installed; no vulnerability-fix claim, upstream test result or runtime compatibility result is established by the lockfiles alone. Related directions: [agents](../agents.md), [decisions](../decisions.md), [evolution](../evolution.md).
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [miroshark](https://github.com/aaronjmars/miroshark); analyzed commit `4f9289ba129ea8dd3e39339daf3ffada2a14fff7`; commit date 2026-10-31T13:13:11-04:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--miroshark.md).
+Analysis metadata: source [miroshark](https://github.com/aaronjmars/miroshark); analyzed commit `570efde85638223df1271f29ec6bf60e779b2718`; commit date 2026-11-01T11:30:52-05:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--miroshark.md).
 <!-- teamagent-analysis:end -->

@@ -34,6 +34,33 @@ The [adaptation skill](https://github.com/vasilyu1983/AI-Agents-public/blob/0124
 
 The [learning note](https://github.com/vasilyu1983/AI-Agents-public/blob/01246042082225a482980162543f453067143e8b/skills/universal/ai-llm/learnings.md) correctly treats model prices and retirement facts as time-sensitive. The [routing log](https://github.com/vasilyu1983/AI-Agents-public/blob/01246042082225a482980162543f453067143e8b/skills/routing-log.md) contains an explicitly replaceable example WIN, not a measured successful route. Adapt source-group separation, serving-artifact evaluation and provenance-aware learning, while ensuring example rows cannot become telemetry and append operations have authorized storage and privacy rules. No dataset, model, trainer or feedback script was run.
 
+## Availability reconciled 2026-11-01
+
+A fresh read-only probe completed at `2026-11-01T21:05:26Z`. The configured
+GitHub credential authenticated successfully against the account endpoint,
+but three Git/API availability attempts and a separate repository metadata
+request still classified the [original source](https://github.com/vasilyu1983/AI-Agents-public)
+as `not_found_or_inaccessible`; the metadata response was HTTP 404. The API
+client did not follow redirects. Public repository lookup also returned 404,
+and no verified successor was found. Cached search listings and the owner's
+profile still naming this repository do not establish current access or a rename.
+
+The retained checkout remains clean and non-shallow at
+`01246042082225a482980162543f453067143e8b`, with its expected origin verified.
+The existing private backup's recorded repository identity, private visibility
+and all three expected retained refs were reverified without creating or pushing
+a backup. Ref agreement establishes retained Git reference coverage, not a new
+upstream revision or an independent audit of every remote object.
+
+The preservation and failure diagnosis are reconciled; current upstream updates
+remain externally blocked. The user identifies this as an intended public source;
+the 404 responses do not establish why it is inaccessible or that it was deleted.
+Keep this source registered for future anonymous availability checks and
+retain the reviewed snapshot and original citations. Do not replace it with a
+marketplace copy or fork without a separately reviewed identity mapping. This
+availability check does not expand the source review above or establish that a
+newer skill version is available.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle.vasilyu83](https://github.com/vasilyu1983/AI-Agents-public); analyzed commit `01246042082225a482980162543f453067143e8b`; commit date 2026-10-16T09:19:00+01:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.vasilyu83.md).
+Analysis metadata: source [bundle.vasilyu83](https://github.com/vasilyu1983/AI-Agents-public); analyzed commit `01246042082225a482980162543f453067143e8b`; commit date 2026-10-16T09:19:00+01:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.vasilyu83.md).
 <!-- teamagent-analysis:end -->

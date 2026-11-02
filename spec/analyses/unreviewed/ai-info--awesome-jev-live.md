@@ -32,6 +32,16 @@ The [README catalog](https://github.com/wh000wh000/awesome-jev-live/blob/966fb9c
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## External-update review - 2026-11-01
+
+Reviewed `1f913385e35ed9fc95ca0c8fa114c4bac36b3d02` against `966fb9c06c9a972d5f62c0eeb5b4060bceab90c5`.
+
+The 60-path update is a refreshed discovery catalog. The whole-diff capture exceeded its bound; a complete README expansion was available, and this assessment reads the opening metadata/featured/category changes plus the added routing entry around the CodeOtter section of the [frozen README](https://github.com/wh000wh000/awesome-jev-live/blob/1f913385e35ed9fc95ca0c8fa114c4bac36b3d02/README.md). The upstream snapshot reports 827 entries, nine additions and a refresh timestamp of 2026-11-02T02:17:42+08:00. Those are catalog-reported counts, not independently reconstructed totals or an assertion that every linked project was checked by Teamagent.
+
+The selected material keeps upstream evidence labels such as inferred and observed beside discovery entries, while refreshing popularity and activity metadata. A new code-review/merge-gate candidate appears under routing/approvals. Its description and grade remain curator claims; this review did not inspect that candidate's code, run its model or validate calibrated scores. Featured image/label association likewise cannot substitute for provenance of the actual described source.
+
+**Harness consequence:** Store catalog discoveries with the catalog commit, reported refresh time, grading authority and original candidate link. Promote individual capabilities only after direct source review and task-relevant fixtures; never treat popularity, a refreshed timestamp or an observed label as authorization or measured decision quality. Existing deterministic policy gates remain separate from probabilistic ranking. Other README entries, scraper/generator changes, datasets, translated pages and media were not audited. No collector, external citation, model or benchmark was executed or verified in this scoped update.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [awesome-jev-live](https://github.com/wh000wh000/awesome-jev-live); analyzed commit `966fb9c06c9a972d5f62c0eeb5b4060bceab90c5`; commit date 2026-11-01T17:27:04+08:00; review date 2026-11-01T11:35:43.470Z; depth reviewed. [Maintenance record](../repos/ai-info--awesome-jev-live.md).
+Analysis metadata: source [awesome-jev-live](https://github.com/wh000wh000/awesome-jev-live); analyzed commit `1f913385e35ed9fc95ca0c8fa114c4bac36b3d02`; commit date 2026-11-02T02:22:55+08:00; review date 2026-11-01T23:12:06.798Z; depth reviewed. [Maintenance record](../repos/ai-info--awesome-jev-live.md).
 <!-- teamagent-analysis:end -->

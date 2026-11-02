@@ -92,6 +92,18 @@ The inspected integration fixtures exercise transformed placement/branch/base re
 
 **Coverage:** Read the complete 190-line lifecycle/service/bootstrap expansion, worktree contract change and selected 553-line integration-test delta. The underlying worktree creation and copy implementations were not audited; no daemon or Git fixture was executed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## External-update review - 2026-11-01
+
+Reviewed `7f318bf7cf32690436c8623f1277521538178942` against `fa89738e3a937e83d10b8998ee0d96f3708947dd`.
+
+The 23-path range adds ownership-aware cancellation in the [Codex session adapter](https://github.com/getpaseo/paseo/blob/7f318bf7cf32690436c8623f1277521538178942/packages/server/src/server/agent/providers/codex-app-server-agent.ts). It tracks root-thread command process IDs by native turn, requests per-process termination only after an accepted turn interrupt, and leaves earlier completed turns' deliberate background work and subagent-thread commands alone. Late command announcements join the interrupted turn's cleanup; duplicate IDs are attempted once. Records are bounded to sixteen turns.
+
+The complete inspected [interrupted-turn fixtures](https://github.com/getpaseo/paseo/blob/7f318bf7cf32690436c8623f1277521538178942/packages/server/src/server/agent/providers/codex-interrupted-turn-terminals.test.ts) cover earlier servers, other threads, late and duplicate announcements, two cleanup sweeps completing in either order, completed versus failed command statuses, and bounded history. A failed item is retained because a failure notification does not necessarily establish process exit.
+
+**Important limit:** This is best-effort cleanup, not proof of quiescence. Terminate calls have a two-second deadline; failures are logged, and the next-turn wait stops after 4.5 seconds. The final fixture explicitly expects a refused or unanswered termination not to block the next turn. IDs are marked attempted before the request, so the inspected path does not retry a failed termination. Older evicted records also lose automatic cleanup ownership.
+
+**Harness consequence:** Bind cancellation to exact turn/process ownership and preserve unrelated background work, but distinguish requested, accepted and observed termination. Require independently observed shutdown before releasing exclusive scratch/workspace ownership; otherwise carry the cleanup uncertainty into the next operation. This scoped static review covers the complete adapter and fixture deltas, not all connected-host, workspace observation or terminal changes. No actual Codex process, terminal, upstream test or provider was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [paseo](https://github.com/getpaseo/paseo); analyzed commit `fa89738e3a937e83d10b8998ee0d96f3708947dd`; commit date 2026-11-01T14:46:52+07:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paseo.md).
+Analysis metadata: source [paseo](https://github.com/getpaseo/paseo); analyzed commit `7f318bf7cf32690436c8623f1277521538178942`; commit date 2026-11-01T19:58:12Z; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paseo.md).
 <!-- teamagent-analysis:end -->

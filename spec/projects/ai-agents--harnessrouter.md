@@ -62,6 +62,16 @@ The recovery policy treats a missing result after 120 seconds as an abandoned cl
 
 **Coverage:** Read the complete 193-line idempotency fixture and the gateway claim/create delta (selected diff offsets 117–239), plus nearby alias changes. Durable-store atomicity, upsert uncertainty and full preparation side effects were not audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/HarnessRouter/harnessrouter](https://github.com/HarnessRouter/harnessrouter) at `f6592b27e0d46478f895100a20827d60b538acf4` against prior analyzed `e94398d9c91a21ae7e01c630e2eeffa4defe1cfb`. Evidence: [runner/server.py](https://github.com/HarnessRouter/harnessrouter/blob/f6592b27e0d46478f895100a20827d60b538acf4/runner/server.py), [runner/tests/test_produced_cursor.py](https://github.com/HarnessRouter/harnessrouter/blob/f6592b27e0d46478f895100a20827d60b538acf4/runner/tests/test_produced_cursor.py).
+
+Produced-file filtering now recognizes deletion in either Git porcelain status column instead of only a leading D. New fixtures cover unstaged, staged and checkpointed deletion after collection, and verify that the listed remaining file has a downloadable response.
+
+**Architecture consequence:** Artifact inventories must model deletion and independently validate current availability; a prior collection event is not proof an artifact still exists. Parse both index and working-tree state when producing user-visible artifacts.
+
+**Scope and limits:** Read the complete two-file diff and regression assertions. Upstream HTTP tests and file-download behavior were not executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [harnessrouter](https://github.com/HarnessRouter/harnessrouter); analyzed commit `e94398d9c91a21ae7e01c630e2eeffa4defe1cfb`; commit date 2026-10-31T11:27:24-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--harnessrouter.md).
+Analysis metadata: source [harnessrouter](https://github.com/HarnessRouter/harnessrouter); analyzed commit `f6592b27e0d46478f895100a20827d60b538acf4`; commit date 2026-11-01T02:07:14-08:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--harnessrouter.md).
 <!-- teamagent-analysis:end -->

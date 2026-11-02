@@ -57,6 +57,16 @@ Reviewed `12d9a38e24bf3fb8573b83bc41a2fe75dcd2c281` (2026-10-31T14:09:55+08:00) 
 
 The run-scoped cache validates reference scope, hash and size, differentiates miss/corruption/backend failure, and delegates quota/value/manifest atomicity to `MediaPut`. Its one-day media TTL and separate cleanup manifest distinguish temporary handoff from durable evidence; scope-derived keys use a 64-bit noncryptographic hash and therefore are not an authorization boundary. Reads fetch a complete backend value before payload validation. Teamagent needs transport byte bounds and a verified atomic backend in addition to this interface. [Cache](https://github.com/infiniflow/ragflow/blob/12d9a38e24bf3fb8573b83bc41a2fe75dcd2c281/internal/ingestion/mediacache/store.go). Scope: complete two implementation files and budget tests plus cache-test inventory; backend implementation and parser call sites not audited, no tests/media processing executed.
 
+## External-update review - 2026-11-01
+
+Reviewed `4b520c2476b54015db0755ece50d8808697ba99b` against `12d9a38e24bf3fb8573b83bc41a2fe75dcd2c281`.
+
+The 20-path comparison introduces operation-log construction around [dataset mutations](https://github.com/infiniflow/ragflow/blob/4b520c2476b54015db0755ece50d8808697ba99b/internal/handler/dataset.go), recording time, operation, request route, client address and error outcome. However, the inspected [common implementation](https://github.com/infiniflow/ragflow/blob/4b520c2476b54015db0755ece50d8808697ba99b/internal/common/stub.go) still has empty Audit and LogIngest bodies. These hooks do not establish durable audit logging. The update handler also labels its operation `create_dataset`, an observable static attribution defect; its identity fields should not be trusted without end-to-end validation.
+
+The JSON helper now returns an error while still writing a failure response. Some mutation callers write another error response after that return; this deserves a response-shape regression before adopting the pattern. The changed [list fixture](https://github.com/infiniflow/ragflow/blob/4b520c2476b54015db0755ece50d8808697ba99b/internal/handler/dataset_list_test.go) only adjusts duplicate-ID wording and supplies no coverage for these audit/response boundaries.
+
+**Harness consequence:** Require an actual configured, redacted audit sink and fixtures for operation identity and exactly one failure response. A hook name or deferred call is not evidence of persisted receipts. Reviewed the full dataset-handler delta, common log type/stub deltas and list fixture within the range; other handlers, deletion services and Turkish localization were not audited. No server, database or upstream tests were executed; the attribution/response observations are static, not reproduced runtime failures.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ragflow](https://github.com/infiniflow/ragflow); analyzed commit `12d9a38e24bf3fb8573b83bc41a2fe75dcd2c281`; commit date 2026-10-31T14:09:55+08:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--ragflow.md).
+Analysis metadata: source [ragflow](https://github.com/infiniflow/ragflow); analyzed commit `4b520c2476b54015db0755ece50d8808697ba99b`; commit date 2026-11-01T22:43:40+08:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--ragflow.md).
 <!-- teamagent-analysis:end -->

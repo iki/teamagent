@@ -22,7 +22,7 @@ Memory source: `none`. Version: `none`. Content SHA-256: `none`.
 
 [Original source](<https://raw.githubusercontent.com/TanStack/ai/b739e357ccab283c247188101f4cd2b66504002c/docs/code-mode/code-mode-with-skills.md>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-28T07:07:39.056Z. Local validation: 2026-11-01T08:51:16.093Z. Import: **pinned**. Content validation: **usable-text**.
+Mode: **static**. Last remote attempt: 2026-10-28T07:07:39.056Z. Local validation: 2026-11-01T21:49:04.531Z. Import: **pinned**. Content validation: **usable-text**.
 
 First captured: 2026-10-28T07:07:42.829Z. Source creation/publication date: unknown. Date evidence: unknown. Filename dates and Last-Modified are not treated as creation dates.
 

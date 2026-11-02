@@ -1,0 +1,195 @@
+{
+  "id": "ai-agents-mem--tolaria",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/refactoringhq/tolaria",
+  "report": "spec/projects/ai-agents-mem--tolaria.md",
+  "analyzedSha": "29b7845b14de68c31d9378212334bd01970cc619",
+  "analyzedAt": "2026-11-01T11:35:43.470Z",
+  "analyzedCommitDate": "2026-11-01T02:20:43+01:00",
+  "observedSha": "00fe0f92d367cd207915fdf0d5b9f325d63ea54b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "00fe0f92d367cd207915fdf0d5b9f325d63ea54b",
+      "date": "2026-11-01T20:35:19+01:00",
+      "subject": "refactor: isolate phone toc target hook TOL-301"
+    },
+    {
+      "sha": "d1c9ec05a6779f618614e87bea64e9cacc24bd52",
+      "date": "2026-11-01T20:14:07+01:00",
+      "subject": "fix: preserve mobile incoming deep-link intent TOL-301"
+    },
+    {
+      "sha": "a63443cefda96a7d9c177647e9135d1ada1bd04f",
+      "date": "2026-11-01T17:41:36Z",
+      "subject": "fix: classify empty date properties by semantic name (TOL-299)"
+    },
+    {
+      "sha": "a63640cb6a65be01252f66c60a28bf4a217ef77e",
+      "date": "2026-11-01T18:27:17+01:00",
+      "subject": "refactor(mobile): extract selection action controls (TOL-296)"
+    },
+    {
+      "sha": "73f1a1396e3edcedb3933a619b443a411d10c5a8",
+      "date": "2026-11-01T18:10:52+01:00",
+      "subject": "refactor(mobile): reduce swipe selection hook size (TOL-296)"
+    },
+    {
+      "sha": "017b37169a44bd52286d6a3e1285370850e9bd7b",
+      "date": "2026-11-01T17:51:04+01:00",
+      "subject": "refactor(mobile): split swipe selection snapshot (TOL-296)"
+    },
+    {
+      "sha": "21621d0f5fc0bd25eebbe631977180786f2d3eb7",
+      "date": "2026-11-01T17:30:46+01:00",
+      "subject": "feat(mobile): organize inbox notes on full swipe (TOL-296)"
+    },
+    {
+      "sha": "d985d2455c9a07d62e83d888474b89a1f3962e0f",
+      "date": "2026-11-01T11:12:54Z",
+      "subject": "fix: neutralize quick open focus divider (TOL-297)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "apps/mobile/src/analytics/mobileAnalytics.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/analytics/mobileAnalytics.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/MobileNoteSwipeActions.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/MobileSwipeableNoteRow.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/MobileSwipeableNoteRow.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/mobileNoteListRows.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/mobileNoteSwipe.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/mobileNoteSwipe.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/components/workspace/useMobileNoteListSelection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/screens/MobileUiLab.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/screens/PhoneWorkspace.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/screens/PhoneWorkspaceScreens.testSupport.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/screens/PhoneWorkspaceScreens.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/screens/TabletWorkspace.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/screens/TabletWorkspacePanels.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/screens/WorkspaceChromeView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/screens/WorkspacePanelContent.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/screens/usePhoneTableOfContentsTarget.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/src/workspace/useIncomingDeepLinkNavigation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/workspace/useMobileIncomingDeepLink.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/src/workspace/useMobileIncomingDeepLink.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/components/QuickOpenPalette.focus.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/components/QuickOpenPalette.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/components/QuickOpenPalettePanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/propertyTypes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/propertyTypes.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

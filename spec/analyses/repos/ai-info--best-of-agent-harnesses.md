@@ -2,11 +2,11 @@
 
 Source: [best-of-agent-harnesses](https://github.com/ryanalberts/best-of-agent-harnesses) · [Analysis](../unreviewed/ai-info--best-of-agent-harnesses.md) · [decisions](../../decisions.md), [evolution](../../evolution.md), [memory](../../memory.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `658960d4fccb351c5a73678e3558ab9626ae73f9`; commit date: 2026-10-25T12:26:00-05:00; review date: 2026-10-28T08:26:04.502Z; observed SHA: `658960d4fccb351c5a73678e3558ab9626ae73f9`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `e9f9373a2079b00470af0976050e1b17f6a79586`; commit date: 2026-11-01T12:46:17-06:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `e9f9373a2079b00470af0976050e1b17f6a79586`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ryanalberts/best-of-agent-harnesses/compare/658960d4fccb351c5a73678e3558ab9626ae73f9...658960d4fccb351c5a73678e3558ab9626ae73f9). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ryanalberts/best-of-agent-harnesses/compare/e9f9373a2079b00470af0976050e1b17f6a79586...e9f9373a2079b00470af0976050e1b17f6a79586). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

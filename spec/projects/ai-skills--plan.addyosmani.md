@@ -43,6 +43,16 @@ The [execution-status validator](https://github.com/addyosmani/agent-skills/blob
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) at `301b02b12bff98e4688e6984af6556802322bbde` against prior analyzed `8bfcc1f9916f2eea55494d8c1fa7f4bde867dd9e`. Evidence: [skills/code-review-and-quality/SKILL.md](https://github.com/addyosmani/agent-skills/blob/301b02b12bff98e4688e6984af6556802322bbde/skills/code-review-and-quality/SKILL.md), [evals/cases/code-review-and-quality.json](https://github.com/addyosmani/agent-skills/blob/301b02b12bff98e4688e6984af6556802322bbde/evals/cases/code-review-and-quality.json), [evals/fixtures/review-evidence/CONTRACT.md](https://github.com/addyosmani/agent-skills/blob/301b02b12bff98e4688e6984af6556802322bbde/evals/fixtures/review-evidence/CONTRACT.md), [evals/fixtures/review-evidence/before.py](https://github.com/addyosmani/agent-skills/blob/301b02b12bff98e4688e6984af6556802322bbde/evals/fixtures/review-evidence/before.py), [evals/fixtures/review-evidence/after.py](https://github.com/addyosmani/agent-skills/blob/301b02b12bff98e4688e6984af6556802322bbde/evals/fixtures/review-evidence/after.py), [evals/fixtures/review-evidence/clean.py](https://github.com/addyosmani/agent-skills/blob/301b02b12bff98e4688e6984af6556802322bbde/evals/fixtures/review-evidence/clean.py).
+
+The code-review skill now requires checking reachable callers, guards and tests, distinguishing old defects from regressions and allowing zero findings. The new wallet evaluation cases separate an exact-balance regression, a pre-existing fee issue, a false authorization allegation defeated by the caller guard, duplicate allegations and a source-comment injection.
+
+**Architecture consequence:** Evaluate review skills on confirmed unique defects, rejected claims, historical attribution and truthful execution limits. Multiple agents agreeing on a description is not independent code verification, and review sources must not become instructions.
+
+**Scope and limits:** Read the complete six-file skill and evaluation delta. No evaluation agent or Python fixture was executed; the cases are specified coverage, not measured skill performance.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [plan.addyosmani](https://github.com/addyosmani/agent-skills); analyzed commit `8bfcc1f9916f2eea55494d8c1fa7f4bde867dd9e`; commit date 2026-10-30T23:40:28-07:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--plan.addyosmani.md).
+Analysis metadata: source [plan.addyosmani](https://github.com/addyosmani/agent-skills); analyzed commit `301b02b12bff98e4688e6984af6556802322bbde`; commit date 2026-11-01T11:24:49-08:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--plan.addyosmani.md).
 <!-- teamagent-analysis:end -->

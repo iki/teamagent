@@ -59,6 +59,16 @@ Reviewed `29b7845b14de68c31d9378212334bd01970cc619` against `f0b9b04927e870a5bea
 
 **Scope and limits:** Callback and batching-test deltas from a larger captured expansion; persistence changes were not substantively reviewed here. No browser, native app, performance benchmark or upstream test was executed.
 
+## External-update review - 2026-11-01
+
+Reviewed `00fe0f92d367cd207915fdf0d5b9f325d63ea54b` against `29b7845b14de68c31d9378212334bd01970cc619`.
+
+Within the 26-path comparison, [incoming mobile links](https://github.com/refactoringhq/tolaria/blob/00fe0f92d367cd207915fdf0d5b9f325d63ea54b/apps/mobile/src/workspace/useMobileIncomingDeepLink.ts) now carry a monotonically increasing request identity rather than only a selected note. A newer warm link suppresses a delayed initial URL; asynchronous vault-selection failures are ignored once superseded or unmounted. A repeated link to the same note creates a fresh navigation request, and acknowledgement clears only the matching request. The [navigation adapter](https://github.com/refactoringhq/tolaria/blob/00fe0f92d367cd207915fdf0d5b9f325d63ea54b/apps/mobile/src/workspace/useIncomingDeepLinkNavigation.ts) forwards the note through the mounted workspace callback before acknowledgement.
+
+The inspected [fixtures](https://github.com/refactoringhq/tolaria/blob/00fe0f92d367cd207915fdf0d5b9f325d63ea54b/apps/mobile/src/workspace/useMobileIncomingDeepLink.test.ts) cover delayed cold-start resolution, selection failure across rerenders, repeated links and callback delivery using mocked React Native Linking plus a DOM-rendered hook. They do not verify OS link registration, packaged mobile behavior or durable delivery across process death.
+
+**Harness consequence:** Separate external navigation intent identity from the selected object, fence stale asynchronous results and acknowledge the exact request consumed. These are useful channel/UI principles; Teamagent mobile implementation remains deferred. This scoped static review covers the two link hooks and their fixture delta; swipe actions, property inference and other UI changes were not audited or executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [tolaria](https://github.com/refactoringhq/tolaria); analyzed commit `29b7845b14de68c31d9378212334bd01970cc619`; commit date 2026-11-01T02:20:43+01:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tolaria.md).
+Analysis metadata: source [tolaria](https://github.com/refactoringhq/tolaria); analyzed commit `00fe0f92d367cd207915fdf0d5b9f325d63ea54b`; commit date 2026-11-01T20:35:19+01:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tolaria.md).
 <!-- teamagent-analysis:end -->

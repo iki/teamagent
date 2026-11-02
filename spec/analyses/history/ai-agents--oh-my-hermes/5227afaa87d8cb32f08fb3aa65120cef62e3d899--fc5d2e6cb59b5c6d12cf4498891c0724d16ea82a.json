@@ -1,0 +1,590 @@
+{
+  "id": "ai-agents--oh-my-hermes",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/rlaope/oh-my-hermes",
+  "report": "spec/analyses/unreviewed/ai-agents--oh-my-hermes.md",
+  "analyzedSha": "5227afaa87d8cb32f08fb3aa65120cef62e3d899",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-11-01T18:28:43+09:00",
+  "observedSha": "fc5d2e6cb59b5c6d12cf4498891c0724d16ea82a",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "fc5d2e6cb59b5c6d12cf4498891c0724d16ea82a",
+      "date": "2026-11-02T04:45:01+09:00",
+      "subject": "Merge pull request #2475 from rlaope/feature/dag-open-run-nudge"
+    },
+    {
+      "sha": "7f67bc3f4217c2379eeccf3b401e6f0d5779bd67",
+      "date": "2026-11-02T04:11:05+09:00",
+      "subject": "fix(dag-ulw): name a run that needs repair, and drop an overclaim from the held line"
+    },
+    {
+      "sha": "4f82cf1b1fa1e3e596e72092be87500d672ae4b1",
+      "date": "2026-11-02T03:24:47+09:00",
+      "subject": "Merge origin/main (#2472) into feature/dag-open-run-nudge"
+    },
+    {
+      "sha": "c96bfe649c778857521076255ff788f258105d62",
+      "date": "2026-11-02T02:23:22+09:00",
+      "subject": "fix(dag-ulw): name every no-running-child stall, and skip finished runs cheaply"
+    },
+    {
+      "sha": "59aef57ef45ff61252e0ffa456f6e335df566103",
+      "date": "2026-11-02T02:21:46+09:00",
+      "subject": "Merge pull request #2472 from rlaope/fix/simple-question-quiet"
+    },
+    {
+      "sha": "13d3191d48d97efb864fec4f917fd26b226cc33a",
+      "date": "2026-11-02T02:01:35+09:00",
+      "subject": "Merge origin/main (#2455, #2466, #2469) into feature/dag-open-run-nudge"
+    },
+    {
+      "sha": "c55f94d8116dbedece63854452046de40369a14b",
+      "date": "2026-11-02T01:59:21+09:00",
+      "subject": "feat(dag-ulw): name a run nothing will wake at the next turn's start"
+    },
+    {
+      "sha": "2a41dda9397e528e00a386f8b934228c5a319431",
+      "date": "2026-11-02T01:41:50+09:00",
+      "subject": "Merge origin/main (#2466, #2469) into fix/simple-question-quiet"
+    },
+    {
+      "sha": "86dc7d58d6346eb87e9b0391bf6c4a22f27e948c",
+      "date": "2026-11-02T01:27:31+09:00",
+      "subject": "Merge pull request #2466 from rlaope/fix/x-share-card"
+    },
+    {
+      "sha": "6472a80ac559ceed9396bd69c1fda745786fe2ae",
+      "date": "2026-11-02T01:08:09+09:00",
+      "subject": "Merge pull request #2469 from rlaope/fix/fanout-verification-truth"
+    },
+    {
+      "sha": "7403920765771e72b179146073e2713ab1bfa700",
+      "date": "2026-11-02T01:04:17+09:00",
+      "subject": "fix: a concept opener followed by a task verb is work, not a plain question"
+    },
+    {
+      "sha": "4a185e88124713cd141ef448dc31b302b97db03c",
+      "date": "2026-11-02T00:55:00+09:00",
+      "subject": "docs(changelog): link #2472"
+    },
+    {
+      "sha": "0f4ae73ebeffebb85642c510eb4e5e37125c2718",
+      "date": "2026-11-02T00:54:16+09:00",
+      "subject": "docs(changelog): plain knowledge questions stay quiet"
+    },
+    {
+      "sha": "45ef549eb4cda8d310d0afb09da0cca08e5956b0",
+      "date": "2026-11-02T00:53:52+09:00",
+      "subject": "Merge origin/main (#2455, #2465) into fix/simple-question-quiet"
+    },
+    {
+      "sha": "b093de388b35eb6416fe1f0b0108cd68c6010167",
+      "date": "2026-11-02T00:49:01+09:00",
+      "subject": "fix: narrow plain_question to concept questions so work questions keep hints"
+    },
+    {
+      "sha": "f8b74e1b77c89be91125273e48ec72ac8a1f6b63",
+      "date": "2026-11-02T00:39:40+09:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into fix/x-share-card"
+    },
+    {
+      "sha": "49d56bb3023948f0fc9bfdb28dba916d74c44e39",
+      "date": "2026-11-02T00:39:26+09:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into fix/x-share-card"
+    },
+    {
+      "sha": "051d52cfa58964c2c9dbd70ff285dde4ebe638db",
+      "date": "2026-11-02T00:38:08+09:00",
+      "subject": "Merge pull request #2455 from rlaope/fix/standalone-route-hint-parity"
+    },
+    {
+      "sha": "ae286df3fe960b16b30546a4d8084e382a12c70f",
+      "date": "2026-11-02T00:19:30+09:00",
+      "subject": "fix(fanout): refuse checks that cannot pass, and call unobserved verification unverified"
+    },
+    {
+      "sha": "c90d9455170c55cb69fde8c02574af354e6be7d6",
+      "date": "2026-11-02T00:16:31+09:00",
+      "subject": "Merge pull request #2465 from rlaope/feat/memory-provider-tool-20261101"
+    },
+    {
+      "sha": "9ee5f0ddca6d45f9744daae4c33902026984a221",
+      "date": "2026-11-02T00:09:29+09:00",
+      "subject": "fix: skip token-only route hints for plain knowledge questions"
+    },
+    {
+      "sha": "15790cd281490d2124bd950779bab70a13695e54",
+      "date": "2026-11-02T00:07:28+09:00",
+      "subject": "fix: stop the skill candidate line for plain knowledge questions"
+    },
+    {
+      "sha": "2d28bc2cde549e7225aa4c5f7b8e6a1cd57ecf2b",
+      "date": "2026-11-02T00:05:14+09:00",
+      "subject": "fix(site): give every page X's full share-card tag set"
+    },
+    {
+      "sha": "dcd1700d4bc6b32b83be6631751114bb9d6c0a49",
+      "date": "2026-11-02T00:02:28+09:00",
+      "subject": "fix(routing): freeze the workflow display table and document its row"
+    },
+    {
+      "sha": "43c9bbb3dedc4962764ad50a2b41790824aa432b",
+      "date": "2026-11-01T23:40:06+09:00",
+      "subject": "feat(memory): an always-visible save tool, and Discord auto-threads share their channel's memory"
+    },
+    {
+      "sha": "8ea5569fa9d4d17c4103c330b148484b58a74462",
+      "date": "2026-11-01T23:26:20+09:00",
+      "subject": "Merge pull request #2464 from rlaope/omh/release-4.0.4"
+    },
+    {
+      "sha": "7660e4af430ecc42ed72233025a36a874138cfb6",
+      "date": "2026-11-01T22:57:45+09:00",
+      "subject": "Merge origin/main (#2454 and earlier) into fix/standalone-route-hint-parity"
+    },
+    {
+      "sha": "b1d03cc981fac6a8305f7321abd15c49fa0fd525",
+      "date": "2026-11-01T22:57:09+09:00",
+      "subject": "Merge pull request #2454 from rlaope/omh/omp-round-review-followups"
+    },
+    {
+      "sha": "279c836197d8acc178c1b70f9c580cadb0684b76",
+      "date": "2026-11-01T22:53:59+09:00",
+      "subject": "chore(release): cut v4.0.4"
+    },
+    {
+      "sha": "7f07d1f53eefa2cea208a05f9859ecfc98c8015e",
+      "date": "2026-11-01T22:25:04+09:00",
+      "subject": "revert(routing): take the \"find out\" inquiry change out of this PR"
+    },
+    {
+      "sha": "93934c74fe31d5653e998066a4630d11114d16c5",
+      "date": "2026-11-01T22:20:07+09:00",
+      "subject": "Merge origin/main (#2462, #2463) into omh/omp-round-review-followups"
+    },
+    {
+      "sha": "80090053c26d4d9aff226410043de43dbca8835f",
+      "date": "2026-11-01T19:03:54+09:00",
+      "subject": "Merge pull request #2463 from rlaope/fix/windows-hermes-home-carry"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/live-model-tools/v1/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ADDING-A-SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/CAPABILITY_IMPACT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/CODING-OBSERVABILITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/FANOUT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/INSTALLATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/MEMORY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "site/docs/design-orchestration/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "site/docs/executor-handoff/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "site/docs/hermes-agent-architecture/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "site/docs/image-gen/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "site/docs/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "site/docs/intent-to-plan/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "site/docs/loop/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "site/docs/model-routing/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "site/docs/product-ops/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "site/i18n.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "site/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/dag-ulw/references/run-loop.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coding/fanout.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coding/fanout_contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coding/fanout_dispatch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coding/postconditions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coding/unit_execution_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/coding.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/setup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/maintenance/per_turn_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/maintenance/release.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/omh/version.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/plugin_bundle/omh/awareness.py",
+      "previousPath": null
+    },
+    {
+      "status": "R093",
+      "path": "src/plugin_bundle/omh/command_verb.py",
+      "previousPath": "src/routing/command_verb.py"
+    },
+    {
+      "status": "M",
+      "path": "src/plugin_bundle/omh/consistency_trigger.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/plugin_bundle/omh/dag_open_run_nudge.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/plugin_bundle/omh/display_names.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/plugin_bundle/omh/export_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/plugin_bundle/omh/hooks/llm_hooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/plugin_bundle/omh/memory_messenger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/plugin_bundle/omh/memory_provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/plugin_bundle/omh/memory_thread_parent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/plugin_bundle/omh/plain_question_cues.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/plugin_bundle/omh/plugin.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/plugin_bundle/omh/request_lead.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/plugin_bundle/omh/runtime_paths.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/plugin_bundle/omh/skill_shortlist.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/plugin_bundle/omh/text_fold.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/plugin_bundle/omh/tools/lsp_nav_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/plugin_bundle/omh/tools/memory_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/plugin_bundle/omh/workflow_intent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/quality/reply_lint.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/routing/display_names.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/routing/intent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/routing/localization.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/routing/policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/routing/visual_qa_cues.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skills/dag_ulw_skill.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_consistency_trigger.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_dag_open_run_nudge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_delegate_route_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_dispatch_failure_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_display_names.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_efficiency.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_export_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_fanout_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_fanout_verification_truth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_jit_learn_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_memory_messenger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_memory_provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_memory_remember_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_memory_thread_parent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_plain_question_quiet.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_plain_question_route_hint.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_runtime_paths.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_search_amplification_hooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_site_seo.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_skill_shortlist_sidecar.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_skills_package_exports.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_standalone_route_hint_parity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_unit_execution_state.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

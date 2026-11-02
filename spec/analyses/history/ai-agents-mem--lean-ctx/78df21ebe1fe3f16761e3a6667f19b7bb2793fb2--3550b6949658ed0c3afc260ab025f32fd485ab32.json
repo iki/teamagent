@@ -1,0 +1,830 @@
+{
+  "id": "ai-agents-mem--lean-ctx",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/yvgude/lean-ctx",
+  "report": "spec/projects/ai-agents-mem--lean-ctx.md",
+  "analyzedSha": "78df21ebe1fe3f16761e3a6667f19b7bb2793fb2",
+  "analyzedAt": "2026-11-01T11:35:43.470Z",
+  "analyzedCommitDate": "2026-10-31T21:39:51+01:00",
+  "observedSha": "3550b6949658ed0c3afc260ab025f32fd485ab32",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "3550b6949658ed0c3afc260ab025f32fd485ab32",
+      "date": "2026-11-01T21:02:54+01:00",
+      "subject": "fix: 3.12.1 shell security, knowledge journal, Hive-ready engine, cleanup waves 3–4 (#2168)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-clients.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "PUBLIC-EXPORT-RECEIPT.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "PUBLISH_MANIFEST.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "aur/lean-ctx/PKGBUILD",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/rust/lean-ctx-client/src/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cookbook/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cookbook/sdk/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cookbook/sdk/src/client.e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/autopilot.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/stigmergic-coordination.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/telemetry.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/cognition-interface.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/cognition-lab/plan-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/a2a-contract-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/delivery-evidence-v1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/intelligence-runtime-install-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/provider-framework-contract-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/team-seat-value-v1/frozen-hashes.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/upgrade-3.12.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/migration/focus-2026-10.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/privacy/TELEMETRY-DATA-DICTIONARY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/02-daily-use.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/14-performance-tuning.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/appendix-paths-and-config.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/generated/config-keys.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/generated/mcp-tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/requirements-traceability-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/sprint-poc/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/sprint-poc/RUNBOOK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/sprint-poc/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "install.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "install.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/hermes-lean-ctx/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/hermes-lean-ctx/benchmarks/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/hermes-lean-ctx/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/hermes-lean-ctx/scripts/install.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/hermes-lean-ctx/tests/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/hermes-lean-ctx/tests/test_live_daemon.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/hermes-lean-ctx/transport.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/lean-ctx-bin/postinstall.checksum.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/lean-ctx-bin/postinstall.cockpit.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/lean-ctx-bin/postinstall.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/lean-ctx-bin/preinstall.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/lean-ctx-bin/preinstall.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/pi-lean-ctx/extensions/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/LOCK_ORDERING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/data/DEPRECATIONS.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/agent_tools_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/autopilot_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/benchmark_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/config_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/dispatch/analytics/gain.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/dispatch/analytics/learning.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/dispatch/cli_shell_admission_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/dispatch/env_prefix_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/dispatch/help.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/dispatch/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/dispatch/network/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/dispatch/network/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/dispatch/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/gotchas_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/hive_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/hive_connect_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/knowledge_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/pack_cmd/management.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/pack_cmd/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/pack_cmd/package.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/pack_cmd/transfer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/policy_enforce_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/read_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/read_cmd_carrier.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/cli/wrap_cmd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/a2a/health.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/a2a/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/a2a/task/policy_file.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/src/core/a2a/telemetry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/src/core/adaptive_mode_policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/adaptive_thresholds.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/agents/registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/archive.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/auto_mode_resolver.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/src/core/bandit.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/behavior_nudge.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/bm25_cache.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/bounce_tracker.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/call_graph.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/call_graph_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/ccp_session_bundle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/cli_cache.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/codesign/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/codesign/setup.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/src/core/cognition_loop.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/src/core/cognition_scheduler.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/config/loader.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/config/logic.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/config/merge.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/config/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/config/model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/config/schema/sections_core.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/config/schema/sections_features.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/config/sections.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/src/core/config/shell_policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_field.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/activation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/airgap_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/autopilot.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/bridge.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/enforce.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/envelope_bridge.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/evidence_hook.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/evidence_wiring.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/feedback_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/health.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/health_api.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/integration_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/orchestrator.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/provider_metrics_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_kernel/startup.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_ledger/ledger.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_ledger/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/context_proof.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/edit_quality.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/efficacy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/embeddings/static_model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/src/core/feedback.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/firewall.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/graph_coordinator.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/graph_index/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/heatmap.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/auth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/src/core/hive/background.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/bus/control.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/bus/leases.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/bus/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/bus/ws.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/bus/ws_v2.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/capture/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/connect.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/consent/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/knowledge/code_graph.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/knowledge/pull.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/knowledge/screening.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/knowledge/states.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/metrics/collect.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/metrics/hive_use.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/metrics/hive_use_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/src/core/hive/metrics/k2_review_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/metrics/local_state.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/metrics/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "rust/src/core/hive/metrics/payload.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/metrics/upload.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/metrics_v2/k2_review_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/src/core/hive/scheduler.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/src/core/hive/tasks/cache.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

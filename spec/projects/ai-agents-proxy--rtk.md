@@ -45,6 +45,16 @@ The [read implementation](https://github.com/rtk-ai/rtk/blob/550a5c13de4f635e29a
 
 For Teamagent, compare equivalent requested evidence spans and report omission separately from compression. The fixture estimator uses bytes divided by four, so its savings are not model-token measurements; clamping also does not prove semantic fidelity or task benefit. The selected source/test comparison was read completely; other command filters in the 47-path update were not re-audited. No upstream binary, tests or benchmark was executed.
 
+## External-update review - 2026-11-01
+
+Reviewed `1d20b015ebad73177a6c086c4292b809c7ce2e38` against `550a5c13de4f635e29a21431404e0489440a1d24`.
+
+Within the 13-path comparison, the [Hermes hook](https://github.com/rtk-ai/rtk/blob/1d20b015ebad73177a6c086c4292b809c7ce2e38/hooks/hermes/rtk-rewrite/__init__.py) mutates the shared terminal argument payload without returning a later modify directive that could overwrite an earlier plugin's queued decision. It preserves other arguments, disables stdin and uses a five-second default rewrite timeout; configured values must be finite and positive. The override has no upper clamp, subprocess output remains captured without a byte bound, and this optional compressor deliberately fails open to the original command.
+
+The inspected [fixtures](https://github.com/rtk-ai/rtk/blob/1d20b015ebad73177a6c086c4292b809c7ce2e38/hooks/hermes/tests/test_rtk_rewrite_plugin.py) simulate directive ordering, preserve workdir/timeout, distinguish accepted versus passthrough exit codes and cover invalid timeout values, missing executables and failures. Their simulated merge rules are not a fresh live Hermes compatibility test.
+
+**Harness consequence:** Optional token compression must not override authorization or another hook's command decision. Validate the final effective command after composition and keep a deterministic execution gate independent of a fail-open optimizer. Reviewed the complete hook and fixture deltas; analytics, Rust scratch isolation and command changes were not audited. No hook, subprocess, installer or upstream test was run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [rtk](https://github.com/rtk-ai/rtk); analyzed commit `550a5c13de4f635e29a21431404e0489440a1d24`; commit date 2026-11-01T00:50:42+01:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--rtk.md).
+Analysis metadata: source [rtk](https://github.com/rtk-ai/rtk); analyzed commit `1d20b015ebad73177a6c086c4292b809c7ce2e38`; commit date 2026-11-01T16:25:08+01:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--rtk.md).
 <!-- teamagent-analysis:end -->

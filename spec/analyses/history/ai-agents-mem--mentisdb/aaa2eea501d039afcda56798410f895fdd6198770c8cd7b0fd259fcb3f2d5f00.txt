@@ -1,0 +1,186 @@
+# mentisdb
+
+Typed append-only memory records with hash chaining, explicit relations and derived-index synchronization.
+
+Source: [mentisdb](https://github.com/CloudLLM-ai/mentisdb) · Snapshot: `4c9b95041da68c5a26dece9f8776ff54b05b910c` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [src/lib.rs:5071-5149](https://github.com/CloudLLM-ai/mentisdb/blob/4c9b95041da68c5a26dece9f8776ff54b05b910c/src/lib.rs#L5071-L5149)
+- [src/lib.rs:5180-5244](https://github.com/CloudLLM-ai/mentisdb/blob/4c9b95041da68c5a26dece9f8776ff54b05b910c/src/lib.rs#L5180-L5244)
+
+Appending validates references and translates referenced indices into typed relations with validity timestamps. Optional deduplication compares normalized token sets against a bounded recent window using Jaccard similarity; a sufficient match adds a Supersedes relation. The record includes agent identity, confidence, importance, source episode and the previous record hash. The implementation computes a new hash, writes the record to durable storage, updates in-memory lexical/query indexes, records invalidating relations, and synchronizes vector sidecars and registries.
+
+## Harness implications
+
+The key reusable idea is durable evidence before derived views. Store human inputs, observable tool events and public agent conclusions as attributed records, then build searchable projections. A correction should append an explicit relationship to the earlier claim rather than erase the history. Hash chaining can detect some tampering when a trusted checkpoint exists, but it does not establish that an agent's assertion is true. Do not interpret the project's term thought as permission to retain hidden model chain-of-thought.
+
+## Limitations and tradeoffs
+
+Jaccard similarity is lexical similarity, not proof of semantic equivalence or supersession; near-identical statements can disagree through negation or a changed number. Automatically marking such a record superseded could hide useful evidence. Storage succeeds before several derived-index operations that may fail, so callers need reconciliation and idempotency semantics rather than assuming a returned error means nothing was written. An in-memory chain and sidecars need workload-specific scale testing.
+
+## Adoption and validation
+
+Borrow the event-log and correction-relationship design; evaluate the database as an optional local implementation. Disable automatic supersession until validated on the actual corpus. Test crash after durable append, duplicate client retries, invalid references, sidecar failure, replay integrity, contradictory near-duplicates and tenant separation. Keep deletion/redaction policy explicit because append-only auditability and erasure requirements need deliberate reconciliation.
+
+Related directions: [memory](../memory.md) · [evolution](../evolution.md) · [agents](../agents.md).
+
+
+## Change review - 2026-10-28
+
+**Scoped operation classes and small embedding chunks separate authorization from resource claims.** Reviewed commit `a3f32e5d4514beea1b3f96a585c5cc5844606326` (commit date `2026-10-22T10:54:01-06:00`). Compared with `4c9b95041da68c5a26dece9f8776ff54b05b910c`; the complete Git comparison contains 117 changed paths.
+
+A shared REST/MCP authorization table distinguishes any-active-token, global-only, chain-scoped and webhook-registration operations. The inspected REST middleware gathers body/query chain keys, requires global scope when a chain-scoped request has none, and checks authenticated scope before dispatch; fixtures cover denied cross/global operations, permitted explicit/injected single-chain calls and table parity. Unknown classifications still default to ChainScoped, so adding an administrative operation requires deliberate table coverage. FastEmbed shares one mutex-protected model session per stable model ID and processes at most four texts per inference call. Its helper still accumulates all returned vectors and does not validate batch cardinality; chunking bounds inference work per call, not total request memory. First use may download model assets, and the source's macOS RSS figures are upstream measurements, not reproduced here. RRF helpers exclude zero/negative/NaN signals and deterministically break ties, preventing absent vector results from receiving arbitrary rank bonuses.
+
+Evidence: [src/server.rs:2452-2479](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/server.rs#L2452-L2479) · [src/server.rs:2619-2643](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/server.rs#L2619-L2643) · [src/server.rs:7115-7160](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/server.rs#L7115-L7160) · [tests/server_auth_scope_tests.rs:79-256](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/tests/server_auth_scope_tests.rs#L79-L256) · [src/search/fastembed_provider.rs:25-31](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/search/fastembed_provider.rs#L25-L31) · [src/search/fastembed_provider.rs:74-98](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/search/fastembed_provider.rs#L74-L98) · [src/search/fastembed_provider.rs:140-169](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/search/fastembed_provider.rs#L140-L169) · [src/search/fastembed_provider.rs:186-239](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/search/fastembed_provider.rs#L186-L239) · [src/search/ranked.rs:84-148](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/search/ranked.rs#L84-L148) · [src/auth.rs:404-460](https://github.com/CloudLLM-ai/mentisdb/blob/a3f32e5d4514beea1b3f96a585c5cc5844606326/src/auth.rs#L404-L460).
+
+**Harness consequence:** Use a complete deny-by-default operation/scope registry and parity fixtures for each exposed surface. Track token-use timestamps as buffered audit metadata separately from durable authorization state. Own model acquisition and verified cache assets explicitly, limit total embedding input/output and waiting work, and validate vector cardinality/finiteness. Preserve absent retrieval signals instead of manufacturing a rank from storage order.
+
+**Scope and limits:** Scoped static review of operation classification and REST scope enforcement with scope fixtures, FastEmbed ownership/chunking and ranking helpers in the 117-path comparison. Full server/MCP dispatch, persistence, all authorization branches and benchmark validity were not audited. No fixtures, model download, inference, service or benchmark was executed.
+
+## 2026-11-01 scoped source review
+
+Reviewed checked-out commit `67cb559d3b004951232387ea694df4c490d12ba1` against prior analyzed commit `a3f32e5d4514beea1b3f96a585c5cc5844606326`. Historical reviews above remain separate evidence. The observed upstream `203a19f4447a738c0370b20aa46e9aa21a60ef6e` is outside this review: it was fetched but not checked out because Windows rejects the path `fuzz/corpus/chain_key/nul`. Read-only history inspection established zero local-only commits and 16 upstream-only commits, with the checked-out commit an ancestor of upstream; the earlier updater label `diverged` did not establish divergent history. A dry-run tree check reproduced the invalid-path failure without changing HEAD.
+
+**Signed memory records need explicit policy and bootstrap trust.** The new [access-policy module](https://github.com/CloudLLM-ai/mentisdb/blob/67cb559d3b004951232387ea694df4c490d12ba1/src/access.rs) defines Open, Signed and Allowlist modes; chains without valid policy records begin Open. Governance records require canonical JSON, a bounded key count of 1,024, unique key identities, a sorted key-set commitment, sequential policy numbers and the exact previous policy-record hash. The genesis signer must belong to its own proposed key set; later changes require a current governor. That authenticates possession of the selected key, not the external authority of the first governor. Replay records invalid governance entries and skips them, leaving the last valid policy in force; an absent valid genesis therefore remains an explicit trust decision, not automatic restrictive access.
+
+The inspected [signing primitives and payload construction](https://github.com/CloudLLM-ai/mentisdb/blob/67cb559d3b004951232387ea694df4c490d12ba1/src/signing.rs#L180-L599) reject malformed or weak public keys and call strict Ed25519 verification. Version 2 domain-separates thought signatures and binds chain identity, author, previous chain hash and encoded semantic fields. Separate registration proofs bind chain/agent/key/public-key/timestamp. The encoder normalizes tags, concepts and scores before signing, so a signature authenticates the agreed normalized representation. It does not establish factual truth, retrieval relevance, execution authorization or the identity of a human operator.
+
+The complete added [access-policy fixtures](https://github.com/CloudLLM-ai/mentisdb/blob/67cb559d3b004951232387ea694df4c490d12ba1/tests/access_policy_tests.rs) exercise wrong signatures, cross-chain/position replay, revocation with historical verification, unchanged signed relations, legacy v1 acceptance on Open chains, v2 requirements in Signed mode, allowlisted keys, governor transitions, stale-head rejection, reopening and invalid-record replay. The complete added [signing fixtures](https://github.com/CloudLLM-ai/mentisdb/blob/67cb559d3b004951232387ea694df4c490d12ba1/tests/signing_tests.rs) cover key/signature shapes, payload variation, normalization, domain separation and Merkle-tree shape. These are inspected test assertions, not executed results; the changed append/server/dashboard/CLI integration was outside this scope.
+
+**Harness consequence:** Keep authority over memory writes separate from signatures on memory content. Pin an authorized genesis/key policy, distinguish unsigned from invalid records, and make replay integrity failures block protected writes until explicitly reconciled instead of treating a fallback Open mode as permission. Validate byte/count limits before allocation and benchmark total replay separately; a 1,024-key validity rule is not a preparse memory bound. Preserve historical signatures after revocation while denying new actions from revoked keys, and retain chain-head conflicts as explicit reconciliation rather than blind retry.
+
+**Coverage:** Complete new 789-line access module, signing verification/payload/Merkle construction at lines 180–599, and complete 667-line access-policy plus 310-line signing fixtures within the 56-path comparison. No upstream source program, fixture, service, cryptographic dependency implementation or benchmark was executed or audited. The malformed first full-diff capture was rejected; this review used the separately validated four-path expansion. This is a scoped architecture review, not a whole-repository security certification or review of the newer fetched revision.
+
+## External-update reconciliation and scoped review - 2026-11-01
+
+The Windows checkout exception is resolved by an upstream filename change. The
+[upstream repair](https://github.com/CloudLLM-ai/mentisdb/commit/906d4df44cacc345507f8b7c22d826d86881a05c)
+renames `fuzz/corpus/chain_key/nul` to
+`fuzz/corpus/chain_key/4a3dec2d1f8245280855c42db0ee4239f917fdb8`. Read-only Git
+inspection found the old and new paths reference the identical blob
+`20b5be91886d0b6f26dc98a225c0dac05fe2c86e`. The checkout is clean at
+`3a4442a9f65feb2578b04d9977806911aeb719de`, equal to its retained `origin/master`
+reference, with zero commits on either side. The inspected local protection and
+sparse-checkout settings are unset. This task did not change Git protection,
+reset the checkout, exclude source paths or execute upstream programs. These
+facts verify the retained checkout and fetched reference, not a new remote
+freshness check. The earlier failure and narrower review remain valid historical
+evidence.
+
+The comparison from analyzed `67cb559d3b004951232387ea694df4c490d12ba1` to this
+commit contains 68 commits and 159 changed paths. The new review focuses on
+audience enforcement, governed-chain verification and migration recovery.
+
+**Private memory includes derived relationships and scores.** The
+[audience map](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/audience.rs#L155-L303)
+tracks public/private segments, governance records and quarantined positions;
+a locked chain exposes no positions even to the authorized audience. The
+library's default audience is still Authorized, while the
+[request authority adapter](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/server_lens.rs#L77-L129)
+defaults to an empty authority and checks the proved key against each chain.
+The [current key check](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/lib.rs#L7514-L7532)
+requires a non-revoked agent/key, exact public-key bytes and applicable policy
+membership. An embedding application must therefore supply its own audience
+boundary; a safe HTTP default does not change the library default.
+
+The [read-proof protocol](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/read_auth.rs#L213-L297)
+requires canonical bounded headers and binds method, path/query, body digest,
+key identity, timestamp and nonce. Its
+[verification and replay cache](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/read_auth.rs#L361-L444)
+are distinct from chain authorization. The
+[middleware](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/server_lens.rs#L167-L248)
+rejects invalid proofs and returns 503 when the bounded nonce cache is full;
+it does not silently downgrade such a request. This is process-local replay
+tracking, not durable or cluster-wide replay prevention. The signed payload has
+no service-origin field. Multi-host reuse needs an explicit intended service
+identity, replay scope and restart policy rather than assuming those guarantees.
+
+The inspected [cross-chain fixtures](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/tests/sec_cross_chain_lineage_tests.rs#L205-L386)
+compare public results with and without a private replacement, including scores,
+counts, successor annotations and context bundles. They also assert that an
+authorized reader can follow the replacement. The
+[push-channel fixtures](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/tests/private_side_channels_tests.rs#L82-L210)
+assert that private records do not reach webhooks and that SSE tool events omit
+arguments. These are useful regression designs; their assertions were read,
+not executed here, and the complete server/push implementations were not audited.
+
+**A remaining audience-default inconsistency needs its own regression.** In
+[library federated search](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/lib.rs#L9211-L9273),
+an omitted per-chain query initially searches that chain as Public. The subsequent
+cross-chain successor view instead inherits the primary query's audience for
+that omitted entry. Final
+[version metadata](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/lib.rs#L9385-L9396)
+defaults the missing entry to Public again. An Authorized primary query therefore
+supplies inconsistent permissions to those stages. The inspected fixtures provide
+explicit per-chain audiences and do not exercise this omission. This is a static
+review concern, not a reproduced disclosure; require an omitted-query regression
+and one shared per-source audience decision before adopting this path.
+
+**A signed checkpoint is a trust input with explicit failure states.**
+[Open-time verification](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/lib.rs#L7735-L7989)
+checks governed suffixes, quarantines invalid records and binds a cached prefix
+to chain identity, count, head hash, policy key commitment, policy sequence and
+quarantine positions. A valid operator-signed checkpoint that disagrees with the
+current prefix locks the chain; a missing or invalid checkpoint falls back to
+full verification when governance remains. The
+[fixtures](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/tests/open_verification_tests.rs#L142-L294)
+cover forged/unsigned records, forged checkpoints, truncation and rewritten
+prefixes. Preserve the independent checkpoint and operator-key trust boundary:
+the same fixture explicitly demonstrates that deleting a checkpoint after
+truncating away governance allows the remaining public prefix to open. A local
+signature cannot establish tamper resistance when the attacker can replace all
+of its trust inputs. Checkpoint persistence is also best-effort in this source;
+it is not evidence that a new checkpoint reached durable storage.
+
+**Recover migrations from durable bytes, then publish availability.** The
+[migration engine](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/migration/engine.rs#L785-L992)
+takes an advisory chain lock, journals the attempt, retains the original, writes
+and synchronizes a staging file, verifies its record count/head, records its
+byte length/digest and renames it before final bookkeeping. The
+[recovery path](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/migration/engine.rs#L1132-L1263)
+uses the staged/live digest to distinguish a rename that already happened from
+work that must restart. Rollback without force rejects a live file changed since
+migration. The [engine fixtures](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/tests/migration_engine_tests.rs#L186-L318)
+inject returned errors at transition points and check recovery/quarantine; they
+are not process-kill or power-loss measurements. The
+[daemon startup path](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/bin/mentisdb.rs#L1411-L1458)
+claims a data-directory lock before headless startup. That is a cooperative
+writer boundary, not protection against direct filesystem writes or every
+embedded library caller.
+
+Several limits prevent treating this as a ready-made general migration system.
+The [manager](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/migration/manager.rs#L327-L428)
+defaults to two workers but has no upper concurrency clamp; its queue grows with
+discovered chains. [Unreadable format stamps](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/migration/manager.rs#L71-L100)
+are accepted, and manager discovery collapses
+[journal read errors](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/migration/manager.rs#L544-L581)
+to absence. [Non-version startup failures](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/bin/mentisdb.rs#L1330-L1360)
+continue without the manager. Worker handles are not retained for joining, and
+[shutdown](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/migration/manager.rs#L521-L529)
+only requests a stop after current work. The
+[directory synchronization helper](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/src/migration/engine.rs#L281-L309)
+does nothing on non-Unix systems, and the inspected
+[real-daemon fixture](https://github.com/CloudLLM-ai/mentisdb/blob/3a4442a9f65feb2578b04d9977806911aeb719de/tests/migration_daemon_tests.rs#L1-L11)
+is Unix-only. A hard-linked backup also depends on excluded concurrent writers;
+it does not independently freeze an inode against direct mutation.
+
+**Harness consequence:** Apply authorization to graph edges, redirection, counts,
+scores, exports and push events as well as returned text. Carry one explicit
+per-source audience throughout retrieval. Preserve absent, unreadable, invalid
+and newer-version state separately. Journal before irreversible transitions,
+reconcile exact output bytes after interruption, bound total queued work and
+join owned workers before releasing resources. Keep checkpoint trust, process
+locks, platform durability and independently verified correctness separate.
+
+**Coverage:** Complete audience, request-authority and read-proof modules;
+selected governed-verification and federated-search sections of `src/lib.rs`;
+migration journal/lock/commit/recovery and manager admission/worker lifecycle
+sections; headless daemon startup; and the five complete fixture files linked
+above. The remaining storage, ranking, codec, operator-lock internals and server
+integration changes were not audited. No Rust build, upstream test, model,
+service, migration or benchmark ran. Newly published retrieval benchmark numbers
+remain upstream claims outside this review; no performance or adoption upgrade
+is inferred from them.

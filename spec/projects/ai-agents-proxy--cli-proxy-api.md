@@ -49,6 +49,16 @@ The [frontend-auth adapter](https://github.com/router-for-me/CLIProxyAPI/blob/25
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## External-update review - 2026-11-01
+
+Reviewed `7cad1cb7df48c6c5ffb7ff0b34ef8198806115bc` against `250d598175db61a4e99ac38b9164ed04745754e5`.
+
+Within the 125-path comparison, the [concurrency release flusher](https://github.com/router-for-me/CLIProxyAPI/blob/7cad1cb7df48c6c5ffb7ff0b34ef8198806115bc/internal/home/concurrency_release.go) tracks pending groups separately from retained history, acknowledges cumulative sequence numbers and removes a pending entry only when its current sequence is covered. Idle operation disables the timer channel rather than repeatedly scanning acknowledged groups. Inspected [fixtures](https://github.com/router-for-me/CLIProxyAPI/blob/7cad1cb7df48c6c5ffb7ff0b34ef8198806115bc/internal/home/concurrency_release_test.go) check no allocation for an idle flush over 1,000 historical groups and eventual pending removal after acknowledgement. This is upstream fixture intent, not a locally measured speedup; historical groups still remain in memory.
+
+The [client error classifier](https://github.com/router-for-me/CLIProxyAPI/blob/7cad1cb7df48c6c5ffb7ff0b34ef8198806115bc/internal/clienterror/client_error.go) recognizes a structured HTTP 400 low-credit message separately from an ordinary malformed request, preserving the credential cooldown/rotation path. Its [fixtures](https://github.com/router-for-me/CLIProxyAPI/blob/7cad1cb7df48c6c5ffb7ff0b34ef8198806115bc/internal/clienterror/client_error_test.go) cover error-body extraction and an ordinary invalid-request control. The classifier uses a message prefix and selected JSON paths, not an authenticated provider-specific error enum; it should not become generic authorization to retry a billable action.
+
+**Harness consequence:** Distinguish request, account and transport failure with bounded evidence, and retain cumulative acknowledgement identity when releasing capacity. Retry authorization still depends on effect status, cost scope and idempotency. This scoped static review covers four complete implementation/test deltas; provider translations, OAuth refresh, plugin execution and routing changes in the larger range were not audited. No account, token refresh, provider call, upstream tests or allocation benchmark was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cli-proxy-api](https://github.com/router-for-me/CLIProxyAPI); analyzed commit `250d598175db61a4e99ac38b9164ed04745754e5`; commit date 2026-10-31T21:09:56+08:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--cli-proxy-api.md).
+Analysis metadata: source [cli-proxy-api](https://github.com/router-for-me/CLIProxyAPI); analyzed commit `7cad1cb7df48c6c5ffb7ff0b34ef8198806115bc`; commit date 2026-11-02T01:07:10+08:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--cli-proxy-api.md).
 <!-- teamagent-analysis:end -->

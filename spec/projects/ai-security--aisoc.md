@@ -54,6 +54,16 @@ The complete [fixture](https://github.com/beenuar/AiSOC/blob/0b052e5f84d6ca33968
 
 **Coverage:** Read the complete 297-line policy/gate/vendored-copy/fixture selection. Base evaluator and asset lookup implementation, live databases and actual actions were not audited. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## External-update review - 2026-11-01
+
+Reviewed `58f42c724de9ec8fca646945e4a3677af39f27e3` against `0b052e5f84d6ca33968fc354d0a7b9a5f2d1b3c9`.
+
+The 117-path update adds explicit dataset provenance to IP-class replay. The complete inspected [Python classifier](https://github.com/beenuar/AiSOC/blob/58f42c724de9ec8fca646945e4a3677af39f27e3/services/fusion/app/services/ip_class.py) is documented as a vendored fixture-replay helper; production classification belongs to the Go ingest path. It reads the committed dataset and manifest version, caches a parsed table, applies a fixed non-public address set and bounds backward prefix search to 64 candidates. A missing entry returns no classification, never a positive assertion that an address is ordinary or safe.
+
+The complete inspected [projection fixtures](https://github.com/beenuar/AiSOC/blob/58f42c724de9ec8fca646945e4a3677af39f27e3/services/fusion/tests/test_ip_class_projection.py) distinguish an ingest-stamped nested field from a fixture that needs derivation, require a nonempty dataset, preserve absent classification, and compare a sampled live projection with replay. These are authored checks of a critical integration boundary: a rule can pass replay while never receiving the corresponding field in production. The actual Go classifier and cross-language dataset gate were not inspected or executed here.
+
+**Harness consequence:** Bind derived security/context features to source and dataset version, test the same projection used by production, and distinguish no evidence from a negative classification. Bounds can leave matches unobserved, so missing data cannot authorize an action. The loader tolerates malformed rows and a missing version; ingestion should separately surface coverage and provenance failures instead of silently claiming a complete classification. This review covers those two complete deltas, not the other detections, connectors or compliance changes. No upstream test, live ingest or external dataset fetch was run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [aisoc](https://github.com/beenuar/AiSOC); analyzed commit `0b052e5f84d6ca33968fc354d0a7b9a5f2d1b3c9`; commit date 2026-11-01T01:13:22-07:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-security--aisoc.md).
+Analysis metadata: source [aisoc](https://github.com/beenuar/AiSOC); analyzed commit `58f42c724de9ec8fca646945e4a3677af39f27e3`; commit date 2026-11-01T11:09:36-08:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-security--aisoc.md).
 <!-- teamagent-analysis:end -->

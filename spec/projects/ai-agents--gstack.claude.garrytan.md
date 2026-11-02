@@ -62,6 +62,16 @@ The [approval record](https://github.com/garrytan/gstack/blob/b15492a148e2744d24
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## External-update review - 2026-11-01
+
+Reviewed `ab2852fb40219669c583f34a6f69b08f623543b4` against `b15492a148e2744d24b0ca4da5ba290fb109c340`.
+
+The 173-path range repairs verification verdicts when policy changes only execution settings or downgrades a coverage gap. [Configuration parsing](https://github.com/garrytan/gstack/blob/ab2852fb40219669c583f34a6f69b08f623543b4/lib/pregate/config.ts) explicitly records whether the policy declares lanes through `dependencies`, `empty_lanes`, `selection` or `local`, including empty declarations. [Head-policy composition](https://github.com/garrytan/gstack/blob/ab2852fb40219669c583f34a6f69b08f623543b4/lib/pregate/head-policy.ts) retains this distinction when an unreviewed head adds coverage to a lane-less trusted base.
+
+The inspected [lane checker](https://github.com/garrytan/gstack/blob/ab2852fb40219669c583f34a6f69b08f623543b4/lib/pregate/checks/lanes.ts) only stops before execution for a strict missing-lane failure. Under warning mode, selected tests still run; failed, incomplete and remote-required results retain their state, while only a passing execution can become a coverage warning. The complete [verdict fixtures](https://github.com/garrytan/gstack/blob/ab2852fb40219669c583f34a6f69b08f623543b4/test/pregate-policy-lane-verdicts.test.ts) cover red tests beside unmapped files, timeout-only policies, strict empty declarations, head-policy composition, platform obligations and deleted-test ownership. The latter fixtures were inspected, but the corresponding lane-selection algorithm was not audited in this slice.
+
+**Harness consequence:** Keep scheduling configuration, coverage policy and observed test outcomes as separate inputs. A warning about one obligation must not skip or downgrade another obligation's failure, and an unavailable platform check remains outstanding. Preserve trusted-base policy provenance when considering head additions. These four complete implementation deltas and the fixture file were reviewed statically; other shipping, release and policy changes remain outside this scope. No upstream verification command or test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gstack.claude.garrytan](https://github.com/garrytan/gstack); analyzed commit `b15492a148e2744d24b0ca4da5ba290fb109c340`; commit date 2026-11-01T09:52:31Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gstack.claude.garrytan.md).
+Analysis metadata: source [gstack.claude.garrytan](https://github.com/garrytan/gstack); analyzed commit `ab2852fb40219669c583f34a6f69b08f623543b4`; commit date 2026-11-01T20:15:10Z; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gstack.claude.garrytan.md).
 <!-- teamagent-analysis:end -->

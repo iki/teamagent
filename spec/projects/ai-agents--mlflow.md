@@ -56,6 +56,16 @@ The [search-scope fixture](https://github.com/mlflow/mlflow/blob/e8d8c09e79e5e0f
 
 **Coverage:** Read complete auth-store delta, first 290 presented lines and the complete search-scopes-before-storage case in the 2,581-line new fixture. Remaining search/job tests and route enforcement were not reviewed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/mlflow/mlflow](https://github.com/mlflow/mlflow) at `f5defbabd26a613e12cd15f24c4da42529b9601e` against prior analyzed `e8d8c09e79e5e0f69cc022409019fc0fb6ad2c30`. Evidence: [mlflow/ml_package_versions.py](https://github.com/mlflow/mlflow/blob/f5defbabd26a613e12cd15f24c4da42529b9601e/mlflow/ml_package_versions.py), [tests/openai/test_openai_agent_autolog.py](https://github.com/mlflow/mlflow/blob/f5defbabd26a613e12cd15f24c4da42529b9601e/tests/openai/test_openai_agent_autolog.py), [tests/openai/test_openai_autolog.py](https://github.com/mlflow/mlflow/blob/f5defbabd26a613e12cd15f24c4da42529b9601e/tests/openai/test_openai_autolog.py).
+
+The release compatibility table raises several supported SDK floors and ceilings, including the OpenAI floor from 2.2.0 to 2.7.0. OpenAI response fixtures add an explicit logprobs field. The changed fixture shapes and declared ranges are compatibility maintenance, not measured trace coverage across all provider routes.
+
+**Architecture consequence:** Bind tracing compatibility to the exact SDK/schema version and exercise streaming reconstruction when changing a pin. Teamagent's provider support and dependency pins are not advanced by this upstream declaration.
+
+**Scope and limits:** Reviewed compatibility-table changes and the changed OpenAI fixture shapes within a nine-path dependency/release update. No SDK installation, live request or upstream autologging test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mlflow](https://github.com/mlflow/mlflow); analyzed commit `e8d8c09e79e5e0f69cc022409019fc0fb6ad2c30`; commit date 2026-11-01T06:30:29Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mlflow.md).
+Analysis metadata: source [mlflow](https://github.com/mlflow/mlflow); analyzed commit `f5defbabd26a613e12cd15f24c4da42529b9601e`; commit date 2026-11-01T10:49:30Z; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mlflow.md).
 <!-- teamagent-analysis:end -->

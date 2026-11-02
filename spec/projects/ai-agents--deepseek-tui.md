@@ -62,6 +62,16 @@ The [Codewhale policy](https://github.com/codewhale-hq/codewhale/blob/ce44c64170
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/codewhale-hq/codewhale](https://github.com/codewhale-hq/codewhale) at `654aa776d6bcb98292d4c7c5841fed871e1ba5bd` against prior analyzed `ce44c64170617ff7b412ee266620d3005cb8d13c`. Evidence: [crates/engine/src/core/engine/preview.rs](https://github.com/codewhale-hq/codewhale/blob/654aa776d6bcb98292d4c7c5841fed871e1ba5bd/crates/engine/src/core/engine/preview.rs), [crates/engine/src/core/engine/preview/tests.rs](https://github.com/codewhale-hq/codewhale/blob/654aa776d6bcb98292d4c7c5841fed871e1ba5bd/crates/engine/src/core/engine/preview/tests.rs), [crates/engine/src/request_manifest.rs](https://github.com/codewhale-hq/codewhale/blob/654aa776d6bcb98292d4c7c5841fed871e1ba5bd/crates/engine/src/request_manifest.rs).
+
+CodeWhale's preview prompt context is now constructed after route resolution and includes the selected route's context window and planned output-token budget. Both preview metadata paths carry planned compaction; fixture metadata uses the shared prompt-origin label. This ties the visible request plan more closely to the planned route rather than installed limits.
+
+**Architecture consequence:** A passive request preview should identify the same route, budget and compaction plan execution will use, while avoiding temporary installation of the preview's authorization gate. Retain the historical deepseek-tui report identity across the already reviewed CodeWhale rename.
+
+**Scope and limits:** Reviewed selected request-preview and provenance changes within a 50-path update. Windows installer/uninstall changes, terminal rendering, provider requests and the upstream Rust tests were not executed or comprehensively audited.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codewhale](https://github.com/codewhale-hq/codewhale); analyzed commit `ce44c64170617ff7b412ee266620d3005cb8d13c`; commit date 2026-11-01T01:27:51-08:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepseek-tui.md).
+Analysis metadata: source [codewhale](https://github.com/codewhale-hq/codewhale); analyzed commit `654aa776d6bcb98292d4c7c5841fed871e1ba5bd`; commit date 2026-11-01T11:53:03-08:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepseek-tui.md).
 <!-- teamagent-analysis:end -->

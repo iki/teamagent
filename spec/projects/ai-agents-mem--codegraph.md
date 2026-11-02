@@ -57,6 +57,16 @@ Reviewed `15483713763f344ff30fb7df92bcf091c7bd9758` (2026-11-01T03:39:32-06:00) 
 
 Index producer version belongs in retrieval provenance; a stale warning is not proof that results are complete, and releasing caches is not a measured process-memory ceiling. The recovery fixture now preloads the engine before installing its watchdog, narrowing measured scope to recovery rather than module loading. Scope: four paths, not the entire resolver/indexing delta; no upstream tests, index or memory benchmark executed. [Recovery fixture](https://github.com/colbymchenry/codegraph/blob/15483713763f344ff30fb7df92bcf091c7bd9758/__tests__/index-recovery-off-thread.test.ts).
 
+## External-update review - 2026-11-01
+
+Reviewed `f72c9d2efb14454ff4f9fd7b8460abd82f19a287` against `15483713763f344ff30fb7df92bcf091c7bd9758`.
+
+The 29-path comparison adds a useful incremental-index oracle: the [memo lifetime fixture](https://github.com/colbymchenry/codegraph/blob/f72c9d2efb14454ff4f9fd7b8460abd82f19a287/__tests__/sync-memo-lifetime.test.ts) edits a project, synchronizes the same graph instance, and compares its edges and unresolved references with a fresh index of the final tree. Cases include Go build constraints, Vue script setup, Objective-C properties, C++ specialization, COBOL, Expo and Angular. The [name matcher](https://github.com/colbymchenry/codegraph/blob/f72c9d2efb14454ff4f9fd7b8460abd82f19a287/src/resolution/name-matcher.ts) now clears additional project-derived memo tables; the [inventory guard](https://github.com/colbymchenry/codegraph/blob/f72c9d2efb14454ff4f9fd7b8460abd82f19a287/__tests__/name-matcher-memo-clears.test.ts) checks module-level collections against explicit clearing or a non-project-state allowlist. That regex-based guard complements, rather than proves, semantic cache correctness.
+
+The [resolver pool](https://github.com/colbymchenry/codegraph/blob/f72c9d2efb14454ff4f9fd7b8460abd82f19a287/src/resolution/resolver-pool.ts) bounds the startup wait to 30 seconds, rejects readiness on early worker exit (including exit code zero), and handles abandoned readiness rejections. The wait bound allows foreground work to continue; it does not itself terminate the worker.
+
+**Harness consequence:** Bind reusable resolution state to its source lifetime and compare incremental updates against a fresh-index oracle. Treat readiness timeout, worker cancellation and actual completion as separate states. This review read the selected implementation and both complete fixture deltas, not every language-resolution change in the 29-path range. No upstream tests, workers, parser or benchmark were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codegraph](https://github.com/colbymchenry/codegraph); analyzed commit `15483713763f344ff30fb7df92bcf091c7bd9758`; commit date 2026-11-01T03:39:32-06:00; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--codegraph.md).
+Analysis metadata: source [codegraph](https://github.com/colbymchenry/codegraph); analyzed commit `f72c9d2efb14454ff4f9fd7b8460abd82f19a287`; commit date 2026-11-01T10:22:32-06:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--codegraph.md).
 <!-- teamagent-analysis:end -->

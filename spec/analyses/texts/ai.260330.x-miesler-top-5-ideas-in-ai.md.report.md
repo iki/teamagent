@@ -6,29 +6,25 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://x.com/DanielMiessler/status/2038432114312675669>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-11-01T08:51:16.093Z. Import: **pinned**. Content validation: **partial**.
+Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-11-01T21:49:04.531Z. Import: **pinned**. Content validation: **partial**.
 
 First captured: 2026-10-24T05:50:23.073Z. Source creation/publication date: 2026-03-30T01:44:22.000Z. Date evidence: publisher-html-meta (article:published_time). Filename dates and Last-Modified are not treated as creation dates.
 
 Source revision: not supplied.
 
-Original bytes: 392731. Extracted Markdown characters: 32470. Captured images: 5.
+Original bytes: 392731. Extracted Markdown characters: 15085. Captured images: 5.
 
-Memory source: `9634d20b-5e70-4d11-a6b1-868407a25e3b`. Version: `1d40cf2a-fb70-4c67-a933-098820f2d496`. Content SHA-256: `8ec690197a7ae7607c690a0b551899ac80e6e19b3691bfd438c05932a6c71b23`.
+Memory source: `9634d20b-5e70-4d11-a6b1-868407a25e3b`. Version: `7ed1e094-07bb-4a15-b1f8-453ae0a897de`. Content SHA-256: `e7ed1afda13f2d441763768f4fd85e7bdb65665c2c046d6f2e8a71f6f9f4153a`.
 
-[Version evidence and assets](../../../.cache/text/exports/9634d20b-5e70-4d11-a6b1-868407a25e3b/1d40cf2a-fb70-4c67-a933-098820f2d496/manifest.json). Export manifests retain exact locators; treat the cache as private.
+[Version evidence and assets](../../../.cache/text/exports/9634d20b-5e70-4d11-a6b1-868407a25e3b/7ed1e094-07bb-4a15-b1f8-453ae0a897de/manifest.json). Export manifests retain exact locators; treat the cache as private.
 
+- Scoped exact&#45;post&#47;article extraction from retained public HTML&#46; Authenticated identity&#44; full threads&#44; edits and media completeness remain unverified&#46;
 - Public social&#45;page HTML only&#58; authenticated post&#44; article and thread completeness are unverified&#46; No alternate mirror was substituted&#46;
 - Image count is measured&#59; visual fidelity and completeness are unverified&#46;
 - Static snapshot checked locally&#59; no remote freshness check&#44; conversion or export rewrite was performed&#46;
 
 Extracted heading sample (up to 20; source text, not an endorsed analysis):
 
-- Article
-- Article
-- Log in or sign up for X
-- Relevant people
-- Trending now
 - The 5 Most Important Ideas in AI Right Now &#40;April 2026&#41;
 - 1&#46; Autonomous Component Optimization
 - Extending Autoresearch &#91;​&#93;&#40;https&#58;&#47;&#47;danielmiessler&#46;com&#47;blog&#47;the&#45;most&#45;important&#45;ideas&#45;in&#45;ai&#41;
@@ -44,4 +40,6 @@ Extracted heading sample (up to 20; source text, not an endorsed analysis):
 - Intent becomes the bottleneck &#91;​&#93;&#40;https&#58;&#47;&#47;danielmiessler&#46;com&#47;blog&#47;the&#45;most&#45;important&#45;ideas&#45;in&#45;ai&#41;
 - Everything becomes transparent &#91;​&#93;&#40;https&#58;&#47;&#47;danielmiessler&#46;com&#47;blog&#47;the&#45;most&#45;important&#45;ideas&#45;in&#45;ai&#41;
 - Scaffolding gets commoditized &#91;​&#93;&#40;https&#58;&#47;&#47;danielmiessler&#46;com&#47;blog&#47;the&#45;most&#45;important&#45;ideas&#45;in&#45;ai&#41;
+- Expert knowledge becomes public infrastructure &#91;​&#93;&#40;https&#58;&#47;&#47;danielmiessler&#46;com&#47;blog&#47;the&#45;most&#45;important&#45;ideas&#45;in&#45;ai&#41;
+- Summary and takeaway &#91;​&#93;&#40;https&#58;&#47;&#47;danielmiessler&#46;com&#47;blog&#47;the&#45;most&#45;important&#45;ideas&#45;in&#45;ai&#41;
 

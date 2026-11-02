@@ -1,0 +1,705 @@
+{
+  "id": "ai-agents-mem--reef",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/Human-Agent-Society/reef",
+  "report": "spec/projects/ai-agents-mem--reef.md",
+  "analyzedSha": "bac62a353d72cfc5af2ade296432445b192e4d7b",
+  "analyzedAt": "2026-11-01T11:35:43.470Z",
+  "analyzedCommitDate": "2026-11-01T17:02:34+08:00",
+  "observedSha": "9149bc9d4dab3dada6b771d074ef40822215e14b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "9149bc9d4dab3dada6b771d074ef40822215e14b",
+      "date": "2026-11-01T17:28:14Z",
+      "subject": "refactor!: every scenario owns its root release; remove the shared base release (RFC #1070) (#1071)"
+    },
+    {
+      "sha": "d6ebc742075b779d7e30e62e9d248f1ecdf60f31",
+      "date": "2026-11-01T19:33:22+08:00",
+      "subject": "feat(service): the inference service sends and records the body that the engine's handler gives (RFC #1068) (#1069)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "docs/advanced_topics/state-model.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/executors.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/surface.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/write-a-recipe.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/configuration.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/http-api.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/python-api.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/operate.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/tinker.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/reefine/examples/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/gepa/examples/aime/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/gepa/examples/aime/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/meta_harness/examples/terminal_bench/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/artifact/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/artifact/composite.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/artifact/git_lfs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/artifact/memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/artifact/release_chain.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/artifact/repository.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/core/artifact_ref.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/dispatcher/dispatcher.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/harness/tree/tree.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/inference/tinker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/recipe/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/recipe/composite.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/recipe/harness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/runtime/interfaces.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/runtime/jobs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/runtime/serving.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/scenario/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/scenario/committer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/scenario/factory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/scenario/registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/scenario/release_files.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/scenario/releases.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/scenario/scenario.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/service/artifact_imports.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/service/assembly.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/service/inference_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/service/request_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/service/routes/scenarios.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/service/wire.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/storage/commits.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/surface/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/train/backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/train/harness_backend/component.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/train/job_queue.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/train/jobs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/train/slime_backend/component.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/train/tinker_backend/component.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/train/tinker_backend/full.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reef/train/trainer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/artifact/test_reef_artifacts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/artifact/test_reef_git_lfs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/artifact/test_release_components.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/artifact/test_repository_backend_capabilities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harness/test_harness_read.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/observability/test_record_tracing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/recipes/coral/test_coral_service_integration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/recipes/gepa/test_gepa_aime_harness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/recipes/meta_harness/test_meta_harness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/recipes/meta_harness/test_meta_harness_artifact_transactions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/recipes/openclawrl/test_openclawrl.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/recipes/sao/test_sao_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/recipes/sdpo/test_sdpo_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/recipes/tttd/test_tttd.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_recipe/test_composite_recipe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_recipe/test_recipe_config_fields.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_recipe/test_reef_interface_inheritance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_recipe/test_reef_recipes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_artifact_evaluations.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_artifact_library.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_artifact_versions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_async_pipeline_core.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_data_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_data_service_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_experiment_reporting.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_harness_channel.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_harness_example.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_harness_recipe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_harness_requests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_harness_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/reef_service/test_inference_request_payload.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_manual_training.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_multi_scenario_training.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_record_import.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_reef_contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_reef_recipe_requests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_reef_wire.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_reports.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_runtime_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_scenario_api.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_served_artifacts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_service_components.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_task_upload.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_training_backends.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/reef_service/test_training_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runtime/test_runtime_ownership.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runtime/test_serving.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scenario/test_commit_history.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scenario/test_component_trainers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scenario/test_composite_activation_admission.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scenario/test_composite_replay_parity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scenario/test_reef_concurrency.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scenario/test_reef_scenarios.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scenario/test_release_files.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scenario/test_scenario_release_concurrency.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scenario/test_scenario_store_integration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scenario/test_scenario_task_storage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scenario/test_scenario_unload.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scenario/test_training_status.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/slime_backend/test_slime_component.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/support/_policy_recipe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/support/artifact_backend_plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/support/artifact_versions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/support/component_trainers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/support/harness_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/support/harness_steps.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/support/runtime_stubs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/support/trajectory_uploads.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/tinker_backend/test_spindle_full.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/tinker_backend/test_tinker_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/tinker_backend/test_tinker_local_engine_ray.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/train/test_harness_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/train/test_harness_component.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/train/test_instructions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/train/test_job_queue.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/train/test_jobs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/train/test_local_jobs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/train/test_record_stage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/train/test_record_stage_job_data_parity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/train/test_reef_trainer_contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/train/test_trainer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/train/test_training_methods.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

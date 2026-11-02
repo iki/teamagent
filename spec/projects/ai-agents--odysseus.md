@@ -54,6 +54,16 @@ The [request-authority delta](https://github.com/pewdiepie-archdaemon/odysseus/b
 
 **Coverage:** Read the complete targeted cleanup/authority implementation and cleanup fixture delta. MCP authority tests, full cleanup lifecycle and remaining oversized changes were outside scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/pewdiepie-archdaemon/odysseus](https://github.com/pewdiepie-archdaemon/odysseus) at `f7f6abf82ba20bc80cd62e9f27d55f780825880e` against prior analyzed `8450793fe68a0cc37ed9dc523620ba49bc234e2f`. Evidence: [routes/chat_helpers.py](https://github.com/pewdiepie-archdaemon/odysseus/blob/f7f6abf82ba20bc80cd62e9f27d55f780825880e/routes/chat_helpers.py), [src/agent_loop.py](https://github.com/pewdiepie-archdaemon/odysseus/blob/f7f6abf82ba20bc80cd62e9f27d55f780825880e/src/agent_loop.py), [src/agent_runtime/effect_log.py](https://github.com/pewdiepie-archdaemon/odysseus/blob/f7f6abf82ba20bc80cd62e9f27d55f780825880e/src/agent_runtime/effect_log.py), [src/settings.py](https://github.com/pewdiepie-archdaemon/odysseus/blob/f7f6abf82ba20bc80cd62e9f27d55f780825880e/src/settings.py), [tests/test_c5_rag_disable.py](https://github.com/pewdiepie-archdaemon/odysseus/blob/f7f6abf82ba20bc80cd62e9f27d55f780825880e/tests/test_c5_rag_disable.py), [tests/test_tool_approval_task_scope.py](https://github.com/pewdiepie-archdaemon/odysseus/blob/f7f6abf82ba20bc80cd62e9f27d55f780825880e/tests/test_tool_approval_task_scope.py).
+
+Context assembly now always passes the computed RAG policy to its consumer; the inspected fixture varies chat/agent/compare modes and policy conditions while observing retrieval and independent context channels. A new ask/off setting feeds a tool-approval bypass helper, while task-scoped grants remain a separate input. Effect journal and launch-marker descriptors add Windows binary mode to preserve serialized byte framing.
+
+**Architecture consequence:** Propagate effective policy to the actual retrieval/effect consumer rather than conditionally omitting it. Keep persistent administrator bypass and task approval distinct; Teamagent does not adopt an automatic bypass. Journal framing must remain byte-stable across platforms.
+
+**Scope and limits:** Reviewed the selected context, approval and persistence changes and fixture assertions within a 13-path delta. No upstream application, Windows journal test or authorization penetration test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [odysseus](https://github.com/pewdiepie-archdaemon/odysseus); analyzed commit `8450793fe68a0cc37ed9dc523620ba49bc234e2f`; commit date 2026-11-01T08:45:11Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--odysseus.md).
+Analysis metadata: source [odysseus](https://github.com/pewdiepie-archdaemon/odysseus); analyzed commit `f7f6abf82ba20bc80cd62e9f27d55f780825880e`; commit date 2026-11-01T12:22:56-07:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--odysseus.md).
 <!-- teamagent-analysis:end -->

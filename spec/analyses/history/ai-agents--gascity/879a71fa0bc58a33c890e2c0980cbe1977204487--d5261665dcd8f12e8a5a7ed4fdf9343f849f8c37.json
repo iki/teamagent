@@ -1,0 +1,900 @@
+{
+  "id": "ai-agents--gascity",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/gastownhall/gascity",
+  "report": "spec/projects/ai-agents--gascity.md",
+  "analyzedSha": "879a71fa0bc58a33c890e2c0980cbe1977204487",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-11-01T09:16:28Z",
+  "observedSha": "d5261665dcd8f12e8a5a7ed4fdf9343f849f8c37",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "d5261665dcd8f12e8a5a7ed4fdf9343f849f8c37",
+      "date": "2026-11-01T11:11:27Z",
+      "subject": "feat(cli): support inline-text and --stdin sling against a remote city (#8654)"
+    },
+    {
+      "sha": "1d6b3179d5c95fc20773944148c45eb3a462e4c2",
+      "date": "2026-11-01T10:28:52Z",
+      "subject": "test(pool): orphan release clears a dead assignee once the store wakes the row (#8442)"
+    },
+    {
+      "sha": "9a97f5e96b67791bb4bddc06fc702fe44e9f2e28",
+      "date": "2026-11-01T09:55:49Z",
+      "subject": "fix(reconciler): alert when v2 refuses a work item for unusable worktree evidence (#8639)"
+    },
+    {
+      "sha": "53f6d29e635457c9ce17972d531ea097b78f4fc7",
+      "date": "2026-11-01T09:50:30Z",
+      "subject": "fix(orders): exec orders no longer inherit the dispatcher's session identity (#6850) (#8482)"
+    },
+    {
+      "sha": "13a17c219f7870e33917ed68ffa69d5dba50e3e4",
+      "date": "2026-11-01T09:49:49Z",
+      "subject": "fix(dispatch): count no-op control dispatches as skips, not drain progress (#8495)"
+    },
+    {
+      "sha": "7a04b34d943e22ba73e71f363237405c128153fc",
+      "date": "2026-11-01T09:48:04Z",
+      "subject": "fix(tmux): pin in-pane gc commands to the $TMUX server socket; legacy drain-ack fails loud when the ack did not persist (#8116) (#8458)"
+    },
+    {
+      "sha": "d9b667de4cc231f774b4792320e520b940b713a1",
+      "date": "2026-11-01T09:46:05Z",
+      "subject": "fix(proctable): accept the running gc executable's name for process_names \"gc\" (#8480)"
+    },
+    {
+      "sha": "ddb13141c84c259b3a53320e355fb1f553eb8c79",
+      "date": "2026-11-01T09:45:37Z",
+      "subject": "fix(config): withhold mail beads from the work query's tiers (#5815) (#8472)"
+    },
+    {
+      "sha": "91978a7c29502db8c053836b5acde329358973da",
+      "date": "2026-11-01T09:39:17Z",
+      "subject": "fix(convergence): stop closes the active wisp's open steps before the wisp (#8476)"
+    },
+    {
+      "sha": "d6bf3d6646eb15ebe71e61ab15e7da0c46eeaf5e",
+      "date": "2026-11-01T09:35:03Z",
+      "subject": "fix(reconciler): a pool seat parked on pre-assigned blocked work is not stranded; the same seat resumes for it (#8110)"
+    },
+    {
+      "sha": "25dc36fdcf5b11e425f4fcf558386bc6e58bbfb4",
+      "date": "2026-11-01T09:34:04Z",
+      "subject": "fix(nudge): say when gc mail --notify queues a notice without a wake (#8461)"
+    },
+    {
+      "sha": "0fef195bdbd830fda56e20d92dfcc94a6f117b0a",
+      "date": "2026-11-01T09:33:25Z",
+      "subject": "fix(session): re-read pool rows under the flock before a tick stops their runtime (#7751) (#8445)"
+    },
+    {
+      "sha": "444ccaedb266c313a1528a3c77ba08088cf7413d",
+      "date": "2026-11-01T09:32:46Z",
+      "subject": "feat(awake): resolve a requalified named session's prior bare bead (#8448)"
+    },
+    {
+      "sha": "b8610f843f062002de95116024b8bac935ab10d7",
+      "date": "2026-11-01T09:29:22Z",
+      "subject": "fix(dolt): declare skipped/partial order outcome when gc dolt sync skips databases (#8459)"
+    },
+    {
+      "sha": "b8b8679d55190c404fe6ceb1e37cb53368b6a961",
+      "date": "2026-11-01T09:26:20Z",
+      "subject": "feat(api): stamp server-owned gc.initiator from the verified write grant (#8651)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_decide.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_demand_reads_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_differential_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_parked_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_plan.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_plan_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_snapshot.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/assigned_work_scope.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/assigned_work_scope_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/build_desired_state.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/build_desired_state_parked_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/build_desired_state_worktree_record_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/city_runtime.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_convoy_dispatch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_hook.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_hook_claim.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_mail.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_mail_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_nudge.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_nudge_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_runtime_drain.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_runtime_drain_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_sling.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_start.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/compute_awake_bridge.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/compute_awake_set.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/compute_awake_set_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/control_dispatch_graph_store_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/convergence_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/convergence_store.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/demand_divergence.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/demand_serve_predicate.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/dispatch_control_ready.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/dispatch_runtime.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/dispatch_runtime_quiet_retry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/dispatch_runtime_skip_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/dolt_start_managed.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/drain_ack_row_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/hook_defer_blocked_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/idle_tracker.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/named_requalify_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/named_sessions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/order_dispatch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/order_dispatch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/pending_create_teardown_sites_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/pending_create_unattributed_teardown_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/pool_desired_state.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/pool_desired_state_parked_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/pool_pieces_prerefactor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/pool_pieces_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/pool_release_bd_guard_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/pool_session_name.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_admit.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_arms_close.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_arms_close_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_arms_heals_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_arms_idle.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_effect_close.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_effect_heal.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_effect_heal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_effect_launch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_effect_launch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_effects_registry.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_gather.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_observe_v2.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_observe_v2_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_pass.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_session_differential_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_sim_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/requalify_stability_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/requalify_v2_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/rig_scope_resolution.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/scan_index_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/seat_parked.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/seat_parked_resume_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/seat_parked_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/session_beads.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/session_idle_latched_named_holder_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/session_lifecycle_parallel.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/session_r3_info_equiv_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/session_reconcile.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/session_reconciler.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/session_reconciler_parked_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/session_reconciler_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/session_w3_split_equiv_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/sling_remote.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/sling_remote_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/testdata/split_strict_baseline.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/testdata/split_strict_known_failures.list",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/work_location.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/config.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/schema/city-schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/schema/city-schema.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engdocs/architecture/session.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engdocs/contributors/reconciler-debugging.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/bd/dolt/commands/sync/run.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/bd/dolt/sync_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/client_sling_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/client_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/handler_sling.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/huma_handlers_beads.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/api/initiator_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/middleware.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/api/principal.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/api/principal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/api/writeauth.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/beadmeta/keys.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/beadmeta/keys_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/beads/bdstore.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/beads/bdstore_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/beads/beads.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/beads/caching_store_internal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/beads/event_payload.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/beads/event_payload_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/beads/native_dolt_store.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/beads/native_dolt_store_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/bootstrap/packs/core/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/bootstrap/packs/core/assets/scripts/cascade-nudge-on-blocker-close.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/bootstrap/packs/core/cascade_nudge_script_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/named_sessions.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/config/named_sessions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/legacy_AssignedInProgress_bd104.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/legacy_AssignedInProgress_bd104_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/legacy_AssignedInProgress_bd105.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/legacy_AssignedInProgress_bd105_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/legacy_AssignedReady_bd104.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/legacy_AssignedReady_bd104_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/legacy_PoolDemand_bd104.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/legacy_PoolDemand_bd104_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/legacy_RoutedPool_bd104.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/legacy_RoutedPool_bd104_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/legacy_Work_bd104.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/legacy_Work_bd104_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/legacy_Work_bd105.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/legacy_Work_bd105_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/normal_AssignedInProgress_bd104.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/normal_AssignedInProgress_bd104_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/normal_AssignedInProgress_bd105.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/normal_AssignedInProgress_bd105_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/normal_AssignedReady_bd104.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/normal_AssignedReady_bd104_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/normal_PoolDemand_bd104.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/normal_PoolDemand_bd104_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/normal_RoutedPool_bd104.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/normal_RoutedPool_bd104_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/normal_Work_bd104.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/normal_Work_bd104_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/normal_Work_bd105.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/normal_Work_bd105_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/pool_AssignedInProgress_bd104.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/pool_AssignedInProgress_bd104_federated.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/pool_AssignedInProgress_bd105.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/testdata/workquery/pool_AssignedInProgress_bd105_federated.golden",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

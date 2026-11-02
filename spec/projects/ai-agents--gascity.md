@@ -68,6 +68,16 @@ The [resume path](https://github.com/gastownhall/gascity/blob/879a71fa0bc58a33c8
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## External-update review - 2026-11-01
+
+Reviewed `d5261665dcd8f12e8a5a7ed4fdf9343f849f8c37` against `879a71fa0bc58a33c890e2c0980cbe1977204487`.
+
+The 210-path update adds authenticated attribution to city-scoped write requests. The inspected [write gate](https://github.com/gastownhall/gascity/blob/d5261665dcd8f12e8a5a7ed4fdf9343f849f8c37/internal/api/writeauth.go) now carries the verified grant's key ID into request context only after grant verification. The new [principal module](https://github.com/gastownhall/gascity/blob/d5261665dcd8f12e8a5a7ed4fdf9343f849f8c37/internal/api/principal.go) exposes that identity to the handler and a request-local slot to outer logging middleware. An empty ID does not become a principal.
+
+The complete inspected [principal fixtures](https://github.com/gastownhall/gascity/blob/d5261665dcd8f12e8a5a7ed4fdf9343f849f8c37/internal/api/principal_test.go) exercise valid and rejected signatures, missing grants, reads and supervisor-scope routes. They assert that valid scoped mutations expose the verified key ID and that rejected/ungated requests do not acquire one merely from a claimed header. Outer logging is checked independently of the handler projection.
+
+**Harness consequence:** Record verified principal attribution separately from asserted identity, transport presence and operation result. Document which routes carry authenticated attribution; absence on a read or an unverified route is not equivalent to an authenticated anonymous actor. Avoid treating a key ID as proof of individual human identity. This review covers the complete principal module/tests and write-gate delta. Partial pool-release fixtures were also inspected, but no conclusion about the whole pool state machine is promoted; the remaining orchestration, authentication and UI changes were not audited. No upstream code, tests or live API requests were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gascity](https://github.com/gastownhall/gascity); analyzed commit `879a71fa0bc58a33c890e2c0980cbe1977204487`; commit date 2026-11-01T09:16:28Z; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--gascity.md).
+Analysis metadata: source [gascity](https://github.com/gastownhall/gascity); analyzed commit `d5261665dcd8f12e8a5a7ed4fdf9343f849f8c37`; commit date 2026-11-01T11:11:27Z; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--gascity.md).
 <!-- teamagent-analysis:end -->

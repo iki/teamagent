@@ -1,0 +1,56 @@
+# mcp-sdk-rust
+
+Source: [mcp-sdk-rust](https://github.com/modelcontextprotocol/rust-sdk) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `8f9a28ecdb5f9237dd7927f915df82cd4d02d09b`; commit timestamp `2026-10-02T22:44:37+01:00`; 289 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/modelcontextprotocol/rust-sdk/blob/8f9a28ecdb5f9237dd7927f915df82cd4d02d09b/README.md)):
+
+> [](https://github.com/modelcontextprotocol/rust-sdk/actions/workflows/ci.yml) An official Rust Model Context Protocol SDK implementation with tokio async runtime.
+
+Build/package evidence: [Cargo.toml](https://github.com/modelcontextprotocol/rust-sdk/blob/8f9a28ecdb5f9237dd7927f915df82cd4d02d09b/Cargo.toml); [conformance/Cargo.toml](https://github.com/modelcontextprotocol/rust-sdk/blob/8f9a28ecdb5f9237dd7927f915df82cd4d02d09b/conformance/Cargo.toml); [crates/rmcp-macros/Cargo.toml](https://github.com/modelcontextprotocol/rust-sdk/blob/8f9a28ecdb5f9237dd7927f915df82cd4d02d09b/crates/rmcp-macros/Cargo.toml); [crates/rmcp/Cargo.toml](https://github.com/modelcontextprotocol/rust-sdk/blob/8f9a28ecdb5f9237dd7927f915df82cd4d02d09b/crates/rmcp/Cargo.toml); [crates/rmcp/tests/test_with_js/package.json](https://github.com/modelcontextprotocol/rust-sdk/blob/8f9a28ecdb5f9237dd7927f915df82cd4d02d09b/crates/rmcp/tests/test_with_js/package.json)
+
+License evidence: [LICENSE](https://github.com/modelcontextprotocol/rust-sdk/blob/8f9a28ecdb5f9237dd7927f915df82cd4d02d09b/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Lifecycle-specific initialization and cancellation-on-drop improve request handling without proving work termination.** Reviewed commit `cd88056ffdc97756fbd98e5a12bbeb41758f0ce8` (commit date `2026-10-26T14:57:21-07:00`). Compared with `8f9a28ecdb5f9237dd7927f915df82cd4d02d09b`; the complete Git comparison contains 55 changed paths.
+
+Client initialization now answers a server ping only while awaiting the initialize response; the discover path deliberately ignores it so a timeout-bounded probe cannot cancel a partially written ping response. New duplex-transport fixtures assert both wire sequences. The server answers bootstrap discovery without committing to a lifecycle, rejects incomplete inline metadata or unsupported versions and keeps waiting, then dispatches the first valid inline request through the service loop so handler notifications can drain. The bootstrap handler receives a disconnected peer.
+
+Convenience client requests now create an abandonment guard after send_request_with_option returns a handle. Dropping the waiting future sends a best-effort cancellation notification; completion disarms it. This does not cover abandonment before a handle is obtained, nor prove the server stopped an operation. The server outbound policy changes from checking association for selected requests to rejecting outbound requests when the recorded peer version is 2026-07-28 or later. Handler dispatch also inserts missing cache hints for that version branch and keeps legacy result shapes/error-code translation separate. These are behaviors of this pinned SDK snapshot; they are not independent confirmation of a published protocol requirement.
+
+Evidence: [crates/rmcp/src/service/client.rs:158-271](https://github.com/modelcontextprotocol/rust-sdk/blob/cd88056ffdc97756fbd98e5a12bbeb41758f0ce8/crates/rmcp/src/service/client.rs#L158-L271) · [crates/rmcp/src/service/client.rs:477-510](https://github.com/modelcontextprotocol/rust-sdk/blob/cd88056ffdc97756fbd98e5a12bbeb41758f0ce8/crates/rmcp/src/service/client.rs#L477-L510) · [crates/rmcp/src/service/client.rs:1452-1490](https://github.com/modelcontextprotocol/rust-sdk/blob/cd88056ffdc97756fbd98e5a12bbeb41758f0ce8/crates/rmcp/src/service/client.rs#L1452-L1490) · [crates/rmcp/src/service/server.rs:48-67](https://github.com/modelcontextprotocol/rust-sdk/blob/cd88056ffdc97756fbd98e5a12bbeb41758f0ce8/crates/rmcp/src/service/server.rs#L48-L67) · [crates/rmcp/src/service/server.rs:550-680](https://github.com/modelcontextprotocol/rust-sdk/blob/cd88056ffdc97756fbd98e5a12bbeb41758f0ce8/crates/rmcp/src/service/server.rs#L550-L680) · [crates/rmcp/src/handler/server.rs:241-275](https://github.com/modelcontextprotocol/rust-sdk/blob/cd88056ffdc97756fbd98e5a12bbeb41758f0ce8/crates/rmcp/src/handler/server.rs#L241-L275) · [crates/rmcp/tests/test_client_lifecycle_modes.rs:280-337](https://github.com/modelcontextprotocol/rust-sdk/blob/cd88056ffdc97756fbd98e5a12bbeb41758f0ce8/crates/rmcp/tests/test_client_lifecycle_modes.rs#L280-L337) · [crates/rmcp/tests/test_client_initialization.rs:157-210](https://github.com/modelcontextprotocol/rust-sdk/blob/cd88056ffdc97756fbd98e5a12bbeb41758f0ce8/crates/rmcp/tests/test_client_initialization.rs#L157-L210).
+
+**Harness consequence:** Keep protocol version and lifecycle explicit in the adapter, exercise discovery/fallback and pre-initialization ping ordering, and distinguish local future cancellation, delivered cancellation intent and verified operation termination. Audit low-level request paths and pre-handle send cancellation separately. Adopt cache hints only with tenant/source revision/auth scope in keys and validate current protocol requirements independently before changing the harness contract.
+
+**Scope and limits:** Static scoped review of lifecycle, request abandonment and server policy changes within the 55-path comparison, plus the two new ping fixture bodies. The wider service loop, serialization model, cache implementation, task manager and real transports were not exhaustively reviewed; no compilation, fixture execution or external protocol conformance verification.
+
+## Change review — 2026-11-01
+
+Reviewed `c742b5536724ec376b14b7ddcbbd024b7d6ae163` (2026-10-30T16:54:49-07:00); 27 paths changed from `cd88056ffdc97756fbd98e5a12bbeb41758f0ce8`. The inspected HTTP transport delta adds debug records for followed same-origin 307/308 redirects, logging old/new paths and status while omitting query strings. Existing bounded redirect policy and unchanged configured URI remain visible in context. Paths can themselves contain private identifiers, so query omission alone is not a complete privacy policy. [Transport](https://github.com/modelcontextprotocol/rust-sdk/blob/c742b5536724ec376b14b7ddcbbd024b7d6ae163/crates/rmcp/src/transport/common/reqwest/streamable_http_client.rs).
+
+Keep redirect decisions explicit and log minimal approved summaries. A custom supplied client can choose a different policy, which needs its own adapter review. Scope is this transport delta only, not new skills/request association/enterprise features; no Rust build, network action or test was executed.
+
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/modelcontextprotocol/rust-sdk](https://github.com/modelcontextprotocol/rust-sdk) at `fe458714e77cbae67498ac9f4da8005a5648fd0d` against prior analyzed `c742b5536724ec376b14b7ddcbbd024b7d6ae163`. Evidence: [crates/rmcp/src/error.rs](https://github.com/modelcontextprotocol/rust-sdk/blob/fe458714e77cbae67498ac9f4da8005a5648fd0d/crates/rmcp/src/error.rs), [crates/rmcp/src/transport.rs](https://github.com/modelcontextprotocol/rust-sdk/blob/fe458714e77cbae67498ac9f4da8005a5648fd0d/crates/rmcp/src/transport.rs), [crates/rmcp/src/transport/auth.rs](https://github.com/modelcontextprotocol/rust-sdk/blob/fe458714e77cbae67498ac9f4da8005a5648fd0d/crates/rmcp/src/transport/auth.rs).
+
+OAuth discovery now exposes distinct structured errors for transport failure, unusable protected-resource metadata and exhausted advertised authorization servers. Resource mismatch, missing resource, fragments and non-metadata documents have typed reasons. Transport causes remain in the error chain rather than being flattened into one message. Advertised bad metadata fails explicitly while a failed well-known guess may be skipped.
+
+**Architecture consequence:** Preserve semantic failure classes and source causes for reconciliation, while redacting URLs and nested messages at user/log boundaries. Discovery failure must not silently redirect authorization to an unadvertised base server. Structured error types do not themselves ensure safe presentation.
+
+**Scope and limits:** Read all changed production auth/error/export code and selected revised error assertions within a nine-path update. Remaining classification fixtures, action upgrades and runtime OAuth flows were not executed or comprehensively audited.

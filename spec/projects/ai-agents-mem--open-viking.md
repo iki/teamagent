@@ -59,6 +59,18 @@ Reviewed `24bd450d602599dcf5d1cdb947a62d6700cdec97` (2026-11-01T16:44:16+08:00) 
 
 The inspected SQLite-restart fixture injects replacement-enqueue failure across five consumers, preserves logical work ID, recovers the original, later accepts a durable replacement and checks duplicate original delivery cannot rerun the substituted business action. It reads as meaningful lifecycle coverage, but was not executed here and substitutes expensive execution/lock contention. Preserve durable replacement-before-ack ordering and separate physical deliveries from logical work identity; do not generalize this to exactly-once external side effects. [Restart fixture](https://github.com/volcengine/OpenViking/blob/24bd450d602599dcf5d1cdb947a62d6700cdec97/tests/agfs/test_handoff_requeue_enqueue_failure.py). The broader lock manager, other consumers and memory split behavior remain outside this three-path static review.
 
+## External-update review - 2026-11-01
+
+Reviewed `4b92b30656c821712e2cf5f053963dedc66206d9` against `24bd450d602599dcf5d1cdb947a62d6700cdec97`.
+
+The 11-path compilation change tightens [plan parsing](https://github.com/volcengine/OpenViking/blob/4b92b30656c821712e2cf5f053963dedc66206d9/bot/vikingbot/compile/plan.py): operator use is unique across both the revised suffix and already completed stages, record extraction and file outputs remain distinct, and Reduce must produce files. [Revision handling](https://github.com/volcengine/OpenViking/blob/4b92b30656c821712e2cf5f053963dedc66206d9/bot/vikingbot/compile/review.py) carries completed operators into validation. The parser operates on a bounded, whitelisted AST rather than evaluating plan text.
+
+[Finalization](https://github.com/volcengine/OpenViking/blob/4b92b30656c821712e2cf5f053963dedc66206d9/bot/vikingbot/compile/ops/finalize.py) removes the final model-driven delivery-completeness reviewer and its repair/exclusion pass. It retains deterministic path, unique-writer, hash, nonempty-content, selected UTF-8/JSON and skill-package checks before preparing revision-bound writes. These checks cannot establish that every requested deliverable exists or that its statements are correct. The earlier final-review behavior described historically above no longer applies at this revision.
+
+The [pipeline](https://github.com/volcengine/OpenViking/blob/4b92b30656c821712e2cf5f053963dedc66206d9/bot/vikingbot/compile/pipeline.py) now seeds sources even for directory plans. Inspected [source fixtures](https://github.com/volcengine/OpenViking/blob/4b92b30656c821712e2cf5f053963dedc66206d9/bot/tests/test_compile_sources.py) cover paginated/deduplicated source inventories and seeding before requested, budget-triggered or input-limit fallback; image transport uses simulated model responses and does not establish OCR quality.
+
+**Harness consequence:** Keep deterministic artifact validity separate from delivery completeness and independent acceptance. Resume/replan must retain completed-operator identity and all required evidence. This scoped static review covers models, planning, revision, finalization, pipeline and source-fixture deltas; service enumeration and other operator implementations were not exhaustively audited. No upstream code, model call or test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [open-viking](https://github.com/volcengine/OpenViking); analyzed commit `24bd450d602599dcf5d1cdb947a62d6700cdec97`; commit date 2026-11-01T16:44:16+08:00; review date 2026-11-01T11:35:43.470Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--open-viking.md).
+Analysis metadata: source [open-viking](https://github.com/volcengine/OpenViking); analyzed commit `4b92b30656c821712e2cf5f053963dedc66206d9`; commit date 2026-11-02T02:04:36+08:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--open-viking.md).
 <!-- teamagent-analysis:end -->

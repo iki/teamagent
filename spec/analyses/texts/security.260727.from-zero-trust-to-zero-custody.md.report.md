@@ -6,7 +6,7 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://2amsecurity.substack.com/p/from-zero-trust-to-zero-custody>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-11-01T08:51:16.093Z. Import: **pinned**. Content validation: **usable-text**.
+Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-11-01T21:49:04.531Z. Import: **pinned**. Content validation: **usable-text**.
 
 First captured: 2026-10-24T05:51:24.891Z. Source creation/publication date: 2026-07-27T15:30:27+00:00. Date evidence: publisher-jsonld (Article.datePublished). Filename dates and Last-Modified are not treated as creation dates.
 

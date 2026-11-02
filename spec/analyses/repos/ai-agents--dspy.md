@@ -2,11 +2,11 @@
 
 Source: [dspy](https://github.com/stanfordnlp/dspy) · [Analysis](../../projects/ai-agents--dspy.md) · [evolution](../../evolution.md), [skills](../../skills.md), [models](../../models.md), [decisions](../../decisions.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `25162c4fc05c2d2d019b0ffb5b6b2a9f315ec007`; commit date: 2026-10-29T09:15:19-04:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `25162c4fc05c2d2d019b0ffb5b6b2a9f315ec007`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `25162c4fc05c2d2d019b0ffb5b6b2a9f315ec007`; commit date: 2026-10-29T09:15:19-04:00; review date: 2026-11-01T11:33:30.893Z; observed SHA: `25162c4fc05c2d2d019b0ffb5b6b2a9f315ec007`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/stanfordnlp/dspy/compare/25162c4fc05c2d2d019b0ffb5b6b2a9f315ec007...25162c4fc05c2d2d019b0ffb5b6b2a9f315ec007). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

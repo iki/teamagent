@@ -1,0 +1,73 @@
+# gitnexus
+
+Structured code ingestion with optional graph phases and hybrid symbol/document retrieval.
+
+Source: [gitnexus](https://github.com/abhigyanpatwari/GitNexus) · Snapshot: `5f9f95f22454b1f878ca549bc38b4c2ef5066b9a` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [gitnexus/src/core/ingestion/pipeline.ts:318-370](https://github.com/abhigyanpatwari/GitNexus/blob/5f9f95f22454b1f878ca549bc38b4c2ef5066b9a/gitnexus/src/core/ingestion/pipeline.ts#L318-L370)
+- [gitnexus/src/core/search/hybrid-search.ts:158-192](https://github.com/abhigyanpatwari/GitNexus/blob/5f9f95f22454b1f878ca549bc38b4c2ef5066b9a/gitnexus/src/core/search/hybrid-search.ts#L158-L192)
+
+The ingestion registry orders scan, structure, configuration, Markdown, parsing, routes, tools, ORM, cross-file and scope-resolution phases, followed by additional language/framework phases. Taint and call summaries are explicitly gated by a PDG option; communities and process derivation can be skipped independently. The hybrid search function runs LadybugDB full-text retrieval and an injected semantic retriever concurrently, then merges through reciprocal-rank fusion. Both branches catch errors and return empty lists, allowing degraded operation.
+
+## Harness implications
+
+Represent code with several complementary views: literal text for exact symbols, syntax declarations for navigation, dependency/call relations for impact, and embeddings for conceptual discovery. The phase registry is preferable to a monolithic parser because language support and expensive analyses can be selected per repository. Preserve commit identity and symbol ranges with every graph record. Retrieval should identify whether a result came from lexical, semantic or structural evidence.
+
+## Limitations and tradeoffs
+
+A code graph is an approximation of actual execution: reflection, dynamic imports, generated code, macros and incomplete language support can hide dependencies. Optional PDG phases do not mean every graph contains precise dataflow. In the inspected hybrid path, failures are swallowed into empty arms; the harness must surface degradation rather than interpreting empty results as authoritative absence. The source review does not prove the correctness of all framework-specific phases or end-to-end index freshness.
+
+## Adoption and validation
+
+Pilot as an optional code-intelligence adapter, with plain file search and language-server references as controls. Use it to suggest impact neighborhoods, then read authoritative source before editing. Acceptance tasks should include renamed symbols, stale commits, multi-language workspaces, generated files, dynamic calls and unavailable FTS. Measure patch success and missed affected tests, not just search relevance.
+
+Related directions: [memory](../memory.md) · [import-generation](../import-generation.md) · [agents](../agents.md).
+
+
+## Change review - 2026-10-28
+
+**Parser identities and persisted-shard receipts strengthen cache coherence while publication retains a crash window.** Reviewed commit `bad2422aa1bd6473e4cbb4da15873090944b67d6` (commit date `2026-10-27T16:46:58Z`). Compared with `5f9f95f22454b1f878ca549bc38b4c2ef5066b9a`; the complete Git comparison contains 2873 changed paths.
+
+Chunk keys now frame sorted path/content-hash pairs with the resolved base parser identity and optional PDG identity/resolved function-line cap. This avoids delimiter ambiguity and prevents parser changes from silently replaying foreign shards. Sharded loads validate the base identity and key grammar; cache publication includes only successfully written/copied shards, chooses staged repairs over live copies and returns the exact written key set for durable ParsedFile pruning. The inspected loader still casts array-shaped V8/legacy values instead of deeply validating parser payloads.
+
+Publication removes a fixed .tmp directory, writes a generation, removes the live directory and then renames the replacement. The source explicitly acknowledges a gap with no live cache; no writer lock or crash-atomic swap appears in this function. Hybrid search now awaits both keyword and semantic lanes with allSettled before propagating symbol-identity corruption, preventing a sibling query from outliving the shared database session. Other lane failures still become empty results, leaving degraded coverage implicit in the returned merged list.
+
+Evidence: [gitnexus/src/storage/parse-cache.ts:180-306](https://github.com/abhigyanpatwari/GitNexus/blob/bad2422aa1bd6473e4cbb4da15873090944b67d6/gitnexus/src/storage/parse-cache.ts#L180-L306) · [gitnexus/src/storage/parse-cache.ts:385-532](https://github.com/abhigyanpatwari/GitNexus/blob/bad2422aa1bd6473e4cbb4da15873090944b67d6/gitnexus/src/storage/parse-cache.ts#L385-L532) · [gitnexus/src/core/search/hybrid-search.ts:170-201](https://github.com/abhigyanpatwari/GitNexus/blob/bad2422aa1bd6473e4cbb4da15873090944b67d6/gitnexus/src/core/search/hybrid-search.ts#L170-L201).
+
+**Harness consequence:** Bind cache entries to actual parser/grammar/options identity and publish an exact successful-shard manifest shared by related stores. Validate cached dynamic values, serialize publication and retain the previous generation until replacement is durably committed. Drain sibling retrieval work before closing shared resources, while reporting unavailable lanes separately from a genuine empty result.
+
+**Scope and limits:** Static scoped parser-cache identity/publication and hybrid-search failure-lifetime review within the 2,873-path comparison. Parser-identity resolver, V8 sidecar integrity, full generation orchestrator, embeddings and graph correctness were not audited or executed.
+
+## Follow-up change review — 2026-10-28
+
+**Unknown export semantics preserve conservative impact coverage.** Reviewed commit `51ce19d77abe86978e34d89dd77188c4dba3ba53` (commit date `2026-10-28T08:09:10Z`), compared with `bad2422aa1bd6473e4cbb4da15873090944b67d6`. The complete no-rename Git path inventory contains 16 changed paths.
+
+The new file-private classifier declines certification for missing/truncated source, flattened line comments, declaration files, parse errors, CommonJS, ambient declarations, alias exports and type aliases. It only certifies visible module semantics; a parsing exception returns false. The fixture matrix covers those cases plus JS/TS/JSX/TSX modules. Thus a failed proof of privacy can retain the wider file seed instead of removing possibly affected code from impact analysis.
+
+Evidence: [gitnexus/src/core/ingestion/languages/typescript/file-private-exports.ts:1-45](https://github.com/abhigyanpatwari/GitNexus/blob/51ce19d77abe86978e34d89dd77188c4dba3ba53/gitnexus/src/core/ingestion/languages/typescript/file-private-exports.ts#L1-L45) · [gitnexus/test/unit/file-private-exports.test.ts:4-53](https://github.com/abhigyanpatwari/GitNexus/blob/51ce19d77abe86978e34d89dd77188c4dba3ba53/gitnexus/test/unit/file-private-exports.test.ts#L4-L53).
+
+**Harness consequence:** Narrow graph traversal only on positive semantic evidence. Retain conservative candidates when extraction is incomplete, and expose the reason for widened impact scope.
+
+**Scope and limits:** Reviewed the new classifier and its fixture matrix; overall impact traversal, dependency updates and logger changes were not re-audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
+## Change review - 2026-11-01
+
+Reviewed `21298f24234e538dc0d0b5369c410e76da77e70e` against `51ce19d77abe86978e34d89dd77188c4dba3ba53` (252 changed paths). The new [retrieval diagnostic scorer](https://github.com/abhigyanpatwari/GitNexus/blob/21298f24234e538dc0d0b5369c410e76da77e70e/eval/workflow_bench/retrieval_diagnostics.py) validates declared source/runtime versions, current completed index, sanitized graph and query options, rejects duplicate/unknown cases, and distinguishes missing observation from an observed empty answer. Its relevance labels support anchor recall, not precision or false-positive estimates. The [fixtures](https://github.com/abhigyanpatwari/GitNexus/blob/21298f24234e538dc0d0b5369c410e76da77e70e/eval/tests/test_retrieval_diagnostics.py) exercise incomplete observations and invalid provenance.
+
+**Harness consequence:** Evaluate retrieval only against pinned, complete inputs and preserve missing/truncated coverage. Declared provenance still needs independent capture integrity; flattened symbol order is not a calibrated relevance score, and re-encoded JSON size is not measured wire traffic. Benchmark receipts should distinguish those quantities.
+
+**Scope and limits:** Complete new scorer and fixture files, not the runtime graph/index implementation or all 252 changed paths. No benchmark or source tests were executed.
+
+## External-update review - 2026-11-01
+
+Reviewed `347cc99b4a237f9a71c0084167bcbcbd9d06e610` against `21298f24234e538dc0d0b5369c410e76da77e70e`.
+
+Within the 94-path range, the [analysis fast path](https://github.com/abhigyanpatwari/GitNexus/blob/347cc99b4a237f9a71c0084167bcbcbd9d06e610/gitnexus/src/core/run-analyze.ts) can reuse a dirty checkout only after checking recorded dirty paths, completeness receipts, file-size policy, the full enumerated path set and current covered-file hashes. Enumeration errors reject reuse; Git status alone is insufficient for hidden edits or ignored scan-policy changes. It records hashes before parsing, then restricts them to actual graph file nodes, so a later analysis can detect an edit that occurred after parsing rather than falsely certifying those new bytes as indexed.
+
+The complete inspected [dirty-snapshot fixture](https://github.com/abhigyanpatwari/GitNexus/blob/347cc99b4a237f9a71c0084167bcbcbd9d06e610/gitnexus/test/integration/analyze-dirty-snapshot.test.ts) checks preserved database bytes, edges and native FTS, plus additions/deletions/renames, hidden edits, scan policy, interrupted writes, incomplete scope and concurrent edits. Its FTS case may skip when the extension is unavailable unless explicitly required. [Metadata](https://github.com/abhigyanpatwari/GitNexus/blob/347cc99b4a237f9a71c0084167bcbcbd9d06e610/gitnexus/src/storage/repo-meta.ts) also distinguishes a complete-empty unresolved-overload summary from missing/unverified evidence.
+
+**Harness consequence:** Cache identity includes readable content coverage and extraction completeness, not just commit identity or an empty status. Pre-parse receipts aid next-run reconciliation; they do not make a concurrently changing worktree an atomic snapshot. This review covers the three complete deltas above; the extensive Java/Python resolver changes and upstream benchmark claims remain outside this assessment. No native graph, FTS, analyzer, upstream test or benchmark was executed.

@@ -1,0 +1,67 @@
+# deploy-cloudflare
+
+Source: [deploy-cloudflare](https://github.com/cloudflare/cloudflare-docs) · Category: [ai-skills](../categories/ai-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `e43015cd6cddad3ee1c0fa087c4d5022e65e7c98`; commit timestamp `2026-10-03T15:34:24-04:00`; 13,801 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/README.md)):
+
+> Welcome to the open-source repository for all Cloudflare's Documentation. Except as otherwise noted, Cloudflare and any contributors grant you a license to the Cloudflare Developer Documentation and other content in this repository under the Creative Commons Attribution 4.0 International Public License, see the LICENSE file, and grant you a license to any code in the repository under the MIT License, see the LICENSE-CODE file.
+
+Build/package evidence: [.flue/package.json](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/.flue/package.json); [.github/actions/check-codeowner/package.json](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/.github/actions/check-codeowner/package.json); [.github/actions/issue-label-assign/package.json](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/.github/actions/issue-label-assign/package.json); [package.json](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/package.json); [tools/go.mod](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/tools/go.mod)
+
+License evidence: [LICENSE](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/LICENSE); [LICENSE-CODE](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/LICENSE-CODE) Classification hint: not classified; inspect source. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-skills**. Its category places it in the candidate set for skills; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`021cca55c71563adc33f365f7cd1904e379a0d92`](https://github.com/cloudflare/cloudflare-docs/commit/021cca55c71563adc33f365f7cd1904e379a0d92). Scope: Full member-permission, Gateway policy-context and Browser Run permission partials plus repository-file renderer tests read. Live account behavior, renderer implementation and broader deployment changes were not reviewed.
+
+The [Gateway documentation](https://github.com/cloudflare/cloudflare-docs/blob/021cca55c71563adc33f365f7cd1904e379a0d92/src/content/partials/cloudflare-one/gateway/policy-context.mdx) says optional policy context can append user email, original URL/referrer and device/account identifiers to a redirect query. This is a concrete privacy boundary: Teamagent must not place sensitive state in public URLs merely because a provider supports it. [Member permissions](https://github.com/cloudflare/cloudflare-docs/blob/021cca55c71563adc33f365f7cd1904e379a0d92/src/content/partials/fundamentals/edit-member-permissions.mdx) and [Browser Run access](https://github.com/cloudflare/cloudflare-docs/blob/021cca55c71563adc33f365f7cd1904e379a0d92/src/content/partials/browser-run/rest-api-token-permissions.mdx) describe separate account-role, API-token and Worker-binding paths. The absence of a token in the binding path is not absence of authorization.
+
+The [renderer tests](https://github.com/cloudflare/cloudflare-docs/blob/021cca55c71563adc33f365f7cd1904e379a0d92/.flue/lib/github-repo-tools.test.ts) distinguish bounded line spans, continuation positions, invalid ranges and binary metadata without dumping binary content. These are useful evidence-reader fixtures, but omit an oversized single-line case in this inspected test file and do not prove upstream response-body bounds. Treat the documentation as revision-specific provider guidance, not verified account state. No cloud account, deployment, renderer or tests were exercised.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `998668d7590142a7db2737b48a0432e33cda9067` (commit date `2026-10-28T09:58:21Z`), compared with `021cca55c71563adc33f365f7cd1904e379a0d92`. Earlier findings remain historical evidence.
+
+**Scope:** Official documentation changes for MCP v2 dependency entry points and performance-timer environment differences; not a Cloudflare runtime source or deployment test. The complete changed-path inventory contains 25 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+The migration guide distinguishes optional server/SDK peers from the required client and warns that a legacy agents/mcp import still loads v1 code even for client helpers. The narrow client entry point and the x402 v1 typing exception demonstrate why a skill's example must be matched to installed package versions and import surfaces before use. This is pinned vendor guidance, not independent verification of those packages. [src/content/docs/agents/model-context-protocol/guides/migrate-to-mcp-sdk-v2.mdx](https://github.com/cloudflare/cloudflare-docs/blob/998668d7590142a7db2737b48a0432e33cda9067/src/content/docs/agents/model-context-protocol/guides/migrate-to-mcp-sdk-v2.mdx#L46-L58).
+
+The performance guide explicitly distinguishes local timer behavior and deployed CPU profiling. Local elapsed measurements should not be promoted into production CPU claims. Teamagent should version compatible dependency examples and measure the relevant runtime; an installed deployment skill does not select or upgrade the project's dependencies. [src/content/docs/workers/runtime-apis/performance.mdx](https://github.com/cloudflare/cloudflare-docs/blob/998668d7590142a7db2737b48a0432e33cda9067/src/content/docs/workers/runtime-apis/performance.mdx#L37-L45).
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
+## 2026-11-01 scoped source review
+
+Reviewed commit `d09c8238fd7278400b29c5b0ee4c8d1d9d8be3a6` (commit date `2026-10-31T20:24:42Z`), compared with `998668d7590142a7db2737b48a0432e33cda9067`. Earlier observations remain historical evidence.
+
+**Scope:** Expanded dynamic-worker authentication guide and complete route-policy example; whole-repository diff was oversized. This is vendor-authored guidance, not inspected platform internals or executed workerd acceptance.
+
+The [guide](https://github.com/cloudflare/cloudflare-docs/blob/d09c8238fd7278400b29c5b0ee4c8d1d9d8be3a6/src/content/docs/dynamic-workers/usage/authentication.mdx) places route checks before customer code and record authorization inside platform-owned capabilities, versions code/policy together and warns that cached worker memory can retain prior-user data. Its [example](https://github.com/cloudflare/cloudflare-docs/blob/d09c8238fd7278400b29c5b0ee4c8d1d9d8be3a6/src/content/partials/workers/platform-auth-route-policy.mdx) matches exact method/path, denies undeclared routes and checks tenant/permission for private routes. Authentication and deployment-manifest validation are integrations the platform must supply.
+
+**Teamagent implication (inference):** Keep untrusted app/agent code behind host-owned capability enforcement and authorize egress before injecting credentials. Bind code, route policy and cache identity to tenant/user isolation needs, with real workerd tests for changed behavior; do not infer isolation from a successful bundle or documentation example.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
+
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/cloudflare/cloudflare-docs](https://github.com/cloudflare/cloudflare-docs) at `492f4244c57f6b4656470b8219d19e88da193357` against prior analyzed `d09c8238fd7278400b29c5b0ee4c8d1d9d8be3a6`. Evidence: [src/components/models/ModelDetailPage.astro](https://github.com/cloudflare/cloudflare-docs/blob/492f4244c57f6b4656470b8219d19e88da193357/src/components/models/ModelDetailPage.astro).
+
+Catalog model pages now distinguish the model identifier used with Workers AI and gateway APIs from the provider-native identifier used by a direct provider endpoint or SDK. This is a conditional documentation component, not a routing implementation change.
+
+**Architecture consequence:** Represent a model route with its host and API namespace, not just a display name; do not pass a gateway catalog identifier unchanged to an unrelated native adapter.
+
+**Scope and limits:** Read the complete one-file delta. No provider model availability, entitlement or runtime compatibility was tested.

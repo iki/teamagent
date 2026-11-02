@@ -50,6 +50,16 @@ The [memory event client](https://github.com/Agent-Field/agentfield/blob/d4c963b
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/Agent-Field/agentfield](https://github.com/Agent-Field/agentfield) at `959dae9b17364ee2e6fd29e61c9e30ee2a036cab` against prior analyzed `d4c963bacd57b5e05013997e5eae54b099d51ed1`. Evidence: [sdk/python/agentfield/memory_events.py](https://github.com/Agent-Field/agentfield/blob/959dae9b17364ee2e6fd29e61c9e30ee2a036cab/sdk/python/agentfield/memory_events.py), [sdk/python/tests/test_memory_events.py](https://github.com/Agent-Field/agentfield/blob/959dae9b17364ee2e6fd29e61c9e30ee2a036cab/sdk/python/tests/test_memory_events.py), [sdk/python/tests/test_memory_events_additional.py](https://github.com/Agent-Field/agentfield/blob/959dae9b17364ee2e6fd29e61c9e30ee2a036cab/sdk/python/tests/test_memory_events_additional.py).
+
+Memory event connections now capture a generation before acquiring the connect lock and discard late sockets after close advances that generation. Background listener/reconnect tasks are retained, canceled and gathered on close, with transport closure in finally. The inspected fixtures cover queued and late connects, reconnect backoff, cancellation during close and explicit reconnection after shutdown.
+
+**Architecture consequence:** Give each subscription connection an owner and generation; invalidate pending admission before awaiting child cleanup. Preserve the distinction between canceling reconnect work and confirming transport closure.
+
+**Scope and limits:** Reviewed the Python event client and changed lifecycle fixtures within a 10-path release/dependency update. Dependency security and actual WebSocket behavior were not independently tested; fixture code was read, not executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agentfield](https://github.com/Agent-Field/agentfield); analyzed commit `d4c963bacd57b5e05013997e5eae54b099d51ed1`; commit date 2026-10-31T13:08:06Z; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agentfield.md).
+Analysis metadata: source [agentfield](https://github.com/Agent-Field/agentfield); analyzed commit `959dae9b17364ee2e6fd29e61c9e30ee2a036cab`; commit date 2026-11-01T14:05:38Z; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agentfield.md).
 <!-- teamagent-analysis:end -->

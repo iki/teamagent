@@ -1,0 +1,900 @@
+{
+  "id": "ai-agents--gstack.claude.garrytan",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/garrytan/gstack",
+  "report": "spec/projects/ai-agents--gstack.claude.garrytan.md",
+  "analyzedSha": "b15492a148e2744d24b0ca4da5ba290fb109c340",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-11-01T09:52:31Z",
+  "observedSha": "ab2852fb40219669c583f34a6f69b08f623543b4",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "ab2852fb40219669c583f34a6f69b08f623543b4",
+      "date": "2026-11-01T20:15:10Z",
+      "subject": "v1.92.38.0 fix(brain-sync): set local edits aside around the retry merge and say why it failed (#3704) (#3728)"
+    },
+    {
+      "sha": "1ea86923a86129d1f32828b36acfe6f91f17c8e6",
+      "date": "2026-11-01T17:35:19Z",
+      "subject": "v1.92.37.0 fix: review briefs check template slots before pasting reviewer text (GST-797) (#3797)"
+    },
+    {
+      "sha": "216493fb32d19f261a9ee37a866c3f3513ea949a",
+      "date": "2026-11-01T17:21:21Z",
+      "subject": "v1.92.36.0 fix(review): keep every severity label, so a blocker after \"no CRITICAL issues except\" is no longer lost (GSTA-167 S1) (#3803)"
+    },
+    {
+      "sha": "4f5b043b3ea02f4fa9887c0122452856c045bb82",
+      "date": "2026-11-01T16:28:03Z",
+      "subject": "v1.92.35.0 fix(pregate): a timeout-only policy keeps lane verdicts, warn lanes runs the tests, [] keeps removed-test suites (GST-775) (#3792)"
+    },
+    {
+      "sha": "6954a8c42be3e0950341e6572a2d9b141a008246",
+      "date": "2026-11-01T16:16:00Z",
+      "subject": "v1.92.34.0 fix(ship-queue): wave plan links PRs only on a real code conflict and leaves out READY heads whose CI is not green (GST-770) (#3791)"
+    },
+    {
+      "sha": "1cac25cb8eb1b394136e98ab76ecd2b8fcec458e",
+      "date": "2026-11-01T16:01:55Z",
+      "subject": "v1.92.33.0 fix(flaky): 2026-10-31 flaky pass — paid detector gaps, Windows cold first launches, fixture races, ubicloud pack index copy (GSTA-199) (#3697)"
+    },
+    {
+      "sha": "84c5019e23c58a327eeff10ed45dedc780b81df2",
+      "date": "2026-11-01T15:47:35Z",
+      "subject": "v1.92.32.0 fix(flaky): Windows hook kill, publication-gates deadline, xvfb marker, devex floor idle API error (2026-10-29 flaky pass, GSTA-162) (#3607)"
+    },
+    {
+      "sha": "7fa7f5f90378aeb243730a74ff6a58ac90b9f69b",
+      "date": "2026-11-01T15:32:09Z",
+      "subject": "v1.92.31.0 fix(flaky): qa-callers child handoff and three ship-docsync detector gaps (2026-10-29 flaky pass, GSTA-162) (#3606)"
+    },
+    {
+      "sha": "83ae96e086dede0235aa80139d93249f40b215e4",
+      "date": "2026-11-01T14:23:49Z",
+      "subject": "v1.92.30.0 test(free): split files over the 60 s seed ceiling and the Windows doctor file, then reseed (GSTA-151 A) (#3585)"
+    },
+    {
+      "sha": "8cef24cea9684c5e97e658bc404063f712daf47f",
+      "date": "2026-11-01T14:10:20Z",
+      "subject": "v1.92.29.0 fix(ship): review collector skips negated severity words and records the reviewer's stated severity (GST-766) (#3787)"
+    },
+    {
+      "sha": "6bffa200a51eddd6461aa6c2589cf446244287d4",
+      "date": "2026-11-01T13:55:38Z",
+      "subject": "v1.92.28.0 ship-receipt: a base merge's metadata changes no longer block carry (GST-343, #3606) (#3706)"
+    },
+    {
+      "sha": "cd0c912a0e7b97da7aeaf8c4e91538b794c8e040",
+      "date": "2026-11-01T13:42:07Z",
+      "subject": "v1.92.27.0 ship: each phase program returns the next phase's sections once, in code (GSTA-167 calls PR 3) (#3670)"
+    },
+    {
+      "sha": "6a2c38da05022962de293c283b576879609678c0",
+      "date": "2026-11-01T13:28:21Z",
+      "subject": "v1.92.26.0 feat(retro): friction by skill from the project timeline (GST-632) (#3757)"
+    },
+    {
+      "sha": "f739756389d1fa7ebca2a10d84c97c294bfea4c5",
+      "date": "2026-11-01T10:32:27Z",
+      "subject": "v1.92.25.0 fix(ship): Step 3 stops by name on an unfinished merge, cherry-pick or revert (GST-732) (#3785)"
+    },
+    {
+      "sha": "a2ce5bd8880e4ddab77e9656ff2a776082f31972",
+      "date": "2026-11-01T10:13:55Z",
+      "subject": "v1.92.24.0 fix(ship): finish accepts an owner-accepted documentation exception (GST-713) (#3776)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "TODOS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "VERSION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents-digest/gstack-AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-brain-sync",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-docs-candidate",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-retro-metrics",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-review-dispatch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-ship-budget",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-ship-parts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-ship-receipt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/test/cookie-import-native.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/test/cookie-import-node.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/test/terminal-agent-publication-lock.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/test/xvfb.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capy/skill/gstack/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/TESTING_INTERNALS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/evals/detector-inventory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/gbrain-sync-errors.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/gbrain-sync.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/pregate.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/recommended-harness.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/review-policy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ship-budget.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ship-policy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/troubleshooting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ios-qa/daemon/test/daemon-integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/capy-review-pass.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/pregate/checks/lanes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/pregate/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/pregate/context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/pregate/head-policy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/pregate/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/pregate/lane-selection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/pregate/starter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/pregate/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/result-codes-release.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "lib/retro-friction.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/review-brief.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/review-ledger.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/review-pass.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/review-scope.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/ship-budget-cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "lib/ship-parts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/ship-preflight.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/ship-queue-wave.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "lib/ship-release.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "retro/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "retro/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/free-test-durations-windows.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/free-test-durations.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/harness-version.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lib/windows-curation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/typecheck-test-baseline.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ubicloud/ubi-runner.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ship/DRIVER.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ship/DRIVER.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ship/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ship/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ship/sections/documentation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ship/sections/documentation.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/brain-sync.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/claude-overlay-setup-installs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/claude-overlay-setup-lifecycle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/claude-overlay-setup-project.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/claude-overlay-setup-recovery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/coverage-audit-evidence.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/docsync-authority.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/docsync-command-grammar.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/docsync-fault-interface-faults.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/docsync-fault-interface-legacy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/docsync-fault-interface.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/docsync-lifecycle-interface.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/coverage-audit-two-file-grep.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/design-ui-focus-capture-41178131219.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/design-ui-focus-capture-41186376825.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/docsync-invalid-first-attempt-public.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/docsync-phase-read-aborted-public.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/docsync-read-help-public.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/docsync-ship-receipt-not-found-public.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/golden/agy-ship-SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/golden/claude-ship-SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/golden/codex-ship-SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/golden/factory-ship-SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/pty-idle-turn-end.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/qa-caller-child-handoff-2026-10-29.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/review-ledger/geva-77-fix-check.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/review-ledger/harn15-152-p1-adversarial-native.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/review-ledger/harn15-152-p2-fix-check.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/review-ledger/harn15-ship2-p2-adversarial-native.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/review-ledger/harn15-ship2-p2-fix-check.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/review-ledger/harn15-ship2-p2-red-team.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/review-ledger/harn15-ship2-red-team.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/gstack-doctor-check.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/gstack-doctor-launch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/gstack-doctor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/gstack-retro-metrics.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/gstack-ship-queue.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/gstack-ship-receipt.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/claude-pty-runner.runners.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/claude-pty-runner.screen.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/coverage-audit-evidence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/docsync-contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/helpers/docsync-fault-callbacks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/docsync-observer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/helpers/doctor-fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/free-fixtures-data.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/helpers/host-renders-prune-fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/llm-judge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/plan-review-board-feedback.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/pty/runners/floor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/pty/screen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/qa-callers-fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/helpers/setup-codex-scope-cyclic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/helpers/shared-libs-checker-evidence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/ship-budget-harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/helpers/ship-queue-train-cases.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/ship-queue-train-fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/third-party-actions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/touchfiles-data.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/helpers/ubi-runner-fake-vm.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/helpers/warm-first-exec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/hook-scripts.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/host-renders-prune-migration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/host-renders-prune-shared-root.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/host-renders-prune.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/land-and-deploy-flow.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/llm-judge-stream.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/plan-design-with-ui-fixture.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/pregate-policy-lane-verdicts.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/pregate-starter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/qa-caller-review-plan.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/qa-only-browser-probe.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/retro-friction.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/review-dispatch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/review-pass.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/review-scope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/setup-codex-scope-aliases.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/setup-codex-scope-namespaces.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/setup-codex-scope-review-boundaries.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/setup-codex-scope-runtime-links.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/shared-libs-checker-interface-evidence-declared.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/shared-libs-checker-interface-evidence-replays.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/shared-libs-checker-interface-evidence.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/ship-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/ship-document-release-dispatch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/ship-driver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/ship-hook-windows-paths.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/ship-parts.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/ship-preflight-base-ancestor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/ship-publication-gates.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/ship-queue-train-bisect.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/ship-queue-train-freeze.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/ship-queue-train-verify.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/ship-queue-train.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/ship-queue-wave.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/ship-release-docs-exception.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/size-ledger/ship/gst-713-docs-exception-finish.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/size-ledger/ship/gst-732-preflight-unfinished-op.json",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

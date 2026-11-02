@@ -46,6 +46,14 @@ The [verification skill](https://github.com/affaan-m/everything-claude-code/blob
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## 2026-11-01 upstream identity reconciliation
+
+[Everything Claude Code](https://github.com/affaan-m/everything-claude-code) now resolves to the same public [ECC repository](https://github.com/affaan-m/ecc). An anonymous primary API probe at `2026-11-01T21:34:18.5940275Z` observed an explicit 301 to repository ID `1136590548`, followed by separate successful name and ID lookups with matching identity. The redirect was not followed automatically. This evidence is independent of shared Git history, which alone could identify a fork rather than a rename.
+
+The clean, nonshallow retained checkout remains exactly at previously analyzed `b38be6a7f6350964d59328b52f0624e1d1d552d1`, with full baseline ancestry verified. The [reviewed verification skill](https://github.com/affaan-m/ecc/blob/b38be6a7f6350964d59328b52f0624e1d1d552d1/.agents/skills/verification-loop/SKILL.md) is therefore unchanged in this identity reconciliation. Preserve this report ID, old URL alias, original review scope and historical snapshots. No fetch, source mutation, new behavioral review or upstream test execution occurred.
+
+**Architecture consequence:** Separate publisher identity verification from commit continuity. A reviewed rename may update operational discovery without duplicating the source or transferring old remote availability dates to the new URL. See the [maintenance evidence](../analyses/reconciliation-2026-11-01.md).
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bundle-claude.ecc.affaan-m](https://github.com/affaan-m/everything-claude-code); analyzed commit `b38be6a7f6350964d59328b52f0624e1d1d552d1`; commit date 2026-10-29T20:06:32-07:00; review date 2026-11-01T11:37:37.120Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-skills--bundle-claude.ecc.affaan-m.md).
+Analysis metadata: source [bundle.ecc.affaan-m](https://github.com/affaan-m/ecc); analyzed commit `b38be6a7f6350964d59328b52f0624e1d1d552d1`; commit date 2026-10-29T20:06:32-07:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-skills--bundle-claude.ecc.affaan-m.md).
 <!-- teamagent-analysis:end -->

@@ -52,6 +52,16 @@ The [rotation change](https://github.com/can1357/oh-my-pi/blob/1c291b87e4b889398
 
 **Coverage:** Read both targeted implementation deltas, the complete new rotation fixture and added cancellation cases; inspected many removed race cases but did not audit their replacement or all tests. Other oversized changes remain outside scope. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## External-update review - 2026-11-01
+
+Reviewed `686b5e2fb542848dc3ff1a9e36a42a8fefdd2278` against `1c291b87e4b889398cc4b8e4ccdfa650b56a0486`.
+
+The 425-path update contains a narrow credential-lifecycle correction. The [auth-broker client](https://github.com/can1357/oh-my-pi/blob/686b5e2fb542848dc3ff1a9e36a42a8fefdd2278/packages/ai/src/auth-broker/client.ts) now sends the explicit refresh reason, and the [server](https://github.com/can1357/oh-my-pi/blob/686b5e2fb542848dc3ff1a9e36a42a8fefdd2278/packages/ai/src/auth-broker/server.ts) passes `usage-probe` to storage separately from the existing authentication-recovery options. A monitoring request therefore retains its purpose across the broker boundary instead of accidentally becoming an ordinary credential-repair operation.
+
+The complete new [usage-probe fixture](https://github.com/can1357/oh-my-pi/blob/686b5e2fb542848dc3ff1a9e36a42a8fefdd2278/packages/ai/test/auth-broker-usage-probe-refresh.test.ts) constructs a local broker and credential store with an injected `invalid_grant` refresh failure. It expects a reported HTTP failure while the credential row remains present. This establishes authored coverage of non-destructive observation, not successful refresh or continuing credential validity. The complete [snapshot-cache delta](https://github.com/can1357/oh-my-pi/blob/686b5e2fb542848dc3ff1a9e36a42a8fefdd2278/packages/ai/src/auth-broker/snapshot-cache.ts) also moves byte-view normalization to the shared utility; the cryptographic format and utility implementation were not re-audited.
+
+**Harness consequence:** Propagate operation purpose through shared credential services, keep observation failure distinct from credential invalidation, and avoid destructive repair as a side effect of usage reporting. Reason vocabulary and access to the broker still require host validation; the inspected client type alone is not a runtime authorization boundary. Scope is these four complete deltas, not the 425-path retry, model, UI and provider update as a whole or storage policy internals. No broker, provider, source program or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [oh-my-pi](https://github.com/can1357/oh-my-pi); analyzed commit `1c291b87e4b889398cc4b8e4ccdfa650b56a0486`; commit date 2026-11-01T00:48:27+01:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--oh-my-pi.md).
+Analysis metadata: source [oh-my-pi](https://github.com/can1357/oh-my-pi); analyzed commit `686b5e2fb542848dc3ff1a9e36a42a8fefdd2278`; commit date 2026-11-01T17:59:18+01:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--oh-my-pi.md).
 <!-- teamagent-analysis:end -->

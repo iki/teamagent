@@ -2,11 +2,11 @@
 
 Source: [career-ops](https://github.com/santifer/career-ops) · [Analysis](../../projects/ai-media--career-ops.md) · [import-generation](../../import-generation.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `6210e4414ad052f83baa560b5ab8e5bdcd2def6a`; commit date: 2026-10-31T23:55:09Z; review date: 2026-11-01T11:35:43.470Z; observed SHA: `6210e4414ad052f83baa560b5ab8e5bdcd2def6a`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `a86398e9060da3e681d41effe6fa82f2cbf98c66`; commit date: 2026-11-01T20:08:10Z; review date: 2026-11-01T23:12:06.798Z; observed SHA: `a86398e9060da3e681d41effe6fa82f2cbf98c66`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/santifer/career-ops/compare/6210e4414ad052f83baa560b5ab8e5bdcd2def6a...6210e4414ad052f83baa560b5ab8e5bdcd2def6a). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/santifer/career-ops/compare/a86398e9060da3e681d41effe6fa82f2cbf98c66...a86398e9060da3e681d41effe6fa82f2cbf98c66). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

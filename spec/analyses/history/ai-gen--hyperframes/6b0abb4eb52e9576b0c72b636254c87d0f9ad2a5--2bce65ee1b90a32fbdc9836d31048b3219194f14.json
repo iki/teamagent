@@ -1,0 +1,590 @@
+{
+  "id": "ai-gen--hyperframes",
+  "generatedAt": "2026-11-02T06:17:34.714Z",
+  "observedAt": "2026-11-02T05:59:06.3500250+00:00",
+  "source": "https://github.com/heygen-com/hyperframes",
+  "report": "spec/projects/ai-gen--hyperframes.md",
+  "analyzedSha": "6b0abb4eb52e9576b0c72b636254c87d0f9ad2a5",
+  "analyzedAt": "2026-11-01T23:12:06.798Z",
+  "analyzedCommitDate": "2026-11-01T19:41:17Z",
+  "observedSha": "2bce65ee1b90a32fbdc9836d31048b3219194f14",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "2bce65ee1b90a32fbdc9836d31048b3219194f14",
+      "date": "2026-11-01T23:16:56Z",
+      "subject": "fix(cli): add the audio and transcribe topics to hyperframes docs (#6960)"
+    },
+    {
+      "sha": "13b42bec3c934b012c6873fa0dcbb1e8bd2519ef",
+      "date": "2026-11-01T22:46:34Z",
+      "subject": "fix(shader-transitions): keep the loading panel out of snapshot and check captures (#6959)"
+    },
+    {
+      "sha": "de6ec3811ee53711409c504ebf75aa3ab63f17ca",
+      "date": "2026-11-01T22:44:11Z",
+      "subject": "fix: cache paths follow HYPERFRAMES_CACHE_DIR (#6716)"
+    },
+    {
+      "sha": "57d23598a7269ac7e4d9c01003eb8c6039ed198b",
+      "date": "2026-11-01T22:40:12Z",
+      "subject": "feat(studio): hosts can remap Studio's single-key shortcuts (#6957)"
+    },
+    {
+      "sha": "8b029f4fb0ab9aa357759628acd7ba842a7c12bd",
+      "date": "2026-11-01T22:22:54Z",
+      "subject": "fix(parsers): resolve file URLs and Git Bash paths in media sources (#6956)"
+    },
+    {
+      "sha": "465128d00201dc931e2bee0396d07cdbe167ce4e",
+      "date": "2026-11-01T22:22:18Z",
+      "subject": "fix(cli): media-treatment says which media the file has when the selector matches none (#6958)"
+    },
+    {
+      "sha": "5c5794287bd0dc2c94f238ca89f4752ecaa045a2",
+      "date": "2026-11-01T21:52:04Z",
+      "subject": "fix(cli): say a font or image URL is a download, not a page, when capture is given one (#6952)"
+    },
+    {
+      "sha": "7d8cdfbb8b609cbca98f93a60ee1ac8eb06bdf8d",
+      "date": "2026-11-01T21:50:31Z",
+      "subject": "fix(studio): a preview reload that timed out is tried once more, so an edit is not left unseen (#6953)"
+    },
+    {
+      "sha": "9284e69fff2af4928d41cc376f36d5cfbd789bfd",
+      "date": "2026-11-01T20:46:08Z",
+      "subject": "fix(core): accept 65-point .cube LUTs, the size grading apps export (#6921)"
+    },
+    {
+      "sha": "5540f491219cedd8cbdcff8f48c296362377363e",
+      "date": "2026-11-01T12:42:11-08:00",
+      "subject": "chore: release v0.8.229 (#6951)"
+    },
+    {
+      "sha": "34ddced2d0e9350c2b6387b2365257bb7080e832",
+      "date": "2026-11-01T12:29:35-08:00",
+      "subject": "fix(cli): keep browser sign-in open through checkout (#6879)"
+    },
+    {
+      "sha": "0ab49311597ce1e01ae2f5e438276c5d313ba448",
+      "date": "2026-11-01T20:16:52Z",
+      "subject": "fix(studio): a clip's thumbnail strip stays put while you trim it (#6942)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".fallowrc.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-render.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/changelog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/media-effects.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/packages/cli.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gemini-extension.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/aws-lambda/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/audio/analysis/providers/apple.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/auth/loopback.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/auth/loopback.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/auth/oauth.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/auth/oauth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/background-removal/coremlTemp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/background-removal/manager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/browser/manager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/capture/navigateForCapture.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/capture/navigateForCapture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/cloud/offload.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/auth/login.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/auth/login.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/docs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/docs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/grade-compare.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/lambda/prebuiltHandler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/media-treatment.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/media-treatment.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/docs/audio.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/docs/transcribe.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/measure/opencv.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/media-use/lib/cube-validate.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/media-use/lib/cube-validate.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/media-use/resolve.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/telemetry/events.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/tts/manager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/tts/synthesize.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/utils/optionalPackages.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/utils/optionalPackages.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/warmCheckProtocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/whisper/manager.install.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/whisper/manager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/whisper/sherpa.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/whisper/sherpa.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/package-subpaths.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core/src/cacheDir.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core/src/cacheDir.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/colorGrading.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/colorLuts.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/colorLuts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/fonts/deterministicFonts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/fonts/fontCompression.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/runtime/colorGrading.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/runtime/colorGrading.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/engine/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/engine/src/services/browserManager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gcp-cloud-run/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/inspector/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/inspector/src/service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/lint/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/parsers/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/parsers/src/assetResolution.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/parsers/src/assetResolution.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/player/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/producer/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/shader-transitions/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/shader-transitions/src/hyper-shader.preview.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/shader-transitions/src/hyper-shader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio-server/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio-server/src/history/projectHistory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/components/TimelineToolPicker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/components/TimelineToolbar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/components/editor/GestureRecordControl.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/components/editor/PropertyPanelFlatFooter.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/components/editor/SnapToolbar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/hooks/appHotkeysDispatch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/hooks/useAppHotkeys.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/hooks/useKeyframeKeyboard.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/player/components/ClipContextMenu.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/player/components/PlayerControls.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/player/components/ShortcutsPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/player/components/VideoThumbnail.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/player/components/VideoThumbnail.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/studio/src/player/components/studioShortcuts.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/player/components/studioShortcuts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/player/components/useTimelineClipDrag.resize.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/player/components/useTimelineClipDrag.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/player/hooks/usePlaybackKeyboard.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/player/hooks/usePlaybackKeyboard.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/player/hooks/useShadowPreviewReload.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/studio/src/player/hooks/useShadowReloadRetry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/studio/src/player/hooks/useTimelinePlayer.shadowRetry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/src/player/lib/playbackShortcuts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "releases/v0.8.229.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

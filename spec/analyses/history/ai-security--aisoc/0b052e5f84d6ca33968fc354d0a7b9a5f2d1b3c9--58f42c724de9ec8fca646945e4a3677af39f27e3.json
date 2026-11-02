@@ -1,0 +1,620 @@
+{
+  "id": "ai-security--aisoc",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/beenuar/AiSOC",
+  "report": "spec/projects/ai-security--aisoc.md",
+  "analyzedSha": "0b052e5f84d6ca33968fc354d0a7b9a5f2d1b3c9",
+  "analyzedAt": "2026-11-01T11:37:37.120Z",
+  "analyzedCommitDate": "2026-11-01T01:13:22-07:00",
+  "observedSha": "58f42c724de9ec8fca646945e4a3677af39f27e3",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "58f42c724de9ec8fca646945e4a3677af39f27e3",
+      "date": "2026-11-01T11:09:36-08:00",
+      "subject": "depth2 Lane E: land Phase 7 provider coverage, hosted agents and the AI rule pack on main (#1599)"
+    },
+    {
+      "sha": "4bb84f0fd54de9f2663e66865d4d7b087f5500f3",
+      "date": "2026-11-01T04:13:01-08:00",
+      "subject": "feat(ingest): anonymizer and hosting classes stamped at ingest (depth2 1.6) (#1586)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitleaksignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "DEPTH2_PROGRESS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ROADMAP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/compliance/evidence-pack.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/connectors/llm_usage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/detections/coverage.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/operations/ip-classification.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/sidebars.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/static/llms-full.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/static/llms.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/public/marketplace/curated.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/public/marketplace/index.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/app/(app)/ai-estate/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/components/ai-estate/AiChatCompliancePanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/ai-estate/AiEstateView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/alerts/InvestigationRail.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/components/alerts/SourceAddressClass.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/data/corpus-stats.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/lib/api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "detections/application/llm-ai-app-granted-write-scope.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "detections/application/llm-copilot-agent-mcp-config-changed.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "detections/application/llm-copilot-bulk-resource-access.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "detections/application/llm-copilot-content-exclusion-changed.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "detections/fixtures/negative/llm-ai-app-granted-write-scope.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "detections/fixtures/negative/llm-copilot-agent-mcp-config-changed.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "detections/fixtures/negative/llm-copilot-bulk-resource-access.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "detections/fixtures/negative/llm-copilot-content-exclusion-changed.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "detections/fixtures/positive/llm-ai-app-granted-write-scope.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "detections/fixtures/positive/llm-copilot-agent-mcp-config-changed.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "detections/fixtures/positive/llm-copilot-bulk-resource-access.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "detections/fixtures/positive/llm-copilot-content-exclusion-changed.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "detections/rule-ids.lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/audit/CLAIM_TO_GATE_MATRIX.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/audit/depth2-baseline/lane-e-phase7-reproduction.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/connectors/conformance-matrix.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/decisions/0018-ip-class-dataset-provenance.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/decisions/0021-ai-chat-compliance-minimisation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/detections/truth-table.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/openapi.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "marketplace/curated.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "marketplace/index.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plans/aisoc_depth_wave2.plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/check_comment_paths.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check_ip_class_dataset.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/detection_specs_part3_application.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/fetch_ip_class_dataset.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/generate_detections.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/ip_class_dataset.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/sync_vendored_ai_instruction_rules.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/sync_vendored_ai_redaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/sync_vendored_ip_class.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/app/_vendor/ai_instruction_rules.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/app/_vendor/ai_redaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/api/v1/endpoints/ai_assets.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/app/api/v1/endpoints/ai_chat_compliance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/api/v1/endpoints/alerts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/api/v1/router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/data/connector_catalog_fallback.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/data/detections/detection_ruleset.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/data/marketplace/index.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/db/lake_migrations.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/models/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/models/ai_asset.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/app/models/ai_chat_compliance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/models/alert.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/app/services/ai_chat_compliance/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/app/services/ai_chat_compliance/classifier.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/app/services/ai_chat_compliance/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/app/services/ai_estate_collectors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/services/ai_inventory.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/app/services/ai_repo_scan.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/app/services/hosted_agents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/clickhouse/001_init.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/migrations/130_alert_ip_class.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/migrations/146_ai_chat_compliance.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/migrations/147_ai_assets_hosted_agents_and_repo_artifacts.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/tests/test_ai_chat_classifier.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/tests/test_ai_chat_compliance_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/tests/test_ai_chat_compliance_minimisation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/tests/test_ai_repo_scan.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/tests/test_builtin_rule_catalogue.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/tests/test_hosted_agents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/connectors/app/connectors/llm_usage.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/connectors/tests/connectors/test_llm_usage_provider_coverage.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/connectors/tests/connectors/test_llm_usage_recorder_fixture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/fusion/app/data/detection_ruleset.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/fusion/app/models/alert.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/fusion/app/services/ai_asset_recorder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/fusion/app/services/alert_sink.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/fusion/app/services/derived_fields.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/fusion/app/services/detection_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/fusion/app/services/ip_class.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/fusion/app/services/lake_writer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/fusion/app/services/promoter.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/fusion/tests/fixtures/llm_usage/entra_consent_grant.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/fusion/tests/fixtures/llm_usage/entra_consent_grant_narrow.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/fusion/tests/fixtures/llm_usage/rule_agent_mcp_config_changed.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/fusion/tests/fixtures/llm_usage/rule_agent_mcp_config_changed_negative.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/fusion/tests/fixtures/llm_usage/rule_ai_app_write_scope.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/fusion/tests/fixtures/llm_usage/rule_ai_app_write_scope_negative.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/fusion/tests/fixtures/llm_usage/rule_content_exclusion_changed.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/fusion/tests/fixtures/llm_usage/rule_content_exclusion_changed_negative.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/fusion/tests/fixtures/llm_usage/rule_copilot_bulk_access.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/fusion/tests/fixtures/llm_usage/rule_copilot_bulk_access_negative.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/fusion/tests/test_ai_asset_recorder_real_connector.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/fusion/tests/test_ai_rule_pack_replay.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/fusion/tests/test_alert_sink_batch.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/fusion/tests/test_ip_class_projection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/ingest/internal/activity/activity.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/ingest/internal/activity/ipclass/data/ip_classes.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/ingest/internal/activity/ipclass/data/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/ingest/internal/activity/ipclass/ipclass.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/ingest/internal/normalizer/ipclass_stamp_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_packaged_detection_corpus_gate.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

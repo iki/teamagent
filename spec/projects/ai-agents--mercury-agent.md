@@ -56,6 +56,16 @@ The [permissions path](https://github.com/cosmicstack-labs/mercury-agent/blob/bd
 
 **Coverage:** Read the complete targeted permissions/session implementation delta and added title-order fixture. No removal, bookmark or profile-switch fixture was present in these selected changes; other paths were not reviewed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/cosmicstack-labs/mercury-agent](https://github.com/cosmicstack-labs/mercury-agent) at `a61d6276fbfc634f5efb5dc1ee7027a9501c0e80` against prior analyzed `bd80329cef9abfe05a0f8d2a843f226eaccf4e36`. Evidence: [.github/badges/downloads-breakdown.json](https://github.com/cosmicstack-labs/mercury-agent/blob/a61d6276fbfc634f5efb5dc1ee7027a9501c0e80/.github/badges/downloads-breakdown.json).
+
+The complete one-file delta updates download counters and their timestamp. It changes no agent execution, policy, retrieval or verification code.
+
+**Architecture consequence:** Retain the existing architecture assessment; popularity counters are not task-success evidence.
+
+**Scope and limits:** Read the complete bounded diff and path inventory. No upstream program or download-counter job was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mercury-agent](https://github.com/cosmicstack-labs/mercury-agent); analyzed commit `bd80329cef9abfe05a0f8d2a843f226eaccf4e36`; commit date 2026-11-01T12:43:32+05:30; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mercury-agent.md).
+Analysis metadata: source [mercury-agent](https://github.com/cosmicstack-labs/mercury-agent); analyzed commit `a61d6276fbfc634f5efb5dc1ee7027a9501c0e80`; commit date 2026-11-01T17:57:19Z; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mercury-agent.md).
 <!-- teamagent-analysis:end -->

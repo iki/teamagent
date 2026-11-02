@@ -2,11 +2,11 @@
 
 Source: [rtk](https://github.com/rtk-ai/rtk) · [Analysis](../../projects/ai-agents-proxy--rtk.md) · [models](../../models.md), [memory](../../memory.md), [agents](../../agents.md), [decisions](../../decisions.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `550a5c13de4f635e29a21431404e0489440a1d24`; commit date: 2026-11-01T00:50:42+01:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `550a5c13de4f635e29a21431404e0489440a1d24`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `1d20b015ebad73177a6c086c4292b809c7ce2e38`; commit date: 2026-11-01T16:25:08+01:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `1d20b015ebad73177a6c086c4292b809c7ce2e38`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/rtk-ai/rtk/compare/550a5c13de4f635e29a21431404e0489440a1d24...550a5c13de4f635e29a21431404e0489440a1d24). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/rtk-ai/rtk/compare/1d20b015ebad73177a6c086c4292b809c7ce2e38...1d20b015ebad73177a6c086c4292b809c7ce2e38). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

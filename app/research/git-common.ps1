@@ -3,7 +3,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 $script:ResearchCategories = @('ai-agents','ai-agents-mem','ai-agents-proxy','ai-agents-sandbox','ai-agents-skills','ai-agents-swarm','ai-agents-tokens','ai-eval','ai-gen','ai-info','ai-media','ai-model-edit','ai-model-run','ai-operate','ai-prompts','ai-query','ai-security','ai-skills','ai-spec')
 # Reviewed parent-export folder names map to stable repository-owned report categories.
-$script:ResearchCategoryAliases = @{'ai-get'='ai-query'}
+$script:ResearchCategoryAliases = @{'ai-get'='ai-query';'ai-agents-manage'='ai-agents-swarm'}
 function Get-ResearchCanonicalCategory {
     param([string]$Category)
     foreach ($alias in $script:ResearchCategoryAliases.Keys) {
@@ -134,8 +134,8 @@ function Get-ResearchSourceHeader {
     return (ConvertTo-ResearchLfText (Read-ResearchText (Join-Path $PSScriptRoot 'git-clone-header.sh') 65536)).TrimEnd()+"`n"
 }
 function Read-ResearchSourceConfiguration {
-    param([hashtable]$Settings)
-    $path=Get-ResearchSafePath $Settings.ProjectRoot 'git-sources.json'
+    param([hashtable]$Settings,[ValidateSet('git-sources.json','git-sources.additional.json')][string]$ConfigurationName='git-sources.json')
+    $path=Get-ResearchSafePath $Settings.ProjectRoot $ConfigurationName
     if (-not (Test-Path -LiteralPath $path)) { throw 'source_config_missing_run_sources_import' }
     $document=$null
     try {
@@ -172,18 +172,40 @@ function Read-ResearchSourceConfiguration {
         if ($null -ne $document) { $document.Dispose() }
     }
 }
+function Merge-ResearchAdditionalSources {
+    param([hashtable]$Settings,[array]$Entries)
+    $path=Get-ResearchSafePath $Settings.ProjectRoot 'git-sources.additional.json'
+    if (-not (Test-Path -LiteralPath $path)) { return ,$Entries }
+    $additional=Read-ResearchSourceConfiguration $Settings 'git-sources.additional.json'
+    $rows=[Collections.Generic.List[object]]::new();foreach ($entry in $Entries) { [void]$rows.Add($entry) }
+    $added=0
+    foreach ($entry in $additional) {
+        $sameId=@($rows | Where-Object { $_.id -ceq $entry.id })
+        $sameUrl=@($rows | Where-Object { $_.url -ceq $entry.url })
+        if ($sameId.Count -eq 1 -and $sameId[0].url -ceq $entry.url -and $sameUrl.Count -eq 1) { continue }
+        if ($sameId.Count -ne 0 -or $sameUrl.Count -ne 0) { throw 'source_additional_conflict' }
+        [void]$rows.Add($entry);$added++
+        if ($rows.Count -gt 10000) { throw 'source_list_limit' }
+    }
+    $Settings.SourceWarnings=@($Settings.SourceWarnings+'explicit_sources_from_git-sources.additional.json'+('additional_sources_added_'+$added))
+    return ,@($rows.ToArray() | Sort-Object category,name)
+}
 function Read-ResearchSourceList {
     param([hashtable]$Settings,[switch]$Import)
     $Settings.SourceHeader=Get-ResearchSourceHeader
     $Settings.SourceWarnings=@()
     $Settings.SourceMode='owned_configuration'
-    if (-not $Import -or $Settings.SourcesDirectory -eq '' -or $Settings.SourcesDirectory -eq $Settings.ProjectRoot) { return ,(Read-ResearchSourceConfiguration $Settings) }
+    if (-not $Import -or $Settings.SourcesDirectory -eq '' -or $Settings.SourcesDirectory -eq $Settings.ProjectRoot) {
+        $entries=Read-ResearchSourceConfiguration $Settings
+        if ($Import) { return ,(Merge-ResearchAdditionalSources $Settings @($entries)) }
+        return ,$entries
+    }
     $Settings.SourceMode='external_declarations'
     $cloneText=Read-ResearchText (Join-Path $Settings.SourcesDirectory '.git-clone')
     if ($cloneText.Contains([char]0)) { throw 'clone_declaration_invalid' }
     $auxiliaryPath=Join-Path $Settings.SourcesDirectory '.git-sources'
     $sourceText=if (Test-Path -LiteralPath $auxiliaryPath) { Read-ResearchText $auxiliaryPath } else { '' }
-    $known=[Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+    $known=[Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
     foreach ($raw in $sourceText -split '\r?\n') {
         $line=$raw.Trim()
         if ($line -ne '' -and -not $line.StartsWith('#')) { [void]$known.Add((Get-ResearchCanonicalUrl $line)) }
@@ -214,7 +236,7 @@ function Read-ResearchSourceList {
         if ($rows.Count -gt 10000) { throw 'source_list_limit' }
     }
     if ($rows.Count -eq 0) { throw 'source_list_empty' }
-    return ,@($rows.ToArray() | Sort-Object category,name)
+    return ,(Merge-ResearchAdditionalSources $Settings @($rows.ToArray() | Sort-Object category,name))
 }
 function Get-ResearchCutoff {
     param([DateTimeOffset]$Now,[string]$Threshold)
@@ -284,13 +306,21 @@ function Invoke-ResearchGit {
     $info.RedirectStandardInput=$true; $info.RedirectStandardOutput=$true; $info.RedirectStandardError=$true
     $info.StandardOutputEncoding=[Text.UTF8Encoding]::new($false,$true); $info.StandardErrorEncoding=[Text.UTF8Encoding]::new($false,$true)
     $info.WorkingDirectory=$Directory
+    # Native Git/LFS on Windows can interpret /dev/null as a worktree path.
+    $nullDevice=if ($IsWindows) { 'NUL' } else { '/dev/null' }
     if ($ReadOnly) {
-        # Status can otherwise refresh the index or execute a repository-configured monitor.
-        # The environment also carries the no-optional-writes policy to Git child processes.
+        # Local inspection must not replace objects, lazily fetch, refresh the index or run a monitor.
+        # Empty protocol allowlist overrides repository-specific allows, including external helpers.
+        # Carry the same restrictions to Git children; missing local objects fail closed.
         $info.Environment['GIT_OPTIONAL_LOCKS']='0'
-        foreach ($value in @('--no-optional-locks','-c','core.fsmonitor=false')) { $info.ArgumentList.Add($value) }
+        $info.Environment['GIT_NO_REPLACE_OBJECTS']='1'
+        $info.Environment['GIT_GRAFT_FILE']=$nullDevice
+        $info.Environment['GIT_NO_LAZY_FETCH']='1'
+        $info.Environment['GIT_ALLOW_PROTOCOL']=''
+        $info.Environment['GIT_PROTOCOL_FROM_USER']='0'
+        foreach ($value in @('--no-optional-locks','--no-replace-objects','-c','core.fsmonitor=false','-c','core.commitGraph=false','-c','advice.graftFileDeprecated=false','-c','protocol.allow=never')) { $info.ArgumentList.Add($value) }
     }
-    foreach ($value in @('-c',('safe.directory='+$Directory.Replace('\','/')),'-c','core.hooksPath=/dev/null','-c','submodule.recurse=false','-c','credential.interactive=false')+$Arguments) { $info.ArgumentList.Add($value) }
+    foreach ($value in @('-c',('safe.directory='+$Directory.Replace('\','/')),'-c',('core.hooksPath='+$nullDevice),'-c','submodule.recurse=false','-c','credential.interactive=false')+$Arguments) { $info.ArgumentList.Add($value) }
     $info.Environment['GIT_TERMINAL_PROMPT']='0'; $info.Environment['GCM_INTERACTIVE']='Never'
     $info.Environment['GIT_SSH_COMMAND']='ssh -oBatchMode=yes -oConnectTimeout=15'
     try {

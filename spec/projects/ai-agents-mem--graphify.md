@@ -59,6 +59,16 @@ Reviewed `f5155badddaa3286c78a51653791131e9e2e4d29` against `0a8cd4e1e342235fe53
 
 **Scope and limits:** Complete selected ID-registry, cache-version and case fixture deltas; not every language extractor. Fixtures were read, not executed, and retrieval effects were not measured.
 
+## External-update review - 2026-11-01
+
+Reviewed `32e5efe935e6844ef39a5e33409e4efe848f2172` against `f5155badddaa3286c78a51653791131e9e2e4d29`.
+
+In the nine-path comparison, [Python extraction](https://github.com/safishamsi/graphify/blob/32e5efe935e6844ef39a5e33409e4efe848f2172/graphify/extract.py) adds a constrained namespace-package interpretation for directories beneath `src`: loose modules and standard-library namespace names do not become package identities. The [resolution engine](https://github.com/safishamsi/graphify/blob/32e5efe935e6844ef39a5e33409e4efe848f2172/graphify/extractors/engine.py) avoids resolving a bare call inside a method to an unrelated enclosing class method, while retaining explicit member calls and appropriate class-body lookup. The AST cache schema advances from 33 to 34 in [cache.py](https://github.com/safishamsi/graphify/blob/32e5efe935e6844ef39a5e33409e4efe848f2172/graphify/cache.py).
+
+The inspected [namespace fixtures](https://github.com/safishamsi/graphify/blob/32e5efe935e6844ef39a5e33409e4efe848f2172/tests/test_src_layout_import_resolution.py) retain unresolved status for duplicate module providers and cover PEP 420 cross-distribution imports; [scope fixtures](https://github.com/safishamsi/graphify/blob/32e5efe935e6844ef39a5e33409e4efe848f2172/tests/test_python_bare_call_not_enclosing_method.py) cover imports, nested functions, module recursion and explicit self calls.
+
+**Harness consequence:** Preserve ambiguous/unresolved edges instead of inventing certainty, model language-specific lexical scope, and invalidate cached graphs when extraction semantics change. This static review covers the Python/cache deltas and their two fixture files; the Go changes were not audited. No extractor, upstream tests or performance comparison were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [graphify](https://github.com/safishamsi/graphify); analyzed commit `f5155badddaa3286c78a51653791131e9e2e4d29`; commit date 2026-11-01T00:43:59Z; review date 2026-11-01T11:35:43.470Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--graphify.md).
+Analysis metadata: source [graphify](https://github.com/safishamsi/graphify); analyzed commit `32e5efe935e6844ef39a5e33409e4efe848f2172`; commit date 2026-11-01T16:01:28Z; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--graphify.md).
 <!-- teamagent-analysis:end -->

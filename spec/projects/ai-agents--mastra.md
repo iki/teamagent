@@ -62,6 +62,16 @@ This distinguishes the caller's response deadline from durable persistence compl
 
 **Coverage:** Read the complete targeted timeout.ts and timeout.test.ts delta from the oversized repository change. Other runtime/storage changes and call sites remain outside this review. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/mastra-ai/mastra](https://github.com/mastra-ai/mastra) at `c1b2a660cc744a040f79d4df41ac6cb9608d0672` against prior analyzed `e219e6d94d3ec7ddb1d8b4d5af311ee6f6075e58`. Evidence: [stores/mysql/src/storage/domains/experiments/index.ts](https://github.com/mastra-ai/mastra/blob/c1b2a660cc744a040f79d4df41ac6cb9608d0672/stores/mysql/src/storage/domains/experiments/index.ts), [stores/mysql/src/storage/purge-barrier.test.ts](https://github.com/mastra-ai/mastra/blob/c1b2a660cc744a040f79d4df41ac6cb9608d0672/stores/mysql/src/storage/purge-barrier.test.ts), [mastracode/factory-ui/src/ui/domains/chat/components/transcript-parts.ts](https://github.com/mastra-ai/mastra/blob/c1b2a660cc744a040f79d4df41ac6cb9608d0672/mastracode/factory-ui/src/ui/domains/chat/components/transcript-parts.ts), [mastracode/factory-ui/src/ui/domains/chat/components/__tests__/TranscriptToolOutcomes.msw.test.tsx](https://github.com/mastra-ai/mastra/blob/c1b2a660cc744a040f79d4df41ac6cb9608d0672/mastracode/factory-ui/src/ui/domains/chat/components/__tests__/TranscriptToolOutcomes.msw.test.tsx).
+
+The MySQL experiment writer now uses a locking item read so a purge marker committed after its repeatable-read snapshot can still prevent sensitive experiment fields from being restored. The authored integration fixture pauses the writer after its first snapshot read, purges, then checks redaction. Transcript projection gives nonzero command exit status precedence over an apparently successful tool envelope, including restored messages and refetch after dropped stream events; kill/output tools are explicitly separate.
+
+**Architecture consequence:** Deletion barriers must survive concurrent stale writers. Reconstructed UI outcomes should use durable operation-specific evidence rather than a generic successful envelope; recovery tests need both stream and persisted-state paths.
+
+**Scope and limits:** Four targeted source/test deltas inspected from a 228-path update whose full diff exceeded the capture bound. MySQL concurrency and UI fixtures were read, not executed; no whole-release audit.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mastra](https://github.com/mastra-ai/mastra); analyzed commit `e219e6d94d3ec7ddb1d8b4d5af311ee6f6075e58`; commit date 2026-11-01T06:20:38Z; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--mastra.md).
+Analysis metadata: source [mastra](https://github.com/mastra-ai/mastra); analyzed commit `c1b2a660cc744a040f79d4df41ac6cb9608d0672`; commit date 2026-11-01T20:53:10+01:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--mastra.md).
 <!-- teamagent-analysis:end -->

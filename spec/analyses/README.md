@@ -13,6 +13,12 @@ the 548-source sync. Its [portable evidence](research-refresh-evidence-2026-11-0
 keeps incomplete Git updates, partial text imports, capture transformations and
 local verification separate from review promotion and publication.
 
+The [subsequent reconciliation](reconciliation-2026-11-01.md) reviews externally
+advanced checkouts, resolves the MentisDB Windows exception upstream, preserves
+the inaccessible public bundle and its private backup, and records the verified
+ECC identity continuity. It also documents explicit local repairs to eleven
+static text captures without converting them into refreshing resources.
+
 The repository-owned [external source registry](../data/external-source-pins.json) records immutable public GitHub revisions used by reports outside the managed census. It does not mark those projects as whole-repository reviews or let regenerated parent exports overwrite review status. Local bare Git caches live under `.cache/research/citation-git`; paths are derived from the source identity, not accepted from the registry.
 
 The internal Python maintenance helpers provide explicit acquisition and offline validation:
@@ -84,13 +90,14 @@ Only the inspected SHA becomes the analyzed baseline. The newer checkout remains
 
 ### Parent category aliases
 
-The reviewed parent-export alias `ai-get` maps to the existing `ai-query`
-category. Source import preserves canonical `ai-query--<name>` report IDs and
-portable inventory entries. Discovery can locate the checkout under either
-category directory, including its lifecycle prefix, without moving it across
-parents. Duplicate declarations after canonicalization and multiple matching
-checkouts remain explicit collisions. Origin, containment and reparse-point
-checks are unchanged. See the [maintenance contract](../research-sync.md).
+The reviewed parent-export aliases map `ai-get` to `ai-query` and
+`ai-agents-manage` to `ai-agents-swarm`. Source import preserves canonical
+inventory categories and established report IDs. Discovery can locate a
+checkout under the configured or reviewed alias directory, including its
+lifecycle prefix, without moving it across parents. Duplicate declarations
+after canonicalization and multiple matching checkouts remain explicit
+collisions. Origin, containment and reparse-point checks are unchanged. See
+the [maintenance contract](../research-sync.md).
 
 This mapping concerns source organization, not a new topic, upstream rename or
 completed source review. Existing report links, analyzed SHAs and review history

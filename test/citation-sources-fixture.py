@@ -97,6 +97,7 @@ class CitationSources(unittest.TestCase):
         def launch_probe(command, **options):
             self.assertEqual(command[0], "git")
             self.assertTrue(options.get("creationflags", 0) & subprocess.CREATE_NO_WINDOW)
+            self.assertIn("core.hooksPath=" + os.devnull, command)
             return real_run(probe, **options)
 
         with patch.object(subprocess, "run", side_effect=launch_probe):

@@ -60,6 +60,16 @@ The [verifier change](https://github.com/block/buzz/blob/acf56fff6fbfece9f143de3
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## External-update review - 2026-11-01
+
+Reviewed `cde6c1bf5b1fa1fde6045de8ea29f6ac1c7e6867` against `acf56fff6fbfece9f143de3f096cb1d258fb9a9f`.
+
+The 104-path update includes a focused relay liveness repair. [WebSocket opening](https://github.com/block/buzz/blob/cde6c1bf5b1fa1fde6045de8ea29f6ac1c7e6867/mobile/lib/shared/relay/relay_websocket.dart) now gives both header-bearing and ordinary connection attempts their own HTTP client and a ten-second default upgrade deadline. Timeout force-closes that client instead of only abandoning a waiting future. [RelaySocket](https://github.com/block/buzz/blob/cde6c1bf5b1fa1fde6045de8ea29f6ac1c7e6867/mobile/lib/shared/relay/relay_socket.dart) passes the deadline through so its existing disconnected/reconnect path can progress.
+
+The inspected [liveness fixture](https://github.com/block/buzz/blob/cde6c1bf5b1fa1fde6045de8ea29f6ac1c7e6867/mobile/test/shared/relay/relay_socket_liveness_test.dart) accepts TCP without answering the upgrade and checks both disconnection and peer-observed socket closure, with and without scoped headers. This tests more than merely receiving a timeout exception.
+
+**Harness consequence:** Bound channel connection establishment and own the underlying resource so timeout releases it; distinguish connection/upgrade deadlines from established-session heartbeat failure. This scoped static review covers those three complete deltas; channel auto-join, authentication, unread state and other mobile changes were not audited. No socket, relay, packaged mobile app or upstream test was executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [buzz](https://github.com/block/buzz); analyzed commit `acf56fff6fbfece9f143de3f096cb1d258fb9a9f`; commit date 2026-10-31T11:55:47-07:00; review date 2026-11-01T11:33:30.893Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--buzz.md).
+Analysis metadata: source [buzz](https://github.com/block/buzz); analyzed commit `cde6c1bf5b1fa1fde6045de8ea29f6ac1c7e6867`; commit date 2026-11-01T14:17:41-05:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--buzz.md).
 <!-- teamagent-analysis:end -->

@@ -2,11 +2,11 @@
 
 Source: [commonplace](https://github.com/zby/commonplace) · [Analysis](../../projects/ai-agents-mem--commonplace.md) · [memory](../../memory.md), [evolution](../../evolution.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `6c27bb663c927dd1a12772c44582746d1a039893`; commit date: 2026-11-01T09:29:59+01:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `6c27bb663c927dd1a12772c44582746d1a039893`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `3805533e943f42469ed3d49457c7c7ffa94fe4a4`; commit date: 2026-11-01T20:37:26+01:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `3805533e943f42469ed3d49457c7c7ffa94fe4a4`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/zby/commonplace/compare/6c27bb663c927dd1a12772c44582746d1a039893...6c27bb663c927dd1a12772c44582746d1a039893). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/zby/commonplace/compare/3805533e943f42469ed3d49457c7c7ffa94fe4a4...3805533e943f42469ed3d49457c7c7ffa94fe4a4). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

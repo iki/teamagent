@@ -1,0 +1,491 @@
+{
+  "id": "ai-gen--hyperframes",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/heygen-com/hyperframes",
+  "report": "spec/projects/ai-gen--hyperframes.md",
+  "analyzedSha": "8c22ddba0fda22c3ec6faa83f4686249804d299d",
+  "analyzedAt": "2026-11-01T11:35:43.470Z",
+  "analyzedCommitDate": "2026-11-01T06:16:39Z",
+  "observedSha": "6b0abb4eb52e9576b0c72b636254c87d0f9ad2a5",
+  "status": "changed",
+  "shallow": false,
+  "dirty": true,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "6b0abb4eb52e9576b0c72b636254c87d0f9ad2a5",
+      "date": "2026-11-01T19:41:17Z",
+      "subject": "fix(cli): a stale mask takes its frame's colours instead of delogo's streaks (#6950)"
+    },
+    {
+      "sha": "7f8ae5b4b650c6b103e4547ddcfab9ed66e20e37",
+      "date": "2026-11-01T18:52:06Z",
+      "subject": "fix(cli): a masked box follows the frame while the camera moves (#6948)"
+    },
+    {
+      "sha": "0f76a7d01ed260670371e6b36ce3334a43ae1c91",
+      "date": "2026-11-01T18:28:10Z",
+      "subject": "docs(skills): animated films in reverse-any-video decide code or generation per shot (#6946)"
+    },
+    {
+      "sha": "3179348d9a080a9d77820a5c9790e255e2fbac7a",
+      "date": "2026-11-01T18:14:51Z",
+      "subject": "chore: release v0.8.228 (#6943)"
+    },
+    {
+      "sha": "12b52e28be2ee5c36a66c1a0522ebe45236d2dde",
+      "date": "2026-11-01T18:06:50Z",
+      "subject": "docs(skills): reverse-any-video keeps what the original does when check flags it (#6944)"
+    },
+    {
+      "sha": "d1d631f60a6cc949c572831927c7fe86455b21f8",
+      "date": "2026-11-01T17:18:48Z",
+      "subject": "fix(producer): an export over the ceiling limits its peaks and keeps the mix's level (#6940)"
+    },
+    {
+      "sha": "89a595316176b78ec96b94b57eada22fd1458a62",
+      "date": "2026-11-01T16:55:53Z",
+      "subject": "fix(core): music keeps playing while a preview video swaps to a new copy (#6937)"
+    },
+    {
+      "sha": "f9e8cab67d948adbc115d3f3a0b271659e2521da",
+      "date": "2026-11-01T16:35:35Z",
+      "subject": "fix(cli): a render says when it lowered the whole mix, and how to keep the level (#6938)"
+    },
+    {
+      "sha": "aa77770ebe03afbdd0316de29178a814967a76f4",
+      "date": "2026-11-01T16:24:48Z",
+      "subject": "docs(skills): reverse-any-video gets a recipe for animated and painted films (#6933)"
+    },
+    {
+      "sha": "7aa3a447e255ed16c05c4daf504cc1b4f8608b59",
+      "date": "2026-11-01T16:16:13Z",
+      "subject": "chore: release v0.8.227 (#6936)"
+    },
+    {
+      "sha": "90f7fe624f7972e1dea939c269bc590a920e2f91",
+      "date": "2026-11-01T15:46:57Z",
+      "subject": "fix(engine): GPU renders use the NVENC preset names the host's ffmpeg lists (#6930)"
+    },
+    {
+      "sha": "ef250cc9d0deaf601315de097b575112ba455242",
+      "date": "2026-11-01T15:46:18Z",
+      "subject": "feat(cli): the api exports offloadHeavyMedia and every offloaded file reports its asset_id (#6932)"
+    },
+    {
+      "sha": "a23cc59ee199d217f1a22b4d5cfb1cffa578df76",
+      "date": "2026-11-01T15:43:24Z",
+      "subject": "fix(studio): opening the thumbnail browser no longer stalls the server to read its version (#6931)"
+    },
+    {
+      "sha": "69400df27686b4e69f6ad9b5fe3652809222f775",
+      "date": "2026-11-01T15:30:29Z",
+      "subject": "fix(cli): the cut detector keeps real cuts in live footage (#6923)"
+    },
+    {
+      "sha": "6b3e7a7a95e11d5d290123ea821b53109d6103c9",
+      "date": "2026-11-01T14:50:41Z",
+      "subject": "fix(cli): check and snapshot free video clips the playhead left, halving memory on cut films (#6929)"
+    },
+    {
+      "sha": "439d01784c58911208a2b2d39deb23454ab64260",
+      "date": "2026-11-01T14:44:27Z",
+      "subject": "fix(cli): a shot from --first-frame comes back in that frame's shape (#6924)"
+    },
+    {
+      "sha": "af0d68d612ebd9c419f27d9ebc8068512667bae4",
+      "date": "2026-11-01T12:00:26Z",
+      "subject": "fix(core): a resized preview video keeps its picture while its new copy loads (#6922)"
+    },
+    {
+      "sha": "9aaa3ae675698fddb7459cca48cabf88a5ec08ec",
+      "date": "2026-11-01T11:16:43Z",
+      "subject": "fix(engine): a video with no source no longer holds capture for 45 seconds (#6926)"
+    },
+    {
+      "sha": "58428b44bcc412646086028be816d90f379f4af5",
+      "date": "2026-11-01T10:42:32Z",
+      "subject": "fix(engine): passthrough keeps frame count and accepts films whose audio outlasts the picture (#6920)"
+    },
+    {
+      "sha": "e5887959bb7c23c45ea56d44d9e6f0929de4eb3d",
+      "date": "2026-11-01T09:47:43Z",
+      "subject": "fix(studio-server): a copy another process holds without progress ends in a named error (#6918)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/changelog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/audio-effects.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gemini-extension.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/aws-lambda/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/api.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/capture/captureCompositionFrame.browserFallback.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/capture/captureCompositionFrame.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/cloud/offload.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/cloud/offload.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/render.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/render.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/heygen/generate.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/heygen/generate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/measure/cuts.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/measure/cuts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/utils/audioLoweredWarning.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/utils/audioLoweredWarning.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/runtime/entry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/runtime/init.buffering.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/runtime/init.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/runtime/mediaProxy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/runtime/mediaProxy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/runtime/preloadMedia.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/runtime/preloadMedia.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/runtime/proxySrc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/runtime/window.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/engine/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/engine/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/engine/src/services/chunkEncoder.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/engine/src/services/chunkEncoder.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/engine/src/services/frameCapture-hiddenVideoReady.browser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/engine/src/services/frameCapture-readinessWarnings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/engine/src/services/frameCapture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/engine/src/services/streamingEncoder.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/engine/src/services/streamingEncoder.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/engine/src/services/videoFrameExtractor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/engine/src/services/videoLayerInput.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/engine/src/utils/gpuEncoder.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/engine/src/utils/gpuEncoder.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gcp-cloud-run/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/inspector/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/lint/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/parsers/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/player/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/producer/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/producer/src/services/render/audioDeliveryLimit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/producer/src/services/render/audioDeliveryLimit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/producer/src/services/render/stages/audioStage.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/producer/src/services/render/stages/audioStage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/sdk/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/shader-transitions/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio-server/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/studio-server/src/helpers/proxyLock.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio-server/src/helpers/proxyLock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio-server/src/helpers/proxyTranscoder.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/vite.browser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/studio/vite.browser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "releases/v0.8.227.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "releases/v0.8.228.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/package-size-budgets.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills-manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/media-use/references/heygen.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/reverse-any-video/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/reverse-any-video/references/animated.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/reverse-any-video/references/people.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: dirty; source lifecycle: active; upstream availability: available.",
+    "Working-tree modifications are excluded from committed change evidence.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

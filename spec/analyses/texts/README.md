@@ -8,13 +8,15 @@ Optional `--x-api` explicitly enables official post lookup using `X_BEARER_TOKEN
 
 Static entries with a captured version perform only local export integrity checks: no network, conversion, export rewrite or account authentication. Initial entries without any successful capture may be retried; a missing or corrupt recorded snapshot is an explicit error and never silently fetched again. A successful capture remains pinned even when local export publication failed. Source state migrates from v1 without replacing pinned versions. If the private cache ledger is absent, the portable report ledger preserves the pin. Transfer the private cache/exports separately when moving machines; historical `data/research/texts` files are not substituted. Imports reuse Teamagent memory's immutable versions, conversion, images, source provenance and size/network limits. Cached exports are checksum-verified before reuse. Reports with `failed` status retain any previous version only as stale evidence. Removed configuration entries retain their prior report and state until deliberately archived; their check time makes staleness visible.
 
+Explicit derivative adoption uses `bun app/research/text-reconcile.ts --root . --request reviewed-request.json`; see [the maintenance contract](../../research-sync.md). It accepts an already exported same-source version with exact old/new pins and a hash of the prior record. It verifies every retained original byte, writes an immutable before/after receipt, and preserves static policy, publication/capture dates and the last remote-check time. It never fetches or converts. Grouped sources, conflicting aliases, changed originals and later-state retries require separate resolution. Receipt reasons are public evidence and must contain no secrets or private URL parameters.
+
 First-captured time comes from the retained memory source creation timestamp. Source creation/publication date is separate: explicit configuration, publisher HTML metadata/Article JSON-LD, or official X created_at, with evidence recorded; absent or conflicting metadata stays unknown. Filename dates and HTTP Last-Modified never become creation dates. Existing dates survive refresh failures. Refresh-marked HTTP sources use validators when available and retained bytes are integrity-checked; assets are checked separately. Official X edit-history IDs are recorded for the exact requested post without silently following another version.
 
 `usable-text` means at least 100 extracted characters and no detected parser warning, access shell or wrong PDF type. It is a basic content check, not complete extraction or factual verification. `partial` includes parser limitations or social content (short authenticated posts use their validated API identity rather than the 100-character web-page threshold); `blocked` covers access shells and PDF wrapper pages; `unsupported` covers inadequate text. Image count does not establish image completeness or visual fidelity. Full warnings remain in memory provenance.
 
 Original research remains in [data/research/texts](../../../data/research/texts/). This sync does not replace historical evidence. Exact source URL query parameters stay in private memory/export manifests; public reports omit them. Extracted heading samples are untrusted source data.
 
-Last run: 2026-11-01T08:51:16.093Z. [Machine-readable source state](source-state.json). [Changelog](CHANGELOG.md).
+Last run: 2026-11-01T21:49:04.531Z. [Machine-readable source state](source-state.json). [Changelog](CHANGELOG.md).
 
 | Source group | Content validation | Import outcome |
 | --- | --- | --- |
@@ -32,7 +34,7 @@ Last run: 2026-11-01T08:51:16.093Z. [Machine-readable source state](source-state
 | [agents.260731.ferrox-ffm10-graph-engineering.pdf](agents.260731.ferrox-ffm10-graph-engineering.pdf.report.md) | partial | pinned |
 | [agents.260731.qm-is-trying-to-solve-the-company-agent-problem.md](agents.260731.qm-is-trying-to-solve-the-company-agent-problem.md.report.md) | failed, usable-text | failed, pinned |
 | [agents.260803.how-we-built-the-kiro-agent-harness.md](agents.260803.how-we-built-the-kiro-agent-harness.md.report.md) | usable-text | pinned |
-| [agents.261029.fine-grained-version-control.delta.md](agents.261029.fine-grained-version-control.delta.md.report.md) | usable-text | created |
+| [agents.261029.fine-grained-version-control.delta.md](agents.261029.fine-grained-version-control.delta.md.report.md) | usable-text | pinned |
 | [ai.260330.x-miesler-top-5-ideas-in-ai.md](ai.260330.x-miesler-top-5-ideas-in-ai.md.report.md) | partial | pinned |
 | [claude.260331.claude-code-leak.kuber.md](claude.260331.claude-code-leak.kuber.md.report.md) | usable-text | pinned |
 | [cx.251126.effective-harnesses-for-long-running-agents.md](cx.251126.effective-harnesses-for-long-running-agents.md.report.md) | usable-text | pinned |
@@ -47,7 +49,7 @@ Last run: 2026-11-01T08:51:16.093Z. [Machine-readable source state](source-state
 | [kb.260410.mentisdb-whitepaper.md](kb.260410.mentisdb-whitepaper.md.report.md) | usable-text | pinned |
 | [kb.260707.llm-wiki-agent-memory.decodingai.md](kb.260707.llm-wiki-agent-memory.decodingai.md.report.md) | usable-text | pinned |
 | [mcp.260422.building-agents-that-use-mcp.claude.md](mcp.260422.building-agents-that-use-mcp.claude.md.report.md) | usable-text | pinned |
-| [sandbox.260803.cloudflare-computer.md](sandbox.260803.cloudflare-computer.md.report.md) | partial | pinned |
+| [sandbox.260803.cloudflare-computer.md](sandbox.260803.cloudflare-computer.md.report.md) | usable-text | pinned |
 | [security.260410.many-ih.md](security.260410.many-ih.md.report.md) | usable-text | pinned |
 | [security.260413.many-ih.2604.09443.pdf](security.260413.many-ih.2604.09443.pdf.report.md) | partial | pinned |
 | [security.260727.from-zero-trust-to-zero-custody.md](security.260727.from-zero-trust-to-zero-custody.md.report.md) | usable-text | pinned |
@@ -57,7 +59,7 @@ Last run: 2026-11-01T08:51:16.093Z. [Machine-readable source state](source-state
 | [spec.250902.spec-driven.speckit.md](spec.250902.spec-driven.speckit.md.report.md) | usable-text | pinned |
 | [spec.260113.good-spec.addyosmani.md](spec.260113.good-spec.addyosmani.md.report.md) | usable-text | pinned |
 | [swarm.260327.multi-agent-landscape.md](swarm.260327.multi-agent-landscape.md.report.md) | usable-text | pinned |
-| [tools.260408.tanstack-ai-code-mode-blog.md](tools.260408.tanstack-ai-code-mode-blog.md.report.md) | partial | pinned |
+| [tools.260408.tanstack-ai-code-mode-blog.md](tools.260408.tanstack-ai-code-mode-blog.md.report.md) | usable-text | pinned |
 | [tools.260624.tanstack-ai-code-mode-isolates.md](tools.260624.tanstack-ai-code-mode-isolates.md.report.md) | usable-text | pinned |
 | [tools.260624.tanstack-ai-code-mode-with-skills.md](tools.260624.tanstack-ai-code-mode-with-skills.md.report.md) | failed, usable-text | failed, pinned |
 | [tools.260624.tanstack-ai-code-mode.md](tools.260624.tanstack-ai-code-mode.md.report.md) | usable-text | pinned |

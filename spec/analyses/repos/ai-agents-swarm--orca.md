@@ -2,11 +2,11 @@
 
 Source: [orca](https://github.com/stablyai/orca) · [Analysis](../../projects/ai-agents-swarm--orca.md) · [agents](../../agents.md), [decisions](../../decisions.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `f29cc1aa82043ef8056ce641251eb4bf4bae5dcd`; commit date: 2026-11-01T01:52:57-08:00; review date: 2026-11-01T11:35:43.470Z; observed SHA: `f29cc1aa82043ef8056ce641251eb4bf4bae5dcd`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `730a4583839e1f936880602bd077a5b6e876264c`; commit date: 2026-11-01T13:07:06-07:00; review date: 2026-11-01T23:12:06.798Z; observed SHA: `730a4583839e1f936880602bd077a5b6e876264c`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/stablyai/orca/compare/f29cc1aa82043ef8056ce641251eb4bf4bae5dcd...f29cc1aa82043ef8056ce641251eb4bf4bae5dcd). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/stablyai/orca/compare/730a4583839e1f936880602bd077a5b6e876264c...730a4583839e1f936880602bd077a5b6e876264c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

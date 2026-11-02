@@ -1,0 +1,595 @@
+{
+  "id": "ai-agents--buzz",
+  "generatedAt": "2026-11-01T23:12:06.798Z",
+  "observedAt": "2026-11-01T22:00:40.3493505+00:00",
+  "source": "https://github.com/block/buzz",
+  "report": "spec/projects/ai-agents--buzz.md",
+  "analyzedSha": "acf56fff6fbfece9f143de3f096cb1d258fb9a9f",
+  "analyzedAt": "2026-11-01T11:33:30.893Z",
+  "analyzedCommitDate": "2026-10-31T11:55:47-07:00",
+  "observedSha": "cde6c1bf5b1fa1fde6045de8ea29f6ac1c7e6867",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "cde6c1bf5b1fa1fde6045de8ea29f6ac1c7e6867",
+      "date": "2026-11-01T14:17:41-05:00",
+      "subject": "feat(relay): auto-join new community members to default channels (#8594)"
+    },
+    {
+      "sha": "21a9839826bad5861ef9be5df50910d3df04e1c9",
+      "date": "2026-11-01T18:51:20Z",
+      "subject": "Fix mobile unread state retaining deleted messages (#8883)"
+    },
+    {
+      "sha": "e18d422d7260d3faffb211c870510a5d6d51a7fd",
+      "date": "2026-11-01T17:53:41Z",
+      "subject": "fix(mobile): fill uploaded avatars on the Agents page (#8882)"
+    },
+    {
+      "sha": "90772a43e9994d00c8786ce0f0f89485a2023394",
+      "date": "2026-11-01T07:37:11-08:00",
+      "subject": "fix(mobile): keep avatars and images loading on slow links (#8879)"
+    },
+    {
+      "sha": "543ecf2b1f239beedeca0c72d7eaa6262523e763",
+      "date": "2026-11-01T07:36:37-08:00",
+      "subject": "fix(mobile): list the same owned agents as desktop (#8857)"
+    },
+    {
+      "sha": "b41caeb5100bafcb8f4611909e4f42bf6dd40faa",
+      "date": "2026-11-01T07:32:28-08:00",
+      "subject": "fix(mobile): time out relay connects that never finish the handshake (#8878)"
+    },
+    {
+      "sha": "5f98a1fa0424228597e13085398be36a858d8005",
+      "date": "2026-11-01T07:31:19-08:00",
+      "subject": "mobile: quiet agent messages and caught-up channel highlights (#8876)"
+    },
+    {
+      "sha": "83ec9c0e2b5105111ca3fac3902fb5e00b63b93e",
+      "date": "2026-11-01T07:30:09-08:00",
+      "subject": "fix(mobile): show hosted community names consistently (#8872)"
+    },
+    {
+      "sha": "e71fbe23df5c776be87d243a548c5ab7c9c1c346",
+      "date": "2026-11-01T07:30:05-08:00",
+      "subject": "fix(mobile): keep loaded timeline visible while reconnecting (#8864)"
+    },
+    {
+      "sha": "2e4aacc9e05b88f2ab6327a29e123e1b8af4e382",
+      "date": "2026-11-01T08:28:58-07:00",
+      "subject": "fix(mobile): find open channels in search and stop the stuck spinner (#8764)"
+    },
+    {
+      "sha": "db4478e8d2d8d0fd6582db7ae152e41d3e67e447",
+      "date": "2026-11-01T07:23:12-08:00",
+      "subject": "feat(mobile): organization sign-in for NIP-FI relays (#8700)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/_ci-clients.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "NOSTR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-admin/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-cli/src/commands/channels.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-cli/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-db/src/runtime/migration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-db/src/store/channel.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-db/src/store/channel_members.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-db/src/store/dm.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/api/invites.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/handlers/auth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/handlers/edit_metadata_postgres_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/handlers/ingest.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/handlers/relay_admin.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/handlers/side_effects.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/nip_fi_test_hooks.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-sdk/src/builders.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-test-client/tests/e2e_relay.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/nips/NIP-CL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "migrations/0080_channel_auto_join.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/Runner/BuzzBrowserAuthBridge.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/Runner/IosNavigationBar.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/RunnerTests/BrowserAuthBridgeTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/activity/activity_provider.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/agents/agent_card.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/agents/agents_page.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/agents/delete_agent_action.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/channel_detail_page.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/channel_directory.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/channel_messages_provider.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/channel_unread.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/lib/features/channels/channel_unread_catch_up.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/lib/features/channels/channel_unread_deletions.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/channels_page/body.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/channels_page/channel_tile.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/channels_page/sections.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/channels_provider.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/channels_provider_lifecycle.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/compose_bar.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/compose_bar/compose_bar_widget.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/mentions/mention_candidates.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/mentions/mention_candidates_provider.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/home/home_page.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/onboarding/hosted_community_selection.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/onboarding/hosted_reconnect_banner.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/lib/features/onboarding/organization_sign_in_banner.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/lib/features/search/name_match.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/search/search_page.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/search/search_provider.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/hosted_app_gate.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/lib/shared/agents/is_quiet_agent_message.dart",
+      "previousPath": null
+    },
+    {
+      "status": "R058",
+      "path": "mobile/lib/shared/agents/owned_agent_directory.dart",
+      "previousPath": "mobile/lib/features/agents/owned_agent_directory.dart"
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/community/community.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/deeplink/deep_link.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/hosted/browser_auth.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/hosted/builderlab_account.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/hosted/hosted_relay_auth.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/lib/shared/hosted/organization_environment.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/lib/shared/hosted/organization_sign_in.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/relay/media_image.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/relay/relay_socket.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/relay/relay_websocket.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/widgets/avatar_image.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/widgets/frosted_app_bar.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/widgets/ios_navigation_bar.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/widgets/mobile_tab_footer_backdrop.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/activity/activity_provider_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/agents/agent_card_grid_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/agents/agents_harness.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/agents/agents_sheet_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "mobile/test/features/agents/owned_agent_directory_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/channels/channel_detail_page_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/channels/channel_detail_page_test/loading_review_tests.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/channels/channel_messages_provider_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/features/channels/channel_unread_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/channels/channels_page_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/features/channels/channels_provider_deletion_cases.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/channels/channels_provider_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/channels/compose_bar_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/channels/compose_bar_test/exact_mention_tests.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/channels/deep_link_dispatcher_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/channels/mentions/mention_candidates_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/onboarding/hosted_community_labels_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/onboarding/hosted_journeys_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/onboarding/onboarding_entry_routes_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/pairing/pairing_hosted_handoff_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/features/search/name_match_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/features/search/search_channel_rank_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/features/search/search_channels_journey_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/helpers/fake_relay.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/helpers/hosted_communities_fixture.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/helpers/hosted_journey_fixture.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/shared/agents/owned_agent_directory_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/shared/agents/remote_agents_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/shared/hosted/builderlab_account_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/shared/hosted/organization_relay_auth_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/shared/hosted/organization_sign_in_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/shared/hosted/relay_auth_isolation_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/shared/identity_names/identity_names_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/shared/relay/media_image_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/shared/relay/relay_socket_liveness_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/shared/widgets/avatar_image_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "schema/tables/public/channels.sql",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

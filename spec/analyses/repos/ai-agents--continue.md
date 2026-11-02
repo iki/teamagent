@@ -2,11 +2,11 @@
 
 Source: [continue](https://github.com/continuedev/continue) · [Analysis](../../projects/ai-agents--continue.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `5522c6f44ca0ac3528b37244818fbfa39b5af470`; commit date: 2026-07-20T21:00:09-07:00; review date: unknown; observed SHA: `5522c6f44ca0ac3528b37244818fbfa39b5af470`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `5522c6f44ca0ac3528b37244818fbfa39b5af470`; commit date: 2026-07-20T21:00:09-07:00; review date: unknown; observed SHA: `5522c6f44ca0ac3528b37244818fbfa39b5af470`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/continuedev/continue/compare/5522c6f44ca0ac3528b37244818fbfa39b5af470...5522c6f44ca0ac3528b37244818fbfa39b5af470). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

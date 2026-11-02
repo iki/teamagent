@@ -56,6 +56,16 @@ The [sanitizer grader](https://github.com/GoogleChrome/modern-web-guidance-src/b
 
 **Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. Review scope is the cited implementation or authored guidance, not whole-project correctness, licensing clearance or measured performance. Source passages were redacted for review; exact URL literals were not byte-validated.
 
+## 2026-11-01 external-update review
+
+Reviewed [https://github.com/GoogleChrome/modern-web-guidance-src](https://github.com/GoogleChrome/modern-web-guidance-src) at `d28d876eeaa088b99259ac8980ab0ffa2685775a` against prior analyzed `7f01aec02769d9ff20014600720a7d4f56cb41f2`. Evidence: [guides/forms/ime-safe-enter-submit/grader.ts](https://github.com/GoogleChrome/modern-web-guidance-src/blob/d28d876eeaa088b99259ac8980ab0ffa2685775a/guides/forms/ime-safe-enter-submit/grader.ts), [guides/forms/ime-safe-enter-submit/guide.md](https://github.com/GoogleChrome/modern-web-guidance-src/blob/d28d876eeaa088b99259ac8980ab0ffa2685775a/guides/forms/ime-safe-enter-submit/guide.md).
+
+The IME submission grader now synthesizes keyCode/which 229 with isComposing instead of 13; the guide expands its explanation of composition and Enter handling. This improves the modeled event but remains a synthetic browser fixture.
+
+**Architecture consequence:** Channel text input should test composition-confirming Enter separately from submission and retain real browser/IME acceptance coverage. A synthetic event alone does not establish behavior on every keyboard, browser or platform.
+
+**Scope and limits:** Read the complete guide/grader delta. The upstream fixture and real input methods were not executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [design.modern-web-guidance.google](https://github.com/GoogleChrome/modern-web-guidance-src); analyzed commit `7f01aec02769d9ff20014600720a7d4f56cb41f2`; commit date 2026-10-31T19:10:43-04:00; review date 2026-11-01T11:37:37.120Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.modern-web-guidance.google.md).
+Analysis metadata: source [design.modern-web-guidance.google](https://github.com/GoogleChrome/modern-web-guidance-src); analyzed commit `d28d876eeaa088b99259ac8980ab0ffa2685775a`; commit date 2026-11-01T15:24:09-05:00; review date 2026-11-01T23:12:06.798Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.modern-web-guidance.google.md).
 <!-- teamagent-analysis:end -->

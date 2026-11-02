@@ -2,11 +2,11 @@
 
 Source: [ijfw](https://github.com/FerroxLabs/ijfw) · [Analysis](../../projects/ai-agents--ijfw.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-11-01T11:37:37.120Z. Status: **current**. Reviewed SHA: `eda62f39f08b3028d824de1d806fe05c1402fd94`; commit date: 2026-07-11T10:56:21+07:00; review date: unknown; observed SHA: `eda62f39f08b3028d824de1d806fe05c1402fd94`.
+Generated: 2026-11-02T06:20:41.762Z. Status: **current**. Reviewed SHA: `eda62f39f08b3028d824de1d806fe05c1402fd94`; commit date: 2026-07-11T10:56:21+07:00; review date: unknown; observed SHA: `eda62f39f08b3028d824de1d806fe05c1402fd94`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/FerroxLabs/ijfw/compare/eda62f39f08b3028d824de1d806fe05c1402fd94...eda62f39f08b3028d824de1d806fe05c1402fd94). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

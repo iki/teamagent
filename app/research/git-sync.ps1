@@ -12,6 +12,7 @@ param(
 )
 . (Join-Path $PSScriptRoot 'git-common.ps1')
 . (Join-Path $PSScriptRoot 'git-recovery.ps1')
+. (Join-Path $PSScriptRoot 'git-identities.ps1')
 
 function Get-ResearchPriorState {
     param([string]$Path,[hashtable]$Settings)
@@ -24,6 +25,8 @@ function Get-ResearchPriorState {
         [void](Get-ResearchCanonicalUrl $row.url)
         $path=[IO.Path]::GetFullPath($row.path,$Settings.ProjectRoot)
         [void](Get-ResearchSafePath $Settings.GitCache ([IO.Path]::GetRelativePath($Settings.GitCache,$path)))
+        if ($row.Contains('previousIdentities')) { Assert-ResearchIdentityHistory $row.previousIdentities $Settings }
+        if ($row.Contains('identityReconciliation') -and ($row.identityReconciliation -isnot [Collections.IDictionary] -or -not $row.identityReconciliation.Contains('status') -or $row.identityReconciliation.status -cnotin @('reviewed','unverified'))) { throw 'git_state_invalid' }
     }
     return ,$state.repositories
 }
@@ -169,7 +172,7 @@ function Read-ResearchCheckout {
     if (-not (Test-Path -LiteralPath (Join-Path $Path '.git') -PathType Container)) { throw 'repository_not_standalone_checkout' }
     if ((Get-Item -LiteralPath (Join-Path $Path '.git') -Force).Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'reparse_path_rejected' }
     $origin=Invoke-ResearchGit $Path @('remote','get-url','origin') '' $TimeoutSeconds -ReadOnly:$ReadOnly
-    if ($origin.exitCode -ne 0 -or (Get-ResearchCanonicalUrl $origin.stdout.Trim()) -ne $ExpectedUrl) { throw 'repository_origin_mismatch' }
+    if ($origin.exitCode -ne 0 -or (Get-ResearchCanonicalUrl $origin.stdout.Trim()) -cne $ExpectedUrl) { throw 'repository_origin_mismatch' }
     $status=Invoke-ResearchGit $Path @('status','--porcelain=v1','--untracked-files=normal','--ignore-submodules=none') '' $TimeoutSeconds -ReadOnly:$ReadOnly
     $head=Invoke-ResearchGit $Path @('rev-parse','--verify','HEAD') '' $TimeoutSeconds -ReadOnly:$ReadOnly
     $shallow=Invoke-ResearchGit $Path @('rev-parse','--is-shallow-repository') '' $TimeoutSeconds -ReadOnly:$ReadOnly
@@ -309,6 +312,13 @@ function Invoke-ResearchBackup {
 function Invoke-ResearchRepository {
     param([hashtable]$Entry,[object]$Previous,[hashtable]$Settings,[DateTimeOffset]$Now,[string]$Token,[string]$Login,[int]$TimeoutSeconds)
     $row=@{id=$Entry.id;checkedThisRun=$true;checkedAt=$Now.ToString('o');listed=if ($Entry.ContainsKey('listed')) {$Entry.listed} else {$true};listStatus=if ($Entry.ContainsKey('listed') -and -not $Entry.listed) {'source_list_removed'} else {'listed'};category=$Entry.category;sourcePath=$Entry.sourcePath;url=$Entry.url;path=Get-ResearchRelativePath $Settings.ProjectRoot (Join-Path $Settings.GitCache ($Entry.category+'/'+$Entry.name));previousPath=$null;aliases=@();status='error';lifecycle='unknown';availability='unknown';availabilityEvidence=@{firstMissingAt=$null;lastMissingAt=$null;observations=0;confirmed=$false};dirty=$null;shallow=$null;head=$null;upstreamHead=$null;lastCommitAt=$null;backup=@{status='not_needed';reason='';url=$null};errors=@()}
+    if ($null -ne $Previous) {
+        foreach ($field in @('previousIdentities','identityReconciliation')) { if ($Previous.Contains($field)) { $row[$field]=$Previous[$field] } }
+        if ($Previous.Contains('identityReconciliation') -and $Previous.identityReconciliation.status -eq 'unverified') {
+            $blocked=$Previous.Clone();$blocked.status='blocked';$blocked.checkedThisRun=$false
+            $blocked.errors=@('reviewed_identity_unverified');return $blocked
+        }
+    }
     try {
         $path=Find-ResearchRepository $Entry $Previous $Settings
         $row.path=Get-ResearchRelativePath $Settings.ProjectRoot $path
@@ -396,25 +406,63 @@ function Invoke-ResearchRepository {
 function Read-ResearchCurrentStatus {
     param([string]$StatePath,[hashtable]$Settings,[int]$TimeoutSeconds,[DateTimeOffset]$Now)
     $rows=Get-ResearchPriorState $StatePath $Settings
-    $partial=$false
+    # Owned inventory is local declarative configuration, never an external export import.
+    $inventoryPath=Get-ResearchSafePath $Settings.ProjectRoot 'git-sources.json'
+    $entries=if (Test-Path -LiteralPath $inventoryPath) { Read-ResearchSourceConfiguration $Settings } else { @() }
+    $rows=Resolve-ResearchReviewedIdentities @($rows) @($entries) $Settings $TimeoutSeconds
+    $used=[Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+    $work=[Collections.Generic.List[object]]::new()
     foreach ($row in $rows) {
+        $matches=@($entries | Where-Object { $_.id -ceq $row.id -and $_.url -ceq $row.url })
+        if ($matches.Count -eq 0) {
+            $sameOrigin=@($entries | Where-Object { $_.url -ceq $row.url })
+            $samePrior=@($rows | Where-Object { $_.url -ceq $row.url })
+            if ($sameOrigin.Count -eq 1 -and $samePrior.Count -eq 1) { $matches=$sameOrigin }
+        }
+        $entry=if ($matches.Count -eq 1) { $matches[0] } else {
+            $name=Get-ResearchBaseName ($row.id.Substring($row.category.Length+2)) $Settings
+            @{id=$row.id;category=$row.category;name=$name;sourcePath=$row.category+'/'+$name;url=$row.url}
+        }
+        if ($matches.Count -eq 1) { [void]$used.Add($entry.id) }
+        [void]$work.Add(@{row=$row;entry=$entry;previous=$row})
+    }
+    foreach ($entry in $entries) {
+        if ($used.Contains($entry.id) -or @($rows | Where-Object { $_.id -ceq $entry.id }).Count -gt 0) { continue }
+        # A configured local checkout is an observation candidate, not an inferred rename.
+        # Changed upstream identities require the separate explicit analysis mapping.
+        $row=New-ResearchObservedIdentity $entry $Settings
+        [void]$work.Add(@{row=$row;entry=$entry;previous=$null})
+    }
+    $partial=$false
+    foreach ($item in $work) {
+        $row=$item.row
         $row.inspectedAt=$Now.ToString('o')
+        $row.errors=if ($row.Contains('errors') -and $row.errors -is [array]) { @($row.errors | Where-Object { $_ -cne 'current_checkout_unverified' }) } else { @() }
+        if ($row.Contains('identityReconciliation') -and $row.identityReconciliation.status -eq 'unverified') { $partial=$true }
         try {
-            $path=[IO.Path]::GetFullPath($row.path,$Settings.ProjectRoot)
+            $path=Find-ResearchRepository $item.entry $item.previous $Settings
             if (-not (Test-Path -LiteralPath $path)) { $row.status='local_missing';$row.dirty=$null;$row.head=$null;$row.shallow=$null;$partial=$true;continue }
             $observed=Read-ResearchCheckout $path $row.url $TimeoutSeconds -ReadOnly
+            $relative=Get-ResearchRelativePath $Settings.ProjectRoot $path
+            if ($relative -cne $row.path) {
+                $aliases=if ($row.Contains('aliases') -and $row.aliases -is [array]) { @($row.aliases) } else { @() }
+                $aliases=@($aliases+$row.path | Select-Object -Unique)
+                if ($aliases.Count -gt 100) { throw 'observation_path_alias_limit' }
+                $row.previousPath=$row.path;$row.aliases=$aliases;$row.path=$relative
+            }
+            $row.inventoryId=$item.entry.id
             $row.dirty=$observed.dirty;$row.head=$observed.head;$row.shallow=$observed.shallow
             $row.status=if ($observed.dirty) {'dirty'} else {'inspected'}
             if ($observed.dirty) { $partial=$true }
         } catch {
             $row.status='inspection_failed';$row.head=$null;$row.dirty=$null;$row.shallow=$null
-            $row.errors=@('current_checkout_unverified');$partial=$true
+            $row.errors=@($row.errors+'current_checkout_unverified');$partial=$true
         }
     }
     # Consumers need the active containment root even when prior machine state omitted it.
     # This is current local configuration, not a refreshed remote synchronization receipt.
     $config=@{gitCache=Get-ResearchRelativePath $Settings.ProjectRoot $Settings.GitCache}
-    return @{schemaVersion=1;generatedAt=$Now.ToString('o');discoveryComplete=$false;sourceListComplete=$false;inspectionComplete=$true;status=if ($partial) {'partial'} else {'complete'};config=$config;repositories=@($rows)}
+    return @{schemaVersion=1;generatedAt=$Now.ToString('o');discoveryComplete=$false;sourceListComplete=$false;inspectionComplete=$true;status=if ($partial) {'partial'} else {'complete'};config=$config;repositories=@($work | ForEach-Object { $_.row })}
 }
 
 function Invoke-ResearchGitSync {
@@ -453,9 +501,14 @@ function Invoke-ResearchGitSync {
         }
         [void][IO.Directory]::CreateDirectory($settings.GitCache)
         $previous=Get-ResearchPriorState $statePath $settings
+        $previous=Resolve-ResearchReviewedIdentities @($previous) @($entries) $settings $TimeoutSeconds
         foreach ($entry in $entries) { $entry.listed=$true }
+        $configuredEntries=@($entries)
         foreach ($oldEntry in $previous) {
             if (@($entries | Where-Object { $_.id -eq $oldEntry.id }).Count -eq 0) {
+                # A unique unchanged origin can move between configured folder identities.
+                # Retaining its old ID as another job would update one checkout twice.
+                if (@($configuredEntries | Where-Object { $_.url -ceq $oldEntry.url }).Count -eq 1 -and @($previous | Where-Object { $_.url -ceq $oldEntry.url }).Count -eq 1) { continue }
                 $name=Get-ResearchBaseName ($oldEntry.id.Substring($oldEntry.category.Length+2)) $settings
                 $entries+=@(@{id=$oldEntry.id;category=$oldEntry.category;name=$name;sourcePath=$oldEntry.category+'/'+$name;url=$oldEntry.url;listed=$false})
             }
@@ -468,8 +521,8 @@ function Invoke-ResearchGitSync {
         }
         $jobs=[Collections.Generic.List[object]]::new(); $results=[Collections.Generic.List[object]]::new(); $selected=0
         foreach ($entry in $entries) {
-            $old=@($previous | Where-Object { $_.id -eq $entry.id -and $_.url -eq $entry.url })
-            if ($old.Count -eq 0 -and @($entries | Where-Object { $_.url -eq $entry.url }).Count -eq 1) { $old=@($previous | Where-Object { $_.url -eq $entry.url }) }
+            $old=@($previous | Where-Object { $_.id -eq $entry.id -and $_.url -ceq $entry.url })
+            if ($old.Count -eq 0 -and @($entries | Where-Object { $_.url -ceq $entry.url }).Count -eq 1) { $old=@($previous | Where-Object { $_.url -ceq $entry.url }) }
             $prior=if ($old.Count -eq 1) { $old[0] } else { $null }
             if (($Repository -ne '' -and $entry.id -ne $Repository) -or ($Category -ne '' -and $entry.category -ne $Category) -or ($Limit -gt 0 -and $selected -ge $Limit)) {
                 if ($null -ne $prior) { $prior.listed=$entry.listed;$prior.listStatus=if ($entry.listed) {'listed'} else {'source_list_removed'};$prior.checkedThisRun=$false;[void]$results.Add($prior) }
@@ -508,6 +561,8 @@ if ($MyInvocation.InvocationName -ne '.') {
     } catch {
         $known=@('source_config_missing_run_sources_import','source_config_invalid','repository_url_invalid','repository_protocol_unsupported','research_input_invalid_or_oversized','source_list_limit','source_lists_disagree','source_loader_unverified','source_executable_line_rejected','source_lists_copy_failed_rolled_back','source_lists_rollback_failed','source_list_empty','clone_declaration_invalid','repository_path_collision','repository_path_invalid','category_invalid','repository_filter_invalid','auto_stash_invalid','git_state_missing','git_state_invalid','dotenv_unknown_teamagent_key','dotenv_invalid_assignment','dotenv_duplicate_key','dotenv_invalid_value','dotenv_unclosed_quote','dotenv_nested_quote_unsupported','dotenv_invalid_quote','cache_path_required','outdated_threshold_invalid','rename_prefix_invalid','rename_prefix_collision','backup_account_invalid','reparse_path_rejected','reparse_cache_rejected','path_outside_cache')
         $known+='observation_options_invalid'
+        $known+=@('analysis_identity_ledger_invalid','identity_history_invalid','identity_history_limit','identity_history_collision')
+        $known+='source_additional_conflict'
         $message=if ($_.Exception.Message -in $known) { $_.Exception.Message } else { 'git_maintenance_failed_or_locked' }
         [Console]::Error.Write($message+"`n"); exit 1
     }

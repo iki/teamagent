@@ -60,6 +60,16 @@ The same delta adds company-scoped seed reuse with per-checkout Git HEAD/ref reb
 
 **Coverage:** Read the complete targeted managed-runtime implementation/test delta (469 presented lines). Imported Git/seed helpers, other cache tests and the remaining oversized update were not reviewed. Source inspection only; no upstream tests, source programs or live providers were executed. This is a scoped architecture review, not a whole-repository correctness or security certification.
 
+## External-update review - 2026-11-01
+
+Reviewed `1a6017d6460267ad89d7e1784e2b521c28d8e9ac` against `d941ed3879d9f9b49573bc138e1f6c465271fca4`.
+
+The 64-path update adds [retained instruction inspection](https://github.com/paperclipai/paperclip/blob/1a6017d6460267ad89d7e1784e2b521c28d8e9ac/packages/paperclip-runner/src/control-plane/durable-prp-control-plane.ts) for recovering admitted run instructions without opening a retired controller's assets. The helper accepts unknown state, validates the stored core record, selects a matching current or staged run attachment, and requires the expected run ID, normalized session ID and runtime-context digest. Empty instructions, malformed state and mismatches return no result.
+
+The complete inspected [control-plane fixture delta](https://github.com/paperclipai/paperclip/blob/1a6017d6460267ad89d7e1784e2b521c28d8e9ac/packages/paperclip-runner/src/control-plane/durable-prp-control-plane.test.ts) covers current and staged attachments, foreign identities/context, malformed commands, empty instructions and an invalid template digest. These checks bind evidence to the intended recovery context; the helper explicitly leaves runner and lease authorization to its caller.
+
+**Harness consequence:** Separate inspection of durable recovery evidence from permission to resume. Reuse only validated instructions tied to the exact run/session/context, then apply current runner, lease and policy checks before an effect. Returning null prevents accidental use but should not erase the host's distinction between absent and invalid recovery evidence. This narrow static review covers the helper and its complete fixture delta, not all persistence validators, lifecycle migrations or a real runner restart. No upstream tests or providers were executed.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [paperclip](https://github.com/paperclipai/paperclip); analyzed commit `d941ed3879d9f9b49573bc138e1f6c465271fca4`; commit date 2026-11-01T03:56:44-06:00; review date 2026-11-01T11:33:30.893Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paperclip.md).
+Analysis metadata: source [paperclip](https://github.com/paperclipai/paperclip); analyzed commit `1a6017d6460267ad89d7e1784e2b521c28d8e9ac`; commit date 2026-11-01T10:08:51-06:00; review date 2026-11-01T23:12:06.798Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paperclip.md).
 <!-- teamagent-analysis:end -->

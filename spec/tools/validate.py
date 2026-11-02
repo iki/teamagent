@@ -39,7 +39,7 @@ def identity(value: str) -> str:
 def git(repo: Path, *args: str) -> subprocess.CompletedProcess:
     return subprocess.run(
         ["git", "--no-replace-objects", "-c", "safe.directory=" + repo.as_posix(),
-         "-c", "core.hooksPath=/dev/null", "-C", str(repo), *args],
+         "-c", "core.hooksPath=" + os.devnull, "-C", str(repo), *args],
         capture_output=True, timeout=30, env=git_environment(),
         creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,
     )
