@@ -11,10 +11,12 @@
     "./media": "./lib/media/index.ts",
     "./media/bun": "./app/media/index.ts",
     "./channels": "./lib/channels/index.ts",
-    "./channels/bun": "./app/channels/index.ts"
+    "./channels/bun": "./app/channels/index.ts",
+    "./project-launcher": "./app/check/project-launcher.ts"
   },
   "scripts": {
     "task:run": "bun app/workflow/index.ts",
+    "project:run": "bun app/check/project-launch.ts",
     "deps": "bun app/dependencies/index.ts",
     "deps:check": "bun app/dependencies/index.ts check",
     "cache:status": "bun app/check/cache.ts status",

@@ -36,7 +36,23 @@ byte range, encoding, immutable version ID, citation and `nextOffset`. Its defau
 is 64 KiB, maximum 256 KiB; use `--offset` and `--length` for subsequent ranges,
 pinning `--source-version`. Binary and split Unicode ranges use base64. Export
 writes the entire version with relative Markdown/image links and `manifest.json`
-to a new directory. Existing destinations are never overwritten.
+to a new directory and rejects an existing destination.
+
+Each store admits at most two active exports and rejects further calls with a
+typed capacity error before allocating staging. There is no waiting queue;
+slots are released only after cleanup joins, including failure and cancellation.
+On Windows, transient `EPERM`/`EBUSY` failures during atomic export publication
+permit at most six rename attempts with cancellable delays of 10, 20, 40, 80 and
+160 milliseconds. The prepared source/version is captured once; retries never
+repeat acquisition or conversion. Each attempt checks the same physical parent
+and staging directory, prepared file inventory/hashes and absent destination,
+including dangling links. Persistent failure remains a typed storage failure.
+Cleanup removes only unchanged owned staging; identity or content drift retains
+it for inspection. The host's optional `exportRename` function is a trusted
+filesystem adapter for deterministic fixtures, not an input/configuration API.
+Destination absence is checked immediately before the rename. The portable
+filesystem operation does not reserve that name against concurrent external
+writers; it is not an operating-system no-replace primitive.
 
 ## Sources and freshness
 

@@ -167,6 +167,14 @@ function Find-ResearchRepository {
     if ($existing.Count -eq 1) { return $existing[0] }
     return Get-ResearchSafePath $Settings.GitCache ($Entry.category+'/'+$Entry.name)
 }
+function ConvertFrom-ResearchCheckoutMetadata {
+    param([object]$Text)
+    # Git emits one LF-terminated boolean followed by one full object identity.
+    if ($Text -isnot [string] -or $Text.Length -gt 71) { throw 'repository_inspection_failed' }
+    $matched=[regex]::Match($Text,'\A(true|false)\n([a-f0-9]{40}|[a-f0-9]{64})\n\z',[Text.RegularExpressions.RegexOptions]::CultureInvariant)
+    if (-not $matched.Success) { throw 'repository_inspection_failed' }
+    return @{head=$matched.Groups[2].Value;shallow=($matched.Groups[1].Value -ceq 'true')}
+}
 function Read-ResearchCheckout {
     param([string]$Path,[string]$ExpectedUrl,[int]$TimeoutSeconds,[switch]$ReadOnly)
     if (-not (Test-Path -LiteralPath (Join-Path $Path '.git') -PathType Container)) { throw 'repository_not_standalone_checkout' }
@@ -174,11 +182,10 @@ function Read-ResearchCheckout {
     $origin=Invoke-ResearchGit $Path @('remote','get-url','origin') '' $TimeoutSeconds -ReadOnly:$ReadOnly
     if ($origin.exitCode -ne 0 -or (Get-ResearchCanonicalUrl $origin.stdout.Trim()) -cne $ExpectedUrl) { throw 'repository_origin_mismatch' }
     $status=Invoke-ResearchGit $Path @('status','--porcelain=v1','--untracked-files=normal','--ignore-submodules=none') '' $TimeoutSeconds -ReadOnly:$ReadOnly
-    $head=Invoke-ResearchGit $Path @('rev-parse','--verify','HEAD') '' $TimeoutSeconds -ReadOnly:$ReadOnly
-    $shallow=Invoke-ResearchGit $Path @('rev-parse','--is-shallow-repository') '' $TimeoutSeconds -ReadOnly:$ReadOnly
-    if ($status.exitCode -ne 0 -or $shallow.exitCode -ne 0 -or $head.exitCode -ne 0 -or $head.stdout.Trim() -notmatch '^(?:[a-f0-9]{40}|[a-f0-9]{64})$') { throw 'repository_inspection_failed' }
-    $sha=$head.stdout.Trim()
-    return @{dirty=($status.stdout.Length -gt 0);head=$sha;shallow=($shallow.stdout.Trim() -eq 'true')}
+    $identity=Invoke-ResearchGit $Path @('rev-parse','--is-shallow-repository','--verify','HEAD') '' $TimeoutSeconds -ReadOnly:$ReadOnly
+    if ($status.exitCode -ne 0 -or $identity.exitCode -ne 0) { throw 'repository_inspection_failed' }
+    $metadata=ConvertFrom-ResearchCheckoutMetadata $identity.stdout
+    return @{dirty=($status.stdout.Length -gt 0);head=$metadata.head;shallow=$metadata.shallow}
 }
 function Get-ResearchAvailability {
     param([hashtable]$Entry,[hashtable]$Settings,[string]$Token,[bool]$Authenticated,[int]$TimeoutSeconds)

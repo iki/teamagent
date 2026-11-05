@@ -3,11 +3,21 @@ import { afterEach, describe, expect, test } from "bun:test";
 import { Database } from "bun:sqlite";
 import { rejects } from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  lstatSync,
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  renameSync,
+  rmSync,
+  symlinkSync,
+  writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
-import { Effect, Schema } from "effect";
-import { openMemory, memoryLayer } from "../app/memory/index.ts";
+import { basename, dirname, join } from "node:path";
+import { Cause, Clock, Effect, Exit, Schema } from "effect";
+import { openMemory, memoryLayer, type MemoryOptions } from "../app/memory/index.ts";
 import { MemoryExportManifestSchema, verifyExportFile } from "../app/memory/export.ts";
 import {
   MemoryError,
@@ -62,6 +72,7 @@ const captured = (
 });
 async function fixture(
   capture: SourceCapture = () => Effect.succeed(captured("Alpha evidence\nSecond line")),
+  exportRename?: MemoryOptions["exportRename"],
 ) {
   const root = mkdtempSync(join(tmpdir(), "teamagent-memory-"));
   temporaryRoots.push(root);
@@ -75,6 +86,7 @@ async function fixture(
     dataDirectory,
     capture,
     now: () => clock,
+    ...(exportRename === undefined ? {} : { exportRename }),
   };
   const store = await Effect.runPromise(openMemory(options));
   openStores.push(store);
@@ -88,7 +100,315 @@ async function fixture(
   };
 }
 
+function publicationFailure(code = "EPERM"): Error {
+  return Object.assign(new Error("Private native fixture payload must stay hidden"), {
+    code,
+    syscall: "rename",
+  });
+}
+
 describe("source memory", () => {
+  test("export retries only Windows publication and preserves prepared bytes without recapture", async () => {
+    let captures = 0;
+    let attempts = 0;
+    let preparedPath = "";
+    let preparedManifest = Buffer.alloc(0);
+    const { store, root } = await fixture(
+      () => {
+        captures++;
+        return Effect.succeed(captured("Exact evidence\r\n"));
+      },
+      (from, to) => {
+        attempts++;
+        if (!preparedPath) {
+          preparedPath = from;
+          preparedManifest = readFileSync(join(from, "manifest.json"));
+        }
+        expect(from).toBe(preparedPath);
+        expect(readFileSync(join(from, "manifest.json"))).toEqual(preparedManifest);
+        if (process.platform === "win32" && attempts <= 2)
+          throw publicationFailure(attempts === 1 ? "EPERM" : "EBUSY");
+        renameSync(from, to);
+      },
+    );
+    const first = await Effect.runPromise(store.get({ locator: "sample.txt" }));
+    const result = await Effect.runPromise(store.export(first.source.id, join(root, "published")));
+    expect(captures).toBe(1);
+    expect(attempts).toBeGreaterThanOrEqual(process.platform === "win32" ? 3 : 1);
+    expect(attempts).toBeLessThanOrEqual(process.platform === "win32" ? 6 : 1);
+    expect(result.version).toEqual(first.version);
+    expect(readFileSync(join(result.directory, "manifest.json"))).toEqual(preparedManifest);
+    expect(readFileSync(join(result.directory, "files/index.md"), "utf8")).toBe("Exact evidence\n");
+    expect(existsSync(preparedPath)).toBe(false);
+  });
+
+  test("export bounds persistent sharing failures and never retries unrelated native failures", async () => {
+    for (const code of ["EPERM", "EXDEV", "EACCES"]) {
+      let attempts = 0;
+      let temporary = "";
+      const { store, root } = await fixture(undefined, (from) => {
+        attempts++;
+        temporary = from;
+        throw publicationFailure(code);
+      });
+      const first = await Effect.runPromise(store.get({ locator: "sample.txt" }));
+      const destination = join(root, "unpublished");
+      const error = await Effect.runPromise(
+        store.export(first.source.id, destination).pipe(Effect.flip),
+      );
+      expect(error.code).toBe("storage");
+      expect(error.message).toContain(`rename: ${code}`);
+      expect(error.message).not.toContain("Private native fixture");
+      expect(attempts).toBe(process.platform === "win32" && code === "EPERM" ? 6 : 1);
+      expect(existsSync(temporary)).toBe(false);
+      expect(existsSync(destination)).toBe(false);
+      expect((await Effect.runPromise(store.show(first.source.id))).total).toBe(1);
+    }
+  });
+
+  test("export preserves existing and newly appearing destinations, including dangling links", async () => {
+    let attempts = 0;
+    const { store, root } = await fixture(undefined, (_from, to) => {
+      attempts++;
+      mkdirSync(to);
+      writeFileSync(join(to, "sentinel.txt"), "Existing destination\n");
+      throw publicationFailure();
+    });
+    const first = await Effect.runPromise(store.get({ locator: "sample.txt" }));
+    const file = join(root, "existing.txt");
+    writeFileSync(file, "Existing file\n");
+    const directory = join(root, "existing-directory");
+    mkdirSync(directory);
+    const link = join(root, "dangling-directory");
+    symlinkSync(
+      join(root, "missing-directory"),
+      link,
+      process.platform === "win32" ? "junction" : "dir",
+    );
+    for (const target of [file, directory, link]) {
+      const error = await Effect.runPromise(
+        store.export(first.source.id, target).pipe(Effect.flip),
+      );
+      expect(error.code).toBe("conflict");
+    }
+    expect(attempts).toBe(0);
+    expect(readFileSync(file, "utf8")).toBe("Existing file\n");
+    expect(lstatSync(link).isSymbolicLink()).toBe(true);
+    const appeared = join(root, "appeared");
+    await rejects(Effect.runPromise(store.export(first.source.id, appeared)));
+    expect(attempts).toBe(1);
+    expect(readFileSync(join(appeared, "sentinel.txt"), "utf8")).toBe("Existing destination\n");
+    expect(readdirSync(root).filter((name) => name.startsWith(".teamagent-export-"))).toEqual([]);
+  });
+
+  test("export retains staging and parent replacements rather than removing foreign directories", async () => {
+    for (const replaceParent of [false, true]) {
+      let replaced = "";
+      let retained = "";
+      let originalMoved = false;
+      const { store, root } = await fixture(undefined, (from) => {
+        const parent = dirname(from);
+        retained = join(dirname(parent), "retained-" + basename(parent));
+        replaced = from;
+        if (replaceParent) {
+          renameSync(parent, retained);
+          mkdirSync(parent);
+        } else {
+          retained = join(parent, "retained-staging");
+          renameSync(from, retained);
+        }
+        originalMoved = true;
+        mkdirSync(from);
+        writeFileSync(join(from, "sentinel.txt"), "Foreign replacement\n");
+        throw publicationFailure();
+      });
+      const first = await Effect.runPromise(store.get({ locator: "sample.txt" }));
+      const parent = join(root, "exports");
+      mkdirSync(parent);
+      await rejects(Effect.runPromise(store.export(first.source.id, join(parent, "published"))));
+      expect(originalMoved).toBe(true);
+      expect(readFileSync(join(replaced, "sentinel.txt"), "utf8")).toBe("Foreign replacement\n");
+      const retainedSource = replaceParent ? join(retained, basename(replaced)) : retained;
+      expect(readFileSync(join(retainedSource, "files/index.md"), "utf8")).toBe(
+        "Alpha evidence\nSecond line",
+      );
+      expect(existsSync(join(parent, "published"))).toBe(false);
+    }
+  });
+
+  test("export refuses changed prepared content and unexpected inventory without publishing it", async () => {
+    for (const path of ["manifest.json", "files/index.md", "unexpected.txt"]) {
+      let temporary = "";
+      let attempts = 0;
+      const { store, root } = await fixture(undefined, (from) => {
+        attempts++;
+        temporary = from;
+        writeFileSync(join(from, path), "Changed prepared artifact\n");
+        throw publicationFailure();
+      });
+      const first = await Effect.runPromise(store.get({ locator: "sample.txt" }));
+      const destination = join(root, "unpublished");
+      const result = await Effect.runPromiseExit(store.export(first.source.id, destination));
+      expect(Exit.isFailure(result)).toBe(true);
+      if (!Exit.isFailure(result)) throw new Error("Expected changed export rejection.");
+      expect(Cause.hasFails(result.cause)).toBe(true);
+      expect(Cause.hasDies(result.cause)).toBe(false);
+      expect(Cause.pretty(result.cause)).not.toContain("Private native fixture");
+      expect(attempts).toBe(1);
+      expect(existsSync(destination)).toBe(false);
+      expect(readFileSync(join(temporary, path), "utf8")).toBe("Changed prepared artifact\n");
+    }
+  });
+
+  (process.platform === "win32" ? test : test.skip)(
+    "export cancellation during a sharing delay joins cleanup without another publication attempt",
+    async () => {
+      const reached = Promise.withResolvers<void>();
+      const controller = new AbortController();
+      let attempts = 0;
+      let temporary = "";
+      const { store, root } = await fixture(undefined, (from) => {
+        attempts++;
+        temporary = from;
+        reached.resolve();
+        throw publicationFailure();
+      });
+      const first = await Effect.runPromise(store.get({ locator: "sample.txt" }));
+      const destination = join(root, "cancelled");
+      const pending = Effect.runPromise(store.export(first.source.id, destination), {
+        signal: controller.signal,
+      });
+      const rejected = rejects(pending);
+      await reached.promise;
+      controller.abort();
+      await rejected;
+      expect(attempts).toBe(1);
+      expect(existsSync(temporary)).toBe(false);
+      expect(existsSync(destination)).toBe(false);
+      expect((await Effect.runPromise(store.show(first.source.id))).total).toBe(1);
+    },
+  );
+
+  (process.platform === "win32" ? test : test.skip)(
+    "export admission bounds prepared trees and releases slots after cancellation, acquisition and cleanup failure",
+    async () => {
+      const firstReached = Promise.withResolvers<void>();
+      const secondReached = Promise.withResolvers<void>();
+      const firstWait = Promise.withResolvers<void>();
+      const secondWait = Promise.withResolvers<void>();
+      const firstController = new AbortController();
+      const secondController = new AbortController();
+      const prepared = new Map<string, string>();
+      let captures = 0;
+      let attempts = 0;
+      let releaseSecond = false;
+      const { store, root } = await fixture(
+        () => {
+          captures++;
+          return Effect.succeed(captured("Admission evidence\n"));
+        },
+        (from, to) => {
+          attempts++;
+          prepared.set(basename(to), from);
+          if (basename(to) === "first") {
+            firstReached.resolve();
+            throw publicationFailure();
+          }
+          if (basename(to) === "second" && !releaseSecond) {
+            secondReached.resolve();
+            throw publicationFailure();
+          }
+          if (basename(to) === "drift") {
+            writeFileSync(join(from, "manifest.json"), "Retained changed manifest\n");
+            throw publicationFailure();
+          }
+          renameSync(from, to);
+        },
+      );
+      const imported = await Effect.runPromise(store.get({ locator: "sample.txt" }));
+      const liveClock = await Effect.runPromise(Clock.Clock);
+      const heldClock = (wait: Promise<void>): Clock.Clock => ({
+        currentTimeMillisUnsafe: () => liveClock.currentTimeMillisUnsafe(),
+        currentTimeMillis: liveClock.currentTimeMillis,
+        currentTimeNanosUnsafe: () => liveClock.currentTimeNanosUnsafe(),
+        currentTimeNanos: liveClock.currentTimeNanos,
+        monotonicTimeNanosUnsafe: () => liveClock.monotonicTimeNanosUnsafe(),
+        monotonicTimeNanos: liveClock.monotonicTimeNanos,
+        sleep: () => Effect.promise(() => wait),
+      });
+      const first = Effect.runPromiseExit(
+        store
+          .export(imported.source.id, join(root, "first"))
+          .pipe(Effect.provideService(Clock.Clock, heldClock(firstWait.promise))),
+        { signal: firstController.signal },
+      );
+      const second = Effect.runPromiseExit(
+        store
+          .export(imported.source.id, join(root, "second"))
+          .pipe(Effect.provideService(Clock.Clock, heldClock(secondWait.promise))),
+        { signal: secondController.signal },
+      );
+      try {
+        await Promise.all([firstReached.promise, secondReached.promise]);
+        const before = readdirSync(root)
+          .filter((name) => name.startsWith(".teamagent-export-"))
+          .sort();
+        expect(before).toHaveLength(2);
+        const blocked = await Effect.runPromise(
+          store.export(imported.source.id, join(root, "third")).pipe(Effect.flip),
+        );
+        expect(blocked.code).toBe("capacity");
+        expect(attempts).toBe(2);
+        expect(
+          readdirSync(root)
+            .filter((name) => name.startsWith(".teamagent-export-"))
+            .sort(),
+        ).toEqual(before);
+        firstController.abort();
+        expect(Exit.isFailure(await first)).toBe(true);
+        const firstTemporary = prepared.get("first");
+        if (!firstTemporary) throw new Error("First export did not reach publication.");
+        expect(existsSync(firstTemporary)).toBe(false);
+
+        const acquisition = await Effect.runPromise(
+          store
+            .export(imported.source.id, join(root, "missing-parent", "output"))
+            .pipe(Effect.flip),
+        );
+        expect(acquisition.code).toBe("storage");
+        const drift = await Effect.runPromiseExit(
+          store.export(imported.source.id, join(root, "drift")),
+        );
+        expect(Exit.isFailure(drift)).toBe(true);
+        if (!Exit.isFailure(drift)) throw new Error("Expected retained scratch failure.");
+        expect(Cause.hasFails(drift.cause)).toBe(true);
+        expect(Cause.hasDies(drift.cause)).toBe(false);
+        expect(Cause.pretty(drift.cause)).not.toContain("Private native fixture");
+        const retained = prepared.get("drift");
+        if (!retained) throw new Error("Changed export did not reach publication.");
+        expect(readFileSync(join(retained, "manifest.json"), "utf8")).toBe(
+          "Retained changed manifest\n",
+        );
+        const success = await Effect.runPromise(
+          store.export(imported.source.id, join(root, "success")),
+        );
+        expect(readFileSync(join(success.directory, "files/index.md"), "utf8")).toBe(
+          "Admission evidence\n",
+        );
+        releaseSecond = true;
+        secondWait.resolve();
+        expect(Exit.isSuccess(await second)).toBe(true);
+        expect(captures).toBe(1);
+      } finally {
+        firstController.abort();
+        secondController.abort();
+        firstWait.resolve();
+        secondWait.resolve();
+        await Promise.all([first, second]);
+      }
+    },
+  );
+
   test("exports LF text with exact raw hashes while keeping historical versions and opaque bytes", async () => {
     const content = "\uFEFFAlpha\r\nBeta\rGamma\n";
     const bytes = new TextEncoder().encode(content);

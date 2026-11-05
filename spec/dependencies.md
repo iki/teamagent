@@ -13,7 +13,11 @@ Do not import all patched packages merely because Trigon uses them. In the Octob
 The November 1 addition selects Trigon's Tinypool 2.2.0 process-worker patch for
 the existing Oxfmt 0.74.0 route. Its
 [signed source revision](https://github.com/iki/trigon/commit/9ef18967b46fe01571933c3ba6216823ad961c16)
-was published only to `codex/tinypool-windows-hide-2-2-0`; it remains unmerged.
+was initially published to `codex/tinypool-windows-hide-2-2-0`. The November 2
+review confirms its merge into source main at
+[`989e4a8fc16855ac037687c6ed7241c926ec74ab`](https://github.com/iki/trigon/commit/989e4a8fc16855ac037687c6ed7241c926ec74ab),
+with patch bytes unchanged. The registry retains the original selected revision
+and its historical evidence; the merge requires no patch reapplication.
 The [artifact record](../patches/trigon/README.md) retains original patch bytes,
 exact provenance, consumer tests and the unchanged supplied Tauri/license hashes.
 This selection changes no dependency version and adds no direct Tinypool package.

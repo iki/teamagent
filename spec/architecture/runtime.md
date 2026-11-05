@@ -41,6 +41,12 @@ supply Rust, Android SDK, Xcode, browser binaries or external compression tools.
 
 ## Native tools and Windows
 
+For explicitly selected projects, use the host-only [project launcher](../project-launcher.md)
+with that target's pins, per-call physical tool selection and owned resources.
+Mise environment evaluation is an explicit trusted opt-in, never a side effect
+of ordinary verification or hook execution. Preserve the selected project's
+removed environment variables and retain scratch when shutdown is unconfirmed.
+
 Invoke pinned formatter/lint JavaScript entries with the current Bun executable
 and a structured argument list, without a shell. For TypeScript, resolve the
 installed native-preview package's matching platform executable and launch it

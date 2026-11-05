@@ -286,7 +286,7 @@ public static class TeamagentResearchProcess {
                 while (!all.IsCompleted) {
                     if (stdout.IsFaulted || stderr.IsFaulted) throw new IOException("process_output_limit");
                     if (DateTime.UtcNow >= deadline) throw new TimeoutException("process_timeout");
-                    Task.Delay(20).GetAwaiter().GetResult();
+                    Task.WhenAny(all, Task.Delay(20)).GetAwaiter().GetResult();
                 }
                 all.GetAwaiter().GetResult();
                 return new[] { process.ExitCode.ToString(), stdout.Result, stderr.Result };
@@ -300,7 +300,12 @@ public static class TeamagentResearchProcess {
 }
 function Invoke-ResearchGit {
     param([string]$Directory,[string[]]$Arguments,[string]$InputText='',[int]$TimeoutSeconds=120,[switch]$ReadOnly)
-    $command=Get-Command git -CommandType Application -ErrorAction Stop | Select-Object -First 1
+    # Resolve the first application against the live PATH for each launch.
+    $command=$ExecutionContext.InvokeCommand.GetCommand('git',[Management.Automation.CommandTypes]::Application)
+    if ($null -eq $command) {
+        # Preserve PowerShell's detailed command-not-found diagnostic on a missing tool.
+        $command=Get-Command git -CommandType Application -ErrorAction Stop | Select-Object -First 1
+    }
     $info=[Diagnostics.ProcessStartInfo]::new(); $info.FileName=$command.Source
     $info.UseShellExecute=$false; $info.CreateNoWindow=$true
     $info.RedirectStandardInput=$true; $info.RedirectStandardOutput=$true; $info.RedirectStandardError=$true

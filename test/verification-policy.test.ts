@@ -38,6 +38,8 @@ await test("verification locale and worker policy do not mutate the parent or er
     LANG: "cs_CZ.UTF-8",
     LC_ALL: "C",
     TZ: "Europe/Prague",
+    CI: "true",
+    GITHUB_ACTIONS: "true",
     TEAMAGENT_FIXTURE: "kept",
     [verificationWriteVariable]: "local",
   };
@@ -46,6 +48,8 @@ await test("verification locale and worker policy do not mutate the parent or er
   assert.deepEqual(normalized, { ...base, LANG: "C.UTF-8", LC_ALL: "C.UTF-8" });
   const worker = unitEnvironment(base, "/owned/fixture-bytecode");
   assert.equal(worker[verificationWriteVariable], undefined);
+  assert.equal(worker.GITHUB_ACTIONS, undefined);
+  assert.equal(worker.CI, "true");
   assert.equal(worker.TEAMAGENT_FIXTURE, "kept");
   assert.equal(worker.TZ, "Europe/Prague");
   assert.equal(worker.LANG, "C.UTF-8");

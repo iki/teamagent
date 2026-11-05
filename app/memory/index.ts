@@ -11,12 +11,14 @@ import {
   mkdirSync,
   mkdtempSync,
   openSync,
+  opendirSync,
   readSync,
   realpathSync,
   renameSync,
   rmSync,
   unlinkSync,
   writeFileSync,
+  type BigIntStats,
 } from "node:fs";
 import { basename, dirname, isAbsolute, join, relative, resolve } from "node:path";
 import { Effect, Layer, Predicate, Schema } from "effect";
@@ -62,6 +64,8 @@ export interface MemoryOptions {
   readonly workspaceRoot: string;
   readonly capture: SourceCapture;
   readonly now?: () => number;
+  /** Trusted host/test port for the final rename only; never loaded from source configuration. */
+  readonly exportRename?: (source: string, destination: string) => void;
 }
 
 const fail = (code: MemoryError["code"], message: string): never => {
@@ -183,6 +187,143 @@ const inside = (root: string, path: string): boolean => {
       !isAbsolute(part))
   );
 };
+
+interface ExportDirectory {
+  readonly parent: string;
+  readonly parentIdentity: BigIntStats;
+  readonly temporary: string;
+  readonly destination: string;
+  readonly directories: Map<string, BigIntStats>;
+  readonly files: Map<string, { readonly identity: BigIntStats; readonly hash: string }>;
+  published: boolean;
+}
+
+function sameExportObject(current: BigIntStats, original: BigIntStats): boolean {
+  return (
+    current.dev === original.dev &&
+    current.ino === original.ino &&
+    current.birthtimeNs === original.birthtimeNs &&
+    current.mode === original.mode
+  );
+}
+
+function exportAbsent(path: string): boolean {
+  try {
+    lstatSync(path);
+    return false;
+  } catch (error) {
+    if (error instanceof Error && "code" in error && error.code === "ENOENT") return true;
+    throw error;
+  }
+}
+
+function exportDirectoryIdentity(path: string): BigIntStats {
+  const info = lstatSync(path, { bigint: true });
+  if (!info.isDirectory() || info.isSymbolicLink() || realpathSync(path) !== path)
+    return fail("integrity", "Export directory identity changed.");
+  return info;
+}
+
+function checkExportParent(scope: ExportDirectory): void {
+  if (!sameExportObject(exportDirectoryIdentity(scope.parent), scope.parentIdentity))
+    fail("integrity", "Export parent identity changed.");
+}
+
+function writeExportFile(scope: ExportDirectory, path: string, bytes: Uint8Array | string): void {
+  const output = join(scope.temporary, path);
+  mkdirSync(dirname(output), { recursive: true });
+  for (let directory = dirname(output); ; directory = dirname(directory)) {
+    if (!inside(scope.temporary, directory))
+      fail("integrity", "Export file escaped its prepared directory.");
+    const name = relative(scope.temporary, directory);
+    const info = exportDirectoryIdentity(directory);
+    const original = scope.directories.get(name);
+    if (original && !sameExportObject(info, original))
+      fail("integrity", "Export directory identity changed.");
+    scope.directories.set(name, original ?? info);
+    if (!name) break;
+  }
+  writeFileSync(output, bytes, { flag: "wx", mode: 0o600 });
+  const identity = lstatSync(output, { bigint: true });
+  if (
+    identity.size !==
+    BigInt(typeof bytes === "string" ? Buffer.byteLength(bytes) : bytes.byteLength)
+  )
+    fail("integrity", "Prepared export content changed.");
+  scope.files.set(path, { identity, hash: sha256(bytes) });
+}
+
+/** Compare the exact prepared tree before publication and before removing scratch. */
+function checkExportTree(scope: ExportDirectory, root = scope.temporary): void {
+  checkExportParent(scope);
+  const children = new Map<string, Set<string>>();
+  for (const name of scope.directories.keys()) children.set(name, new Set());
+  for (const name of [...scope.directories.keys(), ...scope.files.keys()]) {
+    if (!name) continue;
+    const parent = dirname(name);
+    children.get(parent === "." ? "" : parent)?.add(basename(name));
+  }
+  for (const [name, identity] of scope.directories) {
+    const path = join(root, name);
+    if (!sameExportObject(exportDirectoryIdentity(path), identity))
+      fail("integrity", "Export directory identity changed.");
+    const expected = children.get(name) ?? fail("integrity", "Prepared export inventory changed.");
+    const directory = opendirSync(path);
+    try {
+      let count = 0;
+      for (let entry = directory.readSync(); entry !== null; entry = directory.readSync()) {
+        if (++count > expected.size || !expected.has(entry.name))
+          fail("integrity", "Prepared export inventory changed.");
+      }
+      if (count !== expected.size) fail("integrity", "Prepared export inventory changed.");
+    } finally {
+      directory.closeSync();
+    }
+  }
+  const buffer = new Uint8Array(64 * 1024);
+  for (const [name, { identity, hash }] of scope.files) {
+    const path = join(root, name);
+    const unchanged = (current: BigIntStats): boolean =>
+      current.isFile() &&
+      !current.isSymbolicLink() &&
+      current.nlink === 1n &&
+      sameExportObject(current, identity) &&
+      current.size === identity.size &&
+      current.mtimeNs === identity.mtimeNs &&
+      current.ctimeNs === identity.ctimeNs;
+    if (!unchanged(lstatSync(path, { bigint: true })))
+      fail("integrity", "Prepared export file identity changed.");
+    const descriptor = openSync(path, constants.O_RDONLY | constants.O_NOFOLLOW);
+    try {
+      if (!unchanged(fstatSync(descriptor, { bigint: true })))
+        fail("integrity", "Prepared export file identity changed.");
+      const digest = createHash("sha256");
+      let read = 0n;
+      while (read < identity.size) {
+        const count = readSync(
+          descriptor,
+          buffer,
+          0,
+          Number(identity.size - read > 65536n ? 65536n : identity.size - read),
+          null,
+        );
+        if (!count) fail("integrity", "Prepared export content changed.");
+        digest.update(buffer.subarray(0, count));
+        read += BigInt(count);
+      }
+      if (
+        readSync(descriptor, buffer, 0, 1, null) !== 0 ||
+        !unchanged(fstatSync(descriptor, { bigint: true })) ||
+        !unchanged(lstatSync(path, { bigint: true })) ||
+        digest.digest("hex") !== hash
+      )
+        fail("integrity", "Prepared export content changed.");
+    } finally {
+      closeSync(descriptor);
+    }
+  }
+  checkExportParent(scope);
+}
 
 /** Manifest paths are portable relative paths, including on Windows export hosts. */
 const checkedPath = (path: string): string => {
@@ -308,6 +449,7 @@ export const openMemory = (options: MemoryOptions): Effect.Effect<MemoryApi, Mem
     const timestamp = (): string => new Date(now()).toISOString();
     let closed = false;
     let activeCaptures = 0;
+    let activeExports = 0;
     try {
       database.exec("PRAGMA foreign_keys=ON; PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000;");
       const version = decode(
@@ -870,65 +1012,138 @@ export const openMemory = (options: MemoryOptions): Effect.Effect<MemoryApi, Mem
           });
         }),
       export: (id, directory, versionId) =>
-        attempt(() => {
-          const selected = source(id);
-          const version = sourceVersion(selected, versionId);
-          decode(LocatorSchema, directory, "invalid");
-          const target = resolve(directory);
-          if (existsSync(target))
-            return fail("conflict", "Export destination already exists; choose a new directory.");
-          const parent = realpathSync(dirname(target));
-          if (inside(dataDirectory, parent) || inside(target, dataDirectory))
-            return fail("invalid", "Export destination overlaps private application storage.");
-          const destination = join(parent, basename(target));
-          const temporary = mkdtempSync(join(parent, ".teamagent-export-"));
-          try {
-            const normalized: NormalizedExportFile[] = [];
-            const retained = new Set<string>();
-            for (const file of version.files) {
-              const safePath = checkedPath(file.path);
-              const output = join(temporary, "files", safePath);
-              const raw = readBlob(file);
-              const representation = exportFileRepresentation(file, raw);
-              mkdirSync(dirname(output), { recursive: true });
-              writeFileSync(output, representation.bytes, { flag: "wx", mode: 0o600 });
-              if (representation.normalization !== undefined) {
-                normalized.push(representation.normalization);
-                if (!retained.has(file.sha256)) {
-                  const original = join(temporary, "raw", file.sha256);
-                  mkdirSync(dirname(original), { recursive: true });
-                  writeFileSync(original, raw, { flag: "wx", mode: 0o600 });
-                  retained.add(file.sha256);
-                }
-              }
-            }
-            writeFileSync(
-              join(temporary, "manifest.json"),
-              JSON.stringify(
-                {
-                  format: "teamagent-memory-export-v2",
-                  source: selected,
-                  version,
-                  normalization: { policy: textNormalizationPolicy, files: normalized },
-                },
-                null,
-                2,
-              ) + "\n",
-              { flag: "wx", mode: 0o600 },
-            );
-            if (existsSync(destination))
-              return fail("conflict", "Export destination appeared during publication.");
-            renameSync(temporary, destination);
-            return { directory: destination, source: selected, version };
-          } finally {
-            if (
-              existsSync(temporary) &&
-              inside(parent, temporary) &&
-              basename(temporary).startsWith(".teamagent-export-")
-            )
-              rmSync(temporary, { recursive: true });
-          }
-        }),
+        Effect.acquireUseRelease(
+          attempt(() => {
+            ensureOpen();
+            if (activeExports >= 2)
+              return fail("capacity", "This memory service already has two active exports.");
+            activeExports += 1;
+          }),
+          () =>
+            Effect.acquireUseRelease(
+              attempt(() => {
+                const selected = source(id);
+                const version = sourceVersion(selected, versionId);
+                decode(LocatorSchema, directory, "invalid");
+                const target = resolve(directory);
+                if (!exportAbsent(target))
+                  return fail(
+                    "conflict",
+                    "Export destination already exists; choose a new directory.",
+                  );
+                const parent = realpathSync(dirname(target));
+                if (inside(dataDirectory, parent) || inside(target, dataDirectory))
+                  return fail(
+                    "invalid",
+                    "Export destination overlaps private application storage.",
+                  );
+                const parentIdentity = exportDirectoryIdentity(parent);
+                const temporary = mkdtempSync(join(parent, ".teamagent-export-"));
+                const scope: ExportDirectory = {
+                  parent,
+                  parentIdentity,
+                  temporary,
+                  destination: join(parent, basename(target)),
+                  directories: new Map([["", exportDirectoryIdentity(temporary)]]),
+                  files: new Map(),
+                  published: false,
+                };
+                return { selected, version, scope };
+              }),
+              ({ selected, version, scope }) =>
+                Effect.gen(function* () {
+                  yield* attempt(() => {
+                    const normalized: NormalizedExportFile[] = [];
+                    const retained = new Set<string>();
+                    for (const file of version.files) {
+                      const safePath = checkedPath(file.path);
+                      const raw = readBlob(file);
+                      const representation = exportFileRepresentation(file, raw);
+                      writeExportFile(scope, join("files", safePath), representation.bytes);
+                      if (representation.normalization !== undefined) {
+                        normalized.push(representation.normalization);
+                        if (!retained.has(file.sha256)) {
+                          writeExportFile(scope, join("raw", file.sha256), raw);
+                          retained.add(file.sha256);
+                        }
+                      }
+                    }
+                    writeExportFile(
+                      scope,
+                      "manifest.json",
+                      JSON.stringify(
+                        {
+                          format: "teamagent-memory-export-v2",
+                          source: selected,
+                          version,
+                          normalization: { policy: textNormalizationPolicy, files: normalized },
+                        },
+                        null,
+                        2,
+                      ) + "\n",
+                    );
+                  });
+                  const delays = [0, 10, 20, 40, 80, 160];
+                  for (const [index, delay] of delays.entries()) {
+                    if (delay) yield* Effect.sleep(delay);
+                    const published = yield* attempt(() => {
+                      ensureOpen();
+                      if (
+                        JSON.stringify(sourceVersion(selected, version.id)) !==
+                        JSON.stringify(version)
+                      )
+                        return fail(
+                          "integrity",
+                          "Stored export version changed during publication.",
+                        );
+                      checkExportTree(scope);
+                      if (!exportAbsent(scope.destination))
+                        return fail("conflict", "Export destination appeared during publication.");
+                      try {
+                        (options.exportRename ?? renameSync)(scope.temporary, scope.destination);
+                      } catch (error) {
+                        if (
+                          process.platform !== "win32" ||
+                          index === delays.length - 1 ||
+                          !(error instanceof Error && "code" in error) ||
+                          (error.code !== "EPERM" && error.code !== "EBUSY")
+                        )
+                          throw error;
+                        return false;
+                      }
+                      // The synchronous mutation completes before cancellation can release ownership.
+                      scope.published = true;
+                      checkExportTree(scope, scope.destination);
+                      if (!exportAbsent(scope.temporary))
+                        return fail(
+                          "integrity",
+                          "Export staging directory reappeared after publication.",
+                        );
+                      return true;
+                    });
+                    if (published)
+                      return { directory: scope.destination, source: selected, version };
+                  }
+                  return yield* new MemoryError({
+                    code: "storage",
+                    message: "Export publication did not complete.",
+                  });
+                }),
+              ({ scope }) =>
+                attempt(() => {
+                  if (scope.published) return;
+                  checkExportParent(scope);
+                  if (exportAbsent(scope.temporary)) return;
+                  // Identity or content drift retains uncertain scratch, including a foreign replacement.
+                  checkExportTree(scope);
+                  rmSync(scope.temporary, { recursive: true });
+                }),
+            ),
+          () =>
+            Effect.sync(() => {
+              activeExports -= 1;
+            }),
+        ),
       delete: (id) =>
         attempt(() => {
           atomic(() => {

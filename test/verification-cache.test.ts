@@ -1,10 +1,11 @@
-import { mkdtemp } from "./temporary.ts";
+import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { expect, test } from "bun:test";
 import { rejects } from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import {
   mkdir,
+  readdir,
   readFile,
   rm,
   symlink,
@@ -40,6 +41,7 @@ import {
 } from "../app/check/build-cache.ts";
 import { version } from "../package.json";
 import { testBatches, testConcurrency, scheduleTestBatches } from "../app/check/test-groups.ts";
+import { diagnostic, runProcess } from "../app/workflow/process.ts";
 
 function git(root: string, args: readonly string[]): string {
   const result = spawnSync(
@@ -60,14 +62,77 @@ function git(root: string, args: readonly string[]): string {
   if (result.error || result.status !== 0) throw new Error("Fixture Git operation failed");
   return result.stdout;
 }
-async function fixture(): Promise<string> {
-  const root = await mkdtemp(join(tmpdir(), "teamagent-verification-"));
+const initialFiles = {
+  ".gitattributes": "* text eol=lf\n",
+  ".gitignore": ".cache/\noutput/\n",
+  "input.ts": "export const value = 1;\n",
+} as const;
+
+let workerSeed: Promise<string> | undefined;
+
+async function createSeed(): Promise<string> {
+  const root = await mkdtemp("teamagent-verification-seed-");
   git(root, ["init", "--quiet"]);
-  await writeFile(join(root, ".gitignore"), ".cache/\noutput/\n", "utf8");
-  await writeFile(join(root, ".gitattributes"), "* text eol=lf\n", "utf8");
-  await writeFile(join(root, "input.ts"), "export const value = 1;\n", "utf8");
-  git(root, ["add", "."]);
+  for (const [name, bytes] of Object.entries(initialFiles))
+    await writeFile(join(root, name), bytes, { encoding: "utf8", flag: "wx" });
+  git(root, ["add", "--", ...Object.keys(initialFiles)]);
   git(root, ["commit", "--quiet", "-m", "Initial fixture"]);
+  // Only this unsigned initial history is shared. Tests receive separate managed clones.
+  return root;
+}
+
+async function assertPrivateClone(root: string, seed: string): Promise<void> {
+  const gitDirectory = join(root, ".git");
+  const objects = join(gitDirectory, "objects");
+  for (const name of ["alternates", "http-alternates"])
+    await rejects(lstat(join(objects, "info", name)), { code: "ENOENT" });
+  const pending = [objects];
+  let entries = 0;
+  for (const directory of pending) {
+    const info = await lstat(directory);
+    expect(info.isDirectory() && !info.isSymbolicLink()).toBe(true);
+    for (const name of await readdir(directory)) {
+      if (++entries > 64) throw new Error("Unexpected cache fixture object inventory");
+      const child = join(directory, name);
+      const entry = await lstat(child);
+      if (entry.isDirectory() && !entry.isSymbolicLink()) pending.push(child);
+      else expect(entry.isFile() && !entry.isSymbolicLink() && entry.nlink === 1).toBe(true);
+    }
+  }
+  expect((await readdir(root)).sort()).toEqual([".git", ...Object.keys(initialFiles)].sort());
+  for (const [name, bytes] of Object.entries(initialFiles)) {
+    const path = join(root, name);
+    const info = await lstat(path);
+    expect(info.isFile() && !info.isSymbolicLink() && info.nlink === 1).toBe(true);
+    expect(await readFile(path, "utf8")).toBe(bytes);
+  }
+  const config = await readFile(join(gitDirectory, "config"), "utf8");
+  expect(config).not.toMatch(/^\s*\[remote\s|^\s*(?:remote|merge|fetch|url)\s*=/imu);
+  expect(await readFile(join(gitDirectory, "HEAD"), "utf8")).toBe(
+    await readFile(join(seed, ".git/HEAD"), "utf8"),
+  );
+  const remoteRefs = await readdir(join(gitDirectory, "refs/remotes"), {
+    recursive: true,
+    withFileTypes: true,
+  }).catch((error: unknown) => {
+    if (error instanceof Error && "code" in error && error.code === "ENOENT") return [];
+    throw error;
+  });
+  expect(remoteRefs.every((entry) => entry.isDirectory() && !entry.isSymbolicLink())).toBe(true);
+  const refs = await readFile(join(gitDirectory, "packed-refs"), "utf8").catch((error: unknown) => {
+    if (error instanceof Error && "code" in error && error.code === "ENOENT") return "";
+    throw error;
+  });
+  expect(refs).not.toContain("refs/remotes/");
+}
+
+async function fixture(): Promise<string> {
+  const seed = await (workerSeed ??= createSeed());
+  await assertTemporaryFixture(seed);
+  const root = await mkdtemp("teamagent-verification-");
+  git(root, ["clone", "--quiet", "--no-hardlinks", "--origin", "origin", "--", seed, "."]);
+  git(root, ["remote", "remove", "origin"]);
+  await assertPrivateClone(root, seed);
   return root;
 }
 const task: CacheTask = {
@@ -76,6 +141,89 @@ const task: CacheTask = {
   inputs: ["input.ts"],
   values: ["fixture-v1"],
 };
+
+test("GitHub Actions executes every verification store while preserving local and build reuse", async () => {
+  const root = await fixture();
+  const probe = join(root, "actions-policy.ts");
+  const moduleUrl = new URL("../app/check/input-cache.ts", import.meta.url).href;
+  // Only this owned child changes its Actions flag; concurrent workers and the
+  // outer verification runner keep their original trust policy.
+  await writeFile(
+    probe,
+    `import assert from "node:assert/strict";
+import { mkdir, rm, writeFile } from "node:fs/promises";
+import { join } from "node:path";
+import { runCachedTask, type CacheTask } from ${JSON.stringify(moduleUrl)};
+const root = process.cwd();
+assert.equal(process.env.GITHUB_ACTIONS, "true");
+assert.equal(process.env.CI, "true");
+for (const storage of ["tracked", "local", "nonportable"] as const) {
+  const task: CacheTask = {
+    id: "actions-" + storage,
+    kind: "verification",
+    inputs: ["input.ts"],
+    ...(storage === "nonportable" ? { portable: false } : {}),
+  };
+  const options = {
+    receiptWritePolicy: storage === "local" ? "local" as const : "tracked" as const,
+    forceFresh: false,
+  };
+  let calls = 0;
+  const run = async () => { calls++; };
+  delete process.env.GITHUB_ACTIONS;
+  const supplied = await runCachedTask(root, task, run, options);
+  assert.equal(supplied.hit, false);
+  assert.equal((await runCachedTask(root, task, run, options)).hit, true, "CI alone retains local reuse");
+  process.env.GITHUB_ACTIONS = "true";
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const result = await runCachedTask(root, task, run, options);
+    assert.equal(result.key, supplied.key, "Actions rejection is independent of input changes");
+    assert.equal(result.hit, false, storage + " receipt cannot skip an Actions check");
+  }
+  assert.equal(calls, 3, "Even earlier Actions success cannot skip a later check");
+  await assert.rejects(runCachedTask(root, task, async () => {
+    throw new Error("Actions must observe this failure");
+  }, options), /Actions must observe/);
+  process.env.GITHUB_ACTIONS = "false";
+  assert.equal((await runCachedTask(root, task, run, options)).hit, false, "Failed Actions evidence stays rejected outside Actions");
+  assert.equal((await runCachedTask(root, task, run, options)).hit, true, "Fresh local success restores ordinary reuse");
+  assert.equal(calls, 4);
+}
+process.env.GITHUB_ACTIONS = "true";
+const build: CacheTask = {
+  id: "actions-build", kind: "build", inputs: ["input.ts"], outputs: ["output"],
+};
+let builds = 0;
+const output = join(root, "output", "result.js");
+const runBuild = async () => {
+  builds++;
+  await mkdir(join(root, "output"), { recursive: true });
+  await writeFile(output, "export const complete = true;\\n");
+};
+assert.equal((await runCachedTask(root, build, runBuild)).hit, false);
+assert.equal((await runCachedTask(root, build, runBuild)).hit, true);
+assert.equal(builds, 1, "Actions leaves validated build-output reuse available");
+await writeFile(output, "changed output\\n");
+assert.equal((await runCachedTask(root, build, runBuild)).hit, false);
+await rm(output);
+assert.equal((await runCachedTask(root, build, runBuild)).hit, false);
+assert.equal((await runCachedTask(root, build, runBuild, { forceFresh: true })).hit, false);
+assert.equal(builds, 4, "Corrupt, absent and force-fresh build outputs execute again");
+process.stdout.write("Actions cache policy verified\\n");
+`,
+    "utf8",
+  );
+  const result = await runProcess(root, process.execPath, [probe], {
+    env: { ...process.env, GITHUB_ACTIONS: "true", CI: "true" },
+    timeoutMs: 60_000,
+    maximumBytes: 64 * 1024,
+    maximumLineBytes: 8192,
+  });
+  expect(result.termination).toBe("closed");
+  expect(result.outcome).toBe("exited");
+  expect(result.code, diagnostic(result.stderr).slice(-4000)).toBe(0);
+  expect(result.stdout).toBe("Actions cache policy verified\n");
+});
 
 test("local verification keeps Git clean and tracked mode promotes validated local success", async () => {
   const root = await fixture();
@@ -577,7 +725,11 @@ test("staged receipts reject mismatched index without changing it and support an
 
 test("tracked success is portable to a fresh local clone and has Git history provenance", async () => {
   const root = await fixture();
-  const copy = `${root}-clone`;
+  const seed = await workerSeed;
+  if (!seed) throw new Error("Missing verification fixture seed");
+  const seedCommit = git(seed, ["rev-parse", "--verify", "HEAD"]).trim();
+  const seedIndex = await readFile(join(seed, ".git/index"));
+  const copy = await mkdtemp("teamagent-verification-copy-");
   try {
     await runCachedTask(root, task, async () => {});
     git(root, ["add", ".verification"]);
@@ -590,8 +742,14 @@ test("tracked success is portable to a fresh local clone and has Git history pro
         })
       ).hit,
     ).toBe(true);
-    expect((await verificationCacheStatus(copy, "fixture")).repositoryInputsMatch).toBe(true);
-    expect((await verificationCacheStatus(copy, "fixture")).commit).toMatch(/^[a-f0-9]{40}$/u);
+    const status = await verificationCacheStatus(copy, "fixture");
+    expect(status.repositoryInputsMatch).toBe(true);
+    expect(status.commit).toMatch(/^[a-f0-9]{40}$/u);
+    expect(status.commit).not.toBe(seedCommit);
+    expect(git(seed, ["rev-parse", "--verify", "HEAD"]).trim()).toBe(seedCommit);
+    expect(await readFile(join(seed, ".git/index"))).toEqual(seedIndex);
+    expect(await readFile(join(seed, "input.ts"), "utf8")).toBe(initialFiles["input.ts"]);
+    await rejects(lstat(join(seed, ".verification")), { code: "ENOENT" });
   } finally {
     await rm(root, { recursive: true, force: true });
     await rm(copy, { recursive: true, force: true });
@@ -1290,8 +1448,8 @@ test("audited groups cover every file once, preserve unknown order and fall back
     "remaining",
     "test/research-git.test.ts",
     "test/workflow.test.ts",
-    "test/analysis-sync.test.ts",
     "test/verification-cache.test.ts",
+    "test/analysis-sync.test.ts",
   ]);
   expect(testBatches(["test/unknown.test.ts"])).toEqual([
     { name: "remaining", files: ["test/unknown.test.ts"] },
@@ -1319,6 +1477,7 @@ test("audited groups cover every file once, preserve unknown order and fall back
 test("audited cache batch waits for a slot without exceeding the three-worker cap", async () => {
   const files = [
     "test/unknown.test.ts",
+    "test/import-http-cache.test.ts",
     "test/research-git.test.ts",
     "test/workflow.test.ts",
     "test/analysis-sync.test.ts",
@@ -1328,6 +1487,7 @@ test("audited cache batch waits for a slot without exceeding the three-worker ca
     testBatches(files).map((batch) => [batch.name, Promise.withResolvers<void>()] as const),
   );
   const analysisStarted = Promise.withResolvers<void>();
+  const workflowStarted = Promise.withResolvers<void>();
   const cacheStarted = Promise.withResolvers<void>();
   const started: string[] = [];
   const completed: string[] = [];
@@ -1343,6 +1503,7 @@ test("audited cache batch waits for a slot without exceeding the three-worker ca
     if (!gate) throw new Error("Unexpected audited fixture batch");
     maximum = Math.max(maximum, ++active);
     started.push(batch.name);
+    if (batch.name === "test/workflow.test.ts") workflowStarted.resolve();
     if (batch.name === "test/analysis-sync.test.ts") analysisStarted.resolve();
     if (batch.name === "test/verification-cache.test.ts") cacheStarted.resolve();
     await gate.promise;
@@ -1350,12 +1511,15 @@ test("audited cache batch waits for a slot without exceeding the three-worker ca
     active--;
   });
   try {
-    expect(started).toEqual(["remaining", "test/research-git.test.ts", "test/workflow.test.ts"]);
-    finish("test/research-git.test.ts");
-    await analysisStarted.promise;
+    expect(started).toEqual(["remaining", "test/research-git.test.ts", "http-and-memory-cli"]);
+    finish("http-and-memory-cli");
+    await workflowStarted.promise;
     expect(started).not.toContain("test/verification-cache.test.ts");
-    finish("test/analysis-sync.test.ts");
+    finish("test/research-git.test.ts");
     await cacheStarted.promise;
+    expect(started).not.toContain("test/analysis-sync.test.ts");
+    finish("test/verification-cache.test.ts");
+    await analysisStarted.promise;
     expect(active).toBe(3);
     expect(maximum).toBe(3);
   } finally {

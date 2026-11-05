@@ -45,11 +45,17 @@ rejection history, legacy migration and invalidation of both receipt stores;
 success for different inputs does not clear earlier failed keys, and switching
 stores cannot bypass a force-fresh failure.
 
-Tool launches have a 120-second cap; the complete unit phase, including every admitted child, has a 240-second cap. The root Stop hook separately caps its assembled verification subprocess at 300 seconds. Its outer command budget is 420 seconds, allowing the unchanged 60-second archive operation and cleanup overhead. SubagentStop retains its 90-second outer budget. A timeout is a failed gate, not a skipped check; longer specialized integration/benchmark jobs need explicit separately bounded tasks.
+Tool launches have a 120-second cap; the complete unit phase, including every admitted child, has a 360-second cap, explicitly approved on 2026-11-02. The unit runner retains its 120-second per-test default and existing explicit case limits. The root Stop hook separately caps its assembled verification subprocess at 300 seconds. Its outer command budget is 420 seconds, allowing the unchanged 60-second archive operation and cleanup overhead. SubagentStop retains its 90-second outer budget. A timeout is a failed gate, not a skipped check; longer specialized integration/benchmark jobs need explicit separately bounded tasks.
+
+The independently bounded workflow review and Stop hook may require successful
+step evidence for exact-input reuse. A cold or force-fresh run is not guaranteed
+to fit their shorter assembled budget. Run the complete step separately first;
+reuse still requires matching inputs, prerequisites, output integrity and live
+checks, and never turns a partial or timed-out attempt into success.
 
 The resource-aware unit scheduler and audited batches are specified in
 the [cache contract](cache.md#measurements-and-scheduling). Every group shares
-the same 240-second deadline; parallel execution does not extend it. The live
+the same 360-second deadline; parallel execution does not extend it. The live
 prerequisite probe permits read-only use of provisioned Python bytecode and
 fingerprints its bytes before accepting cache reuse. Environment-honoring unit
 fixtures receive fresh bytecode prefixes; isolated converter and OmniVoice
@@ -97,6 +103,11 @@ TypeScript enforces strict mode, unchecked-index safety, exact optional fields, 
 Structural checks are not proof of correctness or a sandbox. Schema and semantic validation, least-privilege capabilities, human review and behavioral tests remain required. Add focused rules and regression fixtures for repeated structural review findings. Keep exceptions narrow and documented at the actual third-party adapter.
 
 ## Hooks and scope
+
+The [project-aware launcher](project-launcher.md) is an explicit caller surface.
+It does not replace the local hook bootstrap or enable Mise inside a normal
+gate. Its helper sources are covered by the verification engine's existing
+`app/check` input scope; the launcher identity alone is not reusable success.
 
 - `.agents/hooks/after-step.json` and `before-review.json` describe required workflow commands. They are portable instructions, not undocumented automatic integrations.
 - `.githooks/pre-commit` executes review with local receipt writes and validates changed staged receipts against Git's actual active index. It rejects any staged or nonignored working-tree drift and does not fix sources. `.githooks/commit-msg` validates the bounded conventional message. `hooks:install` preserves conflicting hook configuration and stores `teamagent.bunPath` only in local Git configuration. Both hook files must have executable Git index modes for portable checkouts.

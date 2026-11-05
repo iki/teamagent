@@ -53,6 +53,8 @@ internal static class OwnedProcess {
     [DllImport("kernel32.dll", SetLastError = true)] static extern bool TerminateProcess(IntPtr process, uint code);
     [DllImport("kernel32.dll", SetLastError = true)] static extern uint ResumeThread(IntPtr thread);
     [DllImport("kernel32.dll", SetLastError = true)] static extern bool CloseHandle(IntPtr handle);
+    [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)] static extern IntPtr CreateFileW(string name, uint access, uint sharing, IntPtr security, uint creation, uint attributes, IntPtr template);
+    [DllImport("kernel32.dll", SetLastError = true)] static extern bool WriteFile(IntPtr file, byte[] bytes, uint count, out uint written, IntPtr overlapped);
     [DllImport("kernel32.dll", SetLastError = true)] static extern IntPtr OpenProcess(uint access, bool inherit, uint id);
     [DllImport("kernel32.dll", SetLastError = true)] static extern bool GetProcessTimes(IntPtr process, out long creation, out long exit, out long kernel, out long user);
     [DllImport("kernel32.dll")] static extern IntPtr GetCurrentProcess();
@@ -96,21 +98,71 @@ internal static class OwnedProcess {
             Thread.Sleep(10);
         }
     }
+    static void WriteCompletion(string path, string token, int code) {
+        Guid identity;
+        if (!Guid.TryParseExact(token, "D", out identity) || identity.ToString("D") != token
+            || code < 0 || code > 255 || code == 253)
+            throw new Exception("Invalid completion identity or status");
+        string receipt = "{\"version\":1,\"token\":\"" + token + "\",\"code\":"
+            + code.ToString(System.Globalization.CultureInfo.InvariantCulture) + "}\n";
+        if (receipt.Length > 256) throw new Exception("Completion exceeds its byte bound");
+        byte[] bytes = new byte[receipt.Length];
+        for (int i = 0; i < receipt.Length; i++) {
+            if (receipt[i] > 0x7f) throw new Exception("Completion must be ASCII");
+            bytes[i] = (byte)receipt[i];
+        }
+        // GENERIC_WRITE, no sharing or inheritance, CREATE_NEW, FILE_ATTRIBUTE_NORMAL.
+        IntPtr file = CreateFileW(path, 0x40000000, 0, IntPtr.Zero, 1, 0x80, IntPtr.Zero);
+        Check(file != IntPtr.Zero && file != new IntPtr(-1), "Create exclusive completion");
+        try {
+            uint written;
+            Check(WriteFile(file, bytes, (uint)bytes.Length, out written, IntPtr.Zero), "Write completion");
+            if (written != (uint)bytes.Length) throw new Exception("Incomplete completion write");
+        } finally {
+            // This live handshake needs visibility before exit, not power-loss
+            // durability. Its receipt never grants recovery authority.
+            Check(CloseHandle(file), "Close completion");
+        }
+    }
     static int Main(string[] arguments) {
         IntPtr job = IntPtr.Zero, parent = IntPtr.Zero, cancellation = IntPtr.Zero, attributes = IntPtr.Zero, jobList = IntPtr.Zero;
         var process = new ProcessInfo();
-        bool assigned = false, attributesInitialized = false;
+        bool assigned = false, attributesInitialized = false, cleanupConfirmed = false;
         int result = 254;
         try {
             uint parentId;
-            if (arguments.Length == 2 && arguments[0] == "--stop") {
-                cancellation = OpenEventW(2, false, arguments[1]);
-                Check(cancellation != IntPtr.Zero, "Open owned cancellation event");
-                Check(SetEvent(cancellation), "Cancel owned process");
-                return 0;
+            if (arguments.Length == 3 && arguments[0] == "--stop") {
+                uint supervisorId;
+                if (!uint.TryParse(arguments[2], out supervisorId) || supervisorId == 0)
+                    throw new Exception("Expected owned supervisor identity");
+                // Keep one process handle while waiting: startup and exit can both
+                // leave the event absent, and a numeric PID can later be reused.
+                parent = OpenProcess(0x100000, false, supervisorId);
+                Check(parent != IntPtr.Zero, "Open owned supervisor process");
+                var deadline = Stopwatch.StartNew();
+                while (true) {
+                    cancellation = OpenEventW(2, false, arguments[1]);
+                    if (cancellation != IntPtr.Zero) {
+                        Check(SetEvent(cancellation), "Cancel owned process");
+                        return 0;
+                    }
+                    int error = Marshal.GetLastWin32Error();
+                    if (error != 2) throw new Win32Exception(error, "Open owned cancellation event");
+                    uint state = WaitForSingleObject(parent, 10);
+                    if (state == 0) return 0;
+                    if (state != 258) throw new Win32Exception(Marshal.GetLastWin32Error(), "Wait for owned supervisor");
+                    if (deadline.ElapsedMilliseconds >= 5000)
+                        throw new Exception("Owned cancellation event did not become available");
+                }
             }
-            if (arguments.Length < 3 || !uint.TryParse(arguments[0], out parentId) || !System.IO.Path.IsPathRooted(arguments[2]))
-                throw new Exception("Expected owner process ID and absolute executable");
+            Guid completionToken;
+            if (arguments.Length < 5 || !uint.TryParse(arguments[0], out parentId)
+                || !System.IO.Path.IsPathRooted(arguments[2]) || arguments[2].Length > 8192
+                || System.IO.Path.GetFileName(arguments[2]) != "completion.json"
+                || !Guid.TryParseExact(arguments[3], "D", out completionToken)
+                || completionToken.ToString("D") != arguments[3]
+                || !System.IO.Path.IsPathRooted(arguments[4]))
+                throw new Exception("Expected owner, completion identity and absolute executable");
             cancellation = CreateEventW(IntPtr.Zero, true, false, arguments[1]);
             Check(cancellation != IntPtr.Zero, "Create owned cancellation event");
             if (Marshal.GetLastWin32Error() == 183) throw new Exception("Owned cancellation identity collision");
@@ -143,8 +195,8 @@ internal static class OwnedProcess {
             startup.Startup.ShowWindow = 0;
             startup.Startup.Input = Standard(-10); startup.Startup.Output = Standard(-11); startup.Startup.Error = Standard(-12);
             var command = new StringBuilder();
-            for (int i = 2; i < arguments.Length; i++) { if (i > 2) command.Append(' '); command.Append(Quote(arguments[i])); }
-            Check(CreateProcessW(arguments[2], command, IntPtr.Zero, IntPtr.Zero, true, 0x08000000 | 0x80000 | 4, IntPtr.Zero, null, ref startup, out process), "Create suspended owned process");
+            for (int i = 4; i < arguments.Length; i++) { if (i > 4) command.Append(' '); command.Append(Quote(arguments[i])); }
+            Check(CreateProcessW(arguments[4], command, IntPtr.Zero, IntPtr.Zero, true, 0x08000000 | 0x80000 | 4, IntPtr.Zero, null, ref startup, out process), "Create suspended owned process");
             assigned = true;
             if (ResumeThread(process.Thread) == uint.MaxValue) throw new Win32Exception(Marshal.GetLastWin32Error(), "Resume owned process");
             uint completed = WaitForMultipleObjects(3, new IntPtr[] { parent, cancellation, process.Process }, false, uint.MaxValue);
@@ -156,7 +208,11 @@ internal static class OwnedProcess {
         } finally {
             try {
                 if (job != IntPtr.Zero && assigned) DrainJob(job);
-                else if (process.Process != IntPtr.Zero) Check(TerminateProcess(process.Process, 254), "Stop suspended unassigned child");
+                else if (process.Process != IntPtr.Zero) {
+                    Check(TerminateProcess(process.Process, 254), "Stop suspended unassigned child");
+                    Check(WaitForSingleObject(process.Process, 5000) == 0, "Join suspended unassigned child");
+                }
+                cleanupConfirmed = true;
             } catch (Exception error) { Console.Error.WriteLine("Owned process cleanup failed: " + error.Message); result = 253; }
             if (process.Thread != IntPtr.Zero) CloseHandle(process.Thread);
             if (process.Process != IntPtr.Zero) CloseHandle(process.Process);
@@ -167,6 +223,11 @@ internal static class OwnedProcess {
             if (attributes != IntPtr.Zero) Marshal.FreeHGlobal(attributes);
             if (jobList != IntPtr.Zero) Marshal.FreeHGlobal(jobList);
         }
+        // Bun's Windows transport exposes only the low exit-code byte. A fresh
+        // exclusive receipt distinguishes completed drainage from forced exit.
+        if (!cleanupConfirmed || result < 0 || result > 255 || result == 253) return 253;
+        try { WriteCompletion(arguments[2], arguments[3], result); }
+        catch { Console.Error.WriteLine("Owned process completion could not be recorded"); return 253; }
         return result;
     }
 }

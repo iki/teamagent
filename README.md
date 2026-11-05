@@ -91,6 +91,12 @@ Verification can reuse matching cooperative results committed under
 LF/export checks remain live. Web and desktop preparation caches are opt-in
 with `--cache`; native compilation and platform acceptance are separate checks.
 
+The [project-aware launcher](spec/project-launcher.md) runs another explicitly
+selected project's pinned Bun or Aube with owned process and scratch cleanup.
+Use `aube run --no-install project:run --help` for physical runtime overrides,
+literal command arguments and optional trusted Windows Mise environment capture.
+The host-only API is available through `teamagent/project-launcher`.
+
 Each module exports its public API and CLI descriptor. [Module rules](spec/architecture/modules.md)
 enforce those entry points and dependency boundaries. [Reuse decisions](spec/architecture/reuse.md)
 record provenance and licensing. Further product work follows the [delivery roadmap](spec/roadmap.md).

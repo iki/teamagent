@@ -37,6 +37,11 @@ completion claim for the product phases below.
 
 ## Research maintenance increment
 
+The [November 2 launcher review](analyses/project-launcher-sync-2026-11-02.md)
+adds explicit project-aware tool launch and optional trusted Windows Mise
+environment capture while retaining owned cleanup and verification boundaries.
+It changes no product completion criteria or automatic hook trust.
+
 The [research sync workflow](research-sync.md) maintains source lists, checkouts, text imports, and reviewed analysis baselines. Execution results, partial sources and remaining source-review work belong in [incremental analyses](analyses/README.md); implementing synchronization does not establish the product phases below or promote fetched findings automatically.
 
 ## Speech and media library increment

@@ -24,6 +24,12 @@ non-Windows test proves the Windows behavior.
 
 ## Resource classes
 
+Repository workflow observations admit at most two active Git reads and eight
+outstanding reads at one boundary. Independent reads settle before validation
+or error return; mutations remain sequenced separately. Failure diagnostic
+writes are serialized within each Git adapter. Every later publication boundary
+obtains fresh observations, and native ownership/fingerprints remain live.
+
 | Resource                                                                      | Owner and lifetime                                                                          |
 | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | Fresh scratch under `.tmp/`                                                   | The scope that created its ownership marker; dispose only after confirmed child shutdown.   |
@@ -98,7 +104,26 @@ preserved. Unmarked entries are preserved. Neither the operating system's
 temporary directory nor existing workflow locks, rejection history, diagnostics
 or conversations are recovery targets. This API is not a scheduled cleanup job.
 
+The research Git tests run PowerShell and Bash inside a supervised command.
+Their repositories belong to that command's marked scratch until the process
+tree has stopped. A confirmed run removes its fixtures; unconfirmed shutdown
+retains them. This does not reclaim the historical fixture directories under
+`.cache/research`.
+After validating inherited temporary routing, these fixtures use a direct
+command lease under the same project's `.tmp` so Git recovery references fit
+the isolated Windows Git path limits. Abrupt worker termination may retain that
+independent lease for explicit recovery; an enclosing unit lease does not grant
+permission to prune it.
+
 ## Process ownership
+
+An explicitly selected physical `projectRoot` can own supervisor artifacts and
+locks independently from the command's `cwd`. Default callers retain this
+repository as owner. Cross-project preparation still reads the trusted
+Teamagent supervisor source and compiler inputs, validates each target cache,
+and keys in-flight preparation by both physical owner and source identity.
+The [project launcher](project-launcher.md) applies the same owner to scratch and
+retains it when either environment capture or command cleanup is unconfirmed.
 
 `app/check/owned-process.ts` accepts a physical absolute executable and literal
 arguments; it does not use a shell. Argument counts and bytes, configured
@@ -116,6 +141,27 @@ quoted, spaced and trailing-backslash arguments; launches are hidden. A failed
 or forced supervisor cleanup reports unconfirmed termination and retains
 scratch, even when the direct process already exited.
 
+Windows completion requires a fresh, token-bound native record written only
+after successful job draining. The host validates its bounded schema, token and
+child status against the observed ordinary exit status. Raw external termination,
+missing or invalid records, reserved status 253 and unsupported child statuses
+remain unconfirmed. This prevents an ordinary forced supervisor exit from
+looking like a normally completed failed command. The record is cooperative
+completion evidence, not attestation against a hostile actor with the same
+filesystem authority. If the cancellation event has already closed, the adapter
+briefly joins an already-finishing supervisor before trying to kill it; an
+actual forced kill cannot establish successful cleanup.
+
+Each Windows command allocates a marked completion lease in the explicit
+project's `.tmp` root. Confirmed completion removes only that lease. Unknown
+completion retains it alongside the caller's command scratch for inspection;
+no receipt, workflow history or unrelated folder is pruned. The protocol does
+not depend on high exit-code bits surviving the Bun transport.
+The native writer completes its bounded synchronous write and closes the
+exclusive file handle before returning. This live handshake requires visibility to its waiting owner,
+not a durable disk flush after every command. It is never recovery authority
+after owner exit or power loss; those paths retain their separate proof rules.
+
 The native helper is compiled with the provisioned Windows compiler, without a
 download or dependency repair. Its cache key binds the C# source, TypeScript
 adapter, compiler and compiler-configuration bytes, explicit `mscorlib.dll` and
@@ -130,8 +176,26 @@ The cache permits at most 32 keyed directories and a 16-MiB binary. Reaching
 capacity fails for explicit inspection; it does not remove older artifacts.
 Only the current operation's exact pending files are removed automatically.
 
+Fully validated complete keyed artifacts can be read without the publication
+lock. Every read still hashes the full input closure before and after artifact
+inspection. The six independent input digests use the existing bounded reader
+pool and all settle before any result or error is returned. There is no timestamp
+shortcut or retained fingerprint result. Cooperative preparation never rewrites
+a complete keyed artifact, and the publication lock was already released before
+executable launch; this is not protection against noncooperating filesystem edits.
+
+Absent, empty or transiently incomplete artifacts use the existing bounded
+publication lock and are reinspected. Previously observed invalid evidence
+cannot disappear into an automatic rebuild; only a complete valid reinspection
+can recognize a concurrent writer finishing. Compilation, capacity admission,
+publication and exact pending-file cleanup remain locked. A warm read may use
+valid evidence while an unrelated publication lock exists; it never removes or
+adopts that lock, and new publication still requires its normal ownership checks.
+
 POSIX uses a detached process group, terminates that owned group and waits for
-its disappearance before reporting confirmed cleanup. This contract does not
+its disappearance before reporting confirmed cleanup. Stop, exit and close
+share one terminate-and-join operation, including absence and failure outcomes;
+they never signal or probe that identifier again after completion. This contract does not
 claim cleanup after abrupt death of the JavaScript owner or coverage of a
 descendant that deliberately leaves the owned process group. Nested owned
 adapters also create separate POSIX groups and can survive an outer JavaScript
@@ -146,7 +210,7 @@ guarantees must not be presented as cross-platform evidence.
 Workflow commands retain explicit exited, timeout, output-limit, cancelled and
 transport outcomes. Tools and unit batches fail when native launch or cleanup
 fails. Unit batches retain the 120-second per-test setting and the shared
-240-second phase deadline. Resource pressure may reduce admission or leave
+360-second phase deadline, explicitly approved on 2026-11-02. Resource pressure may reduce admission or leave
 queued files unrun; such a result is incomplete verification, not a partial pass.
 
 Fingerprint readers hash full content with 64-KiB buffers, at most four active

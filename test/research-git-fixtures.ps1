@@ -1,12 +1,79 @@
-param([string]$ProjectRoot=([IO.Path]::GetFullPath('..',$PSScriptRoot)))
+param([string]$ProjectRoot=([IO.Path]::GetFullPath('..',$PSScriptRoot)),[switch]$IdentityFixture)
 $ErrorActionPreference='Stop'
+$pathComparison=if ($IsWindows) { [StringComparison]::OrdinalIgnoreCase } else { [StringComparison]::Ordinal }
+$ProjectRoot=[IO.Path]::GetFullPath($ProjectRoot)
+if (-not $ProjectRoot.Equals([IO.Path]::GetFullPath('..',$PSScriptRoot),$pathComparison)) { throw 'research_fixture_project_mismatch' }
 . (Join-Path $ProjectRoot 'app/research/git-sync.ps1')
-$fixture=Join-Path $ProjectRoot ('.cache/research/fixtures-'+[Guid]::NewGuid().ToString('N'))
-[void][IO.Directory]::CreateDirectory($fixture)
+
+# The command runner owns this marked directory until every descendant stops.
+# Validate both possible layouts: a direct command, or a command beneath its enclosing owner.
+function Get-FixtureOwnerToken([string]$Directory,[string]$LabelPattern) {
+    $tokenPattern='[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}'
+    $leaf=[regex]::Match([IO.Path]::GetFileName($Directory),('\Arun-'+$LabelPattern+'-(?<token>'+$tokenPattern+')\z'))
+    if (-not $leaf.Success -or -not (Test-Path -LiteralPath $Directory -PathType Container)) { throw 'research_fixture_owner_directory_invalid' }
+    $marker=Get-ResearchSafePath $Directory '.owner.json'
+    $item=Get-Item -LiteralPath $marker -Force
+    if ($item.PSIsContainer -or -not [string]::IsNullOrEmpty($item.LinkType)) { throw 'research_fixture_marker_not_private' }
+    $text=Read-ResearchText $marker 4096
+    if ($text.Contains("`r") -or -not $text.EndsWith("`n")) { throw 'research_fixture_marker_not_lf' }
+    $document=$null
+    try {
+        $document=[Text.Json.JsonDocument]::Parse($text)
+        $owner=$document.RootElement
+        $keys=@($owner.EnumerateObject() | ForEach-Object { $_.Name } | Sort-Object)
+        if (($keys -join ',') -cne 'createdAt,host,pid,token,version') { throw 'invalid_fields' }
+        $token=$owner.GetProperty('token').GetString()
+        $creator=$owner.GetProperty('pid').GetInt32()
+        $created=$owner.GetProperty('createdAt').GetInt64()
+        if ($owner.GetProperty('version').GetInt32() -ne 1 -or $token -cne $leaf.Groups['token'].Value -or $creator -le 0 -or $created -lt 0 -or $created -gt 9007199254740991 -or -not $owner.GetProperty('host').GetString().Equals([Net.Dns]::GetHostName(),$pathComparison)) { throw 'invalid_owner' }
+        $process=[Diagnostics.Process]::GetProcessById($creator)
+        try { if ($process.HasExited) { throw 'owner_exited' } } finally { $process.Dispose() }
+    } catch { throw 'research_fixture_owner_invalid' } finally { if ($null -ne $document) { $document.Dispose() } }
+    return $token
+}
+$temporaryRoot=Join-Path $ProjectRoot '.tmp'
+if (-not [IO.Path]::IsPathFullyQualified($env:TEMP) -or -not [IO.Path]::IsPathFullyQualified($env:TEAMAGENT_TEMPORARY_PARENT) -or -not $ProjectRoot.Equals($env:TEAMAGENT_TEMPORARY_ROOT,$pathComparison)) { throw 'research_fixture_command_scratch_required' }
+$scratch=Get-ResearchSafePath $temporaryRoot (Get-ResearchRelativePath $temporaryRoot $env:TEMP)
+if (-not $scratch.Equals($env:TEMP,$pathComparison) -or -not $scratch.Equals($env:TMP,$pathComparison) -or -not $scratch.Equals($env:TMPDIR,$pathComparison)) { throw 'research_fixture_command_scratch_mismatch' }
+$commandToken=Get-FixtureOwnerToken $scratch 'command'
+$container=Get-ResearchSafePath $temporaryRoot (Get-ResearchRelativePath $temporaryRoot $env:TEAMAGENT_TEMPORARY_PARENT)
+if (-not $container.Equals($env:TEAMAGENT_TEMPORARY_PARENT,$pathComparison) -or -not ([IO.Path]::GetDirectoryName($container)).Equals($temporaryRoot,$pathComparison)) { throw 'research_fixture_container_invalid' }
+if ($scratch.Equals($container,$pathComparison)) { $containerToken=$commandToken } else {
+    if (-not ([IO.Path]::GetDirectoryName($scratch)).Equals($container,$pathComparison)) { throw 'research_fixture_command_parent_mismatch' }
+    $containerToken=Get-FixtureOwnerToken $container '[a-z0-9-]{1,24}'
+}
+if ($containerToken -cne $env:TEAMAGENT_TEMPORARY_PARENT_ID) { throw 'research_fixture_container_token_mismatch' }
+$fixture=Get-ResearchSafePath $scratch 'g'
+# New-Item without Force refuses an existing child, including an unexpected checkout.
+$createdFixture=New-Item -Path $scratch -Name 'g' -ItemType Directory -ErrorAction Stop
+if (-not $createdFixture.PSIsContainer -or -not $createdFixture.FullName.Equals($fixture,$pathComparison) -or ($createdFixture.Attributes -band [IO.FileAttributes]::ReparsePoint)) { throw 'research_fixture_child_invalid' }
+if (-not $IsWindows) { [IO.File]::SetUnixFileMode($fixture,([IO.UnixFileMode]::UserRead -bor [IO.UnixFileMode]::UserWrite -bor [IO.UnixFileMode]::UserExecute)) }
+if ($IdentityFixture) {
+    & (Join-Path $PSScriptRoot 'research-git-identities-fixtures.ps1') -ProjectRoot $ProjectRoot -FixtureRoot $fixture
+    [Console]::Write('FIXTURE_PATH '+(Get-ResearchRelativePath $ProjectRoot $fixture)+"`n")
+    return
+}
 function Assert-That([bool]$Condition,[string]$Name) { if (-not $Condition) { throw ('assertion_failed: '+$Name) }; [Console]::Write('PASS '+$Name+"`n") }
 function Put([string]$Path,[string]$Text) { [IO.File]::WriteAllText($Path,$Text,[Text.UTF8Encoding]::new($false)) }
 function Git([string]$Directory,[string[]]$Arguments) { $r=Invoke-ResearchGit $Directory $Arguments '' 15; if ($r.exitCode -ne 0) { throw ('fixture_git_failed: '+($Arguments -join ' ')+' '+$r.stderr) }; return $r.stdout.Trim() }
+function Get-FixtureGitRefPair([string]$Directory,[string]$First,[string]$Second) {
+    $result=Invoke-ResearchGit $Directory @('rev-parse','--revs-only','--end-of-options',$First,$Second) '' 15
+    if ($result.exitCode -ne 0 -or $result.stdout -isnot [string] -or $result.stdout.Length -gt 130) { throw 'fixture_git_ref_pair_failed' }
+    $pair=[regex]::Match($result.stdout,'\A([a-f0-9]{40}|[a-f0-9]{64})\n([a-f0-9]{40}|[a-f0-9]{64})\n\z',[Text.RegularExpressions.RegexOptions]::CultureInvariant)
+    if (-not $pair.Success -or $pair.Groups[1].Length -ne $pair.Groups[2].Length) { throw 'fixture_git_ref_pair_invalid' }
+    return @($pair.Groups[1].Value,$pair.Groups[2].Value)
+}
 function Rejects([scriptblock]$Operation,[string]$Name) { $rejected=$false; try { & $Operation | Out-Null } catch { $rejected=$true }; Assert-That $rejected $Name }
+function Set-FixtureGitIdentity([string]$Directory) {
+    $configuration=Join-Path $Directory '.git/config'
+    Put $configuration ((ConvertTo-ResearchLfText (Read-ResearchText $configuration))+"`n[commit]`n gpgsign = false`n[user]`n name = Fixture`n email = fixture@example.invalid`n")
+    $rows=(Git $Directory @('config','--local','--null','--get-regexp','^(commit\.gpgsign|user\.(name|email))$')).Split([char]0)
+    $valid=$rows.Count -eq 4 -and $rows[3] -ceq ''
+    foreach ($expected in @("commit.gpgsign`nfalse","user.name`nFixture","user.email`nfixture@example.invalid")) {
+        if (@($rows | Where-Object { $_ -ceq $expected }).Count -ne 1) { $valid=$false }
+    }
+    Assert-That $valid 'fixture Git identity has exact parsed values'
+}
 $root=Join-Path $fixture 'project';$source=Join-Path $fixture 'source';$remote=Join-Path $fixture 'remote.git';$work=Join-Path $fixture 'work'
 foreach ($dir in @($root,$source,$work)) { [void][IO.Directory]::CreateDirectory($dir) }
 # Serialized formatting is normalized; escaped CR in JSON string values stays data.
@@ -21,6 +88,27 @@ $lfConsole=[IO.StringWriter]::new();$lfConsole.NewLine="`r`n";$savedConsole=[Con
 try { [Console]::SetOut($lfConsole); Write-ResearchJsonOutput $lfValue } finally { [Console]::SetOut($savedConsole) }
 Assert-That (-not $lfConsole.ToString().Contains("`r") -and $lfConsole.ToString().EndsWith("`n") -and (ConvertFrom-Json $lfConsole.ToString()).label -ceq 'Žluťoučký') 'CLI JSON output overrides writer newline without altering data'
 $lfConsole.Dispose()
+
+# Validate the combined inspection protocol without launching more native commands.
+foreach ($width in @(40,64)) {
+    $metadataHead='a'*$width
+    foreach ($shallowValue in @('true','false')) {
+        $metadata=ConvertFrom-ResearchCheckoutMetadata ($shallowValue+"`n"+$metadataHead+"`n")
+        Assert-That ($metadata.head -ceq $metadataHead -and $metadata.shallow -eq ($shallowValue -ceq 'true')) 'checkout metadata retains exact object identity and shallow flag'
+    }
+}
+foreach ($invalidMetadata in @(
+    $null,17,@{head=('a'*40)},'',
+    ("false`n"+('a'*40)),
+    ("false`r`n"+('a'*40)+"`r`n"),
+    ("false`n"+('a'*40)+"`nextra`n"),
+    ("false`n"+('a'*40)+"`n`n"),
+    ("False`n"+('a'*40)+"`n"),
+    ("unknown`n"+('a'*40)+"`n"),
+    ("false`n"+('A'*40)+"`n"),
+    ("false`n"+('a'*41)+"`n"),
+    ("false`n"+('a'*65)+"`n")
+)) { Rejects { ConvertFrom-ResearchCheckoutMetadata $invalidMetadata } 'checkout metadata rejects malformed or incomplete fields' }
 
 Put (Join-Path $root '.env') "TEAMAGENT_GIT_SOURCES_DIR=../source`nTEAMAGENT_GIT_CACHE=cache`n"
 Put (Join-Path $root '.env.local') "TEAMAGENT_GIT_CACHE=cache local`n"
@@ -66,9 +154,7 @@ Rejects { Move-ResearchRepositoryDirectory $moveRoot $moveSource (Join-Path $fix
 Rejects { Move-ResearchRepositoryDirectory $moveRoot $moveSource (Join-Path $moveTarget 'nested') } 'directory rename requires same parent'
 Set-Item function:Move-ResearchDirectory $originalDirectoryMove
 [void](Git $work @('init','--initial-branch=main'))
-[void](Git $work @('config','commit.gpgsign','false'))
-[void](Git $work @('config','user.name','Fixture'))
-[void](Git $work @('config','user.email','fixture@example.invalid'))
+Set-FixtureGitIdentity $work
 Put (Join-Path $work 'readme.txt') 'initial'
 [void](Git $work @('add','readme.txt'));[void](Git $work @('commit','-m','initial'))
 [void](Git $fixture @('clone','--bare','--',$work,$remote))
@@ -284,8 +370,7 @@ $settings.Values.TEAMAGENT_GIT_AUTO_STASH='true'
 Put (Join-Path $work 'readme.txt') 'upstream update';[void](Git $work @('commit','-am','upstream update'));[void](Git $work @('push','--',$remote,'main'))
 # A failed fast-forward command does not establish divergent history. Keep its
 # bounded diagnostic receipt while preserving the branch, existing stash and data.
-$failureHead=Git $checkout @('rev-parse','HEAD')
-$failureStash=Git $checkout @('rev-parse','refs/stash')
+$failureHead,$failureStash=Get-FixtureGitRefPair $checkout 'HEAD' 'refs/stash'
 $originalFailureGit=(Get-Item function:Invoke-ResearchGit).ScriptBlock
 function Invoke-ResearchGit([string]$Directory,[string[]]$Arguments,[string]$InputText='',[int]$TimeoutSeconds=120,[switch]$ReadOnly) {
     if ($Arguments.Count -gt 0 -and $Arguments[0] -eq 'merge') {
@@ -306,7 +391,8 @@ try {
         $journal=Read-ResearchText ([IO.Path]::GetFullPath($failedUpdate.recovery.journal,$root))
         Assert-That ($failedUpdate.status -eq 'error' -and $failedUpdate.errors -contains $failure.code -and $diagnostic.outcome -eq $failure.outcome -and $diagnostic.branchDistance.status -eq 'ready' -and $diagnostic.branchDistance.ahead -eq 0 -and $diagnostic.branchDistance.behind -gt 0 -and $script:failureMergeCalls -eq 1) ('fast-forward '+$failure.name+' remains operational and is never retried')
         $expectedRecoveryStatus=if ($failure.response.exitCode -lt 0) {'fast_forward_uncertain'} else {'fast_forward_failed'}
-        Assert-That ((Git $checkout @('rev-parse','HEAD')) -eq $failureHead -and (Git $checkout @('rev-parse','refs/stash')) -eq $failureStash -and $failedUpdate.recovery.status -eq $expectedRecoveryStatus -and $failedUpdate.recovery.beforeHead -eq $failureHead) ('fast-forward '+$failure.name+' retains original HEAD stash and failure journal')
+        $afterFailure=Get-FixtureGitRefPair $checkout 'HEAD' 'refs/stash'
+        Assert-That ($afterFailure[0] -ceq $failureHead -and $afterFailure[1] -ceq $failureStash -and $failedUpdate.recovery.status -eq $expectedRecoveryStatus -and $failedUpdate.recovery.beforeHead -eq $failureHead) ('fast-forward '+$failure.name+' retains original HEAD stash and failure journal')
         Assert-That ($journal.Length -lt 4096 -and -not $journal.Contains("`r") -and $journal -notmatch 'fixture-private|fixture-user|fixture-password|fixture-query-secret|private-filter-data|PRIVATE_DUMP|Authorization:') ('fast-forward '+$failure.name+' journal is bounded LF and contains no raw credentials or payload')
         if ($failure.response.exitCode -ge 0) {
             $expectedStderr=[Text.Encoding]::UTF8.GetBytes($failure.response.stderr)
@@ -318,7 +404,7 @@ try {
 } finally { Set-Item function:Invoke-ResearchGit $originalFailureGit }
 $updated=Invoke-ResearchRepository $entries[0] $dirty $settings $now '' '' 15
 Assert-That ($updated.status -eq 'updated' -and (Read-ResearchText (Join-Path $checkout 'readme.txt')) -eq 'upstream update') 'fast forward update'
-[void](Git $checkout @('config','commit.gpgsign','false'));[void](Git $checkout @('config','user.name','Fixture'));[void](Git $checkout @('config','user.email','fixture@example.invalid'))
+Set-FixtureGitIdentity $checkout
 Put (Join-Path $checkout 'local.txt') 'local commit';[void](Git $checkout @('add','local.txt'));[void](Git $checkout @('commit','-m','local commit'))
 $localHead=Git $checkout @('rev-parse','HEAD')
 Put (Join-Path $work 'readme.txt') 'divergent';[void](Git $work @('commit','-am','divergent'));[void](Git $work @('push','--',$remote,'main'))
@@ -327,7 +413,7 @@ Assert-That ($diverged.status -eq 'diverged' -and $diverged.errors -contains 'lo
 $detachedEntry=@{id='ai-agents--detached';category='ai-agents';name='detached';sourcePath='ai-agents/detached';url=$url}
 $detachedRow=Invoke-ResearchRepository $detachedEntry $null $settings $now '' '' 15
 $detachedPath=[IO.Path]::GetFullPath($detachedRow.path,$root)
-[void](Git $detachedPath @('config','commit.gpgsign','false'));[void](Git $detachedPath @('config','user.name','Fixture'));[void](Git $detachedPath @('config','user.email','fixture@example.invalid'))
+Set-FixtureGitIdentity $detachedPath
 [void](Git $detachedPath @('checkout','--detach',$detachedRow.head))
 Put (Join-Path $detachedPath 'detached-only.txt') 'preserve in recovery branch'
 [void](Git $detachedPath @('add','detached-only.txt'));[void](Git $detachedPath @('commit','-m','detached evidence'))
@@ -340,7 +426,7 @@ Assert-That ((Read-ResearchText (Join-Path $detachedPath 'detached-untracked.txt
 $untrackedEntry=@{id='ai-agents--untracked';category='ai-agents';name='untracked';sourcePath='ai-agents/untracked';url=$url}
 $untrackedRow=Invoke-ResearchRepository $untrackedEntry $null $settings $now '' '' 15
 $untrackedPath=[IO.Path]::GetFullPath($untrackedRow.path,$root)
-[void](Git $untrackedPath @('config','commit.gpgsign','false'));[void](Git $untrackedPath @('config','user.name','Fixture'));[void](Git $untrackedPath @('config','user.email','fixture@example.invalid'))
+Set-FixtureGitIdentity $untrackedPath
 [void](Git $untrackedPath @('checkout','--no-track','-b','internal-staging'))
 Put (Join-Path $untrackedPath 'staging-only.txt') 'preserve original staging branch'
 [void](Git $untrackedPath @('add','staging-only.txt'));[void](Git $untrackedPath @('commit','-m','local staging evidence'))
@@ -352,7 +438,8 @@ $primaryRow=Invoke-ResearchRepository $untrackedEntry $blockedStaging $settings 
 $settings.UsePrimaryBranch=$false
 $stagingUpstream=Invoke-ResearchGit $untrackedPath @('rev-parse','--symbolic-full-name','internal-staging@{upstream}') '' 15
 Assert-That ($primaryRow.status -eq 'updated' -and (Git $untrackedPath @('symbolic-ref','--short','HEAD')) -eq 'main' -and $primaryRow.recovery.sourceBranch -eq 'internal-staging') ('explicit primary option switches safely: '+$primaryRow.status+' '+($primaryRow.errors -join ','))
-Assert-That ((Git $untrackedPath @('rev-parse','internal-staging')) -eq $stagingHead -and (Git $untrackedPath @('rev-parse',$primaryRow.recovery.recoveryRef)) -eq $stagingHead -and $stagingUpstream.exitCode -ne 0 -and -not (Test-Path -LiteralPath (Join-Path $untrackedPath 'staging-only.txt'))) 'original untracked branch, exact commit and upstream config preserved'
+$stagingRefs=Get-FixtureGitRefPair $untrackedPath 'internal-staging' $primaryRow.recovery.recoveryRef
+Assert-That ($stagingRefs[0] -eq $stagingHead -and $stagingRefs[1] -eq $stagingHead -and $stagingUpstream.exitCode -ne 0 -and -not (Test-Path -LiteralPath (Join-Path $untrackedPath 'staging-only.txt'))) 'original untracked branch, exact commit and upstream config preserved'
 
 $missingEntry=@{id='ai-agents--missing-upstream';category='ai-agents';name='missing-upstream';sourcePath='ai-agents/missing-upstream';url=$url}
 $missingRow=Invoke-ResearchRepository $missingEntry $null $settings $now '' '' 15
@@ -373,7 +460,8 @@ $branchConfigBefore=Read-ResearchText (Join-Path $missingPath '.git/config')
 $primaryMissing=Invoke-ResearchRepository $missingEntry $blockedMissing $settings $now '' '' 15
 $settings.UsePrimaryBranch=$false
 Assert-That ($primaryMissing.status -eq 'updated' -and (Git $missingPath @('symbolic-ref','--short','HEAD')) -eq 'main' -and $primaryMissing.recovery.reason -eq 'missing_upstream_primary_opt_in' -and $primaryMissing.recovery.sourceUpstream -eq 'refs/remotes/origin/retired-staging') ('primary opt-in recovers missing origin upstream using authoritative default: '+$primaryMissing.status+' '+($primaryMissing.errors -join ','))
-Assert-That ((Git $missingPath @('rev-parse','retired-staging')) -eq $missingHead -and (Git $missingPath @('rev-parse',$primaryMissing.recovery.recoveryRef)) -eq $missingHead -and (Read-ResearchText (Join-Path $missingPath '.git/config')) -eq $branchConfigBefore) 'missing-upstream recovery preserves original branch and exact config'
+$missingRefs=Get-FixtureGitRefPair $missingPath 'retired-staging' $primaryMissing.recovery.recoveryRef
+Assert-That ($missingRefs[0] -eq $missingHead -and $missingRefs[1] -eq $missingHead -and (Read-ResearchText (Join-Path $missingPath '.git/config')) -eq $branchConfigBefore) 'missing-upstream recovery preserves original branch and exact config'
 
 $conflictEntry=@{id='ai-agents--conflict';category='ai-agents';name='conflict';sourcePath='ai-agents/conflict';url=$url}
 $conflictRow=Invoke-ResearchRepository $conflictEntry $null $settings $now '' '' 15
@@ -498,7 +586,7 @@ try {
     Rejects { Invoke-ResearchGitSync -ProjectRoot $root -Action observe -UsePrimaryBranch } 'observation rejects checkout mutation flags'
     $observeLock=[IO.File]::Open((Join-Path $root '.cache/research/git-sync.lock'),[IO.FileMode]::OpenOrCreate,[IO.FileAccess]::Write,[IO.FileShare]::None)
     try { Rejects { Invoke-ResearchGitSync -ProjectRoot $root -Action observe } 'observation respects the shared maintenance lock' } finally { $observeLock.Dispose() }
-    # Exercise the real checkout reader with only its HEAD subprocess failing.
+    # Exercise the real checkout reader with only its combined identity subprocess failing.
     # Other Git responses are deterministic, so these boundary cases launch no Git processes.
     $oldHeadFailureGit=${function:Invoke-ResearchGit}
     function Invoke-ResearchGit([string]$Directory,[string[]]$Arguments,[string]$InputText='',[int]$TimeoutSeconds=120,[switch]$ReadOnly) {
@@ -507,21 +595,20 @@ try {
         switch ($Arguments -join ' ') {
             'remote get-url origin' { return @{exitCode=0;stdout=$observationRow.url;stderr='';error=''} }
             'status --porcelain=v1 --untracked-files=normal --ignore-submodules=none' { return @{exitCode=0;stdout='';stderr='';error=''} }
-            'rev-parse --is-shallow-repository' { return @{exitCode=0;stdout='false';stderr='';error=''} }
-            'rev-parse --verify HEAD' { $script:observeHeadQueryCalls++;return $script:observeHeadResponse }
+            'rev-parse --is-shallow-repository --verify HEAD' { $script:observeHeadQueryCalls++;return $script:observeHeadResponse }
             default { throw 'fixture_unexpected_inspection_query' }
         }
     }
     try {
         foreach ($headFailure in @(
-            @{name='nonzero exit with stale-looking output';response=@{exitCode=1;stdout=$beforeCheckoutHead;stderr='fixture failure';error=''}},
+            @{name='nonzero exit with stale-looking output';response=@{exitCode=1;stdout=("false`n"+$beforeCheckoutHead+"`n");stderr='fixture failure';error=''}},
             @{name='timeout';response=@{exitCode=-1;stdout='';stderr='';error='process_timeout_or_launch_failure'}},
             @{name='malformed successful response';response=@{exitCode=0;stdout='not-a-commit';stderr='';error=''}}
         )) {
             $script:observeQueryCalls=0;$script:observeHeadQueryCalls=0;$script:observeHeadResponse=$headFailure.response
             $headFailureObservation=Invoke-ResearchGitSync -ProjectRoot $root -Action observe -Now $now.AddHours(2)
             $headFailurePublished=ConvertFrom-Json (Read-ResearchText $observationPath) -AsHashtable
-            Assert-That ($script:observeQueryCalls -eq 4 -and $script:observeHeadQueryCalls -eq 1 -and $headFailureObservation.status -eq 'partial' -and $headFailurePublished.status -eq 'partial' -and $headFailurePublished.repositories[0].status -eq 'inspection_failed' -and $null -eq $headFailurePublished.repositories[0].head -and $null -eq $headFailurePublished.repositories[0].dirty -and $null -eq $headFailurePublished.repositories[0].shallow) ('HEAD '+$headFailure.name+' publishes incomplete inspection without a stale revision')
+            Assert-That ($script:observeQueryCalls -eq 3 -and $script:observeHeadQueryCalls -eq 1 -and $headFailureObservation.status -eq 'partial' -and $headFailurePublished.status -eq 'partial' -and $headFailurePublished.repositories[0].status -eq 'inspection_failed' -and $null -eq $headFailurePublished.repositories[0].head -and $null -eq $headFailurePublished.repositories[0].dirty -and $null -eq $headFailurePublished.repositories[0].shallow) ('HEAD '+$headFailure.name+' publishes incomplete inspection without a stale revision')
         }
     } finally { Set-Item function:Invoke-ResearchGit $oldHeadFailureGit }
     function Read-ResearchCheckout { throw 'injected_local_inspection_failure' }
@@ -595,7 +682,8 @@ $bashPath=if ($null -ne $bash) { $bash.Source } elseif (Test-Path -LiteralPath '
 if ($bashPath -eq '') { throw 'fixture_bash_required' }
 $loader=Join-Path $fixture 'loader';[void][IO.Directory]::CreateDirectory($loader)
 $loaderProbe='printf ''fixture_hooks_path=%s\n'' "$(git -c "core.hooksPath=$git_null_device" config --get core.hooksPath)"'
-Put (Join-Path $loader '.git-clone') ($header+"`nclone 'ai-agents/test' '$url'`n"+$loaderProbe+"`n")
+$loaderDeclaration=$header+"`nclone 'ai-agents/test' '$url'`n"
+Put (Join-Path $loader '.git-clone') ($loaderDeclaration+$loaderProbe+"`n")
 Put (Join-Path $loader '.env') 'TEAMAGENT_GIT_CACHE=cache with spaces'
 $info=[Diagnostics.ProcessStartInfo]::new();$info.FileName=$bashPath;$info.WorkingDirectory=$loader;$info.UseShellExecute=$false;$info.RedirectStandardInput=$true;$info.RedirectStandardOutput=$true;$info.RedirectStandardError=$true;$info.CreateNoWindow=$true
 $info.ArgumentList.Add('--noprofile');$info.ArgumentList.Add('--norc');$info.ArgumentList.Add('./.git-clone')
@@ -603,26 +691,55 @@ $bashResult=[TeamagentResearchProcess]::Run($info,'',20000,1048576)
 Assert-That ($bashResult[0] -eq '0' -and (Test-Path -LiteralPath (Join-Path $loader 'cache with spaces/ai-agents/test/.git'))) ('Bash literal cache clone: '+$bashResult[2])
 $nativeNull=if ($IsWindows) { 'NUL' } else { '/dev/null' }
 Assert-That ($bashResult[1].Contains('fixture_hooks_path='+$nativeNull)) 'Bash loader selects the native Git null hook device'
+Put (Join-Path $loader '.git-clone') $loaderDeclaration
 $cache=Join-Path $loader 'cache with spaces/ai-agents'
 $base=Get-ResearchSafePath $cache 'test';$renamed=Get-ResearchSafePath $cache 'xx-2501-test'
-Move-Item -LiteralPath $base -Destination $renamed
+$loaderMove=Move-ResearchRepositoryDirectory $cache $base $renamed
+Assert-That ($loaderMove.success) 'loader fixture publishes the renamed checkout without replacement'
 $bashResult=[TeamagentResearchProcess]::Run($info,'',20000,1048576)
 Assert-That ($bashResult[0] -eq '0' -and -not (Test-Path -LiteralPath $base)) 'Bash reuses renamed checkout'
 Put (Join-Path $loader '.git-clone') ($header+"`nclone 'ai-agents/xx-2401-test' '$url'`n")
 $bashResult=[TeamagentResearchProcess]::Run($info,'',20000,1048576)
 Assert-That ($bashResult[0] -eq '0' -and -not (Test-Path -LiteralPath (Join-Path $cache 'xx-2401-test'))) 'Bash stale source prefix does not clone duplicate'
-Move-Item -LiteralPath $renamed -Destination $base
+$loaderRestore=Move-ResearchRepositoryDirectory $cache $renamed $base
+Assert-That ($loaderRestore.success) 'loader fixture restores the active checkout without replacement'
 $bashResult=[TeamagentResearchProcess]::Run($info,'',20000,1048576)
 Assert-That ($bashResult[0] -eq '0') 'Bash reuses recovered active checkout'
 [void](Git $fixture @('clone','--',$url,(Join-Path $cache 'xx-2502-test')))
 $bashResult=[TeamagentResearchProcess]::Run($info,'',20000,1048576)
 Assert-That ($bashResult[0] -ne '0' -and $bashResult[2].Contains('clone_alias_ambiguous')) 'Bash refuses ambiguous aliases'
 
-foreach ($bad in @('TEAMAGENT_GIT_CACHE=$(touch pwned)',"TEAMAGENT_GIT_CACHE=x`nTEAMAGENT_GIT_CACHE=y",('TEAMAGENT_GIT_CACHE='+('x'*65537)))) {
-  Put (Join-Path $loader '.env') $bad
-  $bashResult=[TeamagentResearchProcess]::Run($info,'',20000,1048576)
-  Assert-That ($bashResult[0] -ne '0') 'Bash rejects unsafe or oversized config'
+$badConfigs=@(
+    @{text='TEAMAGENT_GIT_CACHE=$(touch pwned)';errors=@('dotenv_invalid_value')},
+    @{text="TEAMAGENT_GIT_CACHE=x`nTEAMAGENT_GIT_CACHE=y";errors=@('dotenv_duplicate_key')},
+    @{text=('TEAMAGENT_GIT_CACHE='+('x'*65537));errors=@('dotenv_oversized','dotenv_invalid_value')}
+)
+for ($caseIndex=0;$caseIndex -lt $badConfigs.Count;$caseIndex++) {
+    Put (Join-Path $loader "bad-config-$caseIndex") $badConfigs[$caseIndex].text
+}
+# Each subshell runs the same loader with a fresh environment and the exact case
+# bytes in .env. Only the outer Bash startup is shared. Dotenv remains inert data.
+$badDriver=@'
+set +e
+for case_id in 0 1 2; do
+    case_file="bad-config-$case_id"
+    [[ -f "$case_file" ]] || exit 90
+    case_data=''
+    IFS= read -r -d '' case_data < "$case_file"
+    [[ $? == 1 && -n "$case_data" ]] || exit 91
+    printf '%s' "$case_data" > .env || exit 92
+    ( . ./.git-clone )
+    printf '%s=%d\n' "$case_id" "$?"
+done
+'@
+$info.ArgumentList[2]='-s'
+$bashResult=[TeamagentResearchProcess]::Run($info,($badDriver+"`n"),20000,1048576)
+$caseStatuses=$bashResult[1].Split([char]10)
+$caseErrors=$bashResult[2].Split([char]10)
+Assert-That ($bashResult[0] -ceq '0' -and $caseStatuses.Count -eq ($badConfigs.Count+1) -and $caseStatuses[-1] -ceq '' -and $caseErrors.Count -eq ($badConfigs.Count+1) -and $caseErrors[-1] -ceq '') 'Bash reports every malformed config case with complete LF records'
+for ($caseIndex=0;$caseIndex -lt $badConfigs.Count;$caseIndex++) {
+    Assert-That ($caseStatuses[$caseIndex] -ceq ($caseIndex.ToString()+'=2') -and $badConfigs[$caseIndex].errors -ccontains $caseErrors[$caseIndex]) 'Bash rejects unsafe or oversized config'
 }
 Assert-That (-not (Test-Path -LiteralPath (Join-Path $loader 'pwned'))) 'Bash never evaluates dotenv'
 Write-ResearchJson (Join-Path $fixture 'example-state.json') @{schemaVersion=1;discoveryComplete=$true;repositories=@($diverged)}
-[Console]::WriteLine('Fixture evidence: '+(Get-ResearchRelativePath $ProjectRoot $fixture))
+[Console]::Write('FIXTURE_PATH '+(Get-ResearchRelativePath $ProjectRoot $fixture)+"`n")

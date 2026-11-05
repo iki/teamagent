@@ -1,6 +1,6 @@
 /** Adapted from Trigon's cooperative input cache at 454e372c; hashes actual working bytes. */
 import { lstat, unlink } from "node:fs/promises";
-import { relative, resolve } from "node:path";
+import { isAbsolute, relative, resolve } from "node:path";
 import { Schema } from "effect";
 import { fileContentDigest, inventoryDigest } from "./cache-fingerprint.ts";
 import {
@@ -53,6 +53,92 @@ const Receipt = Schema.Struct({
 });
 type Receipt = typeof Receipt.Type;
 type Entry = { readonly mode: string; readonly object: string };
+const GitInspectionText = Schema.String.check(Schema.isMaxLength(16 * 1024 ** 2));
+const GitObjectFormat = Schema.Literals(["sha1", "sha256"]);
+const GitIndexEntry = Schema.Struct({
+  mode: Schema.String.check(Schema.isPattern(/^[0-7]{6}$/u)),
+  object: Schema.String.check(Schema.isPattern(/^(?:[a-f0-9]{40}|[a-f0-9]{64})$/u)),
+  stage: Schema.Literal("0"),
+  path: Schema.NonEmptyString,
+});
+const decodeInspectionText = Schema.decodeUnknownSync(GitInspectionText);
+const decodeObjectFormat = Schema.decodeUnknownSync(GitObjectFormat);
+const decodeIndexEntry = Schema.decodeUnknownSync(GitIndexEntry);
+
+function inspectionText(input: unknown): string {
+  try {
+    const text = decodeInspectionText(input);
+    if (Buffer.byteLength(text) > 16 * 1024 ** 2) throw new Error("Oversized Git inspection");
+    return text;
+  } catch {
+    throw new Error("Git inventory inspection requires bounded UTF-8 text");
+  }
+}
+
+/** One fresh observation; the optional query is a trusted host/test port, never configuration. */
+export function workingInventory(
+  root: string,
+  query: (args: readonly string[]) => unknown = (args) => gitText(root, args),
+): {
+  readonly format: typeof GitObjectFormat.Type;
+  readonly indexed: ReadonlyMap<string, Entry>;
+  readonly names: ReadonlySet<string>;
+} {
+  const metadata = inspectionText(
+    query(["rev-parse", "--show-object-format=storage", "--show-toplevel"]),
+  );
+  const separator = metadata.indexOf("\n");
+  if (separator < 0 || !metadata.endsWith("\n"))
+    throw new Error("Git repository metadata requires complete LF framing");
+  let format: typeof GitObjectFormat.Type;
+  try {
+    format = decodeObjectFormat(metadata.slice(0, separator));
+  } catch {
+    throw new Error("Unsupported or malformed Git object format");
+  }
+  // The root may itself contain LF on POSIX. Only the first and final delimiters are framing.
+  const top = metadata.slice(separator + 1, -1);
+  if (top.includes("\0") || !isAbsolute(top) || relative(resolve(top), resolve(root)))
+    throw new Error("Verification cache requires the actual repository root");
+  const text = inspectionText(
+    query(["ls-files", "--cached", "--stage", "--others", "--exclude-standard", "-t", "-z"]),
+  );
+  const indexed = new Map<string, Entry>();
+  const names = new Set<string>();
+  let offset = 0;
+  while (offset < text.length) {
+    const end = text.indexOf("\0", offset);
+    if (end < 0) throw new Error("Git inventory is not NUL-terminated");
+    const row = text.slice(offset, end);
+    offset = end + 1;
+    let path: string;
+    if (row.startsWith("? ")) {
+      path = scopePath(row.slice(2));
+    } else {
+      const match = /^[HS] ([0-7]{6}) ([a-f0-9]+) ([0-3])\t([\s\S]+)$/u.exec(row);
+      let entry: typeof GitIndexEntry.Type;
+      try {
+        entry = decodeIndexEntry({
+          mode: match?.[1],
+          object: match?.[2],
+          stage: match?.[3],
+          path: match?.[4],
+        });
+        if (entry.object.length !== (format === "sha1" ? 40 : 64))
+          throw new Error("Git object format mismatch");
+      } catch {
+        throw new Error("Cannot verify an unmerged or malformed Git index");
+      }
+      path = scopePath(entry.path);
+      indexed.set(path, { mode: entry.mode, object: entry.object });
+      if (indexed.size > 100_000) throw new Error("Git index exceeds verification bounds");
+    }
+    if (names.has(path)) throw new Error("Git inventory contains a duplicate path");
+    names.add(path);
+    if (names.size > 100_000) throw new Error("Git inventory exceeds verification bounds");
+  }
+  return { format, indexed, names };
+}
 const engineInputs = ["app/check", ".gitattributes", ".gitignore"];
 const systemPath = (path: string): boolean =>
   contains(receiptDirectory, path.toLowerCase()) || contains(cacheDirectory, path.toLowerCase());
@@ -129,14 +215,7 @@ function projection(
   return digest.finish();
 }
 async function workingProjection(root: string, task: Task): Promise<string> {
-  const indexed = indexEntries(root);
-  const names = new Set(indexed.keys());
-  for (const path of gitText(root, ["ls-files", "--others", "--exclude-standard", "-z"])
-    .split("\0")
-    .filter(Boolean))
-    names.add(scopePath(path));
-  const format = gitText(root, ["rev-parse", "--show-object-format"]).trim();
-  if (format !== "sha1" && format !== "sha256") throw new Error("Unsupported Git object format");
+  const { indexed, names, format } = workingInventory(root);
   const entries = new Map<string, Entry>();
   let totalBytes = 0;
   for (const path of [...names].sort()) {
@@ -287,6 +366,9 @@ async function matches(
   task: Task,
   identity: Awaited<ReturnType<typeof inputIdentity>>,
 ): Promise<(ReceiptSnapshot & { readonly path: string }) | undefined> {
+  // Submitted or restored receipts are cooperative evidence, not independent CI
+  // results. Actions must execute verification even when every input matches.
+  if (task.kind === "verification" && process.env.GITHUB_ACTIONS === "true") return undefined;
   try {
     if ((await readRejections(root, task)).includes(identity.key)) return undefined;
   } catch {

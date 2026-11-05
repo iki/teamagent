@@ -46,6 +46,7 @@ export const formatPaths = [
   "spec/dependencies.md",
   "spec/cache.md",
   "spec/resources.md",
+  "spec/project-launcher.md",
   ".workflow.json",
   "patches/trigon/registry.json",
   "spec/skills-audit.md",

@@ -12,7 +12,7 @@ import { delimiter, dirname, basename, isAbsolute, join } from "node:path";
 import { Schema } from "effect";
 
 export type Tool = "bun" | "aube";
-type Environment = Record<string, string | undefined>;
+export type Environment = Record<string, string | undefined>;
 const Version = Schema.String.check(Schema.isPattern(/^\d+\.\d+\.\d+(?:-[\w.-]+)?$/));
 const AubeVersionOutput = Schema.String.check(
   Schema.isPattern(
@@ -117,9 +117,18 @@ export function prependToolPath(env: Environment, directories: readonly string[]
   return result;
 }
 
-export function pinnedTool(root: string, tool: Tool, env: Environment = process.env): string {
+export function pinnedTool(
+  root: string,
+  tool: Tool,
+  env: Environment = process.env,
+  options: { readonly path?: string; readonly inheritOverride?: boolean } = {},
+): string {
   const version = toolchainPins(root)[tool];
-  const override = env[tool === "bun" ? "TEAMAGENT_BUN_PATH" : "TEAMAGENT_AUBE_PATH"];
+  const override =
+    options.path ??
+    (options.inheritOverride === false
+      ? undefined
+      : env[tool === "bun" ? "TEAMAGENT_BUN_PATH" : "TEAMAGENT_AUBE_PATH"]);
   let candidates: string[];
   if (override !== undefined) candidates = [override];
   else if (env.MISE_INSTALLS_DIR) {
@@ -138,7 +147,7 @@ export function pinnedTool(root: string, tool: Tool, env: Environment = process.
       .filter(([key]) => key.toLowerCase() === "path")
       .flatMap(([, value]) => value?.split(delimiter) ?? []);
     candidates = [
-      ...(tool === "bun" ? [process.execPath] : []),
+      ...(tool === "bun" && process.versions.bun === version ? [process.execPath] : []),
       ...paths
         .filter(isAbsolute)
         .map((path) => join(path, process.platform === "win32" ? `${tool}.exe` : tool)),
@@ -168,8 +177,12 @@ export function pinnedTool(root: string, tool: Tool, env: Environment = process.
       `Expected ${tool} ${version}; the selected physical executable failed its version check`,
     );
   }
+  const selectionGuidance =
+    options.inheritOverride === false
+      ? "supply an explicit per-call runtime path"
+      : `set TEAMAGENT_${tool.toUpperCase()}_PATH`;
   throw new Error(
-    `Missing physical ${tool} ${version}; install the pinned tool or set TEAMAGENT_${tool.toUpperCase()}_PATH`,
+    `Missing physical ${tool} ${version}; install the pinned tool or ${selectionGuidance}`,
   );
 }
 

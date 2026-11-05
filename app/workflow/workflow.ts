@@ -35,6 +35,7 @@ import {
   signingReady,
   snapshot,
   stageScope,
+  verifyCommitSignature,
   worktreeTree,
   type Git,
 } from "./git.ts";
@@ -346,7 +347,6 @@ export async function workflow(
         throw new Error("Freeze the task checkpoint first");
       await checkedScope(root, git, task);
       await requireProof(root, git, task, verifier);
-      await signingReady(root, git);
       await requireHooks(root, git);
       if ((await remoteHead(git, task.snapshot.remote, task.snapshot.ref)) !== task.snapshot.head)
         throw new Error("Remote differs from task baseline");
@@ -407,11 +407,7 @@ export async function workflow(
         (await git(["rev-parse", "HEAD^"])).trim() !== task.snapshot.head
       )
         throw new Error("Committed tree or parent changed");
-      await git(["verify-commit", commit]);
-      if ((await git(["show", "-s", "--format=%G?", commit])).trim() !== "G")
-        throw new Error("Commit signature is not verified");
-      if ((await git(["show", "-s", "--format=%GF", commit])).trim() !== expectedSigner.fingerprint)
-        throw new Error("Commit signer differs from the prepared identity");
+      await verifyCommitSignature(git, commit, expectedSigner.fingerprint);
       await checkedScope(root, git, task, false);
       if ((await signingReady(root, git)).identity !== task.signingIdentity)
         throw new Error("Signing trust changed during commit");

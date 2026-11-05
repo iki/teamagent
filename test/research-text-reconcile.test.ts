@@ -5,7 +5,7 @@ import { mkdir, readFile, readdir, rename, rm, stat, utimes, writeFile } from "n
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { Effect, Schema } from "effect";
-import { type CaptureResult, type MemoryApi } from "@/memory";
+import { MemoryError, type CaptureResult, type MemoryApi } from "@/memory";
 import { memoryManifestHash, memoryStorageMessage, openMemory } from "../app/memory/index.ts";
 import { MemoryExportManifestSchema } from "../app/memory/export.ts";
 import { syncTextResources } from "../app/research/text-sync.ts";
@@ -100,7 +100,7 @@ test("Windows sharing failures retry only atomic publication while retaining the
   expect(await readFile(path, "utf8")).toBe("Retained\n");
   expect(await readdir(root)).toEqual(["report.md"]);
 });
-async function fixture(secondSource = false, warningCount = 1) {
+async function fixture(secondSource = false, warningCount = 1, failInitialExport = false) {
   const root = await mkdtemp(join(tmpdir(), "teamagent-text-reconcile-"));
   roots.push(root);
   await writeFile(
@@ -157,7 +157,20 @@ async function fixture(secondSource = false, warningCount = 1) {
     }),
   );
   stores.push(store);
-  const first = await syncTextResources({ root }, { memory: store });
+  const first = await syncTextResources(
+    { root },
+    {
+      memory: failInitialExport
+        ? {
+            ...store,
+            export: () =>
+              Effect.fail(new MemoryError({ code: "storage", message: "Fixture export failure" })),
+          }
+        : store,
+    },
+  );
+  if (!failInitialExport && first.records.some((record) => record.status === "failed"))
+    throw new Error("Initial fixture export failed before reconciliation.");
   const before = first.records[0];
   if (!before?.sourceId || !before.versionId || !before.contentHash)
     throw new Error("Missing fixture pin.");
@@ -188,6 +201,46 @@ async function fixture(secondSource = false, warningCount = 1) {
   }
   return { root, store, before, candidate, calls: () => calls };
 }
+
+test("an export-failed capture returns the exact saved record and supports explicit offline recovery", async () => {
+  const f = await fixture(false, 1, true);
+  const path = join(f.root, ".cache/text/source-state.json");
+  const saved = (await readTextState(path)).records.find((record) => record.key === f.before.key);
+  if (!saved || !f.before.sourceId || !f.before.versionId || !f.before.contentHash)
+    throw new Error("Missing retained capture identity.");
+  expect(f.before.status).toBe("failed");
+  expect(f.before.validation).toBe("failed");
+  expect(f.before.warnings.join(" ")).toContain("successful capture is retained");
+  expect(JSON.stringify(f.before)).toBe(JSON.stringify(saved));
+  const hash = (record: typeof f.before) =>
+    createHash("sha256").update(JSON.stringify(record)).digest("hex");
+  expect(hash(f.before)).toBe(hash(saved));
+  const captures = f.calls();
+  // Restore the retained immutable version explicitly, without a fresh source capture.
+  await Effect.runPromise(
+    f.store.export(
+      f.before.sourceId,
+      join(f.root, ".cache/text/exports", f.before.sourceId, f.before.versionId),
+      f.before.versionId,
+    ),
+  );
+  expect(f.calls()).toBe(captures);
+  const request = await f.candidate();
+  expect(request.expectedRecordHash).toBe(hash(saved));
+  const calls = f.calls();
+  const adopted = await reconcileTextResource({ root: f.root, request });
+  expect(adopted.alreadyApplied).toBe(false);
+  expect(adopted.record.versionId).toBe(request.candidateVersionId);
+  expect((await reconcileTextResource({ root: f.root, request })).alreadyApplied).toBe(true);
+  const recovered = await syncTextResources({ root: f.root }, { memory: f.store });
+  expect(recovered.initialOrRefreshImports).toBe(0);
+  expect(recovered.records[0]?.status).toBe("pinned");
+  expect(recovered.records[0]?.versionId).toBe(request.candidateVersionId);
+  expect(f.calls()).toBe(calls);
+  expect(JSON.stringify(recovered.records[0])).toBe(
+    JSON.stringify((await readTextState(path)).records[0]),
+  );
+});
 
 test("explicit offline reconciliation retains static dates, exact originals, warnings and retry evidence", async () => {
   const f = await fixture();

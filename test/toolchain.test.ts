@@ -41,6 +41,24 @@ await test("physical tool selection binds exact pins and rejects shims, invalid 
     assert.throws(() => toolVersionOutput("aube", "2.5.1\nunexpected"));
     const env = { ...process.env, TEAMAGENT_BUN_PATH: process.execPath };
     assert.equal(pinnedTool(f.root, "bun", env), physicalToolPath(process.execPath, "bun"));
+    assert.equal(
+      pinnedTool(
+        f.root,
+        "bun",
+        { ...env, TEAMAGENT_BUN_PATH: "foreign-shim" },
+        { path: process.execPath, inheritOverride: false },
+      ),
+      physicalToolPath(process.execPath, "bun"),
+    );
+    assert.equal(
+      pinnedTool(
+        f.root,
+        "bun",
+        { ...env, TEAMAGENT_BUN_PATH: "foreign-shim", MISE_INSTALLS_DIR: undefined },
+        { inheritOverride: false },
+      ),
+      physicalToolPath(process.execPath, "bun"),
+    );
     for (const override of [
       "bun",
       join(f.root, ".shims", "bun.exe"),
@@ -58,6 +76,20 @@ await test("physical tool selection binds exact pins and rejects shims, invalid 
       "utf8",
     );
     assert.throws(() => pinnedTool(f.root, "bun", env), /Expected bun 1\.4\.999/);
+    assert.throws(
+      () =>
+        pinnedTool(
+          f.root,
+          "bun",
+          { PATH: "", MISE_INSTALLS_DIR: undefined },
+          { inheritOverride: false },
+        ),
+      /Missing physical bun 1\.4\.999; install the pinned tool or supply an explicit per-call runtime path/u,
+    );
+    assert.throws(
+      () => pinnedTool(f.root, "bun", { PATH: "", MISE_INSTALLS_DIR: undefined }),
+      /Missing physical bun 1\.4\.999; install the pinned tool or set TEAMAGENT_BUN_PATH/u,
+    );
     await writeFile(join(f.root, "package.json"), " ".repeat(1024 * 1024 + 1), "utf8");
     assert.throws(() => toolchainPins(f.root), /bounded regular/);
   } finally {

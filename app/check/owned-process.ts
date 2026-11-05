@@ -4,15 +4,67 @@ import { createHash, randomUUID } from "node:crypto";
 import { lstat, mkdir, opendir, realpath, rename, unlink, writeFile } from "node:fs/promises";
 import { basename, dirname, isAbsolute, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { Schema } from "effect";
 import { boundedRead, fileDigest, hasCode, safePath, withCacheLock } from "./cache-io.ts";
+import {
+  borrowTemporaryWorkspace,
+  createTemporaryWorkspace,
+  type TemporaryWorkspaceParent,
+} from "./temporary-workspace.ts";
 
-const root = fileURLToPath(new URL("../../", import.meta.url));
+const implementationRoot = fileURLToPath(new URL("../../", import.meta.url));
 const nativeDirectory = ".cache/verification/native-owned-process";
+const Completion = Schema.Struct({
+  version: Schema.Literal(1),
+  token: Schema.String.check(
+    Schema.isPattern(/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/u),
+  ),
+  code: Schema.Int.check(Schema.isGreaterThanOrEqualTo(0), Schema.isLessThanOrEqualTo(255)),
+});
 const builds = new Map<string, Promise<string>>();
+/** Trusted test observation only; never supplied by CLI, environment or project configuration. */
+export type OwnedPreparationObserver = (
+  phase: "optimistic-complete" | "optimistic-absent" | "optimistic-invalid" | "locked",
+) => void | Promise<void>;
 const samePath = (a: string, b: string): boolean =>
   process.platform === "win32" ? a.toLowerCase() === b.toLowerCase() : a === b;
 const digest = (value: string | Uint8Array): string =>
   createHash("sha256").update(value).digest("hex");
+
+/** A cooperative native drain receipt never authorizes cleanup of another lease. */
+export async function inspectOwnedProcessCompletion(
+  workspace: TemporaryWorkspaceParent,
+  status: number | null,
+): Promise<void> {
+  try {
+    await borrowTemporaryWorkspace(workspace.root, workspace.path, workspace.token);
+    const info = await lstat(join(workspace.path, "completion.json"));
+    if (!info.isFile() || info.isSymbolicLink() || info.nlink !== 1)
+      throw new Error("Completion must be a private regular file");
+    const text = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(
+      await boundedRead(workspace.path, "completion.json", 256),
+    );
+    if (text.includes("\r") || !text.endsWith("\n")) throw new Error("Completion must use LF");
+    const receipt = Schema.decodeUnknownSync(Schema.fromJsonString(Completion), {
+      onExcessProperty: "error",
+    })(text);
+    if (receipt.token !== workspace.token || receipt.code !== status || receipt.code === 253)
+      throw new Error("Completion identity or status mismatch");
+    await borrowTemporaryWorkspace(workspace.root, workspace.path, workspace.token);
+  } catch {
+    throw new Error("Owned native completion could not be confirmed");
+  }
+}
+
+/** Cache ownership is explicit; neither the command cwd nor environment chooses it. */
+async function physicalProjectDirectory(path: string): Promise<string> {
+  if (!isAbsolute(path)) throw new Error("Owned project root requires an absolute path");
+  const full = resolve(path);
+  const info = await lstat(full);
+  if (!info.isDirectory() || info.isSymbolicLink() || !samePath(await realpath(full), full))
+    throw new Error("Owned project root must be a physical directory");
+  return full;
+}
 
 async function physicalExecutable(path: string): Promise<string> {
   if (!isAbsolute(path)) throw new Error("Owned executable requires an absolute path");
@@ -63,10 +115,10 @@ export async function inspectOwnedProcessArtifact(
   }
 }
 
-async function nativeCapacity(key: string): Promise<void> {
-  const parent = await safePath(root, nativeDirectory, true);
+async function nativeCapacity(project: string, key: string): Promise<void> {
+  const parent = await safePath(project, nativeDirectory, true);
   await mkdir(parent, { recursive: true });
-  await safePath(root, nativeDirectory);
+  await safePath(project, nativeDirectory);
   let entries = 0;
   let existing = false;
   const directory = await opendir(parent);
@@ -85,7 +137,10 @@ async function nativeCapacity(key: string): Promise<void> {
 }
 
 /** The native compiler and source are provisioned inputs, never installed or fetched here. */
-async function windowsSupervisor(): Promise<string> {
+async function windowsSupervisor(
+  project: string,
+  observe?: OwnedPreparationObserver,
+): Promise<string> {
   const system = process.env.SystemRoot ?? process.env.SYSTEMROOT;
   if (!system || !isAbsolute(system)) throw new Error("Windows SystemRoot is unavailable");
   const compiler = await physicalExecutable(
@@ -95,112 +150,162 @@ async function windowsSupervisor(): Promise<string> {
     ["mscorlib.dll", "System.dll"].map((name) => physicalExecutable(join(dirname(compiler), name))),
   );
   const source = "app/check/owned-process-windows.cs";
-  const before = async (): Promise<string> =>
-    digest(
-      JSON.stringify([
-        await fileDigest(root, source, 1024 * 1024),
-        await fileDigest(root, "app/check/owned-process.ts", 1024 * 1024),
-        await fileDigest(dirname(compiler), "csc.exe", 64 * 1024 * 1024),
-        await fileDigest(dirname(compiler), "csc.exe.config", 64 * 1024),
-        ...(await Promise.all(
-          references.map((path) => fileDigest(dirname(path), basename(path), 64 * 1024 * 1024)),
-        )),
-        process.arch,
-        process.versions.bun ?? process.version,
-      ]),
-    );
-  const key = await before();
-  const existing = builds.get(key);
-  if (existing) return existing;
-  const build = withCacheLock(root, "native-owned-process", async () => {
-    const folder = `${nativeDirectory}/${key}`;
-    const installed = await inspectOwnedProcessArtifact(root, folder);
-    if (installed) {
-      if ((await before()) !== key)
-        throw new Error("Native supervisor inputs changed during reuse");
-      return installed.path;
-    }
-    await nativeCapacity(key);
-    await mkdir(await safePath(root, folder, true), { recursive: true });
-    const pending = `${folder}/${randomUUID()}.exe`;
-    const pendingReceipt = `${folder}/${randomUUID()}.sha256`;
+  const before = async (): Promise<string> => {
+    // Fixed independent inputs use the shared streaming reader budget. Settle every
+    // digest before reporting failure, and retain the original identity order.
+    const inputs = await Promise.allSettled([
+      fileDigest(implementationRoot, source, 1024 * 1024),
+      fileDigest(implementationRoot, "app/check/owned-process.ts", 1024 * 1024),
+      fileDigest(dirname(compiler), "csc.exe", 64 * 1024 * 1024),
+      fileDigest(dirname(compiler), "csc.exe.config", 64 * 1024),
+      ...references.map((path) => fileDigest(dirname(path), basename(path), 64 * 1024 * 1024)),
+    ]);
+    const values: string[] = [];
     const failures: unknown[] = [];
-    let executable: string | undefined;
-    try {
-      const compiled = spawnSync(
-        compiler,
-        [
-          "/nologo",
-          "/noconfig",
-          "/nostdlib+",
-          "/optimize+",
-          "/target:exe",
-          ...references.map((path) => `/reference:${path}`),
-          `/out:${await safePath(root, pending, true)}`,
-          await safePath(root, source),
-        ],
-        {
-          shell: false,
-          windowsHide: true,
-          encoding: "utf8",
-          timeout: 30_000,
-          maxBuffer: 64 * 1024,
-        },
-      );
-      if (compiled.error || compiled.status !== 0)
-        throw new Error("Windows owned-process supervisor compilation failed");
-      if ((await before()) !== key)
-        throw new Error("Native supervisor inputs changed during compilation");
-      const checksum = await fileDigest(root, pending, 16 * 1024 * 1024);
-      await writeFile(await safePath(root, pendingReceipt, true), `${checksum}\n`, {
-        flag: "wx",
-        mode: 0o600,
-      });
-      await rename(
-        await safePath(root, pending),
-        await safePath(root, `${folder}/owned-process.exe`, true),
-      );
-      await rename(
-        await safePath(root, pendingReceipt),
-        await safePath(root, `${folder}/binary.sha256`, true),
-      );
-      const verified = await inspectOwnedProcessArtifact(root, folder);
-      if (!verified) throw new Error("Native supervisor output failed integrity validation");
-      executable = verified.path;
-    } catch (error) {
-      failures.push(error);
-    }
-    for (const path of [pending, pendingReceipt]) {
-      try {
-        await unlink(await safePath(root, path, true));
-      } catch (error) {
-        if (!hasCode(error, "ENOENT")) failures.push(error);
+    for (const result of inputs) {
+      if (result.status === "fulfilled") values.push(result.value);
+      else {
+        const reason: unknown = result.reason;
+        failures.push(reason);
       }
     }
     if (failures.length === 1) throw failures[0];
-    if (failures.length)
-      throw new AggregateError(failures, "Native preparation and pending-file cleanup failed");
-    if (!executable) throw new Error("Native supervisor preparation returned no artifact");
-    return executable;
-  });
-  builds.set(key, build);
+    if (failures.length) throw new AggregateError(failures, "Native input fingerprinting failed");
+    return digest(
+      JSON.stringify([...values, process.arch, process.versions.bun ?? process.version]),
+    );
+  };
+  const key = await before();
+  await physicalProjectDirectory(project);
+  const buildKey = `${process.platform === "win32" ? project.toLowerCase() : project}\0${key}`;
+  const existing = builds.get(buildKey);
+  if (existing) return existing;
+  const build = (async () => {
+    await physicalProjectDirectory(project);
+    const folder = `${nativeDirectory}/${key}`;
+    const reuse = async (installed: {
+      readonly path: string;
+      readonly digest: string;
+    }): Promise<string> => {
+      if ((await before()) !== key)
+        throw new Error("Native supervisor inputs changed during reuse");
+      await physicalProjectDirectory(project);
+      const verified = await inspectOwnedProcessArtifact(project, folder);
+      if (
+        !verified ||
+        verified.digest !== installed.digest ||
+        !samePath(verified.path, installed.path)
+      )
+        throw new Error("Native supervisor artifact changed during reuse");
+      return verified.path;
+    };
+    let optimistic: Awaited<ReturnType<typeof inspectOwnedProcessArtifact>>;
+    let invalid: { readonly error: unknown } | undefined;
+    try {
+      optimistic = await inspectOwnedProcessArtifact(project, folder);
+    } catch (error) {
+      invalid = { error };
+    }
+    await observe?.(
+      optimistic ? "optimistic-complete" : invalid ? "optimistic-invalid" : "optimistic-absent",
+    );
+    if (optimistic) return await reuse(optimistic);
+    return await withCacheLock(project, "native-owned-process", async () => {
+      await observe?.("locked");
+      await physicalProjectDirectory(project);
+      const installed = await inspectOwnedProcessArtifact(project, folder);
+      if (installed) return await reuse(installed);
+      // A concurrent publisher may finish valid evidence while we wait. Missing or
+      // empty evidence after an invalid observation never authorizes rebuilding it.
+      if (invalid) throw invalid.error;
+      await nativeCapacity(project, key);
+      await mkdir(await safePath(project, folder, true), { recursive: true });
+      const pending = `${folder}/${randomUUID()}.exe`;
+      const pendingReceipt = `${folder}/${randomUUID()}.sha256`;
+      const failures: unknown[] = [];
+      let executable: string | undefined;
+      try {
+        const compiled = spawnSync(
+          compiler,
+          [
+            "/nologo",
+            "/noconfig",
+            "/nostdlib+",
+            "/optimize+",
+            "/target:exe",
+            ...references.map((path) => `/reference:${path}`),
+            `/out:${await safePath(project, pending, true)}`,
+            await safePath(implementationRoot, source),
+          ],
+          {
+            shell: false,
+            windowsHide: true,
+            encoding: "utf8",
+            timeout: 30_000,
+            maxBuffer: 64 * 1024,
+          },
+        );
+        if (compiled.error || compiled.status !== 0)
+          throw new Error("Windows owned-process supervisor compilation failed");
+        if ((await before()) !== key)
+          throw new Error("Native supervisor inputs changed during compilation");
+        await physicalProjectDirectory(project);
+        const checksum = await fileDigest(project, pending, 16 * 1024 * 1024);
+        await writeFile(await safePath(project, pendingReceipt, true), `${checksum}\n`, {
+          flag: "wx",
+          mode: 0o600,
+        });
+        await rename(
+          await safePath(project, pending),
+          await safePath(project, `${folder}/owned-process.exe`, true),
+        );
+        await rename(
+          await safePath(project, pendingReceipt),
+          await safePath(project, `${folder}/binary.sha256`, true),
+        );
+        const verified = await inspectOwnedProcessArtifact(project, folder);
+        if (!verified) throw new Error("Native supervisor output failed integrity validation");
+        executable = verified.path;
+      } catch (error) {
+        failures.push(error);
+      }
+      for (const path of [pending, pendingReceipt]) {
+        try {
+          await physicalProjectDirectory(project);
+          await unlink(await safePath(project, path, true));
+        } catch (error) {
+          if (!hasCode(error, "ENOENT")) failures.push(error);
+        }
+      }
+      if (failures.length === 1) throw failures[0];
+      if (failures.length)
+        throw new AggregateError(failures, "Native preparation and pending-file cleanup failed");
+      if (!executable) throw new Error("Native supervisor preparation returned no artifact");
+      return executable;
+    });
+  })();
+  builds.set(buildKey, build);
   try {
     return await build;
   } finally {
-    builds.delete(key);
+    builds.delete(buildKey);
   }
 }
 
 /** Live source/compiler/artifact identity; this never installs or repairs a prerequisite. */
-export async function ownedProcessIdentity(): Promise<string> {
+export async function ownedProcessIdentity(
+  projectRoot = implementationRoot,
+  observe?: OwnedPreparationObserver,
+): Promise<string> {
+  const project = await physicalProjectDirectory(projectRoot);
   if (process.platform !== "win32")
     return digest(JSON.stringify(["owned-posix-process-group-v1", process.platform, process.arch]));
-  const executable = await windowsSupervisor();
-  const folder = relative(root, dirname(executable)).replaceAll("\\", "/");
-  const artifact = await inspectOwnedProcessArtifact(root, folder);
+  const executable = await windowsSupervisor(project, observe);
+  const folder = relative(project, dirname(executable)).replaceAll("\\", "/");
+  const artifact = await inspectOwnedProcessArtifact(project, folder);
   if (!artifact) throw new Error("Native supervisor disappeared during prerequisite validation");
   return digest(
-    JSON.stringify(["owned-windows-job-v1", basename(dirname(executable)), artifact.digest]),
+    JSON.stringify(["owned-windows-job-v3", basename(dirname(executable)), artifact.digest]),
   );
 }
 
@@ -217,11 +322,36 @@ export type OwnedProcess = {
 };
 export type OwnedProcessOptions = {
   readonly cwd: string;
+  /** Physical consumer owning native artifacts; defaults to the implementation checkout. */
+  readonly projectRoot?: string;
   readonly env?: NodeJS.ProcessEnv;
   readonly stdio: "inherit" | "pipe";
   readonly signal?: AbortSignal;
   readonly timeoutMs?: number;
 };
+
+/** Adapted from fd399cca: share signaling and disappearance, including failed completion. */
+export function createPosixGroupCompletion(operations: {
+  readonly terminate: () => boolean;
+  readonly exists: () => boolean;
+  readonly wait: () => Promise<void>;
+  readonly now: () => number;
+  readonly timeoutMs: number;
+}): () => Promise<void> {
+  let completion: Promise<void> | undefined;
+  return () => {
+    completion ??= (async () => {
+      // Once absent, this numeric group ID may be reused by an unrelated process.
+      if (!operations.terminate()) return;
+      const deadline = operations.now() + operations.timeoutMs;
+      while (operations.exists()) {
+        if (operations.now() >= deadline) throw new Error("Owned process group cleanup timed out");
+        await operations.wait();
+      }
+    })();
+    return completion;
+  };
+}
 
 /** Windows owns descendants atomically at creation; POSIX owns a detached process group. */
 export async function spawnOwned(
@@ -244,21 +374,43 @@ export async function spawnOwned(
   )
     throw new Error("Owned process timeout is invalid");
   options.signal?.throwIfAborted();
-  const supervisor = process.platform === "win32" ? await windowsSupervisor() : undefined;
+  const project = await physicalProjectDirectory(options.projectRoot ?? implementationRoot);
+  const supervisor = process.platform === "win32" ? await windowsSupervisor(project) : undefined;
   options.signal?.throwIfAborted();
+  const completion = supervisor ? await createTemporaryWorkspace(project, "completion") : undefined;
   const cancellation = `Local\\TeamagentOwned-${randomUUID()}`;
-  const child = spawn(
-    supervisor ?? command,
-    supervisor ? [String(process.pid), cancellation, command, ...args] : [...args],
-    {
-      cwd: resolve(options.cwd),
-      ...(options.env ? { env: options.env } : {}),
-      stdio: options.stdio,
-      shell: false,
-      windowsHide: true,
-      detached: process.platform !== "win32",
-    },
-  );
+  let child: ChildProcess;
+  try {
+    options.signal?.throwIfAborted();
+    child = spawn(
+      supervisor ?? command,
+      completion
+        ? [
+            String(process.pid),
+            cancellation,
+            join(completion.path, "completion.json"),
+            completion.token,
+            command,
+            ...args,
+          ]
+        : [...args],
+      {
+        cwd: resolve(options.cwd),
+        ...(options.env ? { env: options.env } : {}),
+        stdio: options.stdio,
+        shell: false,
+        windowsHide: true,
+        detached: process.platform !== "win32",
+      },
+    );
+  } catch (error) {
+    try {
+      await completion?.dispose();
+    } catch {
+      throw new Error("Owned process launch and completion-scope cleanup failed");
+    }
+    throw error;
+  }
   const joined = Promise.withResolvers<OwnedExit>();
   let failure: Error | undefined;
   let complete = false;
@@ -268,12 +420,23 @@ export async function spawnOwned(
   const fail = (error: unknown): void => {
     failure ??= error instanceof Error ? error : new Error("Owned process cleanup failed");
   };
-  function finish(code: number | null, signal: NodeJS.Signals | null, confirmed: boolean): void {
+  async function finish(
+    code: number | null,
+    signal: NodeJS.Signals | null,
+    confirmed: boolean,
+  ): Promise<void> {
     if (complete) return;
     complete = true;
     if (timer) clearTimeout(timer);
     options.signal?.removeEventListener("abort", abort);
     if (!confirmed) fail(new Error("Owned descendant shutdown could not be confirmed"));
+    if (confirmed && completion) {
+      try {
+        await completion.dispose();
+      } catch {
+        fail(new Error("Owned completion-scope cleanup failed"));
+      }
+    }
     joined.resolve({
       code,
       signal,
@@ -303,28 +466,35 @@ export async function spawnOwned(
     } catch (error) {
       fail(error);
     }
-    finish(child.exitCode, child.signalCode, false);
+    void finish(child.exitCode, child.signalCode, false);
   }
-  function killGroup(): void {
-    if (child.pid === undefined) return;
+  function signalGroup(signal: NodeJS.Signals | 0): boolean {
+    if (child.pid === undefined) return false;
     try {
-      process.kill(-child.pid, "SIGKILL");
+      process.kill(-child.pid, signal);
+      return true;
     } catch (error) {
       if (!hasCode(error, "ESRCH")) throw error;
+      return false;
     }
   }
-  async function groupStopped(): Promise<boolean> {
-    if (child.pid === undefined) return true;
-    const deadline = performance.now() + 5000;
-    while (performance.now() < deadline) {
-      try {
-        process.kill(-child.pid, 0);
-      } catch (error) {
-        return hasCode(error, "ESRCH");
-      }
-      await new Promise<void>((done) => setTimeout(done, 10));
-    }
-    return false;
+  const joinGroup = createPosixGroupCompletion({
+    terminate: () => signalGroup("SIGKILL"),
+    exists: () => signalGroup(0),
+    wait: () => new Promise<void>((done) => setTimeout(done, 10)),
+    now: () => performance.now(),
+    timeoutMs: 5000,
+  });
+  let groupCompletion: Promise<boolean> | undefined;
+  function completeGroup(): Promise<boolean> {
+    groupCompletion ??= joinGroup().then(
+      () => true,
+      (error: unknown) => {
+        fail(error);
+        return false;
+      },
+    );
+    return groupCompletion;
   }
   function stop(reason = "Owned process cancelled"): Promise<void> {
     if (complete) return joined.promise.then(() => {});
@@ -334,8 +504,8 @@ export async function spawnOwned(
       const force = setTimeout(endUnconfirmedTransport, 6000);
       try {
         try {
-          if (supervisor) {
-            const result = spawnSync(supervisor, ["--stop", cancellation], {
+          if (supervisor && child.pid !== undefined) {
+            const result = spawnSync(supervisor, ["--stop", cancellation, String(child.pid)], {
               shell: false,
               windowsHide: true,
               encoding: "utf8",
@@ -343,10 +513,22 @@ export async function spawnOwned(
               maxBuffer: 8192,
             });
             if (result.error || result.status !== 0) {
-              forced = true;
-              child.kill("SIGKILL");
+              // The supervisor may have drained and closed its cancellation event
+              // just before this request. Observe that completion before forcing it.
+              let closingTimer: ReturnType<typeof setTimeout> | undefined;
+              try {
+                await Promise.race([
+                  joined.promise,
+                  new Promise<void>((done) => {
+                    closingTimer = setTimeout(done, 100);
+                  }),
+                ]);
+              } finally {
+                if (closingTimer) clearTimeout(closingTimer);
+              }
+              if (!complete) forced = child.kill("SIGKILL");
             }
-          } else killGroup();
+          } else if (!supervisor) void completeGroup();
         } catch (error) {
           fail(error);
           endUnconfirmedTransport();
@@ -368,23 +550,28 @@ export async function spawnOwned(
   const abort = (): void => requestStop("Owned process aborted");
   child.once("error", fail);
   child.once("exit", () => {
-    if (!supervisor) {
-      try {
-        killGroup();
-      } catch (error) {
-        fail(error);
-      }
-    }
+    if (!supervisor) void completeGroup();
   });
   child.once("close", (code, signal) => {
     void (async () => {
-      const confirmed = supervisor
-        ? !forced && signal === null && code !== null && code >= 0 && code <= 255 && code !== 253
-        : await groupStopped();
-      finish(code, signal, confirmed);
+      let confirmed = false;
+      if (completion) {
+        if (
+          !forced &&
+          signal === null &&
+          code !== null &&
+          code >= 0 &&
+          code <= 255 &&
+          code !== 253
+        ) {
+          await inspectOwnedProcessCompletion(completion, code);
+          confirmed = !forced;
+        }
+      } else confirmed = await completeGroup();
+      await finish(code, signal, confirmed);
     })().catch((error: unknown) => {
       fail(error);
-      finish(code, signal, false);
+      return finish(code, signal, false);
     });
   });
   options.signal?.addEventListener("abort", abort, { once: true });

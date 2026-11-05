@@ -46,6 +46,14 @@ a failure cannot leave the same result eligible for reuse. Missing/corrupt
 build outputs invalidate a hit. Installed-tool and source identities are checked
 again before accepting successful work; source changes during a hit also fail.
 
+Each working-tree identity makes two fresh Git inspections: object format plus
+repository root, then a tagged NUL-framed tracked/untracked inventory. Validate
+complete framing, the actual root, object widths, stages, paths and at most
+100,000 combined names before hashing working bytes. Assumed-unchanged and
+skip-worktree flags do not waive byte inspection; tracked ignored files remain
+inputs. Staged-only receipt validation retains its separate active-index path.
+Query batching does not cache an observation or remove the final live reread.
+
 Installed package fingerprints describe the actual provisioned graph, not an
 independent attestation of a frozen installation. Direct pins must exist and
 match. Declared virtual or absent transitive edges must remain distinguishable,
@@ -198,6 +206,14 @@ isolated workers. No launch changes installed packages or removes their bytecode
 
 ## Live checks and staged publication
 
+The explicit [project launcher](project-launcher.md) exposes a streaming helper
+identity for external consumers. It contains no environment snapshot or
+successful result. Each consumer still binds its selected project, runtime,
+arguments, meaningful environment and outputs. Teamagent's normal verification
+already binds the whole `app/check` helper scope, and keeps prerequisite,
+temporary-routing and native-artifact validation live. Mise is not evaluated by
+cache lookup, normal checks or hooks.
+
 Keep raw LF and text-export integrity checks live initially. They inspect ignored caches, retained originals and exported bytes that a source-tree-only key cannot certify. A Git-canonical text hash does not establish actual LF bytes. Signing, allowed destinations, remote state, credentials and real browser/native/service acceptance also remain live unless a separate exact contract proves which evidence can be reused.
 
 Validate staged verification receipts against the actual index, including alternate-index cases. A checked working tree is not proof of different staged content. The publication proof must bind the final reviewed scope and receipt bytes without making receipt timestamps recursively part of their own input keys.
@@ -232,17 +248,42 @@ smaller of host free memory and the runtime's process-available estimate. Unknow
 availability remains conservatively sequential. Admission is checked again
 before each batch. If memory falls below the floor, running children are joined;
 queued files remain explicitly unrun and verification fails without a receipt.
-With multiple workers it starts the remaining suites first and isolates the
-audited research-Git and workflow suites; three-worker mode also isolates
-analysis-sync and verification-cache, queued in that order as slots become
-available. The cache suite uses private fixtures and restores its process-local
-mutations. Two-worker grouping is unchanged. Unknown suites stay together in
+With two workers it starts the remaining suites first and separately queues
+workflow, research Git and workflow revisions. With three workers, the remaining
+suites, research Git, and the HTTP cache plus memory CLI/MCP group start first.
+As slots open, the runner admits owned launchers (native lifetime, both owned
+process suites, project launcher and environment), workflow, workflow revisions,
+verification cache, pre-commit, analysis sync, then imports. This gives the
+120-second research case a chance to run before the busiest Git fixtures and
+leaves a shorter import group for the tail. These suites use private fixtures;
+process-local mutations are restored, network fixtures bind ephemeral loopback
+ports, and native artifact publication retains its ownership lock while complete
+warm artifacts require full live validation. The two
+workflow files share stateless fixture helpers and preserve all original cases.
+The additional groups remain in the remaining batch with two workers.
+Unknown suites stay together in
 their original order, every file belongs to exactly one batch, and the one-worker
-path retains the original complete file order. All groups share the unchanged
-240-second unit deadline and 120-second per-test setting; live admission still
+path retains the original complete file order. All groups share the
+360-second unit deadline and unchanged 120-second per-test setting; live admission still
 caps active workers at three. The one-GiB
 floor is a conservative admission policy, not a measured optimum. Historical
 samples below describe the policy in force when those samples were collected.
+
+The user approved the shared phase increase from 240 to 360 seconds on
+2026-11-02 after measured full runs exhausted the previous budget despite
+passing individual batches. Coverage, individual test limits, the three-worker
+cap and exact-input reuse requirements remain unchanged. The
+[import and repair report](analyses/project-launcher-sync-2026-11-02.md) retains
+the failed attempts and optimization evidence. Assembled hook/workflow budgets
+remain independently bounded; obtain successful step evidence before their
+shorter review/publication checks, which may reuse only validated exact inputs.
+
+When `GITHUB_ACTIONS=true`, verification executes rather than reusing tracked,
+local or nonportable passed receipts, even when every input matches. Storage
+routing and rejection history still apply. Local reuse outside Actions and
+integrity-validated build reuse remain unchanged. Isolated unit workers remove
+the outer Actions flag so private fixture repositories can exercise both
+policies; the parent verification runner retains it.
 
 On 2026-11-01, the regrouped Windows full step check completed in 317.896 seconds
 with exit zero and confirmed closed process scope. Bun 1.4.2 (`744846f84`)

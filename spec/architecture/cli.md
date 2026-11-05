@@ -106,12 +106,13 @@ LF/export checks remain live. See [verification](../verification.md) and the
 
 The developer entry points are separate from the product module CLI:
 
-| Entry                                 | Canonical contract                           | Input                                                                       |
-| ------------------------------------- | -------------------------------------------- | --------------------------------------------------------------------------- |
-| `task:run`                            | [Repository workflow](../workflow.md)        | Bounded JSON stdin; fixed `.workflow.json` policy                           |
-| `deps`, `deps:check`                  | [Dependency maintenance](../dependencies.md) | Strict action-specific flags; no implicit installation                      |
-| `cache:status`, `cache:verify-staged` | [Verification cache](../cache.md)            | Passive history inspection or actual staged-index validation                |
-| `build:web`, `build:desktop`          | [Build cache](../cache.md)                   | Explicit `--cache` or `--force-fresh-cache`; native acceptance remains live |
+| Entry                                 | Canonical contract                           | Input                                                                               |
+| ------------------------------------- | -------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `task:run`                            | [Repository workflow](../workflow.md)        | Bounded JSON stdin; fixed `.workflow.json` policy                                   |
+| `project:run`                         | [Project launcher](../project-launcher.md)   | Explicit physical target, pinned tool and literal arguments after `--`; Mise opt-in |
+| `deps`, `deps:check`                  | [Dependency maintenance](../dependencies.md) | Strict action-specific flags; no implicit installation                              |
+| `cache:status`, `cache:verify-staged` | [Verification cache](../cache.md)            | Passive history inspection or actual staged-index validation                        |
+| `build:web`, `build:desktop`          | [Build cache](../cache.md)                   | Explicit `--cache` or `--force-fresh-cache`; native acceptance remains live         |
 
 Their help/version paths are passive. Fixed JSON policies are decoded data;
 these tools do not discover executable C12 configuration or add unused config

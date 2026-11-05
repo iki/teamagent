@@ -11,6 +11,13 @@ published on `codex/tinypool-windows-hide-2-2-0` without merging into main or
 enqueuing integration. The [Tinypool 2.2.0 artifact](tinypool@2.2.0.patch) preserves
 the [supplied bundle](https://github.com/iki/trigon/blob/9ef18967b46fe01571933c3ba6216823ad961c16/patches/tinypool@2.2.0.patch)
 bytes: SHA-256 `de8f773eec7e3e36c669f0a21df874afe37d23f88efc1b61498602a9701253be`.
+On 2026-11-02, the [subsequent source review](../../spec/analyses/project-launcher-sync-2026-11-02.md)
+confirmed that source main includes this branch through merge
+[`989e4a8fc16855ac037687c6ed7241c926ec74ab`](https://github.com/iki/trigon/commit/989e4a8fc16855ac037687c6ed7241c926ec74ab).
+The supplied patch and Teamagent artifact still share Git blob
+`8e3b4d9cf0430855cdbb19d0cad7a19aac90bec8`. The registry and November 1 evidence
+retain their original selection and then-unmerged status; this later observation
+does not rewrite that provenance or establish a new installation result.
 It adds only `windowsHide: true` after the internal process-worker options spread.
 Oxfmt 0.74.0 consumes Tinypool transitively; the exact
 `aube.patchedDependencies["tinypool@2.2.0"]` selector references this registered

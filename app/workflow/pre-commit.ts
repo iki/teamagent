@@ -47,7 +47,7 @@ export async function verifyPreCommit(root: string, host: PreCommitHost = {}): P
   };
   async function snapshot(): Promise<{ staged: string; working: string }> {
     const staged = tree(await git(["write-tree"]));
-    const working = tree(await worktreeTree(root, git));
+    const working = tree(await worktreeTree(root, git, staged));
     if (tree(await git(["write-tree"])) !== staged)
       throw new PreCommitBoundaryError("The Git index changed during pre-commit inspection.");
     return { staged, working };

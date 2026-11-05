@@ -7,6 +7,8 @@ import { pathToFileURL } from "node:url";
 import {
   normalizeOutputChunk,
   scheduleTestBatches,
+  TestBatchFailure,
+  testBatches,
   testConcurrency,
 } from "../app/check/test-groups.ts";
 import { mkdtemp } from "./temporary.ts";
@@ -19,6 +21,94 @@ const files = [
   "test/analysis-sync.test.ts",
 ];
 const resources = (memoryBytes: number) => ({ cpus: 8, memoryBytes });
+
+await test("expanded private-fixture batches preserve discovery coverage, order and worker limits", async () => {
+  const inventory = [
+    "test/unknown-first.test.ts",
+    "test/workflow-revisions.test.ts",
+    "test/import-http-cache.test.ts",
+    "test/research-git.test.ts",
+    "test/owned-process-project.test.ts",
+    "test/unknown-last.test.ts",
+    "test/project-environment.test.ts",
+    "test/memory-cli-mcp.test.ts",
+    "test/analysis-sync.test.ts",
+    "test/workflow.test.ts",
+    "test/pre-commit.test.ts",
+    "test/verification-cache.test.ts",
+    "test/owned-process.test.ts",
+    "test/imports.test.ts",
+    "test/project-launcher.test.ts",
+    "test/native-lifetime.test.ts",
+  ];
+  for (const expanded of [false, true]) {
+    const batches = testBatches(inventory, expanded);
+    // At three workers, research starts alongside the private HTTP/CLI fixtures.
+    assert.deepEqual(
+      batches.slice(0, 3).map((batch) => batch.name),
+      expanded
+        ? ["remaining", "test/research-git.test.ts", "http-and-memory-cli"]
+        : ["remaining", "test/workflow.test.ts", "test/research-git.test.ts"],
+    );
+    assert.deepEqual(batches.flatMap((batch) => batch.files).sort(), [...inventory].sort());
+    for (const batch of batches)
+      assert.deepEqual(
+        batch.files,
+        inventory.filter((file) => batch.files.includes(file)),
+      );
+    const remaining = batches.find((batch) => batch.name === "remaining");
+    assert.ok(remaining);
+    if (expanded) {
+      assert.deepEqual(
+        batches.map((batch) => batch.name),
+        [
+          "remaining",
+          "test/research-git.test.ts",
+          "http-and-memory-cli",
+          "owned-launchers",
+          "test/workflow.test.ts",
+          "test/workflow-revisions.test.ts",
+          "test/verification-cache.test.ts",
+          "test/pre-commit.test.ts",
+          "test/analysis-sync.test.ts",
+          "test/imports.test.ts",
+        ],
+      );
+      assert.deepEqual(batches.find((batch) => batch.name === "http-and-memory-cli")?.files, [
+        "test/import-http-cache.test.ts",
+        "test/memory-cli-mcp.test.ts",
+      ]);
+      assert.deepEqual(batches.find((batch) => batch.name === "test/imports.test.ts")?.files, [
+        "test/imports.test.ts",
+      ]);
+      assert.deepEqual(remaining.files, [
+        "test/unknown-first.test.ts",
+        "test/unknown-last.test.ts",
+      ]);
+    } else
+      for (const file of [
+        "test/imports.test.ts",
+        "test/pre-commit.test.ts",
+        "test/native-lifetime.test.ts",
+      ])
+        assert.ok(remaining.files.includes(file));
+  }
+  for (const limit of [1, 2, 3]) {
+    let active = 0;
+    let maximum = 0;
+    const completed: string[] = [];
+    await scheduleTestBatches(inventory, limit, async (batch) => {
+      maximum = Math.max(maximum, ++active);
+      await new Promise<void>((done) => setTimeout(done, 1));
+      completed.push(...batch.files);
+      active--;
+    });
+    assert.equal(active, 0);
+    assert.ok(maximum <= limit);
+    assert.deepEqual([...completed].sort(), [...inventory].sort());
+    if (limit === 1) assert.deepEqual(completed, inventory);
+  }
+});
 
 await test("unit output preserves CRLF and lone CR across every chunk boundary", () => {
   const original = "first\rsecond\r\nthird\nžluťoučký\r";
@@ -101,6 +191,73 @@ await test("no-memory admission reports every pending file as incomplete without
   assert.equal(started, 0);
 });
 
+await test("batch diagnostics retain fixed reasons and labels only after every admitted child joins", async () => {
+  const inventory = [...files, "test/verification-cache.test.ts"];
+  const secret = "private-batch-output-sentinel";
+  const release = Promise.withResolvers<void>();
+  const waiting = Promise.withResolvers<void>();
+  const seen: string[] = [];
+  let joined = false;
+  const scheduled = scheduleTestBatches(inventory, 3, async (batch) => {
+    seen.push(...batch.files);
+    const label = batch.name;
+    // Diagnostic labels are captured from the scheduler's fixed inventory.
+    Object.defineProperty(batch, "name", { value: secret });
+    if (label === "remaining") {
+      waiting.resolve();
+      await release.promise;
+      joined = true;
+      throw new TestBatchFailure("deadline");
+    }
+    if (label === "test/research-git.test.ts") throw new TestBatchFailure("exit");
+    if (label === "test/workflow.test.ts") throw new TestBatchFailure("cleanup");
+    if (label === "test/analysis-sync.test.ts") throw new Error(secret, { cause: secret });
+    const malformed = new TestBatchFailure("transport");
+    Object.defineProperty(malformed, "reason", { value: secret });
+    throw malformed;
+  });
+  const rejected = assert.rejects(scheduled, (error: unknown) => {
+    assert.ok(error instanceof Error);
+    assert.equal(joined, true);
+    assert.match(error.message, /5 test batch\(es\) failed; every scheduled child was joined/u);
+    for (const detail of [
+      "remaining=deadline",
+      "test/research-git.test.ts=exit",
+      "test/workflow.test.ts=cleanup",
+      "test/analysis-sync.test.ts=unknown",
+      "test/verification-cache.test.ts=unknown",
+    ])
+      assert.ok(error.message.includes(detail));
+    assert.equal(error.cause, undefined);
+    assert.doesNotMatch(error.stack ?? "", /private-batch-output-sentinel/u);
+    assert.ok(error.message.length < 512);
+    return true;
+  });
+  await waiting.promise;
+  assert.equal(joined, false);
+  release.resolve();
+  await rejected;
+  assert.deepEqual([...seen].sort(), [...inventory].sort());
+});
+
+await test("sequential batch diagnostics preserve fixed reasons without exposing input filenames", async () => {
+  for (const reason of ["cancelled", "output-limit", "transport", "launch"] as const) {
+    await assert.rejects(
+      scheduleTestBatches(["private-source-name.test.ts"], 1, async () => {
+        throw new TestBatchFailure(reason);
+      }),
+      (error: unknown) => {
+        assert.ok(error instanceof Error);
+        assert.equal(
+          error.message,
+          `1 test batch(es) failed; every scheduled child was joined; failures: all=${reason}`,
+        );
+        return true;
+      },
+    );
+  }
+});
+
 await test("admission resamples before each batch, joins running failures and preserves incomplete work", async () => {
   const released = Promise.withResolvers<void>();
   const started = Promise.withResolvers<void>();
@@ -116,13 +273,13 @@ await test("admission resamples before each batch, joins running failures and pr
       started.resolve();
       await released.promise;
       joined = true;
-      throw new Error("fixture batch failure");
+      throw new TestBatchFailure("cleanup");
     },
     () => resources(available),
   );
   const rejected = assert.rejects(
     scheduled,
-    /3 test file\(s\) not run.*1 batch\(es\) failed.*children were joined/u,
+    /3 test file\(s\) not run.*1 batch\(es\) failed.*children were joined.*remaining=cleanup/u,
   );
   await started.promise;
   assert.deepEqual(seen, ["remaining"]);

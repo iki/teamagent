@@ -314,7 +314,11 @@ export async function syncTextResources(input: unknown, dependencies: TextSyncDe
           clearTimeout(timer);
           dependencies.signal?.removeEventListener("abort", abort);
         }
-        record ??= failed("capture_unavailable");
+        // Returned/progress records must have the same representation as persisted state.
+        // Exact reconciliation pins hash the complete record, including property order.
+        record = Schema.decodeUnknownSync(TextRecordSchema)(
+          record ?? failed("capture_unavailable"),
+        );
         records.set(key, record);
         outcomes.push(record);
         dependencies.onProgress?.(record);
