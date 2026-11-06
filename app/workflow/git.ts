@@ -1,5 +1,5 @@
 import { lstat, mkdir, mkdtemp, readFile, rm } from "node:fs/promises";
-import { join, resolve } from "node:path";
+import { isAbsolute, join, resolve } from "node:path";
 import { homedir } from "node:os";
 import { createHash } from "node:crypto";
 import { Schema } from "effect";
@@ -9,7 +9,9 @@ import { diagnostic, runProcess, type ProcessResult } from "./process.ts";
 import { currentBunEnvironment } from "../check/toolchain.ts";
 
 export type Git = (args: readonly string[], input?: string, index?: string) => Promise<string>;
-const GitObjectId = Schema.String.check(Schema.isPattern(/^[a-f0-9]{40}(?:[a-f0-9]{24})?$/u));
+export const GitObjectId = Schema.String.check(
+  Schema.isPattern(/^[a-f0-9]{40}(?:[a-f0-9]{24})?$/u),
+);
 const SigningValue = Schema.String.check(Schema.isMaxLength(16384));
 const SigningConfiguration = Schema.Struct({
   "commit.gpgsign": SigningValue,
@@ -232,7 +234,72 @@ export async function destination(
   policy: Policy,
 ): Promise<Omit<Snapshot, "head" | "changes">> {
   const branch = (await git(["symbolic-ref", "--short", "HEAD"])).trim();
-  if (policy.ref !== `refs/heads/${branch}`)
+  return await destinationForBranch(git, policy, branch);
+}
+function revisionPair(input: unknown): readonly [string, string] {
+  const text = Schema.decodeUnknownSync(Schema.String.check(Schema.isMaxLength(8192)))(input);
+  if (Buffer.byteLength(text) > 8192 || !text.endsWith("\n") || /[\r\0]/u.test(text))
+    throw new Error("Invalid revision observation framing");
+  return Schema.decodeUnknownSync(
+    Schema.Tuple([
+      Schema.NonEmptyString.check(Schema.isMaxLength(4096)),
+      Schema.NonEmptyString.check(Schema.isMaxLength(1024)),
+    ]),
+  )(text.slice(0, -1).split("\n"), { onExcessProperty: "error" });
+}
+function symbolicBranch(ref: string): string | null {
+  if (ref === "HEAD") return null;
+  if (!/^refs\/heads\/[^ \p{Cc}]+$/u.test(ref)) throw new Error("Invalid symbolic HEAD");
+  return ref.slice("refs/heads/".length);
+}
+/** Fresh HEAD identity and branch share one Git invocation, never a cached observation. */
+export async function headAndBranch(git: Git): Promise<{ head: string; branch: string | null }> {
+  const response = await git(["rev-parse", "HEAD", "--symbolic-full-name", "HEAD"]);
+  try {
+    const [head, ref] = revisionPair(response);
+    return { head: Schema.decodeUnknownSync(GitObjectId)(head), branch: symbolicBranch(ref) };
+  } catch {
+    throw new Error("HEAD observation is malformed or exceeds bounds");
+  }
+}
+/** Physical common-directory validation remains the caller's responsibility. */
+export async function commonDirectoryAndBranch(
+  git: Git,
+): Promise<{ directory: string; branch: string | null }> {
+  const response = await git([
+    "rev-parse",
+    "--path-format=absolute",
+    "--git-common-dir",
+    "--symbolic-full-name",
+    "HEAD",
+  ]);
+  try {
+    const [directory, ref] = revisionPair(response);
+    if (!isAbsolute(directory)) throw new Error("Common Git directory must be absolute");
+    return { directory, branch: symbolicBranch(ref) };
+  } catch {
+    throw new Error("Repository binding observation is malformed or exceeds bounds");
+  }
+}
+export async function destinationObservation(
+  git: Git,
+  policy: Policy,
+): Promise<{ head: string; target: Omit<Snapshot, "head" | "changes"> }> {
+  const observed = await headAndBranch(git);
+  if (observed.branch === null)
+    throw new Error("Branch/upstream is outside the approved publication policy");
+  return { head: observed.head, target: await destinationForBranch(git, policy, observed.branch) };
+}
+async function destinationForBranch(
+  git: Git,
+  policy: Policy,
+  branch: string,
+): Promise<Omit<Snapshot, "head" | "changes">> {
+  const targetRef =
+    policy.version === 2 && /^codex\/[a-z0-9][a-z0-9-]{0,95}$/u.test(branch)
+      ? `refs/heads/${branch}`
+      : policy.ref;
+  if (targetRef !== `refs/heads/${branch}`)
     throw new Error("Branch/upstream is outside the approved publication policy");
   const escaped = branch.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
   const response = await git([
@@ -259,7 +326,7 @@ export async function destination(
   } catch {
     throw new Error("Upstream configuration response is malformed or exceeds bounds");
   }
-  if (remote !== policy.remote || ref !== policy.ref || ref !== `refs/heads/${branch}`)
+  if (remote !== policy.remote || ref !== targetRef || ref !== `refs/heads/${branch}`)
     throw new Error("Branch/upstream is outside the approved publication policy");
   const [fetchText, pushText] = await readPair(
     git,
@@ -281,25 +348,92 @@ export async function snapshot(root: string, git: Git, policy: Policy): Promise<
   const read = observationGit(git);
   const observations = await Promise.allSettled([
     changedPaths(read),
-    read(["rev-parse", "HEAD"]),
-    destination(read, policy),
+    destinationObservation(read, policy),
   ]);
   requireJoinedReads(observations);
-  const [changed, head, target] = observations;
+  const [changed, identity] = observations;
   const changes: Record<string, string> = {};
   for (const path of observedValue(changed)) changes[path] = await fileHash(root, path);
   return {
-    head: observedValue(head).trim(),
-    ...observedValue(target),
+    head: observedValue(identity).head,
+    ...observedValue(identity).target,
     changes,
   };
 }
-export async function remoteHead(git: Git, remote: string, ref: string): Promise<string> {
-  const rows = (await git(["ls-remote", "--refs", remote, ref])).trim().split("\n");
+export async function remoteHeadOrAbsent(
+  git: Git,
+  remote: string,
+  ref: string,
+): Promise<string | null> {
+  const text = (await git(["ls-remote", "--refs", remote, ref])).trim();
+  if (!text) return null;
+  const rows = text.split("\n");
   const [sha, name] = (rows[0] ?? "").split(/\s+/u);
   if (rows.length !== 1 || name !== ref || !sha || !/^[a-f0-9]{40,64}$/u.test(sha))
     throw new Error("Cannot verify exact remote branch");
   return sha;
+}
+export async function remoteHead(git: Git, remote: string, ref: string): Promise<string> {
+  const head = await remoteHeadOrAbsent(git, remote, ref);
+  if (!head) throw new Error("Cannot verify exact remote branch");
+  return head;
+}
+/** Explicit absence is useful only before task-ref creation; all returned refs remain exact. */
+export async function remoteMainAndTaskOrAbsent(
+  git: Git,
+  branch: string,
+): Promise<{ main: string | null; source: string | null }> {
+  if (!/^codex\/[a-z0-9][a-z0-9-]{0,95}$/u.test(branch))
+    throw new Error("Invalid parallel task branch");
+  const mainRef = "refs/heads/main";
+  const taskRef = "refs/heads/" + branch;
+  const response = await git(["ls-remote", "--refs", "origin", mainRef, taskRef]);
+  try {
+    const text = Schema.decodeUnknownSync(Schema.String.check(Schema.isMaxLength(2048)))(response);
+    if (Buffer.byteLength(text) > 2048 || (text !== "" && !text.endsWith("\n")))
+      throw new Error("Invalid remote advertisement framing");
+    const rows = text === "" ? [] : text.slice(0, -1).split("\n");
+    if (rows.length > 2) throw new Error("Expected at most two remote refs");
+    const heads = new Map<string, string>();
+    for (const row of rows) {
+      const [sha, ref] = Schema.decodeUnknownSync(
+        Schema.Tuple([GitObjectId, Schema.String.check(Schema.isMaxLength(256))]),
+      )(row.split("\t"), { onExcessProperty: "error" });
+      if ((ref !== mainRef && ref !== taskRef) || heads.has(ref))
+        throw new Error("Unexpected or duplicate remote ref");
+      heads.set(ref, sha);
+    }
+    return { main: heads.get(mainRef) ?? null, source: heads.get(taskRef) ?? null };
+  } catch {
+    throw new Error("Remote ref observation is malformed, incomplete or exceeds bounds");
+  }
+}
+/** Integration requires both refs in the same fresh advertisement; neither may be omitted. */
+export async function remoteMainAndTask(
+  git: Git,
+  branch: string,
+): Promise<{ main: string; source: string }> {
+  const observed = await remoteMainAndTaskOrAbsent(git, branch);
+  if (!observed.main || !observed.source)
+    throw new Error("Remote ref observation is malformed, incomplete or exceeds bounds");
+  return { main: observed.main, source: observed.source };
+}
+/** Resolve HEAD once, binding the observed commit, tree and sole parent to one immutable object. */
+export async function headCommit(
+  git: Git,
+): Promise<{ commit: string; tree: string; parent: string }> {
+  const response = await git(["show", "-s", "--no-notes", "--format=%H%x00%T%x00%P", "HEAD"]);
+  try {
+    const text = Schema.decodeUnknownSync(Schema.String.check(Schema.isMaxLength(1024)))(response);
+    if (Buffer.byteLength(text) > 1024 || !text.endsWith("\n"))
+      throw new Error("Invalid commit framing");
+    const [commit, tree, parent] = Schema.decodeUnknownSync(
+      Schema.Tuple([GitObjectId, GitObjectId, GitObjectId]),
+    )(text.slice(0, -1).split("\0"), { onExcessProperty: "error" });
+    return { commit, tree, parent };
+  } catch {
+    throw new Error("Commit observation is malformed or does not have exactly one parent");
+  }
 }
 export async function checkedScope(
   root: string,
@@ -312,17 +446,19 @@ export async function checkedScope(
     throw new Error("Publication policy changed after task start");
   const read = observationGit(git);
   const observations = await Promise.allSettled([
-    destination(read, configured.policy),
-    checkHead ? read(["rev-parse", "HEAD"]) : Promise.resolve(undefined),
+    checkHead
+      ? destinationObservation(read, configured.policy)
+      : destination(read, configured.policy).then((target) => ({ head: undefined, target })),
     read(["diff", "--cached", "--name-only", "--no-renames", "-z"]),
     changedPaths(read),
   ]);
   requireJoinedReads(observations);
-  const [target, head, staged, changed] = observations;
-  const current = observedValue(target);
+  const [identity, staged, changed] = observations;
+  const observed = observedValue(identity);
+  const current = observed.target;
   if (Object.entries(current).some(([key, value]) => Reflect.get(task.snapshot, key) !== value))
     throw new Error("Branch or destination changed after task start");
-  if (checkHead && observedValue(head)?.trim() !== task.snapshot.head)
+  if (checkHead && observed.head !== task.snapshot.head)
     throw new Error("HEAD changed after task start");
   const scope = task.checkpoint;
   if (!scope) throw new Error("Task has no checkpoint");

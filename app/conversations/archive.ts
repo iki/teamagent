@@ -198,7 +198,9 @@ export async function archive(
     let file =
       prior?.file ??
       `${input.date.slice(2, 10).replaceAll("-", "")}-${slug(clean(input.description))}.${slug(clean(input.agent))}-${slug(clean(input.model))}-${slug(clean(input.reasoning))}.md`;
-    if (!prior && names.includes(file)) {
+    // New task names are independent of which sibling worktree writes first.
+    // Existing open and frozen records retain their recorded filename.
+    if (!prior) {
       file = file.replace(/(\.[^.]+\.md)$/u, `-${task.slice(0, 12)}$1`);
       if (names.includes(file)) throw new Error("Conversation filename identity collision");
     }

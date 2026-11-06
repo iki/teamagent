@@ -10,6 +10,13 @@ not establish their exit criteria or live-provider benchmarks.
 
 ## Development process increment
 
+The [parallel workflow review](analyses/parallel-workflow-2026-11-06.md) introduces
+registered branch/worktree tasks, signed linear integration, optional PR review
+and [selectable reusable skills](reusable-skills.md). The previous task checkpoint,
+verification and public-record contracts remain enforced inside each worktree.
+This is repository development infrastructure, not a completion claim for the
+product phases below.
+
 The [Trigon process review](analyses/trigon-process-sync-2026-10-28.md) precedes
 implementation of the [repository workflow](workflow.md),
 [central dependency patch process](dependencies.md), and

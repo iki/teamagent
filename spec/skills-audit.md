@@ -73,6 +73,15 @@ rollback and conflict handling, and never modify real user-level agent settings.
 
 ## Compatibility notes
 
+The November 6 [shared workflow review](analyses/parallel-workflow-2026-11-06.md)
+adds nine authored development skills under `skills/`, independently selectable
+through the [distribution contract](reusable-skills.md). Imported skills and
+their provenance lock remain separate. Vercel Skills 1.7.6 is pinned through
+Aube and executed explicitly with Bun; version-specific ref parsing and
+runtime validation are recorded in the [source audit](analyses/skills-distribution-2026-11-06.md).
+Workflow, verification, resource ownership and logging stay executable adapters;
+skills do not replace enforcement or local publication authority.
+
 Imported skill files and their provenance lock stay intact. Some C12/Consola reference links use the publisher's absolute checkout path; the intended Markdown references are also installed alongside each skill. Resolve those references locally. C12 guidance contains version-sensitive options/defaults; use the exact installed API when implementing it. The pinned `effect-oxlint` visitor API expects Effect-returning callbacks, so stateful generators need the supported wrapper rather than blindly copying a newer example.
 
 Keep established choices when samples use npm/pnpm, Node wrappers, a different test runner/schema library, unconditional compatibility flags or operational console logging. Apply the underlying requirement through Aube, Bun, Effect, the current test runner and the repository privacy policy. Review and intentionally update imported skill sources separately; do not silently alter their claimed hashes.

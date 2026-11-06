@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { join, resolve } from "node:path";
 import { test } from "node:test";
 import {
   gitEnvironment,
@@ -8,6 +8,12 @@ import {
   destination,
   snapshot,
   checkedScope,
+  commonDirectoryAndBranch,
+  destinationObservation,
+  headAndBranch,
+  headCommit,
+  remoteMainAndTask,
+  remoteMainAndTaskOrAbsent,
   signingReady,
   verifyCommitSignature,
   worktreeTree,
@@ -82,7 +88,7 @@ function observationResponse(args: readonly string[]): string {
   if (args[0] === "symbolic-ref") return "main\n";
   if (args[0] === "config") return configuration(upstreamRows);
   if (args[0] === "remote") return "https://github.com/iki/teamagent.git\n";
-  if (args[0] === "rev-parse") return `${commit}\n`;
+  if (args[0] === "rev-parse") return `${commit}\nrefs/heads/main\n`;
   if (args[0] === "diff") return args[1] === "HEAD" ? "owned.txt\0" : "";
   assert.equal(args[0], "ls-files");
   return "record.md\0";
@@ -124,7 +130,7 @@ await test(
       assert.equal(beforeRelease, 2);
       assert.equal(maximum, 2);
       assert.equal(active, 0);
-      assert.equal(calls.length, boundary === "scope" ? 8 : 7);
+      assert.equal(calls.length, boundary === "snapshot" ? 6 : 7);
       if (boundary === "committed-scope")
         assert.equal(
           calls.some((call) => call.startsWith("rev-parse ")),
@@ -183,7 +189,7 @@ await test(
       const result = await pending;
       assert.equal(premature, false);
       assert.equal(result, failure);
-      assert.equal(started, boundary === "scope" ? 8 : 7);
+      assert.equal(started, boundary === "scope" ? 4 : 3);
       assert.equal(finished, started);
     }
   },
@@ -195,7 +201,7 @@ await test("fresh scope observations retain every identity, staging and file val
   let reads = 0;
   const git: Git = async (args) => {
     reads++;
-    if (phase === "head" && args[0] === "rev-parse") return `${changedTree}\n`;
+    if (phase === "head" && args[0] === "rev-parse") return `${changedTree}\nrefs/heads/main\n`;
     if (phase === "staged" && args[0] === "diff" && args[1] === "--cached") return "outside.txt\0";
     if (phase === "outside" && args[0] === "ls-files") return "outside.txt\0";
     if (phase === "destination" && args[0] === "remote")
@@ -203,7 +209,7 @@ await test("fresh scope observations retain every identity, staging and file val
     return observationResponse(args);
   };
   await checkedScope(root, git, task);
-  assert.equal(reads, 8);
+  assert.equal(reads, 7);
   for (const [changed, message] of [
     ["head", /HEAD changed/u],
     ["staged", /Unrelated staged change/u],
@@ -213,7 +219,7 @@ await test("fresh scope observations retain every identity, staging and file val
     phase = changed;
     const previous: number = reads;
     await assert.rejects(checkedScope(root, git, task), message);
-    assert.equal(reads - previous, 8);
+    assert.equal(reads - previous, 7);
   }
   phase = "valid";
   await writeFile(join(root, "owned.txt"), "modified\n", "utf8");
@@ -524,6 +530,226 @@ await test("commit signature batching retains independent verification and exact
   assert.equal(calls, 1);
 });
 
+await test("revision observations bind fresh HEAD and common-directory identities to symbolic branches", async () => {
+  const directory = resolve("fixture-common-directory");
+  for (const [ref, branch] of [
+    ["refs/heads/main", "main"],
+    ["refs/heads/codex/task", "codex/task"],
+    ["HEAD", null],
+  ] as const) {
+    let reads = 0;
+    const git: Git = async (args) => {
+      reads++;
+      if (args.includes("--git-common-dir")) {
+        assert.deepEqual(args, [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir",
+          "--symbolic-full-name",
+          "HEAD",
+        ]);
+        return `${directory}\n${ref}\n`;
+      }
+      assert.deepEqual(args, ["rev-parse", "HEAD", "--symbolic-full-name", "HEAD"]);
+      return `${reads === 1 ? commit : changedTree}\n${ref}\n`;
+    };
+    assert.deepEqual(await headAndBranch(git), { head: commit, branch });
+    assert.deepEqual(await headAndBranch(git), { head: changedTree, branch });
+    assert.deepEqual(await commonDirectoryAndBranch(git), { directory, branch });
+    assert.equal(reads, 3);
+  }
+  const invalidRefs = [
+    "refs/tags/main",
+    "main",
+    "refs/heads/",
+    "refs/heads/with space",
+    "refs/heads/task\0suffix",
+  ];
+  for (const kind of ["head", "directory"] as const) {
+    const first = kind === "head" ? commit : directory;
+    const inspect = kind === "head" ? headAndBranch : commonDirectoryAndBranch;
+    const expected =
+      kind === "head"
+        ? "HEAD observation is malformed or exceeds bounds"
+        : "Repository binding observation is malformed or exceeds bounds";
+    for (const response of [
+      "",
+      `${first}\n`,
+      `${first}\nHEAD`,
+      `${first}\nHEAD\n\n`,
+      `${first}\r\nHEAD\r\n`,
+      ...invalidRefs.map((ref) => `${first}\n${ref}\n`),
+      `${kind === "head" ? "a".repeat(41) : "relative/path"}\nHEAD\n`,
+      `${"x".repeat(8193)}\nHEAD\n`,
+    ]) {
+      await assert.rejects(
+        inspect(async () => response),
+        (error: unknown) => {
+          assert.ok(error instanceof Error);
+          assert.equal(error.message, expected);
+          assert.equal(error.cause, undefined);
+          return true;
+        },
+      );
+    }
+  }
+  let detachedReads = 0;
+  await assert.rejects(
+    destinationObservation(async () => {
+      detachedReads++;
+      return `${commit}\nHEAD\n`;
+    }, policy),
+    /outside the approved publication policy/u,
+  );
+  assert.equal(detachedReads, 1);
+});
+
+await test("one fresh commit observation binds the exact SHA, tree and sole parent", async () => {
+  let reads = 0;
+  const git: Git = async (args) => {
+    assert.deepEqual(args, ["show", "-s", "--no-notes", "--format=%H%x00%T%x00%P", "HEAD"]);
+    reads++;
+    return `${reads === 1 ? commit : changedTree}\0${tree}\0${commit}\n`;
+  };
+  assert.deepEqual(await headCommit(git), { commit, tree, parent: commit });
+  assert.deepEqual(await headCommit(git), { commit: changedTree, tree, parent: commit });
+  assert.equal(reads, 2);
+  const sha256 = "a".repeat(64);
+  assert.deepEqual(await headCommit(async () => `${sha256}\0${sha256}\0${sha256}\n`), {
+    commit: sha256,
+    tree: sha256,
+    parent: sha256,
+  });
+  for (const response of [
+    "",
+    `${commit}\0${tree}\0${commit}`,
+    `${commit}\0${tree}\0${commit}\n\n`,
+    `${commit}\0${tree}\0${commit}\r\n`,
+    `${commit}\0${tree}\0${commit}\0private-fixture-value\n`,
+    `${commit}\0${tree}\0\n`,
+    `${commit}\0${tree}\0${commit} ${changedTree}\n`,
+    `${commit}\0${"a".repeat(41)}\0${commit}\n`,
+    `${"x".repeat(1025)}\n`,
+  ]) {
+    await assert.rejects(
+      headCommit(async () => response),
+      (error: unknown) => {
+        assert.ok(error instanceof Error);
+        assert.equal(
+          error.message,
+          "Commit observation is malformed or does not have exactly one parent",
+        );
+        assert.equal(error.cause, undefined);
+        return true;
+      },
+    );
+  }
+});
+
+await test("one fresh remote advertisement requires exactly the main and task refs", async () => {
+  const branch = "codex/observed-task";
+  const mainRef = "refs/heads/main";
+  const taskRef = "refs/heads/" + branch;
+  let reads = 0;
+  const git: Git = async (args) => {
+    assert.deepEqual(args, ["ls-remote", "--refs", "origin", mainRef, taskRef]);
+    reads++;
+    return `${reads === 1 ? tree : changedTree}\t${taskRef}\n${commit}\t${mainRef}\n`;
+  };
+  assert.deepEqual(await remoteMainAndTask(git, branch), { main: commit, source: tree });
+  assert.deepEqual(await remoteMainAndTask(git, branch), { main: commit, source: changedTree });
+  assert.equal(reads, 2);
+  const sha256 = "a".repeat(64);
+  assert.deepEqual(
+    await remoteMainAndTask(async () => `${sha256}\t${mainRef}\n${sha256}\t${taskRef}\n`, branch),
+    { main: sha256, source: sha256 },
+  );
+  const valid = `${commit}\t${mainRef}\n${tree}\t${taskRef}\n`;
+  for (const response of [
+    "",
+    `${commit}\t${mainRef}\n`,
+    `${tree}\t${taskRef}\n`,
+    `${commit}\t${mainRef}\n${tree}\t${mainRef}\n`,
+    `${commit}\t${mainRef}\n${tree}\trefs/heads/other\n`,
+    valid.slice(0, -1),
+    `${valid}\n`,
+    valid.replaceAll("\n", "\r\n"),
+    valid.replaceAll("\t", " "),
+    `${valid}${changedTree}\trefs/heads/extra\n`,
+    `${commit}\t${mainRef}\n${tree}\t${taskRef}\tprivate-fixture-value\n`,
+    `${"a".repeat(41)}\t${mainRef}\n${tree}\t${taskRef}\n`,
+    `${"x".repeat(2049)}\n`,
+  ]) {
+    await assert.rejects(
+      remoteMainAndTask(async () => response, branch),
+      (error: unknown) => {
+        assert.ok(error instanceof Error);
+        assert.equal(
+          error.message,
+          "Remote ref observation is malformed, incomplete or exceeds bounds",
+        );
+        assert.equal(error.cause, undefined);
+        return true;
+      },
+    );
+  }
+  const beforeInvalidBranch = reads;
+  for (const invalid of ["main", "--upload-pack=fixture", "codex/task\nextra", "codex/"])
+    await assert.rejects(remoteMainAndTask(git, invalid), /Invalid parallel task branch/u);
+  assert.equal(reads, beforeInvalidBranch);
+  const transport = new Error("controlled remote transport failure");
+  await assert.rejects(
+    remoteMainAndTask(async () => {
+      throw transport;
+    }, branch),
+    (error: unknown) => error === transport,
+  );
+});
+
+await test("initial task publication observes explicit absence while integration still requires both refs", async () => {
+  const branch = "codex/absent-task";
+  const mainRow = `${commit}\trefs/heads/main\n`;
+  const taskRow = `${tree}\trefs/heads/${branch}\n`;
+  for (const [response, expected] of [
+    ["", { main: null, source: null }],
+    [mainRow, { main: commit, source: null }],
+    [taskRow, { main: null, source: tree }],
+    [mainRow + taskRow, { main: commit, source: tree }],
+  ] as const) {
+    let reads = 0;
+    const git: Git = async (args) => {
+      reads++;
+      assert.deepEqual(args, [
+        "ls-remote",
+        "--refs",
+        "origin",
+        "refs/heads/main",
+        "refs/heads/" + branch,
+      ]);
+      return response;
+    };
+    assert.deepEqual(await remoteMainAndTaskOrAbsent(git, branch), expected);
+    assert.equal(reads, 1);
+    if (!expected.main || !expected.source)
+      await assert.rejects(
+        remoteMainAndTask(git, branch),
+        /malformed, incomplete or exceeds bounds/u,
+      );
+  }
+  for (const response of [
+    mainRow + mainRow,
+    taskRow + taskRow,
+    mainRow.slice(0, -1),
+    `${mainRow}\n`,
+    `${commit}\trefs/heads/extra\n`,
+    `${"a".repeat(41)}\trefs/heads/main\n`,
+  ])
+    await assert.rejects(
+      remoteMainAndTaskOrAbsent(async () => response, branch),
+      /malformed, incomplete or exceeds bounds/u,
+    );
+});
+
 await test("pre-commit reuses its captured alternate-index tree and still rejects index drift", async () => {
   for (const drift of ["none", "during-snapshot", "during-review"] as const) {
     const root = await mkdtemp("workflow-index-query-");
@@ -600,7 +826,8 @@ await test("preparation reads signing settings after the live remote check", asy
   const git: Git = async (args) => {
     if (args[0] === "symbolic-ref") return "main\n";
     if (args[0] === "remote") return "https://github.com/iki/teamagent.git\n";
-    if (args[0] === "rev-parse") return `${commit}\n`;
+    if (args[0] === "rev-parse")
+      return args.includes("--symbolic-full-name") ? `${commit}\nrefs/heads/main\n` : `${commit}\n`;
     if (args[0] === "write-tree") return `${tree}\n`;
     if (args[0] === "read-tree" || args[0] === "add" || args[0] === "ls-files") return "";
     if (args[0] === "diff") return args[1] === "HEAD" && changed ? "owned.txt\0" : "";

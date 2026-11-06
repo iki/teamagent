@@ -72,6 +72,15 @@ records source provenance, review findings and measured limits.
 
 The [installed skill audit](spec/skills-audit.md) records applicable guidance, compatibility caveats and future integration requirements.
 
+[Parallel development](spec/parallel-workflow.md) uses isolated `codex/*`
+worktrees under `.cache`, signed task commits and serialized rebase integration
+onto main. PR review is optional through the committed workflow policy.
+`bun app/workflow/parallel-index.ts --help` describes the JSON commands.
+[Reusable development skills](spec/reusable-skills.md) can be selected and
+updated in other repositories with the pinned Vercel Skills CLI; the
+[comparison and adoption prompts](spec/analyses/parallel-workflow-2026-11-06.md)
+record the project-specific migration details.
+
 Use Bun **1.4.2** and Aube **2.5.1**:
 
 ```sh

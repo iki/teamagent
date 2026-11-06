@@ -209,9 +209,20 @@ guarantees must not be presented as cross-platform evidence.
 
 Workflow commands retain explicit exited, timeout, output-limit, cancelled and
 transport outcomes. Tools and unit batches fail when native launch or cleanup
-fails. Unit batches retain the 120-second per-test setting and the shared
-360-second phase deadline, explicitly approved on 2026-11-02. Resource pressure may reduce admission or leave
-queued files unrun; such a result is incomplete verification, not a partial pass.
+fails. Unit batches share the 720-second phase deadline explicitly approved
+on 2026-11-06. The runner default remains 120 seconds per test; only the four
+new multi-step Git scenarios have separately approved 180-second limits.
+Older tests retain their existing limits. The overall three-worker cap,
+two-workflow-group cap, research exclusion and live memory thresholds remain
+unchanged. While any of the four new Git scenario batches is active, a further
+admission cap limits all active batches to two; starting a scenario likewise
+requires fewer than two existing active batches. Ordinary audited groups are
+queued first and can use the third slot while no scenario is active and caller/
+resource limits permit it. Existing children are joined rather than interrupted to change
+admission. Resource pressure may reduce admission or leave queued files unrun;
+such a result is incomplete verification, not a partial pass. The
+[verification contract](verification.md) retains the independently shorter
+Stop-hook and workflow-review budgets.
 
 Fingerprint readers hash full content with 64-KiB buffers, at most four active
 readers and a bounded queue of 256. They compare path/open-handle identities,

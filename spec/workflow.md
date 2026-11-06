@@ -4,7 +4,15 @@ This contract governs development of Teamagent. It is separate from the product'
 
 ## Authority and scope
 
-The user authorized automatic signed commits and ordinary pushes after a changed logical task passes review. The committed, non-secret publication policy names Teamagent's exact remote and branch. It does not authorize force pushes, amended history, integration merges, tags, releases, deployments, permission changes or hook trust changes. Recheck the destination and signature at the publication boundary even when preflight passed.
+The user authorized signed task commits and ordinary pushes after a changed logical task passes review, with explicit signed rebase integration for completed parallel tasks. The committed, non-secret publication policy fixes Teamagent's exact repository, remote and main ref. Version two selects local or PR-reviewed integration and permits registered same-name task-branch publication. It does not authorize force pushes, rewritten published refs, merge commits, tags, releases, deployments, permission changes or hook trust changes. Recheck the destination and signature at the publication boundary even when preflight passed.
+
+Start new independent tasks through the [parallel workflow](parallel-workflow.md).
+The checkpoint protocol below runs inside the returned task worktree and keeps
+one final signed commit per logical task. Main integration is a separate checked
+operation. Existing version-one tasks remain readable; explicit `adopt-policy`
+preserves an already-open task's original baseline when introducing version two.
+An already-open main task can finish through that recorded migration; new
+version-two tasks cannot begin on main.
 
 Preserve the original task identity and baseline through clarification, interruptions and continuation. Declare the task's literal relative file scope. Pre-existing changes require explicit adoption; unrelated staged or changed files must not enter a commit. Never infer ownership from everything currently dirty. A missing upstream, detached HEAD, unmerged index or changed destination stops publication with a recoverable local state.
 
@@ -17,13 +25,14 @@ unrelated work or certify a filtered tree using checks run on different bytes.
 
 ## Lifecycle
 
-1. Begin with a stable task ID, original Git baseline and explicit ownership scope.
+1. Create a registered isolated task worktree, then begin with a stable task ID, original Git baseline and explicit ownership scope.
 2. Implement the authorized work, preserving unrelated changes and private settings. Follow the relevant stack/platform specifications and dependency policy.
 3. Run the required implementation checks. Fix defects before advancing; do not relabel a failed or missing check as a cache hit.
 4. Prepare one public task record with the actual prompts, visible progress and exact implementation response. Apply the archive privacy/LF boundary and freeze its path and content hash before final verification.
 5. Review the final inputs and exact publication scope. Reusable verification evidence follows [the cache contract](cache.md); live LF/export, destination, signing and external-state checks remain required.
 6. Prepare a bounded commit message and immutable scope. Create an explicitly signed commit, verify its signature and expected content, then push the exact commit to the allowed ref without force.
 7. Verify the remote ref. Preserve separate local-commit, uncertain-transport and confirmed-publication outcomes. Later verification/publication results belong in receipts rather than rewriting the frozen public record.
+8. Integrate the confirmed task branch using the parallel workflow. Preserve its published source ref and frozen record, verify the final combined candidate, and confirm main's exact remote outcome separately.
 
 A failed transport does not prove that a remote update failed. Reconcile the saved attempt and remote ref before any retry. If an outcome cannot be confirmed, retain the commit, attempt and diagnostics and report the uncertainty. No entry point may silently restart a committing or pushing attempt.
 
@@ -46,19 +55,22 @@ has `sessionId` and a stable caller-selected `taskId`; never invent an earlier
 baseline by beginning after implementation. `--help` and `--version` do not read
 stdin or execute task work.
 
-| Operation           | Additional fields and behavior                                                                                                                                     |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `begin`             | Capture the actual initial HEAD, target and pre-existing file hashes; preserve an existing task on retry                                                           |
-| `status`            | Read state, baseline, scope, archive, commit, `checkpointHash` and `revisionReceipt` without taking the writer lock                                                |
-| `verify`            | `phase`: `step`, `review` or `final`; step may format, while review/final preserve source bytes and record a fresh proof                                           |
-| `checkpoint`        | `record` follows [the public record schema](conversation-logging.md); `message`, complete `files`, and optional `approvedExistingFiles` define ownership           |
-| `revise-checkpoint` | `revisionId`, `expectedCheckpointHash`, bounded non-secret `reason`, complete `files`, and optional `approvedExistingFiles` explicitly renew a repaired checkpoint |
-| `prepare`           | Require the frozen record, current proof, exact scope, hooks, signing identity and unchanged remote baseline                                                       |
-| `publish`           | Recheck those boundaries, sign and verify the exact commit, push its exact ref, then verify the remote result                                                      |
-| `cancel`            | Close an open/checkpointed/ready task; retain evidence and reject cancellation after publication has begun                                                         |
+| Operation           | Additional fields and behavior                                                                                                                                                                                   |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `begin`             | Capture the actual initial HEAD, target and pre-existing file hashes; preserve an existing task on retry                                                                                                         |
+| `adopt-policy`      | Explicitly adopt a compatible version-one to version-two or version-two mode-only policy change; preserve baseline, destination and frozen record, record the migration and clear verification/signing readiness |
+| `status`            | Read state, baseline, scope, archive, commit, `checkpointHash` and `revisionReceipt` without taking the writer lock                                                                                              |
+| `verify`            | `phase`: `step`, `review` or `final`; step may format, while review/final preserve source bytes and record a fresh proof                                                                                         |
+| `checkpoint`        | `record` follows [the public record schema](conversation-logging.md); `message`, complete `files`, and optional `approvedExistingFiles` define ownership                                                         |
+| `revise-checkpoint` | `revisionId`, `expectedCheckpointHash`, bounded non-secret `reason`, complete `files`, and optional `approvedExistingFiles` explicitly renew a repaired checkpoint                                               |
+| `prepare`           | Require the frozen record, current proof, exact scope, hooks, signing identity and unchanged remote baseline                                                                                                     |
+| `publish`           | Recheck those boundaries, sign and verify the exact commit, push its exact ref, then verify the remote result                                                                                                    |
+| `cancel`            | Close an open/checkpointed/ready task; retain evidence and reject cancellation after publication has begun                                                                                                       |
 
-Step and ordinary review honor `TEAMAGENT_VERIFICATION_CACHE_WRITE`: unset means
-`tracked`, `local` selects ignored receipt writes, and invalid values fail.
+Step and ordinary review honor `TEAMAGENT_VERIFICATION_CACHE_WRITE`: version-two
+task verification and the repository check launcher supply `local` when unset;
+legacy checks default to
+`tracked`. `local` selects ignored receipt writes, and invalid values fail.
 Final verification and pre-commit explicitly select `local`. Both stores remain
 subject to the same schema, exact input identity, rejection history and live
 checks; tracked mode may promote a revalidated local success. This routing is
@@ -138,4 +150,7 @@ The selected archive policy is one frozen public record per changed logical task
 
 Root task completion and explicit commands must share the same guards. Subagents do not publish the shared checkout. Preserve manual operation until the actual host supports and trusts the configured hooks; never change product trust or permission mode as part of installation. [Conversation logging](conversation-logging.md) owns the exact public-content and fallback protocol.
 
-Trigon's source-replay integration, worktree queue, release version graph and mandatory bilingual release notes are deferred. The operational documentation set stays compact; this does not impose product documentation quotas on Teamagent's research corpus or historical evidence.
+The parallel adapter implements isolated worktrees and signed linear integration;
+it does not adopt another project's release graph, bilingual release notes,
+editor-data ownership or preview lifecycle. [Reusable skills](reusable-skills.md)
+separate portable procedures from each project's policy and tested adapters.

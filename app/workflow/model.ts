@@ -11,12 +11,21 @@ export const Path = Schema.NonEmptyString.check(
 );
 export const Hash = Schema.String.check(Schema.isPattern(/^[a-f0-9]{64}$/u));
 export const Identity = { sessionId: Id, taskId: Id };
-export const Policy = Schema.Struct({
-  version: Schema.Literal(1),
+const PolicyFields = {
   repository: Schema.Literal("github.com/iki/teamagent"),
   remote: Schema.Literal("origin"),
   ref: Schema.Literal("refs/heads/main"),
+};
+export const LegacyPolicy = Schema.Struct({
+  version: Schema.Literal(1),
+  ...PolicyFields,
 });
+export const ParallelPolicy = Schema.Struct({
+  version: Schema.Literal(2),
+  ...PolicyFields,
+  mode: Schema.Literals(["local", "pr"]),
+});
+export const Policy = Schema.Union([LegacyPolicy, ParallelPolicy]);
 export type Policy = typeof Policy.Type;
 export const Snapshot = Schema.Struct({
   head: Schema.String,
@@ -66,12 +75,13 @@ export const Task = Schema.Struct({
   signingIdentity: Schema.NullOr(Hash),
   commit: Schema.NullOr(Schema.String),
   failure: Schema.NullOr(Schema.String),
+  policyMigration: Schema.optional(Schema.Struct({ previousHash: Hash, baseline: Schema.String })),
   latestRevision: Schema.optional(Schema.Struct({ receipt: Path, hash: Hash })),
 });
 export type Task = typeof Task.Type;
 export const Request = Schema.Union([
   Schema.Struct({
-    operation: Schema.Literals(["begin", "status", "prepare", "publish", "cancel"]),
+    operation: Schema.Literals(["begin", "status", "prepare", "publish", "cancel", "adopt-policy"]),
     ...Identity,
   }),
   Schema.Struct({

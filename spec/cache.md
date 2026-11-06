@@ -24,7 +24,9 @@ explicit alternate index. It never substitutes the working tree for staged
 receipt inputs.
 
 `TEAMAGENT_VERIFICATION_CACHE_WRITE` selects `tracked` or `local`; an unset
-variable defaults to `tracked`, and empty or unsupported values fail explicitly.
+variable defaults to `tracked` in the low-level API. The repository check
+launcher and task verification supply `local` for version-two policy when unset;
+explicit selections remain honored. Empty or unsupported values fail explicitly.
 Both modes check tracked evidence first, then local evidence, using the same
 schema, current input identity, rejection history and live validation. A miss
 writes only the selected store. Tracked mode promotes a matching local success
@@ -248,26 +250,62 @@ smaller of host free memory and the runtime's process-available estimate. Unknow
 availability remains conservatively sequential. Admission is checked again
 before each batch. If memory falls below the floor, running children are joined;
 queued files remain explicitly unrun and verification fails without a receipt.
-With two workers it starts the remaining suites first and separately queues
-workflow, research Git and workflow revisions. With three workers, the remaining
-suites, research Git, and the HTTP cache plus memory CLI/MCP group start first.
-As slots open, the runner admits owned launchers (native lifetime, both owned
-process suites, project launcher and environment), workflow, workflow revisions,
-verification cache, pre-commit, analysis sync, then imports. This gives the
-120-second research case a chance to run before the busiest Git fixtures and
-leaves a shorter import group for the tail. These suites use private fixtures;
-process-local mutations are restored, network fixtures bind ephemeral loopback
-ports, and native artifact publication retains its ownership lock while complete
-warm artifacts require full live validation. The two
-workflow files share stateless fixture helpers and preserve all original cases.
-The additional groups remain in the remaining batch with two workers.
+The check launcher's optional --workers 1, 2 or 3 caps unit processes.
+Without it, the default remains resource-derived admission up to three.
+The effective initial count is the smaller of the requested cap and resource
+admission; live memory checks can lower it further before each batch. Selecting
+two workers uses the same complete audited inventory as three, so fewer workers
+do not fold isolated suites back into an oversized remaining batch. One worker
+keeps the complete original file order. This option changes scheduling only:
+there is no per-batch success cache, partial receipt or coverage reduction.
+Existing complete exact-input receipts remain eligible; use --force-fresh to
+measure an executed run.
+
+Research Git runs first and alone in both parallel-worker inventories.
+No other batch can start until it settles, including failure; research also
+requires an otherwise empty active set. The one-worker path remains one complete
+batch in the original discovery order.
+Both parallel-worker counts use the same queue after research: remaining
+suites, bootstrap, HTTP cache plus memory CLI/MCP, owned launchers (native
+lifetime, both owned process suites, project launcher and environment), workflow,
+workflow revisions, verification cache, pre-commit, analysis sync and imports.
+The four new heavy scenario batches follow those ordinary audited groups:
+parallel integration, failures, recovery and PR integration. Bootstrap pairs
+the start/registry and policy-migration tests in one separately audited batch.
+At most two of the seven workflow groups (workflow, workflow revisions and the
+five parallel-workflow groups) can run at once. The four new multi-step Git
+scenario batches (integration, failures, recovery and PR integration) also cap
+total active batches at two whenever any of them is running. A scenario can
+start only when fewer than two batches are already active, so entering this
+phase cannot exceed that cap. Before any scenario starts, compatible ordinary
+groups can use three slots, including bootstrap and older workflow groups while
+retaining their two-workflow cap. A scenario may overlap one earlier ordinary
+batch still running. A caller-selected two-worker cap stays at two throughout.
+Each available slot takes the first compatible queued batch, so later work can
+proceed while an earlier batch waits for capacity. With the complete inventory,
+remaining, bootstrap and HTTP batches start after research when three workers
+are admitted. Existing running children are
+never interrupted to change admission.
+Eligibility is released only after an active batch settles; every admitted
+child is still joined before the scheduler reports failures. This contention
+policy is not a measured speedup claim and changes no memory or time limit.
+These suites use private fixtures; process-local mutations are restored,
+network fixtures bind ephemeral loopback ports, and native artifact publication
+retains its ownership lock while complete warm artifacts require full live
+validation. Parallel workflow groups use separate bare remotes, keys, worktrees
+and registries. Only independent source publications within one fixture overlap,
+with a maximum of two joined publishers before shared main or hooks change.
 Unknown suites stay together in
 their original order, every file belongs to exactly one batch, and the one-worker
 path retains the original complete file order. All groups share the
-360-second unit deadline and unchanged 120-second per-test setting; live admission still
-caps active workers at three. The one-GiB
-floor is a conservative admission policy, not a measured optimum. Historical
-samples below describe the policy in force when those samples were collected.
+720-second unit deadline. The runner's default remains 120 seconds per test;
+only the four new multi-step Git scenarios (integration, failures, recovery and
+PR integration) have explicit 180-second limits. Older cases retain their
+existing limits. Live admission still caps all active workers at three and
+workflow groups at two, with the research exclusion described above. The
+one-GiB floor is a conservative admission policy, not a measured optimum.
+Historical samples below describe the policy in force when those samples were
+collected.
 
 The user approved the shared phase increase from 240 to 360 seconds on
 2026-11-02 after measured full runs exhausted the previous budget despite
@@ -277,6 +315,54 @@ cap and exact-input reuse requirements remain unchanged. The
 the failed attempts and optimization evidence. Assembled hook/workflow budgets
 remain independently bounded; obtain successful step evidence before their
 shorter review/publication checks, which may reuse only validated exact inputs.
+
+On 2026-11-06 the user approved increasing only the shared unit phase from 360
+to 420 seconds for the expanded parallel-workflow suite. One 360-second attempt
+completed about 969 worker-seconds before three remaining groups reached the
+shared deadline without assertion failures; a later memory-constrained run
+admitted only two workers. The task record retains those distinct observations.
+Individual test limits, complete coverage, live memory admission, the three-worker
+cap, force-fresh behavior and the shorter hook/workflow review budgets are
+unchanged. This approval does not make incomplete verification successful.
+
+Later on 2026-11-06, the user explicitly approved a 600-second shared unit phase
+and 180-second limits for only the four new multi-step Git cases: signed task
+integration, conflict/verification failure handling, uncertain-push recovery,
+and PR integration. The separate pure PR-admission test, older tests and the
+120-second runner default retain their existing limits. The preceding run
+completed 1,139.62 worker-seconds across finished batches; four new Git cases
+reached their 120-second limit, and three batches remained unfinished at the
+420-second phase deadline. Worker durations overlap and are not the elapsed
+phase duration. Complete coverage, live memory thresholds, the overall
+three-worker cap, the two-workflow-group cap, research exclusion and exact-input
+reuse remain unchanged. Root Stop review remains bounded at 300 seconds, its
+outer command at 420 seconds, and workflow review at 300 seconds. The task
+record retains the attempts and approval; a timed-out or unfinished run still
+cannot produce successful verification evidence.
+
+On 2026-11-06, the user explicitly approved increasing only the shared unit
+phase from 600 to 720 seconds. The four new multi-step Git cases retain their
+180-second limits; older cases and the 120-second runner default retain their
+existing limits. The overall three-worker cap, two-workflow-group cap, temporary
+two-batch cap while heavy scenarios run, research exclusivity, live memory
+thresholds and complete coverage remain unchanged. Root Stop review and workflow
+review still have 300-second budgets, and the root hook outer budget remains
+420 seconds.
+
+The preceding 600-second attempts were incomplete. An explicit two-worker run
+passed research and all four new Git scenarios, but workflow revisions,
+verification cache, pre-commit, analysis sync and imports did not complete by the
+shared deadline. Those four scenarios accumulated 493.65 worker-seconds in that
+run; overlapping worker durations are not a phase elapsed time or a prediction
+for another run. The subsequent automatic schedule ran research exclusively,
+ordinary groups before heavy scenarios, and at most two batches while a heavy
+scenario was active. Every ordinary batch passed, followed by integration in
+147.05 seconds and failure handling in 159.54 seconds. Recovery and PR remained
+incomplete when the 600-second phase expired. No assertion failures were observed
+before that phase abort, and all scheduled descendants were joined. These
+partial successes do not constitute a passed full gate. The extra phase budget
+allows more time for the retained schedule, including exclusive research and
+bounded heavy work; it does not change admission limits or certify the next run.
 
 When `GITHUB_ACTIONS=true`, verification executes rather than reusing tracked,
 local or nonportable passed receipts, even when every input matches. Storage

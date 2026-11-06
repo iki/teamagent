@@ -13,7 +13,7 @@ if (import.meta.main) {
     flags: { version: { type: Boolean, alias: "V", description: "Show version" } },
     help: {
       description:
-        "Bounded JSON task workflow on stdin: begin, status, checkpoint, revise-checkpoint, verify, prepare, publish, cancel. Explicit checkpoint revision preserves the frozen public record and requires fresh verification. Signed commits and exact approved-upstream publication; no automatic retry after uncertain actions. Policy: .workflow.json. No credentials in requests.",
+        "Bounded JSON task workflow on stdin: begin, status, checkpoint, revise-checkpoint, verify, prepare, publish, cancel, adopt-policy. Policy adoption explicitly preserves an active task baseline while invalidating verification. New version 2 tasks require a registered worktree. One final signed commit per task; exact approved-upstream publication without automatic retry. Policy: .workflow.json. No credentials in requests.",
       version: manifest.version,
       examples: [
         'JSON stdin: {"operation":"begin","sessionId":"session","taskId":"task"}',

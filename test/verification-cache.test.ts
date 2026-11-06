@@ -1407,7 +1407,11 @@ test("unit child environment isolates Git indexes and Python bytecode without ch
 test("check, cache and web build help/version stay passive with unavailable prerequisites", () => {
   for (const entry of ["app/check/index.ts", "app/check/cache.ts", "app/web/build.ts"])
     for (const flag of ["-h", "--help", "-V", "--version"]) {
-      const result = spawnSync(process.execPath, [entry, flag], {
+      const args =
+        entry === "app/check/index.ts"
+          ? [entry, "--workers", "1", "--workers", "2", flag]
+          : [entry, flag];
+      const result = spawnSync(process.execPath, args, {
         encoding: "utf8",
         windowsHide: true,
         timeout: 10_000,
@@ -1417,9 +1421,29 @@ test("check, cache and web build help/version stay passive with unavailable prer
       expect(result.status).toBe(0);
       if (flag.includes("V") || flag.includes("version"))
         expect(result.stdout.trim()).toBe(version);
-      else expect(result.stdout + result.stderr).toMatch(/usage:/iu);
+      else {
+        expect(result.stdout + result.stderr).toMatch(/usage:/iu);
+        if (entry === "app/check/index.ts")
+          expect(result.stdout + result.stderr).toContain("--workers");
+      }
       expect(result.stdout + result.stderr).not.toContain("prerequisite probe failed");
     }
+}, 30_000);
+
+test("check rejects invalid and missing worker limits before prerequisite work", () => {
+  for (const args of [["--workers", "2", "--workers", "4"], ["--workers"]]) {
+    const result = spawnSync(process.execPath, ["app/check/index.ts", ...args], {
+      encoding: "utf8",
+      windowsHide: true,
+      timeout: 10_000,
+      maxBuffer: 256 * 1024,
+      env: { ...process.env, TEAMAGENT_TEST_PYTHON: "/missing/fixture-python" },
+    });
+    expect(result.error).toBeUndefined();
+    expect(result.status).not.toBe(0);
+    expect(result.stdout + result.stderr).toMatch(/workers?|number|value/iu);
+    expect(result.stdout + result.stderr).not.toContain("prerequisite probe failed");
+  }
 }, 30_000);
 
 test("audited groups cover every file once, preserve unknown order and fall back under resource pressure", async () => {
@@ -1436,17 +1460,15 @@ test("audited groups cover every file once, preserve unknown order and fall back
       .flatMap((batch) => batch.files)
       .sort(),
   ).toEqual([...files].sort());
-  expect(testBatches(files).at(0)?.files).toEqual(["test/first.test.ts", "test/new.test.ts"]);
-  expect(testBatches(files, false).at(0)?.files).toEqual([
+  expect(testBatches(files).at(0)?.name).toBe("test/research-git.test.ts");
+  expect(testBatches(files).find((batch) => batch.name === "remaining")?.files).toEqual([
     "test/first.test.ts",
     "test/new.test.ts",
-    "test/analysis-sync.test.ts",
-    "test/verification-cache.test.ts",
   ]);
-  expect(testBatches(files, false)).toHaveLength(3);
+  expect(testBatches(files)).toHaveLength(5);
   expect(testBatches(files).map((batch) => batch.name)).toEqual([
-    "remaining",
     "test/research-git.test.ts",
+    "remaining",
     "test/workflow.test.ts",
     "test/verification-cache.test.ts",
     "test/analysis-sync.test.ts",
@@ -1471,7 +1493,7 @@ test("audited groups cover every file once, preserve unknown order and fall back
     /failed/u,
   );
   expect(finished).toHaveLength(5);
-  expect(finished.at(0)).toBe("remaining");
+  expect(finished.at(0)).toBe("test/research-git.test.ts");
 });
 
 test("audited cache batch waits for a slot without exceeding the three-worker cap", async () => {
@@ -1511,11 +1533,18 @@ test("audited cache batch waits for a slot without exceeding the three-worker ca
     active--;
   });
   try {
-    expect(started).toEqual(["remaining", "test/research-git.test.ts", "http-and-memory-cli"]);
-    finish("http-and-memory-cli");
-    await workflowStarted.promise;
-    expect(started).not.toContain("test/verification-cache.test.ts");
+    expect(started).toEqual(["test/research-git.test.ts"]);
+    expect(active).toBe(1);
     finish("test/research-git.test.ts");
+    await workflowStarted.promise;
+    expect(started).toEqual([
+      "test/research-git.test.ts",
+      "remaining",
+      "http-and-memory-cli",
+      "test/workflow.test.ts",
+    ]);
+    expect(started).not.toContain("test/verification-cache.test.ts");
+    finish("http-and-memory-cli");
     await cacheStarted.promise;
     expect(started).not.toContain("test/analysis-sync.test.ts");
     finish("test/verification-cache.test.ts");

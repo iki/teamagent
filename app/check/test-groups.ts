@@ -38,11 +38,28 @@ const single = (file: string): TestBatch => ({ name: file, files: [file] });
 const workflow = single("test/workflow.test.ts");
 const revisions = single("test/workflow-revisions.test.ts");
 const research = single("test/research-git.test.ts");
-const twoWorkerGroups = [workflow, research, revisions];
-// Start research with lower-Git work; let the next free worker take each group.
-// This queue changes neither admission nor the shared deadline.
-const threeWorkerGroups: readonly TestBatch[] = [
+const parallelGroups = [
+  single("test/parallel-workflow-integration.test.ts"),
+  single("test/parallel-workflow-failures.test.ts"),
+  single("test/parallel-workflow-recovery.test.ts"),
+  single("test/parallel-workflow-pr.test.ts"),
+];
+const heavyBatchNames = new Set(parallelGroups.map((batch) => batch.name));
+const parallelBootstrap: TestBatch = {
+  name: "parallel-workflow-bootstrap",
+  files: ["test/parallel-workflow.test.ts", "test/parallel-workflow-migration.test.ts"],
+};
+const workflowBatchNames = new Set([
+  workflow.name,
+  revisions.name,
+  ...parallelGroups.map((batch) => batch.name),
+  parallelBootstrap.name,
+]);
+// Research runs first and alone; then fill free slots with compatible audited batches.
+// Heavy Git scenarios cap all active batches at two; other work retains the overall cap.
+const auditedGroups: readonly TestBatch[] = [
   research,
+  parallelBootstrap,
   {
     name: "http-and-memory-cli",
     files: ["test/import-http-cache.test.ts", "test/memory-cli-mcp.test.ts"],
@@ -63,8 +80,18 @@ const threeWorkerGroups: readonly TestBatch[] = [
   single("test/pre-commit.test.ts"),
   single("test/analysis-sync.test.ts"),
   single("test/imports.test.ts"),
+  ...parallelGroups,
 ];
-const batchLabels = new Set(["all", "remaining", ...threeWorkerGroups.map((batch) => batch.name)]);
+const batchLabels = new Set(["all", "remaining", ...auditedGroups.map((batch) => batch.name)]);
+function compatibleBatch(name: string, active: ReadonlySet<string>): boolean {
+  if (name === research.name) return active.size === 0;
+  if (active.has(research.name)) return false;
+  const heavy =
+    heavyBatchNames.has(name) || [...active].some((label) => heavyBatchNames.has(label));
+  if (heavy && active.size >= 2) return false;
+  const workflows = [...active].filter((label) => workflowBatchNames.has(label)).length;
+  return !workflowBatchNames.has(name) || workflows < 2;
+}
 const failureReasons = [
   "deadline",
   "cancelled",
@@ -96,25 +123,34 @@ function signalFailure(signal: AbortSignal): TestBatchFailure {
   );
 }
 
-export function testBatches(
-  files: readonly string[],
-  additionalIsolation = true,
-): readonly TestBatch[] {
-  const groups = additionalIsolation ? threeWorkerGroups : twoWorkerGroups;
+export function testBatches(files: readonly string[]): readonly TestBatch[] {
+  const groups = auditedGroups;
   const isolated = new Set(groups.flatMap((batch) => batch.files));
   return [
+    { name: research.name, files: files.filter((file) => research.files.includes(file)) },
     { name: "remaining", files: files.filter((file) => !isolated.has(file)) },
-    ...groups.map((batch) => ({
-      name: batch.name,
-      files: files.filter((file) => batch.files.includes(file)),
-    })),
+    ...groups
+      .filter((batch) => batch.name !== research.name)
+      .map((batch) => ({
+        name: batch.name,
+        files: files.filter((file) => batch.files.includes(file)),
+      })),
   ].filter((batch) => batch.files.length > 0);
 }
+const decodeUnitWorkerLimit = Schema.decodeUnknownSync(Schema.Literals([1, 2, 3]));
+export function unitWorkerLimit(input: unknown): 1 | 2 | 3 {
+  try {
+    return decodeUnitWorkerLimit(input === undefined ? 3 : input);
+  } catch {
+    throw new Error("Unit worker limit must be 1, 2 or 3");
+  }
+}
 /** Conservative admission policy; preliminary timings do not establish an optimal cap. */
-export function testConcurrency(resources: {
-  readonly cpus: number;
-  readonly memoryBytes: number;
-}): number {
+export function testConcurrency(
+  resources: { readonly cpus: number; readonly memoryBytes: number },
+  workers: unknown = 3,
+): number {
+  const limit = unitWorkerLimit(workers);
   if (
     Number.isFinite(resources.memoryBytes) &&
     resources.memoryBytes >= 0 &&
@@ -128,7 +164,7 @@ export function testConcurrency(resources: {
     resources.memoryBytes < 2 * 1024 ** 3
   )
     return 1;
-  return resources.cpus >= 4 && resources.memoryBytes >= 4 * 1024 ** 3 ? 3 : 2;
+  return Math.min(limit, resources.cpus >= 4 && resources.memoryBytes >= 4 * 1024 ** 3 ? 3 : 2);
 }
 export async function scheduleTestBatches(
   files: readonly string[],
@@ -138,10 +174,10 @@ export async function scheduleTestBatches(
 ): Promise<void> {
   if (!Number.isInteger(concurrency) || concurrency < 1 || concurrency > 3)
     throw new Error("Test concurrency must be between one and three");
-  const batches =
-    concurrency === 1 ? [{ name: "all", files }] : [...testBatches(files, concurrency === 3)];
+  const batches = concurrency === 1 ? [{ name: "all", files }] : [...testBatches(files)];
   const failures: Array<{ batch: string; reason: TestBatchFailureReason }> = [];
   const active = new Set<Promise<void>>();
+  const activeLabels = new Set<string>();
   let incompleteFiles = 0;
   while (batches.length || active.size) {
     let admitted = concurrency;
@@ -152,10 +188,15 @@ export async function scheduleTestBatches(
         admitted = 1;
       }
     }
-    if (batches.length && active.size < admitted) {
-      const batch = batches.shift();
+    const eligible =
+      active.size < admitted
+        ? batches.findIndex((batch) => compatibleBatch(batch.name, activeLabels))
+        : -1;
+    if (eligible !== -1) {
+      const [batch] = batches.splice(eligible, 1);
       if (!batch) throw new Error("Test batch inventory changed unexpectedly");
       const label = batchLabels.has(batch.name) ? batch.name : "unknown";
+      activeLabels.add(label);
       const work = (async () => {
         try {
           await run(batch);
@@ -166,6 +207,7 @@ export async function scheduleTestBatches(
       active.add(work);
       void work.then(() => {
         active.delete(work);
+        activeLabels.delete(label);
       });
       continue;
     }
@@ -324,7 +366,8 @@ async function boundedTests(
     signal.removeEventListener("abort", abort);
   }
 }
-export async function runUnitTests(root: string): Promise<void> {
+export async function runUnitTests(root: string, workers?: unknown): Promise<void> {
+  const workerLimit = unitWorkerLimit(workers);
   const files = (await readdir(resolve(root, "test")))
     .filter((file) => file.endsWith(".test.ts"))
     .sort()
@@ -337,12 +380,12 @@ export async function runUnitTests(root: string): Promise<void> {
   });
   let concurrency = 1;
   try {
-    concurrency = testConcurrency(resources());
+    concurrency = testConcurrency(resources(), workerLimit);
   } catch {
     /* Unknown resource availability stays sequential. */
   }
   process.stderr.write(
-    `Unit inventory: ${files.length} files, ${concurrency} process(es); 360-second phase deadline\n`,
+    `Unit inventory: ${files.length} files, ${concurrency} process(es); 720-second phase deadline\n`,
   );
   const controller = new AbortController();
   const resourceRoot = fileURLToPath(new URL("../../", import.meta.url));
@@ -352,7 +395,7 @@ export async function runUnitTests(root: string): Promise<void> {
   const interrupt = (): void => controller.abort(new TestBatchFailure("cancelled"));
   process.once("SIGINT", interrupt);
   process.once("SIGTERM", interrupt);
-  const timer = setTimeout(() => controller.abort(new TestBatchFailure("deadline")), 360_000);
+  const timer = setTimeout(() => controller.abort(new TestBatchFailure("deadline")), 720_000);
   try {
     const pycache = resolve(workspace.path, "python");
     await mkdir(pycache);

@@ -11,6 +11,7 @@ The root [agent rules](../AGENTS.md) govern implementation. The CLI/web/desktop 
 | Review or delivery            | `aube run --no-install review:check`               | Check formatting, strict TS7, type-aware Oxlint, regression tests; no automatic source fixes             |
 | Hook installation             | `aube run --no-install hooks:install`              | Install repository Git hook and record this checkout's Bun executable                                    |
 | Conversation archive          | `aube run --no-install conversations:record`       | Read validated JSON from stdin and preserve a public response record                                     |
+| Parallel tasks                | `aube run --no-install task:parallel`              | Bounded JSON worktree, PR submission and explicit integration protocol                                   |
 | Task workflow                 | `aube run --no-install task:run`                   | JSON begin/checkpoint/revision/verification/publication protocol; exact destination and signature guards |
 | Dependency integrity          | `aube run --no-install deps:check`                 | Offline checks of supplied Trigon artifacts and pin coverage; no installation                            |
 | Fresh verification            | `aube run --no-install review:check --force-fresh` | Execute checks even when a cooperative receipt matches                                                   |
@@ -24,7 +25,9 @@ Any missing dependency, nonzero result, timeout or missing backend is a failure.
 The [cache contract](cache.md) permits exact-input reuse for format, all four
 type programs, lint and unit tests. Review preserves source bytes but may write
 cooperative success receipts and owned test/cache outputs.
-`TEAMAGENT_VERIFICATION_CACHE_WRITE` defaults to `tracked`; `local` routes new
+The version-two repository check/task launchers default
+`TEAMAGENT_VERIFICATION_CACHE_WRITE` to `local` when unset; legacy low-level calls
+default to `tracked`. Explicit `local` routes new
 successes to ignored `.cache/verification/` files. Empty or unsupported values
 fail. Both modes validate tracked evidence first, then local evidence; tracked
 mode can promote a revalidated local hit. Routing is excluded from input keys,
@@ -45,7 +48,32 @@ rejection history, legacy migration and invalidation of both receipt stores;
 success for different inputs does not clear earlier failed keys, and switching
 stores cannot bypass a force-fresh failure.
 
-Tool launches have a 120-second cap; the complete unit phase, including every admitted child, has a 360-second cap, explicitly approved on 2026-11-02. The unit runner retains its 120-second per-test default and existing explicit case limits. The root Stop hook separately caps its assembled verification subprocess at 300 seconds. Its outer command budget is 420 seconds, allowing the unchanged 60-second archive operation and cleanup overhead. SubagentStop retains its 90-second outer budget. A timeout is a failed gate, not a skipped check; longer specialized integration/benchmark jobs need explicit separately bounded tasks.
+Use `aube run --no-install step:check --workers 2 --force-fresh` to execute
+the full gate with at most two unit processes. The optional --workers flag
+accepts 1, 2 or 3; without it, admission remains resource-derived up to three.
+It is a cap, not a minimum: initial and live resource checks can admit fewer.
+Two and three workers use the same audited batches; one worker preserves the
+complete original file order. Research runs first and alone. While any of the
+four new multi-step Git scenarios is active, total batch concurrency is capped
+at two; a scenario also requires fewer than two already-active batches before
+starting. Ordinary audited groups are queued before those scenarios and can
+use three slots while none is active, subject to the caller cap, live resources
+and the two-workflow-group cap.
+The flag changes scheduling only, without
+per-batch success reuse, partial receipts, shortened coverage or new deadlines.
+A matching complete receipt can still be reused unless --force-fresh is selected.
+
+Tool launches retain their 120-second cap. The complete unit phase, including
+every admitted child, has a 720-second cap explicitly approved on 2026-11-06.
+The unit runner retains its 120-second per-test default; only the four new
+multi-step Git cases for integration, failures, recovery and PR integration
+have explicit 180-second limits. The pure PR-admission test and older tests
+retain their existing limits. The root Stop hook separately caps its assembled
+verification subprocess at 300 seconds. Its outer command budget is 420 seconds,
+allowing the unchanged 60-second archive operation and cleanup overhead.
+Workflow review retains its 300-second budget, and SubagentStop retains its
+90-second outer budget. A timeout is a failed gate, not a skipped check; longer
+specialized integration/benchmark jobs need explicit separately bounded tasks.
 
 The independently bounded workflow review and Stop hook may require successful
 step evidence for exact-input reuse. A cold or force-fresh run is not guaranteed
@@ -55,7 +83,7 @@ checks, and never turns a partial or timed-out attempt into success.
 
 The resource-aware unit scheduler and audited batches are specified in
 the [cache contract](cache.md#measurements-and-scheduling). Every group shares
-the same 360-second deadline; parallel execution does not extend it. The live
+the same 720-second deadline; parallel execution does not extend it. The live
 prerequisite probe permits read-only use of provisioned Python bytecode and
 fingerprints its bytes before accepting cache reuse. Environment-honoring unit
 fixtures receive fresh bytecode prefixes; isolated converter and OmniVoice
@@ -66,8 +94,9 @@ repository-import fixtures use a temporary prefix for those imports.
 The [resource contract](resources.md) defines bounded streaming fingerprints,
 memory admission, process ownership and temporary-file cleanup. Available
 memory is resampled before each admitted batch; less than 1 GiB admits no new
-batch. Unrun files fail the phase. Tests keep their original coverage and
-deadlines. Managed fixture allocation and a fixture-tested lint rule prevent
+batch. Unrun files fail the phase. Tests keep complete coverage and their
+adopted deadlines, including the four explicitly approved 180-second cases.
+Managed fixture allocation and a fixture-tested lint rule prevent
 new native temporary directories outside the audited ownership helpers.
 Only the three validated temporary-parent routing variables are excluded from
 verification keys; malformed routing fails the live prerequisite check before

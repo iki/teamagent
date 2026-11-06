@@ -104,10 +104,31 @@ matching success receipts. Module layout, dependency-artifact integrity and raw
 LF/export checks remain live. See [verification](../verification.md) and the
 [cache contract](../cache.md).
 
+The optional `--workers <1|2|3>` sets an upper bound on unit worker processes.
+The default remains automatic resource-derived admission up to three. Repeated
+flags select the last value. That value must be an integer from one through
+three; zero, larger values, fractions, non-numbers and a missing value fail
+before prerequisite work. The initial
+count is the smaller of the cap and resource admission, and live memory checks
+can reduce admission further. Two and three workers use the same audited batch
+inventory, with research first and exclusive; one worker preserves the entire
+original file order. The four new multi-step Git scenarios additionally restrict
+total active batches to two while any is running; starting a scenario also
+requires fewer than two existing active batches. Ordinary audited groups are
+queued before those scenarios and can use three slots while none is active,
+bounded by the caller cap, live resources and the two-workflow-group cap. Selecting --workers 2 retains that overall cap
+throughout. The flag changes scheduling only: every discovered test
+still runs unless verification fails, all adopted deadlines stay enforced, and
+there is no partial or per-batch success caching. Existing complete exact-input
+receipts remain eligible; pair `--workers 2` with `--force-fresh` to measure an
+executed full gate. Help and version remain passive with the flag present.
+
 The developer entry points are separate from the product module CLI:
 
 | Entry                                 | Canonical contract                           | Input                                                                               |
 | ------------------------------------- | -------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `task:parallel`                       | [Parallel workflow](../parallel-workflow.md) | Bounded JSON stdin; isolated task and integration operations                        |
+| `skills`                              | [Reusable skills](../reusable-skills.md)     | Pinned Vercel Skills CLI under Bun; explicit names, agents and reviewed source      |
 | `task:run`                            | [Repository workflow](../workflow.md)        | Bounded JSON stdin; fixed `.workflow.json` policy                                   |
 | `project:run`                         | [Project launcher](../project-launcher.md)   | Explicit physical target, pinned tool and literal arguments after `--`; Mise opt-in |
 | `deps`, `deps:check`                  | [Dependency maintenance](../dependencies.md) | Strict action-specific flags; no implicit installation                              |

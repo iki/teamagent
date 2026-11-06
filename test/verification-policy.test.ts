@@ -144,6 +144,12 @@ await test("normalized verification subprocesses use the keyed locale and retain
 await test("workflow verification launches final checks locally and preserves explicit tracked review", async () => {
   const f = await fixture();
   try {
+    await mkdir(join(f.root, "node_modules"));
+    await writeFile(
+      join(f.root, "package.json"),
+      '{"private":true,"dependencies":{},"devDependencies":{}}\n',
+      "utf8",
+    );
     await mkdir(join(f.root, "app/check"), { recursive: true });
     await writeFile(
       join(f.root, "app/check/index.ts"),

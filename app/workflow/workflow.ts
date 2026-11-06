@@ -17,17 +17,26 @@ import {
   atomicText,
   boundedText,
   containedPath,
+  digest,
   taskKey,
   withLock,
   workflowCapacity,
 } from "./storage.ts";
-import { Request, Task, validateMessage, type Verification } from "./model.ts";
+import { Policy, Request, Task, validateMessage, type Verification } from "./model.ts";
+import {
+  assertParallelRegistry,
+  publicationBaseline,
+  validateParallelTask,
+} from "./parallel-store.ts";
+import { assertWorktreeDependencies } from "./parallel-install.ts";
 import {
   changedPaths,
   checkedScope,
   destination,
   fileHash,
+  GitObjectId,
   gitAt,
+  headCommit,
   paths,
   publicPath,
   readPolicy,
@@ -56,14 +65,17 @@ export const verificationHost: VerificationHost = {
   identity: reviewInputIdentity,
   staged: verifyStagedVerificationReceipts,
   async live(root) {
+    await assertWorktreeDependencies(root);
+    await assertParallelRegistry(gitAt(root));
     if (inspectLineEndings(root).violations.length)
       throw new Error("Live LF evidence check failed");
     await inspectTextExports(root);
   },
   async run(root, phase, options) {
+    await assertWorktreeDependencies(root);
+    const configuredWritePolicy = resolveVerificationWritePolicy(process.env);
     const policy =
-      options?.receiptWritePolicy ??
-      (phase === "final" ? "local" : resolveVerificationWritePolicy(process.env));
+      phase === "final" ? "local" : (options?.receiptWritePolicy ?? configuredWritePolicy);
     await workflowCapacity(root, 20 * 1024 * 1024);
     const result = await runProcess(
       root,
@@ -142,7 +154,7 @@ async function requireProof(
     throw new Error("Review proof missing, stale or different; run verification again");
   await verifier.live(root);
 }
-async function requireHooks(root: string, git: Git): Promise<void> {
+export async function requireHooks(root: string, git: Git): Promise<void> {
   if ((await git(["config", "--get", "core.hooksPath"])).trim() !== ".githooks")
     throw new Error("Required Git hooks are not installed");
   for (const name of ["pre-commit", "commit-msg"])
@@ -210,6 +222,12 @@ export async function workflow(
         commit: null,
         failure: null,
       };
+      if (configured.policy.version === 2) {
+        if (initial.snapshot.branch === "main")
+          throw new Error("New tasks use a registered parallel worktree; main is integration-only");
+        await validateParallelTask(root, git, initial);
+        if (verifier === verificationHost) await assertWorktreeDependencies(root);
+      }
       await save(initial);
       await atomicText(
         await containedPath(
@@ -221,6 +239,45 @@ export async function workflow(
       return status(initial);
     }
     if (!task) throw new Error("Begin the task before changing files; no baseline is inferred");
+    if (request.operation === "adopt-policy") {
+      const configured = await readPolicy(root);
+      if (task.policyMigration && configured.hash === task.policyHash) return status(task);
+      if (task.policyMigration || !["open", "checkpointed", "ready"].includes(task.state))
+        throw new Error(
+          "Policy adoption requires an original active task with no earlier migration",
+        );
+      const originalHead = Schema.decodeUnknownSync(GitObjectId)(task.snapshot.head);
+      const original = await git(["show", originalHead + ":.workflow.json"]);
+      const previous = Schema.decodeUnknownSync(Schema.fromJsonString(Policy))(original, {
+        onExcessProperty: "error",
+      });
+      if (
+        digest(original) !== task.policyHash ||
+        configured.policy.version !== 2 ||
+        (previous.version === 1 && task.snapshot.branch !== "main") ||
+        (previous.version === 2 && previous.mode === configured.policy.mode) ||
+        (await git(["rev-parse", "HEAD"])).trim() !== task.snapshot.head
+      )
+        throw new Error(
+          "Policy adoption does not match the original baseline and authorized transition",
+        );
+      const target = await destination(git, configured.policy);
+      const originalSnapshot = task.snapshot;
+      if (
+        Object.entries(target).some(([key, value]) => Reflect.get(originalSnapshot, key) !== value)
+      )
+        throw new Error("Policy adoption cannot change the task destination");
+      const next: Task = {
+        ...task,
+        policyHash: configured.hash,
+        policyMigration: { previousHash: task.policyHash, baseline: task.snapshot.head },
+        verification: null,
+        signingIdentity: null,
+        state: task.state === "open" ? "open" : "checkpointed",
+      };
+      await save(next);
+      return status(next);
+    }
     if (request.operation === "cancel") {
       if (!["open", "checkpointed", "ready"].includes(task.state))
         throw new Error("A started publication requires reconciliation, not cancellation");
@@ -307,7 +364,14 @@ export async function workflow(
         verification: null,
         state: task.state === "ready" ? "checkpointed" : task.state,
       });
-      await verifier.run(root, request.phase);
+      const taskPolicy = await readPolicy(root);
+      const configuredWritePolicy = resolveVerificationWritePolicy(process.env);
+      const receiptWritePolicy =
+        request.phase === "final" ||
+        (taskPolicy.policy.version === 2 && process.env[verificationWriteVariable] === undefined)
+          ? "local"
+          : configuredWritePolicy;
+      await verifier.run(root, request.phase, { receiptWritePolicy });
       const after = await verifier.identity(root);
       if (
         request.phase !== "step" &&
@@ -348,8 +412,7 @@ export async function workflow(
       await checkedScope(root, git, task);
       await requireProof(root, git, task, verifier);
       await requireHooks(root, git);
-      if ((await remoteHead(git, task.snapshot.remote, task.snapshot.ref)) !== task.snapshot.head)
-        throw new Error("Remote differs from task baseline");
+      await publicationBaseline(root, git, task);
       const next: Task = {
         ...task,
         signingIdentity: (await signingReady(root, git)).identity,
@@ -379,8 +442,7 @@ export async function workflow(
       throw new Error("Signing identity changed since preparation");
     // Revalidate authorization here even when prepare was never called by this process.
     await destination(git, (await readPolicy(root)).policy);
-    if ((await remoteHead(git, task.snapshot.remote, task.snapshot.ref)) !== task.snapshot.head)
-      throw new Error("Remote changed before publication");
+    await publicationBaseline(root, git, task);
     const checkpoint = task.checkpoint;
     await workflowCapacity(root, 64 * 1024 * 1024);
     try {
@@ -400,19 +462,16 @@ export async function workflow(
         ["commit", "--gpg-sign", "--file=-"],
         checkpoint.message + "\n\nTeamagent-Task: " + taskKey(task.sessionId, task.taskId) + "\n",
       );
-      const commit = (await git(["rev-parse", "HEAD"])).trim();
+      const committed = await headCommit(git);
+      const commit = committed.commit;
       await save({ ...task, state: "committed", commit });
-      if (
-        (await git(["rev-parse", "HEAD^{tree}"])).trim() !== tree ||
-        (await git(["rev-parse", "HEAD^"])).trim() !== task.snapshot.head
-      )
+      if (committed.tree !== tree || committed.parent !== task.snapshot.head)
         throw new Error("Committed tree or parent changed");
       await verifyCommitSignature(git, commit, expectedSigner.fingerprint);
       await checkedScope(root, git, task, false);
       if ((await signingReady(root, git)).identity !== task.signingIdentity)
         throw new Error("Signing trust changed during commit");
-      if ((await remoteHead(git, task.snapshot.remote, task.snapshot.ref)) !== task.snapshot.head)
-        throw new Error("Remote changed after commit; local commit retained");
+      await publicationBaseline(root, git, task);
       await save({ ...task, state: "pushing" });
       await git([
         "-c",

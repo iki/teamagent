@@ -7,10 +7,16 @@ import { inspectTextExports } from "../research/text-reports.ts";
 import { createDependencyRuntime } from "../dependencies/runtime.ts";
 import { inspectLineEndings } from "./line-endings.ts";
 import { invalidateCachedTask } from "./input-cache.ts";
-import { runUnitTests } from "./test-groups.ts";
+import { runUnitTests, unitWorkerLimit } from "./test-groups.ts";
 import { root, runTool } from "./tools.ts";
 import { verificationEnvironment } from "./tool-prerequisites.ts";
-import { resolveVerificationWritePolicy } from "./verification-policy.ts";
+import {
+  resolveVerificationWritePolicy,
+  verificationWriteVariable,
+} from "./verification-policy.ts";
+import { gitAt, readPolicy } from "../workflow/git.ts";
+import { assertParallelRegistry } from "../workflow/parallel-store.ts";
+import { assertWorktreeDependencies } from "../workflow/parallel-install.ts";
 import {
   cachedVerification,
   reviewSourceIdentity,
@@ -33,6 +39,11 @@ const argv = cli({
       type: Boolean,
       description: "Execute every verification group even when a cooperative receipt matches",
     },
+    workers: {
+      type: Number,
+      placeholder: "<1|2|3>",
+      description: "Cap unit worker processes at 1, 2 or 3 (default: resource-derived, up to 3)",
+    },
   },
   help: {
     version,
@@ -47,9 +58,16 @@ if (argv.flags.version) {
 if (argv._.mode !== undefined && argv._.mode !== "review" && argv._.mode !== "step")
   throw new Error("Expected step or review");
 const forceFresh = argv.flags.forceFresh ?? false;
+const workers = unitWorkerLimit(argv.flags.workers);
 
 try {
+  const policy = await readPolicy(root).catch(() => {
+    throw new Error("Repository workflow policy is missing or invalid");
+  });
+  if (process.env[verificationWriteVariable] === undefined && policy.policy.version === 2)
+    process.env[verificationWriteVariable] = "local";
   resolveVerificationWritePolicy(process.env);
+  await assertWorktreeDependencies(root);
   const environment = await verificationEnvironment(root);
   if (environment.PATH !== undefined) process.env.PATH = environment.PATH;
   process.env.LANG = environment.LANG;
@@ -92,7 +110,7 @@ try {
   await run("lint", async () => {
     await checkedTool("lint", ["--type-aware", "--deny-warnings"]);
   });
-  await run("tests", () => runUnitTests(root));
+  await run("tests", () => runUnitTests(root, workers));
   try {
     if (JSON.stringify(await verificationPrerequisites(root)) !== JSON.stringify(prerequisites))
       throw new Error(
@@ -119,6 +137,7 @@ try {
     throw error;
   }
   logger.info("Checking live LF text and export integrity");
+  await assertParallelRegistry(gitAt(root));
   const inspection = inspectLineEndings(root);
   const exports = await inspectTextExports(root);
   logger.info(

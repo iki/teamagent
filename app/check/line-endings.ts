@@ -54,6 +54,7 @@ export const lineEndingOutputRoots: readonly string[] = [
   ".cache/commit-split-2026-10-27",
   ".cache/conversations",
   ".cache/workflow",
+  ".cache/workflow-reference",
   ".cache/hook-diagnostics",
   ".cache/dependencies",
   ".cache/verification",
