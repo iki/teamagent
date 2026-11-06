@@ -13,7 +13,7 @@ The root [agent rules](../AGENTS.md) govern implementation. The CLI/web/desktop 
 | Conversation archive          | `aube run --no-install conversations:record`       | Read validated JSON from stdin and preserve a public response record                                     |
 | Parallel tasks                | `aube run --no-install task:parallel`              | Bounded JSON worktree, PR submission and explicit integration protocol                                   |
 | Task workflow                 | `aube run --no-install task:run`                   | JSON begin/checkpoint/revision/verification/publication protocol; exact destination and signature guards |
-| Dependency integrity          | `aube run --no-install deps:check`                 | Offline checks of supplied Trigon artifacts and pin coverage; no installation                            |
+| Dependency integrity          | `aube run --no-install deps:check`                 | Offline checks of selected Patches artifacts, catalog provenance and pin coverage; no installation       |
 | Fresh verification            | `aube run --no-install review:check --force-fresh` | Execute checks even when a cooperative receipt matches                                                   |
 | Receipt inspection            | `aube run --no-install cache:status --json`        | Git-history and repository-input equivalence, without readiness or publication claims                    |
 | Staged receipt verification   | `aube run --no-install cache:verify-staged`        | Validate changed receipts against the actual staged index                                                |

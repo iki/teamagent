@@ -1,9 +1,19 @@
-# Trigon-owned dependency fixes
+# Selected shared dependency fixes
 
-`registry.json` identifies the exact source revision, supported package pins and
-SHA-256 of the supplied artifacts. The normal dependency check is offline and
-does not require a sibling Trigon checkout. Refresh stages a candidate; it does
-not change this registry or promote new bytes.
+`registry.json` pins the canonical [Patches](https://github.com/iki/patches)
+revision and selected artifact mappings. `catalog.json` and `migration.json`
+are exact, hash-bound snapshots from that revision, including original
+Trigon/Teamagent/fork origins and retained notices. The directory name and
+executable artifact paths remain historical compatibility paths; Patches now
+owns updates. Ordinary integrity checks use these local copies only.
+
+The ownership migration preserves all three implementation hashes and the
+existing Aube selector/lock. Tauri's ID is unchanged; Tinypool's selection now
+uses canonical `tinypool-windows-hide-process-workers`, with the old
+`tinypool-windows-hide` alias preserved in the catalog. Refresh stages a
+checked canonical candidate without promoting it. The original selected
+registry is preserved in Patches' immutable provenance, so the historical
+observations below retain their original source identity.
 
 On 2026-11-01, the selected source advanced to signed Trigon commit
 [`9ef18967b46fe01571933c3ba6216823ad961c16`](https://github.com/iki/trigon/commit/9ef18967b46fe01571933c3ba6216823ad961c16),
@@ -15,7 +25,7 @@ On 2026-11-02, the [subsequent source review](../../spec/analyses/project-launch
 confirmed that source main includes this branch through merge
 [`989e4a8fc16855ac037687c6ed7241c926ec74ab`](https://github.com/iki/trigon/commit/989e4a8fc16855ac037687c6ed7241c926ec74ab).
 The supplied patch and Teamagent artifact still share Git blob
-`8e3b4d9cf0430855cdbb19d0cad7a19aac90bec8`. The registry and November 1 evidence
+`8e3b4d9cf0430855cdbb19d0cad7a19aac90bec8`. The preserved original registry and November 1 evidence
 retain their original selection and then-unmerged status; this later observation
 does not rewrite that provenance or establish a new installation result.
 It adds only `windowsHide: true` after the internal process-worker options spread.
@@ -38,10 +48,10 @@ copies from [Trigon at the reviewed commit](https://github.com/iki/trigon/tree/4
 Their recorded compatibility covers the historical CLI 2.12.1 observation and
 the supplied conservative guard at CLI 2.12.4. The latter does not claim a newly
 reproduced upstream defect. Any absent or incompatible dependency workaround
-requires asking the user and keeping the implementation owned by Trigon.
-The newer import rechecks those adapters and the accompanying license against
-the selected source revision before advancing the registry; their existing
-artifact hashes and historical compatibility claims remain unchanged.
+requires asking the user and keeping the implementation owned by Patches.
+The canonical migration rechecks those adapters and required notices against
+the selected catalog; existing artifact hashes and historical compatibility
+claims remain unchanged.
 
 The accompanying [license](LICENSE.md) is preserved byte-for-byte from
 [Trigon's proprietary EULA](https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/LICENSE.md),
@@ -50,3 +60,9 @@ in Teamagent; it does not establish a general redistribution or open-source
 license grant. Preserve these notices and evaluate publication rights before
 redistributing the supplied files. Package licenses and application distribution
 policy remain separate.
+
+The migration also retains Tauri's upstream MIT notice at
+`licenses/tauri/LICENSE-MIT` and Tinypool's upstream notice at
+`licenses/tinypool/LICENSE`. The selected catalog records which notices apply
+to each artifact. Public publication of the canonical catalog is explicitly
+authorized, but no source notice is replaced and no blanket license is assigned.

@@ -12,7 +12,7 @@ from pathlib import Path
 import re
 import subprocess
 from urllib.parse import unquote, urlparse
-from external_sources import registry as external_registry, check_cache as check_external_cache, git_environment
+from external_sources import registry as external_registry, check_cache as check_external_cache, git_environment, git_platform_arguments
 from text_output import configure_output, write_utf8_lf
 
 EXCLUDED = ("spec/archive/", "spec/analyses/history/", "spec/conversations/", "spec/conversation-archive/", "spec/.conversations/")
@@ -38,7 +38,7 @@ def identity(value: str) -> str:
 
 def git(repo: Path, *args: str) -> subprocess.CompletedProcess:
     return subprocess.run(
-        ["git", "--no-replace-objects", "-c", "safe.directory=" + repo.as_posix(),
+        ["git", *git_platform_arguments(), "--no-replace-objects", "-c", "safe.directory=" + repo.as_posix(),
          "-c", "core.hooksPath=" + os.devnull, "-C", str(repo), *args],
         capture_output=True, timeout=30, env=git_environment(),
         creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,

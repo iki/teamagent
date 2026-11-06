@@ -7,6 +7,7 @@ import { authorizeLocal } from "./files.ts";
 import { contained, excludedName, importLimits, safeRelative, sourceMediaType } from "./limits.ts";
 import { networkUrl, publicAddress } from "./network.ts";
 import { processEnvironment, runProcess } from "./process.ts";
+import { gitPlatformArguments } from "../check/git-platform.ts";
 
 const text = (bytes: Uint8Array) => new TextDecoder("utf-8", { fatal: true }).decode(bytes);
 
@@ -151,7 +152,7 @@ export async function captureGit(
     GIT_CONFIG_SYSTEM: cleanConfig,
     GIT_OPTIONAL_LOCKS: "0",
   };
-  const safety = [
+  const safety = gitPlatformArguments([
     "-c",
     `core.hooksPath=${hooks}`,
     "-c",
@@ -174,7 +175,7 @@ export async function captureGit(
     "core.attributesFile=",
     "-c",
     "fetch.recurseSubmodules=false",
-  ];
+  ]);
   let location: string;
   let gitPrefix: string[];
   const warnings: string[] = [];

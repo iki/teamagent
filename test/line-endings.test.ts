@@ -1,4 +1,5 @@
 import { assertTemporaryFixtureSync, mkdtempSync } from "./temporary.ts";
+import { gitPlatformArguments } from "../app/check/git-platform.ts";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
@@ -260,7 +261,7 @@ await test("the exact retained PDF derivative needs verified provenance and cann
 
 await test("inventory includes owned ignored outputs without following vendors, byte fixtures or junctions", () => {
   fixture((root) => {
-    const git = spawnSync("git", ["init", "--quiet"], {
+    const git = spawnSync("git", gitPlatformArguments(["init", "--quiet"]), {
       cwd: root,
       encoding: "utf8",
       timeout: 10_000,
@@ -292,6 +293,8 @@ await test("inventory includes owned ignored outputs without following vendors, 
     write(root, ".cache/extractors-smoke/run/marker-home/model/config.json", "third party\r\n");
     write(root, ".cache/skill-validate/yaml/vendor.py", "third party\r\n");
     write(root, ".cache/text/source-state.json", "{}\r\n");
+    const nativeReceipt = `.cache/native/${"0".repeat(64)}/binary.sha256`;
+    write(root, nativeReceipt, "0".repeat(64) + "\n");
     write(root, ".cache/text/exports/version/raw.txt", "validated separately\r\n");
     write(root, ".cache/text/store/memory/blobs/source", "immutable source\r\n");
     const linked = join(root, ".cache/research/linked");
@@ -315,6 +318,10 @@ await test("inventory includes owned ignored outputs without following vendors, 
       false,
     );
     assert.ok(paths.includes(".cache/text/source-state.json"));
+    assert.ok(
+      paths.includes(nativeReceipt),
+      "The new owned native cache is included in LF inventory",
+    );
     assert.equal(
       paths.some(
         (path) => path.startsWith(".cache/text/exports/") || path.startsWith(".cache/text/store/"),
@@ -329,6 +336,8 @@ await test("inventory includes owned ignored outputs without following vendors, 
     );
     const result = inspectLineEndings(root, paths);
     assert.equal(result.violations.length, 7);
+    write(root, nativeReceipt, "0".repeat(64) + "\r\n");
+    assert.equal(inspectLineEndings(root, [nativeReceipt]).violations.length, 1);
     assert.equal(
       result.violations.some((message) => message.includes("private-fixture-value")),
       false,
@@ -339,7 +348,7 @@ await test("inventory includes owned ignored outputs without following vendors, 
 await test("Git whitespace checks preserve exact originals while rejecting active text defects", () => {
   fixture((root) => {
     const git = (args: readonly string[]) => {
-      const result = spawnSync("git", [...args], {
+      const result = spawnSync("git", gitPlatformArguments(args), {
         cwd: root,
         encoding: "utf8",
         timeout: 10_000,
@@ -375,13 +384,17 @@ await test("Git whitespace checks preserve exact originals while rejecting activ
 await test("real Git preserves binary and original bytes while active text checks out LF under either autocrlf setting", () => {
   fixture((root) => {
     function git(args: readonly string[]): void {
-      const result = spawnSync("git", ["-c", "core.safecrlf=false", ...args], {
-        cwd: root,
-        encoding: "utf8",
-        timeout: 10_000,
-        windowsHide: true,
-        shell: false,
-      });
+      const result = spawnSync(
+        "git",
+        gitPlatformArguments(["-c", "core.safecrlf=false", ...args]),
+        {
+          cwd: root,
+          encoding: "utf8",
+          timeout: 10_000,
+          windowsHide: true,
+          shell: false,
+        },
+      );
       assert.ifError(result.error);
       assert.equal(result.status, 0, result.stderr);
     }

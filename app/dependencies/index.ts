@@ -22,23 +22,23 @@ const argv = cli({
     plan: { type: String, description: "Reviewed exact dependency plan to apply" },
     source: {
       type: String,
-      description: "Explicit local Trigon Git checkout for candidate refresh",
+      description: "Explicit local Patches Git checkout for candidate refresh",
     },
     revision: {
       type: String,
-      description: "Full immutable Trigon commit SHA for candidate refresh",
+      description: "Full immutable Patches commit SHA for candidate refresh",
     },
   },
   help: {
     version,
     description:
-      "Dependency maintenance: check | plan | discover | apply | source-refresh. Check/plan are offline. Discover contacts the configured Aube registry. Apply changes dependencies through Aube and runs review:check. Missing/incompatible Trigon fixes block and require asking the user; no automatic repair, trust changes, agent dispatch or retry. Refresh only stages a source candidate. An uncertain apply retains its lease and receipts for reconciliation.",
+      "Dependency maintenance: check | plan | discover | apply | source-refresh. Check/plan are offline. Discover contacts the configured Aube registry. Apply changes dependencies through Aube and runs review:check. Missing/incompatible Patches fixes block and require asking the user; no automatic repair, trust changes, agent dispatch or retry. Refresh only stages a source candidate. An uncertain apply retains its lease and receipts for reconciliation.",
     examples: [
       "teamagent deps check",
       "teamagent deps plan --report .cache/dependencies/outdated.json --output .cache/dependencies/plan.json",
       "teamagent deps discover --output .cache/dependencies/plan.json",
       "teamagent deps apply --plan .cache/dependencies/plan.json",
-      "teamagent deps source-refresh --source ../trigon --revision FULL_COMMIT_SHA --output .cache/dependencies/candidates/review",
+      "teamagent deps source-refresh --source ../x-patches --revision FULL_COMMIT_SHA --output .cache/dependencies/candidates/review",
     ],
   },
 });

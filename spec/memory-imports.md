@@ -29,6 +29,12 @@ scope; the CLI defaults to its current directory. Alternatively, `--workspace`
 selects an existing harness workspace ID from the same data directory. These are
 distinct scope identities; consistently use the same selection. Relative input
 paths resolve against that root. Explicit CLI source paths can be outside it.
+For sources physically inside the declared workspace, `.cache` components strictly
+above that workspace do not exclude the source, allowing registered worktrees.
+The workspace's own name and every descendant still undergo cache exclusion;
+all other sensitive/generated names remain excluded across the full physical path.
+An additional allowed root cannot bypass those exclusions. Private storage,
+symbolic-link sources and sources outside configured import grants remain rejected.
 
 `list` and `show` return `total` and `nextOffset`; continue using `--offset` and
 `--limit`. History defaults to one version per page. `read` returns a verified

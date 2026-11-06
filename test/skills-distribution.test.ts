@@ -17,7 +17,6 @@ const names = [
   "project-toolchain",
   "resource-lifecycle",
   "conversation-records",
-  "dependency-patches",
   "typed-modules",
   "skills-distribution",
 ];
@@ -27,6 +26,9 @@ const Lock = Schema.Struct({
 });
 
 await test("pinned Skills runs under Bun and copies selected sources without global state", async () => {
+  await assert.rejects(access(join(root, "skills/dependency-patches/SKILL.md")), {
+    code: "ENOENT",
+  });
   const target = await mkdtemp("skills-distribution-");
   const state = join(target, "state");
   const installed = join(target, ".agents/skills");

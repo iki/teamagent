@@ -70,8 +70,13 @@ def git_environment():
     return env
 
 
+def git_platform_arguments():
+    # Per-process only: do not persist configuration in caches or consumer repositories.
+    return ["-c", "core.longpaths=true"] if os.name == "nt" else []
+
+
 def command(repo: Path, *args: str):
-    return ["git", "--no-replace-objects", "-c", "safe.directory=" + repo.as_posix(),
+    return ["git", *git_platform_arguments(), "--no-replace-objects", "-c", "safe.directory=" + repo.as_posix(),
             "-c", "core.hooksPath=" + os.devnull, "-c", "credential.helper=", "-c", "credential.interactive=false",
             "-c", "protocol.allow=never", "-c", "protocol.https.allow=always",
             "-c", "http.followRedirects=false", "-c", "gc.auto=0", "-C", str(repo), *args]

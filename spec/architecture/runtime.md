@@ -23,7 +23,7 @@ Use the pinned local tool through its repository launcher, not a throwaway
 the dependency's scripts; do not relax build trust or switch linkers merely to
 clear an install failure. Registry credentials stay in environment references.
 
-[Dependency maintenance](../dependencies.md) uses Trigon as the central source of
+[Dependency maintenance](../dependencies.md) uses Patches (iki/patches) as the central source of
 shared-stack patches. Pin and retain applicable supplied artifacts here; another
 checkout must not need a sibling repository. A necessary absent, incompatible or
 unverified fix requires a user decision before the affected update proceeds.

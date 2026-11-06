@@ -22,6 +22,7 @@ import {
   type CommandResult,
 } from "../app/dependencies/io.ts";
 import { PlanSchema } from "../app/dependencies/model.ts";
+import { catalogSelection } from "../app/dependencies/catalog.ts";
 
 const repository = dirname(fileURLToPath(new URL("../package.json", import.meta.url)));
 function createDependencyRuntime(options: Parameters<typeof createRuntime>[0]) {
@@ -76,10 +77,8 @@ async function fixture() {
   await write("aube-workspace.yaml", "allowBuilds:\n  protobufjs: false\n");
   await write("app/desktop/src-tauri/Cargo.lock", "# Retained native lock\n");
   await write("patches/trigon/registry.json", registryBytes);
-  await write(
-    registry.license.artifactPath,
-    await readFile(join(repository, registry.license.artifactPath)),
-  );
+  for (const file of [...Object.values(registry.metadata), ...registry.notices])
+    await write(file.artifactPath, await readFile(join(repository, file.artifactPath)));
   for (const fix of registry.fixes)
     for (const file of fix.files)
       await write(file.artifactPath, await readFile(join(repository, file.artifactPath)));
@@ -95,7 +94,7 @@ async function fixture() {
   };
 }
 
-await test("dependency plans validate exact pins, preserve groups and block absent Trigon compatibility", async () => {
+await test("dependency plans validate exact pins, preserve groups and block absent Patches compatibility", async () => {
   const plan = await Effect.runPromise(
     buildDependencyPlan({ manifest, registry, report, status: 1, baseline }),
   );
@@ -117,7 +116,7 @@ await test("dependency plans validate exact pins, preserve groups and block abse
       baseline,
     }),
   );
-  assert.equal(blocked.blocked[0]?.action, "ask-user-for-trigon-fix");
+  assert.equal(blocked.blocked[0]?.action, "ask-user-for-canonical-fix");
   assert.deepEqual(dependencyCommands(blocked), []);
   const compatible = await Effect.runPromise(
     buildDependencyPlan({
@@ -175,6 +174,7 @@ await test("transitive package patches require their own active exact supplied s
   const fix = {
     id: "fixture-transitive",
     kind: "package-patch",
+    requires: [],
     packages: [{ name: "fixture-transitive", versions: ["2.2.0"] }],
     files: [
       {
@@ -277,6 +277,11 @@ await test("offline checks/plans need no sibling checkout or subprocess and reje
     );
     assert.equal(plan.upgrades.length, 1);
     assert.equal(calls, 0);
+    for (const file of [...Object.values(registry.metadata), ...registry.notices]) {
+      await setup.write(file.artifactPath, "unapproved metadata or notice\n");
+      await assert.rejects(Effect.runPromise(runtime.check()));
+      await setup.write(file.artifactPath, await readFile(join(repository, file.artifactPath)));
+    }
     await assert.rejects(
       Effect.runPromise(runtime.plan(undefined, ".cache/dependencies/plan.json")),
       /exists/,
@@ -494,14 +499,13 @@ await test("source refresh verifies canonical origin and stages original candida
   for (const fix of registry.fixes)
     for (const file of fix.files)
       blobs.set(file.sourcePath, await readFile(join(repository, file.artifactPath)));
-  blobs.set(
-    registry.license.sourcePath,
-    await readFile(join(repository, registry.license.artifactPath)),
-  );
+  for (const file of [...Object.values(registry.metadata), ...registry.notices])
+    blobs.set(file.sourcePath, await readFile(join(repository, file.artifactPath)));
   const objectBytes = new Map(
     [...blobs.values()].map((value) => [digest(value).slice(0, 40), value]),
   );
   let mode = "100644";
+  let origin = "https://github.com/iki/patches";
   const calls: CommandRequest[] = [];
   const runtime = createDependencyRuntime({
     root: setup.root,
@@ -510,7 +514,7 @@ await test("source refresh verifies canonical origin and stages original candida
       assert.equal(request.executable, "git");
       assert.equal(request.isolatedGit, true);
       assert.ok(request.arguments.includes("core.fsmonitor=false"));
-      if (request.arguments.includes("config")) return result("https://github.com/iki/trigon\n");
+      if (request.arguments.includes("config")) return result(`${origin}\n`);
       if (request.arguments.includes("-e")) return result();
       const object = request.arguments.at(-1);
       assert.ok(object);
@@ -543,6 +547,14 @@ await test("source refresh verifies canonical origin and stages original candida
       ),
       first.sha256,
     );
+    const candidate = Schema.decodeUnknownSync(Schema.Record(Schema.String, Schema.Unknown))(
+      json(await readFile(join(setup.root, refreshed.candidate))),
+    );
+    assert.equal(candidate.format, "teamagent-patches-source-candidate-v1");
+    const candidateSelection = await Effect.runPromise(decodeRegistry(candidate.selection));
+    assert.equal(candidateSelection.sourceRepository, "https://github.com/iki/patches");
+    assert.equal(candidateSelection.sourceRevision, "f".repeat(40));
+    assert.deepEqual(candidateSelection.notices, registry.notices);
     const previousCalls = calls.length;
     await assert.rejects(
       Effect.runPromise(
@@ -551,6 +563,36 @@ await test("source refresh verifies canonical origin and stages original candida
       /exists/,
     );
     assert.equal(calls.length, previousCalls);
+    origin = "https://github.com/iki/trigon";
+    await assert.rejects(
+      Effect.runPromise(
+        runtime.sourceRefresh(setup.root, "f".repeat(40), ".cache/dependencies/candidates/foreign"),
+      ),
+      /central Patches/,
+    );
+    await assert.rejects(
+      readFile(join(setup.root, ".cache/dependencies/candidates/foreign/intent.json")),
+    );
+    origin = "https://github.com/iki/patches";
+    const original = blobs.get(first.sourcePath);
+    assert.ok(original);
+    const changed = bytes("Unexpected source blob\n");
+    blobs.set(first.sourcePath, changed);
+    objectBytes.set(digest(changed).slice(0, 40), changed);
+    await assert.rejects(
+      Effect.runPromise(
+        runtime.sourceRefresh(
+          setup.root,
+          "f".repeat(40),
+          ".cache/dependencies/candidates/hash-mismatch",
+        ),
+      ),
+      /catalog migration/,
+    );
+    await assert.rejects(
+      readFile(join(setup.root, ".cache/dependencies/candidates/hash-mismatch/candidate.json")),
+    );
+    blobs.set(first.sourcePath, original);
     mode = "120000";
     await assert.rejects(
       Effect.runPromise(
@@ -569,6 +611,128 @@ await test("source refresh verifies canonical origin and stages original candida
   } finally {
     await setup.close();
   }
+});
+
+await test("Patches selection decodes the published metadata with installed Effect 4.0.6", async () => {
+  const installed = Schema.decodeUnknownSync(
+    Schema.fromJsonString(
+      Schema.Struct({
+        name: Schema.Literal("effect"),
+        version: Schema.Literal("4.0.6"),
+      }),
+    ),
+  )(await readFile(join(repository, "node_modules/effect/package.json"), "utf8"));
+  assert.equal(installed.version, projectManifest.dependencies.effect);
+  const catalogBytes = await readFile(join(repository, registry.metadata.catalog.artifactPath));
+  const migrationBytes = await readFile(join(repository, registry.metadata.migration.artifactPath));
+  assert.equal(digest(catalogBytes), registry.metadata.catalog.sha256);
+  assert.equal(digest(migrationBytes), registry.metadata.migration.sha256);
+  assert.deepEqual(
+    await Effect.runPromise(catalogSelection(registry, json(catalogBytes), json(migrationBytes))),
+    registry,
+  );
+});
+
+await test("canonical selection rejects incompatible catalogs, lost notices, cycles and origin escapes", async () => {
+  const catalog = {
+    format: "shared-patch-registry-v1",
+    repository: "https://github.com/iki/patches",
+    migration: "migration.json",
+    observation: {
+      sources: [{ repository: "https://github.com/iki/fixture", revision: "a".repeat(40) }],
+    },
+    fixes: registry.fixes.map((fix) => ({
+      id: fix.id,
+      kind: fix.kind,
+      packages: fix.packages,
+      requires: fix.requires,
+      files: fix.files.map((file) => file.sourcePath),
+    })),
+  };
+  const selected = [...registry.fixes.flatMap((fix) => fix.files), ...registry.notices];
+  const migration = {
+    format: "patch-migration-v1",
+    repository: "https://github.com/iki/patches",
+    artifacts: selected.map((file) => ({
+      path: file.sourcePath,
+      bytes: 1,
+      sha256: file.sha256,
+      originalSha256: file.sha256,
+      lfSha256: file.sha256,
+      gitMode: "100644",
+      lineEndings: "lf",
+      origin: {
+        repository: "https://github.com/iki/fixture",
+        revision: "a".repeat(40),
+        path: file.sourcePath,
+        gitBlob: "b".repeat(40),
+      },
+      notices: registry.notices.map((notice) => notice.sourcePath),
+      licenseStatus: "retained-notices",
+    })),
+  };
+  const verify = (candidate: unknown = catalog, evidence: unknown = migration) =>
+    Effect.runPromise(catalogSelection(registry, candidate, evidence));
+  assert.deepEqual(await verify(), registry);
+  const first = catalog.fixes[0];
+  const artifact = migration.artifacts[0];
+  assert.ok(first && artifact);
+  for (const candidate of [
+    { ...catalog, repository: "https://github.com/other/patches" },
+    { ...catalog, format: "shared-patch-registry-v2" },
+    { ...catalog, observation: { sources: [] } },
+    { ...catalog, fixes: catalog.fixes.slice(1) },
+    { ...catalog, fixes: [...catalog.fixes, first] },
+    { ...catalog, fixes: [{ ...first, requires: [first.id] }, ...catalog.fixes.slice(1)] },
+    { ...catalog, fixes: [{ ...first, requires: ["unknown-fix"] }, ...catalog.fixes.slice(1)] },
+    {
+      ...catalog,
+      fixes: [{ ...first, files: ["adapters/unregistered.ts"] }, ...catalog.fixes.slice(1)],
+    },
+    {
+      ...catalog,
+      fixes: [
+        { ...first, packages: first.packages.map((item) => ({ ...item, versions: ["99.0.0"] })) },
+        ...catalog.fixes.slice(1),
+      ],
+    },
+  ])
+    await assert.rejects(verify(candidate), /canonical Patches/);
+  for (const evidence of [
+    { ...migration, artifacts: migration.artifacts.slice(1) },
+    { ...migration, artifacts: [...migration.artifacts, artifact] },
+    {
+      ...migration,
+      artifacts: [
+        { ...artifact, notices: ["licenses/absent.md"] },
+        ...migration.artifacts.slice(1),
+      ],
+    },
+    {
+      ...migration,
+      artifacts: [
+        { ...artifact, origin: { ...artifact.origin, path: "../escape" } },
+        ...migration.artifacts.slice(1),
+      ],
+    },
+  ])
+    await assert.rejects(verify(catalog, evidence), /canonical Patches/);
+  const changed = {
+    ...migration,
+    artifacts: [
+      {
+        ...artifact,
+        sha256: "e".repeat(64),
+        originalSha256: "e".repeat(64),
+        lfSha256: "e".repeat(64),
+      },
+      ...migration.artifacts.slice(1),
+    ],
+  };
+  await assert.rejects(verify(catalog, changed), /canonical Patches/);
+  const proposed = await Effect.runPromise(catalogSelection(registry, catalog, changed, true));
+  assert.equal(proposed.fixes[0]?.files[0]?.sha256, "e".repeat(64));
+  assert.equal(registry.fixes[0]?.files[0]?.sha256, artifact.sha256);
 });
 
 await test("desktop build help/version do not probe native prerequisites or write output", () => {

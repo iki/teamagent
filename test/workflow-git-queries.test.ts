@@ -25,6 +25,7 @@ import { workflow, loadTask } from "../app/workflow/workflow.ts";
 import type { Task } from "../app/workflow/model.ts";
 import { digest } from "../app/workflow/storage.ts";
 import { mkdtemp } from "./temporary.ts";
+import { gitPlatformArguments } from "../app/check/git-platform.ts";
 
 const commit = "1".repeat(40);
 const tree = "2".repeat(40);
@@ -320,14 +321,19 @@ await test(
     const template = join(root, "template");
     await mkdir(template);
     const git: Git = async (args) => {
-      const result = await runProcess(root, "git", ["-c", "core.fsmonitor=false", ...args], {
-        env: {
-          ...gitEnvironment(),
-          GIT_CONFIG_NOSYSTEM: "1",
-          GIT_CONFIG_GLOBAL: process.platform === "win32" ? "NUL" : "/dev/null",
-          GIT_TEMPLATE_DIR: template,
+      const result = await runProcess(
+        root,
+        "git",
+        gitPlatformArguments(["-c", "core.fsmonitor=false", ...args]),
+        {
+          env: {
+            ...gitEnvironment(),
+            GIT_CONFIG_NOSYSTEM: "1",
+            GIT_CONFIG_GLOBAL: process.platform === "win32" ? "NUL" : "/dev/null",
+            GIT_TEMPLATE_DIR: template,
+          },
         },
-      });
+      );
       assert.equal(result.outcome, "exited");
       assert.equal(result.code, 0, result.stderr);
       return result.stdout;
@@ -428,7 +434,13 @@ await test("batched signing configuration preserves Git includes, precedence and
     const result = await runProcess(
       root,
       "git",
-      ["config", "--file", join(root, "config"), "--includes", ...args.slice(1)],
+      gitPlatformArguments([
+        "config",
+        "--file",
+        join(root, "config"),
+        "--includes",
+        ...args.slice(1),
+      ]),
       {
         env: {
           ...gitEnvironment(),

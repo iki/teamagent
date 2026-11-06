@@ -20,20 +20,40 @@ finally:
     sys.pycache_prefix = previous_prefix
 
 
+def fixture_bases():
+    if len(sys.argv) != 2:
+        raise ValueError("The TypeScript fixture owner must provide the exact case inventory")
+    values = json.loads(sys.argv.pop())
+    if (not isinstance(values, list) or not 1 <= len(values) <= 32
+            or any(not isinstance(value, str) or not value or len(value) > 4096 for value in values)):
+        raise ValueError("Invalid citation fixture inventory")
+    roots = [Path(value) for value in values]
+    temporary_root = Path(__file__).resolve().parents[1] / ".tmp"
+    if len(set(roots)) != len(roots) or len({root.parent for root in roots}) != 1:
+        raise ValueError("Citation fixture roots must be distinct children of one owner")
+    for root in roots:
+        if (not root.is_absolute() or root.resolve() != root
+                or root.parent.parent != temporary_root or not root.is_dir()
+                or any(part.is_symlink() or part.is_junction() for part in (root, *root.parents))
+                or any(root.iterdir())):
+            raise ValueError("Citation fixture base must be empty, physical and directly owned")
+    return roots
+
+
+fixture_roots = fixture_bases()
+fixture_iterator = iter(fixture_roots)
+
+
 class CitationSources(unittest.TestCase):
     def setUp(self):
-        # The bare cache adds a full hash path; retain Windows path headroom under owned workers.
-        self.temporary = tempfile.TemporaryDirectory(prefix="cite-")
-        self.base = Path(self.temporary.name).resolve()
+        # The Bun owner retains and cleans every distinct base after this Python child exits.
+        self.base = next(fixture_iterator)
         self.root = self.base / "project"
         (self.root / "spec/data").mkdir(parents=True)
         for name in ["inventory", "coverage"]:
             (self.root / f"spec/data/{name}.json").write_text("[]", encoding="utf-8")
         self.source = {"url": "https://github.com/example/fixture", "revisions": ["1" * 40]}
         self.save_registry()
-
-    def tearDown(self):
-        self.temporary.cleanup()
 
     def save_registry(self, data=None):
         data = data if data is not None else {"format": external_sources.FORMAT, "sources": [self.source]}
@@ -44,7 +64,7 @@ class CitationSources(unittest.TestCase):
         repo = self.root / source["location"]
         repo.mkdir(parents=True)
         def git(*args, data=None):
-            result = subprocess.run(["git", "-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid",
+            result = subprocess.run(["git", *external_sources.git_platform_arguments(), "-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid",
                                      "-c", "core.hooksPath=" + os.devnull, "-C", str(repo), *args],
                                     input=data, capture_output=True, timeout=10, env=external_sources.git_environment(),
                                     creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
@@ -98,6 +118,7 @@ class CitationSources(unittest.TestCase):
             self.assertEqual(command[0], "git")
             self.assertTrue(options.get("creationflags", 0) & subprocess.CREATE_NO_WINDOW)
             self.assertIn("core.hooksPath=" + os.devnull, command)
+            self.assertIn("core.longpaths=true", command)
             return real_run(probe, **options)
 
         with patch.object(subprocess, "run", side_effect=launch_probe):
@@ -148,4 +169,8 @@ class CitationSources(unittest.TestCase):
 
 if __name__ == "__main__":
     external_sources.configure_output()
-    unittest.main()
+    suite = unittest.defaultTestLoader.loadTestsFromModule(sys.modules[__name__])
+    if suite.countTestCases() != len(fixture_roots):
+        raise ValueError("Citation case count changed; update the owned fixture inventory before running")
+    result = unittest.TextTestRunner(verbosity=1).run(suite)
+    raise SystemExit(not result.wasSuccessful())

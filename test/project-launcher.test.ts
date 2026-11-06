@@ -35,7 +35,7 @@ const repository = fileURLToPath(new URL("../", import.meta.url));
 const pins = toolchainPins(repository);
 const entry = join(repository, "app/check/project-launch.ts");
 async function project(directory?: string): Promise<string> {
-  const root = directory ?? (await mkdtemp("project-launch-"));
+  const root = directory ?? (await mkdtemp("pl-"));
   await writeFile(join(root, ".bun-version"), `${pins.bun}\n`, "utf8");
   await writeFile(
     join(root, "package.json"),
@@ -212,7 +212,7 @@ await test("launcher executes the selected pinned Aube and rejects a target's mi
 
 await test("launcher rejects redirected roots and joins cancellation before scratch removal", async () => {
   // Independent ownership keeps uncertainty out of the ordinary fixture after-hook.
-  const workspace = await createTemporaryWorkspace(repository, "cancel-launch");
+  const workspace = await createTemporaryWorkspace(repository, "pc");
   const root = workspace.path;
   let running: ProjectProcess | undefined;
   let confirmed = true;

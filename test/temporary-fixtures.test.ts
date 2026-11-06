@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { access, mkdir, readFile, realpath, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, realpath, symlink, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -10,7 +10,7 @@ import {
   temporaryEnvironmentNames,
   temporaryRootPath,
 } from "../app/check/temporary-workspace.ts";
-import { excludedName } from "../app/imports/limits.ts";
+import { authorizeLocal } from "../app/imports/files.ts";
 import { runProcess } from "../app/workflow/process.ts";
 import {
   assertTemporaryFixture,
@@ -41,11 +41,15 @@ await test("temporary fixture ownership rejects normalized prefixes and unregist
   const fixture = await mkdtemp("fixture-boundary-");
   await assertTemporaryFixture(fixture);
   assert.equal(dirname(dirname(fixture)), join(repository, temporaryRootPath));
+  const privateData = join(fixture, "private");
+  await mkdir(privateData);
+  const request = importRequest(repository, privateData);
   assert.equal(
-    fixture.split(/[\\/]/u).some(excludedName),
-    false,
+    await authorizeLocal(fixture, request, [repository]),
+    await realpath(fixture),
     "Managed inputs must remain eligible under the real import policy",
   );
+  await assert.rejects(authorizeLocal(privateData, request), /private harness data/);
   await assert.rejects(assertTemporaryFixture(dirname(fixture)), /owned temporary workspace/);
   await mkdir(join(fixture, "nested"));
   await assert.rejects(
@@ -54,6 +58,105 @@ await test("temporary fixture ownership rejects normalized prefixes and unregist
   );
   const synchronous = mkdtempSync("synchronous-");
   assertTemporaryFixtureSync(synchronous);
+});
+
+function importRequest(workspaceRoot: string, dataDirectory: string) {
+  return {
+    locator: workspaceRoot,
+    kind: "folder",
+    convert: false,
+    workspaceRoot,
+    dataDirectory,
+    temporaryDirectory: join(dataDirectory, "temporary"),
+  } as const;
+}
+
+await test("local source authorization accepts a physical workspace below cache ancestors", async () => {
+  const fixture = await mkdtemp("import-worktree-");
+  const workspace = join(fixture, ".cache", "worktrees", "task");
+  const privateData = join(fixture, "private");
+  await mkdir(workspace, { recursive: true });
+  await mkdir(privateData);
+  const source = join(workspace, "notes.txt");
+  await writeFile(source, "Retained worktree source\n");
+  const request = importRequest(workspace, privateData);
+  const canonical = await realpath(source);
+  assert.equal(await authorizeLocal(source, request), canonical);
+  assert.equal(await authorizeLocal(pathToFileURL(source).href, request, [workspace]), canonical);
+  assert.equal(await authorizeLocal(workspace, request, [workspace]), await realpath(workspace));
+});
+
+await test("cache exclusion still covers the workspace itself, descendants and outside sources", async () => {
+  const fixture = await mkdtemp("import-cache-boundary-");
+  const workspace = join(fixture, "workspace");
+  const cache = join(workspace, ".CACHE");
+  const nested = join(cache, "nested");
+  const outside = join(fixture, ".cache", "worktrees", "other");
+  const privateData = join(fixture, "private");
+  await mkdir(nested, { recursive: true });
+  await mkdir(outside, { recursive: true });
+  await mkdir(privateData);
+  const request = importRequest(workspace, privateData);
+  await assert.rejects(authorizeLocal(nested, request, [nested]), /excluded private or generated/);
+  await assert.rejects(
+    authorizeLocal(cache, importRequest(cache, privateData), [cache]),
+    /excluded private or generated/,
+  );
+  await assert.rejects(
+    authorizeLocal(outside, request, [outside]),
+    /excluded private or generated/,
+  );
+  await assert.rejects(authorizeLocal(privateData, request), /private harness data/);
+  await assert.rejects(
+    authorizeLocal(workspace, request, [outside]),
+    /outside configured import roots/,
+  );
+});
+
+await test("cache ancestor allowance never exempts other private or generated ancestors", async () => {
+  const fixture = await mkdtemp("import-private-ancestors-");
+  const privateData = join(fixture, "private");
+  await mkdir(privateData);
+  for (const name of [
+    ".git",
+    ".ssh",
+    ".aws",
+    ".codex",
+    ".claude",
+    ".gemini",
+    ".teamagent",
+    "node_modules",
+    "target",
+    "dist",
+    ".env",
+    ".env.local",
+  ]) {
+    const workspace = join(fixture, name, "workspace");
+    await mkdir(workspace, { recursive: true });
+    await assert.rejects(
+      authorizeLocal(workspace, importRequest(workspace, privateData), [workspace]),
+      /excluded private or generated/,
+    );
+  }
+});
+
+await test("cache ancestor allowance uses physical containment and retains link rejection", async () => {
+  const fixture = await mkdtemp("import-cache-alias-");
+  const workspace = join(fixture, "workspace");
+  const outside = join(fixture, ".cache", "outside");
+  const privateData = join(fixture, "private");
+  await mkdir(workspace);
+  await mkdir(outside, { recursive: true });
+  await mkdir(privateData);
+  await writeFile(join(outside, "notes.txt"), "Outside source\n");
+  const alias = join(workspace, "alias");
+  await symlink(outside, alias, process.platform === "win32" ? "junction" : "dir");
+  const request = importRequest(workspace, privateData);
+  await assert.rejects(authorizeLocal(alias, request), /Symbolic link sources/);
+  await assert.rejects(
+    authorizeLocal(join(alias, "notes.txt"), request, [outside]),
+    /excluded private or generated/,
+  );
 });
 
 for (const failure of [false, true]) {

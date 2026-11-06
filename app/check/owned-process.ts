@@ -1,7 +1,17 @@
 /** Host-only process-tree ownership. Callers own bounded output and scratch lifetimes. */
 import { spawn, spawnSync, type ChildProcess } from "node:child_process";
 import { createHash, randomUUID } from "node:crypto";
-import { lstat, mkdir, opendir, realpath, rename, unlink, writeFile } from "node:fs/promises";
+import {
+  lstat,
+  mkdir,
+  mkdtemp,
+  opendir,
+  realpath,
+  rename,
+  rmdir,
+  unlink,
+  writeFile,
+} from "node:fs/promises";
 import { basename, dirname, isAbsolute, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { Schema } from "effect";
@@ -13,7 +23,17 @@ import {
 } from "./temporary-workspace.ts";
 
 const implementationRoot = fileURLToPath(new URL("../../", import.meta.url));
-const nativeDirectory = ".cache/verification/native-owned-process";
+const nativeDirectory = ".cache/native";
+const legacyNativeDirectory = ".cache/verification/native-owned-process";
+/** UTF-16 units, with room below MAX_PATH for the .NET host's adjacent metadata names. */
+export const windowsNativePathLimit = 248;
+export function assertWindowsNativePath(
+  path: string,
+  platform: NodeJS.Platform = process.platform,
+): void {
+  if (platform === "win32" && path.length > windowsNativePathLimit)
+    throw new Error("Windows native supervisor path exceeds the 248-unit compatibility bound");
+}
 const Completion = Schema.Struct({
   version: Schema.Literal(1),
   token: Schema.String.check(
@@ -80,6 +100,13 @@ export async function inspectOwnedProcessArtifact(
   project: string,
   directory: string,
 ): Promise<{ readonly path: string; readonly digest: string } | undefined> {
+  return await inspectNativeArtifact(project, directory, "run.exe");
+}
+async function inspectNativeArtifact(
+  project: string,
+  directory: string,
+  binary: "run.exe" | "owned-process.exe",
+): Promise<{ readonly path: string; readonly digest: string } | undefined> {
   let present = false;
   try {
     const folder = await safePath(project, directory);
@@ -89,7 +116,7 @@ export async function inspectOwnedProcessArtifact(
     for await (const entry of entries) {
       if (
         names.size >= 2 ||
-        !["binary.sha256", "owned-process.exe"].includes(entry.name) ||
+        !["binary.sha256", binary].includes(entry.name) ||
         !entry.isFile() ||
         entry.isSymbolicLink()
       )
@@ -104,7 +131,7 @@ export async function inspectOwnedProcessArtifact(
     );
     if (!/^[a-f0-9]{64}\n$/u.test(receipt))
       throw new Error("Native supervisor receipt requires explicit inspection");
-    const path = `${directory}/owned-process.exe`;
+    const path = `${directory}/${binary}`;
     const checksum = await fileDigest(project, path, 16 * 1024 * 1024);
     if (checksum !== receipt.trim())
       throw new Error("Native supervisor integrity requires explicit inspection");
@@ -121,16 +148,31 @@ async function nativeCapacity(project: string, key: string): Promise<void> {
   await safePath(project, nativeDirectory);
   let entries = 0;
   let existing = false;
-  const directory = await opendir(parent);
-  for await (const entry of directory) {
-    if (
-      ++entries > 32 ||
-      !/^[a-f0-9]{64}$/u.test(entry.name) ||
-      !entry.isDirectory() ||
-      entry.isSymbolicLink()
-    )
-      throw new Error("Native supervisor cache requires inspection; no artifacts were removed");
-    if (entry.name === key) existing = true;
+  for (const location of [legacyNativeDirectory, nativeDirectory]) {
+    let directory: Awaited<ReturnType<typeof opendir>>;
+    try {
+      directory = await opendir(await safePath(project, location));
+    } catch (error) {
+      if (hasCode(error, "ENOENT")) continue;
+      throw error;
+    }
+    for await (const entry of directory) {
+      if (
+        ++entries > 32 ||
+        !/^[a-f0-9]{64}$/u.test(entry.name) ||
+        !entry.isDirectory() ||
+        entry.isSymbolicLink()
+      )
+        throw new Error("Native supervisor cache requires inspection; no artifacts were removed");
+      if (location === legacyNativeDirectory) {
+        if (
+          !(await inspectNativeArtifact(project, `${location}/${entry.name}`, "owned-process.exe"))
+        )
+          throw new Error(
+            "Incomplete legacy native supervisor artifacts require explicit inspection",
+          );
+      } else if (entry.name === key) existing = true;
+    }
   }
   if (entries >= 32 && !existing)
     throw new Error("Native supervisor cache capacity requires explicit inspection");
@@ -141,11 +183,14 @@ async function windowsSupervisor(
   project: string,
   observe?: OwnedPreparationObserver,
 ): Promise<string> {
+  // Reject unsupported project layouts before compiling or launching a managed executable.
+  assertWindowsNativePath(join(project, nativeDirectory, "0".repeat(64), "run.exe"));
   const system = process.env.SystemRoot ?? process.env.SYSTEMROOT;
   if (!system || !isAbsolute(system)) throw new Error("Windows SystemRoot is unavailable");
   const compiler = await physicalExecutable(
     join(system, "Microsoft.NET/Framework64/v4.0.30319/csc.exe"),
   );
+  assertWindowsNativePath(compiler);
   const references = await Promise.all(
     ["mscorlib.dll", "System.dll"].map((name) => physicalExecutable(join(dirname(compiler), name))),
   );
@@ -220,11 +265,18 @@ async function windowsSupervisor(
       if (invalid) throw invalid.error;
       await nativeCapacity(project, key);
       await mkdir(await safePath(project, folder, true), { recursive: true });
-      const pending = `${folder}/${randomUUID()}.exe`;
+      // The exclusive staging child belongs to this project and the existing publication lock.
+      const staging = await mkdtemp(join(await safePath(project, nativeDirectory), "compile-"));
+      const stagingRelative = `${nativeDirectory}/${basename(staging)}`;
+      const pending = `${stagingRelative}/run.exe`;
       const pendingReceipt = `${folder}/${randomUUID()}.sha256`;
       const failures: unknown[] = [];
       let executable: string | undefined;
+      let compilerClosed = true;
       try {
+        const output = await safePath(project, pending, true);
+        assertWindowsNativePath(output);
+        compilerClosed = false;
         const compiled = spawnSync(
           compiler,
           [
@@ -234,7 +286,7 @@ async function windowsSupervisor(
             "/optimize+",
             "/target:exe",
             ...references.map((path) => `/reference:${path}`),
-            `/out:${await safePath(project, pending, true)}`,
+            `/out:${output}`,
             await safePath(implementationRoot, source),
           ],
           {
@@ -245,6 +297,7 @@ async function windowsSupervisor(
             maxBuffer: 64 * 1024,
           },
         );
+        compilerClosed = !compiled.error && compiled.status !== null;
         if (compiled.error || compiled.status !== 0)
           throw new Error("Windows owned-process supervisor compilation failed");
         if ((await before()) !== key)
@@ -257,7 +310,7 @@ async function windowsSupervisor(
         });
         await rename(
           await safePath(project, pending),
-          await safePath(project, `${folder}/owned-process.exe`, true),
+          await safePath(project, `${folder}/run.exe`, true),
         );
         await rename(
           await safePath(project, pendingReceipt),
@@ -269,14 +322,26 @@ async function windowsSupervisor(
       } catch (error) {
         failures.push(error);
       }
-      for (const path of [pending, pendingReceipt]) {
+      if (compilerClosed) {
+        for (const path of [pending, pendingReceipt]) {
+          try {
+            await physicalProjectDirectory(project);
+            await unlink(await safePath(project, path, true));
+          } catch (error) {
+            if (!hasCode(error, "ENOENT")) failures.push(error);
+          }
+        }
         try {
           await physicalProjectDirectory(project);
-          await unlink(await safePath(project, path, true));
+          // No recursive deletion: unexpected staging entries remain available for inspection.
+          await rmdir(await safePath(project, stagingRelative));
         } catch (error) {
-          if (!hasCode(error, "ENOENT")) failures.push(error);
+          failures.push(error);
         }
-      }
+      } else
+        failures.push(
+          new Error("Native compiler outcome is unconfirmed; project-owned staging was retained"),
+        );
       if (failures.length === 1) throw failures[0];
       if (failures.length)
         throw new AggregateError(failures, "Native preparation and pending-file cleanup failed");
@@ -376,6 +441,7 @@ export async function spawnOwned(
   options.signal?.throwIfAborted();
   const project = await physicalProjectDirectory(options.projectRoot ?? implementationRoot);
   const supervisor = process.platform === "win32" ? await windowsSupervisor(project) : undefined;
+  if (supervisor) assertWindowsNativePath(supervisor);
   options.signal?.throwIfAborted();
   const completion = supervisor ? await createTemporaryWorkspace(project, "completion") : undefined;
   const cancellation = `Local\\TeamagentOwned-${randomUUID()}`;

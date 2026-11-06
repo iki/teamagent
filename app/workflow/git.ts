@@ -7,6 +7,7 @@ import { Path, Policy, type Snapshot, type Task } from "./model.ts";
 import { atomicText, boundedText, containedPath, digest, workflowCapacity } from "./storage.ts";
 import { diagnostic, runProcess, type ProcessResult } from "./process.ts";
 import { currentBunEnvironment } from "../check/toolchain.ts";
+import { gitPlatformArguments } from "../check/git-platform.ts";
 
 export type Git = (args: readonly string[], input?: string, index?: string) => Promise<string>;
 export const GitObjectId = Schema.String.check(
@@ -80,11 +81,16 @@ export function gitEnvironment(index?: string): Record<string, string | undefine
 export function gitAt(root: string): Git {
   let diagnostics = Promise.resolve();
   return async (args, input, index) => {
-    const result = await runProcess(root, "git", ["-c", "core.fsmonitor=false", ...args], {
-      ...(input === undefined ? {} : { input }),
-      timeoutMs: args.includes("commit") ? 600_000 : 60_000,
-      env: gitEnvironment(index),
-    });
+    const result = await runProcess(
+      root,
+      "git",
+      gitPlatformArguments(["-c", "core.fsmonitor=false", ...args]),
+      {
+        ...(input === undefined ? {} : { input }),
+        timeoutMs: args.includes("commit") ? 600_000 : 60_000,
+        env: gitEnvironment(index),
+      },
+    );
     if (result.code !== 0 || result.outcome !== "exited") {
       // Read pairs may finish together; keep shared failure inventory/publication sequential.
       const recorded = diagnostics.then(async () => {
@@ -183,15 +189,18 @@ export async function stageScope(root: string, git: Git, files: readonly string[
   if (!files.length || files.length > 10000 || new Set(files).size !== files.length)
     throw new Error("Invalid publication scope count or duplicate path");
   for (const path of files) publicPath(path);
-  const rows = paths(await git(["ls-files", "--stage", "-z"]));
+  // Full path rows are NUL-framed and can form one overlong process-output line.
+  // Numeric LF records retain the global conflict/count check without printing paths.
+  const stages = await git(["ls-files", "--format=%(stage)"]);
+  if (stages.length > 200000) throw new Error("Git index exceeds publication bounds");
+  if (stages && !stages.endsWith("\n"))
+    throw new Error("Cannot stage an unmerged or malformed Git index");
+  const rows = stages ? stages.slice(0, -1).split("\n") : [];
   if (rows.length > 100000) throw new Error("Git index exceeds publication bounds");
-  const indexed = new Set<string>();
-  for (const row of rows) {
-    const match = /^[0-7]{6} [a-f0-9]{40}(?:[a-f0-9]{24})? 0\t([\s\S]+)$/u.exec(row);
-    if (!match?.[1]) throw new Error("Cannot stage an unmerged or malformed Git index");
-    indexed.add(match[1]);
-  }
-  const selected: string[] = [];
+  if (rows.some((stage) => stage !== "0"))
+    throw new Error("Cannot stage an unmerged or malformed Git index");
+  const selected = new Set<string>();
+  const absent: string[] = [];
   for (const path of files) {
     let present = false;
     try {
@@ -201,12 +210,45 @@ export async function stageScope(root: string, git: Git, files: readonly string[
     } catch (error) {
       if (!(error instanceof Error && "code" in error && error.code === "ENOENT")) throw error;
     }
-    if (present || indexed.has(path)) selected.push(path);
+    if (present) selected.add(path);
+    else absent.push(path);
   }
-  if (selected.length)
+  // Only absent scope members need index membership, and a literal pathspec can
+  // still select a directory prefix. Reject every row outside the exact batch.
+  let batch: string[] = [];
+  let argumentBytes = 0;
+  const inspectAbsent = async (): Promise<void> => {
+    if (!batch.length) return;
+    const text = await git(["--literal-pathspecs", "ls-files", "--stage", "-z", "--", ...batch]);
+    if (Buffer.byteLength(text) > 65536 || (text && !text.endsWith("\0")))
+      throw new Error("Malformed or oversized scoped Git index response");
+    const members = new Set(batch);
+    const found = new Set<string>();
+    const records = text ? text.slice(0, -1).split("\0") : [];
+    if (records.length > batch.length) throw new Error("Unexpected scoped Git index membership");
+    for (const row of records) {
+      const match = /^[0-7]{6} [a-f0-9]{40}(?:[a-f0-9]{24})? 0\t([\s\S]+)$/u.exec(row);
+      const path = match?.[1];
+      if (!path || !members.has(path) || found.has(path))
+        throw new Error("Unmerged, malformed or unexpected scoped Git index membership");
+      found.add(path);
+      selected.add(path);
+    }
+    batch = [];
+    argumentBytes = 0;
+  };
+  for (const path of absent) {
+    const bytes = Buffer.byteLength(path) + 1;
+    if (bytes > 16384) throw new Error("Publication scope argument exceeds its bound");
+    if (batch.length >= 64 || argumentBytes + bytes > 16384) await inspectAbsent();
+    batch.push(path);
+    argumentBytes += bytes;
+  }
+  await inspectAbsent();
+  if (selected.size)
     await git(
       ["--literal-pathspecs", "add", "--pathspec-from-file=-", "--pathspec-file-nul"],
-      selected.join("\0") + "\0",
+      files.filter((path) => selected.has(path)).join("\0") + "\0",
     );
 }
 export async function fileHash(root: string, path: string): Promise<string> {

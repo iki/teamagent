@@ -1,16 +1,41 @@
 {
-  "format": "teamagent-trigon-patches-v1",
-  "sourceRepository": "https://github.com/iki/trigon",
-  "sourceRevision": "9ef18967b46fe01571933c3ba6216823ad961c16",
-  "license": {
-    "sourcePath": "LICENSE.md",
-    "artifactPath": "patches/trigon/LICENSE.md",
-    "sha256": "319664e96ae8627ec41a39e583c7a88491cf20fe0696d55882719258ab45d8e8"
+  "format": "teamagent-patches-selection-v1",
+  "sourceRepository": "https://github.com/iki/patches",
+  "sourceRevision": "83ce0d003ff07bbb3ceca5019d4b0fd8caec25fa",
+  "metadata": {
+    "catalog": {
+      "sourcePath": "registry.json",
+      "artifactPath": "patches/trigon/catalog.json",
+      "sha256": "06f26d1088b76cbc946ddbe8779efa25de478f003ff7a6fc75af2483f5697e87"
+    },
+    "migration": {
+      "sourcePath": "migration.json",
+      "artifactPath": "patches/trigon/migration.json",
+      "sha256": "35ca36cfa90d65b381e662914e1ab1218ed2cc2fc8088d05d5579e3dbdefaad9"
+    }
   },
+  "notices": [
+    {
+      "sourcePath": "licenses/trigon-eula-2026.md",
+      "artifactPath": "patches/trigon/LICENSE.md",
+      "sha256": "319664e96ae8627ec41a39e583c7a88491cf20fe0696d55882719258ab45d8e8"
+    },
+    {
+      "sourcePath": "licenses/tauri/LICENSE-MIT",
+      "artifactPath": "patches/trigon/licenses/tauri/LICENSE-MIT",
+      "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d"
+    },
+    {
+      "sourcePath": "licenses/tinypool/LICENSE",
+      "artifactPath": "patches/trigon/licenses/tinypool/LICENSE",
+      "sha256": "0d506ca1b2adc4ee63a9e2384a85d6cf9f014b4cf3d00c162cd60216450324fa"
+    }
+  ],
   "fixes": [
     {
       "id": "tauri-native-lifetime",
       "kind": "host-adapter",
+      "requires": [],
       "packages": [
         {
           "name": "@tauri-apps/cli",
@@ -19,12 +44,12 @@
       ],
       "files": [
         {
-          "sourcePath": "app/trigon-check/native-lifetime.ts",
+          "sourcePath": "adapters/tauri/native-lifetime.ts",
           "artifactPath": "app/dependencies/trigon/native-lifetime.ts",
           "sha256": "eaa3d76d8a35f1e67a41f30dbc23eb4ef24c6c798ca3ca26cb012782f9891480"
         },
         {
-          "sourcePath": "app/trigon-check/tauri-cli.ts",
+          "sourcePath": "adapters/tauri/tauri-cli.ts",
           "artifactPath": "app/dependencies/trigon/tauri-cli.ts",
           "sha256": "7c8cc2f93df58823a54dae5879ef2d8f1ab32ba7bdfe3f517ae5b00dd6b055fc"
         }
@@ -32,8 +57,9 @@
       "evidence": "https://github.com/iki/trigon/blob/454e372cbc6bb75eafbbc4795391c492bc4fbf96/spec/runtime.md: historical CLI 2.12.1 early exit; supplied conservative guard retained at 2.12.4, where the unguarded issue was not reproduced. Remove only after upstream lifecycle guarantees and deterministic success/rejection/cleanup regression justify removal."
     },
     {
-      "id": "tinypool-windows-hide",
+      "id": "tinypool-windows-hide-process-workers",
       "kind": "package-patch",
+      "requires": [],
       "packages": [
         {
           "name": "tinypool",

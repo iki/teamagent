@@ -154,6 +154,9 @@ Rejects { Move-ResearchRepositoryDirectory $moveRoot $moveSource (Join-Path $fix
 Rejects { Move-ResearchRepositoryDirectory $moveRoot $moveSource (Join-Path $moveTarget 'nested') } 'directory rename requires same parent'
 Set-Item function:Move-ResearchDirectory $originalDirectoryMove
 [void](Git $work @('init','--initial-branch=main'))
+if ($IsWindows) {
+    Assert-That ((Git $work @('config','--get','core.longpaths')) -ceq 'true' -and -not (Read-ResearchText (Join-Path $work '.git/config')).Contains('longpaths')) 'Windows Git long paths are enabled per invocation without persistent configuration'
+}
 Set-FixtureGitIdentity $work
 Put (Join-Path $work 'readme.txt') 'initial'
 [void](Git $work @('add','readme.txt'));[void](Git $work @('commit','-m','initial'))
@@ -282,7 +285,7 @@ $caseOwned=Read-ResearchSourceList $caseSettings
 Assert-That ($caseImport.repositories.Count -eq 1 -and $caseImport.repositories[0].id -ceq 'ai-gen--yue2-studio' -and $caseImport.repositories[0].name -ceq 'YuE2-Studio' -and $caseImport.repositories[0].sourcePath -ceq 'ai-gen/YuE2-Studio') 'uppercase declaration has canonical lowercase ID while preserving display and cache spelling'
 Assert-That ($caseOwned.Count -eq 1 -and $caseOwned[0].id -ceq 'ai-gen--yue2-studio' -and $caseOwned[0].name -ceq 'YuE2-Studio' -and $caseOwned[0].sourcePath -ceq 'ai-gen/YuE2-Studio' -and $caseConfig.Contains('YuE2-Studio') -and (Read-ResearchText (Join-Path $caseSource '.git-clone')) -ceq $caseDeclaration) 'owned configuration round trip preserves name and source path case without rewriting the export'
 $caseRow=Invoke-ResearchRepository $caseOwned[0] $null $caseSettings $now '' '' 15
-Assert-That ($caseRow.status -eq 'cloned' -and $caseRow.id -ceq 'ai-gen--yue2-studio' -and $caseRow.path -ceq 'cache/ai-gen/YuE2-Studio' -and (Find-ResearchRepository $caseOwned[0] $caseRow $caseSettings) -ceq ([IO.Path]::GetFullPath($caseRow.path,$caseRoot))) 'sync and prior checkout matching retain canonical ID and actual uppercase directory'
+Assert-That ($caseRow.status -eq 'cloned' -and $caseRow.id -ceq 'ai-gen--yue2-studio' -and $caseRow.path -ceq 'cache/ai-gen/YuE2-Studio' -and (Find-ResearchRepository $caseOwned[0] $caseRow $caseSettings) -ceq ([IO.Path]::GetFullPath($caseRow.path,$caseRoot))) ('sync and prior checkout matching retain canonical ID and actual uppercase directory: '+$caseRow.status+' '+($caseRow.errors -join ','))
 Put (Join-Path $caseSource '.git-clone') ($caseDeclaration+"clone 'ai-gen/yue2-studio' '$url'`n")
 Rejects { Invoke-ResearchGitSync -ProjectRoot $caseRoot -Action lists } 'case-folded declaration ID collision is rejected before publication'
 Assert-That ((Read-ResearchText (Join-Path $caseRoot 'git-sources.json')) -ceq $caseConfig) 'case-fold collision preserves previous portable configuration'

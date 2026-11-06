@@ -82,6 +82,14 @@ runtime validation are recorded in the [source audit](analyses/skills-distributi
 Workflow, verification, resource ownership and logging stay executable adapters;
 skills do not replace enforcement or local publication authority.
 
+The subsequent November 6 Patches migration leaves eight authored development
+skills in Teamagent and moves the patch consumer procedure to `iki/patches`,
+beside the independent `patch-maintenance` procedure. Its exact original source
+is retained there as non-discoverable provenance. Installation selects only
+these two procedures at an explicit reviewed Patches commit; unrelated imported
+skills and their hashes remain intact. Catalog/consumer verification and skill
+installation results are recorded separately.
+
 Imported skill files and their provenance lock stay intact. Some C12/Consola reference links use the publisher's absolute checkout path; the intended Markdown references are also installed alongside each skill. Resolve those references locally. C12 guidance contains version-sensitive options/defaults; use the exact installed API when implementing it. The pinned `effect-oxlint` visitor API expects Effect-returning callbacks, so stateful generators need the supported wrapper rather than blindly copying a newer example.
 
 Keep established choices when samples use npm/pnpm, Node wrappers, a different test runner/schema library, unconditional compatibility flags or operational console logging. Apply the underlying requirement through Aube, Bun, Effect, the current test runner and the repository privacy policy. Review and intentionally update imported skill sources separately; do not silently alter their claimed hashes.

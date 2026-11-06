@@ -18,7 +18,18 @@ export async function authorizeLocal(
   const privateRoot = await realpath(request.dataDirectory);
   if (contained(privateRoot, canonical))
     throw new Error("A source cannot overlap private harness data");
-  if (canonical.split(/[\\/]/).some(excludedName))
+  const workspace = await realpath(request.workspaceRoot);
+  if (!(await lstat(workspace)).isDirectory())
+    throw new Error("Import workspace must be an existing directory");
+  const absoluteParts = canonical.split(/[\\/]/);
+  // A physical workspace may live below .cache/worktrees; its own cache stays excluded.
+  const scopedParts = contained(workspace, canonical)
+    ? [basename(workspace), ...relative(workspace, canonical).split(/[\\/]/)]
+    : absoluteParts;
+  if (
+    absoluteParts.some((name) => name.toLowerCase() !== ".cache" && excludedName(name)) ||
+    scopedParts.some(excludedName)
+  )
     throw new Error("Source is inside an excluded private or generated directory");
   if (allowedRoots !== undefined) {
     const roots = await Promise.all(allowedRoots.map((root) => realpath(root)));

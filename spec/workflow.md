@@ -16,6 +16,14 @@ version-two tasks cannot begin on main.
 
 Preserve the original task identity and baseline through clarification, interruptions and continuation. Declare the task's literal relative file scope. Pre-existing changes require explicit adoption; unrelated staged or changed files must not enter a commit. Never infer ownership from everything currently dirty. A missing upstream, detached HEAD, unmerged index or changed destination stops publication with a recoverable local state.
 
+Publication checks every index stage using bounded numeric LF records, preserving
+the 100,000-entry limit and rejection of conflicts anywhere in the index. Existing
+scope files need no global path listing. Only absent scope members use literal,
+bounded membership batches; unexpected directory-prefix matches or malformed rows
+stop staging. Already-staged deletions remain intact, and the final add receives
+only the declared scope through NUL-framed stdin. This avoids a whole-index NUL
+block exceeding the unchanged process line bound; no output limit is raised.
+
 The current helper requires the complete checked working tree to equal the
 intended commit. It rejects every changed path outside the checkpoint scope
 before freezing the record, including unchanged pre-existing dirt. Preserve

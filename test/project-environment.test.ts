@@ -127,7 +127,7 @@ await test(
   "native capture avoids dotenv and Bun preloads and retains private values only in memory",
   { skip: process.platform !== "win32" },
   async () => {
-    const root = await mkdtemp("environment-native-");
+    const root = await mkdtemp("en-");
     try {
       await writeFile(join(root, ".env"), "REMOVED_BY_PROVIDER=must-not-return\n", "utf8");
       await writeFile(join(root, "bunfig.toml"), 'preload = ["missing-preload.ts"]\n', "utf8");
@@ -161,7 +161,7 @@ await test(
 );
 
 await test("sensitive capture bounds both outputs, joins failure and timeout, and removes only confirmed scratch", async () => {
-  const root = await mkdtemp("environment-capture-");
+  const root = await mkdtemp("ec-");
   try {
     const text = await captureEnvironmentSnapshot(
       root,
@@ -214,7 +214,7 @@ await test("sensitive capture bounds both outputs, joins failure and timeout, an
 });
 
 await test("borrowed capture preserves generated credentials through command lifetime", async () => {
-  const root = await mkdtemp("environment-lease-");
+  const root = await mkdtemp("el-");
   const temporary = await createTemporaryWorkspace(root, "command");
   try {
     const body =
@@ -267,7 +267,7 @@ for (const mode of ["reserved-status", "external-supervisor-termination"] as con
     `provider retains scratch after ${mode}`,
     { skip: process.platform !== "win32" },
     async () => {
-      const root = await mkdtemp("environment-retention-");
+      const root = await mkdtemp("er-");
       let descendantsStopped = false;
       try {
         // 253 is deliberately ambiguous in the native protocol. Even a fixture's

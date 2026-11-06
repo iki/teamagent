@@ -176,7 +176,7 @@ async function fixture(
     ) => Promise<OwnedProcess>,
   ) => Promise<void>,
 ): Promise<void> {
-  const workspace = await createTemporaryWorkspace(resolve(import.meta.dir, ".."), "process-test");
+  const workspace = await createTemporaryWorkspace(resolve(import.meta.dir, ".."), "op");
   const processes: OwnedProcess[] = [];
   const failures: unknown[] = [];
   try {
@@ -281,13 +281,13 @@ await test(
         assert.equal(outputs[0], outputs[2]);
         assert.equal(outputs[1], "");
         assert.equal(outputs[3], "");
-        const cache = join(project, ".cache/verification/native-owned-process");
+        const cache = join(project, ".cache/native");
         const keys = await readdir(cache);
         assert.equal(keys.length, 1);
         assert.ok(keys[0]);
         assert.deepEqual((await readdir(join(cache, keys[0]))).sort(), [
           "binary.sha256",
-          "owned-process.exe",
+          "run.exe",
         ]);
         await assert.rejects(
           access(join(project, ".cache/verification/native-owned-process.lock")),
@@ -313,13 +313,14 @@ await test(
         "owned-process.ts",
         "owned-process-windows.cs",
         "cache-io.ts",
+        "git-platform.ts",
         "cache-fingerprint.ts",
         "temporary-workspace.ts",
       ])
         await copyFile(resolve(import.meta.dir, "../app/check", name), join(check, name));
       // Exact copied source bytes share the real implementation's initial key.
       const identity = await ownedProcessIdentity(project);
-      const cache = join(project, ".cache/verification/native-owned-process");
+      const cache = join(project, ".cache/native");
       const keys = await readdir(cache);
       const script = join(directory, "input-drift.ts");
       await writeFile(
@@ -374,6 +375,7 @@ await test(
         "owned-process.ts",
         "owned-process-windows.cs",
         "cache-io.ts",
+        "git-platform.ts",
         "cache-fingerprint.ts",
         "temporary-workspace.ts",
       ])
@@ -484,10 +486,7 @@ await test(
   "native completion creation preserves an existing receipt and remains unconfirmed",
   { skip: process.platform !== "win32", timeout: 30_000 },
   async () => {
-    const workspace = await createTemporaryWorkspace(
-      resolve(import.meta.dir, ".."),
-      "completion-collision",
-    );
+    const workspace = await createTemporaryWorkspace(resolve(import.meta.dir, ".."), "oc");
     const script = join(workspace.path, "controlled.ts");
     const marker = join(workspace.path, "controlled.pid");
     const failures: unknown[] = [];
@@ -771,10 +770,7 @@ await test(
   "owned transport settles unconfirmed when its close notification is unavailable",
   { timeout: 20_000 },
   async () => {
-    const workspace = await createTemporaryWorkspace(
-      resolve(import.meta.dir, ".."),
-      "transport-test",
-    );
+    const workspace = await createTemporaryWorkspace(resolve(import.meta.dir, ".."), "ot");
     const script = join(workspace.path, "idle.ts");
     let independentlyClosed = false;
     let owned: OwnedProcess | undefined;
@@ -967,7 +963,7 @@ await test(
       await mkdir(folder);
       assert.equal(await inspectOwnedProcessArtifact(directory, "absent"), undefined);
       assert.equal(await inspectOwnedProcessArtifact(directory, "artifact"), undefined);
-      const binary = join(folder, "owned-process.exe"),
+      const binary = join(folder, "run.exe"),
         receipt = join(folder, "binary.sha256");
       await writeFile(binary, "fixture binary\n", "utf8");
       await assert.rejects(inspectOwnedProcessArtifact(directory, "artifact"), /Incomplete/u);

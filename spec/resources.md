@@ -30,13 +30,13 @@ or error return; mutations remain sequenced separately. Failure diagnostic
 writes are serialized within each Git adapter. Every later publication boundary
 obtains fresh observations, and native ownership/fingerprints remain live.
 
-| Resource                                                                      | Owner and lifetime                                                                          |
-| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| Fresh scratch under `.tmp/`                                                   | The scope that created its ownership marker; dispose only after confirmed child shutdown.   |
-| Borrowed temporary parent                                                     | Validated routing for a child scope; borrowing grants no authority to dispose the parent.   |
-| Native supervisor artifacts under `.cache/verification/native-owned-process/` | A bounded, source-keyed derived cache; no age-based eviction or process adoption.           |
-| Workflow locks, receipts, histories and conversation records                  | Their existing workflow and evidence contracts; never temporary-workspace recovery targets. |
-| Source checkouts, installed dependencies and original research inputs         | Preserved inputs; never inferred scratch from their location, age or a stored PID.          |
+| Resource                                                                             | Owner and lifetime                                                                           |
+| ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- |
+| Fresh scratch under `.tmp/`                                                          | The scope that created its ownership marker; dispose only after confirmed child shutdown.    |
+| Borrowed temporary parent                                                            | Validated routing for a child scope; borrowing grants no authority to dispose the parent.    |
+| Native supervisor artifacts under `.cache/native/` and the retained legacy namespace | One combined bounded, source-keyed derived cache; no age-based eviction or process adoption. |
+| Workflow locks, receipts, histories and conversation records                         | Their existing workflow and evidence contracts; never temporary-workspace recovery targets.  |
+| Source checkouts, installed dependencies and original research inputs                | Preserved inputs; never inferred scratch from their location, age or a stored PID.           |
 
 All maintained text uses LF, including ownership markers and native-cache digest
 receipts. `.tmp/` is an explicitly registered owned output root. A
@@ -115,6 +115,16 @@ the isolated Windows Git path limits. Abrupt worker termination may retain that
 independent lease for explicit recovery; an enclosing unit lease does not grant
 permission to prune it.
 
+The workflow/import, verification, research and citation Git adapters on Windows
+enable `core.longpaths=true` for that process.
+These adapters and their real Git fixtures preserve physical worktree paths instead of shortening or
+aliasing them. This does not modify repository/global Git configuration, relax
+containment or change tool/test deadlines. A canonical Git regression fixes the checkout below its startup path limit,
+sets local long-path support to false, and proves an unconfigured stage fails
+before the per-command adapter succeeds. The full file path exceeds 260 characters
+and verifies the staging, blob, LF inventory and cache-reader paths;
+the registered-worktree suites also exercise deep pack and public-record paths.
+
 ## Process ownership
 
 An explicitly selected physical `projectRoot` can own supervisor artifacts and
@@ -162,6 +172,21 @@ exclusive file handle before returning. This live handshake requires visibility 
 not a durable disk flush after every command. It is never recovery authority
 after owner exit or power loss; those paths retain their separate proof rules.
 
+Native executables use `.cache/native/<full-64-character-key>/run.exe` with the
+same `binary.sha256` receipt. The old
+`.cache/verification/native-owned-process/` namespace remains byte-for-byte in
+place: preparation never moves, removes or launches its artifacts. New
+publication validates and counts both namespaces together against the existing
+32-directory limit, including legacy artifact shape and digest integrity.
+
+The Windows .NET host has a separate executable startup path limit from Git.
+Admission rejects compiler and final executable paths beyond a conservative
+248 UTF-16-code-unit compatibility budget before starting either process, leaving
+room below the legacy 260-unit limit for host metadata suffixes. Unsupported
+project locations fail explicitly; no alias, truncated key or foreign cache is
+substituted. Fixture display labels stay compact while each project, marker,
+Unicode/space case and process boundary remains independent.
+
 The native helper is compiled with the provisioned Windows compiler, without a
 download or dependency repair. Its cache key binds the C# source, TypeScript
 adapter, compiler and compiler-configuration bytes, explicit `mscorlib.dll` and
@@ -174,7 +199,14 @@ incomplete or unexpected existing artifacts require explicit inspection and are
 never overwritten by preparation. A validated empty directory remains retryable.
 The cache permits at most 32 keyed directories and a 16-MiB binary. Reaching
 capacity fails for explicit inspection; it does not remove older artifacts.
-Only the current operation's exact pending files are removed automatically.
+Compilation uses an exclusively created `compile-*` staging child inside the
+same project-owned native cache, under the existing publication lock. Its short
+output path avoids the compiler's independent path parser limit; the final
+full-key path is checked again before launch. Only the current operation's exact
+pending files and its empty staging directory are removed after a confirmed
+compiler outcome. An uncertain compiler result retains staging and causes
+subsequent cold preparation to require inspection. No recursive cleanup or lock
+reclamation is introduced.
 
 Fully validated complete keyed artifacts can be read without the publication
 lock. Every read still hashes the full input closure before and after artifact

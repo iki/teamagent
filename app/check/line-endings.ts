@@ -1,4 +1,5 @@
 import { spawnSync } from "node:child_process";
+import { gitPlatformArguments } from "./git-platform.ts";
 import { createHash } from "node:crypto";
 import {
   closeSync,
@@ -57,7 +58,9 @@ export const lineEndingOutputRoots: readonly string[] = [
   ".cache/workflow-reference",
   ".cache/hook-diagnostics",
   ".cache/dependencies",
+  ".cache/patches-migration",
   ".cache/verification",
+  ".cache/native",
   ".cache/temporary",
   ".tmp",
   ".cache/text",
@@ -175,7 +178,7 @@ function readBoundedFile(path: string, expected: Stats): Uint8Array {
 export function lineEndingPaths(root: string): readonly string[] {
   const result = spawnSync(
     "git",
-    ["ls-files", "--cached", "--others", "--exclude-standard", "-z"],
+    gitPlatformArguments(["ls-files", "--cached", "--others", "--exclude-standard", "-z"]),
     {
       cwd: root,
       windowsHide: true,

@@ -3,6 +3,7 @@ import { lstat, realpath } from "node:fs/promises";
 import { isDeepStrictEqual } from "node:util";
 import { isAbsolute, relative, resolve, sep } from "node:path";
 import { pinnedTool } from "../check/toolchain.ts";
+import { catalogSelection } from "./catalog.ts";
 import { DateTime, Effect, Schema } from "effect";
 import {
   DependencyError,
@@ -50,7 +51,7 @@ async function snapshot(root: string) {
       throw new DependencyError({
         code: "blocked",
         message:
-          "ASK: the central Trigon patch registry is missing or unreadable; restore reviewed provenance before continuing.",
+          "ASK: the central Patches patch registry is missing or unreadable; restore reviewed provenance before continuing.",
       });
     }),
     readBounded(root, cargoPath, dependencyLimits.lockBytes),
@@ -60,31 +61,50 @@ async function snapshot(root: string) {
   const manifest = await Effect.runPromise(decodeManifest(manifestValue));
   const registry = await Effect.runPromise(decodeRegistry(registryValue));
   await Effect.runPromise(patchPolicy(manifest, registry));
-  const license = await readBounded(root, registry.license.artifactPath).catch(() => {
+  const [catalogBytes, migrationBytes] = await Promise.all(
+    [registry.metadata.catalog, registry.metadata.migration].map(async (file) => {
+      const bytes = await readBounded(root, file.artifactPath);
+      if (digest(bytes) !== file.sha256 || bytes.includes(13))
+        throw new DependencyError({
+          code: "blocked",
+          message: "ASK: canonical patch metadata changed or is not LF.",
+        });
+      return bytes;
+    }),
+  );
+  if (catalogBytes === undefined || migrationBytes === undefined)
     throw new DependencyError({
-      code: "blocked",
-      message: "The supplied Trigon license/notice is missing or unreadable.",
+      code: "invalid",
+      message: "Patch metadata coverage is incomplete.",
     });
-  });
-  if (digest(license) !== registry.license.sha256)
-    throw new DependencyError({
-      code: "blocked",
-      message: "The supplied Trigon license/notice does not match its recorded source bytes.",
+  await Effect.runPromise(catalogSelection(registry, json(catalogBytes), json(migrationBytes)));
+  for (const notice of registry.notices) {
+    const bytes = await readBounded(root, notice.artifactPath).catch(() => {
+      throw new DependencyError({
+        code: "blocked",
+        message: "A required patch notice is missing or unreadable.",
+      });
     });
+    if (digest(bytes) !== notice.sha256 || bytes.includes(13))
+      throw new DependencyError({
+        code: "blocked",
+        message: "A required patch notice does not match its exact LF source bytes.",
+      });
+  }
   const artifacts = [];
   for (const fix of registry.fixes)
     for (const file of fix.files) {
       const bytes = await readBounded(root, file.artifactPath).catch(() => {
         throw new DependencyError({
           code: "blocked",
-          message: "ASK: a supplied Trigon dependency artifact is missing or unreadable.",
+          message: "ASK: a supplied Patches dependency artifact is missing or unreadable.",
         });
       });
       if (digest(bytes) !== file.sha256)
         throw new DependencyError({
           code: "blocked",
           message:
-            "ASK: a Trigon-owned dependency artifact changed or is missing. Restore its reviewed source or request a central Trigon fix.",
+            "ASK: a Patches-owned dependency artifact changed or is missing. Restore its reviewed source or request a central Patches fix.",
         });
       if (bytes.includes(13))
         throw new DependencyError({
@@ -273,7 +293,7 @@ export function createDependencyRuntime(options: DependencyRuntimeOptions) {
           throw new DependencyError({
             code: "blocked",
             message:
-              "ASK: this plan requires an absent or incompatible Trigon fix or stack review. No dependency change was attempted.",
+              "ASK: this plan requires an absent or incompatible Patches fix or stack review. No dependency change was attempted.",
           });
         const id = randomUUID();
         const receipt = `.cache/dependencies/runs/${id}`;
@@ -379,7 +399,7 @@ export function createDependencyRuntime(options: DependencyRuntimeOptions) {
           await publishJson(root, `${receipt}/reconcile.json`, {
             state: "reconciliation-required",
             action:
-              "Inspect the retained attempt, processes and repository state. A required dependency workaround absent from Trigon must be proposed to the user before authoring or applying it.",
+              "Inspect the retained attempt, processes and repository state. A required dependency workaround absent from Patches must be proposed to the user before authoring or applying it.",
             automaticRepair: false,
           });
           throw error;
@@ -445,7 +465,7 @@ export function createDependencyRuntime(options: DependencyRuntimeOptions) {
         if (origin.toLowerCase().replace(/\.git$/, "") !== current.registry.sourceRepository)
           throw new DependencyError({
             code: "invalid",
-            message: "The explicit source origin is not the central Trigon repository.",
+            message: "The explicit source origin is not the central Patches repository.",
           });
         await git(["cat-file", "-e", `${revision}^{commit}`], 64);
         const sourceBlob = async (path: string): Promise<Uint8Array> => {
@@ -454,7 +474,7 @@ export function createDependencyRuntime(options: DependencyRuntimeOptions) {
           if (match?.[2] === undefined || match[3] !== path)
             throw new DependencyError({
               code: "invalid",
-              message: "A supplied Trigon path must be one regular file in the exact commit tree.",
+              message: "A supplied Patches path must be one regular file in the exact commit tree.",
             });
           const bytes = await git(["cat-file", "blob", match[2]]);
           utf8(bytes);
@@ -462,7 +482,7 @@ export function createDependencyRuntime(options: DependencyRuntimeOptions) {
             throw new DependencyError({
               code: "blocked",
               message:
-                "ASK: Trigon candidate text needs reviewed LF source bytes; the shared source was not rewritten.",
+                "ASK: Patches candidate text needs reviewed LF source bytes; the shared source was not rewritten.",
             });
           return bytes;
         };
@@ -474,30 +494,70 @@ export function createDependencyRuntime(options: DependencyRuntimeOptions) {
           approvalRequired: true,
           promoted: false,
         });
+        const catalogBytes = await sourceBlob(current.registry.metadata.catalog.sourcePath);
+        const migrationBytes = await sourceBlob(current.registry.metadata.migration.sourcePath);
+        const selection = await Effect.runPromise(
+          catalogSelection(
+            {
+              ...current.registry,
+              sourceRevision: revision,
+              metadata: {
+                catalog: { ...current.registry.metadata.catalog, sha256: digest(catalogBytes) },
+                migration: {
+                  ...current.registry.metadata.migration,
+                  sha256: digest(migrationBytes),
+                },
+              },
+            },
+            json(catalogBytes),
+            json(migrationBytes),
+            true,
+          ),
+        );
+        await Effect.runPromise(patchPolicy(current.manifest, selection));
+        await publish(root, `${output}/${selection.metadata.catalog.artifactPath}`, catalogBytes);
+        await publish(
+          root,
+          `${output}/${selection.metadata.migration.artifactPath}`,
+          migrationBytes,
+        );
+        const stage = async (file: {
+          readonly sourcePath: string;
+          readonly artifactPath: string;
+          readonly sha256: string;
+        }) => {
+          const bytes = await sourceBlob(file.sourcePath);
+          if (digest(bytes) !== file.sha256)
+            throw new DependencyError({
+              code: "blocked",
+              message: "ASK: Patches candidate bytes do not match its catalog migration.",
+            });
+          await publish(root, `${output}/${file.artifactPath}`, bytes);
+        };
         const artifacts = [];
-        for (const fix of current.registry.fixes)
+        for (const fix of selection.fixes)
           for (const file of fix.files) {
-            const bytes = await sourceBlob(file.sourcePath);
-            const path = `${output}/${file.artifactPath}`;
-            await publish(root, path, bytes);
+            await stage(file);
+            const previous = current.registry.fixes
+              .find((item) => item.id === fix.id)
+              ?.files.find((item) => item.artifactPath === file.artifactPath);
             artifacts.push({
               fix: fix.id,
               sourcePath: file.sourcePath,
               artifactPath: file.artifactPath,
-              sha256: digest(bytes),
-              changed: digest(bytes) !== file.sha256,
+              sha256: file.sha256,
+              changed: file.sha256 !== previous?.sha256,
             });
           }
-        const license = await sourceBlob(current.registry.license.sourcePath);
-        await publish(root, `${output}/${current.registry.license.artifactPath}`, license);
+        for (const notice of selection.notices) await stage(notice);
         checkUnchanged(current.baseline, (await snapshot(root)).baseline);
         const candidate = {
-          format: "teamagent-trigon-source-candidate-v1",
-          sourceRepository: current.registry.sourceRepository,
+          format: "teamagent-patches-source-candidate-v1",
+          sourceRepository: selection.sourceRepository,
           sourceRevision: revision,
           previousRevision: current.registry.sourceRevision,
           artifacts,
-          license: { ...current.registry.license, sha256: digest(license) },
+          selection,
           approvalRequired: true,
           promoted: false,
           publicReachabilityVerified: false,

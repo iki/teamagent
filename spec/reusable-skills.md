@@ -14,9 +14,20 @@ changing a consumer's copy without updating provenance.
 | [project-toolchain](../skills/project-toolchain/SKILL.md)         | Tools must run with the target project's physical pins and optional trusted Mise environment. |
 | [resource-lifecycle](../skills/resource-lifecycle/SKILL.md)       | Processes, memory admission, temporary ownership or cleanup need implementation or review.    |
 | [conversation-records](../skills/conversation-records/SKILL.md)   | Public agent activity must be recorded once per logical task with frozen completion evidence. |
-| [dependency-patches](../skills/dependency-patches/SKILL.md)       | A project consumes or maintains centrally owned upstream dependency fixes.                    |
 | [typed-modules](../skills/typed-modules/SKILL.md)                 | The project has adopted the TypeScript/Effect/Oxc module boundary contract.                   |
 | [skills-distribution](../skills/skills-distribution/SKILL.md)     | Selected skill sources are installed, reviewed or updated across projects.                    |
+
+Patch procedures are maintained separately in [Patches](https://github.com/iki/patches):
+
+| Skill                                                                                    | Select when                                                             |
+| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| [dependency-patches](https://github.com/iki/patches/tree/main/skills/dependency-patches) | A consumer selects, updates or retires supplied fixes.                  |
+| [patch-maintenance](https://github.com/iki/patches/tree/main/skills/patch-maintenance)   | A canonical owner develops fixes and manages upstream/removal evidence. |
+
+Teamagent no longer publishes a duplicate authored `dependency-patches` source.
+Its original bytes and origin remain in Patches provenance under
+`skill-original.md`, outside Skills discovery. Install the two procedures
+explicitly from a reviewed Patches commit; do not rewrite unrelated installed skills.
 
 The existing [teamagent-memory](../skills/teamagent-memory/SKILL.md) remains a
 separate product integration. Workflow installation does not select memory,
@@ -48,6 +59,15 @@ full 40-character commit. From the consumer's project root:
 ```sh
 bun node_modules/skills/bin/cli.mjs add "iki/teamagent#FULL_REVIEWED_SHA" --skill task-worktrees rebase-integration verification-evidence resource-lifecycle conversation-records --agent codex --copy --yes
 ```
+
+The two patch procedures have their own reviewed immutable source:
+
+```sh
+bun node_modules/skills/bin/cli.mjs add "iki/patches#FULL_REVIEWED_PATCHES_SHA" --skill dependency-patches patch-maintenance --agent codex --copy --yes
+```
+
+Review that selected installation and its provenance lock separately from
+Teamagent skill updates. Each source may advance independently.
 
 Select additional supported agents explicitly when requested. Do not infer
 permission to change user-global installations, every detected agent, credentials

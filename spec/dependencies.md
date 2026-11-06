@@ -4,11 +4,11 @@ Aube owns JavaScript dependency changes and `aube-lock.yaml`; Bun executes tools
 
 ## Central patch ownership
 
-Trigon is the source of shared-stack dependency fixes. Reuse an applicable supplied fix with its exact source revision, affected versions, prerequisites, original bytes, regression coverage and removal condition. Store the portable required artifacts and provenance in Teamagent so a new checkout does not depend on a sibling directory.
+[Patches](https://github.com/iki/patches) is the canonical source of shared-stack dependency fixes and the atomic `dependency-patches`/`patch-maintenance` skills. Reuse an applicable supplied fix with its exact source revision, affected versions, prerequisites, original bytes, regression coverage and removal condition. Store the portable required artifacts and provenance in Teamagent so a new checkout does not depend on a sibling directory.
 
-If a required workaround is absent, incompatible or no longer verifiable in Trigon, stop the affected change and ask the user. Present the bounded reproduction and why the supplied fixes do not apply. Do not silently create an independent patch, fork, monkeypatch, declaration shim or repair-agent workaround. This rule applies to normal commands, CI, manual overrides and fallback/repair paths. A direct repository implementation fix is not automatically a third-party dependency patch; record that distinction explicitly.
+If a required workaround is absent, incompatible or no longer verifiable in Patches, stop the affected change and ask the user. Present the bounded reproduction and why the supplied fixes do not apply. Do not silently create an independent patch, fork, monkeypatch, declaration shim or repair-agent workaround. This rule applies to normal commands, CI, manual overrides and fallback/repair paths. A direct repository implementation fix is not automatically a third-party dependency patch; record that distinction explicitly.
 
-Do not import all patched packages merely because Trigon uses them. In the October 28 snapshot, only the Tauri native-lifetime adapter applied to Teamagent's stack. Its conservative historical workaround is not proof that the latest upstream release still reproduces the defect. The [reviewed patch inventory](data/trigon-patch-inventory-2026-10-28.json) preserves that dated assessment of eight active supplied fixes.
+Select only fixes needed by Teamagent; the canonical catalog is not an instruction to import every related stack workaround. In the October 28 snapshot, only the Tauri native-lifetime adapter applied to Teamagent's stack. Its conservative historical workaround is not proof that the latest upstream release still reproduces the defect. The [reviewed patch inventory](data/trigon-patch-inventory-2026-10-28.json) preserves that dated assessment of eight active supplied fixes.
 
 The November 1 addition selects Trigon's Tinypool 2.2.0 process-worker patch for
 the existing Oxfmt 0.74.0 route. Its
@@ -31,13 +31,37 @@ direct pin. Unknown selectors, missing artifacts and changed hashes remain error
 This is manifest/artifact admission, not a general transitive lock-graph or
 installed-output verification system.
 
+The November 6 ownership migration pins the published Patches catalog in
+`patches/trigon/registry.json` using the explicit
+`teamagent-patches-selection-v1` schema. The historical directory name and
+three executable artifact paths remain unchanged to preserve offline copies
+and the Aube lock/selector. Exact local catalog/migration snapshots bind
+selected IDs, compatible versions, prerequisites, original source provenance
+and every required notice. Tauri and Tinypool upstream notices are retained
+beside the existing EULA; no blanket relicensing is implied. The previous
+Trigon selection is retained in Patches' immutable provenance.
+
+The Tinypool canonical ID is `tinypool-windows-hide-process-workers`;
+the original Teamagent ID remains an explicit source-catalog alias.
+Other canonical fixes are not selected. Skills are installed from an explicit
+reviewed Patches revision; Teamagent's authored workflow skills remain separate.
+
 ## Process
 
 Ordinary integrity checks are offline and inspect the committed manifest, provenance and supplied files. Explicit discovery may query Aube for update information; a saved report is untrusted data until structurally and semantically validated. Planning records current and proposed exact pins, dependency roles, source hashes and applicable fixes. Planning never installs packages or runs upstream code.
 
 Applying a reviewed plan is an explicit mutation. Verify its baseline and patch coverage again, persist the attempt before invoking Aube, preserve trust settings, and inspect both manifest and lock changes. Bound process time and diagnostic output; do not automatically retry an uncertain install or launch an agent to invent a repair. Leave honest partial-state evidence if Aube changes files before failing.
 
-Explicit source refresh stages a candidate from an exact supplied Git revision. It does not promote it, execute it, copy configuration or import a successful receipt. Verify source identity and immutable object/file hashes. Normal checks and fresh installs use committed artifacts; local source locations remain optional maintenance inputs.
+Explicit source refresh stages a candidate from an exact Patches Git revision.
+It first decodes the bounded catalog/migration metadata and verifies selected
+IDs, supported versions, prerequisite closure, artifact membership and required
+notices. It then checks each selected source blob against its catalog hash.
+Missing fixes, incompatible versions, changed notice requirements and malformed
+metadata stop refresh; an incomplete staging attempt retains its intent and
+never produces a completed candidate. A candidate includes updated metadata,
+selected hashes and provenance for review. It does not promote or execute them,
+copy configuration or import a successful receipt. Normal checks and fresh
+installs use committed offline artifacts; a sibling source checkout is optional.
 
 ## Commands
 
@@ -57,10 +81,10 @@ aube run --no-install deps apply --plan .cache/dependencies/plan.json
 Aube registry with bounded requests. `apply` rechecks the saved plan and current
 baseline, changes exact pins through Aube, and runs the review gate. An uncertain
 apply retains its lease and receipts; neither another entry point nor an agent
-may silently retry it. `source-refresh --source ../trigon --revision FULL_SHA
+may silently retry it. `source-refresh --source ../x-patches --revision FULL_SHA
 --output .cache/dependencies/candidates/review` stages an exact local Git
 candidate for review without promoting it. The source must match the canonical
-[Trigon repository](https://github.com/iki/trigon); normal checks do not require
+[Patches repository](https://github.com/iki/patches); normal checks do not require
 that sibling directory.
 
 ## This alignment
@@ -85,7 +109,7 @@ consumer edge and the installed dependency resolved from Oxfmt. Run Aube's froze
 install and the [consumer regression](../test/tinypool-windows-hide.test.ts);
 the real worker may start only after its hidden-options prerequisite passes.
 Keep actual application and regression receipts separate from the offline
-`deps check` result and from Trigon's own verification. Do not infer native
+`deps check` result and from the canonical catalog's own verification. Do not infer native
 visibility, unchanged timing or full repository acceptance from the option check.
 
 Do not relax lifecycle trust, disable type-aware lint, weaken schemas or replace native tooling solely to make an update pass. A failing new dependency without an applicable supplied fix triggers the user decision above. No new agent chat, external message, fork push or release is implicitly authorized by dependency maintenance.

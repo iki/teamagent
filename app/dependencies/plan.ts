@@ -24,7 +24,7 @@ export const decodeRegistry = (value: unknown) =>
     Effect.mapError(invalid),
   );
 
-/** Active dependency workarounds must have a supplied, exact-version Trigon source. */
+/** Active dependency workarounds must have a supplied, exact-version Patches source. */
 export const patchPolicy = Effect.fnUntraced(function* (
   manifest: DependencyManifest,
   registry: PatchRegistry,
@@ -37,12 +37,31 @@ export const patchPolicy = Effect.fnUntraced(function* (
     return yield* invalid();
   const identities = new Set<string>();
   const paths = new Set<string>();
+  const noticePaths = new Set<string>();
+  const noticeSources = new Set<string>();
+  for (const notice of registry.notices) {
+    if (
+      noticePaths.has(notice.artifactPath) ||
+      noticeSources.has(notice.sourcePath) ||
+      !notice.artifactPath.startsWith("patches/trigon/") ||
+      !notice.sourcePath.startsWith("licenses/") ||
+      Object.values(registry.metadata).some((file) => file.artifactPath === notice.artifactPath)
+    )
+      return yield* invalid();
+    noticePaths.add(notice.artifactPath);
+    noticeSources.add(notice.sourcePath);
+  }
   for (const fix of registry.fixes) {
     if (identities.has(fix.id)) return yield* invalid();
     identities.add(fix.id);
     for (const file of fix.files) {
       if (
         paths.has(file.artifactPath) ||
+        noticePaths.has(file.artifactPath) ||
+        Object.values(registry.metadata).some(
+          (entry) => entry.artifactPath === file.artifactPath,
+        ) ||
+        !(file.sourcePath.startsWith("adapters/") || file.sourcePath.startsWith("patches/")) ||
         !(
           file.artifactPath.startsWith("app/dependencies/trigon/") ||
           file.artifactPath.startsWith("patches/trigon/")
@@ -66,12 +85,21 @@ export const patchPolicy = Effect.fnUntraced(function* (
       if (!covered) {
         return yield* new DependencyError({
           code: "blocked",
-          message: `ASK: ${fix.id} has no supplied Trigon coverage for the ${item.name} pin or active exact patch selector.`,
+          message: `ASK: ${fix.id} has no supplied Patches coverage for the ${item.name} pin or active exact patch selector.`,
         });
       }
     }
   }
-  if (paths.size > dependencyLimits.files) return yield* invalid();
+  if (paths.size + noticePaths.size > dependencyLimits.files) return yield* invalid();
+  const satisfied = new Set<string>();
+  while (satisfied.size < registry.fixes.length) {
+    const before = satisfied.size;
+    for (const fix of registry.fixes) {
+      if (new Set(fix.requires).size !== fix.requires.length) return yield* invalid();
+      if (fix.requires.every((id) => satisfied.has(id))) satisfied.add(fix.id);
+    }
+    if (satisfied.size === before) return yield* invalid();
+  }
   for (const [selector, path] of Object.entries(manifest.aube?.patchedDependencies ?? {})) {
     const split = selector.lastIndexOf("@");
     const name = selector.slice(0, split);
@@ -87,7 +115,7 @@ export const patchPolicy = Effect.fnUntraced(function* (
       return yield* new DependencyError({
         code: "blocked",
         message:
-          "ASK: an active dependency patch lacks exact supplied Trigon provenance or its package pin changed.",
+          "ASK: an active dependency patch lacks exact supplied Patches provenance or its package pin changed.",
       });
     }
   }
@@ -144,8 +172,8 @@ export const buildDependencyPlan = Effect.fnUntraced(function* (input: {
         package: name,
         reason: stackChanged
           ? "Target leaves the adopted TS7/Effect 4 stack."
-          : "Target requires a reviewed compatible Trigon fix and exact patch selector.",
-        action: "ask-user-for-trigon-fix",
+          : "Target requires a reviewed compatible Patches fix and exact patch selector.",
+        action: "ask-user-for-canonical-fix",
       });
     } else
       upgrades.push({

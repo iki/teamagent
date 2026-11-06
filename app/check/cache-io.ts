@@ -6,6 +6,7 @@ import { lstat, mkdir, open, opendir, rename, unlink } from "node:fs/promises";
 import { hostname } from "node:os";
 import { dirname, isAbsolute, relative, resolve } from "node:path";
 import { fileContentDigest, inventoryDigest } from "./cache-fingerprint.ts";
+import { gitPlatformArguments } from "./git-platform.ts";
 
 export const cacheLimits = {
   files: 25_000,
@@ -79,7 +80,7 @@ export function gitBytes(
       Reflect.deleteProperty(env, name);
   const result = spawnSync(
     "git",
-    [
+    gitPlatformArguments([
       "--no-optional-locks",
       "--no-pager",
       "-c",
@@ -91,7 +92,7 @@ export function gitBytes(
       "-c",
       "log.showSignature=false",
       ...args,
-    ],
+    ]),
     {
       cwd: root,
       env: { ...env, ...(options.indexFile ? { GIT_INDEX_FILE: resolve(options.indexFile) } : {}) },

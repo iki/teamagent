@@ -11,6 +11,7 @@ import {
 import { gitEnvironment, GitFailure, type Git } from "../app/workflow/git.ts";
 import { runProcess, diagnostic } from "../app/workflow/process.ts";
 import { digest } from "../app/workflow/storage.ts";
+import { gitPlatformArguments } from "../app/check/git-platform.ts";
 
 export const identity = { sessionId: "fixture-session", taskId: "fixture-task" };
 export async function directory() {
@@ -31,7 +32,13 @@ function fixtureGit(root: string, template: string): Git {
     const result = await runProcess(
       root,
       "git",
-      ["-c", "core.fsmonitor=false", "-c", `core.attributesFile=${nullFile}`, ...args],
+      gitPlatformArguments([
+        "-c",
+        "core.fsmonitor=false",
+        "-c",
+        `core.attributesFile=${nullFile}`,
+        ...args,
+      ]),
       {
         ...(input === undefined ? {} : { input }),
         timeoutMs: args.includes("commit") ? 600_000 : 60_000,

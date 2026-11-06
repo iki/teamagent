@@ -325,7 +325,9 @@ function Invoke-ResearchGit {
         $info.Environment['GIT_PROTOCOL_FROM_USER']='0'
         foreach ($value in @('--no-optional-locks','--no-replace-objects','-c','core.fsmonitor=false','-c','core.commitGraph=false','-c','advice.graftFileDeprecated=false','-c','protocol.allow=never')) { $info.ArgumentList.Add($value) }
     }
-    foreach ($value in @('-c',('safe.directory='+$Directory.Replace('\','/')),'-c',('core.hooksPath='+$nullDevice),'-c','submodule.recurse=false','-c','credential.interactive=false')+$Arguments) { $info.ArgumentList.Add($value) }
+    # Keep registered worktrees and their nested clones usable without changing saved Git settings.
+    $platformArguments=if ($IsWindows) { @('-c','core.longpaths=true') } else { @() }
+    foreach ($value in @('-c',('safe.directory='+$Directory.Replace('\','/')),'-c',('core.hooksPath='+$nullDevice),'-c','submodule.recurse=false','-c','credential.interactive=false')+$platformArguments+$Arguments) { $info.ArgumentList.Add($value) }
     $info.Environment['GIT_TERMINAL_PROMPT']='0'; $info.Environment['GCM_INTERACTIVE']='Never'
     $info.Environment['GIT_SSH_COMMAND']='ssh -oBatchMode=yes -oConnectTimeout=15'
     try {
