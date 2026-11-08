@@ -69,15 +69,30 @@ match their bytes in the package inventory and remain unchanged on graph revisit
 Serial 64-KiB reads and the stable digest format remain unchanged; parallel
 hashing is an unimplemented proposal, not an adopted optimization.
 
-On Windows, ordinary checks and Git hooks use the same Git-for-Windows `cmd`
-launcher from the installation identified by its execution payload. Both the
-launcher and core executable remain hashed. The launcher must report that same
-payload; missing or linked executables, mismatched payloads and unsupported
-installation layouts fail explicitly.
-Verification prepends the validated launcher directory to its actual process
-path. This avoids treating Git's hook-added core directory as a different
-verification toolchain without ignoring executable or environment changes.
-POSIX executable selection is unchanged.
+On Windows, ordinary checks and Git hooks discover the same Git-for-Windows
+installation through its canonical `cmd` launcher and reported execution payload.
+Both executable identities remain live. Missing or linked executables,
+mismatched payloads and unsupported installation layouts fail explicitly.
+Verification retains canonical launcher PATH normalization, so Git's hook-added
+core directory does not select a different installation.
+
+The explicitly selected asynchronous workflow Git adapter may execute the
+validated payload directly for the reviewed binary/environment profile. The user
+approved this contract revision on 2026-11-08. The adapter verifies complete
+executable bytes and physical paths on each selection and prepares only a child
+environment matching the admitted wrapper behavior. A bounded discovery cache
+retains the installation relationship and baseline fingerprints, but never treats
+retained fingerprints as live evidence. Valid
+installations outside the admitted profile return canonical execution with an
+explicit reason; they do not approximate unsupported wrapper behavior.
+
+Verification also binds the execution profile, current wrapper configuration and
+effective environment controls. The per-dispatch environment digest is distinct
+from reusable verification identity: raw PATH spelling and Git's hook-added core
+entry must not cause false toolchain differences. Synchronous Git checks and
+generic process execution remain unchanged. See the
+[execution review](analyses/git-execution-2026-11-08.md) for the admitted profile,
+provenance, parity evidence and measured limits. POSIX selection is unchanged.
 
 Verification executes with `LANG=C.UTF-8` and `LC_ALL=C.UTF-8`, including direct
 checks, workflow children, prerequisite probes and unit workers. Its environment

@@ -12,6 +12,7 @@ import { gitEnvironment, GitFailure, type Git } from "../app/workflow/git.ts";
 import { runProcess, diagnostic } from "../app/workflow/process.ts";
 import { digest } from "../app/workflow/storage.ts";
 import { gitPlatformArguments } from "../app/check/git-platform.ts";
+import { resolveGitExecution } from "../app/check/git-execution.ts";
 
 export const identity = { sessionId: "fixture-session", taskId: "fixture-task" };
 export async function directory() {
@@ -29,9 +30,16 @@ export const fixtureVerifier: VerificationHost = {
 function fixtureGit(root: string, template: string): Git {
   return async (args, input, index) => {
     const nullFile = process.platform === "win32" ? "NUL" : "/dev/null";
+    const execution = await resolveGitExecution(root, {
+      ...gitEnvironment(index),
+      GIT_CONFIG_NOSYSTEM: "1",
+      GIT_CONFIG_GLOBAL: nullFile,
+      GIT_ATTR_NOSYSTEM: "1",
+      GIT_TEMPLATE_DIR: template,
+    });
     const result = await runProcess(
       root,
-      "git",
+      execution.executable,
       gitPlatformArguments([
         "-c",
         "core.fsmonitor=false",
@@ -42,13 +50,7 @@ function fixtureGit(root: string, template: string): Git {
       {
         ...(input === undefined ? {} : { input }),
         timeoutMs: args.includes("commit") ? 600_000 : 60_000,
-        env: {
-          ...gitEnvironment(index),
-          GIT_CONFIG_NOSYSTEM: "1",
-          GIT_CONFIG_GLOBAL: nullFile,
-          GIT_ATTR_NOSYSTEM: "1",
-          GIT_TEMPLATE_DIR: template,
-        },
+        env: execution.env,
       },
     );
     const detail = diagnostic(result.stderr).slice(-4000);

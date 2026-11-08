@@ -1,10 +1,15 @@
 import { createHash } from "node:crypto";
 import { access, open, realpath } from "node:fs/promises";
 import { constants } from "node:fs";
-import { basename, delimiter, dirname, isAbsolute, resolve } from "node:path";
-import { spawnSync } from "node:child_process";
+import { delimiter, dirname, resolve } from "node:path";
 import { encodedDigest } from "./cache-io.ts";
 import { verificationLocaleEnvironment } from "./verification-policy.ts";
+import {
+  gitExecutionPath,
+  resolveGitExecution,
+  resolveWindowsGitLauncher,
+} from "./git-execution.ts";
+export { resolveWindowsGitLauncher } from "./git-execution.ts";
 
 export async function hashExecutable(path: string): Promise<string> {
   const handle = await open(await realpath(path), "r");
@@ -36,65 +41,6 @@ export async function hashExecutable(path: string): Promise<string> {
   } finally {
     await handle.close();
   }
-}
-
-function gitExecutionPath(command: string, root: string): string {
-  const result = spawnSync(command, ["--exec-path"], {
-    cwd: root,
-    encoding: "utf8",
-    shell: false,
-    windowsHide: true,
-    timeout: 15_000,
-    maxBuffer: 16384,
-  });
-  const output = result.stdout?.trim();
-  if (
-    result.error ||
-    result.status !== 0 ||
-    !output ||
-    !isAbsolute(output) ||
-    /[\r\n\0]/u.test(output)
-  )
-    throw new Error("Git execution payload could not be located");
-  return output;
-}
-
-/** The optional probe is a trusted fixture seam, never executable configuration. */
-export async function resolveWindowsGitLauncher(
-  root: string,
-  candidate: string,
-  probe: (command: string, root: string) => string = gitExecutionPath,
-): Promise<string> {
-  const reported = probe(candidate, root);
-  if (!isAbsolute(reported) || /[\r\n\0]/u.test(reported))
-    throw new Error("Git execution payload must be one absolute path");
-  const core = await realpath(reported);
-  const libexec = dirname(core);
-  const runtime = dirname(libexec);
-  if (
-    basename(core).toLowerCase() !== "git-core" ||
-    basename(libexec).toLowerCase() !== "libexec" ||
-    !["ucrt64", "mingw64", "mingw32"].includes(basename(runtime).toLowerCase())
-  )
-    throw new Error("Unsupported Git-for-Windows installation layout");
-  const installation = dirname(runtime);
-  const launcherPath = resolve(installation, "cmd/git.exe");
-  const payloadPath = resolve(core, "git.exe");
-  await access(launcherPath, constants.X_OK);
-  await access(payloadPath, constants.X_OK);
-  const launcher = await realpath(launcherPath);
-  const payload = await realpath(payloadPath);
-  if (
-    launcher.toLowerCase() !== launcherPath.toLowerCase() ||
-    payload.toLowerCase() !== payloadPath.toLowerCase()
-  )
-    throw new Error("Linked Git-for-Windows executable layout is unsupported");
-  const canonicalReported = probe(launcher, root);
-  if (!isAbsolute(canonicalReported) || /[\r\n\0]/u.test(canonicalReported))
-    throw new Error("Canonical Git launcher reported an invalid execution payload");
-  if ((await realpath(canonicalReported)).toLowerCase() !== core.toLowerCase())
-    throw new Error("Git launcher and execution payload do not match");
-  return launcher;
 }
 
 /** System OS libraries remain a trusted host prerequisite, not portable cached evidence. */
@@ -159,8 +105,11 @@ export async function nativeToolIdentity(
     ["powershell-launcher", await hashExecutable(powershell)],
   ];
   const executionPath = gitExecutionPath(git, root);
-  if (process.platform === "win32")
+  if (process.platform === "win32") {
     rows.push(["git-core", await hashExecutable(resolve(executionPath, "git.exe"))]);
+    rows.push(["git-runtime", await hashExecutable(resolve(executionPath, "../../bin/git.exe"))]);
+    rows.push(["git-execution", (await resolveGitExecution(root)).prerequisiteIdentity]);
+  }
   const home = dirname(await realpath(powershell));
   for (const file of [
     "pwsh.dll",

@@ -8,6 +8,7 @@ import { atomicText, boundedText, containedPath, digest, workflowCapacity } from
 import { diagnostic, runProcess, type ProcessResult } from "./process.ts";
 import { currentBunEnvironment } from "../check/toolchain.ts";
 import { gitPlatformArguments } from "../check/git-platform.ts";
+import { resolveGitExecution } from "../check/git-execution.ts";
 
 export type Git = (args: readonly string[], input?: string, index?: string) => Promise<string>;
 export const GitObjectId = Schema.String.check(
@@ -81,14 +82,15 @@ export function gitEnvironment(index?: string): Record<string, string | undefine
 export function gitAt(root: string): Git {
   let diagnostics = Promise.resolve();
   return async (args, input, index) => {
+    const execution = await resolveGitExecution(root, gitEnvironment(index));
     const result = await runProcess(
       root,
-      "git",
+      execution.executable,
       gitPlatformArguments(["-c", "core.fsmonitor=false", ...args]),
       {
         ...(input === undefined ? {} : { input }),
         timeoutMs: args.includes("commit") ? 600_000 : 60_000,
-        env: gitEnvironment(index),
+        env: execution.env,
       },
     );
     if (result.code !== 0 || result.outcome !== "exited") {
