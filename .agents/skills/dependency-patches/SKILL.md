@@ -17,6 +17,11 @@ Keep planning and application separate. Record current/proposed versions, depend
 
 Keep ordinary integrity checks offline. Run regressions through the actual consumer and affected platform in addition to registry checks. A passed catalog check does not prove native, browser or installed-package behavior.
 
+Keep full application wrappers local. When separating an application integration
+from a generic canonical fix, follow the [integration binding contract](references/integrations.md):
+retain its exact hash, original provenance, canonical references and regression
+coverage. A classification change must never silently remove integrity checks.
+
 Remove a selected fix only after the unpatched published version includes the change and passes the original regression and consumer checks. A merged PR, an upstream source build or a patched old package is insufficient. Retain selection/removal history and independently needed adapters.
 
 For an explicitly authorized ownership migration, transfer exact artifacts, notices, supported pins, upstream references, regressions and removal criteria first. Pin the new catalog commit, preserve original origins and offline copies, then change consumer policy. Procedure skills and artifact releases may have different release cadences.

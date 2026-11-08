@@ -7,6 +7,12 @@ description: Develop and maintain canonical dependency fixes, reusable fork evid
 
 Read the canonical repository's local rules, registry contract, package-manager policy and relevant upstream contribution instructions. Keep exact commands, credential profiles, artifact ownership and communication authority local. This procedure does not authorize upstream messages, reactions, PRs, token changes or publication.
 
+Read the [complete lifecycle rules](references/lifecycle.md) when creating,
+rebasing, contributing, coordinating or retiring a fix. Keep catalog records
+grouped by responsible upstream and related packages. Consumer project names,
+application wrappers, deployment details and conversation archives stay with
+their owners; upstream attribution and issue/PR/fork links remain explicit.
+
 ## Establish an atomic fix
 
 Reproduce the dependency failure with exact versions/runtime and the smallest safe fixture. Establish the failing regression before changing behavior; identify which upstream owns the defect. Ordinary supported extension points are not automatically patches, but bypasses of upstream defects, declaration shims, preloads and forks belong in the registry.
@@ -24,6 +30,11 @@ Follow the canonical owner's fork policy. Reusable fork evidence includes reposi
 Independent fixes branch separately from upstream. A stacked branch may add one fix over its recorded prerequisite; state dependency order and comparison base. Preserve published history and prior review references; a new versioned branch can avoid rewriting a shared branch. Do not claim that local cache commits are published or that a differently expressed installed patch is byte-identical to an upstream source change.
 
 Preserve licenses, attribution and original source hashes before normalization. Keep exact originals and documented transformations. Registry checks should remain offline and bounded, separate from actual consumer/platform regressions.
+
+When a user explicitly requests removal of consumer context, preserve the original
+evidence privately outside the public catalog and record the transformation
+honestly. Bind the curated representation to its actual catalog source snapshot;
+do not label it as an unchanged upstream copy or alter upstream licenses.
 
 ## Update, communicate and retire
 

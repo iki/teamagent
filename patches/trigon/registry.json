@@ -1,25 +1,20 @@
 {
   "format": "teamagent-patches-selection-v1",
   "sourceRepository": "https://github.com/iki/patches",
-  "sourceRevision": "83ce0d003ff07bbb3ceca5019d4b0fd8caec25fa",
+  "sourceRevision": "cc5703384466295f113721c9172cbe62acd6df37",
   "metadata": {
     "catalog": {
       "sourcePath": "registry.json",
       "artifactPath": "patches/trigon/catalog.json",
-      "sha256": "06f26d1088b76cbc946ddbe8779efa25de478f003ff7a6fc75af2483f5697e87"
+      "sha256": "0e96743088ee81d6feb46951e8e3b9c852726c665258b85d68ae75f55eb81214"
     },
     "migration": {
       "sourcePath": "migration.json",
       "artifactPath": "patches/trigon/migration.json",
-      "sha256": "35ca36cfa90d65b381e662914e1ab1218ed2cc2fc8088d05d5579e3dbdefaad9"
+      "sha256": "fdae4932e2a884eafdd3f75f60db82fa0a485057ba740c1d9ff3a3367f54f94a"
     }
   },
   "notices": [
-    {
-      "sourcePath": "licenses/trigon-eula-2026.md",
-      "artifactPath": "patches/trigon/LICENSE.md",
-      "sha256": "319664e96ae8627ec41a39e583c7a88491cf20fe0696d55882719258ab45d8e8"
-    },
     {
       "sourcePath": "licenses/tauri/LICENSE-MIT",
       "artifactPath": "patches/trigon/licenses/tauri/LICENSE-MIT",
@@ -29,6 +24,11 @@
       "sourcePath": "licenses/tinypool/LICENSE",
       "artifactPath": "patches/trigon/licenses/tinypool/LICENSE",
       "sha256": "0d506ca1b2adc4ee63a9e2384a85d6cf9f014b4cf3d00c162cd60216450324fa"
+    },
+    {
+      "sourcePath": "licenses/catalog-NOTICE.md",
+      "artifactPath": "patches/canonical/licenses/catalog-NOTICE.md",
+      "sha256": "6c3a74e8c9abbd2fa4927280566a1a81a5181746774600648759a6623f1f3a4c"
     }
   ],
   "fixes": [
@@ -44,12 +44,12 @@
       ],
       "files": [
         {
-          "sourcePath": "adapters/tauri/native-lifetime.ts",
+          "sourcePath": "packages/tauri/adapters/native-lifetime.ts",
           "artifactPath": "app/dependencies/trigon/native-lifetime.ts",
           "sha256": "eaa3d76d8a35f1e67a41f30dbc23eb4ef24c6c798ca3ca26cb012782f9891480"
         },
         {
-          "sourcePath": "adapters/tauri/tauri-cli.ts",
+          "sourcePath": "packages/tauri/adapters/tauri-cli.ts",
           "artifactPath": "app/dependencies/trigon/tauri-cli.ts",
           "sha256": "7c8cc2f93df58823a54dae5879ef2d8f1ab32ba7bdfe3f517ae5b00dd6b055fc"
         }

@@ -25,8 +25,8 @@ Patch procedures are maintained separately in [Patches](https://github.com/iki/p
 | [patch-maintenance](https://github.com/iki/patches/tree/main/skills/patch-maintenance)   | A canonical owner develops fixes and manages upstream/removal evidence. |
 
 Teamagent no longer publishes a duplicate authored `dependency-patches` source.
-Its original bytes and origin remain in Patches provenance under
-`skill-original.md`, outside Skills discovery. Install the two procedures
+Its original transfer remains historical evidence outside the current neutral
+public catalog. Install the two procedures
 explicitly from a reviewed Patches commit; do not rewrite unrelated installed skills.
 
 The existing [teamagent-memory](../skills/teamagent-memory/SKILL.md) remains a
@@ -68,6 +68,14 @@ bun node_modules/skills/bin/cli.mjs add "iki/patches#FULL_REVIEWED_PATCHES_SHA" 
 
 Review that selected installation and its provenance lock separately from
 Teamagent skill updates. Each source may advance independently.
+
+The November 8 catalog adoption advances only `dependency-patches` and
+`patch-maintenance`, including their supporting references. Reject selected
+local content drift before replacement, retain the old selected trees and lock
+as owned evidence, and verify the complete new trees against the reviewed source
+revision. Preserve every unrelated installed file, lock entry and configured pin.
+The selective update neither activates hook trust nor performs broad dependency
+or skill maintenance.
 
 Select additional supported agents explicitly when requested. Do not infer
 permission to change user-global installations, every detected agent, credentials

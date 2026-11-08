@@ -43,7 +43,10 @@ export const patchPolicy = Effect.fnUntraced(function* (
     if (
       noticePaths.has(notice.artifactPath) ||
       noticeSources.has(notice.sourcePath) ||
-      !notice.artifactPath.startsWith("patches/trigon/") ||
+      !(
+        notice.artifactPath.startsWith("patches/trigon/") ||
+        notice.artifactPath.startsWith("patches/canonical/licenses/")
+      ) ||
       !notice.sourcePath.startsWith("licenses/") ||
       Object.values(registry.metadata).some((file) => file.artifactPath === notice.artifactPath)
     )
@@ -61,7 +64,11 @@ export const patchPolicy = Effect.fnUntraced(function* (
         Object.values(registry.metadata).some(
           (entry) => entry.artifactPath === file.artifactPath,
         ) ||
-        !(file.sourcePath.startsWith("adapters/") || file.sourcePath.startsWith("patches/")) ||
+        !(
+          file.sourcePath.startsWith("adapters/") ||
+          file.sourcePath.startsWith("patches/") ||
+          /^packages\/[a-z][a-z0-9-]*\/adapters\/[^/]+(?:\/[^/]+)*$/.test(file.sourcePath)
+        ) ||
         !(
           file.artifactPath.startsWith("app/dependencies/trigon/") ||
           file.artifactPath.startsWith("patches/trigon/")

@@ -2,18 +2,27 @@
 
 `registry.json` pins the canonical [Patches](https://github.com/iki/patches)
 revision and selected artifact mappings. `catalog.json` and `migration.json`
-are exact, hash-bound snapshots from that revision, including original
-Trigon/Teamagent/fork origins and retained notices. The directory name and
+are exact, hash-bound snapshots from that revision, including reusable upstream
+provenance and retained notices. Original consumer context remains in the local
+adoption archives. The directory name and
 executable artifact paths remain historical compatibility paths; Patches now
 owns updates. Ordinary integrity checks use these local copies only.
 
 The ownership migration preserves all three implementation hashes and the
 existing Aube selector/lock. Tauri's ID is unchanged; Tinypool's selection now
 uses canonical `tinypool-windows-hide-process-workers`, with the old
-`tinypool-windows-hide` alias preserved in the catalog. Refresh stages a
+`tinypool-windows-hide` alias preserved in the archived prior catalog. Refresh stages a
 checked canonical candidate without promoting it. The original selected
-registry is preserved in Patches' immutable provenance, so the historical
+registry is preserved in the local immutable adoption archives, so the historical
 observations below retain their original source identity.
+
+The November 8 neutral-catalog adoption records every previous mapping in
+[`adoption.json`](../provenance/catalog-neutral-20261108/adoption.json), beside
+the exact original selection, registry and migration snapshots. It preserves
+the three executable files, Aube bundle/selector, existing notices and v1
+selection shape while adding the required neutral-catalog contribution notice.
+Offline catalog validation and the consumer's ordinary regression checks remain
+separate evidence.
 
 On 2026-11-01, the selected source advanced to signed Trigon commit
 [`9ef18967b46fe01571933c3ba6216823ad961c16`](https://github.com/iki/trigon/commit/9ef18967b46fe01571933c3ba6216823ad961c16),

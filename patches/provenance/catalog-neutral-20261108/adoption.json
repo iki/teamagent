@@ -1,0 +1,56 @@
+{
+  "format": "patch-selection-migration-v1",
+  "source": {
+    "selection": {
+      "path": "patches/provenance/catalog-neutral-20261108/selection-v1.json",
+      "sha256": "2918f70399db603c8684399a97f3c54c795ee149925127ac98651e78884c1991"
+    },
+    "registry": {
+      "path": "patches/provenance/catalog-neutral-20261108/registry-v1.json",
+      "sha256": "06f26d1088b76cbc946ddbe8779efa25de478f003ff7a6fc75af2483f5697e87"
+    },
+    "migration": {
+      "path": "patches/provenance/catalog-neutral-20261108/migration-v1.json",
+      "sha256": "35ca36cfa90d65b381e662914e1ab1218ed2cc2fc8088d05d5579e3dbdefaad9"
+    }
+  },
+  "targetRevision": "cc5703384466295f113721c9172cbe62acd6df37",
+  "mappings": [
+    {
+      "path": "app/dependencies/trigon/native-lifetime.ts",
+      "disposition": "copy",
+      "canonicalPath": "packages/tauri/adapters/native-lifetime.ts",
+      "reason": "Retain the exact local bytes, fix identities and installed path; relocate only the canonical source reference."
+    },
+    {
+      "path": "app/dependencies/trigon/tauri-cli.ts",
+      "disposition": "copy",
+      "canonicalPath": "packages/tauri/adapters/tauri-cli.ts",
+      "reason": "Retain the exact local bytes, fix identities and installed path; relocate only the canonical source reference."
+    },
+    {
+      "path": "patches/trigon/tinypool@2.2.0.patch",
+      "disposition": "copy",
+      "canonicalPath": "patches/tinypool@2.2.0.patch",
+      "reason": "Retain the exact local bytes, fix identities and installed path; relocate only the canonical source reference."
+    },
+    {
+      "path": "patches/trigon/licenses/tauri/LICENSE-MIT",
+      "disposition": "copy",
+      "canonicalPath": "licenses/tauri/LICENSE-MIT",
+      "reason": "Retain the exact local bytes, fix identities and installed path; relocate only the canonical source reference."
+    },
+    {
+      "path": "patches/trigon/licenses/tinypool/LICENSE",
+      "disposition": "copy",
+      "canonicalPath": "licenses/tinypool/LICENSE",
+      "reason": "Retain the exact local bytes, fix identities and installed path; relocate only the canonical source reference."
+    },
+    {
+      "path": "patches/trigon/LICENSE.md",
+      "disposition": "retained-notice",
+      "replacementCanonicalPath": "licenses/catalog-NOTICE.md",
+      "reason": "Retain unchanged as original consumer evidence; remove from current canonical notice mappings only when the new catalog contribution notice is explicitly added."
+    }
+  ]
+}

@@ -39,12 +39,24 @@ and the Aube lock/selector. Exact local catalog/migration snapshots bind
 selected IDs, compatible versions, prerequisites, original source provenance
 and every required notice. Tauri and Tinypool upstream notices are retained
 beside the existing EULA; no blanket relicensing is implied. The previous
-Trigon selection is retained in Patches' immutable provenance.
+selection and its source metadata remain in this consumer's immutable adoption archives.
 
 The Tinypool canonical ID is `tinypool-windows-hide-process-workers`;
-the original Teamagent ID remains an explicit source-catalog alias.
+the original Teamagent ID remains in the archived prior catalog. The neutral
+catalog contains no consumer aliases.
 Other canonical fixes are not selected. Skills are installed from an explicit
 reviewed Patches revision; Teamagent's authored workflow skills remain separate.
+
+The November 8 catalog adoption retains the `teamagent-patches-selection-v1`
+shape, all three implementation files and the Aube selector/lock. The shared
+catalog now groups reusable fixes by upstream package. The original selection,
+registry and migration snapshots remain under
+`patches/provenance/catalog-neutral-20261108/`; its `adoption.json` records each
+previous mapping and exact retained bytes. This metadata transition does not
+establish a new installation or regression result. Future legitimate integration
+edits must append reviewed provenance and update the source-owned registration
+and current hashes; preserve the original adoption evidence rather than relabel
+it as proof of changed bytes.
 
 ## Process
 

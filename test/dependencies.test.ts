@@ -169,6 +169,91 @@ await test("dependency plans validate exact pins, preserve groups and block abse
   );
 });
 
+await test("patch policy admits grouped adapters and canonical notices without widening local runtime paths", async () => {
+  const file = {
+    sourcePath: "adapters/fixture.ts",
+    artifactPath: "app/dependencies/trigon/fixture.ts",
+    sha256: "a".repeat(64),
+  };
+  const notice = {
+    sourcePath: "licenses/fixture-NOTICE.md",
+    artifactPath: "patches/trigon/licenses/fixture-NOTICE.md",
+    sha256: "b".repeat(64),
+  };
+  const fix = {
+    id: "fixture-adapter",
+    kind: "host-adapter",
+    requires: [],
+    packages: [{ name: "effect", versions: [manifest.dependencies.effect] }],
+    files: [file],
+    evidence:
+      "Path admission fixture; canonical membership and exact bytes are checked separately.",
+  };
+  const selected = { ...registry, notices: [notice], fixes: [fix] };
+  const plan = (candidate: unknown) =>
+    Effect.runPromise(
+      buildDependencyPlan({
+        manifest: { ...manifest, aube: { patchedDependencies: {} } },
+        registry: candidate,
+        report: {},
+        status: 0,
+        baseline,
+      }),
+    );
+  const selectedFile = (sourcePath: string, artifactPath: string) => ({
+    ...selected,
+    fixes: [{ ...fix, files: [{ ...file, sourcePath, artifactPath }] }],
+  });
+  for (const sourcePath of ["adapters/fixture.ts", "packages/example/adapters/fixture.ts"]) {
+    for (const artifactPath of [
+      "patches/trigon/licenses/fixture-NOTICE.md",
+      "patches/canonical/licenses/fixture-NOTICE.md",
+    ])
+      assert.deepEqual(
+        (
+          await plan({
+            ...selectedFile(sourcePath, file.artifactPath),
+            notices: [{ ...notice, artifactPath }],
+          })
+        ).upgrades,
+        [],
+      );
+  }
+  for (const sourcePath of [
+    "packages/example/fixtures/fixture.ts",
+    "packages/example/adapters-other/fixture.ts",
+    "packages//adapters/fixture.ts",
+    "packages/example/adapters/",
+    "packages/example/adapters/../fixture.ts",
+    "other/adapters/fixture.ts",
+  ])
+    await assert.rejects(plan(selectedFile(sourcePath, file.artifactPath)), /Invalid dependency/);
+  for (const artifactPath of [
+    "patches/canonical/artifacts/fixture.ts",
+    "patches/canonical/licenses/fixture.ts",
+    "app/dependencies/other/fixture.ts",
+    registry.metadata.catalog.artifactPath,
+  ])
+    await assert.rejects(plan(selectedFile(file.sourcePath, artifactPath)), /Invalid dependency/);
+  for (const artifactPath of [
+    "patches/canonical/fixture-NOTICE.md",
+    "patches/canonical/licenses-other/fixture-NOTICE.md",
+    "app/dependencies/trigon/fixture-NOTICE.md",
+    registry.metadata.catalog.artifactPath,
+  ])
+    await assert.rejects(
+      plan({ ...selected, notices: [{ ...notice, artifactPath }] }),
+      /Invalid dependency/,
+    );
+  await assert.rejects(
+    plan({
+      ...selected,
+      notices: [{ ...notice, sourcePath: "packages/example/NOTICE.md" }],
+    }),
+    /Invalid dependency/,
+  );
+});
+
 await test("transitive package patches require their own active exact supplied selector", async () => {
   const path = "patches/trigon/fixture-transitive.patch";
   const fix = {
