@@ -521,7 +521,42 @@ export async function inspectSharedResult(
   });
 }
 
+// Order only this process's admission transitions for one physical repository.
+// Other processes retain the existing snapshot checks and three-attempt bound.
+export const sharedAdmissionQueueLimit = 64;
+type AdmissionQueue = { tail: Promise<void>; pending: number };
+const admissionQueues = new Map<string, AdmissionQueue>();
+let pendingAdmissions = 0;
+
 async function start(
+  owner: SharedResultOwner,
+  key: string,
+  kind: SharedAttempt["kind"],
+  observe?: SharedAdmissionObserver,
+): Promise<SharedAttempt | undefined> {
+  const repository = Schema.decodeUnknownSync(Hash)(owner.repository);
+  if (pendingAdmissions >= sharedAdmissionQueueLimit)
+    throw new Error("Shared verification admission queue exceeds its bound");
+  const queue = admissionQueues.get(repository) ?? { tail: Promise.resolve(), pending: 0 };
+  admissionQueues.set(repository, queue);
+  queue.pending++;
+  pendingAdmissions++;
+  const operation = queue.tail.then(() => startAdmission(owner, key, kind, observe));
+  // Attach both settlement paths immediately; no rejected tail can strand a waiter.
+  queue.tail = operation.then(
+    () => {},
+    () => {},
+  );
+  try {
+    return await operation;
+  } finally {
+    queue.pending--;
+    pendingAdmissions--;
+    if (queue.pending === 0) admissionQueues.delete(repository);
+  }
+}
+
+async function startAdmission(
   owner: SharedResultOwner,
   key: string,
   kind: SharedAttempt["kind"],

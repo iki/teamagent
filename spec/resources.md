@@ -297,8 +297,8 @@ guarantees must not be presented as cross-platform evidence.
 
 Workflow commands retain explicit exited, timeout, output-limit, cancelled and
 transport outcomes. Tools and unit batches fail when native launch or cleanup
-fails. Unit batches share the 720-second phase deadline explicitly approved
-on 2026-11-06. The runner default remains 120 seconds per test; only the four
+fails. Unit batches share the 960-second phase deadline explicitly approved
+on 2026-11-09. The runner default remains 120 seconds per test; only the four
 new multi-step Git scenarios have separately approved 180-second limits.
 Older tests retain their existing limits. The overall three-worker cap,
 two-workflow-group cap, research exclusion and live memory thresholds remain

@@ -1,5 +1,5 @@
 import { beforeAll, expect, test } from "bun:test";
-import { rejects, strictEqual } from "node:assert/strict";
+import { rejects, strictEqual, strict as assert } from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { randomUUID } from "node:crypto";
 import { lstat, mkdir, readFile, rename, rm, symlink, writeFile } from "node:fs/promises";
@@ -30,6 +30,7 @@ import {
   invalidateSharedResult,
   sharedResultDirectory,
   sharedResultLimits,
+  sharedAdmissionQueueLimit,
   type SharedAttempt,
 } from "../app/check/shared-results.ts";
 import {
@@ -1203,4 +1204,160 @@ test("a forced CI failure invalidates normal worktrees with the same complete ke
   }
   expect((await runCachedTask(fixture.a, definition, async () => {})).hit).toBe(false);
   expect((await runCachedTask(fixture.a, definition, async () => {})).hit).toBe(true);
+}, 120_000);
+
+test("eleven distinct shared keys admit without racing their own reservation snapshots", async () => {
+  const a = await primary();
+  const owner = await sharedResultOwner(a);
+  const entered = Promise.withResolvers<void>();
+  const release = Promise.withResolvers<void>();
+  const abort = () => {
+    entered.resolve();
+    release.resolve();
+  };
+  let inventories = 0;
+  const starts = Array.from({ length: 11 }, (_, index) =>
+    beginSharedResult(
+      owner,
+      encodedDigest(["ordered distinct admission", index]),
+      async (phase, retry) => {
+        assert.equal(retry, 0, "same-process admissions do not consume external retry attempts");
+        if (phase === "inventory") {
+          inventories++;
+          if (index === 0) {
+            entered.resolve();
+            await release.promise;
+          }
+        }
+      },
+    ),
+  );
+  const settled = Promise.allSettled(starts);
+  void starts[0]?.then(
+    () => entered.resolve(),
+    () => entered.resolve(),
+  );
+  try {
+    await entered.promise;
+    // Inspection does not join the admission queue or need a completion from it.
+    assert.equal(
+      (await inspectSharedResult(owner, encodedDigest("independent admission inspection"))).stamp,
+      "absent",
+    );
+    assert.equal(inventories, 1);
+    release.resolve();
+    const results = await settled;
+    assert.equal(inventories, 11);
+    const tokens = new Set<string>();
+    for (const result of results) {
+      assert.equal(result.status, "fulfilled");
+      if (result.status !== "fulfilled" || !result.value)
+        throw new Error("Admission did not start");
+      tokens.add(result.value.token);
+      assert.equal((await inspectSharedResult(owner, result.value.key)).blocked, true);
+      // All starts finished before any completion, so actual work is never serialized.
+      assert.equal(await completeSharedResult(owner, result.value, receipt), true);
+    }
+    assert.equal(tokens.size, 11);
+  } finally {
+    abort();
+    await settled;
+  }
+}, 120_000);
+
+test("independent processes still exhaust exactly three changed admission snapshots", async () => {
+  const root = await primary();
+  const owner = await sharedResultOwner(root);
+  const worker = fileURLToPath(new URL("./shared-verification-child.ts", import.meta.url));
+  const project = fileURLToPath(new URL("../", import.meta.url));
+  const key = encodedDigest("externally interrupted admission");
+  const retries: number[] = [];
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 110_000);
+  try {
+    await rejects(
+      beginSharedResult(owner, key, async (phase, retry) => {
+        if (phase !== "inventory-complete") return;
+        retries.push(retry);
+        // This is a different process and a fresh real reservation, not reentrant
+        // admission through the parent queue or a forged account update.
+        passedChild(
+          await runProcess(
+            project,
+            process.execPath,
+            [worker, root, "normal", encodedDigest(["external admission", retry])],
+            { signal: controller.signal, timeoutMs: 110_000, maximumBytes: 4096 },
+          ),
+        );
+      }),
+      (error: unknown) =>
+        error instanceof Error &&
+        error.constructor.name === "ChangedAdmission" &&
+        error.message === "",
+    );
+    assert.deepEqual(retries, [0, 1, 2]);
+    assert.equal((await inspectSharedResult(owner, key)).stamp, "absent");
+    const fresh = required(await beginSharedResult(owner, key));
+    assert.equal(await completeSharedResult(owner, fresh, receipt), true);
+  } finally {
+    clearTimeout(timer);
+    controller.abort();
+  }
+}, 120_000);
+
+test("bounded admission failure releases every waiter and permits a later fresh admission", async () => {
+  const a = await primary();
+  const owner = await sharedResultOwner(a);
+  const entered = Promise.withResolvers<void>();
+  const release = Promise.withResolvers<void>();
+  const failure = new Error("controlled admission observation failure");
+  const abort = () => {
+    entered.resolve();
+    release.resolve();
+  };
+  let observed = 0;
+  const starts = Array.from({ length: sharedAdmissionQueueLimit }, (_, index) =>
+    beginSharedResult(owner, encodedDigest(["failed bounded admission", index]), async (phase) => {
+      if (phase !== "inventory") return;
+      observed++;
+      if (index === 0) {
+        entered.resolve();
+        await release.promise;
+      }
+      throw failure;
+    }),
+  );
+  const settled = Promise.allSettled(starts);
+  void starts[0]?.then(
+    () => entered.resolve(),
+    () => entered.resolve(),
+  );
+  try {
+    await entered.promise;
+    await assert.rejects(
+      beginSharedResult(owner, encodedDigest("overflow admission")),
+      /admission queue exceeds its bound/u,
+    );
+    assert.equal(observed, 1);
+    release.resolve();
+    const results = await settled;
+    assert.equal(observed, sharedAdmissionQueueLimit);
+    for (const result of results) {
+      assert.equal(result.status, "rejected");
+      if (result.status === "rejected") {
+        const error: unknown = result.reason;
+        assert.equal(error, failure);
+      }
+    }
+    assert.equal(
+      (await inspectSharedResult(owner, encodedDigest(["failed bounded admission", 0]))).stamp,
+      "absent",
+    );
+    const fresh = await beginSharedResult(owner, encodedDigest("fresh after admission failures"));
+    assert.ok(fresh);
+    assert.equal(await completeSharedResult(owner, fresh, receipt), true);
+  } finally {
+    abort();
+    await settled;
+  }
 }, 120_000);

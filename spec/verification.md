@@ -64,7 +64,7 @@ per-batch success reuse, partial receipts, shortened coverage or new deadlines.
 A matching complete receipt can still be reused unless --force-fresh is selected.
 
 Tool launches retain their 120-second cap. The complete unit phase, including
-every admitted child, has a 720-second cap explicitly approved on 2026-11-06.
+every admitted child, has a 960-second cap explicitly approved on 2026-11-09.
 The unit runner retains its 120-second per-test default; only the four new
 multi-step Git cases for integration, failures, recovery and PR integration
 have explicit 180-second limits. The pure PR-admission test and older tests
@@ -83,7 +83,7 @@ checks, and never turns a partial or timed-out attempt into success.
 
 The resource-aware unit scheduler and audited batches are specified in
 the [cache contract](cache.md#measurements-and-scheduling). Every group shares
-the same 720-second deadline; parallel execution does not extend it. The live
+the same 960-second deadline; parallel execution does not extend it. The live
 prerequisite probe permits read-only use of provisioned Python bytecode and
 fingerprints its bytes before accepting cache reuse. Environment-honoring unit
 fixtures receive fresh bytecode prefixes; isolated converter and OmniVoice

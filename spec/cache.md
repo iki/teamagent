@@ -341,7 +341,7 @@ with a maximum of two joined publishers before shared main or hooks change.
 Unknown suites stay together in
 their original order, every file belongs to exactly one batch, and the one-worker
 path retains the original complete file order. All groups share the
-720-second unit deadline. The runner's default remains 120 seconds per test;
+960-second unit deadline. The runner's default remains 120 seconds per test;
 only the four new multi-step Git scenarios (integration, failures, recovery and
 PR integration) have explicit 180-second limits. Older cases retain their
 existing limits. Live admission still caps all active workers at three and
@@ -406,6 +406,15 @@ before that phase abort, and all scheduled descendants were joined. These
 partial successes do not constitute a passed full gate. The extra phase budget
 allows more time for the retained schedule, including exclusive research and
 bounded heavy work; it does not change admission limits or certify the next run.
+
+On 2026-11-09, the user explicitly approved increasing only the shared unit
+phase from 720 to 960 seconds. Individual test limits, complete coverage, live
+memory admission, the three-worker cap, two-workflow-group cap, temporary
+two-batch heavy-scenario cap and research exclusivity remain unchanged.
+Force-fresh behavior and complete-input reuse remain unchanged. Workflow and
+root Stop review still have 300-second budgets; the root Stop outer budget
+remains 420 seconds. This approval does not certify an incomplete attempt or
+predict the outcome of a later run.
 
 When `GITHUB_ACTIONS=true`, verification executes rather than reusing tracked,
 local or nonportable passed receipts, even when every input matches. Storage
@@ -587,6 +596,8 @@ under the short lock, reserving slots without enumeration. Lock order is key the
 admission; no owner waits for a key while holding admission. Changed snapshots
 get at most three attempts outside locks. Missing or unconfirmed reservation state
 in an existing namespace is an error, never permission to recreate counts.
+
+A process orders only its shared admission transitions, from fresh inventory through reservation and start publication, by the physical repository identity. At most 64 active or waiting admissions exist across that process; overflow fails explicitly, and both successful and failed settlement remove empty queues. Actual checks, result inspection and completion remain outside this queue. Other processes still use the unchanged short metadata locks and three snapshot attempts. No queue survives settlement or increases a caller deadline.
 
 At capacity, a strict repository-bound unavailable marker visibly disables all
 shared-task reuse, including old local/tracked receipts. Checks still execute
