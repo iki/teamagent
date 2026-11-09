@@ -1,5 +1,41 @@
 # Verification resource ownership
 
+## Metadata lock recovery
+
+The user's November 8 workflow instruction authorizes automatic recovery during
+acquisition of an exact abandoned workflow or verification lock. The native
+[metadata-lock adapter](../app/check/metadata-lock.ts) requires complete bounded
+physical ownership, the current host and an affirmative OS missing-process
+result. Age grants no authority. Live or reused PIDs, foreign hosts, unknown
+liveness, malformed records and redirected paths remain protected.
+
+Directory locks move once into a deterministic, permanently nonempty quarantine.
+Competing recoverers cannot replace that destination with a newly acquired
+owner. New cache locks use directories too; legacy regular-file locks require a
+separate directory claim, fresh original-byte/identity validation and one unlink.
+An abandoned claim follows the same directory protocol without nested claims.
+Every action still requires acquiring a new exclusive lock.
+
+Original ownership, immutable intent and outcome records stay in owned ignored
+evidence. Archive and hook-diagnostic locks route to
+`.cache/workflow/.lock-recovery`; other locks use their adjacent
+`.lock-recovery` directory, including common-repository integration locks.
+All callers of one physical lock use the same canonical evidence address.
+Public archives and strict result/native stores receive no recovery files.
+
+Each evidence root admits at most 32 retained exclusive reservation slots,
+including interrupted reservations. Ownership and individual records are at
+most 4096 bytes; the aggregate admission reserves the complete next attempt and
+is bounded by 1 MiB, 256 files, 65 directories and depth two. Existing containing
+workflow/registry budgets and LF checks still apply. Exhaustion preserves all
+records and stops recovery; no quarantine, receipt or rejection history is pruned.
+
+Recovery does not establish descendant shutdown, authorize another task's files,
+clear failed task state or prove that a remote operation completed. Existing
+publication reconciliation and scratch-disposal checks remain mandatory.
+Product/import/media locks with other formats are outside this metadata adapter.
+All existing acquisition, process, test and verification deadlines remain unchanged.
+
 Verification owns the processes and temporary files it creates. Completion means
 that owned descendants have stopped and their streams have closed; the direct
 child's exit status alone is insufficient. Unconfirmed shutdown fails the check
@@ -199,18 +235,38 @@ incomplete or unexpected existing artifacts require explicit inspection and are
 never overwritten by preparation. A validated empty directory remains retryable.
 The cache permits at most 32 keyed directories and a 16-MiB binary. Reaching
 capacity fails for explicit inspection; it does not remove older artifacts.
+When the importing implementation and explicitly selected project are exact
+physical checkouts of the same Git common repository, the primary prepares one
+immutable artifact per complete key. Linked checkouts copy and validate those
+bytes into their own keyed native cache and always launch the local path. The
+primary is storage only: source/helper/compiler fingerprints still belong to
+the importing implementation. The actual binary hash remains a prerequisite.
+Physical `.git`, administrative/common-directory and reverse worktree pointers
+are checked without spawning Git. This artifact-only capability reads no task
+registry and grants no verification, task or publication authority; it naturally
+works during registered worktree dependency bootstrap. A foreign repository or
+an exact non-repository owner stays local. An absent marker is distinct from a
+malformed, redirected or unsupported marker; ownership failures never select a
+fallback. No ancestor repository is inferred for a private fixture.
+Canonical preparation releases its lock before local publication begins. Copies
+use the shared bounded streaming-reader budget and exclusive local staging;
+each owner's existing capacity/path/lock/compiler limits remain unchanged.
+Existing conflicting or incomplete artifacts are retained and rejected, never
+replaced or silently migrated. Canonical and local bytes plus topology remain
+live checks, and each process still owns its local completion/scratch lifetime.
 Compilation uses an exclusively created `compile-*` staging child inside the
 same project-owned native cache, under the existing publication lock. Its short
 output path avoids the compiler's independent path parser limit; the final
 full-key path is checked again before launch. Only the current operation's exact
 pending files and its empty staging directory are removed after a confirmed
 compiler outcome. An uncertain compiler result retains staging and causes
-subsequent cold preparation to require inspection. No recursive cleanup or lock
-reclamation is introduced.
+subsequent cold preparation to require inspection. Staging cleanup remains
+non-recursive and never authorizes lock recovery. Publication-lock acquisition
+follows the confirmed-dead-owner metadata protocol above.
 
 Fully validated complete keyed artifacts can be read without the publication
 lock. Every read still hashes the full input closure before and after artifact
-inspection. The six independent input digests use the existing bounded reader
+inspection. The independent input digests use the existing bounded reader
 pool and all settle before any result or error is returned. There is no timestamp
 shortcut or retained fingerprint result. Cooperative preparation never rewrites
 a complete keyed artifact, and the publication lock was already released before
@@ -274,3 +330,27 @@ abrupt death of the JavaScript owner. Temporary fixtures exercised borrowed
 authority, redirects, preserved link targets, bounded explicit recovery and
 cleanup after success, failure and abrupt exit. These are focused Windows
 results, not a complete repository gate or POSIX validation.
+
+## Shared result metadata ownership
+
+`.cache/verification-results/v1/` in the physical primary checkout is retained
+verification evidence, not disposable scratch. It uses short per-key locks and a
+short admission lock; none spans actual test execution. Every start reserves its
+bounded terminal evidence. Pending metadata publication and unknown lock owners
+fail closed and require explicit inspection. Exact confirmed-dead metadata locks
+follow the automatic recovery protocol above; retained transaction and result
+evidence stays untouched. Neither age nor an absent process permits evidence
+cleanup. The capacity-unavailable marker may disable reuse while allowing
+fresh checks, but no automatic path removes it or prunes retained evidence.
+Native discovery and full ownership/store inventories never run under these
+locks. Cheap physical/selected-registration checks remain live inside each key
+boundary. Reservation generation binds the outside-lock inventory; acquisition
+order is key then admission and never the reverse. Interrupted reservations stay
+occupied, and unknown transaction state is retained for explicit inspection.
+Final reuse/fresh-publication ownership refreshes remain outside locks. A changed
+registry revision can only retry pre-mutation validation; selected corruption or
+disappearance and partially executed metadata operations never qualify for retry.
+
+This store is an LF-owned output root. Build output and native supervisor artifact
+ownership remain separate and unchanged. Existing process cleanup, memory checks,
+concurrency and verification deadlines apply equally to fresh and reused results.

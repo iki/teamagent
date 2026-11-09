@@ -62,7 +62,10 @@ An explicit workflow checkpoint revision can renew repaired source hashes and
 scope while preserving this record byte-for-byte. It retains a separate
 immutable revision receipt and requires fresh verification. It cannot amend
 the public response, change the original task baseline or restart an uncertain
-commit/push. No automatic lock reclamation or archive pruning is implemented.
+commit/push. Archive-lock acquisition uses the exact confirmed-dead-owner
+recovery protocol in [resource ownership](resources.md#metadata-lock-recovery).
+It preserves the original lock evidence and never prunes archives or resets
+interrupted publication state.
 
 Conversation files are excluded from general formatting so historical wording and layout stay intact; this does not exempt their active text representation from the LF policy. Original public bytes are retained under `spec/archive/line-endings/originals/<sha>.bin`; private-cache originals stay under `.cache/line-endings/originals/<sha>.bin`. Migration manifests explicitly list `retainedOriginals` paths and hashes. These preserved originals are evidence, not active text outputs.
 

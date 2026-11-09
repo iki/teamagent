@@ -1,5 +1,12 @@
 # Build and verification cache contract
 
+Verification lock acquisition follows the bounded
+[automatic metadata recovery protocol](resources.md#metadata-lock-recovery).
+Confirmed same-host absent owners retain exact evidence before a new lock is
+acquired. A reclaimed lock never clears failed-key history or supplies a passing
+verification result. Live, reused, foreign, malformed and unknown owners remain
+protected, and all existing deadlines stay in force.
+
 This contract defines Teamagent's build and verification evidence. Implementation and measured results must be distinguished from these requirements. The [adoption record](analyses/trigon-process-sync/verification.md) and [benchmark record](benchmarks/trigon-process-sync-2026-10-28.json) retain the initial fixed-pin comparison and its limitations.
 
 ## Commands and evidence
@@ -89,8 +96,17 @@ explicit reason; they do not approximate unsupported wrapper behavior.
 Verification also binds the execution profile, current wrapper configuration and
 effective environment controls. The per-dispatch environment digest is distinct
 from reusable verification identity: raw PATH spelling and Git's hook-added core
-entry must not cause false toolchain differences. Synchronous Git checks and
-generic process execution remain unchanged. See the
+entry must not cause false toolchain differences. Synchronous cache Git reads
+reuse the same reviewed profile and environment selection. Each dispatch reads
+the complete selected wrapper, canonical launcher, core payload and runtime
+payload bytes; only same-observation aliases are deduplicated. Missing, changed,
+linked or unsupported inputs retain the original `git` command and environment.
+An already-selected core payload retains its existing environment without a
+second wrapper translation. No discovery process, retained digest, retry or new
+verification identity is introduced. Arguments, index overrides, raw byte reads,
+strict UTF-8 decoding, errors and the existing 30-second/16-MiB bounds remain
+unchanged. Native preparation and launcher keys include the added helper
+dependency. Generic process execution is unchanged. See the
 [execution review](analyses/git-execution-2026-11-08.md) for the admitted profile,
 provenance, parity evidence and measured limits. POSIX selection is unchanged.
 
@@ -231,6 +247,15 @@ already binds the whole `app/check` helper scope, and keeps prerequisite,
 temporary-routing and native-artifact validation live. Mise is not evaluated by
 cache lookup, normal checks or hooks.
 
+Windows supervisor artifacts may be copied from the physical primary only
+through the complete immutable-artifact contract in [resources](resources.md).
+This makes actual binary bytes equal across related checkouts without dropping
+their hashes from prerequisite identity. The importing implementation's source,
+preparation/topology helpers, compiler/configuration, framework references,
+architecture and runtime remain key inputs. Per-checkout executable paths,
+completion scratch and mutable app/build outputs stay local. Artifact equality
+does not establish equal verification inputs or grant reusable result authority.
+
 Keep raw LF and text-export integrity checks live initially. They inspect ignored caches, retained originals and exported bytes that a source-tree-only key cannot certify. A Git-canonical text hash does not establish actual LF bytes. Signing, allowed destinations, remote state, credentials and real browser/native/service acceptance also remain live unless a separate exact contract proves which evidence can be reused.
 
 Validate staged verification receipts against the actual index, including alternate-index cases. A checked working tree is not proof of different staged content. The publication proof must bind the final reviewed scope and receipt bytes without making receipt timestamps recursively part of their own input keys.
@@ -280,10 +305,13 @@ Research Git runs first and alone in both parallel-worker inventories.
 No other batch can start until it settles, including failure; research also
 requires an otherwise empty active set. The one-worker path remains one complete
 batch in the original discovery order.
-Both parallel-worker counts use the same queue after research: remaining
-suites, bootstrap, HTTP cache plus memory CLI/MCP, owned launchers (native
-lifetime, both owned process suites, project launcher and environment), workflow,
-workflow revisions, verification cache, pre-commit, analysis sync and imports.
+Both parallel-worker counts use the same fixed queue after research: remaining
+suites, workflow, workflow revisions, verification cache, analysis sync,
+pre-commit, imports, owned launchers (native lifetime, both owned process suites,
+project launcher and environment), bootstrap, and HTTP cache plus memory CLI/MCP.
+The longer ordinary groups lead this queue to reduce staggered admission of the
+later heavy groups. This is a fixed priority based on retained observations,
+not runtime duration prediction or a guarantee that a run fits its deadline.
 The four new heavy scenario batches follow those ordinary audited groups:
 parallel integration, failures, recovery and PR integration. Bootstrap pairs
 the start/registry and policy-migration tests in one separately audited batch.
@@ -298,8 +326,8 @@ retaining their two-workflow cap. A scenario may overlap one earlier ordinary
 batch still running. A caller-selected two-worker cap stays at two throughout.
 Each available slot takes the first compatible queued batch, so later work can
 proceed while an earlier batch waits for capacity. With the complete inventory,
-remaining, bootstrap and HTTP batches start after research when three workers
-are admitted. Existing running children are
+remaining, workflow and workflow revisions start after research when three
+workers are admitted. Existing running children are
 never interrupted to change admission.
 Eligibility is released only after an active batch settles; every admitted
 child is still joined before the scheduler reports failures. This contention
@@ -461,3 +489,111 @@ their difference cannot be attributed solely to daemon reuse. Separate real
 browser and Windows WebView2 acceptance passed in 10.563 and 49.282 seconds.
 The [implementation measurements](benchmarks/trigon-process-implementation-2026-10-28.json)
 retain source identities, runtime details, failed attempts and per-output hashes.
+
+## Repository-shared verification results
+
+Explicitly selected portable, output-free verification groups may use the new
+`.cache/verification-results/v1/` store in the canonical primary checkout. The
+primary and each registered task or detached integration candidate must resolve
+to the same physical common Git directory. Repository URL equality is insufficient.
+An unregistered, redirected, ambiguous or uncertain worktree cannot use this store.
+The four production format/type/lint/test groups opt in; generic tasks remain
+local unless explicitly selected. Build outputs, logs, scratch, task records and
+final/publication proofs remain local. CI continues to execute checks, while its
+actual starts and outcomes still participate in same-key failure ordering. CI
+status never exempts a genuine failure from invalidating another worktree's
+older success.
+
+The storage selector does not enter the definition key. Every actual raw source,
+engine helper, definition, environment and installed-prerequisite input remains
+mandatory. Workflow ownership helpers are part of the engine source projection.
+A matching source tree is insufficient when the supervisor binary, installed
+packages, tool identity or execution environment differs. No old cache is copied
+into this initially empty namespace, and no supervisor hash is omitted.
+
+All four production groups currently receive the same complete prerequisite
+array, including the Python environment identity. Independently provisioned
+worktree environments can contain different actual bytes, including Python
+bytecode (`.pyc`), even when their package versions match. Such a difference
+prevents reuse for format, types and lint as well as tests. All four groups are
+eligible to share results only when their complete source, prerequisite and
+execution-environment identities match; ordinary separate installs do not
+guarantee a shared hit. Identities are not normalized to manufacture equality.
+
+The prepared cross-worktree production acceptance procedure explicitly selects
+one common Python executable with `TEAMAGENT_TEST_PYTHON` in both worktrees while
+retaining its complete environment fingerprint. It exercises actual shared native
+artifacts and complete prerequisite equality for that configuration. A passing
+run establishes reuse for that explicit common-Python configuration only; it does
+not establish equality or cache-hit rates for independently provisioned Python
+environments.
+
+A short common key lock protects a generation head plus immutable starts and
+outcomes. Begin advances the generation before execution and blocks older
+shared, local and tracked successes. Actual checks run outside metadata locks.
+Full native discovery and registry enumeration also stay outside these locks;
+inside validation reads only physical bindings, bounded Git metadata and the
+selected registration. Native atomic registry temporaries are independently
+bounded and never ownership candidates. A proven atomic entry replacement gets
+at most three consistent-snapshot attempts; missing or corrupt ownership rejects.
+Before accepting reuse or publishing fresh success, a complete registry refresh
+runs outside locks to reject new ambiguity and malformed metadata. The captured
+directory revision is checked cheaply inside metadata operations. Routine
+inventory churn refreshes outside locks within fixed bounds, including during
+failure recording; actual transition failures are never automatically replayed.
+Only a successful attempt that still owns the current generation can publish a
+reusable result. Every failure advances the current generation, including an
+older attempt failing after a newer success. A stale success cannot erase a
+later failure. A fresh exact-input execution can supersede an unfinished attempt
+while preserving its evidence. Existing local cumulative rejection remains
+independently authoritative; another checkout's success cannot clear it.
+
+Production group execution leaves its shared generation running until the
+complete gate repeats its installed/native/Python prerequisites and passes its
+live LF/export and whole-source checks. It writes neither local nor tracked
+success and clears no rejection before this barrier. No additional per-group
+Python probe is introduced. Completion reacquires the local task lock, refreshes
+ownership and source identity, and publishes local evidence only when the shared
+attempt still owns the current generation. An older pending success cannot clear
+a later same-checkout failure, even if both failures have identical rejection
+bytes. Any gate or completion failure settles all pending attempts and rejects
+the captured identities of all four groups, including reused ones; uncertain
+metadata publication remains explicit retained failure evidence. Generic callers
+with complete live validation may still publish their own success immediately.
+The gate retains every consumed group's exact returned key, including shared-only
+hits that create no local receipt. Failure adds that captured key to invalidation
+alongside current and retained local identities, even if source mutation or an
+unreadable input prevents reconstructing the identity that was actually reused.
+
+A retained transaction marker means metadata publication is unconfirmed and
+fails closed. Unknown locks are never reclaimed. Exact confirmed-dead metadata
+owners follow the automatic recovery protocol; this never clears transaction
+markers, running generations, failed results or reserved evidence. An execution
+crash alone does not establish metadata ownership or process absence.
+Lookups validate strict bounded LF
+metadata, the pointed immutable receipt and unchanged head after live input
+validation; orphan artifacts never establish success. Successful receipts retain
+the version-one schema. Staged-index and all external readiness checks stay live.
+
+The store reserves at most 1,024 full-key slots and 8,192 attempts, with at most
+64 KiB for each immutable successful receipt and 2 KiB per metadata record. Starts
+reserve their terminal record, including unfinished attempts. These reservations
+remain below the existing 25,000-file and 256 MiB aggregate limits. No normal
+lookup or admission prunes failures, starts, outcomes or successes.
+An atomic repository-bound reservation account retains counts even if an admitted
+writer crashes before creating its start. Full inventory checks run outside every
+lock and bind the reservation generation. Admission compares that generation
+under the short lock, reserving slots without enumeration. Lock order is key then
+admission; no owner waits for a key while holding admission. Changed snapshots
+get at most three attempts outside locks. Missing or unconfirmed reservation state
+in an existing namespace is an error, never permission to recreate counts.
+
+At capacity, a strict repository-bound unavailable marker visibly disables all
+shared-task reuse, including old local/tracked receipts. Checks still execute
+fresh and retain failures. Deferred production checks publish no new local or
+tracked success and clear no rejection while this marker is present: capacity
+mode has no execution generation with which to prove local ordering. Generic
+immediate callers retain their existing local-result behavior. A later successful check does not
+remove that marker or silently restore reuse. Explicit reviewed maintenance is
+required; corrupt state, redirected ownership and unknown locks remain errors.
+No deadline, test coverage, worker maximum or memory admission changes.

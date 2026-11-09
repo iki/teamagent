@@ -2,11 +2,14 @@
 import { spawnSync } from "node:child_process";
 import { resolve } from "node:path";
 import { Schema } from "effect";
+import { consola } from "consola";
 import { digest, encodedDigest, gitText } from "./cache-io.ts";
 import {
   checkStagedVerificationCache,
   inputIdentity,
+  invalidateCachedTask,
   runCachedTask,
+  type CachedTaskResult,
   type CacheTask,
 } from "./input-cache.ts";
 import { installedPackageIdentity } from "./installed-inputs.ts";
@@ -175,6 +178,7 @@ export function verificationTask(
   return {
     id,
     kind: "verification",
+    shared: true,
     inputs:
       id === "format"
         ? [...formatPaths, ...configurationInputs]
@@ -191,14 +195,66 @@ export async function cachedVerification(
   prerequisites: readonly string[],
   run: () => Promise<void>,
   forceFresh = false,
-): Promise<{ hit: boolean; key: string }> {
+): Promise<CachedTaskResult> {
   assertTrackedVerificationInputs(root);
   return runCachedTask(root, verificationTask(id, prerequisites), run, {
     forceFresh,
+    deferReceipt: true,
+    sharedUnavailable: () => {
+      consola.warn(
+        "Shared verification cache capacity is full. Checks are running fresh; explicit cache maintenance is required to restore reuse.",
+      );
+    },
     validate: async () => {
       assertTrackedVerificationInputs(root);
     },
   });
+}
+/** The callback includes the final prerequisite, raw LF/export and whole-source checks. */
+export async function withVerificationResults(
+  root: string,
+  prerequisites: readonly string[],
+  run: (retain: (id: VerificationTask, result: CachedTaskResult) => void) => Promise<void>,
+): Promise<void> {
+  const retained = new Map<VerificationTask, CachedTaskResult>();
+  try {
+    await run((id, result) => {
+      if (retained.size >= 4 || retained.has(id))
+        throw new Error("Verification completion scope requires at most four distinct groups");
+      retained.set(id, result);
+    });
+    for (const result of retained.values()) await result.pending?.complete();
+  } catch (error) {
+    const failures: unknown[] = [error];
+    // Settle every executed attempt, even if another completion failed after publication.
+    // Then reject the captured identities of reused groups as well as freshly run ones.
+    // These operations share the admission account. Settle the bounded scope in
+    // order so this gate does not exhaust another group's snapshot retries.
+    for (const result of retained.values()) {
+      try {
+        await result.pending?.fail();
+      } catch (failure) {
+        failures.push(failure);
+      }
+    }
+    for (const id of ["format", "types", "lint", "tests"] as const) {
+      try {
+        await invalidateCachedTask(
+          root,
+          verificationTask(id, prerequisites),
+          retained.get(id)?.key,
+        );
+      } catch (failure) {
+        failures.push(failure);
+      }
+    }
+    if (failures.length > 1)
+      throw new AggregateError(
+        failures,
+        "Verification failed; one or more receipt invalidations also failed",
+      );
+    throw error;
+  }
 }
 export async function reviewInputIdentity(root: string): Promise<{ key: string }> {
   return reviewSourceIdentity(root, await verificationPrerequisites(root));

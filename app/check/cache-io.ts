@@ -3,10 +3,11 @@ import { spawnSync } from "node:child_process";
 import { createHash, randomUUID } from "node:crypto";
 import type { BigIntStats } from "node:fs";
 import { lstat, mkdir, open, opendir, rename, unlink } from "node:fs/promises";
-import { hostname } from "node:os";
 import { dirname, isAbsolute, relative, resolve } from "node:path";
 import { fileContentDigest, inventoryDigest } from "./cache-fingerprint.ts";
 import { gitPlatformArguments } from "./git-platform.ts";
+import { resolveGitExecutionSync } from "./git-execution.ts";
+import { withMetadataLock } from "./metadata-lock.ts";
 
 export const cacheLimits = {
   files: 25_000,
@@ -78,8 +79,12 @@ export function gitBytes(
       )
     )
       Reflect.deleteProperty(env, name);
+  const execution = resolveGitExecutionSync(root, {
+    ...env,
+    ...(options.indexFile ? { GIT_INDEX_FILE: resolve(options.indexFile) } : {}),
+  });
   const result = spawnSync(
-    "git",
+    execution.executable,
     gitPlatformArguments([
       "--no-optional-locks",
       "--no-pager",
@@ -95,7 +100,7 @@ export function gitBytes(
     ]),
     {
       cwd: root,
-      env: { ...env, ...(options.indexFile ? { GIT_INDEX_FILE: resolve(options.indexFile) } : {}) },
+      env: execution.env,
       shell: false,
       timeout: 30_000,
       maxBuffer: 16 * 1024 ** 2,
@@ -316,7 +321,7 @@ async function atomicWrite(root: string, path: string, bytes: Uint8Array): Promi
   }
 }
 
-/** Fail closed on live, dead or foreign leftover locks; age never authorizes stealing. */
+/** Retain confirmed dead-owner evidence; live, reused, foreign and unknown owners remain protected. */
 export async function withCacheLock<T>(
   root: string,
   id: string,
@@ -329,35 +334,5 @@ export async function withCacheLock<T>(
   const directory = await safePath(root, cacheDirectory, true);
   await mkdir(directory, { recursive: true });
   const path = `${cacheDirectory}/${id}.lock`;
-  const token = randomUUID();
-  const owner = `${JSON.stringify({ pid: process.pid, hostname: hostname(), token })}\n`;
-  const started = performance.now();
-  for (;;) {
-    try {
-      const handle = await open(await safePath(root, path, true), "wx", 0o600);
-      try {
-        await handle.writeFile(owner, "utf8");
-      } finally {
-        await handle.close();
-      }
-      break;
-    } catch (error) {
-      if (!hasCode(error, "EEXIST")) throw error;
-      if (performance.now() - started >= waitMs)
-        throw new Error(
-          `Verification cache is locked: ${path}. Inspect ownership before explicit recovery; lock age is not permission to reclaim it.`,
-        );
-      await new Promise<void>((done) => setTimeout(done, 50));
-    }
-  }
-  const release = async (): Promise<void> => {
-    const current = new TextDecoder().decode(await boundedRead(root, path, 4096));
-    if (current !== owner) throw new Error("Verification cache lock ownership changed");
-    await unlink(await safePath(root, path));
-  };
-  try {
-    return await run();
-  } finally {
-    await release();
-  }
+  return withMetadataLock(await safePath(root, path, true), run, { waitMs, legacyFile: true });
 }

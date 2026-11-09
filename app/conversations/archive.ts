@@ -8,7 +8,7 @@ import {
   boundedText,
   digest,
   lf,
-  withLock,
+  withWorkflowLock,
   containedPath,
 } from "../workflow/storage.ts";
 
@@ -162,7 +162,7 @@ export async function archive(
   const taskMarker = `<!-- teamagent-task: ${task} -->`;
   const folder = await containedPath(root, "spec/.conversations");
   await mkdir(folder, { recursive: true });
-  return await withLock(join(folder, ".write-lock"), async () => {
+  return await withWorkflowLock(root, join(folder, ".write-lock"), async () => {
     const names = (await readdir(folder)).filter((name) => /^\d{6}-[^/]+\.md$/u.test(name));
     if (names.length > 20000) throw new Error("Conversation inventory limit exceeded");
     let prior: { file: string; content: string } | undefined;
@@ -300,7 +300,7 @@ export async function freezeArchive(
     throw new Error("Unanswered review question");
   const file = await archive(root, input);
   const path = "spec/.conversations/" + file;
-  return await withLock(join(root, "spec/.conversations/.write-lock"), async () => {
+  return await withWorkflowLock(root, join(root, "spec/.conversations/.write-lock"), async () => {
     const target = await containedPath(root, path);
     let content = await boundedText(target);
     const response = cleanPublic(root, input, input.response);

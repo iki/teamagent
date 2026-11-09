@@ -24,6 +24,17 @@ import {
   resolveVerificationWritePolicy,
   type VerificationWritePolicy,
 } from "./verification-policy.ts";
+import { sharedResultOwner, type SharedResultOwner } from "./shared-result-owner.ts";
+import {
+  beginSharedResult,
+  completeSharedResult,
+  failSharedResult,
+  inspectSharedResult,
+  invalidateSharedResult,
+  sharedResultDirectory,
+  type SharedAttempt,
+  type SharedSnapshot,
+} from "./shared-results.ts";
 
 export interface CacheTask {
   readonly id: string;
@@ -34,6 +45,8 @@ export interface CacheTask {
   readonly externalInputs?: readonly string[];
   readonly values?: readonly string[];
   readonly portable?: boolean;
+  /** Storage selection only; never excludes identity inputs or live prerequisites. */
+  readonly shared?: boolean;
 }
 const Digest = Schema.String.check(Schema.isPattern(/^[a-f0-9]{64}$/u));
 const Strings = Schema.Array(Schema.String).check(Schema.isMaxLength(256));
@@ -139,9 +152,11 @@ export function workingInventory(
   }
   return { format, indexed, names };
 }
-const engineInputs = ["app/check", ".gitattributes", ".gitignore"];
+const engineInputs = ["app/check", "app/workflow", ".gitattributes", ".gitignore"];
 const systemPath = (path: string): boolean =>
-  contains(receiptDirectory, path.toLowerCase()) || contains(cacheDirectory, path.toLowerCase());
+  contains(receiptDirectory, path.toLowerCase()) ||
+  contains(cacheDirectory, path.toLowerCase()) ||
+  contains(sharedResultDirectory, path.toLowerCase());
 const keyFor = (definition: string, projection: string, external: string): string =>
   encodedDigest([1, definition, projection, external]);
 export const validTaskId = (id: string): string => {
@@ -167,12 +182,15 @@ function normalize(task: CacheTask) {
       (path) =>
         systemPath(path) ||
         contains(path.toLowerCase(), receiptDirectory) ||
-        contains(path.toLowerCase(), cacheDirectory),
+        contains(path.toLowerCase(), cacheDirectory) ||
+        contains(path.toLowerCase(), sharedResultDirectory),
     )
   )
     throw new Error("Cache outputs cannot contain receipts or locks");
   if (task.kind === "build" && !outputs.length)
     throw new Error("Build cache requires complete output paths");
+  if (task.shared && (task.kind !== "verification" || task.portable === false || outputs.length))
+    throw new Error("Shared results require portable verification without output paths");
   return { ...task, inputs, excludeInputs, outputs, externalInputs };
 }
 type Task = ReturnType<typeof normalize>;
@@ -365,6 +383,7 @@ async function matches(
   root: string,
   task: Task,
   identity: Awaited<ReturnType<typeof inputIdentity>>,
+  shared?: SharedSnapshot,
 ): Promise<(ReceiptSnapshot & { readonly path: string }) | undefined> {
   // Submitted or restored receipts are cooperative evidence, not independent CI
   // results. Actions must execute verification even when every input matches.
@@ -374,9 +393,24 @@ async function matches(
   } catch {
     return undefined;
   }
+  const current =
+    shared ??
+    (task.shared
+      ? await inspectSharedResult(await sharedResultOwner(root), identity.key)
+      : undefined);
+  if (current?.blocked) return undefined;
+  const candidates: Array<ReceiptSnapshot & { path: string }> = [];
   for (const path of receiptPaths(task)) {
     const snapshot = await readReceipt(root, path);
-    if (!snapshot) continue;
+    if (snapshot) candidates.push({ path, ...snapshot });
+  }
+  if (current?.bytes)
+    candidates.push({
+      path: "shared",
+      bytes: current.bytes,
+      receipt: decodeReceipt(current.bytes),
+    });
+  for (const snapshot of candidates) {
     const { receipt } = snapshot;
     if (
       receipt.id !== task.id ||
@@ -390,15 +424,25 @@ async function matches(
       JSON.stringify(receipt.excludeInputs) !== JSON.stringify(task.excludeInputs)
     )
       continue;
-    if (task.kind !== "build") return { path, ...snapshot };
+    if (task.kind !== "build") return snapshot;
     try {
-      if (receipt.output === (await inventory(root, task.outputs, true)))
-        return { path, ...snapshot };
+      if (receipt.output === (await inventory(root, task.outputs, true))) return snapshot;
     } catch (error) {
       if (hasCode(error, "EACCES") || hasCode(error, "EPERM")) throw error;
     }
   }
   return undefined;
+}
+/** A host must settle this executed check after its complete live prerequisite barrier. */
+export interface PendingCachedTask {
+  readonly complete: () => Promise<void>;
+  readonly fail: () => Promise<void>;
+}
+export interface CachedTaskResult {
+  readonly hit: boolean;
+  readonly key: string;
+  readonly sharedUnavailable?: "capacity";
+  readonly pending?: PendingCachedTask;
 }
 export async function runCachedTask(
   root: string,
@@ -408,9 +452,14 @@ export async function runCachedTask(
     readonly forceFresh?: boolean;
     readonly validate?: () => Promise<void>;
     readonly receiptWritePolicy?: VerificationWritePolicy;
+    readonly sharedUnavailable?: (reason: "capacity") => void;
+    /** Shared verification only: retain running evidence until the host's final live barrier. */
+    readonly deferReceipt?: boolean;
   } = {},
-): Promise<{ hit: boolean; key: string }> {
+): Promise<CachedTaskResult> {
   const task = normalize(definition);
+  if (options.deferReceipt && !task.shared)
+    throw new Error("Deferred receipts require shared portable verification");
   const writePolicy =
     task.kind === "verification" && task.portable !== false
       ? (options.receiptWritePolicy ?? resolveVerificationWritePolicy(process.env))
@@ -418,26 +467,83 @@ export async function runCachedTask(
   const writePath = writePolicy === "tracked" ? receiptPath(task) : localReceiptPath(task);
   return withCacheLock(root, `${task.kind}-${task.id}`, async () => {
     const before = await inputIdentity(root, task);
+    const owner = task.shared ? await sharedResultOwner(root) : undefined;
+    let attempt: SharedAttempt | undefined;
+    let capacityUnavailable = false;
+    let terminal = false;
+    let rejected = false;
+    const rejectResult = async (): Promise<void> => {
+      if (rejected) return;
+      const failures: unknown[] = [];
+      try {
+        await updateRejections(root, task, [before.key], true);
+      } catch (failure) {
+        failures.push(failure);
+      }
+      if (owner) {
+        try {
+          await owner.refresh();
+          if (attempt && !terminal) {
+            await failSharedResult(owner, attempt);
+            terminal = true;
+          } else await invalidateSharedResult(owner, before.key);
+        } catch (failure) {
+          failures.push(
+            new Error(
+              "Shared verification invalidation is unconfirmed; retained evidence requires inspection",
+              { cause: failure },
+            ),
+          );
+        }
+      }
+      if (failures.length)
+        throw new AggregateError(failures, "Verification rejection updates were unconfirmed");
+      rejected = true;
+    };
+    const rejectAndThrow = async (error: unknown): Promise<never> => {
+      try {
+        await rejectResult();
+      } catch (failure) {
+        throw new AggregateError(
+          [error, failure],
+          "Verification failed; one or more rejection updates were unconfirmed",
+        );
+      }
+      throw error;
+    };
     try {
-      if (!options.forceFresh && (await matches(root, task, before))) {
+      const shared = owner ? await inspectSharedResult(owner, before.key) : undefined;
+      if (!options.forceFresh && (await matches(root, task, before, shared))) {
         await options.validate?.();
-        const validated = await matches(root, task, before);
+        await owner?.refresh();
+        const checked = owner ? await inspectSharedResult(owner, before.key) : undefined;
+        const validated = await matches(root, task, before, checked);
         if (!validated || (await inputIdentity(root, task)).key !== before.key)
           throw new Error(`Cache inputs or outputs changed during ${task.id} reuse validation`);
+        if (owner && (await inspectSharedResult(owner, before.key)).stamp !== shared?.stamp)
+          throw new Error(`Shared verification state changed during ${task.id} reuse validation`);
         if (writePolicy === "tracked" && validated.path !== writePath)
           await atomicReceiptText(root, writePath, validated.bytes);
+        if (owner && (await inspectSharedResult(owner, before.key)).stamp !== shared?.stamp)
+          throw new Error(`Shared verification state changed during ${task.id} receipt promotion`);
         return { hit: true, key: before.key };
+      }
+      if (owner) {
+        attempt = await beginSharedResult(owner, before.key);
+        capacityUnavailable = attempt === undefined;
+        if (capacityUnavailable) options.sharedUnavailable?.("capacity");
       }
       await run();
       const output = task.kind === "build" ? await inventory(root, task.outputs, true) : undefined;
       await options.validate?.();
       if (output !== undefined && output !== (await inventory(root, task.outputs, true)))
         throw new Error(`Build output changed during ${task.id} validation`);
+      await owner?.refresh();
       if ((await inputIdentity(root, task)).key !== before.key)
         throw new Error(
           `Verification inputs changed during ${task.id}; no new receipt was recorded`,
         );
-      await atomicJson(root, writePath, {
+      const receipt = {
         version: 1,
         id: task.id,
         kind: task.kind,
@@ -446,20 +552,82 @@ export async function runCachedTask(
         ...before,
         passed: true,
         ...(output === undefined ? {} : { output }),
-      });
+      };
+      if (options.deferReceipt) {
+        let completed = false;
+        const pending: PendingCachedTask = {
+          complete: () =>
+            withCacheLock(root, `${task.kind}-${task.id}`, async () => {
+              if (completed || rejected)
+                throw new Error("Deferred verification has already been settled");
+              try {
+                await options.validate?.();
+                await owner?.refresh();
+                if ((await inputIdentity(root, task)).key !== before.key)
+                  throw new Error(
+                    `Verification inputs changed before ${task.id} receipt publication`,
+                  );
+                // The shared generation also orders local receipt writes. An older pending run
+                // must not clear a newer same-checkout rejection after releasing its task lock.
+                if (owner && attempt) {
+                  const published = await completeSharedResult(
+                    owner,
+                    attempt,
+                    new TextEncoder().encode(`${JSON.stringify(receipt)}\n`),
+                  );
+                  terminal = true;
+                  if (published) {
+                    await atomicJson(root, writePath, receipt);
+                    await updateRejections(root, task, [before.key], false);
+                  }
+                }
+                // Capacity disables all reuse. Without an attempt epoch, leave local evidence
+                // and rejection history unchanged rather than infer an execution ordering.
+                completed = true;
+              } catch (error) {
+                await rejectAndThrow(error);
+              }
+            }),
+          fail: () => withCacheLock(root, `${task.kind}-${task.id}`, rejectResult),
+        };
+        return {
+          hit: false,
+          key: before.key,
+          pending,
+          ...(capacityUnavailable ? { sharedUnavailable: "capacity" as const } : {}),
+        };
+      }
+      await atomicJson(root, writePath, receipt);
       await updateRejections(root, task, [before.key], false);
+      if (owner && attempt) {
+        await completeSharedResult(
+          owner,
+          attempt,
+          new TextEncoder().encode(`${JSON.stringify(receipt)}\n`),
+        );
+        terminal = true;
+      }
     } catch (error) {
-      await updateRejections(root, task, [before.key], true);
-      throw error;
+      await rejectAndThrow(error);
     }
-    return { hit: false, key: before.key };
+    return {
+      hit: false,
+      key: before.key,
+      ...(capacityUnavailable ? { sharedUnavailable: "capacity" as const } : {}),
+    };
   });
 }
 
-export async function invalidateCachedTask(root: string, definition: CacheTask): Promise<void> {
+export async function invalidateCachedTask(
+  root: string,
+  definition: CacheTask,
+  capturedKey?: string,
+): Promise<void> {
   const task = normalize(definition);
+  const captured =
+    capturedKey === undefined ? undefined : Schema.decodeUnknownSync(Digest)(capturedKey);
   await withCacheLock(root, `${task.kind}-${task.id}`, async () => {
-    const keys = new Set<string>();
+    const keys = new Set<string>(captured === undefined ? [] : [captured]);
     for (const path of receiptPaths(task)) {
       const receipt = (await readReceipt(root, path))?.receipt;
       if (
@@ -469,13 +637,36 @@ export async function invalidateCachedTask(root: string, definition: CacheTask):
       )
         keys.add(receipt.key);
     }
+    let hashingFailure: unknown;
     try {
       keys.add((await inputIdentity(root, task)).key);
     } catch (error) {
-      if (keys.size) await updateRejections(root, task, [...keys], true);
-      throw error;
+      hashingFailure = error;
     }
-    await updateRejections(root, task, [...keys], true);
+    const failures: unknown[] = hashingFailure === undefined ? [] : [hashingFailure];
+    try {
+      if (keys.size) await updateRejections(root, task, [...keys], true);
+    } catch (error) {
+      failures.push(error);
+    }
+    if (task.shared) {
+      let owner: SharedResultOwner | undefined;
+      try {
+        owner = await sharedResultOwner(root);
+      } catch (error) {
+        failures.push(error);
+      }
+      if (owner)
+        for (const key of keys) {
+          try {
+            await invalidateSharedResult(owner, key);
+          } catch (error) {
+            failures.push(error);
+          }
+        }
+    }
+    if (failures.length)
+      throw new AggregateError(failures, "Verification invalidation was not fully confirmed");
   });
 }
 

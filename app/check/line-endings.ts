@@ -60,6 +60,7 @@ export const lineEndingOutputRoots: readonly string[] = [
   ".cache/dependencies",
   ".cache/patches-migration",
   ".cache/verification",
+  ".cache/verification-results",
   ".cache/native",
   ".cache/temporary",
   ".tmp",

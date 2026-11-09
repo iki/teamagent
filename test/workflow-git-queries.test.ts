@@ -9,6 +9,8 @@ import {
   snapshot,
   checkedScope,
   commonDirectoryAndBranch,
+  repositoryAndBranch,
+  repositoryDirectories,
   destinationObservation,
   headAndBranch,
   headCommit,
@@ -45,6 +47,75 @@ const policy = {
   remote: "origin",
   ref: "refs/heads/main",
 } as const;
+
+await test("native repository batches preserve exact paths, detached branches and framing", async () => {
+  const root = resolve("repository-observation"),
+    common = join(root, ".git");
+  const admin = join(common, "worktrees", "task"),
+    rows = [root, common, admin];
+  let calls = 0,
+    output = rows.join("\n") + "\n";
+  const observed: Git = async (args, input, index) => {
+    calls++;
+    assert.equal(input, undefined);
+    assert.equal(index, undefined);
+    assert.deepEqual(args, [
+      "rev-parse",
+      "--path-format=absolute",
+      "--show-toplevel",
+      "--git-common-dir",
+      "--absolute-git-dir",
+      ...(output.split("\n").length === 5 ? ["--symbolic-full-name", "HEAD"] : []),
+    ]);
+    return output;
+  };
+  assert.deepEqual(await repositoryDirectories(observed), {
+    root,
+    directory: common,
+    gitDirectory: admin,
+  });
+  assert.equal(calls, 1);
+  for (const ref of ["refs/heads/codex/native-observation", "HEAD"]) {
+    output = [...rows, ref].join("\n") + "\n";
+    assert.deepEqual(await repositoryAndBranch(observed), {
+      root,
+      directory: common,
+      gitDirectory: admin,
+      branch: ref === "HEAD" ? null : "codex/native-observation",
+    });
+  }
+  assert.equal(calls, 3);
+  for (const response of [
+    rows.join("\n"),
+    rows.join("\r\n") + "\r\n",
+    rows.join("\n") + "\nextra\n",
+    ["relative", common, admin].join("\n") + "\n",
+    [root, common, "bad\0admin"].join("\n") + "\n",
+    "x".repeat(16 * 1024 + 1),
+  ])
+    await assert.rejects(
+      repositoryDirectories(async () => response),
+      /malformed/u,
+    );
+  for (const response of [
+    rows.join("\n") + "\n",
+    [...rows, "refs/tags/release"].join("\n") + "\n",
+    [...rows, "refs/heads/bad branch"].join("\n") + "\n",
+    [...rows, "HEAD", "extra"].join("\n") + "\n",
+    [...rows, "HEAD"].join("\n") + "\r\n",
+  ])
+    await assert.rejects(
+      repositoryAndBranch(async () => response),
+      /malformed/u,
+    );
+  const failure = new Error("native repository read failed");
+  await assert.rejects(
+    repositoryAndBranch(async () => {
+      throw failure;
+    }),
+    (error: unknown) => error === failure,
+  );
+});
 
 async function scopeFixture() {
   const root = await mkdtemp("workflow-observation-");

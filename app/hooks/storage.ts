@@ -8,7 +8,7 @@ import {
   containedPath,
   digest,
   exclusiveText,
-  withLock,
+  withWorkflowLock,
 } from "../workflow/storage.ts";
 
 export const hookDiagnosticRoot = ".cache/hook-diagnostics";
@@ -157,24 +157,28 @@ export async function reserveHookDiagnostics(
     bytes: maximumOutputBytes + overheadBytes,
     files: overheadFiles,
   });
-  return await withLock(await containedPath(root, `${hookDiagnosticRoot}/.lock`), async () => {
-    const current = await inspect(root);
-    if (
-      current.bytes + reservation.bytes > allowed.bytes ||
-      current.files + reservation.files > allowed.files ||
-      current.slots >= limits.slots
-    )
-      throw new Error(
-        "Hook diagnostic capacity reserved; preserve and reconcile existing evidence before retrying",
-      );
-    const paths = hookDiagnosticPaths(reservation);
-    await mkdir(await containedPath(root, paths.directory));
-    const text = JSON.stringify(reservation, null, 2) + "\n";
-    if (Buffer.byteLength(text) > reservationBytes)
-      throw new Error("Hook reservation exceeds byte limit");
-    await exclusiveText(await containedPath(root, paths.reservation), text);
-    return reservation;
-  });
+  return await withWorkflowLock(
+    root,
+    await containedPath(root, `${hookDiagnosticRoot}/.lock`),
+    async () => {
+      const current = await inspect(root);
+      if (
+        current.bytes + reservation.bytes > allowed.bytes ||
+        current.files + reservation.files > allowed.files ||
+        current.slots >= limits.slots
+      )
+        throw new Error(
+          "Hook diagnostic capacity reserved; preserve and reconcile existing evidence before retrying",
+        );
+      const paths = hookDiagnosticPaths(reservation);
+      await mkdir(await containedPath(root, paths.directory));
+      const text = JSON.stringify(reservation, null, 2) + "\n";
+      if (Buffer.byteLength(text) > reservationBytes)
+        throw new Error("Hook reservation exceeds byte limit");
+      await exclusiveText(await containedPath(root, paths.reservation), text);
+      return reservation;
+    },
+  );
 }
 export async function writeHookDiagnostic(
   root: string,
@@ -195,18 +199,22 @@ export async function finalizeHookDiagnostics(
   reservation: HookReservation,
   expected: { receiptHash: string; logHash: string },
 ): Promise<void> {
-  await withLock(await containedPath(root, `${hookDiagnosticRoot}/.lock`), async () => {
-    await owned(root, reservation);
-    const paths = hookDiagnosticPaths(reservation);
-    const receipt = await boundedText(await containedPath(root, paths.receipt), receiptBytes);
-    const log = await boundedText(
-      await containedPath(root, paths.log),
-      reservation.maximumOutputBytes,
-    );
-    if (digest(receipt) !== expected.receiptHash || digest(log) !== expected.logHash)
-      throw new Error("Hook diagnostic publication changed before finalization");
-    await inspect(root);
-    // Failed/interrupted finalization retains the reservation; no age or PID-based reclamation.
-    await unlink(await containedPath(root, paths.reservation));
-  });
+  await withWorkflowLock(
+    root,
+    await containedPath(root, `${hookDiagnosticRoot}/.lock`),
+    async () => {
+      await owned(root, reservation);
+      const paths = hookDiagnosticPaths(reservation);
+      const receipt = await boundedText(await containedPath(root, paths.receipt), receiptBytes);
+      const log = await boundedText(
+        await containedPath(root, paths.log),
+        reservation.maximumOutputBytes,
+      );
+      if (digest(receipt) !== expected.receiptHash || digest(log) !== expected.logHash)
+        throw new Error("Hook diagnostic publication changed before finalization");
+      await inspect(root);
+      // Failed/interrupted finalization retains the reservation; no age or PID-based reclamation.
+      await unlink(await containedPath(root, paths.reservation));
+    },
+  );
 }

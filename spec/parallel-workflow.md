@@ -1,5 +1,13 @@
 # Parallel repository tasks
 
+Common-repository task, registry and integration locks use the
+[automatic metadata recovery protocol](resources.md#metadata-lock-recovery)
+only for complete physical same-host ownership whose process is affirmatively
+absent. Exact originals stay retained at one deterministic common address.
+Recovery permits a fresh exclusive acquisition; it never resets task state,
+replays publication, changes the destination or substitutes for reconciling an
+uncertain remote result. Live, reused, foreign and unknown owners remain protected.
+
 Use one `codex/*` branch and one registered worktree per independent logical
 task. Keep related subagents inside that task with explicit file ownership.
 The primary checkout remains available for inspection and coordination; another
@@ -43,6 +51,14 @@ Aube installs JavaScript dependencies only. Provision any required Python/extrac
 or native prerequisites through the existing project setup commands in each new
 worktree or integration candidate; parent caches are not an implicit fallback.
 Creation never copies credentials or activates agent-hook trust.
+
+The one immutable native-supervisor exception is described in
+[resource ownership](resources.md): exact physical checkouts of the same Git
+repository can copy a fully keyed, validated primary artifact into their own
+native cache. This is not a dependency-installation or mutable-output fallback.
+It does not read or change task state, so dependency bootstrap can use it while
+registration is still `creating`. Verification results retain their separate
+registered ownership and complete-input contract.
 
 Continue in the returned worktree. Use `task:run` to begin, implement, verify,
 checkpoint, prepare and publish through the existing [task contract](workflow.md).
@@ -147,3 +163,20 @@ because they are under `.cache`. No automatic deletion is implemented. A later
 explicit cleanup must verify registered physical containment, clean source and
 index, retained evidence and stopped descendants before removing an exact owned
 worktree. Temporary scratch retains the separate [resource contract](resources.md).
+
+## Verification reuse across worktrees
+
+Registered worktrees may share explicitly portable verification results through
+`spec/cache.md`'s repository-owned result backend. They do not share build outputs,
+running processes, scratch, task state, conversation records or publication proofs.
+A shared running/failed generation blocks older local and tracked success for the
+same complete key. A fresh successful execution can supersede an unfinished test
+attempt without deleting its evidence. Superseding a result does not itself
+authorize lock recovery; exact confirmed-dead metadata owners follow the separate
+[resource contract](resources.md#metadata-lock-recovery).
+
+Current installed package bytes, runtime/tool/supervisor identity and environment
+remain live prerequisites. Integration candidate ownership is checked against the
+native registry and physical common directory. Skill installation or a shared
+success record grants no additional task or publication authority. A full store
+reports reuse unavailable and runs genuine checks until explicit maintenance.

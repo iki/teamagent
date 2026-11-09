@@ -34,3 +34,8 @@ Verification resource ownership: `spec/resources.md`. Use streaming fingerprints
 live memory admission and owned processes; hold marked scratch until descendant
 shutdown is confirmed. Tests allocate fixtures through `test/temporary.ts`.
 Explicit temporary recovery never authorizes evidence pruning or lock reclamation.
+Native metadata-lock acquisition automatically recovers only a complete physical
+same-host owner whose PID is affirmatively absent, preserving exact evidence and
+protecting competing or replacement owners. Follow `spec/resources.md`; live,
+reused, foreign or unknown owners remain protected. Recovery never resets task
+state or replaces publication reconciliation and descendant-shutdown checks.

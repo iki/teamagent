@@ -312,8 +312,11 @@ await test(
       for (const name of [
         "owned-process.ts",
         "owned-process-windows.cs",
+        "native-artifact-owner.ts",
+        "metadata-lock.ts",
         "cache-io.ts",
         "git-platform.ts",
+        "git-execution.ts",
         "cache-fingerprint.ts",
         "temporary-workspace.ts",
       ])
@@ -374,8 +377,11 @@ await test(
       for (const name of [
         "owned-process.ts",
         "owned-process-windows.cs",
+        "native-artifact-owner.ts",
+        "metadata-lock.ts",
         "cache-io.ts",
         "git-platform.ts",
+        "git-execution.ts",
         "cache-fingerprint.ts",
         "temporary-workspace.ts",
       ])

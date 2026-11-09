@@ -1,7 +1,16 @@
 /** Explicit Git callers may use a reviewed payload; general process launch stays unchanged. */
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { constants } from "node:fs";
+import {
+  constants,
+  closeSync,
+  fstatSync,
+  lstatSync,
+  openSync,
+  readSync,
+  realpathSync,
+  type BigIntStats,
+} from "node:fs";
 import { access, lstat, realpath } from "node:fs/promises";
 import { basename, dirname, isAbsolute, resolve, win32 } from "node:path";
 import { which } from "bun";
@@ -400,4 +409,164 @@ export async function resolveGitExecution(
       )
         throw new Error("Git runtime directories must be physical");
   return selection;
+}
+
+const sameSynchronousFile = (left: BigIntStats, right: BigIntStats): boolean =>
+  left.isFile() &&
+  right.isFile() &&
+  left.dev === right.dev &&
+  left.ino === right.ino &&
+  left.mode === right.mode &&
+  left.nlink === right.nlink &&
+  left.size === right.size &&
+  left.mtimeNs === right.mtimeNs &&
+  left.ctimeNs === right.ctimeNs;
+
+/** Complete live byte inspection adapted from the verified synchronous Git host adapter. */
+export function gitFileFingerprintSync(
+  path: string,
+  maximum = 256 * 1024 ** 2,
+  observe?: (phase: "opened" | "read") => void,
+): string {
+  if (!Number.isSafeInteger(maximum) || maximum < 0 || maximum > 256 * 1024 ** 2)
+    throw new Error("Git execution file requires a bounded byte limit");
+  const physical = (): void => {
+    const actual = realpathSync.native(path);
+    if (process.platform === "win32" ? !samePath(actual, path) : actual !== path)
+      throw new Error("Git execution paths must be physical");
+  };
+  physical();
+  const before = lstatSync(path, { bigint: true });
+  if (!before.isFile() || before.isSymbolicLink() || before.size > BigInt(maximum))
+    throw new Error("Git execution file exceeds its bound");
+  const descriptor = openSync(path, "r");
+  try {
+    const opened = fstatSync(descriptor, { bigint: true });
+    if (!sameSynchronousFile(before, opened))
+      throw new Error("Git execution file changed before reading");
+    observe?.("opened");
+    const hash = createHash("sha256"),
+      chunk = new Uint8Array(64 * 1024);
+    let size = 0;
+    for (;;) {
+      const count = readSync(descriptor, chunk, 0, chunk.length, size);
+      if (!count) break;
+      size += count;
+      if (size > maximum) throw new Error("Git execution file grew beyond its bound");
+      hash.update(chunk.subarray(0, count));
+      observe?.("read");
+    }
+    physical();
+    if (
+      size !== Number(before.size) ||
+      !sameSynchronousFile(before, fstatSync(descriptor, { bigint: true })) ||
+      !sameSynchronousFile(before, lstatSync(path, { bigint: true }))
+    )
+      throw new Error("Git execution file changed during reading");
+    return hash.digest("hex");
+  } finally {
+    closeSync(descriptor);
+  }
+}
+
+/** The admitted wrapper has a fixed relation; unknown layouts keep their original dispatch. */
+export function synchronousGitInstallation(candidate: string): WindowsGitInstallation | null {
+  if (!/^[A-Za-z]:[/\\]/u.test(candidate) || /[\r\n\0]/u.test(candidate)) return null;
+  // Prefer the complete runtime suffix over its shorter trailing bin suffix.
+  const match = /^(.*?)\\(?:ucrt64\\libexec\\git-core|ucrt64\\bin|cmd|bin)\\git\.exe$/iu.exec(
+    win32.normalize(candidate),
+  );
+  const root = match?.[1];
+  if (!root) return null;
+  const core = win32.join(root, "ucrt64/libexec/git-core");
+  return {
+    root,
+    runtime: "ucrt64",
+    core,
+    launcher: win32.join(root, "cmd/git.exe"),
+    payload: win32.join(core, "git.exe"),
+  };
+}
+
+/** Dispatch only: complete verification prerequisites still belong to their existing live boundary. */
+export type SynchronousGitExecution = Pick<GitExecution, "executable" | "env" | "mode" | "reason">;
+
+/** No subprocess discovery, digest memoization, fallback retry or process-global environment change. */
+export function resolveGitExecutionSync(
+  root: string,
+  input: unknown = process.env,
+): SynchronousGitExecution {
+  const env = environmentCopy(input, process.platform === "win32");
+  const fallback = (reason: string): SynchronousGitExecution => ({
+    executable: "git",
+    env,
+    mode: "canonical",
+    reason,
+  });
+  if (process.platform !== "win32") return { executable: "git", env, mode: "posix", reason: null };
+  const candidate = which("git", { PATH: valueOf(env, "PATH") ?? "", cwd: root });
+  if (!candidate) return fallback("canonical-discovery-unavailable");
+  const installation = synchronousGitInstallation(candidate);
+  if (!installation) return fallback("already-direct-or-unsupported-layout");
+  try {
+    // Deduplicate aliases within this one observation; every later call reads complete bytes again.
+    const inspected = new Map<string, string>();
+    const hash = (path: string, maximum?: number): string => {
+      const key = win32.normalize(path).toLowerCase();
+      const known = inspected.get(key);
+      if (known !== undefined) return known;
+      const value = gitFileFingerprintSync(path, maximum);
+      inspected.set(key, value);
+      return value;
+    };
+    const selected = hash(candidate),
+      launcherSha256 = hash(installation.launcher);
+    const payloadSha256 = hash(installation.payload);
+    const runtimePayload = win32.join(installation.root, "ucrt64/bin/git.exe");
+    const runtimePayloadSha256 = hash(runtimePayload);
+    const direct = samePath(candidate, installation.payload) || samePath(candidate, runtimePayload);
+    if (selected !== (direct ? gitPayloadProfile.payloadSha256 : gitPayloadProfile.launcherSha256))
+      return fallback("unsupported-selected-wrapper");
+    let wrapperConfigPresent = true;
+    const configuration = win32.join(installation.root, "etc/git-bash.config");
+    try {
+      lstatSync(configuration);
+    } catch (error) {
+      if (!(error instanceof Error && "code" in error && error.code === "ENOENT")) throw error;
+      wrapperConfigPresent = false;
+    }
+    const wrapperConfigSha256 = wrapperConfigPresent ? hash(configuration, 1024 * 1024) : undefined;
+    const selectedEnvironment = selectGitEnvironment(installation, env, {
+      launcherSha256,
+      payloadSha256,
+      runtimePayloadSha256,
+      wrapperConfigPresent,
+      ...(wrapperConfigSha256 === undefined ? {} : { wrapperConfigSha256 }),
+    });
+    if (selectedEnvironment.mode !== "payload")
+      return fallback(selectedEnvironment.reason ?? "unsupported-profile");
+    for (const directory of [
+      win32.join(installation.root, "ucrt64/bin"),
+      win32.join(installation.root, "usr/bin"),
+    ]) {
+      const info = lstatSync(directory);
+      if (
+        !info.isDirectory() ||
+        info.isSymbolicLink() ||
+        !samePath(realpathSync.native(directory), directory)
+      )
+        throw new Error("Git runtime directories must be physical");
+    }
+    // Hooks may already select the actual payload. Preserve that exact environment instead of translating twice.
+    return direct
+      ? { executable: "git", env, mode: "payload", reason: null }
+      : {
+          executable: selectedEnvironment.executable,
+          env: selectedEnvironment.env,
+          mode: "payload",
+          reason: null,
+        };
+  } catch {
+    return fallback("canonical-inspection-incomplete");
+  }
 }

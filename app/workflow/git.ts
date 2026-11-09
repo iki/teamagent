@@ -325,6 +325,71 @@ export async function commonDirectoryAndBranch(
     throw new Error("Repository binding observation is malformed or exceeds bounds");
   }
 }
+
+export type RepositoryDirectories = {
+  readonly root: string;
+  readonly directory: string;
+  readonly gitDirectory: string;
+};
+export type RepositoryObservation = RepositoryDirectories & { readonly branch: string | null };
+const repositoryPath = Schema.NonEmptyString.check(
+  Schema.isMaxLength(4096),
+  Schema.isPattern(/^[^\p{Cc}]+$/u),
+);
+const repositoryDirectoryArguments = [
+  "rev-parse",
+  "--path-format=absolute",
+  "--show-toplevel",
+  "--git-common-dir",
+  "--absolute-git-dir",
+] as const;
+function repositoryRows(input: unknown): string[] {
+  const text = Schema.decodeUnknownSync(Schema.String.check(Schema.isMaxLength(16 * 1024)))(input);
+  if (Buffer.byteLength(text) > 16 * 1024 || !text.endsWith("\n") || /[\r\0]/u.test(text))
+    throw new Error("Invalid repository observation framing");
+  return text.slice(0, -1).split("\n");
+}
+function repositoryDirectoriesOf(
+  root: string,
+  directory: string,
+  gitDirectory: string,
+): RepositoryDirectories {
+  if (![root, directory, gitDirectory].every(isAbsolute))
+    throw new Error("Repository observation requires absolute native paths");
+  return { root, directory, gitDirectory };
+}
+/** One fresh native observation; primary discovery does not require a born HEAD. */
+export async function repositoryDirectories(git: Git): Promise<RepositoryDirectories> {
+  const response = await git(repositoryDirectoryArguments);
+  try {
+    const [root, directory, gitDirectory] = Schema.decodeUnknownSync(
+      Schema.Tuple([repositoryPath, repositoryPath, repositoryPath]),
+    )(repositoryRows(response), { onExcessProperty: "error" });
+    return repositoryDirectoriesOf(root, directory, gitDirectory);
+  } catch {
+    throw new Error("Repository directory observation is malformed or exceeds bounds");
+  }
+}
+/** Linked ownership also binds the native branch in that same fresh invocation. */
+export async function repositoryAndBranch(git: Git): Promise<RepositoryObservation> {
+  const response = await git([...repositoryDirectoryArguments, "--symbolic-full-name", "HEAD"]);
+  try {
+    const [root, directory, gitDirectory, ref] = Schema.decodeUnknownSync(
+      Schema.Tuple([
+        repositoryPath,
+        repositoryPath,
+        repositoryPath,
+        Schema.NonEmptyString.check(Schema.isMaxLength(1024)),
+      ]),
+    )(repositoryRows(response), { onExcessProperty: "error" });
+    return {
+      ...repositoryDirectoriesOf(root, directory, gitDirectory),
+      branch: symbolicBranch(ref),
+    };
+  } catch {
+    throw new Error("Repository branch observation is malformed or exceeds bounds");
+  }
+}
 export async function destinationObservation(
   git: Git,
   policy: Policy,

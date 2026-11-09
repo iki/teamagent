@@ -16,6 +16,8 @@ import { basename, dirname, isAbsolute, join, relative, resolve } from "node:pat
 import { fileURLToPath } from "node:url";
 import { Schema } from "effect";
 import { boundedRead, fileDigest, hasCode, safePath, withCacheLock } from "./cache-io.ts";
+import { copyFileContent, UnconfirmedArtifactCopy } from "./cache-fingerprint.ts";
+import { nativeArtifactOwner, type NativeArtifactOwner } from "./native-artifact-owner.ts";
 import {
   borrowTemporaryWorkspace,
   createTemporaryWorkspace,
@@ -201,6 +203,14 @@ async function windowsSupervisor(
     const inputs = await Promise.allSettled([
       fileDigest(implementationRoot, source, 1024 * 1024),
       fileDigest(implementationRoot, "app/check/owned-process.ts", 1024 * 1024),
+      ...[
+        "native-artifact-owner.ts",
+        "cache-fingerprint.ts",
+        "cache-io.ts",
+        "git-platform.ts",
+        "git-execution.ts",
+        "metadata-lock.ts",
+      ].map((name) => fileDigest(implementationRoot, "app/check/" + name, 1024 * 1024)),
       fileDigest(dirname(compiler), "csc.exe", 64 * 1024 * 1024),
       fileDigest(dirname(compiler), "csc.exe.config", 64 * 1024),
       ...references.map((path) => fileDigest(dirname(path), basename(path), 64 * 1024 * 1024)),
@@ -221,6 +231,36 @@ async function windowsSupervisor(
     );
   };
   const key = await before();
+  const owner = await nativeArtifactOwner(implementationRoot, project);
+  assertWindowsNativePath(join(owner.canonical, nativeDirectory, key, "run.exe"));
+  const inputs = { key, source, compiler, references, before };
+  const canonical = await prepareNativeArtifact(
+    owner.canonical,
+    inputs,
+    owner.validate,
+    samePath(project, owner.canonical) ? observe : undefined,
+  );
+  await owner.validate();
+  if (samePath(project, owner.canonical)) return canonical;
+  const artifact = await inspectOwnedProcessArtifact(owner.canonical, `${nativeDirectory}/${key}`);
+  if (!artifact || !samePath(artifact.path, canonical))
+    throw new Error("Canonical native supervisor disappeared after preparation");
+  return await copyOwnedProcessArtifact(owner, inputs, artifact, observe);
+}
+
+type NativeInputs = {
+  readonly key: string;
+  readonly source: string;
+  readonly compiler: string;
+  readonly references: readonly string[];
+  readonly before: () => Promise<string>;
+};
+async function prepareNativeArtifact(
+  project: string,
+  { key, source, compiler, references, before }: NativeInputs,
+  validateOwner: () => Promise<void>,
+  observe?: OwnedPreparationObserver,
+): Promise<string> {
   await physicalProjectDirectory(project);
   const buildKey = `${process.platform === "win32" ? project.toLowerCase() : project}\0${key}`;
   const existing = builds.get(buildKey);
@@ -234,6 +274,7 @@ async function windowsSupervisor(
     }): Promise<string> => {
       if ((await before()) !== key)
         throw new Error("Native supervisor inputs changed during reuse");
+      await validateOwner();
       await physicalProjectDirectory(project);
       const verified = await inspectOwnedProcessArtifact(project, folder);
       if (
@@ -257,6 +298,7 @@ async function windowsSupervisor(
     if (optimistic) return await reuse(optimistic);
     return await withCacheLock(project, "native-owned-process", async () => {
       await observe?.("locked");
+      await validateOwner();
       await physicalProjectDirectory(project);
       const installed = await inspectOwnedProcessArtifact(project, folder);
       if (installed) return await reuse(installed);
@@ -302,6 +344,7 @@ async function windowsSupervisor(
           throw new Error("Windows owned-process supervisor compilation failed");
         if ((await before()) !== key)
           throw new Error("Native supervisor inputs changed during compilation");
+        await validateOwner();
         await physicalProjectDirectory(project);
         const checksum = await fileDigest(project, pending, 16 * 1024 * 1024);
         await writeFile(await safePath(project, pendingReceipt, true), `${checksum}\n`, {
@@ -346,6 +389,154 @@ async function windowsSupervisor(
       if (failures.length)
         throw new AggregateError(failures, "Native preparation and pending-file cleanup failed");
       if (!executable) throw new Error("Native supervisor preparation returned no artifact");
+      return executable;
+    });
+  })();
+  builds.set(buildKey, build);
+  try {
+    return await build;
+  } finally {
+    builds.delete(buildKey);
+  }
+}
+
+/** Trusted preparation adapter; fixtures bind a real prepared artifact, never CLI/configuration. */
+export async function copyOwnedProcessArtifact(
+  owner: NativeArtifactOwner,
+  { key, before }: Pick<NativeInputs, "key" | "before">,
+  canonical: { readonly path: string; readonly digest: string },
+  observe?: OwnedPreparationObserver,
+): Promise<string> {
+  if (!/^[a-f0-9]{64}$/u.test(key)) throw new Error("Native artifact copy requires a complete key");
+  const project = owner.project,
+    folder = `${nativeDirectory}/${key}`;
+  const buildKey = `${process.platform === "win32" ? project.toLowerCase() : project}\0${key}`;
+  const existing = builds.get(buildKey);
+  const validateCanonical = async (): Promise<void> => {
+    await owner.validate();
+    if ((await before()) !== key)
+      throw new Error("Native supervisor inputs changed during copying");
+    const current = await inspectOwnedProcessArtifact(owner.canonical, folder);
+    if (!current || current.digest !== canonical.digest || !samePath(current.path, canonical.path))
+      throw new Error("Canonical native supervisor changed during copying");
+  };
+  const reuse = async (local: {
+    readonly path: string;
+    readonly digest: string;
+  }): Promise<string> => {
+    await validateCanonical();
+    const current = await inspectOwnedProcessArtifact(project, folder);
+    if (
+      !current ||
+      current.digest !== local.digest ||
+      current.digest !== canonical.digest ||
+      !samePath(current.path, local.path)
+    )
+      throw new Error(
+        "Local native supervisor differs from the canonical artifact; evidence retained",
+      );
+    return current.path;
+  };
+  if (existing) {
+    const path = await existing;
+    const local = await inspectOwnedProcessArtifact(project, folder);
+    if (!local || !samePath(path, local.path))
+      throw new Error("Joined native copy lost its exact artifact");
+    return await reuse(local);
+  }
+  const build = (async () => {
+    let optimistic: Awaited<ReturnType<typeof inspectOwnedProcessArtifact>>;
+    let invalid: { readonly error: unknown } | undefined;
+    try {
+      optimistic = await inspectOwnedProcessArtifact(project, folder);
+    } catch (error) {
+      invalid = { error };
+    }
+    await observe?.(
+      optimistic ? "optimistic-complete" : invalid ? "optimistic-invalid" : "optimistic-absent",
+    );
+    if (optimistic) return await reuse(optimistic);
+    // Canonical preparation and its lock have completed before this local lock.
+    return await withCacheLock(project, "native-owned-process", async () => {
+      await observe?.("locked");
+      await validateCanonical();
+      const installed = await inspectOwnedProcessArtifact(project, folder);
+      if (installed) return await reuse(installed);
+      if (invalid) throw invalid.error;
+      await nativeCapacity(project, key);
+      await mkdir(await safePath(project, folder, true), { recursive: true });
+      const staging = await mkdtemp(join(await safePath(project, nativeDirectory), "copy-"));
+      const stagingRelative = `${nativeDirectory}/${basename(staging)}`;
+      const pending = `${stagingRelative}/run.exe`,
+        pendingReceipt = `${folder}/${randomUUID()}.sha256`;
+      const failures: unknown[] = [];
+      let executable: string | undefined;
+      let copyClosed = true;
+      try {
+        const target = await safePath(project, pending, true);
+        assertWindowsNativePath(target);
+        const checksum = await copyFileContent(
+          canonical.path,
+          await lstat(canonical.path, { bigint: true }),
+          target,
+          {
+            maximumBytes: 16 * 1024 * 1024,
+            validatePaths: async () => {
+              await owner.validate();
+              await safePath(owner.canonical, `${folder}/run.exe`);
+              await safePath(project, pending, true);
+            },
+          },
+        );
+        if (checksum !== canonical.digest) throw new Error("Native supervisor copy digest differs");
+        await validateCanonical();
+        const receipt = await boundedRead(owner.canonical, `${folder}/binary.sha256`, 128);
+        if (new TextDecoder("utf-8", { fatal: true }).decode(receipt) !== `${checksum}\n`)
+          throw new Error("Canonical native supervisor receipt changed before publication");
+        await writeFile(await safePath(project, pendingReceipt, true), receipt, {
+          flag: "wx",
+          mode: 0o600,
+        });
+        await rename(
+          await safePath(project, pending),
+          await safePath(project, `${folder}/run.exe`, true),
+        );
+        await rename(
+          await safePath(project, pendingReceipt),
+          await safePath(project, `${folder}/binary.sha256`, true),
+        );
+        const verified = await inspectOwnedProcessArtifact(project, folder);
+        if (!verified || verified.digest !== checksum)
+          throw new Error("Copied native supervisor failed integrity validation");
+        await validateCanonical();
+        executable = verified.path;
+      } catch (error) {
+        if (error instanceof UnconfirmedArtifactCopy) copyClosed = false;
+        failures.push(error);
+      }
+      if (copyClosed) {
+        for (const path of [pending, pendingReceipt]) {
+          try {
+            await physicalProjectDirectory(project);
+            await unlink(await safePath(project, path, true));
+          } catch (error) {
+            if (!hasCode(error, "ENOENT")) failures.push(error);
+          }
+        }
+        try {
+          await physicalProjectDirectory(project);
+          await rmdir(await safePath(project, stagingRelative));
+        } catch (error) {
+          failures.push(error);
+        }
+      }
+      if (failures.length === 1) throw failures[0];
+      if (failures.length)
+        throw new AggregateError(
+          failures,
+          "Native artifact copying and exact staging cleanup failed",
+        );
+      if (!executable) throw new Error("Native artifact copy returned no executable");
       return executable;
     });
   })();

@@ -155,7 +155,9 @@ certified by the Windows fixtures. New Windows receipts identify
 `windows-job-object`; historical `windows-child-tree` receipts remain readable
 without rewriting them. An unconfirmed termination is a failed hook even if a
 status of zero was observed. The 420-second root and 90-second subagent outer
-budgets remain unchanged; no stale cache lock is automatically reclaimed.
+budgets remain unchanged. Metadata-lock acquisition automatically recovers only
+an exact confirmed-dead same-host owner under [resource ownership](resources.md#metadata-lock-recovery);
+age alone never permits recovery.
 
 Each operation reserves capacity and writes a pending receipt under `.cache/hook-diagnostics/`,
 then retains a completed receipt and LF, redacted log with unique names. Receipts
@@ -169,7 +171,8 @@ reported ownership mechanism confirmed cleanup. A scope label describes the
 configured mechanism, including in pending receipts; it is not proof the process
 started. Historical receipts retain their original, weaker tree-cleanup meaning.
 No receipt certifies unrelated processes or descendants outside its reported
-scope. An unconfirmed result requires process-tree inspection before lock recovery.
+scope. An unconfirmed result retains scratch until process-tree cleanup is
+verified; metadata-lock recovery does not satisfy that separate check.
 New hook diagnostics have a separate 64-MiB, 4096-file, 1024-operation-slot budget.
 A short admission/finalization lock accounts for actual completed files and full
 pending reservations, including temporary-file and metadata allowances. It is

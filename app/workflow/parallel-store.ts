@@ -8,6 +8,7 @@ import {
   remoteHeadOrAbsent,
   remoteMainAndTaskOrAbsent,
   type Git,
+  type RepositoryObservation,
 } from "./git.ts";
 import { Hash, Identity, type Task } from "./model.ts";
 import {
@@ -63,7 +64,7 @@ export async function parallelDirectory(git: Git): Promise<string> {
   const value = (await git(["rev-parse", "--path-format=absolute", "--git-common-dir"])).trim();
   return await checkedParallelDirectory(value);
 }
-async function checkedParallelDirectory(value: string): Promise<string> {
+export async function checkedParallelDirectory(value: string): Promise<string> {
   if (!isAbsolute(value) || value.length > 4096 || /[\r\n\0]/u.test(value))
     throw new Error("Invalid common Git directory");
   if ((await lstat(value)).isSymbolicLink() || !(await lstat(value)).isDirectory())
@@ -216,11 +217,10 @@ export async function assertParallelRegistry(
     async () => await inspectParallelRegistry(directory, reserveBytes, limits),
   );
 }
-export async function assertIntegrationWorkspace(
+async function assertIntegrationLocation(
   git: Git,
   entry: ParallelEntry,
   workspace: string,
-  candidate: Git,
   fast: boolean,
   known?: ParallelLocations,
 ): Promise<void> {
@@ -244,11 +244,46 @@ export async function assertIntegrationWorkspace(
     resolve(await realpath(workspace)) !== resolve(workspace)
   )
     throw new Error("Integration checkout is redirected or belongs to another repository");
-  const observed = await commonDirectoryAndBranch(candidate);
+}
+async function assertIntegrationBinding(
+  git: Git,
+  entry: ParallelEntry,
+  observed: { readonly directory: string; readonly branch: string | null },
+  fast: boolean,
+  known?: ParallelLocations,
+): Promise<void> {
   if ((await checkedParallelDirectory(observed.directory)) !== (await registryAddress(git, known)))
     throw new Error("Integration checkout is redirected or belongs to another repository");
   if (fast ? observed.branch !== entry.branch : observed.branch !== null)
     throw new Error("Integration requires the original task branch or a detached owned candidate");
+}
+/** Ordinary workflow calls retain their original fresh native query and ordering. */
+export async function assertIntegrationWorkspace(
+  git: Git,
+  entry: ParallelEntry,
+  workspace: string,
+  candidate: Git,
+  fast: boolean,
+  known?: ParallelLocations,
+): Promise<void> {
+  await assertIntegrationLocation(git, entry, workspace, fast, known);
+  const observed = await commonDirectoryAndBranch(candidate);
+  await assertIntegrationBinding(git, entry, observed, fast, known);
+}
+/** Trusted host composition only: consume a fresh observation from this exact
+ * constructor. Never persist it, accept it from configuration, or reuse it later. */
+export async function assertObservedIntegrationWorkspace(
+  git: Git,
+  entry: ParallelEntry,
+  workspace: string,
+  observed: RepositoryObservation,
+  fast: boolean,
+  known: ParallelLocations,
+): Promise<void> {
+  if (resolve(observed.root) !== resolve(workspace))
+    throw new Error("Observed integration checkout differs from its native repository root");
+  await assertIntegrationLocation(git, entry, workspace, fast, known);
+  await assertIntegrationBinding(git, entry, observed, fast, known);
 }
 export async function validateParallelTask(
   root: string,

@@ -1,18 +1,7 @@
 import { createHash, randomUUID } from "node:crypto";
-import { hostname } from "node:os";
-import {
-  link,
-  lstat,
-  mkdir,
-  open,
-  opendir,
-  rename,
-  rmdir,
-  unlink,
-  writeFile,
-} from "node:fs/promises";
+import { link, lstat, mkdir, open, opendir, rename, unlink, writeFile } from "node:fs/promises";
 import { dirname, join, relative, resolve, isAbsolute } from "node:path";
-import { Schema } from "effect";
+import { withMetadataLock } from "../check/metadata-lock.ts";
 
 export const digest = (value: string | Uint8Array): string =>
   createHash("sha256").update(value).digest("hex");
@@ -158,48 +147,22 @@ export async function exclusiveText(path: string, content: string): Promise<void
   }
 }
 
-const Owner = Schema.Struct({ token: Schema.String, pid: Schema.Int, hostname: Schema.String });
-/** No automatic reclamation: even a dead owner requires explicit operator recovery. */
+/** Confirmed absent owners are retained in quarantine before a new exclusive acquisition. */
 export async function withLock<T>(
   directory: string,
   action: () => Promise<T>,
   waitMs = 5000,
 ): Promise<T> {
-  await mkdir(dirname(directory), { recursive: true });
-  const owner = { token: randomUUID(), pid: process.pid, hostname: hostname() };
-  const ownerPath = join(directory, "owner.json");
-  const began = Date.now();
-  let acquired = false;
-  while (!acquired) {
-    try {
-      await mkdir(directory);
-      await writeFile(ownerPath, JSON.stringify(owner) + "\n", { flag: "wx", mode: 0o600 });
-      acquired = true;
-    } catch (error) {
-      if (!(error instanceof Error && "code" in error && error.code === "EEXIST")) throw error;
-      if (Date.now() - began >= waitMs)
-        throw new Error("Workflow locked; inspect owner before recovery");
-      await new Promise<void>((done) => setTimeout(done, 25));
-    }
-  }
-  let result: { ok: true; value: T } | { ok: false; error: unknown };
-  try {
-    result = { ok: true, value: await action() };
-  } catch (error) {
-    result = { ok: false, error };
-  }
-  try {
-    const current = Schema.decodeUnknownSync(Schema.fromJsonString(Owner))(
-      await boundedText(ownerPath, 4096),
-    );
-    if (current.token !== owner.token) throw new Error("Workflow lock ownership changed");
-    await unlink(ownerPath);
-    await rmdir(directory);
-  } catch (error) {
-    if (!result.ok)
-      throw new AggregateError([result.error, error], "Workflow and lock release failed");
-    throw error;
-  }
-  if (!result.ok) throw result.error;
-  return result.value;
+  return withMetadataLock(directory, action, { waitMs });
+}
+
+/** Public archive and strict diagnostic directories retain recovery evidence in the project's owned cache. */
+export async function withWorkflowLock<T>(
+  root: string,
+  directory: string,
+  action: () => Promise<T>,
+  waitMs = 5000,
+): Promise<T> {
+  const evidenceRoot = await containedPath(root, ".cache/workflow/.lock-recovery");
+  return withMetadataLock(directory, action, { waitMs, evidenceRoot });
 }

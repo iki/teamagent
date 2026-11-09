@@ -119,9 +119,12 @@ an uncertain external publication, which remains an explicit operator task.
 
 Task state and diagnostic logs stay in owned ignored caches. Bound their sizes, versions, paths, queue depths and lifetimes. Use exclusive locks and token-checked release. Lock age alone never proves that a live, foreign or unknown owner is dead. Recovery requires evidence or an explicit operator decision.
 
-The implementation does not automatically reclaim any leftover lock, including
-a dead owner's lock, or prune evidence. Inspect ownership before explicit
-recovery. State files are limited to 8 MiB. The workflow cache is bounded by
+Native lock acquisition automatically quarantines only a complete physical
+same-host owner whose PID is affirmatively absent. Exact original bytes and
+recovery records remain retained; live, reused, foreign, malformed and unknown
+owners remain protected. The [resource contract](resources.md#metadata-lock-recovery)
+owns the bounded atomic protocol. Reacquiring a lock never resets task state or
+completes an interrupted publication. State files are limited to 8 MiB. The workflow cache is bounded by
 256 MiB, 20,000 files, 128 directories and depth four. Each task permits at most
 64 revision receipts, each at most 16 MiB, within that aggregate budget. Limit
 failures retain existing evidence. The archive has its own 8 MiB input/output

@@ -1,6 +1,6 @@
 import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { expect, test } from "bun:test";
-import { rejects } from "node:assert/strict";
+import { ok, rejects } from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import {
@@ -42,6 +42,13 @@ import {
 import { version } from "../package.json";
 import { testBatches, testConcurrency, scheduleTestBatches } from "../app/check/test-groups.ts";
 import { diagnostic, runProcess } from "../app/workflow/process.ts";
+
+function aggregateErrors(error: unknown, message: string): readonly unknown[] {
+  ok(error instanceof AggregateError);
+  expect(error.message).toBe(message);
+  const errors: readonly unknown[] = error.errors;
+  return errors;
+}
 
 function git(root: string, args: readonly string[]): string {
   const result = spawnSync(
@@ -494,7 +501,14 @@ test("explicit invalidation revokes retained evidence even when current inputs c
     await runCachedTask(root, task, run, { receiptWritePolicy: "local" });
     await rm(input);
     await mkdir(input);
-    await rejects(invalidateCachedTask(root, task), /Unsupported verification input/u);
+    await rejects(invalidateCachedTask(root, task), (error: unknown) => {
+      const errors = aggregateErrors(error, "Verification invalidation was not fully confirmed");
+      expect(errors).toHaveLength(1);
+      const original = errors[0];
+      ok(original instanceof Error);
+      expect(original.message).toBe("Unsupported verification input: input.ts");
+      return true;
+    });
     await rm(input, { recursive: true });
     await writeFile(input, "export const value = 1;\n", "utf8");
     expect((await runCachedTask(root, task, run, { receiptWritePolicy: "tracked" })).hit).toBe(
@@ -522,21 +536,58 @@ test("legacy rejections remain effective and bounded rejection overflow blocks r
     expect(calls).toBe(2);
     const keys = Array.from({ length: 256 }, (_, index) => encodedDigest(["rejected", index]));
     await writeFile(rejectionPath, `${JSON.stringify({ version: 2, keys })}\n`, "utf8");
+    const failure = new Error("Fresh failure must not revive retained evidence");
     await rejects(
       runCachedTask(
         root,
         task,
         async () => {
-          throw new Error("Fresh failure must not revive retained evidence");
+          throw failure;
         },
         { forceFresh: true, receiptWritePolicy: "local" },
       ),
-      /rejection history exceeds bounds/u,
+      (error: unknown) => {
+        const errors = aggregateErrors(
+          error,
+          "Verification failed; one or more rejection updates were unconfirmed",
+        );
+        expect(errors).toHaveLength(2);
+        expect(errors[0]).toBe(failure);
+        const updates = aggregateErrors(
+          errors[1],
+          "Verification rejection updates were unconfirmed",
+        );
+        expect(updates).toHaveLength(1);
+        const overflow = updates[0];
+        ok(overflow instanceof Error);
+        expect(overflow.message).toBe(
+          "Verification rejection history exceeds bounds; inspect retained receipts",
+        );
+        return true;
+      },
     );
     expect(await readFile(rejectionPath, "utf8")).toBe('{"version":2,"blocked":true}\n');
     await rejects(
       runCachedTask(root, task, run, { receiptWritePolicy: "local" }),
-      /history is blocked/u,
+      (error: unknown) => {
+        const errors = aggregateErrors(
+          error,
+          "Verification failed; one or more rejection updates were unconfirmed",
+        );
+        expect(errors).toHaveLength(2);
+        const updates = aggregateErrors(
+          errors[1],
+          "Verification rejection updates were unconfirmed",
+        );
+        expect(updates).toHaveLength(1);
+        for (const blocked of [errors[0], updates[0]]) {
+          ok(blocked instanceof Error);
+          expect(blocked.message).toBe(
+            "Verification rejection history is blocked; inspect retained receipts",
+          );
+        }
+        return true;
+      },
     );
     expect(calls).toBe(3);
   } finally {
@@ -1502,6 +1553,7 @@ test("audited cache batch waits for a slot without exceeding the three-worker ca
     "test/import-http-cache.test.ts",
     "test/research-git.test.ts",
     "test/workflow.test.ts",
+    "test/workflow-revisions.test.ts",
     "test/analysis-sync.test.ts",
     "test/verification-cache.test.ts",
   ];
@@ -1509,7 +1561,7 @@ test("audited cache batch waits for a slot without exceeding the three-worker ca
     testBatches(files).map((batch) => [batch.name, Promise.withResolvers<void>()] as const),
   );
   const analysisStarted = Promise.withResolvers<void>();
-  const workflowStarted = Promise.withResolvers<void>();
+  const revisionsStarted = Promise.withResolvers<void>();
   const cacheStarted = Promise.withResolvers<void>();
   const started: string[] = [];
   const completed: string[] = [];
@@ -1525,7 +1577,7 @@ test("audited cache batch waits for a slot without exceeding the three-worker ca
     if (!gate) throw new Error("Unexpected audited fixture batch");
     maximum = Math.max(maximum, ++active);
     started.push(batch.name);
-    if (batch.name === "test/workflow.test.ts") workflowStarted.resolve();
+    if (batch.name === "test/workflow-revisions.test.ts") revisionsStarted.resolve();
     if (batch.name === "test/analysis-sync.test.ts") analysisStarted.resolve();
     if (batch.name === "test/verification-cache.test.ts") cacheStarted.resolve();
     await gate.promise;
@@ -1536,15 +1588,15 @@ test("audited cache batch waits for a slot without exceeding the three-worker ca
     expect(started).toEqual(["test/research-git.test.ts"]);
     expect(active).toBe(1);
     finish("test/research-git.test.ts");
-    await workflowStarted.promise;
+    await revisionsStarted.promise;
     expect(started).toEqual([
       "test/research-git.test.ts",
       "remaining",
-      "http-and-memory-cli",
       "test/workflow.test.ts",
+      "test/workflow-revisions.test.ts",
     ]);
     expect(started).not.toContain("test/verification-cache.test.ts");
-    finish("http-and-memory-cli");
+    finish("test/workflow-revisions.test.ts");
     await cacheStarted.promise;
     expect(started).not.toContain("test/analysis-sync.test.ts");
     finish("test/verification-cache.test.ts");

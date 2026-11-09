@@ -102,6 +102,123 @@ export async function fileContentDigest(
   });
 }
 
+export class UnconfirmedArtifactCopy extends AggregateError {}
+
+/** Exclusive derived-artifact copy, sharing the fingerprint reader/queue budget. */
+export async function copyFileContent(
+  source: string,
+  expected: BigIntStats,
+  target: string,
+  options: {
+    readonly maximumBytes: number;
+    readonly validatePaths: () => Promise<void>;
+    readonly observe?: FingerprintObserver;
+  },
+): Promise<string> {
+  if (
+    !isAbsolute(source) ||
+    !isAbsolute(target) ||
+    source === target ||
+    !Number.isSafeInteger(options.maximumBytes) ||
+    options.maximumBytes < 0
+  )
+    throw new Error("Artifact copy requires distinct absolute paths and a bounded byte limit");
+  return withReadPermit(async () => {
+    if (
+      !expected.isFile() ||
+      expected.isSymbolicLink() ||
+      expected.nlink !== 1n ||
+      expected.size > BigInt(options.maximumBytes)
+    )
+      throw new Error("Artifact copy source is not a bounded private regular file");
+    await options.validatePaths();
+    await options.observe?.({ path: source, phase: "before-open", bytes: 0 });
+    const input = await open(source, "r");
+    let output: Awaited<ReturnType<typeof open>> | undefined;
+    let failure: { readonly error: unknown } | undefined;
+    let copied: string | undefined;
+    try {
+      const before = await input.stat({ bigint: true });
+      if (!sameFile(expected, before) || before.nlink !== 1n)
+        throw new Error("Artifact copy source changed before opening");
+      output = await open(target, "wx", 0o600);
+      await options.observe?.({ path: source, phase: "opened", bytes: 0 });
+      const chunk = new Uint8Array(fingerprintChunkBytes),
+        hash = createHash("sha256");
+      const size = Number(before.size);
+      let offset = 0;
+      while (offset < size) {
+        const part = await input.read(chunk, 0, Math.min(chunk.length, size - offset), offset);
+        if (!part.bytesRead) throw new Error("Artifact copy source changed during reading");
+        hash.update(chunk.subarray(0, part.bytesRead));
+        let written = 0;
+        while (written < part.bytesRead) {
+          const result = await output.write(
+            chunk,
+            written,
+            part.bytesRead - written,
+            offset + written,
+          );
+          if (!result.bytesWritten) throw new Error("Artifact copy made no write progress");
+          written += result.bytesWritten;
+        }
+        offset += part.bytesRead;
+        await options.observe?.({ path: source, phase: "read", bytes: part.bytesRead });
+      }
+      const extra = await input.read(chunk, 0, 1, offset);
+      const after = await input.stat({ bigint: true }),
+        current = await lstat(source, { bigint: true });
+      const produced = await output.stat({ bigint: true }),
+        targetNow = await lstat(target, { bigint: true });
+      if (
+        extra.bytesRead ||
+        !sameFile(before, after) ||
+        !sameFile(before, current) ||
+        after.nlink !== 1n ||
+        current.nlink !== 1n ||
+        produced.nlink !== 1n ||
+        targetNow.nlink !== 1n ||
+        produced.size !== before.size ||
+        !sameFile(produced, targetNow)
+      )
+        throw new Error("Artifact copy inputs or output changed during copying");
+      await options.validatePaths();
+      copied = hash.digest("hex");
+    } catch (error) {
+      failure = { error };
+    }
+    const failures: unknown[] = [];
+    try {
+      await output?.close();
+    } catch (error) {
+      failures.push(error);
+    }
+    try {
+      await input.close();
+    } catch (error) {
+      failures.push(error);
+    }
+    if (failures.length)
+      throw new UnconfirmedArtifactCopy(
+        failure ? [failure.error, ...failures] : failures,
+        "Artifact copy descriptor closure is unconfirmed; staging must be retained",
+      );
+    try {
+      await options.observe?.({ path: source, phase: "closed", bytes: 0 });
+    } catch (error) {
+      if (failure)
+        throw new AggregateError(
+          [failure.error, error],
+          "Artifact copy and its closure observer failed",
+        );
+      throw error;
+    }
+    if (failure) throw failure.error;
+    if (copied === undefined) throw new Error("Artifact copy produced no confirmed digest");
+    return copied;
+  });
+}
+
 /** Preserve JSON.stringify(rows) identity without retaining the complete encoded array. */
 export function inventoryDigest(): {
   readonly record: (row: readonly string[]) => void;

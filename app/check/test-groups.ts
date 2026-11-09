@@ -57,13 +57,16 @@ const workflowBatchNames = new Set([
 ]);
 // Research runs first and alone; then fill free slots with compatible audited batches.
 // Heavy Git scenarios cap all active batches at two; other work retains the overall cap.
+// Longer ordinary groups lead the fixed queue to reduce the gap between heavy admissions.
+// This priority changes neither group membership nor live resource admission.
 const auditedGroups: readonly TestBatch[] = [
   research,
-  parallelBootstrap,
-  {
-    name: "http-and-memory-cli",
-    files: ["test/import-http-cache.test.ts", "test/memory-cli-mcp.test.ts"],
-  },
+  workflow,
+  revisions,
+  single("test/verification-cache.test.ts"),
+  single("test/analysis-sync.test.ts"),
+  single("test/pre-commit.test.ts"),
+  single("test/imports.test.ts"),
   {
     name: "owned-launchers",
     files: [
@@ -74,12 +77,11 @@ const auditedGroups: readonly TestBatch[] = [
       "test/project-environment.test.ts",
     ],
   },
-  workflow,
-  revisions,
-  single("test/verification-cache.test.ts"),
-  single("test/pre-commit.test.ts"),
-  single("test/analysis-sync.test.ts"),
-  single("test/imports.test.ts"),
+  parallelBootstrap,
+  {
+    name: "http-and-memory-cli",
+    files: ["test/import-http-cache.test.ts", "test/memory-cli-mcp.test.ts"],
+  },
   ...parallelGroups,
 ];
 const batchLabels = new Set(["all", "remaining", ...auditedGroups.map((batch) => batch.name)]);

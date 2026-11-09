@@ -111,14 +111,14 @@ await test("frozen scope and unrelated partial staging cannot bypass publication
   await assert.rejects(f.call({ operation: "publish" }), /Unreviewed|Checkpoint/);
 });
 
-await test("live, foreign and dead lock owners require explicit recovery and are never stolen", async () => {
+await test("live, reused and foreign lock owners are never stolen", async () => {
   const root = await directory();
   const lock = join(root, "lock");
   await mkdir(lock);
   for (const owner of [
     { token: "live", pid: process.pid, hostname: hostname(), startedAt: 0 },
     { token: "foreign", pid: 999999, hostname: "other-host", startedAt: 0 },
-    { token: "dead", pid: 999999, hostname: hostname(), startedAt: 0 },
+    { token: "reused", pid: process.pid, hostname: hostname(), startedAt: 0 },
   ]) {
     await writeFile(join(lock, "owner.json"), JSON.stringify(owner) + "\n");
     await assert.rejects(

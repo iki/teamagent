@@ -15,6 +15,10 @@ Keep publication authorization, required live checks, external state, and signin
 
 Separate source-writing steps from read-only review. Route ordinary final checks to an allowed local receipt store when tracked receipt writes would change the candidate under review. Receipt storage location must not alter coverage or eligibility. Never stage a newly changed receipt as a substitute for verifying the resulting complete tree.
 
+For cross-worktree reuse, resolve a repository-owned shared result store through validated Git common-directory and worktree ownership. Key results by the complete verification identity, independent of branch name or checkout path where those are not consumed inputs. Keep repositories separate, and keep mutable outputs, scratch, logs and publication proofs with their owners. Shared storage does not make different source, environment or native-tool bytes equivalent.
+
+Concurrent writers need atomic bounded state transitions. Starting fresh work invalidates older success for that key; a later failure must prevent an earlier run from restoring reusable success. Preserve unfinished and failed evidence. A later complete fresh execution may supersede an interrupted execution through the validated protocol, without reclaiming unknown locks. Recheck inputs before accepting any hit, including a shared hit.
+
 Only successful, completely terminated work can publish reusable success. Failures invalidate matching success and retain bounded diagnostic/rejection evidence. Missing or corrupt outputs invalidate build hits. Partial test batches are not complete-suite success; narrower reuse requires an explicit dependency graph with complete coverage and separately validated receipts.
 
 Preserve every required test, its deadline, the shared phase budget, and resource admission. Optimize repeated hashing, command dispatch, and independent work only when equivalence remains checked. Measure cold and warm runs separately using actual runtime versions. A faster cache lookup is not evidence of faster tests or independently verified task correctness.

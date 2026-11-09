@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import {
   access,
+  appendFile,
+  copyFile,
   mkdir,
   readFile,
   readdir,
@@ -30,10 +32,33 @@ import {
 } from "../app/check/toolchain.ts";
 import { createTemporaryWorkspace } from "../app/check/temporary-workspace.ts";
 import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
+import { inventory } from "../app/check/cache-io.ts";
 
 const repository = fileURLToPath(new URL("../", import.meta.url));
 const pins = toolchainPins(repository);
 const entry = join(repository, "app/check/project-launch.ts");
+
+await test("exported launcher closure invalidates when only artifact topology, Git platform or lock behavior changes", async () => {
+  const root = await mkdtemp("launcher-closure-");
+  const changed = [
+    "app/check/native-artifact-owner.ts",
+    "app/check/git-platform.ts",
+    "app/check/git-execution.ts",
+    "app/check/metadata-lock.ts",
+  ];
+  // Copy the changed files independently too: an omitted exported input must
+  // fail this invalidation check rather than vanish from the fixture.
+  for (const path of new Set([...projectLauncherInputs, ...changed])) {
+    await mkdir(dirname(join(root, path)), { recursive: true });
+    await copyFile(join(repository, path), join(root, path));
+  }
+  for (const path of changed) {
+    const before = await inventory(root, projectLauncherInputs, true);
+    await appendFile(join(root, path), "\n// Isolated fixture helper change.\n", "utf8");
+    assert.notEqual(await inventory(root, projectLauncherInputs, true), before);
+  }
+});
+
 async function project(directory?: string): Promise<string> {
   const root = directory ?? (await mkdtemp("pl-"));
   await writeFile(join(root, ".bun-version"), `${pins.bun}\n`, "utf8");
