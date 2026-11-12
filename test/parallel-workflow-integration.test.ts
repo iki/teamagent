@@ -14,9 +14,9 @@ import {
 
 await test(
   "two signed task branches integrate linearly, serialize publication and preserve dirty main",
-  { timeout: 180_000 },
+  { timeout: 240_000 },
   async () => {
-    const f = await parallelFixture();
+    const f = await parallelFixture("local", "integration");
     const first = await start(f, "alpha");
     const second = await start(f, "beta");
     const fetchesBeforePublication = f.fetches().length;

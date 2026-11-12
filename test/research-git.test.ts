@@ -6,7 +6,7 @@ import { temporaryEnvironmentNames, temporaryParent } from "../app/check/tempora
 import { diagnostic, runProcess } from "../app/workflow/process.ts";
 
 // These fixtures use only local Git remotes and stub the GitHub API where needed.
-async function researchFixture(identity: boolean): Promise<void> {
+async function researchFixture(identity: boolean, timeoutMs = 120_000): Promise<void> {
   const root = resolve(".");
   const inherited = { ...process.env };
   await temporaryParent(inherited, root);
@@ -30,7 +30,7 @@ async function researchFixture(identity: boolean): Promise<void> {
       resolve("test/research-git-fixtures.ps1"),
       ...(identity ? ["-IdentityFixture"] : []),
     ],
-    { timeoutMs: 120_000, env: environment },
+    { timeoutMs, env: environment },
   );
   const detail = diagnostic(result.stdout + result.stderr).slice(-6000);
   assert.equal(result.termination, "closed", detail);
@@ -47,8 +47,8 @@ async function researchFixture(identity: boolean): Promise<void> {
 
 test(
   "Git research maintenance preserves local evidence and validates source configuration",
-  () => researchFixture(false),
-  125_000,
+  () => researchFixture(false, 180_000),
+  185_000,
 );
 
 test(

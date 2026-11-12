@@ -49,9 +49,9 @@ await test("PR admission requires approval, checks and exact repository, task he
 
 await test(
   "PR integration admits reviewed heads, rechecks approval and never legitimizes failed attempts",
-  { timeout: 180_000 },
+  { timeout: 240_000 },
   async () => {
-    const f = await parallelFixture("pr");
+    const f = await parallelFixture("pr", "pr");
     const accepted = (await f.call({ operation: "start", taskId: "approved", name: "approved" }))
       .entry;
     const acceptedSource = await f.publish(

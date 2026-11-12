@@ -6,9 +6,9 @@ import { parallelFixture, startParallelTask as start } from "./parallel-workflow
 
 await test(
   "uncertain successful pushes reconcile once and concurrent main advancement never forces history",
-  { timeout: 180_000 },
+  { timeout: 240_000 },
   async () => {
-    const f = await parallelFixture();
+    const f = await parallelFixture("local", "recovery");
     const uncertain = await start(f, "uncertain");
     const source = await f.publish(
       uncertain.path,

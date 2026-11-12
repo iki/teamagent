@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { writeSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { GitFailure, type Git } from "../app/workflow/git.ts";
@@ -10,22 +11,104 @@ export type ParallelHost = NonNullable<Parameters<typeof parallelWorkflow>[2]>;
 export const parallelIdentity = { sessionId: "parallel-fixture", taskId: "parallel-task" };
 
 /** All Git effects use a private bare remote; only its approved URL observation is substituted. */
-export async function parallelFixture(mode: "local" | "pr" = "local") {
-  const f = await fixture();
-  await writeFile(
-    join(f.repo, ".workflow.json"),
-    JSON.stringify({
-      version: 2,
-      repository: "github.com/iki/teamagent",
-      remote: "origin",
-      ref: "refs/heads/main",
-      mode,
-    }) + "\n",
-  );
-  await f.git(["add", "--", ".workflow.json"]);
-  await f.git(["commit", "--gpg-sign", "-m", "test: Configure isolated parallel workflow"]);
-  await f.git(["push", "origin", "HEAD:refs/heads/main"]);
-  const base = (await f.git(["rev-parse", "HEAD"])).trim();
+export async function parallelFixture(
+  mode: "local" | "pr" = "local",
+  diagnosticLabel?: "integration" | "failures" | "recovery" | "pr",
+) {
+  type Stage =
+    | "fixture"
+    | "configure"
+    | "git"
+    | "publication"
+    | "start"
+    | "status"
+    | "prepare"
+    | "integrate"
+    | "reconcile"
+    | "begin"
+    | "checkpoint"
+    | "verify"
+    | "publish"
+    | "operation"
+    | "main"
+    | "advance-main"
+    | "signature";
+  const origin = diagnosticLabel === undefined ? 0 : performance.now();
+  let sequence = 0;
+  let records = 0;
+  const emit = (record: object): void => {
+    if (diagnosticLabel === undefined || records > 1024) return;
+    const bounded = records === 1024 ? { fixture: diagnosticLabel, truncated: true } : record;
+    records++;
+    try {
+      writeSync(2, `[parallel-fixture] ${JSON.stringify(bounded)}\n`);
+    } catch {
+      // Diagnostic transport must never replace an operation's result or original error.
+    }
+  };
+  const timed = <T>(stage: Stage, action: () => Promise<T>): Promise<T> => {
+    if (diagnosticLabel === undefined || records > 1024) return action();
+    const current = ++sequence;
+    const started = performance.now();
+    const note = (state: "start" | "end" | "fail"): void =>
+      emit({
+        fixture: diagnosticLabel,
+        sequence: current,
+        stage,
+        state,
+        elapsedMs: Math.round(performance.now() - origin),
+        stageMs: Math.round(performance.now() - started),
+      });
+    note("start");
+    try {
+      return action().then(
+        (value) => {
+          note("end");
+          return value;
+        },
+        (error: unknown) => {
+          note("fail");
+          throw error;
+        },
+      );
+    } catch (error) {
+      note("fail");
+      throw error;
+    }
+  };
+  const operationStage = (operation: unknown): Stage => {
+    switch (operation) {
+      case "start":
+      case "status":
+      case "prepare":
+      case "integrate":
+      case "reconcile":
+      case "begin":
+      case "checkpoint":
+      case "verify":
+      case "publish":
+        return operation;
+      default:
+        return "operation";
+    }
+  };
+  const f = await timed("fixture", () => fixture());
+  const base = await timed("configure", async () => {
+    await writeFile(
+      join(f.repo, ".workflow.json"),
+      JSON.stringify({
+        version: 2,
+        repository: "github.com/iki/teamagent",
+        remote: "origin",
+        ref: "refs/heads/main",
+        mode,
+      }) + "\n",
+    );
+    await f.git(["add", "--", ".workflow.json"]);
+    await f.git(["commit", "--gpg-sign", "-m", "test: Configure isolated parallel workflow"]);
+    await f.git(["push", "origin", "HEAD:refs/heads/main"]);
+    return (await f.git(["rev-parse", "HEAD"])).trim();
+  });
   const attempts: string[][] = [];
   const fetches: string[] = [];
   const installations: string[] = [];
@@ -37,7 +120,7 @@ export async function parallelFixture(mode: "local" | "pr" = "local") {
   const rawGit =
     (root: string): Git =>
     (args, input, index) =>
-      f.git(["-C", root, ...args], input, index);
+      timed("git", () => f.git(["-C", root, ...args], input, index));
   const git =
     (root: string): Git =>
     async (args, input, index) => {
@@ -78,37 +161,42 @@ export async function parallelFixture(mode: "local" | "pr" = "local") {
     },
   };
   const call = (request: Record<string, unknown>, root = f.repo, selectedHost = host) =>
-    parallelWorkflow(root, { ...parallelIdentity, ...request }, selectedHost);
-  const publish = async (root: string, taskId: string, file: string, content: string) => {
-    const id = { ...parallelIdentity, taskId };
-    const run = (request: Record<string, unknown>) =>
-      workflow(root, { ...id, ...request }, { git: git(root), verification });
-    await run({ operation: "begin" });
-    await writeFile(join(root, file), content);
-    await run({
-      operation: "checkpoint",
-      files: [file],
-      message: "test: Publish isolated task source",
-      record: {
-        ...id,
-        turnId: "fixture-turn",
-        agent: "codex",
-        model: "fixture",
-        reasoning: "fixture",
-        date: "2026-11-06T12:00:00Z",
-        description: "Parallel workflow fixture",
-        prompt: "Publish isolated fixture source",
-        response: "Changed and checked the isolated fixture.",
-        processingLog: [],
-      },
+    timed(operationStage(request.operation), () =>
+      parallelWorkflow(root, { ...parallelIdentity, ...request }, selectedHost),
+    );
+  const publish = (root: string, taskId: string, file: string, content: string) =>
+    timed("publication", async () => {
+      const id = { ...parallelIdentity, taskId };
+      const run = (request: Record<string, unknown>) =>
+        timed(operationStage(request.operation), () =>
+          workflow(root, { ...id, ...request }, { git: git(root), verification }),
+        );
+      await run({ operation: "begin" });
+      await writeFile(join(root, file), content);
+      await run({
+        operation: "checkpoint",
+        files: [file],
+        message: "test: Publish isolated task source",
+        record: {
+          ...id,
+          turnId: "fixture-turn",
+          agent: "codex",
+          model: "fixture",
+          reasoning: "fixture",
+          date: "2026-11-06T12:00:00Z",
+          description: "Parallel workflow fixture",
+          prompt: "Publish isolated fixture source",
+          response: "Changed and checked the isolated fixture.",
+          processingLog: [],
+        },
+      });
+      await run({ operation: "verify", phase: "review" });
+      await run({ operation: "prepare" });
+      const result = await run({ operation: "publish" });
+      assert.equal(result.state, "pushed");
+      assert.ok(result.commit);
+      return result.commit;
     });
-    await run({ operation: "verify", phase: "review" });
-    await run({ operation: "prepare" });
-    const result = await run({ operation: "publish" });
-    assert.equal(result.state, "pushed");
-    assert.ok(result.commit);
-    return result.commit;
-  };
   return {
     repo: f.repo,
     base,
@@ -122,17 +210,21 @@ export async function parallelFixture(mode: "local" | "pr" = "local") {
     pushes: () => [...attempts],
     fetches: () => [...fetches],
     async main() {
-      const value = await f.git(["ls-remote", "--refs", "origin", "refs/heads/main"]);
-      const commit = value.trim().split(/\s/u)[0];
-      assert.ok(commit);
-      return commit;
+      return timed("main", async () => {
+        const value = await f.git(["ls-remote", "--refs", "origin", "refs/heads/main"]);
+        const commit = value.trim().split(/\s/u)[0];
+        assert.ok(commit);
+        return commit;
+      });
     },
     async advanceMain(file = "main-only.txt", content = "Independent main source\n") {
-      await writeFile(join(f.repo, file), content);
-      await f.git(["add", "--", file]);
-      await f.git(["commit", "--gpg-sign", "-m", "test: Advance main independently"]);
-      await f.git(["push", "origin", "HEAD:refs/heads/main"]);
-      return (await f.git(["rev-parse", "HEAD"])).trim();
+      return timed("advance-main", async () => {
+        await writeFile(join(f.repo, file), content);
+        await f.git(["add", "--", file]);
+        await f.git(["commit", "--gpg-sign", "-m", "test: Advance main independently"]);
+        await f.git(["push", "origin", "HEAD:refs/heads/main"]);
+        return (await f.git(["rev-parse", "HEAD"])).trim();
+      });
     },
     failAfterPush() {
       uncertainAfterPush = true;
@@ -147,8 +239,10 @@ export async function parallelFixture(mode: "local" | "pr" = "local") {
       beforeVerify = action;
     },
     async assertSignature(commit: string) {
-      await f.git(["verify-commit", commit]);
-      assert.equal((await f.git(["show", "-s", "--format=%G?", commit])).trim(), "G");
+      return timed("signature", async () => {
+        await f.git(["verify-commit", commit]);
+        assert.equal((await f.git(["show", "-s", "--format=%G?", commit])).trim(), "G");
+      });
     },
     async assertSource(root: string, file: string, expected: string) {
       assert.equal(await readFile(join(root, file), "utf8"), expected);

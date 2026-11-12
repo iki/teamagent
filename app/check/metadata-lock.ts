@@ -54,12 +54,17 @@ async function physical(path: string, directory: boolean): Promise<BigIntStats> 
   if (!isAbsolute(path) || path.length > 4096 || /[\r\n\0]/u.test(path))
     throw new Error("Metadata lock paths must be bounded absolute physical paths");
   const info = await lstat(path, { bigint: true });
-  if (
-    info.isSymbolicLink() ||
-    (directory ? !info.isDirectory() : !info.isFile()) ||
-    !samePath(await realpath(path), path)
-  )
-    throw new Error("Metadata lock path is redirected or has an unexpected kind");
+  const rejection = info.isSymbolicLink()
+    ? "symbolic-link"
+    : (directory ? !info.isDirectory() : !info.isFile())
+      ? "unexpected-kind"
+      : !samePath(await realpath(path), path)
+        ? "canonical-path-mismatch"
+        : undefined;
+  if (rejection)
+    throw new Error(
+      `Metadata lock path is redirected or has an unexpected kind: ${rejection}; expected ${directory ? "directory" : "file"}`,
+    );
   return info;
 }
 
@@ -157,6 +162,7 @@ export type MetadataLockOptions = {
   /** Trusted fixture synchronization only; never read from external configuration. */
   readonly observe?: (
     phase:
+      | "acquisition-snapshot"
       | "observed-dead"
       | "before-move"
       | "rename-ready"
@@ -510,9 +516,13 @@ export async function withMetadataLock<T>(
     if (info.isSymbolicLink() || (!info.isDirectory() && !(options.legacyFile && info.isFile())))
       throw new Error("Metadata lock has an unsupported kind");
     const kind = info.isDirectory() ? "directory" : "legacy-file";
-    const saved = await snapshot(path, kind).catch((error: unknown) => {
-      if (hasCode(error, "EACCES") || hasCode(error, "EPERM")) throw error;
-      return undefined; // Malformed or initializing owners never authorize mutation.
+    const saved = await (async () => {
+      await options.observe?.("acquisition-snapshot");
+      return snapshot(path, kind);
+    })().catch(() => {
+      // An unreadable, malformed or initializing owner remains unknown. Retry
+      // observation only within the existing deadline; it never permits recovery.
+      return undefined;
     });
     if (saved && absent(saved, options)) {
       withinDeadline(deadline);

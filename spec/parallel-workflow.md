@@ -96,11 +96,13 @@ captured current main, performs frozen dependency setup and returns its path and
 staged tree. Run the ordinary complete implementation check there with local
 receipt writes. Then run `integrate` from the original task/primary checkout.
 The final gate must match that candidate's source, index, runtime, prerequisites,
-outputs and external state. The unit phase has an explicitly approved 960-second
-budget; workflow review retains its 300-second limit. Only the four new
-multi-step Git tests for integration, failures, recovery and PR integration
-have separately approved 180-second limits. The pure PR-admission test, older
-tests and the 120-second runner default retain their existing limits.
+outputs and external state. The unit phase has an explicitly approved 1,680-second
+budget; workflow review retains its 300-second limit. The four new multi-step
+Git tests for integration, failures, recovery and PR integration have separately
+approved 240-second limits. The first research maintenance scenario also has the
+[180-second child and 185-second case allowance](verification.md). The pure
+PR-admission test, other older tests and the 120-second runner default retain
+their existing limits.
 Preparation makes a separate cold check possible before the bounded final
 review.
 

@@ -162,17 +162,45 @@ await test("competing directory and legacy recoverers reacquire serially without
           await gate.promise;
         },
       };
-      const action = async () => {
+      const action = async (record: (phase: string) => void) => {
+        record("action-enter");
         maximum = Math.max(maximum, ++active);
         calls++;
         await new Promise<void>((done) => setTimeout(done, 10));
         active--;
+        record("action-exit");
       };
-      const results = await Promise.allSettled([
-        withMetadataLock(path, action, options).finally(() => gate.resolve()),
-        withMetadataLock(path, action, options).finally(() => gate.resolve()),
-      ]);
-      for (const result of results) if (result.status === "rejected") throw result.reason;
+      const contender = (id: 1 | 2) => {
+        const phases: string[] = [];
+        let dropped = 0;
+        const record = (phase: string) => {
+          if (phases.length === 32) {
+            phases.shift();
+            dropped++;
+          }
+          phases.push(phase);
+        };
+        return {
+          describe: () =>
+            `subcase=${legacy ? "legacy" : "directory"}; contender=${id}; dropped=${dropped}; phases=${phases.join(",")}`,
+          promise: withMetadataLock(path, () => action(record), {
+            ...options,
+            observe: (phase) => {
+              record(phase);
+              return options.observe(phase);
+            },
+          }).finally(() => gate.resolve()),
+        };
+      };
+      const first = contender(1);
+      const second = contender(2);
+      const results = await Promise.allSettled([first.promise, second.promise]);
+      for (const [index, result] of results.entries())
+        if (result.status === "rejected")
+          throw new Error(
+            `Competing metadata recovery failed: ${(index === 0 ? first : second).describe()}`,
+            { cause: result.reason },
+          );
       assert.equal(calls, 2);
       assert.equal(maximum, 1);
       assert.ok((await originals(root)).includes(raw));
@@ -521,5 +549,111 @@ await test("archive and hook recovery stays in ignored workflow evidence and pre
       (await originals(join(root, ".cache/workflow"))).sort(),
       [archiveOwner, reserveOwner, finalizeOwner].sort(),
     );
+  });
+});
+
+await test("unreadable acquisition snapshots wait for a real release before acquiring", async (context) => {
+  await fixture(async (root) => {
+    for (const code of ["EPERM", "EACCES"]) {
+      const path = join(root, "live-read-" + code);
+      const entered = Promise.withResolvers<void>(),
+        release = Promise.withResolvers<void>();
+      const abort = () => release.resolve();
+      context.signal.addEventListener("abort", abort, { once: true });
+      if (context.signal.aborted) abort();
+      let observations = 0,
+        recoveries = 0,
+        calls = 0;
+      const keeper = withMetadataLock(path, async () => {
+        entered.resolve();
+        await release.promise;
+      });
+      void keeper.catch((error: unknown) => entered.reject(error));
+      const pending: Promise<void>[] = [keeper];
+      try {
+        await entered.promise;
+        const raw = await readFile(join(path, "owner.json"), "utf8");
+        const failure = Object.assign(new Error("Fixture unreadable acquisition snapshot"), {
+          code,
+        });
+        const contender = withMetadataLock(
+          path,
+          async () => {
+            calls++;
+            assert.notEqual(await readFile(join(path, "owner.json"), "utf8"), raw);
+          },
+          {
+            observe: async (phase: string) => {
+              if (phase === "observed-dead") recoveries++;
+              if (phase !== "acquisition-snapshot") return;
+              observations++;
+              assert.equal(calls, 0);
+              assert.equal(await readFile(join(path, "owner.json"), "utf8"), raw);
+              if (observations === 1) throw failure;
+              release.resolve();
+              await keeper;
+            },
+          },
+        );
+        pending.push(contender);
+        const result = await contender.then(
+          () => ({ ok: true as const }),
+          (error: unknown) => ({ ok: false as const, error }),
+        );
+        if (!result.ok) throw result.error;
+        assert.equal(observations, 2, "the failed read must be followed by a new observation");
+        assert.equal(recoveries, 0, "an unreadable live owner cannot authorize recovery");
+        assert.equal(calls, 1);
+        await assert.rejects(access(path), { code: "ENOENT" });
+        await assert.rejects(access(join(root, ".lock-recovery")), { code: "ENOENT" });
+      } finally {
+        release.resolve();
+        await Promise.allSettled(pending);
+        context.signal.removeEventListener("abort", abort);
+      }
+    }
+  });
+});
+
+await test("persistent acquisition read denial stays bounded and preserves dead-owner evidence", async () => {
+  await fixture(async (root, dead) => {
+    for (const code of ["EPERM", "EACCES"]) {
+      const path = join(root, "denied-read-" + code),
+        raw = owner(dead, code);
+      await abandoned(path, raw);
+      const before = await lstat(path, { bigint: true });
+      let observations = 0,
+        recoveries = 0,
+        calls = 0;
+      const failure = Object.assign(new Error("Fixture persistent acquisition denial"), { code });
+      await assert.rejects(
+        withMetadataLock(
+          path,
+          async () => {
+            calls++;
+          },
+          {
+            waitMs: 10,
+            observe: (phase: string) => {
+              if (phase === "observed-dead") recoveries++;
+              if (phase === "acquisition-snapshot") {
+                observations++;
+                throw failure;
+              }
+            },
+          },
+        ),
+        /locked/,
+      );
+      assert.ok(observations >= 1);
+      assert.equal(calls, 0);
+      assert.equal(recoveries, 0);
+      assert.equal(await readFile(join(path, "owner.json"), "utf8"), raw);
+      assert.deepEqual(await readdir(path), ["owner.json"]);
+      const after = await lstat(path, { bigint: true });
+      assert.equal(after.dev, before.dev);
+      assert.equal(after.ino, before.ino);
+      await assert.rejects(access(join(root, ".lock-recovery")), { code: "ENOENT" });
+    }
   });
 });

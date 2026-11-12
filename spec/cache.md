@@ -7,6 +7,11 @@ acquired. A reclaimed lock never clears failed-key history or supplies a passing
 verification result. Live, reused, foreign, malformed and unknown owners remain
 protected, and all existing deadlines stay in force.
 
+If a lock-owner record cannot be read, a waiting verifier re-observes it within
+its existing deadline. It can proceed only after a genuine exclusive acquisition
+or the complete recovery protocol above. Persistent denial preserves the lock
+and its evidence; it supplies no cache success or recovery authority.
+
 This contract defines Teamagent's build and verification evidence. Implementation and measured results must be distinguished from these requirements. The [adoption record](analyses/trigon-process-sync/verification.md) and [benchmark record](benchmarks/trigon-process-sync-2026-10-28.json) retain the initial fixed-pin comparison and its limitations.
 
 ## Commands and evidence
@@ -341,10 +346,11 @@ with a maximum of two joined publishers before shared main or hooks change.
 Unknown suites stay together in
 their original order, every file belongs to exactly one batch, and the one-worker
 path retains the original complete file order. All groups share the
-960-second unit deadline. The runner's default remains 120 seconds per test;
-only the four new multi-step Git scenarios (integration, failures, recovery and
-PR integration) have explicit 180-second limits. Older cases retain their
-existing limits. Live admission still caps all active workers at three and
+1,680-second unit deadline. The runner's default remains 120 seconds per test;
+the four new multi-step Git scenarios (integration, failures, recovery and
+PR integration) have explicit 240-second limits. The first research maintenance
+scenario separately uses the [180-second child and 185-second case](verification.md)
+allowance; other older cases retain their existing limits. Live admission still caps all active workers at three and
 workflow groups at two, with the research exclusion described above. The
 one-GiB floor is a conservative admission policy, not a measured optimum.
 Historical samples below describe the policy in force when those samples were
@@ -415,6 +421,37 @@ Force-fresh behavior and complete-input reuse remain unchanged. Workflow and
 root Stop review still have 300-second budgets; the root Stop outer budget
 remains 420 seconds. This approval does not certify an incomplete attempt or
 predict the outcome of a later run.
+
+On 2026-11-10, the user-approved shared phase allowance increased from 960 to
+1,440 seconds. The completed research batch took 159.86 seconds and the ordinary
+71-file batch took 652.05 seconds; all four heavy Git files remained unfinished
+at the phase deadline. All scheduled children were joined. A planning comparison
+with the previously measured heavy work, plus the two reviewed fixture bounds,
+left insufficient margin at 1,200 seconds; overlapping worker timings are not
+an exact elapsed prediction. The 1,440-second bound preserves every scenario,
+worker/resource cap and the independent review/Stop limits. The direct step
+owner allows 1,800 seconds for the complete command and owned cleanup; it does
+not extend the unit phase or certify the next result.
+
+Later on 2026-11-10, the standing approval for needed limits extended the shared
+unit phase from 1,440 to 1,680 seconds (28 minutes) and the same four heavy Git
+cases from 180 to 240 seconds. In the preceding complete step, all four reached
+their 180-second case limits without exhausting the shared phase. A subsequent
+serial diagnostic run passed integration in 177.30 seconds, recovery in 128.85
+seconds and PR integration in 128.31 seconds; the separate pure PR case passed.
+The failure-handling case timed out at 180 seconds, then its callback emitted
+further stage records through 188.711 seconds. That continuation is not a passed
+case. The run finished with four passes and one failure across five cases; one
+small integration trace segment was clipped, so the retained trace is partial.
+
+The extra 240 phase seconds equal the four additional 60-second case allowances
+in worker-seconds, not a prediction of elapsed time or a guarantee of completion.
+The subsequent direct step has a 2,100-second owner for its complete command and
+owned cleanup. Assertions, nested command limits, the 120-second runner default,
+worker/resource caps and independent workflow/Stop limits remain unchanged.
+These allowances do not resolve the earlier after-hook cleanup errors or prove
+that the next complete gate will pass. All scheduled children must still be
+joined, and uncertain shutdown retains its marked scratch.
 
 When `GITHUB_ACTIONS=true`, verification executes rather than reusing tracked,
 local or nonportable passed receipts, even when every input matches. Storage

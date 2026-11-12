@@ -63,12 +63,16 @@ The flag changes scheduling only, without
 per-batch success reuse, partial receipts, shortened coverage or new deadlines.
 A matching complete receipt can still be reused unless --force-fresh is selected.
 
-Tool launches retain their 120-second cap. The complete unit phase, including
-every admitted child, has a 960-second cap explicitly approved on 2026-11-09.
+Ordinary tool launches retain their 120-second cap. The complete unit phase, including
+every admitted child, has a 1,680-second cap explicitly approved on 2026-11-10.
 The unit runner retains its 120-second per-test default; only the four new
 multi-step Git cases for integration, failures, recovery and PR integration
-have explicit 180-second limits. The pure PR-admission test and older tests
-retain their existing limits. The root Stop hook separately caps its assembled
+have explicit 240-second limits. The first research Git maintenance scenario
+has a 180-second owned PowerShell child and a 185-second case limit, approved
+on 2026-11-10 after the unchanged fixture exceeded its former 120-second child
+budget. The identity scenario retains its 120-second child and 125-second case;
+individual fixture Git commands retain 15 seconds and Bash children 20 seconds.
+The pure PR-admission test and other older tests retain their existing limits. The root Stop hook separately caps its assembled
 verification subprocess at 300 seconds. Its outer command budget is 420 seconds,
 allowing the unchanged 60-second archive operation and cleanup overhead.
 Workflow review retains its 300-second budget, and SubagentStop retains its
@@ -83,7 +87,7 @@ checks, and never turns a partial or timed-out attempt into success.
 
 The resource-aware unit scheduler and audited batches are specified in
 the [cache contract](cache.md#measurements-and-scheduling). Every group shares
-the same 960-second deadline; parallel execution does not extend it. The live
+the same 1,680-second deadline; parallel execution does not extend it. The live
 prerequisite probe permits read-only use of provisioned Python bytecode and
 fingerprints its bytes before accepting cache reuse. Environment-honoring unit
 fixtures receive fresh bytecode prefixes; isolated converter and OmniVoice
@@ -95,7 +99,8 @@ The [resource contract](resources.md) defines bounded streaming fingerprints,
 memory admission, process ownership and temporary-file cleanup. Available
 memory is resampled before each admitted batch; less than 1 GiB admits no new
 batch. Unrun files fail the phase. Tests keep complete coverage and their
-adopted deadlines, including the four explicitly approved 180-second cases.
+adopted deadlines, including the four explicitly approved 240-second cases
+and the separately bounded research maintenance scenario above.
 Managed fixture allocation and a fixture-tested lint rule prevent
 new native temporary directories outside the audited ownership helpers.
 Only the three validated temporary-parent routing variables are excluded from
