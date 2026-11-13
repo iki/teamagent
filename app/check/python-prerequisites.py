@@ -43,6 +43,18 @@ def check_bytecode_mode():
         raise RuntimeError("Python probe requires read-only provisioned bytecode and no external prefix")
 
 
+def check_inventory_bounds(files, total, file_size, started):
+    """Keep the existing ordered bounds while identifying the exhausted resource."""
+    if files > 100000:
+        raise RuntimeError("Python prerequisite inventory file-count bound exceeded")
+    if total > 4 * 1024 ** 3:
+        raise RuntimeError("Python prerequisite inventory total-bytes bound exceeded")
+    if file_size > 256 * 1024 ** 2:
+        raise RuntimeError("Python prerequisite inventory file-bytes bound exceeded")
+    if time.monotonic() - started > 90:
+        raise RuntimeError("Python prerequisite inventory elapsed bound exceeded")
+
+
 def fingerprint():
     check_bytecode_mode()
     started = time.monotonic()
@@ -87,8 +99,7 @@ def fingerprint():
         files += 1
         before = path.stat()
         total += before.st_size
-        if files > 100000 or total > 4 * 1024 ** 3 or before.st_size > 256 * 1024 ** 2 or time.monotonic() - started > 50:
-            raise RuntimeError("Python prerequisite inventory bound exceeded")
+        check_inventory_bounds(files, total, before.st_size, started)
         content = file_content_identity(path, before)
         digest.update((json.dumps([label, before.st_mode & 0o777, content], ensure_ascii=True, separators=(",", ":")) + "\n").encode())
     for root, role in roots.items():

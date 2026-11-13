@@ -7,6 +7,11 @@ acquired. A reclaimed lock never clears failed-key history or supplies a passing
 verification result. Live, reused, foreign, malformed and unknown owners remain
 protected, and all existing deadlines stay in force.
 
+If a lock-owner record cannot be read, a waiting verifier re-observes it within
+its existing deadline. It can proceed only after a genuine exclusive acquisition
+or the complete recovery protocol above. Persistent denial preserves the lock
+and its evidence; it supplies no cache success or recovery authority.
+
 This contract defines Teamagent's build and verification evidence. Implementation and measured results must be distinguished from these requirements. The [adoption record](analyses/trigon-process-sync/verification.md) and [benchmark record](benchmarks/trigon-process-sync-2026-10-28.json) retain the initial fixed-pin comparison and its limitations.
 
 ## Commands and evidence
@@ -109,6 +114,16 @@ unchanged. Native preparation and launcher keys include the added helper
 dependency. Generic process execution is unchanged. See the
 [execution review](analyses/git-execution-2026-11-08.md) for the admitted profile,
 provenance, parity evidence and measured limits. POSIX selection is unchanged.
+
+The [November 12 profile review](analyses/git-execution-2026-11-12.md) adds the
+exact installed Git `2.56.1.windows.1` tuple alongside `2.56.0.windows.4`.
+Launcher, core payload and runtime payload must match one complete reviewed
+release; combining individually known hashes from different releases fails
+admission. The synchronous adapter also binds the selected executable to that
+same release. Verification identity includes the matching profile, while every
+existing physical-path, complete-byte, wrapper-configuration and environment
+check remains live. Unknown profiles retain canonical execution and do not
+retain asynchronous discovery. No verification deadline or coverage changes.
 
 Verification executes with `LANG=C.UTF-8` and `LC_ALL=C.UTF-8`, including direct
 checks, workflow children, prerequisite probes and unit workers. Its environment
@@ -237,6 +252,30 @@ It removes inherited external bytecode prefixes before importing converters.
 These are separate modes; the probe does not establish a fresh-prefix claim for
 isolated workers. No launch changes installed packages or removes their bytecode.
 
+Failed live probes identify the fixed Git-version, PowerShell-version or Python
+prerequisite operation, classified outcome, elapsed time, configured deadline and
+output bound, numeric exit status, and recognized signal/OS error code. Diagnostics
+never include executable paths, arguments, environment values, native output or
+schema causes. Python inventory rejection distinguishes file count, total bytes,
+individual file bytes and elapsed time only when the entire stderr matches an
+owned constant message. Unknown or additional output remains unclassified. The
+ordered 100,000-file, 4-GiB-total and 256-MiB-file bounds remain unchanged. The
+inventory elapsed limit is 90 seconds, its enclosing Python probe is 120 seconds,
+version probes retain 15 seconds, and every probe retains its 1-MiB output bound.
+Successful fingerprints do not include diagnostic timing or metadata.
+
+On 2026-11-12, a full-check attempt stopped before tests when the Python probe
+reported a nonzero exit after 53.848 seconds with the recognized
+`inventory-elapsed` reason. Under the user's authorization for measured time
+extensions, the inventory limit increased from 50 to 90 seconds and its enclosing
+probe from 60 to 120 seconds. The enclosing limit leaves 30 seconds for capability
+imports, startup and completion outside the inventory timer. This measured
+failure does not establish the cause of earlier unclassified probe failures.
+Count, aggregate-byte, per-file, depth and output bounds, successful fingerprint
+contents, other probes, individual test deadlines, coverage and full-check phase
+limits remain unchanged. Injected-clock regressions check acceptance at the
+90-second boundary and rejection immediately above it without real-time waits.
+
 ## Live checks and staged publication
 
 The explicit [project launcher](project-launcher.md) exposes a streaming helper
@@ -341,10 +380,11 @@ with a maximum of two joined publishers before shared main or hooks change.
 Unknown suites stay together in
 their original order, every file belongs to exactly one batch, and the one-worker
 path retains the original complete file order. All groups share the
-960-second unit deadline. The runner's default remains 120 seconds per test;
-only the four new multi-step Git scenarios (integration, failures, recovery and
-PR integration) have explicit 180-second limits. Older cases retain their
-existing limits. Live admission still caps all active workers at three and
+1,680-second unit deadline. The runner's default remains 120 seconds per test;
+the signed two-task integration scenario has an explicit 360-second limit, while
+the failure, recovery and PR integration scenarios retain 240 seconds. The first research maintenance
+scenario separately uses the [180-second child and 185-second case](verification.md)
+allowance; other older cases retain their existing limits. Live admission still caps all active workers at three and
 workflow groups at two, with the research exclusion described above. The
 one-GiB floor is a conservative admission policy, not a measured optimum.
 Historical samples below describe the policy in force when those samples were
@@ -415,6 +455,58 @@ Force-fresh behavior and complete-input reuse remain unchanged. Workflow and
 root Stop review still have 300-second budgets; the root Stop outer budget
 remains 420 seconds. This approval does not certify an incomplete attempt or
 predict the outcome of a later run.
+
+On 2026-11-10, the user-approved shared phase allowance increased from 960 to
+1,440 seconds. The completed research batch took 159.86 seconds and the ordinary
+71-file batch took 652.05 seconds; all four heavy Git files remained unfinished
+at the phase deadline. All scheduled children were joined. A planning comparison
+with the previously measured heavy work, plus the two reviewed fixture bounds,
+left insufficient margin at 1,200 seconds; overlapping worker timings are not
+an exact elapsed prediction. The 1,440-second bound preserves every scenario,
+worker/resource cap and the independent review/Stop limits. The direct step
+owner allows 1,800 seconds for the complete command and owned cleanup; it does
+not extend the unit phase or certify the next result.
+
+Later on 2026-11-10, the standing approval for needed limits extended the shared
+unit phase from 1,440 to 1,680 seconds (28 minutes) and the same four heavy Git
+cases from 180 to 240 seconds. In the preceding complete step, all four reached
+their 180-second case limits without exhausting the shared phase. A subsequent
+serial diagnostic run passed integration in 177.30 seconds, recovery in 128.85
+seconds and PR integration in 128.31 seconds; the separate pure PR case passed.
+The failure-handling case timed out at 180 seconds, then its callback emitted
+further stage records through 188.711 seconds. That continuation is not a passed
+case. The run finished with four passes and one failure across five cases; one
+small integration trace segment was clipped, so the retained trace is partial.
+
+The extra 240 phase seconds equal the four additional 60-second case allowances
+in worker-seconds, not a prediction of elapsed time or a guarantee of completion.
+The subsequent direct step has a 2,100-second owner for its complete command and
+owned cleanup. Assertions, nested command limits, the 120-second runner default,
+worker/resource caps and independent workflow/Stop limits remain unchanged.
+These allowances do not resolve the earlier after-hook cleanup errors or prove
+that the next complete gate will pass. All scheduled children must still be
+joined, and uncertain shutdown retains its marked scratch.
+
+On 2026-11-12, the standing authorization for measured time extensions increased
+only the signed two-task integration case from 240 to 360 seconds. A complete
+attempt reached its 240.000-second case deadline without a preceding assertion
+failure; the other three long Git scenarios passed within their existing
+240-second limits, and every scheduled child was joined. The retained stage
+trace shows the first successful integration ending at 193.286 seconds, the
+second task's changed-base preparation ending at 233.542 seconds, and its
+deliberately repeated preparation check beginning at 235.512 seconds.
+
+The remaining path checks rejection of a non-detached candidate, integrates the
+prepared second task, and verifies signatures, linear history, retained task
+refs and dirty-main preservation. The first successful integration took
+45.183 seconds; the 360-second allowance leaves about 124 seconds after the
+last completed status observation for this remaining work. That is a bounded
+planning margin, not a measured complete duration or a guarantee of success.
+The trace excerpt is partial, and concurrent CPU load was observed without
+attribution to a particular process. The other three 240-second cases, older
+case limits, 120-second runner default, 1,680-second unit phase, 2,100-second
+outer step owner, nested command bounds, coverage and worker/memory caps remain
+unchanged. A timeout remains a failed gate and cannot publish passed receipts.
 
 When `GITHUB_ACTIONS=true`, verification executes rather than reusing tracked,
 local or nonportable passed receipts, even when every input matches. Storage

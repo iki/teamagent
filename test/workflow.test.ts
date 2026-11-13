@@ -183,19 +183,85 @@ await test("process time, total output, long lines and cancellation are bounded"
   );
 });
 
-await test("process timeout terminates its child tree instead of leaving inherited pipes open", async () => {
+await test("process timeout terminates its child tree instead of leaving inherited pipes open", async (context) => {
   const root = await directory();
-  await writeFile(join(root, "child.ts"), "setInterval(() => {}, 1000);\n");
+  const marker = join(root, "child.pid");
+  await writeFile(
+    join(root, "child.ts"),
+    "import { writeFileSync, renameSync } from 'node:fs';\nwriteFileSync('child.pid.pending', String(process.pid) + '\\n', { flag: 'wx' });\nrenameSync('child.pid.pending', 'child.pid');\nsetInterval(() => {}, 1000);\n",
+  );
   await writeFile(
     join(root, "parent.ts"),
-    "import { spawn } from 'node:child_process';\nimport { writeFileSync } from 'node:fs';\nconst child = spawn(process.execPath, ['child.ts'], { stdio: 'inherit', windowsHide: true });\nwriteFileSync('child.pid', String(child.pid) + '\\n');\nsetInterval(() => {}, 1000);\n",
+    "import { spawn } from 'node:child_process';\nspawn(process.execPath, ['child.ts'], { stdio: 'inherit', windowsHide: true });\nsetInterval(() => {}, 1000);\n",
   );
-  const began = Date.now();
-  const result = await runProcess(root, process.execPath, ["parent.ts"], { timeoutMs: 1000 });
-  assert.equal(result.outcome, "timeout");
-  assert.equal(result.termination, "closed");
-  assert.ok(Date.now() - began < 6000);
-  const pid = Number((await readFile(join(root, "child.pid"), "utf8")).trim());
-  assert.ok(Number.isSafeInteger(pid) && pid > 0);
-  assert.throws(() => process.kill(pid, 0), { code: "ESRCH" });
+  const controller = new AbortController();
+  const abort = () => controller.abort();
+  context.signal.addEventListener("abort", abort, { once: true });
+  if (context.signal.aborted) abort();
+  const began = performance.now();
+  let completed = false;
+  const pending = runProcess(root, process.execPath, ["parent.ts"], {
+    timeoutMs: 10_000,
+    signal: controller.signal,
+  }).then(
+    (result) => {
+      completed = true;
+      return { ok: true as const, result };
+    },
+    (error: unknown) => {
+      completed = true;
+      return { ok: false as const, error };
+    },
+  );
+  const failures: unknown[] = [];
+  try {
+    let pid: number | undefined;
+    while (pid === undefined) {
+      if (completed) {
+        const settled = await pending;
+        if (!settled.ok) throw settled.error;
+        assert.fail(
+          `Owned command completed before descendant readiness: ${settled.result.outcome}`,
+        );
+      }
+      assert.ok(performance.now() - began < 5000, "Descendant readiness exceeded five seconds");
+      let text: string | undefined;
+      try {
+        text = await readFile(marker, "utf8");
+      } catch (error) {
+        if (!(error instanceof Error && "code" in error && error.code === "ENOENT")) throw error;
+      }
+      if (text !== undefined) {
+        assert.match(text, /^[1-9]\d*\n$/u, "Descendant PID marker must be a complete LF line");
+        const value = Number(text.trim());
+        assert.ok(Number.isSafeInteger(value) && value > 0, "Descendant PID must be valid");
+        pid = value;
+      } else await new Promise<void>((done) => setTimeout(done, 20));
+    }
+    assert.ok(performance.now() - began < 5000, "Descendant readiness exceeded five seconds");
+    assert.equal(completed, false, "The owned command must still be running at readiness");
+    const descendant = pid;
+    assert.equal(process.kill(descendant, 0), true, "The descendant must be alive before timeout");
+    const settled = await pending;
+    if (!settled.ok) throw settled.error;
+    assert.equal(settled.result.outcome, "timeout");
+    assert.equal(settled.result.termination, "closed");
+    assert.ok(performance.now() - began < 15_000);
+    assert.throws(() => process.kill(descendant, 0), { code: "ESRCH" });
+  } catch (error) {
+    failures.push(error);
+  } finally {
+    if (!completed) controller.abort();
+    try {
+      const settled = await pending;
+      if (!settled.ok) {
+        if (!failures.includes(settled.error)) failures.push(settled.error);
+      } else if (settled.result.termination !== "closed") {
+        failures.push(new Error("Fixture command cleanup must be confirmed"));
+      }
+    } finally {
+      context.signal.removeEventListener("abort", abort);
+    }
+  }
+  if (failures.length) throw new AggregateError(failures, "Process timeout fixture failed");
 });

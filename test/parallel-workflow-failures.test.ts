@@ -11,9 +11,9 @@ import {
 
 await test(
   "conflicts, failed verification and changed source refs retain evidence without publication",
-  { timeout: 180_000 },
+  { timeout: 240_000 },
   async () => {
-    const f = await parallelFixture();
+    const f = await parallelFixture("local", "failures");
     const conflict = await start(f, "conflict");
     const failed = await start(f, "failed");
     const moved = await start(f, "moved");

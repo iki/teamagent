@@ -6,6 +6,7 @@ import { test } from "bun:test";
 import { Schema } from "effect";
 import {
   gitPayloadProfile,
+  gitPayloadProfiles,
   inspectGitRuntimePayload,
   resolveGitExecution,
   selectGitEnvironment,
@@ -26,12 +27,6 @@ const installation: WindowsGitInstallation = {
   launcher: "C:\\fixture\\Git\\cmd\\git.exe",
   payload: "C:\\fixture\\Git\\ucrt64\\libexec\\git-core\\git.exe",
 };
-const facts = {
-  launcherSha256: gitPayloadProfile.launcherSha256,
-  payloadSha256: gitPayloadProfile.payloadSha256,
-  runtimePayloadSha256: gitPayloadProfile.payloadSha256,
-  wrapperConfigPresent: false,
-};
 const environment = Object.freeze({
   HOME: "C:\\fixture\\home",
   PATH: "C:\\inherited\\bin;C:\\inherited\\bin;;",
@@ -51,201 +46,252 @@ test("the direct Git profile remains bound to the reviewed launcher, payload and
     "9c75f3f41eb5686bacde4b7c4fdfcd7970e8b699ee05c8d7a0cc9c8a7ddaffe8",
   );
   assert.equal(gitPayloadProfile.sourceRevision, "20a412e3b61c853fb3a290f02e78f59611d20342");
+  assert.deepEqual(gitPayloadProfiles, [
+    gitPayloadProfile,
+    {
+      sourceRevision: "050f94fd8a2198a71f3efc9044e801430d83daef",
+      sourceSha256: "c24bab1178721707c848b370aabfc3714a570d0ff34b664d318104a86098d58c",
+      launcherSha256: "177bc8a9af84fa3a400c694c975fda731d048279c074e1a93947ce8b067ebb48",
+      payloadSha256: "9bf8ee81d79f38a11eaf7799499a634c46a718e009a4a9b2b20b115804643302",
+    },
+  ]);
 });
 
-test("direct Git translates only the reviewed wrapper environment and preserves the caller", () => {
-  const before = { ...environment };
-  const selected = selectGitEnvironment(installation, environment, facts);
-  assert.equal(selected.mode, "payload");
-  assert.equal(selected.reason, null);
-  assert.equal(selected.executable, installation.payload);
-  assert.equal(selected.launcher, installation.launcher);
-  assert.equal(selected.payload, installation.payload);
-  assert.deepEqual(selected.env, {
-    ...environment,
-    MSYSTEM: "UCRT64",
-    PLINK_PROTOCOL: "",
-    PATH:
-      "C:\\fixture\\Git\\ucrt64\\bin;C:\\fixture\\Git\\usr\\bin;" +
-      "C:\\fixture\\home\\bin;" +
-      environment.PATH,
-  });
-  assert.notEqual(selected.env, environment);
-  assert.deepEqual(environment, before);
-  assert.match(selected.identity, /^[a-f0-9]{64}$/u);
-  assert.equal(
-    selectGitEnvironment(installation, { ...environment }, { ...facts }).identity,
-    selected.identity,
-  );
-  const changedPath = selectGitEnvironment(
-    installation,
-    { ...environment, PATH: environment.PATH + "extra" },
-    facts,
-  );
-  assert.notEqual(changedPath.identity, selected.identity);
-  assert.equal(changedPath.prerequisiteIdentity, selected.prerequisiteIdentity);
+test("Git profile admission rejects every mixed release tuple and separates release identities", () => {
+  const identities = new Set<string>();
+  let admitted = 0,
+    rejected = 0;
+  for (const launcher of gitPayloadProfiles)
+    for (const core of gitPayloadProfiles)
+      for (const runtime of gitPayloadProfiles) {
+        const selected = selectGitEnvironment(installation, environment, {
+          launcherSha256: launcher.launcherSha256,
+          payloadSha256: core.payloadSha256,
+          runtimePayloadSha256: runtime.payloadSha256,
+          wrapperConfigPresent: false,
+        });
+        if (launcher === core && core === runtime) {
+          assert.equal(selected.mode, "payload");
+          identities.add(selected.prerequisiteIdentity);
+          admitted++;
+        } else {
+          assert.equal(selected.mode, "canonical");
+          assert.equal(selected.reason, "unsupported-profile");
+          assert.deepEqual(selected.env, environment);
+          rejected++;
+        }
+      }
+  assert.equal(admitted, 2);
+  assert.equal(rejected, 6);
+  assert.equal(identities.size, 2);
 });
 
-test("direct Git preserves wrapper HOME suffix semantics and caller protocol choices", () => {
-  for (const home of ["C:\\fixture\\home", "C:\\fixture\\home\\", "C:/fixture/home/"]) {
-    const selected = selectGitEnvironment(
-      installation,
-      { ...environment, HOME: home, PLINK_PROTOCOL: "custom-transport" },
-      facts,
-    );
-    assert.equal(selected.mode, "payload");
-    assert.equal(selected.env.HOME, home);
-    assert.equal(selected.env.PLINK_PROTOCOL, "custom-transport");
-    const suffix = home.endsWith("\\") ? "bin" : "\\bin";
-    assert.equal(
-      selected.env.PATH,
-      "C:\\fixture\\Git\\ucrt64\\bin;C:\\fixture\\Git\\usr\\bin;" +
-        home +
-        suffix +
-        ";" +
-        environment.PATH,
-    );
-  }
-  const withoutProtocol = { ...environment, PLINK_PROTOCOL: undefined };
-  assert.equal(
-    selectGitEnvironment(installation, withoutProtocol, facts).env.PLINK_PROTOCOL,
-    "ssh",
-  );
-  const missingProtocol = { ...environment };
-  Reflect.deleteProperty(missingProtocol, "PLINK_PROTOCOL");
-  assert.equal(
-    selectGitEnvironment(installation, missingProtocol, facts).env.PLINK_PROTOCOL,
-    "ssh",
-  );
-  assert.equal(
-    selectGitEnvironment(installation, { ...environment, HOME: "h".repeat(4088) }, facts).mode,
-    "payload",
-  );
-});
-
-test("unsupported wrapper cases explicitly keep canonical Git and the untranslated environment", () => {
-  const cases = [
-    {
-      reason: "unsupported-profile",
-      facts: { ...facts, launcherSha256: "0".repeat(64) },
-      env: environment,
-    },
-    {
-      reason: "unsupported-profile",
-      facts: { ...facts, payloadSha256: "0".repeat(64) },
-      env: environment,
-    },
-    {
-      reason: "unsupported-profile",
-      facts: { ...facts, runtimePayloadSha256: "0".repeat(64) },
-      env: environment,
-    },
-    {
-      reason: "wrapper-config-present",
-      facts: { ...facts, wrapperConfigPresent: true, wrapperConfigSha256: "1".repeat(64) },
-      env: environment,
-    },
-    { reason: "missing-home", facts, env: { ...environment, HOME: undefined } },
-    { reason: "missing-home", facts, env: { ...environment, HOME: "" } },
-    { reason: "home-path-bound", facts, env: { ...environment, HOME: "h".repeat(4089) } },
-    {
-      reason: "foreign-exec-path",
-      facts,
-      env: { ...environment, GIT_EXEC_PATH: "C:\\foreign\\git-core" },
-    },
-    {
-      reason: "foreign-exec-path",
-      facts,
-      env: { ...environment, GIT_EXEC_PATH: "relative/git-core" },
-    },
-    { reason: "foreign-exec-path", facts, env: { ...environment, GIT_EXEC_PATH: "" } },
-  ];
-  for (const entry of cases) {
-    const selected = selectGitEnvironment(installation, entry.env, entry.facts);
-    assert.equal(selected.mode, "canonical", entry.reason);
-    assert.equal(selected.reason, entry.reason);
-    assert.equal(selected.executable, installation.launcher);
-    assert.deepEqual(selected.env, entry.env);
-    assert.notEqual(
-      selected.identity,
-      selectGitEnvironment(installation, environment, facts).identity,
-    );
-  }
-  for (const runtime of ["mingw64", "mingw32"] as const) {
-    const core = win32.join(installation.root, runtime, "libexec/git-core");
-    const selected = selectGitEnvironment(
-      { ...installation, runtime, core, payload: win32.join(core, "git.exe") },
-      environment,
-      facts,
-    );
-    assert.equal(selected.mode, "canonical");
-    assert.equal(selected.reason, "unsupported-profile");
-    assert.deepEqual(selected.env, environment);
-  }
-});
-
-test("the exact core override supports hook dispatch without hiding per-dispatch environment changes", () => {
-  const direct = selectGitEnvironment(installation, environment, facts);
-  const hookEnvironment = {
-    ...environment,
-    PATH: installation.core + ";" + environment.PATH,
-    GIT_EXEC_PATH: installation.core,
+for (const profile of gitPayloadProfiles) {
+  const facts = {
+    launcherSha256: profile.launcherSha256,
+    payloadSha256: profile.payloadSha256,
+    runtimePayloadSha256: profile.payloadSha256,
+    wrapperConfigPresent: false,
   };
-  const selected = selectGitEnvironment(installation, hookEnvironment, facts);
-  assert.equal(selected.mode, "payload");
-  assert.equal(selected.env.GIT_EXEC_PATH, installation.core);
-  assert.ok(selected.env.PATH?.endsWith(";" + hookEnvironment.PATH));
-  assert.notEqual(selected.identity, direct.identity);
-  assert.equal(selected.prerequisiteIdentity, direct.prerequisiteIdentity);
-  assert.equal(
-    selectGitEnvironment(installation, hookEnvironment, facts).identity,
-    selected.identity,
-  );
-});
 
-test("review prerequisites bind effective wrapper inputs and present configuration contents", () => {
-  const direct = selectGitEnvironment(installation, environment, facts);
-  for (const changed of [
-    { ...environment, HOME: "C:\\fixture\\other-home" },
-    { ...environment, PLINK_PROTOCOL: "custom-transport" },
-    { ...environment, MSYS: "" },
-  ])
-    assert.notEqual(
-      selectGitEnvironment(installation, changed, facts).prerequisiteIdentity,
-      direct.prerequisiteIdentity,
+  test(`direct Git translates only the reviewed wrapper environment and preserves the caller (${profile.sourceRevision})`, () => {
+    const before = { ...environment };
+    const selected = selectGitEnvironment(installation, environment, facts);
+    assert.equal(selected.mode, "payload");
+    assert.equal(selected.reason, null);
+    assert.equal(selected.executable, installation.payload);
+    assert.equal(selected.launcher, installation.launcher);
+    assert.equal(selected.payload, installation.payload);
+    assert.deepEqual(selected.env, {
+      ...environment,
+      MSYSTEM: "UCRT64",
+      PLINK_PROTOCOL: "",
+      PATH:
+        "C:\\fixture\\Git\\ucrt64\\bin;C:\\fixture\\Git\\usr\\bin;" +
+        "C:\\fixture\\home\\bin;" +
+        environment.PATH,
+    });
+    assert.notEqual(selected.env, environment);
+    assert.deepEqual(environment, before);
+    assert.match(selected.identity, /^[a-f0-9]{64}$/u);
+    assert.equal(
+      selectGitEnvironment(installation, { ...environment }, { ...facts }).identity,
+      selected.identity,
     );
-  const withoutProtocol = selectGitEnvironment(
-    installation,
-    { ...environment, PLINK_PROTOCOL: undefined },
-    facts,
-  );
-  assert.notEqual(withoutProtocol.prerequisiteIdentity, direct.prerequisiteIdentity);
-  assert.equal(
-    withoutProtocol.prerequisiteIdentity,
-    selectGitEnvironment(installation, { ...environment, PLINK_PROTOCOL: "ssh" }, facts)
-      .prerequisiteIdentity,
-  );
-  const configured = { ...facts, wrapperConfigPresent: true, wrapperConfigSha256: "1".repeat(64) };
-  assert.notEqual(
-    selectGitEnvironment(installation, environment, configured).prerequisiteIdentity,
-    selectGitEnvironment(installation, environment, {
-      ...configured,
-      wrapperConfigSha256: "2".repeat(64),
-    }).prerequisiteIdentity,
-  );
-});
+    const changedPath = selectGitEnvironment(
+      installation,
+      { ...environment, PATH: environment.PATH + "extra" },
+      facts,
+    );
+    assert.notEqual(changedPath.identity, selected.identity);
+    assert.equal(changedPath.prerequisiteIdentity, selected.prerequisiteIdentity);
+  });
 
-test("Git execution rejects malformed environment values before translation", () => {
-  for (const value of [
-    null,
-    [],
-    { HOME: 42 },
-    { HOME: "C:\\fixture\0home" },
-    { PATH: false },
-    { PATH: "first", Path: "second" },
-  ])
-    assert.throws(() => selectGitEnvironment(installation, value, facts));
-});
+  test(`direct Git preserves wrapper HOME suffix semantics and caller protocol choices (${profile.sourceRevision})`, () => {
+    for (const home of ["C:\\fixture\\home", "C:\\fixture\\home\\", "C:/fixture/home/"]) {
+      const selected = selectGitEnvironment(
+        installation,
+        { ...environment, HOME: home, PLINK_PROTOCOL: "custom-transport" },
+        facts,
+      );
+      assert.equal(selected.mode, "payload");
+      assert.equal(selected.env.HOME, home);
+      assert.equal(selected.env.PLINK_PROTOCOL, "custom-transport");
+      const suffix = home.endsWith("\\") ? "bin" : "\\bin";
+      assert.equal(
+        selected.env.PATH,
+        "C:\\fixture\\Git\\ucrt64\\bin;C:\\fixture\\Git\\usr\\bin;" +
+          home +
+          suffix +
+          ";" +
+          environment.PATH,
+      );
+    }
+    const withoutProtocol = { ...environment, PLINK_PROTOCOL: undefined };
+    assert.equal(
+      selectGitEnvironment(installation, withoutProtocol, facts).env.PLINK_PROTOCOL,
+      "ssh",
+    );
+    const missingProtocol = { ...environment };
+    Reflect.deleteProperty(missingProtocol, "PLINK_PROTOCOL");
+    assert.equal(
+      selectGitEnvironment(installation, missingProtocol, facts).env.PLINK_PROTOCOL,
+      "ssh",
+    );
+    assert.equal(
+      selectGitEnvironment(installation, { ...environment, HOME: "h".repeat(4088) }, facts).mode,
+      "payload",
+    );
+  });
+
+  test(`unsupported wrapper cases explicitly keep canonical Git and the untranslated environment (${profile.sourceRevision})`, () => {
+    const cases = [
+      {
+        reason: "unsupported-profile",
+        facts: { ...facts, launcherSha256: "0".repeat(64) },
+        env: environment,
+      },
+      {
+        reason: "unsupported-profile",
+        facts: { ...facts, payloadSha256: "0".repeat(64) },
+        env: environment,
+      },
+      {
+        reason: "unsupported-profile",
+        facts: { ...facts, runtimePayloadSha256: "0".repeat(64) },
+        env: environment,
+      },
+      {
+        reason: "wrapper-config-present",
+        facts: { ...facts, wrapperConfigPresent: true, wrapperConfigSha256: "1".repeat(64) },
+        env: environment,
+      },
+      { reason: "missing-home", facts, env: { ...environment, HOME: undefined } },
+      { reason: "missing-home", facts, env: { ...environment, HOME: "" } },
+      { reason: "home-path-bound", facts, env: { ...environment, HOME: "h".repeat(4089) } },
+      {
+        reason: "foreign-exec-path",
+        facts,
+        env: { ...environment, GIT_EXEC_PATH: "C:\\foreign\\git-core" },
+      },
+      {
+        reason: "foreign-exec-path",
+        facts,
+        env: { ...environment, GIT_EXEC_PATH: "relative/git-core" },
+      },
+      { reason: "foreign-exec-path", facts, env: { ...environment, GIT_EXEC_PATH: "" } },
+    ];
+    for (const entry of cases) {
+      const selected = selectGitEnvironment(installation, entry.env, entry.facts);
+      assert.equal(selected.mode, "canonical", entry.reason);
+      assert.equal(selected.reason, entry.reason);
+      assert.equal(selected.executable, installation.launcher);
+      assert.deepEqual(selected.env, entry.env);
+      assert.notEqual(
+        selected.identity,
+        selectGitEnvironment(installation, environment, facts).identity,
+      );
+    }
+    for (const runtime of ["mingw64", "mingw32"] as const) {
+      const core = win32.join(installation.root, runtime, "libexec/git-core");
+      const selected = selectGitEnvironment(
+        { ...installation, runtime, core, payload: win32.join(core, "git.exe") },
+        environment,
+        facts,
+      );
+      assert.equal(selected.mode, "canonical");
+      assert.equal(selected.reason, "unsupported-profile");
+      assert.deepEqual(selected.env, environment);
+    }
+  });
+
+  test(`the exact core override supports hook dispatch without hiding per-dispatch environment changes (${profile.sourceRevision})`, () => {
+    const direct = selectGitEnvironment(installation, environment, facts);
+    const hookEnvironment = {
+      ...environment,
+      PATH: installation.core + ";" + environment.PATH,
+      GIT_EXEC_PATH: installation.core,
+    };
+    const selected = selectGitEnvironment(installation, hookEnvironment, facts);
+    assert.equal(selected.mode, "payload");
+    assert.equal(selected.env.GIT_EXEC_PATH, installation.core);
+    assert.ok(selected.env.PATH?.endsWith(";" + hookEnvironment.PATH));
+    assert.notEqual(selected.identity, direct.identity);
+    assert.equal(selected.prerequisiteIdentity, direct.prerequisiteIdentity);
+    assert.equal(
+      selectGitEnvironment(installation, hookEnvironment, facts).identity,
+      selected.identity,
+    );
+  });
+
+  test(`review prerequisites bind effective wrapper inputs and present configuration contents (${profile.sourceRevision})`, () => {
+    const direct = selectGitEnvironment(installation, environment, facts);
+    for (const changed of [
+      { ...environment, HOME: "C:\\fixture\\other-home" },
+      { ...environment, PLINK_PROTOCOL: "custom-transport" },
+      { ...environment, MSYS: "" },
+    ])
+      assert.notEqual(
+        selectGitEnvironment(installation, changed, facts).prerequisiteIdentity,
+        direct.prerequisiteIdentity,
+      );
+    const withoutProtocol = selectGitEnvironment(
+      installation,
+      { ...environment, PLINK_PROTOCOL: undefined },
+      facts,
+    );
+    assert.notEqual(withoutProtocol.prerequisiteIdentity, direct.prerequisiteIdentity);
+    assert.equal(
+      withoutProtocol.prerequisiteIdentity,
+      selectGitEnvironment(installation, { ...environment, PLINK_PROTOCOL: "ssh" }, facts)
+        .prerequisiteIdentity,
+    );
+    const configured = {
+      ...facts,
+      wrapperConfigPresent: true,
+      wrapperConfigSha256: "1".repeat(64),
+    };
+    assert.notEqual(
+      selectGitEnvironment(installation, environment, configured).prerequisiteIdentity,
+      selectGitEnvironment(installation, environment, {
+        ...configured,
+        wrapperConfigSha256: "2".repeat(64),
+      }).prerequisiteIdentity,
+    );
+  });
+
+  test(`Git execution rejects malformed environment values before translation (${profile.sourceRevision})`, () => {
+    for (const value of [
+      null,
+      [],
+      { HOME: 42 },
+      { HOME: "C:\\fixture\0home" },
+      { PATH: false },
+      { PATH: "first", Path: "second" },
+    ])
+      assert.throws(() => selectGitEnvironment(installation, value, facts));
+  });
+}
 
 const hash = (value: string | Uint8Array): string =>
   createHash("sha256").update(value).digest("hex");
@@ -313,9 +359,12 @@ async function assertInstalledProfileMode(selected: GitExecution): Promise<void>
   const runtimeSha256 = (await inspectGitRuntimePayload(inspected)).sha256;
   if (
     runtime === "ucrt64" &&
-    launcherSha256 === gitPayloadProfile.launcherSha256 &&
-    payloadSha256 === gitPayloadProfile.payloadSha256 &&
-    runtimeSha256 === gitPayloadProfile.payloadSha256
+    gitPayloadProfiles.some(
+      (profile) =>
+        launcherSha256 === profile.launcherSha256 &&
+        payloadSha256 === profile.payloadSha256 &&
+        runtimeSha256 === profile.payloadSha256,
+    )
   )
     assert.equal(
       selected.mode,

@@ -50,16 +50,40 @@ export function metadataOwnerAlive(pid: number): boolean | undefined {
   }
 }
 
-async function physical(path: string, directory: boolean): Promise<BigIntStats> {
+class CanonicalPathMismatch extends Error {
+  readonly #canonical: string;
+  readonly #directory: boolean;
+  constructor(canonical: string, directory: boolean) {
+    super(
+      `Metadata lock path is redirected or has an unexpected kind: canonical-path-mismatch; expected ${directory ? "directory" : "file"}`,
+    );
+    this.#canonical = canonical;
+    this.#directory = directory;
+  }
+  matchesDirectory(path: string): boolean {
+    return this.#directory && samePath(this.#canonical, path);
+  }
+}
+
+async function physical(
+  path: string,
+  directory: boolean,
+  canonicalPath: (path: string) => Promise<string> = realpath,
+): Promise<BigIntStats> {
   if (!isAbsolute(path) || path.length > 4096 || /[\r\n\0]/u.test(path))
     throw new Error("Metadata lock paths must be bounded absolute physical paths");
   const info = await lstat(path, { bigint: true });
-  if (
-    info.isSymbolicLink() ||
-    (directory ? !info.isDirectory() : !info.isFile()) ||
-    !samePath(await realpath(path), path)
-  )
-    throw new Error("Metadata lock path is redirected or has an unexpected kind");
+  const rejection = info.isSymbolicLink()
+    ? "symbolic-link"
+    : (directory ? !info.isDirectory() : !info.isFile())
+      ? "unexpected-kind"
+      : undefined;
+  if (rejection)
+    throw new Error(
+      `Metadata lock path is redirected or has an unexpected kind: ${rejection}; expected ${directory ? "directory" : "file"}`,
+    );
+  const canonical = await canonicalPath(path);
+  if (!samePath(canonical, path)) throw new CanonicalPathMismatch(canonical, directory);
   return info;
 }
 
@@ -121,8 +145,12 @@ async function bytes(
   }
 }
 
-async function snapshot(path: string, kind: "directory" | "legacy-file") {
-  const info = await physical(path, kind === "directory");
+async function snapshot(
+  path: string,
+  kind: "directory" | "legacy-file",
+  canonicalPath?: (path: string) => Promise<string>,
+) {
+  const info = await physical(path, kind === "directory", canonicalPath);
   if (kind === "directory") {
     const entries = await opendir(path);
     const names: string[] = [];
@@ -154,9 +182,12 @@ export type MetadataLockOptions = {
   readonly evidenceRoot?: string;
   /** Conservative fixture/host veto only; it cannot turn a native live result into absence. */
   readonly isAlive?: (pid: number) => boolean | undefined;
+  /** Internal trusted fixture reader for recovery re-observation only; defaults to realpath. */
+  readonly readRecoveryCanonicalPath?: (path: string) => Promise<string>;
   /** Trusted fixture synchronization only; never read from external configuration. */
   readonly observe?: (
     phase:
+      | "acquisition-snapshot"
       | "observed-dead"
       | "before-move"
       | "rename-ready"
@@ -183,10 +214,12 @@ async function unchanged(
   saved: Snapshot,
   options: MetadataLockOptions,
 ): Promise<boolean> {
-  const current = await snapshot(path, kind).catch((error: unknown) => {
-    if (hasCode(error, "ENOENT")) return undefined;
-    throw error;
-  });
+  const current = await snapshot(path, kind, options.readRecoveryCanonicalPath).catch(
+    (error: unknown) => {
+      if (hasCode(error, "ENOENT")) return undefined;
+      throw error;
+    },
+  );
   if (!current) return false;
   if (
     current.digest !== saved.digest ||
@@ -340,7 +373,43 @@ async function recoverDirectory(
   const retained = await evidence(path, "directory", saved, options);
   const target = join(retained, "lock");
   await options.observe?.("before-move");
-  if (!(await unchanged(path, "directory", saved, options))) return false;
+  let current: boolean;
+  try {
+    current = await unchanged(path, "directory", saved, options);
+  } catch (error) {
+    // A canonical observation can finish after a competing atomic move. Only
+    // this exact, independently validated quarantine proves that completed move.
+    // It permits fresh bounded acquisition, never retrying this stale rename.
+    if (error instanceof CanonicalPathMismatch) {
+      let reason:
+        | "different-target"
+        | "unavailable-target"
+        | "owner-mismatch"
+        | "directory-identity-mismatch" = "different-target";
+      if (error.matchesDirectory(target)) {
+        const moved = await snapshot(target, "directory").catch(() => undefined);
+        if (!moved) reason = "unavailable-target";
+        else if (moved.digest !== saved.digest) reason = "owner-mismatch";
+        else if (
+          moved.directory.dev !== saved.directory.dev ||
+          moved.directory.ino !== saved.directory.ino
+        )
+          reason = "directory-identity-mismatch";
+        else {
+          await options.observe?.("move-collision");
+          return false;
+        }
+      }
+      // Keep the original denial as cause, but never expose the observed name
+      // or an untrusted target-read error through this bounded classification.
+      throw new Error(
+        `Metadata lock pre-move canonical-path-mismatch: reason=${reason}; original denial retained`,
+        { cause: error },
+      );
+    }
+    throw error;
+  }
+  if (!current) return false;
   await physical(retained, true);
   try {
     await options.observe?.("rename-ready");
@@ -510,9 +579,13 @@ export async function withMetadataLock<T>(
     if (info.isSymbolicLink() || (!info.isDirectory() && !(options.legacyFile && info.isFile())))
       throw new Error("Metadata lock has an unsupported kind");
     const kind = info.isDirectory() ? "directory" : "legacy-file";
-    const saved = await snapshot(path, kind).catch((error: unknown) => {
-      if (hasCode(error, "EACCES") || hasCode(error, "EPERM")) throw error;
-      return undefined; // Malformed or initializing owners never authorize mutation.
+    const saved = await (async () => {
+      await options.observe?.("acquisition-snapshot");
+      return snapshot(path, kind);
+    })().catch(() => {
+      // An unreadable, malformed or initializing owner remains unknown. Retry
+      // observation only within the existing deadline; it never permits recovery.
+      return undefined;
     });
     if (saved && absent(saved, options)) {
       withinDeadline(deadline);

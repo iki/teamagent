@@ -1,5 +1,9 @@
 /** Live prerequisite checks precede cooperative source-result reuse. */
-import { spawnSync } from "node:child_process";
+import {
+  spawnSync,
+  type SpawnSyncOptionsWithStringEncoding,
+  type SpawnSyncReturns,
+} from "node:child_process";
 import { resolve } from "node:path";
 import { Schema } from "effect";
 import { consola } from "consola";
@@ -87,13 +91,74 @@ export function assertTrackedVerificationInputs(root: string): void {
   }
 }
 export type VerificationTask = "format" | "types" | "lint" | "tests";
-function boundedProbe(
+type VerificationProbeId = "git-version" | "powershell-version" | "python-prerequisites";
+/** A trusted host test seam; executable selection and options are not external configuration. */
+export type VerificationProbeRunner = (
+  executable: string,
+  args: readonly string[],
+  options: SpawnSyncOptionsWithStringEncoding,
+) => SpawnSyncReturns<string>;
+const probeErrorCodes = new Set([
+  "ETIMEDOUT",
+  "ENOBUFS",
+  "ERR_CHILD_PROCESS_STDIO_MAXBUFFER",
+  "ENOENT",
+  "EACCES",
+  "EPERM",
+  "EINVAL",
+  "E2BIG",
+  "ENOEXEC",
+  "EMFILE",
+  "ENFILE",
+  "ENOMEM",
+  "ENOSYS",
+]);
+const probeSignals = new Set([
+  "SIGTERM",
+  "SIGKILL",
+  "SIGABRT",
+  "SIGSEGV",
+  "SIGINT",
+  "SIGHUP",
+  "SIGQUIT",
+  "SIGPIPE",
+  "SIGBUS",
+  "SIGFPE",
+  "SIGILL",
+  "SIGXCPU",
+  "SIGXFSZ",
+  "SIGSYS",
+  "SIGTRAP",
+  "SIGBREAK",
+]);
+function probeErrorCode(error: unknown): string {
+  if (typeof error !== "object" || error === null || !("code" in error)) return "unclassified";
+  return typeof error.code === "string" && probeErrorCodes.has(error.code)
+    ? error.code
+    : "unclassified";
+}
+function pythonProbeReason(stderr: unknown): string {
+  if (typeof stderr !== "string") return "unclassified";
+  const normalized = stderr.replaceAll("\r\n", "\n");
+  for (const bound of ["file-count", "total-bytes", "file-bytes", "elapsed"] as const) {
+    if (
+      normalized ===
+      `Python prerequisite integrity could not be established: Python prerequisite inventory ${bound} bound exceeded. No cached success is valid.\n`
+    )
+      return `inventory-${bound}`;
+  }
+  return "unclassified";
+}
+export function verificationProbe(
+  id: VerificationProbeId,
   executable: string,
   args: readonly string[],
   root: string,
-  timeout = 15_000,
-  pythonResult = false,
+  run: VerificationProbeRunner = spawnSync,
 ): string {
+  const pythonResult = id === "python-prerequisites";
+  const timeout = pythonResult ? 120_000 : 15_000;
+  const maxBuffer = 1024 * 1024;
   const env: NodeJS.ProcessEnv = {
     ...verificationLocaleEnvironment(process.env),
     PYTHONDONTWRITEBYTECODE: "1",
@@ -101,17 +166,58 @@ function boundedProbe(
   };
   // This probe hashes provisioned .pyc bytes as inputs; never consume a foreign prefix.
   if (pythonResult) Reflect.deleteProperty(env, "PYTHONPYCACHEPREFIX");
-  const result = spawnSync(executable, [...args], {
-    cwd: root,
-    shell: false,
-    windowsHide: true,
-    encoding: "utf8",
-    timeout,
-    maxBuffer: 1024 * 1024,
-    env,
-  });
-  if (result.error || result.status !== 0)
-    throw new Error("A live verification prerequisite probe failed; cached success is unavailable");
+  const started = performance.now();
+  const failure = (
+    outcome:
+      | "timeout"
+      | "output-limit"
+      | "spawn-error"
+      | "nonzero-exit"
+      | "signal"
+      | "missing-status"
+      | "invalid-output",
+    result?: SpawnSyncReturns<string>,
+    error?: unknown,
+  ): Error => {
+    const status = result?.status;
+    const signal = result?.signal;
+    // Only fixed labels and bounded numeric metadata cross this diagnostic boundary.
+    // Never attach the native error or schema cause: they can include private output.
+    return new Error(
+      `A live verification prerequisite probe failed: probe=${id} outcome=${outcome} elapsedMs=${Math.max(0, Math.round(performance.now() - started))} timeoutMs=${timeout} maxBufferBytes=${maxBuffer} status=${typeof status === "number" && Number.isSafeInteger(status) ? status : "none"} signal=${typeof signal === "string" && probeSignals.has(signal) ? signal : "none"} errorCode=${probeErrorCode(error)} reason=${pythonResult && result?.status !== 0 && result ? pythonProbeReason(result.stderr) : "unclassified"}; cached success is unavailable`,
+    );
+  };
+  let result: SpawnSyncReturns<string>;
+  try {
+    result = run(executable, [...args], {
+      cwd: root,
+      shell: false,
+      windowsHide: true,
+      encoding: "utf8",
+      timeout,
+      maxBuffer,
+      env,
+    });
+  } catch (error) {
+    throw failure("spawn-error", undefined, error);
+  }
+  if (result.error) {
+    const code = probeErrorCode(result.error);
+    throw failure(
+      code === "ETIMEDOUT"
+        ? "timeout"
+        : code === "ENOBUFS" || code === "ERR_CHILD_PROCESS_STDIO_MAXBUFFER"
+          ? "output-limit"
+          : "spawn-error",
+      result,
+      result.error,
+    );
+  }
+  if (result.status !== 0)
+    throw failure(
+      result.signal ? "signal" : result.status === null ? "missing-status" : "nonzero-exit",
+      result,
+    );
   if (pythonResult) {
     const schema = Schema.Struct({
       version: Schema.Literal(1),
@@ -125,7 +231,11 @@ function boundedProbe(
         Schema.isLessThanOrEqualTo(4 * 1024 ** 3),
       ),
     });
-    return encodedDigest(Schema.decodeUnknownSync(Schema.fromJsonString(schema))(result.stdout));
+    try {
+      return encodedDigest(Schema.decodeUnknownSync(Schema.fromJsonString(schema))(result.stdout));
+    } catch {
+      throw failure("invalid-output", result);
+    }
   }
   return digest(result.stdout.replaceAll("\r\n", "\n").replaceAll("\r", "\n"));
 }
@@ -146,9 +256,10 @@ export async function verificationPrerequisites(
   if (includeTests) {
     const tools = await nativeToolIdentity(root);
     values.push(tools.identity);
-    values.push(boundedProbe(tools.git, ["--version"], root));
+    values.push(verificationProbe("git-version", tools.git, ["--version"], root));
     values.push(
-      boundedProbe(
+      verificationProbe(
+        "powershell-version",
         tools.powershell,
         [
           "-NoLogo",
@@ -167,7 +278,14 @@ export async function verificationPrerequisites(
         ".cache/import-python",
         process.platform === "win32" ? "Scripts/python.exe" : "bin/python",
       );
-    values.push(boundedProbe(python, ["app/check/python-prerequisites.py"], root, 60_000, true));
+    values.push(
+      verificationProbe(
+        "python-prerequisites",
+        python,
+        ["app/check/python-prerequisites.py"],
+        root,
+      ),
+    );
   }
   return values;
 }

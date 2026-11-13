@@ -8,7 +8,7 @@ import { which } from "bun";
 import { gitBytes, gitText } from "../app/check/cache-io.ts";
 import {
   gitFileFingerprintSync,
-  gitPayloadProfile,
+  gitPayloadProfiles,
   resolveGitExecutionSync,
   selectGitEnvironment,
   synchronousGitInstallation,
@@ -46,14 +46,16 @@ test("synchronous cache Git shares existing policy and leaves unsupported dispat
     () => resolveGitExecutionSync(process.cwd(), { PATH: 123 }),
     /environment is invalid/u,
   );
-  const selected = selectGitEnvironment(installation, environment, {
-    launcherSha256: gitPayloadProfile.launcherSha256,
-    payloadSha256: gitPayloadProfile.payloadSha256,
-    runtimePayloadSha256: gitPayloadProfile.payloadSha256,
-    wrapperConfigPresent: false,
-  });
-  assert.equal(selected.mode, "payload");
-  assert.equal(selected.env.PLINK_PROTOCOL, "");
+  for (const profile of gitPayloadProfiles) {
+    const selected = selectGitEnvironment(installation, environment, {
+      launcherSha256: profile.launcherSha256,
+      payloadSha256: profile.payloadSha256,
+      runtimePayloadSha256: profile.payloadSha256,
+      wrapperConfigPresent: false,
+    });
+    assert.equal(selected.mode, "payload");
+    assert.equal(selected.env.PLINK_PROTOCOL, "");
+  }
 });
 
 test("synchronous complete-byte inspection rejects mutation and closes its descriptor", async () => {
@@ -107,17 +109,21 @@ test("every synchronous selection rechecks all actual executables and wrapper co
     assert.equal(resolveGitExecutionSync(root).executable, "git");
     return;
   }
-  let known = false;
+  let profile: (typeof gitPayloadProfiles)[number] | undefined;
   try {
-    known =
-      gitFileFingerprintSync(actual.launcher) === gitPayloadProfile.launcherSha256 &&
-      gitFileFingerprintSync(actual.payload) === gitPayloadProfile.payloadSha256 &&
-      gitFileFingerprintSync(win32.join(actual.root, "ucrt64/bin/git.exe")) ===
-        gitPayloadProfile.payloadSha256;
+    const launcher = gitFileFingerprintSync(actual.launcher),
+      core = gitFileFingerprintSync(actual.payload),
+      runtime = gitFileFingerprintSync(win32.join(actual.root, "ucrt64/bin/git.exe"));
+    profile = gitPayloadProfiles.find(
+      (candidate) =>
+        launcher === candidate.launcherSha256 &&
+        core === candidate.payloadSha256 &&
+        runtime === candidate.payloadSha256,
+    );
   } catch {
     /* Missing or unsupported installations retain the original native dispatch. */
   }
-  if (!known) {
+  if (profile === undefined) {
     const originalEnvironment = { ...process.env };
     const unsupported = resolveGitExecutionSync(root, originalEnvironment);
     assert.equal(unsupported.executable, "git");
@@ -143,12 +149,11 @@ test("every synchronous selection rechecks all actual executables and wrapper co
   const before = { ...env },
     admitted = resolveGitExecutionSync(root, env);
   assert.ok(
-    gitFileFingerprintSync(fixture.launcher) === gitPayloadProfile.launcherSha256 &&
-      gitFileFingerprintSync(win32.join(fixture.root, "bin/git.exe")) ===
-        gitPayloadProfile.launcherSha256 &&
-      gitFileFingerprintSync(fixture.payload) === gitPayloadProfile.payloadSha256 &&
+    gitFileFingerprintSync(fixture.launcher) === profile.launcherSha256 &&
+      gitFileFingerprintSync(win32.join(fixture.root, "bin/git.exe")) === profile.launcherSha256 &&
+      gitFileFingerprintSync(fixture.payload) === profile.payloadSha256 &&
       gitFileFingerprintSync(win32.join(fixture.root, "ucrt64/bin/git.exe")) ===
-        gitPayloadProfile.payloadSha256,
+        profile.payloadSha256,
   );
   assert.equal(admitted.mode, "payload");
   assert.equal(admitted.executable, fixture.payload);

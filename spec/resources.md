@@ -9,12 +9,30 @@ physical ownership, the current host and an affirmative OS missing-process
 result. Age grants no authority. Live or reused PIDs, foreign hosts, unknown
 liveness, malformed records and redirected paths remain protected.
 
+An unreadable acquisition snapshot remains unknown. Retry only the ownership
+observation within the existing acquisition deadline; a failed read never proves
+owner absence or authorizes recovery. Persistent denial leaves the lock and its
+retained evidence unchanged. Recovery mutations and owner release still report
+their original errors.
+
 Directory locks move once into a deterministic, permanently nonempty quarantine.
 Competing recoverers cannot replace that destination with a newly acquired
 owner. New cache locks use directories too; legacy regular-file locks require a
 separate directory claim, fresh original-byte/identity validation and one unlink.
 An abandoned claim follows the same directory protocol without nested claims.
 Every action still requires acquiring a new exclusive lock.
+
+A pre-move canonical-path mismatch is recoverable only when the observed name
+is that attempt's exact quarantine destination and a fresh physical snapshot
+there matches the saved owner-byte digest and directory device/inode. This
+recognizes a completed competing move and restarts bounded acquisition; it never
+retries the stale rename. Different, missing, copied or redirected targets remain
+errors, and a replacement live owner stays protected. The trusted fixture reader
+models a canonical observation finishing after a real move; production uses the
+actual filesystem reader. All other path, owner and evidence checks stay live.
+An unconfirmed mismatch retains its original denial and a finite reason:
+different target, unavailable target, changed owner bytes or directory identity.
+Diagnostics never include the observed canonical path or raw target-read errors.
 
 Original ownership, immutable intent and outcome records stay in owned ignored
 evidence. Archive and hook-diagnostic locks route to
@@ -297,10 +315,16 @@ guarantees must not be presented as cross-platform evidence.
 
 Workflow commands retain explicit exited, timeout, output-limit, cancelled and
 transport outcomes. Tools and unit batches fail when native launch or cleanup
-fails. Unit batches share the 960-second phase deadline explicitly approved
-on 2026-11-09. The runner default remains 120 seconds per test; only the four
-new multi-step Git scenarios have separately approved 180-second limits.
-Older tests retain their existing limits. The overall three-worker cap,
+fails. Unit batches share the 1,680-second phase deadline explicitly approved
+on 2026-11-10. The runner default remains 120 seconds per test. The signed
+two-task integration scenario has a separately approved 360-second limit; the
+failures, recovery and PR integration scenarios retain 240 seconds.
+The first research Git maintenance scenario separately permits a 180-second
+owned PowerShell child and a 185-second case, approved on 2026-11-10 after an
+actual child timeout. The identity scenario retains its 120-second child and
+125-second case, and nested fixture Git/Bash commands retain 15/20 seconds.
+This scenario allowance does not change assertions, owned cleanup or the shared phase deadline.
+Other older tests retain their existing limits. The overall three-worker cap,
 two-workflow-group cap, research exclusion and live memory thresholds remain
 unchanged. While any of the four new Git scenario batches is active, a further
 admission cap limits all active batches to two; starting a scenario likewise
@@ -311,6 +335,14 @@ admission. Resource pressure may reduce admission or leave queued files unrun;
 such a result is incomplete verification, not a partial pass. The
 [verification contract](verification.md) retains the independently shorter
 Stop-hook and workflow-review budgets.
+
+The workflow descendant-timeout fixture waits at most five seconds for the
+child's own PID marker and verifies that child is live before its real
+10-second command timeout. It requires closed ownership, descendant absence
+and total elapsed time below 15 seconds. These fixture bounds were approved on
+2026-11-10 after the former one-second timeout ended before child readiness.
+Only missing readiness files are retried; setup failure aborts and joins the
+owned command. Production timeout defaults and the case limit are unchanged.
 
 Fingerprint readers hash full content with 64-KiB buffers, at most four active
 readers and a bounded queue of 256. They compare path/open-handle identities,

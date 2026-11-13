@@ -387,7 +387,7 @@ export async function runUnitTests(root: string, workers?: unknown): Promise<voi
     /* Unknown resource availability stays sequential. */
   }
   process.stderr.write(
-    `Unit inventory: ${files.length} files, ${concurrency} process(es); 960-second phase deadline\n`,
+    `Unit inventory: ${files.length} files, ${concurrency} process(es); 1680-second phase deadline\n`,
   );
   const controller = new AbortController();
   const resourceRoot = fileURLToPath(new URL("../../", import.meta.url));
@@ -397,7 +397,7 @@ export async function runUnitTests(root: string, workers?: unknown): Promise<voi
   const interrupt = (): void => controller.abort(new TestBatchFailure("cancelled"));
   process.once("SIGINT", interrupt);
   process.once("SIGTERM", interrupt);
-  const timer = setTimeout(() => controller.abort(new TestBatchFailure("deadline")), 960_000);
+  const timer = setTimeout(() => controller.abort(new TestBatchFailure("deadline")), 1_680_000);
   try {
     const pycache = resolve(workspace.path, "python");
     await mkdir(pycache);

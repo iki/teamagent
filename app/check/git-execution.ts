@@ -26,6 +26,18 @@ export const gitPayloadProfile = {
   payloadSha256: "9c75f3f41eb5686bacde4b7c4fdfcd7970e8b699ee05c8d7a0cc9c8a7ddaffe8",
 } as const;
 
+// Add complete release tuples only after reviewing the matching package source and native parity.
+// https://github.com/git-for-windows/MINGW-packages/tree/050f94fd8a2198a71f3efc9044e801430d83daef/mingw-w64-git
+export const gitPayloadProfiles = [
+  gitPayloadProfile,
+  {
+    sourceRevision: "050f94fd8a2198a71f3efc9044e801430d83daef",
+    sourceSha256: "c24bab1178721707c848b370aabfc3714a570d0ff34b664d318104a86098d58c",
+    launcherSha256: "177bc8a9af84fa3a400c694c975fda731d048279c074e1a93947ce8b067ebb48",
+    payloadSha256: "9bf8ee81d79f38a11eaf7799499a634c46a718e009a4a9b2b20b115804643302",
+  },
+] as const;
+
 export type WindowsGitInstallation = {
   readonly root: string;
   readonly runtime: "ucrt64" | "mingw64" | "mingw32";
@@ -41,6 +53,19 @@ type GitFacts = {
   readonly wrapperConfigPresent: boolean;
   readonly wrapperConfigSha256?: string;
 };
+function matchingGitProfile(
+  installation: WindowsGitInstallation,
+  facts: Pick<GitFacts, "launcherSha256" | "payloadSha256" | "runtimePayloadSha256">,
+): (typeof gitPayloadProfiles)[number] | undefined {
+  return installation.runtime === "ucrt64"
+    ? gitPayloadProfiles.find(
+        (profile) =>
+          facts.launcherSha256 === profile.launcherSha256 &&
+          facts.payloadSha256 === profile.payloadSha256 &&
+          facts.runtimePayloadSha256 === profile.payloadSha256,
+      )
+    : undefined;
+}
 export type GitExecution = {
   readonly executable: string;
   readonly env: Environment;
@@ -107,14 +132,9 @@ export function selectGitEnvironment(
   const matchingPath =
     executionPath === undefined ||
     (win32.isAbsolute(executionPath) && samePath(executionPath, installation.core));
+  const profile = matchingGitProfile(installation, facts);
   let reason: string | null = null;
-  if (
-    installation.runtime !== "ucrt64" ||
-    facts.launcherSha256 !== gitPayloadProfile.launcherSha256 ||
-    facts.payloadSha256 !== gitPayloadProfile.payloadSha256 ||
-    facts.runtimePayloadSha256 !== gitPayloadProfile.payloadSha256
-  )
-    reason = "unsupported-profile";
+  if (profile === undefined) reason = "unsupported-profile";
   else if (facts.wrapperConfigPresent) reason = "wrapper-config-present";
   else if (!home) reason = "missing-home";
   else if (home.length + 7 >= 4096) reason = "home-path-bound";
@@ -139,7 +159,7 @@ export function selectGitEnvironment(
   const executable = mode === "payload" ? installation.payload : installation.launcher;
   const prerequisiteIdentity = digest({
     version: 1,
-    profile: gitPayloadProfile,
+    profile: profile ?? null,
     mode,
     reason,
     facts,
@@ -375,9 +395,11 @@ export async function resolveGitExecution(
   if (digest(current) !== digest(discovered.fingerprints))
     throw new Error("Git installation changed after discovery");
   if (
-    current.launcher.sha256 !== gitPayloadProfile.launcherSha256 ||
-    current.payload.sha256 !== gitPayloadProfile.payloadSha256 ||
-    current.runtimePayload.sha256 !== gitPayloadProfile.payloadSha256
+    matchingGitProfile(installation, {
+      launcherSha256: current.launcher.sha256,
+      payloadSha256: current.payload.sha256,
+      runtimePayloadSha256: current.runtimePayload.sha256,
+    }) === undefined
   )
     if (discoveries.get(key) === pending) discoveries.delete(key);
   let configPresent = true;
@@ -525,7 +547,13 @@ export function resolveGitExecutionSync(
     const runtimePayload = win32.join(installation.root, "ucrt64/bin/git.exe");
     const runtimePayloadSha256 = hash(runtimePayload);
     const direct = samePath(candidate, installation.payload) || samePath(candidate, runtimePayload);
-    if (selected !== (direct ? gitPayloadProfile.payloadSha256 : gitPayloadProfile.launcherSha256))
+    const profile = matchingGitProfile(installation, {
+      launcherSha256,
+      payloadSha256,
+      runtimePayloadSha256,
+    });
+    if (profile === undefined) return fallback("unsupported-profile");
+    if (selected !== (direct ? profile.payloadSha256 : profile.launcherSha256))
       return fallback("unsupported-selected-wrapper");
     let wrapperConfigPresent = true;
     const configuration = win32.join(installation.root, "etc/git-bash.config");

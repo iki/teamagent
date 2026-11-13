@@ -6,6 +6,7 @@ import {
   mkdir,
   readFile,
   readdir,
+  realpath,
   rename,
   rm,
   symlink,
@@ -60,6 +61,15 @@ async function originals(root: string): Promise<string[]> {
   return Promise.all(
     records.map((name) => readFile(join(directory, name, "original.json"), "utf8")),
   );
+}
+async function retainedLock(root: string): Promise<string> {
+  const records = (await readdir(join(root, ".lock-recovery"))).filter((name) =>
+    /^[a-f0-9]{64}$/u.test(name),
+  );
+  assert.equal(records.length, 1);
+  const record = records[0];
+  assert.ok(record);
+  return join(root, ".lock-recovery", record, "lock");
 }
 
 await test("fresh dead-owner locks recover without an age wait and retain exact originals", async () => {
@@ -162,21 +172,205 @@ await test("competing directory and legacy recoverers reacquire serially without
           await gate.promise;
         },
       };
-      const action = async () => {
+      const action = async (record: (phase: string) => void) => {
+        record("action-enter");
         maximum = Math.max(maximum, ++active);
         calls++;
         await new Promise<void>((done) => setTimeout(done, 10));
         active--;
+        record("action-exit");
       };
-      const results = await Promise.allSettled([
-        withMetadataLock(path, action, options).finally(() => gate.resolve()),
-        withMetadataLock(path, action, options).finally(() => gate.resolve()),
-      ]);
-      for (const result of results) if (result.status === "rejected") throw result.reason;
+      const contender = (id: 1 | 2) => {
+        const phases: string[] = [];
+        let dropped = 0;
+        const record = (phase: string) => {
+          if (phases.length === 32) {
+            phases.shift();
+            dropped++;
+          }
+          phases.push(phase);
+        };
+        return {
+          describe: () =>
+            `subcase=${legacy ? "legacy" : "directory"}; contender=${id}; dropped=${dropped}; phases=${phases.join(",")}`,
+          promise: withMetadataLock(path, () => action(record), {
+            ...options,
+            observe: (phase) => {
+              record(phase);
+              return options.observe(phase);
+            },
+          }).finally(() => gate.resolve()),
+        };
+      };
+      const first = contender(1);
+      const second = contender(2);
+      const results = await Promise.allSettled([first.promise, second.promise]);
+      for (const [index, result] of results.entries())
+        if (result.status === "rejected")
+          throw new Error(
+            `Competing metadata recovery failed: ${(index === 0 ? first : second).describe()}`,
+            { cause: result.reason },
+          );
       assert.equal(calls, 2);
       assert.equal(maximum, 1);
       assert.ok((await originals(root)).includes(raw));
       await assert.rejects(access(path), { code: "ENOENT" });
+    }
+  });
+});
+
+await test("a moved canonical observation requires the exact retained lock and preserves a new live owner", async () => {
+  await fixture(async (root, dead) => {
+    for (const replacement of [false, true]) {
+      const directory = join(root, replacement ? "live-replacement" : "completed-move");
+      await mkdir(directory);
+      const path = join(directory, "lock"),
+        raw = owner(dead, "canonical-race");
+      const live = owner(process.pid, "new-live-owner");
+      await abandoned(path, raw);
+      const before = await lstat(path, { bigint: true });
+      let target = "",
+        reads = 0,
+        collisions = 0,
+        staleMoves = 0,
+        competingCalls = 0,
+        calls = 0;
+      const acquisition = withMetadataLock(
+        path,
+        async () => {
+          calls++;
+        },
+        {
+          waitMs: replacement ? 1000 : 5000,
+          readRecoveryCanonicalPath: async (observed) => {
+            assert.equal(observed, path);
+            assert.equal(++reads, 1);
+            // physical() has already obtained the old lstat. Complete a real move,
+            // then model a native canonical read finishing with that moved name.
+            await withMetadataLock(path, async () => {
+              competingCalls++;
+            });
+            target = await retainedLock(directory);
+            if (replacement) await abandoned(path, live);
+            return realpath(target);
+          },
+          observe: (phase) => {
+            if (phase === "rename-ready") staleMoves++;
+            if (phase === "move-collision") collisions++;
+          },
+        },
+      );
+      if (replacement) await assert.rejects(acquisition, /locked/);
+      else await acquisition;
+      assert.equal(reads, 1);
+      assert.equal(collisions, 1);
+      assert.equal(staleMoves, 0, "a failed re-observation never retries its rename");
+      assert.equal(competingCalls, 1);
+      assert.equal(calls, replacement ? 0 : 1);
+      assert.deepEqual(await originals(directory), [raw]);
+      assert.equal(await readFile(join(target, "owner.json"), "utf8"), raw);
+      const retained = await lstat(target, { bigint: true });
+      assert.equal(retained.dev, before.dev);
+      assert.equal(retained.ino, before.ino);
+      if (replacement) assert.equal(await readFile(join(path, "owner.json"), "utf8"), live);
+      else await assert.rejects(access(path), { code: "ENOENT" });
+    }
+  });
+});
+
+await test("unproven or redirected canonical observations cannot authorize lock recovery", async () => {
+  await fixture(async (root, dead) => {
+    for (const [scenario, reason] of [
+      ["wrong-target", "different-target"],
+      ["missing-target", "unavailable-target"],
+      ["copied-target", "directory-identity-mismatch"],
+      ["changed-moved-owner", "owner-mismatch"],
+      ["linked-target", "unavailable-target"],
+      ["redirected-source", "different-target"],
+    ] as const) {
+      const directory = join(root, scenario);
+      await mkdir(directory);
+      const path = join(directory, "lock"),
+        raw = owner(dead, scenario);
+      await abandoned(path, raw);
+      const originalIdentity = await lstat(path, { bigint: true });
+      const changed = owner(dead, "changed-" + scenario);
+      const outside = join(directory, "outside");
+      await mkdir(outside);
+      await writeFile(join(outside, "sentinel"), "preserve\n");
+      let reads = 0,
+        collisions = 0,
+        moves = 0;
+      await assert.rejects(
+        withMetadataLock(
+          path,
+          async () => assert.fail("Unproven canonical observation acquired a lock"),
+          {
+            readRecoveryCanonicalPath: async (observed) => {
+              assert.equal(observed, path);
+              assert.equal(++reads, 1);
+              const target = await retainedLock(directory);
+              if (scenario === "wrong-target") return realpath(outside);
+              if (scenario === "missing-target") return target;
+              if (scenario === "copied-target") {
+                await abandoned(target, raw);
+                return realpath(target);
+              }
+              if (scenario === "changed-moved-owner") {
+                await rename(path, target);
+                await writeFile(join(target, "owner.json"), changed, "utf8");
+                return realpath(target);
+              }
+              if (scenario === "linked-target") {
+                await symlink(outside, target, process.platform === "win32" ? "junction" : "dir");
+                // Model the exact name, but its fresh physical validation must reject the link.
+                return target;
+              }
+              await rename(path, join(directory, "retained-old"));
+              await symlink(outside, path, process.platform === "win32" ? "junction" : "dir");
+              return realpath(path);
+            },
+            observe: (phase) => {
+              if (phase === "move-collision") collisions++;
+              if (phase === "rename-ready") moves++;
+            },
+          },
+        ),
+        (error: unknown) => {
+          assert.ok(error instanceof Error);
+          assert.equal(
+            error.message,
+            `Metadata lock pre-move canonical-path-mismatch: reason=${reason}; original denial retained`,
+          );
+          assert.ok(error.cause instanceof Error);
+          assert.equal(
+            error.cause.message,
+            "Metadata lock path is redirected or has an unexpected kind: canonical-path-mismatch; expected directory",
+          );
+          assert.equal(error.message.includes(directory), false);
+          assert.equal(error.cause.message.includes(directory), false);
+          return true;
+        },
+      );
+      assert.equal(reads, 1);
+      assert.equal(collisions, 0);
+      assert.equal(moves, 0);
+      assert.deepEqual(await originals(directory), [raw]);
+      if (scenario === "changed-moved-owner") {
+        const target = await retainedLock(directory);
+        const retained = await lstat(target, { bigint: true });
+        assert.equal(retained.dev, originalIdentity.dev);
+        assert.equal(retained.ino, originalIdentity.ino);
+        assert.equal(await readFile(join(target, "owner.json"), "utf8"), changed);
+        await assert.rejects(access(path), { code: "ENOENT" });
+      } else {
+        const original = scenario === "redirected-source" ? join(directory, "retained-old") : path;
+        assert.equal(await readFile(join(original, "owner.json"), "utf8"), raw);
+        if (scenario === "missing-target")
+          await assert.rejects(access(await retainedLock(directory)), { code: "ENOENT" });
+      }
+      assert.equal(await readFile(join(outside, "sentinel"), "utf8"), "preserve\n");
+      assert.deepEqual(await readdir(outside), ["sentinel"]);
     }
   });
 });
@@ -521,5 +715,111 @@ await test("archive and hook recovery stays in ignored workflow evidence and pre
       (await originals(join(root, ".cache/workflow"))).sort(),
       [archiveOwner, reserveOwner, finalizeOwner].sort(),
     );
+  });
+});
+
+await test("unreadable acquisition snapshots wait for a real release before acquiring", async (context) => {
+  await fixture(async (root) => {
+    for (const code of ["EPERM", "EACCES"]) {
+      const path = join(root, "live-read-" + code);
+      const entered = Promise.withResolvers<void>(),
+        release = Promise.withResolvers<void>();
+      const abort = () => release.resolve();
+      context.signal.addEventListener("abort", abort, { once: true });
+      if (context.signal.aborted) abort();
+      let observations = 0,
+        recoveries = 0,
+        calls = 0;
+      const keeper = withMetadataLock(path, async () => {
+        entered.resolve();
+        await release.promise;
+      });
+      void keeper.catch((error: unknown) => entered.reject(error));
+      const pending: Promise<void>[] = [keeper];
+      try {
+        await entered.promise;
+        const raw = await readFile(join(path, "owner.json"), "utf8");
+        const failure = Object.assign(new Error("Fixture unreadable acquisition snapshot"), {
+          code,
+        });
+        const contender = withMetadataLock(
+          path,
+          async () => {
+            calls++;
+            assert.notEqual(await readFile(join(path, "owner.json"), "utf8"), raw);
+          },
+          {
+            observe: async (phase: string) => {
+              if (phase === "observed-dead") recoveries++;
+              if (phase !== "acquisition-snapshot") return;
+              observations++;
+              assert.equal(calls, 0);
+              assert.equal(await readFile(join(path, "owner.json"), "utf8"), raw);
+              if (observations === 1) throw failure;
+              release.resolve();
+              await keeper;
+            },
+          },
+        );
+        pending.push(contender);
+        const result = await contender.then(
+          () => ({ ok: true as const }),
+          (error: unknown) => ({ ok: false as const, error }),
+        );
+        if (!result.ok) throw result.error;
+        assert.equal(observations, 2, "the failed read must be followed by a new observation");
+        assert.equal(recoveries, 0, "an unreadable live owner cannot authorize recovery");
+        assert.equal(calls, 1);
+        await assert.rejects(access(path), { code: "ENOENT" });
+        await assert.rejects(access(join(root, ".lock-recovery")), { code: "ENOENT" });
+      } finally {
+        release.resolve();
+        await Promise.allSettled(pending);
+        context.signal.removeEventListener("abort", abort);
+      }
+    }
+  });
+});
+
+await test("persistent acquisition read denial stays bounded and preserves dead-owner evidence", async () => {
+  await fixture(async (root, dead) => {
+    for (const code of ["EPERM", "EACCES"]) {
+      const path = join(root, "denied-read-" + code),
+        raw = owner(dead, code);
+      await abandoned(path, raw);
+      const before = await lstat(path, { bigint: true });
+      let observations = 0,
+        recoveries = 0,
+        calls = 0;
+      const failure = Object.assign(new Error("Fixture persistent acquisition denial"), { code });
+      await assert.rejects(
+        withMetadataLock(
+          path,
+          async () => {
+            calls++;
+          },
+          {
+            waitMs: 10,
+            observe: (phase: string) => {
+              if (phase === "observed-dead") recoveries++;
+              if (phase === "acquisition-snapshot") {
+                observations++;
+                throw failure;
+              }
+            },
+          },
+        ),
+        /locked/,
+      );
+      assert.ok(observations >= 1);
+      assert.equal(calls, 0);
+      assert.equal(recoveries, 0);
+      assert.equal(await readFile(join(path, "owner.json"), "utf8"), raw);
+      assert.deepEqual(await readdir(path), ["owner.json"]);
+      const after = await lstat(path, { bigint: true });
+      assert.equal(after.dev, before.dev);
+      assert.equal(after.ino, before.ino);
+      await assert.rejects(access(join(root, ".lock-recovery")), { code: "ENOENT" });
+    }
   });
 });

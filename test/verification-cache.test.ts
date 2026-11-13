@@ -1,7 +1,7 @@
 import { assertTemporaryFixture, mkdtemp } from "./temporary.ts";
 import { expect, test } from "bun:test";
-import { ok, rejects } from "node:assert/strict";
-import { spawnSync } from "node:child_process";
+import { ok, rejects, throws } from "node:assert/strict";
+import { spawnSync, type SpawnSyncReturns } from "node:child_process";
 import { createHash } from "node:crypto";
 import {
   mkdir,
@@ -30,7 +30,9 @@ import { installedPackageIdentity } from "../app/check/installed-inputs.ts";
 import { withCacheLock, encodedDigest } from "../app/check/cache-io.ts";
 import {
   assertTrackedVerificationInputs,
+  verificationProbe,
   verificationTask,
+  type VerificationProbeRunner,
 } from "../app/check/verification-cache.ts";
 import { unitEnvironment } from "../app/check/test-groups.ts";
 import {
@@ -658,6 +660,214 @@ test("runtime argument changes invalidate otherwise identical cache inputs", asy
   }
 });
 
+test("prerequisite probes retain dispatch boundaries and exact successful fingerprints", () => {
+  const original = { ...process.env };
+  try {
+    process.env.PYTHONPYCACHEPREFIX = "private-prefix";
+    process.env.PYTHONDONTWRITEBYTECODE = "0";
+    process.env.GIT_OPTIONAL_LOCKS = "1";
+    const python = { version: 1, sha256: "a".repeat(64), files: 3, bytes: 42 };
+    for (const id of ["git-version", "powershell-version", "python-prerequisites"] as const) {
+      let calls = 0;
+      const run: VerificationProbeRunner = (executable, args, options) => {
+        calls++;
+        expect(executable).toBe("private-executable");
+        expect(args).toEqual(["private-argument"]);
+        expect(options.cwd).toBe("private-root");
+        expect(options.shell).toBe(false);
+        expect(options.windowsHide).toBe(true);
+        expect(options.encoding).toBe("utf8");
+        expect(options.timeout).toBe(id === "python-prerequisites" ? 120_000 : 15_000);
+        expect(options.maxBuffer).toBe(1024 * 1024);
+        expect(options.env?.LANG).toBe("C.UTF-8");
+        expect(options.env?.LC_ALL).toBe("C.UTF-8");
+        expect(options.env?.PYTHONDONTWRITEBYTECODE).toBe("1");
+        expect(options.env?.GIT_OPTIONAL_LOCKS).toBe("0");
+        expect(options.env?.PYTHONPYCACHEPREFIX).toBe(
+          id === "python-prerequisites" ? undefined : "private-prefix",
+        );
+        return {
+          pid: 1,
+          output: [],
+          status: 0,
+          signal: null,
+          stdout:
+            id === "python-prerequisites" ? JSON.stringify(python) : "version\r\nnext\rlast\n",
+          stderr: "private-diagnostic",
+        };
+      };
+      expect(
+        verificationProbe(id, "private-executable", ["private-argument"], "private-root", run),
+      ).toBe(
+        id === "python-prerequisites"
+          ? encodedDigest(python)
+          : createHash("sha256").update("version\nnext\nlast\n").digest("hex"),
+      );
+      expect(calls).toBe(1);
+    }
+    expect(process.env.PYTHONPYCACHEPREFIX).toBe("private-prefix");
+    expect(process.env.PYTHONDONTWRITEBYTECODE).toBe("0");
+    expect(process.env.GIT_OPTIONAL_LOCKS).toBe("1");
+  } finally {
+    for (const key of ["PYTHONPYCACHEPREFIX", "PYTHONDONTWRITEBYTECODE", "GIT_OPTIONAL_LOCKS"]) {
+      const value = original[key];
+      if (value === undefined) Reflect.deleteProperty(process.env, key);
+      else process.env[key] = value;
+    }
+  }
+});
+
+test("prerequisite failures identify bounded outcomes without disclosing native payloads", () => {
+  const base: SpawnSyncReturns<string> = {
+    pid: 1,
+    output: [],
+    status: 1,
+    signal: null,
+    stdout: "private-stdout",
+    stderr: "private-stderr",
+  };
+  const cases: readonly {
+    outcome: string;
+    result: SpawnSyncReturns<string>;
+    code: string;
+    status: string;
+    signal: string;
+  }[] = [
+    { outcome: "nonzero-exit", result: base, code: "unclassified", status: "1", signal: "none" },
+    {
+      outcome: "signal",
+      result: { ...base, status: null, signal: "SIGTERM" },
+      code: "unclassified",
+      status: "none",
+      signal: "SIGTERM",
+    },
+    {
+      outcome: "missing-status",
+      result: { ...base, status: null },
+      code: "unclassified",
+      status: "none",
+      signal: "none",
+    },
+    ...[
+      "ETIMEDOUT",
+      "ENOBUFS",
+      "ERR_CHILD_PROCESS_STDIO_MAXBUFFER",
+      "ENOENT",
+      "private-error-code",
+    ].map((code) => ({
+      outcome:
+        code === "ETIMEDOUT"
+          ? "timeout"
+          : code === "ENOBUFS" || code === "ERR_CHILD_PROCESS_STDIO_MAXBUFFER"
+            ? "output-limit"
+            : "spawn-error",
+      result: {
+        ...base,
+        status: null,
+        error: Object.assign(new Error("private-error-message"), { code }),
+      },
+      code: code === "private-error-code" ? "unclassified" : code,
+      status: "none",
+      signal: "none",
+    })),
+  ];
+  for (const entry of cases) {
+    throws(
+      () =>
+        verificationProbe(
+          "git-version",
+          "private-executable",
+          ["private-argument"],
+          "private-root",
+          () => entry.result,
+        ),
+      (error: unknown) => {
+        ok(error instanceof Error);
+        expect(error.message).toContain(`probe=git-version outcome=${entry.outcome}`);
+        expect(error.message).toMatch(/elapsedMs=\d+ timeoutMs=15000 maxBufferBytes=1048576/u);
+        expect(error.message).toContain(
+          `status=${entry.status} signal=${entry.signal} errorCode=${entry.code} reason=unclassified`,
+        );
+        expect(error.message).not.toContain("private-");
+        expect(error.cause).toBeUndefined();
+        return true;
+      },
+    );
+  }
+  throws(
+    () =>
+      verificationProbe("powershell-version", "private-executable", [], "private-root", () => {
+        throw Object.assign(new Error("private-thrown-message"), { code: "EACCES" });
+      }),
+    (error: unknown) => {
+      ok(error instanceof Error);
+      expect(error.message).toContain("probe=powershell-version outcome=spawn-error");
+      expect(error.message).toContain("errorCode=EACCES");
+      expect(error.message).not.toContain("private-");
+      expect(error.cause).toBeUndefined();
+      return true;
+    },
+  );
+  for (const stdout of [
+    "private-invalid-json",
+    JSON.stringify({ version: 1, sha256: "private-invalid-sha", files: 1, bytes: 1 }),
+  ]) {
+    throws(
+      () =>
+        verificationProbe("python-prerequisites", "private-executable", [], "private-root", () => ({
+          ...base,
+          status: 0,
+          stdout,
+        })),
+      (error: unknown) => {
+        ok(error instanceof Error);
+        expect(error.message).toContain("probe=python-prerequisites outcome=invalid-output");
+        expect(error.message).toContain("timeoutMs=120000 maxBufferBytes=1048576");
+        expect(error.message).not.toContain("private-");
+        expect(error.cause).toBeUndefined();
+        return true;
+      },
+    );
+  }
+});
+
+test("Python probe diagnostics recognize only complete owned bound messages", () => {
+  for (const bound of ["file-count", "total-bytes", "file-bytes", "elapsed"] as const) {
+    const message = `Python prerequisite integrity could not be established: Python prerequisite inventory ${bound} bound exceeded. No cached success is valid.\n`;
+    for (const [stderr, reason] of [
+      [message, `inventory-${bound}`],
+      [message.replaceAll("\n", "\r\n"), `inventory-${bound}`],
+      [`private-prefix\n${message}`, "unclassified"],
+      [`${message}private-suffix\n`, "unclassified"],
+      ["private-diagnostic", "unclassified"],
+    ] as const) {
+      throws(
+        () =>
+          verificationProbe(
+            "python-prerequisites",
+            "private-executable",
+            [],
+            "private-root",
+            () => ({
+              pid: 1,
+              output: [],
+              status: 1,
+              signal: null,
+              stdout: "private-stdout",
+              stderr,
+            }),
+          ),
+        (error: unknown) => {
+          ok(error instanceof Error);
+          expect(error.message).toContain(`reason=${reason};`);
+          expect(error.message).not.toContain("private-");
+          return true;
+        },
+      );
+    }
+  }
+});
+
 test("Python fingerprint binds provisioned source/bytecode and restricts launcher aliases and bytecode mode", () => {
   const python =
     process.env.TEAMAGENT_TEST_PYTHON ??
@@ -701,6 +911,22 @@ for writing, prefix in [(False, None), (True, "external-prefix")]:
             raise AssertionError("Unsupported bytecode mode was accepted")
         except RuntimeError:
             pass
+for now in [150, 190]:
+    with patch.object(module.time, "monotonic", return_value=now):
+        module.check_inventory_bounds(100000, 4 * 1024 ** 3, 256 * 1024 ** 2, 100)
+for files, total, size, now, reason in [
+    (100001, 4 * 1024 ** 3 + 1, 256 * 1024 ** 2 + 1, 191, "file-count"),
+    (100000, 4 * 1024 ** 3 + 1, 256 * 1024 ** 2 + 1, 191, "total-bytes"),
+    (100000, 4 * 1024 ** 3, 256 * 1024 ** 2 + 1, 191, "file-bytes"),
+    (100000, 4 * 1024 ** 3, 256 * 1024 ** 2, 190.000001, "elapsed"),
+]:
+    with patch.object(module.time, "monotonic", return_value=now) as clock:
+        try:
+            module.check_inventory_bounds(files, total, size, 100)
+            raise AssertionError("Inventory bound was not enforced")
+        except RuntimeError as error:
+            assert str(error) == "Python prerequisite inventory " + reason + " bound exceeded"
+        assert clock.call_count == (1 if reason == "elapsed" else 0)
 with tempfile.TemporaryDirectory(prefix="teamagent-python-identity-") as directory:
     for name in ["source.py", "compiled.pyc"]:
         path = pathlib.Path(directory) / name
