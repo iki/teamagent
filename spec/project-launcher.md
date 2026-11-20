@@ -16,7 +16,11 @@ engines must agree, and its `packageManager` must pin Aube exactly. The command
 runs in that directory and uses literal arguments after `--`. Per-call
 `--bun-path` and `--aube-path` select physical executables; shims and mismatched
 versions fail. A host Bun with a different version is not a target-runtime
-candidate. Missing tools are reported, never installed by resolution.
+candidate. When physical PATH candidates are exhausted and no install root or
+override was selected, a native Mise on PATH may locate the exact installed
+pin with a config-free, offline `mise which` lookup. The launcher validates
+the returned binary and its version before use. Missing tools are reported,
+never installed by resolution.
 
 The caller's environment is inherited by default without mutation. Foreign
 `TEAMAGENT_BUN_PATH` and `TEAMAGENT_AUBE_PATH` values do not select a target's

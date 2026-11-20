@@ -83,7 +83,7 @@ export function toolVersionOutput(tool: Tool, output: string): string {
 }
 
 /** Never execute a shim to discover the executable behind it. */
-export function physicalToolPath(path: string, tool: Tool): string {
+export function physicalToolPath(path: string, tool: Tool | "mise"): string {
   if (!isAbsolute(path)) throw new Error(`The ${tool} executable must be an absolute path`);
   if (/(?:^|[/\\])\.?shims?(?:[/\\]|$)/i.test(path))
     throw new Error(`Refusing a ${tool} shim; select the physical pinned executable`);
@@ -117,6 +117,60 @@ export function prependToolPath(env: Environment, directories: readonly string[]
   return result;
 }
 
+function probeEnvironment(
+  env: Environment,
+  controls: Readonly<Record<string, string>>,
+  removedKey?: string,
+): Environment {
+  const clean = Object.fromEntries(
+    Object.entries(env).filter(([key]) => {
+      const upper = key.toUpperCase();
+      return upper !== removedKey && !Object.hasOwn(controls, upper);
+    }),
+  );
+  return { ...clean, ...controls };
+}
+
+/** A config-free local Mise lookup is the last PATH candidate. It never runs a tool shim. */
+function* pathCandidates(
+  root: string,
+  tool: Tool,
+  version: string,
+  env: Environment,
+): Generator<string> {
+  const paths = Object.entries(env)
+    .filter(([key]) => key.toLowerCase() === "path")
+    .flatMap(([, value]) => value?.split(delimiter) ?? [])
+    .filter(isAbsolute);
+  const suffix = process.platform === "win32" ? ".exe" : "";
+  if (tool === "bun" && process.versions.bun === version) yield process.execPath;
+  for (const directory of paths) yield join(directory, tool + suffix);
+
+  for (const directory of paths) {
+    let mise: string;
+    try {
+      mise = physicalToolPath(join(directory, "mise" + suffix), "mise");
+    } catch {
+      continue;
+    }
+    const controls = { MISE_OFFLINE: "true", MISE_AUTO_INSTALL: "false" };
+    const lookup = spawnSync(mise, ["--no-config", "which", tool, "--tool", tool + "@" + version], {
+      cwd: root,
+      shell: false,
+      windowsHide: true,
+      encoding: "utf8",
+      timeout: 10000,
+      maxBuffer: 65536,
+      env: probeEnvironment(env, controls),
+    });
+    const output = lookup.stdout?.replace(/\r?\n$/u, "");
+    if (lookup.error || lookup.status !== 0 || !output || /[\r\n\0]/u.test(output))
+      throw new Error(`Mise could not locate the installed ${tool} ${version}`);
+    yield physicalToolPath(output, tool);
+    return;
+  }
+}
+
 export function pinnedTool(
   root: string,
   tool: Tool,
@@ -129,7 +183,7 @@ export function pinnedTool(
     (options.inheritOverride === false
       ? undefined
       : env[tool === "bun" ? "TEAMAGENT_BUN_PATH" : "TEAMAGENT_AUBE_PATH"]);
-  let candidates: string[];
+  let candidates: Iterable<string>;
   if (override !== undefined) candidates = [override];
   else if (env.MISE_INSTALLS_DIR) {
     if (!isAbsolute(env.MISE_INSTALLS_DIR)) throw new Error("MISE_INSTALLS_DIR must be absolute");
@@ -139,19 +193,12 @@ export function pinnedTool(
       tool === "bun"
         ? [join(installs, tool, version, "bin", executable)]
         : [
+            join(installs, tool, version, ".mise-bins", executable),
             join(installs, tool, version, executable),
             join(installs, tool, version, "bin", executable),
           ];
   } else {
-    const paths = Object.entries(env)
-      .filter(([key]) => key.toLowerCase() === "path")
-      .flatMap(([, value]) => value?.split(delimiter) ?? []);
-    candidates = [
-      ...(tool === "bun" && process.versions.bun === version ? [process.execPath] : []),
-      ...paths
-        .filter(isAbsolute)
-        .map((path) => join(path, process.platform === "win32" ? `${tool}.exe` : tool)),
-    ];
+    candidates = pathCandidates(root, tool, version, env);
   }
   for (const candidate of candidates) {
     let executable: string;
@@ -161,6 +208,7 @@ export function pinnedTool(
       if (override !== undefined) throw new Error(`Invalid physical ${tool} override`);
       continue;
     }
+    const probeEnv = prependToolPath(env, [dirname(executable)]);
     const probe = spawnSync(executable, ["--version"], {
       cwd: root,
       shell: false,
@@ -168,7 +216,14 @@ export function pinnedTool(
       encoding: "utf8",
       timeout: 10000,
       maxBuffer: 65536,
-      env: prependToolPath(env, [dirname(executable)]),
+      env:
+        tool === "aube"
+          ? probeEnvironment(
+              probeEnv,
+              { AUBE_MANAGE_PACKAGE_MANAGER_VERSIONS: "false", AUBE_NO_UPDATE_CHECK: "1" },
+              "NPM_CONFIG_MANAGE_PACKAGE_MANAGER_VERSIONS",
+            )
+          : probeEnv,
     });
     if (!probe.error && probe.status === 0 && toolVersionOutput(tool, probe.stdout) === version)
       return executable;

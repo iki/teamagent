@@ -39,6 +39,39 @@ Select Bun explicitly in launchers and package scripts rather than depending on
 automatic shebang rewriting. Native prerequisites remain explicit: Bun does not
 supply Rust, Android SDK, Xcode, browser binaries or external compression tools.
 
+## Install the project tools
+
+The root [mise.toml](../../mise.toml) provisions the Bun and Aube versions
+declared in `.bun-version` and `package.json`. From the repository root, review
+the configuration, run `mise trust` if Mise requires trust for this checkout,
+then explicitly run `mise install bun@1.4.2 aube@2.5.1`. Naming both tools limits setup to
+the project's requested tools even on a host with a larger global configuration.
+Use `aube install --frozen-lockfile` for the JavaScript packages.
+
+On Windows, invoke the project launcher to run the pinned executable directly.
+PowerShell 7.3 and newer preserve literal native arguments even if the caller
+uses Legacy argument passing. Older shells reject empty arguments, embedded
+double quotes and arguments containing whitespace that end in a backslash.
+
+```powershell
+.\\app\\toolchain.ps1 -Tool aube install --frozen-lockfile
+.\\app\\toolchain.ps1 -Tool aube run --no-install review:check
+```
+
+The launcher first checks a per-tool `TEAMAGENT_BUN_PATH` or `TEAMAGENT_AUBE_PATH`
+override. With an absolute `MISE_INSTALLS_DIR`, it resolves the versioned Bun
+`bin/bun.exe` and Aube `.mise-bins/aube.exe`, `aube.exe` or `bin/aube.exe`
+under that directory, in the order listed.
+With neither setting it checks absolute PATH entries for physical tools. When
+only tool shims are available, a physical Mise executable on PATH can locate
+the installed version with `mise --no-config which bun --tool bun@1.4.2` or
+the equivalent exact Aube query. This lookup runs offline with automatic
+installation disabled. Each selected binary must pass the path, name and
+version checks. The Aube version probe removes the npm-compatible manager-switch
+override and disables manager switching and update checks in its own environment.
+The child receives the selected tool directories first on PATH.
+See [project launch](../project-launcher.md) for cross-project selection.
+
 ## Native tools and Windows
 
 For explicitly selected projects, use the host-only [project launcher](../project-launcher.md)

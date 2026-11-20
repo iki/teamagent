@@ -28,6 +28,10 @@ reproduction commands. The [measured results](spec/benchmarks/results.md) retain
 88 questions, before/after runs, reference comparisons and remaining limitations.
 `aube run --no-install benchmark:memory --help` lists the runner.
 
+Install the pinned Bun and Aube tools with `mise install bun@1.4.2 aube@2.5.1` from the
+reviewed project root. For Windows setup and direct executable selection, see
+[the runtime guide](spec/architecture/runtime.md#install-the-project-tools).
+
 ```sh
 aube install --frozen-lockfile
 aube run --no-install build:web

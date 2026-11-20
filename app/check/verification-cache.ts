@@ -34,6 +34,7 @@ const configurationInputs = [
   "aube-lock.yaml",
   "aube-workspace.yaml",
   ".bun-version",
+  "mise.toml",
   "bunfig.toml",
   "tsconfig.json",
   "tsconfig.lib.json",
